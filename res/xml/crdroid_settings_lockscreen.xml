@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -20,37 +20,40 @@
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     android:title="@string/lockscreen_title">
 
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="lockscreen_shortcuts_category"
         android:title="@string/lockscreen_shortcuts_category">
 
-        <PreferenceScreen
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="lockscreen_shortcuts_longpress"
+            android:icon="@drawable/ic_format_center"
+            android:title="@string/lockscreen_shorcuts_launch_type_title"
+            android:summary="%s"
+            android:defaultValue="1"
+            android:entries="@array/lockscreen_shortcuts_launch_type_entries"
+            android:entryValues="@array/lockscreen_shortcuts_launch_type_values" />
+
+        <Preference
             android:key="lockscreen_shortcuts"
             android:icon="@drawable/ic_format_center"
-            android:title="@string/lockscreen_shortcuts_title"
-            android:summary="@string/lockscreen_shortcuts_summary"
-            android:fragment="com.crdroid.settings.fragments.ActionListViewSettings">
+            android:fragment="com.crdroid.settings.fragments.lockscreen.slim.dslv.ActionListViewSettings"
+            android:summary="@string/lockscreen_shortcuts_slim_summary"
+            android:title="@string/lockscreen_shortcuts_slim_title">
                 <extra android:name="actionMode" android:value="4" />
                 <extra android:name="maxAllowedActions" android:value="20" />
                 <extra android:name="disableLongpress" android:value="true" />
                 <extra android:name="useAppPickerOnly" android:value="true" />
-        </PreferenceScreen>
+        </Preference>
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_shortcuts_longpress"
-            android:icon="@drawable/ic_format_center"
-            android:title="@string/lockscreen_shorcuts_longpress_title"
-            android:summary="@string/lockscreen_shorcuts_longpress_summary" />
-
-         <PreferenceScreen
+        <!--<Preference
+            android:title="@string/lockscreen_shortcuts_title"
             android:icon="@drawable/ic_format_bottom"
-            android:title="@string/lockscreen_swipe_title"
-            android:summary="@string/lockscreen_swipe_summary" >
-            <intent
+            android:summary="@string/lockscreen_shortcuts_summary">
+            <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.cm.LockscreenShortcutsActivity" />
-         </PreferenceScreen>
-    </PreferenceCategory>-->
+                android:targetClass="com.android.systemui.tuner.LockscreenTunerActivity" />
+        </Preference>-->
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="lockscreen_interface_category"
