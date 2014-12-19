@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016 crDroid Android Project
+     Copyright (C) 2016-2017 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,16 +15,20 @@
      limitations under the License.
 -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-        android:width="24.0dp"
-        android:height="24.0dp"
-        android:viewportWidth="24.0"
-        android:viewportHeight="24.0"
-        android:tint="?android:attr/colorControlNormal">
-    <path
-        android:fillColor="#FF000000"
-        android:pathData="M0,31.6499023c0-1.546875,0-28.6938477,0-29.7607422
-	c0-1.3837891,1.4057617-2.4130859,2.7954102-1.6035156c1.1137695,0.6479492,23.3701172,13.7314453,25.2695313,14.8500977
-	c1.2480469,0.7353516,1.2265625,2.487793,0,3.2241211C26.6977539,19.1801758,4.3564453,32.3305664,2.7382813,33.2446289
-	C1.5537109,33.9145508,0,33.1743164,0,31.6499023z"/>
-</vector>
+    android:width="32.0dp"
+    android:height="32.00dp"
+    android:viewportWidth="96.0"
+    android:viewportHeight="96.0"
+    android:tint="?android:attr/colorControlNormal">
 
+    <group
+        android:translateY="96.0"
+        android:scaleX="0.1"
+        android:scaleY="-0.1">
+        <path
+            android:fillColor="#FF000000"
+            android:strokeWidth="1"
+            android:pathData="M567 562 l-187 -187 -98 98 -98 97 -42 -43 -42 -43 139 -138 138 -138 232 227 c127
++125 231 230 230 234 0 3 -20 23 -43 43 l-42 37 -187 -187z" />
+    </group>
+</vector>
