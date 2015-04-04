@@ -23,6 +23,12 @@
                  android:targetPackage="com.android.settings"
                  android:targetClass="com.crdroid.settings.fragments.HAFRAppListActivity" />
          </PreferenceScreen>
+
+         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+             android:key="systemui_recents_mem_display"
+             android:title="@string/systemui_recents_mem_display_title"
+             android:summary="@string/systemui_recents_mem_display_summary"
+             android:defaultValue="false" />
     </PreferenceCategory>
 
     <PreferenceCategory 
@@ -38,7 +44,6 @@
             android:title="@string/omniswitch_start_settings_title"
             android:summary="@string/omniswitch_start_settings_summary"
             android:persistent="false" />
-
     </PreferenceCategory>
 
 </PreferenceScreen>
