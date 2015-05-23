@@ -20,4 +20,10 @@
             android:fragment="com.crdroid.settings.fragments.ExpandedDesktopPreferenceFragment"
             android:persistent="false" />
 
+        <PreferenceScreen
+            android:key="interface_animation_scroll"
+            android:fragment="com.crdroid.settings.fragments.ScrollAnimationInterfaceSettings"
+            android:title="@string/scrolling_title"
+            android:summary="@string/scrolling_summary"
+            android:persistent="false" />
 </PreferenceScreen>
