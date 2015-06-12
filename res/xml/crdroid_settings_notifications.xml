@@ -22,4 +22,27 @@
             android:title="@string/disable_immersive_message_title"
             android:summary="@string/disable_immersive_message_summary" />
 
+     <PreferenceCategory
+        android:key="breathing_notifications"
+        android:title="@string/breathing_notifications_category">
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="missed_call_breath"
+            android:title="@string/missed_call_breath_title"
+            android:summary="@string/missed_call_breath_summary"
+            android:persistent="false"/>
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="voicemail_breath"
+            android:title="@string/voicemail_breath_title"
+            android:summary="@string/voicemail_breath_summary"
+            android:persistent="false"/>
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="sms_breath"
+            android:title="@string/sms_breath_title"
+            android:summary="@string/sms_breath_summary"
+            android:persistent="false"/>
+     </PreferenceCategory>
+
 </PreferenceScreen>
