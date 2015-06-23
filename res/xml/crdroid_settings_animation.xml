@@ -31,4 +31,10 @@
         android:entries="@array/listview_interpolator_entries"
         android:entryValues="@array/listview_interpolator_values"
         android:defaultValue="0" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="disable_transition_animations"
+        android:title="@string/disable_animations"
+        android:summary="@string/disable_animations_summary"
+        android:defaultValue="false" />
 </PreferenceScreen>
