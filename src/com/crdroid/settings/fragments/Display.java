@@ -31,6 +31,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.crdroid.settings.fragments.display.ExpandedDesktop;
 import com.crdroid.settings.R;
 
 public class Display extends SettingsPreferenceFragment {
@@ -47,7 +48,7 @@ public class Display extends SettingsPreferenceFragment {
     }
 
     public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
+        ExpandedDesktop.reset(mContext);
     }
 
     @Override
