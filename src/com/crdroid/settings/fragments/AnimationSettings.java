@@ -22,10 +22,12 @@ public class AnimationSettings extends SettingsPreferenceFragment
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
+    private static final String POWER_MENU_ANIMATION = "power_menu_animation";
 
     private ListPreference mToastAnimation;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
+    private ListPreference mPowerMenuAnimation;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -54,6 +56,13 @@ public class AnimationSettings extends SettingsPreferenceFragment
         mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
         mListViewInterpolator.setEnabled(listviewanimation > 0);
         mListViewInterpolator.setOnPreferenceChangeListener(this);
+
+        mPowerMenuAnimation = (ListPreference) findPreference(POWER_MENU_ANIMATION);
+        int powermenuanimation = Settings.System.getInt(resolver,
+                Settings.System.POWER_MENU_ANIMATION, 0);
+        mPowerMenuAnimation.setValue(String.valueOf(powermenuanimation));
+        mPowerMenuAnimation.setSummary(mPowerMenuAnimation.getEntry());
+        mPowerMenuAnimation.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -80,6 +89,13 @@ public class AnimationSettings extends SettingsPreferenceFragment
             Settings.System.putInt(resolver,
                     Settings.System.LISTVIEW_INTERPOLATOR, value);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
+            return true;
+        } else if (preference == mPowerMenuAnimation) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mPowerMenuAnimation.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.POWER_MENU_ANIMATION, value);
+            mPowerMenuAnimation.setSummary(mPowerMenuAnimation.getEntries()[index]);
             return true;
         }
         return false;
