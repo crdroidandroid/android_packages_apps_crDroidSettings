@@ -39,8 +39,12 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.buttons.PowerMenuSettings;
+import com.crdroid.settings.preferences.LineageSystemSettingSeekBarPreference;
+import com.crdroid.settings.utils.DeviceUtils;
 
 import java.util.List;
+
+import lineageos.providers.LineageSettings;
 
 @SearchIndexable
 public class Buttons extends SettingsPreferenceFragment implements
@@ -48,11 +52,41 @@ public class Buttons extends SettingsPreferenceFragment implements
 
     private static final String TAG = "Buttons";
 
+    private static final String KEY_POWER_MENU = "power_menu";
+    private static final String KEY_TORCH_LONG_PRESS_POWER_GESTURE =
+            "torch_long_press_power_gesture";
+    private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
+            "torch_long_press_power_timeout";
+
+    private static final String CATEGORY_POWER = "power_key";
+
+    private SwitchPreference mTorchLongPressPowerGesture;
+    private LineageSystemSettingSeekBarPreference mTorchLongPressPowerTimeout;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.crdroid_settings_button);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        // Long press power while display is off to activate torchlight
+        mTorchLongPressPowerGesture = findPreference(KEY_TORCH_LONG_PRESS_POWER_GESTURE);
+        mTorchLongPressPowerTimeout = findPreference(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
+
+        final boolean hasPowerKey = DeviceUtils.hasPowerKey();
+
+        final PreferenceCategory powerCategory = prefScreen.findPreference(CATEGORY_POWER);
+
+        if (hasPowerKey) {
+            if (!DeviceUtils.deviceSupportsFlashLight(getActivity())) {
+                powerCategory.removePreference(mTorchLongPressPowerGesture);
+                powerCategory.removePreference(mTorchLongPressPowerTimeout);
+            }
+        } else {
+            prefScreen.removePreference(powerCategory);
+        }
     }
 
     @Override
@@ -62,6 +96,10 @@ public class Buttons extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.TORCH_LONG_PRESS_POWER_GESTURE, 0, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0, UserHandle.USER_CURRENT);
         PowerMenuSettings.reset(mContext);
     }
 
@@ -79,6 +117,17 @@ public class Buttons extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+
+                    if (!DeviceUtils.hasPowerKey()) {
+                        keys.add(KEY_POWER_MENU);
+                        keys.add(KEY_TORCH_LONG_PRESS_POWER_GESTURE);
+                        keys.add(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
+                    } else {
+                        if (!DeviceUtils.deviceSupportsFlashLight(context)) {
+                            keys.add(KEY_TORCH_LONG_PRESS_POWER_GESTURE);
+                            keys.add(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
+                        }
+                    }
 
                     return keys;
                 }
