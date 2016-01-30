@@ -29,6 +29,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.preferences.ColorPickerPreference;
+import com.crdroid.settings.preferences.SeekBarPreference;
 
 import cyanogenmod.preference.CMSystemSettingListPreference;
 
@@ -44,6 +45,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String STATUS_BAR_DATE = "status_bar_date";
     private static final String STATUS_BAR_DATE_STYLE = "status_bar_date_style";
     private static final String STATUS_BAR_DATE_FORMAT = "status_bar_date_format";
+    private static final String PREF_FONT_STYLE = "statusbar_clock_font_style";
+    private static final String PREF_STATUS_BAR_CLOCK_FONT_SIZE  = "statusbar_clock_font_size";
+    private static final String PREF_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
@@ -62,6 +66,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private CMSystemSettingListPreference mStatusBarDate;
     private CMSystemSettingListPreference mStatusBarDateStyle;
     private CMSystemSettingListPreference mStatusBarDateFormat;
+    private CMSystemSettingListPreference mFontStyle;
+    private SeekBarPreference mStatusBarClockFontSize;
+    private CMSystemSettingListPreference mClockDatePosition;
     private CMSystemSettingListPreference mStatusBarBattery;
     private CMSystemSettingListPreference mStatusBarBatteryShowPercent;
     private CMSystemSettingListPreference mQuickPulldown;
@@ -101,6 +108,9 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarBatteryShowPercent =
                 (CMSystemSettingListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
         mQuickPulldown = (CMSystemSettingListPreference) findPreference(STATUS_BAR_QUICK_QS_PULLDOWN);
+        mFontStyle = (CMSystemSettingListPreference) findPreference(PREF_FONT_STYLE);
+        mStatusBarClockFontSize = (SeekBarPreference) findPreference(PREF_STATUS_BAR_CLOCK_FONT_SIZE);
+        mClockDatePosition = (CMSystemSettingListPreference) findPreference(PREF_CLOCK_DATE_POSITION);
 
         if (DateFormat.is24HourFormat(getActivity())) {
             mStatusBarAmPm.setEnabled(false);
@@ -128,6 +138,22 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mStatusBarDateFormat.setSummary(DateFormat.format(dateFormat, new Date()));
 
         parseClockDateFormats();
+
+        int fontStyle = Settings.System.getInt(resolver,
+                Settings.System.STATUSBAR_CLOCK_FONT_STYLE, 0);
+        mFontStyle.setValue(String.valueOf(fontStyle));
+        mFontStyle.setSummary(mFontStyle.getEntry());
+        mFontStyle.setOnPreferenceChangeListener(this);
+
+        mStatusBarClockFontSize.setValue(Settings.System.getInt(resolver,
+                Settings.System.STATUSBAR_CLOCK_FONT_SIZE, 14));
+        mStatusBarClockFontSize.setOnPreferenceChangeListener(this);
+
+        int clockdatePosition = Settings.System.getInt(resolver,
+                Settings.System.STATUSBAR_CLOCK_DATE_POSITION, 0);
+        mClockDatePosition.setValue(String.valueOf(clockdatePosition));
+        mClockDatePosition.setSummary(mClockDatePosition.getEntry());
+        mClockDatePosition.setOnPreferenceChangeListener(this);
 
         mStatusBarBattery.setOnPreferenceChangeListener(this);
         enableStatusBarBatteryDependents(mStatusBarBattery.getIntValue(0));
@@ -180,7 +206,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             setStatusBarDateDependencies();
             return true;
         } else if (preference == mStatusBarDateStyle) {
-            int statusBarDateStyle = Integer.parseInt((String) newValue);
+            int statusBarDateStyle = Integer.valueOf((String) newValue);
             int index = mStatusBarDateStyle.findIndexOfValue((String) newValue);
             Settings.System.putInt(
                     resolver, STATUS_BAR_DATE_STYLE, statusBarDateStyle);
@@ -237,7 +263,27 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         } else if (preference == mStatusBarClock) {
             setStatusBarDateDependencies();
             return true;
-        }
+        } else if (preference == mFontStyle) {
+            int val = Integer.valueOf((String) newValue);
+            int index = mFontStyle.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUSBAR_CLOCK_FONT_STYLE, val);
+            mFontStyle.setSummary(mFontStyle.getEntries()[index]);
+            return true;
+        } else if (preference == mStatusBarClockFontSize) {
+            int size = (Integer) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUSBAR_CLOCK_FONT_SIZE, size);
+            return true;
+        } else if (preference == mClockDatePosition) {
+            int val = Integer.valueOf((String) newValue);
+            int index = mClockDatePosition.findIndexOfValue((String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.STATUSBAR_CLOCK_DATE_POSITION, val);
+            mClockDatePosition.setSummary(mClockDatePosition.getEntries()[index]);
+            parseClockDateFormats();
+            return true;
+         }
 
         return false;
     }
@@ -262,10 +308,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                     mStatusBarDate.setEnabled(false);
                     mStatusBarDateStyle.setEnabled(false);
                     mStatusBarDateFormat.setEnabled(false);
+                    mClockDatePosition.setEnabled(false);
                 } else {
                     mStatusBarDate.setEnabled(true);
                     mStatusBarDateStyle.setEnabled(showDate != 0);
                     mStatusBarDateFormat.setEnabled(showDate != 0);
+                    mClockDatePosition.setEnabled(showDate != 0);
                 }
             }
         });
@@ -319,5 +367,4 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     protected int getMetricsCategory() {
         return MetricsEvent.CRDROID_SETTINGS;
     }
-
 }
