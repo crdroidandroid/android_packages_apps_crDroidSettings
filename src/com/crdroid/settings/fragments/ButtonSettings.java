@@ -9,9 +9,9 @@ import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.RemoteException;
 import android.os.SystemProperties;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.ListPreference;
@@ -26,6 +26,8 @@ import android.view.KeyEvent;
 import android.view.WindowManagerGlobal;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.utils.du.ActionConstants;
+import com.android.internal.utils.du.DUActionUtils;
 import com.android.settings.DevelopmentSettings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -40,14 +42,12 @@ import java.util.List;
 import org.cyanogenmod.internal.util.QSUtils;
 import org.cyanogenmod.internal.util.ScreenType;
 
-public class ButtonSettings extends SettingsPreferenceFragment
+public class ButtonSettings extends ActionFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "SystemSettings";
 
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
-    private static final String KEY_HOME_LONG_PRESS = "hardware_keys_home_long_press";
-    private static final String KEY_HOME_DOUBLE_TAP = "hardware_keys_home_double_tap";
     private static final String KEY_MENU_PRESS = "hardware_keys_menu_press";
     private static final String KEY_MENU_LONG_PRESS = "hardware_keys_menu_long_press";
     private static final String KEY_ASSIST_PRESS = "hardware_keys_assist_press";
@@ -62,6 +62,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private static final String KEY_VOLUME_CONTROL_RING_STREAM = "volume_keys_control_ring_stream";
     private static final String KEY_TORCH_LONG_PRESS_POWER_GESTURE =
             "torch_long_press_power_gesture";
+    private static final String HWKEY_DISABLE = "hardware_keys_disable";
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -72,6 +73,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private static final String CATEGORY_CAMERA = "camera_key";
     private static final String CATEGORY_VOLUME = "volume_keys";
     private static final String CATEGORY_BACKLIGHT = "key_backlight";
+    private static final String CATEGORY_HWKEY = "hardware_keys";
 
     // Available custom actions to perform on a key press.
     // Must match values for KEY_HOME_LONG_PRESS_ACTION in:
@@ -110,8 +112,6 @@ public class ButtonSettings extends SettingsPreferenceFragment
     public static final int KEY_MASK_CAMERA = 0x20;
     public static final int KEY_MASK_VOLUME = 0x40;
 
-    private ListPreference mHomeLongPressAction;
-    private ListPreference mHomeDoubleTapAction;
     private ListPreference mMenuPressAction;
     private ListPreference mMenuLongPressAction;
     private ListPreference mAssistPressAction;
@@ -128,8 +128,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
     private SwitchPreference mTorchLongPressPowerGesture;
-
-    private Handler mHandler;
+    private SwitchPreference mHwKeyDisable;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -191,7 +190,20 @@ public class ButtonSettings extends SettingsPreferenceFragment
         mTorchLongPressPowerGesture =
                 (SwitchPreference) findPreference(KEY_TORCH_LONG_PRESS_POWER_GESTURE);
 
-        mHandler = new Handler();
+        final boolean needsNavbar = DUActionUtils.hasNavbarByDefault(getActivity());
+        final PreferenceCategory hwkeyCat = (PreferenceCategory) prefScreen
+                .findPreference(CATEGORY_HWKEY);
+        int keysDisabled = 0;
+        if (!needsNavbar) {
+            mHwKeyDisable = (SwitchPreference) findPreference(HWKEY_DISABLE);
+            keysDisabled = Settings.Secure.getIntForUser(resolver,
+                    Settings.Secure.HARDWARE_KEYS_DISABLE, 0,
+                    UserHandle.USER_CURRENT);
+            mHwKeyDisable.setChecked(keysDisabled != 0);
+            mHwKeyDisable.setOnPreferenceChangeListener(this);
+        } else {
+            prefScreen.removePreference(hwkeyCat);
+        }
 
         if (hasPowerKey) {
             if (!TelephonyUtils.isVoiceCapable(getActivity())) {
@@ -214,22 +226,6 @@ public class ButtonSettings extends SettingsPreferenceFragment
                 homeCategory.removePreference(mHomeAnswerCall);
                 mHomeAnswerCall = null;
             }
-
-            Action defaultLongPressAction = Action.fromIntSafe(res.getInteger(
-                    com.android.internal.R.integer.config_longPressOnHomeBehavior));
-
-            Action defaultDoubleTapAction = Action.fromIntSafe(res.getInteger(
-                    com.android.internal.R.integer.config_doubleTapOnHomeBehavior));
-
-            Action longPressAction = Action.fromSettings(resolver,
-                    CMSettings.System.KEY_HOME_LONG_PRESS_ACTION,
-                    defaultLongPressAction);
-            mHomeLongPressAction = initActionList(KEY_HOME_LONG_PRESS, longPressAction);
-
-            Action doubleTapAction = Action.fromSettings(resolver,
-                    CMSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
-                    defaultDoubleTapAction);
-            mHomeDoubleTapAction = initActionList(KEY_HOME_DOUBLE_TAP, doubleTapAction);
 
             hasAnyBindableKey = true;
         } else {
@@ -364,6 +360,12 @@ public class ButtonSettings extends SettingsPreferenceFragment
                 mVolumeWakeScreen.setDisableDependentsState(true);
             }
         }
+
+        // let super know we can load ActionPreferences
+        onPreferenceScreenLoaded(ActionConstants.getDefaults(ActionConstants.HWKEYS));
+
+        // load preferences first
+        setActionPreferencesEnabled(keysDisabled == 0);
     }
 
     @Override
@@ -420,15 +422,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mHomeLongPressAction) {
-            handleActionListChange(mHomeLongPressAction, newValue,
-                    CMSettings.System.KEY_HOME_LONG_PRESS_ACTION);
-            return true;
-        } else if (preference == mHomeDoubleTapAction) {
-            handleActionListChange(mHomeDoubleTapAction, newValue,
-                    CMSettings.System.KEY_HOME_DOUBLE_TAP_ACTION);
-            return true;
-        } else if (preference == mMenuPressAction) {
+        if (preference == mMenuPressAction) {
             handleActionListChange(mMenuPressAction, newValue,
                     CMSettings.System.KEY_MENU_ACTION);
             return true;
@@ -455,6 +449,12 @@ public class ButtonSettings extends SettingsPreferenceFragment
         } else if (preference == mVolumeKeyCursorControl) {
             handleSystemActionListChange(mVolumeKeyCursorControl, newValue,
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL);
+            return true;
+        } else if (preference == mHwKeyDisable) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.HARDWARE_KEYS_DISABLE,
+                    value ? 1 : 0);
+            setActionPreferencesEnabled(!value);
             return true;
         }
         return false;
@@ -490,6 +490,11 @@ public class ButtonSettings extends SettingsPreferenceFragment
                 CMSettings.Secure.RING_HOME_BUTTON_BEHAVIOR, (mHomeAnswerCall.isChecked()
                         ? CMSettings.Secure.RING_HOME_BUTTON_BEHAVIOR_ANSWER
                         : CMSettings.Secure.RING_HOME_BUTTON_BEHAVIOR_DO_NOTHING));
+    }
+
+    @Override
+    protected boolean usesExtendedActionsList() {
+        return true;
     }
 
     @Override
