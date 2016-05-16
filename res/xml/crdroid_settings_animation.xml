@@ -40,6 +40,22 @@
         android:entryValues="@array/power_menu_animation_values"
         android:defaultValue="0" />
 
+     <ListPreference
+        android:key="qs_tile_animation_style"
+        android:dialogTitle="@string/qs_tile_animation_style_title"
+        android:title="@string/qs_tile_animation_style_title"
+        android:entries="@array/qs_tile_animation_style_entries"
+        android:entryValues="@array/qs_tile_animation_style_values"
+        android:defaultValue="0" />
+
+    <ListPreference
+        android:key="qs_tile_animation_duration"
+        android:dialogTitle="@string/qs_tile_animation_duration_title"
+        android:title="@string/qs_tile_animation_duration_title"
+        android:entries="@array/qs_tile_animation_duration_entries"
+        android:entryValues="@array/qs_tile_animation_duration_values"
+        android:defaultValue="2000" />
+
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="disable_transition_animations"
         android:title="@string/disable_animations"
