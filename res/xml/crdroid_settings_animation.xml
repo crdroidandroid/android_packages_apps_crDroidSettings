@@ -56,6 +56,14 @@
         android:entryValues="@array/qs_tile_animation_duration_values"
         android:defaultValue="2000" />
 
+    <ListPreference
+        android:key="qs_tile_animation_interpolator"
+        android:dialogTitle="@string/qs_tile_animation_interpolator_title"
+        android:title="@string/qs_tile_animation_interpolator_title"
+        android:entries="@array/qs_tile_animation_interpolator_entries"
+        android:entryValues="@array/qs_tile_animation_interpolator_values"
+        android:defaultValue="0" />
+
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="disable_transition_animations"
         android:title="@string/disable_animations"
