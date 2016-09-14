@@ -17,7 +17,6 @@ import android.preference.SwitchPreference;
 import android.provider.Settings;
 import com.android.settings.R;
 
-import com.crdroid.settings.preferences.SeekBarPreference;
 import java.util.Locale;
 import android.text.TextUtils;
 import android.view.View;

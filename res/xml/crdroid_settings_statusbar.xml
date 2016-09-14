@@ -4,4 +4,9 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+            android:key="network_traffic_state"
+            android:fragment="com.crdroid.settings.fragments.NetworkTraffic"
+            android:title="@string/network_traffic_title" />
+
 </PreferenceScreen>

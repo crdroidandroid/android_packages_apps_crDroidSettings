@@ -11,7 +11,6 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
-import com.crdroid.settings.preferences.SeekBarPreference;
 import android.widget.Toast;
 
 import android.provider.Settings;
