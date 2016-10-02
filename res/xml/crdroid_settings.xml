@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/crdroid_settings_title" >
+
+        <!-- Status Bar -->
+        <PreferenceScreen
+            android:key="statusbar_category"
+            android:title="@string/statusbar_title"
+            android:fragment="com.crdroid.settings.fragments.StatusBarSettings"
+            android:icon="@drawable/ic_settings_statusbar"/>
+
+        <!-- Quick Settings panel -->
+        <PreferenceScreen
+            android:key="quicksettings_category"
+            android:title="@string/quicksettings_title"
+            android:fragment="com.crdroid.settings.fragments.QuickSettings"
+            android:icon="@drawable/ic_settings_quicksettings"/>
+
+        <!-- Buttons -->
+        <PreferenceScreen
+            android:key="buttonsettings_category"
+            android:title="@string/button_title"
+            android:fragment="com.crdroid.settings.fragments.ButtonSettings"
+            android:icon="@drawable/ic_settings_buttons"/>
+
+        <!-- Navigation Bar -->
+        <PreferenceScreen
+            android:key="navigationbar_category"
+            android:title="@string/navbar_title" 
+            android:fragment="com.crdroid.settings.fragments.NavigationBarSettings"
+            android:icon="@drawable/ic_settings_navbar"/>
+
+        <!-- Gestures -->
+        <PreferenceScreen
+            android:key="gestures_category"
+            android:title="@string/gestures_title" 
+            android:fragment="com.crdroid.settings.fragments.GestureSettings"
+            android:icon="@drawable/ic_settings_gestures"/>
+
+        <!-- Lock Screen -->
+        <PreferenceScreen
+            android:key="lockscreen_category"
+            android:title="@string/lockscreen_title" 
+            android:fragment="com.crdroid.settings.fragments.LockScreenSettings"
+            android:icon="@drawable/ic_settings_lockscreens"/>
+
+        <!-- Power Menu -->
+        <PreferenceScreen
+            android:key="powermenu__category"
+            android:title="@string/powermenu_title" 
+            android:fragment="com.crdroid.settings.fragments.PowerMenuSettings"
+            android:icon="@drawable/ic_settings_powermenu"/>
+
+        <!-- Recents -->
+        <PreferenceScreen
+            android:key="recents_category"
+            android:title="@string/recents_title"
+            android:fragment="com.crdroid.settings.fragments.RecentsSettings"
+            android:icon="@drawable/ic_settings_recents"/>
+
+        <!-- Misc -->
+        <PreferenceScreen
+            android:key="misc_category"
+            android:title="@string/misc_title" 
+            android:fragment="com.crdroid.settings.fragments.MiscSettings"
+            android:icon="@drawable/ic_settings_miscs"/>
+
+</PreferenceScreen>

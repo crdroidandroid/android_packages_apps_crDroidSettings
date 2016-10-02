@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="@string/misc_title"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+        <PreferenceScreen
+            android:key="lock_clock"
+            android:title="@string/lockclock_title"
+            android:summary="@string/lockclock_summary"
+            android:persistent="false">
+
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.cyanogenmod.lockclock"
+                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+        </PreferenceScreen>
+
+</PreferenceScreen>
