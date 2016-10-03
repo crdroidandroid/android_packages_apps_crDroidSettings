@@ -29,7 +29,7 @@ public class ColorPickerPreference extends Preference implements
     LinearLayout widgetFrameView;
     private int mValue = Color.BLACK;
     private float mDensity = 0;
-    private boolean mAlphaSliderEnabled = false;
+    private boolean mAlphaSliderEnabled = true;
 
     // if we return -6, button is not enabled
     static final String SETTINGS_NS = "http://schemas.android.com/apk/res/com.android.settings";
