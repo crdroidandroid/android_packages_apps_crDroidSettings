@@ -1,17 +1,8 @@
-/*
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.crdroid.settings.fragments;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.net.TrafficStats;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -27,21 +18,16 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.SeekBarPreference;
 
 public class NetworkTraffic extends SettingsPreferenceFragment
-    implements Preference.OnPreferenceChangeListener {
+            implements Preference.OnPreferenceChangeListener  {
 
     private static final String TAG = "NetworkTraffic";
 
     private static final String NETWORK_TRAFFIC_STATE = "network_traffic_state";
     private static final String NETWORK_TRAFFIC_UNIT = "network_traffic_unit";
     private static final String NETWORK_TRAFFIC_PERIOD = "network_traffic_period";
+    private static final String NETWORK_TRAFFIC_HIDEARROW = "network_traffic_hidearrow";
     private static final String NETWORK_TRAFFIC_AUTOHIDE = "network_traffic_autohide";
     private static final String NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD = "network_traffic_autohide_threshold";
-
-    private ListPreference mNetTrafficState;
-    private ListPreference mNetTrafficUnit;
-    private ListPreference mNetTrafficPeriod;
-    private SwitchPreference mNetTrafficAutohide;
-    private SeekBarPreference mNetTrafficAutohideThreshold;
 
     private int mNetTrafficVal;
     private int MASK_UP;
@@ -49,23 +35,34 @@ public class NetworkTraffic extends SettingsPreferenceFragment
     private int MASK_UNIT;
     private int MASK_PERIOD;
 
+    private ListPreference mNetTrafficState;
+    private ListPreference mNetTrafficUnit;
+    private ListPreference mNetTrafficPeriod;
+    private SwitchPreference mNetTrafficHidearrow;
+    private SwitchPreference mNetTrafficAutohide;
+    private SeekBarPreference mNetTrafficAutohideThreshold;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         addPreferencesFromResource(R.xml.network_traffic);
+        ContentResolver resolver = getActivity().getContentResolver();
 
         loadResources();
-
-	ContentResolver resolver = getActivity().getContentResolver();
 
         mNetTrafficState = (ListPreference) findPreference(NETWORK_TRAFFIC_STATE);
         mNetTrafficUnit = (ListPreference) findPreference(NETWORK_TRAFFIC_UNIT);
         mNetTrafficPeriod = (ListPreference) findPreference(NETWORK_TRAFFIC_PERIOD);
 
+        mNetTrafficHidearrow =
+            (SwitchPreference) findPreference(NETWORK_TRAFFIC_HIDEARROW);
+        mNetTrafficHidearrow.setChecked((Settings.System.getInt(resolver,
+                Settings.System.NETWORK_TRAFFIC_HIDEARROW, 0) == 1));
+        mNetTrafficHidearrow.setOnPreferenceChangeListener(this);
+
         mNetTrafficAutohide =
-                (SwitchPreference) findPreference(NETWORK_TRAFFIC_AUTOHIDE);
-        mNetTrafficAutohide.setChecked((Settings.System.getInt(getContentResolver(),
+            (SwitchPreference) findPreference(NETWORK_TRAFFIC_AUTOHIDE);
+        mNetTrafficAutohide.setChecked((Settings.System.getInt(resolver,
                 Settings.System.NETWORK_TRAFFIC_AUTOHIDE, 0) == 1));
         mNetTrafficAutohide.setOnPreferenceChangeListener(this);
 
@@ -78,12 +75,16 @@ public class NetworkTraffic extends SettingsPreferenceFragment
  	// TrafficStats will return UNSUPPORTED if the device does not support it.
         if (TrafficStats.getTotalTxBytes() != TrafficStats.UNSUPPORTED &&
                 TrafficStats.getTotalRxBytes() != TrafficStats.UNSUPPORTED) {
-            mNetTrafficVal = Settings.System.getInt(getContentResolver(),
-                    Settings.System.NETWORK_TRAFFIC_STATE, 0);
+            mNetTrafficVal = Settings.System.getInt(resolver, Settings.System.NETWORK_TRAFFIC_STATE, 0);
             int intIndex = mNetTrafficVal & (MASK_UP + MASK_DOWN);
             intIndex = mNetTrafficState.findIndexOfValue(String.valueOf(intIndex));
-            updateNetworkTrafficState(intIndex);
-
+            if (intIndex <= 0) {
+                mNetTrafficUnit.setEnabled(false);
+                mNetTrafficPeriod.setEnabled(false);
+                mNetTrafficHidearrow.setEnabled(false);
+                mNetTrafficAutohide.setEnabled(false);
+                mNetTrafficAutohideThreshold.setEnabled(false);
+            }
             mNetTrafficState.setValueIndex(intIndex >= 0 ? intIndex : 0);
             mNetTrafficState.setSummary(mNetTrafficState.getEntry());
             mNetTrafficState.setOnPreferenceChangeListener(this);
@@ -102,18 +103,27 @@ public class NetworkTraffic extends SettingsPreferenceFragment
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsEvent.APPLICATION;
+        return MetricsEvent.CRDROID_SETTINGS;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
     private void updateNetworkTrafficState(int mIndex) {
         if (mIndex <= 0) {
             mNetTrafficUnit.setEnabled(false);
             mNetTrafficPeriod.setEnabled(false);
+            mNetTrafficHidearrow.setEnabled(false);
             mNetTrafficAutohide.setEnabled(false);
+            mNetTrafficAutohideThreshold.setEnabled(false);
         } else {
             mNetTrafficUnit.setEnabled(true);
             mNetTrafficPeriod.setEnabled(true);
+            mNetTrafficHidearrow.setEnabled(true);
             mNetTrafficAutohide.setEnabled(true);
+            mNetTrafficAutohideThreshold.setEnabled(true);
         }
     }
    
@@ -142,6 +152,11 @@ public class NetworkTraffic extends SettingsPreferenceFragment
                     Settings.System.NETWORK_TRAFFIC_STATE, mNetTrafficVal);
             int index = mNetTrafficPeriod.findIndexOfValue((String) newValue);
             mNetTrafficPeriod.setSummary(mNetTrafficPeriod.getEntries()[index]);
+            return true;
+        } else if (preference == mNetTrafficHidearrow) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NETWORK_TRAFFIC_HIDEARROW, value ? 1 : 0);
             return true;
         } else if (preference == mNetTrafficAutohide) {
             boolean value = (Boolean) newValue;
