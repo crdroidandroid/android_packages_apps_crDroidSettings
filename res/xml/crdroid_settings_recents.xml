@@ -4,4 +4,11 @@
 	android:title="@string/recents_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- OmniSwitch -->
+    <PreferenceScreen
+        android:key="omniswitch"
+        android:id="@+id/omniswitch"
+        android:title="@string/omniswitch_settings_title"
+        android:fragment="com.crdroid.settings.fragments.OmniSwitch" />
+
 </PreferenceScreen>
