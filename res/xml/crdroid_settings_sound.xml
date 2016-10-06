@@ -9,4 +9,10 @@
         android:title="@string/screenshot_sound_title"
         android:summary="@string/screenshot_sound_summary"
         android:defaultValue="true" />
+
+    <!-- Volume Steps -->
+    <PreferenceScreen
+        android:key="volume_steps"
+        android:title="@string/volume_steps_title"
+        android:fragment="com.crdroid.settings.fragments.VolumeSteps" />
 </PreferenceScreen>
