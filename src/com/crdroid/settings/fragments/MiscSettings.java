@@ -33,7 +33,9 @@ public class MiscSettings extends SettingsPreferenceFragment
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_LOCK_CLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
     private static final String DISABLE_SETTINGS_SUGGESTIONS = "disable_settings_suggestions";
+    private static final String REMOVE_SETTINGS_SUMMARY = "remove_settings_summary";
     private SwitchPreference mDisableSuggestions;
+    private SwitchPreference mRemoveSummary;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,16 @@ public class MiscSettings extends SettingsPreferenceFragment
                   Settings.System.DISABLE_SETTINGS_SUGGESTIONS, 0) == 1));
             mDisableSuggestions.setOnPreferenceChangeListener(this);
         }
+
+        mRemoveSummary =
+                (SwitchPreference) findPreference(REMOVE_SETTINGS_SUMMARY);
+
+        if (mRemoveSummary != null) {
+            mRemoveSummary.setChecked((Settings.System.getInt(getContentResolver(),
+                  Settings.System.REMOVE_SETTINGS_SUMMARY, 0) == 1));
+            mRemoveSummary.setOnPreferenceChangeListener(this);
+        }
+
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
@@ -61,6 +73,11 @@ public class MiscSettings extends SettingsPreferenceFragment
             boolean value = (Boolean) objValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.DISABLE_SETTINGS_SUGGESTIONS, value ? 1 : 0);
+            return true;
+        } else if (preference == mRemoveSummary) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.REMOVE_SETTINGS_SUMMARY, value ? 1 : 0);
             return true;
         }
         return false;
