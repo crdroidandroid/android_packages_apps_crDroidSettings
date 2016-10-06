@@ -59,6 +59,13 @@
             android:fragment="com.crdroid.settings.fragments.RecentsSettings"
             android:icon="@drawable/ic_settings_recents"/>
 
+        <!-- Sound -->
+        <PreferenceScreen
+            android:key="sound_category"
+            android:title="@string/sound_title" 
+            android:fragment="com.crdroid.settings.fragments.SoundSettings"
+            android:icon="@drawable/ic_settings_sound"/>
+
         <!-- Misc -->
         <PreferenceScreen
             android:key="misc_category"
