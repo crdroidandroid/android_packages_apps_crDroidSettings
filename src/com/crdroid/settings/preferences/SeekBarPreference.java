@@ -2,87 +2,79 @@ package com.crdroid.settings.preferences;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.preference.Preference;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewParent;
-import android.widget.RelativeLayout;
+import android.view.ViewGroup;
 import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+import android.support.v7.preference.*;
+
 import com.android.settings.R;
 
-public class SeekBarPreference extends Preference implements OnSeekBarChangeListener {
-
+public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarChangeListener {
     private final String TAG = getClass().getName();
-
-    private static final String ANDROIDNS = "http://schemas.android.com/apk/res/android";
     private static final String SETTINGS = "http://schemas.android.com/apk/res/com.android.settings";
+    private static final String ANDROIDNS = "http://schemas.android.com/apk/res/android";
     private static final int DEFAULT_VALUE = 50;
 
-    private int mMaxValue      = 100;
-    private int mMinValue      = 0;
-    private int mInterval      = 1;
+    private int mMin = 0;
+    private int mInterval = 1;
     private int mCurrentValue;
-    private String mUnitsLeft  = "";
-    private String mUnitsRight = "";
+    private int mDefaultValue = -1;
+    private int mMax = 100;
+    private String mUnits = "";
     private SeekBar mSeekBar;
     private TextView mTitle;
-
     private TextView mStatusText;
 
-    public SeekBarPreference(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        initPreference(context, attrs);
-    }
-
-    public SeekBarPreference(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        initPreference(context, attrs);
-    }
-
-    private void initPreference(Context context, AttributeSet attrs) {
-        setValuesFromXml(attrs);
-        mSeekBar = new SeekBar(context, attrs);
-        mSeekBar.setMax(mMaxValue - mMinValue);
-        mSeekBar.setOnSeekBarChangeListener(this);
-    }
-
-    private void setValuesFromXml(AttributeSet attrs) {
-        final TypedArray typedArray = getContext().obtainStyledAttributes(
+    public SeekBarPreference(Context context, AttributeSet attrs, int defStyleAttr,
+            int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        final TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.SeekBarPreference);
 
-        mMaxValue = attrs.getAttributeIntValue(ANDROIDNS, "max", 100);
-        mMinValue = attrs.getAttributeIntValue(SETTINGS, "minimum", 0);
-        mUnitsLeft = getAttributeStringValue(attrs, SETTINGS, "unitsLeft", "");
-        String units = getAttributeStringValue(attrs, SETTINGS, "units", "");
-        mUnitsRight = getAttributeStringValue(attrs, SETTINGS, "unitsRight", units);
+        mMax = attrs.getAttributeIntValue(SETTINGS, "max", 100);
+        mMin = attrs.getAttributeIntValue(SETTINGS, "min", 0);
+        mDefaultValue = attrs.getAttributeIntValue(ANDROIDNS, "defaultValue", -1);
+        mUnits = getAttributeStringValue(attrs, SETTINGS, "units", "");
 
-        Integer id = typedArray.getResourceId(R.styleable.SeekBarPreference_unitsRight, 0);
+        Integer id = a.getResourceId(R.styleable.SeekBarPreference_units, 0);
         if (id > 0) {
-            mUnitsRight = getContext().getResources().getString(id);
-        }
-        id = typedArray.getResourceId(R.styleable.SeekBarPreference_unitsLeft, 0);
-        if (id > 0) {
-            mUnitsLeft = getContext().getResources().getString(id);
+            mUnits = context.getResources().getString(id);
         }
 
         try {
             String newInterval = attrs.getAttributeValue(SETTINGS, "interval");
-            if(newInterval != null)
+            if (newInterval != null)
                 mInterval = Integer.parseInt(newInterval);
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             Log.e(TAG, "Invalid interval value", e);
         }
+
+        a.recycle();
+        mSeekBar = new SeekBar(context, attrs);
+        mSeekBar.setMax(mMax - mMin);
+        mSeekBar.setOnSeekBarChangeListener(this);
+        setLayoutResource(R.layout.seek_bar_preference);
     }
 
-    private String getAttributeStringValue(AttributeSet attrs, String namespace, String name, String defaultValue) {
+    public SeekBarPreference(Context context, AttributeSet attrs, int defStyleAttr) {
+        this(context, attrs, defStyleAttr, 0);
+    }
+
+    public SeekBarPreference(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public SeekBarPreference(Context context) {
+        this(context, null);
+    }
+
+    private String getAttributeStringValue(AttributeSet attrs, String namespace, String name,
+            String defaultValue) {
         String value = attrs.getAttributeValue(namespace, name);
-        if(value == null)
+        if (value == null)
             value = defaultValue;
 
         return value;
@@ -96,27 +88,13 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
             mTitle.setEnabled(!disableDependent);
         if (mSeekBar != null)
             mSeekBar.setEnabled(!disableDependent);
+        if (mStatusText != null)
+            mStatusText.setEnabled(!disableDependent);
     }
 
     @Override
-    protected View onCreateView(ViewGroup parent){
-
-        RelativeLayout layout =  null;
-        try {
-            LayoutInflater mInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            layout = (RelativeLayout)mInflater.inflate(R.layout.seek_bar_preference, parent, false);
-            mTitle = (TextView) layout.findViewById(android.R.id.title);
-        }
-        catch(Exception e)
-        {
-            Log.e(TAG, "Error creating seek bar preference", e);
-        }
-        return layout;
-    }
-
-    @Override
-    public void onBindView(View view) {
-        super.onBindView(view);
+    public void onBindViewHolder(PreferenceViewHolder view) {
+        super.onBindViewHolder(view);
         try
         {
             // move our seekbar to the new view we've been given
@@ -133,87 +111,26 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
                 newContainer.addView(mSeekBar, ViewGroup.LayoutParams.FILL_PARENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT);
             }
-        }
-        catch(Exception ex) {
+        } catch (Exception ex) {
             Log.e(TAG, "Error binding view: " + ex.toString());
         }
-        updateView(view);
+        mStatusText = (TextView) view.findViewById(R.id.seekBarPrefValue);
+        mStatusText.setText(String.valueOf(mCurrentValue) + mUnits);
+        mStatusText.setMinimumWidth(30);
+        mSeekBar.setProgress(mCurrentValue - mMin);
+        mTitle = (TextView) view.findViewById(android.R.id.title);
     }
 
-    /**
-     * Update a SeekBarPreference view with our current state
-     * @param view
-     */
-    protected void updateView(View view) {
-
-        try {
-            RelativeLayout layout = (RelativeLayout)view;
-            mStatusText = (TextView)layout.findViewById(R.id.seekBarPrefValue);
-            mStatusText.setText(String.valueOf(mCurrentValue));
-            mStatusText.setMinimumWidth(30);
-            mSeekBar.setProgress(mCurrentValue - mMinValue);
-
-            TextView unitsRight = (TextView)layout.findViewById(R.id.seekBarPrefUnitsRight);
-            unitsRight.setText(mUnitsRight);
-            TextView unitsLeft = (TextView)layout.findViewById(R.id.seekBarPrefUnitsLeft);
-            unitsLeft.setText(mUnitsLeft);
-        }
-        catch(Exception e) {
-            Log.e(TAG, "Error updating seek bar preference", e);
-        }
+    public void setMax(int max) {
+        mMax = max;
     }
 
-    @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        int newValue = progress + mMinValue;
-        if(newValue > mMaxValue)
-            newValue = mMaxValue;
-        else if(newValue < mMinValue)
-            newValue = mMinValue;
-        else if(mInterval != 1 && newValue % mInterval != 0)
-            newValue = Math.round(((float)newValue)/mInterval)*mInterval;
-
-        // change rejected, revert to the previous value
-        if(!callChangeListener(newValue)){
-            seekBar.setProgress(mCurrentValue - mMinValue);
-            return;
-        }
-        // change accepted, store it
-        mCurrentValue = newValue;
-        mStatusText.setText(String.valueOf(newValue));
-        persistInt(newValue);
+    public void setMin(int min) {
+        mMin = min;
     }
 
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {}
-
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {
-        notifyChanged();
-    }
-
-    @Override
-    protected Object onGetDefaultValue(TypedArray ta, int index){
-        int defaultValue = ta.getInt(index, DEFAULT_VALUE);
-        return defaultValue;
-    }
-
-    @Override
-    protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
-        if(restoreValue) {
-            mCurrentValue = getPersistedInt(mCurrentValue);
-        }
-        else {
-            int temp = 0;
-            try {
-                temp = (Integer)defaultValue;
-            }
-            catch(Exception ex) {
-                Log.e(TAG, "Invalid default value: " + defaultValue.toString());
-            }
-            persistInt(temp);
-            mCurrentValue = temp;
-        }
+    public void setIntervalValue(int value) {
+        mInterval = value;
     }
 
     public void setValue(int value) {
@@ -221,8 +138,67 @@ public class SeekBarPreference extends Preference implements OnSeekBarChangeList
     }
 
     @Override
-    public void setEnabled (boolean enabled) {
-        mSeekBar.setEnabled(enabled);
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        int newValue = progress + mMin;
+        if (newValue > mMax)
+            newValue = mMax;
+        else if (newValue < mMin)
+            newValue = mMin;
+        else if (mInterval != 1 && newValue % mInterval != 0)
+            newValue = Math.round(((float) newValue) / mInterval) * mInterval;
+
+        // change rejected, revert to the previous value
+        if (!callChangeListener(newValue)) {
+            seekBar.setProgress(mCurrentValue - mMin);
+            return;
+        }
+        // change accepted, store it
+        mCurrentValue = newValue;
+        if (mStatusText != null) {
+            mStatusText.setText(String.valueOf(newValue) + mUnits);
+        }
+        persistInt(newValue);
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+        notifyChanged();
+    }
+
+    @Override
+    protected Object onGetDefaultValue(TypedArray ta, int index) {
+        int defaultValue = ta.getInt(index, DEFAULT_VALUE);
+        return defaultValue;
+    }
+
+    @Override
+    protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
+        if (restoreValue) {
+            mCurrentValue = getPersistedInt(mCurrentValue);
+        }
+        else {
+            int temp = 0;
+            try {
+                temp = (Integer) defaultValue;
+            } catch (Exception ex) {
+                Log.e(TAG, "Invalid default value: " + defaultValue.toString());
+            }
+            persistInt(temp);
+            mCurrentValue = temp;
+        }
+    }
+
+    @Override
+    public void setEnabled(boolean enabled) {
+        if (mSeekBar != null && mStatusText != null && mTitle != null) {
+            mSeekBar.setEnabled(enabled);
+            mStatusText.setEnabled(enabled);
+            mTitle.setEnabled(enabled);
+        }
         super.setEnabled(enabled);
     }
 }
