@@ -15,11 +15,26 @@
                android:summary="@string/show_su_indicator_summary"
                android:defaultValue="true" />
 
+    <!-- Status bar crDroid logo -->
+    <PreferenceCategory
+            android:title="@string/status_bar_logo_category_title">
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-               android:key="status_bar_crdroid_logo"
-               android:title="@string/status_bar_crdroid_logo_title"
-               android:summaryOn="@string/status_bar_crdroid_logo_summary_on"
-               android:summaryOff="@string/status_bar_crdroid_logo_summary_off"
-               android:defaultValue="false" />
+            android:key="status_bar_crdroid_logo"
+            android:title="@string/status_bar_crdroid_logo_title"
+            android:summary="@string/status_bar_crdroid_logo_summary" />
 
+        <com.crdroid.settings.preferences.ColorPickerPreference
+            android:key="status_bar_crdroid_logo_color"
+            android:title="@string/status_bar_crdroid_logo_color"
+            android:defaultValue="0xffffffff"
+            android:dependency="status_bar_crdroid_logo" />
+
+       <ListPreference
+            android:key="status_bar_crdroid_logo_style"
+            android:title="@string/status_bar_crdroid_logo_position"
+            android:dialogTitle="@string/status_bar_crdroid_logo_position"
+            android:entries="@array/status_bar_logo_position_entries"
+            android:entryValues="@array/status_bar_logo_position_values"
+            android:dependency="status_bar_crdroid_logo" />
+     </PreferenceCategory>
 </PreferenceScreen>
