@@ -4,6 +4,17 @@
 	android:title="@string/recents_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory 
+         android:title="@string/recents_default_category">
+         <ListPreference
+            android:key="immersive_recents"
+            android:title="@string/immersive_recents_title"
+            android:summary="@string/immersive_recents_summary"
+            android:dialogTitle="@string/immersive_recents_dialog_title"
+            android:entries="@array/immersive_recents_entries"
+            android:entryValues="@array/immersive_recents_values"
+            android:persistent="false" />
+
          <PreferenceScreen
              android:key="hide_app_from_recents"
              android:title="@string/hide_apps_from_recents_title"
@@ -12,12 +23,16 @@
                  android:targetPackage="com.android.settings"
                  android:targetClass="com.crdroid.settings.fragments.HAFRAppListActivity" />
          </PreferenceScreen>
+    </PreferenceCategory>
 
-    <!-- OmniSwitch -->
-    <PreferenceScreen
-        android:key="omniswitch"
-        android:id="@+id/omniswitch"
-        android:title="@string/omniswitch_settings_title"
-        android:fragment="com.crdroid.settings.fragments.OmniSwitch" />
+    <PreferenceCategory 
+         android:title="@string/recents_omni_category">
+         <!-- OmniSwitch -->
+         <PreferenceScreen
+             android:key="omniswitch"
+             android:id="@+id/omniswitch"
+             android:title="@string/omniswitch_settings_title"
+             android:fragment="com.crdroid.settings.fragments.OmniSwitch" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
