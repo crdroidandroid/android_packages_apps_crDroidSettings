@@ -40,4 +40,10 @@
         android:title="@string/qs_advanced_data_title"
         android:summary="@string/qs_advanced_data_summary"
         android:defaultValue="false" />
+
+    <ListPreference
+        android:key="sysui_qqs_count_key"
+        android:title="@string/sysui_qqs_count_title"
+        android:entries="@array/sysui_qqs_count_entries"
+        android:entryValues="@array/sysui_qqs_count_values" />
 </PreferenceScreen>
