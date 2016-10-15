@@ -22,11 +22,6 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 public class NavigationBarSettings extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
-    private static final String TAG = "NavBar";
-    private static final String ENABLE_NAVIGATION_BAR = "enable_nav_bar";
-
-    private SwitchPreference mEnableNavigationBar;
-
     @Override
     protected int getMetricsCategory() {
         return MetricsEvent.CRDROID_SETTINGS;
@@ -39,21 +34,10 @@ public class NavigationBarSettings extends SettingsPreferenceFragment
 
         final Resources res = getActivity().getResources();
 
-        // navigation bar switch
-        mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAVIGATION_BAR);
-        mEnableNavigationBar.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW, 1) == 1);
-        mEnableNavigationBar.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mEnableNavigationBar) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_SHOW,
-                    ((Boolean) newValue) ? 1 : 0);
-            return true;
-        }
         return false;
     }
 
