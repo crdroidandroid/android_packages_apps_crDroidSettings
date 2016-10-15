@@ -16,14 +16,6 @@
                 android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
         </PreferenceScreen>
 
-        <!-- App sidebar -->
-        <PreferenceScreen
-            android:key="app_sidebar"
-            android:fragment="com.crdroid.settings.fragments.AppSidebar"
-            android:title="@string/app_sidebar_title"
-            android:layout="@layout/preference_appbar" 
-            />
-
        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="disable_settings_suggestions"
             android:title="@string/disable_settings_suggestions_title"
