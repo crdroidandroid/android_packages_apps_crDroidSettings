@@ -4,64 +4,74 @@
     android:title="@string/quicksettings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-        android:key="qs_show_brightness"
-        android:title="@string/qs_brightness_slider_title"
-        android:summary="@string/qs_brightness_slider_summary"
-        android:defaultValue="true"/>
+    <PreferenceCategory 
+         android:title="@string/qs_tiles_category">
+        <ListPreference
+            android:key="sysui_qqs_count_key"
+            android:title="@string/sysui_qqs_count_title"
+            android:entries="@array/sysui_qqs_count_entries"
+            android:entryValues="@array/sysui_qqs_count_values" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="qs_show_brightness_icon"
-        android:title="@string/brightness_icon_title"
-        android:summary="@string/brightness_icon_summary"
-        android:dependency="qs_show_brightness"
-        android:defaultValue="false"/>
+        <ListPreference
+            android:key="qs_rows_portrait"
+            android:title="@string/qs_rows_portrait_title"
+            android:entries="@array/qs_rows_portrait_entries"
+            android:entryValues="@array/qs_rows_portrait_values" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="quick_settings_vibrate"
-        android:title="@string/quick_settings_vibrate_title"
-        android:summary="@string/quick_settings_vibrate_summary"
-        android:defaultValue="false"/>
+        <ListPreference
+            android:key="qs_rows_landscape"
+            android:title="@string/qs_rows_landscape_title"
+            android:entries="@array/qs_rows_landscape_entries"
+            android:entryValues="@array/qs_rows_landscape_values" />
 
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-        android:key="qs_wifi_easy_toggle"
-        android:title="@string/qs_wifi_easy_toggle_title"
-        android:summary="@string/qs_wifi_easy_toggle_summary"
-        android:defaultValue="false" />
+        <ListPreference
+            android:key="qs_columns"
+            android:title="@string/qs_columns_title"
+            android:entries="@array/qs_columns_entries"
+            android:entryValues="@array/qs_columns_values" />
+    </PreferenceCategory>
 
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-        android:key="qs_bt_easy_toggle"
-        android:title="@string/qs_bt_easy_toggle_title"
-        android:summary="@string/qs_bt_easy_toggle_summary"
-        android:defaultValue="false" />
+    <PreferenceCategory 
+         android:title="@string/qs_toggles_category">
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_wifi_easy_toggle"
+            android:title="@string/qs_wifi_easy_toggle_title"
+            android:summary="@string/qs_wifi_easy_toggle_summary"
+            android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-        android:key="qs_data_advanced"
-        android:title="@string/qs_advanced_data_title"
-        android:summary="@string/qs_advanced_data_summary"
-        android:defaultValue="false" />
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_bt_easy_toggle"
+            android:title="@string/qs_bt_easy_toggle_title"
+            android:summary="@string/qs_bt_easy_toggle_summary"
+            android:defaultValue="false" />
 
-    <ListPreference
-        android:key="sysui_qqs_count_key"
-        android:title="@string/sysui_qqs_count_title"
-        android:entries="@array/sysui_qqs_count_entries"
-        android:entryValues="@array/sysui_qqs_count_values" />
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_data_advanced"
+            android:title="@string/qs_advanced_data_title"
+            android:summary="@string/qs_advanced_data_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
 
-    <ListPreference
-        android:key="qs_rows_portrait"
-        android:title="@string/qs_rows_portrait_title"
-        android:entries="@array/qs_rows_portrait_entries"
-        android:entryValues="@array/qs_rows_portrait_values" />
+    <PreferenceCategory 
+         android:title="@string/qs_misc_category">
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_brightness"
+            android:title="@string/qs_brightness_slider_title"
+            android:summary="@string/qs_brightness_slider_summary"
+            android:defaultValue="true"/>
 
-    <ListPreference
-        android:key="qs_rows_landscape"
-        android:title="@string/qs_rows_landscape_title"
-        android:entries="@array/qs_rows_landscape_entries"
-        android:entryValues="@array/qs_rows_landscape_values" />
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_show_brightness_icon"
+            android:title="@string/brightness_icon_title"
+            android:summary="@string/brightness_icon_summary"
+            android:dependency="qs_show_brightness"
+            android:defaultValue="false"/>
 
-    <ListPreference
-        android:key="qs_columns"
-        android:title="@string/qs_columns_title"
-        android:entries="@array/qs_columns_entries"
-        android:entryValues="@array/qs_columns_values" />
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="quick_settings_vibrate"
+            android:title="@string/quick_settings_vibrate_title"
+            android:summary="@string/quick_settings_vibrate_summary"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+
 </PreferenceScreen>
