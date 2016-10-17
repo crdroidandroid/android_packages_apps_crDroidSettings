@@ -122,7 +122,7 @@ public class FlingSettings extends ActionFragment implements
         // so we always write 100ms less but display 100ms more
         mLongPressTimeout = (SeekBarPreference) findPreference("du_fling_longpress_pref");
         int val = Settings.Secure.getIntForUser(getContentResolver(),
-                Settings.Secure.FLING_LONGPRESS_TIMEOUT, 250, UserHandle.USER_CURRENT);
+                Settings.Secure.FLING_LONGPRESS_TIMEOUT, 2400, UserHandle.USER_CURRENT);
         val += 100;
         mLongPressTimeout.setValue(val);
         mLongPressTimeout.setOnPreferenceChangeListener(this);
