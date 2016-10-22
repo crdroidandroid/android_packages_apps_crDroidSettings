@@ -24,4 +24,27 @@
             android:entries="@array/less_notification_sounds_entries"
             android:entryValues="@array/less_notification_sounds_values"
             android:persistent="false" />
+
+    <!-- Do not disturb -->
+    <PreferenceCategory 
+         android:title="@string/sound_dnd_category">
+         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="sysui_volume_down_silent"
+            android:title="@string/volbtn_down_zen_title"
+            android:summary="@string/volbtn_down_zen_summary"
+            android:defaultValue="true"/>
+
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="sysui_volume_up_silent"
+            android:title="@string/volbtn_up_zen_title"
+            android:summary="@string/volbtn_up_zen_summary"
+            android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="sysui_show_full_zen"
+            android:title="@string/vol_zen_title"
+            android:summary="@string/vol_zen_summary"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+
 </PreferenceScreen>

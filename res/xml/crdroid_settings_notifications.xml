@@ -4,6 +4,14 @@
 	android:title="@string/misc_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+        <PreferenceScreen
+             android:title="@string/power_notification_title"
+             android:summary="@string/power_notification_summary">
+        <intent android:action="android.intent.action.MAIN"
+             android:targetPackage="com.android.systemui"
+             android:targetClass="com.android.systemui.tuner.PowerNotificationControlsActivity" />
+        </PreferenceScreen>
+
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
              android:key="force_expanded_notifications"
              android:title="@string/force_expanded_notifications_title"
