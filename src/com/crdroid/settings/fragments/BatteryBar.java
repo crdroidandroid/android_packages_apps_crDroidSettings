@@ -89,6 +89,7 @@ public class BatteryBar extends SettingsPreferenceFragment
         mBatteryBarBatteryLowColor.setSummary(hexColor);
 
         mBatteryBarChargingAnimation = (SwitchPreference) findPreference(PREF_BATT_ANIMATE);
+        mBatteryBarChargingAnimation.setOnPreferenceChangeListener(this);
         mBatteryBarChargingAnimation.setChecked(Settings.System.getInt(resolver,
             Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE, 0) == 1);
 
@@ -168,16 +169,9 @@ public class BatteryBar extends SettingsPreferenceFragment
                 Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, val);
             mBatteryBarThickness.setSummary(mBatteryBarThickness.getEntries()[index]);
             return true;
-        }
-        return false;
-    }
-
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        boolean value;
-        if (preference == mBatteryBarChargingAnimation) {
-            value = mBatteryBarChargingAnimation.isChecked();
-            Settings.System.putInt(resolver, Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE, value ? 1 : 0);
+        } else if (preference == mBatteryBarChargingAnimation) {
+            int val = ((Boolean) newValue) ? 1 : 0;
+            Settings.System.putInt(resolver, Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE, val);
             return true;
         }
         return false;
