@@ -56,23 +56,24 @@
            <com.crdroid.settings.preferences.SeekBarPreference
                 android:key="navbar_height_portrait"
                 android:title="@string/portrait_title"
-                settings:max="135"
+                android:max="135"
                 settings:min="65"
                 settings:units="%" />
 
            <com.crdroid.settings.preferences.SeekBarPreference
                 android:key="navbar_height_landscape"
                 android:title="@string/land_hor_title"
-                settings:max="135"
+                android:max="135"
                 settings:min="65"
                 settings:units="%" />
 
            <com.crdroid.settings.preferences.SeekBarPreference
                 android:key="navbar_width"
                 android:title="@string/land_vert_title"
-                settings:max="135"
+                android:max="135"
                 settings:min="65"
                 settings:units="%" />
+
         <PreferenceScreen
             android:key="pulse_settings"
             android:title="@string/pulse_settings"
