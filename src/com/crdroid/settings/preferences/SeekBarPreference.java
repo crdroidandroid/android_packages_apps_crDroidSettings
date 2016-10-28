@@ -34,7 +34,7 @@ public class SeekBarPreference extends Preference implements SeekBar.OnSeekBarCh
         final TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.SeekBarPreference);
 
-        mMax = attrs.getAttributeIntValue(SETTINGS, "max", 100);
+        mMax = attrs.getAttributeIntValue(ANDROIDNS, "max", 100);
         mMin = attrs.getAttributeIntValue(SETTINGS, "min", 0);
         mDefaultValue = attrs.getAttributeIntValue(ANDROIDNS, "defaultValue", -1);
         mUnits = getAttributeStringValue(attrs, SETTINGS, "units", "");
