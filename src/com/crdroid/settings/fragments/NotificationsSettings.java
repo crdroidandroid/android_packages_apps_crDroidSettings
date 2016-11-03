@@ -2,7 +2,9 @@ package com.crdroid.settings.fragments;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.res.Resources;
 import android.net.ConnectivityManager;
+import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
@@ -23,11 +25,13 @@ public class NotificationsSettings extends SettingsPreferenceFragment
     private static final String VOICEMAIL_BREATH = "voicemail_breath";
     private static final String SMS_BREATH = "sms_breath";
     private static final String BREATHING_NOTIFICATIONS = "breathing_notifications";
+    private static final String PREF_HEADS_UP_TIME_OUT = "heads_up_time_out";
 
     private SwitchPreference mMissedCallBreath;
     private SwitchPreference mVoicemailBreath;
     private SwitchPreference mSmsBreath;
     private PreferenceGroup mBreathingNotifications;
+    private ListPreference mHeadsUpTimeOut;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,6 +70,22 @@ public class NotificationsSettings extends SettingsPreferenceFragment
             prefSet.removePreference(mSmsBreath);
             prefSet.removePreference(mBreathingNotifications);
         }
+
+        Resources systemUiResources;
+        try {
+            systemUiResources = getPackageManager().getResourcesForApplication("com.android.systemui");
+        } catch (Exception e) {
+            return;
+        }
+
+        int defaultTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
+                    "com.android.systemui:integer/heads_up_notification_decay", null, null));
+        mHeadsUpTimeOut = (ListPreference) findPreference(PREF_HEADS_UP_TIME_OUT);
+        mHeadsUpTimeOut.setOnPreferenceChangeListener(this);
+        int headsUpTimeOut = Settings.System.getInt(getContentResolver(),
+                Settings.System.HEADS_UP_TIMEOUT, defaultTimeOut);
+        mHeadsUpTimeOut.setValue(String.valueOf(headsUpTimeOut));
+        updateHeadsUpTimeOutSummary(headsUpTimeOut);
     }
 
     @Override
@@ -85,8 +105,21 @@ public class NotificationsSettings extends SettingsPreferenceFragment
             Settings.Global.putInt(getContentResolver(), SMS_BREATH,
                     value ? 1 : 0);
             return true;
+        } else if (preference == mHeadsUpTimeOut) {
+            int headsUpTimeOut = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.HEADS_UP_TIMEOUT,
+                    headsUpTimeOut);
+            updateHeadsUpTimeOutSummary(headsUpTimeOut);
+            return true;
         }
         return false;
+    }
+
+    private void updateHeadsUpTimeOutSummary(int value) {
+        String summary = getResources().getString(R.string.heads_up_time_out_summary,
+                value / 1000);
+        mHeadsUpTimeOut.setSummary(summary);
     }
 
     @Override
