@@ -16,6 +16,12 @@
                 android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
         </PreferenceScreen>
 
+       <ListPreference
+             android:entries="@array/screenshot_type_entries"
+             android:entryValues="@array/screenshot_type_values"
+             android:key="screenshot_type"
+             android:title="@string/screenshot_type_title" />
+
        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="disable_settings_suggestions"
             android:title="@string/disable_settings_suggestions_title"
