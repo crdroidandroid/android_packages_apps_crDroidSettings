@@ -4,6 +4,12 @@
 	android:title="@string/sound_title"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Charging sounds -->
+    <PreferenceScreen
+        android:key="charging_sounds_settings"
+        android:title="@string/charging_sounds_settings_title"
+        android:fragment="com.crdroid.settings.fragments.ChargingSoundsSettings" />
+
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="screenshot_sound"
         android:title="@string/screenshot_sound_title"
