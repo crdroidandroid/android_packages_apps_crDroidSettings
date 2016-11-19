@@ -3,9 +3,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/crdroid_settings_title" >
 
-    <PreferenceCategory
-         android:title="@string/crdroid_personalization_category">
-
         <!-- Status Bar -->
         <PreferenceScreen
             android:key="statusbar_category"
@@ -82,11 +79,12 @@
             android:title="@string/misc_title" 
             android:fragment="com.crdroid.settings.fragments.MiscSettings"
             android:icon="@drawable/ic_settings_miscs" />
-    </PreferenceCategory>
 
-    <!-- <PreferenceCategory
-         android:title="@string/crdroid_addons_category">
-
-    </PreferenceCategory>  -->
+        <!-- About crDroid -->
+        <PreferenceScreen
+            android:key="about"
+            android:title="@string/about_crdroid"
+            android:fragment="com.crdroid.settings.fragments.About"
+            android:icon="@drawable/ic_settings_about" />
 
 </PreferenceScreen>
