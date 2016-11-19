@@ -5,13 +5,18 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
         <SwitchPreference
-                android:key="doze_fragment"
-                android:title="@string/doze_title" />
+            android:key="doze_fragment"
+            android:title="@string/doze_title" />
 
-       <Preference
-             android:key="trans_porn"
-             android:title="@string/trans"
-             android:fragment="com.crdroid.settings.fragments.TransparencyPornFragment" />
+        <Preference
+            android:key="trans_porn"
+            android:title="@string/trans"
+            android:fragment="com.crdroid.settings.fragments.TransparencyPornFragment" />
+
+        <Preference
+            android:key="blur"
+            android:title="@string/settings_blur_cat"
+            android:fragment="com.crdroid.settings.fragments.BlurPersonalizations" />
 
         <PreferenceScreen
             android:key="expanded_desktop"
