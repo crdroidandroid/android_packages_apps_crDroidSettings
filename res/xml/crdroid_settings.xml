@@ -38,6 +38,13 @@
             android:fragment="com.crdroid.settings.fragments.NotificationsSettings"
             android:icon="@drawable/ic_settings_notifications" />
 
+        <!-- Display -->
+        <PreferenceScreen
+            android:key="display_category"
+            android:title="@string/display_title" 
+            android:fragment="com.crdroid.settings.fragments.DisplaySettings"
+            android:icon="@drawable/ic_settings_display" />
+
         <!-- Gestures
         <PreferenceScreen
             android:key="gestures_category"

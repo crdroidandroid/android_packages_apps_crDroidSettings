@@ -27,12 +27,10 @@ public class MiscSettings extends SettingsPreferenceFragment
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String SCROLLINGCACHE_DEFAULT = "1";
     private static final String SCREENSHOT_TYPE = "screenshot_type";
-    private static final String KEY_DOZE_FRAGMENT = "doze_fragment";
 
     private SwitchPreference mShowCpuInfo;
     private ListPreference mScrollingCachePref;
     private ListPreference mScreenshotType;
-    private PreferenceScreen mDozeFragement;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,8 +60,6 @@ public class MiscSettings extends SettingsPreferenceFragment
         mScreenshotType.setValue(String.valueOf(mScreenshotTypeValue));
         mScreenshotType.setSummary(mScreenshotType.getEntry());
         mScreenshotType.setOnPreferenceChangeListener(this);
-
-        mDozeFragement = (PreferenceScreen) findPreference(KEY_DOZE_FRAGMENT);
     }
 
     private void writeCpuInfoOptions(boolean value) {
@@ -103,17 +99,6 @@ public class MiscSettings extends SettingsPreferenceFragment
             return true;
         }
         return false;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        boolean dozeEnabled = Settings.Secure.getInt(
-                getContentResolver(), Settings.Secure.DOZE_ENABLED, 1) != 0;
-        if (mDozeFragement != null) {
-            mDozeFragement.setSummary(dozeEnabled
-                    ? R.string.summary_doze_enabled : R.string.summary_doze_disabled);
-        }
     }
 
     @Override
