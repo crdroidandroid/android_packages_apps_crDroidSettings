@@ -87,7 +87,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         }
 
         mStatusBarBattery.setOnPreferenceChangeListener(this);
-        enableStatusBarBatteryDependents(mStatusBarBattery.getIntValue(2));
+        enableStatusBarBatteryDependents(mStatusBarBattery.getIntValue(0));
         updatePulldownSummary(mQuickPulldown.getIntValue(0));
     }
 
