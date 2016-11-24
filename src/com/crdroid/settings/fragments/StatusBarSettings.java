@@ -49,6 +49,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String PREF_STATUS_BAR_CLOCK_FONT_SIZE  = "statusbar_clock_font_size";
     private static final String PREF_CLOCK_DATE_POSITION = "statusbar_clock_date_position";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+    private static final String STATUS_BAR_BATTERY_STYLE_TILE = "status_bar_battery_style_tile";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
 
@@ -72,6 +73,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private CMSystemSettingListPreference mStatusBarBattery;
     private CMSystemSettingListPreference mStatusBarBatteryShowPercent;
     private CMSystemSettingListPreference mQuickPulldown;
+    private SwitchPreference mQsBatteryTitle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -154,6 +156,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mClockDatePosition.setValue(String.valueOf(clockdatePosition));
         mClockDatePosition.setSummary(mClockDatePosition.getEntry());
         mClockDatePosition.setOnPreferenceChangeListener(this);
+
+        mQsBatteryTitle = (SwitchPreference) findPreference(STATUS_BAR_BATTERY_STYLE_TILE);
+        mQsBatteryTitle.setChecked((Settings.Secure.getInt(resolver,
+                Settings.Secure.STATUS_BAR_BATTERY_STYLE_TILE, 1) == 1));
+        mQsBatteryTitle.setOnPreferenceChangeListener(this);
 
         mStatusBarBattery.setOnPreferenceChangeListener(this);
         enableStatusBarBatteryDependents(mStatusBarBattery.getIntValue(0));
@@ -283,6 +290,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             mClockDatePosition.setSummary(mClockDatePosition.getEntries()[index]);
             parseClockDateFormats();
             return true;
+        } else if  (preference == mQsBatteryTitle) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.STATUS_BAR_BATTERY_STYLE_TILE, value ? 1: 0);
+            return true;
          }
 
         return false;
@@ -292,8 +304,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN ||
                 batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
             mStatusBarBatteryShowPercent.setEnabled(false);
+            mQsBatteryTitle.setEnabled(false);
         } else {
             mStatusBarBatteryShowPercent.setEnabled(true);
+            mQsBatteryTitle.setEnabled(true);
         }
     }
 

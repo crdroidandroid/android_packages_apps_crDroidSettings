@@ -110,6 +110,12 @@
         android:entryValues="@array/status_bar_battery_style_values"
         android:defaultValue="0" />
 
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="status_bar_battery_style_tile"
+        android:title="@string/status_bar_battery_style_tile_title"
+        android:summary="@string/status_bar_battery_style_tile_summary"
+        android:defaultValue="true" />
+
     <cyanogenmod.preference.CMSystemSettingListPreference
         android:key="status_bar_show_battery_percent"
         android:title="@string/status_bar_battery_percentage_title"
