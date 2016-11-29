@@ -52,6 +52,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private static final String STATUS_BAR_BATTERY_STYLE_TILE = "status_bar_battery_style_tile";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String STATUS_BAR_QUICK_QS_PULLDOWN = "qs_quick_pulldown";
+    private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
 
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
@@ -74,7 +75,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     private CMSystemSettingListPreference mStatusBarBatteryShowPercent;
     private CMSystemSettingListPreference mQuickPulldown;
     private SwitchPreference mQsBatteryTitle;
-
+    private ListPreference mTextChargingSymbol;
+ 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,6 +114,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mFontStyle = (CMSystemSettingListPreference) findPreference(PREF_FONT_STYLE);
         mStatusBarClockFontSize = (SeekBarPreference) findPreference(PREF_STATUS_BAR_CLOCK_FONT_SIZE);
         mClockDatePosition = (CMSystemSettingListPreference) findPreference(PREF_CLOCK_DATE_POSITION);
+        mTextChargingSymbol = (ListPreference) findPreference(TEXT_CHARGING_SYMBOL);
 
         if (DateFormat.is24HourFormat(getActivity())) {
             mStatusBarAmPm.setEnabled(false);
@@ -160,6 +163,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mQsBatteryTitle.setChecked((Settings.Secure.getInt(resolver,
                 Settings.Secure.STATUS_BAR_BATTERY_STYLE_TILE, 1) == 1));
         mQsBatteryTitle.setOnPreferenceChangeListener(this);
+
+        int textChargingSymbolValue = Settings.Secure.getInt(resolver,
+                Settings.Secure.TEXT_CHARGING_SYMBOL, 0);
+        mTextChargingSymbol.setValue(Integer.toString(textChargingSymbolValue));
+        mTextChargingSymbol.setSummary(mTextChargingSymbol.getEntry());
+        mTextChargingSymbol.setOnPreferenceChangeListener(this);
 
         mStatusBarBattery.setOnPreferenceChangeListener(this);
         enableStatusBarBatteryDependents(mStatusBarBattery.getIntValue(0));
@@ -291,19 +300,31 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             Settings.Secure.putInt(resolver,
                     Settings.Secure.STATUS_BAR_BATTERY_STYLE_TILE, value ? 1: 0);
             return true;
-         }
+        } else if (preference == mTextChargingSymbol) {
+            int val = Integer.parseInt((String) newValue);
+            int index = mTextChargingSymbol.findIndexOfValue((String) newValue);
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.TEXT_CHARGING_SYMBOL, val);
+            mTextChargingSymbol.setSummary(mTextChargingSymbol.getEntries()[index]);
+            return true;
+        }
 
         return false;
     }
 
     private void enableStatusBarBatteryDependents(int batteryIconStyle) {
-        if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN ||
-                batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
+        if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN) {
             mStatusBarBatteryShowPercent.setEnabled(false);
             mQsBatteryTitle.setEnabled(false);
+            mTextChargingSymbol.setEnabled(false);
+        } else if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
+            mStatusBarBatteryShowPercent.setEnabled(false);
+            mQsBatteryTitle.setEnabled(false);
+            mTextChargingSymbol.setEnabled(true);
         } else {
             mStatusBarBatteryShowPercent.setEnabled(true);
             mQsBatteryTitle.setEnabled(true);
+            mTextChargingSymbol.setEnabled(false);
         }
     }
 
