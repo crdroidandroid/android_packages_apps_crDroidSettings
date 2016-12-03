@@ -11,24 +11,24 @@ import android.support.v7.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.View;
 
-public class CustomDialogPreference<T extends DialogInterface> extends DialogPreference {
+public class CustomDialogPref<T extends DialogInterface> extends DialogPreference {
 
     private CustomPreferenceDialogFragment mFragment;
 
-    public CustomDialogPreference(Context context, AttributeSet attrs, int defStyleAttr,
+    public CustomDialogPref(Context context, AttributeSet attrs, int defStyleAttr,
             int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
-    public CustomDialogPreference(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CustomDialogPref(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
-    public CustomDialogPreference(Context context, AttributeSet attrs) {
+    public CustomDialogPref(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public CustomDialogPreference(Context context) {
+    public CustomDialogPref(Context context) {
         super(context);
     }
 
@@ -79,8 +79,8 @@ public class CustomDialogPreference<T extends DialogInterface> extends DialogPre
             return fragment;
         }
 
-        private CustomDialogPreference getCustomizablePreference() {
-            return (CustomDialogPreference) getPreference();
+        private CustomDialogPref getCustomizablePreference() {
+            return (CustomDialogPref) getPreference();
         }
 
         private class OnDismissListener implements View.OnClickListener {
