@@ -18,7 +18,7 @@ import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.android.settings.CustomDialogPreference;
+import com.crdroid.settings.preferences.CustomDialogPreference;
 import com.android.settings.R;
 
 import cyanogenmod.providers.CMSettings;
