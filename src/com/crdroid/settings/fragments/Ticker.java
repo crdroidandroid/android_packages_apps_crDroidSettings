@@ -45,8 +45,8 @@ public class Ticker extends SettingsPreferenceFragment
         mTextColor = (ColorPickerPreference) prefSet.findPreference(PREF_TEXT_COLOR);
         mTextColor.setOnPreferenceChangeListener(this);
         int textColor = Settings.System.getInt(resolver,
-            Settings.System.STATUS_BAR_TICKER_TEXT_COLOR, 0xffffab00);
-        String textHexColor = String.format("#%08x", (0xffffab00 & textColor));
+            Settings.System.STATUS_BAR_TICKER_TEXT_COLOR, 0xffb0b0b0);
+        String textHexColor = String.format("#%08x", (0xffb0b0b0 & textColor));
         mTextColor.setSummary(textHexColor);
         mTextColor.setNewPreviewColor(textColor);
 
@@ -96,10 +96,10 @@ public class Ticker extends SettingsPreferenceFragment
             String hexColor;
 
             Settings.System.putInt(resolver,
-                    Settings.System.STATUS_BAR_TICKER_TEXT_COLOR, 0xffffab00);
+                    Settings.System.STATUS_BAR_TICKER_TEXT_COLOR, 0xffb0b0b0);
             intColor = Settings.System.getInt(resolver,
-                    Settings.System.STATUS_BAR_TICKER_TEXT_COLOR, 0xffffab00);
-            hexColor = String.format("#%08x", (0xffffab00 & intColor));
+                    Settings.System.STATUS_BAR_TICKER_TEXT_COLOR, 0xffb0b0b0);
+            hexColor = String.format("#%08x", (0xffb0b0b0 & intColor));
             mTextColor.setSummary(hexColor);
             mTextColor.setNewPreviewColor(intColor);
 
