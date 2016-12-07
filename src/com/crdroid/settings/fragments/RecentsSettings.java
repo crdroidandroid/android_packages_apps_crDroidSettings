@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
@@ -25,6 +26,7 @@ public class RecentsSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String IMMERSIVE_RECENTS = "immersive_recents";
+    private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
 
     private static final String TAG = "OmniSwitch";
     private static final String RECENTS_USE_OMNISWITCH = "recents_use_omniswitch";
@@ -36,10 +38,12 @@ public class RecentsSettings extends SettingsPreferenceFragment
     public static Intent INTENT_OMNISWITCH_SETTINGS = new Intent(Intent.ACTION_MAIN)
             .setClassName(OMNISWITCH_PACKAGE_NAME, OMNISWITCH_PACKAGE_NAME + ".SettingsActivity");
 
+    private SwitchPreference mRecentsClearAll;
     private SwitchPreference mRecentsUseOmniSwitch;
     private Preference mOmniSwitchSettings;
     private boolean mOmniSwitchInitCalled;
     private ListPreference mImmersiveRecents;
+    private ListPreference mRecentsClearAllLocation;
     private SharedPreferences mPreferences;
     private Context mContext;
 
@@ -54,7 +58,7 @@ public class RecentsSettings extends SettingsPreferenceFragment
 
         mContext = getActivity().getApplicationContext();
 
-        mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS);
+        mImmersiveRecents = (ListPreference) prefSet.findPreference(IMMERSIVE_RECENTS);
         mImmersiveRecents.setValue(String.valueOf(Settings.System.getInt(
                 resolver, Settings.System.IMMERSIVE_RECENTS, 0)));
         mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
@@ -84,6 +88,14 @@ public class RecentsSettings extends SettingsPreferenceFragment
         mOmniSwitchSettings = (Preference)
                 prefSet.findPreference(OMNISWITCH_START_SETTINGS);
         mOmniSwitchSettings.setEnabled(mRecentsUseOmniSwitch.isChecked());
+
+        // clear all location
+        mRecentsClearAllLocation = (ListPreference) prefSet.findPreference(RECENTS_CLEAR_ALL_LOCATION);
+        int location = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
+        mRecentsClearAllLocation.setValue(String.valueOf(location));
+        mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
+        mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -108,8 +120,15 @@ public class RecentsSettings extends SettingsPreferenceFragment
                     resolver, Settings.System.RECENTS_USE_OMNISWITCH, value ? 1 : 0);
             mOmniSwitchSettings.setEnabled(value);
             return true;
+        } else if (preference == mRecentsClearAllLocation) {
+            int location = Integer.valueOf((String) newValue);
+            int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
+            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+            return true;
         }
-    return false;
+        return false;
     }
 
     @Override
@@ -119,11 +138,6 @@ public class RecentsSettings extends SettingsPreferenceFragment
             return true;
         }
         return super.onPreferenceTreeClick(preference);
-    }
-
-    @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.CRDROID_SETTINGS;
     }
 
     private void openAOSPFirstTimeWarning() {
@@ -144,5 +158,10 @@ public class RecentsSettings extends SettingsPreferenceFragment
                         public void onClick(DialogInterface dialog, int whichButton) {
                         }
                 }).show();
+    }
+
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsEvent.CRDROID_SETTINGS;
     }
 }
