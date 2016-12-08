@@ -48,7 +48,9 @@ public class DisplaySettings extends SettingsPreferenceFragment
     public void onResume() {
         super.onResume();
         boolean dozeEnabled = Settings.Secure.getInt(
-                getContentResolver(), Settings.Secure.DOZE_ENABLED, 0) != 0;
+                getContentResolver(), Settings.Secure.DOZE_ENABLED,
+                getActivity().getResources().getBoolean(
+                com.android.internal.R.bool.config_doze_enabled_by_default) ? 1 : 0) != 0;
         if (mDozeFragement != null) {
             mDozeFragement.setSummary(dozeEnabled
                     ? R.string.summary_doze_enabled : R.string.summary_doze_disabled);
