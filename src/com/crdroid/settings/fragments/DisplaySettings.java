@@ -22,7 +22,7 @@ public class DisplaySettings extends SettingsPreferenceFragment
 
     private static final String KEY_DOZE_FRAGMENT = "doze_fragment";
 
-    private PreferenceScreen mDozeFragement;
+    private SwitchPreference mDozeFragement;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,11 +30,17 @@ public class DisplaySettings extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.crdroid_settings_display);
 
-        mDozeFragement = (PreferenceScreen) findPreference(KEY_DOZE_FRAGMENT);
+        mDozeFragement = (SwitchPreference) findPreference(KEY_DOZE_FRAGMENT);
+        mDozeFragement.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mDozeFragement) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.DOZE_ENABLED, value ? 1 : 0);
+            return true;
+        }
         return false;
     }
 
@@ -42,9 +48,7 @@ public class DisplaySettings extends SettingsPreferenceFragment
     public void onResume() {
         super.onResume();
         boolean dozeEnabled = Settings.Secure.getInt(
-                getContentResolver(), Settings.Secure.DOZE_ENABLED,
-                getActivity().getResources().getBoolean(
-                com.android.internal.R.bool.config_doze_enabled_by_default) ? 1 : 0) != 0;
+                getContentResolver(), Settings.Secure.DOZE_ENABLED, 0) != 0;
         if (mDozeFragement != null) {
             mDozeFragement.setSummary(dozeEnabled
                     ? R.string.summary_doze_enabled : R.string.summary_doze_disabled);
