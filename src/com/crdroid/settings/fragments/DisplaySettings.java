@@ -34,6 +34,7 @@ public class DisplaySettings extends SettingsPreferenceFragment
         if (preference == mDozeFragement) {
             boolean value = (Boolean) newValue;
             Settings.Secure.putInt(getContentResolver(), Settings.Secure.DOZE_ENABLED, value ? 1 : 0);
+            updateStatus();
             return true;
         }
         return false;
@@ -42,16 +43,20 @@ public class DisplaySettings extends SettingsPreferenceFragment
     @Override
     public void onResume() {
         super.onResume();
-        if (mDozeFragement != null) {
-            mDozeFragement.setSummary(isDozeEnabled()
-                    ? R.string.summary_doze_enabled : R.string.summary_doze_disabled);
-        }
+        updateStatus();
     }
 
     public boolean isDozeEnabled() {
         return Settings.Secure.getInt(getContentResolver(), Settings.Secure.DOZE_ENABLED,
                 getActivity().getResources().getBoolean(
                 com.android.internal.R.bool.config_doze_enabled_by_default) ? 1 : 0) != 0;
+    }
+
+    public void updateStatus() {
+        if (mDozeFragement != null) {
+            mDozeFragement.setSummary(isDozeEnabled()
+                    ? R.string.summary_doze_enabled : R.string.summary_doze_disabled);
+        }
     }
 
     @Override
