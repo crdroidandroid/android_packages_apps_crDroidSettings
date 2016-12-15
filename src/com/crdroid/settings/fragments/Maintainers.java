@@ -40,6 +40,7 @@ public class Maintainers extends Fragment {
         InputStreamReader inputReader = null;
         String text = null;
 
+        setHasOptionsMenu(true);
         try {
             StringBuilder data = new StringBuilder();
             char tmp[] = new char[2048];
@@ -73,7 +74,7 @@ public class Maintainers extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            getActivity().finish();
+            getActivity().onBackPressed();
             return true;
         }
         return super.onOptionsItemSelected(item);
