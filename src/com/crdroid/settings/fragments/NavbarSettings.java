@@ -19,6 +19,7 @@ package com.crdroid.settings.fragments;
 import java.util.ArrayList;
 
 import android.app.AlertDialog;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
@@ -31,6 +32,7 @@ import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
+import android.widget.Toast;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
@@ -55,6 +57,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements OnPref
     private static final String KEY_NAVIGATION_HEIGHT_PORT = "navbar_height_portrait";
     private static final String KEY_NAVIGATION_HEIGHT_LAND = "navbar_height_landscape";
     private static final String KEY_NAVIGATION_WIDTH = "navbar_width";
+    private static final String NAVBAR_DYNAMIC = "navbar_dynamic";
 
     private SwitchPreference mNavbarVisibility;
     private ListPreference mNavbarMode;
@@ -65,11 +68,13 @@ public class NavbarSettings extends SettingsPreferenceFragment implements OnPref
     private SeekBarPreference mBarHeightPort;
     private SeekBarPreference mBarHeightLand;
     private SeekBarPreference mBarWidth;
+    private SwitchPreference mNavbarDynamic;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.crdroid_settings_navigation);
+        final ContentResolver resolver = getActivity().getContentResolver();
 
         mNavInterface = (PreferenceCategory) findPreference(KEY_CATEGORY_NAVIGATION_INTERFACE);
         mNavGeneral = (PreferenceCategory) findPreference(KEY_CATEGORY_NAVIGATION_GENERAL);
@@ -77,20 +82,21 @@ public class NavbarSettings extends SettingsPreferenceFragment implements OnPref
         mNavbarMode = (ListPreference) findPreference(KEY_NAVBAR_MODE);
         mFlingSettings = (PreferenceScreen) findPreference(KEY_FLING_NAVBAR_SETTINGS);
         mSmartbarSettings = (PreferenceScreen) findPreference(KEY_SMARTBAR_SETTINGS);
+        mNavbarDynamic = (SwitchPreference) findPreference(NAVBAR_DYNAMIC);
 
-        boolean showing = Settings.Secure.getInt(getContentResolver(),
+        boolean showing = Settings.Secure.getInt(resolver,
                 Settings.Secure.NAVIGATION_BAR_VISIBLE,
                 DUActionUtils.hasNavbarByDefault(getActivity()) ? 1 : 0) != 0;
         updateBarVisibleAndUpdatePrefs(showing);
         mNavbarVisibility.setOnPreferenceChangeListener(this);
 
-        int mode = Settings.Secure.getInt(getContentResolver(), Settings.Secure.NAVIGATION_BAR_MODE,
+        int mode = Settings.Secure.getInt(resolver, Settings.Secure.NAVIGATION_BAR_MODE,
                 0);
 
         updateBarModeSettings(mode);
         mNavbarMode.setOnPreferenceChangeListener(this);
 
-        int size = Settings.Secure.getIntForUser(getContentResolver(),
+        int size = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.NAVIGATION_BAR_HEIGHT, 80, UserHandle.USER_CURRENT);
         mBarHeightPort = (SeekBarPreference) findPreference(KEY_NAVIGATION_HEIGHT_PORT);
         mBarHeightPort.setValue(size);
@@ -99,19 +105,24 @@ public class NavbarSettings extends SettingsPreferenceFragment implements OnPref
         final boolean canMove = DUActionUtils.navigationBarCanMove();
         if (canMove) {
             mNavGeneral.removePreference(findPreference(KEY_NAVIGATION_HEIGHT_LAND));
-            size = Settings.Secure.getIntForUser(getContentResolver(),
+            size = Settings.Secure.getIntForUser(resolver,
                     Settings.Secure.NAVIGATION_BAR_WIDTH, 80, UserHandle.USER_CURRENT);
             mBarWidth = (SeekBarPreference) findPreference(KEY_NAVIGATION_WIDTH);
             mBarWidth.setValue(size);
             mBarWidth.setOnPreferenceChangeListener(this);
         } else {
             mNavGeneral.removePreference(findPreference(KEY_NAVIGATION_WIDTH));
-            size = Settings.Secure.getIntForUser(getContentResolver(),
+            size = Settings.Secure.getIntForUser(resolver,
                     Settings.Secure.NAVIGATION_BAR_HEIGHT_LANDSCAPE, 80, UserHandle.USER_CURRENT);
             mBarHeightLand = (SeekBarPreference) findPreference(KEY_NAVIGATION_HEIGHT_LAND);
             mBarHeightLand.setValue(size);
             mBarHeightLand.setOnPreferenceChangeListener(this);
         }
+
+        boolean isDynamic = Settings.System.getInt(resolver,
+                Settings.System.NAVBAR_DYNAMIC, 0) == 1;
+        mNavbarDynamic.setChecked(isDynamic);
+        mNavbarDynamic.setOnPreferenceChangeListener(this);
     }
 
     private void updateBarModeSettings(int mode) {
@@ -126,36 +137,45 @@ public class NavbarSettings extends SettingsPreferenceFragment implements OnPref
         mNavbarVisibility.setChecked(showing);
         mNavInterface.setEnabled(mNavbarVisibility.isChecked());
         mNavGeneral.setEnabled(mNavbarVisibility.isChecked());
+        mNavbarDynamic.setEnabled(mNavbarVisibility.isChecked());
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
         if (preference.equals(mNavbarMode)) {
             int mode = Integer.parseInt(((String) newValue).toString());
-            Settings.Secure.putInt(getContentResolver(),
+            Settings.Secure.putInt(resolver,
                     Settings.Secure.NAVIGATION_BAR_MODE, mode);
             updateBarModeSettings(mode);
             return true;
         } else if (preference.equals(mNavbarVisibility)) {
             boolean showing = ((Boolean)newValue);
-            Settings.Secure.putInt(getContentResolver(), Settings.Secure.NAVIGATION_BAR_VISIBLE,
+            Settings.Secure.putInt(resolver, Settings.Secure.NAVIGATION_BAR_VISIBLE,
                     showing ? 1 : 0);
             updateBarVisibleAndUpdatePrefs(showing);
             return true;
         } else if (preference == mBarHeightPort) {
             int val = (Integer) newValue;
-            Settings.Secure.putIntForUser(getContentResolver(),
+            Settings.Secure.putIntForUser(resolver,
                     Settings.Secure.NAVIGATION_BAR_HEIGHT, val, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mBarHeightLand) {
             int val = (Integer) newValue;
-            Settings.Secure.putIntForUser(getContentResolver(),
+            Settings.Secure.putIntForUser(resolver,
                     Settings.Secure.NAVIGATION_BAR_HEIGHT_LANDSCAPE, val, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mBarWidth) {
             int val = (Integer) newValue;
-            Settings.Secure.putIntForUser(getContentResolver(),
+            Settings.Secure.putIntForUser(resolver,
                     Settings.Secure.NAVIGATION_BAR_WIDTH, val, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference.equals(mNavbarDynamic)) {
+            boolean isDynamic = ((Boolean)newValue);
+            Settings.System.putInt(resolver, Settings.System.NAVBAR_DYNAMIC,
+                    isDynamic ? 1 : 0);
+            Toast.makeText(getActivity(), R.string.restart_app_required,
+                    Toast.LENGTH_LONG).show();
             return true;
         }
         return false;

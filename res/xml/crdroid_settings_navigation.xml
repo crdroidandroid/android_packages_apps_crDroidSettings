@@ -53,6 +53,11 @@
         android:key="category_navbar_general"
         android:title="@string/navbar_general_title" >
 
+        <SwitchPreference
+            android:key="navbar_dynamic"
+            android:title="@string/navbar_dynamic_title"
+            android:summary="@string/navbar_dynamic_summary" />
+
            <com.crdroid.settings.preferences.SeekBarPreference
                 android:key="navbar_height_portrait"
                 android:title="@string/portrait_title"
