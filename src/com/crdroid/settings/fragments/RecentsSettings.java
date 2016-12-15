@@ -103,8 +103,8 @@ public class RecentsSettings extends SettingsPreferenceFragment
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mImmersiveRecents) {
             Settings.System.putInt(resolver, Settings.System.IMMERSIVE_RECENTS,
-                    Integer.valueOf((String) newValue));
-            mImmersiveRecents.setValue(String.valueOf(newValue));
+                    Integer.parseInt((String) newValue));
+            mImmersiveRecents.setValue((String) newValue);
             mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
             return true;
         } else if (preference == mRecentsUseOmniSwitch) {
@@ -121,7 +121,7 @@ public class RecentsSettings extends SettingsPreferenceFragment
             mOmniSwitchSettings.setEnabled(value);
             return true;
         } else if (preference == mRecentsClearAllLocation) {
-            int location = Integer.valueOf((String) newValue);
+            int location = Integer.parseInt((String) newValue);
             int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
             Settings.System.putIntForUser(resolver,
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);

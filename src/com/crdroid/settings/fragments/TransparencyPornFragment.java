@@ -284,7 +284,7 @@ public class TransparencyPornFragment extends SettingsPreferenceFragment
             return true;
         } else if (preference == mVolumeDialogStrokeColor) {
             String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(newValue)));
+                    Integer.parseInt(String.valueOf(newValue)));
             mVolumeDialogStrokeColor.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(resolver,
@@ -326,7 +326,7 @@ public class TransparencyPornFragment extends SettingsPreferenceFragment
             return true;
         } else if (preference == mQSStrokeColor) {
             String hex = ColorPickerPreference.convertToARGB(
-                   Integer.valueOf(String.valueOf(newValue)));
+                   Integer.parseInt(String.valueOf(newValue)));
             mQSStrokeColor.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(resolver,

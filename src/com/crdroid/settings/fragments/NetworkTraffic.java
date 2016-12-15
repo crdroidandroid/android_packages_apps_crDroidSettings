@@ -129,7 +129,7 @@ public class NetworkTraffic extends SettingsPreferenceFragment
    
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mNetTrafficState) {
-            int intState = Integer.valueOf((String)newValue);
+            int intState = Integer.parseInt((String)newValue);
             mNetTrafficVal = setBit(mNetTrafficVal, MASK_UP, getBit(intState, MASK_UP));
             mNetTrafficVal = setBit(mNetTrafficVal, MASK_DOWN, getBit(intState, MASK_DOWN));
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -146,7 +146,7 @@ public class NetworkTraffic extends SettingsPreferenceFragment
             mNetTrafficUnit.setSummary(mNetTrafficUnit.getEntries()[index]);
             return true;
         } else if (preference == mNetTrafficPeriod) {
-            int intState = Integer.valueOf((String)newValue);
+            int intState = Integer.parseInt((String)newValue);
             mNetTrafficVal = setBit(mNetTrafficVal, MASK_PERIOD, false) + (intState << 16);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NETWORK_TRAFFIC_STATE, mNetTrafficVal);

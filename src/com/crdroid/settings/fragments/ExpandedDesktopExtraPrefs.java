@@ -110,8 +110,8 @@ public class ExpandedDesktopExtraPrefs extends SettingsPreferenceFragment
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object value) {
-        final int val = Integer.valueOf((String) value);
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        final int val = Integer.parseInt((String) newValue);
         WindowManagerPolicyControl.saveStyleToSettings(getActivity(), val);
         return false;
     }

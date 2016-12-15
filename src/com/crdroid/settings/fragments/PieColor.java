@@ -209,7 +209,7 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
                 value ? 1 : 0);
             return true;
         } else if (preference == mPieBg) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+            String hex = ColorPickerPreference.convertToARGB(Integer.parseInt(String
                     .valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
@@ -217,7 +217,7 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
                     Settings.System.PA_PIE_BACKGROUND, intHex);
             return true;
         } else if (preference == mSelect) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+            String hex = ColorPickerPreference.convertToARGB(Integer.parseInt(String
                     .valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
@@ -225,7 +225,7 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
                     Settings.System.PA_PIE_SELECT, intHex);
             return true;
         } else if (preference == mOutlines) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+            String hex = ColorPickerPreference.convertToARGB(Integer.parseInt(String
                     .valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
@@ -233,7 +233,7 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
                     Settings.System.PA_PIE_OUTLINES, intHex);
             return true;
         } else if (preference == mStatusClock) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+            String hex = ColorPickerPreference.convertToARGB(Integer.parseInt(String
                     .valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
@@ -241,7 +241,7 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
                     Settings.System.PA_PIE_STATUS_CLOCK, intHex);
             return true;
         } else if (preference == mStatus) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+            String hex = ColorPickerPreference.convertToARGB(Integer.parseInt(String
                     .valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
@@ -249,7 +249,7 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
                     Settings.System.PA_PIE_STATUS, intHex);
             return true;
         } else if (preference == mChevron) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+            String hex = ColorPickerPreference.convertToARGB(Integer.parseInt(String
                     .valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
@@ -257,7 +257,7 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
                     Settings.System.PA_PIE_CHEVRON, intHex);
             return true;
         } else if (preference == mBtnColor) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+            String hex = ColorPickerPreference.convertToARGB(Integer.parseInt(String
                     .valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
@@ -265,7 +265,7 @@ public class PieColor extends SettingsPreferenceFragment implements OnPreference
                     Settings.System.PA_PIE_BUTTON_COLOR, intHex);
             return true;
         } else if (preference == mJuice) {
-            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+            String hex = ColorPickerPreference.convertToARGB(Integer.parseInt(String
                     .valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);

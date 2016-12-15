@@ -90,22 +90,22 @@ public class PieControl extends SettingsPreferenceFragment implements OnPreferen
                     Settings.System.PA_PIE_SIZE, pieSize);
             return true;
         } else if (preference == mPieGravity) {
-            int pieGravity = Integer.valueOf((String) newValue);
+            int pieGravity = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.PA_PIE_GRAVITY, pieGravity);
             return true;
         } else if (preference == mPieMode) {
-            int pieMode = Integer.valueOf((String) newValue);
+            int pieMode = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.PA_PIE_MODE, pieMode);
             return true;
         } else if (preference == mPieAngle) {
-            int pieAngle = Integer.valueOf((String) newValue);
+            int pieAngle = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.PA_PIE_ANGLE, pieAngle);
             return true;
         } else if (preference == mPieGap) {
-            int pieGap = Integer.valueOf((String) newValue);
+            int pieGap = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.PA_PIE_GAP, pieGap);
             return true;

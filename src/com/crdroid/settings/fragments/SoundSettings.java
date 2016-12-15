@@ -34,7 +34,7 @@ public class SoundSettings extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mAnnoyingNotifications) {
-            int val = Integer.valueOf((String) newValue);
+            int val = Integer.parseInt((String) newValue);
             System.putInt(getContentResolver(),
                     System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, val);
             return true;

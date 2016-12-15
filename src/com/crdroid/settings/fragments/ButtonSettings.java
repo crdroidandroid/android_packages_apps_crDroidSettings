@@ -417,14 +417,14 @@ public class ButtonSettings extends SettingsPreferenceFragment
         String value = (String) newValue;
         int index = pref.findIndexOfValue(value);
         pref.setSummary(pref.getEntries()[index]);
-        CMSettings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
+        CMSettings.System.putInt(getContentResolver(), setting, Integer.parseInt(value));
     }
 
     private void handleSystemActionListChange(ListPreference pref, Object newValue, String setting) {
         String value = (String) newValue;
         int index = pref.findIndexOfValue(value);
         pref.setSummary(pref.getEntries()[index]);
-        Settings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
+        Settings.System.putInt(getContentResolver(), setting, Integer.parseInt(value));
     }
 
     @Override

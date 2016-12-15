@@ -117,14 +117,14 @@ public class NotificationsSettings extends SettingsPreferenceFragment
                     value ? 1 : 0);
             return true;
         } else if (preference == mHeadsUpTimeOut) {
-            int headsUpTimeOut = Integer.valueOf((String) newValue);
+            int headsUpTimeOut = Integer.parseInt((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.HEADS_UP_TIMEOUT,
                     headsUpTimeOut);
             updateHeadsUpTimeOutSummary(headsUpTimeOut);
             return true;
         } else if (preference == mHeadsUpSnoozeTime) {
-            int headsUpSnooze = Integer.valueOf((String) newValue);
+            int headsUpSnooze = Integer.parseInt((String) newValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.HEADS_UP_NOTIFICATION_SNOOZE,
                     headsUpSnooze);

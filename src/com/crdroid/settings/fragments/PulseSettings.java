@@ -150,7 +150,7 @@ public class PulseSettings extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference.equals(mRenderMode)) {
-            int mode = Integer.valueOf((String) newValue);
+            int mode = Integer.parseInt((String) newValue);
             Settings.Secure.putIntForUser(getContentResolver(),
                     Settings.Secure.PULSE_RENDER_STYLE_URI, mode, UserHandle.USER_CURRENT);
             PreferenceCategory fadingBarsCat = (PreferenceCategory)findPreference("pulse_fading_bars_category");

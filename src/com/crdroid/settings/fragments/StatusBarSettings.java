@@ -178,14 +178,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mCrDroidLogoColor) {
             String hex = ColorPickerPreference.convertToARGB(
-                Integer.valueOf(String.valueOf(newValue)));
+                Integer.parseInt(String.valueOf(newValue)));
             preference.setSummary(hex);
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(resolver,
                 Settings.System.STATUS_BAR_CRDROID_LOGO_COLOR, intHex);
             return true;
         } else if (preference == mCrDroidLogoStyle) {
-            int crdroidLogoStyle = Integer.valueOf((String) newValue);
+            int crdroidLogoStyle = Integer.parseInt((String) newValue);
             int index = mCrDroidLogoStyle.findIndexOfValue((String) newValue);
             Settings.System.putIntForUser(
                 resolver, Settings.System.STATUS_BAR_CRDROID_LOGO_STYLE, crdroidLogoStyle,
@@ -194,11 +194,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                     mCrDroidLogoStyle.getEntries()[index]);
             return true;
         } else if (preference == mStatusBarBattery) {
-            int batteryStyle = Integer.valueOf((String) newValue);
+            int batteryStyle = Integer.parseInt((String) newValue);
             enableStatusBarBatteryDependents(batteryStyle);
             return true;
         } else if (preference == mStatusBarDate) {
-            int statusBarDate = Integer.valueOf((String) newValue);
+            int statusBarDate = Integer.parseInt((String) newValue);
             int index = mStatusBarDate.findIndexOfValue((String) newValue);
             Settings.System.putInt(
                     resolver, STATUS_BAR_DATE, statusBarDate);
@@ -206,7 +206,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             setStatusBarDateDependencies();
             return true;
         } else if (preference == mStatusBarDateStyle) {
-            int statusBarDateStyle = Integer.valueOf((String) newValue);
+            int statusBarDateStyle = Integer.parseInt((String) newValue);
             int index = mStatusBarDateStyle.findIndexOfValue((String) newValue);
             Settings.System.putInt(
                     resolver, STATUS_BAR_DATE_STYLE, statusBarDateStyle);
@@ -264,7 +264,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             setStatusBarDateDependencies();
             return true;
         } else if (preference == mFontStyle) {
-            int val = Integer.valueOf((String) newValue);
+            int val = Integer.parseInt((String) newValue);
             int index = mFontStyle.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver,
                     Settings.System.STATUSBAR_CLOCK_FONT_STYLE, val);
@@ -276,7 +276,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                     Settings.System.STATUSBAR_CLOCK_FONT_SIZE, size);
             return true;
         } else if (preference == mClockDatePosition) {
-            int val = Integer.valueOf((String) newValue);
+            int val = Integer.parseInt((String) newValue);
             int index = mClockDatePosition.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver,
                     Settings.System.STATUSBAR_CLOCK_DATE_POSITION, val);
