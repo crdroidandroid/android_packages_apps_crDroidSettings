@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PreferenceScreen
     android:title="@string/battery_bar_title"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <ListPreference
         android:key="battery_bar_list"
@@ -36,11 +37,13 @@
         android:entries="@array/battery_bar_style_entries"
         android:entryValues="@array/battery_bar_style_values" />
 
-    <ListPreference
+    <com.crdroid.settings.preferences.SeekBarPreference
         android:key="battery_bar_thickness"
         android:title="@string/battery_bar_thickness_title"
-        android:entries="@array/battery_bar_thickness_entries"
-        android:entryValues="@array/battery_bar_thickness_values" />
+        android:max="4"
+        settings:min="1"
+        settings:units="dp"
+        android:persistent="false" />
 
     <SwitchPreference
         android:key="battery_bar_animate"
