@@ -80,6 +80,13 @@
             android:fragment="com.crdroid.settings.fragments.SoundSettings"
             android:icon="@drawable/ic_settings_sound" />
 
+        <!-- Animations -->
+        <PreferenceScreen
+            android:key="animation_category"
+            android:title="@string/animation_title" 
+            android:fragment="com.crdroid.settings.fragments.AnimationSettings"
+            android:icon="@drawable/ic_settings_animation" />
+
         <!-- Misc -->
         <PreferenceScreen
             android:key="misc_category"
