@@ -2,6 +2,7 @@ package com.crdroid.settings.fragments;
 
 import android.content.ContentResolver;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
@@ -27,6 +28,9 @@ public class AnimationSettings extends SettingsPreferenceFragment
     private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
+    private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
+    private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
+    private static final String SCROLLINGCACHE_DEFAULT = "1";
 
     private ListPreference mToastAnimation;
     private ListPreference mListViewAnimation;
@@ -35,6 +39,7 @@ public class AnimationSettings extends SettingsPreferenceFragment
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
+    private ListPreference mScrollingCachePref;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -43,10 +48,10 @@ public class AnimationSettings extends SettingsPreferenceFragment
         final ContentResolver resolver = getActivity().getContentResolver();
 
         mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
+        int toastanimation = Settings.System.getInt(resolver,
+                Settings.System.TOAST_ANIMATION, 1);
+        mToastAnimation.setValue(String.valueOf(toastanimation));
         mToastAnimation.setSummary(mToastAnimation.getEntry());
-        int CurrentToastAnimation = Settings.System.getInt(resolver, Settings.System.TOAST_ANIMATION, 1);
-        mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
-        mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
         mToastAnimation.setOnPreferenceChangeListener(this);
 
         mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
@@ -96,14 +101,22 @@ public class AnimationSettings extends SettingsPreferenceFragment
         mTileAnimationInterpolator.setSummary(mTileAnimationInterpolator.getEntry());
         mTileAnimationInterpolator.setEnabled(tileAnimationStyle > 0);
         mTileAnimationInterpolator.setOnPreferenceChangeListener(this);
+
+        mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
+        mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
+                SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
+        mScrollingCachePref.setSummary(mScrollingCachePref.getEntry());
+        mScrollingCachePref.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mToastAnimation) {
+            int value = Integer.parseInt((String) newValue);
             int index = mToastAnimation.findIndexOfValue((String) newValue);
-            Settings.System.putString(resolver, Settings.System.TOAST_ANIMATION, (String) newValue);
+            Settings.System.putInt(resolver,
+                    Settings.System.TOAST_ANIMATION, value);
             mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
             Toast.makeText(getActivity(), R.string.toast_animation_test,
                     Toast.LENGTH_SHORT).show();
@@ -152,6 +165,12 @@ public class AnimationSettings extends SettingsPreferenceFragment
             Settings.System.putIntForUser(resolver, Settings.System.ANIM_TILE_INTERPOLATOR,
                     value, UserHandle.USER_CURRENT);
             mTileAnimationInterpolator.setSummary(mTileAnimationInterpolator.getEntries()[index]);
+            return true;
+        } else if (preference == mScrollingCachePref) {
+            String value = (String) newValue;
+            int index = mScrollingCachePref.findIndexOfValue(value);
+            SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, value);
+            mScrollingCachePref.setSummary(mScrollingCachePref.getEntries()[index]);
             return true;
         }
         return false;
