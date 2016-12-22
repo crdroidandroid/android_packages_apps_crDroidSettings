@@ -65,7 +65,7 @@ public class QuickSettings extends SettingsPreferenceFragment
 
         mQsColumns = (SeekBarPreference) findPreference(PREF_COLUMNS);
         int columnsQs = Settings.Secure.getInt(resolver,
-                Settings.Secure.QS_COLUMNS, 3);
+                Settings.Secure.QS_COLUMNS, 4);
         mQsColumns.setValue(columnsQs);
         mQsColumns.setOnPreferenceChangeListener(this);
      }
