@@ -64,6 +64,8 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private static final String KEY_VOLUME_CONTROL_RING_STREAM = "volume_keys_control_ring_stream";
     private static final String KEY_TORCH_LONG_PRESS_POWER_GESTURE =
             "torch_long_press_power_gesture";
+    private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
+            "torch_long_press_power_timeout";
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -132,6 +134,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
     private SwitchPreference mTorchLongPressPowerGesture;
+    private ListPreference mTorchLongPressPowerTimeout;
 
     private Handler mHandler;
 
@@ -195,6 +198,11 @@ public class ButtonSettings extends SettingsPreferenceFragment
         mTorchLongPressPowerGesture =
                 (SwitchPreference) findPreference(KEY_TORCH_LONG_PRESS_POWER_GESTURE);
 
+        final int torchLongPressPowerTimeout = CMSettings.System.getInt(resolver,
+                CMSettings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0);
+        mTorchLongPressPowerTimeout = initList(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT,
+                torchLongPressPowerTimeout);
+
         mHandler = new Handler();
 
         if (hasPowerKey) {
@@ -204,6 +212,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
             }
             if (!QSUtils.deviceSupportsFlashLight(getActivity())) {
                 powerCategory.removePreference(mTorchLongPressPowerGesture);
+                powerCategory.removePreference(mTorchLongPressPowerTimeout);
             }
         } else {
             prefScreen.removePreference(powerCategory);
@@ -459,6 +468,10 @@ public class ButtonSettings extends SettingsPreferenceFragment
         } else if (preference == mVolumeKeyCursorControl) {
             handleSystemListChange(mVolumeKeyCursorControl, newValue,
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL);
+            return true;
+        } else if (preference == mTorchLongPressPowerTimeout) {
+            handleListChange(mTorchLongPressPowerTimeout, newValue,
+                    CMSettings.System.TORCH_LONG_PRESS_POWER_TIMEOUT);
             return true;
         }
         return false;
