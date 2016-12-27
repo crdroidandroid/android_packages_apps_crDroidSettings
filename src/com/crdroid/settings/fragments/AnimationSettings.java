@@ -8,7 +8,7 @@ import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-//import android.widget.Toast;
+import android.widget.Toast;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -21,7 +21,7 @@ import java.util.List;
 public class AnimationSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
-//    private static final String KEY_TOAST_ANIMATION = "toast_animation";
+    private static final String KEY_TOAST_ANIMATION = "toast_animation";
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
     private static final String POWER_MENU_ANIMATION = "power_menu_animation";
@@ -32,7 +32,7 @@ public class AnimationSettings extends SettingsPreferenceFragment
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String SCROLLINGCACHE_DEFAULT = "1";
 
-//    private ListPreference mToastAnimation;
+    private ListPreference mToastAnimation;
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
     private ListPreference mPowerMenuAnimation;
@@ -47,14 +47,12 @@ public class AnimationSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.crdroid_settings_animation);
         final ContentResolver resolver = getActivity().getContentResolver();
 
-/*
         mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
         int toastanimation = Settings.System.getInt(resolver,
                 Settings.System.TOAST_ANIMATION, 1);
         mToastAnimation.setValue(String.valueOf(toastanimation));
         mToastAnimation.setSummary(mToastAnimation.getEntry());
         mToastAnimation.setOnPreferenceChangeListener(this);
-*/
 
         mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
         int listviewanimation = Settings.System.getInt(resolver,
@@ -114,7 +112,7 @@ public class AnimationSettings extends SettingsPreferenceFragment
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-/*        if (preference == mToastAnimation) {
+        if (preference == mToastAnimation) {
             int value = Integer.parseInt((String) newValue);
             int index = mToastAnimation.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver,
@@ -123,9 +121,7 @@ public class AnimationSettings extends SettingsPreferenceFragment
             Toast.makeText(getActivity(), R.string.toast_animation_test,
                     Toast.LENGTH_SHORT).show();
             return true;
-        } else 
-*/
-        if (preference == mListViewAnimation) {
+        } else if (preference == mListViewAnimation) {
             int value = Integer.parseInt((String) newValue);
             int index = mListViewAnimation.findIndexOfValue((String) newValue);
             Settings.System.putInt(resolver,
