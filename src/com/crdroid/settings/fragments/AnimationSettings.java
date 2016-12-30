@@ -41,6 +41,8 @@ public class AnimationSettings extends SettingsPreferenceFragment
     private ListPreference mTileAnimationInterpolator;
     private ListPreference mScrollingCachePref;
 
+    Toast mToast;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -107,6 +109,11 @@ public class AnimationSettings extends SettingsPreferenceFragment
                 SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT)));
         mScrollingCachePref.setSummary(mScrollingCachePref.getEntry());
         mScrollingCachePref.setOnPreferenceChangeListener(this);
+
+        if (mToast != null) {
+            mToast.cancel();
+            mToast = null;
+        }
     }
 
     @Override
@@ -118,8 +125,12 @@ public class AnimationSettings extends SettingsPreferenceFragment
             Settings.System.putInt(resolver,
                     Settings.System.TOAST_ANIMATION, value);
             mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
-            Toast.makeText(getActivity(), R.string.toast_animation_test,
-                    Toast.LENGTH_SHORT).show();
+            if (mToast != null) {
+                mToast.cancel();
+            }
+            mToast = Toast.makeText(getActivity(), R.string.toast_animation_test,
+                    Toast.LENGTH_SHORT);
+            mToast.show();
             return true;
         } else if (preference == mListViewAnimation) {
             int value = Integer.parseInt((String) newValue);
