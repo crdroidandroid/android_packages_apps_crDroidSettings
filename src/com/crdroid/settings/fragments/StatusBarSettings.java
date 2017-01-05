@@ -320,11 +320,17 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                         .getContentResolver(), Settings.System.STATUS_BAR_DATE, 0);
                 if ("0".equals(clockStyle)) {
                     mStatusBarDate.setEnabled(false);
+                    mStatusBarAmPm.setEnabled(false);
+                    mFontStyle.setEnabled(false);
+                    mStatusBarClockFontSize.setEnabled(false);
                     mStatusBarDateStyle.setEnabled(false);
                     mStatusBarDateFormat.setEnabled(false);
                     mClockDatePosition.setEnabled(false);
                 } else {
                     mStatusBarDate.setEnabled(true);
+                    mStatusBarAmPm.setEnabled(true);
+                    mFontStyle.setEnabled(true);
+                    mStatusBarClockFontSize.setEnabled(true);
                     mStatusBarDateStyle.setEnabled(showDate != 0);
                     mStatusBarDateFormat.setEnabled(showDate != 0);
                     mClockDatePosition.setEnabled(showDate != 0);
