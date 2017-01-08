@@ -40,7 +40,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
 
     private static final String KEY_CRDROID_LOGO_COLOR = "status_bar_crdroid_logo_color";
     private static final String KEY_CRDROID_LOGO_STYLE = "status_bar_crdroid_logo_style";
-    private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
+    private static final String STATUS_BAR_CLOCK_POSITION = "status_bar_clock";
     private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
     private static final String STATUS_BAR_DATE = "status_bar_date";
     private static final String STATUS_BAR_DATE_STYLE = "status_bar_date_style";
@@ -100,8 +100,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mCrDroidLogoColor.setSummary(hexColor);
         mCrDroidLogoColor.setNewPreviewColor(intColor);
 
-        mStatusBarClock = (CMSystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
-        mStatusBarClock.setOnPreferenceChangeListener(this);
+        mStatusBarClock = (CMSystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_POSITION);
         mStatusBarAmPm = (CMSystemSettingListPreference) findPreference(STATUS_BAR_AM_PM);
         mStatusBarDate = (CMSystemSettingListPreference) findPreference(STATUS_BAR_DATE);
         mStatusBarDateStyle = (CMSystemSettingListPreference) findPreference(STATUS_BAR_DATE_STYLE);
@@ -175,7 +174,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         Configuration config = getResources().getConfiguration();
         if (config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
                 mStatusBarClock.setEntries(getActivity().getResources().getStringArray(
-                        R.array.status_bar_clock_style_entries_rtl));
+                        R.array.status_bar_clock_position_entries_rtl));
                 mStatusBarClock.setSummary(mStatusBarClock.getEntry());
         }
     }
@@ -267,9 +266,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                 }
             }
             return true;
-        } else if (preference == mStatusBarClock) {
-            setStatusBarDateDependencies();
-            return true;
         } else if (preference == mFontStyle) {
             int val = Integer.parseInt((String) newValue);
             int index = mFontStyle.findIndexOfValue((String) newValue);
@@ -315,26 +311,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         new Handler().post(new Runnable() {
             @Override
             public void run() {
-                String clockStyle = mStatusBarClock.getValue();
                 int showDate = Settings.System.getInt(getActivity()
                         .getContentResolver(), Settings.System.STATUS_BAR_DATE, 0);
-                if ("0".equals(clockStyle)) {
-                    mStatusBarDate.setEnabled(false);
-                    mStatusBarAmPm.setEnabled(false);
-                    mFontStyle.setEnabled(false);
-                    mStatusBarClockFontSize.setEnabled(false);
-                    mStatusBarDateStyle.setEnabled(false);
-                    mStatusBarDateFormat.setEnabled(false);
-                    mClockDatePosition.setEnabled(false);
-                } else {
-                    mStatusBarDate.setEnabled(true);
-                    mStatusBarAmPm.setEnabled(true);
-                    mFontStyle.setEnabled(true);
-                    mStatusBarClockFontSize.setEnabled(true);
-                    mStatusBarDateStyle.setEnabled(showDate != 0);
-                    mStatusBarDateFormat.setEnabled(showDate != 0);
-                    mClockDatePosition.setEnabled(showDate != 0);
-                }
+                mStatusBarDateStyle.setEnabled(showDate != 0);
+                mStatusBarDateFormat.setEnabled(showDate != 0);
+                mClockDatePosition.setEnabled(showDate != 0);
             }
         });
     }
