@@ -21,6 +21,11 @@
             android:title="@string/wakelock_blocker_title"
             android:fragment="com.crdroid.settings.fragments.WakelockBlockerFragment" />
 
+        <PreferenceScreen
+            android:key="screenstate_category"
+            android:title="@string/screen_state_toggles_title" 
+            android:fragment="com.crdroid.settings.fragments.ScreenStateToggles" />
+
        <ListPreference
              android:entries="@array/screenshot_type_entries"
              android:entryValues="@array/screenshot_type_values"
