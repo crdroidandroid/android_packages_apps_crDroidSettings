@@ -52,5 +52,9 @@
         settings:units=""
         android:persistent="false" />
 
-
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="smartbar_doubletap_sleep"
+        android:title="@string/smartbar_doubletap_sleep_title"
+        android:summary="@string/smartbar_doubletap_sleep_summary"
+        android:defaultValue="false" />
 </PreferenceScreen>
