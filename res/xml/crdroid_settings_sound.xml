@@ -18,12 +18,17 @@
 
     <!-- Less Notification sounds -->
     <ListPreference
-            android:key="less_notification_sounds"
-            android:title="@string/less_notification_sounds_title"
-            android:summary="@string/less_notification_sounds_summary"
-            android:entries="@array/less_notification_sounds_entries"
-            android:entryValues="@array/less_notification_sounds_values"
-            android:persistent="false" />
+        android:key="less_notification_sounds"
+        android:title="@string/less_notification_sounds_title"
+        android:summary="@string/less_notification_sounds_summary"
+        android:entries="@array/less_notification_sounds_entries"
+        android:entryValues="@array/less_notification_sounds_values"
+        android:persistent="false" />
+
+    <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        android:key="headset_connect_player"
+        android:title="@string/headset_connect_player_title"
+        android:summary="@string/headset_connect_player_summary" />
 
     <!-- Do not disturb -->
     <PreferenceCategory 
@@ -46,5 +51,4 @@
             android:summary="@string/vol_zen_summary"
             android:defaultValue="false"/>
     </PreferenceCategory>
-
 </PreferenceScreen>
