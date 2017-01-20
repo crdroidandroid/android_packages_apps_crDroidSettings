@@ -178,6 +178,10 @@
     <string name="lockscreen_enable_power_menu_title">Power menu</string>
     <string name="lockscreen_enable_power_menu_summary">Toegang tot het power menu op het vergrendelscherm</string>
 
+    <!-- Quick settings on secure lockscreen -->
+    <string name="lockscreen_enable_qs_title">Snelle instellingen</string>
+    <string name="lockscreen_enable_qs_summary">Snelle instellingen toelaten in veilig vergrendelscherm</string>
+
     <!-- Screenshot Sound  -->
     <string name="screenshot_sound_title">Screenshot geluid inschakelen</string>
     <string name="screenshot_sound_summary">Optie om screenshot geluid aan of uit te zetten</string>
@@ -248,8 +252,14 @@
     <string name="disable_immersive_message_title">Schakel fullscreen berichten uit</string>
     <string name="disable_immersive_message_summary">Verberg alle fullscreen berichten</string>
 
+    <!-- Statusbar categories -->
+    <string name="status_bar_icons_category_title">Iconen</string>
+    <string name="status_bar_clock_category_title">Klok &amp; datum</string>
+    <string name="status_bar_battery_category_title">Batterij aanpassingen</string>
+    <string name="status_bar_logo_category_title">crDroid logo</string>
+    <string name="status_bar_misc_category_title">Overig</string>
+
     <!-- Statusbar crDroid logo -->
-    <string name="status_bar_logo_category_title">Statusbar logo</string>
     <string name="status_bar_crdroid_logo_title">crDroid logo</string>
     <string name="status_bar_crdroid_logo_summary">Inschakelen voor crDroid logo</string>
     <string name="status_bar_crdroid_logo_color">crDroid logo kleur</string>
@@ -397,6 +407,9 @@
     <string name="profile_applist_title">Applicatie</string>
     <string name="default_string">Standaard</string>
     <string name="reset">Reset</string>
+    <string name="smartbar_doubletap_sleep_title">Dubbel tikken om te slapen</string>
+    <string name="smartbar_doubletap_sleep_summary">Dubbel tik op lege plekken in de navbar om scherm uit te schakelen</string>
+
 
     <!-- Actions dialog and default task values set in ActionPreference xml-->
     <string name="choose_action_title">Kies actie</string>
@@ -541,11 +554,10 @@
     <string name="status_bar_quick_qs_pulldown_right">Rechts</string>
 
     <!-- Status bar - Clock -->
-    <string name="status_bar_clock_style_title">Klok stijl</string>
-    <string name="status_bar_clock_style_right">Rechts</string>
-    <string name="status_bar_clock_style_left">Links</string>
-    <string name="status_bar_clock_style_center">Midden</string>
-    <string name="status_bar_clock_style_hidden">Verborgen</string>
+    <string name="status_bar_clock_position_title">Klok positie</string>
+    <string name="status_bar_clock_position_right">Rechts</string>
+    <string name="status_bar_clock_position_left">Links</string>
+    <string name="status_bar_clock_position_center">Midden</string>
 
     <string name="status_bar_am_pm_title">AM/PM stijl</string>
     <string name="status_bar_am_pm_info">24-uur klok aan</string>
@@ -560,6 +572,13 @@
     <string name="status_bar_battery_style_circle">Cirkel</string>
     <string name="status_bar_battery_style_text">Tekst</string>
     <string name="status_bar_battery_style_hidden">Verborgen</string>
+
+    <!-- Status bar - Battery custom charging symbol -->
+    <string name="text_charging_symbol_title">Aangepast symbool voor tekst stijl</string>
+    <string name="text_charging_symbol_dialog">Aangepast symbool naast batterij percentage</string>
+    <string name="text_charging_symbol_default">Uit</string>
+    <string name="text_charging_symbol_flash">Flash</string>
+    <string name="text_charging_symbol_tilde">Tilde</string>
 
     <!-- Status bar - Battery percentage -->
     <string name="status_bar_battery_percentage_title">Batterij percentage</string>
@@ -888,6 +907,7 @@
     <string name="power_menu_title">Power menu</string>
     <string name="power_menu_reboot_title">Herstart menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
+    <string name="power_menu_onthego_title">On-The-Go modus</string>
     <string name="power_menu_airplane_title">Vliegtuig modus</string>
     <string name="power_menu_users_title">Gebruiker verwisselen</string>
     <string name="power_menu_settings_title">Snelkoppeling instellingen</string>
@@ -962,6 +982,10 @@
     <string name="qs_multiuser_switch_summary">Zet MultiUser switch in de header aan</string>
     <string name="qs_expand_indicator_title">Uitbreid Indicator</string>
     <string name="qs_expand_indicator_summary">Zet de expand indicator (^) in de header aan</string>
+
+    <!-- Center Time + Date in header -->
+    <string name="qs_date_time_center_title">Midden tijd &amp; datum</string>
+    <string name="qs_date_time_center_summary">Je moet 1 of meer icoontjes uit zetten</string>
 
     <!-- Recents Membar -->
     <string name="systemui_recents_mem_display_title">Laat geheugen Bar zien</string>
