@@ -51,5 +51,17 @@
             android:summary="@string/doze_pulse_duration_out_summary"
             android:persistent="false"
             android:dependency="doze_overwrite_value" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="doze_vibrate_on_pickup"
+            android:title="@string/doze_vibrate_on_pickup_title"
+            android:dependency="doze_overwrite_value"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="doze_check_proximity_before_pulse"
+            android:title="@string/doze_check_proximity_before_pulse_title"
+            android:dependency="doze_overwrite_value"
+            android:defaultValue="false" />
     </PreferenceCategory>
 </PreferenceScreen>
