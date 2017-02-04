@@ -95,43 +95,38 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         // CrDroid logo color
         mCrDroidLogoColor =
                 (ColorPickerPreference) findPreference(KEY_CRDROID_LOGO_COLOR);
-        mCrDroidLogoColor.setOnPreferenceChangeListener(this);
         int intColor = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CRDROID_LOGO_COLOR, 0xffffffff);
         String hexColor = String.format("#%08x", (0xffffffff & intColor));
         mCrDroidLogoColor.setSummary(hexColor);
         mCrDroidLogoColor.setNewPreviewColor(intColor);
+        mCrDroidLogoColor.setOnPreferenceChangeListener(this);
 
         mStatusBarClock = (CMSystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_POSITION);
-        mStatusBarAmPm = (CMSystemSettingListPreference) findPreference(STATUS_BAR_AM_PM);
-        mStatusBarDate = (CMSystemSettingListPreference) findPreference(STATUS_BAR_DATE);
-        mStatusBarDateStyle = (CMSystemSettingListPreference) findPreference(STATUS_BAR_DATE_STYLE);
-        mStatusBarDateFormat = (CMSystemSettingListPreference) findPreference(STATUS_BAR_DATE_FORMAT);
-        mStatusBarBattery = (CMSystemSettingListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         mStatusBarBatteryShowPercent =
                 (CMSystemSettingListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
-        mQuickPulldown = (CMSystemSettingListPreference) findPreference(STATUS_BAR_QUICK_QS_PULLDOWN);
-        mFontStyle = (CMSystemSettingListPreference) findPreference(PREF_FONT_STYLE);
-        mStatusBarClockFontSize = (SeekBarPreference) findPreference(PREF_STATUS_BAR_CLOCK_FONT_SIZE);
-        mClockDatePosition = (CMSystemSettingListPreference) findPreference(PREF_CLOCK_DATE_POSITION);
-        mTextChargingSymbol = (ListPreference) findPreference(TEXT_CHARGING_SYMBOL);
 
+        mStatusBarAmPm = (CMSystemSettingListPreference) findPreference(STATUS_BAR_AM_PM);
         if (DateFormat.is24HourFormat(getActivity())) {
             mStatusBarAmPm.setEnabled(false);
             mStatusBarAmPm.setSummary(R.string.status_bar_am_pm_info);
         }
 
+        mStatusBarDate = (CMSystemSettingListPreference) findPreference(STATUS_BAR_DATE);
         int showDate = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_DATE, 0);
         mStatusBarDate.setValue(String.valueOf(showDate));
         mStatusBarDate.setSummary(mStatusBarDate.getEntry());
         mStatusBarDate.setOnPreferenceChangeListener(this);
+
         int dateStyle = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_DATE_STYLE, 0);
+        mStatusBarDateStyle = (CMSystemSettingListPreference) findPreference(STATUS_BAR_DATE_STYLE);
         mStatusBarDateStyle.setValue(String.valueOf(dateStyle));
         mStatusBarDateStyle.setSummary(mStatusBarDateStyle.getEntry());
         mStatusBarDateStyle.setOnPreferenceChangeListener(this);
 
+        mStatusBarDateFormat = (CMSystemSettingListPreference) findPreference(STATUS_BAR_DATE_FORMAT);
         String dateFormat = Settings.System.getString(resolver,
                 Settings.System.STATUS_BAR_DATE_FORMAT);
         if (dateFormat == null) {
@@ -143,16 +138,19 @@ public class StatusBarSettings extends SettingsPreferenceFragment
 
         parseClockDateFormats();
 
+        mFontStyle = (CMSystemSettingListPreference) findPreference(PREF_FONT_STYLE);
         int fontStyle = Settings.System.getInt(resolver,
                 Settings.System.STATUSBAR_CLOCK_FONT_STYLE, 0);
         mFontStyle.setValue(String.valueOf(fontStyle));
         mFontStyle.setSummary(mFontStyle.getEntry());
         mFontStyle.setOnPreferenceChangeListener(this);
 
+        mStatusBarClockFontSize = (SeekBarPreference) findPreference(PREF_STATUS_BAR_CLOCK_FONT_SIZE);
         mStatusBarClockFontSize.setValue(Settings.System.getInt(resolver,
                 Settings.System.STATUSBAR_CLOCK_FONT_SIZE, 14));
         mStatusBarClockFontSize.setOnPreferenceChangeListener(this);
 
+        mClockDatePosition = (CMSystemSettingListPreference) findPreference(PREF_CLOCK_DATE_POSITION);
         int clockdatePosition = Settings.System.getInt(resolver,
                 Settings.System.STATUSBAR_CLOCK_DATE_POSITION, 0);
         mClockDatePosition.setValue(String.valueOf(clockdatePosition));
@@ -164,17 +162,20 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                 Settings.Secure.STATUS_BAR_BATTERY_STYLE_TILE, 1) == 1));
         mQsBatteryTitle.setOnPreferenceChangeListener(this);
 
+        mTextChargingSymbol = (ListPreference) findPreference(TEXT_CHARGING_SYMBOL);
         int textChargingSymbolValue = Settings.Secure.getInt(resolver,
                 Settings.Secure.TEXT_CHARGING_SYMBOL, 0);
         mTextChargingSymbol.setValue(Integer.toString(textChargingSymbolValue));
         mTextChargingSymbol.setSummary(mTextChargingSymbol.getEntry());
         mTextChargingSymbol.setOnPreferenceChangeListener(this);
 
-        mStatusBarBattery.setOnPreferenceChangeListener(this);
+        mStatusBarBattery = (CMSystemSettingListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         enableStatusBarBatteryDependents(mStatusBarBattery.getIntValue(0));
+        mStatusBarBattery.setOnPreferenceChangeListener(this);
 
-        mQuickPulldown.setOnPreferenceChangeListener(this);
+        mQuickPulldown = (CMSystemSettingListPreference) findPreference(STATUS_BAR_QUICK_QS_PULLDOWN);
         updateQuickPulldownSummary(mQuickPulldown.getIntValue(0));
+        mQuickPulldown.setOnPreferenceChangeListener(this);
 
         setStatusBarDateDependencies();
     }
@@ -182,13 +183,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     @Override
     public void onResume() {
         super.onResume();
-        // Adjust clock position for RTL if necessary
-        Configuration config = getResources().getConfiguration();
-        if (config.getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
-                mStatusBarClock.setEntries(getActivity().getResources().getStringArray(
-                        R.array.status_bar_clock_position_entries_rtl));
-
-                mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries_rtl);
+        // Adjust status bar preferences for RTL
+        if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+            mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
+            mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries_rtl);
         }
     }
 
@@ -316,24 +314,18 @@ public class StatusBarSettings extends SettingsPreferenceFragment
             mTextChargingSymbol.setSummary(mTextChargingSymbol.getEntries()[index]);
             return true;
         }
-
         return false;
     }
 
     private void enableStatusBarBatteryDependents(int batteryIconStyle) {
-        if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN) {
-            mStatusBarBatteryShowPercent.setEnabled(false);
-            mQsBatteryTitle.setEnabled(false);
-            mTextChargingSymbol.setEnabled(false);
-        } else if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
-            mStatusBarBatteryShowPercent.setEnabled(false);
-            mQsBatteryTitle.setEnabled(false);
-            mTextChargingSymbol.setEnabled(true);
-        } else {
-            mStatusBarBatteryShowPercent.setEnabled(true);
-            mQsBatteryTitle.setEnabled(true);
-            mTextChargingSymbol.setEnabled(false);
-        }
+        mStatusBarBatteryShowPercent.setEnabled(
+                batteryIconStyle != STATUS_BAR_BATTERY_STYLE_HIDDEN
+                && batteryIconStyle != STATUS_BAR_BATTERY_STYLE_TEXT);
+        mQsBatteryTitle.setEnabled(
+                batteryIconStyle != STATUS_BAR_BATTERY_STYLE_HIDDEN
+                && batteryIconStyle != STATUS_BAR_BATTERY_STYLE_TEXT);
+        mTextChargingSymbol.setEnabled(
+                batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT);
     }
 
     private void setStatusBarDateDependencies() {
