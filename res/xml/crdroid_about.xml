@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2016 crDroid Android
+<!--
+     Copyright (C) 2016-2017 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,44 +14,53 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-                  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-        android:title="@string/about_crdroid">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/about_crdroid">
 
-        <!-- Changelog -->
-        <PreferenceScreen
-            android:key="changelog"
-            android:title="@string/changelog_crdroid_title"
-            android:fragment="com.crdroid.settings.fragments.Changelog" />
+    <!-- crDroid Changelog -->
+    <PreferenceScreen
+        android:key="changelog"
+        android:icon="@drawable/changelog_icon"
+        android:title="@string/changelog_crdroid_title"
+        android:summary="@string/changelog_crdroid_summary"
+        android:fragment="com.crdroid.settings.fragments.Changelog" />
 
-        <!-- crDroid Share -->
-        <PreferenceScreen
-            android:key="share"
-            android:title="@string/share_crdroid_title"
-            android:summary="@string/share_crdroid_summary" />
+    <!-- crDroid Share -->
+    <PreferenceScreen
+        android:key="share"
+        android:icon="@drawable/share_icon"
+        android:title="@string/share_crdroid_title"
+        android:summary="@string/share_crdroid_summary" />
 
-        <!-- crDroid Github -->
-        <PreferenceScreen
-            android:key="crdroid_source"
-            android:title="@string/crdroid_source_title"
-            android:summary="@string/crdroid_source_summary" />
+    <!-- crDroid Source -->
+    <PreferenceScreen
+        android:key="crdroid_source"
+        android:icon="@drawable/source_icon"
+        android:title="@string/crdroid_source_title"
+        android:summary="@string/crdroid_source_summary" />
 
-        <!-- crDroid GooglePlus -->
-        <PreferenceScreen
-            android:key="crdroid_google_plus"
-            android:title="@string/crdroid_google_plus_title"
-            android:summary="@string/crdroid_google_plus_summary" />
+    <!-- crDroid GooglePlus -->
+    <PreferenceScreen
+        android:key="crdroid_google_plus"
+        android:icon="@drawable/gplus_icon"
+        android:title="@string/crdroid_google_plus_title"
+        android:summary="@string/crdroid_google_plus_summary" />
 
-        <!-- Maintainers -->
-        <PreferenceScreen
-            android:key="maintainers"
-            android:title="@string/maintainers_crdroid_title"
-            android:fragment="com.crdroid.settings.fragments.Maintainers" />
+    <!-- crDroid Maintainers -->
+    <PreferenceScreen
+        android:key="maintainers"
+        android:icon="@drawable/maintainers_icon"
+        android:title="@string/maintainers_crdroid_title"
+        android:summary="@string/maintainers_crdroid_summary"
+        android:fragment="com.crdroid.settings.fragments.Maintainers" />
 
-        <!-- The Drill -->
-        <PreferenceScreen
-            android:key="drill"
-            android:fragment="com.crdroid.settings.fragments.Drill"
-            android:title="@string/drill_title"
-            android:summary="@string/drill_summary"/>
+    <!-- crDroid Drill -->
+    <PreferenceScreen
+        android:key="drill"
+        android:icon="@drawable/drill_icon"
+        android:title="@string/drill_title"
+        android:summary="@string/drill_summary"
+        android:fragment="com.crdroid.settings.fragments.Drill" />
 </PreferenceScreen>
