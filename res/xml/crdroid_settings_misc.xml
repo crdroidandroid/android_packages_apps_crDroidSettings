@@ -1,63 +1,89 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright (C) 2016-2017 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <PreferenceScreen
-        xmlns:android="http://schemas.android.com/apk/res/android"
-	android:title="@string/misc_title"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/about_crdroid">
 
-        <PreferenceScreen
-            android:key="lock_clock"
-            android:title="@string/lockclock_title"
-            android:summary="@string/lockclock_summary"
-            android:persistent="false">
+    <PreferenceScreen
+        android:key="lock_clock"
+        android:icon="@drawable/clock_icon"
+        android:title="@string/lockclock_title"
+        android:summary="@string/lockclock_summary"
+        android:persistent="false">
 
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.cyanogenmod.lockclock"
-                android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
-        </PreferenceScreen>
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.cyanogenmod.lockclock"
+            android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+    </PreferenceScreen>
 
-        <PreferenceScreen
-            android:key="wakelock_blocker"
-            android:title="@string/wakelock_blocker_title"
-            android:fragment="com.crdroid.settings.fragments.WakelockBlockerFragment" />
+    <PreferenceScreen
+        android:key="wakelock_blocker"
+        android:icon="@drawable/wakelock_icon"
+        android:title="@string/wakelock_blocker_title"
+        android:summary="@string/wakelock_blocker_summary"
+        android:fragment="com.crdroid.settings.fragments.WakelockBlockerFragment" />
 
-        <PreferenceScreen
-            android:key="screenstate_category"
-            android:title="@string/screen_state_toggles_title" 
-            android:fragment="com.crdroid.settings.fragments.ScreenStateToggles" />
+    <PreferenceScreen
+        android:key="screenstate_category"
+        android:icon="@drawable/screen_state_icon"
+        android:title="@string/screen_state_toggles_title" 
+        android:summary="@string/screen_state_toggles_summary" 
+        android:fragment="com.crdroid.settings.fragments.ScreenStateToggles" />
 
-       <ListPreference
-             android:entries="@array/screenshot_type_entries"
-             android:entryValues="@array/screenshot_type_values"
-             android:key="screenshot_type"
-             android:title="@string/screenshot_type_title" />
+    <ListPreference
+        android:key="screenshot_type"
+        android:icon="@drawable/screenshot_type_icon"
+        android:title="@string/screenshot_type_title"
+        android:entries="@array/screenshot_type_entries"
+        android:entryValues="@array/screenshot_type_values" />
 
-       <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-             android:key="three_finger_gesture"
-             android:title="@string/three_finger_gesture"
-             android:summary="@string/three_finger_gesture_summary"
-             android:defaultValue="false" />
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="three_finger_gesture"
+        android:icon="@drawable/three_finger_gesture_icon"
+        android:title="@string/three_finger_gesture"
+        android:summary="@string/three_finger_gesture_summary"
+        android:defaultValue="false" />
 
-       <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="disable_settings_suggestions"
-            android:title="@string/disable_settings_suggestions_title"
-            android:summary="@string/disable_settings_suggestions_summary"
-            android:defaultValue="false" />
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="disable_settings_suggestions"
+        android:icon="@drawable/dashboard_icon"
+        android:title="@string/disable_settings_suggestions_title"
+        android:summary="@string/disable_settings_suggestions_summary"
+        android:defaultValue="false" />
 
-       <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="remove_settings_summary"
-            android:title="@string/remove_settings_summary_title"
-            android:summary="@string/remove_settings_summary_summary"
-            android:defaultValue="false" />
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="remove_settings_summary"
+        android:icon="@drawable/settings_ui_icon"
+        android:title="@string/remove_settings_summary_title"
+        android:summary="@string/remove_settings_summary_summary"
+        android:defaultValue="false" />
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-            android:key="allow_signature_fake"
-            android:title="@string/allow_signature_fake"
-            android:summary="@string/allow_signature_fake_summary"
-            android:defaultValue="false" />
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="allow_signature_fake"
+        android:icon="@drawable/lock_icon"
+        android:title="@string/allow_signature_fake"
+        android:summary="@string/allow_signature_fake_summary"
+        android:defaultValue="false" />
 
-        <SwitchPreference
-            android:key="show_cpu_info"
-            android:title="@string/show_cpu_info"
-            android:summary="@string/show_cpu_info_summary" />
+    <SwitchPreference
+        android:key="show_cpu_info"
+        android:icon="@drawable/info_icon"
+        android:title="@string/show_cpu_info"
+        android:summary="@string/show_cpu_info_summary" />
 </PreferenceScreen>
