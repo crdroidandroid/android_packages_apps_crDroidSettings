@@ -97,8 +97,8 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             frags[4] = new NotificationsSettings();
             frags[5] = new DisplaySettings();
             frags[6] = new LockScreenSettings();
-            frags[7] = new RecentsSettings();
-            frags[8] = new PowerMenuSettings();
+            frags[7] = new PowerMenuSettings();
+            frags[8] = new RecentsSettings();
             frags[9] = new SoundSettings();
             frags[10] = new AnimationSettings();
             frags[11] = new MiscSettings();
