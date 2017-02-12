@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2017 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/lockscreen_title"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/lockscreen_title">
 
     <PreferenceCategory 
-         android:title="@string/lockscreen_shortcuts_category">
+        android:title="@string/lockscreen_shortcuts_category">
+
         <PreferenceScreen
             android:key="lockscreen_shortcuts"
-            android:fragment="com.crdroid.settings.fragments.ActionListViewSettings"
+            android:icon="@drawable/format_center_icon"
+            android:title="@string/lockscreen_shortcuts_title"
             android:summary="@string/lockscreen_shortcuts_summary"
-            android:title="@string/lockscreen_shortcuts_title">
+            android:fragment="com.crdroid.settings.fragments.ActionListViewSettings">
                 <extra android:name="actionMode" android:value="4" />
                 <extra android:name="maxAllowedActions" android:value="20" />
                 <extra android:name="disableLongpress" android:value="true" />
@@ -19,10 +36,12 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_shortcuts_longpress"
+            android:icon="@drawable/format_center_icon"
             android:title="@string/lockscreen_shorcuts_longpress_title"
             android:summary="@string/lockscreen_shorcuts_longpress_summary" />
 
          <PreferenceScreen
+            android:icon="@drawable/format_bottom_icon"
             android:title="@string/lockscreen_swipe_title"
             android:summary="@string/lockscreen_swipe_summary" >
             <intent
@@ -33,26 +52,31 @@
 
     <PreferenceCategory 
          android:title="@string/lockscreen_interface_category">
+
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_media_metadata"
+            android:icon="@drawable/movie_icon"
             android:title="@string/media_art_title"
             android:summary="@string/media_art_summary"
             android:defaultValue="true" />
 
          <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="hide_lockscreen_clock"
+            android:icon="@drawable/clock_icon"
             android:title="@string/hide_lockscreen_clock_title"
             android:summary="@string/hide_lockscreen_clock_summary"
             android:defaultValue="true" />
 
          <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="hide_lockscreen_date"
+            android:icon="@drawable/calendar_icon"
             android:title="@string/hide_lockscreen_date_title"
             android:summary="@string/hide_lockscreen_date_summary"
             android:defaultValue="true" />
 
          <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="hide_lockscreen_alarm"
+            android:icon="@drawable/alarm_icon"
             android:title="@string/hide_lockscreen_alarm_title"
             android:summary="@string/hide_lockscreen_alarm_summary"
             android:defaultValue="true" />
@@ -60,8 +84,10 @@
 
     <PreferenceCategory 
          android:title="@string/lockscreen_gestures_category">
+
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
                android:key="double_tap_sleep_anywhere"
+               android:icon="@drawable/double_tap_icon"
                android:title="@string/double_tap_sleep_anywhere_title"
                android:summary="@string/double_tap_sleep_anywhere_summary"
                android:defaultValue="false" />
@@ -69,14 +95,17 @@
 
     <PreferenceCategory 
          android:title="@string/lockscreen_misc_category">
+
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
                android:key="lock_screen_custom_notif"
+               android:icon="@drawable/counter_icon"
                android:title="@string/lockscreen_maxnotif_title"
                android:summary="@string/lockscreen_maxnotif_sumary"
                android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.SeekBarPreference
                android:key="lockscreen_max_notif_cofig"
+               android:icon="@drawable/counter_icon"
                android:title="@string/lockscreen_maxnotif_config"
                android:max="8"
                settings:min="0"
@@ -86,12 +115,14 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
                android:key="lockscreen_enable_power_menu"
+               android:icon="@drawable/power_icon"
                android:title="@string/lockscreen_enable_power_menu_title"
                android:summary="@string/lockscreen_enable_power_menu_summary"
                android:defaultValue="true" />
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
                android:key="lockscreen_enable_qs"
+               android:icon="@drawable/ic_settings_quicksettings"
                android:title="@string/lockscreen_enable_qs_title"
                android:summary="@string/lockscreen_enable_qs_summary"
                android:defaultValue="true" />

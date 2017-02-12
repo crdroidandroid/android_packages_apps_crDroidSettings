@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2017 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <PreferenceScreen
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:cm="http://schemas.android.com/apk/res/cyanogenmod.platform"
-        android:key="button_settings"
-	android:title="@string/button_title"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cm="http://schemas.android.com/apk/res/cyanogenmod.platform"
+    android:key="button_settings"
+    android:title="@string/button_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.crdroid.settings.fragments.ButtonBacklightBrightness
         android:key="button_backlight"
+        android:icon="@drawable/backlight_icon"
         android:title="@string/button_backlight_title"
+        android:summary="@string/button_backlight_summary"
         android:dialogTitle="@string/button_backlight_title"
         android:persistent="false" />
 
@@ -18,12 +35,14 @@
 
         <SwitchPreference
             android:key="power_end_call"
+            android:icon="@drawable/end_call_icon"
             android:title="@string/power_end_call_title"
             android:summary="@string/power_end_call_summary"
             android:persistent="false"/>
 
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="torch_long_press_power_gesture"
+            android:icon="@drawable/flashlight_icon"
             android:title="@string/torch_long_press_power_gesture_title"
             android:summary="@string/torch_long_press_power_gesture_desc"
             android:defaultValue="false"
@@ -36,17 +55,21 @@
 
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="home_wake_screen"
+            android:icon="@drawable/wake_icon"
             android:title="@string/button_wake_title"
+            android:summary="@string/button_wake_summary"
             android:defaultValue="true" />
 
         <SwitchPreference
             android:key="home_answer_call"
+            android:icon="@drawable/answer_call_icon"
             android:title="@string/home_answer_call_title"
             android:summary="@string/home_answer_call_summary"
             android:persistent="false"/>
 
         <ListPreference
             android:key="hardware_keys_home_long_press"
+            android:icon="@drawable/single_tap_icon"
             android:dialogTitle="@string/hardware_keys_long_press_title"
             android:title="@string/hardware_keys_long_press_title"
             android:entries="@array/hardware_keys_action_entries"
@@ -55,12 +78,12 @@
 
         <ListPreference
             android:key="hardware_keys_home_double_tap"
+            android:icon="@drawable/double_tap_icon"
             android:dialogTitle="@string/hardware_keys_double_tap_title"
             android:title="@string/hardware_keys_double_tap_title"
             android:entries="@array/hardware_keys_action_entries"
             android:entryValues="@array/hardware_keys_action_values"
             android:persistent="false" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -69,11 +92,14 @@
 
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="back_wake_screen"
+            android:icon="@drawable/wake_icon"
             android:title="@string/button_wake_title"
+            android:summary="@string/button_wake_summary"
             android:defaultValue="false" />
 
         <cyanogenmod.preference.CMSecureSettingSwitchPreference
             android:key="kill_app_longpress_back"
+            android:icon="@drawable/close_icon"
             android:title="@string/kill_app_longpress_back"
             android:summary="@string/kill_app_longpress_back_summary"/>
     </PreferenceCategory>
@@ -84,11 +110,14 @@
 
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="menu_wake_screen"
+            android:icon="@drawable/wake_icon"
             android:title="@string/button_wake_title"
+            android:summary="@string/button_wake_summary"
             android:defaultValue="false" />
 
         <ListPreference
             android:key="hardware_keys_menu_press"
+            android:icon="@drawable/single_tap_icon"
             android:dialogTitle="@string/hardware_keys_short_press_title"
             android:title="@string/hardware_keys_short_press_title"
             android:entries="@array/hardware_keys_action_entries"
@@ -97,12 +126,12 @@
 
         <ListPreference
             android:key="hardware_keys_menu_long_press"
+            android:icon="@drawable/single_tap_icon"
             android:dialogTitle="@string/hardware_keys_long_press_title"
             android:title="@string/hardware_keys_long_press_title"
             android:entries="@array/hardware_keys_action_entries"
             android:entryValues="@array/hardware_keys_action_values"
             android:persistent="false" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -111,11 +140,14 @@
 
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="assist_wake_screen"
+            android:icon="@drawable/wake_icon"
             android:title="@string/button_wake_title"
+            android:summary="@string/button_wake_summary"
             android:defaultValue="false" />
 
         <ListPreference
             android:key="hardware_keys_assist_press"
+            android:icon="@drawable/single_tap_icon"
             android:dialogTitle="@string/hardware_keys_short_press_title"
             android:title="@string/hardware_keys_short_press_title"
             android:entries="@array/hardware_keys_action_entries"
@@ -124,12 +156,12 @@
 
         <ListPreference
             android:key="hardware_keys_assist_long_press"
+            android:icon="@drawable/single_tap_icon"
             android:dialogTitle="@string/hardware_keys_long_press_title"
             android:title="@string/hardware_keys_long_press_title"
             android:entries="@array/hardware_keys_action_entries"
             android:entryValues="@array/hardware_keys_action_values"
             android:persistent="false" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -138,11 +170,14 @@
 
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="app_switch_wake_screen"
+            android:icon="@drawable/wake_icon"
             android:title="@string/button_wake_title"
+            android:summary="@string/button_wake_summary"
             android:defaultValue="false" />
 
         <ListPreference
             android:key="hardware_keys_app_switch_press"
+            android:icon="@drawable/single_tap_icon"
             android:dialogTitle="@string/hardware_keys_short_press_title"
             android:title="@string/hardware_keys_short_press_title"
             android:entries="@array/hardware_keys_action_entries"
@@ -151,12 +186,12 @@
 
         <ListPreference
             android:key="hardware_keys_app_switch_long_press"
+            android:icon="@drawable/single_tap_icon"
             android:dialogTitle="@string/hardware_keys_long_press_title"
             android:title="@string/hardware_keys_long_press_title"
             android:entries="@array/hardware_keys_action_entries"
             android:entryValues="@array/hardware_keys_action_values"
             android:persistent="false" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -165,21 +200,24 @@
 
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="camera_wake_screen"
+            android:icon="@drawable/wake_icon"
             android:title="@string/button_wake_title"
+            android:summary="@string/button_wake_summary"
             android:defaultValue="false" />
 
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="camera_sleep_on_release"
+            android:icon="@drawable/camera_rear_icon"
             android:title="@string/camera_sleep_on_release_title"
             android:summary="@string/camera_sleep_on_release_summary"
             android:defaultValue="false" />
 
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="camera_launch"
+            android:icon="@drawable/camera_icon"
             android:title="@string/camera_launch_title"
             android:summary="@string/camera_launch_summary"
             android:defaultValue="false" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -188,23 +226,28 @@
 
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="volume_wake_screen"
+            android:icon="@drawable/wake_icon"
             android:title="@string/button_wake_title"
+            android:summary="@string/button_wake_summary"
             android:defaultValue="false" />
 
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="volume_answer_call"
+            android:icon="@drawable/answer_call_icon"
             android:title="@string/volume_answer_call_title"
             android:summary="@string/volume_answer_call_summary"
             android:defaultValue="false" />
 
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="volbtn_music_controls"
+            android:icon="@drawable/music_icon"
             android:title="@string/volbtn_music_controls_title"
             android:summary="@string/volbtn_music_controls_summary"
             android:defaultValue="true" />
 
         <cyanogenmod.preference.CMSystemSettingSwitchPreference
             android:key="volume_keys_control_ring_stream"
+            android:icon="@drawable/call_ring_icon"
             android:title="@string/volume_keys_control_ring_stream_title"
             android:summaryOn="@string/volume_keys_control_ring_stream_summary_on"
             android:summaryOff="@string/volume_keys_control_ring_stream_summary_off"
@@ -212,6 +255,7 @@
 
         <ListPreference
             android:key="volume_key_cursor_control"
+            android:icon="@drawable/cursor_icon"
             android:dialogTitle="@string/volbtn_cursor_control_title"
             android:title="@string/volbtn_cursor_control_title"
             android:entries="@array/volbtn_cursor_control_entries"
@@ -220,8 +264,8 @@
 
         <SwitchPreference
             android:key="swap_volume_buttons"
+            android:icon="@drawable/rotation_icon"
             android:title="@string/swap_volume_buttons_title"
             android:summary="@string/swap_volume_buttons_summary" />
     </PreferenceCategory>
-
 </PreferenceScreen>

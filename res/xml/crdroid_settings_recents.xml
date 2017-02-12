@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2017 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <PreferenceScreen
-        xmlns:android="http://schemas.android.com/apk/res/android"
-	android:title="@string/recents_title"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/recents_title">
 
     <PreferenceCategory 
-         android:title="@string/recents_default_category">
-         <ListPreference
+        android:title="@string/recents_default_category">
+
+        <ListPreference
             android:key="immersive_recents"
+            android:icon="@drawable/recents_icon"
             android:title="@string/immersive_recents_title"
             android:summary="@string/immersive_recents_summary"
             android:dialogTitle="@string/immersive_recents_dialog_title"
@@ -15,29 +32,33 @@
             android:entryValues="@array/immersive_recents_values"
             android:persistent="false" />
 
-         <PreferenceScreen
-             android:key="hide_app_from_recents"
-             android:title="@string/hide_apps_from_recents_title"
-             android:summary="@string/hide_apps_from_recents_summary" >
-             <intent android:action="android.intent.action.MAIN"
-                 android:targetPackage="com.android.settings"
-                 android:targetClass="com.crdroid.settings.fragments.HAFRAppListActivity" />
-         </PreferenceScreen>
+        <PreferenceScreen
+            android:key="hide_app_from_recents"
+            android:icon="@drawable/recents_hide_app_icon"
+            android:title="@string/hide_apps_from_recents_title"
+            android:summary="@string/hide_apps_from_recents_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.crdroid.settings.fragments.HAFRAppListActivity" />
+        </PreferenceScreen>
 
-         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-             android:key="systemui_recents_mem_display"
-             android:title="@string/systemui_recents_mem_display_title"
-             android:summary="@string/systemui_recents_mem_display_summary"
-             android:defaultValue="false" />
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="systemui_recents_mem_display"
+            android:icon="@drawable/memory_icon"
+            android:title="@string/systemui_recents_mem_display_title"
+            android:summary="@string/systemui_recents_mem_display_summary"
+            android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="show_clear_all_recents"
+            android:icon="@drawable/recents_clear_all_icon"
             android:title="@string/show_clear_all_recents_button_title"
             android:summary="@string/show_clear_all_recents_button_summary"
             android:defaultValue="true" />
 
-         <ListPreference
+        <ListPreference
             android:key="recents_clear_all_location"
+            android:icon="@drawable/recents_clear_all_icon"
             android:title="@string/recents_clear_all_location_title"
             android:entries="@array/recents_clear_all_location_entries"
             android:entryValues="@array/recents_clear_all_location_values"
@@ -46,18 +67,20 @@
     </PreferenceCategory>
 
     <PreferenceCategory 
-         android:title="@string/recents_omni_category">
-    <SwitchPreference
+        android:title="@string/recents_omni_category">
+
+        <SwitchPreference
             android:key="recents_use_omniswitch"
+            android:icon="@drawable/omni_icon"
             android:title="@string/recents_use_omniswitch_title"
             android:summary="@string/recents_use_omniswitch_summary"
             android:persistent="false" />
 
-    <Preference
+        <Preference
             android:key="omniswitch_start_settings"
+            android:icon="@drawable/omni_icon"
             android:title="@string/omniswitch_start_settings_title"
             android:summary="@string/omniswitch_start_settings_summary"
             android:persistent="false" />
     </PreferenceCategory>
-
 </PreferenceScreen>

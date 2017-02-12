@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2012-2014 The TeamEos Project
+     Copyright (C) 2016-2017 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,17 +14,22 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/navbar_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <SwitchPreference
         android:key="navbar_visibility"
-        android:title="@string/navbar_visibility" />
+        android:icon="@drawable/navbar_icon"
+        android:title="@string/navbar_visibility"
+        android:summary="@string/navbar_visibility_summary" />
 
     <Preference
         android:key="pa_pie_control"
+        android:icon="@drawable/pie_icon"
         android:title="@string/pa_pie_control_title"
+        android:summary="@string/pa_pie_control_summary"
         android:fragment="com.crdroid.settings.fragments.PieControl" />
 
     <PreferenceCategory
@@ -32,21 +37,26 @@
         android:title="@string/navbar_interface_title" >
 
         <ListPreference
-            android:entries="@array/systemui_navbar_mode_entries"
-            android:entryValues="@array/systemui_navbar_mode_values"
             android:key="navbar_mode"
-            android:title="@string/navbar_mode" />
+            android:icon="@drawable/navbar_mode_icon"
+            android:title="@string/navbar_mode"
+            android:summary="@string/navbar_mode_summary"
+            android:entries="@array/systemui_navbar_mode_entries"
+            android:entryValues="@array/systemui_navbar_mode_values" />
 
         <PreferenceScreen
             android:key="smartbar_settings"
+            android:icon="@drawable/smartbar_icon"
             android:title="@string/smartbar_settings_title"
+            android:summary="@string/smartbar_settings_summary"
             android:fragment="com.crdroid.settings.fragments.SmartbarSettings" />
 
         <PreferenceScreen
             android:key="fling_settings"
+            android:icon="@drawable/fling_icon"
             android:title="@string/fling_settings"
+            android:summary="@string/fling_settings_summary"
             android:fragment="com.crdroid.settings.fragments.FlingSettings" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -55,34 +65,39 @@
 
         <SwitchPreference
             android:key="navbar_dynamic"
+            android:icon="@drawable/color_bucket_icon"
             android:title="@string/navbar_dynamic_title"
             android:summary="@string/navbar_dynamic_summary" />
 
-           <com.crdroid.settings.preferences.SeekBarPreference
-                android:key="navbar_height_portrait"
-                android:title="@string/portrait_title"
-                android:max="135"
-                settings:min="65"
-                settings:units="%" />
+        <com.crdroid.settings.preferences.SeekBarPreference
+            android:key="navbar_height_portrait"
+            android:icon="@drawable/bar_icon"
+            android:title="@string/portrait_title"
+            android:max="135"
+            settings:min="65"
+            settings:units="%" />
 
-           <com.crdroid.settings.preferences.SeekBarPreference
-                android:key="navbar_height_landscape"
-                android:title="@string/land_hor_title"
-                android:max="135"
-                settings:min="65"
-                settings:units="%" />
+        <com.crdroid.settings.preferences.SeekBarPreference
+            android:key="navbar_height_landscape"
+            android:icon="@drawable/bar_icon"
+            android:title="@string/land_hor_title"
+            android:max="135"
+            settings:min="65"
+            settings:units="%" />
 
-           <com.crdroid.settings.preferences.SeekBarPreference
-                android:key="navbar_width"
-                android:title="@string/land_vert_title"
-                android:max="135"
-                settings:min="65"
-                settings:units="%" />
+        <com.crdroid.settings.preferences.SeekBarPreference
+            android:key="navbar_width"
+            android:icon="@drawable/bar_icon"
+            android:title="@string/land_vert_title"
+            android:max="135"
+            settings:min="65"
+            settings:units="%" />
 
         <PreferenceScreen
             android:key="pulse_settings"
+            android:icon="@drawable/pulse_icon"
             android:title="@string/pulse_settings"
+            android:summary="@string/pulse_settings_summary"
             android:fragment="com.crdroid.settings.fragments.PulseSettings" />
-
     </PreferenceCategory>
 </PreferenceScreen>
