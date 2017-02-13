@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2017 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
     <string name="crdroid_settings_title">Настройки crDroid</string>
@@ -40,6 +55,7 @@
 
     <!-- Network traffic -->
     <string name="network_traffic_title">Индикатор сетевого трафика</string>
+    <string name="network_traffic_summary">Настройка индикатора сетевого трафика</string>
     <string name="show_network_traffic_state">Показывать скорость передачи данных</string>
     <string name="show_network_traffic_unit">Единицы измерения</string>
     <string name="show_network_traffic_frequency">Частота обновления</string>
@@ -208,10 +224,6 @@
     <string name="double_tap_sleep_anywhere_title">Двойное нажатие для сна везде</string>
     <string name="double_tap_sleep_anywhere_summary">Двойное нажатие для сна в любом месте экрана блокировки</string>
 
-    <!-- Lockscreen torch -->
-    <string name="torch_long_press_power_gesture_title">Фонарик</string>
-    <string name="torch_long_press_power_gesture_desc">Долгое нажатие на кнопку включения, при выключенном экране, включает фонарик</string>
-
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Меню кнопки питания</string>
     <string name="lockscreen_enable_power_menu_summary">Отображать меню кнопки питания на защищенном экране блокировки</string>
@@ -226,6 +238,7 @@
 
     <!-- Volume Steps -->
     <string name="volume_steps_title">Уровни громкости</string>
+    <string name="volume_steps_summary">Настройка количества шагов в панели громкости</string>
     <string name="volume_steps_alarm_title">Будильник</string>
     <string name="volume_steps_dtmf_title">Тональный набор (DTMF)</string>
     <string name="volume_steps_music_title">Музыка</string>
@@ -447,7 +460,9 @@
     <string name="navbar_interface_title">Интерфейс</string>
     <string name="navbar_size">Размер панели навигации</string>
     <string name="navbar_mode">Режим навигации</string>
+    <string name="navbar_mode_summary">Выбрать Smartbar или Fling</string>
     <string name="navbar_visibility">Включить панель навигации</string>
+    <string name="navbar_visibility_summary">Видимость панели навигации</string>
     <string name="navigationbar_settings_title">Панель навигации</string>
     <string name="navigationbar_settings_summary">Настроить поведение и стиль панели навигации</string>
     <string name="navbar_general_title">Расширенные настройки</string>
@@ -476,6 +491,7 @@
 
     <!-- Fling -->
     <string name="fling_settings">Настройки Fling</string>
+    <string name="fling_settings_summary">Настройка жестов Fling</string>
     <string name="fling_interface">Fling</string>
     <string name="fling_enable_title">Включить Fling</string>
     <string name="fling_back_home_policy">\"Назад\" и \"Домой\" должны быть установлены всегда. Чтобы изменить назначение \"Назад\" или \"Домой\", сначала установите нужное назначение</string>
@@ -566,6 +582,7 @@
     <!-- SmartBar -->
     <string name="smartbar_category">SmartBar</string>
     <string name="smartbar_settings_title">Настройки SmartBar</string>
+    <string name="smartbar_settings_summary">Настройка различных элементов SmartBar</string>
     <string name="smartbar_editor_title">Режим редактирования</string>
     <string name="smartbar_editor_summary">Недолго удерживайте кнопку панели навигации для изменения ее расположения. Длительно удерживайте кнопку для отображения меню. Положение кнопки может быть изменено во время отображения меню.</string>
     <string name="smartbar_context_menu_position_title">Позиция контекстных кнопок</string>
@@ -577,6 +594,8 @@
     <string name="smartbar_button_animation_ripple">Пульсация</string>
     <string name="smartbar_button_animation_spring">Пружина</string>
     <string name="smartbar_button_animation_flip">Переворот</string>
+    <string name="smartbar_button_animation_pixel">Pixel (все кнопки)</string>
+    <string name="smartbar_button_animation_pixel_home">Pixel (только кнопка \"Домой\")</string>
     <string name="smartbar_factory_reset_title">Сброс к настройкам по умолчанию</string>
     <string name="smartbar_factory_reset_confirm">Вы уверены, что вы хотите сбросить SmartBar к настройкам по умолчанию?</string>
     <string name="smartbar_ime_action_title">Параметры метода ввода</string>
@@ -651,10 +670,6 @@
     <string name="status_bar_icons_title">Значки в строке состояния</string>
     <string name="status_bar_icons_summary">Управление значками в строке состояния</string>
 
-    <!-- Status bar - double tap to sleep -->
-    <string name="status_bar_double_tap_to_sleep_title">Двойное нажатие для сна</string>
-    <string name="status_bar_double_tap_to_sleep_summary">Двойное нажатие по строке состояния выключает экран</string>
-
     <!-- Power notification controls -->
     <string name="power_notification_title">Расширенное управление уведомлениями</string>
     <string name="power_notification_summary">Настройка уведомлений по категориям</string>
@@ -672,6 +687,7 @@
 
     <!-- Battery Bar -->
     <string name="battery_bar_title">Настройки полосы батареи</string>
+    <string name="battery_bar_summary">Отображение и настройка полосы батареи возле строки состояния или панели навигации</string>
     <string name="battery_bar">Расположение полосы батареи</string>
     <string name="battery_bar_no_navbar">Расположение полосы батареи</string>
     <string name="battery_bar_location_hide">Скрыта</string>
@@ -697,6 +713,7 @@
 
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Уведомления</string>
+    <string name="ticker_screen_summary">Показывать бегущие уведомления в строке состояния</string>
     <string name="ticker_title">Уведомления в строке состояния</string>
     <string name="ticker_screen_summary">Настроить стиль в строке состояния</string>
     <string name="ticker_summary">Показывать уведомления в строке состояния</string>
@@ -708,7 +725,8 @@
 
     <!-- PA Pie control -->
     <string name="pa_piecontrol_settings_summary">Настроить стиль, размер и цвет ярлыков PA Pie</string>
-    <string name="pa_pie_control_title">Настройки PA Pie</string>
+    <string name="pa_pie_control_title">Настройки Pie</string>
+    <string name="pa_pie_control_summary">Включить и настроить Pie</string>
     <string name="pa_pie_control_enable_title">Включить управление Pie</string>
     <string name="pa_pie_targets_title">Настройки кнопок</string>
     <string name="pa_pie_style_title">Стиль Pie</string>
@@ -824,6 +842,7 @@
 
     <!-- Transparency porn -->
     <string name="trans">Прозрачность</string>
+    <string name="trans_summary">Настройка уровня прозрачности для различных элементов</string>
     <string name="trans_qs">Быстрые настройки</string>
     <string name="trans_vol_dialog">Панель громкости</string>
     <string name="trans_power_menu">Меню питания</string>
@@ -891,6 +910,7 @@
 
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Список изменений</string>
+    <string name="changelog_crdroid_summary">Просмотр недавних изменений в прошивке</string>
     <string name="changelog_crdroid_error">Невозможно загрузить список изменений</string>
 
     <!-- About crDroid -->
@@ -909,7 +929,8 @@
     <string name="crdroid_google_plus_summary">Постетить сообщество G+</string>
 
     <!-- Maintainers -->
-    <string name="maintainers_crdroid_title">Сопровождающие</string>
+    <string name="maintainers_crdroid_title">Устройства и сопровождающие</string>
+    <string name="maintainers_crdroid_summary">Список поддерживаемых устройств и их официальные сопровождающие</string>
     <string name="maintainers_crdroid_error">Невозможно загрузить список</string>
 
     <!-- Button settings -->
@@ -949,6 +970,7 @@
     <string name="swap_volume_buttons_title">Автоповорот</string>
     <string name="swap_volume_buttons_summary">Поменять местами кнопки регулировки громкости при повороте экрана</string>
     <string name="button_wake_title">Пробуждать устройство</string>
+    <string name="button_wake_summary">Пробуждать устройство нажатием на кнопку</string>
     <string name="volume_answer_call_title">Ответ на вызов</string>
     <string name="volume_answer_call_summary">Ответ на входящий вызов кнопками громкости</string>
     <string name="home_answer_call_title">Ответ на звонок</string>
@@ -958,6 +980,7 @@
 
     <!-- Key backlight -->
     <string name="button_backlight_title">Подсветка</string>
+    <string name="button_backlight_summary">Настройка кнопок подсветки</string>
     <string name="button_backlight_enabled">Включить подсветку кнопок</string>
     <string name="keyboard_backlight_enabled">Подсветка клавиатуры</string>
     <string name="button_backlight_seekbar_title">Яркость клавиш</string>
@@ -987,6 +1010,9 @@
 
     <!-- Description of setting that controls gesture to open camera by double tapping the power button [CHAR LIMIT=NONE] -->
     <string name="camera_double_tap_power_gesture_desc">Открывать камеру двойным нажатием кнопки питания</string>
+
+    <string name="torch_long_press_power_gesture_title">Фонарик</string>
+    <string name="torch_long_press_power_gesture_desc">Долгое нажатие на кнопку включения, при выключенном экране, включает фонарик</string>
 
     <!--Status bar date -->
     <string name="status_bar_date_title">Дата</string>
@@ -1091,6 +1117,7 @@
     <!-- Custom System Animations -->
     <string name="animation_title">Анимации</string>
     <string name="system_animation_title">Системные анимации</string>
+    <string name="system_animation_summary">Настроить анимации для каждого окна в системе</string>
     <string name="activity_open_title">Анимация открытия активности</string>
     <string name="activity_close_title">Анимация закрытия активности</string>
     <string name="task_open_title">Анимация открытия задачи</string>
@@ -1193,7 +1220,8 @@
     <string name="disable_animations_summary">Отключение анимации перехода, например, при запуске приложения</string>
 
     <!-- XOSP Blur personalizations -->
-    <string name="settings_blur_cat">Настройки размытия</string>
+    <string name="settings_blur_cat">Размытие</string>
+    <string name="settings_blur_cat_summary">Настроить размытие различных элементов</string>
     <string name="blurred_status_bar_expanded_enabled_pref">Размытие фона строки состояния</string>
     <string name="blurred_status_bar_expanded_enabled_pref_summary">Размывать фон, когда вы тяните вниз строку состояния</string>
     <string name="translucent_notifications_pref">Прозрачные уведомления</string>
@@ -1225,6 +1253,7 @@
 
     <!-- Sounds: Charging sounds -->
     <string name="charging_sounds_settings_title">Звук при зарядке</string>
+    <string name="charging_sounds_settings_summary">Настроить звук при подключении или отключении источника питания</string>
     <string name="charging_sounds_enabled_title">Включить</string>
     <string name="charging_sounds_enabled_summary">Воспроизводить звук при подключении или отключении источника питания</string>
     <string name="power_notifications_vibrate_title">Вибрировать</string>
@@ -1253,4 +1282,30 @@
     <string name="custom_header_provider_title">Изменение изображений</string>
     <string name="custom_header_browse_title">Обзор установленных изображений</string>
     <string name="custom_header_browse_summary">Длительное нажатие на любое изображение, для перевода в статический режим</string>
+
+    <!-- Screen state service -->
+    <string name="screen_state_toggles_title">Действия в режиме ожидания</string>
+    <string name="screen_state_toggles_summary">Действия, выполняемые при выключенном экране</string>
+    <string name="screen_state_toggles_enable_title">Включить</string>
+    <string name="screen_state_toggles_enable_summary">Действия, выполняемые при выключении экрана. При включении возвращаются прежние состояния параметров.</string>
+    <string name="screen_state_toggles_mobile_title">Мобильные сети</string>
+    <string name="screen_state_toggles_location_title">Местоположение</string>
+    <string name="screen_state_toggles_twog">Использовать режим 2G</string>
+    <string name="screen_state_toggles_twog_summary">Режим передачи данных активной сети будет переключен в режим 2G</string>
+    <string name="screen_state_toggles_gps">Выключить GPS</string>
+    <string name="screen_state_toggles_gps_summary">Не использовать GPS при выключенном экране</string>
+    <string name="screen_state_toggles_mobile_data">Отключить мобильные данные</string>
+    <string name="screen_state_toggles_mobile_data_summary">Не использовать передачу данных при выключенном экране</string>
+    <string name="screen_state_off_delay_title">Отложить действия при выключении экрана</string>
+    <string name="screen_state_off_delay_summary">Отложить действия при выключении экрана на указанное количество секунд</string>
+    <string name="screen_state_on_delay_title">Отложить действия при включении экрана</string>
+    <string name="screen_state_on_delay_summary">Отложить действия при включении экрана на указанное количество секунд</string>
+
+    <!-- Data/Wifi activity arrows -->
+    <string name="data_wifi_activity_arrows_title">Показывать активность мобильных данных или wifi</string>
+    <string name="data_wifi_activity_arrows_summary">Отображать стрелки активности у индикатора мобильных данных или wifi</string>
+
+    <!-- The Drill -->
+    <string name="drill_title">The Drill</string>
+    <string name="drill_summary">Нашел баг? Появился вопрос?</string>
 </resources>
