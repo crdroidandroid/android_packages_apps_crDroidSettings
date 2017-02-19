@@ -40,6 +40,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
 
     private static final String KEY_CRDROID_LOGO_COLOR = "status_bar_crdroid_logo_color";
     private static final String KEY_CRDROID_LOGO_POSITION = "status_bar_crdroid_logo_position";
+    private static final String KEY_CRDROID_LOGO_STYLE = "status_bar_crdroid_logo_style";
     private static final String STATUS_BAR_CLOCK_POSITION = "status_bar_clock";
     private static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
     private static final String STATUS_BAR_DATE = "status_bar_date";
@@ -63,6 +64,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
 
     private ColorPickerPreference mCrDroidLogoColor;
     private ListPreference mCrDroidLogoPosition;
+    private ListPreference mCrDroidLogoStyle;
     private CMSystemSettingListPreference mStatusBarClock;
     private CMSystemSettingListPreference mStatusBarAmPm;
     private CMSystemSettingListPreference mStatusBarDate;
@@ -85,14 +87,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         final ContentResolver resolver = getActivity().getContentResolver();
 
         mCrDroidLogoPosition = (ListPreference) findPreference(KEY_CRDROID_LOGO_POSITION);
-        int crdroidLogoStyle = Settings.System.getIntForUser(resolver,
+        int crdroidLogoPosition = Settings.System.getIntForUser(resolver,
                 Settings.System.STATUS_BAR_CRDROID_LOGO_POSITION, 0,
                 UserHandle.USER_CURRENT);
-        mCrDroidLogoPosition.setValue(String.valueOf(crdroidLogoStyle));
+        mCrDroidLogoPosition.setValue(String.valueOf(crdroidLogoPosition));
         mCrDroidLogoPosition.setSummary(mCrDroidLogoPosition.getEntry());
         mCrDroidLogoPosition.setOnPreferenceChangeListener(this);
 
-        // CrDroid logo color
         mCrDroidLogoColor =
                 (ColorPickerPreference) findPreference(KEY_CRDROID_LOGO_COLOR);
         int intColor = Settings.System.getInt(resolver,
@@ -101,6 +102,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         mCrDroidLogoColor.setSummary(hexColor);
         mCrDroidLogoColor.setNewPreviewColor(intColor);
         mCrDroidLogoColor.setOnPreferenceChangeListener(this);
+
+        mCrDroidLogoStyle = (ListPreference) findPreference(KEY_CRDROID_LOGO_STYLE);
+        int crdroidLogoStyle = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_CRDROID_LOGO_STYLE, 0,
+                UserHandle.USER_CURRENT);
+        mCrDroidLogoStyle.setValue(String.valueOf(crdroidLogoStyle));
+        mCrDroidLogoStyle.setSummary(mCrDroidLogoStyle.getEntry());
+        mCrDroidLogoStyle.setOnPreferenceChangeListener(this);
 
         mStatusBarClock = (CMSystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_POSITION);
         mStatusBarBatteryShowPercent =
@@ -209,6 +218,15 @@ public class StatusBarSettings extends SettingsPreferenceFragment
                 UserHandle.USER_CURRENT);
             mCrDroidLogoPosition.setSummary(
                     mCrDroidLogoPosition.getEntries()[index]);
+            return true;
+        } else if (preference == mCrDroidLogoStyle) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mCrDroidLogoStyle.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(
+                resolver, Settings.System.STATUS_BAR_CRDROID_LOGO_STYLE, value,
+                UserHandle.USER_CURRENT);
+            mCrDroidLogoStyle.setSummary(
+                    mCrDroidLogoStyle.getEntries()[index]);
             return true;
         } else if (preference == mQuickPulldown) {
             int value = Integer.parseInt((String) newValue);

@@ -216,6 +216,15 @@
             android:entries="@array/status_bar_logo_position_entries"
             android:entryValues="@array/status_bar_logo_position_values"
             android:dependency="status_bar_crdroid_logo" />
+
+       <ListPreference
+            android:key="status_bar_crdroid_logo_style"
+            android:icon="@drawable/tag_icon"
+            android:title="@string/status_bar_crdroid_logo_style"
+            android:dialogTitle="@string/status_bar_crdroid_logo_style"
+            android:entries="@array/status_bar_logo_style_entries"
+            android:entryValues="@array/status_bar_logo_style_values"
+            android:dependency="status_bar_crdroid_logo" />
     </PreferenceCategory>
 
     <!-- Status bar misc customizations -->
