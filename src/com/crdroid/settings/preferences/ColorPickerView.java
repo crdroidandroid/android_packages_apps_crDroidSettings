@@ -39,16 +39,16 @@ public class ColorPickerView extends View {
     /**
      * The width in dp of the hue panel.
      */
-    private float         HUE_PANEL_WIDTH = 30f;
+    private float         HUE_PANEL_WIDTH = 36f;
     /**
      * The height in dp of the alpha panel
      */
-    private float        ALPHA_PANEL_HEIGHT = 20f;
+    private float        ALPHA_PANEL_HEIGHT = 36f;
     /**
      * The distance in dp between the different
      * color panels.
      */
-    private float         PANEL_SPACING = 10f;
+    private float         PANEL_SPACING = 8f;
     /**
      * The radius in dp of the color palette tracker circle.
      */
@@ -57,7 +57,7 @@ public class ColorPickerView extends View {
      * The dp which the tracker of the hue or alpha panel
      * will extend outside of its bounds.
      */
-    private float        RECTANGLE_TRACKER_OFFSET = 2f;
+    private float        RECTANGLE_TRACKER_OFFSET = 3f;
 
 
     private float         mDensity = 1f;
