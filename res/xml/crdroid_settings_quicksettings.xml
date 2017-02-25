@@ -71,6 +71,14 @@
 
     <PreferenceCategory 
          android:title="@string/qs_tiles_category">
+        <!-- OmniJaws -->
+        <PreferenceScreen
+            android:key="omnijaws_settings"
+            android:icon="@drawable/ic_omnijaws"
+            android:title="@string/omnijaws_settings_title"
+            android:summary="@string/omnijaws_settings_summary"
+            android:fragment="com.crdroid.settings.fragments.OmniJawsSettings" />
+
         <com.crdroid.settings.preferences.SeekBarPreference
             android:key="sysui_qqs_count_key"
             android:icon="@drawable/qs_tile_icon"
