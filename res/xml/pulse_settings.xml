@@ -121,6 +121,13 @@
             android:title="@string/pulse_solid_dimen_category" >
 
             <com.crdroid.settings.preferences.SeekBarPreference
+                android:key="pulse_solid_units_opacity"
+                android:title="@string/pulse_solid_units_opacity"
+                android:max="255"
+                settings:min="0"
+                android:dependency="pulse_2"/>
+
+            <com.crdroid.settings.preferences.SeekBarPreference
                 android:key="pulse_solid_units_count"
                 android:title="@string/pulse_solid_units_count"
                 android:max="128"
