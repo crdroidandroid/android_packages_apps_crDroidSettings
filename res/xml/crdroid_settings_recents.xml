@@ -83,4 +83,25 @@
             android:summary="@string/omniswitch_start_settings_summary"
             android:persistent="false" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="slim_recents"
+        android:title="@string/slim_recents_title">
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="use_slim_recents"
+            android:icon="@drawable/slim_icon"
+            android:title="@string/use_slim_recents_title"
+            android:summary="@string/use_slim_recents_summary"
+            android:defaultValue="false" />
+
+        <PreferenceScreen
+            android:key="slim_recent_panel"
+            android:icon="@drawable/slim_icon"
+            android:title="@string/slim_recents_settings_title"
+            android:summary="@string/slim_recents_settings_summary"
+            android:fragment="com.crdroid.settings.fragments.SlimRecentPanel"
+            android:dependency="use_slim_recents"
+            android:persistent="false" />
+    </PreferenceCategory>
 </PreferenceScreen>
