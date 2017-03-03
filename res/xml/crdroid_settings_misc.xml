@@ -86,4 +86,11 @@
         android:icon="@drawable/info_icon"
         android:title="@string/show_cpu_info"
         android:summary="@string/show_cpu_info_summary" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="disable_fc_notifications"
+        android:icon="@drawable/close_icon"
+        android:title="@string/disable_fc_notifications_title"
+        android:summary="@string/disable_fc_notifications_summary"
+        android:defaultValue="false" />
 </PreferenceScreen>
