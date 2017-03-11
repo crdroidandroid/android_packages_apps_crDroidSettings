@@ -60,9 +60,9 @@ public class SlimRecentPanel extends SettingsPreferenceFragment implements
             "recent_panel_expanded_mode";
     private static final String RECENT_PANEL_BG_COLOR =
             "recent_panel_bg_color";
-    /*private static final String RECENT_CARD_BG_COLOR =
+    private static final String RECENT_CARD_BG_COLOR =
             "recent_card_bg_color";
-    private static final String RECENT_CARD_TEXT_COLOR =
+    /*private static final String RECENT_CARD_TEXT_COLOR =
             "recent_card_text_color";*/
 
     private static final int MENU_RESET = Menu.FIRST;
@@ -73,7 +73,7 @@ public class SlimRecentPanel extends SettingsPreferenceFragment implements
     private SeekBarPreference mRecentPanelScale;
     private ListPreference mRecentPanelExpandedMode;
     private ColorPickerPreference mRecentPanelBgColor;
-    //private ColorPickerPreference mRecentCardBgColor;
+    private ColorPickerPreference mRecentCardBgColor;
     //private ColorPickerPreference mRecentCardTextColor;
 
     @Override
@@ -135,6 +135,12 @@ public class SlimRecentPanel extends SettingsPreferenceFragment implements
                 0x763367d6);
         mRecentPanelBgColor.setSummary(R.string.default_string);
         mRecentPanelBgColor.setNewPreviewColor(0x763367d6);
+
+        Settings.System.putInt(getContext().getContentResolver(),
+                Settings.System.RECENT_CARD_BG_COLOR,
+                0x00ffffff);
+        mRecentCardBgColor.setSummary(R.string.default_auto_string);
+        mRecentCardBgColor.setNewPreviewColor(0x00ffffff);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -165,11 +171,11 @@ public class SlimRecentPanel extends SettingsPreferenceFragment implements
                     Settings.System.RECENT_PANEL_BG_COLOR,
                     intHex);
             return true;
-        /*} else if (preference == mRecentCardBgColor) {
+        } else if (preference == mRecentCardBgColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             if (hex.equals("#00ffffff")) {
-                preference.setSummary(R.string.default_string);
+                preference.setSummary(R.string.default_auto_string);
             } else {
                 preference.setSummary(hex);
             }
@@ -178,7 +184,7 @@ public class SlimRecentPanel extends SettingsPreferenceFragment implements
                     Settings.System.RECENT_CARD_BG_COLOR,
                     intHex);
             return true;
-        } else if (preference == mRecentCardTextColor) {
+        /*} else if (preference == mRecentCardTextColor) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             if (hex.equals("#00ffffff")) {
@@ -251,21 +257,21 @@ public class SlimRecentPanel extends SettingsPreferenceFragment implements
         mRecentPanelBgColor.setNewPreviewColor(intColor);
 
         // Recent card background color
-        /*mRecentCardBgColor =
+        mRecentCardBgColor =
                 (ColorPickerPreference) findPreference(RECENT_CARD_BG_COLOR);
         mRecentCardBgColor.setOnPreferenceChangeListener(this);
         final int intColorCard = Settings.System.getInt(getContext().getContentResolver(),
                 Settings.System.RECENT_CARD_BG_COLOR, 0x00ffffff);
         String hexColorCard = String.format("#%08x", (0x00ffffff & intColorCard));
         if (hexColorCard.equals("#00ffffff")) {
-            mRecentCardBgColor.setSummary(R.string.default_string);
+            mRecentCardBgColor.setSummary(R.string.default_auto_string);
         } else {
             mRecentCardBgColor.setSummary(hexColorCard);
         }
         mRecentCardBgColor.setNewPreviewColor(intColorCard);
 
         // Recent card text color
-        mRecentCardTextColor =
+        /*mRecentCardTextColor =
                 (ColorPickerPreference) findPreference(RECENT_CARD_TEXT_COLOR);
         mRecentCardTextColor.setOnPreferenceChangeListener(this);
         final int intColorText = Settings.System.getInt(getContext().getContentResolver(),
