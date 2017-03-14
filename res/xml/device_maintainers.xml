@@ -63,11 +63,18 @@
             android:selectable="false" />
     </PreferenceCategory>
 
-    <!-- HUAWEİ
+    <!-- HUAWEİ -->
     <PreferenceCategory
         android:title="@string/device_category_huawei_title">
 
-    </PreferenceCategory> -->
+        <Preference
+            android:id="@+id/device_huawei_kiwi"
+            android:icon="@drawable/phone_tint"
+            android:title="@string/device_huawei_kiwi"
+            android:summary="@string/device_huawei_kiwi_summary"
+            android:selectable="false" />
+
+    </PreferenceCategory>
 
     <!-- GOOGLE -->
     <PreferenceCategory
@@ -207,6 +214,13 @@
             android:selectable="false" />
 
         <Preference
+            android:id="@+id/device_moto_osprey"
+            android:icon="@drawable/phone_tint"
+            android:title="@string/device_moto_osprey"
+            android:summary="@string/device_moto_osprey_summary"
+            android:selectable="false" />
+
+        <Preference
             android:id="@+id/device_moto_lux"
             android:icon="@drawable/phone_tint"
             android:title="@string/device_moto_lux"
@@ -218,6 +232,13 @@
             android:icon="@drawable/phone_tint"
             android:title="@string/device_moto_quark"
             android:summary="@string/device_moto_quark_summary"
+            android:selectable="false" />
+
+        <Preference
+            android:id="@+id/device_moto_harpia"
+            android:icon="@drawable/phone_tint"
+            android:title="@string/device_moto_harpia"
+            android:summary="@string/device_moto_harpia_summary"
             android:selectable="false" />
     </PreferenceCategory>
 
@@ -250,12 +271,12 @@
             android:summary="@string/device_oneplus_bacon_summary"
             android:selectable="false" />
 
-        <!-- <Preference
+        <Preference
             android:id="@+id/device_oneplus_oneplus2"
             android:icon="@drawable/phone_tint"
             android:title="@string/device_oneplus_oneplus2"
             android:summary="@string/device_oneplus_oneplus2_summary"
-            android:selectable="false" /> -->
+            android:selectable="false" />
 
         <Preference
             android:id="@+id/device_oneplus_oneplus3"
@@ -264,12 +285,12 @@
             android:summary="@string/device_oneplus_oneplus3_summary"
             android:selectable="false" />
 
-        <!-- <Preference
+        <Preference
             android:id="@+id/device_oneplus_onyx"
             android:icon="@drawable/phone_tint"
             android:title="@string/device_oneplus_onyx"
             android:summary="@string/device_oneplus_onyx_summary"
-            android:selectable="false" /> -->
+            android:selectable="false" />
     </PreferenceCategory>
 
     <!-- OPPO -->
@@ -367,12 +388,19 @@
             android:summary="@string/device_xiaomi_ferrari_summary"
             android:selectable="false" />
 
-        <!-- <Preference
+        <Preference
             android:id="@+id/device_xiaomi_gemini"
             android:icon="@drawable/phone_tint"
             android:title="@string/device_xiaomi_gemini"
             android:summary="@string/device_xiaomi_gemini_summary"
-            android:selectable="false" /> -->
+            android:selectable="false" />
+
+        <Preference
+            android:id="@+id/device_xiaomi_cancro"
+            android:icon="@drawable/phone_tint"
+            android:title="@string/device_xiaomi_cancro"
+            android:summary="@string/device_xiaomi_cancro_summary"
+            android:selectable="false" />
     </PreferenceCategory>
 
     <!-- YU -->
