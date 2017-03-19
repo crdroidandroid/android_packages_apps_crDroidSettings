@@ -104,7 +104,7 @@
             android:dependency="use_slim_recents"
             android:persistent="false" />
 
-       <PreferenceScreen
+       <!--<PreferenceScreen
             android:key="recent_app_sidebar_content"
             android:icon="@drawable/slim_icon"
             android:fragment="com.crdroid.settings.fragments.ActionListViewSettings"
@@ -115,14 +115,6 @@
                <extra android:name="maxAllowedActions" android:value="-1" />
                <extra android:name="useAppPickerOnly" android:value="true" />
                <extra android:name="fragment" android:value="com.crdroid.settings.fragments.RecentAppSidebar" />
-       </PreferenceScreen>
-
-       <PreferenceScreen
-            android:key="recent_app_sidebar"
-            android:icon="@drawable/slim_icon"
-            android:title="@string/recent_app_sidebar_style_title"
-            android:summary="@string/recent_app_sidebar_style_summary"
-            android:fragment="com.crdroid.settings.fragments.RecentAppSidebar"
-            android:dependency="use_slim_recents"/>
+       </PreferenceScreen> -->
     </PreferenceCategory>
 </PreferenceScreen>
