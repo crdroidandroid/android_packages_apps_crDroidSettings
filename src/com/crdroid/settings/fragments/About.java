@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 crDroid Android
+ * Copyright (C) 2016-2017 crDroid Android
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,23 +33,22 @@ public class About extends SettingsPreferenceFragment {
 
     public static final String TAG = "About";
 
-    private static final String KEY_CRDROID_SHARE = "share";
+    private String KEY_CRDROID_SOURCE = "crdroid_source";
+    private String KEY_CRDROID_GPLUS = "crdroid_google_plus";
+    private String KEY_CRDROID_SHARE = "crdroid_share";
 
-    Preference mSourceUrl;
-    Preference mGoogleUrl;
+    private Preference mSourceUrl;
+    private Preference mGoogleUrl;
+    private Preference mShare;
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.crdroid_about);
 
-        mSourceUrl = findPreference("crdroid_source");
-        mGoogleUrl = findPreference("crdroid_google_plus");
-    }
-
-    @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.CRDROID_SETTINGS;
+        mSourceUrl = findPreference(KEY_CRDROID_SOURCE);
+        mGoogleUrl = findPreference(KEY_CRDROID_GPLUS);
+        mShare = findPreference(KEY_CRDROID_SHARE);
     }
 
     @Override
@@ -58,14 +57,15 @@ public class About extends SettingsPreferenceFragment {
             launchUrl("https://github.com/crdroidandroid");
         } else if (preference == mGoogleUrl) {
             launchUrl("https://plus.google.com/u/0/communities/118297646046960923906");
-        } else if (preference.getKey().equals(KEY_CRDROID_SHARE)) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, String.format(
-                getActivity().getString(R.string.share_message), Build.MODEL));
-        startActivity(Intent.createChooser(intent, getActivity().getString(R.string.share_chooser_title)));
+        } else if (preference == mShare) {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT, String.format(
+                    getActivity().getString(R.string.share_message), Build.MODEL));
+            startActivity(Intent.createChooser(intent, getActivity().getString(R.string.share_chooser_title)));
         }
+
         return super.onPreferenceTreeClick(preference);
     }
 
@@ -73,5 +73,10 @@ public class About extends SettingsPreferenceFragment {
         Uri uriUrl = Uri.parse(url);
         Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
         getActivity().startActivity(intent);
+    }
+
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsEvent.CRDROID_SETTINGS;
     }
 }
