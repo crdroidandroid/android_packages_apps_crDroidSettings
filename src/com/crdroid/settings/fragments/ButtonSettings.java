@@ -20,6 +20,8 @@ import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.util.Log;
+import android.view.Display;
+import android.view.DisplayInfo;
 import android.view.IWindowManager;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
@@ -467,6 +469,17 @@ public class ButtonSettings extends SettingsPreferenceFragment
         if (preference == mSwapVolumeButtons) {
             int value = mSwapVolumeButtons.isChecked()
                     ? (ScreenType.isTablet(getActivity()) ? 2 : 1) : 0;
+            if (value == 2) {
+                Display defaultDisplay = getActivity().getWindowManager().getDefaultDisplay();
+
+                DisplayInfo displayInfo = new DisplayInfo();
+                defaultDisplay.getDisplayInfo(displayInfo);
+
+                // Not all tablets are landscape
+                if (displayInfo.getNaturalWidth() < displayInfo.getNaturalHeight()) {
+                    value = 1;
+                }
+            }
             CMSettings.System.putInt(getActivity().getContentResolver(),
                     CMSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);
         } else if (preference == mPowerEndCall) {
