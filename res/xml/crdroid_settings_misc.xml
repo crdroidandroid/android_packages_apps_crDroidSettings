@@ -19,6 +19,18 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/about_crdroid">
 
+    <!-- Ad Away -->
+    <Preference
+        android:key="adaway"
+        android:icon="@drawable/ic_block"
+        android:title="@string/adaway_title"
+        android:summary="@string/adaway_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="org.adaway"
+                android:targetClass="org.adaway.ui.BaseActivity" />
+    </Preference>
+
     <PreferenceScreen
         android:key="lock_clock"
         android:icon="@drawable/clock_icon"
