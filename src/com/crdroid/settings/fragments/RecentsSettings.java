@@ -17,18 +17,21 @@ import android.support.v14.preference.SwitchPreference;
 
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
-import com.android.settings.R;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+
+import com.crdroid.settings.preferences.ColorPickerPreference;
 
 public class RecentsSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
+    private static final String MEMBAR_COLOR = "systemui_recents_mem_barcolor";
+    private static final String MEM_TEXT_COLOR = "systemui_recents_mem_textcolor";
     private static final String IMMERSIVE_RECENTS = "immersive_recents";
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
 
-    private static final String TAG = "OmniSwitch";
     private static final String RECENTS_USE_OMNISWITCH = "recents_use_omniswitch";
     private static final String OMNISWITCH_START_SETTINGS = "omniswitch_start_settings";
 
@@ -38,6 +41,8 @@ public class RecentsSettings extends SettingsPreferenceFragment
     public static Intent INTENT_OMNISWITCH_SETTINGS = new Intent(Intent.ACTION_MAIN)
             .setClassName(OMNISWITCH_PACKAGE_NAME, OMNISWITCH_PACKAGE_NAME + ".SettingsActivity");
 
+    private ColorPickerPreference mMemBarColor;
+    private ColorPickerPreference mMemTextColor;
     private SwitchPreference mRecentsClearAll;
     private SwitchPreference mRecentsUseOmniSwitch;
     private Preference mOmniSwitchSettings;
@@ -96,6 +101,34 @@ public class RecentsSettings extends SettingsPreferenceFragment
         mRecentsClearAllLocation.setValue(String.valueOf(location));
         mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
+
+        // Recents memory bar bar color
+        mMemBarColor  =
+                (ColorPickerPreference) findPreference(MEMBAR_COLOR);
+        final int intColorBar = Settings.System.getInt(resolver,
+                Settings.System.SYSTEMUI_RECENTS_MEM_BARCOLOR, 0x00ffffff);
+        String hexColorBar = String.format("#%08x", (0x00ffffff & intColorBar));
+        if (hexColorBar.equals("#00ffffff")) {
+            mMemBarColor.setSummary(R.string.default_string);
+        } else {
+            mMemBarColor.setSummary(hexColorBar);
+        }
+        mMemBarColor.setNewPreviewColor(intColorBar);
+        mMemBarColor.setOnPreferenceChangeListener(this);
+
+        // Recents memory bar text color
+        mMemTextColor  =
+                (ColorPickerPreference) findPreference(MEM_TEXT_COLOR);
+        final int intColorText = Settings.System.getInt(resolver,
+                Settings.System.SYSTEMUI_RECENTS_MEM_TEXTCOLOR, 0x00ffffff);
+        String hexColorText = String.format("#%08x", (0x00ffffff & intColorText));
+        if (hexColorText.equals("#00ffffff")) {
+            mMemTextColor.setSummary(R.string.default_string);
+        } else {
+            mMemTextColor.setSummary(hexColorText);
+        }
+        mMemTextColor.setNewPreviewColor(intColorText);
+        mMemTextColor.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -126,6 +159,32 @@ public class RecentsSettings extends SettingsPreferenceFragment
             Settings.System.putIntForUser(resolver,
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+            return true;
+        } else if (preference == mMemBarColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                Integer.parseInt(String.valueOf(newValue)));
+            if (hex.equals("#00ffffff")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                    Settings.System.SYSTEMUI_RECENTS_MEM_BARCOLOR,
+                    intHex);
+            return true;
+        } else if (preference == mMemTextColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                Integer.parseInt(String.valueOf(newValue)));
+            if (hex.equals("#00ffffff")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(resolver,
+                    Settings.System.SYSTEMUI_RECENTS_MEM_TEXTCOLOR,
+                    intHex);
             return true;
         }
         return false;

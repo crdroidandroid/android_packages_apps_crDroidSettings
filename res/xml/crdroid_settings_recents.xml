@@ -49,6 +49,22 @@
             android:summary="@string/systemui_recents_mem_display_summary"
             android:defaultValue="false" />
 
+        <com.crdroid.settings.preferences.ColorPickerPreference
+            android:key="systemui_recents_mem_barcolor"
+            android:icon="@drawable/memory_icon"
+            android:title="@string/systemui_recents_mem_display_color"
+            android:defaultValue="#00ffffff"
+            android:dependency="systemui_recents_mem_display"
+            alphaSlider="true" />
+
+        <com.crdroid.settings.preferences.ColorPickerPreference
+            android:key="systemui_recents_mem_textcolor"
+            android:icon="@drawable/memory_icon"
+            android:title="@string/systemui_recents_mem_display_text_color"
+            android:defaultValue="#00ffffff"
+            android:dependency="systemui_recents_mem_display"
+            alphaSlider="true" />
+
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="show_clear_all_recents"
             android:icon="@drawable/recents_clear_all_icon"
