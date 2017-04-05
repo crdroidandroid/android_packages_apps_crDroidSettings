@@ -72,15 +72,6 @@ public class RecentsSettings extends SettingsPreferenceFragment
         mRecentsUseOmniSwitch = (SwitchPreference)
                 prefSet.findPreference(RECENTS_USE_OMNISWITCH);
 
-        mPreferences = mContext.getSharedPreferences("recent_settings", Activity.MODE_PRIVATE);
-        if (!mPreferences.getBoolean("first_info_shown", false)) {
-            getActivity().getSharedPreferences("recent_settings", Activity.MODE_PRIVATE)
-                    .edit()
-                    .putBoolean("first_info_shown", true)
-                    .commit();
-            openAOSPFirstTimeWarning();
-        }
-
         try {
             mRecentsUseOmniSwitch.setChecked(Settings.System.getInt(resolver,
                     Settings.System.RECENTS_USE_OMNISWITCH) == 1);
@@ -139,6 +130,15 @@ public class RecentsSettings extends SettingsPreferenceFragment
                     Integer.parseInt((String) newValue));
             mImmersiveRecents.setValue((String) newValue);
             mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+
+            mPreferences = mContext.getSharedPreferences("recent_settings", Activity.MODE_PRIVATE);
+            if (!mPreferences.getBoolean("first_info_shown", false) && newValue != null) {
+                getActivity().getSharedPreferences("recent_settings", Activity.MODE_PRIVATE)
+                        .edit()
+                        .putBoolean("first_info_shown", true)
+                        .commit();
+                openAOSPFirstTimeWarning();
+            }
             return true;
         } else if (preference == mRecentsUseOmniSwitch) {
             boolean value = (Boolean) newValue;
