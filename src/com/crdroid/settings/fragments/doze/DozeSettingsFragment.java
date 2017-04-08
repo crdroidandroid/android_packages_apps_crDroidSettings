@@ -43,6 +43,8 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.crdroid.settings.preferences.SeekBarPreference;
+
 public class DozeSettingsFragment extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
     private static final String TAG = "DozeSettingsFragment";
@@ -59,6 +61,10 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
     private static final String KEY_DOZE_TRIGGER_HANDWAVE = "doze_trigger_handwave";
     private static final String KEY_DOZE_TRIGGER_POCKET = "doze_trigger_pocket";
 
+    private static final String KEY_DOZE_VIBRATE_TILT = "doze_vibrate_tilt";
+    private static final String KEY_DOZE_VIBRATE_PICKUP = "doze_vibrate_pickup";
+    private static final String KEY_DOZE_VIBRATE_PROX = "doze_vibrate_prox";
+
     private SwitchPreference mDozePreference;
     private ListPreference mDozeFadeInPickup;
     private ListPreference mDozeFadeInDoubleTap;
@@ -72,6 +78,10 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
 
     private DozeBrightnessDialog mDozeBrightnessDialog;
     private Preference mDozeBrightness;
+
+    private SeekBarPreference mVibrateTilt;
+    private SeekBarPreference mVibratePickup;
+    private SeekBarPreference mVibrateProximity;
 
     @Override
     protected int getMetricsCategory() {
@@ -113,8 +123,18 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
         mPocketPreference = (SwitchPreference) findPreference(KEY_DOZE_TRIGGER_POCKET);
         mPocketPreference.setOnPreferenceChangeListener(this);
 
+        mVibrateTilt = (SeekBarPreference) findPreference(KEY_DOZE_VIBRATE_TILT);
+        mVibrateTilt.setOnPreferenceChangeListener(this);
+
+        mVibratePickup = (SeekBarPreference) findPreference(KEY_DOZE_VIBRATE_PICKUP);
+        mVibratePickup.setOnPreferenceChangeListener(this);
+
+        mVibrateProximity = (SeekBarPreference) findPreference(KEY_DOZE_VIBRATE_PROX);
+        mVibrateProximity.setOnPreferenceChangeListener(this);
+
         updateState();
         updateDozeOptions();
+        updateVibOptions();
     }
 
     private void updateDozeOptions() {
@@ -158,11 +178,73 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
         }
     }
 
+    private void updateVibOptions() {
+        Context context = getContext();
+        ContentResolver resolver = context.getContentResolver();
+        int val;
+        boolean enabled; 
+        boolean dozeEnabled = Utils.isDozeEnabled(context);
+
+        if (mVibrateTilt != null) {
+            enabled = (Settings.System.getInt(resolver,
+                    Settings.System.DOZE_TRIGGER_TILT, 0) != 0) &&
+                    dozeEnabled;
+            val = Settings.System.getInt(resolver,
+                    Settings.System.DOZE_VIBRATE_TILT, 0);
+            mVibrateTilt.setEnabled(enabled);
+            mVibrateTilt.setValue(val);
+            if (enabled && val > 0) {
+                mVibrateTilt.setSummary(context.getResources().getString(R.string.enabled));
+            } else if (enabled) {
+                mVibrateTilt.setSummary(context.getResources().getString(R.string.disabled));
+            } else {
+                mVibrateTilt.setSummary(context.getResources().getString(R.string.doze_vibrate_summary));
+            }
+        }
+
+        if (mVibratePickup != null) {
+            enabled = (Settings.System.getInt(resolver,
+                    Settings.System.DOZE_TRIGGER_PICKUP, 0) != 0) &&
+                    dozeEnabled;
+            val = Settings.System.getInt(resolver,
+                    Settings.System.DOZE_VIBRATE_PICKUP, 0);
+            mVibratePickup.setEnabled(enabled);
+            mVibratePickup.setValue(val);
+            if (enabled && val > 0) {
+                mVibratePickup.setSummary(context.getResources().getString(R.string.enabled));
+            } else if (enabled) {
+                mVibratePickup.setSummary(context.getResources().getString(R.string.disabled));
+            } else {
+                mVibratePickup.setSummary(context.getResources().getString(R.string.doze_vibrate_summary));
+            }
+        }
+
+        if (mVibrateProximity != null) {
+            enabled = ((Settings.System.getInt(resolver,
+                    Settings.System.DOZE_TRIGGER_HANDWAVE, 0) != 0) ||
+                    (Settings.System.getInt(resolver,
+                    Settings.System.DOZE_TRIGGER_POCKET, 0) != 0)) &&
+                    dozeEnabled;
+            val = Settings.System.getInt(resolver,
+                    Settings.System.DOZE_VIBRATE_PROX, 0);
+            mVibrateProximity.setEnabled(enabled);
+            mVibrateProximity.setValue(val);
+            if (enabled && val > 0) {
+                mVibrateProximity.setSummary(context.getResources().getString(R.string.enabled));
+            } else if (enabled) {
+                mVibrateProximity.setSummary(context.getResources().getString(R.string.disabled));
+            } else {
+                mVibrateProximity.setSummary(context.getResources().getString(R.string.doze_vibrate_summary));
+            }
+        }
+    }
+
     @Override
     public void onResume() {
         super.onResume();
         updateState();
         updateDozeOptions();
+        updateVibOptions();
     }
 
     @Override
@@ -243,25 +325,44 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
             boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver, Settings.System.DOZE_TRIGGER_TILT, 
                  value ? 1 : 0);
+            updateVibOptions();
             Utils.enableService(Utils.isDozeEnabled(context), context);
             return true;
         } else if (preference == mPickUpPreference) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver, Settings.System.DOZE_TRIGGER_PICKUP, 
                  value ? 1 : 0);
+            updateVibOptions();
             Utils.enableService(Utils.isDozeEnabled(context), context);
             return true;
         } else if (preference == mHandwavePreference) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver, Settings.System.DOZE_TRIGGER_HANDWAVE, 
                  value ? 1 : 0);
+            updateVibOptions();
             Utils.enableService(Utils.isDozeEnabled(context), context);
             return true;
         } else if (preference == mPocketPreference) {
             boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver, Settings.System.DOZE_TRIGGER_POCKET, 
                  value ? 1 : 0);
+            updateVibOptions();
             Utils.enableService(Utils.isDozeEnabled(context), context);
+            return true;
+        } else if (preference == mVibrateTilt) {
+            int val = (Integer) newValue;
+            Settings.System.putInt(resolver, Settings.System.DOZE_VIBRATE_TILT, val);
+            updateVibOptions();
+            return true;
+        } else if (preference == mVibratePickup) {
+            int val = (Integer) newValue;
+            Settings.System.putInt(resolver, Settings.System.DOZE_VIBRATE_PICKUP, val);
+            updateVibOptions();
+            return true;
+        } else if (preference == mVibrateProximity) {
+            int val = (Integer) newValue;
+            Settings.System.putInt(resolver, Settings.System.DOZE_VIBRATE_PROX, val);
+            updateVibOptions();
             return true;
         }
 

@@ -34,6 +34,16 @@
             android:title="@string/tilt_title"
             android:summary="@string/tilt_summary"
             android:dependency="doze_enabled" />
+
+        <com.crdroid.settings.preferences.SeekBarPreference
+            android:key="doze_vibrate_tilt"
+            android:title="@string/doze_vibrate"
+            android:summary="@string/doze_vibrate_summary"
+            android:max="2000"
+            settings:min="0"
+            settings:units="ms"
+            android:persistent="false"
+            android:dependency="doze_trigger_tilt" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -46,6 +56,16 @@
             android:title="@string/pickup_title"
             android:summary="@string/pickup_summary"
             android:dependency="doze_enabled" />
+
+        <com.crdroid.settings.preferences.SeekBarPreference
+            android:key="doze_vibrate_pickup"
+            android:title="@string/doze_vibrate"
+            android:summary="@string/doze_vibrate_summary"
+            android:max="2000"
+            settings:min="0"
+            settings:units="ms"
+            android:persistent="false"
+            android:dependency="doze_trigger_pickup" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -64,6 +84,16 @@
             android:defaultValue="false"
             android:title="@string/pocket_title"
             android:summary="@string/pocket_summary"
+            android:dependency="doze_enabled" />
+
+        <com.crdroid.settings.preferences.SeekBarPreference
+            android:key="doze_vibrate_prox"
+            android:title="@string/doze_vibrate"
+            android:summary="@string/doze_vibrate_summary"
+            android:max="2000"
+            settings:min="0"
+            settings:units="ms"
+            android:persistent="false"
             android:dependency="doze_enabled" />
     </PreferenceCategory>
 
@@ -118,12 +148,6 @@
             android:summary="@string/doze_pulse_duration_out_summary"
             android:persistent="false"
             android:dependency="doze_overwrite_value" />
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="doze_vibrate_on_pickup"
-            android:title="@string/doze_vibrate_on_pickup_title"
-            android:dependency="doze_overwrite_value"
-            android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="doze_check_proximity_before_pulse"

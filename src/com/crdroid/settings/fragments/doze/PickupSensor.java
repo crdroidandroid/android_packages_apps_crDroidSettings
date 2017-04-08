@@ -23,6 +23,8 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.os.SystemClock;
+import android.os.Vibrator;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
@@ -43,6 +45,8 @@ public class PickupSensor implements SensorEventListener {
     private float mAccelCurrent;
     private long mEntryTimestamp;
 
+    private Vibrator mVibrator;
+
     public PickupSensor(Context context) {
         mContext = context;
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
@@ -50,6 +54,10 @@ public class PickupSensor implements SensorEventListener {
         telephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
         mAccelLast = SensorManager.GRAVITY_EARTH;
         mAccelCurrent = SensorManager.GRAVITY_EARTH;
+        mVibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
+        if (mVibrator == null || !mVibrator.hasVibrator()) {
+            mVibrator = null;
+        }
     }
 
     @Override
@@ -77,6 +85,7 @@ public class PickupSensor implements SensorEventListener {
                 float accDelta = Math.abs(mAccelCurrent - mAccelLast);
                 if (accDelta >= 0.1 && accDelta <= 1.5) {
                     Utils.launchDozePulse(mContext);
+                    doHapticFeedback();
                 }
             }
         } catch (Exception e) {
@@ -108,5 +117,16 @@ public class PickupSensor implements SensorEventListener {
     protected void disable() {
         if (DEBUG) Log.d(TAG, "Disabling");
         mSensorManager.unregisterListener(this, mSensorPickup);
+    }
+
+    private void doHapticFeedback() {
+        if (mVibrator == null) {
+            return;
+        }
+        int val = Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.DOZE_VIBRATE_PICKUP, 0);
+        if (val > 0) {
+            mVibrator.vibrate(val);
+        }
     }
 }
