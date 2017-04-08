@@ -1,4 +1,20 @@
-package com.crdroid.settings.fragments;
+/*
+ * Copyright (C) 2017 crDroid Android Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.crdroid.settings.fragments.doze;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -27,24 +43,32 @@ import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class AmbientSettings extends SettingsPreferenceFragment
+public class DozeSettingsFragment extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
-    private static final String TAG = "AmbientSettings";
+    private static final String TAG = "DozeSettingsFragment";
 
-    private static final String KEY_DOZE = "doze";
+    private static final String KEY_DOZE = "doze_enabled";
     private static final String KEY_DOZE_FADE_IN_PICKUP = "doze_fade_in_pickup";
     private static final String KEY_DOZE_FADE_IN_DOUBLETAP = "doze_fade_in_doubletap";
     private static final String KEY_DOZE_PULSE_VISIBLE = "doze_pulse_visible";
     private static final String KEY_DOZE_PULSE_OUT = "doze_pulse_out";
     private static final String KEY_DOZE_BRIGHTNESS_LEVEL = "doze_brightness_level";
 
-    private static final String SYSTEMUI_METADATA_NAME = "com.android.systemui";
+    private static final String KEY_DOZE_TRIGGER_TILT = "doze_trigger_tilt";
+    private static final String KEY_DOZE_TRIGGER_PICKUP = "doze_trigger_pickup";
+    private static final String KEY_DOZE_TRIGGER_HANDWAVE = "doze_trigger_handwave";
+    private static final String KEY_DOZE_TRIGGER_POCKET = "doze_trigger_pocket";
 
     private SwitchPreference mDozePreference;
     private ListPreference mDozeFadeInPickup;
     private ListPreference mDozeFadeInDoubleTap;
     private ListPreference mDozePulseVisible;
     private ListPreference mDozePulseOut;
+
+    private SwitchPreference mTiltPreference;
+    private SwitchPreference mPickUpPreference;
+    private SwitchPreference mHandwavePreference;
+    private SwitchPreference mPocketPreference;
 
     private DozeBrightnessDialog mDozeBrightnessDialog;
     private Preference mDozeBrightness;
@@ -57,10 +81,8 @@ public class AmbientSettings extends SettingsPreferenceFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final Activity activity = getActivity();
-        ContentResolver resolver = getActivity().getContentResolver();
 
-        addPreferencesFromResource(R.xml.ambient_settings);
+        addPreferencesFromResource(R.xml.doze_settings);
 
         mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
         mDozePreference.setOnPreferenceChangeListener(this);
@@ -77,14 +99,29 @@ public class AmbientSettings extends SettingsPreferenceFragment
         mDozePulseOut = (ListPreference) findPreference(KEY_DOZE_PULSE_OUT);
         mDozePulseOut.setOnPreferenceChangeListener(this);
 
-        updateDozeOptions();
-
         mDozeBrightness = (Preference) findPreference(KEY_DOZE_BRIGHTNESS_LEVEL);
+
+        mTiltPreference = (SwitchPreference) findPreference(KEY_DOZE_TRIGGER_TILT);
+        mTiltPreference.setOnPreferenceChangeListener(this);
+
+        mPickUpPreference = (SwitchPreference) findPreference(KEY_DOZE_TRIGGER_PICKUP);
+        mPickUpPreference.setOnPreferenceChangeListener(this);
+
+        mHandwavePreference = (SwitchPreference) findPreference(KEY_DOZE_TRIGGER_HANDWAVE);
+        mHandwavePreference.setOnPreferenceChangeListener(this);
+
+        mPocketPreference = (SwitchPreference) findPreference(KEY_DOZE_TRIGGER_POCKET);
+        mPocketPreference.setOnPreferenceChangeListener(this);
+
+        updateState();
+        updateDozeOptions();
     }
 
     private void updateDozeOptions() {
+        ContentResolver resolver = getContext().getContentResolver();
+
         if (mDozeFadeInPickup != null) {
-            final int statusDozePulseIn = Settings.System.getInt(getContentResolver(),
+            final int statusDozePulseIn = Settings.System.getInt(resolver,
                     Settings.System.DOZE_FADE_IN_PICKUP, 500);
             mDozeFadeInPickup.setValue(String.valueOf(statusDozePulseIn));
             int index = mDozeFadeInPickup.findIndexOfValue(String.valueOf(statusDozePulseIn));
@@ -93,7 +130,7 @@ public class AmbientSettings extends SettingsPreferenceFragment
             }
         }
         if (mDozeFadeInDoubleTap != null) {
-            final int statusDozePulseIn = Settings.System.getInt(getContentResolver(),
+            final int statusDozePulseIn = Settings.System.getInt(resolver,
                     Settings.System.DOZE_FADE_IN_DOUBLETAP, 500);
             mDozeFadeInDoubleTap.setValue(String.valueOf(statusDozePulseIn));
             int index = mDozeFadeInDoubleTap.findIndexOfValue(String.valueOf(statusDozePulseIn));
@@ -102,7 +139,7 @@ public class AmbientSettings extends SettingsPreferenceFragment
             }
         }
         if (mDozePulseVisible != null) {
-            final int statusDozePulseVisible = Settings.System.getInt(getContentResolver(),
+            final int statusDozePulseVisible = Settings.System.getInt(resolver,
                     Settings.System.DOZE_PULSE_DURATION_VISIBLE, 3000);
             mDozePulseVisible.setValue(String.valueOf(statusDozePulseVisible));
             int index = mDozePulseVisible.findIndexOfValue(String.valueOf(statusDozePulseVisible));
@@ -111,7 +148,7 @@ public class AmbientSettings extends SettingsPreferenceFragment
             }
         }
         if (mDozePulseOut != null) {
-            final int statusDozePulseOut = Settings.System.getInt(getContentResolver(),
+            final int statusDozePulseOut = Settings.System.getInt(resolver,
                     Settings.System.DOZE_PULSE_DURATION_OUT, 500);
             mDozePulseOut.setValue(String.valueOf(statusDozePulseOut));
             int index = mDozePulseOut.findIndexOfValue(String.valueOf(statusDozePulseOut));
@@ -134,13 +171,24 @@ public class AmbientSettings extends SettingsPreferenceFragment
     }
 
     private void updateState() {
-        // Update doze if it is available.
+        Context context = getContext();
+
         if (mDozePreference != null) {
-            int value = Settings.Secure.getInt(getContentResolver(), Settings.Secure.DOZE_ENABLED,
-                    getActivity().getResources().getBoolean(
-                    com.android.internal.R.bool.config_doze_enabled_by_default) ? 1 : 0);
-            mDozePreference.setChecked(value != 0);
+            mDozePreference.setChecked(Utils.isDozeEnabled(context));
         }
+        if (mTiltPreference != null) {
+            mTiltPreference.setChecked(Utils.tiltEnabled(context));
+        }
+        if (mPickUpPreference != null) {
+            mPickUpPreference.setChecked(Utils.pickUpEnabled(context));
+        }
+        if (mHandwavePreference != null) {
+            mHandwavePreference.setChecked(Utils.handwaveGestureEnabled(context));
+        }
+        if (mPocketPreference != null) {
+            mPocketPreference.setChecked(Utils.pocketGestureEnabled(context));
+        }
+
     }
 
     @Override
@@ -153,64 +201,71 @@ public class AmbientSettings extends SettingsPreferenceFragment
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        Context context = getContext();
+        ContentResolver resolver = context.getContentResolver();
+
         if (preference == mDozePreference) {
-            boolean value = (Boolean) objValue;
-            Settings.Secure.putInt(getContentResolver(), Settings.Secure.DOZE_ENABLED, value ? 1 : 0);
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putInt(resolver, Settings.Secure.DOZE_ENABLED, 
+                 value ? 1 : 0);
+            Utils.enableService(value, context);
+            return true;
         } else if (preference == mDozeFadeInPickup) {
-            int dozePulseIn = Integer.parseInt((String)objValue);
-            int index = mDozeFadeInPickup.findIndexOfValue((String) objValue);
+            int dozePulseIn = Integer.parseInt((String) newValue);
+            int index = mDozeFadeInPickup.findIndexOfValue((String) newValue);
             mDozeFadeInPickup.setSummary(mDozeFadeInPickup.getEntries()[index]);
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.DOZE_FADE_IN_PICKUP, dozePulseIn);
+            return true;
         } else if (preference == mDozeFadeInDoubleTap) {
-            int dozePulseIn = Integer.parseInt((String)objValue);
-            int index = mDozeFadeInDoubleTap.findIndexOfValue((String) objValue);
+            int dozePulseIn = Integer.parseInt((String) newValue);
+            int index = mDozeFadeInDoubleTap.findIndexOfValue((String) newValue);
             mDozeFadeInDoubleTap.setSummary(mDozeFadeInDoubleTap.getEntries()[index]);
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.DOZE_FADE_IN_DOUBLETAP, dozePulseIn);
+            return true;
         } else if (preference == mDozePulseVisible) {
-            int dozePulseVisible = Integer.parseInt((String)objValue);
-            int index = mDozePulseVisible.findIndexOfValue((String) objValue);
+            int dozePulseVisible = Integer.parseInt((String) newValue);
+            int index = mDozePulseVisible.findIndexOfValue((String) newValue);
             mDozePulseVisible.setSummary(mDozePulseVisible.getEntries()[index]);
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.DOZE_PULSE_DURATION_VISIBLE, dozePulseVisible);
+            return true;
         } else if (preference == mDozePulseOut) {
-            int dozePulseOut = Integer.parseInt((String)objValue);
-            int index = mDozePulseOut.findIndexOfValue((String) objValue);
+            int dozePulseOut = Integer.parseInt((String) newValue);
+            int index = mDozePulseOut.findIndexOfValue((String) newValue);
             mDozePulseOut.setSummary(mDozePulseOut.getEntries()[index]);
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.DOZE_PULSE_DURATION_OUT, dozePulseOut);
+            return true;
+        } else if (preference == mTiltPreference) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, Settings.System.DOZE_TRIGGER_TILT, 
+                 value ? 1 : 0);
+            Utils.enableService(Utils.isDozeEnabled(context), context);
+            return true;
+        } else if (preference == mPickUpPreference) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, Settings.System.DOZE_TRIGGER_PICKUP, 
+                 value ? 1 : 0);
+            Utils.enableService(Utils.isDozeEnabled(context), context);
+            return true;
+        } else if (preference == mHandwavePreference) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, Settings.System.DOZE_TRIGGER_HANDWAVE, 
+                 value ? 1 : 0);
+            Utils.enableService(Utils.isDozeEnabled(context), context);
+            return true;
+        } else if (preference == mPocketPreference) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, Settings.System.DOZE_TRIGGER_POCKET, 
+                 value ? 1 : 0);
+            Utils.enableService(Utils.isDozeEnabled(context), context);
+            return true;
         }
-        return true;
-    }
 
-    private static boolean isPickupSensorUsedByDefault(Context context) {
-        return getConfigBoolean(context, "doze_pulse_on_pick_up");
-    }
-
-    private static Boolean getConfigBoolean(Context context, String configBooleanName) {
-        int resId = -1;
-        Boolean b = true;
-        PackageManager pm = context.getPackageManager();
-        if (pm == null) {
-            return null;
-        }
-
-        Resources systemUiResources;
-        try {
-            systemUiResources = pm.getResourcesForApplication(SYSTEMUI_METADATA_NAME);
-        } catch (Exception e) {
-            Log.e("DozeSettings:", "can't access systemui resources",e);
-            return null;
-        }
-
-        resId = systemUiResources.getIdentifier(
-            SYSTEMUI_METADATA_NAME + ":bool/" + configBooleanName, null, null);
-        if (resId > 0) {
-            b = systemUiResources.getBoolean(resId);
-        }
-        return b;
+        return false;
     }
 
     private void showDozeBrightnessDialog() {
@@ -218,12 +273,11 @@ public class AmbientSettings extends SettingsPreferenceFragment
             return;
         }
 
-        mDozeBrightnessDialog = new DozeBrightnessDialog(getActivity());
+        mDozeBrightnessDialog = new DozeBrightnessDialog(getContext());
         mDozeBrightnessDialog.show();
     }
 
     private class DozeBrightnessDialog extends AlertDialog implements DialogInterface.OnClickListener {
-
         private SeekBar mBacklightBar;
         private EditText mBacklightInput;
         private int mCurrentBrightness;
@@ -236,7 +290,6 @@ public class AmbientSettings extends SettingsPreferenceFragment
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             final View v = getLayoutInflater().inflate(R.layout.dialog_doze_brightness, null);
-            final Context context = getContext();
 
             mBacklightBar = (SeekBar) v.findViewById(R.id.doze_seek);
             mBacklightInput = (EditText) v.findViewById(R.id.doze_input);
@@ -247,7 +300,7 @@ public class AmbientSettings extends SettingsPreferenceFragment
 
             final int dozeBrightnessConfig = getResources().getInteger(
                     com.android.internal.R.integer.config_screenBrightnessDoze);
-            mCurrentBrightness = Settings.System.getInt(getContentResolver(),
+            mCurrentBrightness = Settings.System.getInt(getContext().getContentResolver(),
                     Settings.System.DOZE_SCREEN_BRIGHTNESS, dozeBrightnessConfig);
 
             final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
