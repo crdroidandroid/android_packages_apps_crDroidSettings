@@ -28,8 +28,17 @@
         <ListPreference
             android:entries="@array/doze_pulse_duration_in_entries"
             android:entryValues="@array/doze_pulse_duration_in_values"
-            android:key="doze_pulse_in"
-            android:title="@string/doze_pulse_duration_in_title"
+            android:key="doze_fade_in_pickup"
+            android:title="@string/doze_fade_in_pickup_title"
+            android:summary="@string/doze_pulse_duration_in_summary"
+            android:persistent="false"
+            android:dependency="doze_overwrite_value" />
+
+        <ListPreference
+            android:entries="@array/doze_pulse_duration_in_entries"
+            android:entryValues="@array/doze_pulse_duration_in_values"
+            android:key="doze_fade_in_doubletap"
+            android:title="@string/doze_fade_in_doubletap_title"
             android:summary="@string/doze_pulse_duration_in_summary"
             android:persistent="false"
             android:dependency="doze_overwrite_value" />

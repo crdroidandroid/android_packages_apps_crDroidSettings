@@ -32,7 +32,8 @@ public class AmbientSettings extends SettingsPreferenceFragment
     private static final String TAG = "AmbientSettings";
 
     private static final String KEY_DOZE = "doze";
-    private static final String KEY_DOZE_PULSE_IN = "doze_pulse_in";
+    private static final String KEY_DOZE_FADE_IN_PICKUP = "doze_fade_in_pickup";
+    private static final String KEY_DOZE_FADE_IN_DOUBLETAP = "doze_fade_in_doubletap";
     private static final String KEY_DOZE_PULSE_VISIBLE = "doze_pulse_visible";
     private static final String KEY_DOZE_PULSE_OUT = "doze_pulse_out";
     private static final String KEY_DOZE_BRIGHTNESS_LEVEL = "doze_brightness_level";
@@ -40,7 +41,8 @@ public class AmbientSettings extends SettingsPreferenceFragment
     private static final String SYSTEMUI_METADATA_NAME = "com.android.systemui";
 
     private SwitchPreference mDozePreference;
-    private ListPreference mDozePulseIn;
+    private ListPreference mDozeFadeInPickup;
+    private ListPreference mDozeFadeInDoubleTap;
     private ListPreference mDozePulseVisible;
     private ListPreference mDozePulseOut;
 
@@ -63,8 +65,11 @@ public class AmbientSettings extends SettingsPreferenceFragment
         mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
         mDozePreference.setOnPreferenceChangeListener(this);
 
-        mDozePulseIn = (ListPreference) findPreference(KEY_DOZE_PULSE_IN);
-        mDozePulseIn.setOnPreferenceChangeListener(this);
+        mDozeFadeInPickup = (ListPreference) findPreference(KEY_DOZE_FADE_IN_PICKUP);
+        mDozeFadeInPickup.setOnPreferenceChangeListener(this);
+
+        mDozeFadeInDoubleTap = (ListPreference) findPreference(KEY_DOZE_FADE_IN_DOUBLETAP);
+        mDozeFadeInDoubleTap.setOnPreferenceChangeListener(this);
 
         mDozePulseVisible = (ListPreference) findPreference(KEY_DOZE_PULSE_VISIBLE);
         mDozePulseVisible.setOnPreferenceChangeListener(this);
@@ -78,13 +83,22 @@ public class AmbientSettings extends SettingsPreferenceFragment
     }
 
     private void updateDozeOptions() {
-        if (mDozePulseIn != null) {
+        if (mDozeFadeInPickup != null) {
             final int statusDozePulseIn = Settings.System.getInt(getContentResolver(),
-                    Settings.System.DOZE_PULSE_DURATION_IN, 500);
-            mDozePulseIn.setValue(String.valueOf(statusDozePulseIn));
-            int index = mDozePulseIn.findIndexOfValue(String.valueOf(statusDozePulseIn));
+                    Settings.System.DOZE_FADE_IN_PICKUP, 500);
+            mDozeFadeInPickup.setValue(String.valueOf(statusDozePulseIn));
+            int index = mDozeFadeInPickup.findIndexOfValue(String.valueOf(statusDozePulseIn));
             if (index != -1) {
-                mDozePulseIn.setSummary(mDozePulseIn.getEntries()[index]);
+                mDozeFadeInPickup.setSummary(mDozeFadeInPickup.getEntries()[index]);
+            }
+        }
+        if (mDozeFadeInDoubleTap != null) {
+            final int statusDozePulseIn = Settings.System.getInt(getContentResolver(),
+                    Settings.System.DOZE_FADE_IN_DOUBLETAP, 500);
+            mDozeFadeInDoubleTap.setValue(String.valueOf(statusDozePulseIn));
+            int index = mDozeFadeInDoubleTap.findIndexOfValue(String.valueOf(statusDozePulseIn));
+            if (index != -1) {
+                mDozeFadeInDoubleTap.setSummary(mDozeFadeInDoubleTap.getEntries()[index]);
             }
         }
         if (mDozePulseVisible != null) {
@@ -143,12 +157,18 @@ public class AmbientSettings extends SettingsPreferenceFragment
         if (preference == mDozePreference) {
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), Settings.Secure.DOZE_ENABLED, value ? 1 : 0);
-        } else if (preference == mDozePulseIn) {
+        } else if (preference == mDozeFadeInPickup) {
             int dozePulseIn = Integer.parseInt((String)objValue);
-            int index = mDozePulseIn.findIndexOfValue((String) objValue);
-            mDozePulseIn.setSummary(mDozePulseIn.getEntries()[index]);
+            int index = mDozeFadeInPickup.findIndexOfValue((String) objValue);
+            mDozeFadeInPickup.setSummary(mDozeFadeInPickup.getEntries()[index]);
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.DOZE_PULSE_DURATION_IN, dozePulseIn);
+                    Settings.System.DOZE_FADE_IN_PICKUP, dozePulseIn);
+        } else if (preference == mDozeFadeInDoubleTap) {
+            int dozePulseIn = Integer.parseInt((String)objValue);
+            int index = mDozeFadeInDoubleTap.findIndexOfValue((String) objValue);
+            mDozeFadeInDoubleTap.setSummary(mDozeFadeInDoubleTap.getEntries()[index]);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.DOZE_FADE_IN_DOUBLETAP, dozePulseIn);
         } else if (preference == mDozePulseVisible) {
             int dozePulseVisible = Integer.parseInt((String)objValue);
             int index = mDozePulseVisible.findIndexOfValue((String) objValue);
