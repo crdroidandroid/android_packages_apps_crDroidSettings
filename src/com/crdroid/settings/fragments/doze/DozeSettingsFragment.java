@@ -21,18 +21,18 @@ import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.pm.PackageManager;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -59,6 +59,8 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
     private static final String KEY_DOZE_TRIGGER_HANDWAVE = "doze_trigger_handwave";
     private static final String KEY_DOZE_TRIGGER_POCKET = "doze_trigger_pocket";
 
+    private static final String CATEGORY_USER = "doze_pulse_category";
+
     private SwitchPreference mDozePreference;
     private ListPreference mDozeFadeInPickup;
     private ListPreference mDozeFadeInDoubleTap;
@@ -69,6 +71,8 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
     private SwitchPreference mPickUpPreference;
     private SwitchPreference mHandwavePreference;
     private SwitchPreference mPocketPreference;
+
+    private boolean mNativeDoubleTapToDozeAvailable;
 
     private DozeBrightnessDialog mDozeBrightnessDialog;
     private Preference mDozeBrightness;
@@ -84,33 +88,44 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.doze_settings);
 
-        mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final PreferenceCategory userCategory =
+               (PreferenceCategory) prefScreen.findPreference(CATEGORY_USER);
+
+        mDozePreference = (SwitchPreference) prefScreen.findPreference(KEY_DOZE);
         mDozePreference.setOnPreferenceChangeListener(this);
 
-        mDozeFadeInPickup = (ListPreference) findPreference(KEY_DOZE_FADE_IN_PICKUP);
-        mDozeFadeInPickup.setOnPreferenceChangeListener(this);
+        mNativeDoubleTapToDozeAvailable = !TextUtils.isEmpty(
+                getContext().getResources().getString(R.string.config_dozeDoubleTapSensorType));
 
-        mDozeFadeInDoubleTap = (ListPreference) findPreference(KEY_DOZE_FADE_IN_DOUBLETAP);
+        mDozeFadeInPickup = (ListPreference) prefScreen.findPreference(KEY_DOZE_FADE_IN_PICKUP);
+        if (mNativeDoubleTapToDozeAvailable) {
+            mDozeFadeInPickup.setOnPreferenceChangeListener(this);
+        } else {
+            userCategory.removePreference(mDozeFadeInPickup);
+        }
+
+        mDozeFadeInDoubleTap = (ListPreference) prefScreen.findPreference(KEY_DOZE_FADE_IN_DOUBLETAP);
         mDozeFadeInDoubleTap.setOnPreferenceChangeListener(this);
 
-        mDozePulseVisible = (ListPreference) findPreference(KEY_DOZE_PULSE_VISIBLE);
+        mDozePulseVisible = (ListPreference) prefScreen.findPreference(KEY_DOZE_PULSE_VISIBLE);
         mDozePulseVisible.setOnPreferenceChangeListener(this);
 
-        mDozePulseOut = (ListPreference) findPreference(KEY_DOZE_PULSE_OUT);
+        mDozePulseOut = (ListPreference) prefScreen.findPreference(KEY_DOZE_PULSE_OUT);
         mDozePulseOut.setOnPreferenceChangeListener(this);
 
-        mDozeBrightness = (Preference) findPreference(KEY_DOZE_BRIGHTNESS_LEVEL);
+        mDozeBrightness = (Preference) prefScreen.findPreference(KEY_DOZE_BRIGHTNESS_LEVEL);
 
-        mTiltPreference = (SwitchPreference) findPreference(KEY_DOZE_TRIGGER_TILT);
+        mTiltPreference = (SwitchPreference) prefScreen.findPreference(KEY_DOZE_TRIGGER_TILT);
         mTiltPreference.setOnPreferenceChangeListener(this);
 
-        mPickUpPreference = (SwitchPreference) findPreference(KEY_DOZE_TRIGGER_PICKUP);
+        mPickUpPreference = (SwitchPreference) prefScreen.findPreference(KEY_DOZE_TRIGGER_PICKUP);
         mPickUpPreference.setOnPreferenceChangeListener(this);
 
-        mHandwavePreference = (SwitchPreference) findPreference(KEY_DOZE_TRIGGER_HANDWAVE);
+        mHandwavePreference = (SwitchPreference) prefScreen.findPreference(KEY_DOZE_TRIGGER_HANDWAVE);
         mHandwavePreference.setOnPreferenceChangeListener(this);
 
-        mPocketPreference = (SwitchPreference) findPreference(KEY_DOZE_TRIGGER_POCKET);
+        mPocketPreference = (SwitchPreference) prefScreen.findPreference(KEY_DOZE_TRIGGER_POCKET);
         mPocketPreference.setOnPreferenceChangeListener(this);
 
         updateState();
