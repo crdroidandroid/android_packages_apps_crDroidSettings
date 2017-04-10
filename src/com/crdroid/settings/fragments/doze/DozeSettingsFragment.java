@@ -21,6 +21,7 @@ import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -82,6 +83,8 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
     private SeekBarPreference mVibrateTilt;
     private SeekBarPreference mVibratePickup;
     private SeekBarPreference mVibrateProximity;
+
+    private SharedPreferences mPreferences;
 
     @Override
     protected int getMetricsCategory() {
@@ -327,6 +330,8 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
                  value ? 1 : 0);
             updateVibOptions();
             Utils.enableService(Utils.isDozeEnabled(context), context);
+            if (newValue != null)
+                sensorWarning(context);
             return true;
         } else if (preference == mPickUpPreference) {
             boolean value = (Boolean) newValue;
@@ -334,6 +339,8 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
                  value ? 1 : 0);
             updateVibOptions();
             Utils.enableService(Utils.isDozeEnabled(context), context);
+            if (newValue != null)
+                sensorWarning(context);
             return true;
         } else if (preference == mHandwavePreference) {
             boolean value = (Boolean) newValue;
@@ -341,6 +348,8 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
                  value ? 1 : 0);
             updateVibOptions();
             Utils.enableService(Utils.isDozeEnabled(context), context);
+            if (newValue != null)
+                sensorWarning(context);
             return true;
         } else if (preference == mPocketPreference) {
             boolean value = (Boolean) newValue;
@@ -348,6 +357,8 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
                  value ? 1 : 0);
             updateVibOptions();
             Utils.enableService(Utils.isDozeEnabled(context), context);
+            if (newValue != null)
+                sensorWarning(context);
             return true;
         } else if (preference == mVibrateTilt) {
             int val = (Integer) newValue;
@@ -367,6 +378,25 @@ public class DozeSettingsFragment extends SettingsPreferenceFragment
         }
 
         return false;
+    }
+
+    private void sensorWarning(Context context) {
+        mPreferences = context.getSharedPreferences("dozesettingsfragment", Activity.MODE_PRIVATE);
+        if (mPreferences.getBoolean("sensor_warning_shown", false)) {
+            return;
+        }
+        context.getSharedPreferences("dozesettingsfragment", Activity.MODE_PRIVATE)
+                .edit()
+                .putBoolean("sensor_warning_shown", true)
+                .commit();
+
+        new AlertDialog.Builder(context)
+                .setTitle(getResources().getString(R.string.sensor_warning_title))
+                .setMessage(getResources().getString(R.string.sensor_warning_message))
+                .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                        }
+                }).show();
     }
 
     private void showDozeBrightnessDialog() {
