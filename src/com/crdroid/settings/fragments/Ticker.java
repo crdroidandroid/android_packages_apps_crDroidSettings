@@ -23,7 +23,7 @@ public class Ticker extends SettingsPreferenceFragment
     private static final String PREF_ICON_COLOR = "status_bar_ticker_icon_color";
     private static final String PREF_TICKER_RESTORE_DEFAULTS = "ticker_restore_defaults";
 
-    private SwitchPreference mShowTicker;
+    private ListPreference mShowTicker;
     private ColorPickerPreference mTextColor;
     private ColorPickerPreference mIconColor;
     private Preference mTickerDefaults;
@@ -37,9 +37,12 @@ public class Ticker extends SettingsPreferenceFragment
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mShowTicker = (SwitchPreference) prefSet.findPreference(PREF_SHOW_TICKER);
-        mShowTicker.setChecked(Settings.System.getInt(resolver,
-            Settings.System.STATUS_BAR_SHOW_TICKER, 0) != 0);
+        mShowTicker = (ListPreference) findPreference(PREF_SHOW_TICKER);
+        int tickerMode = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.STATUS_BAR_SHOW_TICKER,
+                0, UserHandle.USER_CURRENT);
+        mShowTicker.setValue(String.valueOf(tickerMode));
+        mShowTicker.setSummary(mShowTicker.getEntry());
         mShowTicker.setOnPreferenceChangeListener(this);
 
         mTextColor = (ColorPickerPreference) prefSet.findPreference(PREF_TEXT_COLOR);
@@ -64,9 +67,12 @@ public class Ticker extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mShowTicker) {
-            int enabled = ((Boolean) newValue) ? 1 : 0;
-            Settings.System.putInt(resolver,
-                Settings.System.STATUS_BAR_SHOW_TICKER, enabled);
+            int tickerMode = Integer.parseInt((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.STATUS_BAR_SHOW_TICKER, tickerMode,
+                    UserHandle.USER_CURRENT);
+            int index = mShowTicker.findIndexOfValue((String) newValue);
+            mShowTicker.setSummary(mShowTicker.getEntries()[index]);
             return true;
         } else if (preference == mTextColor) {
             String hex = ColorPickerPreference.convertToARGB(
