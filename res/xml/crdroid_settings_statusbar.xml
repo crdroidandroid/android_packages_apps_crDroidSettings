@@ -44,6 +44,13 @@
             android:defaultValue="true" /> -->
 
         <PreferenceScreen
+            android:key="custom_carrier"
+            android:icon="@drawable/ic_label"
+            android:title="@string/custom_carrier_title"
+            android:summary="@string/custom_carrier_summary"
+            android:fragment="com.crdroid.settings.fragments.CarrierLabel" />
+
+        <PreferenceScreen
             android:key="network_traffic_state"
             android:icon="@drawable/traffic_icon"
             android:title="@string/network_traffic_title"
