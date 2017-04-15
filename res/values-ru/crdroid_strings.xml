@@ -476,6 +476,7 @@
     <string name="reset">Сброс</string>
     <string name="attention">Внимание</string>
     <string name="enabled">Включено</string>
+    <string name="disabled">Выключено</string>
     <string name="default_string">По умолчанию</string>
     <string name="add">Добавить</string>
     <string name="choose_app">Выбрать приложение</string>
@@ -605,6 +606,7 @@
     <string name="pulse_solid_dimen_category">Настройки сплошных линий</string>
     <string name="fling_lavalamp_color_from">Начальный цвет \"Лава Лампы\"</string>
     <string name="fling_lavalamp_color_to">Конечный цвет \"Лава Лампы\"</string>
+    <string name="pulse_custom_buttons_opacity_title">Прозрачность кнопок Smartbar в режиме Pulse</string>
 
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">Ширина</string>
@@ -643,6 +645,7 @@
     <string name="smartbar_ime_action_none">Ничего</string>
     <string name="smartbar_ime_action_arrows">Стрелки ввода</string>
     <string name="smartbar_ime_action_switcher">Переключатель клавиатуры</string>
+    <string name="smartbar_ime_action_dynamic">Стрелки ввода/медиа</string>
     <string name="smartbar_backup_current_config_title">Сохранить профиль</string>
     <string name="smartbar_restore_config_title">Восстановить профиль</string>
     <string name="smartbar_config_name_edit_dialog_title">Имя профиля Smartbar</string>
@@ -665,6 +668,8 @@
     <string name="status_bar_notif_count_summary">Показывать количество новых уведомлений в строке состояния</string>
     <string name="status_bar_quick_qs_pulldown_title">Быстрый доступ</string>
     <string name="status_bar_quick_qs_pulldown_summary">%1$s строки состояния открывает быстрые настройки</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">Левый край</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">Правый край</string>
     <string name="status_bar_quick_qs_pulldown_off">Выключен</string>
     <string name="status_bar_quick_qs_pulldown_left">Левый край</string>
     <string name="status_bar_quick_qs_pulldown_right">Правый край</string>
@@ -916,7 +921,8 @@
     <string name="doze_overwrite_value_title">Перезаписать значения</string>
     <string name="doze_overwrite_value_summary">Разрешить перезаписывать стандартные значения пользовательскими</string>
     <string name="doze_pulse_title">Настройки пульсации</string>
-    <string name="doze_pulse_duration_in_title">Появление</string>
+    <string name="doze_fade_in_pickup_title">Появление (Взятие в руку)</string>
+    <string name="doze_fade_in_doubletap_title">Появление (Двойное нажатие)</string>
     <string name="doze_pulse_duration_in_summary"></string>
     <string name="doze_pulse_duration_visible_title">Время отображения</string>
     <string name="doze_pulse_duration_visible_summary"></string>
@@ -941,6 +947,23 @@
     <string name="doze_notification_color_invert_summary_on">Уведомления будут инвертированы. Используйте для светлых/стоковых тем.</string>
     <string name="doze_vibrate_on_pickup_title">Вибрировать при поднятии</string>
     <string name="doze_check_proximity_before_pulse_title">Проверять датчик приближения перед пульсацией</string>
+    <string name="sensor_warning_title">Предупреждение</string>
+    <string name="sensor_warning_message">Данные настройки зависят от аппаратной совместимости. Включение датчиков для автоматического включения экрана может ускорить разряд батареи.</string>
+
+    <!-- Doze: switches -->
+    <string name="tilt_sensor_title">Датчик наклона</string>
+    <string name="pickup_sensor_title">Датчик поднятия</string>
+    <string name="proximity_sensor_title">Датчик приближения</string>
+    <string name="tilt_title">Наклон</string>
+    <string name="tilt_summary">Отображать уведомления при наклоне устройства</string>
+    <string name="pickup_title">Поднятие</string>
+    <string name="pickup_summary">Отображать уведомления при поднятии устройства</string>
+    <string name="handwave_title">Взмах рукой</string>
+    <string name="handwave_summary">Проведите ладонью над экраном для просмотра уведомлений</string>
+    <string name="pocket_title">Карман</string>
+    <string name="pocket_summary">Отображать уведомления при извлечении устройства из кармана</string>
+    <string name="doze_vibrate">Вибрация</string>
+    <string name="doze_vibrate_summary">Длительность вибрации</string>
 
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Список изменений</string>
@@ -1117,6 +1140,8 @@
     <!-- Recents Membar -->
     <string name="systemui_recents_mem_display_title">Показывать использование ОЗУ</string>
     <string name="systemui_recents_mem_display_summary">Включить/отключить шкалу использования ОЗУ в последних приложениях</string>
+    <string name="systemui_recents_mem_display_color">Цвет шкалы</string>
+    <string name="systemui_recents_mem_display_text_color">Цвет текста</string>
 
     <!-- Recents panel settings -->
     <string name="show_clear_all_recents_button_title">Кнопка \"Очистить всё\"</string>
@@ -1432,4 +1457,22 @@
     <string name="volte_icon_title">Значок VoLTE</string>
     <string name="volte_icon_summary">Отображать значок VoLTE</string>
 
+    <!-- Ad Away -->
+    <string name="adaway_title">Ad Away</string>
+    <string name="adaway_summary">Блокировка нежелательной рекламы</string>
+
+
+    <!-- Carrier Label -->
+    <string name="custom_carrier_title">Имя оператора</string>
+    <string name="custom_carrier_summary">Настроить имя оператора</string>
+    <string name="custom_carrier_label_title">Пользовательское имя оператора</string>
+    <string name="custom_carrier_label_explain">Пожалуйста, введите своё имя оператора. Оставить пустым для отображения по умолчанию.</string>
+    <string name="custom_carrier_label_notset">Имя оператора в данный момент не установлено</string>
+    <string name="show_carrier_title">Имя оператора</string>
+    <string name="show_carrier_disabled">Выключено</string>
+    <string name="show_carrier_keyguard">Только на экране блокировки</string>
+    <string name="show_carrier_statusbar">Только в строке состояния</string>
+    <string name="show_carrier_enabled">На экране блокировки и в строке состояния</string>
+    <string name="status_bar_carrier_color">Цвет шрифта имени оператора</string>
+    <string name="status_bar_carrier_size">Размер шрифта имени оператора</string>
 </resources>
