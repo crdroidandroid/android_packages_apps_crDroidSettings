@@ -4,6 +4,7 @@ import android.content.ContentResolver;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v14.preference.SwitchPreference;
+import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceScreen;
@@ -48,8 +49,8 @@ public class Ticker extends SettingsPreferenceFragment
         mTextColor = (ColorPickerPreference) prefSet.findPreference(PREF_TEXT_COLOR);
         mTextColor.setOnPreferenceChangeListener(this);
         int textColor = Settings.System.getInt(resolver,
-            Settings.System.STATUS_BAR_TICKER_TEXT_COLOR, 0xffb0b0b0);
-        String textHexColor = String.format("#%08x", (0xffb0b0b0 & textColor));
+            Settings.System.STATUS_BAR_TICKER_TEXT_COLOR, 0xffffffff);
+        String textHexColor = String.format("#%08x", (0xffffffff & textColor));
         mTextColor.setSummary(textHexColor);
         mTextColor.setNewPreviewColor(textColor);
 
@@ -102,10 +103,10 @@ public class Ticker extends SettingsPreferenceFragment
             String hexColor;
 
             Settings.System.putInt(resolver,
-                    Settings.System.STATUS_BAR_TICKER_TEXT_COLOR, 0xffb0b0b0);
+                    Settings.System.STATUS_BAR_TICKER_TEXT_COLOR, 0xffffffff);
             intColor = Settings.System.getInt(resolver,
-                    Settings.System.STATUS_BAR_TICKER_TEXT_COLOR, 0xffb0b0b0);
-            hexColor = String.format("#%08x", (0xffb0b0b0 & intColor));
+                    Settings.System.STATUS_BAR_TICKER_TEXT_COLOR, 0xffffffff);
+            hexColor = String.format("#%08x", (0xffffffff & intColor));
             mTextColor.setSummary(hexColor);
             mTextColor.setNewPreviewColor(intColor);
 
