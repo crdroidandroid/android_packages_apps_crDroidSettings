@@ -31,11 +31,17 @@
 
     </PreferenceCategory> -->
 
-    <!-- ASUS
+    <!-- ASUS -->
     <PreferenceCategory
         android:title="@string/device_category_asus_title">
 
-    </PreferenceCategory> -->
+        <Preference
+            android:id="@+id/device_asus_Z00L"
+            android:icon="@drawable/phone_tint"
+            android:title="@string/device_asus_Z00L"
+            android:summary="@string/device_asus_Z00L_summary"
+            android:selectable="false" />
+    </PreferenceCategory>
 
     <!-- HTC -->
     <PreferenceCategory
@@ -369,6 +375,20 @@
             android:icon="@drawable/phone_tint"
             android:title="@string/device_samsung_klte"
             android:summary="@string/device_samsung_klte_summary"
+            android:selectable="false" />
+
+        <Preference
+            android:id="@+id/device_samsung_herolte"
+            android:icon="@drawable/phone_tint"
+            android:title="@string/device_samsung_herolte"
+            android:summary="@string/device_samsung_herolte_summary"
+            android:selectable="false" />
+
+        <Preference
+            android:id="@+id/device_samsung_hero2lte"
+            android:icon="@drawable/phone_tint"
+            android:title="@string/device_samsung_hero2lte"
+            android:summary="@string/device_samsung_hero2lte_summary"
             android:selectable="false" />
     </PreferenceCategory>
 
