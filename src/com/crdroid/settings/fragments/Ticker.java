@@ -2,6 +2,7 @@ package com.crdroid.settings.fragments;
 
 import android.content.ContentResolver;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.ListPreference;
