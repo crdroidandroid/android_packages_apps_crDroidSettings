@@ -20,18 +20,18 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="lock_screen_show_weather"
-        android:title="@string/lock_screen_show_weather_title"
-        android:summaryOn="@string/lock_screen_show_weather_summaryOn"
-        android:summaryOff="@string/lock_screen_show_weather_summaryOff" />
+        android:key="lock_screen_weather"
+        android:title="@string/lock_screen_weather_title"
+        android:summaryOn="@string/lock_screen_weather_summaryOn"
+        android:summaryOff="@string/lock_screen_weather_summaryOff" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="lock_screen_show_weather_location"
-        android:title="@string/lock_screen_show_location_title"
-        android:summaryOn="@string/lock_screen_show_location_summaryOn"
-        android:summaryOff="@string/lock_screen_show_location_summaryOff"
+        android:key="lock_screen_weather_location"
+        android:title="@string/lock_screen_location_title"
+        android:summaryOn="@string/lock_screen_location_summaryOn"
+        android:summaryOff="@string/lock_screen_location_summaryOff"
         android:defaultValue="true"
-        android:dependency="lock_screen_show_weather" />
+        android:dependency="lock_screen_weather" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="lock_screen_weather_condition_icon"
@@ -39,7 +39,7 @@
         android:summaryOn="@string/lock_screen_weather_condition_icon_summaryOn"
         android:summaryOff="@string/lock_screen_weather_condition_icon_summaryOff"
         android:defaultValue="true"
-        android:dependency="lock_screen_show_weather" />
+        android:dependency="lock_screen_weather" />
 
     <!-- OmniJaws -->
     <PreferenceScreen
