@@ -66,6 +66,13 @@
         android:entryValues="@array/screenshot_type_values" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="toast_icon"
+        android:icon="@drawable/toast_icon"
+        android:title="@string/toast_icon_title"
+        android:summary="@string/toast_icon_summary"
+        android:defaultValue="true" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="dnd_when_call"
         android:icon="@drawable/ic_dnd"
         android:title="@string/dnd_when_call_title"
