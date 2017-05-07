@@ -60,7 +60,12 @@ public class LockScreenSettings extends SettingsPreferenceFragment
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SystemSettingSwitchPreference) findPreference(FP_SUCCESS_VIBRATE);
+        mFingerprintVib.setChecked((Settings.System.getInt(resolver,
+                Settings.System.FP_SUCCESS_VIBRATE, 1) == 1));
+
         mFpKeystore = (SystemSettingSwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
+        mFpKeystore.setChecked((Settings.System.getInt(resolver,
+                Settings.System.FP_UNLOCK_KEYSTORE, 0) == 1));
 
         if (!mFingerprintManager.isHardwareDetected()){
             gestCategory.removePreference(mFingerprintVib);
