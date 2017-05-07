@@ -19,7 +19,8 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/lockscreen_title">
 
-    <PreferenceCategory 
+    <PreferenceCategory
+        android:key="lockscreen_shortcuts_category"
         android:title="@string/lockscreen_shortcuts_category">
 
         <PreferenceScreen
@@ -50,7 +51,8 @@
          </PreferenceScreen>
     </PreferenceCategory>
 
-    <PreferenceCategory 
+    <PreferenceCategory
+        android:key="lockscreen_interface_category"
          android:title="@string/lockscreen_interface_category">
 
         <PreferenceScreen
@@ -96,19 +98,36 @@
             android:defaultValue="true" />
     </PreferenceCategory>
 
-    <PreferenceCategory 
-         android:title="@string/lockscreen_gestures_category">
+    <PreferenceCategory
+        android:key="lockscreen_gestures_category"
+        android:title="@string/lockscreen_gestures_category">
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-               android:key="double_tap_sleep_anywhere"
-               android:icon="@drawable/double_tap_icon"
-               android:title="@string/double_tap_sleep_anywhere_title"
-               android:summary="@string/double_tap_sleep_anywhere_summary"
-               android:defaultValue="false" />
+            android:key="double_tap_sleep_anywhere"
+            android:icon="@drawable/double_tap_icon"
+            android:title="@string/double_tap_sleep_anywhere_title"
+            android:summary="@string/double_tap_sleep_anywhere_summary"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="fp_success_vibrate"
+            android:icon="@drawable/ic_fingerprint"
+            android:title="@string/fp_success_vibrate_title"
+            android:summary="@string/fp_success_vibrate_summary"
+            android:defaultValue="true"
+            android:persistent="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="fp_unlock_keystore"
+            android:icon="@drawable/ic_fingerprint"
+            android:title="@string/fp_unlock_keystore_title"
+            android:summary="@string/fp_unlock_keystore_summary"
+            android:persistent="false" />
     </PreferenceCategory>
 
-    <PreferenceCategory 
-         android:title="@string/lockscreen_misc_category">
+    <PreferenceCategory
+        android:key="lockscreen_misc_category"
+        android:title="@string/lockscreen_misc_category">
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
                android:key="lock_screen_custom_notif"
