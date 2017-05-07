@@ -22,8 +22,6 @@ import com.android.settings.Utils;
 
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 
-import com.crdroid.settings.preferences.SystemSettingSwitchPreference;
-
 public class LockScreenSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
@@ -34,8 +32,8 @@ public class LockScreenSettings extends SettingsPreferenceFragment
 
     private SeekBarPreference mMaxKeyguardNotifConfig;
     private FingerprintManager mFingerprintManager;
-    private SystemSettingSwitchPreference mFingerprintVib;
-    private SystemSettingSwitchPreference mFpKeystore;
+    private SwitchPreference mFingerprintVib;
+    private SwitchPreference mFpKeystore;
 
     @Override
     protected int getMetricsCategory() {
@@ -59,13 +57,15 @@ public class LockScreenSettings extends SettingsPreferenceFragment
         mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-        mFingerprintVib = (SystemSettingSwitchPreference) findPreference(FP_SUCCESS_VIBRATE);
+        mFingerprintVib = (SwitchPreference) findPreference(FP_SUCCESS_VIBRATE);
         mFingerprintVib.setChecked((Settings.System.getInt(resolver,
                 Settings.System.FP_SUCCESS_VIBRATE, 1) == 1));
+        mFingerprintVib.setOnPreferenceChangeListener(this);
 
-        mFpKeystore = (SystemSettingSwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
+        mFpKeystore = (SwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
         mFpKeystore.setChecked((Settings.System.getInt(resolver,
                 Settings.System.FP_UNLOCK_KEYSTORE, 0) == 1));
+        mFpKeystore.setOnPreferenceChangeListener(this);
 
         if (!mFingerprintManager.isHardwareDetected()){
             gestCategory.removePreference(mFingerprintVib);
@@ -77,9 +77,19 @@ public class LockScreenSettings extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mMaxKeyguardNotifConfig) {
-            int kgconf = (Integer) newValue;
+            int value = (Integer) newValue;
             Settings.System.putInt(resolver,
-                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, kgconf);
+                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, value);
+            return true;
+        } else if (preference == mFingerprintVib) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.FP_SUCCESS_VIBRATE, value);
+            return true;
+        } else if (preference == mFpKeystore) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.FP_UNLOCK_KEYSTORE, value);
             return true;
         }
         return false;

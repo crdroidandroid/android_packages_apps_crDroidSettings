@@ -109,7 +109,7 @@
             android:summary="@string/double_tap_sleep_anywhere_summary"
             android:defaultValue="false" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <SwitchPreference
             android:key="fp_success_vibrate"
             android:icon="@drawable/ic_fp"
             android:title="@string/fp_success_vibrate_title"
@@ -117,7 +117,7 @@
             android:defaultValue="true"
             android:persistent="false" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <SwitchPreference
             android:key="fp_unlock_keystore"
             android:icon="@drawable/ic_fp"
             android:title="@string/fp_unlock_keystore_title"
