@@ -82,14 +82,14 @@ public class LockScreenSettings extends SettingsPreferenceFragment
                     Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, value);
             return true;
         } else if (preference == mFingerprintVib) {
-            int value = (Integer) newValue;
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
-                    Settings.System.FP_SUCCESS_VIBRATE, value);
+                    Settings.System.FP_SUCCESS_VIBRATE, value ? 1: 0);
             return true;
         } else if (preference == mFpKeystore) {
-            int value = (Integer) newValue;
+            boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
-                    Settings.System.FP_UNLOCK_KEYSTORE, value);
+                    Settings.System.FP_UNLOCK_KEYSTORE, value ? 1: 0);
             return true;
         }
         return false;
