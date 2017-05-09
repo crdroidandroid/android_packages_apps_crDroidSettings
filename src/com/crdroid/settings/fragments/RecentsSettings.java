@@ -83,7 +83,6 @@ public class RecentsSettings extends SettingsPreferenceFragment
 
         mOmniSwitchSettings = (Preference)
                 prefSet.findPreference(OMNISWITCH_START_SETTINGS);
-        mOmniSwitchSettings.setEnabled(mRecentsUseOmniSwitch.isChecked());
 
         // clear all location
         mRecentsClearAllLocation = (ListPreference) prefSet.findPreference(RECENTS_CLEAR_ALL_LOCATION);
@@ -151,7 +150,6 @@ public class RecentsSettings extends SettingsPreferenceFragment
 
             Settings.System.putInt(
                     resolver, Settings.System.RECENTS_USE_OMNISWITCH, value ? 1 : 0);
-            mOmniSwitchSettings.setEnabled(value);
             return true;
         } else if (preference == mRecentsClearAllLocation) {
             int location = Integer.parseInt((String) newValue);
