@@ -56,7 +56,7 @@ public class About extends SettingsPreferenceFragment {
         if (preference == mSourceUrl) {
             launchUrl("https://github.com/crdroidandroid");
         } else if (preference == mGoogleUrl) {
-            launchUrl("https://plus.google.com/u/0/communities/118297646046960923906");
+            launchUrl("https://plus.google.com/communities/118297646046960923906");
         } else if (preference == mShare) {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_SEND);
