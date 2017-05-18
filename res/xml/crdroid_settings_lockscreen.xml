@@ -49,13 +49,13 @@
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.cm.LockscreenShortcutsActivity" />
          </PreferenceScreen>
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:key="lockscreen_interface_category"
          android:title="@string/lockscreen_interface_category">
 
-        <PreferenceScreen
+        <!--<PreferenceScreen
             android:key="lock_screen_weather"
             android:icon="@drawable/ic_weather"
             android:title="@string/lock_screen_weather_title"
@@ -95,7 +95,7 @@
             android:icon="@drawable/ic_shapes"
             android:title="@string/lockscreen_hide_status_bar_title"
             android:summary="@string/lockscreen_hide_status_bar_summary"
-            android:defaultValue="true" />
+            android:defaultValue="true" /> -->
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
@@ -105,7 +105,7 @@
             android:defaultValue="true" />
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="lockscreen_gestures_category"
         android:title="@string/lockscreen_gestures_category">
 
