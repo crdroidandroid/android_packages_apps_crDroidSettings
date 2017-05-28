@@ -80,6 +80,13 @@
             android:entryValues="@array/recents_clear_all_location_values"
             android:defaultValue="3"
             android:dependency="show_clear_all_recents" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="recents_lock_icon"
+            android:icon="@drawable/ic_lock_outline"
+            android:title="@string/recents_lock_icon_title"
+            android:summary="@string/recents_lock_icon_summary"
+            android:defaultValue="false" />
     </PreferenceCategory>
 
     <PreferenceCategory 
