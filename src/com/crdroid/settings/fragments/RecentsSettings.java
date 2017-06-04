@@ -31,6 +31,8 @@ public class RecentsSettings extends SettingsPreferenceFragment
     private static final String MEM_TEXT_COLOR = "systemui_recents_mem_textcolor";
     private static final String IMMERSIVE_RECENTS = "immersive_recents";
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+    private static final String RECENTS_LOCK_ICON = "recents_lock_icon";
+    private static final String RECENTS_USE_GRID = "recents_use_grid";
 
     private static final String RECENTS_USE_OMNISWITCH = "recents_use_omniswitch";
     private static final String OMNISWITCH_START_SETTINGS = "omniswitch_start_settings";
@@ -45,6 +47,8 @@ public class RecentsSettings extends SettingsPreferenceFragment
     private ColorPickerPreference mMemTextColor;
     private SwitchPreference mRecentsClearAll;
     private SwitchPreference mRecentsUseOmniSwitch;
+    private SwitchPreference mLockIcon;
+    private SwitchPreference mUseGrid;
     private Preference mOmniSwitchSettings;
     private boolean mOmniSwitchInitCalled;
     private ListPreference mImmersiveRecents;
@@ -119,6 +123,30 @@ public class RecentsSettings extends SettingsPreferenceFragment
         }
         mMemTextColor.setNewPreviewColor(intColorText);
         mMemTextColor.setOnPreferenceChangeListener(this);
+
+        mLockIcon = (SwitchPreference)
+                prefSet.findPreference(RECENTS_LOCK_ICON);
+        try {
+           mLockIcon.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.RECENTS_LOCK_ICON) == 1);
+           mLockIcon.setEnabled(Settings.System.getInt(resolver,
+                    Settings.System.RECENTS_USE_GRID) != 1);
+        } catch(SettingNotFoundException e){
+            // if the settings value is unset
+        }
+        mLockIcon.setOnPreferenceChangeListener(this);
+
+        mUseGrid = (SwitchPreference)
+                prefSet.findPreference(RECENTS_USE_GRID);
+        try {
+            mUseGrid.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.RECENTS_USE_GRID) == 1);
+            mUseGrid.setEnabled(Settings.System.getInt(resolver,
+                    Settings.System.RECENTS_LOCK_ICON) != 1);
+        } catch(SettingNotFoundException e){
+            // if the settings value is unset
+        }
+        mUseGrid.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -183,6 +211,18 @@ public class RecentsSettings extends SettingsPreferenceFragment
             Settings.System.putInt(resolver,
                     Settings.System.SYSTEMUI_RECENTS_MEM_TEXTCOLOR,
                     intHex);
+            return true;
+        } else if (preference == mLockIcon) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(
+                    resolver, Settings.System.RECENTS_LOCK_ICON, value ? 1 : 0);
+            mUseGrid.setEnabled(!value);
+            return true;
+        } else if (preference == mUseGrid) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(
+                    resolver, Settings.System.RECENTS_USE_GRID, value ? 1 : 0);
+            mLockIcon.setEnabled(!value);
             return true;
         }
         return false;
