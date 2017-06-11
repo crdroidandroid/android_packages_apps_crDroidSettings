@@ -124,28 +124,27 @@ public class RecentsSettings extends SettingsPreferenceFragment
         mMemTextColor.setNewPreviewColor(intColorText);
         mMemTextColor.setOnPreferenceChangeListener(this);
 
+        boolean lockicon = false, usegrid = false;
+        try {
+            lockicon = Settings.System.getInt(resolver,
+                    Settings.System.RECENTS_LOCK_ICON) == 1;
+            usegrid = Settings.System.getInt(resolver,
+                    Settings.System.RECENTS_USE_GRID) == 1;
+        } catch (SettingNotFoundException e) {
+            // if the settings value is unset
+        }
+
         mLockIcon = (SwitchPreference)
                 prefSet.findPreference(RECENTS_LOCK_ICON);
-        try {
-           mLockIcon.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.RECENTS_LOCK_ICON) == 1);
-           mLockIcon.setEnabled(Settings.System.getInt(resolver,
-                    Settings.System.RECENTS_USE_GRID) != 1);
-        } catch(SettingNotFoundException e){
-            // if the settings value is unset
-        }
-        mLockIcon.setOnPreferenceChangeListener(this);
-
         mUseGrid = (SwitchPreference)
                 prefSet.findPreference(RECENTS_USE_GRID);
-        try {
-            mUseGrid.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.RECENTS_USE_GRID) == 1);
-            mUseGrid.setEnabled(Settings.System.getInt(resolver,
-                    Settings.System.RECENTS_LOCK_ICON) != 1);
-        } catch(SettingNotFoundException e){
-            // if the settings value is unset
-        }
+
+        mLockIcon.setChecked(lockicon);
+        mUseGrid.setChecked(usegrid);
+        mLockIcon.setEnabled(!usegrid || lockicon);
+        mUseGrid.setEnabled(!lockicon || usegrid);
+
+        mLockIcon.setOnPreferenceChangeListener(this);
         mUseGrid.setOnPreferenceChangeListener(this);
     }
 
