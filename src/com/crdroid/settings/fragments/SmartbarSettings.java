@@ -69,6 +69,7 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
     private ListPreference mImeActions;
     private ListPreference mButtonAnim;
     private SeekBarPreference mButtonsAlpha;
+    private ListPreference mButtonLongpressDelay;
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int MENU_SAVE = Menu.FIRST + 1;
@@ -114,6 +115,12 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
                 Settings.Secure.NAVBAR_BUTTONS_ALPHA, 255, UserHandle.USER_CURRENT);
         mButtonsAlpha.setValue(bAlpha / 1);
         mButtonsAlpha.setOnPreferenceChangeListener(this);
+
+        int longpressDelayVal = Settings.Secure.getIntForUser(getContentResolver(),
+                "smartbar_longpress_delay", 0, UserHandle.USER_CURRENT);
+        mButtonLongpressDelay = (ListPreference) findPreference("smartbar_longpress_delay");
+        mButtonLongpressDelay.setValue(String.valueOf(longpressDelayVal));
+        mButtonLongpressDelay.setOnPreferenceChangeListener(this);
 
         setHasOptionsMenu(true);
     }
@@ -251,6 +258,11 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
             Settings.Secure.putIntForUser(getContentResolver(),
                     Settings.Secure.NAVBAR_BUTTONS_ALPHA, val * 1, UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == mButtonLongpressDelay) {
+            int val = Integer.parseInt(((String) newValue).toString());
+            Settings.Secure.putIntForUser(getContentResolver(),
+                    "smartbar_longpress_delay", val, UserHandle.USER_CURRENT);
+            return true;
         }
         return false;
     }
@@ -285,6 +297,11 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
                 "navbar_buttons_alpha", 255);
         mButtonsAlpha.setValue(255);
         mButtonsAlpha.setOnPreferenceChangeListener(this);
+
+        Settings.Secure.putInt(getContentResolver(),
+                "smartbar_longpress_delay", 0);
+        mButtonLongpressDelay.setValue(String.valueOf(0));
+        mButtonLongpressDelay.setOnPreferenceChangeListener(this);
     }
 
     static class ConfigAdapter extends ArrayAdapter<File> {
