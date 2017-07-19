@@ -23,6 +23,14 @@
         android:title="@string/smartbar_editor_title"
         android:summary="@string/smartbar_editor_summary" />
 
+    <com.crdroid.settings.preferences.SeekBarPreference
+        android:key="smartbar_custom_icon_size"
+        android:title="@string/smartbar_custom_icon_size_title"
+        android:max="100"
+        settings:min="10"
+        settings:units="%"
+        android:persistent="false" />
+
     <ListPreference
         android:key="smartbar_context_menu_position"
         android:title="@string/smartbar_context_menu_position_title"

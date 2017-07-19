@@ -27,6 +27,7 @@ import java.util.ArrayList;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -68,8 +69,9 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
     private ListPreference mSmartBarContext;
     private ListPreference mImeActions;
     private ListPreference mButtonAnim;
-    private SeekBarPreference mButtonsAlpha;
     private ListPreference mButtonLongpressDelay;
+    private SeekBarPreference mButtonsAlpha;
+    private SeekBarPreference mCustomButtonScaling;
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int MENU_SAVE = Menu.FIRST + 1;
@@ -85,42 +87,52 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
     private static final String KEY_SMARTBAR_BACKUP = "smartbar_profile_save";
     private static final String KEY_SMARTBAR_RESTORE = "smartbar_profile_restore";
     private static final String PREF_NAVBAR_BUTTONS_ALPHA = "navbar_buttons_alpha";
+    private static final String PREF_SMARTBAR_CUSTOM_ICON_SIZE = "smartbar_custom_icon_size";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.smartbar_settings);
 
-        int contextVal = Settings.Secure.getIntForUser(getContentResolver(),
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        int contextVal = Settings.Secure.getIntForUser(resolver,
                 "smartbar_context_menu_mode", 0, UserHandle.USER_CURRENT);
         mSmartBarContext = (ListPreference) findPreference("smartbar_context_menu_position");
         mSmartBarContext.setValue(String.valueOf(contextVal));
         mSmartBarContext.setOnPreferenceChangeListener(this);
 
-        int imeVal = Settings.Secure.getIntForUser(getContentResolver(),
+        int imeVal = Settings.Secure.getIntForUser(resolver,
                 "smartbar_ime_hint_mode", 1, UserHandle.USER_CURRENT);
         mImeActions = (ListPreference) findPreference("smartbar_ime_action");
         mImeActions.setValue(String.valueOf(imeVal));
         mImeActions.setOnPreferenceChangeListener(this);
 
-        int buttonAnimVal = Settings.Secure.getIntForUser(getContentResolver(),
+        int buttonAnimVal = Settings.Secure.getIntForUser(resolver,
                 "smartbar_button_animation_style", 0, UserHandle.USER_CURRENT);
         mButtonAnim = (ListPreference) findPreference("smartbar_button_animation");
         mButtonAnim.setValue(String.valueOf(buttonAnimVal));
         mButtonAnim.setOnPreferenceChangeListener(this);
 
-        mButtonsAlpha =
-                (SeekBarPreference) findPreference(PREF_NAVBAR_BUTTONS_ALPHA);
-        int bAlpha = Settings.Secure.getIntForUser(getContentResolver(),
-                Settings.Secure.NAVBAR_BUTTONS_ALPHA, 255, UserHandle.USER_CURRENT);
-        mButtonsAlpha.setValue(bAlpha / 1);
-        mButtonsAlpha.setOnPreferenceChangeListener(this);
-
-        int longpressDelayVal = Settings.Secure.getIntForUser(getContentResolver(),
+        int longpressDelayVal = Settings.Secure.getIntForUser(resolver,
                 "smartbar_longpress_delay", 0, UserHandle.USER_CURRENT);
         mButtonLongpressDelay = (ListPreference) findPreference("smartbar_longpress_delay");
         mButtonLongpressDelay.setValue(String.valueOf(longpressDelayVal));
         mButtonLongpressDelay.setOnPreferenceChangeListener(this);
+
+        mButtonsAlpha =
+                (SeekBarPreference) findPreference(PREF_NAVBAR_BUTTONS_ALPHA);
+        int bAlpha = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.NAVBAR_BUTTONS_ALPHA, 255, UserHandle.USER_CURRENT);
+        mButtonsAlpha.setValue(bAlpha / 1);
+        mButtonsAlpha.setOnPreferenceChangeListener(this);
+
+        mCustomButtonScaling =
+                (SeekBarPreference) findPreference(PREF_SMARTBAR_CUSTOM_ICON_SIZE);
+        int size = Settings.Secure.getIntForUser(resolver,
+                "smartbar_custom_icon_size", 60, UserHandle.USER_CURRENT);
+        mCustomButtonScaling.setValue(size);
+        mCustomButtonScaling.setOnPreferenceChangeListener(this);
 
         setHasOptionsMenu(true);
     }
@@ -238,30 +250,37 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+
         if (preference.equals(mSmartBarContext)) {
-            int position = Integer.parseInt(((String) newValue).toString());
-            Settings.Secure.putInt(getContentResolver(), "smartbar_context_menu_mode",
-                    position);
+            int val = Integer.parseInt((String) newValue);
+            Settings.Secure.putIntForUser(resolver, "smartbar_context_menu_mode",
+                    val, UserHandle.USER_CURRENT);
             return true;
         } else if (preference.equals(mButtonAnim)) {
-            int val = Integer.parseInt(((String) newValue).toString());
-            Settings.Secure.putInt(getContentResolver(), "smartbar_button_animation_style",
-                    val);
+            int val = Integer.parseInt((String) newValue);
+            Settings.Secure.putIntForUser(resolver, "smartbar_button_animation_style",
+                    val, UserHandle.USER_CURRENT);
             return true;
         } else if (preference.equals(mImeActions)) {
-            int val = Integer.parseInt(((String) newValue).toString());
-            Settings.Secure.putInt(getContentResolver(), "smartbar_ime_hint_mode",
-                    val);
+            int val = Integer.parseInt((String) newValue);
+            Settings.Secure.putIntForUser(resolver, "smartbar_ime_hint_mode",
+                    val, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mButtonLongpressDelay) {
+            int val = Integer.parseInt((String) newValue);
+            Settings.Secure.putIntForUser(resolver,
+                    "smartbar_longpress_delay", val, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mButtonsAlpha) {
             int val = (Integer) newValue;
-            Settings.Secure.putIntForUser(getContentResolver(),
-                    Settings.Secure.NAVBAR_BUTTONS_ALPHA, val * 1, UserHandle.USER_CURRENT);
+            Settings.Secure.putIntForUser(resolver,
+                    "navbar_buttons_alpha", val, UserHandle.USER_CURRENT);
             return true;
-        } else if (preference == mButtonLongpressDelay) {
-            int val = Integer.parseInt(((String) newValue).toString());
-            Settings.Secure.putIntForUser(getContentResolver(),
-                    "smartbar_longpress_delay", val, UserHandle.USER_CURRENT);
+        } else if (preference == mCustomButtonScaling) {
+            int val = (Integer) newValue;
+            Settings.Secure.putIntForUser(resolver,
+                    "smartbar_custom_icon_size", val, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
@@ -274,34 +293,41 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
                Config.setConfig(getActivity(),
         ActionConstants.getDefaults(ActionConstants.SMARTBAR),
                buttonConfigs);
+        ContentResolver resolver = getActivity().getContentResolver();
+
         Intent intent = new Intent("intent_navbar_edit");
         intent.putExtra("extra_navbar_edit_reset_layout", "resetMePlox");
         getActivity().sendBroadcastAsUser(intent, UserHandle.CURRENT);
 
-        Settings.Secure.putInt(getContentResolver(),
-                "smartbar_context_menu_mode", 0);
+        Settings.Secure.putIntForUser(resolver,
+                "smartbar_context_menu_mode", 0, UserHandle.USER_CURRENT);
         mSmartBarContext.setValue(String.valueOf(0));
         mSmartBarContext.setOnPreferenceChangeListener(this);
 
-        Settings.Secure.putInt(getContentResolver(),
-                "smartbar_ime_hint_mode", 1);
+        Settings.Secure.putIntForUser(resolver,
+                "smartbar_ime_hint_mode", 1, UserHandle.USER_CURRENT);
         mImeActions.setValue(String.valueOf(1));
         mImeActions.setOnPreferenceChangeListener(this);
 
-        Settings.Secure.putInt(getContentResolver(),
-                "smartbar_button_animation_style", 0);
+        Settings.Secure.putIntForUser(resolver,
+                "smartbar_button_animation_style", 0, UserHandle.USER_CURRENT);
         mButtonAnim.setValue(String.valueOf(0));
         mButtonAnim.setOnPreferenceChangeListener(this);
 
-        Settings.Secure.putInt(getContentResolver(),
-                "navbar_buttons_alpha", 255);
+        Settings.Secure.putIntForUser(resolver,
+                "smartbar_longpress_delay", 0, UserHandle.USER_CURRENT);
+        mButtonLongpressDelay.setValue(String.valueOf(0));
+        mButtonLongpressDelay.setOnPreferenceChangeListener(this);
+
+        Settings.Secure.putIntForUser(resolver,
+                "navbar_buttons_alpha", 255, UserHandle.USER_CURRENT);
         mButtonsAlpha.setValue(255);
         mButtonsAlpha.setOnPreferenceChangeListener(this);
 
-        Settings.Secure.putInt(getContentResolver(),
-                "smartbar_longpress_delay", 0);
-        mButtonLongpressDelay.setValue(String.valueOf(0));
-        mButtonLongpressDelay.setOnPreferenceChangeListener(this);
+        Settings.Secure.putIntForUser(resolver,
+                "smartbar_custom_icon_size", 60, UserHandle.USER_CURRENT);
+        mButtonsAlpha.setValue(60);
+        mButtonsAlpha.setOnPreferenceChangeListener(this);
     }
 
     static class ConfigAdapter extends ArrayAdapter<File> {
