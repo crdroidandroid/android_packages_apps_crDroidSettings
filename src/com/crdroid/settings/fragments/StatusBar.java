@@ -51,9 +51,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private static final String KEY_VOLTE_ICON_STYLE = "volte_icon_style";
     private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
+    private static final String KEY_SHOW_FOURG = "show_fourg_icon";
 
     private SystemSettingSeekBarPreference mVolteIconStyle;
     private SwitchPreference mShowRoaming;
+    private SwitchPreference mShowFourg;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,10 +67,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         mVolteIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOLTE_ICON_STYLE);
         mShowRoaming = (SwitchPreference) findPreference(KEY_SHOW_ROAMING);
+        mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
 
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(mVolteIconStyle);
             prefScreen.removePreference(mShowRoaming);
+            prefScreen.removePreference(mShowFourg);
         }
     }
 
@@ -83,6 +87,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.VOLTE_ICON_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ROAMING_INDICATOR_ICON, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -103,6 +109,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
                     if (!TelephonyUtils.isVoiceCapable(context)) {
                         keys.add(KEY_VOLTE_ICON_STYLE);
                         keys.add(KEY_SHOW_ROAMING);
+                        keys.add(KEY_SHOW_FOURG);
                     }
 
                     return keys;
