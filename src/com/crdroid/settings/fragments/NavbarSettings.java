@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 TeamEos
+ * Copyright (C) 2016-2017 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,32 +16,26 @@
 
 package com.crdroid.settings.fragments;
 
-import java.util.ArrayList;
-
-import android.app.AlertDialog;
 import android.content.ContentResolver;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.provider.Settings;
 import android.widget.Toast;
 
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.internal.utils.du.ActionConstants;
 import com.android.internal.utils.du.Config;
-import com.android.internal.utils.du.DUActionUtils;
 import com.android.internal.utils.du.Config.ButtonConfig;
+import com.android.internal.utils.du.DUActionUtils;
 import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.preferences.SeekBarPreference;
 
