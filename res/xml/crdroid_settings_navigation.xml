@@ -57,17 +57,6 @@
             android:title="@string/fling_settings"
             android:summary="@string/fling_settings_summary"
             android:fragment="com.crdroid.settings.fragments.FlingSettings" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="category_navbar_general"
-        android:title="@string/navbar_general_title" >
-
-        <SwitchPreference
-            android:key="navbar_dynamic"
-            android:icon="@drawable/color_bucket_icon"
-            android:title="@string/navbar_dynamic_title"
-            android:summary="@string/navbar_dynamic_summary" />
 
         <com.crdroid.settings.preferences.SeekBarPreference
             android:key="navbar_height_portrait"
@@ -84,6 +73,17 @@
             android:max="135"
             settings:min="65"
             settings:units="%" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_navbar_general"
+        android:title="@string/navbar_general_title" >
+
+        <SwitchPreference
+            android:key="navbar_dynamic"
+            android:icon="@drawable/color_bucket_icon"
+            android:title="@string/navbar_dynamic_title"
+            android:summary="@string/navbar_dynamic_summary" />
 
         <com.crdroid.settings.preferences.SeekBarPreference
             android:key="navbar_width"
