@@ -1,3 +1,19 @@
+/*
+ * Copyright (C) 2016-2017 crDroid Android Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.crdroid.settings.fragments;
 
 import android.app.Activity;
@@ -66,6 +82,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
             "torch_long_press_power_gesture";
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
             "torch_long_press_power_timeout";
+    private static final String KEY_ANBI = "anbi_enabled";
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -135,6 +152,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private SwitchPreference mHomeAnswerCall;
     private SwitchPreference mTorchLongPressPowerGesture;
     private ListPreference mTorchLongPressPowerTimeout;
+    private SwitchPreference mAnbi;
 
     private Handler mHandler;
 
@@ -197,6 +215,8 @@ public class ButtonSettings extends SettingsPreferenceFragment
         // Long press power while display is off to activate torchlight
         mTorchLongPressPowerGesture =
                 (SwitchPreference) findPreference(KEY_TORCH_LONG_PRESS_POWER_GESTURE);
+
+        mAnbi = (SwitchPreference) findPreference(KEY_ANBI);
 
         final int torchLongPressPowerTimeout = CMSettings.System.getInt(resolver,
                 CMSettings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0);
@@ -275,6 +295,9 @@ public class ButtonSettings extends SettingsPreferenceFragment
         } else {
             prefScreen.removePreference(menuCategory);
         }
+
+        if (!hasHomeKey && !hasMenuKey)
+            prefScreen.removePreference(mAnbi);
 
         if (hasAssistKey) {
             if (!showAssistWake) {
