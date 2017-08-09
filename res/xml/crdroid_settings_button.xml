@@ -41,6 +41,13 @@
              android:action="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS" />
     </lineageos.preference.RemotePreference>
 
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="anbi_enabled"
+        android:icon="@drawable/ic_anbi"
+        android:title="@string/anbi_title"
+        android:summary="@string/anbi_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
         android:key="power_key"
         android:title="@string/hardware_keys_power_key_title" >

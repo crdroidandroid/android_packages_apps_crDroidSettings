@@ -58,6 +58,7 @@ public class Buttons extends SettingsPreferenceFragment implements
 
     private static final String HWKEYS_DISABLED = "hardware_keys_disable";
     private static final String KEY_SWAP_CAPACITIVE_KEYS = "swap_capacitive_keys";
+    private static final String KEY_ANBI = "anbi_enabled";
     private static final String KEY_BACK_LONG_PRESS = "hardware_keys_back_long_press";
     private static final String KEY_BACK_WAKE_SCREEN = "back_wake_screen";
     private static final String KEY_CAMERA_LAUNCH = "camera_launch";
@@ -100,6 +101,7 @@ public class Buttons extends SettingsPreferenceFragment implements
 
     private SwitchPreference mHardwareKeysDisable;
     private SwitchPreference mSwapCapacitiveKeys;
+    private SwitchPreference mAnbi;
     private ListPreference mHomeLongPressAction;
     private ListPreference mHomeDoubleTapAction;
     private ListPreference mBackLongPressAction;
@@ -164,6 +166,7 @@ public class Buttons extends SettingsPreferenceFragment implements
 
         mHardwareKeysDisable = (SwitchPreference) findPreference(HWKEYS_DISABLED);
         mSwapCapacitiveKeys = findPreference(KEY_SWAP_CAPACITIVE_KEYS);
+        mAnbi = (SwitchPreference) findPreference(KEY_ANBI);
 
         // Power button ends calls.
         mPowerEndCall = findPreference(KEY_POWER_END_CALL);
@@ -204,6 +207,15 @@ public class Buttons extends SettingsPreferenceFragment implements
 
         if (!isKeySwapperSupported(getActivity())) {
             prefScreen.removePreference(mSwapCapacitiveKeys);
+        }
+
+        if (!hasHomeKey && !hasBackKey && !hasMenuKey && !hasAssistKey && !hasAppSwitchKey) {
+            prefScreen.removePreference(mAnbi);
+            mAnbi = null;
+        } else if (isKeyDisablerSupported(getActivity())) {
+            mAnbi.setEnabled(!(Settings.System.getIntForUser(resolver,
+                    Settings.System.HARDWARE_KEYS_DISABLE, 0,
+                    UserHandle.USER_CURRENT) == 1));
         }
 
         if (hasPowerKey) {
@@ -413,7 +425,10 @@ public class Buttons extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mHardwareKeysDisable) {
-            // do nothing for now
+            boolean value = (Boolean) newValue;
+            if (mAnbi != null) {
+                mAnbi.setEnabled(!value);
+            }
             return true;
         } else if (preference == mHomeLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
@@ -524,6 +539,8 @@ public class Buttons extends SettingsPreferenceFragment implements
                 Settings.System.HARDWARE_KEYS_DISABLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SWAP_CAPACITIVE_KEYS, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.ANBI_ENABLED, 0, UserHandle.USER_CURRENT);
         PowerMenuSettings.reset(mContext);
     }
 
@@ -544,11 +561,21 @@ public class Buttons extends SettingsPreferenceFragment implements
 
                     LineageHardwareManager mLineageHardware = LineageHardwareManager.getInstance(context);
 
+                    final boolean hasHomeKey = DeviceUtils.hasHomeKey(context);
+                    final boolean hasBackKey = DeviceUtils.hasBackKey(context);
+                    final boolean hasMenuKey = DeviceUtils.hasMenuKey(context);
+                    final boolean hasAssistKey = DeviceUtils.hasAssistKey(context);
+                    final boolean hasAppSwitchKey = DeviceUtils.hasAppSwitchKey(context);
+
                     if (!isKeyDisablerSupported(context))
                         keys.add(HWKEYS_DISABLED);
 
                     if (!isKeySwapperSupported(context))
                         keys.add(KEY_SWAP_CAPACITIVE_KEYS);
+
+                    if (!hasHomeKey && !hasBackKey && !hasMenuKey && !hasAssistKey
+                            && !hasAppSwitchKey)
+                        keys.add(KEY_ANBI);
 
                     if (!DeviceUtils.hasPowerKey()) {
                         keys.add(KEY_POWER_MENU);
