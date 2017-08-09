@@ -66,6 +66,13 @@
         android:defaultValue="true" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="sensor_block"
+        android:icon="@drawable/ic_remote"
+        android:title="@string/sensor_block_title"
+        android:summary="@string/sensor_block_summary"
+        android:defaultValue="false" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="dnd_when_call"
         android:icon="@drawable/ic_dnd"
         android:title="@string/dnd_when_call_title"
