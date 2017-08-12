@@ -73,6 +73,14 @@
             android:max="135"
             settings:min="65"
             settings:units="%" />
+
+        <com.crdroid.settings.preferences.SeekBarPreference
+            android:key="navbar_width"
+            android:icon="@drawable/bar_icon"
+            android:title="@string/land_vert_title"
+            android:max="135"
+            settings:min="65"
+            settings:units="%" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -84,14 +92,6 @@
             android:icon="@drawable/color_bucket_icon"
             android:title="@string/navbar_dynamic_title"
             android:summary="@string/navbar_dynamic_summary" />
-
-        <com.crdroid.settings.preferences.SeekBarPreference
-            android:key="navbar_width"
-            android:icon="@drawable/bar_icon"
-            android:title="@string/land_vert_title"
-            android:max="135"
-            settings:min="65"
-            settings:units="%" />
 
         <PreferenceScreen
             android:key="pulse_settings"
