@@ -97,6 +97,14 @@
         android:summary="@string/wakelock_blocker_summary"
         android:fragment="com.crdroid.settings.fragments.misc.WakeLockBlocker" />
 
+    <!-- Alarm blocker -->
+    <Preference
+        android:key="alarm_blocker"
+        android:icon="@drawable/ic_alarm"
+        android:title="@string/alarm_blocker_title"
+        android:summary="@string/alarm_blocker_summary"
+        android:fragment="com.crdroid.settings.fragments.misc.AlarmBlocker" />
+
     <!-- Pocket Judge -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="pocket_judge"
