@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014 The LiquidSmooth Project
+ *           (C) 2017 faust93 at monumentum@gmail.com
  *           (C) 2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,8 +21,8 @@ package com.crdroid.settings.fragments.misc;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.os.Bundle;
-import android.os.PowerManager;
 import android.os.UserHandle;
+import android.app.AlarmManager;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,38 +54,38 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.R;
 
-public class WakeLockBlocker extends SettingsPreferenceFragment {
+public class AlarmBlocker extends SettingsPreferenceFragment {
 
-    private static final String TAG = "WakeLockBlocker";
+    private static final String TAG = "AlarmBlocker";
 
     private Switch mBlockerEnabled;
-    private ListView mWakeLockList;
-    private List<String> mSeenWakeLocks;
-    private List<String> mBlockedWakeLocks;
+    private ListView mAlarmList;
+    private List<String> mSeenAlarms;
+    private List<String> mBlockedAlarms;
     private LayoutInflater mInflater;
-    private Map<String, Boolean> mWakeLockState;
-    private WakeLockListAdapter mListAdapter;
+    private Map<String, Boolean> mAlarmState;
+    private AlarmListAdapter mListAdapter;
     private boolean mEnabled;
     private AlertDialog mAlertDialog;
     private boolean mAlertShown = false;
-    private TextView mWakeLockListHeader;
+    private TextView mAlarmListHeader;
 
     private static final int MENU_RELOAD = Menu.FIRST;
     private static final int MENU_SAVE = Menu.FIRST + 1;
 
-    public class WakeLockListAdapter extends ArrayAdapter<String> {
+    public class AlarmListAdapter extends ArrayAdapter<String> {
 
-        public WakeLockListAdapter(Context context, int resource, List<String> values) {
-            super(context, R.layout.wakelock_item, resource, values);
+        public AlarmListAdapter(Context context, int resource, List<String> values) {
+            super(context, R.layout.alarm_item, resource, values);
         }
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            View rowView = mInflater.inflate(R.layout.wakelock_item, parent, false);
-            final CheckBox check = (CheckBox)rowView.findViewById(R.id.wakelock_blocked);
-            check.setText(mSeenWakeLocks.get(position));
+            View rowView = mInflater.inflate(R.layout.alarm_item, parent, false);
+            final CheckBox check = (CheckBox)rowView.findViewById(R.id.alarm_blocked);
+            check.setText(mSeenAlarms.get(position));
 
-            Boolean checked = mWakeLockState.get(check.getText().toString());
+            Boolean checked = mAlarmState.get(check.getText().toString());
             check.setChecked(checked.booleanValue());
 
             if(checked.booleanValue()) {
@@ -94,7 +95,7 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
             check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(CompoundButton v, boolean checked) {
-                        mWakeLockState.put(v.getText().toString(), new Boolean(checked));
+                        mAlarmState.put(v.getText().toString(), new Boolean(checked));
                         if(checked) {
                             check.setTextColor(getResources().getColor(android.R.color.holo_red_light));
                             mListAdapter.notifyDataSetChanged();
@@ -109,11 +110,6 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
     }
 
     @Override
-    public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
-    }
-
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "running");
@@ -124,27 +120,27 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
                              Bundle savedInstanceState) {
         mInflater = inflater;
         setHasOptionsMenu(true);
-        return inflater.inflate(R.layout.wakelock_blocker, container, false);
+        return inflater.inflate(R.layout.alarm_blocker, container, false);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        mWakeLockState = new HashMap<String, Boolean>();
-        updateSeenWakeLocksList();
-        updateBlockedWakeLocksList();
+        mAlarmState = new HashMap<String, Boolean>();
+        updateSeenAlarmsList();
+        updateBlockedAlarmsList();
 
         mBlockerEnabled = (Switch) getActivity().findViewById(
-                R.id.wakelock_blocker_switch);
-        mWakeLockList = (ListView) getActivity().findViewById(
-                R.id.wakelock_list);
-        mWakeLockListHeader = (TextView) getActivity().findViewById(
-                R.id.wakelock_list_header);
+                R.id.alarm_blocker_switch);
+        mAlarmList = (ListView) getActivity().findViewById(
+                R.id.alarm_list);
+        mAlarmListHeader = (TextView) getActivity().findViewById(
+                R.id.alarm_list_header);
 
-        mListAdapter = new WakeLockListAdapter(getActivity(), android.R.layout.simple_list_item_multiple_choice,
-                mSeenWakeLocks);
-        mWakeLockList.setAdapter(mListAdapter);
+        mListAdapter = new AlarmListAdapter(getActivity(), android.R.layout.simple_list_item_multiple_choice,
+                mSeenAlarms);
+        mAlarmList.setAdapter(mListAdapter);
 
         updateSwitches();
 
@@ -159,7 +155,7 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
                         }
 
                         Settings.System.putIntForUser(getActivity().getContentResolver(),
-                                Settings.System.WAKELOCK_BLOCKING_ENABLED,
+                                Settings.System.ALARM_BLOCKING_ENABLED,
                                 checked ? 1 : 0, UserHandle.USER_CURRENT);
 
                         updateSwitches();
@@ -167,94 +163,96 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
                 });
     }
 
+    @Override
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
+    }
+
     private boolean isFirstEnable() {
         return Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.WAKELOCK_BLOCKING_LIST) == null;
+                Settings.System.ALARM_BLOCKING_LIST) == null;
     }
 
     private void updateSwitches() {
         mBlockerEnabled.setChecked(Settings.System.getIntForUser(getActivity().getContentResolver(),
-                Settings.System.WAKELOCK_BLOCKING_ENABLED, 0, UserHandle.USER_CURRENT) == 1);
-
+                Settings.System.ALARM_BLOCKING_ENABLED, 0, UserHandle.USER_CURRENT) == 1);
 
         mEnabled = mBlockerEnabled.isChecked();
-        //mWakeLockList.setEnabled(mEnabled);
-        mWakeLockList.setVisibility(mEnabled ?View.VISIBLE : View.INVISIBLE);
-        mWakeLockListHeader.setVisibility(mEnabled ?View.VISIBLE : View.INVISIBLE);
+        mAlarmList.setVisibility(mEnabled ?View.VISIBLE : View.INVISIBLE);
+        mAlarmListHeader.setVisibility(mEnabled ?View.VISIBLE : View.INVISIBLE);
     }
 
-    private void updateSeenWakeLocksList() {
-        PowerManager pm = (PowerManager) getActivity().getSystemService(Context.POWER_SERVICE);
-        Log.d(TAG, pm.getSeenWakeLocks());
+    private void updateSeenAlarmsList() {
+        AlarmManager pm = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+        Log.d(TAG, pm.getSeenAlarms());
 
-        String seenWakeLocks =  pm.getSeenWakeLocks();
-        mSeenWakeLocks = new ArrayList<String>();
+        String seenAlarms =  pm.getSeenAlarms();
+        mSeenAlarms = new ArrayList<String>();
 
-        if (seenWakeLocks!=null && seenWakeLocks.length()!=0) {
-            String[] parts = seenWakeLocks.split("\\|");
+        if (seenAlarms!=null && seenAlarms.length()!=0) {
+            String[] parts = seenAlarms.split("\\|");
             for(int i = 0; i < parts.length; i++) {
-                mSeenWakeLocks.add(parts[i]);
-                mWakeLockState.put(parts[i], new Boolean(false));
+                mSeenAlarms.add(parts[i]);
+                mAlarmState.put(parts[i], new Boolean(false));
             }
         }
     }
 
-    private void updateBlockedWakeLocksList() {
-        String blockedWakelockList = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.WAKELOCK_BLOCKING_LIST);
+    private void updateBlockedAlarmsList() {
+        String blockedAlarmList = Settings.System.getString(getActivity().getContentResolver(),
+                Settings.System.ALARM_BLOCKING_LIST);
 
-        mBlockedWakeLocks = new ArrayList<String>();
+        mBlockedAlarms = new ArrayList<String>();
 
-        if (blockedWakelockList!=null && blockedWakelockList.length()!=0) {
-            String[] parts = blockedWakelockList.split("\\|");
+        if (blockedAlarmList!=null && blockedAlarmList.length()!=0) {
+            String[] parts = blockedAlarmList.split("\\|");
             for(int i = 0; i < parts.length; i++) {
-                mBlockedWakeLocks.add(parts[i]);
+                mBlockedAlarms.add(parts[i]);
 
                 // add all blocked but not seen so far
-                if(!mSeenWakeLocks.contains(parts[i])) {
-                    mSeenWakeLocks.add(parts[i]);
+                if(!mSeenAlarms.contains(parts[i])) {
+                    mSeenAlarms.add(parts[i]);
                 }
-                mWakeLockState.put(parts[i], new Boolean(true));
+                mAlarmState.put(parts[i], new Boolean(true));
             }
         }
 
-        Collections.sort(mSeenWakeLocks);
+        Collections.sort(mSeenAlarms);
     }
 
     private void save() {
         StringBuffer buffer = new StringBuffer();
-        Iterator<String> nextState = mWakeLockState.keySet().iterator();
+        Iterator<String> nextState = mAlarmState.keySet().iterator();
         while(nextState.hasNext()) {
             String name = nextState.next();
-            Boolean state=mWakeLockState.get(name);
+            Boolean state=mAlarmState.get(name);
             if(state.booleanValue()) {
                 buffer.append(name + "|");
             }
         }
-        if(buffer.length() > 0) {
+        if(buffer.length()>0) {
             buffer.deleteCharAt(buffer.length() - 1);
         }
-        Log.d(TAG, buffer.toString());
         Settings.System.putString(getActivity().getContentResolver(),
-                Settings.System.WAKELOCK_BLOCKING_LIST, buffer.toString());
+                Settings.System.ALARM_BLOCKING_LIST, buffer.toString());
     }
 
     private void reload() {
-        mWakeLockState = new HashMap<String, Boolean>();
-        updateSeenWakeLocksList();
-        updateBlockedWakeLocksList();
+        mAlarmState = new HashMap<String, Boolean>();
+        updateSeenAlarmsList();
+        updateBlockedAlarmsList();
 
         mListAdapter.notifyDataSetChanged();
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.add(0, MENU_RELOAD, 0, R.string.wakelock_blocker_reload)
+        menu.add(0, MENU_RELOAD, 0, R.string.alarm_blocker_reload)
                 .setIcon(com.android.internal.R.drawable.ic_menu_refresh)
                 .setAlphabeticShortcut('r')
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
                         MenuItem.SHOW_AS_ACTION_WITH_TEXT);
-        menu.add(0, MENU_SAVE, 0, R.string.wakelock_blocker_save)
+        menu.add(0, MENU_SAVE, 0, R.string.alarm_blocker_save)
                 .setIcon(R.drawable.ic_wakelockblocker_save)
                 .setAlphabeticShortcut('s')
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
@@ -282,14 +280,14 @@ public class WakeLockBlocker extends SettingsPreferenceFragment {
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
-                Settings.System.WAKELOCK_BLOCKING_ENABLED, 0, UserHandle.USER_CURRENT);
+                Settings.System.ALARM_BLOCKING_ENABLED, 0, UserHandle.USER_CURRENT);
     }
 
     private void showAlert() {
         /* Display the warning dialog */
         mAlertDialog = new AlertDialog.Builder(getActivity()).create();
-        mAlertDialog.setTitle(R.string.wakelock_blocker_warning_title);
-        mAlertDialog.setMessage(getResources().getString(R.string.wakelock_blocker_warning));
+        mAlertDialog.setTitle(R.string.alarm_blocker_warning_title);
+        mAlertDialog.setMessage(getResources().getString(R.string.alarm_blocker_warning));
         mAlertDialog.setButton(DialogInterface.BUTTON_POSITIVE,
                 getResources().getString(com.android.internal.R.string.ok),
                 new DialogInterface.OnClickListener() {

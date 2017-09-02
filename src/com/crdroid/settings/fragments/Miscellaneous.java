@@ -32,7 +32,9 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.crdroid.settings.fragments.misc.AlarmBlocker;
 import com.crdroid.settings.fragments.misc.ScreenStateToggles;
+import com.crdroid.settings.fragments.misc.WakeLockBlocker;
 import com.crdroid.settings.R;
 
 public class Miscellaneous extends SettingsPreferenceFragment
@@ -107,7 +109,9 @@ public class Miscellaneous extends SettingsPreferenceFragment
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        AlarmBlocker.reset(mContext);
         ScreenStateToggles.reset(mContext);
+        WakeLockBlocker.reset(mContext);
         writeCpuInfoOptions(mContext, false);
         Settings.System.putIntForUser(resolver,
                 Settings.System.MEDIA_SCANNER_ON_BOOT, 0, UserHandle.USER_CURRENT);
