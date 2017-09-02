@@ -52,6 +52,13 @@
             android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
     </PreferenceScreen>
 
+    <Preference
+        android:key="wakelock_blocker"
+        android:icon="@drawable/ic_wakelock"
+        android:title="@string/wakelock_blocker_title"
+        android:summary="@string/wakelock_blocker_summary"
+        android:fragment="com.crdroid.settings.fragments.misc.WakeLockBlocker"/>
+
     <!-- CPU Info -->
     <SwitchPreference
         android:key="show_cpu_info"
