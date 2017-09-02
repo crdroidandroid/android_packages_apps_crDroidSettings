@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-     Copyright (C) 2016-2023 crDroid Android Project
+     Copyright (C) 2016-2024 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -88,6 +88,14 @@
         android:title="@string/sensor_block_title"
         android:summary="@string/sensor_block_summary"
         android:fragment="com.crdroid.settings.fragments.misc.SensorBlock"/>
+
+    <!-- Wakelock blocker -->
+    <Preference
+        android:key="wakelock_blocker"
+        android:icon="@drawable/ic_wake"
+        android:title="@string/wakelock_blocker_title"
+        android:summary="@string/wakelock_blocker_summary"
+        android:fragment="com.crdroid.settings.fragments.misc.WakeLockBlocker" />
 
     <!-- Pocket Judge -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
