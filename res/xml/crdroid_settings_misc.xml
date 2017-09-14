@@ -33,7 +33,7 @@
 
     <PreferenceScreen
         android:key="lock_clock"
-        android:icon="@drawable/clock_icon"
+        android:icon="@drawable/ic_clock"
         android:title="@string/lockclock_title"
         android:summary="@string/lockclock_summary"
         android:persistent="false">
@@ -46,21 +46,21 @@
 
     <PreferenceScreen
         android:key="screenstate_category"
-        android:icon="@drawable/sleep_icon"
+        android:icon="@drawable/ic_sleep"
         android:title="@string/screen_state_toggles_title" 
         android:summary="@string/screen_state_toggles_summary" 
         android:fragment="com.crdroid.settings.fragments.ScreenStateToggles" />
 
     <ListPreference
         android:key="screenshot_type"
-        android:icon="@drawable/screenshot_type_icon"
+        android:icon="@drawable/ic_screenshot_type"
         android:title="@string/screenshot_type_title"
         android:entries="@array/screenshot_type_entries"
         android:entryValues="@array/screenshot_type_values" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="toast_icon"
-        android:icon="@drawable/toast_icon"
+        android:icon="@drawable/ic_toast"
         android:title="@string/toast_icon_title"
         android:summary="@string/toast_icon_summary"
         android:defaultValue="true" />
@@ -88,21 +88,21 @@
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="three_finger_gesture"
-        android:icon="@drawable/three_finger_gesture_icon"
+        android:icon="@drawable/ic_three_finger_gesture"
         android:title="@string/three_finger_gesture"
         android:summary="@string/three_finger_gesture_summary"
         android:defaultValue="false" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="disable_settings_suggestions"
-        android:icon="@drawable/dashboard_icon"
+        android:icon="@drawable/ic_dashboard"
         android:title="@string/disable_settings_suggestions_title"
         android:summary="@string/disable_settings_suggestions_summary"
         android:defaultValue="false" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="remove_settings_summary"
-        android:icon="@drawable/settings_ui_icon"
+        android:icon="@drawable/ic_settings_ui"
         android:title="@string/remove_settings_summary_title"
         android:summary="@string/remove_settings_summary_summary"
         android:defaultValue="false" />
@@ -116,13 +116,13 @@
 
     <SwitchPreference
         android:key="show_cpu_info"
-        android:icon="@drawable/info_icon"
+        android:icon="@drawable/ic_info"
         android:title="@string/show_cpu_info"
         android:summary="@string/show_cpu_info_summary" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="disable_fc_notifications"
-        android:icon="@drawable/close_icon"
+        android:icon="@drawable/ic_close"
         android:title="@string/disable_fc_notifications_title"
         android:summary="@string/disable_fc_notifications_summary"
         android:defaultValue="false" />

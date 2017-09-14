@@ -21,7 +21,7 @@
 
     <SwitchPreference
         android:key="navbar_visibility"
-        android:icon="@drawable/navbar_icon"
+        android:icon="@drawable/ic_navbar"
         android:title="@string/navbar_visibility"
         android:summary="@string/navbar_visibility_summary" />
 
@@ -38,7 +38,7 @@
 
         <ListPreference
             android:key="navbar_mode"
-            android:icon="@drawable/navbar_mode_icon"
+            android:icon="@drawable/ic_navbar_mode"
             android:title="@string/navbar_mode"
             android:summary="@string/navbar_mode_summary"
             android:entries="@array/systemui_navbar_mode_entries"
@@ -46,21 +46,21 @@
 
         <PreferenceScreen
             android:key="smartbar_settings"
-            android:icon="@drawable/smartbar_icon"
+            android:icon="@drawable/ic_smartbar"
             android:title="@string/smartbar_settings_title"
             android:summary="@string/smartbar_settings_summary"
             android:fragment="com.crdroid.settings.fragments.SmartbarSettings" />
 
         <PreferenceScreen
             android:key="fling_settings"
-            android:icon="@drawable/fling_icon"
+            android:icon="@drawable/ic_fling"
             android:title="@string/fling_settings"
             android:summary="@string/fling_settings_summary"
             android:fragment="com.crdroid.settings.fragments.FlingSettings" />
 
         <com.crdroid.settings.preferences.SeekBarPreference
             android:key="navbar_height_portrait"
-            android:icon="@drawable/bar_icon"
+            android:icon="@drawable/ic_bar"
             android:title="@string/portrait_title"
             android:max="135"
             settings:min="65"
@@ -68,7 +68,7 @@
 
         <com.crdroid.settings.preferences.SeekBarPreference
             android:key="navbar_height_landscape"
-            android:icon="@drawable/bar_icon"
+            android:icon="@drawable/ic_bar"
             android:title="@string/land_hor_title"
             android:max="135"
             settings:min="65"
@@ -76,7 +76,7 @@
 
         <com.crdroid.settings.preferences.SeekBarPreference
             android:key="navbar_width"
-            android:icon="@drawable/bar_icon"
+            android:icon="@drawable/ic_bar"
             android:title="@string/land_vert_title"
             android:max="135"
             settings:min="65"
@@ -89,13 +89,13 @@
 
         <SwitchPreference
             android:key="navbar_dynamic"
-            android:icon="@drawable/color_bucket_icon"
+            android:icon="@drawable/ic_color_bucket"
             android:title="@string/navbar_dynamic_title"
             android:summary="@string/navbar_dynamic_summary" />
 
         <PreferenceScreen
             android:key="pulse_settings"
-            android:icon="@drawable/pulse_icon"
+            android:icon="@drawable/ic_pulse"
             android:title="@string/pulse_settings"
             android:summary="@string/pulse_settings_summary"
             android:fragment="com.crdroid.settings.fragments.PulseSettings" />

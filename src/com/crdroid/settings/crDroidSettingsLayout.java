@@ -30,11 +30,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+/*
 import com.crdroid.settings.fragments.StatusBarSettings;
 import com.crdroid.settings.fragments.QuickSettings;
 import com.crdroid.settings.fragments.ButtonSettings;
@@ -47,6 +48,7 @@ import com.crdroid.settings.fragments.RecentsSettings;
 import com.crdroid.settings.fragments.SoundSettings;
 import com.crdroid.settings.fragments.AnimationSettings;
 import com.crdroid.settings.fragments.MiscSettings;
+*/
 import com.crdroid.settings.fragments.About;
 
 public class crDroidSettingsLayout extends SettingsPreferenceFragment {
@@ -90,6 +92,7 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
+/*
             frags[0] = new StatusBarSettings();
             frags[1] = new QuickSettings();
             frags[2] = new ButtonSettings();
@@ -102,7 +105,8 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             frags[9] = new SoundSettings();
             frags[10] = new AnimationSettings();
             frags[11] = new MiscSettings();
-            frags[12] = new About();
+*/
+            frags[0] = new About();
         }
 
         @Override
@@ -124,6 +128,7 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[] {
+/*
             getString(R.string.statusbar_title),
             getString(R.string.quicksettings_title),
             getString(R.string.button_title),
@@ -136,13 +141,14 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             getString(R.string.sound_title),
             getString(R.string.animation_title),
             getString(R.string.misc_title),
+*/
             getString(R.string.about_crdroid)
         };
         return titleString;
     }
 
     @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.CRDROID_SETTINGS;
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
      }
 }

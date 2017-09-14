@@ -22,7 +22,7 @@
     <!-- Charging sounds -->
     <PreferenceScreen
         android:key="charging_sounds_settings"
-        android:icon="@drawable/charger_icon"
+        android:icon="@drawable/ic_charger"
         android:title="@string/charging_sounds_settings_title"
         android:summary="@string/charging_sounds_settings_summary"
         android:fragment="com.crdroid.settings.fragments.ChargingSoundsSettings" />
@@ -30,7 +30,7 @@
    <!-- Screenshot Sound  -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="screenshot_sound"
-        android:icon="@drawable/screenshot_type_icon"
+        android:icon="@drawable/ic_screenshot_type"
         android:title="@string/screenshot_sound_title"
         android:summary="@string/screenshot_sound_summary"
         android:defaultValue="true" />
@@ -46,7 +46,7 @@
     <!-- Less Notification sounds -->
     <ListPreference
         android:key="less_notification_sounds"
-        android:icon="@drawable/headsup_icon"
+        android:icon="@drawable/ic_headsup"
         android:title="@string/less_notification_sounds_title"
         android:summary="@string/less_notification_sounds_summary"
         android:entries="@array/less_notification_sounds_entries"
@@ -56,7 +56,7 @@
     <!-- Launch music player when headset is connected -->
     <cyanogenmod.preference.CMSystemSettingSwitchPreference
         android:key="headset_connect_player"
-        android:icon="@drawable/headphones_icon"
+        android:icon="@drawable/ic_headphones"
         android:title="@string/headset_connect_player_title"
         android:summary="@string/headset_connect_player_summary" />
 
@@ -66,21 +66,21 @@
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="sysui_volume_down_silent"
-            android:icon="@drawable/zen_down_icon"
+            android:icon="@drawable/ic_zen_down"
             android:title="@string/volbtn_down_zen_title"
             android:summary="@string/volbtn_down_zen_summary"
             android:defaultValue="true"/>
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="sysui_volume_up_silent"
-            android:icon="@drawable/zen_up_icon"
+            android:icon="@drawable/ic_zen_up"
             android:title="@string/volbtn_up_zen_title"
             android:summary="@string/volbtn_up_zen_summary"
             android:defaultValue="true" />
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="sysui_show_full_zen"
-            android:icon="@drawable/zen_icon"
+            android:icon="@drawable/ic_zen"
             android:title="@string/vol_zen_title"
             android:summary="@string/vol_zen_summary"
             android:defaultValue="false"/>

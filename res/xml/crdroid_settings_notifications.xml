@@ -20,7 +20,7 @@
     android:title="@string/notifications_title">
 
     <PreferenceScreen
-        android:icon="@drawable/power_notification_icon"
+        android:icon="@drawable/ic_power_notification"
         android:title="@string/power_notification_title"
         android:summary="@string/power_notification_summary">
             <intent android:action="com.android.settings.action.POWER_NOTIF_CONTROLS" />
@@ -28,19 +28,19 @@
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="force_expanded_notifications"
-        android:icon="@drawable/expanded_notification_icon"
+        android:icon="@drawable/ic_expanded_notification"
         android:title="@string/force_expanded_notifications_title"
         android:summary="@string/force_expanded_notifications_summary" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="disable_immersive_message"
-        android:icon="@drawable/immersive_notification_icon"
+        android:icon="@drawable/ic_immersive_notification"
         android:title="@string/disable_immersive_message_title"
         android:summary="@string/disable_immersive_message_summary" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="notification_guts_kill_app_button"
-        android:icon="@drawable/immersive_notification_icon"
+        android:icon="@drawable/ic_immersive_notification"
         android:title="@string/notification_guts_kill_app_button_title"
         android:summary="@string/notification_guts_kill_app_button_summary" />
 
@@ -50,21 +50,21 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="missed_call_breath"
-            android:icon="@drawable/missed_call_icon"
+            android:icon="@drawable/ic_missed_call"
             android:title="@string/missed_call_breath_title"
             android:summary="@string/missed_call_breath_summary"
             android:persistent="false"/>
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="voicemail_breath"
-            android:icon="@drawable/voicemail_icon"
+            android:icon="@drawable/ic_voicemail"
             android:title="@string/voicemail_breath_title"
             android:summary="@string/voicemail_breath_summary"
             android:persistent="false"/>
 
         <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
             android:key="sms_breath"
-            android:icon="@drawable/sms_icon"
+            android:icon="@drawable/ic_sms"
             android:title="@string/sms_breath_title"
             android:summary="@string/sms_breath_summary"
             android:persistent="false"/>
@@ -76,7 +76,7 @@
 
         <ListPreference
             android:key="heads_up_time_out"
-            android:icon="@drawable/headsup_icon"
+            android:icon="@drawable/ic_headsup"
             android:title="@string/heads_up_time_out_title"
             android:entries="@array/heads_up_time_out_entries"
             android:entryValues="@array/heads_up_time_out_values"
@@ -84,7 +84,7 @@
 
         <ListPreference
             android:key="heads_up_snooze_time"
-            android:icon="@drawable/headsup_sleep_icon"
+            android:icon="@drawable/ic_headsup_sleep"
             android:title="@string/heads_up_snooze_title"
             android:entries="@array/heads_up_snooze_entries"
             android:entryValues="@array/heads_up_snooze_values"

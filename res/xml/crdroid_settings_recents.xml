@@ -24,7 +24,7 @@
 
         <ListPreference
             android:key="immersive_recents"
-            android:icon="@drawable/recents_icon"
+            android:icon="@drawable/ic_recents"
             android:title="@string/immersive_recents_title"
             android:summary="@string/immersive_recents_summary"
             android:dialogTitle="@string/immersive_recents_dialog_title"
@@ -34,7 +34,7 @@
 
         <PreferenceScreen
             android:key="hide_app_from_recents"
-            android:icon="@drawable/recents_hide_app_icon"
+            android:icon="@drawable/ic_recents_hide_app"
             android:title="@string/hide_apps_from_recents_title"
             android:summary="@string/hide_apps_from_recents_summary" >
             <intent android:action="android.intent.action.MAIN"
@@ -44,14 +44,14 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="systemui_recents_mem_display"
-            android:icon="@drawable/memory_icon"
+            android:icon="@drawable/ic_memory"
             android:title="@string/systemui_recents_mem_display_title"
             android:summary="@string/systemui_recents_mem_display_summary"
             android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.ColorPickerPreference
             android:key="systemui_recents_mem_barcolor"
-            android:icon="@drawable/memory_icon"
+            android:icon="@drawable/ic_memory"
             android:title="@string/systemui_recents_mem_display_color"
             android:defaultValue="#00ffffff"
             android:dependency="systemui_recents_mem_display"
@@ -59,7 +59,7 @@
 
         <com.crdroid.settings.preferences.ColorPickerPreference
             android:key="systemui_recents_mem_textcolor"
-            android:icon="@drawable/memory_icon"
+            android:icon="@drawable/ic_memory"
             android:title="@string/systemui_recents_mem_display_text_color"
             android:defaultValue="#00ffffff"
             android:dependency="systemui_recents_mem_display"
@@ -67,14 +67,14 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="show_clear_all_recents"
-            android:icon="@drawable/recents_clear_all_icon"
+            android:icon="@drawable/ic_recents_clear_all"
             android:title="@string/show_clear_all_recents_button_title"
             android:summary="@string/show_clear_all_recents_button_summary"
             android:defaultValue="true" />
 
         <ListPreference
             android:key="recents_clear_all_location"
-            android:icon="@drawable/recents_clear_all_icon"
+            android:icon="@drawable/ic_recents_clear_all"
             android:title="@string/recents_clear_all_location_title"
             android:entries="@array/recents_clear_all_location_entries"
             android:entryValues="@array/recents_clear_all_location_values"
@@ -106,14 +106,14 @@
 
         <SwitchPreference
             android:key="recents_use_omniswitch"
-            android:icon="@drawable/omni_icon"
+            android:icon="@drawable/ic_omni"
             android:title="@string/recents_use_omniswitch_title"
             android:summary="@string/recents_use_omniswitch_summary"
             android:persistent="false" />
 
         <Preference
             android:key="omniswitch_start_settings"
-            android:icon="@drawable/omni_icon"
+            android:icon="@drawable/ic_omni"
             android:title="@string/omniswitch_start_settings_title"
             android:summary="@string/omniswitch_start_settings_summary"
             android:persistent="false" />
@@ -125,14 +125,14 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="use_slim_recents"
-            android:icon="@drawable/slim_icon"
+            android:icon="@drawable/ic_slim"
             android:title="@string/use_slim_recents_title"
             android:summary="@string/use_slim_recents_summary"
             android:defaultValue="false" />
 
         <PreferenceScreen
             android:key="slim_recent_panel"
-            android:icon="@drawable/slim_icon"
+            android:icon="@drawable/ic_slim"
             android:title="@string/slim_recents_settings_title"
             android:summary="@string/slim_recents_settings_summary"
             android:fragment="com.crdroid.settings.fragments.SlimRecentPanel"

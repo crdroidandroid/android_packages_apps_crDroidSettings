@@ -25,7 +25,7 @@
 
         <PreferenceScreen
             android:key="lockscreen_shortcuts"
-            android:icon="@drawable/format_center_icon"
+            android:icon="@drawable/ic_format_center"
             android:title="@string/lockscreen_shortcuts_title"
             android:summary="@string/lockscreen_shortcuts_summary"
             android:fragment="com.crdroid.settings.fragments.ActionListViewSettings">
@@ -37,12 +37,12 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_shortcuts_longpress"
-            android:icon="@drawable/format_center_icon"
+            android:icon="@drawable/ic_format_center"
             android:title="@string/lockscreen_shorcuts_longpress_title"
             android:summary="@string/lockscreen_shorcuts_longpress_summary" />
 
          <PreferenceScreen
-            android:icon="@drawable/format_bottom_icon"
+            android:icon="@drawable/ic_format_bottom"
             android:title="@string/lockscreen_swipe_title"
             android:summary="@string/lockscreen_swipe_summary" >
             <intent
@@ -57,42 +57,42 @@
 
         <PreferenceScreen
             android:key="lock_screen_weather"
-            android:icon="@drawable/weather_icon"
+            android:icon="@drawable/ic_weather"
             android:title="@string/lock_screen_weather_title"
             android:summary="@string/lock_screen_weather_summary"
             android:fragment="com.crdroid.settings.fragments.LockScreenWeather" />
 
         <cyanogenmod.preference.CMSecureSettingSwitchPreference
             android:key="lockscreen_media_metadata"
-            android:icon="@drawable/movie_icon"
+            android:icon="@drawable/ic_movie"
             android:title="@string/media_art_title"
             android:summary="@string/media_art_summary"
             android:defaultValue="true" />
 
          <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="hide_lockscreen_clock"
-            android:icon="@drawable/clock_icon"
+            android:icon="@drawable/ic_clock"
             android:title="@string/hide_lockscreen_clock_title"
             android:summary="@string/hide_lockscreen_clock_summary"
             android:defaultValue="true" />
 
          <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="hide_lockscreen_date"
-            android:icon="@drawable/calendar_icon"
+            android:icon="@drawable/ic_calendar"
             android:title="@string/hide_lockscreen_date_title"
             android:summary="@string/hide_lockscreen_date_summary"
             android:defaultValue="true" />
 
          <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="hide_lockscreen_alarm"
-            android:icon="@drawable/alarm_icon"
+            android:icon="@drawable/ic_alarm"
             android:title="@string/hide_lockscreen_alarm_title"
             android:summary="@string/hide_lockscreen_alarm_summary"
             android:defaultValue="true" />
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="lockscreen_hide_status_bar"
-            android:icon="@drawable/shapes_icon"
+            android:icon="@drawable/ic_shapes"
             android:title="@string/lockscreen_hide_status_bar_title"
             android:summary="@string/lockscreen_hide_status_bar_summary"
             android:defaultValue="true" />
@@ -111,7 +111,7 @@
 
         <cyanogenmod.preference.CMSecureSettingSwitchPreference
             android:key="double_tap_sleep_anywhere"
-            android:icon="@drawable/double_tap_icon"
+            android:icon="@drawable/ic_double_tap"
             android:title="@string/double_tap_sleep_anywhere_title"
             android:summary="@string/double_tap_sleep_anywhere_summary"
             android:defaultValue="false" />
@@ -138,14 +138,14 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
                android:key="lock_screen_custom_notif"
-               android:icon="@drawable/counter_icon"
+               android:icon="@drawable/ic_counter"
                android:title="@string/lockscreen_maxnotif_title"
                android:summary="@string/lockscreen_maxnotif_sumary"
                android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.SeekBarPreference
                android:key="lockscreen_max_notif_cofig"
-               android:icon="@drawable/counter_icon"
+               android:icon="@drawable/ic_counter"
                android:title="@string/lockscreen_maxnotif_config"
                android:max="8"
                settings:min="0"
@@ -155,7 +155,7 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
                android:key="lockscreen_enable_power_menu"
-               android:icon="@drawable/power_icon"
+               android:icon="@drawable/ic_power"
                android:title="@string/lockscreen_enable_power_menu_title"
                android:summary="@string/lockscreen_enable_power_menu_summary"
                android:defaultValue="true" />

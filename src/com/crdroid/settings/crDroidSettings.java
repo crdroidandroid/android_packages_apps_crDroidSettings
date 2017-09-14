@@ -21,7 +21,7 @@ import android.support.v7.preference.ListPreference;
 import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
 
-import com.android.internal.logging.MetricsProto.MetricsEvent;
+import com.android.internal.logging.nano.MetricsProto;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -31,8 +31,8 @@ public class crDroidSettings extends SettingsPreferenceFragment {
     private static final String TAG = "crDroidSettings";
 
     @Override
-    protected int getMetricsCategory() {
-        return MetricsEvent.CRDROID_SETTINGS;
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
     }
 
     @Override

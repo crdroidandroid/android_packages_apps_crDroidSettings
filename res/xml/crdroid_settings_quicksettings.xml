@@ -24,14 +24,14 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="status_bar_custom_header"
-            android:icon="@drawable/header_icon"
+            android:icon="@drawable/ic_header"
             android:title="@string/status_bar_custom_header_title"
             android:summary="@string/status_bar_custom_header_summary"
             android:defaultValue="false" />
 
         <ListPreference
             android:key="custom_header_provider"
-            android:icon="@drawable/header_provider_icon"
+            android:icon="@drawable/ic_header_provider"
             android:title="@string/custom_header_provider_title"
             android:persistent="false"
             android:entries="@array/custom_header_provider_entries"
@@ -40,14 +40,14 @@
 
         <ListPreference
             android:key="daylight_header_pack"
-            android:icon="@drawable/weather_icon"
+            android:icon="@drawable/ic_weather"
             android:title="@string/daylight_header_pack_title"
             android:persistent="false"
             android:dependency="status_bar_custom_header" />
 
         <PreferenceScreen
             android:key="custom_header_browse"
-            android:icon="@drawable/weather_icon"
+            android:icon="@drawable/ic_weather"
             android:title="@string/custom_header_browse_title"
             android:summary="@string/custom_header_browse_summary"
             android:dependency="status_bar_custom_header"
@@ -59,7 +59,7 @@
 
         <com.crdroid.settings.preferences.SeekBarPreference
             android:key="status_bar_custom_header_shadow"
-            android:icon="@drawable/text_shadow_icon"
+            android:icon="@drawable/ic_text_shadow"
             android:title="@string/status_bar_custom_header_shadow_title"
             android:summary="@string/status_bar_custom_header_shadow_summary"
             android:max="255"
@@ -81,7 +81,7 @@
 
         <com.crdroid.settings.preferences.SeekBarPreference
             android:key="sysui_qqs_count_key"
-            android:icon="@drawable/qs_tile_icon"
+            android:icon="@drawable/ic_qs_tile"
             android:title="@string/sysui_qqs_count_title"
             android:max="7"
             settings:min="1"
@@ -90,7 +90,7 @@
 
         <com.crdroid.settings.preferences.SeekBarPreference
             android:key="qs_rows_portrait"
-            android:icon="@drawable/qs_tile_icon"
+            android:icon="@drawable/ic_qs_tile"
             android:title="@string/qs_rows_portrait_title"
             android:max="7"
             settings:min="1"
@@ -99,7 +99,7 @@
 
         <com.crdroid.settings.preferences.SeekBarPreference
             android:key="qs_rows_landscape"
-            android:icon="@drawable/qs_tile_icon"
+            android:icon="@drawable/ic_qs_tile"
             android:title="@string/qs_rows_landscape_title"
             android:max="3"
             settings:min="1"
@@ -108,7 +108,7 @@
 
         <com.crdroid.settings.preferences.SeekBarPreference
             android:key="qs_columns"
-            android:icon="@drawable/qs_tile_icon"
+            android:icon="@drawable/ic_qs_tile"
             android:title="@string/qs_columns_title"
             android:max="10"
             settings:min="1"
@@ -120,28 +120,28 @@
          android:title="@string/qs_toggles_category">
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="qs_wifi_easy_toggle"
-            android:icon="@drawable/wifi_icon"
+            android:icon="@drawable/ic_wifi"
             android:title="@string/qs_wifi_easy_toggle_title"
             android:summary="@string/qs_wifi_easy_toggle_summary"
             android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="qs_bt_easy_toggle"
-            android:icon="@drawable/bt_icon"
+            android:icon="@drawable/ic_bt"
             android:title="@string/qs_bt_easy_toggle_title"
             android:summary="@string/qs_bt_easy_toggle_summary"
             android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="qs_data_advanced"
-            android:icon="@drawable/data_icon"
+            android:icon="@drawable/ic_data"
             android:title="@string/qs_advanced_data_title"
             android:summary="@string/qs_advanced_data_summary"
             android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="qs_battery_easy_toggle"
-            android:icon="@drawable/battery_saver_icon"
+            android:icon="@drawable/ic_battery_saver"
             android:title="@string/qs_battery_easy_toggle_title"
             android:summary="@string/qs_battery_easy_toggle_summary"
             android:defaultValue="false" />
@@ -158,14 +158,14 @@
          android:title="@string/qs_misc_category">
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="qs_show_brightness"
-            android:icon="@drawable/brightness_icon"
+            android:icon="@drawable/ic_brightness"
             android:title="@string/qs_brightness_slider_title"
             android:summary="@string/qs_brightness_slider_summary"
             android:defaultValue="true"/>
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_show_brightness_icon"
-            android:icon="@drawable/brightness_auto_icon"
+            android:icon="@drawable/ic_brightness_auto"
             android:title="@string/brightness_icon_title"
             android:summary="@string/brightness_icon_summary"
             android:dependency="qs_show_brightness"
@@ -173,14 +173,14 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="quick_settings_vibrate"
-            android:icon="@drawable/vibrate_icon"
+            android:icon="@drawable/ic_vibrate"
             android:title="@string/quick_settings_vibrate_title"
             android:summary="@string/quick_settings_vibrate_summary"
             android:defaultValue="false"/>
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_settings_icon_toggle"
-            android:icon="@drawable/settings_icon"
+            android:icon="@drawable/ic_settings"
             android:title="@string/qs_settings_icon_title"
             android:summary="@string/qs_settings_icon_summary"
             android:disableDependentsState="true"
@@ -188,7 +188,7 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_settings_expanded_toggle"
-            android:icon="@drawable/settings_icon"
+            android:icon="@drawable/ic_settings"
             android:title="@string/qs_settings_expanded_title"
             android:summary="@string/qs_settings_expanded_summary"
             android:dependency="qs_settings_icon_toggle"
@@ -196,28 +196,28 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_edit_toggle"
-            android:icon="@drawable/pencil_icon"
+            android:icon="@drawable/ic_pencil"
             android:title="@string/qs_edit_title"
             android:summary="@string/qs_edit_summary"
             android:defaultValue="true" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_multiuser_switch_toggle"
-            android:icon="@drawable/account_icon"
+            android:icon="@drawable/ic_account"
             android:title="@string/qs_multiuser_switch_title"
             android:summary="@string/qs_multiuser_switch_summary"
             android:defaultValue="true" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_expand_indicator_toggle"
-            android:icon="@drawable/expand_indicator_icon"
+            android:icon="@drawable/ic_expand_indicator"
             android:title="@string/qs_expand_indicator_title"
             android:summary="@string/qs_expand_indicator_summary"
             android:defaultValue="true" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_date_time_center"
-            android:icon="@drawable/calendar_clock_icon"
+            android:icon="@drawable/ic_calendar_clock"
             android:title="@string/qs_date_time_center_title"
             android:summary="@string/qs_date_time_center_summary"
             android:defaultValue="false" />

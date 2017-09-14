@@ -21,21 +21,21 @@
 
     <PreferenceScreen
         android:key="system_animation"
-        android:icon="@drawable/system_animation_icon"
+        android:icon="@drawable/ic_system_animation"
         android:title="@string/system_animation_title"
         android:summary="@string/system_animation_summary"
         android:fragment="com.crdroid.settings.fragments.AnimationControls" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="disable_transition_animations"
-        android:icon="@drawable/system_animation_icon"
+        android:icon="@drawable/ic_system_animation"
         android:title="@string/disable_animations"
         android:summary="@string/disable_animations_summary"
         android:defaultValue="false" />
 
     <ListPreference
         android:key="listview_animation"
-        android:icon="@drawable/listview_icon"
+        android:icon="@drawable/ic_listview"
         android:dialogTitle="@string/listview_animation_title"
         android:title="@string/listview_animation_title"
         android:entries="@array/listview_animation_entries"
@@ -44,7 +44,7 @@
 
     <ListPreference
         android:key="listview_interpolator"
-        android:icon="@drawable/listview_icon"
+        android:icon="@drawable/ic_listview"
         android:dialogTitle="@string/listview_interpolator_title"
         android:title="@string/listview_interpolator_title"
         android:entries="@array/listview_interpolator_entries"
@@ -53,7 +53,7 @@
 
     <ListPreference
         android:key="toast_animation"
-        android:icon="@drawable/toast_icon"
+        android:icon="@drawable/ic_toast"
         android:title="@string/toast_animation_title"
         android:entries="@array/toast_animation_entries"
         android:entryValues="@array/toast_animation_values"
@@ -61,7 +61,7 @@
 
     <ListPreference
         android:key="power_menu_animation"
-        android:icon="@drawable/power_menu_animation_icon"
+        android:icon="@drawable/ic_power_menu_animation"
         android:dialogTitle="@string/power_menu_animation_title"
         android:title="@string/power_menu_animation_title"
         android:entries="@array/power_menu_animation_entries"
@@ -70,7 +70,7 @@
 
      <ListPreference
         android:key="qs_tile_animation_style"
-        android:icon="@drawable/qs_tile_animation_style_icon"
+        android:icon="@drawable/ic_qs_tile_animation_style"
         android:dialogTitle="@string/qs_tile_animation_style_title"
         android:title="@string/qs_tile_animation_style_title"
         android:entries="@array/qs_tile_animation_style_entries"
@@ -79,7 +79,7 @@
 
     <ListPreference
         android:key="qs_tile_animation_duration"
-        android:icon="@drawable/qs_tile_animation_style_icon"
+        android:icon="@drawable/ic_qs_tile_animation_style"
         android:dialogTitle="@string/qs_tile_animation_duration_title"
         android:title="@string/qs_tile_animation_duration_title"
         android:entries="@array/qs_tile_animation_duration_entries"
@@ -88,7 +88,7 @@
 
     <ListPreference
         android:key="qs_tile_animation_interpolator"
-        android:icon="@drawable/qs_tile_animation_style_icon"
+        android:icon="@drawable/ic_qs_tile_animation_style"
         android:dialogTitle="@string/qs_tile_animation_interpolator_title"
         android:title="@string/qs_tile_animation_interpolator_title"
         android:entries="@array/qs_tile_animation_interpolator_entries"
@@ -97,14 +97,14 @@
 
     <!-- <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="qs_fancy_animation"
-        android:icon="@drawable/qs_tile_animation_style_icon"
+        android:icon="@drawable/ic_qs_tile_animation_style"
         android:title="@string/qs_fancy_animation_title"
         android:summary="@string/qs_fancy_animation_summary"
         android:defaultValue="true" /> -->
 
     <ListPreference
         android:key="pref_scrollingcache"
-        android:icon="@drawable/scroll_icon"
+        android:icon="@drawable/ic_scroll"
         android:dialogTitle="@string/pref_scrollingcache_title"
         android:title="@string/pref_scrollingcache_title"
         android:entries="@array/entries_scrollingcache"
@@ -113,7 +113,7 @@
 
     <PreferenceScreen
         android:key="interface_animation_scroll"
-        android:icon="@drawable/scroll_icon"
+        android:icon="@drawable/ic_scroll"
         android:title="@string/scrolling_title"
         android:summary="@string/scrolling_summary"
         android:fragment="com.crdroid.settings.fragments.ScrollAnimationInterfaceSettings"
