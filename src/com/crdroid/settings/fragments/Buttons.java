@@ -38,6 +38,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.fragments.buttons.PowerMenuSettings;
+
 import java.util.List;
 
 @SearchIndexable
@@ -60,6 +62,7 @@ public class Buttons extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        PowerMenuSettings.reset(mContext);
     }
 
     @Override

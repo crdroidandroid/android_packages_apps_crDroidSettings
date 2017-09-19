@@ -20,4 +20,17 @@
     android:key="button_settings"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="power_key"
+        android:title="@string/hardware_keys_power_key_title" >
+
+        <PreferenceScreen
+            android:key="power_menu"
+            android:icon="@drawable/ic_settings_powermenu"
+            android:title="@string/power_menu_title"
+            android:summary="@string/power_menu_summary"
+            android:fragment="com.crdroid.settings.fragments.buttons.PowerMenuSettings" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
