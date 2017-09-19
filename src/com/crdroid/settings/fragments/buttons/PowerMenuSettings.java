@@ -24,8 +24,9 @@ import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.Settings;
 
-import androidx.preference.SwitchPreference;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.SwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,15 +36,29 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.settings.R;
 
+import com.crdroid.settings.utils.DeviceUtils;
+
 public class PowerMenuSettings extends SettingsPreferenceFragment {
 
     final static String TAG = "PowerMenuSettings";
+
+    private static final String KEY_POWERMENU_TORCH = "powermenu_torch";
+
+    private SwitchPreference mPowermenuTorch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.power_menu_settings);
+
+        final ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mPowermenuTorch = (SwitchPreference) findPreference(KEY_POWERMENU_TORCH);
+        if (!DeviceUtils.deviceSupportsFlashLight(getActivity())) {
+            prefScreen.removePreference(mPowermenuTorch);
+        }
     }
 
     public static void reset(Context mContext) {
@@ -54,6 +69,8 @@ public class PowerMenuSettings extends SettingsPreferenceFragment {
                 Settings.System.POWERMENU_SCREENSHOT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.POWERMENU_SETTINGS, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.POWERMENU_TORCH, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.POWERMENU_LOCKDOWN, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
