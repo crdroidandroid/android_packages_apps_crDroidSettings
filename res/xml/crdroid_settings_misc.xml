@@ -17,7 +17,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/about_crdroid">
+    android:title="@string/misc_title">
 
     <!-- Ad Away -->
     <Preference
@@ -44,7 +44,7 @@
             android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
     </PreferenceScreen>
 
-    <PreferenceScreen
+    <!--<PreferenceScreen
         android:key="screenstate_category"
         android:icon="@drawable/ic_sleep"
         android:title="@string/screen_state_toggles_title" 
@@ -125,5 +125,5 @@
         android:icon="@drawable/ic_close"
         android:title="@string/disable_fc_notifications_title"
         android:summary="@string/disable_fc_notifications_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" />-->
 </PreferenceScreen>
