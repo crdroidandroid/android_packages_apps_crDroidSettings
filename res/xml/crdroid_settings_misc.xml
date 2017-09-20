@@ -44,6 +44,12 @@
             android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
     </PreferenceScreen>
 
+    <SwitchPreference
+        android:key="show_cpu_info"
+        android:icon="@drawable/ic_info"
+        android:title="@string/show_cpu_info"
+        android:summary="@string/show_cpu_info_summary" />
+
     <!--<PreferenceScreen
         android:key="screenstate_category"
         android:icon="@drawable/ic_sleep"
@@ -113,12 +119,6 @@
         android:title="@string/allow_signature_fake"
         android:summary="@string/allow_signature_fake_summary"
         android:defaultValue="false" />
-
-    <SwitchPreference
-        android:key="show_cpu_info"
-        android:icon="@drawable/ic_info"
-        android:title="@string/show_cpu_info"
-        android:summary="@string/show_cpu_info_summary" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="disable_fc_notifications"

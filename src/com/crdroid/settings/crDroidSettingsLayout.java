@@ -31,9 +31,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.android.internal.logging.nano.MetricsProto;
-
-import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+
+import com.crdroid.settings.R;
 
 /*
 import com.crdroid.settings.fragments.StatusBarSettings;
