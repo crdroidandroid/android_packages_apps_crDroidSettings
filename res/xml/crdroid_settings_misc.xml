@@ -50,6 +50,14 @@
         android:title="@string/show_cpu_info"
         android:summary="@string/show_cpu_info_summary" />
 
+    <!-- MediaScanner behavior on boot -->
+    <ListPreference
+        android:key="media_scanner_on_boot"
+        android:icon="@drawable/ic_movie"
+        android:title="@string/media_scanner_on_boot_title"
+        android:entries="@array/media_scanner_on_boot_entries"
+        android:entryValues="@array/media_scanner_on_boot_values" />
+
     <!--<PreferenceScreen
         android:key="screenstate_category"
         android:icon="@drawable/ic_sleep"

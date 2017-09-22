@@ -40,8 +40,10 @@ public class Miscellaneous extends SettingsPreferenceFragment
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_LOCK_CLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
     private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
+    private static final String MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
 
     private SwitchPreference mShowCpuInfo;
+    private ListPreference mMSOB;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,14 @@ public class Miscellaneous extends SettingsPreferenceFragment
         mShowCpuInfo.setChecked(Settings.Global.getInt(getActivity().getContentResolver(),
                 Settings.Global.SHOW_CPU_OVERLAY, 0) == 1);
         mShowCpuInfo.setOnPreferenceChangeListener(this);
+
+        // MediaScanner behavior on boot
+        mMSOB = (ListPreference) findPreference(MEDIA_SCANNER_ON_BOOT);
+        int mMSOBValue = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.MEDIA_SCANNER_ON_BOOT, 0);
+        mMSOB.setValue(String.valueOf(mMSOBValue));
+        mMSOB.setSummary(mMSOB.getEntry());
+        mMSOB.setOnPreferenceChangeListener(this);
     }
 
     private void writeCpuInfoOptions(boolean value) {
@@ -76,6 +86,13 @@ public class Miscellaneous extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mShowCpuInfo) {
             writeCpuInfoOptions((Boolean) newValue);
+            return true;
+        } else if (preference == mMSOB) {
+            int value = Integer.parseInt(((String) newValue).toString());
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.MEDIA_SCANNER_ON_BOOT, value);
+            mMSOB.setValue(String.valueOf(value));
+            mMSOB.setSummary(mMSOB.getEntries()[value]);
             return true;
         }
         return false;
