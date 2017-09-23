@@ -36,7 +36,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.crdroid.settings.R;
 
 /*
-import com.crdroid.settings.fragments.StatusBarSettings;
 import com.crdroid.settings.fragments.QuickSettings;
 import com.crdroid.settings.fragments.ButtonSettings;
 import com.crdroid.settings.fragments.NavbarSettings;
@@ -51,6 +50,7 @@ import com.crdroid.settings.fragments.AnimationSettings;
 
 import com.crdroid.settings.fragments.About;
 import com.crdroid.settings.fragments.Miscellaneous;
+import com.crdroid.settings.fragments.StatusBar;
 
 public class crDroidSettingsLayout extends SettingsPreferenceFragment {
 
@@ -94,7 +94,6 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
 /*
-            frags[0] = new StatusBarSettings();
             frags[1] = new QuickSettings();
             frags[2] = new ButtonSettings();
             frags[3] = new NavbarSettings();
@@ -107,8 +106,9 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             frags[10] = new AnimationSettings();
             frags[11] = new MiscSettings();
 */
-            frags[0] = new Miscellaneous();
-            frags[1] = new About();
+            frags[0] = new StatusBar();
+            frags[1] = new Miscellaneous();
+            frags[2] = new About();
         }
 
         @Override
@@ -131,7 +131,6 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
         String titleString[];
         titleString = new String[] {
 /*
-            getString(R.string.statusbar_title),
             getString(R.string.quicksettings_title),
             getString(R.string.button_title),
             getString(R.string.navbar_title),
@@ -143,6 +142,7 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             getString(R.string.sound_title),
             getString(R.string.animation_title),
 */
+            getString(R.string.statusbar_title),
             getString(R.string.misc_title),
             getString(R.string.about_crdroid)
         };

@@ -19,7 +19,7 @@
     android:title="@string/statusbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!-- Status bar icons customizations -->
+    <!-- Status bar icons customizations
     <PreferenceCategory
         android:title="@string/status_bar_icons_category_title">
 
@@ -105,9 +105,9 @@
             android:title="@string/status_bar_notif_count_title"
             android:summary="@string/status_bar_notif_count_summary"
             android:defaultValue="true" />
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 
-    <!-- Status bar clock customizations -->
+    <!-- Status bar clock customizations
     <PreferenceCategory
         android:title="@string/status_bar_clock_category_title">
 
@@ -182,9 +182,9 @@
             settings:min="4"
             settings:units="dp"
             android:persistent="false" />
-    </PreferenceCategory>
+    </PreferenceCategory>  -->
 
-    <!-- Status bar battery customizations -->
+    <!-- Status bar battery customizations
     <PreferenceCategory
         android:title="@string/status_bar_battery_category_title">
 
@@ -231,9 +231,9 @@
             android:entries="@array/status_bar_battery_percentage_entries"
             android:entryValues="@array/status_bar_battery_percentage_values"
             android:defaultValue="0" />
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 
-    <!-- Status bar crDroid logo -->
+    <!-- Status bar crDroid logo
     <PreferenceCategory
         android:title="@string/status_bar_logo_category_title">
 
@@ -267,9 +267,9 @@
             android:entries="@array/status_bar_logo_style_entries"
             android:entryValues="@array/status_bar_logo_style_values"
             android:dependency="status_bar_crdroid_logo" />
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 
-    <!-- Status bar misc customizations -->
+    <!-- Status bar misc customizations
     <PreferenceCategory
         android:title="@string/status_bar_misc_category_title">
 
@@ -294,5 +294,5 @@
             android:title="@string/status_bar_toggle_brightness"
             android:summary="@string/status_bar_toggle_brightness_summary"
             android:defaultValue="false" />
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 </PreferenceScreen>
