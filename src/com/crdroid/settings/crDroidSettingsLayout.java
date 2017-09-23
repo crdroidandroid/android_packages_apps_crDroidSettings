@@ -41,7 +41,6 @@ import com.crdroid.settings.fragments.ButtonSettings;
 import com.crdroid.settings.fragments.NavbarSettings;
 import com.crdroid.settings.fragments.NotificationsSettings;
 import com.crdroid.settings.fragments.DisplaySettings;
-import com.crdroid.settings.fragments.LockScreenSettings;
 import com.crdroid.settings.fragments.PowerMenuSettings;
 import com.crdroid.settings.fragments.RecentsSettings;
 import com.crdroid.settings.fragments.SoundSettings;
@@ -49,6 +48,7 @@ import com.crdroid.settings.fragments.AnimationSettings;
 */
 
 import com.crdroid.settings.fragments.About;
+import com.crdroid.settings.fragments.LockScreen;
 import com.crdroid.settings.fragments.Miscellaneous;
 import com.crdroid.settings.fragments.StatusBar;
 
@@ -99,7 +99,6 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             frags[3] = new NavbarSettings();
             frags[4] = new NotificationsSettings();
             frags[5] = new DisplaySettings();
-            frags[6] = new LockScreenSettings();
             frags[7] = new PowerMenuSettings();
             frags[8] = new RecentsSettings();
             frags[9] = new SoundSettings();
@@ -107,8 +106,9 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             frags[11] = new MiscSettings();
 */
             frags[0] = new StatusBar();
-            frags[1] = new Miscellaneous();
-            frags[2] = new About();
+            frags[1] = new LockScreen();
+            frags[2] = new Miscellaneous();
+            frags[3] = new About();
         }
 
         @Override
@@ -136,13 +136,13 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             getString(R.string.navbar_title),
             getString(R.string.notifications_title),
             getString(R.string.display_title),
-            getString(R.string.lockscreen_title),
             getString(R.string.powermenu_title),
             getString(R.string.recents_title),
             getString(R.string.sound_title),
             getString(R.string.animation_title),
 */
             getString(R.string.statusbar_title),
+            getString(R.string.lockscreen_title),
             getString(R.string.misc_title),
             getString(R.string.about_crdroid)
         };
