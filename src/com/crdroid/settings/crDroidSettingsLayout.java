@@ -17,23 +17,21 @@
 package com.crdroid.settings;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.ContentResolver;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
-
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
-
-import com.crdroid.settings.R;
 
 /*
 import com.crdroid.settings.fragments.QuickSettings;
@@ -47,10 +45,13 @@ import com.crdroid.settings.fragments.SoundSettings;
 import com.crdroid.settings.fragments.AnimationSettings;
 */
 
+import com.crdroid.settings.fab.FloatingActionsMenu;
+import com.crdroid.settings.fab.FloatingActionButton;
 import com.crdroid.settings.fragments.About;
 import com.crdroid.settings.fragments.LockScreen;
 import com.crdroid.settings.fragments.Miscellaneous;
 import com.crdroid.settings.fragments.StatusBar;
+import com.crdroid.settings.R;
 
 public class crDroidSettingsLayout extends SettingsPreferenceFragment {
 
@@ -61,10 +62,14 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
     SectionsPagerAdapter mSectionsPagerAdapter;
     protected Context mContext;
     private LinearLayout mLayout;
+    private FloatingActionsMenu mFab;
+    private FrameLayout mInterceptorFrame;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContainer = container;
         View view = inflater.inflate(R.layout.crdroid_settings, container, false);
+        mFab = (FloatingActionsMenu) view.findViewById(R.id.fab_menu);
+        mInterceptorFrame = (FrameLayout) view.findViewById(R.id.fl_interceptor);
         mLayout = (LinearLayout) view.findViewById(R.id.crdroid_content);
         mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
         mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
@@ -72,7 +77,55 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mTabs.setViewPager(mViewPager);
         mContext = getActivity().getApplicationContext();
-        ContentResolver resolver = getActivity().getContentResolver();
+
+        mInterceptorFrame.getBackground().setAlpha(0);
+
+        mFab.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
+        @Override
+        public void onMenuExpanded() {
+        mInterceptorFrame.getBackground().setAlpha(240);
+        mInterceptorFrame.setOnTouchListener(new View.OnTouchListener() {
+             @Override
+             public boolean onTouch(View v, MotionEvent event) {
+                   mFab.collapse();
+                   return true;
+                   }
+             });
+        }
+
+        @Override
+        public void onMenuCollapsed() {
+                    mInterceptorFrame.getBackground().setAlpha(0);
+                    mInterceptorFrame.setOnTouchListener(null);
+    	            }
+        });
+
+        mInterceptorFrame.setOnTouchListener(new View.OnTouchListener() {
+             @Override
+             public boolean onTouch(View v, MotionEvent event) {
+                if (mFab.isExpanded()) {
+                    mFab.collapse();
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        FloatingActionButton mFab1 = (FloatingActionButton) view.findViewById(R.id.fab_reset);
+        mFab1.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 StatusBar.reset(mContext);
+                 LockScreen.reset(mContext);
+                 Miscellaneous.reset(mContext);
+                 mSectionsPagerAdapter.notifyDataSetChanged();
+                 if (mFab.isExpanded())
+                     mFab.collapse();
+                 finish();
+                 startActivity(getIntent());
+             }
+        });
+
         return view;
     }
 

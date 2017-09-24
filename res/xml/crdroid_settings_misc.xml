@@ -44,6 +44,7 @@
             android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
     </PreferenceScreen>
 
+    <!-- CPU Info -->
     <SwitchPreference
         android:key="show_cpu_info"
         android:icon="@drawable/ic_info"
@@ -77,6 +78,7 @@
         android:icon="@drawable/ic_toast"
         android:title="@string/toast_icon_title"
         android:summary="@string/toast_icon_summary"
+        android:theme="@style/PrefsTheme"
         android:defaultValue="true" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -84,6 +86,7 @@
         android:icon="@drawable/ic_remote"
         android:title="@string/sensor_block_title"
         android:summary="@string/sensor_block_summary"
+        android:theme="@style/PrefsTheme"
         android:defaultValue="false" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -91,6 +94,7 @@
         android:icon="@drawable/ic_pocket"
         android:title="@string/pocket_judge_title"
         android:summary="@string/pocket_judge_summary"
+        android:theme="@style/PrefsTheme"
         android:defaultValue="false" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -98,6 +102,7 @@
         android:icon="@drawable/ic_dnd"
         android:title="@string/dnd_when_call_title"
         android:summary="@string/dnd_when_call_summary"
+        android:theme="@style/PrefsTheme"
         android:defaultValue="true" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -105,6 +110,7 @@
         android:icon="@drawable/ic_three_finger_gesture"
         android:title="@string/three_finger_gesture"
         android:summary="@string/three_finger_gesture_summary"
+        android:theme="@style/PrefsTheme"
         android:defaultValue="false" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -112,6 +118,7 @@
         android:icon="@drawable/ic_dashboard"
         android:title="@string/disable_settings_suggestions_title"
         android:summary="@string/disable_settings_suggestions_summary"
+        android:theme="@style/PrefsTheme"
         android:defaultValue="false" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -119,6 +126,7 @@
         android:icon="@drawable/ic_settings_ui"
         android:title="@string/remove_settings_summary_title"
         android:summary="@string/remove_settings_summary_summary"
+        android:theme="@style/PrefsTheme"
         android:defaultValue="false" />
 
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
@@ -126,6 +134,7 @@
         android:icon="@drawable/ic_sign_caution"
         android:title="@string/allow_signature_fake"
         android:summary="@string/allow_signature_fake_summary"
+        android:theme="@style/PrefsTheme"
         android:defaultValue="false" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -133,5 +142,6 @@
         android:icon="@drawable/ic_close"
         android:title="@string/disable_fc_notifications_title"
         android:summary="@string/disable_fc_notifications_summary"
+        android:theme="@style/PrefsTheme"
         android:defaultValue="false" />-->
 </PreferenceScreen>

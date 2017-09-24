@@ -25,35 +25,41 @@
         android:icon="@drawable/ic_changelog"
         android:title="@string/changelog_crdroid_title"
         android:summary="@string/changelog_crdroid_summary"
-        android:fragment="com.crdroid.settings.fragments.about.Changelog" />
+        android:fragment="com.crdroid.settings.fragments.about.Changelog"
+        settings:allowDividerAbove="false" />
 
     <!-- crDroid Share -->
     <PreferenceScreen
         android:key="crdroid_share"
         android:icon="@drawable/ic_share"
         android:title="@string/share_crdroid_title"
-        android:summary="@string/share_crdroid_summary" />
+        android:summary="@string/share_crdroid_summary"
+        settings:allowDividerAbove="false" />
+
 
     <!-- crDroid Donate -->
     <PreferenceScreen
         android:key="crdroid_donate"
         android:icon="@drawable/ic_donate"
         android:title="@string/donate_crdroid_title"
-        android:summary="@string/donate_crdroid_summary" />
+        android:summary="@string/donate_crdroid_summary"
+        settings:allowDividerAbove="false" />
 
     <!-- crDroid Source -->
     <PreferenceScreen
         android:key="crdroid_source"
         android:icon="@drawable/ic_source"
         android:title="@string/crdroid_source_title"
-        android:summary="@string/crdroid_source_summary" />
+        android:summary="@string/crdroid_source_summary"
+        settings:allowDividerAbove="false" />
 
     <!-- crDroid GooglePlus -->
     <PreferenceScreen
         android:key="crdroid_google_plus"
         android:icon="@drawable/ic_gplus"
         android:title="@string/crdroid_google_plus_title"
-        android:summary="@string/crdroid_google_plus_summary" />
+        android:summary="@string/crdroid_google_plus_summary"
+        settings:allowDividerAbove="false" />
 
     <!-- crDroid Maintainers -->
     <PreferenceScreen
@@ -61,7 +67,8 @@
         android:icon="@drawable/ic_maintainers"
         android:title="@string/maintainers_crdroid_title"
         android:summary="@string/maintainers_crdroid_summary"
-        android:fragment="com.crdroid.settings.fragments.about.Maintainers" />
+        android:fragment="com.crdroid.settings.fragments.about.Maintainers"
+        settings:allowDividerAbove="false" />
 
     <!-- crDroid OTA
     <PreferenceScreen
@@ -80,5 +87,6 @@
         android:icon="@drawable/ic_drill"
         android:title="@string/drill_title"
         android:summary="@string/drill_summary"
-        android:fragment="com.crdroid.settings.fragments.about.Drill" />
+        android:fragment="com.crdroid.settings.fragments.about.Drill"
+        settings:allowDividerAbove="false" />
 </PreferenceScreen>

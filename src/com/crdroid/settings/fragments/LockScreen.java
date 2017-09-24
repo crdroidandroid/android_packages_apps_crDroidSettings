@@ -16,6 +16,7 @@
 package com.crdroid.settings.fragments;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,7 +41,15 @@ public class LockScreen extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Context mContext = getActivity().getApplicationContext();
+
         addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putInt(resolver,
+                Settings.System.LOCKSCREEN_BATTERY_INFO, 1);
     }
 
     @Override

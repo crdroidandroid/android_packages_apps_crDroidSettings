@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android
+ * Copyright (C) 2016-2017 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package com.crdroid.settings.fragments;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -49,53 +50,64 @@ public class Miscellaneous extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Context mContext = getActivity().getApplicationContext();
+
         addPreferencesFromResource(R.xml.crdroid_settings_misc);
 
         // mLockClock
-        if (!DevelopmentSettings.isPackageInstalled(getActivity(), KEY_LOCK_CLOCK_PACKAGE_NAME)) {
+        if (!DevelopmentSettings.isPackageInstalled(mContext, KEY_LOCK_CLOCK_PACKAGE_NAME)) {
             getPreferenceScreen().removePreference(findPreference(KEY_LOCK_CLOCK));
         }
 
         mShowCpuInfo = (SwitchPreference) findPreference(SHOW_CPU_INFO_KEY);
-        mShowCpuInfo.setChecked(Settings.Global.getInt(getActivity().getContentResolver(),
+        mShowCpuInfo.setChecked(Settings.Global.getInt(mContext.getContentResolver(),
                 Settings.Global.SHOW_CPU_OVERLAY, 0) == 1);
         mShowCpuInfo.setOnPreferenceChangeListener(this);
 
         // MediaScanner behavior on boot
         mMSOB = (ListPreference) findPreference(MEDIA_SCANNER_ON_BOOT);
-        int mMSOBValue = Settings.System.getInt(getActivity().getContentResolver(),
+        int mMSOBValue = Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.MEDIA_SCANNER_ON_BOOT, 0);
         mMSOB.setValue(String.valueOf(mMSOBValue));
         mMSOB.setSummary(mMSOB.getEntry());
         mMSOB.setOnPreferenceChangeListener(this);
     }
 
-    private void writeCpuInfoOptions(boolean value) {
-        Settings.Global.putInt(getActivity().getContentResolver(),
+    private static void writeCpuInfoOptions(Context mContext, boolean value) {
+        Settings.Global.putInt(mContext.getContentResolver(),
                 Settings.Global.SHOW_CPU_OVERLAY, value ? 1 : 0);
         Intent service = (new Intent())
                 .setClassName("com.android.systemui", "com.android.systemui.CPUInfoService");
         if (value) {
-            getActivity().startService(service);
+            mContext.startService(service);
         } else {
-            getActivity().stopService(service);
+            mContext.stopService(service);
         }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        Context mContext = getActivity().getApplicationContext();
         if (preference == mShowCpuInfo) {
-            writeCpuInfoOptions((Boolean) newValue);
+            writeCpuInfoOptions(mContext, (Boolean) newValue);
             return true;
         } else if (preference == mMSOB) {
             int value = Integer.parseInt(((String) newValue).toString());
-            Settings.System.putInt(getContentResolver(),
+            Settings.System.putInt(resolver,
                     Settings.System.MEDIA_SCANNER_ON_BOOT, value);
             mMSOB.setValue(String.valueOf(value));
             mMSOB.setSummary(mMSOB.getEntries()[value]);
             return true;
         }
         return false;
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        writeCpuInfoOptions(mContext, false);
+        Settings.System.putInt(resolver,
+                Settings.System.MEDIA_SCANNER_ON_BOOT, 0);
     }
 
     @Override

@@ -16,6 +16,7 @@
 package com.crdroid.settings.fragments;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.crdroid.settings.fragments.statusbar.NetworkTraffic;
 import com.crdroid.settings.R;
 
 public class StatusBar extends SettingsPreferenceFragment {
@@ -41,6 +43,18 @@ public class StatusBar extends SettingsPreferenceFragment {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.crdroid_settings_statusbar);
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+
+        NetworkTraffic.reset(mContext);
+        Settings.System.putInt(resolver,
+                Settings.System.SHOW_FOURG_ICON, 0);
+        Settings.System.putInt(resolver,
+                Settings.System.ROAMING_INDICATOR_ICON, 1);
+        Settings.System.putInt(resolver,
+                Settings.System.BLUETOOTH_SHOW_BATTERY, 1);
     }
 
     @Override
