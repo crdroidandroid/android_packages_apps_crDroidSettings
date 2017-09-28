@@ -19,6 +19,13 @@
     android:title="@string/navbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="double_tap_sleep_navbar"
+        android:icon="@drawable/ic_double_tap"
+        android:title="@string/smartbar_doubletap_sleep_title"
+        android:summary="@string/smartbar_doubletap_sleep_summary"
+        android:defaultValue="false" />
+
     <!--<SwitchPreference
         android:key="navbar_visibility"
         android:icon="@drawable/ic_navbar"

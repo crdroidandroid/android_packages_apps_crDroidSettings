@@ -46,6 +46,8 @@ public class NavBar extends SettingsPreferenceFragment {
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putInt(resolver,
+                Settings.System.DOUBLE_TAP_SLEEP_NAVBAR, 0);
     }
 
     @Override
