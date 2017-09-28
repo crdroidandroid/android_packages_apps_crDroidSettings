@@ -50,6 +50,8 @@ public class LockScreen extends SettingsPreferenceFragment {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putInt(resolver,
                 Settings.System.LOCKSCREEN_BATTERY_INFO, 1);
+        Settings.System.putInt(resolver,
+                Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, 0);
     }
 
     @Override

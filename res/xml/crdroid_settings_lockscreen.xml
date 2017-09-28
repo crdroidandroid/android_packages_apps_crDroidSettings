@@ -105,18 +105,18 @@
             android:defaultValue="true" />
     </PreferenceCategory>
 
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="lockscreen_gestures_category"
         android:title="@string/lockscreen_gestures_category">
 
-        <cyanogenmod.preference.CMSecureSettingSwitchPreference
-            android:key="double_tap_sleep_anywhere"
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_lockscreen"
             android:icon="@drawable/ic_double_tap"
             android:title="@string/double_tap_sleep_anywhere_title"
             android:summary="@string/double_tap_sleep_anywhere_summary"
             android:defaultValue="false" />
 
-        <SwitchPreference
+        <!--<SwitchPreference
             android:key="fp_success_vibrate"
             android:icon="@drawable/ic_fp"
             android:title="@string/fp_success_vibrate_title"
@@ -129,10 +129,10 @@
             android:icon="@drawable/ic_fp"
             android:title="@string/fp_unlock_keystore_title"
             android:summary="@string/fp_unlock_keystore_summary"
-            android:persistent="false" />
+            android:persistent="false" />-->
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="lockscreen_misc_category"
         android:title="@string/lockscreen_misc_category">
 
