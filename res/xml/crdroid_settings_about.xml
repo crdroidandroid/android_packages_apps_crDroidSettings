@@ -70,16 +70,14 @@
         android:fragment="com.crdroid.settings.fragments.about.Maintainers"
         settings:allowDividerAbove="false" />
 
-    <!-- crDroid OTA
+    <!-- crDroid OTA -->
     <PreferenceScreen
         android:key="crdroid_ota"
         android:icon="@drawable/ic_update"
         android:title="@string/ota_crdroid_title"
-        android:summary="@string/ota_crdroid_summary">
-        <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.crdroid.ota"
-                android:targetClass="com.crdroid.ota.MainActivity" />
-    </PreferenceScreen> -->
+        android:summary="@string/ota_crdroid_summary"
+        android:fragment="com.crdroid.settings.fragments.about.OTA"
+        settings:allowDividerAbove="false" />
 
     <!-- crDroid Drill -->
     <PreferenceScreen
