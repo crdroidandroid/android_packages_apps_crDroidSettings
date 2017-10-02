@@ -24,8 +24,7 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.graphics.Color;
 
-import com.crdroid.settings.crDroidSettingsLayout;
-import com.crdroid.settings.fragments.about.OTA;
+import com.crdroid.settings.crDroidOTA;
 import com.crdroid.settings.R;
 
 /**
@@ -50,7 +49,7 @@ class NotificationHelper extends ContextWrapper {
         chan.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
         getManager().createNotificationChannel(chan);
 
-        Intent intent = new Intent(context, crDroidSettingsLayout.class);
+        Intent intent = new Intent(context, crDroidOTA.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         pendingIntent = PendingIntent.getActivity(context, 0, intent,
                 PendingIntent.FLAG_ONE_SHOT);
