@@ -44,15 +44,44 @@ import java.util.List;
 import java.util.ArrayList;
 
 @SearchIndexable
-public class Sound extends SettingsPreferenceFragment implements Indexable {
+public class Sound extends SettingsPreferenceFragment implements Indexable,
+        Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "Sound";
+
+    private static final String RINGTONE_FOCUS_MODE = "ringtone_focus_mode";
+
+    private ListPreference mHeadsetRingtoneFocus;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        ContentResolver resolver = getActivity().getContentResolver();
+
         addPreferencesFromResource(R.xml.crdroid_settings_sound);
+
+        mHeadsetRingtoneFocus = (ListPreference) findPreference(RINGTONE_FOCUS_MODE);
+        int mHeadsetRingtoneFocusValue = Settings.Global.getInt(resolver,
+                Settings.Global.RINGTONE_FOCUS_MODE, 1);
+        mHeadsetRingtoneFocus.setValue(Integer.toString(mHeadsetRingtoneFocusValue));
+        mHeadsetRingtoneFocus.setSummary(mHeadsetRingtoneFocus.getEntry());
+        mHeadsetRingtoneFocus.setOnPreferenceChangeListener(this);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mHeadsetRingtoneFocus) {
+            int mHeadsetRingtoneFocusValue = Integer.valueOf((String) newValue);
+            int index = mHeadsetRingtoneFocus.findIndexOfValue((String) newValue);
+            mHeadsetRingtoneFocus.setSummary(
+                    mHeadsetRingtoneFocus.getEntries()[index]);
+            Settings.Global.putInt(resolver, Settings.Global.RINGTONE_FOCUS_MODE,
+                    mHeadsetRingtoneFocusValue);
+            return true;
+        }
+        return false;
     }
 
     public static void reset(Context mContext) {
@@ -63,6 +92,7 @@ public class Sound extends SettingsPreferenceFragment implements Indexable {
                 Settings.System.ADAPTIVE_PLAYBACK_TIMEOUT, 30, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SCREENSHOT_SOUND, 1, UserHandle.USER_CURRENT);
+        Settings.Global.putInt(resolver, Settings.Global.RINGTONE_FOCUS_MODE, 1);
         VolumePanel.reset(mContext);
     }
 
