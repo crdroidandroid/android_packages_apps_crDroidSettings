@@ -102,4 +102,11 @@
         settings:interval="10"
         settings:units="@string/unit_seconds"
         android:dependency="adaptive_playback_enabled" />
+
+    <com.crdroid.settings.preferences.GlobalSettingListPreference
+        android:key="ringtone_focus_mode"
+        android:title="@string/ringtone_focus_mode_title"
+        android:entries="@array/ringtone_focus_mode_entries"
+        android:entryValues="@array/ringtone_focus_mode_values"
+        android:defaultValue="1" />
 </PreferenceScreen>
