@@ -55,6 +55,8 @@ public class StatusBar extends SettingsPreferenceFragment {
                 Settings.System.ROAMING_INDICATOR_ICON, 1);
         Settings.System.putInt(resolver,
                 Settings.System.BLUETOOTH_SHOW_BATTERY, 1);
+        Settings.System.putInt(resolver,
+                Settings.System.SHOW_VOLTE_ICON, 0);
     }
 
     @Override
