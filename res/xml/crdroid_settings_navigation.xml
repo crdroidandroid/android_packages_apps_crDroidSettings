@@ -70,7 +70,7 @@
             android:summary="@string/fling_settings_summary"
             android:fragment="com.crdroid.settings.fragments.FlingSettings" />
 
-        <com.crdroid.settings.preferences.SeekBarPreference
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="navbar_height_portrait"
             android:icon="@drawable/ic_bar"
             android:title="@string/portrait_title"
@@ -78,7 +78,7 @@
             settings:min="65"
             settings:units="%" />
 
-        <com.crdroid.settings.preferences.SeekBarPreference
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="navbar_height_landscape"
             android:icon="@drawable/ic_bar"
             android:title="@string/land_hor_title"
@@ -86,7 +86,7 @@
             settings:min="65"
             settings:units="%" />
 
-        <com.crdroid.settings.preferences.SeekBarPreference
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="navbar_width"
             android:icon="@drawable/ic_bar"
             android:title="@string/land_vert_title"
