@@ -132,7 +132,7 @@
             android:persistent="false" />-->
     </PreferenceCategory>
 
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="lockscreen_misc_category"
         android:title="@string/lockscreen_misc_category">
 
@@ -144,7 +144,7 @@
                android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.SeekBarPreference
-               android:key="lockscreen_max_notif_cofig"
+               android:key="lockscreen_max_notif_config"
                android:icon="@drawable/ic_counter"
                android:title="@string/lockscreen_maxnotif_config"
                android:max="8"
@@ -153,7 +153,7 @@
                android:persistent="false"
                android:dependency="lock_screen_custom_notif" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
                android:key="lockscreen_enable_power_menu"
                android:icon="@drawable/ic_power"
                android:title="@string/lockscreen_enable_power_menu_title"
@@ -165,7 +165,7 @@
                android:icon="@drawable/ic_settings_quicksettings"
                android:title="@string/lockscreen_enable_qs_title"
                android:summary="@string/lockscreen_enable_qs_summary"
-               android:defaultValue="true" />
-    </PreferenceCategory>-->
+               android:defaultValue="true" />-->
+    </PreferenceCategory>
 
 </PreferenceScreen>
