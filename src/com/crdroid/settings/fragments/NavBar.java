@@ -48,6 +48,8 @@ public class NavBar extends SettingsPreferenceFragment {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putInt(resolver,
                 Settings.System.DOUBLE_TAP_SLEEP_NAVBAR, 0);
+        Settings.System.putInt(resolver,
+                Settings.System.PIXEL_NAV_ANIMATION, 1);
     }
 
     @Override
