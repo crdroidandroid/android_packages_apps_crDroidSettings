@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 crDroid Android Project
+     Copyright (C) 2017-2021 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -36,4 +36,14 @@
         android:dependency="charging_sounds_enabled"
         android:persistent="false" />
 
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="battery_fully_charged_sound_enabled"
+        android:title="@string/battery_fully_charged_sound_enabled_title"
+        android:summary="@string/battery_fully_charged_sound_enabled_summary" />
+
+    <Preference
+        android:key="battery_fully_charged_sound_ringtone"
+        android:title="@string/battery_fully_charged_sound_ringtone_title"
+        android:dependency="battery_fully_charged_sound_enabled"
+        android:persistent="false" />
 </PreferenceScreen>
