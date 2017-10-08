@@ -136,6 +136,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0);
         Settings.System.putInt(resolver,
                 Settings.System.QS_SMART_PULLDOWN, 0);
+        Settings.System.putInt(resolver,
+                Settings.System.DOUBLE_TAP_SLEEP_GESTURE, 0);
     }
 
     @Override
