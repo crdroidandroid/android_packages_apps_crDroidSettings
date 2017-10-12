@@ -31,11 +31,17 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.R;
 
-public class LockScreen extends SettingsPreferenceFragment {
+public class LockScreen extends SettingsPreferenceFragment
+            implements Preference.OnPreferenceChangeListener  {
 
     public static final String TAG = "LockScreen";
+
+    private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_config";
+
+    private CustomSeekBarPreference mMaxKeyguardNotifConfig;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +50,26 @@ public class LockScreen extends SettingsPreferenceFragment {
         Context mContext = getActivity().getApplicationContext();
 
         addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
+
+        ContentResolver resolver = mContext.getContentResolver();
+
+        mMaxKeyguardNotifConfig = (CustomSeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
+        int kgconf = Settings.System.getInt(resolver,
+                Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5);
+        mMaxKeyguardNotifConfig.setValue(kgconf);
+        mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mMaxKeyguardNotifConfig) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(resolver,
+                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, value);
+            return true;
+        }
+        return false;
     }
 
     public static void reset(Context mContext) {
