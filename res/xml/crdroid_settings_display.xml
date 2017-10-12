@@ -19,7 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/display_title">
 
-    <PreferenceScreen
+    <!--<PreferenceScreen
         android:key="doze_fragment"
         android:icon="@drawable/ic_ambient"
         android:title="@string/doze_title"
@@ -52,5 +52,16 @@
         android:icon="@drawable/ic_alarm_check"
         android:title="@string/show_alarm_fullscreen_title"
         android:summary="@string/show_alarm_fullscreen_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" />-->
+
+    <PreferenceScreen
+        android:title=""
+        android:selectable="false"
+        settings:allowDividerAbove="false" />
+
+    <PreferenceScreen
+        android:title=""
+        android:selectable="false"
+        settings:allowDividerAbove="false" />
+
 </PreferenceScreen>

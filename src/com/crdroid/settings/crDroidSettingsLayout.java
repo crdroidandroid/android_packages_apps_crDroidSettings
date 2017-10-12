@@ -37,7 +37,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.crdroid.settings.fragments.QuickSettings;
 import com.crdroid.settings.fragments.ButtonSettings;
 import com.crdroid.settings.fragments.NotificationsSettings;
-import com.crdroid.settings.fragments.DisplaySettings;
 import com.crdroid.settings.fragments.PowerMenuSettings;
 import com.crdroid.settings.fragments.RecentsSettings;
 import com.crdroid.settings.fragments.SoundSettings;
@@ -47,6 +46,7 @@ import com.crdroid.settings.fragments.AnimationSettings;
 import com.crdroid.settings.fab.FloatingActionsMenu;
 import com.crdroid.settings.fab.FloatingActionButton;
 import com.crdroid.settings.fragments.About;
+import com.crdroid.settings.fragments.Display;
 import com.crdroid.settings.fragments.LockScreen;
 import com.crdroid.settings.fragments.Miscellaneous;
 import com.crdroid.settings.fragments.NavBar;
@@ -118,6 +118,7 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
                  StatusBar.reset(mContext);
                  LockScreen.reset(mContext);
                  NavBar.reset(mContext);
+                 Display.reset(mContext);
                  Miscellaneous.reset(mContext);
                  mSectionsPagerAdapter.notifyDataSetChanged();
                  if (mFab.isExpanded())
@@ -151,7 +152,6 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             frags[1] = new QuickSettings();
             frags[2] = new ButtonSettings();
             frags[4] = new NotificationsSettings();
-            frags[5] = new DisplaySettings();
             frags[7] = new PowerMenuSettings();
             frags[8] = new RecentsSettings();
             frags[9] = new SoundSettings();
@@ -161,8 +161,9 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             frags[0] = new StatusBar();
             frags[1] = new LockScreen();
             frags[2] = new NavBar();
-            frags[3] = new Miscellaneous();
-            frags[4] = new About();
+            frags[3] = new Display();
+            frags[4] = new Miscellaneous();
+            frags[5] = new About();
         }
 
         @Override
@@ -188,7 +189,6 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             getString(R.string.quicksettings_title),
             getString(R.string.button_title),
             getString(R.string.notifications_title),
-            getString(R.string.display_title),
             getString(R.string.powermenu_title),
             getString(R.string.recents_title),
             getString(R.string.sound_title),
@@ -197,6 +197,7 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             getString(R.string.statusbar_title),
             getString(R.string.lockscreen_title),
             getString(R.string.navbar_title),
+            getString(R.string.display_title),
             getString(R.string.misc_title),
             getString(R.string.about_crdroid)
         };

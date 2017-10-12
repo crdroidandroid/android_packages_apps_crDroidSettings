@@ -25,6 +25,41 @@
             android:fragment="com.crdroid.settings.fragments.StatusBar"
             android:icon="@drawable/ic_settings_statusbar" />
 
+        <!-- Lock Screen -->
+        <PreferenceScreen
+            android:key="lockscreen_category"
+            android:title="@string/lockscreen_title" 
+            android:fragment="com.crdroid.settings.fragments.LockScreen"
+            android:icon="@drawable/ic_settings_lockscreens" />
+
+        <!-- Navigation Bar -->
+        <PreferenceScreen
+            android:key="navigationbar_category"
+            android:title="@string/navbar_title" 
+            android:fragment="com.crdroid.settings.fragments.NavBar"
+            android:icon="@drawable/ic_settings_navbar" />
+
+        <!-- Display -->
+        <PreferenceScreen
+            android:key="display_category"
+            android:title="@string/display_title" 
+            android:fragment="com.crdroid.settings.fragments.Display"
+            android:icon="@drawable/ic_settings_display" />
+
+        <!-- Miscellaneous -->
+        <PreferenceScreen
+            android:key="misc_category"
+            android:title="@string/misc_title" 
+            android:fragment="com.crdroid.settings.fragments.Miscellaneous"
+            android:icon="@drawable/ic_settings_miscs" />
+
+        <!-- About crDroid -->
+        <PreferenceScreen
+            android:key="about"
+            android:title="@string/about_crdroid"
+            android:fragment="com.crdroid.settings.fragments.About"
+            android:icon="@drawable/ic_settings_about" />
+
         <!-- Quick Settings panel
         <PreferenceScreen
             android:key="quicksettings_category"
@@ -39,13 +74,6 @@
             android:fragment="com.crdroid.settings.fragments.ButtonSettings"
             android:icon="@drawable/ic_settings_buttons"/> -->
 
-        <!-- Navigation Bar -->
-        <PreferenceScreen
-            android:key="navigationbar_category"
-            android:title="@string/navbar_title" 
-            android:fragment="com.crdroid.settings.fragments.NavBar"
-            android:icon="@drawable/ic_settings_navbar" />
-
         <!-- Notifications
         <PreferenceScreen
             android:key="notifications_category"
@@ -53,26 +81,12 @@
             android:fragment="com.crdroid.settings.fragments.NotificationsSettings"
             android:icon="@drawable/ic_settings_notifications" /> -->
 
-        <!-- Display
-        <PreferenceScreen
-            android:key="display_category"
-            android:title="@string/display_title" 
-            android:fragment="com.crdroid.settings.fragments.DisplaySettings"
-            android:icon="@drawable/ic_settings_display" /> -->
-
         <!-- Gestures
         <PreferenceScreen
             android:key="gestures_category"
             android:title="@string/gestures_title" 
             android:fragment="com.crdroid.settings.fragments.GestureSettings"
             android:icon="@drawable/ic_settings_gestures"/> -->
-
-        <!-- Lock Screen -->
-        <PreferenceScreen
-            android:key="lockscreen_category"
-            android:title="@string/lockscreen_title" 
-            android:fragment="com.crdroid.settings.fragments.LockScreen"
-            android:icon="@drawable/ic_settings_lockscreens" />
 
         <!-- Power Menu
         <PreferenceScreen
@@ -101,20 +115,6 @@
             android:title="@string/animation_title" 
             android:fragment="com.crdroid.settings.fragments.AnimationSettings"
             android:icon="@drawable/ic_settings_animation" /> -->
-
-        <!-- Miscellaneous -->
-        <PreferenceScreen
-            android:key="misc_category"
-            android:title="@string/misc_title" 
-            android:fragment="com.crdroid.settings.fragments.Miscellaneous"
-            android:icon="@drawable/ic_settings_miscs" />
-
-        <!-- About crDroid -->
-        <PreferenceScreen
-            android:key="about"
-            android:title="@string/about_crdroid"
-            android:fragment="com.crdroid.settings.fragments.About"
-            android:icon="@drawable/ic_settings_about" />
 
         <PreferenceScreen
             android:title=""
