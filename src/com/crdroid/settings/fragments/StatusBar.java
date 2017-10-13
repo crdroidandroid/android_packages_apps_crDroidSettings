@@ -32,6 +32,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.crdroid.settings.fragments.statusbar.BatteryBar;
 import com.crdroid.settings.fragments.statusbar.NetworkTraffic;
 import com.crdroid.settings.R;
 
@@ -123,6 +124,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
 
+        BatteryBar.reset(mContext);
         NetworkTraffic.reset(mContext);
         Settings.System.putInt(resolver,
                 Settings.System.SHOW_FOURG_ICON, 0);
