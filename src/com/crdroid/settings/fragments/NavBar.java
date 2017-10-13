@@ -20,12 +20,14 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemProperties;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
@@ -33,15 +35,54 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.R;
 
-public class NavBar extends SettingsPreferenceFragment {
+public class NavBar extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "NavBar";
+
+    private static final String NAVBAR_VISIBILITY = "navbar_visibility";
+
+    private SwitchPreference mNavbarVisibility;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.crdroid_settings_navigation);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
+
+        boolean showing = Settings.Secure.getInt(resolver,
+                Settings.Secure.NAVIGATION_BAR_ENABLED,
+                deviceNavigationDefault(getActivity())) != 0;
+        mNavbarVisibility.setChecked(showing);
+        mNavbarVisibility.setOnPreferenceChangeListener(this);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference.equals(mNavbarVisibility)) {
+            boolean showing = ((Boolean)newValue);
+            Settings.Secure.putInt(resolver, Settings.Secure.NAVIGATION_BAR_ENABLED,
+                    showing ? 1 : 0);
+            mNavbarVisibility.setChecked(showing);
+            return true;
+        }
+        return false;
+    }
+
+    public static int deviceNavigationDefault(Context context) {
+        final boolean showByDefault = context.getResources().getBoolean(
+                com.android.internal.R.bool.config_showNavigationBar);
+
+        if (showByDefault) {
+            return 1;
+        }
+
+        return 0;
     }
 
     public static void reset(Context mContext) {
@@ -50,6 +91,8 @@ public class NavBar extends SettingsPreferenceFragment {
                 Settings.System.DOUBLE_TAP_SLEEP_NAVBAR, 0);
         Settings.System.putInt(resolver,
                 Settings.System.PIXEL_NAV_ANIMATION, 1);
+        Settings.Secure.putInt(resolver,
+                Settings.Secure.NAVIGATION_BAR_ENABLED, deviceNavigationDefault(mContext));
     }
 
     @Override

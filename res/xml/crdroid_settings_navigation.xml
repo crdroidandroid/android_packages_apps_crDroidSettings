@@ -19,6 +19,12 @@
     android:title="@string/navbar_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <SwitchPreference
+        android:key="navbar_visibility"
+        android:icon="@drawable/ic_navbar"
+        android:title="@string/navbar_visibility"
+        android:summary="@string/navbar_visibility_summary" />
+
     <PreferenceCategory
         android:key="navbar_gestures_category"
         android:title="@string/gestures_title">
@@ -28,6 +34,7 @@
             android:icon="@drawable/ic_double_tap"
             android:title="@string/smartbar_doubletap_sleep_title"
             android:summary="@string/smartbar_doubletap_sleep_summary"
+            android:dependency="navbar_visibility"
             android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -35,16 +42,11 @@
             android:icon="@drawable/ic_google_circles"
             android:title="@string/pixel_navbar_anim_title"
             android:summary="@string/pixel_navbar_anim_summary"
+            android:dependency="navbar_visibility"
             android:defaultValue="true" />
     </PreferenceCategory>
 
-    <!--<SwitchPreference
-        android:key="navbar_visibility"
-        android:icon="@drawable/ic_navbar"
-        android:title="@string/navbar_visibility"
-        android:summary="@string/navbar_visibility_summary" />
-
-    <Preference
+    <!--<Preference
         android:key="pie_settings"
         android:icon="@drawable/ic_pie"
         android:title="@string/pie_settings"
