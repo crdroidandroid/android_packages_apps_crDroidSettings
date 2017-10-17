@@ -20,15 +20,15 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/slim_recents_title" >
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="show_running_tasks"
         android:title="@string/show_running_tasks_title"
-        android:defaultValue="false" />
+        android:defaultValue="false" />-->
 
-    <com.crdroid.settings.preferences.SeekBarPreference
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
         android:key="recents_max_apps"
         android:title="@string/recents_max_apps_title"
-        android:max="105"
+        android:max="30"
         settings:min="5"
         android:persistent="false" />
 
@@ -45,13 +45,13 @@
         android:summary="@string/recent_panel_lefty_mode_summary"
         android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="recent_panel_show_topmost"
         android:title="@string/recent_panel_show_topmost_title"
         android:summary="@string/recent_panel_show_topmost_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" />-->
 
-    <com.crdroid.settings.preferences.SeekBarPreference
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
         android:key="recent_panel_scale"
         android:title="@string/recent_panel_scale_title"
         android:max="160"
@@ -60,13 +60,13 @@
         settings:units="%"
         android:persistent="false" />
 
-    <com.crdroid.settings.preferences.ColorPickerPreference
+    <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
         android:key="recent_panel_bg_color"
         android:title="@string/recent_panel_bg_color_title"
         android:defaultValue="#763367d6"
         alphaSlider="true" />
 
-    <com.crdroid.settings.preferences.ColorPickerPreference
+    <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
         android:key="recent_card_bg_color"
         android:title="@string/recent_card_bg_color_title"
         android:defaultValue="0x00ffffff"
@@ -81,4 +81,11 @@
         android:key="slim_icon_pack"
         android:title="@string/recents_icon_pack_title"
         android:summary="@string/recents_icon_pack_summary" />
+
+    <Preference
+        android:key="blacklist_fragment"
+        android:fragment="com.crdroid.settings.recents.SlimRecentsBlacklist"
+        android:title="@string/slim_blacklist_apps_cat_title"
+        android:summary="@string/slim_blacklist_apps_summary"
+        android:persistent="false" />
 </PreferenceScreen>
