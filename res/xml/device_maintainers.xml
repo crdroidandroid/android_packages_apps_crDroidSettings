@@ -19,11 +19,17 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/about_crdroid">
 
-    <!-- ANDROİD ONE
+    <!-- ANDROİD ONE -->
     <PreferenceCategory
         android:title="@string/device_category_one_title">
-
-    </PreferenceCategory> -->
+        
+	<Preference
+            android:id="@+id/device_google_seed"
+            android:icon="@drawable/phone_tint"
+            android:title="@string/device_google_seed"
+            android:summary="@string/device_google_seed_summary"
+            android:selectable="false" />
+    </PreferenceCategory>
 
     <!-- ASUS -->
     <PreferenceCategory
