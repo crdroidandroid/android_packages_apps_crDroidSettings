@@ -29,7 +29,8 @@ public class QuickSettings extends SettingsPreferenceFragment
     private static final String PREF_SYSUI_QQS_COUNT = "sysui_qqs_count_key";
     private static final String PREF_ROWS_PORTRAIT = "qs_rows_portrait";
     private static final String PREF_ROWS_LANDSCAPE = "qs_rows_landscape";
-    private static final String PREF_COLUMNS = "qs_columns";
+    private static final String PREF_COLUMNS_PORTRAIT = "qs_columns_portrait";
+    private static final String PREF_COLUMNS_LANDSCAPE = "qs_columns_landscape";
     private static final String DAYLIGHT_HEADER_PACK = "daylight_header_pack";
     private static final String DEFAULT_HEADER_PACKAGE = "com.android.systemui";
     private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
@@ -39,7 +40,8 @@ public class QuickSettings extends SettingsPreferenceFragment
     private SeekBarPreference mSysuiQqsCount;
     private SeekBarPreference mRowsPortrait;
     private SeekBarPreference mRowsLandscape;
-    private SeekBarPreference mQsColumns;
+    private SeekBarPreference mQsColumnsPortrait;
+    private SeekBarPreference mQsColumnsLandscape;
     private ListPreference mDaylightHeaderPack;
     private SeekBarPreference mHeaderShadow;
     private ListPreference mHeaderProvider;
@@ -78,11 +80,17 @@ public class QuickSettings extends SettingsPreferenceFragment
         mRowsLandscape.setValue(rowsLandscape);
         mRowsLandscape.setOnPreferenceChangeListener(this);
 
-        mQsColumns = (SeekBarPreference) findPreference(PREF_COLUMNS);
+        mQsColumnsPortrait = (SeekBarPreference) findPreference(PREF_COLUMNS_PORTRAIT);
         int columnsQs = Settings.Secure.getInt(resolver,
-                Settings.Secure.QS_COLUMNS, 4);
-        mQsColumns.setValue(columnsQs);
-        mQsColumns.setOnPreferenceChangeListener(this);
+                Settings.Secure.QS_COLUMNS_PORTRAIT, 4);
+        mQsColumnsPortrait.setValue(columnsQs);
+        mQsColumnsPortrait.setOnPreferenceChangeListener(this);
+
+        mQsColumnsLandscape = (SeekBarPreference) findPreference(PREF_COLUMNS_LANDSCAPE);
+        columnsQs = Settings.Secure.getInt(resolver,
+                Settings.Secure.QS_COLUMNS_LANDSCAPE, 4);
+        mQsColumnsLandscape.setValue(columnsQs);
+        mQsColumnsLandscape.setOnPreferenceChangeListener(this);
 
         // headers
         String settingHeaderPackage = Settings.System.getString(resolver,
@@ -153,10 +161,15 @@ public class QuickSettings extends SettingsPreferenceFragment
             Settings.Secure.putInt(resolver,
                     Settings.Secure.QS_ROWS_LANDSCAPE, intValue);
             return true;
-        } else if (preference == mQsColumns) {
+        } else if (preference == mQsColumnsPortrait) {
             intValue = (Integer) newValue;
             Settings.Secure.putInt(resolver,
-                    Settings.Secure.QS_COLUMNS, intValue);
+                    Settings.Secure.QS_COLUMNS_PORTRAIT, intValue);
+            return true;
+        } else if (preference == mQsColumnsLandscape) {
+            intValue = (Integer) newValue;
+            Settings.Secure.putInt(resolver,
+                    Settings.Secure.QS_COLUMNS_LANDSCAPE, intValue);
             return true;
         } else if (preference == mDaylightHeaderPack) {
             String value = (String) newValue;
