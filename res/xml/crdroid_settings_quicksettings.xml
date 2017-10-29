@@ -67,6 +67,13 @@
             settings:units=""
             android:persistent="false"
             android:dependency="status_bar_custom_header" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_tap_to_add"
+            android:icon="@drawable/single_tap_icon"
+            android:title="@string/qs_tile_single_tap_title"
+            android:summary="@string/qs_tile_single_tap_summary"
+            android:defaultValue="false" />
     </PreferenceCategory>
 
     <PreferenceCategory 
