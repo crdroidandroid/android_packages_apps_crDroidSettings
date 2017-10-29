@@ -236,6 +236,8 @@
     <string name="lockscreen_enable_power_menu_summary">将在安全锁屏下禁用电源高级菜单</string>
     
     <!-- Quick settings on secure lockscreen -->
+    <string name="lockscreen_enable_qs_title">快速设置</string>
+    <string name="lockscreen_enable_qs_summary">允许在安全屏幕下访问快速设置</string>
      
     <!-- Screenshot sound -->
     <string name="screenshot_sound_title">截图声音</string>
@@ -258,7 +260,95 @@
     <string name="volume_steps_7">7</string>
     <string name="volume_steps_5">5</string>
     
-     <!-- Lockscreen shortcuts -->
+    <!-- WiFi easy toggle  -->
+    <string name="qs_wifi_easy_toggle_title">Wifi 快捷切换键</string>
+    <string name="qs_wifi_easy_toggle_summary">点击即可开启或关闭 Wifi，而不是打开设置界面</string>
+
+    <!-- BT easy toggle  -->
+    <string name="qs_bt_easy_toggle_title">蓝牙快捷切换键</string>
+    <string name="qs_bt_easy_toggle_summary">点击即可开启或关闭蓝牙，而不是打开设置界面</string>
+
+    <!-- Advanced data tile -->
+    <string name="qs_advanced_data_title">移动数据快捷切换键</string>
+    <string name="qs_advanced_data_summary">点击即可开启或关闭移动数据，而不是打开设置界面</string>
+
+    <!-- Battery Saver easy toggle -->
+    <string name="qs_battery_easy_toggle_title">一键切换省电模式</string>
+    <string name="qs_battery_easy_toggle_summary">点击电池瓷块不打开设置直接切换至省电模式</string>
+
+    <!-- Location easy toggle -->
+    <string name="qs_location_easy_toggle_title">位置轻松切换</string>
+    <string name="qs_location_easy_toggle_summary">单击开关位置服务，而不是前往设置</string>
+     
+    <!-- Statusbar crDroid logo -->
+    <string name="status_bar_crdroid_logo_title">显示crDroid Logo</string>
+    <string name="status_bar_crdroid_logo_summary">在状态栏上显示crDroid Logo</string>
+    <string name="status_bar_crdroid_logo_color">Logo 颜色</string>
+    <string name="status_bar_crdroid_logo_position">Logo 位置</string>
+    <string name="status_bar_crdroid_logo_position_summary">选择在左侧还是右侧显示Logo</string>
+    <string name="status_bar_crdroid_logo_style">Logo 样式</string>
+    <string name="status_bar_logo_position_right">右侧</string>
+    <string name="status_bar_logo_position_left">左侧</string>
+
+    <!-- Expanded Desktop -->
+    <string name="expanded_desktop_title">扩展桌面选项</string>
+    <string name="expanded_desktop_summary">Expand your available desktop space by hiding the status bar, navigation bar, or both</string>
+    <string name="expanded_hide_nothing">不隐藏</string>
+    <string name="expanded_hide_status">隐藏状态栏</string>
+    <string name="expanded_hide_navigation">隐藏导航栏</string>
+    <string name="expanded_hide_both">全部隐藏</string>
+    <string name="expanded_nothing_to_show">要添加一个为单个应用配置的扩展状态，请关闭“全部开启”</string>
+    <string name="expanded_desktop_state">扩展的状态</string>
+    <string name="expanded_enabled_for_all">启用全部</string>
+    <string name="expanded_user_configurable">用户配置</string>
+    <string name="expanded_desktop_style">扩展桌面的样式</string>
+    <string name="expanded_desktop_style_description">选择默认的扩展桌面样式</string>
+     
+    <!-- DSLV -->
+    <string name="shortcut_action_none">None</string>
+    <string name="shortcut_action_longpress">长按:</string>
+    <string name="shortcut_action_select_action_longpress">选择长按动作:</string>
+    <string name="shortcut_action_select_action">选择动作:</string>
+    <string name="shortcut_action_select_action_newaction">选择新动作:</string>
+    <string name="shortcut_action_reset">重置</string>
+    <string name="shortcut_action_add">添加</string>
+    <string name="shortcut_action_reset_message">将全部条目重置为默认？</string>
+    <string name="shortcut_action_max">Maximum entries size has been reached</string>
+    <string name="shortcut_action_warning">警告</string>
+    <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
+    <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
+    <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
+    <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
+    <string name="shortcut_action_help_shortcut">shortcut</string>
+    <string name="shortcut_action_help_button">button</string>
+    <string name="shortcut_action_help_app">app</string>
+    <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
+     
+    <!-- General strings -->
+    <string name="ok">确定</string>
+    <string name="reset">重置</string>
+    <string name="attention">注意</string>
+    <string name="enabled">已启用</string>
+    <string name="disabled">已禁用</string>
+    <string name="default_string">默认</string>
+    <string name="add">添加</string>
+    <string name="choose_app">Choose app</string>
+    <string name="empty_title">空</string>
+    <string name="normal_title">正常</string>
+    <string name="hidden_title">隐藏</string>
+    <string name="position_title">位置</string>
+    <string name="position_right_title">右侧</string>
+    <string name="position_centered_title">中间</string>
+    <string name="help">Help</string>
+    <string name="reset_message">Reset all entries to default?</string>
+    <string name="profiles_add">添加</string>
+    <string name="profile_choose_app">Choose app</string>
+    <string name="profile_reset_title">重置</string>
+    <string name="show_title">显示</string>
+    <string name="reset_paranoid">Paranoid</string>
+    <string name="reset_android">Android</string>
+
+    <!-- Lockscreen shortcuts -->
     <string name="lockscreen_shortcuts_title">锁屏快捷方式</string>
     <string name="lockscreen_shortcuts_summary">更改锁屏时钟下方的快捷方式</string>
     <string name="lockscreen_shorcuts_launch_type_title">快捷键</string>
@@ -687,6 +777,27 @@
     <string name="qs_expand_indicator_title">扩展桌面指示</string>
     <string name="qs_expand_indicator_summary">禁用扩展桌面指示</string>
 
+    <!-- Tiles animation style  -->
+    <string name="qs_tile_animation_style_title">快速设置瓷块动画</string>
+    <string name="qs_tile_animation_duration_title">动画时长</string>
+    <string name="qs_tile_animation_style_off">无动画</string>
+    <string name="qs_tile_animation_style_flip">翻转</string>
+    <string name="qs_tile_animation_style_rotate">旋转</string>
+    <string name="qs_tile_animation_duration_low">低</string>
+    <string name="qs_tile_animation_duration_default">默认</string>
+    <string name="qs_tile_animation_duration_fast">快</string>
+     
+    <!-- Tiles animation interpolator -->
+    <string name="qs_tile_animation_interpolator_title">快速设置瓷块动画插值器</string>
+    <string name="qs_tile_animation_interpolator_linearInterpolator">线性</string>
+    <string name="qs_tile_animation_interpolator_accelerateInterpolator">加速</string>
+    <string name="qs_tile_animation_interpolator_decelerateInterpolator">减速</string>
+    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">先加速后减速</string>
+    <string name="qs_tile_animation_interpolator_bounceInterpolator">反弹</string>
+    <string name="qs_tile_animation_interpolator_overshootInterpolator">越界</string>
+    <string name="qs_tile_animation_interpolator_anticipateInterpolator">预测</string>
+    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">预测和越界</string>
+
     <!-- Disabling FC notifications -->
     <string name="disable_fc_notifications_title">禁用 FC 通知</string>
     <string name="disable_fc_notifications_summary">隐藏所有强制关闭的通知</string>
@@ -694,10 +805,19 @@
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">强制扩展通知</string>
     <string name="force_expanded_notifications_summary">仅适用于支持扩展通知的应用</string>
+     
+    <!-- Sounds: Charging sounds -->
+    <string name="charging_sounds_settings_title">充电声音</string>
+    <string name="charging_sounds_settings_summary">自定义当连接和断开充电器时要播放的声音</string>
+    <string name="charging_sounds_enabled_title">启用</string>
+    <string name="charging_sounds_enabled_summary">Play a sound when connecting or disconnecting a power source</string>
+    <string name="power_notifications_vibrate_title">振动</string>
+    <string name="charging_sounds_ringtone_title">通知声音</string>
+    <string name="charging_sounds_ringtone_silent">静默</string>
+     
     <!-- 4G icon -->
-
     <string name="show_fourg_icon_title">4G 图标</string>
-    <string name="show_fourg_icon_summary">用4G图标代替LTE图标</string>
+    <string name="show_fourg_icon_summary">使用4G图标代替LTE图标</string>
 
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Roaming indicator</string>
@@ -727,6 +847,7 @@
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">启动音乐播放器</string>
     <string name="headset_connect_player_summary">当耳机连接时启动默认的音乐播放器</string>
+     
     <!-- Carrier label -->
     <string name="carrier_title">运营商标签</string>
     <string name="carrier_options_summary">自定义运营商标签</string>
@@ -742,7 +863,7 @@
     <string name="status_bar_carrier_color">运营商标签颜色</string>
     <string name="status_bar_carrier_size">运营商标签文本大小</string>
 
-     <string name="volte_icon_title">VoLTE 图标</string>
+    <string name="volte_icon_title">VoLTE 图标</string>
     <string name="volte_icon_summary">如果可用，显示VoLTE图标</string>
 
     <!-- Fingerprint unlock keystore -->
