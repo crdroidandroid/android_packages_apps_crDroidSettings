@@ -98,14 +98,14 @@ public class NavbarSettings extends SettingsPreferenceFragment implements OnPref
 
         final boolean canMove = DUActionUtils.navigationBarCanMove();
         if (canMove) {
-            mNavGeneral.removePreference(findPreference(KEY_NAVIGATION_HEIGHT_LAND));
+            mNavInterface.removePreference(findPreference(KEY_NAVIGATION_HEIGHT_LAND));
             size = Settings.Secure.getIntForUser(resolver,
                     Settings.Secure.NAVIGATION_BAR_WIDTH, 80, UserHandle.USER_CURRENT);
             mBarWidth = (SeekBarPreference) findPreference(KEY_NAVIGATION_WIDTH);
             mBarWidth.setValue(size);
             mBarWidth.setOnPreferenceChangeListener(this);
         } else {
-            mNavGeneral.removePreference(findPreference(KEY_NAVIGATION_WIDTH));
+            mNavInterface.removePreference(findPreference(KEY_NAVIGATION_WIDTH));
             size = Settings.Secure.getIntForUser(resolver,
                     Settings.Secure.NAVIGATION_BAR_HEIGHT_LANDSCAPE, 80, UserHandle.USER_CURRENT);
             mBarHeightLand = (SeekBarPreference) findPreference(KEY_NAVIGATION_HEIGHT_LAND);
