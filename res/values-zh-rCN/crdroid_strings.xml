@@ -35,7 +35,7 @@
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">颜色拾取器</string>
-    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="press_color_to_apply">应用颜色</string>
     <string name="hex">十六进制:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">设置</string>
@@ -47,8 +47,9 @@
     <string name="cancel">取消</string>
     <string name="save">保存</string>
 
-     <!-- Misc strings -->
+    <!-- Misc strings -->
     <string name="lockclock_title">时钟小部件</string>
+    <string name="lockclock_summary">查看或改变怎样显示时钟小部件</string>
      
     <!-- Network traffic -->
     <string name="network_traffic_title">网速显示</string>
@@ -71,17 +72,21 @@
     <string name="network_traffic_hidearrow">隐藏箭头</string>
     <string name="network_traffic_hidearrow_summary">隐藏流量监控中的箭头</string>
     
-     <!-- SU indicator -->
+    <!-- Settings suggestions  -->
+    <string name="disable_settings_suggestions_title">禁用建议</string>
+    <string name="disable_settings_suggestions_summary">以禁用面板建议</string>
+     
+    <!-- SU indicator -->
     <string name="show_su_indicator_title">Superuser 图标</string>
-    <string name="show_su_indicator_summary">当使用Supersu时显示SU图标</string>
+    <string name="show_su_indicator_summary">当使用原生Supersu时显示超级用户图标</string>
 
     <!-- Settings suggestions  -->
-    <string name="disable_settings_suggestions_title">Disable suggestions</string>
-    <string name="disable_settings_suggestions_summary">Disable suggestions on the dashboard</string>
+    <string name="disable_settings_suggestions_title">禁用面板建议</string>
+    <string name="disable_settings_suggestions_summary">面板建议已禁用</string>
 
     <!-- Settings summary  -->
-    <string name="remove_settings_summary_title">Remove settings summary</string>
-    <string name="remove_settings_summary_summary">Remove summary underneath tile titles</string>
+    <string name="remove_settings_summary_title">禁用面板摘要</string>
+    <string name="remove_settings_summary_summary">面板摘要已禁用</string>
     
     <!-- Immersive Recents -->
     <string name="immersive_recents_title">沉浸式最近任务</string>
@@ -92,7 +97,41 @@
     <string name="immersive_recents_statusbar">仅状态栏</string>
     <string name="immersive_recents_navbar">仅导航栏</string>
     
-     <!-- SmartBar -->
+    <!-- AOSP Recents -->
+    <string name="aosp_first_time_title">AOSP 最近任务</string>
+     
+    <!-- OmniSwitch Recents -->
+    <string name="recents_use_omniswitch_title">用于最近任务</string>
+    <string name="recents_use_omniswitch_summary">用 Omni 最近任务替换原生最近任务</string>
+    <string name="omniswitch_start_settings_title">设置</string>
+    <string name="omniswitch_start_settings_summary">View the settings for OmniSwitch</string>
+    <string name="omniswitch_first_time_title">OmniSwitch 最近任务</string>
+    <string name="omniswitch_first_time_message">请确认您已开启 Omni 切换器。您可以通过下面的“设置”启用它。</string>
+     
+    <!-- Lockscreen categories -->
+    <string name="lockscreen_shortcuts_category">Shortcuts</string>
+    <string name="lockscreen_interface_category">界面</string>
+    <string name="lockscreen_gestures_category">手势</string>
+     <string name="lockscreen_misc_category">杂项</string>
+     
+    <!-- Hide Lockscreen clock, date & alarm -->
+    <string name="hide_lockscreen_clock_title">时钟</string>
+    <string name="hide_lockscreen_clock_summary"显示当前时间</string>
+    <string name="hide_lockscreen_date_title">日期</string>
+    <string name="hide_lockscreen_date_summary">显示当前日期</string>
+    <string name="hide_lockscreen_alarm_title">闹钟</string>
+    <string name="hide_lockscreen_alarm_summary">显示已设置的闹钟</string>
+
+    <!-- Lockscreen notif count -->
+    <string name="lockscreen_maxnotif_title">通知计数</string>
+    <string name="lockscreen_maxnotif_sumary">Enable adjustment of notifications</string>
+    <string name="lockscreen_maxnotif_config">Max allowed notifications</string>
+
+    <!-- Lockscreen tap-to sleep -->
+    <string name="double_tap_sleep_anywhere_title">Tap to sleep</string>
+    <string name="double_tap_sleep_anywhere_summary">在锁屏上双击使设备睡眠</string>
+         
+    <!-- SmartBar -->
     <string name="smartbar_category">Smart Bar</string>
     <string name="smartbar_settings_title">Smart Bar 设置</string>
     <string name="smartbar_editor_title">切换按钮编辑器</string>
@@ -133,7 +172,7 @@
     <string name="smartbar_longpress_delay_long">慢</string>
     <string name="smartbar_custom_icon_size_title">自定义图标缩放</string>
      
-     <!-- Pie -->
+    <!-- Pie -->
     <string name="pie_enable_title">启用Pie控制</string>
     <string name="pie_settings">扇形设置</string>
     <string name="pie_enable_title">启用扇形控制</string>
@@ -273,6 +312,18 @@
     <string name="qs_location_easy_toggle_title">位置轻松切换</string>
     <string name="qs_location_easy_toggle_summary">单击开关位置服务，而不是前往设置</string>
      
+    <!-- Quick settings brightness slider -->
+    <string name="qs_brightness_slider_title">亮度调节滑块</string>
+    <string name="qs_brightness_slider_summary">在快速设置面板显示亮度调节滑块</string>
+     
+    <!-- Quick settings brightness icon -->
+    <string name="brightness_icon_title">亮度调节图标</string>
+    <string name="brightness_icon_summary">在亮度滑块左侧显示亮度调节图标</string>
+     
+    <!-- Quick settings haptic feedback -->
+    <string name="quick_settings_vibrate_title">触摸振动</string>
+    <string name="quick_settings_vibrate_summary">当触摸瓷块时振动</string>
+     
     <!-- Statusbar crDroid logo -->
     <string name="status_bar_crdroid_logo_title">显示crDroid Logo</string>
     <string name="status_bar_crdroid_logo_summary">在状态栏上显示crDroid Logo</string>
@@ -285,7 +336,7 @@
 
     <!-- Expanded Desktop -->
     <string name="expanded_desktop_title">扩展桌面选项</string>
-    <string name="expanded_desktop_summary">Expand your available desktop space by hiding the status bar, navigation bar, or both</string>
+    <string name="expanded_desktop_summary">通过隐藏状态栏和或导航栏来扩展你的桌面可用空间</string>
     <string name="expanded_hide_nothing">不隐藏</string>
     <string name="expanded_hide_status">隐藏状态栏</string>
     <string name="expanded_hide_navigation">隐藏导航栏</string>
@@ -392,6 +443,12 @@
     <string name="shortcut_action_help_delete_last_entry">删除列表中的所有 %1$s 将完全禁用该功能。</string>
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">移除列表中的全部 %1$s 将会完全禁用 Pie 的第二层菜单</string>
      
+    <!-- Actions dialog and default task values set in ActionPreference xml-->
+    <string name="choose_action_title">选择操作</string>
+    <string name="action_entry_default_action">默认设置</string>
+    <string name="action_entry_select_app">选择应用程序</string>
+    <string name="action_entry_custom_action">选择自定义操作</string>
+     
     <!-- Fling -->
     <string name="fling_settings">Fling 设置</string>
     <string name="fling_interface">Fling</string>
@@ -472,6 +529,19 @@
     <string name="fling_lavalamp_color_from">java</string>
     <string name="fling_lavalamp_color_to">熔岩灯消失颜色</string>
      
+    <!-- Pulse config -->
+    <string name="pulse_custom_dimen">栏宽度</string>
+    <string name="pulse_custom_div">栏间距</string>
+    <string name="pulse_filled_block_size">块大小</string>
+    <string name="pulse_empty_block_size">方块间距</string>
+     
+    <!-- Navbar height -->
+    <string name="navigation_bar_size_title">导航栏大小</string>
+    <string name="portrait_title">纵向高度</string>
+    <string name="land_vert_title">横向宽度</string>
+    <string name="land_hor_title">横向高度</string>
+    <string name="positive_done">完成</string>
+     
     <!-- Status bar -->
     <string name="status_bar_toggle_brightness">亮度控制</string>
     <string name="status_bar_toggle_brightness_summary">通过状态栏的亮度调节滑块自动调节亮度</string>
@@ -491,7 +561,7 @@
     <string name="status_bar_clock_position_left">左侧</string>
     <string name="status_bar_clock_position_center">中心</string>
 
-    <string name="status_bar_am_pm_title">AM/PM 风格</string>
+    <string name="status_bar_am_pm_title">上午/下午 风格</string>
     <string name="status_bar_am_pm_info">24小时制已启用</string>
     <string name="status_bar_am_pm_normal">正常</string>
     <string name="status_bar_am_pm_small">较小</string>
@@ -506,8 +576,8 @@
     <string name="status_bar_battery_style_text">文字</string>
     <string name="status_bar_battery_style_hidden">隐藏</string>
 
-    <string name="status_bar_battery_style_tile_title">Override battery tile</string>
-    <string name="status_bar_battery_style_tile_summary">Use same icon style as above in QS battery tile</string>
+    <string name="status_bar_battery_style_tile_title">电池磁贴样式</string>
+    <string name="status_bar_battery_style_tile_summary">允许为状态栏的电池图标设定相同的图标样式</string>
      
     <!-- CPU Info -->
     <string name="show_cpu_info">显示CPU信息</string>
@@ -515,7 +585,24 @@
      
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">下滑截屏</string>
-    <string name="three_finger_gesture_summary">三指下滑截屏</string>
+    <string name="three_finger_gesture_summary">三指下滑来截取屏幕</string>
+     
+    <!-- Transparency porn -->
+    <string name="trans">透明度</string>
+    <string name="trans_summary">自定义多种元素的透明度等级</string>
+    <string name="trans_qs">快速设置</string>
+    <string name="trans_vol_dialog">音量对话框</string>
+    <string name="trans_power_menu">电源菜单</string>
+    <string name="qs_stroke_disabled">已禁用</string>
+    <string name="qs_stroke_accent">强调颜色</string>
+    <string name="qs_stroke_custom">自定义颜色</string>
+    <string name="volume_dialog_transparency">声音对话框透明度</string>
+    <string name="volume_dialog_stroke_disabled">已禁用</string>
+    <string name="volume_dialog_stroke_accent">强调颜色</string>
+    <string name="volume_dialog_stroke_custom">自定义颜色</string>
+    <string name="power_menu_transparency">电源/重启菜单透明度</string>
+    <string name="power_menu_dialog_dim">电源/重启对话框背景遮挡率</string>
+    <string name="soft_restart_required">软重启设备来使更改生效</string>
      
     <!-- Changelog -->
     <string name="changelog_crdroid_title">更新历史</string>
@@ -528,23 +615,23 @@
     <!-- Share crDroid -->
     <string name="share_crdroid_title">分享 crDroid</string>
     <string name="share_crdroid_summary">让其他人知道 crDroid</string>
-    <string name="share_message">Check out what #crDroid is all about @ https://plus.google.com/communities/118297646046960923906</string>
+    <string name="share_message">通过此处获取更多有关信息 @ https://plus.google.com/communities/118297646046960923906</string>
     <string name="share_chooser_title">分享 crDroid</string>
 
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">Github</string>
-    <string name="crdroid_source_summary">We love open source, check us out</string>
+    <string name="crdroid_source_summary">我们在Github开源社区上开放了源码，来看看吧</string>
     <string name="crdroid_google_plus_title">Google+</string>
-    <string name="crdroid_google_plus_summary">Join us on G+ for quick updates and support</string>
+    <string name="crdroid_google_plus_summary">通过Google+加入我们以获取更新及更多信息</string>
 
     <!-- Maintainers -->
-    <string name="maintainers_crdroid_title">Devices and maintainers</string>
-    <string name="maintainers_crdroid_summary">List of supported devices and their official maintainers</string>
+    <string name="maintainers_crdroid_title">设备和维护者</string>
+    <string name="maintainers_crdroid_summary">我们官方支持的设备和它们的维护者列表</string>
     <string name="maintainers_crdroid_error">Unable to load devices and maintainers list</string>
 
     <!-- Data/Wifi activity arrows -->
-    <string name="data_wifi_activity_arrows_title">Data/wifi 活动</string>
-    <string name="data_wifi_activity_arrows_summary">显示 data/wifi 活动箭头</string>
+    <string name="data_wifi_activity_arrows_title">移动数据/Wifi 活动</string>
+    <string name="data_wifi_activity_arrows_summary">显示 移动数据/Wifi 活动箭头</string>
 
     <!-- OTA -->
     <string name="ota_crdroid_title">更新</string>
@@ -583,7 +670,7 @@
     <string name="listview_translate_left">翻转 (左)</string>
     <string name="listview_translate_right">翻转 (右)</string>
 
-   <!-- Power menu Animations  -->
+    <!-- Power menu Animations  -->
     <string name="powermenu">电源菜单</string>
     <string name="power_menu_animation_title">电源菜单动画</string>
     <string name="power_menu_animation_summary">更改电源菜单的动画</string>
@@ -600,7 +687,6 @@
     <string name="power_menu_animation_card">3D</string>
     <string name="power_menu_animation_translucent_top">半透明 （顶部）</string>
     <string name="power_menu_animation_translucent_bottom">半透明 （底部）</string>
-    
 
     <!-- Tiles animation style  -->
     <string name="qs_tiles">快速设置瓷块</string>
@@ -698,7 +784,7 @@
     <string name="backlight_summary_enabled_with_timeout">保持背光灯 <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">启用</string>
 
-     <!--Status bar date -->
+    <!--Status bar date -->
     <string name="status_bar_date_title">日期</string>
     <string name="status_bar_date_none">隐藏 (默认)</string>
     <string name="status_bar_date_small">较小</string>
@@ -791,22 +877,41 @@
     <string name="charging_sounds_settings_title">充电声音</string>
     <string name="charging_sounds_settings_summary">自定义当连接和断开充电器时要播放的声音</string>
     <string name="charging_sounds_enabled_title">启用</string>
-    <string name="charging_sounds_enabled_summary">Play a sound when connecting or disconnecting a power source</string>
+    <string name="charging_sounds_enabled_summary">当连接和断开电源时播放声音</string>
     <string name="power_notifications_vibrate_title">振动</string>
     <string name="charging_sounds_ringtone_title">通知声音</string>
     <string name="charging_sounds_ringtone_silent">静默</string>
+     
+    <!-- Battery Bar -->
+    <string name="battery_bar_title">电池图标</string>
+    <string name="battery_bar">电池图标位置</string>
+    <string name="battery_bar_no_navbar">电池图标位置</string>
+    <string name="battery_bar_location_hide">隐藏</string>
+    <string name="battery_bar_location_statusbar">状态栏</string>
+    <string name="battery_bar_location_top_navbar">导航栏顶部</string>
+    <string name="battery_bar_location_bottom_navbar">导航栏底部</string>
+    <string name="battery_bar_color">电量条颜色</string>
+    <string name="battery_bar_charging_color">电池菜充电颜色</string>
+    <string name="battery_bar_battery_low_color">低电量颜色r</string>
+    <string name="battery_bar_cat">电池图标样式</string>
+    <string name="battery_bar_animate_title">充电动画</string>
+    <string name="battery_bar_style_regular">正常</string>
+    <string name="battery_bar_style_center_mirrored">中心镜像</string>
+    <string name="battery_bar_style_reversed">反转</string>
+    <string name="battery_bar_use_charging_color">自定义充电颜色</string>
+    <string name="battery_bar_blend_color_title">混合颜色</string>
      
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G 图标</string>
     <string name="show_fourg_icon_summary">使用4G图标代替LTE图标</string>
 
     <!-- Roaming indicator icon -->
-    <string name="roaming_indicator_icon_title">Roaming indicator</string>
-    <string name="roaming_indicator_icon_summary">Display roaming indicator in signal icon when in roaming mode</string>
+    <string name="roaming_indicator_icon_title">显示漫游标志</string>
+    <string name="roaming_indicator_icon_summary">漫游时在信号图标处显示漫游标志</string>
 
     <!-- In-call DND -->
     <string name="dnd_when_call_title">来电时勿扰</string>
-    <string name="dnd_when_call_summary">Auto enable DND during calls</string>
+    <string name="dnd_when_call_summary">当通话时自动启用勿扰</string>
 
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">蓝牙电池状态</string>
