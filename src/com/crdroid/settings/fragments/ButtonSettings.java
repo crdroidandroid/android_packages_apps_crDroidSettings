@@ -63,6 +63,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
 
     private static final String TAG = "SystemSettings";
 
+    private static final String HWKEYS_DISABLED = "hardware_keys_disable";
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_HOME_LONG_PRESS = "hardware_keys_home_long_press";
     private static final String KEY_HOME_DOUBLE_TAP = "hardware_keys_home_double_tap";
@@ -133,6 +134,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
     public static final int KEY_MASK_CAMERA = 0x20;
     public static final int KEY_MASK_VOLUME = 0x40;
 
+    private SwitchPreference mHardwareKeysDisable;
     private ListPreference mHomeLongPressAction;
     private ListPreference mHomeDoubleTapAction;
     private ListPreference mMenuPressAction;
@@ -216,6 +218,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
         mTorchLongPressPowerGesture =
                 (SwitchPreference) findPreference(KEY_TORCH_LONG_PRESS_POWER_GESTURE);
 
+        mHardwareKeysDisable = (SwitchPreference) findPreference(HWKEYS_DISABLED);
         mAnbi = (SwitchPreference) findPreference(KEY_ANBI);
 
         final int torchLongPressPowerTimeout = CMSettings.System.getInt(resolver,
@@ -224,6 +227,10 @@ public class ButtonSettings extends SettingsPreferenceFragment
                 torchLongPressPowerTimeout);
 
         mHandler = new Handler();
+
+        if (!hasHomeKey && !hasBackKey && !hasMenuKey && !hasAssistKey && !hasAppSwitchKey) {
+            prefScreen.removePreference(mHardwareKeysDisable);
+        }
 
         if (hasPowerKey) {
             if (!TelephonyUtils.isVoiceCapable(getActivity())) {
