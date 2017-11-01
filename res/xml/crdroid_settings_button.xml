@@ -21,6 +21,12 @@
     android:title="@string/button_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="hardware_keys_disable"
+        android:icon="@drawable/ic_buttons"
+        android:title="@string/hwkeys_disabled_title"
+        android:summary="@string/hwkeys_disabled_summary" />
+
     <!--<com.crdroid.settings.fragments.ButtonBacklightBrightness
         android:key="button_backlight"
         android:icon="@drawable/ic_backlight"

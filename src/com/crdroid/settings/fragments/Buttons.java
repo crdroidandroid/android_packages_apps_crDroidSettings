@@ -59,6 +59,7 @@ public class Buttons extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "SystemSettings";
 
+    private static final String HWKEYS_DISABLED = "hardware_keys_disable";
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_HOME_LONG_PRESS = "hardware_keys_home_long_press";
     private static final String KEY_HOME_DOUBLE_TAP = "hardware_keys_home_double_tap";
@@ -89,6 +90,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String CATEGORY_VOLUME = "volume_keys";
     private static final String CATEGORY_BACKLIGHT = "key_backlight";
 
+    private SwitchPreference mHardwareKeysDisable;
     private ListPreference mHomeLongPressAction;
     private ListPreference mHomeDoubleTapAction;
     private ListPreference mMenuPressAction;
@@ -159,6 +161,8 @@ public class Buttons extends SettingsPreferenceFragment implements
         final PreferenceCategory cameraCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_CAMERA);
 
+        mHardwareKeysDisable = (SwitchPreference) findPreference(HWKEYS_DISABLED);
+
         // Power button ends calls.
         mPowerEndCall = (SwitchPreference) findPreference(KEY_POWER_END_CALL);
 
@@ -183,6 +187,10 @@ public class Buttons extends SettingsPreferenceFragment implements
         Action homeDoubleTapAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
                 defaultHomeDoubleTapAction);
+
+        if (!hasHomeKey && !hasBackKey && !hasMenuKey && !hasAssistKey && !hasAppSwitchKey) {
+            prefScreen.removePreference(mHardwareKeysDisable);
+        }
 
         if (hasPowerKey) {
             if (!TelephonyUtils.isVoiceCapable(getActivity())) {
