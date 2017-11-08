@@ -14,7 +14,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">crDroid 设置</string>
+    <string name="crdroid_settings_title">crDroid 个性化设置</string>
     <string name="crdroid_personalization_category">个性化</string>
     <string name="crdroid_addons_category">插件</string>
 
@@ -109,7 +109,7 @@
     <string name="recents_use_omniswitch_title">用于最近任务</string>
     <string name="recents_use_omniswitch_summary">用 Omni 最近任务替换原生最近任务</string>
     <string name="omniswitch_start_settings_title">设置</string>
-    <string name="omniswitch_start_settings_summary">View the settings for OmniSwitch</string>
+    <string name="omniswitch_start_settings_summary">查看 OmniSwitch 的设置</string>
     <string name="omniswitch_first_time_title">OmniSwitch 最近任务</string>
     <string name="omniswitch_first_time_message">请确认您已开启 Omni 切换器。您可以通过下面的“设置”启用它。</string>
      
@@ -129,11 +129,11 @@
 
     <!-- Lockscreen notif count -->
     <string name="lockscreen_maxnotif_title">通知计数</string>
-    <string name="lockscreen_maxnotif_sumary">Enable adjustment of notifications</string>
-    <string name="lockscreen_maxnotif_config">Max allowed notifications</string>
+    <string name="lockscreen_maxnotif_sumary">启用通知调整</string>
+    <string name="lockscreen_maxnotif_config">已达到最大的通知计数</string>
 
     <!-- Lockscreen tap-to sleep -->
-    <string name="double_tap_sleep_anywhere_title">Tap to sleep</string>
+    <string name="double_tap_sleep_anywhere_title">双击睡眠</string>
     <string name="double_tap_sleep_anywhere_summary">在锁屏上双击使设备睡眠</string>
          
     <!-- SmartBar -->
@@ -636,7 +636,7 @@
     <string name="status_bar_toggle_brightness">亮度控制</string>
     <string name="status_bar_toggle_brightness_summary">通过状态栏的亮度调节滑块自动调节亮度</string>
     <string name="status_bar_notif_count_title">通知计数</string>
-    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+    <string name="status_bar_notif_count_summary">显示待处理的通知计数</string>
     <string name="status_bar_quick_qs_pulldown_title">快速下拉</string>
     <string name="status_bar_quick_qs_pulldown_summary">从状态栏 %1$s 边缘下拉打开快速设置</string>
     <string name="status_bar_quick_qs_pulldown_summary_left">左侧</string>
@@ -651,7 +651,7 @@
     <string name="status_bar_clock_position_left">左侧</string>
     <string name="status_bar_clock_position_center">中心</string>
 
-    <string name="status_bar_am_pm_title">上午/下午 风格</string>
+    <string name="status_bar_am_pm_title">上午/下午 样式</string>
     <string name="status_bar_am_pm_info">24小时制已启用</string>
     <string name="status_bar_am_pm_normal">正常</string>
     <string name="status_bar_am_pm_small">较小</string>
@@ -668,6 +668,19 @@
 
     <string name="status_bar_battery_style_tile_title">电池磁贴样式</string>
     <string name="status_bar_battery_style_tile_summary">允许为状态栏的电池图标设定相同的图标样式</string>
+     
+    <!-- Status bar - Battery custom charging symbol -->
+    <string name="text_charging_symbol_title">自定义充电时的符号和文字</string>
+    <string name="text_charging_symbol_dialog">Custom charging symbol near battery percentage text</string>
+    <string name="text_charging_symbol_default">已禁用</string>
+    <string name="text_charging_symbol_flash">闪烁</string>
+    <string name="text_charging_symbol_tilde">Tilde</string>
+     
+    <!-- Status bar - Battery percentage -->
+    <string name="status_bar_battery_percentage_title">电量百分比</string>
+    <string name="status_bar_battery_percentage_default">隐藏</string>
+    <string name="status_bar_battery_percentage_text_inside">图标内</string>
+    <string name="status_bar_battery_percentage_text_next">图标旁</string>
      
     <!-- Breathing Notifications -->
     <string name="breathing_notifications_title">呼吸式通知</string>
@@ -770,6 +783,10 @@
     <!-- OTA -->
     <string name="ota_crdroid_title">更新</string>
     <string name="ota_crdroid_summary">检查你的设备的OTA更新</string>
+     
+    <!-- Donate crDroid -->
+    <string name="donate_crdroid_title">支持</string>
+    <string name="donate_crdroid_summary">通过捐助来支持我们的开发工作</string>
 
      <!-- Scrolling Animation Controls -->
     <string name="scrolling_title">滚动选项</string>
@@ -887,7 +904,7 @@
     <string name="hardware_keys_home_key_title">主屏键</string>
     <string name="hardware_keys_menu_key_title">菜单键</string>
     <string name="hardware_keys_assist_key_title">搜索键</string>
-    <string name="hardware_keys_appswitch_key_title">预览按键布局</string>
+    <string name="hardware_keys_appswitch_key_title">菜单键</string>
     <string name="hardware_keys_back_key_title">返回键</string>
     <string name="hardware_keys_camera_key_title">相机键</string>
     <string name="hardware_keys_long_press_title">长按操作</string>
@@ -901,6 +918,9 @@
     <string name="hardware_keys_action_launch_camera">启动相机</string>
     <string name="hardware_keys_action_sleep">关闭屏幕</string>
     <string name="hardware_keys_action_last_app">上次运行应用</string>
+    <string name="hardware_keys_action_split_screen">分屏</string>
+    <string name="hardware_keys_action_single_handed_left">单手模式 (左手)</string>
+    <string name="hardware_keys_action_single_handed_right">单手模式 (右手)</string>
     <string name="hardware_keys_power_key_title">电源按钮</string>
     <string name="camera_sleep_on_release_title">屏幕窥探</string>
     <string name="camera_sleep_on_release_summary">半按保持屏幕开启</string>
@@ -931,6 +951,23 @@
     <string name="backlight_summary_disabled">禁用</string>
     <string name="backlight_summary_enabled_with_timeout">保持背光灯 <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">启用</string>
+
+     <!-- Power menu -->
+    <string name="power_menu_title">电源菜单</string>
+    <string name="power_menu_reboot_title">重启菜单</string>
+    <string name="power_menu_screenshot_title">屏幕截图</string>
+    <string name="power_menu_onthego_title">On-The-Go 行走模式</string>
+    <string name="power_menu_airplane_title">飞行模式</string>
+    <string name="power_menu_users_title">用户切换</string>
+    <string name="power_menu_settings_title">设置预览</string>
+    <string name="power_menu_lockdown_title">锁定设备</string>
+    <string name="power_menu_sound_title">音量面板</string>
+
+    <string name="volume_keys_control_ring_stream_title">铃声音量控制</string>
+    <string name="volume_keys_control_ring_stream_summary_on">音量键控制铃声音量</string>
+    <string name="volume_keys_control_ring_stream_summary_off">音量键控制媒体音量</string>
+
+    <string name="camera_double_tap_power_gesture_title">按电源按钮两次即可打开相机</string>
 
     <!--Status bar date -->
     <string name="status_bar_date_title">日期</string>
@@ -1215,6 +1252,8 @@
     <string name="adaway_summary">当使用Root模式时可拦截多余的广告</string>
      
     <!-- Carrier label -->
+    <string name="custom_carrier_title">运营商标签</string>
+    <string name="custom_carrier_summary">显示自定义的运营商标签</string>
     <string name="custom_carrier_label_title">自定义运营商标签</string>
     <string name="custom_carrier_label_explain">请输入一个新的标签，留空将恢复至默认的运营商标签。</string>
     <string name="custom_carrier_label_notset">没有设置自定义运营商标签</string>
