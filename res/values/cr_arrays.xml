@@ -237,6 +237,7 @@
     </string-array>
 
     <string-array name="systemui_navbar_mode_entries">
+        <item>@string/default_string</item>
         <item>@string/smartbar_interface</item>
         <item>@string/fling_interface</item>
     </string-array>
@@ -244,32 +245,31 @@
     <string-array name="systemui_navbar_mode_values" translatable="false">
         <item>0</item>
         <item>1</item>
-    </string-array>
-
-    <string-array name="systemui_navbar_settings_fragments" translatable="false">
-        <item>com.crdroid.settings.fragments.SmartbarSettings</item>
-        <item>com.crdroid.settings.fragments.FlingSettings</item>
+        <item>2</item>
     </string-array>
 
     <string-array name="systemui_navbar_mode_settings">
+        <item>@string/default_settings</item>
         <item>@string/smartbar_settings_title</item>
         <item>@string/fling_settings</item>
     </string-array>
 
     <string-array name="smartbar_button_animation_entries">
         <item>@string/smartbar_button_animation_ripple</item>
-        <item>@string/smartbar_button_animation_spring</item>
+        <!--<item>@string/smartbar_button_animation_spring</item>-->
         <item>@string/smartbar_button_animation_flip</item>
         <item>@string/smartbar_button_animation_pixel</item>
         <item>@string/smartbar_button_animation_pixel_home</item>
+        <item>@string/smartbar_button_animation_pixel_home_ripple</item>
     </string-array>
 
     <string-array name="smartbar_button_animation_values" translatable="false">
         <item>0</item>
-        <item>1</item>
+        <!--<item>1</item>-->
         <item>2</item>
         <item>3</item>
         <item>4</item>
+        <item>5</item>
     </string-array>
 
     <string-array name="smartbar_ime_action_entries">
@@ -284,6 +284,18 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+    </string-array>
+
+    <string-array name="smartbar_longpress_delay_entries">
+        <item>@string/smartbar_longpress_delay_default</item>
+        <item>@string/smartbar_longpress_delay_normal</item>
+        <item>@string/smartbar_longpress_delay_long</item>
+    </string-array>
+
+    <string-array name="smartbar_longpress_delay_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
     <!-- Pulse config -->
@@ -1090,18 +1102,6 @@
     </string-array>
 
     <string-array name="fp_swipe_call_actions_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
-    <string-array name="smartbar_longpress_delay_entries">
-        <item>@string/smartbar_longpress_delay_default</item>
-        <item>@string/smartbar_longpress_delay_normal</item>
-        <item>@string/smartbar_longpress_delay_long</item>
-    </string-array>
-
-    <string-array name="smartbar_longpress_delay_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>

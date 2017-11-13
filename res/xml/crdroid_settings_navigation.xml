@@ -25,7 +25,7 @@
         android:title="@string/navbar_visibility"
         android:summary="@string/navbar_visibility_summary" />
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="navbar_gestures_category"
         android:title="@string/gestures_title">
 
@@ -46,12 +46,12 @@
             android:defaultValue="true" />
     </PreferenceCategory>
 
-    <!--<Preference
+    <Preference
         android:key="pie_settings"
         android:icon="@drawable/ic_pie"
         android:title="@string/pie_settings"
         android:summary="@string/pie_settings_summary"
-        android:fragment="com.crdroid.settings.fragments.PieSettings" />
+        android:fragment="com.crdroid.settings.fragments.PieSettings" />-->
 
     <PreferenceCategory
         android:key="category_navbar_interface"
@@ -70,14 +70,14 @@
             android:icon="@drawable/ic_smartbar"
             android:title="@string/smartbar_settings_title"
             android:summary="@string/smartbar_settings_summary"
-            android:fragment="com.crdroid.settings.fragments.SmartbarSettings" />
+            android:fragment="com.crdroid.settings.fragments.navbar.Smartbar" />
 
         <PreferenceScreen
             android:key="fling_settings"
             android:icon="@drawable/ic_fling"
             android:title="@string/fling_settings"
             android:summary="@string/fling_settings_summary"
-            android:fragment="com.crdroid.settings.fragments.FlingSettings" />
+            android:fragment="com.crdroid.settings.fragments.navbar.Fling" />
 
         <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="navbar_height_portrait"
@@ -108,19 +108,19 @@
         android:key="category_navbar_general"
         android:title="@string/navbar_general_title" >
 
-        <SwitchPreference
+        <!--<SwitchPreference
             android:key="navbar_dynamic"
             android:icon="@drawable/ic_color_bucket"
             android:title="@string/navbar_dynamic_title"
-            android:summary="@string/navbar_dynamic_summary" />
+            android:summary="@string/navbar_dynamic_summary" />-->
 
         <PreferenceScreen
             android:key="pulse_settings"
             android:icon="@drawable/ic_pulse"
             android:title="@string/pulse_settings"
             android:summary="@string/pulse_settings_summary"
-            android:fragment="com.crdroid.settings.fragments.PulseSettings" />
-    </PreferenceCategory>-->
+            android:fragment="com.crdroid.settings.fragments.navbar.Pulse" />
+    </PreferenceCategory>
 
     <PreferenceScreen
         android:title=""

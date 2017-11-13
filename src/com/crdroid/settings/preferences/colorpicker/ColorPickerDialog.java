@@ -201,6 +201,7 @@ public class ColorPickerDialog
         Bundle state = super.onSaveInstanceState();
         state.putInt("old_color", mOldColor.getColor());
         state.putInt("new_color", mNewColor.getColor());
+        dismiss();
         return state;
     }
 

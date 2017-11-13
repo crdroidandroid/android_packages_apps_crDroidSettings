@@ -23,14 +23,6 @@
         android:title="@string/smartbar_editor_title"
         android:summary="@string/smartbar_editor_summary" />
 
-    <com.crdroid.settings.preferences.SeekBarPreference
-        android:key="smartbar_custom_icon_size"
-        android:title="@string/smartbar_custom_icon_size_title"
-        android:max="100"
-        settings:min="10"
-        settings:units="%"
-        android:persistent="false" />
-
     <ListPreference
         android:key="smartbar_context_menu_position"
         android:title="@string/smartbar_context_menu_position_title"
@@ -59,7 +51,7 @@
         android:entryValues="@array/smartbar_longpress_delay_values"
         android:summary="@string/smartbar_longpress_delay_summary" />
 
-    <com.crdroid.settings.preferences.SeekBarPreference
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
         android:key="navbar_buttons_alpha"
         android:title="@string/navbar_buttons_alpha_title"
         android:max="255"
@@ -67,15 +59,23 @@
         settings:units=""
         android:persistent="false" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
+        android:key="smartbar_custom_icon_size"
+        android:title="@string/smartbar_custom_icon_size_title"
+        android:max="100"
+        settings:min="10"
+        settings:units="%"
+        android:persistent="false" />
+
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="smartbar_doubletap_sleep"
         android:title="@string/smartbar_doubletap_sleep_title"
         android:summary="@string/smartbar_doubletap_sleep_summary"
-        android:defaultValue="false" />
+        android:defaultValue="true" />
 
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+    <!--<com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="one_handed_mode_ui"
         android:title="@string/one_handed_mode_title"
         android:summary="@string/one_handed_mode_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" />-->
 </PreferenceScreen>

@@ -20,142 +20,136 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/pulse_settings" >
 
-        <Preference
-            style="?android:preferenceInformationStyle"
-            android:key="pulse_help_policy_notice"
-            android:selectable="false"
-            android:summary="@string/pulse_help_policy_notice_summary"
-            android:title="@string/pulse_help_policy_notice_title" />
+    <SwitchPreference
+        android:key="eos_fling_show_pulse"
+        android:title="@string/fling_show_pulse_title"
+        android:summary="@string/fling_show_pulse_summary" />
 
-        <SwitchPreference
-            android:key="eos_fling_show_pulse"
-            android:title="@string/fling_show_pulse_title"
-            android:summary="@string/fling_show_pulse_summary" />
+    <ListPreference
+        android:key="pulse_render_mode"
+        android:title="@string/pulse_render_mode_title"
+        android:entries="@array/pulse_render_mode_entries"
+        android:entryValues="@array/pulse_render_mode_values"
+        android:dependency="eos_fling_show_pulse" />
 
-        <ListPreference
-            android:key="pulse_render_mode"
-            android:title="@string/pulse_render_mode_title"
-            android:entries="@array/pulse_render_mode_entries"
-            android:entryValues="@array/pulse_render_mode_values"
+    <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
+        android:key="eos_fling_pulse_color"
+        android:title="@string/fling_pulse_color"
+        android:defaultValue="0xffffff"
+        android:dependency="eos_fling_show_pulse" />
+
+    <SwitchPreference
+        android:key="eos_fling_lavalamp"
+        android:title="@string/eos_fling_lavalamp_title"
+        android:summary="@string/eos_fling_lavalamp_summary"
+        android:dependency="eos_fling_show_pulse" />
+
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
+        android:key="pulse_custom_buttons_opacity"
+        android:title="@string/pulse_custom_buttons_opacity_title"
+        android:max="255"
+        settings:min="0"
+        android:dependency="eos_fling_show_pulse"/>
+
+    <PreferenceCategory
+        android:key="pulse_fading_bars_category"
+        android:title="@string/pulse_legacy_mode_advanced_category">
+
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="pulse_custom_dimen"
+            android:title="@string/pulse_custom_dimen"
+            android:max="30"
+            settings:min="1"
+            settings:units="dp"
+            android:dependency="pulse_fading_bars_category"/>
+
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="pulse_custom_div"
+            android:title="@string/pulse_custom_div"
+            android:max="44"
+            settings:min="2"
+            settings:interval="2"
+            settings:units="dp"
+            android:dependency="pulse_fading_bars_category"/>
+
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="pulse_filled_block_size"
+            android:title="@string/pulse_filled_block_size"
+            android:max="8"
+            settings:min="4"
+            settings:units="dp"
+            android:dependency="pulse_fading_bars_category"/>
+
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="pulse_empty_block_size"
+            android:title="@string/pulse_empty_block_size"
+            android:max="4"
+            settings:min="0"
+            settings:units="dp"
+            android:dependency="pulse_fading_bars_category"/>
+
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="pulse_custom_fudge_factor"
+            android:title="@string/pulse_custom_fudge_factor"
+            android:max="6"
+            settings:min="2"
+            android:dependency="pulse_fading_bars_category"/>
+
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="fling_pulse_lavalamp_speed"
+            android:title="@string/lavamp_solid_speed_title"
+            android:max="30000"
+            settings:min="200"
+            settings:interval="200"
+            settings:units="ms"
+            android:dependency="pulse_fading_bars_category"/>
+
+        <!--<com.crdroid.settings.preferences.ColorPickerPreference
+            android:key="fling_lavalamp_color_from"
+            android:title="@string/fling_lavalamp_color_from"
+            android:defaultValue="0xffff8080"
             android:dependency="eos_fling_show_pulse" />
 
         <com.crdroid.settings.preferences.ColorPickerPreference
-            android:key="eos_fling_pulse_color"
-            android:title="@string/fling_pulse_color"
-            android:defaultValue="0xffffff"
-            android:dependency="eos_fling_show_pulse" />
+            android:key="fling_lavalamp_color_to"
+            android:title="@string/fling_lavalamp_color_to"
+            android:defaultValue="0xff8080ff"
+            android:dependency="eos_fling_show_pulse" />-->
+    </PreferenceCategory>
 
-        <SwitchPreference
-            android:key="eos_fling_lavalamp"
-            android:title="@string/eos_fling_lavalamp_title"
-            android:summary="@string/eos_fling_lavalamp_summary"
-            android:dependency="eos_fling_show_pulse" />
+    <PreferenceCategory
+        android:key="pulse_2"
+        android:title="@string/pulse_solid_dimen_category" >
 
-        <com.crdroid.settings.preferences.SeekBarPreference
-            android:key="pulse_custom_buttons_opacity"
-            android:title="@string/pulse_custom_buttons_opacity_title"
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="pulse_solid_units_opacity"
+            android:title="@string/pulse_solid_units_opacity"
             android:max="255"
             settings:min="0"
-            android:dependency="eos_fling_show_pulse"/>
+            android:dependency="pulse_2"/>
 
-        <PreferenceCategory
-            android:key="pulse_fading_bars_category"
-            android:title="@string/pulse_legacy_mode_advanced_category">
-            <com.crdroid.settings.preferences.SeekBarPreference
-                android:key="pulse_custom_dimen"
-                android:title="@string/pulse_custom_dimen"
-                android:max="30"
-                settings:min="1"
-                settings:units="dp"
-                android:dependency="pulse_fading_bars_category"/>
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="pulse_solid_units_count"
+            android:title="@string/pulse_solid_units_count"
+            android:max="128"
+            settings:min="32"
+            settings:interval="16"
+            android:dependency="pulse_2"/>
 
-            <com.crdroid.settings.preferences.SeekBarPreference
-                android:key="pulse_custom_div"
-                android:title="@string/pulse_custom_div"
-                android:max="44"
-                settings:min="2"
-                settings:interval="2"
-                settings:units="dp"
-                android:dependency="pulse_fading_bars_category"/>
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="pulse_solid_fudge_factor"
+            android:title="@string/pulse_custom_fudge_factor"
+            android:max="7"
+            settings:min="2"
+            android:dependency="pulse_2"/>
 
-            <com.crdroid.settings.preferences.SeekBarPreference
-                android:key="pulse_filled_block_size"
-                android:title="@string/pulse_filled_block_size"
-                android:max="8"
-                settings:min="4"
-                settings:units="dp"
-                android:dependency="pulse_fading_bars_category"/>
-
-            <com.crdroid.settings.preferences.SeekBarPreference
-                android:key="pulse_empty_block_size"
-                android:title="@string/pulse_empty_block_size"
-                android:max="4"
-                settings:min="0"
-                settings:units="dp"
-                android:dependency="pulse_fading_bars_category"/>
-
-            <com.crdroid.settings.preferences.SeekBarPreference
-                android:key="pulse_custom_fudge_factor"
-                android:title="@string/pulse_custom_fudge_factor"
-                android:max="6"
-                settings:min="2"
-                android:dependency="pulse_fading_bars_category"/>
-
-            <com.crdroid.settings.preferences.SeekBarPreference
-                android:key="fling_pulse_lavalamp_speed"
-                android:title="@string/lavamp_solid_speed_title"
-                android:max="30000"
-                settings:min="200"
-                settings:interval="200"
-                settings:units="ms"
-                android:dependency="pulse_fading_bars_category"/>
-
-            <com.crdroid.settings.preferences.ColorPickerPreference
-                android:key="fling_lavalamp_color_from"
-                android:title="@string/fling_lavalamp_color_from"
-                android:defaultValue="0xffff8080"
-                android:dependency="eos_fling_show_pulse" />
-
-            <com.crdroid.settings.preferences.ColorPickerPreference
-                android:key="fling_lavalamp_color_to"
-                android:title="@string/fling_lavalamp_color_to"
-                android:defaultValue="0xff8080ff"
-                android:dependency="eos_fling_show_pulse" />
-        </PreferenceCategory>
-
-        <PreferenceCategory
-            android:key="pulse_2"
-            android:title="@string/pulse_solid_dimen_category" >
-
-            <com.crdroid.settings.preferences.SeekBarPreference
-                android:key="pulse_solid_units_opacity"
-                android:title="@string/pulse_solid_units_opacity"
-                android:max="255"
-                settings:min="0"
-                android:dependency="pulse_2"/>
-
-            <com.crdroid.settings.preferences.SeekBarPreference
-                android:key="pulse_solid_units_count"
-                android:title="@string/pulse_solid_units_count"
-                android:max="128"
-                settings:min="32"
-                settings:interval="16"
-                android:dependency="pulse_2"/>
-
-            <com.crdroid.settings.preferences.SeekBarPreference
-                android:key="pulse_solid_fudge_factor"
-                android:title="@string/pulse_custom_fudge_factor"
-                android:max="7"
-                settings:min="2"
-                android:dependency="pulse_2"/>
-
-            <com.crdroid.settings.preferences.SeekBarPreference
-                android:key="lavamp_solid_speed"
-                android:title="@string/lavamp_solid_speed_title"
-                android:max="30000"
-                settings:min="200"
-                settings:interval="200"
-                settings:units="ms"
-                android:dependency="pulse_2"/>
-        </PreferenceCategory>
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="lavamp_solid_speed"
+            android:title="@string/lavamp_solid_speed_title"
+            android:max="30000"
+            settings:min="200"
+            settings:interval="200"
+            settings:units="ms"
+            android:dependency="pulse_2"/>
+    </PreferenceCategory>
 </PreferenceScreen>

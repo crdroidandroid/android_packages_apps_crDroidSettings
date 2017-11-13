@@ -48,7 +48,7 @@ import com.crdroid.settings.fragments.About;
 import com.crdroid.settings.fragments.Display;
 import com.crdroid.settings.fragments.LockScreen;
 import com.crdroid.settings.fragments.Miscellaneous;
-//import com.crdroid.settings.fragments.NavBar;
+import com.crdroid.settings.fragments.NavBar;
 import com.crdroid.settings.fragments.QuickSettings;
 import com.crdroid.settings.fragments.StatusBar;
 import com.crdroid.settings.R;
@@ -118,7 +118,7 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
                  StatusBar.reset(mContext);
                  QuickSettings.reset(mContext);
                  LockScreen.reset(mContext);
-                 //NavBar.reset(mContext);
+                 NavBar.reset(mContext);
                  Display.reset(mContext);
                  Miscellaneous.reset(mContext);
                  mSectionsPagerAdapter.notifyDataSetChanged();
@@ -161,10 +161,10 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             frags[0] = new StatusBar();
             frags[1] = new QuickSettings();
             frags[2] = new LockScreen();
-//            frags[2] = new NavBar();
-            frags[3] = new Display();
-            frags[4] = new Miscellaneous();
-            frags[5] = new About();
+            frags[3] = new NavBar();
+            frags[4] = new Display();
+            frags[5] = new Miscellaneous();
+            frags[6] = new About();
         }
 
         @Override
@@ -198,7 +198,7 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             getString(R.string.statusbar_title),
             getString(R.string.quicksettings_title),
             getString(R.string.lockscreen_title),
-//            getString(R.string.navbar_title),
+            getString(R.string.navbar_title),
             getString(R.string.display_title),
             getString(R.string.misc_title),
             getString(R.string.about_crdroid)
