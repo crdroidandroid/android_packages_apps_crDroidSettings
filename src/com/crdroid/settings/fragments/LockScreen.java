@@ -77,7 +77,7 @@ public class LockScreen extends SettingsPreferenceFragment
         Settings.System.putInt(resolver,
                 Settings.System.LOCKSCREEN_BATTERY_INFO, 1);
         Settings.System.putInt(resolver,
-                Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, 0);
+                Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, 1);
         Settings.System.putInt(resolver,
                 Settings.System.LOCK_SCREEN_CUSTOM_NOTIF, 0);
         Settings.System.putInt(resolver,
