@@ -36,6 +36,8 @@ import com.crdroid.settings.fragments.statusbar.BatteryBar;
 import com.crdroid.settings.fragments.statusbar.NetworkTraffic;
 import com.crdroid.settings.R;
 
+import lineageos.providers.LineageSettings;
+
 public class StatusBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -56,8 +58,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
-        int quickPulldownValue = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0);
+        int quickPulldownValue = LineageSettings.System.getInt(resolver,
+                LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0);
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
         mQuickPulldown.setOnPreferenceChangeListener(this);
@@ -75,7 +77,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mQuickPulldown) {
             int value = Integer.parseInt((String) newValue);
-            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+            LineageSettings.System.putInt(resolver, LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
                     value);
             updatePulldownSummary(value);
             return true;
