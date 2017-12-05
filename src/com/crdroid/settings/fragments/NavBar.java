@@ -42,8 +42,9 @@ public class NavBar extends SettingsPreferenceFragment implements
 
     private static final String NAVBAR_VISIBILITY = "navbar_visibility";
 
+/*
     private SwitchPreference mNavbarVisibility;
-
+*/
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +53,7 @@ public class NavBar extends SettingsPreferenceFragment implements
 
         ContentResolver resolver = getActivity().getContentResolver();
 
+/*
         mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
 
         boolean showing = Settings.Secure.getInt(resolver,
@@ -59,11 +61,13 @@ public class NavBar extends SettingsPreferenceFragment implements
                 deviceNavigationDefault(getActivity())) != 0;
         mNavbarVisibility.setChecked(showing);
         mNavbarVisibility.setOnPreferenceChangeListener(this);
+*/
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+/*
         if (preference.equals(mNavbarVisibility)) {
             boolean showing = ((Boolean)newValue);
             Settings.Secure.putInt(resolver, Settings.Secure.NAVIGATION_BAR_ENABLED,
@@ -71,9 +75,11 @@ public class NavBar extends SettingsPreferenceFragment implements
             mNavbarVisibility.setChecked(showing);
             return true;
         }
+*/
         return false;
     }
 
+/*
     public static int deviceNavigationDefault(Context context) {
         final boolean showByDefault = context.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
@@ -94,7 +100,7 @@ public class NavBar extends SettingsPreferenceFragment implements
         Settings.Secure.putInt(resolver,
                 Settings.Secure.NAVIGATION_BAR_ENABLED, deviceNavigationDefault(mContext));
     }
-
+*/
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
