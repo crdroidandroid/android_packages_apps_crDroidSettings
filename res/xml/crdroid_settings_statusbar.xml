@@ -293,12 +293,12 @@
     <PreferenceCategory
         android:title="@string/gestures_title">
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="double_tap_sleep_gesture"
             android:icon="@drawable/ic_double_tap"
             android:title="@string/statusbar_doubletap_sleep_title"
             android:summary="@string/statusbar_doubletap_sleep_summary"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
 
         <ListPreference
             android:key="quick_pulldown"
