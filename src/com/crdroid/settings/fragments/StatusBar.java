@@ -45,9 +45,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String SMART_PULLDOWN = "smart_pulldown";
+    private static final String DATA_ACTIVITY_ARROWS = "data_activity_arrows";
+    private static final String WIFI_ACTIVITY_ARROWS = "wifi_activity_arrows";
 
     private ListPreference mQuickPulldown;
     private ListPreference mSmartPulldown;
+    private SwitchPreference mDataActivityEnabled;
+    private SwitchPreference mWifiActivityEnabled;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +74,20 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mSmartPulldown.setValue(String.valueOf(smartPulldown));
         updateSmartPulldownSummary(smartPulldown);
         mSmartPulldown.setOnPreferenceChangeListener(this);
+
+        mDataActivityEnabled = (SwitchPreference) findPreference(DATA_ACTIVITY_ARROWS);
+        boolean mActivityEnabled = Settings.System.getInt(resolver,
+                Settings.System.DATA_ACTIVITY_ARROWS,
+                showActivityDefault(getActivity())) != 0;
+        mDataActivityEnabled.setChecked(mActivityEnabled);
+        mDataActivityEnabled.setOnPreferenceChangeListener(this);
+
+        mWifiActivityEnabled = (SwitchPreference) findPreference(WIFI_ACTIVITY_ARROWS);
+        mActivityEnabled = Settings.System.getInt(resolver,
+                Settings.System.WIFI_ACTIVITY_ARROWS,
+                showActivityDefault(getActivity())) != 0;
+        mWifiActivityEnabled.setChecked(mActivityEnabled);
+        mWifiActivityEnabled.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -85,6 +103,18 @@ public class StatusBar extends SettingsPreferenceFragment implements
             int value = Integer.parseInt((String) newValue);
             Settings.System.putInt(resolver, Settings.System.QS_SMART_PULLDOWN, value);
             updateSmartPulldownSummary(value);
+            return true;
+        } else if (preference == mDataActivityEnabled) {
+            boolean showing = ((Boolean)newValue);
+            Settings.System.putInt(resolver, Settings.System.DATA_ACTIVITY_ARROWS,
+                    showing ? 1 : 0);
+            mDataActivityEnabled.setChecked(showing);
+            return true;
+        } else if (preference == mWifiActivityEnabled) {
+            boolean showing = ((Boolean)newValue);
+            Settings.System.putInt(resolver, Settings.System.WIFI_ACTIVITY_ARROWS,
+                    showing ? 1 : 0);
+            mWifiActivityEnabled.setChecked(showing);
             return true;
         }
         return false;
@@ -123,6 +153,18 @@ public class StatusBar extends SettingsPreferenceFragment implements
         }
     }
 
+    public static int showActivityDefault(Context context) {
+/*
+        final boolean showByDefault = context.getResources().getBoolean(
+                com.android.internal.R.bool.config_showActivity);
+
+        if (showByDefault) {
+            return 1;
+        }
+*/
+        return 0;
+    }
+
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
 
@@ -142,6 +184,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.QS_SMART_PULLDOWN, 0);
         LineageSettings.System.putInt(resolver,
                 LineageSettings.System.DOUBLE_TAP_SLEEP_GESTURE, 1);
+        Settings.System.putInt(resolver,
+                Settings.System.DATA_ACTIVITY_ARROWS, showActivityDefault(mContext));
+        Settings.System.putInt(resolver,
+                Settings.System.WIFI_ACTIVITY_ARROWS, showActivityDefault(mContext));
     }
 
     @Override

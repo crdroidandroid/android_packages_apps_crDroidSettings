@@ -64,14 +64,19 @@
             android:icon="@drawable/ic_weather"
             android:title="@string/status_bar_weather_title"
             android:summary="@string/status_bar_weather_summary"
-            android:fragment="com.crdroid.settings.fragments.StatusBarWeather" />
+            android:fragment="com.crdroid.settings.fragments.StatusBarWeather" /> -->
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <SwitchPreference
             android:key="data_activity_arrows"
             android:icon="@drawable/ic_data"
-            android:title="@string/data_wifi_activity_arrows_title"
-            android:summary="@string/data_wifi_activity_arrows_summary"
-            android:defaultValue="true"/> -->
+            android:title="@string/data_activity_arrows_title"
+            android:summary="@string/data_activity_arrows_summary" />
+
+        <SwitchPreference
+            android:key="wifi_activity_arrows"
+            android:icon="@drawable/ic_data"
+            android:title="@string/wifi_activity_arrows_title"
+            android:summary="@string/wifi_activity_arrows_summary" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="show_fourg_icon"
