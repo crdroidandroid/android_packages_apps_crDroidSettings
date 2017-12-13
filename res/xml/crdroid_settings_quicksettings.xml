@@ -67,11 +67,19 @@
             settings:units=""
             android:persistent="false"
             android:dependency="status_bar_custom_header" />
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 
     <PreferenceCategory 
          android:title="@string/qs_tiles_category">
-        <PreferenceScreen
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="bluetooth_qs_show_battery"
+            android:icon="@drawable/ic_bluetooth_connect"
+            android:title="@string/bluetooth_battery_title"
+            android:summary="@string/bluetooth_battery_summary"
+            android:defaultValue="true"/>
+
+        <!--<PreferenceScreen
             android:key="omnijaws_settings"
             android:icon="@drawable/ic_omnijaws"
             android:title="@string/omnijaws_settings_title"
@@ -112,10 +120,10 @@
             android:max="10"
             settings:min="1"
             settings:units=""
-            android:persistent="false" />
+            android:persistent="false" />-->
     </PreferenceCategory>
 
-    <PreferenceCategory 
+    <!--<PreferenceCategory 
          android:title="@string/qs_toggles_category">
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="qs_wifi_easy_toggle"
