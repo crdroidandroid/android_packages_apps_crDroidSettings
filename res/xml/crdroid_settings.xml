@@ -25,6 +25,13 @@
             android:fragment="com.crdroid.settings.fragments.StatusBar"
             android:icon="@drawable/ic_settings_statusbar" />
 
+        <!-- Quick Settings panel -->
+        <PreferenceScreen
+            android:key="quicksettings_category"
+            android:title="@string/quicksettings_title"
+            android:fragment="com.crdroid.settings.fragments.QuickSettings"
+            android:icon="@drawable/ic_settings_quicksettings" />
+
         <!-- Lock Screen -->
         <PreferenceScreen
             android:key="lockscreen_category"
@@ -32,12 +39,12 @@
             android:fragment="com.crdroid.settings.fragments.LockScreen"
             android:icon="@drawable/ic_settings_lockscreens" />
 
-        <!-- Navigation Bar -->
+        <!-- Navigation Bar
         <PreferenceScreen
             android:key="navigationbar_category"
             android:title="@string/navbar_title" 
             android:fragment="com.crdroid.settings.fragments.NavBar"
-            android:icon="@drawable/ic_settings_navbar" />
+            android:icon="@drawable/ic_settings_navbar" /> -->
 
         <!-- Display -->
         <PreferenceScreen
@@ -59,13 +66,6 @@
             android:title="@string/about_crdroid"
             android:fragment="com.crdroid.settings.fragments.About"
             android:icon="@drawable/ic_settings_about" />
-
-        <!-- Quick Settings panel
-        <PreferenceScreen
-            android:key="quicksettings_category"
-            android:title="@string/quicksettings_title"
-            android:fragment="com.crdroid.settings.fragments.QuickSettings"
-            android:icon="@drawable/ic_settings_quicksettings" /> -->
 
         <!-- Buttons
         <PreferenceScreen
