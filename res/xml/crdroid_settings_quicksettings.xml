@@ -159,11 +159,11 @@
             android:title="@string/qs_location_easy_toggle_title"
             android:summary="@string/qs_location_easy_toggle_summary"
             android:defaultValue="false" />
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 
     <PreferenceCategory 
          android:title="@string/qs_misc_category">
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="qs_show_brightness"
             android:icon="@drawable/ic_brightness"
             android:title="@string/qs_brightness_slider_title"
@@ -176,16 +176,16 @@
             android:title="@string/brightness_icon_title"
             android:summary="@string/brightness_icon_summary"
             android:dependency="qs_show_brightness"
-            android:defaultValue="false"/>
+            android:defaultValue="false"/>-->
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="quick_settings_vibrate"
             android:icon="@drawable/ic_vibrate"
             android:title="@string/quick_settings_vibrate_title"
             android:summary="@string/quick_settings_vibrate_summary"
             android:defaultValue="false"/>
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_settings_icon_toggle"
             android:icon="@drawable/ic_settings"
             android:title="@string/qs_settings_icon_title"
@@ -227,6 +227,6 @@
             android:icon="@drawable/ic_calendar_clock"
             android:title="@string/qs_date_time_center_title"
             android:summary="@string/qs_date_time_center_summary"
-            android:defaultValue="false" />
-    </PreferenceCategory>-->
+            android:defaultValue="false" />-->
+    </PreferenceCategory>
 </PreferenceScreen>

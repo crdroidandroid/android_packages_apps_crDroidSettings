@@ -60,6 +60,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putInt(resolver,
                 Settings.System.BLUETOOTH_QS_SHOW_BATTERY, 1);
+        Settings.Secure.putInt(resolver,
+                Settings.Secure.QUICK_SETTINGS_VIBRATE, 0);
     }
 
     @Override
