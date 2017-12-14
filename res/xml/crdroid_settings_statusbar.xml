@@ -277,11 +277,18 @@
             android:dependency="status_bar_crdroid_logo" />
     </PreferenceCategory> -->
 
-    <!-- Status bar misc customizations
     <PreferenceCategory
         android:title="@string/status_bar_misc_category_title">
 
-        <PreferenceScreen
+        <ListPreference
+            android:key="ticker_mode"
+            android:icon="@drawable/ic_cursor"
+            android:title="@string/ticker_screen_title"
+            android:entries="@array/ticker_mode_entries"
+            android:entryValues="@array/ticker_mode_values"
+            android:summary="%s" />
+
+        <!-- <PreferenceScreen
             android:key="ticker"
             android:icon="@drawable/ic_cursor"
             android:title="@string/ticker_screen_title"
@@ -293,8 +300,8 @@
             android:icon="@drawable/ic_brightness_auto"
             android:title="@string/status_bar_toggle_brightness"
             android:summary="@string/status_bar_toggle_brightness_summary"
-            android:defaultValue="false" />
-    </PreferenceCategory> -->
+            android:defaultValue="false" /> -->
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/gestures_title">
