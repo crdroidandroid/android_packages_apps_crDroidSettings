@@ -39,12 +39,19 @@
             android:fragment="com.crdroid.settings.fragments.LockScreen"
             android:icon="@drawable/ic_settings_lockscreens" />
 
-        <!-- Navigation Bar
+        <!-- Navigation Bar -->
         <PreferenceScreen
             android:key="navigationbar_category"
             android:title="@string/navbar_title" 
             android:fragment="com.crdroid.settings.fragments.NavBar"
-            android:icon="@drawable/ic_settings_navbar" /> -->
+            android:icon="@drawable/ic_settings_navbar" />
+
+        <!-- Recents -->
+        <PreferenceScreen
+            android:key="recents_category"
+            android:title="@string/recents_title"
+            android:fragment="com.crdroid.settings.fragments.Recents"
+            android:icon="@drawable/ic_settings_recents" />
 
         <!-- Display -->
         <PreferenceScreen
@@ -94,13 +101,6 @@
             android:title="@string/powermenu_title" 
             android:fragment="com.crdroid.settings.fragments.PowerMenuSettings"
             android:icon="@drawable/ic_settings_powermenu"/> -->
-
-        <!-- Recents
-        <PreferenceScreen
-            android:key="recents_category"
-            android:title="@string/recents_title"
-            android:fragment="com.crdroid.settings.fragments.RecentsSettings"
-            android:icon="@drawable/ic_settings_recents" /> -->
 
         <!-- Sound
         <PreferenceScreen
