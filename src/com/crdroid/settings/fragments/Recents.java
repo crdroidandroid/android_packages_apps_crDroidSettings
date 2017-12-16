@@ -71,6 +71,7 @@ public class Recents extends SettingsPreferenceFragment
 
     private static final String PREF_RECENTS_STYLE = "recents_component";
     private static final String PREF_RECENTS_ICONPACK = "recents_icon_pack";
+    private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
 
     private final static String[] sSupportedActions = new String[] {
         "org.adw.launcher.THEMES",
@@ -87,6 +88,7 @@ public class Recents extends SettingsPreferenceFragment
     private ListView mListView;
 
     private ListPreference mRecentsStyle;
+    private ListPreference mRecentsClearAllLocation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -96,6 +98,15 @@ public class Recents extends SettingsPreferenceFragment
 
         mRecentsStyle = (ListPreference) findPreference(PREF_RECENTS_STYLE);
         mRecentsStyle.setOnPreferenceChangeListener(this);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
+        int location = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
+        mRecentsClearAllLocation.setValue(String.valueOf(location));
+        mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
+        mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -106,6 +117,13 @@ public class Recents extends SettingsPreferenceFragment
             Settings.System.putIntForUser(resolver,
                 Settings.System.RECENTS_COMPONENT, value, UserHandle.USER_CURRENT);
             Utils.showSystemUiRestartDialog(getActivity());
+
+        } else if (preference == mRecentsClearAllLocation) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, value, UserHandle.USER_CURRENT);
+            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
             return true;
         }
         return false;
@@ -283,6 +301,10 @@ public class Recents extends SettingsPreferenceFragment
                 Settings.System.RECENTS_COMPONENT, 0, UserHandle.USER_CURRENT);
         Settings.System.putString(resolver,
                 Settings.System.RECENTS_ICON_PACK, "");
+        Settings.System.putInt(resolver,
+                Settings.System.SHOW_CLEAR_ALL_RECENTS, 1);
+        Settings.System.putInt(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3);
     }
 
     @Override
