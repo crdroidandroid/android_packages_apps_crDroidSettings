@@ -108,6 +108,8 @@ public class Miscellaneous extends SettingsPreferenceFragment
         writeCpuInfoOptions(mContext, false);
         Settings.System.putInt(resolver,
                 Settings.System.MEDIA_SCANNER_ON_BOOT, 0);
+        Settings.System.putInt(resolver,
+                Settings.System.AUTO_USB_MODE_CHOOSER, 0);
     }
 
     @Override

@@ -59,6 +59,14 @@
         android:entries="@array/media_scanner_on_boot_entries"
         android:entryValues="@array/media_scanner_on_boot_values" />
 
+    <!-- Auto USB mode chooser -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="auto_usb_mode_chooser"
+        android:icon="@drawable/ic_usb"
+        android:title="@string/auto_usb_mode_chooser_title"
+        android:summary="@string/auto_usb_mode_chooser_summary"
+        android:defaultValue="false" />
+
     <!--<PreferenceScreen
         android:key="screenstate_category"
         android:icon="@drawable/ic_sleep"
