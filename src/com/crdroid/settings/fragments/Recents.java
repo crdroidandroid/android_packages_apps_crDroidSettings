@@ -40,6 +40,10 @@ public class Recents extends SettingsPreferenceFragment implements
 
     public static final String TAG = "Recents";
 
+    private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+
+    private ListPreference mRecentsClearAllLocation;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,17 +51,36 @@ public class Recents extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.crdroid_settings_recents);
 
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
+        int location = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
+        mRecentsClearAllLocation.setValue(String.valueOf(location));
+        mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
+        mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
 
+        if (preference == mRecentsClearAllLocation) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, value, UserHandle.USER_CURRENT);
+            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+            return true;
+        }
         return false;
     }
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putInt(resolver,
+                Settings.System.SHOW_CLEAR_ALL_RECENTS, 1);
+        Settings.System.putInt(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3);
     }
 
     @Override
