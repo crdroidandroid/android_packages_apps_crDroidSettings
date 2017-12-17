@@ -20,6 +20,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
@@ -66,8 +67,8 @@ public class Miscellaneous extends SettingsPreferenceFragment
 
         // MediaScanner behavior on boot
         mMSOB = (ListPreference) findPreference(MEDIA_SCANNER_ON_BOOT);
-        int mMSOBValue = Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.MEDIA_SCANNER_ON_BOOT, 0);
+        int mMSOBValue = Settings.System.getIntForUser(mContext.getContentResolver(),
+                Settings.System.MEDIA_SCANNER_ON_BOOT, 0, UserHandle.USER_CURRENT);
         mMSOB.setValue(String.valueOf(mMSOBValue));
         mMSOB.setSummary(mMSOB.getEntry());
         mMSOB.setOnPreferenceChangeListener(this);
@@ -94,8 +95,8 @@ public class Miscellaneous extends SettingsPreferenceFragment
             return true;
         } else if (preference == mMSOB) {
             int value = Integer.parseInt(((String) newValue).toString());
-            Settings.System.putInt(resolver,
-                    Settings.System.MEDIA_SCANNER_ON_BOOT, value);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.MEDIA_SCANNER_ON_BOOT, value, UserHandle.USER_CURRENT);
             mMSOB.setValue(String.valueOf(value));
             mMSOB.setSummary(mMSOB.getEntries()[value]);
             return true;
@@ -106,10 +107,10 @@ public class Miscellaneous extends SettingsPreferenceFragment
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         writeCpuInfoOptions(mContext, false);
-        Settings.System.putInt(resolver,
-                Settings.System.MEDIA_SCANNER_ON_BOOT, 0);
-        Settings.System.putInt(resolver,
-                Settings.System.AUTO_USB_MODE_CHOOSER, 0);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.MEDIA_SCANNER_ON_BOOT, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.AUTO_USB_MODE_CHOOSER, 0, UserHandle.USER_CURRENT);
     }
 
     @Override

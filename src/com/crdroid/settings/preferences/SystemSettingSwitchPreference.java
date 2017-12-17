@@ -17,6 +17,7 @@ package com.crdroid.settings.preferences;
 
 import android.content.Context;
 import android.provider.Settings;
+import android.os.UserHandle;
 import android.support.v14.preference.SwitchPreference;
 import android.util.AttributeSet;
 
@@ -40,7 +41,8 @@ public class SystemSettingSwitchPreference extends SwitchPreference {
                 // It's already there, so the same as persisting
                 return true;
             }
-            Settings.System.putInt(getContext().getContentResolver(), getKey(), value ? 1 : 0);
+            Settings.System.putIntForUser(getContext().getContentResolver(),
+                getKey(), value ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
@@ -51,8 +53,8 @@ public class SystemSettingSwitchPreference extends SwitchPreference {
         if (!shouldPersist()) {
             return defaultReturnValue;
         }
-        return Settings.System.getInt(getContext().getContentResolver(),
-                getKey(), defaultReturnValue ? 1 : 0) != 0;
+        return Settings.System.getIntForUser(getContext().getContentResolver(),
+                getKey(), defaultReturnValue ? 1 : 0, UserHandle.USER_CURRENT) != 0;
     }
 
     @Override

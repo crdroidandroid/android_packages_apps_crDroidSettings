@@ -20,6 +20,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
@@ -54,8 +55,8 @@ public class LockScreen extends SettingsPreferenceFragment
         ContentResolver resolver = mContext.getContentResolver();
 
         mMaxKeyguardNotifConfig = (CustomSeekBarPreference) findPreference(LOCKSCREEN_MAX_NOTIF_CONFIG);
-        int kgconf = Settings.System.getInt(resolver,
-                Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5);
+        int kgconf = Settings.System.getIntForUser(resolver,
+                Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5, UserHandle.USER_CURRENT);
         mMaxKeyguardNotifConfig.setValue(kgconf);
         mMaxKeyguardNotifConfig.setOnPreferenceChangeListener(this);
     }
@@ -65,8 +66,8 @@ public class LockScreen extends SettingsPreferenceFragment
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mMaxKeyguardNotifConfig) {
             int value = (Integer) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, value);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, value, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
@@ -74,16 +75,16 @@ public class LockScreen extends SettingsPreferenceFragment
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putInt(resolver,
-                Settings.System.LOCKSCREEN_BATTERY_INFO, 1);
-        Settings.System.putInt(resolver,
-                Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, 1);
-        Settings.System.putInt(resolver,
-                Settings.System.LOCK_SCREEN_CUSTOM_NOTIF, 0);
-        Settings.System.putInt(resolver,
-                Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5);
-        Settings.System.putInt(resolver,
-                Settings.System.LOCKSCREEN_MEDIA_METADATA, 1);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCK_SCREEN_CUSTOM_NOTIF, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT);
     }
 
     @Override

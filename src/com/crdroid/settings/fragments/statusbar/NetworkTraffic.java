@@ -21,6 +21,7 @@ import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.net.TrafficStats;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -77,26 +78,27 @@ public class NetworkTraffic extends SettingsPreferenceFragment
 
         mNetTrafficHidearrow =
             (SwitchPreference) findPreference(NETWORK_TRAFFIC_HIDEARROW);
-        mNetTrafficHidearrow.setChecked((Settings.System.getInt(resolver,
-                Settings.System.NETWORK_TRAFFIC_HIDEARROW, 0) == 1));
+        mNetTrafficHidearrow.setChecked((Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_HIDEARROW, 0, UserHandle.USER_CURRENT) == 1));
         mNetTrafficHidearrow.setOnPreferenceChangeListener(this);
 
         mNetTrafficAutohide =
             (SwitchPreference) findPreference(NETWORK_TRAFFIC_AUTOHIDE);
-        mNetTrafficAutohide.setChecked((Settings.System.getInt(resolver,
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE, 0) == 1));
+        mNetTrafficAutohide.setChecked((Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT) == 1));
         mNetTrafficAutohide.setOnPreferenceChangeListener(this);
 
         mNetTrafficAutohideThreshold = (CustomSeekBarPreference) findPreference(NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
-        int netTrafficAutohideThreshold = Settings.System.getInt(resolver,
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 10);
+        int netTrafficAutohideThreshold = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 10, UserHandle.USER_CURRENT);
         mNetTrafficAutohideThreshold.setValue(netTrafficAutohideThreshold / 1);
         mNetTrafficAutohideThreshold.setOnPreferenceChangeListener(this);
 
  	// TrafficStats will return UNSUPPORTED if the device does not support it.
         if (TrafficStats.getTotalTxBytes() != TrafficStats.UNSUPPORTED &&
                 TrafficStats.getTotalRxBytes() != TrafficStats.UNSUPPORTED) {
-            mNetTrafficVal = Settings.System.getInt(resolver, Settings.System.NETWORK_TRAFFIC_STATE, 0);
+            mNetTrafficVal = Settings.System.getIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
             int intIndex = mNetTrafficVal & (MASK_UP + MASK_DOWN);
             intIndex = mNetTrafficState.findIndexOfValue(String.valueOf(intIndex));
             if (intIndex <= 0) {
@@ -144,41 +146,41 @@ public class NetworkTraffic extends SettingsPreferenceFragment
             int intState = Integer.parseInt((String)newValue);
             mNetTrafficVal = setBit(mNetTrafficVal, MASK_UP, getBit(intState, MASK_UP));
             mNetTrafficVal = setBit(mNetTrafficVal, MASK_DOWN, getBit(intState, MASK_DOWN));
-            Settings.System.putInt(resolver,
-                    Settings.System.NETWORK_TRAFFIC_STATE, mNetTrafficVal);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_STATE, mNetTrafficVal, UserHandle.USER_CURRENT);
             int index = mNetTrafficState.findIndexOfValue((String) newValue);
             mNetTrafficState.setSummary(mNetTrafficState.getEntries()[index]);
             updateNetworkTrafficState(index);
             return true;
         } else if (preference == mNetTrafficUnit) {
             mNetTrafficVal = setBit(mNetTrafficVal, MASK_UNIT, ((String)newValue).equals("1"));
-            Settings.System.putInt(resolver,
-                    Settings.System.NETWORK_TRAFFIC_STATE, mNetTrafficVal);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_STATE, mNetTrafficVal, UserHandle.USER_CURRENT);
             int index = mNetTrafficUnit.findIndexOfValue((String) newValue);
             mNetTrafficUnit.setSummary(mNetTrafficUnit.getEntries()[index]);
             return true;
         } else if (preference == mNetTrafficPeriod) {
             int intState = Integer.parseInt((String)newValue);
             mNetTrafficVal = setBit(mNetTrafficVal, MASK_PERIOD, false) + (intState << 16);
-            Settings.System.putInt(resolver,
-                    Settings.System.NETWORK_TRAFFIC_STATE, mNetTrafficVal);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_STATE, mNetTrafficVal, UserHandle.USER_CURRENT);
             int index = mNetTrafficPeriod.findIndexOfValue((String) newValue);
             mNetTrafficPeriod.setSummary(mNetTrafficPeriod.getEntries()[index]);
             return true;
         } else if (preference == mNetTrafficHidearrow) {
             boolean value = (Boolean) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.NETWORK_TRAFFIC_HIDEARROW, value ? 1 : 0);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_HIDEARROW, value ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mNetTrafficAutohide) {
             boolean value = (Boolean) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE, value ? 1 : 0);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE, value ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mNetTrafficAutohideThreshold) {
             int threshold = (Integer) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, threshold * 1);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, threshold, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
@@ -205,14 +207,14 @@ public class NetworkTraffic extends SettingsPreferenceFragment
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putInt(resolver,
-                Settings.System.NETWORK_TRAFFIC_STATE, 0);
-        Settings.System.putInt(resolver,
-                Settings.System.NETWORK_TRAFFIC_HIDEARROW, 0);
-        Settings.System.putInt(resolver,
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE, 0);
-        Settings.System.putInt(resolver,
-                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 10);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_STATE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_HIDEARROW, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 10, UserHandle.USER_CURRENT);
     }
 
     @Override

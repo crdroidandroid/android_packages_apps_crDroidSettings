@@ -77,10 +77,10 @@ public class Recents extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putInt(resolver,
-                Settings.System.SHOW_CLEAR_ALL_RECENTS, 1);
-        Settings.System.putInt(resolver,
-                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_CLEAR_ALL_RECENTS, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
     }
 
     @Override

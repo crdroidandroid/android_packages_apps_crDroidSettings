@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
@@ -64,36 +65,36 @@ public class StatusBar extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
-        int quickPulldownValue = LineageSettings.System.getInt(resolver,
-                LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0);
+        int quickPulldownValue = LineageSettings.System.getIntForUser(resolver,
+                LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
         mQuickPulldown.setOnPreferenceChangeListener(this);
 
         mSmartPulldown = (ListPreference) findPreference(SMART_PULLDOWN);
-        int smartPulldown = Settings.System.getInt(resolver,
-                Settings.System.QS_SMART_PULLDOWN, 0);
+        int smartPulldown = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
         mSmartPulldown.setValue(String.valueOf(smartPulldown));
         updateSmartPulldownSummary(smartPulldown);
         mSmartPulldown.setOnPreferenceChangeListener(this);
 
         mDataActivityEnabled = (SwitchPreference) findPreference(DATA_ACTIVITY_ARROWS);
-        boolean mActivityEnabled = Settings.System.getInt(resolver,
+        boolean mActivityEnabled = Settings.System.getIntForUser(resolver,
                 Settings.System.DATA_ACTIVITY_ARROWS,
-                showActivityDefault(getActivity())) != 0;
+                showActivityDefault(getActivity()), UserHandle.USER_CURRENT) != 0;
         mDataActivityEnabled.setChecked(mActivityEnabled);
         mDataActivityEnabled.setOnPreferenceChangeListener(this);
 
         mWifiActivityEnabled = (SwitchPreference) findPreference(WIFI_ACTIVITY_ARROWS);
-        mActivityEnabled = Settings.System.getInt(resolver,
+        mActivityEnabled = Settings.System.getIntForUser(resolver,
                 Settings.System.WIFI_ACTIVITY_ARROWS,
-                showActivityDefault(getActivity())) != 0;
+                showActivityDefault(getActivity()), UserHandle.USER_CURRENT) != 0;
         mWifiActivityEnabled.setChecked(mActivityEnabled);
         mWifiActivityEnabled.setOnPreferenceChangeListener(this);
 
         mTickerMode = (ListPreference) findPreference(TICKER_MODE);
-        int tickerMode = Settings.System.getInt(resolver,
-                Settings.System.STATUS_BAR_SHOW_TICKER, 0);
+        int tickerMode = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_SHOW_TICKER, 0, UserHandle.USER_CURRENT);
         mTickerMode.setValue(String.valueOf(tickerMode));
         mTickerMode.setSummary(mTickerMode.getEntry());
         mTickerMode.setOnPreferenceChangeListener(this);
@@ -104,30 +105,30 @@ public class StatusBar extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mQuickPulldown) {
             int value = Integer.parseInt((String) newValue);
-            LineageSettings.System.putInt(resolver, LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
-                    value);
+            LineageSettings.System.putIntForUser(resolver, LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+                    value, UserHandle.USER_CURRENT);
             updatePulldownSummary(value);
             return true;
         } else if (preference == mSmartPulldown) {
             int value = Integer.parseInt((String) newValue);
-            Settings.System.putInt(resolver, Settings.System.QS_SMART_PULLDOWN, value);
+            Settings.System.putIntForUser(resolver, Settings.System.QS_SMART_PULLDOWN, value, UserHandle.USER_CURRENT);
             updateSmartPulldownSummary(value);
             return true;
         } else if (preference == mDataActivityEnabled) {
             boolean showing = ((Boolean)newValue);
-            Settings.System.putInt(resolver, Settings.System.DATA_ACTIVITY_ARROWS,
-                    showing ? 1 : 0);
+            Settings.System.putIntForUser(resolver, Settings.System.DATA_ACTIVITY_ARROWS,
+                    showing ? 1 : 0, UserHandle.USER_CURRENT);
             mDataActivityEnabled.setChecked(showing);
             return true;
         } else if (preference == mWifiActivityEnabled) {
             boolean showing = ((Boolean)newValue);
-            Settings.System.putInt(resolver, Settings.System.WIFI_ACTIVITY_ARROWS,
-                    showing ? 1 : 0);
+            Settings.System.putIntForUser(resolver, Settings.System.WIFI_ACTIVITY_ARROWS,
+                    showing ? 1 : 0, UserHandle.USER_CURRENT);
             mWifiActivityEnabled.setChecked(showing);
             return true;
         } else if (preference.equals(mTickerMode)) {
             int value = Integer.parseInt((String) newValue);
-            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_SHOW_TICKER, value);
+            Settings.System.putIntForUser(resolver, Settings.System.STATUS_BAR_SHOW_TICKER, value, UserHandle.USER_CURRENT);
             int index = mTickerMode.findIndexOfValue((String) newValue);
             mTickerMode.setSummary(mTickerMode.getEntries()[index]);
             return true;
@@ -185,26 +186,26 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         BatteryBar.reset(mContext);
         NetworkTraffic.reset(mContext);
-        Settings.System.putInt(resolver,
-                Settings.System.SHOW_FOURG_ICON, 0);
-        Settings.System.putInt(resolver,
-                Settings.System.ROAMING_INDICATOR_ICON, 1);
-        Settings.System.putInt(resolver,
-                Settings.System.BLUETOOTH_SHOW_BATTERY, 1);
-        Settings.System.putInt(resolver,
-                Settings.System.SHOW_VOLTE_ICON, 0);
-        LineageSettings.System.putInt(resolver,
-                LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0);
-        Settings.System.putInt(resolver,
-                Settings.System.QS_SMART_PULLDOWN, 0);
-        LineageSettings.System.putInt(resolver,
-                LineageSettings.System.DOUBLE_TAP_SLEEP_GESTURE, 1);
-        Settings.System.putInt(resolver,
-                Settings.System.DATA_ACTIVITY_ARROWS, showActivityDefault(mContext));
-        Settings.System.putInt(resolver,
-                Settings.System.WIFI_ACTIVITY_ARROWS, showActivityDefault(mContext));
-        Settings.System.putInt(resolver,
-                Settings.System.STATUS_BAR_SHOW_TICKER, 0);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.ROAMING_INDICATOR_ICON, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUETOOTH_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_VOLTE_ICON, 0, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.DOUBLE_TAP_SLEEP_GESTURE, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.DATA_ACTIVITY_ARROWS, showActivityDefault(mContext), UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.WIFI_ACTIVITY_ARROWS, showActivityDefault(mContext), UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_SHOW_TICKER, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
