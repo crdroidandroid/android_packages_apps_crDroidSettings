@@ -34,6 +34,9 @@ import com.android.internal.utils.du.Config;
 import com.android.internal.utils.du.DUActionUtils;
 import com.android.internal.utils.du.Config.ButtonConfig;
 
+import com.crdroid.settings.fragments.navbar.Fling;
+import com.crdroid.settings.fragments.navbar.Pulse;
+import com.crdroid.settings.fragments.navbar.Smartbar;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.R;
 
@@ -214,6 +217,19 @@ public class NavBar extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Settings.Secure.putInt(resolver, Settings.Secure.NAVIGATION_BAR_VISIBLE,
+             DUActionUtils.hasNavbarByDefault(mContext) ? 1 : 0);
+        Settings.Secure.putIntForUser(resolver,
+            Settings.Secure.NAVIGATION_BAR_MODE, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+            Settings.Secure.NAVIGATION_BAR_HEIGHT, 80, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+            Settings.Secure.NAVIGATION_BAR_HEIGHT_LANDSCAPE, 80, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+            Settings.Secure.NAVIGATION_BAR_WIDTH, 80, UserHandle.USER_CURRENT);
+        Fling.reset(mContext);
+        Pulse.reset(mContext);
+        Smartbar.reset(mContext);
     }
 
     @Override
