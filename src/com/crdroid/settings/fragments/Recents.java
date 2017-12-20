@@ -85,6 +85,8 @@ public class Recents extends SettingsPreferenceFragment implements
                 Settings.System.RECENTS_LOCK_ICON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.RECENTS_DISMISS_ICON, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SYSTEMUI_RECENTS_MEM_DISPLAY, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
