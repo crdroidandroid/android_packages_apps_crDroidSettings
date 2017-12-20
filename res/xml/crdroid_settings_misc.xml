@@ -67,6 +67,14 @@
         android:summary="@string/auto_usb_mode_chooser_summary"
         android:defaultValue="false" />
 
+    <!-- Three-fingers-swipe to screenshot -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="three_finger_gesture"
+        android:icon="@drawable/ic_three_finger_gesture"
+        android:title="@string/three_finger_gesture"
+        android:summary="@string/three_finger_gesture_summary"
+        android:defaultValue="false" />
+
     <!--<PreferenceScreen
         android:key="screenstate_category"
         android:icon="@drawable/ic_sleep"
@@ -108,13 +116,6 @@
         android:title="@string/dnd_when_call_title"
         android:summary="@string/dnd_when_call_summary"
         android:defaultValue="true" />
-
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="three_finger_gesture"
-        android:icon="@drawable/ic_three_finger_gesture"
-        android:title="@string/three_finger_gesture"
-        android:summary="@string/three_finger_gesture_summary"
-        android:defaultValue="false" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="disable_settings_suggestions"
