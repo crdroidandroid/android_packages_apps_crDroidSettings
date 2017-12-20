@@ -19,31 +19,31 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/sound_title">
 
-    <!-- Charging sounds -->
+    <!-- Charging sounds
     <PreferenceScreen
         android:key="charging_sounds_settings"
         android:icon="@drawable/ic_charger"
         android:title="@string/charging_sounds_settings_title"
         android:summary="@string/charging_sounds_settings_summary"
-        android:fragment="com.crdroid.settings.fragments.ChargingSoundsSettings" />
+        android:fragment="com.crdroid.settings.fragments.ChargingSoundsSettings" /> -->
 
-   <!-- Screenshot Sound  -->
+   <!-- Screenshot Sound
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="screenshot_sound"
         android:icon="@drawable/ic_screenshot_type"
         android:title="@string/screenshot_sound_title"
         android:summary="@string/screenshot_sound_summary"
-        android:defaultValue="true" />
+        android:defaultValue="true" />  -->
 
-    <!-- Volume Steps -->
+    <!-- Volume Steps
     <PreferenceScreen
         android:key="volume_steps"
         android:icon="@drawable/ic_settings_sound"
         android:title="@string/volume_steps_title"
         android:summary="@string/volume_steps_summary"
-        android:fragment="com.crdroid.settings.fragments.VolumeSteps" />
+        android:fragment="com.crdroid.settings.fragments.VolumeSteps" /> -->
 
-    <!-- Less Notification sounds -->
+    <!-- Less Notification sounds
     <ListPreference
         android:key="less_notification_sounds"
         android:icon="@drawable/ic_headsup"
@@ -51,16 +51,16 @@
         android:summary="@string/less_notification_sounds_summary"
         android:entries="@array/less_notification_sounds_entries"
         android:entryValues="@array/less_notification_sounds_values"
-        android:persistent="false" />
+        android:persistent="false" /> -->
 
-    <!-- Launch music player when headset is connected -->
+    <!-- Launch music player when headset is connected
     <cyanogenmod.preference.CMSystemSettingSwitchPreference
         android:key="headset_connect_player"
         android:icon="@drawable/ic_headphones"
         android:title="@string/headset_connect_player_title"
-        android:summary="@string/headset_connect_player_summary" />
+        android:summary="@string/headset_connect_player_summary" /> -->
 
-    <!-- Do not disturb -->
+    <!-- Do not disturb
     <PreferenceCategory 
         android:title="@string/sound_dnd_category">
 
@@ -84,5 +84,5 @@
             android:title="@string/vol_zen_title"
             android:summary="@string/vol_zen_summary"
             android:defaultValue="false"/>
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 </PreferenceScreen>
