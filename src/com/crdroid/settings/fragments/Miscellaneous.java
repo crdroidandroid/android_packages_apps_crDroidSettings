@@ -64,6 +64,8 @@ public class Miscellaneous extends SettingsPreferenceFragment {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
