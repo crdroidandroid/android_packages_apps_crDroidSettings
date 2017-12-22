@@ -92,6 +92,7 @@ public class NavBar extends SettingsPreferenceFragment implements
         mFlingSettings = (Preference) findPreference(KEY_FLING_NAVBAR_SETTINGS);
         mSmartbarSettings = (Preference) findPreference(KEY_SMARTBAR_SETTINGS);
         mPulseSettings = (Preference) findPreference(KEY_PULSE_SETTINGS);
+        mNavbarDynamic = (SwitchPreference) findPreference(NAVBAR_DYNAMIC);
 
         boolean showing = Settings.Secure.getInt(resolver,
                 Settings.Secure.NAVIGATION_BAR_VISIBLE,
@@ -130,7 +131,6 @@ public class NavBar extends SettingsPreferenceFragment implements
 
         mHandler = new Handler();
 
-        mNavbarDynamic = (SwitchPreference) findPreference(NAVBAR_DYNAMIC);
         boolean isDynamic = Settings.System.getIntForUser(resolver,
                 Settings.System.NAVBAR_DYNAMIC, 0, UserHandle.USER_CURRENT) == 1;
         mNavbarDynamic.setChecked(isDynamic);
