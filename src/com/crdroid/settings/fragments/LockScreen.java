@@ -85,6 +85,8 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT);
+        Settings.Global.putInt(resolver,
+                Settings.Global.LOCKSCREEN_ENABLE_POWER_MENU, 1);
     }
 
     @Override
