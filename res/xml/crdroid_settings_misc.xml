@@ -67,6 +67,14 @@
         android:summary="@string/auto_usb_mode_chooser_summary"
         android:defaultValue="false" />
 
+    <!-- Vibrate on plugged -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="vibration_on_charge_state_changed"
+        android:icon="@drawable/ic_vibrate"
+        android:title="@string/vibration_on_charge_state_changed_title"
+        android:summary="@string/vibration_on_charge_state_changed_summary"
+        android:defaultValue="false" />
+
     <!-- Three-fingers-swipe to screenshot -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="three_finger_gesture"
