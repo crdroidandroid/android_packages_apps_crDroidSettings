@@ -101,7 +101,7 @@ public class NavBar extends SettingsPreferenceFragment implements
         mNavbarVisibility.setOnPreferenceChangeListener(this);
 
         int mode = Settings.Secure.getInt(resolver, Settings.Secure.NAVIGATION_BAR_MODE,
-                0);
+                1);
 
         updateBarModeSettings(mode);
         mNavbarMode.setOnPreferenceChangeListener(this);
@@ -237,7 +237,7 @@ public class NavBar extends SettingsPreferenceFragment implements
         Settings.Secure.putInt(resolver, Settings.Secure.NAVIGATION_BAR_VISIBLE,
              DUActionUtils.hasNavbarByDefault(mContext) ? 1 : 0);
         Settings.Secure.putIntForUser(resolver,
-            Settings.Secure.NAVIGATION_BAR_MODE, 0, UserHandle.USER_CURRENT);
+            Settings.Secure.NAVIGATION_BAR_MODE, 1, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
             Settings.Secure.NAVIGATION_BAR_HEIGHT, 80, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
