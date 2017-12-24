@@ -93,7 +93,7 @@
             android:max="7"
             settings:min="1"
             settings:units=""
-            android:persistent="false" />
+            android:persistent="false" />-->
 
         <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="qs_rows_portrait"
@@ -114,13 +114,22 @@
             android:persistent="false" />
 
         <com.crdroid.settings.preferences.CustomSeekBarPreference
-            android:key="qs_columns"
+            android:key="qs_columns_portrait"
             android:icon="@drawable/ic_qs_tile"
-            android:title="@string/qs_columns_title"
+            android:title="@string/qs_columns_portrait_title"
             android:max="10"
             settings:min="1"
             settings:units=""
-            android:persistent="false" />-->
+            android:persistent="false" />
+
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="qs_columns_landscape"
+            android:icon="@drawable/ic_qs_tile"
+            android:title="@string/qs_columns_landscape_title"
+            android:max="10"
+            settings:min="1"
+            settings:units=""
+            android:persistent="false" />
     </PreferenceCategory>
 
     <!--<PreferenceCategory 
