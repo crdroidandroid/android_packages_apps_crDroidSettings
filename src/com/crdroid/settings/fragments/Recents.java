@@ -168,8 +168,8 @@ public class Recents extends SettingsPreferenceFragment implements
                     return;
                 }
                 String selectedPackage = adapter.getItem(position);
-                Settings.System.putString(getContext().getContentResolver(),
-                        Settings.System.RECENTS_ICON_PACK, selectedPackage);
+                Settings.System.putStringForUser(getContext().getContentResolver(),
+                        Settings.System.RECENTS_ICON_PACK, selectedPackage, UserHandle.USER_CURRENT);
                 mDialog.dismiss();
             }
         });
@@ -212,8 +212,8 @@ public class Recents extends SettingsPreferenceFragment implements
             String defaultLabel = res.getString(R.string.default_iconpack_title);
             Drawable icon = res.getDrawable(android.R.drawable.sym_def_app_icon);
             mSupportedPackages.add(0, new IconPackInfo(defaultLabel, icon, ""));
-            mCurrentIconPack = Settings.System.getString(ctx.getContentResolver(),
-                Settings.System.RECENTS_ICON_PACK);
+            mCurrentIconPack = Settings.System.getStringForUser(ctx.getContentResolver(),
+                Settings.System.RECENTS_ICON_PACK, UserHandle.USER_CURRENT);
         }
 
         @Override
@@ -311,6 +311,8 @@ public class Recents extends SettingsPreferenceFragment implements
                 Settings.System.RECENTS_DISMISS_ICON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SYSTEMUI_RECENTS_MEM_DISPLAY, 0, UserHandle.USER_CURRENT);
+        Settings.System.putStringForUser(resolver,
+                Settings.System.RECENTS_ICON_PACK, "", UserHandle.USER_CURRENT);
     }
 
     @Override
