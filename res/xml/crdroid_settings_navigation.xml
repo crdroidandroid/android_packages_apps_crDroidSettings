@@ -66,6 +66,14 @@
             android:entryValues="@array/systemui_navbar_mode_values" />
 
         <PreferenceScreen
+            android:key="stock_settings"
+            android:icon="@drawable/ic_shapes"
+            android:title="@string/navbar_settings_title"
+            android:summary="@string/navabar_settings_summary">
+                <intent android:action="com.android.settings.action.NAV_BAR_TUNER" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
             android:key="smartbar_settings"
             android:icon="@drawable/ic_smartbar"
             android:title="@string/smartbar_settings_title"

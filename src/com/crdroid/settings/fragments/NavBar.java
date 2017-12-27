@@ -48,7 +48,7 @@ public class NavBar extends SettingsPreferenceFragment implements
 
     private static final String NAVBAR_VISIBILITY = "navbar_visibility";
     private static final String KEY_NAVBAR_MODE = "navbar_mode";
-    private static final String KEY_DEFAULT_NAVBAR_SETTINGS = "default_settings";
+    private static final String KEY_STOCK_NAVBAR_SETTINGS = "stock_settings";
     private static final String KEY_FLING_NAVBAR_SETTINGS = "fling_settings";
     private static final String KEY_CATEGORY_NAVIGATION_INTERFACE = "category_navbar_interface";
     private static final String KEY_CATEGORY_NAVIGATION_GENERAL = "category_navbar_general";
@@ -66,7 +66,7 @@ public class NavBar extends SettingsPreferenceFragment implements
     private PreferenceCategory mNavInterface;
     private PreferenceCategory mNavGeneral;
     private Preference mSmartbarSettings;
-    //private Preference mDefaultSettings;
+    private Preference mStockSettings;
     private CustomSeekBarPreference mBarHeightPort;
     private CustomSeekBarPreference mBarHeightLand;
     private CustomSeekBarPreference mBarWidth;
@@ -88,7 +88,7 @@ public class NavBar extends SettingsPreferenceFragment implements
         mNavGeneral = (PreferenceCategory) findPreference(KEY_CATEGORY_NAVIGATION_GENERAL);
         mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
         mNavbarMode = (ListPreference) findPreference(KEY_NAVBAR_MODE);
-        //mDefaultSettings = (Preference) findPreference(KEY_DEFAULT_NAVBAR_SETTINGS);
+        mStockSettings = (Preference) findPreference(KEY_STOCK_NAVBAR_SETTINGS);
         mFlingSettings = (Preference) findPreference(KEY_FLING_NAVBAR_SETTINGS);
         mSmartbarSettings = (Preference) findPreference(KEY_SMARTBAR_SETTINGS);
         mPulseSettings = (Preference) findPreference(KEY_PULSE_SETTINGS);
@@ -141,8 +141,8 @@ public class NavBar extends SettingsPreferenceFragment implements
         mNavbarMode.setValue(String.valueOf(mode));
         switch (mode) {
             case 0:
-//                mDefaultSettings.setEnabled(true);
-//                mDefaultSettings.setSelectable(true);
+                mStockSettings.setEnabled(true);
+                mStockSettings.setSelectable(true);
                 mSmartbarSettings.setEnabled(false);
                 mSmartbarSettings.setSelectable(false);
                 mFlingSettings.setEnabled(false);
@@ -151,8 +151,8 @@ public class NavBar extends SettingsPreferenceFragment implements
                 mPulseSettings.setSelectable(false);
                 break;
             case 1:
-//                mDefaultSettings.setEnabled(false);
-//                mDefaultSettings.setSelectable(false);
+                mStockSettings.setEnabled(false);
+                mStockSettings.setSelectable(false);
                 mSmartbarSettings.setEnabled(true);
                 mSmartbarSettings.setSelectable(true);
                 mFlingSettings.setEnabled(false);
@@ -161,8 +161,8 @@ public class NavBar extends SettingsPreferenceFragment implements
                 mPulseSettings.setSelectable(true);
                 break;
             case 2:
-//                mDefaultSettings.setEnabled(false);
-//                mDefaultSettings.setSelectable(false);
+                mStockSettings.setEnabled(false);
+                mStockSettings.setSelectable(false);
                 mSmartbarSettings.setEnabled(false);
                 mSmartbarSettings.setSelectable(false);
                 mFlingSettings.setEnabled(true);
