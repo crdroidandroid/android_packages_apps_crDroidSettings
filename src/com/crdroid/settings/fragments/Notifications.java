@@ -49,6 +49,9 @@ public class Notifications extends SettingsPreferenceFragment {
     }
 
     public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FORCE_EXPANDED_NOTIFICATIONS, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
