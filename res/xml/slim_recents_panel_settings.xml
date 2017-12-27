@@ -20,6 +20,18 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/slim_recents_title" >
 
+    <Preference
+        android:key="slim_icon_pack"
+        android:title="@string/recents_icon_pack_title"
+        android:summary="@string/recents_icon_pack_summary" />
+
+    <Preference
+        android:key="blacklist_fragment"
+        android:fragment="com.crdroid.settings.fragments.recents.SlimRecentsBlacklist"
+        android:title="@string/slim_blacklist_apps_cat_title"
+        android:summary="@string/slim_blacklist_apps_summary"
+        android:persistent="false" />
+
     <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="show_running_tasks"
         android:title="@string/show_running_tasks_title"
@@ -39,8 +51,8 @@
         android:title="@string/recent_panel_expanded_mode_title"
         android:summary="@string/recent_panel_expanded_mode_summary" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="recent_panel_lefty_mode"
+    <SwitchPreference
+        android:key="recent_panel_gravity"
         android:title="@string/recent_panel_lefty_mode_title"
         android:summary="@string/recent_panel_lefty_mode_summary"
         android:defaultValue="false" />
@@ -76,16 +88,4 @@
         android:key="slim_recents_corner_radius"
         android:title="@string/slim_recents_corner_radius_title"
         android:defaultValue="true" />
-
-    <Preference
-        android:key="slim_icon_pack"
-        android:title="@string/recents_icon_pack_title"
-        android:summary="@string/recents_icon_pack_summary" />
-
-    <Preference
-        android:key="blacklist_fragment"
-        android:fragment="com.crdroid.settings.fragments.recents.SlimRecentsBlacklist"
-        android:title="@string/slim_blacklist_apps_cat_title"
-        android:summary="@string/slim_blacklist_apps_summary"
-        android:persistent="false" />
 </PreferenceScreen>

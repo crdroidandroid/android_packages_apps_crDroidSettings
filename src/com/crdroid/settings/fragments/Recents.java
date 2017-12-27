@@ -50,6 +50,7 @@ import android.widget.ListView;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
+import com.crdroid.settings.fragments.recents.SlimRecentsPanel;
 
 import com.crdroid.settings.R;
 
@@ -65,11 +66,21 @@ public class Recents extends SettingsPreferenceFragment implements
 
     public static final String TAG = "Recents";
 
-    private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String RECENTS_ICON_PACK = "recents_icon_pack";
+    private static final String RECENTS_MEMBAR = "systemui_recents_mem_display";
+    private static final String RECENTS_CLEAR_ALL = "show_clear_all_recents";
+    private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+    private static final String RECENTS_DISMISS_ICON = "recents_dismiss_icon";
+    private static final String RECENTS_LOCK_ICON = "recents_lock_icon";
+    private static final String USE_SLIM_RECENTS = "use_slim_recents";
 
-    private ListPreference mRecentsClearAllLocation;
     private Preference mRecentsIconPack;
+    private Preference mRecentsMembar;
+    private Preference mRecentsClearAll;
+    private ListPreference mRecentsClearAllLocation;
+    private Preference mRecentsDismissIcon;
+    private Preference mRecentsLockIcon;
+    private Preference mSlimRecents;
 
     private final static String[] sSupportedActions = new String[] {
         "org.adw.launcher.THEMES",
@@ -93,6 +104,20 @@ public class Recents extends SettingsPreferenceFragment implements
 
         ContentResolver resolver = getActivity().getContentResolver();
 
+        String currentIconPack =  Settings.System.getStringForUser(resolver,
+            Settings.System.RECENTS_ICON_PACK, UserHandle.USER_CURRENT);
+
+        mRecentsIconPack = (Preference) findPreference(RECENTS_ICON_PACK);
+        if (currentIconPack != null && !currentIconPack.isEmpty()) {
+            mRecentsIconPack.setSummary(currentIconPack);
+        } else {
+            mRecentsIconPack.setSummary(R.string.recents_icon_pack_summary);
+        }
+
+        mRecentsMembar = (Preference) findPreference(RECENTS_MEMBAR);
+
+        mRecentsClearAll = (Preference) findPreference(RECENTS_CLEAR_ALL);
+
         mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
         int location = Settings.System.getIntForUser(resolver,
                 Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
@@ -100,15 +125,17 @@ public class Recents extends SettingsPreferenceFragment implements
         mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
 
-        String currentIconPack =  Settings.System.getStringForUser(resolver,
-            Settings.System.RECENTS_ICON_PACK, UserHandle.USER_CURRENT);
+        mRecentsDismissIcon = (Preference) findPreference(RECENTS_DISMISS_ICON);
 
-        mRecentsIconPack = (Preference) findPreference(RECENTS_ICON_PACK);
-        if (currentIconPack != null && currentIconPack != "") {
-            mRecentsIconPack.setSummary(currentIconPack);
-        } else {
-            mRecentsIconPack.setSummary(R.string.recents_icon_pack_summary);
-        }
+        mRecentsLockIcon = (Preference) findPreference(RECENTS_LOCK_ICON);
+
+        mSlimRecents = (Preference) findPreference(USE_SLIM_RECENTS);
+        mSlimRecents.setOnPreferenceChangeListener(this);
+
+        boolean mUseSlimRecents = Settings.System.getIntForUser(
+                resolver, Settings.System.USE_SLIM_RECENTS, 0,
+                UserHandle.USER_CURRENT) == 1;
+        toggleAOSPrecents(!mUseSlimRecents);
     }
 
     @Override
@@ -121,8 +148,21 @@ public class Recents extends SettingsPreferenceFragment implements
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, value, UserHandle.USER_CURRENT);
             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
             return true;
+        } else if (preference == mSlimRecents) {
+            boolean value = (Boolean) newValue;
+            toggleAOSPrecents(!value);
+            return true;
         }
         return false;
+    }
+
+    private void toggleAOSPrecents(boolean enabled) {
+        mRecentsIconPack.setEnabled(enabled);
+        mRecentsMembar.setEnabled(enabled);
+        mRecentsClearAll.setEnabled(enabled);
+        mRecentsClearAllLocation.setEnabled(enabled);
+        mRecentsDismissIcon.setEnabled(enabled);
+        mRecentsLockIcon.setEnabled(enabled);
     }
 
     @Override
@@ -185,7 +225,7 @@ public class Recents extends SettingsPreferenceFragment implements
         String currentIconPack =  Settings.System.getStringForUser(
             getContext().getContentResolver(),
             Settings.System.RECENTS_ICON_PACK, UserHandle.USER_CURRENT);
-        if (mRecentsIconPack != null && currentIconPack != null && currentIconPack != "") {
+        if (mRecentsIconPack != null && currentIconPack != null && !currentIconPack.isEmpty()) {
             mRecentsIconPack.setSummary(currentIconPack);
         } else {
             mRecentsIconPack.setSummary(R.string.recents_icon_pack_summary);
@@ -301,6 +341,8 @@ public class Recents extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putStringForUser(resolver,
+                Settings.System.RECENTS_ICON_PACK, "", UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_CLEAR_ALL_RECENTS, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -311,8 +353,9 @@ public class Recents extends SettingsPreferenceFragment implements
                 Settings.System.RECENTS_DISMISS_ICON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SYSTEMUI_RECENTS_MEM_DISPLAY, 0, UserHandle.USER_CURRENT);
-        Settings.System.putStringForUser(resolver,
-                Settings.System.RECENTS_ICON_PACK, "", UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.USE_SLIM_RECENTS, 0, UserHandle.USER_CURRENT);
+        SlimRecentsPanel.reset(mContext);
     }
 
     @Override

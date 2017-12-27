@@ -26,6 +26,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceGroup;
@@ -73,6 +74,7 @@ public class SlimRecentsBlacklist extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.slim_recents_blacklist);
         initializeAllPreferences();
+        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.slim_blacklist_apps_info);
     }
 
     @Override
@@ -247,8 +249,8 @@ public class SlimRecentsBlacklist extends SettingsPreferenceFragment implements
 
     private boolean parsePackageList() {
         boolean parsed = false;
-        final String blacklistString = Settings.System.getString(getContentResolver(),
-                Settings.System.SLIM_RECENTS_BLACKLIST_VALUES);
+        final String blacklistString = Settings.System.getStringForUser(getContentResolver(),
+                Settings.System.SLIM_RECENTS_BLACKLIST_VALUES, UserHandle.USER_CURRENT);
 
         if (!TextUtils.equals(mBlacklistPackageList, blacklistString)) {
             mBlacklistPackageList = blacklistString;
@@ -287,7 +289,7 @@ public class SlimRecentsBlacklist extends SettingsPreferenceFragment implements
         if (preferencesUpdated) {
             mBlacklistPackageList = value;
         }
-        Settings.System.putString(getContentResolver(),
-                setting, value);
+        Settings.System.putStringForUser(getContentResolver(),
+                setting, value, UserHandle.USER_CURRENT);
     }
 }

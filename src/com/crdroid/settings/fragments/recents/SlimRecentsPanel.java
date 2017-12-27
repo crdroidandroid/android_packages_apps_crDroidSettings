@@ -35,6 +35,7 @@ import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
+import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.Gravity;
@@ -56,7 +57,6 @@ import android.widget.ListView;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.crdroid.settings.preferences.SystemSettingSwitchPreference;
 import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.R;
@@ -74,9 +74,10 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
     private static final String TAG = "SlimRecentsPanelSettings";
 
     // Preferences
+    private static final String RECENTS_ICON_PACK = "slim_icon_pack";
     private static final String RECENTS_MAX_APPS = "recents_max_apps";
-    private static final String RECENT_PANEL_LEFTY_MODE =
-            "recent_panel_lefty_mode";
+    private static final String RECENT_PANEL_GRAVITY =
+            "recent_panel_gravity";
     private static final String RECENT_PANEL_SCALE =
             "recent_panel_scale";
     private static final String RECENT_PANEL_EXPANDED_MODE =
@@ -85,6 +86,8 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
             "recent_panel_bg_color";
     private static final String RECENT_CARD_BG_COLOR =
             "recent_card_bg_color";
+    private static final String RECENT_PANEL_CORNER_RADIUS =
+            "slim_recents_corner_radius";
 
     private final static String[] sSupportedActions = new String[] {
         "org.adw.launcher.THEMES",
@@ -100,12 +103,14 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
     private static final int MENU_RESET = Menu.FIRST;
     private static final int DIALOG_RESET_CONFIRM = 1;
 
+    private Preference mRecentsIconPack;
     private CustomSeekBarPreference mMaxApps;
-    private SystemSettingSwitchPreference mRecentPanelLeftyMode;
+    private SwitchPreference mRecentPanelGravity;
     private CustomSeekBarPreference mRecentPanelScale;
     private ListPreference mRecentPanelExpandedMode;
     private ColorPickerPreference mRecentPanelBgColor;
     private ColorPickerPreference mRecentCardBgColor;
+    private SwitchPreference mRecentPanelRadius;
 
     private AlertDialog mDialog;
     private ListView mListView;
@@ -129,7 +134,8 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
                 alertDialog.setMessage(R.string.recent_reset_confirm);
                 alertDialog.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        resetSettings();
+                        reset(getContext());
+                        updateRecentPanelPreferences();
                     }
                 });
                 alertDialog.setNegativeButton(R.string.write_settings_off, null);
@@ -168,34 +174,41 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
         return super.onOptionsItemSelected(item);
     }
 
-    private void resetSettings() {
-        Settings.System.putInt(getContext().getContentResolver(),
-                Settings.System.RECENT_PANEL_BG_COLOR,
-                0x763367d6);
-        mRecentPanelBgColor.setSummary(R.string.default_string);
-        mRecentPanelBgColor.setNewPreviewColor(0x763367d6);
-
-        Settings.System.putInt(getContext().getContentResolver(),
-                Settings.System.RECENT_CARD_BG_COLOR,
-                0x00ffffff);
-        mRecentCardBgColor.setSummary(R.string.default_auto_string);
-        mRecentCardBgColor.setNewPreviewColor(0x00ffffff);
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.RECENTS_MAX_APPS, 15, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.RECENT_PANEL_SCALE_FACTOR, 115, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.RECENT_PANEL_EXPANDED_MODE, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.RECENT_PANEL_GRAVITY, Gravity.RIGHT, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SLIM_RECENTS_CORNER_RADIUS, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.RECENT_PANEL_BG_COLOR, 0x763367d6, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.RECENT_CARD_BG_COLOR, 0x00ffffff, UserHandle.USER_CURRENT);
+        Settings.System.putStringForUser(resolver,
+                Settings.System.SLIM_RECENTS_ICON_PACK, "", UserHandle.USER_CURRENT);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mRecentPanelLeftyMode) {
-            Settings.System.putInt(getContext().getContentResolver(),
+        if (preference == mRecentPanelGravity) {
+            Settings.System.putIntForUser(getContext().getContentResolver(),
                     Settings.System.RECENT_PANEL_GRAVITY,
-                    ((Boolean) newValue) ? Gravity.LEFT : Gravity.RIGHT);
+                    ((Boolean) newValue) ? Gravity.LEFT : Gravity.RIGHT, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mRecentPanelScale) {
-            Settings.System.putInt(getContext().getContentResolver(),
-                Settings.System.RECENT_PANEL_SCALE_FACTOR, Integer.valueOf(String.valueOf(newValue)));
+            Settings.System.putIntForUser(getContext().getContentResolver(),
+                Settings.System.RECENT_PANEL_SCALE_FACTOR,
+                Integer.valueOf(String.valueOf(newValue)), UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mRecentPanelExpandedMode) {
             int value = Integer.parseInt((String) newValue);
-            Settings.System.putInt(getContext().getContentResolver(),
-                    Settings.System.RECENT_PANEL_EXPANDED_MODE, value);
+            Settings.System.putIntForUser(getContext().getContentResolver(),
+                    Settings.System.RECENT_PANEL_EXPANDED_MODE, value, UserHandle.USER_CURRENT);
             int index = mRecentPanelExpandedMode.findIndexOfValue((String) newValue);
             mRecentPanelExpandedMode.setSummary(
                     mRecentPanelExpandedMode.getEntries()[index]);
@@ -209,9 +222,9 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
                 preference.setSummary(hex);
             }
             int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getContext().getContentResolver(),
+            Settings.System.putIntForUser(getContext().getContentResolver(),
                     Settings.System.RECENT_PANEL_BG_COLOR,
-                    intHex);
+                    intHex, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mRecentCardBgColor) {
             String hex = ColorPickerPreference.convertToARGB(
@@ -222,57 +235,53 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
                 preference.setSummary(hex);
             }
             int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getContext().getContentResolver(),
+            Settings.System.putIntForUser(getContext().getContentResolver(),
                     Settings.System.RECENT_CARD_BG_COLOR,
-                    intHex);
+                    intHex, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mMaxApps) {
-            Settings.System.putInt(getContext().getContentResolver(),
-                Settings.System.RECENTS_MAX_APPS, Integer.valueOf(String.valueOf(newValue)));
+            Settings.System.putIntForUser(getContext().getContentResolver(),
+                Settings.System.RECENTS_MAX_APPS, Integer.valueOf(String.valueOf(newValue)), UserHandle.USER_CURRENT);
             return true;
         }
         return false;
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        updateRecentPanelPreferences();
-    }
-
     private void updateRecentPanelPreferences() {
-        final boolean recentLeftyMode = Settings.System.getInt(getContext().getContentResolver(),
-                Settings.System.RECENT_PANEL_GRAVITY, Gravity.RIGHT) == Gravity.LEFT;
-        mRecentPanelLeftyMode.setChecked(recentLeftyMode);
+        ContentResolver resolver = getActivity().getContentResolver();
 
-        mMaxApps.setValue(Settings.System.getIntForUser(getContext().getContentResolver(),
-                Settings.System.RECENTS_MAX_APPS, 15,
-                UserHandle.USER_CURRENT));
+        String currentIconPack =  Settings.System.getStringForUser(resolver,
+            Settings.System.SLIM_RECENTS_ICON_PACK, UserHandle.USER_CURRENT);
 
-        final int recentScale = Settings.System.getInt(getContext().getContentResolver(),
-                Settings.System.RECENT_PANEL_SCALE_FACTOR, 115);
+        if (currentIconPack != null && !currentIconPack.isEmpty()) {
+            mRecentsIconPack.setSummary(currentIconPack);
+        } else {
+            mRecentsIconPack.setSummary(R.string.recents_icon_pack_summary);
+        }
+
+        boolean recentLeftyMode = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENT_PANEL_GRAVITY, Gravity.RIGHT, UserHandle.USER_CURRENT) == Gravity.LEFT;
+        mRecentPanelGravity.setChecked(recentLeftyMode);
+
+        boolean recentCornerRadius = Settings.System.getIntForUser(resolver,
+                Settings.System.SLIM_RECENTS_CORNER_RADIUS, 1, UserHandle.USER_CURRENT) != 0;
+        mRecentPanelRadius.setChecked(recentCornerRadius);
+
+        int maxapps = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENTS_MAX_APPS, 15, UserHandle.USER_CURRENT);
+        mMaxApps.setValue(maxapps);
+
+        int recentScale = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENT_PANEL_SCALE_FACTOR, 115, UserHandle.USER_CURRENT);
         mRecentPanelScale.setValue(recentScale);
 
-        final int recentExpandedMode = Settings.System.getInt(getContext().getContentResolver(),
-                Settings.System.RECENT_PANEL_EXPANDED_MODE, 1);
+        int recentExpandedMode = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENT_PANEL_EXPANDED_MODE, 1, UserHandle.USER_CURRENT);
         mRecentPanelExpandedMode.setValue(recentExpandedMode + "");
         mRecentPanelExpandedMode.setSummary(mRecentPanelExpandedMode.getEntry());
-    }
 
-    private void initializeAllPreferences() {
-        mRecentPanelLeftyMode =
-                (SystemSettingSwitchPreference) findPreference(RECENT_PANEL_LEFTY_MODE);
-        mRecentPanelLeftyMode.setOnPreferenceChangeListener(this);
-
-        mMaxApps = (CustomSeekBarPreference) findPreference(RECENTS_MAX_APPS);
-        mMaxApps.setOnPreferenceChangeListener(this);
-
-        // Recent panel background color
-        mRecentPanelBgColor =
-                (ColorPickerPreference) findPreference(RECENT_PANEL_BG_COLOR);
-        mRecentPanelBgColor.setOnPreferenceChangeListener(this);
-        final int intColor = Settings.System.getInt(getContext().getContentResolver(),
-                Settings.System.RECENT_PANEL_BG_COLOR, 0x763367d6);
+        int intColor = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENT_PANEL_BG_COLOR, 0x763367d6, UserHandle.USER_CURRENT);
         String hexColor = String.format("#%08x", (0x00ffffff & intColor));
         if (hexColor.equals("#763367d6")) {
             mRecentPanelBgColor.setSummary(R.string.default_string);
@@ -281,12 +290,8 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
         }
         mRecentPanelBgColor.setNewPreviewColor(intColor);
 
-        // Recent card background color
-        mRecentCardBgColor =
-                (ColorPickerPreference) findPreference(RECENT_CARD_BG_COLOR);
-        mRecentCardBgColor.setOnPreferenceChangeListener(this);
-        final int intColorCard = Settings.System.getInt(getContext().getContentResolver(),
-                Settings.System.RECENT_CARD_BG_COLOR, 0x00ffffff);
+        int intColorCard = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENT_CARD_BG_COLOR, 0x00ffffff, UserHandle.USER_CURRENT);
         String hexColorCard = String.format("#%08x", (0x00ffffff & intColorCard));
         if (hexColorCard.equals("#00ffffff")) {
             mRecentCardBgColor.setSummary(R.string.default_auto_string);
@@ -294,6 +299,27 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
             mRecentCardBgColor.setSummary(hexColorCard);
         }
         mRecentCardBgColor.setNewPreviewColor(intColorCard);
+    }
+
+    private void initializeAllPreferences() {
+        mRecentsIconPack = (Preference) findPreference(RECENTS_ICON_PACK);
+
+        mRecentPanelGravity =
+                (SwitchPreference) findPreference(RECENT_PANEL_GRAVITY);
+        mRecentPanelGravity.setOnPreferenceChangeListener(this);
+
+        mMaxApps = (CustomSeekBarPreference) findPreference(RECENTS_MAX_APPS);
+        mMaxApps.setOnPreferenceChangeListener(this);
+
+        // Recent panel background color
+        mRecentPanelBgColor =
+                (ColorPickerPreference) findPreference(RECENT_PANEL_BG_COLOR);
+        mRecentPanelBgColor.setOnPreferenceChangeListener(this);
+
+        // Recent card background color
+        mRecentCardBgColor =
+                (ColorPickerPreference) findPreference(RECENT_CARD_BG_COLOR);
+        mRecentCardBgColor.setOnPreferenceChangeListener(this);
 
         mRecentPanelScale =
                 (CustomSeekBarPreference) findPreference(RECENT_PANEL_SCALE);
@@ -302,6 +328,11 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
         mRecentPanelExpandedMode =
                 (ListPreference) findPreference(RECENT_PANEL_EXPANDED_MODE);
         mRecentPanelExpandedMode.setOnPreferenceChangeListener(this);
+
+        mRecentPanelRadius =
+                (SwitchPreference) findPreference(RECENT_PANEL_CORNER_RADIUS);
+
+        updateRecentPanelPreferences();
     }
 
     @Override
@@ -311,7 +342,7 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == findPreference("slim_icon_pack")) {
+        if (preference == mRecentsIconPack) {
             pickIconPack(getContext());
             return true;
         }
@@ -352,8 +383,8 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
                     return;
                 }
                 String selectedPackage = adapter.getItem(position);
-                Settings.System.putString(getContext().getContentResolver(),
-                        Settings.System.SLIM_RECENTS_ICON_PACK, selectedPackage);
+                Settings.System.putStringForUser(getContext().getContentResolver(),
+                        Settings.System.SLIM_RECENTS_ICON_PACK, selectedPackage, UserHandle.USER_CURRENT);
                 mDialog.dismiss();
             }
         });
@@ -366,6 +397,7 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
         if (mDialog != null) {
             mDialog = null;
         }
+        updateRecentPanelPreferences();
     }
 
     private static class IconAdapter extends BaseAdapter {
@@ -388,8 +420,8 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
             String defaultLabel = res.getString(R.string.default_iconpack_title);
             Drawable icon = res.getDrawable(android.R.drawable.sym_def_app_icon);
             mSupportedPackages.add(0, new IconPackInfo(defaultLabel, icon, ""));
-            mCurrentIconPack = Settings.System.getString(ctx.getContentResolver(),
-                Settings.System.SLIM_RECENTS_ICON_PACK);
+            mCurrentIconPack = Settings.System.getStringForUser(ctx.getContentResolver(),
+                Settings.System.SLIM_RECENTS_ICON_PACK, UserHandle.USER_CURRENT);
         }
 
         @Override
