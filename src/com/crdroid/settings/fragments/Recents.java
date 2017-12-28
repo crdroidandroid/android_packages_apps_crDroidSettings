@@ -15,6 +15,7 @@
  */
 package com.crdroid.settings.fragments;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ContentResolver;
@@ -22,6 +23,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.res.Resources;
@@ -67,6 +69,7 @@ public class Recents extends SettingsPreferenceFragment implements
     public static final String TAG = "Recents";
 
     private static final String RECENTS_ICON_PACK = "recents_icon_pack";
+    private static final String IMMERSIVE_RECENTS = "immersive_recents";
     private static final String RECENTS_MEMBAR = "systemui_recents_mem_display";
     private static final String RECENTS_CLEAR_ALL = "show_clear_all_recents";
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
@@ -75,12 +78,16 @@ public class Recents extends SettingsPreferenceFragment implements
     private static final String USE_SLIM_RECENTS = "use_slim_recents";
 
     private Preference mRecentsIconPack;
+    private ListPreference mImmersiveRecents;
     private Preference mRecentsMembar;
     private Preference mRecentsClearAll;
     private ListPreference mRecentsClearAllLocation;
     private Preference mRecentsDismissIcon;
     private Preference mRecentsLockIcon;
     private Preference mSlimRecents;
+
+    private SharedPreferences mPreferences;
+    private Context mContext;
 
     private final static String[] sSupportedActions = new String[] {
         "org.adw.launcher.THEMES",
@@ -104,6 +111,8 @@ public class Recents extends SettingsPreferenceFragment implements
 
         ContentResolver resolver = getActivity().getContentResolver();
 
+        mContext = getActivity().getApplicationContext();
+
         String currentIconPack =  Settings.System.getStringForUser(resolver,
             Settings.System.RECENTS_ICON_PACK, UserHandle.USER_CURRENT);
 
@@ -113,6 +122,12 @@ public class Recents extends SettingsPreferenceFragment implements
         } else {
             mRecentsIconPack.setSummary(R.string.recents_icon_pack_summary);
         }
+
+        mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS);
+        mImmersiveRecents.setValue(String.valueOf(Settings.System.getIntForUser(
+                resolver, Settings.System.IMMERSIVE_RECENTS, 0, UserHandle.USER_CURRENT)));
+        mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+        mImmersiveRecents.setOnPreferenceChangeListener(this);
 
         mRecentsMembar = (Preference) findPreference(RECENTS_MEMBAR);
 
@@ -141,7 +156,22 @@ public class Recents extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mRecentsClearAllLocation) {
+        if (preference == mImmersiveRecents) {
+            Settings.System.putIntForUser(resolver, Settings.System.IMMERSIVE_RECENTS,
+                    Integer.parseInt((String) newValue), UserHandle.USER_CURRENT);
+            mImmersiveRecents.setValue((String) newValue);
+            mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+
+            mPreferences = mContext.getSharedPreferences("recent_settings", Activity.MODE_PRIVATE);
+            if (!mPreferences.getBoolean("first_info_shown", false) && newValue != null) {
+                getActivity().getSharedPreferences("recent_settings", Activity.MODE_PRIVATE)
+                        .edit()
+                        .putBoolean("first_info_shown", true)
+                        .commit();
+                openAOSPFirstTimeWarning();
+            }
+            return true;
+         } else if (preference == mRecentsClearAllLocation) {
             int value = Integer.parseInt((String) newValue);
             int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
             Settings.System.putIntForUser(resolver,
@@ -158,6 +188,7 @@ public class Recents extends SettingsPreferenceFragment implements
 
     private void toggleAOSPrecents(boolean enabled) {
         mRecentsIconPack.setEnabled(enabled);
+        mImmersiveRecents.setEnabled(enabled);
         mRecentsMembar.setEnabled(enabled);
         mRecentsClearAll.setEnabled(enabled);
         mRecentsClearAllLocation.setEnabled(enabled);
@@ -172,6 +203,16 @@ public class Recents extends SettingsPreferenceFragment implements
             return true;
         }
         return super.onPreferenceTreeClick(preference);
+    }
+
+    private void openAOSPFirstTimeWarning() {
+        new AlertDialog.Builder(getActivity())
+                .setTitle(getResources().getString(R.string.aosp_first_time_title))
+                .setMessage(getResources().getString(R.string.aosp_first_time_message))
+                .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                        }
+                }).show();
     }
 
     /** Recents Icon Pack Dialog **/
@@ -343,6 +384,8 @@ public class Recents extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putStringForUser(resolver,
                 Settings.System.RECENTS_ICON_PACK, "", UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.IMMERSIVE_RECENTS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_CLEAR_ALL_RECENTS, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
