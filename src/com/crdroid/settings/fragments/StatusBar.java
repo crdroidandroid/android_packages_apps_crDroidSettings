@@ -206,6 +206,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.WIFI_ACTIVITY_ARROWS, showActivityDefault(mContext), UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_SHOW_TICKER, 0, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0, UserHandle.USER_CURRENT);
     }
 
     @Override

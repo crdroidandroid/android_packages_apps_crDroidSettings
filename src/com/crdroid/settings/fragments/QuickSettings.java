@@ -36,6 +36,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.R;
 
+import lineageos.providers.LineageSettings;
+
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
@@ -125,6 +127,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_COLUMNS_PORTRAIT, 4, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_COLUMNS_LANDSCAPE, 4, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.QS_SHOW_AUTO_BRIGHTNESS, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
