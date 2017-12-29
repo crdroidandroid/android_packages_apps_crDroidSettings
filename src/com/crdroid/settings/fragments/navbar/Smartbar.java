@@ -29,6 +29,7 @@ import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v14.preference.SwitchPreference;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -61,12 +62,20 @@ import java.util.ArrayList;
 public class Smartbar extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
+    private static final String SMARTBAR_CONFIGS_PREFIX = "smartbar_config_";
+    private static final String KEY_SMARTBAR_BACKUP = "smartbar_profile_save";
+    private static final String KEY_SMARTBAR_RESTORE = "smartbar_profile_restore";
+    private static final String PREF_NAVBAR_BUTTONS_ALPHA = "navbar_buttons_alpha";
+    private static final String PREF_SMARTBAR_CUSTOM_ICON_SIZE = "smartbar_custom_icon_size";
+    private static final String PREF_SMARTBAR_DOUBLE_TAP_SLEEP = "smartbar_doubletap_sleep";
+
     private ListPreference mSmartBarContext;
     private ListPreference mImeActions;
     private ListPreference mButtonAnim;
     private ListPreference mButtonLongpressDelay;
     private CustomSeekBarPreference mButtonsAlpha;
     private CustomSeekBarPreference mCustomButtonScaling;
+    private SwitchPreference mDoubleTapSleep;
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int MENU_SAVE = Menu.FIRST + 1;
@@ -78,11 +87,6 @@ public class Smartbar extends SettingsPreferenceFragment implements
     private static final String CONFIG_STORAGE = Environment.getExternalStorageDirectory()
             + File.separator
             + "smartbar_configs";
-    private static final String SMARTBAR_CONFIGS_PREFIX = "smartbar_config_";
-    private static final String KEY_SMARTBAR_BACKUP = "smartbar_profile_save";
-    private static final String KEY_SMARTBAR_RESTORE = "smartbar_profile_restore";
-    private static final String PREF_NAVBAR_BUTTONS_ALPHA = "navbar_buttons_alpha";
-    private static final String PREF_SMARTBAR_CUSTOM_ICON_SIZE = "smartbar_custom_icon_size";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -131,6 +135,8 @@ public class Smartbar extends SettingsPreferenceFragment implements
                 Settings.Secure.SMARTBAR_CUSTOM_ICON_SIZE, 60, UserHandle.USER_CURRENT);
         mCustomButtonScaling.setValue(size);
         mCustomButtonScaling.setOnPreferenceChangeListener(this);
+
+        mDoubleTapSleep = (SwitchPreference) findPreference(PREF_SMARTBAR_DOUBLE_TAP_SLEEP);
 
         setHasOptionsMenu(true);
     }
@@ -345,6 +351,7 @@ public class Smartbar extends SettingsPreferenceFragment implements
 
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.SMARTBAR_DOUBLETAP_SLEEP, 1, UserHandle.USER_CURRENT);
+        mDoubleTapSleep.setChecked(true);
     }
 
     public static void reset(Context mContext) {
