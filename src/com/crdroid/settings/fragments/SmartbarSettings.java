@@ -326,8 +326,8 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
 
         Settings.Secure.putIntForUser(resolver,
                 "smartbar_custom_icon_size", 60, UserHandle.USER_CURRENT);
-        mButtonsAlpha.setValue(60);
-        mButtonsAlpha.setOnPreferenceChangeListener(this);
+        mCustomButtonScaling.setValue(60);
+        mCustomButtonScaling.setOnPreferenceChangeListener(this);
     }
 
     static class ConfigAdapter extends ArrayAdapter<File> {
