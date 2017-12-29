@@ -307,6 +307,7 @@
     <string name="enabled">Включено</string>
     <string name="disabled">Выключено</string>
     <string name="default_string">По умолчанию</string>
+    <string name="default_settings">Настройки по умолчанию</string>
     <string name="add">Добавить</string>
     <string name="choose_app">Выбрать приложение</string>
     <string name="empty_title">Пустой</string>
@@ -321,6 +322,7 @@
     <string name="profile_choose_app">Выбрать приложение</string>
     <string name="profile_reset_title">Сброс</string>
     <string name="show_title">Показать</string>
+    <string name="stock">Stock</string>
     <string name="reset_paranoid">Paranoid</string>
     <string name="reset_android">Android</string>
 
@@ -339,6 +341,7 @@
     <string name="info_pref_note_title">Заметка</string>
     <string name="smartbar_interface">SmartBar</string>
     <string name="icon_pack_picker_dialog_title">Наборы иконок</string>
+    <string name="image_exceeds_max_allowed_size">Изображение не должно превышать 512x512</string>
     <string name="invalid_icon_from_uri">Не удается загрузить изображения от контент-провайдера</string>
     <string name="picker_activities">Действия</string>
     <string name="select_custom_app_title">Выбрать пользовательское приложение</string>
@@ -410,6 +413,9 @@
     <string name="fling_longpress_timeout_label_right">Большая задержка</string>
     <string name="fling_longpress_title">Задержка длительного нажатия</string>
     <string name="fling_longpress_summary">Увеличить или уменьшить время, необходимое для длительно нажатия</string>
+    <string name="fling_keyboard_cursors_title">Управление курсором</string>
+    <string name="fling_keyboard_cursors_summary">Двойное нажатие слева и справа перемещают курсор при открытой клавиатуре</string>
+    <string name="fling_logo_opacity_title">Прозрачность логотипа Fling</string>
 
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">О Pulse</string>
@@ -448,12 +454,17 @@
     <string name="land_hor_title">Высота в альбомном режиме</string>
     <string name="positive_done">Готово</string>
 
+    <!-- Stock navbar -->
+    <string name="navbar_settings_title">Настройки Stock</string>
+    <string name="navabar_settings_summary">Настройка стоковой панели навигации</string>
+
     <!-- SmartBar -->
     <string name="smartbar_category">SmartBar</string>
     <string name="smartbar_settings_title">Настройки SmartBar</string>
     <string name="smartbar_settings_summary">Настройка различных элементов SmartBar</string>
     <string name="smartbar_editor_title">Режим редактирования</string>
     <string name="smartbar_editor_summary">Недолго удерживайте кнопку панели навигации для изменения ее расположения. Длительно удерживайте кнопку для отображения меню. Положение кнопки может быть изменено во время отображения меню.</string>
+    <string name="smartbar_help_policy_notice_summary">В режиме редактирования: нажмите и переместите кнопку, удерживайте кнопку для открытия меню параметров. Кнопки могут перемещаться при открытом меню настроек.\n\nДействие двойного нажатия приводит к задержке одиночного нажатия.</string>
     <string name="smartbar_context_menu_position_title">Позиция контекстных кнопок</string>
     <string name="smartbar_context_menu_position_summary">Задать положение контекстных кнопок, таких как меню и выбор способа ввода</string>
     <string name="smartbar_right">Правая сторона</string>
@@ -465,6 +476,7 @@
     <string name="smartbar_button_animation_flip">Переворот</string>
     <string name="smartbar_button_animation_pixel">Pixel (все кнопки)</string>
     <string name="smartbar_button_animation_pixel_home">Pixel (только кнопка \"Домой\")</string>
+    <string name="smartbar_button_animation_pixel_home_ripple">Pixel (только кнопка Домой) и пульсация</string>
     <string name="smartbar_factory_reset_title">Сброс к настройкам по умолчанию</string>
     <string name="smartbar_factory_reset_confirm">Вы уверены, что вы хотите сбросить SmartBar к настройкам по умолчанию?</string>
     <string name="smartbar_ime_action_title">Параметры метода ввода</string>
@@ -506,6 +518,7 @@
     <string name="status_bar_quick_qs_pulldown_off">Выключен</string>
     <string name="status_bar_quick_qs_pulldown_left">Левый край</string>
     <string name="status_bar_quick_qs_pulldown_right">Правый край</string>
+    <string name="status_bar_quick_qs_pulldown_always">Быстрые настройки открываются из любого места строки состояния</string>
 
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_position_title">Часы</string>
@@ -782,10 +795,6 @@
     <string name="maintainers_crdroid_summary">Список поддерживаемых устройств и их официальные сопровождающие</string>
     <string name="maintainers_crdroid_error">Невозможно загрузить список</string>
 
-    <!-- OTA -->
-    <string name="ota_crdroid_title">Обновления</string>
-    <string name="ota_crdroid_summary">Проверить OTA обновление и ссылки для вашего устройства</string>
-
     <!-- Donate crDroid -->
     <string name="donate_crdroid_title">Поддержать нас</string>
     <string name="donate_crdroid_summary">Пожертвовать на разработку и на наш сервер</string>
@@ -874,6 +883,10 @@
     <string name="torch_long_press_power_gesture_desc">Долгое нажатие на кнопку включения, при выключенном экране, включает фонарик</string>
     <string name="torch_long_press_power_timeout_title">Автоматическое выключение фонарика</string>
     <string name="auto_power_save_never">Никогда</string>
+    <string name="torch_long_press_power_timeout_1min">1 минута</string>
+    <string name="torch_long_press_power_timeout_2min">2 минуты</string>
+    <string name="torch_long_press_power_timeout_5min">5 минут</string>
+    <string name="torch_long_press_power_timeout_10min">10 минут</string>
 
     <!--Status bar date -->
     <string name="status_bar_date_title">Дата</string>
@@ -1205,7 +1218,15 @@
     <string name="no_iconpacks_summary">Нет наборов иконок</string>
     <string name="dialog_pick_iconpack_title">Выбрать набор иконок</string>
     <string name="default_iconpack_title">Иконки по умолчанию</string>
+    <string name="dialog_delete_title">Удалить</string>
+    <string name="dialog_delete_message">Удалить выбранный элемент?</string>
     <string name="slim_recents_corner_radius_title">Использовать круглые углы для карт</string>
+    <string name="slim_blacklist_apps_cat_title">Чёрный список</string>
+    <string name="slim_blacklist_apps_title">Черный список приложений</string>
+    <string name="slim_blacklist_apps_summary">Исключить приложения, которые будут отображаться на панели</string>
+    <string name="slim_blacklist_add_apps_title">Добавить приложение</string>
+    <string name="slim_blacklist_add_apps_summary">Нажмите здесь для добавления приложения в черный список</string>
+    <string name="slim_blacklist_apps_info">Нажмите на приложение для удаления из списка</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Показывать с левого края</string>
@@ -1339,4 +1360,77 @@
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Режим \"В кармане\"</string>
     <string name="pocket_judge_summary">Блокировать экран и кнопки, когда устройство находится в кармане</string>
+
+    <!-- MediaScanner behavior on boot -->
+    <string name="media_scanner_on_boot_title">Поведение медиасканера при загрузке</string>
+    <string name="media_scanner_on_boot_enabled">Сканировать медиа</string>
+    <string name="media_scanner_on_boot_ask">Запрос (уведомление)</string>
+    <string name="media_scanner_on_boot_disabled">Не сканировать медиа</string>
+
+    <!-- FAB -->
+    <string name="fab_reset">Сбросить настройки</string>
+
+    <!-- OTA -->
+    <string name="ota_crdroid_title">Обновления</string>
+    <string name="ota_crdroid_summary">Проверить OTA обновление и ссылки для вашего устройства</string>
+
+    <!-- Categories -->
+    <string name="ota_category">OTA</string>
+    <string name="links_category">Ссылки</string>
+
+    <!-- ROM info -->
+    <string name="latest_version">Последняя версия: %1$s</string>
+    <string name="unknown">Неизвестно</string>
+    <string name="system_uptodate">Ваша система обновлена до последней версии</string>
+
+    <!-- Check update -->
+    <string name="check_update_title">Проверить обновление</string>
+    <string name="last_check_summary">Последняя проверка: %1$s</string>
+    <string name="last_check_never">Никогда</string>
+    <string name="check_update_failed">Невозможно проверить обновление</string>
+    <string name="no_update_available">Нет доступных обновлений</string>
+
+    <!-- Update interval -->
+    <string name="interval_title">Интервал обновления</string>
+    <string name="interval_entry_disable">Отключено</string>
+    <string name="interval_entry_15m">Каждые 15 минут</string>
+    <string name="interval_entry_30m">Каждые 30 минут</string>
+    <string name="interval_entry_1h">Каждый час</string>
+    <string name="interval_entry_12h">Каждые 12 часов</string>
+    <string name="interval_entry_24h">Каждые 24 часа</string>
+    <string name="interval_entry_1m">Каждую минуту (Только тест)</string>
+    <string name="autoupdate_enabled">Автоматическое обновление включено</string>
+    <string name="autoupdate_disabled">Автоматические обновление отключено</string>
+
+    <!-- Notification -->
+    <string name="notification_title">Обновление прошивки</string>
+    <string name="notification_message">Доступно новое обновление!</string>
+
+    <!-- Dialog -->
+    <string name="dialog_message">Проверка обновлений, пожалуйста, подождите…</string>
+
+    <!-- Navbar Animation -->
+    <string name="pixel_navbar_anim_title">Pixel animation</string>
+    <string name="pixel_navbar_anim_summary">Toggle pixel style animation for navigation bar</string>
+
+    <!-- Smart pulldown-->
+    <string name="smart_pulldown_title">Умная панель уведомлений</string>
+    <string name="smart_pulldown_summary">Открыть быстрые настройки %1$s уведомлений</string>
+    <string name="smart_pulldown_none_summary">Открыть быстрые настройки без уведомлений</string>
+    <string name="smart_pulldown_off">выключено</string>
+    <string name="smart_pulldown_none">без уведомлений</string>
+    <string name="smart_pulldown_dismissable">без удаляемых</string>
+    <string name="smart_pulldown_ongoing">без постоянных</string>
+
+    <!-- Tap to sleep on status bar -->
+    <string name="statusbar_doubletap_sleep_title">Спящий режим</string>
+    <string name="statusbar_doubletap_sleep_summary">Дважды коснитесь строки состояния для перевода устройства в спящий режим</string>
+
+    <!-- Auto USB mode chooser -->
+    <string name="auto_usb_mode_chooser_title">Выбор режима USB</string>
+    <string name="auto_usb_mode_chooser_summary">При подключении к PC появится всплывающее окно с выбором режима USB</string>
+
+    <!-- Vibrate on plugged -->
+    <string name="vibration_on_charge_state_changed_title">Вибрация при подключении</string>
+    <string name="vibration_on_charge_state_changed_summary">Вибрировать при подключении к источнику питания</string>
 </resources>
