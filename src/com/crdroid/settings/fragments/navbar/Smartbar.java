@@ -268,17 +268,17 @@ public class Smartbar extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         if (preference == mSmartBarContext) {
-            int position = (Integer) newValue;
+            int position = Integer.parseInt((String) newValue);
             Settings.Secure.putIntForUser(resolver, Settings.Secure.SMARTBAR_CONTEXT_MENU_MODE,
                     position, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mButtonAnim) {
-            int val = (Integer) newValue;
+            int val = Integer.parseInt((String) newValue);
             Settings.Secure.putIntForUser(resolver, Settings.Secure.SMARTBAR_BUTTON_ANIMATION_STYLE,
                     val, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mImeActions) {
-            int val = (Integer) newValue;
+            int val = Integer.parseInt((String) newValue);
             Settings.Secure.putIntForUser(resolver, Settings.Secure.SMARTBAR_IME_HINT_MODE,
                     val, UserHandle.USER_CURRENT);
             return true;
@@ -288,7 +288,7 @@ public class Smartbar extends SettingsPreferenceFragment implements
                     Settings.Secure.NAVBAR_BUTTONS_ALPHA, val, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mButtonLongpressDelay) {
-            int val = (Integer) newValue;
+            int val = Integer.parseInt((String) newValue);
             Settings.Secure.putIntForUser(resolver,
                     Settings.Secure.SMARTBAR_LONGPRESS_DELAY, val, UserHandle.USER_CURRENT);
             return true;
@@ -340,8 +340,8 @@ public class Smartbar extends SettingsPreferenceFragment implements
 
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.SMARTBAR_CUSTOM_ICON_SIZE, 60, UserHandle.USER_CURRENT);
-        mButtonsAlpha.setValue(60);
-        mButtonsAlpha.setOnPreferenceChangeListener(this);
+        mCustomButtonScaling.setValue(60);
+        mCustomButtonScaling.setOnPreferenceChangeListener(this);
 
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.SMARTBAR_DOUBLETAP_SLEEP, 1, UserHandle.USER_CURRENT);
