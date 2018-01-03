@@ -112,6 +112,8 @@ public class Miscellaneous extends SettingsPreferenceFragment
         Settings.System.putIntForUser(resolver,
                 Settings.System.AUTO_USB_MODE_CHOOSER, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.SCREENSHOT_TYPE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.VIBRATION_ON_CHARGE_STATE_CHANGED, 0, UserHandle.USER_CURRENT);

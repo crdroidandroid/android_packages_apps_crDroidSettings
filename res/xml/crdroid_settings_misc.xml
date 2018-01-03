@@ -75,6 +75,14 @@
         android:summary="@string/vibration_on_charge_state_changed_summary"
         android:defaultValue="false" />
 
+    <!-- Partial screenshot -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="screenshot_type"
+        android:icon="@drawable/ic_screenshot_type"
+        android:title="@string/screenshot_type_title"
+        android:summary="@string/screenshot_type_partial"
+        android:defaultValue="false" />
+
     <!-- Three-fingers-swipe to screenshot -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="three_finger_gesture"
@@ -97,13 +105,6 @@
         android:title="@string/screen_state_toggles_title" 
         android:summary="@string/screen_state_toggles_summary" 
         android:fragment="com.crdroid.settings.fragments.ScreenStateToggles" />
-
-    <ListPreference
-        android:key="screenshot_type"
-        android:icon="@drawable/ic_screenshot_type"
-        android:title="@string/screenshot_type_title"
-        android:entries="@array/screenshot_type_entries"
-        android:entryValues="@array/screenshot_type_values" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="sensor_block"
