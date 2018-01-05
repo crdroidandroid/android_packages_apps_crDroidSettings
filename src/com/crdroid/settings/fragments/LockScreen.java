@@ -35,6 +35,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.R;
 
+import lineageos.providers.LineageSettings;
+
 public class LockScreen extends SettingsPreferenceFragment
             implements Preference.OnPreferenceChangeListener  {
 
@@ -83,12 +85,14 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.LOCK_SCREEN_CUSTOM_NOTIF, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT);
         Settings.Global.putInt(resolver,
                 Settings.Global.LOCKSCREEN_ENABLE_POWER_MENU, 1);
         Settings.Global.putInt(resolver,
                 Settings.Global.LOCKSCREEN_ENABLE_QS, 1);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.LOCKSCREEN_VISUALIZER, 1, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
