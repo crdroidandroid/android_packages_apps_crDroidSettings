@@ -90,7 +90,7 @@ public class LockScreen extends SettingsPreferenceFragment
         Settings.Global.putInt(resolver,
                 Settings.Global.LOCKSCREEN_ENABLE_QS, 1);
         LineageSettings.Secure.putIntForUser(resolver,
-                LineageSettings.Secure.LOCKSCREEN_VISUALIZER, 1, UserHandle.USER_CURRENT);
+                LineageSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 1, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT);
     }
