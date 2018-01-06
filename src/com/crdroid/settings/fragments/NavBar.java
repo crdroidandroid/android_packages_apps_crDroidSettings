@@ -234,8 +234,8 @@ public class NavBar extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        Settings.Secure.putInt(resolver, Settings.Secure.NAVIGATION_BAR_VISIBLE,
-             DUActionUtils.hasNavbarByDefault(mContext) ? 1 : 0);
+        Settings.Secure.putIntForUser(resolver, Settings.Secure.NAVIGATION_BAR_VISIBLE,
+             DUActionUtils.hasNavbarByDefault(mContext) ? 1 : 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
             Settings.Secure.NAVIGATION_BAR_MODE, 1, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
