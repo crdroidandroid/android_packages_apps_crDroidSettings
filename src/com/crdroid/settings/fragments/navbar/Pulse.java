@@ -184,7 +184,7 @@ public class Pulse extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         if (preference == mRenderMode) {
-            int mode = (Integer) newValue;
+            int mode = Integer.parseInt((String) newValue);
             Settings.Secure.putIntForUser(resolver,
                     Settings.Secure.PULSE_RENDER_STYLE_URI, mode, UserHandle.USER_CURRENT);
             PreferenceCategory fadingBarsCat = (PreferenceCategory)findPreference("pulse_fading_bars_category");
