@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -64,7 +64,7 @@
         <PreferenceScreen
             android:key="notifications_category"
             android:title="@string/notifications_title" 
-            android:fragment="com.crdroid.settings.fragments.NotificationsSettings"
+            android:fragment="com.crdroid.settings.fragments.Notifications"
             android:icon="@drawable/ic_settings_notifications" />
 
         <!-- Sound -->
@@ -73,6 +73,13 @@
             android:title="@string/sound_title" 
             android:fragment="com.crdroid.settings.fragments.Sound"
             android:icon="@drawable/ic_settings_sound" />
+
+        <!-- Animations -->
+        <PreferenceScreen
+            android:key="animation_category"
+            android:title="@string/animation_title" 
+            android:fragment="com.crdroid.settings.fragments.Animations"
+            android:icon="@drawable/ic_settings_animation" />
 
         <!-- Miscellaneous -->
         <PreferenceScreen
@@ -108,13 +115,6 @@
             android:title="@string/powermenu_title" 
             android:fragment="com.crdroid.settings.fragments.PowerMenuSettings"
             android:icon="@drawable/ic_settings_powermenu"/> -->
-
-        <!-- Animations
-        <PreferenceScreen
-            android:key="animation_category"
-            android:title="@string/animation_title" 
-            android:fragment="com.crdroid.settings.fragments.AnimationSettings"
-            android:icon="@drawable/ic_settings_animation" /> -->
 
         <PreferenceScreen
             android:title=""

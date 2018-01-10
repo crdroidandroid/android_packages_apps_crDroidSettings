@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -24,14 +24,14 @@
         android:icon="@drawable/ic_system_animation"
         android:title="@string/system_animation_title"
         android:summary="@string/system_animation_summary"
-        android:fragment="com.crdroid.settings.fragments.AnimationControls" />
+        android:fragment="com.crdroid.settings.fragments.animations.AnimationControls" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <!-- <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="disable_transition_animations"
         android:icon="@drawable/ic_system_animation"
         android:title="@string/disable_animations"
         android:summary="@string/disable_animations_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" /> -->
 
     <ListPreference
         android:key="listview_animation"
@@ -59,41 +59,41 @@
         android:entryValues="@array/toast_animation_values"
         android:defaultValue="1" />
 
-    <ListPreference
+    <!-- <ListPreference
         android:key="power_menu_animation"
         android:icon="@drawable/ic_power_menu_animation"
         android:dialogTitle="@string/power_menu_animation_title"
         android:title="@string/power_menu_animation_title"
         android:entries="@array/power_menu_animation_entries"
         android:entryValues="@array/power_menu_animation_values"
-        android:defaultValue="0" />
+        android:defaultValue="0" /> -->
 
-     <ListPreference
+     <!-- <ListPreference
         android:key="qs_tile_animation_style"
         android:icon="@drawable/ic_qs_tile_animation_style"
         android:dialogTitle="@string/qs_tile_animation_style_title"
         android:title="@string/qs_tile_animation_style_title"
         android:entries="@array/qs_tile_animation_style_entries"
         android:entryValues="@array/qs_tile_animation_style_values"
-        android:defaultValue="0" />
+        android:defaultValue="0" /> -->
 
-    <ListPreference
+    <!-- <ListPreference
         android:key="qs_tile_animation_duration"
         android:icon="@drawable/ic_qs_tile_animation_style"
         android:dialogTitle="@string/qs_tile_animation_duration_title"
         android:title="@string/qs_tile_animation_duration_title"
         android:entries="@array/qs_tile_animation_duration_entries"
         android:entryValues="@array/qs_tile_animation_duration_values"
-        android:defaultValue="2000" />
+        android:defaultValue="2000" /> -->
 
-    <ListPreference
+    <!-- <ListPreference
         android:key="qs_tile_animation_interpolator"
         android:icon="@drawable/ic_qs_tile_animation_style"
         android:dialogTitle="@string/qs_tile_animation_interpolator_title"
         android:title="@string/qs_tile_animation_interpolator_title"
         android:entries="@array/qs_tile_animation_interpolator_entries"
         android:entryValues="@array/qs_tile_animation_interpolator_values"
-        android:defaultValue="0" />
+        android:defaultValue="0" /> -->
 
     <!-- <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="qs_fancy_animation"
@@ -111,13 +111,13 @@
         android:entryValues="@array/values_scrollingcache"
         android:defaultValue="1" />
 
-    <PreferenceScreen
+    <!-- <PreferenceScreen
         android:key="interface_animation_scroll"
         android:icon="@drawable/ic_scroll"
         android:title="@string/scrolling_title"
         android:summary="@string/scrolling_summary"
         android:fragment="com.crdroid.settings.fragments.ScrollAnimationInterfaceSettings"
-        android:persistent="false" />
+        android:persistent="false" /> -->
 
     <PreferenceScreen
         android:title=""
