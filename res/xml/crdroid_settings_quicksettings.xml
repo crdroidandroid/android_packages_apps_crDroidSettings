@@ -131,6 +131,13 @@
             settings:min="1"
             settings:units=""
             android:persistent="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_title_visibility"
+            android:icon="@drawable/ic_text"
+            android:title="@string/qs_tile_title_visibility_title"
+            android:summary="@string/qs_tile_title_visibility_summary"
+            android:defaultValue="true" />
     </PreferenceCategory>
 
     <!--<PreferenceCategory 
