@@ -4,6 +4,15 @@
     android:title="@string/system_animation_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="animation_controls_duration"
+            android:title="@string/animation_duration_title"
+            android:max="400"
+            settings:min="0"
+            settings:interval="8"
+            settings:units="ms"
+            android:persistent="false" />
+
         <ListPreference
             android:key="activity_open"
             android:title="@string/activity_open_title" />
