@@ -52,7 +52,7 @@ import android.widget.ListView;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
-//import com.crdroid.settings.fragments.recents.SlimRecentsPanel;
+import com.crdroid.settings.fragments.recents.SlimRecentsPanel;
 
 import com.crdroid.settings.R;
 
@@ -75,7 +75,7 @@ public class Recents extends SettingsPreferenceFragment implements
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String RECENTS_DISMISS_ICON = "recents_dismiss_icon";
     private static final String RECENTS_LOCK_ICON = "recents_lock_icon";
-//    private static final String USE_SLIM_RECENTS = "use_slim_recents";
+    private static final String USE_SLIM_RECENTS = "use_slim_recents";
 
     private Preference mRecentsIconPack;
     private ListPreference mImmersiveRecents;
@@ -84,7 +84,7 @@ public class Recents extends SettingsPreferenceFragment implements
     private ListPreference mRecentsClearAllLocation;
     private Preference mRecentsDismissIcon;
     private Preference mRecentsLockIcon;
-//    private Preference mSlimRecents;
+    private Preference mSlimRecents;
 
     private SharedPreferences mPreferences;
     private Context mContext;
@@ -144,7 +144,6 @@ public class Recents extends SettingsPreferenceFragment implements
 
         mRecentsLockIcon = (Preference) findPreference(RECENTS_LOCK_ICON);
 
-/*
         mSlimRecents = (Preference) findPreference(USE_SLIM_RECENTS);
         mSlimRecents.setOnPreferenceChangeListener(this);
 
@@ -152,7 +151,6 @@ public class Recents extends SettingsPreferenceFragment implements
                 resolver, Settings.System.USE_SLIM_RECENTS, 0,
                 UserHandle.USER_CURRENT) == 1;
         toggleAOSPrecents(!mUseSlimRecents);
-*/
     }
 
     @Override
@@ -180,17 +178,14 @@ public class Recents extends SettingsPreferenceFragment implements
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, value, UserHandle.USER_CURRENT);
             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
             return true;
-/*
         } else if (preference == mSlimRecents) {
             boolean value = (Boolean) newValue;
             toggleAOSPrecents(!value);
             return true;
-*/
         }
         return false;
     }
 
-/*
     private void toggleAOSPrecents(boolean enabled) {
         mRecentsIconPack.setEnabled(enabled);
         mImmersiveRecents.setEnabled(enabled);
@@ -200,7 +195,6 @@ public class Recents extends SettingsPreferenceFragment implements
         mRecentsDismissIcon.setEnabled(enabled);
         mRecentsLockIcon.setEnabled(enabled);
     }
-*/
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
@@ -404,11 +398,9 @@ public class Recents extends SettingsPreferenceFragment implements
                 Settings.System.RECENTS_DEEP_CLEAR, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SYSTEMUI_RECENTS_MEM_DISPLAY, 0, UserHandle.USER_CURRENT);
-/*
         Settings.System.putIntForUser(resolver,
                 Settings.System.USE_SLIM_RECENTS, 0, UserHandle.USER_CURRENT);
         SlimRecentsPanel.reset(mContext);
-*/
     }
 
     @Override
