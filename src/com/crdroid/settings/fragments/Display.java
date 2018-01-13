@@ -35,6 +35,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.crdroid.settings.fragments.display.ExpandedDesktop;
 import com.crdroid.settings.R;
 
+import lineageos.providers.LineageSettings;
+
 public class Display extends SettingsPreferenceFragment {
 
     public static final String TAG = "Display";
@@ -49,6 +51,9 @@ public class Display extends SettingsPreferenceFragment {
     }
 
     public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.DARK_THEME, 1, UserHandle.USER_CURRENT);
         ExpandedDesktop.reset(mContext);
     }
 

@@ -17,6 +17,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     android:title="@string/display_title">
 
     <PreferenceScreen
@@ -26,6 +27,15 @@
         android:summary="@string/expanded_desktop_summary"
         android:fragment="com.crdroid.settings.fragments.display.ExpandedDesktop"
         android:persistent="false" />
+
+    <lineageos.preference.LineageSystemSettingListPreference
+        android:key="dark_theme"
+        android:icon="@drawable/ic_theme_light_dark"
+        android:title="@string/dark_theme_title"
+        android:summary="%s"
+        android:entries="@array/dark_theme_entries"
+        android:entryValues="@array/dark_theme_values"
+        android:defaultValue="1" />
 
     <!--<PreferenceScreen
         android:key="doze_fragment"
