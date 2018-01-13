@@ -226,7 +226,6 @@ public class Buttons extends SettingsPreferenceFragment implements
         if (hasBackKey) {
             if (!showBackWake) {
                 backCategory.removePreference(findPreference(LineageSettings.System.BACK_WAKE_SCREEN));
-                prefScreen.removePreference(backCategory);
             }
         } else {
             prefScreen.removePreference(backCategory);
