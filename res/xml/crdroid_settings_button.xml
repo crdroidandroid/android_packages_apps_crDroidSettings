@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:cm="http://schemas.android.com/apk/res/cyanogenmod.platform"
+    xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     android:key="button_settings"
     android:title="@string/button_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
@@ -27,14 +27,14 @@
         android:title="@string/button_backlight_title"
         android:summary="@string/button_backlight_summary"
         android:dialogTitle="@string/button_backlight_title"
-        android:persistent="false" />
+        android:persistent="false" />-->
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="anbi_enabled"
         android:icon="@drawable/ic_anbi"
         android:title="@string/anbi_title"
         android:summary="@string/anbi_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" />-->
 
     <PreferenceCategory
         android:key="power_key"
@@ -47,13 +47,13 @@
             android:summary="@string/power_end_call_summary"
             android:persistent="false"/>
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="torch_long_press_power_gesture"
             android:icon="@drawable/ic_flashlight"
             android:title="@string/torch_long_press_power_gesture_title"
             android:summary="@string/torch_long_press_power_gesture_desc"
             android:defaultValue="false"
-            cm:requiresConfig="@*android:bool/config_supportLongPressPowerWhenNonInteractive" />
+            lineage:requiresConfig="@*android:bool/config_supportLongPressPowerWhenNonInteractive" />
 
         <ListPreference
             android:key="torch_long_press_power_timeout"
@@ -70,7 +70,7 @@
         android:key="home_key"
         android:title="@string/hardware_keys_home_key_title" >
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="home_wake_screen"
             android:icon="@drawable/ic_wake"
             android:title="@string/button_wake_title"
@@ -107,25 +107,25 @@
         android:key="back_key"
         android:title="@string/hardware_keys_back_key_title" >
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="back_wake_screen"
             android:icon="@drawable/ic_wake"
             android:title="@string/button_wake_title"
             android:summary="@string/button_wake_summary"
             android:defaultValue="false" />
 
-        <cyanogenmod.preference.CMSecureSettingSwitchPreference
+        <!--<cyanogenmod.preference.CMSecureSettingSwitchPreference
             android:key="kill_app_longpress_back"
             android:icon="@drawable/ic_close"
             android:title="@string/kill_app_longpress_back"
-            android:summary="@string/kill_app_longpress_back_summary"/>
+            android:summary="@string/kill_app_longpress_back_summary"/>-->
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="menu_key"
         android:title="@string/hardware_keys_menu_key_title" >
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="menu_wake_screen"
             android:icon="@drawable/ic_wake"
             android:title="@string/button_wake_title"
@@ -155,7 +155,7 @@
         android:key="assist_key"
         android:title="@string/hardware_keys_assist_key_title" >
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="assist_wake_screen"
             android:icon="@drawable/ic_wake"
             android:title="@string/button_wake_title"
@@ -185,7 +185,7 @@
         android:key="app_switch_key"
         android:title="@string/hardware_keys_appswitch_key_title" >
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="app_switch_wake_screen"
             android:icon="@drawable/ic_wake"
             android:title="@string/button_wake_title"
@@ -215,21 +215,21 @@
         android:key="camera_key"
         android:title="@string/hardware_keys_camera_key_title">
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="camera_wake_screen"
             android:icon="@drawable/ic_wake"
             android:title="@string/button_wake_title"
             android:summary="@string/button_wake_summary"
             android:defaultValue="false" />
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="camera_sleep_on_release"
             android:icon="@drawable/ic_camera_rear"
             android:title="@string/camera_sleep_on_release_title"
             android:summary="@string/camera_sleep_on_release_summary"
             android:defaultValue="false" />
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="camera_launch"
             android:icon="@drawable/ic_camera"
             android:title="@string/camera_launch_title"
@@ -241,28 +241,28 @@
         android:key="volume_keys"
         android:title="@string/hardware_keys_volume_keys_title" >
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="volume_wake_screen"
             android:icon="@drawable/ic_wake"
             android:title="@string/button_wake_title"
             android:summary="@string/button_wake_summary"
             android:defaultValue="false" />
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="volume_answer_call"
             android:icon="@drawable/ic_answer_call"
             android:title="@string/volume_answer_call_title"
             android:summary="@string/volume_answer_call_summary"
             android:defaultValue="false" />
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="volbtn_music_controls"
             android:icon="@drawable/ic_music"
             android:title="@string/volbtn_music_controls_title"
             android:summary="@string/volbtn_music_controls_summary"
             android:defaultValue="true" />
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="volume_keys_control_ring_stream"
             android:icon="@drawable/ic_call_ring"
             android:title="@string/volume_keys_control_ring_stream_title"
@@ -284,5 +284,30 @@
             android:icon="@drawable/ic_rotation"
             android:title="@string/swap_volume_buttons_title"
             android:summary="@string/swap_volume_buttons_summary" />
-    </PreferenceCategory>-->
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="extras_category"
+        android:title="@string/extras_title" >
+
+        <lineageos.preference.RemotePreference
+            android:key="additional_buttons"
+            android:icon="@drawable/ic_extra_buttons"
+            android:title="@string/additional_buttons_title"
+            lineage:requiresAction="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS">
+            <intent
+                android:action="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS" />
+        </lineageos.preference.RemotePreference>
+
+    </PreferenceCategory>
+
+    <PreferenceScreen
+        android:title=""
+        android:selectable="false"
+        settings:allowDividerAbove="false" />
+
+    <PreferenceScreen
+        android:title=""
+        android:selectable="false"
+        settings:allowDividerAbove="false" />
 </PreferenceScreen>

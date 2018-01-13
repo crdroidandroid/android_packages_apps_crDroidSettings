@@ -39,6 +39,13 @@
             android:fragment="com.crdroid.settings.fragments.LockScreen"
             android:icon="@drawable/ic_settings_lockscreens" />
 
+        <!-- Recents -->
+        <PreferenceScreen
+            android:key="recents_category"
+            android:title="@string/recents_title"
+            android:fragment="com.crdroid.settings.fragments.Recents"
+            android:icon="@drawable/ic_settings_recents" />
+
         <!-- Navigation Bar -->
         <PreferenceScreen
             android:key="navigationbar_category"
@@ -46,12 +53,12 @@
             android:fragment="com.crdroid.settings.fragments.NavBar"
             android:icon="@drawable/ic_settings_navbar" />
 
-        <!-- Recents -->
+        <!-- Buttons -->
         <PreferenceScreen
-            android:key="recents_category"
-            android:title="@string/recents_title"
-            android:fragment="com.crdroid.settings.fragments.Recents"
-            android:icon="@drawable/ic_settings_recents" />
+            android:key="buttonsettings_category"
+            android:title="@string/button_title"
+            android:fragment="com.crdroid.settings.fragments.Buttons"
+            android:icon="@drawable/ic_settings_buttons"/>
 
         <!-- Display -->
         <PreferenceScreen
@@ -94,13 +101,6 @@
             android:title="@string/about_crdroid"
             android:fragment="com.crdroid.settings.fragments.About"
             android:icon="@drawable/ic_settings_about" />
-
-        <!-- Buttons
-        <PreferenceScreen
-            android:key="buttonsettings_category"
-            android:title="@string/button_title"
-            android:fragment="com.crdroid.settings.fragments.ButtonSettings"
-            android:icon="@drawable/ic_settings_buttons"/> -->
 
         <!-- Gestures
         <PreferenceScreen
