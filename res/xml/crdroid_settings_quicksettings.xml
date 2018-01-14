@@ -80,6 +80,13 @@
             android:summary="@string/bluetooth_battery_summary"
             android:defaultValue="true"/>
 
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_quickbar_scroll_enabled"
+            android:icon="@drawable/ic_gesture_swipe_left"
+            android:title="@string/qqs_scroll_title"
+            android:summary="@string/qqs_scroll_summary"
+            android:defaultValue="false"/>
+
         <!--<PreferenceScreen
             android:key="omnijaws_settings"
             android:icon="@drawable/ic_omnijaws"

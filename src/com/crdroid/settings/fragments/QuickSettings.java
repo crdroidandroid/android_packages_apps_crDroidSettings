@@ -117,6 +117,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.BLUETOOTH_QS_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_QUICKBAR_SCROLL_ENABLED, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.QUICK_SETTINGS_VIBRATE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
