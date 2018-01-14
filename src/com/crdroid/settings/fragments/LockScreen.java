@@ -76,7 +76,7 @@ public class LockScreen extends SettingsPreferenceFragment
         mFingerprintVib = (SwitchPreference) findPreference(FP_SUCCESS_VIBRATE);
         mFpKeystore = (SwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
 
-        if (mFingerprintManager.isHardwareDetected()){
+        if (mFingerprintManager != null && mFingerprintManager.isHardwareDetected()){
             mFingerprintVib.setChecked((Settings.System.getIntForUser(resolver,
                     Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT) == 1));
             mFingerprintVib.setOnPreferenceChangeListener(this);
