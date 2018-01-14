@@ -60,6 +60,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String TAG = "SystemSettings";
 
     private static final String HWKEYS_DISABLED = "hardware_keys_disable";
+    private static final String KEY_ANBI = "anbi_enabled";
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_HOME_LONG_PRESS = "hardware_keys_home_long_press";
     private static final String KEY_HOME_DOUBLE_TAP = "hardware_keys_home_double_tap";
@@ -91,6 +92,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String CATEGORY_BACKLIGHT = "key_backlight";
 
     private SwitchPreference mHardwareKeysDisable;
+    private SwitchPreference mAnbi;
     private ListPreference mHomeLongPressAction;
     private ListPreference mHomeDoubleTapAction;
     private ListPreference mMenuPressAction;
@@ -162,6 +164,7 @@ public class Buttons extends SettingsPreferenceFragment implements
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_CAMERA);
 
         mHardwareKeysDisable = (SwitchPreference) findPreference(HWKEYS_DISABLED);
+        mAnbi = (SwitchPreference) findPreference(KEY_ANBI);
 
         // Power button ends calls.
         mPowerEndCall = (SwitchPreference) findPreference(KEY_POWER_END_CALL);
@@ -190,6 +193,7 @@ public class Buttons extends SettingsPreferenceFragment implements
 
         if (!hasHomeKey && !hasBackKey && !hasMenuKey && !hasAssistKey && !hasAppSwitchKey) {
             prefScreen.removePreference(mHardwareKeysDisable);
+            prefScreen.removePreference(mAnbi);
         }
 
         if (hasPowerKey) {
