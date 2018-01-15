@@ -42,6 +42,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
     private String mDefaultText = "";
     private SeekBar mSeekBar;
     private TextView mTitle;
+    private TextView mSummary;
     private TextView mStatusText;
 
     public CustomSeekBarPreference(Context context, AttributeSet attrs, int defStyleAttr,
@@ -107,6 +108,8 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         this.setShouldDisableView(true);
         if (mTitle != null)
             mTitle.setEnabled(!disableDependent);
+        if (mSummary != null)
+            mSummary.setEnabled(!disableDependent);
         if (mSeekBar != null)
             mSeekBar.setEnabled(!disableDependent);
         if (mStatusText != null)
@@ -143,6 +146,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         } 
         mSeekBar.setProgress(mCurrentValue - mMin);
         mTitle = (TextView) view.findViewById(android.R.id.title);
+        mSummary = (TextView) view.findViewById(android.R.id.summary);
 
         view.setDividerAllowedAbove(false);
         //view.setDividerAllowedBelow(false);
@@ -228,11 +232,14 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
 
     @Override
     public void setEnabled(boolean enabled) {
-        if (mSeekBar != null && mStatusText != null && mTitle != null) {
-            mSeekBar.setEnabled(enabled);
-            mStatusText.setEnabled(enabled);
-            mTitle.setEnabled(enabled);
-        }
         super.setEnabled(enabled);
+        if (mTitle != null)
+            mTitle.setEnabled(enabled);
+        if (mSummary != null)
+            mSummary.setEnabled(enabled);
+        if (mSeekBar != null)
+            mSeekBar.setEnabled(enabled);
+        if (mStatusText != null)
+            mStatusText.setEnabled(enabled);
     }
 }
