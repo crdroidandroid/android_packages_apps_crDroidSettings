@@ -86,6 +86,11 @@ public class ColorPickerPreference extends Preference implements
         onColorChanged(restoreValue ? getPersistedInt(mValue) : (Integer) defaultValue);
     }
 
+    @Override
+    protected boolean isPersisted() {
+        return true;
+    }
+
     private void init(Context context, AttributeSet attrs) {
         mDensity = getContext().getResources().getDisplayMetrics().density;
         setOnPreferenceClickListener(this);
@@ -209,9 +214,7 @@ public class ColorPickerPreference extends Preference implements
         iView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mEnabled) {
-                    showDialog(null);
-                }
+                showDialog(null);
             }
         });
     }
@@ -219,9 +222,7 @@ public class ColorPickerPreference extends Preference implements
     @Override
     public void setEnabled(boolean enabled) {
         super.setEnabled(enabled);
-        if (mEnabled != enabled) {
-            mEnabled = enabled;
-        }
+        mEnabled = enabled;
     }
 
     private Bitmap getPreviewBitmap() {
@@ -262,11 +263,13 @@ public class ColorPickerPreference extends Preference implements
     }
 
     public boolean onPreferenceClick(Preference preference) {
-        //showDialog(null);
         return false;
     }
 
     protected void showDialog(Bundle state) {
+        if (!mEnabled)
+            return;
+
         mDialog = new ColorPickerDialog(getContext(), mValue);
         mDialog.setOnColorChangedListener(this);
         if (mAlphaSliderEnabled) {
