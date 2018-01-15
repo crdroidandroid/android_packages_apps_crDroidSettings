@@ -31,12 +31,8 @@ import android.widget.LinearLayout;
 
 import com.crdroid.settings.R;
 
-public class ColorPickerDialog
-        extends
-        Dialog
-        implements
-        ColorPickerView.OnColorChangedListener,
-        View.OnClickListener {
+public class ColorPickerDialog extends Dialog implements
+        ColorPickerView.OnColorChangedListener, View.OnClickListener {
 
     private ColorPickerView mColorPicker;
 
@@ -66,11 +62,11 @@ public class ColorPickerDialog
     }
 
     private void init(int color) {
-        // To fight color branding.
-        getWindow().setFormat(PixelFormat.RGBA_8888);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setUp(color);
-
+        if (getWindow() != null) {
+            getWindow().setFormat(PixelFormat.RGBA_8888);
+            requestWindowFeature(Window.FEATURE_NO_TITLE);
+            setUp(color);
+        }
     }
 
     private void setUp(int color) {
@@ -113,10 +109,10 @@ public class ColorPickerDialog
 
         setColorAndClickAction(mWhite, Color.WHITE);
         setColorAndClickAction(mBlack, Color.BLACK);
-        setColorAndClickAction(mCyan, 0xff33b5e5);
-        setColorAndClickAction(mRed, Color.RED);
-        setColorAndClickAction(mGreen, Color.GREEN);
-        setColorAndClickAction(mYellow, Color.YELLOW);
+        setColorAndClickAction(mCyan, 0xff24b7d6);
+        setColorAndClickAction(mRed, 0xfff90028);
+        setColorAndClickAction(mGreen, 0xff76c124);
+        setColorAndClickAction(mYellow, 0xffffc90f);
 
         if (mHex != null) {
             mHex.setText(ColorPickerPreference.convertToARGB(color));
