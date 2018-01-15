@@ -47,12 +47,12 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
     private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_config";
     private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
-    private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
+//    private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
 
     private CustomSeekBarPreference mMaxKeyguardNotifConfig;
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
-    private SwitchPreference mFpKeystore;
+//    private SwitchPreference mFpKeystore;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,19 +74,21 @@ public class LockScreen extends SettingsPreferenceFragment
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FP_SUCCESS_VIBRATE);
-        mFpKeystore = (SwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
+//        mFpKeystore = (SwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
 
         if (mFingerprintManager != null && mFingerprintManager.isHardwareDetected()){
             mFingerprintVib.setChecked((Settings.System.getIntForUser(resolver,
                     Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT) == 1));
             mFingerprintVib.setOnPreferenceChangeListener(this);
 
+/*
             mFpKeystore.setChecked((Settings.System.getIntForUser(resolver,
                     Settings.System.FP_UNLOCK_KEYSTORE, 0, UserHandle.USER_CURRENT) == 1));
             mFpKeystore.setOnPreferenceChangeListener(this);
+*/
         } else {
             gestCategory.removePreference(mFingerprintVib);
-            gestCategory.removePreference(mFpKeystore);
+//            gestCategory.removePreference(mFpKeystore);
         }
     }
 
@@ -103,11 +105,13 @@ public class LockScreen extends SettingsPreferenceFragment
             Settings.System.putIntForUser(resolver,
                     Settings.System.FP_SUCCESS_VIBRATE, value ? 1: 0, UserHandle.USER_CURRENT);
             return true;
+/*
         } else if (preference == mFpKeystore) {
             boolean value = (Boolean) newValue;
             Settings.System.putIntForUser(resolver,
                     Settings.System.FP_UNLOCK_KEYSTORE, value ? 1: 0, UserHandle.USER_CURRENT);
             return true;
+*/
         }
         return false;
     }
@@ -124,8 +128,10 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.LOCKSCREEN_MAX_NOTIF_CONFIG, 5, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT);
+/*
         Settings.System.putIntForUser(resolver,
                 Settings.System.FP_UNLOCK_KEYSTORE, 0, UserHandle.USER_CURRENT);
+*/
         Settings.Global.putInt(resolver,
                 Settings.Global.LOCKSCREEN_ENABLE_POWER_MENU, 1);
         Settings.Global.putInt(resolver,
