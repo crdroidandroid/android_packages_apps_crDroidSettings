@@ -93,24 +93,26 @@ public class BatteryBar extends SettingsPreferenceFragment
         mBatteryBarStyle.setOnPreferenceChangeListener(this);
 
         mBatteryBarColor = (ColorPickerPreference) prefSet.findPreference(PREF_BATT_BAR_COLOR);
-        int defaultColor = 0xffffffff;
         intColor = Settings.System.getIntForUser(resolver,
-            Settings.System.STATUSBAR_BATTERY_BAR_COLOR, defaultColor, UserHandle.USER_CURRENT);
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
+            Settings.System.STATUSBAR_BATTERY_BAR_COLOR, 0xffffffff, UserHandle.USER_CURRENT);
+        hexColor = ColorPickerPreference.convertToARGB(intColor);
+        mBatteryBarColor.setNewPreviewColor(intColor);
         mBatteryBarColor.setSummary(hexColor);
         mBatteryBarColor.setOnPreferenceChangeListener(this);
 
         mBatteryBarChargingColor = (ColorPickerPreference) prefSet.findPreference(PREF_BATT_BAR_CHARGING_COLOR);
         intColor = Settings.System.getIntForUser(resolver,
-            Settings.System.STATUSBAR_BATTERY_BAR_CHARGING_COLOR, defaultColor, UserHandle.USER_CURRENT);
-        hexColor = String.format("#%08x", (0xffffff00 & intColor));
+            Settings.System.STATUSBAR_BATTERY_BAR_CHARGING_COLOR, 0xffffff00, UserHandle.USER_CURRENT);
+        hexColor = ColorPickerPreference.convertToARGB(intColor);
+        mBatteryBarChargingColor.setNewPreviewColor(intColor);
         mBatteryBarChargingColor.setSummary(hexColor);
         mBatteryBarChargingColor.setOnPreferenceChangeListener(this);
 
         mBatteryBarBatteryLowColor = (ColorPickerPreference) prefSet.findPreference(PREF_BATT_BAR_BATTERY_LOW_COLOR);
         intColor = Settings.System.getIntForUser(resolver,
-            Settings.System.STATUSBAR_BATTERY_BAR_BATTERY_LOW_COLOR, defaultColor, UserHandle.USER_CURRENT);
-        hexColor = String.format("#%08x", (0xffffffff & intColor));
+            Settings.System.STATUSBAR_BATTERY_BAR_BATTERY_LOW_COLOR, 0xffffffff, UserHandle.USER_CURRENT);
+        hexColor = ColorPickerPreference.convertToARGB(intColor);
+        mBatteryBarBatteryLowColor.setNewPreviewColor(intColor);
         mBatteryBarBatteryLowColor.setSummary(hexColor);
         mBatteryBarBatteryLowColor.setOnPreferenceChangeListener(this);
 
