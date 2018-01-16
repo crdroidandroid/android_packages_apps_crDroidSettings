@@ -212,7 +212,7 @@ public class BatteryBar extends SettingsPreferenceFragment
             Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE, val, UserHandle.USER_CURRENT);
             return true;
-        } else if (preference == mBatteryBarUseChargingColor)
+        } else if (preference == mBatteryBarUseChargingColor) {
             boolean enabled = (Boolean) newValue;
             mBatteryBarChargingColor.setEnabled(enabled);
             return true;
