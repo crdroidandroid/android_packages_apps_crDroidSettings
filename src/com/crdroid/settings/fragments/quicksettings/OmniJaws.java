@@ -16,6 +16,7 @@
  */
 package com.crdroid.settings.fragments.quicksettings;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -23,6 +24,7 @@ import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
@@ -67,8 +69,8 @@ public class OmniJaws extends SettingsPreferenceFragment implements
         if (mWeatherCategory != null && !isOmniJawsServiceInstalled()) {
             prefScreen.removePreference(mWeatherCategory);
         } else {
-            String settingHeaderPackage = Settings.System.getString(getContentResolver(),
-                    Settings.System.OMNIJAWS_WEATHER_ICON_PACK);
+            String settingHeaderPackage = Settings.System.getStringForUser(getContentResolver(),
+                    Settings.System.OMNIJAWS_WEATHER_ICON_PACK, UserHandle.USER_CURRENT);
             if (settingHeaderPackage == null) {
                 settingHeaderPackage = DEFAULT_WEATHER_ICON_PACKAGE;
             }
@@ -84,8 +86,8 @@ public class OmniJaws extends SettingsPreferenceFragment implements
             if (valueIndex == -1) {
                 // no longer found
                 settingHeaderPackage = DEFAULT_WEATHER_ICON_PACKAGE;
-                Settings.System.putString(getContentResolver(),
-                        Settings.System.OMNIJAWS_WEATHER_ICON_PACK, settingHeaderPackage);
+                Settings.System.putStringForUser(getContentResolver(),
+                        Settings.System.OMNIJAWS_WEATHER_ICON_PACK, settingHeaderPackage, UserHandle.USER_CURRENT);
                 valueIndex = mWeatherIconPack.findIndexOfValue(settingHeaderPackage);
             }
             mWeatherIconPack.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
@@ -97,8 +99,8 @@ public class OmniJaws extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (preference == mWeatherIconPack) {
             String value = (String) objValue;
-            Settings.System.putString(getContentResolver(),
-                    Settings.System.OMNIJAWS_WEATHER_ICON_PACK, value);
+            Settings.System.putStringForUser(getContentResolver(),
+                    Settings.System.OMNIJAWS_WEATHER_ICON_PACK, value, UserHandle.USER_CURRENT);
             int valueIndex = mWeatherIconPack.findIndexOfValue(value);
             mWeatherIconPack.setSummary(mWeatherIconPackNote + " \n\n" + mWeatherIconPack.getEntries()[valueIndex]);
         }
@@ -185,6 +187,12 @@ public class OmniJaws extends SettingsPreferenceFragment implements
                     return result;
                 }
     };
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putStringForUser(resolver,
+                Settings.System.OMNIJAWS_WEATHER_ICON_PACK, DEFAULT_WEATHER_ICON_PACKAGE, UserHandle.USER_CURRENT);
+    }
 
     @Override
     public int getMetricsCategory() {
