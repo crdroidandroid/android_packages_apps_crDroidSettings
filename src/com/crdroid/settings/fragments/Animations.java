@@ -39,9 +39,9 @@ public class Animations extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
+/*
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
-/*
     private static final String POWER_MENU_ANIMATION = "power_menu_animation";
     private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
@@ -52,9 +52,9 @@ public class Animations extends SettingsPreferenceFragment
     private static final String SCROLLINGCACHE_DEFAULT = "1";
 
     private ListPreference mToastAnimation;
+/*
     private ListPreference mListViewAnimation;
     private ListPreference mListViewInterpolator;
-/*
     private ListPreference mPowerMenuAnimation;
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
@@ -78,6 +78,7 @@ public class Animations extends SettingsPreferenceFragment
         mToastAnimation.setSummary(mToastAnimation.getEntry());
         mToastAnimation.setOnPreferenceChangeListener(this);
 
+/*
         mListViewAnimation = (ListPreference) findPreference(KEY_LISTVIEW_ANIMATION);
         int listviewanimation = Settings.System.getIntForUser(resolver,
                 Settings.System.LISTVIEW_ANIMATION, 0,
@@ -95,7 +96,6 @@ public class Animations extends SettingsPreferenceFragment
         mListViewInterpolator.setEnabled(listviewanimation > 0);
         mListViewInterpolator.setOnPreferenceChangeListener(this);
 
-/*
         mPowerMenuAnimation = (ListPreference) findPreference(POWER_MENU_ANIMATION);
         int powermenuanimation = Settings.System.getIntForUser(resolver,
                 Settings.System.POWER_MENU_ANIMATION, 0,
@@ -159,6 +159,7 @@ public class Animations extends SettingsPreferenceFragment
                     Toast.LENGTH_SHORT);
             mToast.show();
             return true;
+/*
         } else if (preference == mListViewAnimation) {
             int value = Integer.parseInt((String) newValue);
             int index = mListViewAnimation.findIndexOfValue((String) newValue);
@@ -174,7 +175,6 @@ public class Animations extends SettingsPreferenceFragment
                     Settings.System.LISTVIEW_INTERPOLATOR, value, UserHandle.USER_CURRENT);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
             return true;
-/*
         } else if (preference == mPowerMenuAnimation) {
             int value = Integer.parseInt((String) newValue);
             int index = mPowerMenuAnimation.findIndexOfValue((String) newValue);
@@ -220,11 +220,11 @@ public class Animations extends SettingsPreferenceFragment
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.TOAST_ANIMATION, 1, UserHandle.USER_CURRENT);
+/*
         Settings.System.putIntForUser(resolver,
                 Settings.System.LISTVIEW_ANIMATION, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LISTVIEW_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
-/*
         Settings.System.putIntForUser(resolver,
                 Settings.System.POWER_MENU_ANIMATION, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
