@@ -236,7 +236,7 @@
             android:defaultValue="0" /> -->
     </PreferenceCategory>
 
-    <!-- Status bar crDroid logo
+    <!-- Status bar crDroid logo -->
     <PreferenceCategory
         android:title="@string/status_bar_logo_category_title">
 
@@ -246,12 +246,11 @@
             android:title="@string/status_bar_crdroid_logo_title"
             android:summary="@string/status_bar_crdroid_logo_summary" />
 
-        <com.crdroid.settings.preferences.ColorPickerPreference
+        <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
             android:key="status_bar_crdroid_logo_color"
             android:icon="@drawable/ic_tag"
             android:title="@string/status_bar_crdroid_logo_color"
-            android:defaultValue="0xffffffff"
-            android:dependency="status_bar_crdroid_logo" />
+            android:defaultValue="0xffffffff" />
 
        <ListPreference
             android:key="status_bar_crdroid_logo_position"
@@ -259,8 +258,7 @@
             android:title="@string/status_bar_crdroid_logo_position"
             android:dialogTitle="@string/status_bar_crdroid_logo_position"
             android:entries="@array/status_bar_logo_position_entries"
-            android:entryValues="@array/status_bar_logo_position_values"
-            android:dependency="status_bar_crdroid_logo" />
+            android:entryValues="@array/status_bar_logo_position_values" />
 
        <ListPreference
             android:key="status_bar_crdroid_logo_style"
@@ -268,9 +266,8 @@
             android:title="@string/status_bar_crdroid_logo_style"
             android:dialogTitle="@string/status_bar_crdroid_logo_style"
             android:entries="@array/status_bar_logo_style_entries"
-            android:entryValues="@array/status_bar_logo_style_values"
-            android:dependency="status_bar_crdroid_logo" />
-    </PreferenceCategory> -->
+            android:entryValues="@array/status_bar_logo_style_values" />
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/gestures_title">
