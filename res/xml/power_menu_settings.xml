@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -20,11 +20,11 @@
     android:key="power_menu"
     android:title="@string/powermenu_title">
 
-    <CheckBoxPreference
+    <!--<CheckBoxPreference
         android:key="restart"
         android:icon="@drawable/ic_restart"
         android:title="@string/power_menu_reboot_title"
-        android:defaultValue="true" />
+        android:defaultValue="true" />-->
 
     <CheckBoxPreference
         android:key="screenshot"
@@ -36,7 +36,7 @@
         android:key="airplane"
         android:icon="@drawable/ic_airplane"
         android:title="@string/power_menu_airplane_title"
-        android:defaultValue="true" />
+        android:defaultValue="false" />
 
     <CheckBoxPreference
         android:key="users"
@@ -44,7 +44,7 @@
         android:title="@string/power_menu_users_title"
         android:defaultValue="false" />
 
-    <CheckBoxPreference
+    <!--<CheckBoxPreference
         android:key="settings"
         android:title="@string/power_menu_settings_title"
         android:defaultValue="false" />
@@ -76,16 +76,6 @@
         android:key="onthego"
         android:icon="@drawable/ic_onthego"
         android:title="@string/power_menu_onthego_title"
-        android:defaultValue="false" />
-
-    <PreferenceScreen
-        android:title=""
-        android:selectable="false"
-        settings:allowDividerAbove="false" />
-
-    <PreferenceScreen
-        android:title=""
-        android:selectable="false"
-        settings:allowDividerAbove="false" />
+        android:defaultValue="false" />-->
 
 </PreferenceScreen>

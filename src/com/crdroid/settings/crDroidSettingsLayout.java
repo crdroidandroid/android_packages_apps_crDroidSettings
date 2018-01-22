@@ -33,10 +33,6 @@ import android.widget.LinearLayout;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
-/*
-import com.crdroid.settings.fragments.PowerMenuSettings;
-*/
-
 import com.crdroid.settings.fab.FloatingActionsMenu;
 import com.crdroid.settings.fab.FloatingActionButton;
 import com.crdroid.settings.fragments.About;
@@ -154,9 +150,6 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
-/*
-            frags[7] = new PowerMenuSettings();
-*/
             frags[0] = new StatusBar();
             frags[1] = new QuickSettings();
             frags[2] = new LockScreen();
@@ -190,9 +183,6 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[] {
-/*
-            getString(R.string.powermenu_title),
-*/
             getString(R.string.statusbar_title),
             getString(R.string.quicksettings_title),
             getString(R.string.lockscreen_title),

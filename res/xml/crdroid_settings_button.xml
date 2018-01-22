@@ -46,6 +46,13 @@
         android:key="power_key"
         android:title="@string/hardware_keys_power_key_title" >
 
+        <PreferenceScreen
+            android:key="power_menu"
+            android:icon="@drawable/ic_settings_powermenu"
+            android:title="@string/powermenu_title"
+            android:summary="@string/powermenu_summary"
+            android:fragment="com.crdroid.settings.fragments.buttons.PowerMenuActions" />
+
         <SwitchPreference
             android:key="power_end_call"
             android:icon="@drawable/ic_end_call"
