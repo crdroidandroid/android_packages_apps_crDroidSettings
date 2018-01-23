@@ -27,7 +27,6 @@
     <string name="misc_title">Varie</string>
     <string name="navbar_title">Barra di navigazione</string>
     <string name="notifications_title">Notifiche</string>
-    <string name="powermenu_title">Menù alimentazione</string>
     <string name="quicksettings_title">Impostazioni rapide</string>
     <string name="recents_title">Schermata recenti</string>
     <string name="sound_title">Suono</string>
@@ -35,6 +34,10 @@
     <string name="display_title">Schermo</string>
     <string name="animation_title">Animazioni</string>
 
+     <!-- Power Menu -->
+    <string name="powermenu_title">Menù alimentazione</string>
+    <string name="powermenu_summary">Personalizza le opzioni del menù di alimentazione</string>
+     
     <!-- Color Picker -->
     <string name="dialog_color_picker">Selettore dei colori</string>
     <string name="press_color_to_apply">Premi sul colore sottostante per applicare</string>
@@ -118,6 +121,10 @@
     <string name="lockscreen_interface_category">Interfaccia</string>
     <string name="lockscreen_misc_category">Varie</string>
 
+    <!-- Lockscreen visualizer -->
+    <string name="music_visualizer_title">Visualizzatore musicale</string>
+    <string name="music_visualizer_summary">Visualizzatore musicale sullo schermo quando disponibile</string>
+     
     <!-- Media art -->
     <string name="media_art_title">Copertina applicazioni multimediali</string>
     <string name="media_art_summary">Abilita la visualizzazione della copertina dei file multimediali nella schermata di blocco</string>
@@ -307,6 +314,7 @@
     <string name="enabled">Abilita</string>
     <string name="disabled">Disabilita</string>
     <string name="default_string">Predefinito</string>
+     <string name="default_settings">Impostazioni predefinite</string>
     <string name="add">Aggiungi</string>
     <string name="choose_app">Scegli applicazione</string>
     <string name="empty_title">Vuoto</string>
@@ -321,6 +329,7 @@
     <string name="profile_choose_app">Scegli applicazione</string>
     <string name="profile_reset_title">Ripristina</string>
     <string name="show_title">Mostra</string>
+     <string name="stock">Predefinito</string>
     <string name="reset_paranoid">Paranoid</string>
     <string name="reset_android">Android</string>
 
@@ -339,6 +348,7 @@
     <string name="info_pref_note_title">Note</string>
     <string name="smartbar_interface">SmartBar</string>
     <string name="icon_pack_picker_dialog_title">Pacchetti icone</string>
+    <string name="image_exceeds_max_allowed_size">L\'immagine non deve superare 512x512</string>
     <string name="invalid_icon_from_uri">Impossibile caricare l\'immagine dal provider di contenuti</string>
     <string name="picker_activities">Attività</string>
     <string name="select_custom_app_title">Seleziona app personalizzata</string>
@@ -410,7 +420,10 @@
     <string name="fling_longpress_timeout_label_right">Più ritardo</string>
     <string name="fling_longpress_title">Ritardo pressione prolungata</string>
     <string name="fling_longpress_summary">Aumenta o diminuisce il tempo impiegato per eseguire una pressione prolungata</string>
-    
+    <string name="fling_keyboard_cursors_title">Azione del cursore della tastiera dinamica</string>
+    <string name="fling_keyboard_cursors_summary">Doppio tocco le azioni sinistra e destra diventano azioni del cursore della tastiera sinistra e destra se la tastiera è aperta</string>
+    <string name="fling_logo_opacity_title">Opacità del logo Fling</string>
+     
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">Informazioni su Pulse</string>
     <string name="pulse_help_policy_notice_summary">Pulse è un brillante equalizzatore grafico audio visualizzato sulla barra di navigazione durante la riproduzione musicale. Pulse non funziona con alcune fonti audio durante l\'ascolto sull\'altoparlante del dispositivo</string>
@@ -448,12 +461,17 @@
     <string name="land_hor_title">Altezza orizzontale</string>
     <string name="positive_done">Fatto</string>
 
+    <!-- Stock navbar -->
+    <string name="navbar_settings_title">Impostazioni della barra di navigazione</string>
+    <string name="navabar_settings_summary">Avvia i controlli del sintonizzatore della barra di navigazione</string>
+     
     <!-- SmartBar -->
     <string name="smartbar_category">SmartBar</string>
     <string name="smartbar_settings_title">Impostazioni Smartbar</string>
     <string name="smartbar_settings_summary">Personalizza vari elementi della smartbar</string>
     <string name="smartbar_editor_title">Attiva o disattiva modifica pulsanti</string>
     <string name="smartbar_editor_summary">Tieni premuto e trascina per cambiare la posizione. Tieni premuto a lungo per visualizzare il menù di modifica. La posizione del pulsante potrebbe cambiare durante la visualizzazione del menù.</string>
+    <string name="smartbar_editor_summary">Apri le modifiche dei pulsanti della smartbar</string>
     <string name="smartbar_context_menu_position_title">Posizione pulsanti contestuali</string>
     <string name="smartbar_context_menu_position_summary">Regola la posizione dei pulsanti contestuali, come il pulsante menù e il selettore della tastiera</string>
     <string name="smartbar_right">Destra</string>
@@ -465,6 +483,7 @@
     <string name="smartbar_button_animation_flip">Capovolgi</string>
     <string name="smartbar_button_animation_pixel">Pixel (tutti i pulsanti)</string>
     <string name="smartbar_button_animation_pixel_home">Pixel (solo il tasto Home)</string>
+    <string name="smartbar_button_animation_pixel_home_ripple">Pixel (solo il tasto Home) e ondulazione</string>
     <string name="smartbar_factory_reset_title">Ripristina a predefinito</string>
     <string name="smartbar_factory_reset_confirm">Sei sicuro di voler ripristinare Smart Bar alle impostazioni di fabbrica?</string>
     <string name="smartbar_ime_action_title">Metodo di inserimento e comandi multimediali</string>
@@ -506,6 +525,7 @@
     <string name="status_bar_quick_qs_pulldown_off">Spenta</string>
     <string name="status_bar_quick_qs_pulldown_left">Sinistra</string>
     <string name="status_bar_quick_qs_pulldown_right">Destra</string>
+    <string name="status_bar_quick_qs_pulldown_always">Mostra sempre le impostazioni rapide sulla barra di stato a discesa rapida</string>
 
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_position_title">Posizione orologio</string>
@@ -781,10 +801,6 @@
     <string name="maintainers_crdroid_summary">Elenco dei dispositivi supportati e dei loro manutentori ufficiali</string>
     <string name="maintainers_crdroid_error">Impossibile caricare i dispositivi e i manutentori</string>
 
-    <!-- OTA -->
-    <string name="ota_crdroid_title">Aggiornamenti</string>
-    <string name="ota_crdroid_summary">Controlla l\'aggiornamento OTA e i collegamenti per il tuo dispositivo</string>
-
     <!-- Donate crDroid -->
     <string name="donate_crdroid_title">Supportaci</string>
     <string name="donate_crdroid_summary">Donate per sostenere lo sviluppo e il nostro server</string>
@@ -835,7 +851,9 @@
     <string name="home_answer_call_summary">Premendo il pulsante Home si risponderà alla chiamata in entrata</string>
     <string name="kill_app_longpress_back">Chiudi app con pulsante indietro</string>
     <string name="kill_app_longpress_back_summary">Chiude l\'applicazione corrente con la pressione prolungata del tasto indietro</string>
-
+    <string name="extras_title">Extra</string>
+    <string name="additional_buttons_title">Pulsanti aggiuntivi</string>
+     
     <!-- Key backlight -->
     <string name="button_backlight_title">Retroilluminazione</string>
     <string name="button_backlight_summary">Personalizza le impostazioni della retroilluminazione del pulsante</string>
@@ -873,6 +891,10 @@
     <string name="torch_long_press_power_gesture_desc">Pressione prolungata sul pulsante di alimentazione quando lo schermo è spento per attivare la torcia</string>
     <string name="torch_long_press_power_timeout_title">Spegni automaticamente la torcia</string>
     <string name="auto_power_save_never">Mai</string>
+    <string name="torch_long_press_power_timeout_1min">1 minuto</string>
+    <string name="torch_long_press_power_timeout_2min">2 minuti</string>
+    <string name="torch_long_press_power_timeout_5min">5 minuti</string>
+    <string name="torch_long_press_power_timeout_10min">10 minuti</string>
 
     <!--Status bar date -->
     <string name="status_bar_date_title">Data</string>
@@ -992,6 +1014,7 @@
     <string name="wallpaper_intra_close_title">Animazione chiusura interna sfondo</string>
     <string name="animation_duration_title">Durata animazione</string>
     <string name="animation_duration_default">Predefinita</string>
+    <string name="animation_duration_custom">Personalizzata</string>
 
     <!-- Toast Animations -->
     <string name="toast_animation_title">Animazione toast</string>
@@ -1177,12 +1200,12 @@
     <string name="lockscreen_hide_status_bar_summary">Mostra la barra di stato</string>
 
     <!-- Slim Recent panel -->
-    <string name="slim_recents_title">Slim recents</string>
-    <string name="use_slim_recents_title">Usa Slim Recents</string>
-    <string name="use_slim_recents_summary">Utilizza Slim Recents anziché la visualizzazione predefinita</string>
-    <string name="slim_recents_settings_title">Impostazioni Slim Recents</string>
-    <string name="slim_recents_settings_summary">Visualizza le impostazioni slim recents</string>
-    <string name="recent_panel_category">Pannello app recenti slim</string>
+    <string name="slim_recents_title">Recenti Slim</string>
+    <string name="use_slim_recents_title">Usa i recenti Slim</string>
+    <string name="use_slim_recents_summary">Utilizza i recenti Slim anziché la visualizzazione predefinita</string>
+    <string name="slim_recents_settings_title">Impostazioni recenti Slim</string>
+    <string name="slim_recents_settings_summary">Visualizza le impostazioni dei recenti Slim</string>
+    <string name="recent_panel_category">Pannello app recenti Slim</string>
     <string name="show_running_tasks_title">Mostra solo le applicazioni in esecuzione</string>
     <string name="recents_max_apps_title">Applicazioni massime consentite</string>
     <string name="recent_panel_scale_title">Dimensione</string>
@@ -1204,7 +1227,15 @@
     <string name="no_iconpacks_summary">Nessun pacchetto icone installato</string>
     <string name="dialog_pick_iconpack_title">Scegli pacchetto icone</string>
     <string name="default_iconpack_title">Icone predefinite</string>
+    <string name="dialog_delete_title">Elimina</string>
+    <string name="dialog_delete_message">Rimuovi l\'elemento selezionato?</string>
     <string name="slim_recents_corner_radius_title">Utilizza gli angoli rotondi per i recenti a carte</string>
+    <string name="slim_blacklist_apps_cat_title">App nella lista nera</string>
+    <string name="slim_blacklist_apps_title">Lista nera delle app</string>
+    <string name="slim_blacklist_apps_summary">Escludi le app da mostrare nel pannello</string>
+    <string name="slim_blacklist_add_apps_title">Aggiungi app</string>
+    <string name="slim_blacklist_add_apps_summary">Tocca qui per aggiungere un\'app alla lista nera</string>
+    <string name="slim_blacklist_apps_info">Tocca sull'app aggiunta per rimuoverla</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Mostra sul bordo sinistro</string>
@@ -1345,6 +1376,10 @@
 
     <!-- FAB -->
     <string name="fab_reset">Ripristina le impostazioni</string>
+     
+     <!-- OTA -->
+    <string name="ota_crdroid_title">Aggiornamenti</string>
+    <string name="ota_crdroid_summary">Controlla l\'aggiornamento OTA e i link per il tuo dispositivo</string>
 
     <!-- Categories -->
     <string name="ota_category">OTA</string>
@@ -1397,4 +1432,37 @@
     <!-- Tap to sleep on status bar -->
     <string name="statusbar_doubletap_sleep_title">Doppio tocco per sospendere</string>
     <string name="statusbar_doubletap_sleep_summary">Doppio tocco sulla barra di stato per sospendere il dispositivo</string>
+     
+     <!-- Auto USB mode chooser -->
+    <string name="auto_usb_mode_chooser_title">Scelta della modalità USB automatica</string>
+    <string name="auto_usb_mode_chooser_summary">Scegli dalla modalità pop-up USB quando il dispositivo viene collegato al PC</string>
+
+    <!-- Vibrate on plugged -->
+    <string name="vibration_on_charge_state_changed_title">Vibrazione al collegamento</string>
+    <string name="vibration_on_charge_state_changed_summary">Vibra quando il dispositivo viene collegato all\'alimentazione</string>
+
+    <!-- Recents deep clear -->
+    <string name="recents_deep_clear_title">Sfondo chiaro</string>
+    <string name="recents_deep_clear_summary"Processo in background chiaro quando si utilizza tocca l\'icona per chiudere attività dalla schermata dei recenti. Questo potrebbe portare a risultati non intenzionali. Alcune app potrebbero non funzionare più finché non le riavvii.</string>
+
+    <string name="qs_tile_title_visibility_title">Titolo Tile</string>
+    <string name="qs_tile_title_visibility_summary">Mostra il titolo sotto ogni Tile</string>
+
+    <!-- Dark SysUI Theme -->
+    <string name="dark_theme_title">Tema</string>
+    <string name="dark_theme_automatic">Automatico</string>
+    <string name="dark_theme_light">Chiaro</string>
+    <string name="dark_theme_dark">Scuro</string>
+
+    <!-- Disable HW keys -->
+    <string name="hwkeys_disabled_title">Disabilita tasti HW</string>
+    <string name="hwkeys_disabled_summary">Abilitando questo si disabiliteranno i tasti hardware per la navigazione</string>
+
+    <!-- Quick QS scroller -->
+    <string name="qqs_scroll_title">Scorri velocemente i Tile piccoli</string>
+    <string name="qqs_scroll_summary">Permette di far scorrere i Tile piccoli delle impostazioni rapide</string>
+
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_title">Riavvio avanzato</string>
+    <string name="advanced_reboot_summary">Una volta sbloccato, include le opzioni nel menù di accensione per riavviare in recovery o in bootloader</string>
 </resources>
