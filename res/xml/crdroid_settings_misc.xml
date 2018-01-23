@@ -31,6 +31,14 @@
                 android:targetClass="org.adaway.ui.BaseActivity" />
     </Preference>
 
+    <!-- Pocket Judge -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="pocket_judge"
+        android:icon="@drawable/ic_pocket"
+        android:title="@string/pocket_judge_title"
+        android:summary="@string/pocket_judge_summary"
+        android:defaultValue="false" />
+
     <PreferenceScreen
         android:key="lock_clock"
         android:icon="@drawable/ic_clock"
@@ -111,13 +119,6 @@
         android:icon="@drawable/ic_remote"
         android:title="@string/sensor_block_title"
         android:summary="@string/sensor_block_summary"
-        android:defaultValue="false" />
-
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="pocket_judge"
-        android:icon="@drawable/ic_pocket"
-        android:title="@string/pocket_judge_title"
-        android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
