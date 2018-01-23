@@ -35,6 +35,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.fragments.statusbar.BatteryBar;
 import com.crdroid.settings.fragments.statusbar.NetworkTraffic;
+import com.crdroid.settings.fragments.statusbar.StatusBarWeather;
 import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
 import com.crdroid.settings.R;
 
@@ -274,6 +275,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         BatteryBar.reset(mContext);
         NetworkTraffic.reset(mContext);
+        StatusBarWeather.reset(mContext);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
