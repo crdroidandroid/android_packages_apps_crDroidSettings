@@ -35,6 +35,7 @@ import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
+import com.crdroid.settings.fragments.lockscreen.LockScreenWeather;
 import com.crdroid.settings.R;
 
 import lineageos.providers.LineageSettings;
@@ -140,6 +141,7 @@ public class LockScreen extends SettingsPreferenceFragment
                 LineageSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 1, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT);
+        LockScreenWeather.reset(mContext);
     }
 
     @Override
