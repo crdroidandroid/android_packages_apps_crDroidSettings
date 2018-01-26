@@ -51,30 +51,29 @@ public class OmniJaws extends SettingsPreferenceFragment implements
     private static final String CATEGORY_WEATHER = "weather_category";
     private static final String WEATHER_ICON_PACK = "weather_icon_pack";
     private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
-    private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
+    private static final String DEFAULT_WEATHER_ICON_PREFIX = "outline";
     private static final String CHRONUS_ICON_PACK_INTENT = "com.dvtonder.chronus.ICON_PACK";
 
     private PreferenceCategory mWeatherCategory;
     private ListPreference mWeatherIconPack;
-    private String mWeatherIconPackNote;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.omnijaws_settings);
         final PreferenceScreen prefScreen = getPreferenceScreen();
-        mWeatherIconPackNote = getResources().getString(R.string.weather_icon_pack_note);
+        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.weather_icon_pack_note);
 
         mWeatherCategory = (PreferenceCategory) prefScreen.findPreference(CATEGORY_WEATHER);
         if (mWeatherCategory != null && !isOmniJawsServiceInstalled()) {
             prefScreen.removePreference(mWeatherCategory);
         } else {
+            mWeatherIconPack = (ListPreference) findPreference(WEATHER_ICON_PACK);
             String settingHeaderPackage = Settings.System.getStringForUser(getContentResolver(),
                     Settings.System.OMNIJAWS_WEATHER_ICON_PACK, UserHandle.USER_CURRENT);
             if (settingHeaderPackage == null) {
-                settingHeaderPackage = DEFAULT_WEATHER_ICON_PACKAGE;
+                settingHeaderPackage = DEFAULT_WEATHER_ICON_PACKAGE + "." + DEFAULT_WEATHER_ICON_PREFIX;
             }
-            mWeatherIconPack = (ListPreference) findPreference(WEATHER_ICON_PACK);
 
             List<String> entries = new ArrayList<String>();
             List<String> values = new ArrayList<String>();
@@ -85,13 +84,12 @@ public class OmniJaws extends SettingsPreferenceFragment implements
             int valueIndex = mWeatherIconPack.findIndexOfValue(settingHeaderPackage);
             if (valueIndex == -1) {
                 // no longer found
-                settingHeaderPackage = DEFAULT_WEATHER_ICON_PACKAGE;
-                Settings.System.putStringForUser(getContentResolver(),
-                        Settings.System.OMNIJAWS_WEATHER_ICON_PACK, settingHeaderPackage, UserHandle.USER_CURRENT);
+                settingHeaderPackage = DEFAULT_WEATHER_ICON_PACKAGE + "." + DEFAULT_WEATHER_ICON_PREFIX;
                 valueIndex = mWeatherIconPack.findIndexOfValue(settingHeaderPackage);
             }
+
             mWeatherIconPack.setValueIndex(valueIndex >= 0 ? valueIndex : 0);
-            mWeatherIconPack.setSummary(mWeatherIconPackNote + "\n\n" + mWeatherIconPack.getEntry());
+            mWeatherIconPack.setSummary(mWeatherIconPack.getEntry());
             mWeatherIconPack.setOnPreferenceChangeListener(this);
         }
     }
@@ -102,30 +100,34 @@ public class OmniJaws extends SettingsPreferenceFragment implements
             Settings.System.putStringForUser(getContentResolver(),
                     Settings.System.OMNIJAWS_WEATHER_ICON_PACK, value, UserHandle.USER_CURRENT);
             int valueIndex = mWeatherIconPack.findIndexOfValue(value);
-            mWeatherIconPack.setSummary(mWeatherIconPackNote + " \n\n" + mWeatherIconPack.getEntries()[valueIndex]);
+            mWeatherIconPack.setSummary(mWeatherIconPack.getEntries()[valueIndex]);
         }
         return true;
     }
 
     private boolean isOmniJawsServiceInstalled() {
-        return Utils.isPackageInstalled(getActivity(), WEATHER_SERVICE_PACKAGE);
+        return Utils.isPackageInstalled(getActivity(), DEFAULT_WEATHER_ICON_PACKAGE);
     }
 
     private void getAvailableWeatherIconPacks(List<String> entries, List<String> values) {
         Intent i = new Intent();
-        PackageManager packageManager = getPackageManager();
+        PackageManager packageManager = getActivity().getPackageManager();
         i.setAction("org.omnirom.WeatherIconPack");
         for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
             String packageName = r.activityInfo.packageName;
+            String label = r.activityInfo.loadLabel(getActivity().getPackageManager()).toString();
+            if (label == null) {
+                label = r.activityInfo.packageName;
+            }
+            if (entries.contains(label)) {
+                continue;
+            }
             if (packageName.equals(DEFAULT_WEATHER_ICON_PACKAGE)) {
                 values.add(0, r.activityInfo.name);
             } else {
                 values.add(r.activityInfo.name);
             }
-            String label = r.activityInfo.loadLabel(getPackageManager()).toString();
-            if (label == null) {
-                label = r.activityInfo.packageName;
-            }
+
             if (packageName.equals(DEFAULT_WEATHER_ICON_PACKAGE)) {
                 entries.add(0, label);
             } else {
@@ -136,11 +138,15 @@ public class OmniJaws extends SettingsPreferenceFragment implements
         i.addCategory(CHRONUS_ICON_PACK_INTENT);
         for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
             String packageName = r.activityInfo.packageName;
-            values.add(packageName + ".weather");
-            String label = r.activityInfo.loadLabel(getPackageManager()).toString();
+            String label = r.activityInfo.loadLabel(getActivity().getPackageManager()).toString();
             if (label == null) {
                 label = r.activityInfo.packageName;
             }
+            if (entries.contains(label)) {
+                continue;
+            }
+            values.add(packageName + ".weather");
+
             entries.add(label);
         }
     }
@@ -191,7 +197,7 @@ public class OmniJaws extends SettingsPreferenceFragment implements
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putStringForUser(resolver,
-                Settings.System.OMNIJAWS_WEATHER_ICON_PACK, DEFAULT_WEATHER_ICON_PACKAGE, UserHandle.USER_CURRENT);
+                Settings.System.OMNIJAWS_WEATHER_ICON_PACK, null, UserHandle.USER_CURRENT);
     }
 
     @Override
