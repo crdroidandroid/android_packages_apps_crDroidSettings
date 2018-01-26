@@ -41,6 +41,14 @@
              android:action="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS" />
     </lineageos.preference.RemotePreference>
 
+    <com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness
+        android:key="button_backlight"
+        android:icon="@drawable/ic_backlight"
+        android:title="@string/button_backlight_title"
+        android:summary="@string/button_backlight_summary"
+        android:dialogTitle="@string/button_backlight_title"
+        android:persistent="false" />
+
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="anbi_enabled"
         android:icon="@drawable/ic_anbi"

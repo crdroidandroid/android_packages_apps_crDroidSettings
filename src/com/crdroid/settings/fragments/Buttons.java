@@ -38,6 +38,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness;
 import com.crdroid.settings.fragments.buttons.PowerMenuActions;
 import com.crdroid.settings.preferences.LineageSystemSettingSeekBarPreference;
 import com.crdroid.settings.utils.DeviceUtils;
@@ -59,6 +60,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String HWKEYS_DISABLED = "hardware_keys_disable";
     private static final String KEY_SWAP_CAPACITIVE_KEYS = "swap_capacitive_keys";
     private static final String KEY_ANBI = "anbi_enabled";
+    private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_BACK_LONG_PRESS = "hardware_keys_back_long_press";
     private static final String KEY_BACK_WAKE_SCREEN = "back_wake_screen";
     private static final String KEY_CAMERA_LAUNCH = "camera_launch";
@@ -102,6 +104,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private SwitchPreference mHardwareKeysDisable;
     private SwitchPreference mSwapCapacitiveKeys;
     private SwitchPreference mAnbi;
+    private ButtonBacklightBrightness backlight;
     private ListPreference mHomeLongPressAction;
     private ListPreference mHomeDoubleTapAction;
     private ListPreference mBackLongPressAction;
@@ -352,6 +355,17 @@ public class Buttons extends SettingsPreferenceFragment implements
             prefScreen.removePreference(volumeCategory);
         }
 
+        backlight = findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!DeviceUtils.hasButtonBacklightSupport(getActivity())
+                && !DeviceUtils.hasKeyboardBacklightSupport(getActivity())) {
+            prefScreen.removePreference(backlight);
+            backlight = null;
+        } else if (isKeyDisablerSupported(getActivity())) {
+            backlight.setEnabled(!(Settings.System.getIntForUser(resolver,
+                    Settings.System.HARDWARE_KEYS_DISABLE, 0,
+                    UserHandle.USER_CURRENT) == 1));
+        }
+
         if (mCameraWakeScreen != null) {
             if (mCameraSleepOnRelease != null && !res.getBoolean(
                     org.lineageos.platform.internal.R.bool.config_singleStageCameraKey)) {
@@ -428,6 +442,9 @@ public class Buttons extends SettingsPreferenceFragment implements
             boolean value = (Boolean) newValue;
             if (mAnbi != null) {
                 mAnbi.setEnabled(!value);
+            }
+            if (backlight != null) {
+                backlight.setEnabled(!value);
             }
             return true;
         } else if (preference == mHomeLongPressAction) {
@@ -541,6 +558,7 @@ public class Buttons extends SettingsPreferenceFragment implements
                 Settings.System.SWAP_CAPACITIVE_KEYS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANBI_ENABLED, 0, UserHandle.USER_CURRENT);
+        ButtonBacklightBrightness.reset(mContext);
         PowerMenuActions.reset(mContext);
     }
 
@@ -629,6 +647,11 @@ public class Buttons extends SettingsPreferenceFragment implements
                         if (!TelephonyUtils.isVoiceCapable(context)) {
                             keys.add(KEY_VOLUME_ANSWER_CALL);
                         }
+                    }
+
+                    if (!DeviceUtils.hasButtonBacklightSupport(context)
+                            && !DeviceUtils.hasKeyboardBacklightSupport(context)) {
+                        keys.add(KEY_BUTTON_BACKLIGHT);
                     }
 
                     keys.add(KEY_ADDITIONAL_BUTTONS);
