@@ -23,6 +23,7 @@ import android.content.DialogInterface;
 import android.content.res.Resources;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.os.UserHandle;
 import android.support.v7.preference.PreferenceManager;
 import android.util.AttributeSet;
 import android.view.View;
@@ -459,5 +460,13 @@ public class ButtonBacklightBrightness extends CustomDialogPref<AlertDialog> imp
             }
             updateTimeoutEnabledState();
         }
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        int defaultBrightness = mContext.getResources().getInteger(
+                com.android.internal.R.integer.config_buttonBrightnessSettingDefault);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.BUTTON_BRIGHTNESS, defaultBrightness, UserHandle.USER_CURRENT);
     }
 }

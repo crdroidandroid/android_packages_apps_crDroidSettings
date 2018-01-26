@@ -41,6 +41,7 @@ import android.view.KeyEvent;
 import android.view.WindowManagerGlobal;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.utils.du.DUActionUtils;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness;
@@ -113,6 +114,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private SwitchPreference mHomeAnswerCall;
     private SwitchPreference mTorchLongPressPowerGesture;
     private ListPreference mTorchLongPressPowerTimeout;
+    private ButtonBacklightBrightness backlight;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -192,9 +194,26 @@ public class Buttons extends SettingsPreferenceFragment implements
                 LineageSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
                 defaultHomeDoubleTapAction);
 
+        backlight = (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported() /*&& !backlight.isKeyboardSupported()*/) {
+            prefScreen.removePreference(backlight);
+            backlight = null;
+        } else {
+            backlight.setEnabled(!(Settings.Secure.getIntForUser(resolver,
+                    Settings.Secure.HARDWARE_KEYS_DISABLE,
+                    DUActionUtils.hasNavbarByDefault(getActivity()) ? 1 : 0,
+                    UserHandle.USER_CURRENT) == 1));
+        }
+
         if (!hasHomeKey && !hasBackKey && !hasMenuKey && !hasAssistKey && !hasAppSwitchKey) {
             prefScreen.removePreference(mHardwareKeysDisable);
             prefScreen.removePreference(mAnbi);
+        } else {
+            mHardwareKeysDisable.setOnPreferenceChangeListener(this);
+            mAnbi.setEnabled(!(Settings.Secure.getIntForUser(resolver,
+                    Settings.Secure.HARDWARE_KEYS_DISABLE,
+                    DUActionUtils.hasNavbarByDefault(getActivity()) ? 1 : 0,
+                    UserHandle.USER_CURRENT) == 1));
         }
 
         if (hasPowerKey) {
@@ -335,12 +354,6 @@ public class Buttons extends SettingsPreferenceFragment implements
             prefScreen.removePreference(volumeCategory);
         }
 
-        final ButtonBacklightBrightness backlight =
-                (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
-        if (!backlight.isButtonSupported() /*&& !backlight.isKeyboardSupported()*/) {
-            prefScreen.removePreference(backlight);
-        }
-
         if (mCameraWakeScreen != null) {
             if (mCameraSleepOnRelease != null && !getResources().getBoolean(
                     org.lineageos.platform.internal.R.bool.config_singleStageCameraKey)) {
@@ -413,7 +426,14 @@ public class Buttons extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mHomeLongPressAction) {
+        if (preference == mHardwareKeysDisable) {
+            boolean value = (Boolean) newValue;
+            mAnbi.setEnabled(!value);
+            if (backlight != null) {
+                backlight.setEnabled(!value);
+            }
+            return true;
+        } else if (preference == mHomeLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION);
             return true;
@@ -504,6 +524,11 @@ public class Buttons extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.ADVANCED_REBOOT, 1, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver, Settings.Secure.HARDWARE_KEYS_DISABLE,
+             DUActionUtils.hasNavbarByDefault(mContext) ? 1 : 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.ANBI_ENABLED, 0, UserHandle.USER_CURRENT);
+        ButtonBacklightBrightness.reset(mContext);
     }
 
     @Override
