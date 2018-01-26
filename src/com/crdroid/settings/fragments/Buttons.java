@@ -43,6 +43,7 @@ import android.view.WindowManagerGlobal;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness;
 import com.crdroid.settings.R;
 import com.crdroid.settings.utils.DeviceUtils;
 import com.crdroid.settings.utils.TelephonyUtils;
@@ -334,13 +335,11 @@ public class Buttons extends SettingsPreferenceFragment implements
             prefScreen.removePreference(volumeCategory);
         }
 
-        /*
         final ButtonBacklightBrightness backlight =
                 (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
-        if (!backlight.isButtonSupported() && !backlight.isKeyboardSupported()) {
+        if (!backlight.isButtonSupported() /*&& !backlight.isKeyboardSupported()*/) {
             prefScreen.removePreference(backlight);
         }
-        */
 
         if (mCameraWakeScreen != null) {
             if (mCameraSleepOnRelease != null && !getResources().getBoolean(
