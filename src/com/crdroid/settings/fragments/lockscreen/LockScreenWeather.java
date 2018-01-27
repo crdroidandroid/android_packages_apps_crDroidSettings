@@ -50,7 +50,7 @@ public class LockScreenWeather extends SettingsPreferenceFragment {
                 Settings.System.LOCK_SCREEN_WEATHER_CONDITION_ICON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCK_SCREEN_SHOW_WEATHER_LOCATION, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.LOCK_SCREEN_AMBIENT_WEATHER, 0, UserHandle.USER_CURRENT);
+//        Settings.System.putIntForUser(resolver,
+//                Settings.System.LOCK_SCREEN_AMBIENT_WEATHER, 0, UserHandle.USER_CURRENT);
     }
 }
