@@ -32,7 +32,6 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.crdroid.settings.fragments.display.ExpandedDesktop;
 import com.crdroid.settings.R;
 
 public class Notifications extends SettingsPreferenceFragment {

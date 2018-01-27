@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.crdroid.settings.fragments.display;
+package com.crdroid.settings.fragments.ui;
 
 import android.annotation.Nullable;
 import android.app.Fragment;

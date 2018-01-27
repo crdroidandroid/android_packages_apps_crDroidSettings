@@ -29,13 +29,13 @@ import android.widget.Toast;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.crdroid.settings.fragments.animations.AnimationControls;
+import com.crdroid.settings.fragments.ui.AnimationControls;
 import com.crdroid.settings.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Animations extends SettingsPreferenceFragment
+public class UserInterface extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
@@ -67,7 +67,7 @@ public class Animations extends SettingsPreferenceFragment
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.crdroid_settings_animation);
+        addPreferencesFromResource(R.xml.crdroid_settings_ui);
         final ContentResolver resolver = getActivity().getContentResolver();
 
         mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);

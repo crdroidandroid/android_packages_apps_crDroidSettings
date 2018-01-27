@@ -60,11 +60,11 @@
             android:fragment="com.crdroid.settings.fragments.Buttons"
             android:icon="@drawable/ic_settings_buttons"/>
 
-        <!-- Display -->
+        <!-- UI -->
         <PreferenceScreen
-            android:key="display_category"
-            android:title="@string/display_title" 
-            android:fragment="com.crdroid.settings.fragments.Display"
+            android:key="ui_category"
+            android:title="@string/ui_title" 
+            android:fragment="com.crdroid.settings.fragments.UserInterface"
             android:icon="@drawable/ic_settings_display" />
 
         <!-- Notifications -->
@@ -80,13 +80,6 @@
             android:title="@string/sound_title" 
             android:fragment="com.crdroid.settings.fragments.Sound"
             android:icon="@drawable/ic_settings_sound" />
-
-        <!-- Animations -->
-        <PreferenceScreen
-            android:key="animation_category"
-            android:title="@string/animation_title" 
-            android:fragment="com.crdroid.settings.fragments.Animations"
-            android:icon="@drawable/ic_settings_animation" />
 
         <!-- Miscellaneous -->
         <PreferenceScreen

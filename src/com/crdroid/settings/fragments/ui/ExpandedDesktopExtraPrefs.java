@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.crdroid.settings.fragments.display;
+package com.crdroid.settings.fragments.ui;
 
 import android.app.Activity;
 import android.content.ContentResolver;
