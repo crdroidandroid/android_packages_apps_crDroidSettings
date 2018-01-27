@@ -105,6 +105,18 @@ public class ButtonBacklightBrightness extends CustomDialogPref<AlertDialog> imp
             public void onClick(DialogInterface dialog, int which) {
             }
         });
+        builder.setPositiveButton(R.string.save,
+                new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        builder.setNegativeButton(R.string.cancel,
+                new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
     }
 
     @Override
