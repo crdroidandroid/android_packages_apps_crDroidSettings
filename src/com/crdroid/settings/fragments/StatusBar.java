@@ -34,7 +34,6 @@ import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.fragments.statusbar.BatteryBar;
-import com.crdroid.settings.fragments.statusbar.NetworkTraffic;
 import com.crdroid.settings.fragments.statusbar.StatusBarWeather;
 import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
 import com.crdroid.settings.R;
@@ -274,7 +273,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
 
         BatteryBar.reset(mContext);
-        NetworkTraffic.reset(mContext);
         StatusBarWeather.reset(mContext);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
@@ -306,6 +304,14 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_CRDROID_LOGO_POSITION, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_CRDROID_LOGO_STYLE, 0, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.NETWORK_TRAFFIC_UNITS, 1, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
