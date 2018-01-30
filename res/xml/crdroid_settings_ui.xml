@@ -27,6 +27,13 @@
         android:fragment="com.crdroid.settings.fragments.ui.ExpandedDesktop"
         android:persistent="false" />
 
+    <Preference
+        android:key="force_ambient_for_media_pref"
+        android:icon="@drawable/ic_music"
+        android:fragment="com.crdroid.settings.fragments.ui.AmbientTicker"
+        android:title="@string/force_ambient_for_media_pref_title"
+        android:summary="@string/force_ambient_for_media_pref_summary"/>
+
     <!--<lineageos.preference.LineageSystemSettingListPreference
         android:key="dark_theme"
         android:icon="@drawable/ic_theme_light_dark"

@@ -29,6 +29,7 @@ import android.widget.Toast;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
+import com.crdroid.settings.fragments.ui.AmbientTicker;
 import com.crdroid.settings.fragments.ui.AnimationControls;
 import com.crdroid.settings.R;
 
@@ -235,6 +236,7 @@ public class UserInterface extends SettingsPreferenceFragment
                 Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
 */
         SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT);
+        AmbientTicker.reset(mContext);
         AnimationControls.reset(mContext);
     }
 
