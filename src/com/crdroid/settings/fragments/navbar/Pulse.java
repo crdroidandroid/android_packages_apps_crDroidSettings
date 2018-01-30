@@ -55,6 +55,7 @@ public class Pulse extends SettingsPreferenceFragment implements
 
     SwitchPreference mShowPulse;
     ListPreference mRenderMode;
+    SwitchPreference mAutoColor;
     ColorPickerPreference mPulseColor;
     SwitchPreference mLavaLampEnabled;
     CustomSeekBarPreference mCustomDimen;
@@ -88,6 +89,11 @@ public class Pulse extends SettingsPreferenceFragment implements
         mRenderMode = (ListPreference) findPreference("pulse_render_mode");
         mRenderMode.setValue(String.valueOf(renderMode));
         mRenderMode.setOnPreferenceChangeListener(this);
+
+        mAutoColor = (SwitchPreference) findPreference("pulse_auto_color");
+        mAutoColor.setChecked(Settings.Secure.getIntForUser(getContentResolver(),
+                Settings.Secure.PULSE_AUTO_COLOR, 0, UserHandle.USER_CURRENT) == 1);
+        mAutoColor.setOnPreferenceChangeListener(this);
 
         PreferenceCategory fadingBarsCat = (PreferenceCategory)findPreference("pulse_fading_bars_category");
         fadingBarsCat.setEnabled(renderMode == RENDER_STYLE_FADING_BARS);
@@ -197,6 +203,11 @@ public class Pulse extends SettingsPreferenceFragment implements
             Settings.Secure.putIntForUser(resolver,
                     Settings.Secure.FLING_PULSE_ENABLED, enabled ? 1 : 0, UserHandle.USER_CURRENT);
             return true;
+        } else if (preference == mAutoColor) {
+            boolean enabled = (Boolean) newValue;
+            Settings.Secure.putIntForUser(resolver,
+                    Settings.Secure.PULSE_AUTO_COLOR, enabled ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
         } else if (preference == mPulseColor) {
             int color = (Integer) newValue;
             Settings.Secure.putIntForUser(resolver,
@@ -272,6 +283,8 @@ public class Pulse extends SettingsPreferenceFragment implements
         Settings.Secure.putIntForUser(resolver, Settings.Secure.PULSE_RENDER_STYLE_URI,
              RENDER_STYLE_SOLID_LINES, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver, Settings.Secure.FLING_PULSE_ENABLED,
+             0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver, Settings.Secure.PULSE_AUTO_COLOR,
              0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver, Settings.Secure.FLING_PULSE_COLOR,
              Color.WHITE, UserHandle.USER_CURRENT);

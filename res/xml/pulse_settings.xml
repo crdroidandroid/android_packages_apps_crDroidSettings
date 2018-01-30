@@ -32,9 +32,16 @@
         android:entryValues="@array/pulse_render_mode_values"
         android:dependency="eos_fling_show_pulse" />
 
+    <SwitchPreference
+        android:key="pulse_auto_color"
+        android:title="@string/pulse_auto_color_title"
+        android:summary="@string/pulse_auto_color_summary"
+        android:dependency="eos_fling_show_pulse" />
+
     <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
         android:key="eos_fling_pulse_color"
         android:title="@string/fling_pulse_color"
+        android:summary="@string/fling_pulse_color_summary"
         android:defaultValue="0xffffff"
         android:dependency="eos_fling_show_pulse" />
 
