@@ -40,6 +40,8 @@ public class Sound extends SettingsPreferenceFragment implements
 
     public static final String TAG = "Sound";
 
+    private ListPreference mNoisyNotification;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,17 +49,35 @@ public class Sound extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.crdroid_settings_sound);
 
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mNoisyNotification = (ListPreference) findPreference("notification_sound_vib_screen_on");
+        int mode = Settings.System.getIntForUser(resolver,
+                Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON,
+                1, UserHandle.USER_CURRENT);
+        mNoisyNotification.setValue(String.valueOf(mode));
+        mNoisyNotification.setSummary(mNoisyNotification.getEntry());
+        mNoisyNotification.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         ContentResolver resolver = getActivity().getContentResolver();
-
+        if (preference == mNoisyNotification) {
+            int value = Integer.parseInt((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, value, UserHandle.USER_CURRENT);
+            int index = mNoisyNotification.findIndexOfValue((String) newValue);
+            mNoisyNotification.setSummary(
+                    mNoisyNotification.getEntries()[index]);
+            return true;
+        }
         return false;
     }
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
