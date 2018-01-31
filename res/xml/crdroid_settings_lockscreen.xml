@@ -117,6 +117,13 @@
         android:key="lockscreen_gestures_category"
         android:title="@string/gestures_title">
 
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="face_auto_unlock"
+            android:icon="@drawable/ic_face"
+            android:title="@string/face_auto_unlock_title"
+            android:summary="@string/face_auto_unlock_summary"
+            android:defaultValue="false"/>
+
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="double_tap_sleep_lockscreen"
             android:icon="@drawable/ic_double_tap"
