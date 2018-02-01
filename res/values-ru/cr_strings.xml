@@ -33,6 +33,7 @@
     <string name="statusbar_title">Строка состояния</string>
     <string name="display_title">Экран</string>
     <string name="animation_title">Анимации</string>
+    <string name="ui_title">Интерфейс</string>
 
     <!-- Power Menu -->
     <string name="powermenu_title">Меню кнопки питания</string>
@@ -435,6 +436,7 @@
     <string name="pulse_render_mode_fading_bars">Затухающие блоки</string>
     <string name="pulse_render_mode_solid_lines">Сплошные линии</string>
     <string name="fling_pulse_color">Цвет Pulse</string>
+    <string name="fling_pulse_color_summary">Используется также как резерв для автоматического подбора цвета</string>
     <string name="eos_fling_lavalamp_title">Включить \"Лава Лампу\"</string>
     <string name="eos_fling_lavalamp_summary">Включить плавно меняющиеся цвета визуализатора Pulse</string>
     <string name="pulse_advanced_category">Расширенные настройки</string>
@@ -447,6 +449,8 @@
     <string name="fling_lavalamp_color_from">Начальный цвет \"Лава Лампы\"</string>
     <string name="fling_lavalamp_color_to">Конечный цвет \"Лава Лампы\"</string>
     <string name="pulse_custom_buttons_opacity_title">Прозрачность кнопок Smartbar в режиме Pulse</string>
+    <string name="pulse_auto_color_title">Автоматический цвет Pulse</string>
+    <string name="pulse_auto_color_summary">Цвет зависит от обложки трека. Переопределяет прозрачность \"Лава Лампы\" и сплошных линий.</string>
 
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">Ширина</string>
@@ -1461,4 +1465,29 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Расширенная перезагрузка</string>
     <string name="advanced_reboot_summary">Когда устройство разблокировано, в меню питания доступны опции перезагрузки в режим восстановления и в загрузчик</string>
+
+    <!-- Allow lights in zen mode -->
+    <string name="zen_allow_lights">Включено</string>
+    <string name="zen_allow_lights_summary">Разрешить мигание в режиме \"Не беспокоить\"</string>
+    <string name="light_brightness_category">Настройки световой индикации</string>
+
+    <!-- Suppress notification sound -->
+    <string name="notification_sound_vib_screen_on_title">Звук и вибрация уведомлений при включенном экране</string>
+    <string name="notification_sound_vib_screen_on_never">Никогда</string>
+    <string name="notification_sound_vib_screen_on_always">Всегда (по умолчанию)</string>
+    <string name="notification_sound_vib_screen_on_nomedia">Когда медиа не вопроизводится</string>
+
+    <!-- Ambient Ticker -->
+    <string name="force_ambient_for_media_pref_title">Функция «Now Playing»</string>
+    <string name="force_ambient_for_media_pref_summary">Информация о текущем треке в режиме «Ambient Display»</string>
+    <string name="ambient_ticker_footer">Функция позволяет отображать информацию о текущем треке на экране блокировки используя «Ambient Display».\n\nВы можете выбрать обычный или упрощенный режим отображния. Эта функция использует «Ambient Display» и так или иначе зависит от него. Она может быть вызвана без его использования с помощью принудительного режима.\n\nВ обычном режиме на экране отображаются часы, дата и информация о треке.\n\nВ упрощенном режиме часы и дата скрыты, информация о треке отображается по центру экрана.</string>
+    <string name="force_ambient_for_media_title">Режим отображения</string>
+    <string name="force_ambient_for_media_off">Отключено</string>
+    <string name="force_ambient_for_media_on">Обычный</string>
+    <string name="force_ambient_for_media_on_forced">Обычный (принудительно)</string>
+    <string name="force_ambient_for_media_on_forced_clean">Упрощенный (принудительно)</string>
+
+    <!-- Face Auto Unlock -->
+    <string name="face_auto_unlock_title">Автоматическая разблокировка</string>
+    <string name="face_auto_unlock_summary">Скрыть экран блокировки при разблокировке лицом</string>
 </resources>
