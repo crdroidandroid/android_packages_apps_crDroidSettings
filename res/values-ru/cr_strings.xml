@@ -96,13 +96,13 @@
   <!-- Hide Apps from Recents -->
   <string name="hide_apps_from_recents_title">Скрытые приложения</string>
   <string name="hide_from_recents_add_app">Добавить приложение</string>
-  <string name="hide_apps_from_recents_summary">Выберите, какие приложения необходимо исключить из \"Недавних приложений\"</string>
+  <string name="hide_apps_from_recents_summary">Выберите приложения, которые будут исключены из меню недавних приложений</string>
   <!-- OmniSwitch Recents -->
   <string name="recents_use_omniswitch_title">Использовать как \"Недавние приложения\"</string>
   <string name="recents_use_omniswitch_summary">Использовать OmniSwitch вместо стандартных \"Недавних приложений\"</string>
   <string name="omniswitch_start_settings_title">Настройки</string>
   <string name="omniswitch_start_settings_summary">Открыть настройки OmniSwitch</string>
-  <string name="omniswitch_first_time_title">Информация</string>
+  <string name="omniswitch_first_time_title">Недавние приложения OmniSwitch</string>
   <string name="omniswitch_first_time_message">Убедитесь, что вы включили OmniSwitch. Это можно сделать с помощью настроек внизу</string>
   <!-- Lockscreen categories -->
   <string name="lockscreen_shortcuts_category">Ярлыки</string>
@@ -116,7 +116,7 @@
   <string name="media_art_summary">Показывать обложку трека</string>
   <!-- Hide Lockscreen clock, date & alarm -->
   <string name="hide_lockscreen_clock_title">Часы</string>
-  <string name="hide_lockscreen_clock_summary">Показывать часы</string>
+  <string name="hide_lockscreen_clock_summary">Показывать текущее время</string>
   <string name="hide_lockscreen_date_title">Дата</string>
   <string name="hide_lockscreen_date_summary">Показывать дату</string>
   <string name="hide_lockscreen_alarm_title">Будильник</string>
@@ -224,10 +224,10 @@
   <string name="status_bar_logo_style_emoticon_dead">Смайл мертвого</string>
   <string name="status_bar_logo_style_emoticon_devil">Смайл дьявол</string>
   <string name="status_bar_logo_style_emoticon_happy">Смайл счастливый</string>
-  <string name="status_bar_logo_style_emoticon_neutral">Emoticon neutral</string>
-  <string name="status_bar_logo_style_emoticon_poop">Emoticon poop</string>
-  <string name="status_bar_logo_style_emoticon_sad">Emoticon sad</string>
-  <string name="status_bar_logo_style_emoticon_tongue">Emoticon tongue</string>
+  <string name="status_bar_logo_style_emoticon_neutral">Смайл нейтральный</string>
+  <string name="status_bar_logo_style_emoticon_poop">Смайл какаха</string>
+  <string name="status_bar_logo_style_emoticon_sad">Смайл грустный</string>
+  <string name="status_bar_logo_style_emoticon_tongue">Смайл язык</string>
   <string name="status_bar_logo_style_blackberry">Blackberry</string>
   <string name="status_bar_logo_style_cake">Кекс</string>
   <string name="status_bar_logo_style_blogger">Блогер</string>
@@ -295,7 +295,7 @@
   <string name="profile_choose_app">Выбрать приложение</string>
   <string name="profile_reset_title">Сброс</string>
   <string name="show_title">Показать</string>
-  <string name="stock">Stock</string>
+  <string name="stock">По умолчанию</string>
   <string name="reset_paranoid">Paranoid</string>
   <string name="reset_android">Android</string>
   <!-- Navigation Bar -->
@@ -311,7 +311,7 @@
   <string name="navigation_bar_left_title">Режим левши</string>
   <string name="navigation_bar_left_summary">Отображать панель навигации слева в альбомной ориентации экрана</string>
   <string name="info_pref_note_title">Заметка</string>
-  <string name="smartbar_interface">SmartBar</string>
+  <string name="smartbar_interface">Умная панель</string>
   <string name="icon_pack_picker_dialog_title">Наборы иконок</string>
   <string name="image_exceeds_max_allowed_size">Изображение не должно превышать 512x512</string>
   <string name="invalid_icon_from_uri">Не удается загрузить изображения от контент-провайдера</string>
@@ -331,7 +331,7 @@
   <!-- Fling -->
   <string name="fling_settings">Настройки Fling</string>
   <string name="fling_settings_summary">Настройка жестов Fling</string>
-  <string name="fling_interface">Fling</string>
+  <string name="fling_interface">Отскок</string>
   <string name="fling_enable_title">Включить Fling</string>
   <string name="fling_back_home_policy">\"Назад\" и \"Домой\" должны быть установлены всегда. Чтобы изменить назначение \"Назад\" или \"Домой\", сначала установите нужное назначение</string>
   <string name="fling_split_bar_policy">Когда назначено действие только справа или слева, оно выполняется на всей панели</string>
@@ -389,7 +389,7 @@
   <!-- Pulse navigation bar music visualizer -->
   <string name="pulse_help_policy_notice_title">О Pulse</string>
   <string name="pulse_help_policy_notice_summary">Pulse - это блестящий и стильный визуализатор звука, который отображается на панели навигации при воспроизведении музыки. Pulse не работает с некоторыми источниками звука при прослушивании через динамик устройства</string>
-  <string name="pulse_settings">Pulse</string>
+  <string name="pulse_settings">Пульс</string>
   <string name="pulse_settings_summary">Аудио визуализация панели навигации</string>
   <string name="fling_show_pulse_title">Включить Pulse</string>
   <string name="fling_show_pulse_summary">Включить визуализацию аудио в панели навигации</string>
@@ -857,7 +857,7 @@
   <string name="font_black_italic">Чёрный курсив</string>
   <string name="font_dancingscript">Рукописный</string>
   <string name="font_dancingscript_bold">Рукописный жирный</string>
-  <string name="font_comingsoon">ComingSoon</string>
+  <string name="font_comingsoon">Ожидается</string>
   <string name="font_notoserif">NotoSerif обычный</string>
   <string name="font_notoserif_italic">NotoSerif курсив</string>
   <string name="font_notoserif_bold">NotoSerif жирный</string>
@@ -1091,7 +1091,7 @@
   <string name="wifi_activity_arrows_title">Показывать активность WiFi</string>
   <string name="wifi_activity_arrows_summary">Отображать стрелки активности у WiFi индикатора</string>
   <!-- The Drill -->
-  <string name="drill_title">The Drill</string>
+  <string name="drill_title">От разработчиков</string>
   <string name="drill_summary">Нашел баг? Столкнулся с проблемой?</string>
   <!-- Hide Statusbar on Lockscreen -->
   <string name="lockscreen_hide_status_bar_title">Скрыть строку состояния</string>
@@ -1177,7 +1177,7 @@
   <string name="volte_icon_title">Значок VoLTE</string>
   <string name="volte_icon_summary">Отображать значок VoLTE</string>
   <!-- Ad Away -->
-  <string name="adaway_title">Ad Away</string>
+  <string name="adaway_title">Убрать рекламу</string>
   <string name="adaway_summary">Блокировка нежелательной рекламы</string>
   <!-- Carrier Label -->
   <string name="custom_carrier_title">Имя оператора</string>
@@ -1275,8 +1275,8 @@
   <!-- Dialog -->
   <string name="dialog_message">Проверка обновлений, пожалуйста, подождите…</string>
   <!-- Navbar Animation -->
-  <string name="pixel_navbar_anim_title">Pixel animation</string>
-  <string name="pixel_navbar_anim_summary">Toggle pixel style animation for navigation bar</string>
+  <string name="pixel_navbar_anim_title">Анимация Pixel</string>
+  <string name="pixel_navbar_anim_summary">Переключение Pixel анимации для навигационной строки</string>
   <!-- Smart pulldown-->
   <string name="smart_pulldown_title">Умная панель уведомлений</string>
   <string name="smart_pulldown_summary">Открыть быстрые настройки %1$s уведомлений</string>
