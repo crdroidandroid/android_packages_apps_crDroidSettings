@@ -33,6 +33,7 @@
     <string name="statusbar_title">Barra di stato</string>
     <string name="display_title">Schermo</string>
     <string name="animation_title">Animazioni</string>
+    <string name="ui_title">Interfaccia utente</string>
 
     <!-- Power Menu -->
     <string name="powermenu_title">Menù alimentazione</string>
@@ -435,6 +436,7 @@
     <string name="pulse_render_mode_fading_bars">Dissolvenza blocchi</string>
     <string name="pulse_render_mode_solid_lines">Linee continue</string>
     <string name="fling_pulse_color">Colore Pulse</string>
+    <string name="fling_pulse_color_summary">Usato anche come fallback per il colore automatico</string>
     <string name="eos_fling_lavalamp_title">Attiva lampada di lava</string>
     <string name="eos_fling_lavalamp_summary">Pulse mescola e cambia colore come una lampada di lava</string>
     <string name="pulse_advanced_category">Avanzate</string>
@@ -447,6 +449,8 @@
     <string name="fling_lavalamp_color_from">Colore avvio lampada di lava</string>
     <string name="fling_lavalamp_color_to">Colore finale lampada di lava</string>
     <string name="pulse_custom_buttons_opacity_title">Trasparenza dei pulsanti in modalità Pulse</string>
+    <string name="pulse_auto_color_title">Colore Pulse automatico</string>
+    <string name="pulse_auto_color_summary">Sincronizza il colore con gli artisti dell\'album. Esegui la sovrapposizione della Lampada di Lava e l\'opacità delle linee.</string>
 
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">Larghezza barra</string>
@@ -469,8 +473,9 @@
     <string name="smartbar_category">SmartBar</string>
     <string name="smartbar_settings_title">Impostazioni Smartbar</string>
     <string name="smartbar_settings_summary">Personalizza vari elementi della smartbar</string>
-    <string name="smartbar_editor_title">Attiva o disattiva modifica pulsanti</string>
-    <string name="smartbar_editor_summary">Tieni premuto e trascina per cambiare la posizione. Tieni premuto a lungo per visualizzare il menù di modifica. La posizione del pulsante potrebbe cambiare durante la visualizzazione del menù.</string>
+    <string name="smartbar_editor_title">Avvia la modalità modifica</string>
+    <string name="smartbar_editor_summary">Apri per la modifica dei pulsanti della smartbar</string>
+	<string name="smartbar_help_policy_notice_summary">Tieni premuto e trascina per cambiare la posizione. Tieni premuto a lungo per visualizzare il menù di modifica. La posizione del pulsante potrebbe cambiare durante la visualizzazione del menù.</string>
     <string name="smartbar_context_menu_position_title">Posizione pulsanti contestuali</string>
     <string name="smartbar_context_menu_position_summary">Regola la posizione dei pulsanti contestuali, come il pulsante menù e il selettore della tastiera</string>
     <string name="smartbar_right">Destra</string>
@@ -1274,12 +1279,9 @@
     <string name="status_bar_temperature_title">Temperatura meteo</string>
     <string name="status_bar_temperature_hidden">Nascosta</string>
     <string name="status_bar_temperature_location_title">Posizione</string>
-    <string name="status_bar_temperature_location_summary">Seleziona dove la temperatura del meteo viene visualizzata nella barra di stato</string>
     <string name="status_bar_temperature_location_right">Mostra a destra</string>
     <string name="status_bar_temperature_location_left">Mostra a sinistra</string>
     <string name="status_bar_weather_color_title">Colore temperatura</string>
-    <string name="statusbar_weather_summary">Configura dalle impostazioni rapide/Meteo.</string>
-    <string name="statusbar_weather_dialog_title">Stile meteo barra di stato</string>
     <string name="status_bar_weather_hidden">Nascondi meteo</string>
     <string name="status_bar_temperature_image_show_scale">Mostra temperatura con scala e immagine</string>
     <string name="status_bar_temperature_image_hide_scale">Mostra temperatura con immagine senza scala</string>
@@ -1313,13 +1315,12 @@
     <string name="lock_screen_weather_title">Meteo</string>
     <string name="lock_screen_weather_summary">Visualizza e personalizza i dettagli del meteo</string>
     <string name="lock_screen_weather_summaryOn">Visualizza il meteo sulla schermata di blocco</string>
-    <string name="lock_screen_weather_summaryOff">Nascondi il meteo sulla schermata di blocco</string>
     <string name="lock_screen_location_title">Visualizza posizione</string>
-    <string name="lock_screen_location_summaryOn">Visualizza la posizione sulla schermata di blocco</string>
-    <string name="lock_screen_location_summaryOff">Nascondi la posizione sulla schermata di blocco</string>
-    <string name="lock_screen_weather_condition_icon_title">Visualizza icona condizioni</string>
-    <string name="lock_screen_weather_condition_icon_summaryOn">Visualizza l\'icona delle condizioni sulla schermata di blocco</string>
-    <string name="lock_screen_weather_condition_icon_summaryOff">Nascondi l\'icona delle condizioni sulla schermata di blocco</string>
+    <string name="lock_screen_location_summary">Mostra la posizione sulla schermata di blocco</string>
+    <string name="lock_screen_weather_condition_icon_title">Icona condizioni</string>
+    <string name="lock_screen_weather_condition_icon_summary">Visualizza le icone delle condizioni sulla schermata di blocco</string>  
+	<string name="lock_screen_ambient_weather_title">Meteo ambientale</string>
+    <string name="lock_screen_ambient_weather_summary">Mostra il tempo sullo schermo ambientale</string>
 
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Autenticazione impronta digitale con vibrazione</string>
@@ -1462,4 +1463,29 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Riavvio avanzato</string>
     <string name="advanced_reboot_summary">Una volta sbloccato, include le opzioni nel menù di accensione per riavviare in recovery o in bootloader</string>
+    
+	<!-- Allow lights in zen mode -->
+    <string name="zen_allow_lights">Abilita</string>
+    <string name="zen_allow_lights_summary">Permetti di far lampeggiare la luce quando Non Disturbare è attivo</string>
+    <string name="light_brightness_category">Impostazioni di luminosità</string>
+
+    <!-- Suppress notification sound -->
+    <string name="notification_sound_vib_screen_on_title">Notifiche suono e vibrazioni se lo schermo è acceso</string>
+    <string name="notification_sound_vib_screen_on_never">Mai</string>
+    <string name="notification_sound_vib_screen_on_always">Sempre (predefinito)</string>
+    <string name="notification_sound_vib_screen_on_nomedia">Nessuna riproduzione multimediale</string>
+
+    <!-- Ambient Ticker -->
+    <string name="force_ambient_for_media_pref_title">Ticker Ambient musicale</string>
+    <string name="force_ambient_for_media_pref_summary">Configura il ticker musicale su Ambient Display</string>
+    <string name="force_ambient_for_media_title">Select layout</string>
+    <string name="ambient_ticker_footer">Questa funzionalità da la possibilità di visualizzare l\'attuale canzone sulla schermata di blocco con o senza Ambient Display abilitato.\n\nPuoi scegliere tra due layout, normale e minimale. Mentre questa funzionalità sfrutta l\'Ambient Display, essa non dipende da quest\'ultimo. Può essere attivata senza avere Ambient Display abilitato utilizzando l\'opzione (forzata).\n\nLa visualizzazione Normale include l'orologio della schermata di blocco, la data e il quadrante.\n\nLa visualizzazione Minimale include solo il quadrante al centro dello schermo.</string>
+    <string name="force_ambient_for_media_off">Disabilitato</string>
+    <string name="force_ambient_for_media_on">Normale</string>
+    <string name="force_ambient_for_media_on_forced">Normale (forzata)</string>
+    <string name="force_ambient_for_media_on_forced_clean">Minimo (forzata)</string>
+
+    <!-- Face Auto Unlock -->
+    <string name="face_auto_unlock_title">Sblocco automatico con viso</string>
+    <string name="face_auto_unlock_summary">Sblocca automaticamente il blocco schermo dopo aver riconosciuto il volto</string>
 </resources>
