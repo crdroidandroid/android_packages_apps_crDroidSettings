@@ -32,6 +32,14 @@
                 <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
         </PreferenceScreen>
 
+        <PreferenceScreen
+            android:key="clock"
+            android:icon="@drawable/ic_clock"
+            android:title="@string/status_bar_clock_title"
+            android:summary="@string/status_bar_clock_summary"
+            android:fragment="com.crdroid.settings.fragments.statusbar.Clock"
+            settings:allowDividerAbove="false" />
+
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="show_su_indicator"
             android:icon="@drawable/ic_hash"
@@ -105,83 +113,6 @@
             android:summary="@string/status_bar_notif_count_summary"
             android:defaultValue="true" /> -->
     </PreferenceCategory>
-
-    <!-- Status bar clock customizations
-    <PreferenceCategory
-        android:title="@string/status_bar_clock_category_title">
-
-        <cyanogenmod.preference.CMSystemSettingListPreference
-            android:key="status_bar_clock"
-            android:icon="@drawable/ic_clock"
-            android:title="@string/status_bar_clock_position_title"
-            android:summary="%s"
-            android:dialogTitle="@string/status_bar_clock_position_title"
-            android:entries="@array/status_bar_clock_position_entries"
-            android:entryValues="@array/status_bar_clock_position_values"
-            android:defaultValue="0" />
-
-        <cyanogenmod.preference.CMSystemSettingListPreference
-            android:key="status_bar_am_pm"
-            android:icon="@drawable/ic_night"
-            android:title="@string/status_bar_am_pm_title"
-            android:summary="%s"
-            android:dialogTitle="@string/status_bar_am_pm_title"
-            android:entries="@array/status_bar_am_pm_entries"
-            android:entryValues="@array/status_bar_am_pm_values"
-            android:defaultValue="2" />
-
-        <cyanogenmod.preference.CMSystemSettingListPreference
-            android:key="status_bar_date"
-            android:icon="@drawable/ic_calendar"
-            android:title="@string/status_bar_date_title"
-            android:dialogTitle="@string/status_bar_date_title"
-            android:entries="@array/status_bar_date_entries"
-            android:entryValues="@array/status_bar_date_values"
-            android:persistent="false" />
-
-        <cyanogenmod.preference.CMSystemSettingListPreference
-            android:key="status_bar_date_style"
-            android:icon="@drawable/ic_calendar"
-            android:title="@string/status_bar_date_style"
-            android:dialogTitle="@string/status_bar_date_style"
-            android:entries="@array/status_bar_date_style_entries"
-            android:entryValues="@array/status_bar_date_style_values"
-            android:persistent="false" />
-
-        <cyanogenmod.preference.CMSystemSettingListPreference
-            android:key="status_bar_date_format"
-            android:icon="@drawable/ic_calendar"
-            android:title="@string/status_bar_date_format_title"
-            android:dialogTitle="@string/status_bar_date_format_title"
-            android:entries="@array/status_bar_date_format_entries_values"
-            android:entryValues="@array/status_bar_date_format_entries_values"
-            android:persistent="false" />
-
-        <cyanogenmod.preference.CMSystemSettingListPreference
-            android:key="statusbar_clock_date_position"
-            android:icon="@drawable/ic_calendar_clock"
-            android:title="@string/clock_date_position"
-            android:entries="@array/clock_date_position_entries"
-            android:entryValues="@array/clock_date_position_values"
-            android:persistent="false" />
-
-        <cyanogenmod.preference.CMSystemSettingListPreference
-            android:key="statusbar_clock_font_style"
-            android:icon="@drawable/ic_font"
-            android:title="@string/font_style_title"
-            android:entries="@array/font_style_entries"
-            android:entryValues="@array/font_style_values"
-            android:persistent="false" />
-
-       <com.crdroid.settings.preferences.CustomSeekBarPreference
-            android:key="statusbar_clock_font_size"
-            android:icon="@drawable/ic_font_size"
-            android:title="@string/font_size_title"
-            android:max="23"
-            settings:min="4"
-            settings:units="dp"
-            android:persistent="false" />
-    </PreferenceCategory>  -->
 
     <!-- Status bar battery customizations -->
     <PreferenceCategory

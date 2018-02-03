@@ -34,6 +34,7 @@ import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.fragments.statusbar.BatteryBar;
+import com.crdroid.settings.fragments.statusbar.Clock;
 import com.crdroid.settings.fragments.statusbar.StatusBarWeather;
 import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
 import com.crdroid.settings.R;
@@ -273,6 +274,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
 
         BatteryBar.reset(mContext);
+        Clock.reset(mContext);
         StatusBarWeather.reset(mContext);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_SU_INDICATOR, 1, UserHandle.USER_CURRENT);
