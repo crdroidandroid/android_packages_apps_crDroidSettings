@@ -275,6 +275,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
         BatteryBar.reset(mContext);
         StatusBarWeather.reset(mContext);
         Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_SU_INDICATOR, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ROAMING_INDICATOR_ICON, 1, UserHandle.USER_CURRENT);
