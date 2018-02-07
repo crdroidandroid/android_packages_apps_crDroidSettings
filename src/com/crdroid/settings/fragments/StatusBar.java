@@ -55,6 +55,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String CRDROID_LOGO_COLOR = "status_bar_crdroid_logo_color";
     private static final String CRDROID_LOGO_POSITION = "status_bar_crdroid_logo_position";
     private static final String CRDROID_LOGO_STYLE = "status_bar_crdroid_logo_style";
+    private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
 
     private ListPreference mQuickPulldown;
     private ListPreference mSmartPulldown;
@@ -65,6 +66,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ColorPickerPreference mCrDroidLogoColor;
     private ListPreference mCrDroidLogoPosition;
     private ListPreference mCrDroidLogoStyle;
+    private ListPreference mBatteryPercent;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -146,6 +148,14 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_CRDROID_LOGO,
                 0, UserHandle.USER_CURRENT) != 0;
         toggleLogo(mLogoEnabled);
+
+        mBatteryPercent = (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
+        int batterypercent = Settings.System.getIntForUser(resolver,
+                Settings.System.SHOW_BATTERY_PERCENT, 0,
+                UserHandle.USER_CURRENT);
+        mBatteryPercent.setValue(String.valueOf(batterypercent));
+        mBatteryPercent.setSummary(mBatteryPercent.getEntry());
+        mBatteryPercent.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -214,6 +224,15 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 UserHandle.USER_CURRENT);
             mCrDroidLogoStyle.setSummary(
                     mCrDroidLogoStyle.getEntries()[index]);
+            return true;
+        } else if (preference == mBatteryPercent) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mBatteryPercent.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(
+                resolver, Settings.System.SHOW_BATTERY_PERCENT, value,
+                UserHandle.USER_CURRENT);
+            mBatteryPercent.setSummary(
+                    mBatteryPercent.getEntries()[index]);
             return true;
         }
         return false;
@@ -286,6 +305,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.BLUETOOTH_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_VOLTE_ICON, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_BATTERY_IMAGE, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,

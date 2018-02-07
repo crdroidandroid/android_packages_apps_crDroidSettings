@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -117,6 +117,23 @@
     <!-- Status bar battery customizations -->
     <PreferenceCategory
         android:title="@string/status_bar_battery_category_title">
+
+        <!-- Show Battery image on Statusbar -->
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="show_battery_image"
+            android:icon="@drawable/ic_battery"
+            android:title="@string/battery_image_title"
+            android:summary="@string/battery_image_summary"
+            android:defaultValue="true"/>
+
+        <!-- Show Battery percent on Statusbar -->
+       <ListPreference
+            android:key="show_battery_percent"
+            android:icon="@drawable/ic_percent"
+            android:title="@string/battery_percent_title"
+            android:dialogTitle="@string/battery_percent_title"
+            android:entries="@array/battery_percent_entries"
+            android:entryValues="@array/battery_percent_values" />
 
         <PreferenceScreen
             android:key="batterybar"
