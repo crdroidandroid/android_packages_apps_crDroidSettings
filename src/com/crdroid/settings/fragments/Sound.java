@@ -78,6 +78,8 @@ public class Sound extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SCREENSHOT_SOUND, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
