@@ -10,7 +10,7 @@
         android:summary="@string/screen_state_toggles_enable_summary"
         android:defaultValue="false"/>
 
-    <com.crdroid.settings.preferences.SeekBarPreference
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
         android:key="screen_state_off_delay"
         android:title="@string/screen_state_off_delay_title"
         android:summary="@string/screen_state_off_delay_summary"
@@ -20,7 +20,7 @@
         android:persistent="false"
         android:dependency="screen_state_toggles_enable_key"/>
 
-    <com.crdroid.settings.preferences.SeekBarPreference
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
         android:key="screen_state_on_delay"
         android:title="@string/screen_state_on_delay_title"
         android:summary="@string/screen_state_on_delay_summary"

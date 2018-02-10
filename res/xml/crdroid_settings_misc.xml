@@ -39,6 +39,14 @@
         android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
 
+    <!-- Suspend actions -->
+    <PreferenceScreen
+        android:key="screenstate_category"
+        android:icon="@drawable/ic_sleep"
+        android:title="@string/screen_state_toggles_title" 
+        android:summary="@string/screen_state_toggles_summary" 
+        android:fragment="com.crdroid.settings.fragments.misc.ScreenStateToggles" />
+
     <PreferenceScreen
         android:key="lock_clock"
         android:icon="@drawable/ic_clock"
@@ -107,14 +115,7 @@
         android:summary="@string/toast_icon_summary"
         android:defaultValue="true" />
 
-    <!--<PreferenceScreen
-        android:key="screenstate_category"
-        android:icon="@drawable/ic_sleep"
-        android:title="@string/screen_state_toggles_title" 
-        android:summary="@string/screen_state_toggles_summary" 
-        android:fragment="com.crdroid.settings.fragments.ScreenStateToggles" />
-
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="sensor_block"
         android:icon="@drawable/ic_remote"
         android:title="@string/sensor_block_title"
