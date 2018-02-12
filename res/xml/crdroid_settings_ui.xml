@@ -19,6 +19,11 @@
     android:title="@string/ui_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Color Styles -->
+    <org.lineageos.internal.lineageparts.LineagePartsPreference
+        android:key="style"
+        android:icon="@drawable/ic_theme_light_dark" />
+
     <PreferenceScreen
         android:key="expanded_desktop"
         android:icon="@drawable/ic_expanded"
@@ -33,15 +38,6 @@
         android:fragment="com.crdroid.settings.fragments.ui.AmbientTicker"
         android:title="@string/force_ambient_for_media_pref_title"
         android:summary="@string/force_ambient_for_media_pref_summary"/>
-
-    <!--<lineageos.preference.LineageSystemSettingListPreference
-        android:key="dark_theme"
-        android:icon="@drawable/ic_theme_light_dark"
-        android:title="@string/dark_theme_title"
-        android:summary="%s"
-        android:entries="@array/dark_theme_entries"
-        android:entryValues="@array/dark_theme_values"
-        android:defaultValue="1" />-->
 
     <!--<PreferenceScreen
         android:key="doze_fragment"
