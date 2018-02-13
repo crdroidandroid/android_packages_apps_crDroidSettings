@@ -18,7 +18,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App Title -->
   <string name="crdroid_settings_title">crDroid设置</string>
-  <string name="crdroid_personalization_category">个性化</string>
+  <string name="crdroid_personalization_category">个性化设置</string>
   <string name="crdroid_addons_category">附加组件</string>
   <!-- Personalization Categories -->
   <string name="button_title">按钮</string>
@@ -40,7 +40,7 @@
   <!-- Color Picker -->
   <string name="dialog_color_picker">颜色选择器</string>
   <string name="press_color_to_apply">点选下面的颜色以应用</string>
-  <string name="hex">Hex:</string>
+  <string name="hex">十六进制:</string>
   <string name="hex_hint">#ff000000</string>
   <string name="set">设置</string>
   <string name="color_default">默认</string>
@@ -51,7 +51,7 @@
   <string name="save">保存</string>
   <!-- Misc strings -->
   <string name="lockclock_title">时钟小部件</string>
-  <string name="lockclock_summary">查看或更改 cLock 小部件的显示方式</string>
+  <string name="lockclock_summary">查看或更改时钟小部件的显示方式</string>
   <!-- Network traffic -->
   <string name="network_traffic_title">网速显示</string>
   <string name="network_traffic_summary">自定义网络流量监视器</string>
@@ -62,8 +62,8 @@
   <string name="show_network_traffic_up">上传速度</string>
   <string name="show_network_traffic_down">下载速度</string>
   <string name="show_network_traffic_all">显示上传和下载速度</string>
-  <string name="show_network_traffic_bit">Bit/s</string>
-  <string name="show_network_traffic_byte">每秒字节数</string>
+  <string name="show_network_traffic_bit">比特每秒</string>
+  <string name="show_network_traffic_byte">字节每秒</string>
   <string name="show_network_traffic_500">500 ms</string>
   <string name="show_network_traffic_1000">1000 ms</string>
   <string name="show_network_traffic_1500">1500 ms</string>
@@ -136,10 +136,10 @@
   <string name="lockscreen_enable_qs_summary">允许在安全锁屏界面访问快速设置和滑动快捷方式</string>
   <!-- Screenshot Sound  -->
   <string name="screenshot_sound_title">截图提示音</string>
-  <string name="screenshot_sound_summary">截图时播放切换声音</string>
+  <string name="screenshot_sound_summary">截图时播放截图音效</string>
   <!-- Volume Steps -->
-  <string name="volume_steps_title">音量步进</string>
-  <string name="volume_steps_summary">自定义声音面板中的步进数</string>
+  <string name="volume_steps_title">音量级别</string>
+  <string name="volume_steps_summary">自定义声音面板中的音量级别</string>
   <string name="volume_steps_alarm_title">音量级别: 闹钟</string>
   <string name="volume_steps_dtmf_title">音量级别: DTMF （双音多频）</string>
   <string name="volume_steps_music_title">音量级别: 音乐</string>
@@ -387,8 +387,8 @@
   <string name="fling_keyboard_cursors_summary">如果键盘打开，双击左右动作变成左键和右键。</string>
   <string name="fling_logo_opacity_title">Fling 标志透明度</string>
   <!-- Pulse navigation bar music visualizer -->
-  <string name="pulse_help_policy_notice_title">关于脉冲</string>
-  <string name="pulse_help_policy_notice_summary">Pulse 是一种在播放音乐时，位于导航栏的智能均衡器式的音频显示方式。当使用扬声器时， Pulse 在某些音源下可能不工作</string>
+  <string name="pulse_help_policy_notice_title">关于Pulse</string>
+  <string name="pulse_help_policy_notice_summary">Pulse 是一种在播放音乐时，位于导航栏的智能均衡器式的音频显示方式。当使用扬声器时，Pulse 在某些音源下可能不工作</string>
   <string name="pulse_settings">脉冲信号</string>
   <string name="pulse_settings_summary">导航栏音乐可视化</string>
   <string name="fling_show_pulse_title">显示脉冲</string>
@@ -575,9 +575,9 @@
   <string name="ticker_enabled">通知提示</string>
   <string name="ticker_media_enabled">通知和音乐提示</string>
   <!-- Pie -->
-  <string name="pie_settings">扇形设置</string>
-  <string name="pie_enable_title">启用扇形控制</string>
-  <string name="pie_settings_summary">调整扇形到您喜欢的程度</string>
+  <string name="pie_settings">Pie设置</string>
+  <string name="pie_enable_title">启用Pie控制</string>
+  <string name="pie_settings_summary">调整Pie到您喜欢的程度</string>
   <string name="pie_theme_mode_title">主题</string>
   <string name="pie_auto">自动</string>
   <string name="pie_white">白色</string>
@@ -683,19 +683,19 @@
   <string name="doze_pulse_duration_out_title">淡出</string>
   <string name="doze_pulse_duration_out_summary"></string>
   <string name="doze_brightness_level_title">亮度级别</string>
-  <string name="onehundred_ms">100 ms</string>
-  <string name="twofifty_ms">250 ms</string>
-  <string name="fivehundred_ms_default">500 ms (default)</string>
-  <string name="sevenfifty_ms">750 ms</string>
-  <string name="one_second">1 s</string>
-  <string name="onehalf_second">1.5 s</string>
-  <string name="two_second">2 s</string>
-  <string name="twohalf_second">2.5 s</string>
-  <string name="three_second_default">3 s (default)</string>
-  <string name="threehalf_second">3.5 s</string>
-  <string name="four_second">4 s</string>
-  <string name="fourhalf_second">4.5 s</string>
-  <string name="five_second">5 s</string>
+  <string name="onehundred_ms">100 毫秒</string>
+  <string name="twofifty_ms">250 毫秒</string>
+  <string name="fivehundred_ms_default">500 ms (默认)</string>
+  <string name="sevenfifty_ms">750 毫秒</string>
+  <string name="one_second">1 秒</string>
+  <string name="onehalf_second">1.5 秒</string>
+  <string name="two_second">2 秒</string>
+  <string name="twohalf_second">2.5 秒</string>
+  <string name="three_second_default">3 秒 (默认)</string>
+  <string name="threehalf_second">3.5 秒</string>
+  <string name="four_second">4 秒</string>
+  <string name="fourhalf_second">4.5 秒</string>
+  <string name="five_second">5 秒</string>
   <string name="doze_notification_color_invert_title">通知反色</string>
   <string name="doze_notification_color_invert_summary_off">使用暗色主题时，通知将不会反转颜色。</string>
   <string name="doze_notification_color_invert_summary_on">使用亮色主题时，通知将会反转颜色。</string>
@@ -716,7 +716,7 @@
   <string name="pocket_title">口袋</string>
   <string name="pocket_summary">从口袋中拿出时唤醒屏幕</string>
   <string name="doze_vibrate">振动</string>
-  <string name="doze_vibrate_summary">脉冲通知时震动的持续时间</string>
+  <string name="doze_vibrate_summary">脉冲通知时振动的持续时间</string>
   <!-- Changelog -->
   <string name="changelog_crdroid_title">更新日志​​​​​</string>
   <string name="changelog_crdroid_summary">查看 ROM 的最近更新日志</string>
@@ -730,16 +730,16 @@
   <string name="share_chooser_title">分享 crDroid</string>
   <!-- Sites crDroid -->
   <string name="crdroid_source_title">GitHub</string>
-  <string name="crdroid_source_summary">我们爱开源, 检查我们</string>
+  <string name="crdroid_source_summary">我们爱开源, 在Github上检查源代码</string>
   <string name="crdroid_google_plus_title">Google+</string>
-  <string name="crdroid_google_plus_summary">加入我们的 G +, 提供更新和支持</string>
+  <string name="crdroid_google_plus_summary">加入我们的 G+ 社区, 获取更新和支持</string>
   <!-- Maintainers -->
   <string name="maintainers_crdroid_title">设备和维护者</string>
   <string name="maintainers_crdroid_summary">设备列表和官方维护者</string>
   <string name="maintainers_crdroid_error">无法加载设备和维护器列表</string>
   <!-- Donate crDroid -->
   <string name="donate_crdroid_title">支持我们</string>
-  <string name="donate_crdroid_summary">捐赠支持开发和我们的服务器</string>
+  <string name="donate_crdroid_summary">通过捐赠来支持开发和维护服务器</string>
   <!-- Button settings -->
   <string name="hardware_keys_power_key_title">电源键</string>
   <string name="hardware_keys_home_key_title">Home 键</string>
@@ -868,7 +868,7 @@
   <string name="font_notoserif_bold_italic">NotoSerif 粗斜体</string>
   <string name="font_size_title">字体大小</string>
   <string name="menu_save">保存</string>
-  <string name="menu_cancel">舍弃</string>
+  <string name="menu_cancel">放弃</string>
   <!-- QS Header Icons -->
   <string name="qs_settings_icon_title">设置快捷方式</string>
   <string name="qs_settings_icon_summary">在页眉中启用设置快捷方式</string>
@@ -1234,8 +1234,8 @@
   <string name="anbi_title">误触</string>
   <string name="anbi_summary">当触摸屏幕时防止和导航按键交互</string>
   <!-- Sensor block -->
-  <string name="sensor_block_title">传感器块</string>
-  <string name="sensor_block_summary">为少数电池密集型应用程序阻止对重要运动传感器的访问</string>
+  <string name="sensor_block_title">传感器阻断</string>
+  <string name="sensor_block_summary">为少数电池密集型应用程序阻止对重要的传感器的访问</string>
   <!-- Pocket judge -->
   <string name="pocket_judge_title">口袋检测</string>
   <string name="pocket_judge_summary">当设备在口袋中时屏蔽屏幕和按键操作</string>
