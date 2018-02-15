@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ public class Clock extends SettingsPreferenceFragment
     private static final String STATUS_BAR_CLOCK_POSITION = "status_bar_clock_position";
     private static final String STATUS_BAR_CLOCK_AM_PM_STYLE = "status_bar_am_pm";
     private static final String CLOCK_DATE_DISPLAY = "status_bar_date";
+    private static final String CLOCK_DATE_POSITION = "statusbar_clock_date_position";
     private static final String CLOCK_DATE_STYLE = "status_bar_date_style";
     private static final String CLOCK_DATE_FORMAT = "status_bar_date_format";
 
@@ -56,6 +57,7 @@ public class Clock extends SettingsPreferenceFragment
     private ListPreference mClockPosition;
     private ListPreference mClockAmPmStyle;
     private ListPreference mClockDateDisplay;
+    private ListPreference mClockDatePosition;
     private ListPreference mClockDateStyle;
     private ListPreference mClockDateFormat;
 
@@ -92,6 +94,13 @@ public class Clock extends SettingsPreferenceFragment
         mClockDateDisplay.setValue(Integer.toString(dateDisplay));
         mClockDateDisplay.setSummary(mClockDateDisplay.getEntry());
         mClockDateDisplay.setOnPreferenceChangeListener(this);
+
+        mClockDatePosition = (ListPreference) findPreference(CLOCK_DATE_POSITION);
+        mClockDatePosition.setValue(Integer.toString(Settings.System.getIntForUser(resolver,
+                Settings.System.STATUSBAR_CLOCK_DATE_POSITION, 0, UserHandle.USER_CURRENT)));
+        mClockDatePosition.setSummary(mClockDatePosition.getEntry());
+        mClockDatePosition.setEnabled(dateDisplay > 0);
+        mClockDatePosition.setOnPreferenceChangeListener(this);
 
         mClockDateStyle = (ListPreference) findPreference(CLOCK_DATE_STYLE);
         mClockDateStyle.setValue(Integer.toString(Settings.System.getIntForUser(resolver,
@@ -134,13 +143,23 @@ public class Clock extends SettingsPreferenceFragment
                   Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, val, UserHandle.USER_CURRENT);
           mClockDateDisplay.setSummary(mClockDateDisplay.getEntries()[index]);
           if (val == 0) {
+              mClockDatePosition.setEnabled(false);
               mClockDateStyle.setEnabled(false);
               mClockDateFormat.setEnabled(false);
           } else {
+              mClockDatePosition.setEnabled(true);
               mClockDateStyle.setEnabled(true);
               mClockDateFormat.setEnabled(true);
           }
           return true;
+        } else if (preference == mClockDatePosition) {
+            int val = Integer.parseInt((String) newValue);
+            int index = mClockDatePosition.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.STATUSBAR_CLOCK_DATE_POSITION, val, UserHandle.USER_CURRENT);
+            mClockDatePosition.setSummary(mClockDatePosition.getEntries()[index]);
+            parseClockDateFormats();
+            return true;
       } else if (preference == mClockDateStyle) {
           int val = Integer.parseInt((String) newValue);
           int index = mClockDateStyle.findIndexOfValue((String) newValue);
@@ -240,6 +259,8 @@ public class Clock extends SettingsPreferenceFragment
                 Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUSBAR_CLOCK_DATE_POSITION, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_CLOCK_DATE_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putString(resolver,
