@@ -87,8 +87,9 @@ public class Clock extends SettingsPreferenceFragment
         mClockAmPmStyle.setOnPreferenceChangeListener(this);
 
         mClockDateDisplay = (ListPreference) findPreference(CLOCK_DATE_DISPLAY);
-        mClockDateDisplay.setValue(Integer.toString(Settings.System.getIntForUser(resolver,
-                Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0, UserHandle.USER_CURRENT)));
+        int dateDisplay = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0, UserHandle.USER_CURRENT);
+        mClockDateDisplay.setValue(Integer.toString(dateDisplay));
         mClockDateDisplay.setSummary(mClockDateDisplay.getEntry());
         mClockDateDisplay.setOnPreferenceChangeListener(this);
 
@@ -96,6 +97,7 @@ public class Clock extends SettingsPreferenceFragment
         mClockDateStyle.setValue(Integer.toString(Settings.System.getIntForUser(resolver,
                 Settings.System.STATUSBAR_CLOCK_DATE_STYLE, 0, UserHandle.USER_CURRENT)));
         mClockDateStyle.setSummary(mClockDateStyle.getEntry());
+        mClockDateStyle.setEnabled(dateDisplay > 0);
         mClockDateStyle.setOnPreferenceChangeListener(this);
 
         mClockDateFormat = (ListPreference) findPreference(CLOCK_DATE_FORMAT);
@@ -103,6 +105,7 @@ public class Clock extends SettingsPreferenceFragment
             mClockDateFormat.setValue("EEE");
         }
         parseClockDateFormats();
+        mClockDateFormat.setEnabled(dateDisplay > 0);
         mClockDateFormat.setOnPreferenceChangeListener(this);
     }
 
