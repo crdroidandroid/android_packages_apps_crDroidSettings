@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@
             android:summary="@string/tilt_summary"
             android:dependency="doze_enabled" />
 
-        <com.crdroid.settings.preferences.SeekBarPreference
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="doze_vibrate_tilt"
             android:title="@string/doze_vibrate"
             android:summary="@string/doze_vibrate_summary"
@@ -57,7 +57,7 @@
             android:summary="@string/pickup_summary"
             android:dependency="doze_enabled" />
 
-        <com.crdroid.settings.preferences.SeekBarPreference
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="doze_vibrate_pickup"
             android:title="@string/doze_vibrate"
             android:summary="@string/doze_vibrate_summary"
@@ -86,7 +86,7 @@
             android:summary="@string/pocket_summary"
             android:dependency="doze_enabled" />
 
-        <com.crdroid.settings.preferences.SeekBarPreference
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="doze_vibrate_prox"
             android:title="@string/doze_vibrate"
             android:summary="@string/doze_vibrate_summary"
@@ -97,7 +97,7 @@
             android:dependency="doze_enabled" />
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="doze_pulse_category"
         android:title="@string/doze_pulse_title" >
 
@@ -154,5 +154,5 @@
             android:title="@string/doze_check_proximity_before_pulse_title"
             android:dependency="doze_overwrite_value"
             android:defaultValue="false" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 </PreferenceScreen>

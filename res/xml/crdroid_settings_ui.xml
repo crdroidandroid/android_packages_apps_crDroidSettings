@@ -32,6 +32,13 @@
         android:fragment="com.crdroid.settings.fragments.ui.ExpandedDesktop"
         android:persistent="false" />
 
+    <PreferenceScreen
+        android:key="doze_fragment"
+        android:icon="@drawable/ic_ambient"
+        android:title="@string/ambient_display_title"
+        android:summary="@string/ambient_display_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.DozeFragment" />
+
     <Preference
         android:key="force_ambient_for_media_pref"
         android:icon="@drawable/ic_music"
@@ -39,13 +46,7 @@
         android:title="@string/force_ambient_for_media_pref_title"
         android:summary="@string/force_ambient_for_media_pref_summary"/>
 
-    <!--<PreferenceScreen
-        android:key="doze_fragment"
-        android:icon="@drawable/ic_ambient"
-        android:title="@string/doze_title"
-        android:fragment="com.crdroid.settings.fragments.doze.DozeSettingsFragment" />
-
-    <Preference
+    <!--<Preference
         android:key="trans_porn"
         android:icon="@drawable/ic_transparency"
         android:title="@string/trans"

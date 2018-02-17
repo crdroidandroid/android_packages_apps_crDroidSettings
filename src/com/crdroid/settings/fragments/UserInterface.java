@@ -31,6 +31,7 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import com.crdroid.settings.fragments.ui.AmbientTicker;
 import com.crdroid.settings.fragments.ui.AnimationControls;
+import com.crdroid.settings.fragments.ui.DozeFragment;
 import com.crdroid.settings.R;
 
 import java.util.ArrayList;
@@ -238,6 +239,7 @@ public class UserInterface extends SettingsPreferenceFragment
         SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT);
         AmbientTicker.reset(mContext);
         AnimationControls.reset(mContext);
+        DozeFragment.reset(mContext);
     }
 
     @Override
