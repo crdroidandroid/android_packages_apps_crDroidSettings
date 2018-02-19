@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2013 Andreas Stuetz <andreas.stuetz@gmail.com>
- *           (C) 2017 crDroid Android Project
+ *           (C) 2017-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,7 +128,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         mRectPaint.setAntiAlias(true);
         mRectPaint.setStyle(Style.FILL);
 
-        DisplayMetrics dm = getResources().getDisplayMetrics();
+        DisplayMetrics dm = context.getResources().getDisplayMetrics();
         mScrollOffset = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mScrollOffset, dm);
         mIndicatorHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mIndicatorHeight, dm);
         mUnderlineHeight = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, mUnderlineHeight, dm);
@@ -273,7 +273,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
             v.setPadding(mTabPadding, v.getPaddingTop(), mTabPadding, v.getPaddingBottom());
             TextView tab_title = (TextView) v.findViewById(R.id.psts_tab_title);
             if (tab_title != null) {
-                tab_title.setTextColor(getResources().getColor(R.color.config_tab_text_color));
+                tab_title.setTextColor(getContext().getResources().getColor(R.color.config_tab_text_color));
                 tab_title.setTypeface(mTabTextTypeface, mTabTextTypefaceStyle);
                 tab_title.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTabTextSize);
                 // setAllCaps() is only available from API 14, so the upper case is made manually if we are on a
