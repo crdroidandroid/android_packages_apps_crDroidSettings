@@ -56,7 +56,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String CRDROID_LOGO_COLOR = "status_bar_crdroid_logo_color";
     private static final String CRDROID_LOGO_POSITION = "status_bar_crdroid_logo_position";
     private static final String CRDROID_LOGO_STYLE = "status_bar_crdroid_logo_style";
+    private static final String SHOW_BATTERY_IMAGE = "show_battery_image";
+    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
+    private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
 
     private ListPreference mQuickPulldown;
     private ListPreference mSmartPulldown;
@@ -67,7 +70,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ColorPickerPreference mCrDroidLogoColor;
     private ListPreference mCrDroidLogoPosition;
     private ListPreference mCrDroidLogoStyle;
+    private SwitchPreference mBatteryImage;
+    private ListPreference mBatteryStyle;
     private ListPreference mBatteryPercent;
+    private ListPreference mTextSymbol;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -150,6 +156,17 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 0, UserHandle.USER_CURRENT) != 0;
         toggleLogo(mLogoEnabled);
 
+        mBatteryImage = (SwitchPreference) findPreference(SHOW_BATTERY_IMAGE);
+        mBatteryImage.setOnPreferenceChangeListener(this);
+
+        mBatteryStyle = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
+        int batterystyle = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 0,
+                UserHandle.USER_CURRENT);
+        mBatteryStyle.setValue(String.valueOf(batterystyle));
+        mBatteryStyle.setSummary(mBatteryStyle.getEntry());
+        mBatteryStyle.setOnPreferenceChangeListener(this);
+
         mBatteryPercent = (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
         int batterypercent = Settings.System.getIntForUser(resolver,
                 Settings.System.SHOW_BATTERY_PERCENT, 0,
@@ -157,6 +174,15 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mBatteryPercent.setValue(String.valueOf(batterypercent));
         mBatteryPercent.setSummary(mBatteryPercent.getEntry());
         mBatteryPercent.setOnPreferenceChangeListener(this);
+
+        mTextSymbol = (ListPreference) findPreference(TEXT_CHARGING_SYMBOL);
+        int textsymbol = Settings.System.getIntForUser(resolver,
+                Settings.System.TEXT_CHARGING_SYMBOL, 0,
+                UserHandle.USER_CURRENT);
+        mTextSymbol.setValue(String.valueOf(textsymbol));
+        mTextSymbol.setSummary(mTextSymbol.getEntry());
+        updateTextSymbol();
+        mTextSymbol.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -226,6 +252,21 @@ public class StatusBar extends SettingsPreferenceFragment implements
             mCrDroidLogoStyle.setSummary(
                     mCrDroidLogoStyle.getEntries()[index]);
             return true;
+        } else if (preference == mBatteryImage) {
+            boolean value = ((Boolean)newValue);
+            Settings.System.putIntForUser(resolver, Settings.System.SHOW_BATTERY_IMAGE,
+                    value ? 1 : 0, UserHandle.USER_CURRENT);
+            updateTextSymbol();
+            return true;
+        } else if (preference == mBatteryStyle) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mBatteryStyle.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(
+                resolver, Settings.System.STATUS_BAR_BATTERY_STYLE, value,
+                UserHandle.USER_CURRENT);
+            mBatteryStyle.setSummary(
+                    mBatteryStyle.getEntries()[index]);
+            return true;
         } else if (preference == mBatteryPercent) {
             int value = Integer.parseInt((String) newValue);
             int index = mBatteryPercent.findIndexOfValue((String) newValue);
@@ -234,9 +275,30 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 UserHandle.USER_CURRENT);
             mBatteryPercent.setSummary(
                     mBatteryPercent.getEntries()[index]);
+            updateTextSymbol();
+            return true;
+        } else if (preference == mTextSymbol) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mTextSymbol.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(
+                resolver, Settings.System.TEXT_CHARGING_SYMBOL, value,
+                UserHandle.USER_CURRENT);
+            mTextSymbol.setSummary(
+                    mTextSymbol.getEntries()[index]);
             return true;
         }
         return false;
+    }
+
+    private void updateTextSymbol() {
+        ContentResolver resolver = getActivity().getContentResolver();
+        int batteryimage = Settings.System.getIntForUser(resolver,
+                Settings.System.SHOW_BATTERY_IMAGE, 1,
+                UserHandle.USER_CURRENT);
+        int batterypercent = Settings.System.getIntForUser(resolver,
+                Settings.System.SHOW_BATTERY_PERCENT, 0,
+                UserHandle.USER_CURRENT);
+        mTextSymbol.setEnabled(batterypercent < 2 && batteryimage < 1);
     }
 
     private void updatePulldownSummary(int value) {
@@ -310,7 +372,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_BATTERY_IMAGE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.TEXT_CHARGING_SYMBOL, 0, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
