@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.settings.fragments.about.ota.configs;
+package com.crdroid.settings.fragments.about.update.configs;
 
 import android.app.AlarmManager;
 import android.content.Context;
@@ -22,8 +22,8 @@ import com.commonsware.cwac.wakeful.WakefulIntentService;
 
 import android.provider.Settings;
 import com.crdroid.settings.R;
-import com.crdroid.settings.fragments.about.ota.scheduler.OTAListener;
-import com.crdroid.settings.fragments.about.ota.utils.OTAUtils;
+import com.crdroid.settings.fragments.about.update.scheduler.OTAListener;
+import com.crdroid.settings.fragments.about.update.utils.OTAUtils;
 
 import android.content.ContentResolver;
 
@@ -57,6 +57,14 @@ public final class AppConfig {
 
     public static void persistLatestVersion(String latestVersion, Context context) {
         Settings.System.putString(context.getContentResolver(), Settings.System.OTA_LATEST_VERSION, latestVersion);
+    }
+
+    public static String getMaintainer(Context context) {
+        return Settings.System.getString(context.getContentResolver(), Settings.System.OTA_MAINTAINER);
+    }
+
+    public static void persistMaintainer(String maintainer, Context context) {
+        Settings.System.putString(context.getContentResolver(), Settings.System.OTA_MAINTAINER, maintainer);
     }
 
     public static void persistLastCheck(Context context) {

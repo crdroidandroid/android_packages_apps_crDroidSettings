@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.settings.fragments.about.ota.utils;
+package com.crdroid.settings.fragments.about.update.utils;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,7 +22,7 @@ import android.os.SystemProperties;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.crdroid.settings.fragments.about.ota.configs.OTAConfig;
+import com.crdroid.settings.fragments.about.update.configs.OTAConfig;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -98,7 +98,9 @@ public final class OTAUtils {
 
     public static void launchUrl(String url, Context context) {
         if (!url.isEmpty() && context != null) {
-            context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            context.startActivity(intent);
         }
     }
 }

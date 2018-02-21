@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -70,13 +70,13 @@
         android:fragment="com.crdroid.settings.fragments.about.Maintainers"
         settings:allowDividerAbove="false" />
 
-    <!-- crDroid OTA -->
+    <!-- crDroid OTA update -->
     <PreferenceScreen
-        android:key="crdroid_ota"
+        android:key="crdroid_update"
         android:icon="@drawable/ic_update"
         android:title="@string/ota_crdroid_title"
         android:summary="@string/ota_crdroid_summary"
-        android:fragment="com.crdroid.settings.fragments.about.OTA"
+        android:fragment="com.crdroid.settings.fragments.about.Update"
         settings:allowDividerAbove="false" />
 
     <!-- crDroid Drill -->

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.settings.fragments.about.ota.configs;
+package com.crdroid.settings.fragments.about.update.configs;
 
 import android.content.Context;
 
-import com.crdroid.settings.fragments.about.ota.xml.OTALink;
-import com.crdroid.settings.fragments.about.ota.xml.OTAParser;
-import com.crdroid.settings.fragments.about.ota.utils.OTAUtils;
+import com.crdroid.settings.fragments.about.update.xml.OTALink;
+import com.crdroid.settings.fragments.about.update.xml.OTAParser;
+import com.crdroid.settings.fragments.about.update.utils.OTAUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -36,7 +36,7 @@ import java.util.List;
 
 public class LinkConfig {
 
-    private static final String FILENAME = "links_conf";
+    private static final String FILENAME = "update_links_config";
 
     private static LinkConfig mInstance;
     private List<OTALink> mLinks;

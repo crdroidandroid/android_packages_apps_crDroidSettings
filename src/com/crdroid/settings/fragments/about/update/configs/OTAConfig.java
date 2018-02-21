@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.settings.fragments.about.ota.configs;
+package com.crdroid.settings.fragments.about.update.configs;
 
 import android.content.Context;
 
-import com.crdroid.settings.fragments.about.ota.utils.OTAUtils;
+import com.crdroid.settings.fragments.about.update.utils.OTAUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,10 +27,9 @@ import java.util.Properties;
 
 public class OTAConfig extends Properties {
 
-    private final static String FILENAME = "ota_conf";
+    private final static String FILENAME = "update_config";
 
     private final static String OTA_URL = "ota_url";
-    private final static String RELEASE_TYPE = "release_type";
 
     private final static String DEVICE_NAME = "device_name";
 
@@ -60,10 +59,6 @@ public class OTAConfig extends Properties {
 
     public String getOtaUrl() {
         return getProperty(OTAConfig.OTA_URL, "");
-    }
-
-    public String getReleaseType() {
-        return getProperty(OTAConfig.RELEASE_TYPE, "Stable");
     }
 
     public String getVersionSource() {

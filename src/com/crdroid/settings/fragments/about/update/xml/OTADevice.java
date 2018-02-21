@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.settings.fragments.about.ota.xml;
+package com.crdroid.settings.fragments.about.update.xml;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +22,8 @@ public class OTADevice {
 
     private List<OTALink> mLinks;
     private String mLatestVersion;
+    private String mMaintainer;
+    private boolean mDeviceSupported;
 
     public OTADevice() {
         mLinks = new ArrayList<>();
@@ -41,5 +43,21 @@ public class OTADevice {
 
     public String getLatestVersion() {
         return mLatestVersion;
+    }
+
+    public void setMaintainer(String maintainer) {
+        this.mMaintainer = maintainer;
+    }
+
+    public String getMaintainer() {
+        return mMaintainer;
+    }
+
+    public void setDeviceFound(boolean supported) {
+        this.mDeviceSupported = supported;
+    }
+
+    public boolean isDeviceSupported() {
+        return mDeviceSupported;
     }
 }

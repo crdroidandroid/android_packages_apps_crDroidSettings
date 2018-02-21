@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.settings.fragments.about.ota.tasks;
+package com.crdroid.settings.fragments.about.update.tasks;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -70,7 +70,7 @@ class NotificationHelper extends ContextWrapper {
                  .setContentTitle(title)
                  .setContentText(body)
                  .setContentIntent(pendingIntent)
-                 .setSmallIcon(R.drawable.ic_notification_ota)
+                 .setSmallIcon(R.drawable.ic_update)
                  .setAutoCancel(true);
     }
 

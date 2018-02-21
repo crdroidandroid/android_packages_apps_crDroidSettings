@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -20,19 +20,25 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
-        android:title="@string/ota_category"
-        settings:allowDividerAbove="false">
+        android:title="@string/ota_category">
 
         <PreferenceScreen
-            android:key="key_rom_info"/>
+            android:key="key_rom_info"
+            android:icon="@drawable/ic_crdroid_logo"/>
+
+        <PreferenceScreen
+            android:key="key_maintainer_info"
+            android:icon="@drawable/ic_account"
+            android:title="@string/maintainer_title"/>
 
         <PreferenceScreen
             android:key="key_check_update"
+            android:icon="@drawable/ic_update"
             android:title="@string/check_update_title"/>
 
         <ListPreference
             android:key="key_update_interval"
-            android:icon="@drawable/ic_notification_ota"
+            android:icon="@drawable/ic_timetable"
             android:title="@string/interval_title"
             android:dialogTitle="@string/interval_title"
             android:entries="@array/interval_entries"
@@ -42,8 +48,27 @@
 
     <PreferenceCategory
         android:key="category_links"
-        android:title="@string/links_category"
-        settings:allowDividerAbove="false">
+        android:title="@string/links_category">
+
+        <PreferenceScreen
+            android:key="download"
+            android:icon="@drawable/ic_download"
+            android:visibility="gone"/>
+
+        <PreferenceScreen
+            android:key="changelog"
+            android:icon="@drawable/ic_changelog"
+            android:visibility="gone"/>
+
+        <PreferenceScreen
+            android:key="gapps"
+            android:icon="@drawable/ic_google"
+            android:visibility="gone"/>
+
+        <PreferenceScreen
+            android:key="forum"
+            android:icon="@drawable/ic_forum"
+            android:visibility="gone"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

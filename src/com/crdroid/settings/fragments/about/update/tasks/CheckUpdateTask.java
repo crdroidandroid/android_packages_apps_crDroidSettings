@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.settings.fragments.about.ota.tasks;
+package com.crdroid.settings.fragments.about.update.tasks;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -26,16 +26,16 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 
-import com.crdroid.settings.fragments.about.OTA;
-import com.crdroid.settings.fragments.about.ota.configs.AppConfig;
-import com.crdroid.settings.fragments.about.ota.configs.LinkConfig;
-import com.crdroid.settings.fragments.about.ota.configs.OTAConfig;
-import com.crdroid.settings.fragments.about.ota.configs.OTAVersion;
-import com.crdroid.settings.fragments.about.ota.dialogs.WaitDialogHandler;
-import com.crdroid.settings.fragments.about.ota.tasks.NotificationHelper;
-import com.crdroid.settings.fragments.about.ota.utils.OTAUtils;
-import com.crdroid.settings.fragments.about.ota.xml.OTADevice;
-import com.crdroid.settings.fragments.about.ota.xml.OTAParser;
+import com.crdroid.settings.fragments.about.Update;
+import com.crdroid.settings.fragments.about.update.configs.AppConfig;
+import com.crdroid.settings.fragments.about.update.configs.LinkConfig;
+import com.crdroid.settings.fragments.about.update.configs.OTAConfig;
+import com.crdroid.settings.fragments.about.update.configs.OTAVersion;
+import com.crdroid.settings.fragments.about.update.dialogs.WaitDialogHandler;
+import com.crdroid.settings.fragments.about.update.tasks.NotificationHelper;
+import com.crdroid.settings.fragments.about.update.utils.OTAUtils;
+import com.crdroid.settings.fragments.about.update.xml.OTADevice;
+import com.crdroid.settings.fragments.about.update.xml.OTAParser;
 import com.crdroid.settings.R;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -82,8 +82,7 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
                 String otaUrl = OTAConfig.getInstance(mContext).getOtaUrl();
                 InputStream is = OTAUtils.downloadURL(otaUrl);
                 if (is != null) {
-                    final String releaseType = OTAConfig.getInstance(mContext).getReleaseType();
-                    device = OTAParser.getInstance().parse(is, deviceName, releaseType);
+                    device = OTAParser.getInstance(mContext).parse(is, deviceName);
                     is.close();
                 }
             } catch (IOException | XmlPullParserException e) {
@@ -98,10 +97,15 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
     protected void onPostExecute(OTADevice device) {
         super.onPostExecute(device);
 
-        if (device == null) {
+        if (!isConnectivityAvailable(mContext)) {
             showToast(R.string.check_update_failed);
+            Update.showLinks(false);
+        } else if (device == null) {
+            showToast(R.string.check_update_failed);
+            Update.showLinks(false);
         } else {
             String latestVersion = device.getLatestVersion();
+            String maintainer = device.getMaintainer();
             boolean updateAvailable = OTAVersion.checkServerVersion(latestVersion, mContext);
             if (updateAvailable) {
                 showNotification(mContext);
@@ -109,11 +113,13 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
                 showToast(R.string.no_update_available);
             }
             AppConfig.persistLatestVersion(latestVersion, mContext);
+            AppConfig.persistMaintainer(maintainer, mContext);
             LinkConfig.persistLinks(device.getLinks(), mContext);
+            Update.showLinks(device.isDeviceSupported() && !device.getLinks().isEmpty());
         }
 
         AppConfig.persistLastCheck(mContext);
-        OTA.updatePreferences(mContext);
+        Update.updatePreferences(mContext);
 
         hideWaitDialog();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.settings.fragments.about.ota.scheduler;
+package com.crdroid.settings.fragments.about.update.scheduler;
 
 import android.content.Intent;
 import android.os.AsyncTask;
 
 import com.commonsware.cwac.wakeful.WakefulIntentService;
-import com.crdroid.settings.fragments.about.ota.tasks.CheckUpdateTask;
-import com.crdroid.settings.fragments.about.ota.utils.OTAUtils;
+import com.crdroid.settings.fragments.about.update.tasks.CheckUpdateTask;
+import com.crdroid.settings.fragments.about.update.utils.OTAUtils;
 
 public class OTAService extends WakefulIntentService {
 

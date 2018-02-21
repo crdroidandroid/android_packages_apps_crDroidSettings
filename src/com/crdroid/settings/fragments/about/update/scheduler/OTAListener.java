@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.settings.fragments.about.ota.scheduler;
+package com.crdroid.settings.fragments.about.update.scheduler;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -24,8 +24,8 @@ import android.net.NetworkInfo;
 import android.os.SystemClock;
 
 import com.commonsware.cwac.wakeful.WakefulIntentService;
-import com.crdroid.settings.fragments.about.ota.configs.AppConfig;
-import com.crdroid.settings.fragments.about.ota.utils.OTAUtils;
+import com.crdroid.settings.fragments.about.update.configs.AppConfig;
+import com.crdroid.settings.fragments.about.update.utils.OTAUtils;
 
 public class OTAListener implements WakefulIntentService.AlarmListener {
 

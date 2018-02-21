@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 crDroid Android Project
+ * Copyright (C) 2017-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,24 +21,24 @@ import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.view.MenuItem;
 
-import com.crdroid.settings.fragments.about.ota.configs.LinkConfig;
-import com.crdroid.settings.fragments.about.ota.dialogs.WaitDialogFragment;
-import com.crdroid.settings.fragments.about.OTA;
+import com.crdroid.settings.fragments.about.update.configs.LinkConfig;
+import com.crdroid.settings.fragments.about.update.dialogs.WaitDialogFragment;
+import com.crdroid.settings.fragments.about.Update;
 
 public class crDroidOTA extends PreferenceActivity implements
         WaitDialogFragment.OTADialogListener, LinkConfig.LinkConfigListener {
 
-    private static final String FRAGMENT_TAG = OTA.class.getName();
-    private OTA mFragment;
+    private static final String FRAGMENT_TAG = Update.class.getName();
+    private Update mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mFragment = (OTA) getFragmentManager().findFragmentByTag(FRAGMENT_TAG);
+        mFragment = (Update) getFragmentManager().findFragmentByTag(FRAGMENT_TAG);
         if (mFragment == null) {
             getFragmentManager().beginTransaction()
-                    .replace(android.R.id.content, new OTA(), FRAGMENT_TAG)
+                    .replace(android.R.id.content, new Update(), FRAGMENT_TAG)
                     .commit();
         }
 

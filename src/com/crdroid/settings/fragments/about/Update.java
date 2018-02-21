@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,98 +16,173 @@
 package com.crdroid.settings.fragments.about;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.PreferenceCategory;
+import android.support.v7.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.crdroid.settings.R;
-import com.crdroid.settings.fragments.about.ota.configs.AppConfig;
-import com.crdroid.settings.fragments.about.ota.configs.LinkConfig;
-import com.crdroid.settings.fragments.about.ota.configs.OTAVersion;
-import com.crdroid.settings.fragments.about.ota.dialogs.WaitDialogFragment;
-import com.crdroid.settings.fragments.about.ota.tasks.CheckUpdateTask;
-import com.crdroid.settings.fragments.about.ota.utils.OTAUtils;
-import com.crdroid.settings.fragments.about.ota.xml.OTALink;
+import com.crdroid.settings.fragments.about.update.configs.AppConfig;
+import com.crdroid.settings.fragments.about.update.configs.LinkConfig;
+import com.crdroid.settings.fragments.about.update.configs.OTAVersion;
+import com.crdroid.settings.fragments.about.update.dialogs.WaitDialogFragment;
+import com.crdroid.settings.fragments.about.update.tasks.CheckUpdateTask;
+import com.crdroid.settings.fragments.about.update.utils.OTAUtils;
+import com.crdroid.settings.fragments.about.update.xml.OTALink;
 import com.android.settings.SettingsPreferenceFragment;
 
 import java.util.List;
 
-public class OTA extends SettingsPreferenceFragment implements
+public class Update extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener,
         WaitDialogFragment.OTADialogListener,
         LinkConfig.LinkConfigListener {
 
     private static final String KEY_ROM_INFO = "key_rom_info";
+    private static final String KEY_MAINTAINER_INFO = "key_maintainer_info";
     private static final String KEY_CHECK_UPDATE = "key_check_update";
     private static final String KEY_UPDATE_INTERVAL = "key_update_interval";
     private static final String CATEGORY_LINKS = "category_links";
 
+    private static final String DOWNLOAD_TAG = "download";
+    private static final String CHANGELOG_TAG = "changelog";
+    private static final String GAPPS_TAG = "gapps";
+    private static final String FORUM_TAG = "forum";
+
     private static PreferenceScreen mRomInfo;
+    private static PreferenceScreen mMaintainerInfo;
     private static PreferenceScreen mCheckUpdate;
     private static ListPreference mUpdateInterval;
     private static PreferenceCategory mLinksCategory;
 
+    private static PreferenceScreen mDownloadLink;
+    private static PreferenceScreen mChangelogLink;
+    private static PreferenceScreen mGappsLink;
+    private static PreferenceScreen mForumLink;
+
+
     private static CheckUpdateTask mTask;
+    private static boolean mShowLinks;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRetainInstance(true);
 
+        loadPreferences(true);
+    }
+
+    private void loadPreferences(boolean force) {
+        Context context = getActivity().getApplicationContext();
+
+        if (getPreferenceScreen() != null)
+            getPreferenceScreen().removeAll();
         addPreferencesFromResource(R.xml.ota_settings);
 
-        Context context = getActivity();
-
         mRomInfo = (PreferenceScreen) getPreferenceScreen().findPreference(KEY_ROM_INFO);
+        mMaintainerInfo = (PreferenceScreen) getPreferenceScreen().findPreference(KEY_MAINTAINER_INFO);
         mCheckUpdate = (PreferenceScreen) getPreferenceScreen().findPreference(KEY_CHECK_UPDATE);
 
         mUpdateInterval = (ListPreference) getPreferenceScreen().findPreference(KEY_UPDATE_INTERVAL);
         mUpdateInterval.setOnPreferenceChangeListener(this);
 
         mLinksCategory = (PreferenceCategory) getPreferenceScreen().findPreference(CATEGORY_LINKS);
+        mDownloadLink = (PreferenceScreen) getPreferenceScreen().findPreference(DOWNLOAD_TAG);
+        mChangelogLink = (PreferenceScreen) getPreferenceScreen().findPreference(CHANGELOG_TAG);
+        mGappsLink = (PreferenceScreen) getPreferenceScreen().findPreference(GAPPS_TAG);
+        mForumLink = (PreferenceScreen) getPreferenceScreen().findPreference(FORUM_TAG);
 
         updatePreferences(context);
-        updateLinks(context, false);
+        updateLinks(force);
     }
 
     public static void updatePreferences(Context context) {
         updateRomInfo(context);
+        updateMaintainerInfo(context);
         updateLastCheckSummary(context);
         updateIntervalSummary(context);
+        updateDownloadLinks(context);
     }
 
-    private void updateLinks(Context context, boolean force) {
+    public static void showLinks(boolean show) {
+        mShowLinks = show;
+    }
+
+    private static void updateDownloadLinks(Context context) {
+        List<OTALink> links = LinkConfig.getInstance().getLinks(context, true);
+
+        if (mLinksCategory == null)
+            return;
+
+        mDownloadLink.setVisible(false);
+        mChangelogLink.setVisible(false);
+        mGappsLink.setVisible(false);
+        mForumLink.setVisible(false);
+
+        for (OTALink link : links) {
+            String id = link.getId();
+
+            if (id.equalsIgnoreCase(DOWNLOAD_TAG)) {
+                mDownloadLink.setTitle(link.getTitle());
+                mDownloadLink.setSummary(link.getDescription());
+                mDownloadLink.setVisible(mShowLinks);
+            } else if (id.equalsIgnoreCase(CHANGELOG_TAG)) {
+                mChangelogLink.setTitle(link.getTitle());
+                mChangelogLink.setSummary(link.getDescription());
+                mChangelogLink.setVisible(mShowLinks);
+            } else if (id.equalsIgnoreCase(GAPPS_TAG)) {
+                mGappsLink.setTitle(link.getTitle());
+                mGappsLink.setSummary(link.getDescription());
+                mGappsLink.setVisible(mShowLinks);
+            } else if (id.equalsIgnoreCase(FORUM_TAG)) {
+                mForumLink.setTitle(link.getTitle());
+                mForumLink.setSummary(link.getDescription());
+                mForumLink.setVisible(mShowLinks);
+            }
+        }
+
+        mLinksCategory.setTitle(mShowLinks ? context.getString(R.string.links_category) : "");
+    }
+
+    private void updateLinks(boolean force) {
+        Context context = getActivity().getApplicationContext();
         List<OTALink> links = LinkConfig.getInstance().getLinks(context, force);
-        boolean removeCat = true;
+        Drawable drawable = context.getDrawable(R.drawable.ic_web);
+        TypedArray ta =
+               context.obtainStyledAttributes(new int[]{android.R.attr.colorControlNormal});
+        drawable.setTint(ta.getColor(0, 0));
 
         if (mLinksCategory == null)
             return;
 
         for (OTALink link : links) {
             String id = link.getId();
-            PreferenceScreen linkPref = (PreferenceScreen) getPreferenceScreen().findPreference(id);
+
+            if (id.equalsIgnoreCase(DOWNLOAD_TAG) ||
+                    id.equalsIgnoreCase(CHANGELOG_TAG) ||
+                    id.equalsIgnoreCase(GAPPS_TAG) ||
+                    id.equalsIgnoreCase(FORUM_TAG)) {
+                continue;
+            }
+            PreferenceScreen linkPref = (PreferenceScreen) getPreferenceScreen().findPreference(id.toLowerCase());
             if (linkPref == null) {
                 linkPref = getPreferenceManager().createPreferenceScreen(context);
-                linkPref.setKey(id);
+                linkPref.setKey(id.toLowerCase());
+                linkPref.setIcon(drawable);
                 mLinksCategory.addPreference(linkPref);
             }
             if (linkPref != null) {
                 String title = link.getTitle();
                 linkPref.setTitle(title.isEmpty() ? id : title);
                 linkPref.setSummary(link.getDescription());
-                removeCat = false;
             }
         }
-        if (removeCat) {
-            mLinksCategory.setTitle("");
-        } else {
-            mLinksCategory.setTitle(context.getResources().getString(R.string.links_category));
-        }
+        mLinksCategory.setTitle(mShowLinks ? context.getString(R.string.links_category) : "");
     }
 
     private static void updateRomInfo(Context context) {
@@ -117,20 +192,31 @@ public class OTA extends SettingsPreferenceFragment implements
         String fullLocalVersion = OTAVersion.getFullLocalVersion(context);
         mRomInfo.setTitle(fullLocalVersion);
 
-        String prefix = context.getResources().getString(R.string.latest_version);
+        String prefix = context.getString(R.string.latest_version);
         String fullLatestVersion = AppConfig.getFullLatestVersion(context);
         if (fullLatestVersion == null || fullLatestVersion.isEmpty()) {
-            fullLatestVersion = context.getResources().getString(R.string.unknown);
+            fullLatestVersion = context.getString(R.string.unknown);
             mRomInfo.setSummary(String.format(prefix, fullLatestVersion));
         } else {
             String shortLocalVersion = OTAVersion.extractVersionFrom(fullLocalVersion, context);
             String shortLatestVersion = OTAVersion.extractVersionFrom(fullLatestVersion, context);
             if (!OTAVersion.compareVersion(shortLatestVersion, shortLocalVersion, context)) {
-                mRomInfo.setSummary(context.getResources().getString(R.string.system_uptodate));
+                mRomInfo.setSummary(context.getString(R.string.system_uptodate));
             } else {
                 mRomInfo.setSummary(String.format(prefix, fullLatestVersion));
             }
         }
+    }
+
+    private static void updateMaintainerInfo(Context context) {
+        if (mMaintainerInfo == null)
+            return;
+
+        String maintainer = AppConfig.getMaintainer(context);
+        if (maintainer == null || maintainer.isEmpty()) {
+            maintainer = context.getString(R.string.maintainer_unknown);
+        }
+        mMaintainerInfo.setSummary(maintainer);
     }
 
     private static void updateLastCheckSummary(Context context) {
@@ -148,9 +234,8 @@ public class OTA extends SettingsPreferenceFragment implements
 
     @Override
      public void onResume() {
-        updatePreferences(getActivity());
-        updateLinks(getActivity(), false);
         super.onResume();
+        loadPreferences(false);
     }
 
     @Override
@@ -163,7 +248,7 @@ public class OTA extends SettingsPreferenceFragment implements
 
     @Override
     public void onConfigChange() {
-        updateLinks(getActivity(), true);
+        loadPreferences(false);
     }
 
     @Override
@@ -173,13 +258,12 @@ public class OTA extends SettingsPreferenceFragment implements
         if (preference == mUpdateInterval)
             return super.onPreferenceTreeClick(preference);
 
-        Context context = getActivity();
+        Context context = getActivity().getApplicationContext();
         if (preference == mCheckUpdate) {
             mTask = CheckUpdateTask.getInstance(false);
             if (!mTask.getStatus().equals(AsyncTask.Status.RUNNING)) {
                 mTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, context);
             }
-            updateLinks(context, true);
             return true;
         }
 
@@ -193,7 +277,7 @@ public class OTA extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
-        Context context = getActivity();
+        Context context = getActivity().getApplicationContext();
         if (preference == mUpdateInterval) {
             AppConfig.persistUpdateIntervalIndex(Integer.valueOf((String) value), context);
             updateIntervalSummary(context);
