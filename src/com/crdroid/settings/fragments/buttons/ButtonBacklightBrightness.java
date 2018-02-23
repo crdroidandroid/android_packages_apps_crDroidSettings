@@ -48,7 +48,7 @@ public class ButtonBacklightBrightness extends CustomDialogPref<AlertDialog> imp
 
     public static final String KEY_BUTTON_BACKLIGHT = "pre_navbar_button_backlight";
 
-    private BrightnessControl mButtonBrightness;
+    private ButtonBrightnessControl mButtonBrightness;
     private BrightnessControl mKeyboardBrightness;
     private BrightnessControl mActiveControl;
 
@@ -81,8 +81,10 @@ public class ButtonBacklightBrightness extends CustomDialogPref<AlertDialog> imp
             int defaultBrightness = context.getResources().getInteger(
                     com.android.internal.R.integer.config_buttonBrightnessSettingDefault);
 
-            mButtonBrightness = new BrightnessControl(
-                    LineageSettings.Secure.BUTTON_BRIGHTNESS, isSingleValue, defaultBrightness);
+            mButtonBrightness = new ButtonBrightnessControl(
+                    LineageSettings.Secure.BUTTON_BRIGHTNESS,
+                    LineageSettings.System.BUTTON_BACKLIGHT_ONLY_WHEN_PRESSED,
+                    isSingleValue, defaultBrightness);
             mActiveControl = mButtonBrightness;
         }
 
@@ -480,5 +482,40 @@ public class ButtonBacklightBrightness extends CustomDialogPref<AlertDialog> imp
                 com.android.internal.R.integer.config_buttonBrightnessSettingDefault);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.BUTTON_BRIGHTNESS, defaultBrightness, UserHandle.USER_CURRENT);
+    }
+
+    private class ButtonBrightnessControl extends BrightnessControl {
+        private String mOnlyWhenPressedSetting;
+        private CheckBox mOnlyWhenPressedCheckBox;
+
+        public ButtonBrightnessControl(String brightnessSetting, String onlyWhenPressedSetting,
+                boolean singleValue, int defaultBrightness) {
+            super(brightnessSetting, singleValue, defaultBrightness);
+            mOnlyWhenPressedSetting = onlyWhenPressedSetting;
+        }
+
+       @Override
+        public void init(ViewGroup container) {
+            super.init(container);
+
+            mOnlyWhenPressedCheckBox =
+                    (CheckBox) container.findViewById(R.id.backlight_only_when_pressed_switch);
+            mOnlyWhenPressedCheckBox.setChecked(isOnlyWhenPressedEnabled());
+            mOnlyWhenPressedCheckBox.setOnCheckedChangeListener(this);
+        }
+
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            super.onCheckedChanged(buttonView, isChecked);
+            setOnlyWhenPressedEnabled(mOnlyWhenPressedCheckBox.isChecked());
+        }
+
+        public boolean isOnlyWhenPressedEnabled() {
+            return LineageSettings.System.getInt(mResolver, mOnlyWhenPressedSetting, 0) == 1;
+        }
+
+        public void setOnlyWhenPressedEnabled(boolean enabled) {
+            LineageSettings.System.putInt(mResolver, mOnlyWhenPressedSetting, enabled ? 1 : 0);
+        }
     }
 }

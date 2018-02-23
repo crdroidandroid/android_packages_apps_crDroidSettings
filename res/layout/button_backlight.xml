@@ -22,19 +22,34 @@
     <LinearLayout
         android:id="@+id/button_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
 
         <LinearLayout
             android:id="@+id/checkbox_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:paddingHorizontal="10dp">
 
             <CheckBox
                 android:id="@+id/backlight_switch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/button_backlight_enabled" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp">
+
+            <CheckBox
+                android:id="@+id/backlight_only_when_pressed_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_backlight_only_when_pressed_title" />
 
         </LinearLayout>
 
