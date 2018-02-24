@@ -24,13 +24,10 @@
         android:key="style"
         android:icon="@drawable/ic_theme_light_dark" />
 
-    <PreferenceScreen
-        android:key="expanded_desktop"
-        android:icon="@drawable/ic_expanded"
-        android:title="@string/expanded_desktop_title"
-        android:summary="@string/expanded_desktop_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.ExpandedDesktop"
-        android:persistent="false" />
+    <!-- Expanded Desktop -->
+    <org.lineageos.internal.lineageparts.LineagePartsPreference
+        android:key="expanded_desktop_settings"
+        android:icon="@drawable/ic_expanded" />
 
     <PreferenceScreen
         android:key="doze_fragment"
