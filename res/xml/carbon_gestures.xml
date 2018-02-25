@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2017 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/carbon_gesture_preference_title">
+
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
+        android:key="carbon_gestures_fingers"
+        android:title="@string/carbon_gestures_fingers_title"
+        android:max="4"
+        settings:min="2"
+        settings:units="@string/carbon_gestures_fingers_unit"
+        android:persistent="false" />
+
+    <ListPreference
+        android:key="carbon_gestures_right"
+        android:entries="@array/carbon_gestures_button_entries"
+        android:entryValues="@array/carbon_gestures_button_values"
+        android:defaultValue="0"
+        android:summary="%s"
+        android:title="@string/carbon_gestures_right_title" />
+
+    <ListPreference
+        android:key="carbon_gestures_left"
+        android:entries="@array/carbon_gestures_button_entries"
+        android:entryValues="@array/carbon_gestures_button_values"
+        android:defaultValue="0"
+        android:summary="%s"
+        android:title="@string/carbon_gestures_left_title" />
+
+    <ListPreference
+        android:key="carbon_gestures_up"
+        android:entries="@array/carbon_gestures_button_entries"
+        android:entryValues="@array/carbon_gestures_button_values"
+        android:defaultValue="0"
+        android:summary="%s"
+        android:title="@string/carbon_gestures_up_title" />
+
+    <ListPreference
+        android:key="carbon_gestures_down"
+        android:entries="@array/carbon_gestures_button_entries"
+        android:entryValues="@array/carbon_gestures_button_values"
+        android:defaultValue="0"
+        android:summary="%s"
+        android:title="@string/carbon_gestures_down_title" />
+
+</PreferenceScreen>

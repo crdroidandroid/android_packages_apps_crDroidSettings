@@ -20,6 +20,13 @@
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     android:title="@string/gestures_title" >
 
+    <PreferenceScreen
+        android:key="carbon_gestures"
+        android:fragment="com.crdroid.settings.fragments.ui.CarbonGesturesSettings"
+        android:title="@string/carbon_gesture_preference_title"
+        android:summary="@string/carbon_gestures_summary"
+        android:persistent="false" />
+
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="touchscreen_gesture_settings"
         lineage:requiresFeature="lineagehardware:FEATURE_TOUCHSCREEN_GESTURES" />
