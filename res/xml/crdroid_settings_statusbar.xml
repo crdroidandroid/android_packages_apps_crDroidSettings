@@ -118,25 +118,16 @@
     <PreferenceCategory
         android:title="@string/status_bar_battery_category_title">
 
-        <!-- Show Battery image on Statusbar -->
-        <SwitchPreference
-            android:key="show_battery_image"
-            android:icon="@drawable/ic_battery"
-            android:title="@string/battery_image_title"
-            android:summary="@string/battery_image_summary"
-            android:defaultValue="true"/>
-
         <!-- Battery styles -->
         <ListPreference
             android:key="status_bar_battery_style"
-            android:icon="@drawable/ic_battery_unknown"
+            android:icon="@drawable/ic_battery"
             android:title="@string/status_bar_battery_style_title"
             android:summary="%s"
             android:dialogTitle="@string/status_bar_battery_style_title"
             android:entries="@array/status_bar_battery_style_entries"
             android:entryValues="@array/status_bar_battery_style_values"
-            android:defaultValue="0"
-            android:dependency="show_battery_image" />
+            android:defaultValue="0" />
 
         <!-- Show Battery percent on Statusbar -->
        <ListPreference
