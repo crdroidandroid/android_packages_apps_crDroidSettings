@@ -18,6 +18,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App Title -->
   <string name="crdroid_settings_title">crDroid 설정</string>
+  <string name="crdroid_settings_summary">커스텀 고급설정</string>
   <string name="crdroid_personalization_category">개인 설정</string>
   <string name="crdroid_addons_category">부가 기능들</string>
   <!-- Personalization Categories -->
@@ -110,7 +111,7 @@
   <string name="lockscreen_misc_category">기타 설정</string>
   <!-- Lockscreen visualizer -->
   <string name="music_visualizer_title">Music visualizer</string>
-  <string name="music_visualizer_summary">Display music visualizer when available</string>
+  <string name="music_visualizer_summary">음악 시각화 프로그램 표시(가능한 경우)</string>
   <!-- Media art -->
   <string name="media_art_title">미디어 커버 아트</string>
   <string name="media_art_summary">미디어 커버 아트 표시 (사용가능한 경우)</string>
@@ -123,7 +124,7 @@
   <string name="hide_lockscreen_alarm_summary">알람 표시 설정</string>
   <!-- Lockscreen notif count -->
   <string name="lockscreen_maxnotif_title">알림 카운트</string>
-  <string name="lockscreen_maxnotif_sumary">Enable adjustment of notifications</string>
+  <string name="lockscreen_maxnotif_sumary">알림 갯수 사용자 지정 활성</string>
   <string name="lockscreen_maxnotif_config">최대 허용 알림</string>
   <!-- Lockscreen tap-to sleep -->
   <string name="double_tap_sleep_anywhere_title">잠금 화면을 탭하여 절전 모드로 들어갑니다.</string>
@@ -133,13 +134,13 @@
   <string name="lockscreen_enable_power_menu_summary">잠금 화면에서 전원 메뉴 표시</string>
   <!-- Quick settings on secure lockscreen -->
   <string name="lockscreen_enable_qs_title">빠른 설정</string>
-  <string name="lockscreen_enable_qs_summary">Allow accessing quick settings and swipe shortcuts on secure lock screen</string>
+  <string name="lockscreen_enable_qs_summary">잠금 화면에서 빠른 설정에 액세스하고 바로 가기를 스 와이프 할 수 있습니다.</string>
   <!-- Screenshot Sound  -->
   <string name="screenshot_sound_title">스크린샷 소리</string>
-  <string name="screenshot_sound_summary">Toggle sound played while taking screenshot</string>
+  <string name="screenshot_sound_summary">스크린 샷을 찍을 때에 사운드 소리를 설정합니다</string>
   <!-- Volume Steps -->
   <string name="volume_steps_title">불륨 단계</string>
-  <string name="volume_steps_summary">Customize no. of steps in volume panel</string>
+  <string name="volume_steps_summary">볼륨 패널에 단계를 조정합니다</string>
   <string name="volume_steps_alarm_title">볼륨 단계: 알람</string>
   <string name="volume_steps_dtmf_title">볼륨 단계: DTMF</string>
   <string name="volume_steps_music_title">음량 단계: 음악</string>
@@ -302,7 +303,7 @@
   <string name="navbar_interface_title">인터페이스</string>
   <string name="navbar_size">내비게이션 바 크기</string>
   <string name="navbar_mode">내비게이션 바 모드</string>
-  <string name="navbar_mode_summary">Smartbar 또는 별거를 활성화 하려면 선택</string>
+  <string name="navbar_mode_summary">Smartbar 또는 fing를 활성화 하려면 선택</string>
   <string name="navbar_visibility">네비게이션 바</string>
   <string name="navbar_visibility_summary">탐색 모음 표시 전환</string>
   <string name="navigationbar_settings_title">네비게이션 바</string>
@@ -429,7 +430,7 @@
   <!-- SmartBar -->
   <string name="smartbar_category">스마트바</string>
   <string name="smartbar_settings_title">스마트바 설정</string>
-  <string name="smartbar_settings_summary">Fully-customizable navigation bar</string>
+  <string name="smartbar_settings_summary">스마트바 사용자 설정모음</string>
   <string name="smartbar_editor_title">편집모드 시작</string>
   <string name="smartbar_editor_summary">스마트바 버튼 편집</string>
   <string name="smartbar_help_policy_notice_summary">When in editor mode, medium press and drag a button to change its position or long press a button to show the edit menu. Button position may be changed while menu is showing.\n\nSetting a double tap action will delay single tap a bit.</string>
@@ -505,6 +506,7 @@
   <string name="status_bar_battery_style_icon_landscape">가로 아이콘</string>
   <string name="status_bar_battery_style_circle">원 아이콘</string>
   <string name="status_bar_battery_style_dotted_circle">점선 원</string>
+  <string name="status_bar_battery_style_square">스퀘어</string>
   <string name="status_bar_battery_style_solid">두껍게</string>
   <string name="status_bar_battery_style_text">텍스트</string>
   <string name="status_bar_battery_style_hidden">숨김</string>
@@ -727,15 +729,15 @@
   <!-- About crDroid -->
   <string name="about_crdroid">crDroid에 관하여</string>
   <!-- Share crDroid -->
-  <string name="share_crdroid_title">Share crDroid</string>
-  <string name="share_crdroid_summary">Let others know about crDroid</string>
+  <string name="share_crdroid_title">CrDroid 공유</string>
+  <string name="share_crdroid_summary">CrDroid에 대해 다른 사람들에게 알리기</string>
   <string name="share_message">Check out what #crDroid is all about @ https://plus.google.com/communities/118297646046960923906</string>
-  <string name="share_chooser_title">Share crDroid</string>
+  <string name="share_chooser_title">CrDroid 공유</string>
   <!-- Sites crDroid -->
   <string name="crdroid_source_title">GitHub</string>
   <string name="crdroid_source_summary">We love open source, check us out</string>
   <string name="crdroid_google_plus_title">Google+</string>
-  <string name="crdroid_google_plus_summary">Join us on G+ for quick updates and support</string>
+  <string name="crdroid_google_plus_summary">빠른 업데이트 및 지원을 위해 G +에 가입하십시오.</string>
   <!-- Maintainers -->
   <string name="maintainers_crdroid_title">기기 및 메인테이너</string>
   <string name="maintainers_crdroid_summary">지원 되는 장치 목록 및 그들의 공식적인 관리자</string>
@@ -893,7 +895,7 @@
   <string name="systemui_recents_mem_display_text_color">메모리바 텍스트 색상</string>
   <!-- Recents panel settings -->
   <string name="show_clear_all_recents_button_title">모두 지우기</string>
-  <string name="show_clear_all_recents_button_summary">Toggle clear all floating button in recent app view</string>
+  <string name="show_clear_all_recents_button_summary">최근 앱보기에서 모든 지우기 버튼 활성화</string>
   <string name="recents_clear_all_location_title">모두 지우기 버튼 위치</string>
   <string name="recents_clear_all_location_top_right">오른쪽 상단</string>
   <string name="recents_clear_all_location_top_left">왼쪽 상단</string>
@@ -903,7 +905,7 @@
   <string name="recents_clear_all_location_bottom_center">하단 중앙</string>
   <!-- Dynamic Navbar -->
   <string name="navbar_dynamic_title">동적 내비게이션 바 색상</string>
-  <string name="navbar_dynamic_summary">Adapt navbar color to match foreground running app</string>
+  <string name="navbar_dynamic_summary">포 그라운드 앱 색상과 일치하도록 설정</string>
   <string name="restart_app_required">Restart respective app to see effect</string>
   <!-- Scrolling Animation Controls -->
   <string name="scrolling_title">스크롤 애니메이션</string>
@@ -1109,7 +1111,7 @@
   <string name="wifi_activity_arrows_summary">데이터/WiFi 활동 표시기를 표시합니다</string>
   <!-- The Drill -->
   <string name="drill_title">The Drill</string>
-  <string name="drill_summary">Found a bug? Ran into an issue?</string>
+  <string name="drill_summary">버그를 찾았나요? 문제가 생겼나요?</string>
   <!-- Hide Statusbar on Lockscreen -->
   <string name="lockscreen_hide_status_bar_title">상태 표시줄</string>
   <string name="lockscreen_hide_status_bar_summary">상태표시줄에 표시</string>
@@ -1158,7 +1160,7 @@
   <string name="disable_fc_notifications_summary">Hide all force close notification dialogs</string>
   <!-- OmniJaws -->
   <string name="omnijaws_settings_title">날씨 서비스</string>
-  <string name="omnijaws_settings_summary">Customize service settings and icon pack</string>
+  <string name="omnijaws_settings_summary">서비스 설정 및 아이콘 사용자 지정</string>
   <string name="weather_config_title">서비스 설정</string>
   <string name="weather_config_summary">Configure service to enable weather details</string>
   <string name="weather_icon_pack_title">날씨 아이콘 팩</string>
@@ -1192,7 +1194,7 @@
   <string name="status_bar_show_image">이미지만 표시</string>
   <string name="status_bar_weather_image_color_title">상태 이미지</string>
   <string name="volte_icon_title">VoLTE 아이콘</string>
-  <string name="volte_icon_summary">Display VoLTE icon when available</string>
+  <string name="volte_icon_summary">VoLTE 아이콘을 표시합니다</string>
   <!-- Ad Away -->
   <string name="adaway_title">광고 차단</string>
   <string name="adaway_summary">원치않는 광고를 차단합니다 (루트권한 필요)</string>
@@ -1239,7 +1241,7 @@
   <string name="lockscreen_battery_info_summary">충전 중일 때 잠금 화면에 충전기의 최대 전류-전압과 배터리의 온도를 표시합니다</string>
   <!-- Recents lock icon -->
   <string name="recents_lock_icon_title">작업 고정</string>
-  <string name="recents_lock_icon_summary">Toggle lock task icon in recent app view</string>
+  <string name="recents_lock_icon_summary">최근 앱보기에서 잠금 작업 아이콘 표시</string>
   <!-- AOSP Recents Grid -->
   <string name="recents_use_grid_title">Grid-style recents</string>
   <string name="recents_use_grid_summary">Toggle grid-style recents</string>
@@ -1322,16 +1324,16 @@
   <string name="statusbar_doubletap_sleep_title">잠금 화면을 탭하여 절전 모드로 들어갑니다.</string>
   <string name="statusbar_doubletap_sleep_summary">상태 표시줄을 두번 두드려 화면 끄기</string>
   <!-- Auto USB mode chooser -->
-  <string name="auto_usb_mode_chooser_title">Auto USB mode chooser</string>
-  <string name="auto_usb_mode_chooser_summary">Pop-up usb mode chooser when device connected to PC</string>
+  <string name="auto_usb_mode_chooser_title">자동 USB 모드 선택</string>
+  <string name="auto_usb_mode_chooser_summary">장치가 PC에 연결될 경우 팝업으로 USB 연결 알림</string>
   <!-- Vibrate on plugged -->
   <string name="vibration_on_charge_state_changed_title">터치 시 진동</string>
-  <string name="vibration_on_charge_state_changed_summary">Vibrate device when device connected to power source</string>
+  <string name="vibration_on_charge_state_changed_summary">장치가 전원에 연결될 경우 진동이 울립니다</string>
   <!-- Recents deep clear -->
   <string name="recents_deep_clear_title">Deep clear</string>
-  <string name="recents_deep_clear_summary">Clear background process when using dismiss icon to dismiss task from recents view. This may lead unitentional results. Some apps may stop working until you restart them.</string>
+  <string name="recents_deep_clear_summary">(주의) 단정적 결과를 가져올 수 있습니다. 일부 앱은 다시 시작할 때까지 작동을 멈출 수 있습니다.</string>
   <string name="qs_tile_title_visibility_title">Tile title</string>
-  <string name="qs_tile_title_visibility_summary">Display title below each tile</string>
+  <string name="qs_tile_title_visibility_summary">각 타일 아래에 상세 표시</string>
   <!-- Dark SysUI Theme -->
   <string name="dark_theme_title">테마</string>
   <string name="dark_theme_automatic">자동</string>
@@ -1348,7 +1350,7 @@
   <string name="advanced_reboot_summary">잠금 해제했을 때 전원 메뉴에 다운로드 모드, 복구 모드 진입 옵션 생성</string>
   <!-- Allow lights in zen mode -->
   <string name="zen_allow_lights">활성화</string>
-  <string name="zen_allow_lights_summary">Permit pulsing the light when Do Not Disturb is active</string>
+  <string name="zen_allow_lights_summary">방해 금지가 활성화되어있을 때 표시 등 켜기 허용 합니다</string>
   <string name="light_brightness_category">밝기 설정</string>
   <!-- Suppress notification sound -->
   <string name="notification_sound_vib_screen_on_title">화면이 켜져있을때 사운드와 진동</string>
@@ -1357,7 +1359,7 @@
   <string name="notification_sound_vib_screen_on_nomedia">미디어를 재생 하는 경우</string>
   <!-- Ambient Ticker -->
   <string name="force_ambient_for_media_pref_title">음악 알림</string>
-  <string name="force_ambient_for_media_pref_summary">Configure the Ambient music ticker</string>
+  <string name="force_ambient_for_media_pref_summary">음악 티커 구성</string>
   <string name="ambient_ticker_footer">This feature allows for the ability to show the current music track info on the lockscreen with or without Ambient display enabled.\n\nYou can select from two layouts, normal and minimal. While this feature takes advantage of ambient display, it does not depend on it. It can be triggered without having ambient display enabled by using the (forced) options.\n\nNormal view includes the lockscreen clock, date and ticker.\n\nMinimal view includes just the ticker at the center of the screen.</string>
   <string name="force_ambient_for_media_title">레이아웃 선택</string>
   <string name="force_ambient_for_media_off">비활성화</string>
@@ -1375,4 +1377,13 @@
   <string name="battery_percent_stock">기본 동작</string>
   <string name="battery_percent_always">항상 표시</string>
   <string name="battery_percent_never">표시하지 않음</string>
+  <string name="twilight_mode_location_dialog">위치 사용 않함</string>
+  <string name="twilight_mode_location_disabled">위치 접근이 비활성화 됨</string>
+  <string name="twilight_mode_location_enable">활성화</string>
+  <!-- Quick unlock -->
+  <string name="unlock_quick_unlock_control_title">빠른 잠금해제</string>
+  <string name="unlock_quick_unlock_control_summary">PIN/비밀번호를 올바르게 입력하면 자동으로 잠금을 해제합니다</string>
+  <string name="background_processes_settings_title">백그라운드 프로세스</string>
+  <!-- App details: open play store link if app is user installed -->
+  <string name="app_play_store">Google 플레이</string>
 </resources>
