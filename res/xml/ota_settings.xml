@@ -69,6 +69,20 @@
             android:key="forum"
             android:icon="@drawable/ic_forum"
             android:visibility="gone"/>
+
+        <PreferenceScreen
+            android:key="paypal"
+            android:icon="@drawable/ic_paypal"
+            android:visibility="gone"/>
+
+        <PreferenceScreen
+            android:key="telegram"
+            android:icon="@drawable/ic_telegram"
+            android:visibility="gone"/>
     </PreferenceCategory>
 
+    <PreferenceScreen
+        android:title=""
+        android:selectable="false"
+        settings:allowDividerAbove="false" />
 </PreferenceScreen>

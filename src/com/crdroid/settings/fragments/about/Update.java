@@ -54,6 +54,8 @@ public class Update extends SettingsPreferenceFragment implements
     private static final String CHANGELOG_TAG = "changelog";
     private static final String GAPPS_TAG = "gapps";
     private static final String FORUM_TAG = "forum";
+    private static final String PAYPAL_TAG = "paypal";
+    private static final String TELEGRAM_TAG = "telegram";
 
     private static PreferenceScreen mRomInfo;
     private static PreferenceScreen mMaintainerInfo;
@@ -65,7 +67,8 @@ public class Update extends SettingsPreferenceFragment implements
     private static PreferenceScreen mChangelogLink;
     private static PreferenceScreen mGappsLink;
     private static PreferenceScreen mForumLink;
-
+    private static PreferenceScreen mPayPalLink;
+    private static PreferenceScreen mTelegramLink;
 
     private static CheckUpdateTask mTask;
     private static boolean mShowLinks;
@@ -96,6 +99,8 @@ public class Update extends SettingsPreferenceFragment implements
         mChangelogLink = (PreferenceScreen) getPreferenceScreen().findPreference(CHANGELOG_TAG);
         mGappsLink = (PreferenceScreen) getPreferenceScreen().findPreference(GAPPS_TAG);
         mForumLink = (PreferenceScreen) getPreferenceScreen().findPreference(FORUM_TAG);
+        mPayPalLink = (PreferenceScreen) getPreferenceScreen().findPreference(PAYPAL_TAG);
+        mTelegramLink = (PreferenceScreen) getPreferenceScreen().findPreference(TELEGRAM_TAG);
 
         updatePreferences(context);
         updateLinks(force);
@@ -123,6 +128,8 @@ public class Update extends SettingsPreferenceFragment implements
         mChangelogLink.setVisible(false);
         mGappsLink.setVisible(false);
         mForumLink.setVisible(false);
+        mPayPalLink.setVisible(false);
+        mTelegramLink.setVisible(false);
 
         for (OTALink link : links) {
             String id = link.getId();
@@ -143,6 +150,14 @@ public class Update extends SettingsPreferenceFragment implements
                 mForumLink.setTitle(link.getTitle());
                 mForumLink.setSummary(link.getDescription());
                 mForumLink.setVisible(mShowLinks);
+            } else if (id.equalsIgnoreCase(PAYPAL_TAG)) {
+                mPayPalLink.setTitle(link.getTitle());
+                mPayPalLink.setSummary(link.getDescription());
+                mPayPalLink.setVisible(mShowLinks);
+            } else if (id.equalsIgnoreCase(TELEGRAM_TAG)) {
+                mTelegramLink.setTitle(link.getTitle());
+                mTelegramLink.setSummary(link.getDescription());
+                mTelegramLink.setVisible(mShowLinks);
             }
         }
 
@@ -166,7 +181,9 @@ public class Update extends SettingsPreferenceFragment implements
             if (id.equalsIgnoreCase(DOWNLOAD_TAG) ||
                     id.equalsIgnoreCase(CHANGELOG_TAG) ||
                     id.equalsIgnoreCase(GAPPS_TAG) ||
-                    id.equalsIgnoreCase(FORUM_TAG)) {
+                    id.equalsIgnoreCase(FORUM_TAG) ||
+                    id.equalsIgnoreCase(PAYPAL_TAG) ||
+                    id.equalsIgnoreCase(TELEGRAM_TAG)) {
                 continue;
             }
             PreferenceScreen linkPref = (PreferenceScreen) getPreferenceScreen().findPreference(id.toLowerCase());

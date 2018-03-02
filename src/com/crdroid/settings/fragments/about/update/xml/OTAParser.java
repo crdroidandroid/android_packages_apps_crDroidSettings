@@ -36,6 +36,8 @@ public class OTAParser {
     private static final String DOWNLOAD_TAG = "download";
     private static final String GAPPS_TAG = "gapps";
     private static final String FORUM_TAG = "forum";
+    private static final String PAYPAL_TAG = "paypal";
+    private static final String TELEGRAM_TAG = "telegram";
     private static final String URL_TAG = "url";
 
     public static final String ID = "id";
@@ -130,7 +132,9 @@ public class OTAParser {
             } else if (mContext != null && (tagName.equalsIgnoreCase(CHANGELOG_TAG) ||
                     tagName.equalsIgnoreCase(DOWNLOAD_TAG) ||
                     tagName.equalsIgnoreCase(GAPPS_TAG) ||
-                    tagName.equalsIgnoreCase(FORUM_TAG))) {
+                    tagName.equalsIgnoreCase(FORUM_TAG) ||
+                    tagName.equalsIgnoreCase(PAYPAL_TAG) ||
+                    tagName.equalsIgnoreCase(TELEGRAM_TAG))) {
                 OTALink link = readLink(parser, tagName);
                 mDevice.addLink(link);
             } else if (isUrlTag(tagName)) {
@@ -169,6 +173,12 @@ public class OTAParser {
         } else if (tag.equalsIgnoreCase(FORUM_TAG)) {
             title = mContext.getResources().getString(R.string.forum_title);
             description = mContext.getResources().getString(R.string.forum_summary);
+        } else if (tag.equalsIgnoreCase(PAYPAL_TAG)) {
+            title = mContext.getResources().getString(R.string.paypal_title);
+            description = mContext.getResources().getString(R.string.paypal_summary);
+        } else if (tag.equalsIgnoreCase(TELEGRAM_TAG)) {
+            title = mContext.getResources().getString(R.string.telegram_title);
+            description = mContext.getResources().getString(R.string.telegram_summary);
         } else {
             title = parser.getAttributeValue(null, TITLE);
             description = parser.getAttributeValue(null, DESCRIPTION);
