@@ -122,6 +122,8 @@ public class SlimRecentsPanel extends SettingsPreferenceFragment implements
         initializeAllPreferences();
 
         setHasOptionsMenu(true);
+
+        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.slim_recents_hints_footer);
     }
 
     @Override
