@@ -45,10 +45,10 @@ public class UserInterface extends SettingsPreferenceFragment
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
 /*
     private static final String POWER_MENU_ANIMATION = "power_menu_animation";
+*/
     private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
-*/
     private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String SCROLLINGCACHE_DEFAULT = "1";
@@ -58,10 +58,10 @@ public class UserInterface extends SettingsPreferenceFragment
     private ListPreference mListViewInterpolator;
 /*
     private ListPreference mPowerMenuAnimation;
+*/
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
-*/
     private ListPreference mScrollingCachePref;
 
     Toast mToast;
@@ -105,6 +105,7 @@ public class UserInterface extends SettingsPreferenceFragment
         mPowerMenuAnimation.setValue(String.valueOf(powermenuanimation));
         mPowerMenuAnimation.setSummary(mPowerMenuAnimation.getEntry());
         mPowerMenuAnimation.setOnPreferenceChangeListener(this);
+*/
 
         mTileAnimationStyle = (ListPreference) findPreference(PREF_TILE_ANIM_STYLE);
         int tileAnimationStyle = Settings.System.getIntForUser(resolver,
@@ -131,7 +132,6 @@ public class UserInterface extends SettingsPreferenceFragment
         mTileAnimationInterpolator.setSummary(mTileAnimationInterpolator.getEntry());
         mTileAnimationInterpolator.setEnabled(tileAnimationStyle > 0);
         mTileAnimationInterpolator.setOnPreferenceChangeListener(this);
-*/
 
         mScrollingCachePref = (ListPreference) findPreference(SCROLLINGCACHE_PREF);
         mScrollingCachePref.setValue(SystemProperties.get(SCROLLINGCACHE_PERSIST_PROP,
@@ -184,6 +184,7 @@ public class UserInterface extends SettingsPreferenceFragment
                     Settings.System.POWER_MENU_ANIMATION, value, UserHandle.USER_CURRENT);
             mPowerMenuAnimation.setSummary(mPowerMenuAnimation.getEntries()[index]);
             return true;
+*/
         } else if (preference == mTileAnimationStyle) {
             int value = Integer.valueOf((String) newValue);
             int index = mTileAnimationStyle.findIndexOfValue((String) newValue);
@@ -207,7 +208,6 @@ public class UserInterface extends SettingsPreferenceFragment
                     value, UserHandle.USER_CURRENT);
             mTileAnimationInterpolator.setSummary(mTileAnimationInterpolator.getEntries()[index]);
             return true;
-*/
         } else if (preference == mScrollingCachePref) {
             String value = (String) newValue;
             int index = mScrollingCachePref.findIndexOfValue(value);
@@ -229,13 +229,13 @@ public class UserInterface extends SettingsPreferenceFragment
 /*
         Settings.System.putIntForUser(resolver,
                 Settings.System.POWER_MENU_ANIMATION, 0, UserHandle.USER_CURRENT);
+*/
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANIM_TILE_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANIM_TILE_DURATION, 2000, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
-*/
         SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT);
         AmbientTicker.reset(mContext);
         AnimationControls.reset(mContext);
