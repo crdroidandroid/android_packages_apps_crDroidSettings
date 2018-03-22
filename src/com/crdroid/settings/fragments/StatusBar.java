@@ -51,7 +51,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String SMART_PULLDOWN = "smart_pulldown";
     private static final String DATA_ACTIVITY_ARROWS = "data_activity_arrows";
     private static final String WIFI_ACTIVITY_ARROWS = "wifi_activity_arrows";
-    private static final String TICKER_MODE = "ticker_mode";
+    private static final String TICKER_MODE = "status_bar_show_ticker";
+    private static final String TICKER_MODE_ANIMATION = "status_bar_ticker_animation_mode";
     private static final String CRDROID_LOGO = "status_bar_crdroid_logo";
     private static final String CRDROID_LOGO_COLOR = "status_bar_crdroid_logo_color";
     private static final String CRDROID_LOGO_POSITION = "status_bar_crdroid_logo_position";
@@ -72,6 +73,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SwitchPreference mDataActivityEnabled;
     private SwitchPreference mWifiActivityEnabled;
     private ListPreference mTickerMode;
+    private ListPreference mTickerModeAnimation;
     private SwitchPreference mCrDroidLogo;
     private ColorPickerPreference mCrDroidLogoColor;
     private ListPreference mCrDroidLogoPosition;
@@ -117,11 +119,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mWifiActivityEnabled.setOnPreferenceChangeListener(this);
 
         mTickerMode = (ListPreference) findPreference(TICKER_MODE);
+        mTickerMode.setOnPreferenceChangeListener(this);
+
+        mTickerModeAnimation = (ListPreference) findPreference(TICKER_MODE_ANIMATION);
         int tickerMode = Settings.System.getIntForUser(resolver,
                 Settings.System.STATUS_BAR_SHOW_TICKER, 0, UserHandle.USER_CURRENT);
-        mTickerMode.setValue(String.valueOf(tickerMode));
-        mTickerMode.setSummary(mTickerMode.getEntry());
-        mTickerMode.setOnPreferenceChangeListener(this);
+        mTickerModeAnimation.setEnabled(tickerMode > 0);
 
         mCrDroidLogo = (SwitchPreference) findPreference(CRDROID_LOGO);
         mCrDroidLogo.setOnPreferenceChangeListener(this);
@@ -215,9 +218,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
             return true;
         } else if (preference.equals(mTickerMode)) {
             int value = Integer.parseInt((String) newValue);
-            Settings.System.putIntForUser(resolver, Settings.System.STATUS_BAR_SHOW_TICKER, value, UserHandle.USER_CURRENT);
-            int index = mTickerMode.findIndexOfValue((String) newValue);
-            mTickerMode.setSummary(mTickerMode.getEntries()[index]);
+            mTickerModeAnimation.setEnabled(value > 0);
             return true;
         } else if (preference == mCrDroidLogo) {
             boolean value = (Boolean) newValue;
@@ -382,6 +383,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.WIFI_ACTIVITY_ARROWS, showActivityDefault(mContext), UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_SHOW_TICKER, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_TICKER_ANIMATION_MODE, 1, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,

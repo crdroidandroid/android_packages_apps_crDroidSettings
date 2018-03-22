@@ -246,13 +246,21 @@
     <PreferenceCategory
         android:title="@string/status_bar_misc_category_title">
 
-        <ListPreference
-            android:key="ticker_mode"
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="status_bar_show_ticker"
             android:icon="@drawable/ic_cursor"
             android:title="@string/ticker_screen_title"
             android:entries="@array/ticker_mode_entries"
             android:entryValues="@array/ticker_mode_values"
-            android:summary="%s" />
+            android:defaultValue="0" />
+
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="status_bar_ticker_animation_mode"
+            android:icon="@drawable/ic_cursor"
+            android:title="@string/ticker_animation_mode_title"
+            android:entries="@array/ticker_animation_mode_entries"
+            android:entryValues="@array/ticker_animation_mode_values"
+            android:defaultValue="1" />
     </PreferenceCategory>
 
     <PreferenceScreen
