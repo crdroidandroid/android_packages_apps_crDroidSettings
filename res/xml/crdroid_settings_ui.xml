@@ -24,6 +24,15 @@
         android:key="style"
         android:icon="@drawable/ic_theme_light_dark" />
 
+    <!-- Dark Shade -->
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="berry_dark_shade"
+        android:icon="@drawable/ic_invert_colors"
+        android:title="@string/berry_dark_shade_title"
+        android:entries="@array/berry_dark_shade_entries"
+        android:entryValues="@array/berry_dark_shade_values"
+        android:defaultValue="0" />
+
     <!-- Expanded Desktop -->
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="expanded_desktop_settings"
