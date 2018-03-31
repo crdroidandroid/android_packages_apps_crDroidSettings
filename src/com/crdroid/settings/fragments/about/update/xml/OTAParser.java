@@ -136,10 +136,12 @@ public class OTAParser {
                     tagName.equalsIgnoreCase(PAYPAL_TAG) ||
                     tagName.equalsIgnoreCase(TELEGRAM_TAG))) {
                 OTALink link = readLink(parser, tagName);
-                mDevice.addLink(link);
+                if (!link.getUrl().isEmpty())
+                    mDevice.addLink(link);
             } else if (isUrlTag(tagName)) {
                 OTALink link = readLink(parser, tagName);
-                mDevice.addLink(link);
+                if (!link.getUrl().isEmpty())
+                    mDevice.addLink(link);
             } else {
                 skip(parser);
             }
