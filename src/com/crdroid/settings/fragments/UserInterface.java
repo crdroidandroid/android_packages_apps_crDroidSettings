@@ -220,6 +220,8 @@ public class UserInterface extends SettingsPreferenceFragment
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Settings.Global.putInt(resolver,
+                Settings.Global.SCREEN_OFF_ANIMATION, 0);
         Settings.System.putIntForUser(resolver,
                 Settings.System.TOAST_ANIMATION, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,

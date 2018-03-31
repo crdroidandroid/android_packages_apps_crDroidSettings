@@ -77,6 +77,14 @@
         android:key="category_animations"
         android:title="@string/animation_title" >
 
+        <com.crdroid.settings.preferences.GlobalSettingListPreference
+            android:key="screen_off_animation"
+            android:icon="@drawable/ic_fullscreen_exit"
+            android:title="@string/screen_off_animation_title"
+            android:entries="@array/screen_off_animation_entries"
+            android:entryValues="@array/screen_off_animation_values"
+            android:defaultValue="0" />
+
         <PreferenceScreen
             android:key="system_animation"
             android:icon="@drawable/ic_system_animation"
