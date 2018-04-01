@@ -13,6 +13,11 @@
             settings:units="ms"
             android:persistent="false" />
 
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="system_default_animation"
+            android:title="@string/system_default_animation_title"
+            android:summary="@string/system_default_animation_summary" />
+
         <ListPreference
             android:key="activity_open"
             android:title="@string/activity_open_title" />
