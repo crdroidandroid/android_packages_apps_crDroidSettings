@@ -280,8 +280,8 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SYSTEM_DEFAULT_ANIMATION, 0, UserHandle.USER_CURRENT);
+        Settings.Global.putInt(resolver,
+                Settings.Global.SYSTEM_DEFAULT_ANIMATION, 0);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANIMATION_CONTROLS_DURATION, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
