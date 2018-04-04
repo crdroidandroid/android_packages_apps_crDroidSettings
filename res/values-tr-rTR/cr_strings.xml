@@ -58,7 +58,7 @@
   <string name="network_traffic_summary">Ağ etkinliğini görüntüleme ve özelleştirme</string>
   <string name="show_network_traffic_state">Ağ etkinliğini durum çubuğunda göster</string>
   <string name="show_network_traffic_unit">Görüntü birimi</string>
-  <string name="show_network_traffic_frequency">Güncelleme aralığı</string>
+  <string name="show_network_traffic_frequency">Güncelleme sıklığı</string>
   <string name="show_network_traffic_disable">Devre dışı</string>
   <string name="show_network_traffic_up">Yalnızca indirme</string>
   <string name="show_network_traffic_down">Yalnızca yükleme</string>
@@ -70,7 +70,7 @@
   <string name="show_network_traffic_1500">1500 ms</string>
   <string name="show_network_traffic_2000">2000 ms</string>
   <string name="network_traffic_autohide">Otomatik gizle</string>
-  <string name="network_traffic_autohide_summary">Veri aktarımı olmadığında ağ etkinliğini gizle</string>
+  <string name="network_traffic_autohide_summary">Veri etkinliği olmadığında ağ göstergesini gizle</string>
   <string name="network_traffic_autohide_threshold">Hareketsizlik eşiği</string>
   <string name="network_traffic_hidearrow">Okları gizle</string>
   <string name="network_traffic_hidearrow_summary">Ağ etkinliği ok göstergelerini gizler</string>
@@ -131,13 +131,13 @@
   <string name="double_tap_sleep_anywhere_summary">Kilit ekranında cihazı uyutmak için herhangi bir yere çift dokunun</string>
   <!-- Power menu on secure lockscreen -->
   <string name="lockscreen_enable_power_menu_title">Güç menüsü</string>
-  <string name="lockscreen_enable_power_menu_summary">Güç menüsünü güvenli kilit ekranında erişimine izin ver</string>
+  <string name="lockscreen_enable_power_menu_summary">Güvenli kilit ekranında güç menüsünü göster</string>
   <!-- Quick settings on secure lockscreen -->
   <string name="lockscreen_enable_qs_title">Hızlı ayarlar</string>
-  <string name="lockscreen_enable_qs_summary">Hızlı ayarlar ve kaydırma kısayollarına güvenli kilit ekranında erişimine izin ver</string>
+  <string name="lockscreen_enable_qs_summary">Güvenli kilit ekranında hızlı ayarlar panelini ve kaydırma kısayollarını göster</string>
   <!-- Screenshot Sound  -->
   <string name="screenshot_sound_title">Ekran görüntüsü sesi</string>
-  <string name="screenshot_sound_summary">Ekran görüntüsü alırken ses çıkar</string>
+  <string name="screenshot_sound_summary">Ekran görüntüsü alınırken ses çıkar</string>
   <!-- Volume Steps -->
   <string name="volume_steps_title">Ses seviyeleri</string>
   <string name="volume_steps_summary">Ses panelindeki seviye sayısını özelleştirme</string>
@@ -167,10 +167,10 @@
   <string name="qs_misc_category">Diğer</string>
   <!-- Quick settings tiles -->
   <string name="sysui_qqs_count_title">Küçük hızlı ayarlar kareleri</string>
-  <string name="qs_rows_portrait_title">Satırlar (dikey)</string>
-  <string name="qs_rows_landscape_title">Satırlar (yatay)</string>
-  <string name="qs_columns_portrait_title">Sütunlar (dikey)</string>
-  <string name="qs_columns_landscape_title">Sütunlar (yatay)</string>
+  <string name="qs_rows_portrait_title">Dikey modda satırlar</string>
+  <string name="qs_rows_landscape_title">Yatay modda satırlar</string>
+  <string name="qs_columns_portrait_title">Dikey modda sütunlar</string>
+  <string name="qs_columns_landscape_title">Yatay modda sütunlar</string>
   <!-- WiFi easy toggle  -->
   <string name="qs_wifi_easy_toggle_title">Kablosuz kolay geçiş</string>
   <string name="qs_wifi_easy_toggle_summary">Tek dokunuşla kablosuzu etkinleştir</string>
@@ -191,7 +191,7 @@
   <string name="qs_brightness_slider_summary">Hızlı ayarlar panelinde parlaklık kaydırıcısını göster</string>
   <!-- Quick settings brightness icon -->
   <string name="brightness_icon_title">Otomatik parlaklık</string>
-  <string name="brightness_icon_summary">Otomatik parlaklık simgesini hızlı ayarlarda göster</string>
+  <string name="brightness_icon_summary">Hızlı ayarlar panelinde otomatik parlaklık simgesini göster</string>
   <!-- Quick settings haptic feedback -->
   <string name="quick_settings_vibrate_title">Dokunulduğunda titret</string>
   <string name="quick_settings_vibrate_summary">Karelere dokunulduğunda titret</string>
@@ -410,7 +410,7 @@
   <string name="pulse_solid_dimen_category">Düz çizgi modu ayarları</string>
   <string name="fling_lavalamp_color_from">Lav lambası başlangıç rengi</string>
   <string name="fling_lavalamp_color_to">Lav lambası bitiş rengi</string>
-  <string name="pulse_custom_buttons_opacity_title">Pulse etkinken Akıllı çubuk tuş opaklığı</string>
+  <string name="pulse_custom_buttons_opacity_title">Akıllı çubuk tuş opaklığı</string>
   <string name="pulse_auto_color_title">Otomatik pulse rengi</string>
   <string name="pulse_auto_color_summary">Rengi albüm kapaklarıyla senkronize eder. Lav Lambası ve çizgilerinin opaklığını geçersiz kılar.</string>
   <!-- Pulse config -->
@@ -426,7 +426,7 @@
   <string name="positive_done">Bitti</string>
   <!-- Stock navbar -->
   <string name="navbar_settings_title">Standart gezinme çubuğu ayarları</string>
-  <string name="navabar_settings_summary">Gezinme çubuğu kontrollerini aç</string>
+  <string name="navabar_settings_summary">Standart gezinme çubuğu kontrollerini aç</string>
   <!-- SmartBar -->
   <string name="smartbar_category">Akıllı çubuk</string>
   <string name="smartbar_settings_title">Akıllı çubuk ayarları</string>
@@ -447,7 +447,7 @@
   <string name="smartbar_button_animation_pixel_home">Pixel (Yalnızca ana ekran tuşu)</string>
   <string name="smartbar_button_animation_pixel_home_ripple">Pixel (Yalnızca ana ekran tuşu) ve Dalgalanma</string>
   <string name="smartbar_factory_reset_title">Varsayılana sıfırla</string>
-  <string name="smartbar_factory_reset_confirm">Akıllı çubuk ayarlarını varsayılan ayarlara sıfırlamak istediğinizden emin misiniz?</string>
+  <string name="smartbar_factory_reset_confirm">Akıllı çubuk ayarlarını varsayılan ayarlara sıfırlamak istediğinize emin misiniz?</string>
   <string name="smartbar_ime_action_title">Giriş yöntemi ve medya eylemleri</string>
   <string name="smartbar_ime_action_summary">Ekran klavyesi açıkken veya müzik çalıyorken hangi tuşların gösterileceğini seçin</string>
   <string name="smartbar_ime_action_none">Hiçbiri</string>
@@ -522,7 +522,7 @@
   <string name="status_bar_battery_percentage_title">Pil yüzdesi</string>
   <string name="status_bar_battery_percentage_default">Gizle</string>
   <string name="status_bar_battery_percentage_text_inside">Simge içinde</string>
-  <string name="status_bar_battery_percentage_text_next">Simge yanında</string>
+  <string name="status_bar_battery_percentage_text_next">Simge dışında</string>
   <!-- Status bar - icon blacklist -->
   <string name="status_bar_icons_title">Durum çubuğu simgeleri</string>
   <string name="status_bar_icons_summary">Durum çubuğunda gösterilen simgeleri kontrol etme</string>
@@ -1248,13 +1248,13 @@ Sadece yarı şeffaf bildirimler etkin.</string>
   <string name="lockscreen_battery_info_summary">Şarj olurken kilit ekranında şarj cihazı maksimum akım voltajını ve pil sıcaklığını görüntüler</string>
   <!-- Recents lock icon -->
   <string name="recents_lock_icon_title">Kilit simgesi</string>
-  <string name="recents_lock_icon_summary">Son uygulama ekranında kilit simgesini göster</string>
+  <string name="recents_lock_icon_summary">Son uygulamalar ekranında kilit simgesini göster</string>
   <!-- AOSP Recents Grid -->
   <string name="recents_use_grid_title">Izgara stili</string>
   <string name="recents_use_grid_summary">Izgara stili görünümler arasında geçiş yap</string>
   <!-- Recents dismiss icon -->
   <string name="recents_dismiss_icon_title">Görev simgesi</string>
-  <string name="recents_dismiss_icon_summary">Son uygulama ekranında görev simgesini göster</string>
+  <string name="recents_dismiss_icon_summary">Son uygulamalar ekranında görev simgesini göster</string>
   <!-- Notification guts kill app button -->
   <string name="notification_guts_kill_app_button_title">Uygulama sonlandırma tuşu</string>
   <string name="notification_guts_kill_app_button_summary">Bildirime uzun dokunma menüsünde uygulama sonlandırma tuşunu göster</string>
