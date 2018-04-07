@@ -196,6 +196,23 @@
 
     <PreferenceCategory 
          android:title="@string/qs_misc_category">
+
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="qs_clock_style"
+            android:icon="@drawable/ic_clock"
+            android:title="@string/status_bar_clock_position_title"
+            android:entries="@array/qs_clock_position_entries"
+            android:entryValues="@array/qs_clock_position_values"
+            android:defaultValue="0" />
+
+        <PreferenceScreen
+            android:key="clock"
+            android:icon="@drawable/ic_clock"
+            android:title="@string/status_bar_clock_title"
+            android:summary="@string/status_bar_clock_summary"
+            android:fragment="com.crdroid.settings.fragments.statusbar.Clock"
+            settings:allowDividerAbove="false" />
+
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="qs_show_brightness_slider"
             android:icon="@drawable/ic_brightness"

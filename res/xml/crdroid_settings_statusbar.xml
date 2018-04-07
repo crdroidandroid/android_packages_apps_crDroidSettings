@@ -32,6 +32,14 @@
                 <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
         </PreferenceScreen>
 
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="statusbar_clock_style"
+            android:icon="@drawable/ic_clock"
+            android:title="@string/status_bar_clock_position_title"
+            android:entries="@array/status_bar_clock_position_entries"
+            android:entryValues="@array/status_bar_clock_position_values"
+            android:defaultValue="0" />
+
         <PreferenceScreen
             android:key="clock"
             android:icon="@drawable/ic_clock"
