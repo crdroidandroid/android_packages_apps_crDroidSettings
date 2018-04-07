@@ -43,8 +43,7 @@ public class Clock extends SettingsPreferenceFragment
 
     private static final String TAG = "Clock";
 
-    private static final String STATUS_BAR_CLOCK_POSITION = "status_bar_clock_position";
-    private static final String STATUS_BAR_CLOCK_AM_PM_STYLE = "status_bar_am_pm";
+    private static final String STATUSBAR_CLOCK_AM_PM_STYLE = "statusbar_clock_am_pm_style";
     private static final String CLOCK_DATE_DISPLAY = "status_bar_date";
     private static final String CLOCK_DATE_POSITION = "statusbar_clock_date_position";
     private static final String CLOCK_DATE_STYLE = "status_bar_date_style";
@@ -54,7 +53,6 @@ public class Clock extends SettingsPreferenceFragment
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
 
-    private ListPreference mClockPosition;
     private ListPreference mClockAmPmStyle;
     private ListPreference mClockDateDisplay;
     private ListPreference mClockDatePosition;
@@ -69,13 +67,7 @@ public class Clock extends SettingsPreferenceFragment
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mClockPosition = (ListPreference) findPreference(STATUS_BAR_CLOCK_POSITION);
-        mClockPosition.setValue(Integer.toString(Settings.System.getIntForUser(resolver,
-                Settings.System.STATUSBAR_CLOCK_STYLE, 0, UserHandle.USER_CURRENT)));
-        mClockPosition.setSummary(mClockPosition.getEntry());
-        mClockPosition.setOnPreferenceChangeListener(this);
-
-        mClockAmPmStyle = (ListPreference) findPreference(STATUS_BAR_CLOCK_AM_PM_STYLE);
+        mClockAmPmStyle = (ListPreference) findPreference(STATUSBAR_CLOCK_AM_PM_STYLE);
         mClockAmPmStyle.setValue(Integer.toString(Settings.System.getIntForUser(resolver,
                 Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE, 0, UserHandle.USER_CURRENT)));
 
@@ -122,14 +114,7 @@ public class Clock extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
       AlertDialog dialog;
       ContentResolver resolver = getActivity().getContentResolver();
-      if (preference == mClockPosition) {
-          int val = Integer.parseInt((String) newValue);
-          int index = mClockPosition.findIndexOfValue((String) newValue);
-          Settings.System.putIntForUser(resolver,
-                  Settings.System.STATUSBAR_CLOCK_STYLE, val, UserHandle.USER_CURRENT);
-          mClockPosition.setSummary(mClockPosition.getEntries()[index]);
-          return true;
-      } else if (preference == mClockAmPmStyle) {
+      if (preference == mClockAmPmStyle) {
           int val = Integer.parseInt((String) newValue);
           int index = mClockAmPmStyle.findIndexOfValue((String) newValue);
           Settings.System.putIntForUser(resolver,
@@ -250,11 +235,9 @@ public class Clock extends SettingsPreferenceFragment
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_CLOCK, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_CLOCK_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_CLOCK_SECONDS, 0, UserHandle.USER_CURRENT);
+                Settings.System.STATUSBAR_CLOCK_SECONDS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
