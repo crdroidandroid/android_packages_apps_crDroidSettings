@@ -17,7 +17,12 @@ package com.crdroid.settings.fragments;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.FontInfo;
+import android.content.IFontService;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -32,6 +37,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.crdroid.settings.fragments.ui.AmbientTicker;
 import com.crdroid.settings.fragments.ui.AnimationControls;
 import com.crdroid.settings.fragments.ui.DozeFragment;
+import com.crdroid.settings.fragments.ui.FontDialogPreference;
 import com.crdroid.settings.R;
 
 import java.util.ArrayList;
@@ -52,6 +58,12 @@ public class UserInterface extends SettingsPreferenceFragment
     private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String SCROLLINGCACHE_DEFAULT = "1";
+
+    private static final String KEY_FONT_PICKER_FRAGMENT_PREF = "custom_font";
+    private static final String SUBS_PACKAGE = "projekt.substratum";
+
+    private FontDialogPreference mFontPreference;
+    private IFontService mFontService;
 
     private ListPreference mToastAnimation;
     private ListPreference mListViewAnimation;
@@ -142,6 +154,35 @@ public class UserInterface extends SettingsPreferenceFragment
         if (mToast != null) {
             mToast.cancel();
             mToast = null;
+        }
+
+       mFontPreference =  (FontDialogPreference) findPreference(KEY_FONT_PICKER_FRAGMENT_PREF);
+       mFontService = IFontService.Stub.asInterface(
+                ServiceManager.getService("fontservice"));
+
+        if (!isPackageInstalled(SUBS_PACKAGE, getActivity())) {
+            mFontPreference.setSummary(getCurrentFontInfo().fontName.replace("_", " "));
+        } else {
+            mFontPreference.setSummary(getActivity().getString(
+                    R.string.disable_fonts_installed_title));
+        }
+    }
+
+    private FontInfo getCurrentFontInfo() {
+        try {
+            return mFontService.getFontInfo();
+        } catch (RemoteException e) {
+            return FontInfo.getDefaultFontInfo();
+        }
+    }
+
+    private boolean isPackageInstalled(String package_name, Context context) {
+        try {
+            PackageManager pm = context.getPackageManager();
+            pm.getPackageInfo(package_name, PackageManager.GET_ACTIVITIES);
+            return true;
+        } catch (Exception e) {
+            return false;
         }
     }
 
