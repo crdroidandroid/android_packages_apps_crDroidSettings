@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,11 +48,13 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
     private static final String LOCKSCREEN_MAX_NOTIF_CONFIG = "lockscreen_max_notif_config";
     private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
+    private static final String FP_WAKE_AND_UNLOCK = "fp_wake_and_unlock";
 //    private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
 
     private CustomSeekBarPreference mMaxKeyguardNotifConfig;
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
+    private SwitchPreference mFpWakeAndUnlock;
 //    private SwitchPreference mFpKeystore;
 
     @Override
@@ -75,12 +77,17 @@ public class LockScreen extends SettingsPreferenceFragment
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SwitchPreference) findPreference(FP_SUCCESS_VIBRATE);
+        mFpWakeAndUnlock = (SwitchPreference) findPreference(FP_WAKE_AND_UNLOCK);
 //        mFpKeystore = (SwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
 
         if (mFingerprintManager != null && mFingerprintManager.isHardwareDetected()){
             mFingerprintVib.setChecked((Settings.System.getIntForUser(resolver,
                     Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT) == 1));
             mFingerprintVib.setOnPreferenceChangeListener(this);
+
+            mFpWakeAndUnlock.setChecked(Settings.System.getIntForUser(resolver,
+                Settings.System.FP_WAKE_AND_UNLOCK, 1, UserHandle.USER_CURRENT) == 1);
+            mFpWakeAndUnlock.setOnPreferenceChangeListener(this);
 
 /*
             mFpKeystore.setChecked((Settings.System.getIntForUser(resolver,
@@ -89,6 +96,7 @@ public class LockScreen extends SettingsPreferenceFragment
 */
         } else {
             gestCategory.removePreference(mFingerprintVib);
+            gestCategory.removePreference(mFpWakeAndUnlock);
 //            gestCategory.removePreference(mFpKeystore);
         }
     }
@@ -105,6 +113,11 @@ public class LockScreen extends SettingsPreferenceFragment
             boolean value = (Boolean) newValue;
             Settings.System.putIntForUser(resolver,
                     Settings.System.FP_SUCCESS_VIBRATE, value ? 1: 0, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mFpWakeAndUnlock) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.FP_WAKE_AND_UNLOCK, value ? 1: 0, UserHandle.USER_CURRENT);
             return true;
 /*
         } else if (preference == mFpKeystore) {

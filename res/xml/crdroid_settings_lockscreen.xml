@@ -132,6 +132,13 @@
             android:defaultValue="true" />
 
         <SwitchPreference
+            android:key="fp_wake_and_unlock"
+            android:icon="@drawable/ic_fp"
+            android:title="@string/fp_wake_and_unlock_title"
+            android:summary="@string/fp_wake_and_unlock_summary"
+            android:persistent="false" />
+
+        <SwitchPreference
             android:key="fp_success_vibrate"
             android:icon="@drawable/ic_fp"
             android:title="@string/fp_success_vibrate_title"
