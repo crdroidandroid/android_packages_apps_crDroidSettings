@@ -42,6 +42,7 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.crdroid.settings.fragments.ui.AmbientTicker;
 import com.crdroid.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -304,6 +305,9 @@ public class DozeFragment extends SettingsPreferenceFragment
                 Settings.System.DOZE_VIBRATE_PICKUP, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.DOZE_VIBRATE_PROX, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.AMBIENT_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
+        AmbientTicker.reset(mContext);
     }
 
     @Override

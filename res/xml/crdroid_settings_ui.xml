@@ -19,6 +19,14 @@
     android:title="@string/ui_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Ambient Display -->
+    <PreferenceScreen
+        android:key="doze_fragment"
+        android:icon="@drawable/ic_ambient"
+        android:title="@string/doze_display_title"
+        android:summary="@string/doze_display_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.DozeFragment" />
+
     <!-- Color Styles -->
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="style"
@@ -32,6 +40,11 @@
         android:entries="@array/berry_dark_shade_entries"
         android:entryValues="@array/berry_dark_shade_values"
         android:defaultValue="0" />
+
+    <!-- Expanded Desktop -->
+    <org.lineageos.internal.lineageparts.LineagePartsPreference
+        android:key="expanded_desktop_settings"
+        android:icon="@drawable/ic_expanded" />
 
     <!-- Font -->
     <com.crdroid.settings.fragments.ui.FontDialogPreference
@@ -47,25 +60,6 @@
         android:title="@string/gestures_title"
         android:summary="@string/gestures_summary"
         android:fragment="com.android.settings.gestures.GestureSettings" />
-
-    <!-- Expanded Desktop -->
-    <org.lineageos.internal.lineageparts.LineagePartsPreference
-        android:key="expanded_desktop_settings"
-        android:icon="@drawable/ic_expanded" />
-
-    <PreferenceScreen
-        android:key="doze_fragment"
-        android:icon="@drawable/ic_ambient"
-        android:title="@string/doze_display_title"
-        android:summary="@string/doze_display_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.DozeFragment" />
-
-    <Preference
-        android:key="force_ambient_for_media_pref"
-        android:icon="@drawable/ic_music"
-        android:fragment="com.crdroid.settings.fragments.ui.AmbientTicker"
-        android:title="@string/force_ambient_for_media_pref_title"
-        android:summary="@string/force_ambient_for_media_pref_summary"/>
 
     <!--<Preference
         android:key="trans_porn"

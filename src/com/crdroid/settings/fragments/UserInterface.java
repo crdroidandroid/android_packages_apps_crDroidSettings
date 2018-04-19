@@ -37,7 +37,6 @@ import android.widget.Toast;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.crdroid.settings.fragments.ui.AmbientTicker;
 import com.crdroid.settings.fragments.ui.AnimationControls;
 import com.crdroid.settings.fragments.ui.DozeFragment;
 import com.crdroid.settings.fragments.ui.FontDialogPreference;
@@ -313,7 +312,6 @@ public class UserInterface extends SettingsPreferenceFragment
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
         SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT);
-        AmbientTicker.reset(mContext);
         AnimationControls.reset(mContext);
         DozeFragment.reset(mContext);
     }
