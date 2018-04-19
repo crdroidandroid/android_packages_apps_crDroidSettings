@@ -44,6 +44,8 @@ import com.crdroid.settings.R;
 import java.util.List;
 import java.util.ArrayList;
 
+import com.crdroid.settings.preferences.CustomSeekBarPreference;
+
 import lineageos.providers.LineageSettings;
 
 public class QuickSettings extends SettingsPreferenceFragment implements
@@ -62,6 +64,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String CUSTOM_HEADER_PROVIDER = "custom_header_provider";
     private static final String CUSTOM_HEADER_BROWSE = "custom_header_browse";
     private static final String FILE_HEADER_SELECT = "file_header_select";
+    private static final String QS_PANEL_ALPHA = "qs_panel_alpha";
 
     private static final int REQUEST_PICK_IMAGE = 0;
 
@@ -69,6 +72,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private CustomSeekBarPreference mRowsLandscape;
     private CustomSeekBarPreference mQsColumnsPortrait;
     private CustomSeekBarPreference mQsColumnsLandscape;
+    private CustomSeekBarPreference mQsPanelAlpha;
     private SwitchPreference mHeaderEnabled;
     private ListPreference mDaylightHeaderPack;
     private CustomSeekBarPreference mHeaderShadow;
@@ -85,6 +89,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.crdroid_settings_quicksettings);
 
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mQsPanelAlpha = (CustomSeekBarPreference) findPreference(QS_PANEL_ALPHA);
+        int qsPanelAlpha = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
+        mQsPanelAlpha.setValue(qsPanelAlpha);
+        mQsPanelAlpha.setOnPreferenceChangeListener(this);
 
         mRowsPortrait = (CustomSeekBarPreference) findPreference(PREF_ROWS_PORTRAIT);
         int rowsPortrait = Settings.System.getIntForUser(resolver,
@@ -174,6 +184,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             int value = (Integer) newValue;
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_ROWS_PORTRAIT, value, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mQsPanelAlpha) {
+            int bgAlpha = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.QS_PANEL_BG_ALPHA, bgAlpha,
+                    UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mRowsLandscape) {
             int value = (Integer) newValue;
@@ -326,6 +342,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_COLUMNS_LANDSCAPE, 4, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TILE_TITLE_VISIBILITY, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
