@@ -291,6 +291,8 @@ public class DozeFragment extends SettingsPreferenceFragment
                 Settings.Secure.DOZE_ENABLED, mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_doze_enabled_by_default) ? 1 : 0,
                 UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.DOZE_ALWAYS_ON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.DOZE_TRIGGER_TILT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
