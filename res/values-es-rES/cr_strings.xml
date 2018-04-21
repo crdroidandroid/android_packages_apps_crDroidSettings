@@ -18,12 +18,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App Title -->
   <string name="crdroid_settings_title">Ajustes crDroid</string>
-  <string name="crdroid_settings_summary">Open Goodness</string>
+  <string name="crdroid_settings_summary">Abre la cosa buena</string>
   <string name="crdroid_personalization_category">Personalización</string>
   <string name="crdroid_addons_category">Añadidos</string>
   <!-- Personalization Categories -->
   <string name="button_title">Botones</string>
-  <string name="gestures_title">Gestos</string>
   <string name="lockscreen_title">Pantalla de bloqueo</string>
   <string name="misc_title">Ajustes varios</string>
   <string name="navbar_title">Barra de navegacion</string>
@@ -488,13 +487,14 @@
   <string name="status_bar_quick_qs_pulldown_always">Mostrar la configuración rápida a abrir la barra de estado</string>
   <!-- Status bar - Clock -->
   <string name="status_bar_clock_title">Reloj &amp; fecha</string>
-  <string name="status_bar_clock_summary">Mostrar y personalizar hora &amp; fecha</string>
+  <string name="status_bar_clock_summary">Personalizar reloj y fecha</string>
   <string name="status_bar_clock_seconds_title">Segundos</string>
   <string name="status_bar_clock_seconds_summary">Mostrar los segundos al lado del reloj en la barra de estado</string>
-  <string name="status_bar_clock_position_title">Posición del reloj</string>
+  <string name="status_bar_clock_position_title">Estilo de reloj</string>
   <string name="status_bar_clock_position_right">Derecha</string>
   <string name="status_bar_clock_position_left">Izquierda</string>
   <string name="status_bar_clock_position_center">Centrado</string>
+  <string name="status_bar_clock_position_hidden">Oculto</string>
   <string name="status_bar_am_pm_title">Estilo AM/PM</string>
   <string name="status_bar_am_pm_info">Reloj 24 horas activado</string>
   <string name="status_bar_am_pm_normal">Normal</string>
@@ -577,7 +577,7 @@
   <string name="ticker_disabled">Sin etiqueta</string>
   <string name="ticker_enabled">Etiqueta de notificación</string>
   <string name="ticker_media_enabled">Etiqueta con música y notificaciones</string>
-  <string name="ticker_animation_mode_title">Ticker animation style</string>
+  <string name="ticker_animation_mode_title">Estilo de animación Ticker</string>
   <string name="ticker_animation_mode_alpha_fade">Desvanecer</string>
   <string name="ticker_animation_mode_scroll">Desplazamiento</string>
   <!-- Pie -->
@@ -720,7 +720,7 @@
   <string name="pickup_title">Recoger</string>
   <string name="pickup_summary">Mostrar notificaciones al recoger</string>
   <string name="handwave_title">Movimiento de la mano</string>
-  <string name="handwave_summary">Pulse notifications on hand wave</string>
+  <string name="handwave_summary">Mostrar notificaciones al pasar la mano por sobre el dispositivo</string>
   <string name="pocket_title">Bolsillo</string>
   <string name="pocket_summary">Mostrar notificaciones cuando se saque del bolsillo</string>
   <string name="doze_vibrate">Vibrar</string>
@@ -800,7 +800,7 @@
   <string name="button_backlight_title">Retroiluminación de los botones</string>
   <string name="button_backlight_summary">Personalizar los ajustes de la retroiluminación de los botones</string>
   <string name="button_backlight_enabled">Iluminar botones</string>
-  <string name="button_backlight_only_when_pressed_title">Illuminate buttons only when pressed</string>
+  <string name="button_backlight_only_when_pressed_title">Iluminar los botones únicamente cuando se presionan</string>
   <string name="keyboard_backlight_enabled">Iluminar teclado</string>
   <string name="button_backlight_seekbar_title">Brillo de los botones</string>
   <string name="keyboard_backlight_seekbar_title">Brillo del teclado</string>
@@ -914,10 +914,10 @@
   <!-- Scrolling Animation Controls -->
   <string name="scrolling_title">Animación de desplazamiento</string>
   <string name="scrolling_summary">Personalizar parámetros de animación de desplazamiento</string>
-  <string name="animation_fling_velocity_title">Fling velocity</string>
-  <string name="animation_scroll_friction_title">Scroll friction</string>
-  <string name="animation_overscroll_distance_title">Overscroll distance</string>
-  <string name="animation_overfling_distance_title">Overfling distance</string>
+  <string name="animation_fling_velocity_title">Velocidad de Fling</string>
+  <string name="animation_scroll_friction_title">Fricción del Desplazamiento</string>
+  <string name="animation_overscroll_distance_title">Distancia del desplazamiento inferior permitido</string>
+  <string name="animation_overfling_distance_title">Distancia del desplazamiento superior permitido</string>
   <string name="animation_duration_summary">Establecer duración</string>
   <string name="animation_no_scroll_title">Usar valores personalizados</string>
   <string name="scroll_disclaimer_summary">La mayoría de las aplicaciones deben reiniciarse para que los valores personalizados surtan efecto</string>
@@ -1086,11 +1086,11 @@
   <string name="custom_header_pick_summary">Elija una imagen para usarla en el modo estático</string>
   <string name="style_enabled_summary">Encabezado de imagen personalizado ENCENDIDO</string>
   <string name="style_disabled_summary">Encabezado de imagen personalizada APAGADO</string>
-  <string name="header_provider_disabled">Disabled</string>
-  <string name="custom_header_title">Custom header image</string>
-  <string name="file_header_select_title">Select image</string>
-  <string name="file_header_select_summary">Select custom image</string>
-  <string name="file_header_provider_title">Custom image</string>
+  <string name="header_provider_disabled">Deshabilitado</string>
+  <string name="custom_header_title">Imagen personalizada en la barra de estado</string>
+  <string name="file_header_select_title">Seleccionar imagen</string>
+  <string name="file_header_select_summary">Seleccione imagen personalizada</string>
+  <string name="file_header_provider_title">Imagen personalizada</string>
   <!-- Screen state service -->
   <string name="screen_state_toggles_title">Suspender acciones</string>
   <string name="screen_state_toggles_summary">Acciones ejecutadas en pantalla desactivada</string>
@@ -1114,7 +1114,7 @@
   <string name="wifi_activity_arrows_title">Mostrar actividad WiFi móviles</string>
   <string name="wifi_activity_arrows_summary">Mostrar flechas WiFi móviles</string>
   <!-- The Drill -->
-  <string name="drill_title">The Drill</string>
+  <string name="drill_title">El Drill</string>
   <string name="drill_summary">¿Encontraste un error? ¿Se metió en un problema?</string>
   <!-- Hide Statusbar on Lockscreen -->
   <string name="lockscreen_hide_status_bar_title">Barra de estado</string>
@@ -1125,7 +1125,7 @@
   <string name="use_slim_recents_summary">Usar Slim para la multitarea en lugar de la predeterminada</string>
   <string name="slim_recents_settings_title">Ajustes</string>
   <string name="slim_recents_settings_summary">Ver los ajustes para la multitarea slim</string>
-  <string name="recent_panel_category">Slim recent apps panel</string>
+  <string name="recent_panel_category">Aps. recientes Slim</string>
   <string name="show_running_tasks_title">Mostrar solo aplicaciones en ejecución</string>
   <string name="recents_max_apps_title">Máximo de aplicaciones permitidas</string>
   <string name="recent_panel_scale_title">Tamaño</string>
@@ -1408,4 +1408,17 @@
   <!-- System default animation -->
   <string name="system_default_animation_title">Android P animation style</string>
   <string name="system_default_animation_summary">Enable Android P \"Default\" animations</string>
+  <!-- Gestures -->
+  <string name="gestures_title">Gestos</string>
+  <string name="gestures_summary">Customize gesture settings</string>
+  <!-- Font picker -->
+  <string name="font_picker_title">Font</string>
+  <string name="disable_fonts_installed_title">Custom fonts disabled</string>
+  <string name="font_picker_progress">Applying new font\u2026</string>
+  <!-- Ambient display battery percentage -->
+  <string name="ambient_battery_percent_title">Battery info</string>
+  <string name="ambient_battery_percent_summary">Display current battery info while dozing</string>
+  <!-- Wake And Unlock -->
+  <string name="fp_wake_and_unlock_title">Fingerprint wake and unlock</string>
+  <string name="fp_wake_and_unlock_summary">Allow unlocking device using fingerprint when screen is off or dozing</string>
 </resources>
