@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2021 crDroid Android Project
+     Copyright (C) 2016-2022 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -52,5 +52,11 @@
         android:key="android.theme.customization.adaptive_icon_shape"
         android:icon="@drawable/ic_shapes"
         android:title="@string/theme_customization_adaptive_icon_shape_title"/>
+
+    <!-- Full screen aspect ratio -->
+    <org.lineageos.internal.lineageparts.LineagePartsPreference
+        android:key="long_screen_settings"
+        android:icon="@drawable/ic_fullscreen"
+        lineage:requiresConfig="@*lineageos.platform:bool/config_haveHigherAspectRatioScreen" />
 
 </PreferenceScreen>
