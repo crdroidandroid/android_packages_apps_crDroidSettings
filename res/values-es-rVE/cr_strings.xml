@@ -770,6 +770,7 @@
   <string name="hardware_keys_action_sleep">Apagar pantalla</string>
   <string name="hardware_keys_action_last_app">Última aplicación</string>
   <string name="hardware_keys_action_split_screen">Pantalla dividida</string>
+  <string name="hardware_keys_action_close_app">Kill app</string>
   <string name="hardware_keys_action_single_handed_left">Modo a una mano (izquierda)</string>
   <string name="hardware_keys_action_single_handed_right">Modo a una mano (derecha)</string>
   <string name="camera_sleep_on_release_title">Vistazo a la pantalla</string>
@@ -1069,13 +1070,13 @@
   <string name="wakelock_blocker_warning_title">Proceder con precaución</string>
   <string name="wakelock_blocker_warning">Bloquear wakelocks puede causar inestabilidad, accidentes o pérdida de datos</string>
   <!-- Alarm blocker -->
-  <string name="alarm_blocker_title">Alarm blocker</string>
-  <string name="alarm_blocker_summary">Block alarms while screen off</string>
-  <string name="alarm_blocker_save">Save</string>
-  <string name="alarm_list_header">Available alarms</string>
-  <string name="alarm_blocker_reload">Reload</string>
-  <string name="alarm_blocker_warning_title">Proceed with caution</string>
-  <string name="alarm_blocker_warning">Blocking alarms have the potential to cause instability, crashes or data loss.</string>
+  <string name="alarm_blocker_title">Bloqueador de alarmas</string>
+  <string name="alarm_blocker_summary">Bloquear alarmas mientras la pantalla esté apagada</string>
+  <string name="alarm_blocker_save">Guardar</string>
+  <string name="alarm_list_header">Alarmas disponibles</string>
+  <string name="alarm_blocker_reload">Recargar</string>
+  <string name="alarm_blocker_warning_title">Proceda con cuidado</string>
+  <string name="alarm_blocker_warning">Bloquear alarmas puede causar inestabilidad, cierres o perdida de información.</string>
   <!-- Headers -->
   <string name="status_bar_header_title">Encabezados</string>
   <string name="status_bar_custom_header_title">Encabezado de imagen personalizado</string>
@@ -1142,8 +1143,8 @@
   <string name="recent_panel_expanded_mode_auto">Auto (por defecto)</string>
   <string name="recent_panel_expanded_mode_always">Siempre</string>
   <string name="recent_panel_expanded_mode_never">Nunca</string>
-  <string name="recent_panel_show_topmost_title">Show topmost task</string>
-  <string name="recent_panel_show_topmost_summary">Don\'t exclude the topmost task in recents view</string>
+  <string name="recent_panel_show_topmost_title">Mostrar la tarea más importante</string>
+  <string name="recent_panel_show_topmost_summary">No excluir la tarea más importante en la vista de recientes</string>
   <string name="recent_panel_bg_color_title">Color del fondo del panel</string>
   <string name="recent_card_bg_color_title">Color de fondo de las tarjetas</string>
   <string name="recent_card_text_color_title">Color del texto de las trajetas</string>
@@ -1151,20 +1152,20 @@
   <string name="recent_reset_confirm">¿Seguro que quieres restablecer Slim Recent a la configuración de stock?</string>
   <string name="default_auto_string">Defecto (Basado en aplicaciones)</string>
   <string name="recents_icon_pack_title">Paquete de iconos</string>
-  <string name="recents_icon_pack_summary">Apply a custom icon pack for apps in the panel</string>
-  <string name="no_iconpacks_summary">No icon packs installed</string>
+  <string name="recents_icon_pack_summary">Aplica un paquete de iconos personalizados en el panel</string>
+  <string name="no_iconpacks_summary">No hay paquetes de iconos instalado</string>
   <string name="dialog_pick_iconpack_title">Elegir paquete de iconos</string>
   <string name="default_iconpack_title">Iconos predeterminados</string>
   <string name="dialog_delete_title">Eliminar</string>
   <string name="dialog_delete_message">¿Borrar elemento seleccionado?</string>
-  <string name="slim_recents_corner_radius_title">Use round corners for cards</string>
-  <string name="slim_blacklist_apps_cat_title">Blacklisted apps</string>
-  <string name="slim_blacklist_apps_title">Apps blacklist</string>
-  <string name="slim_blacklist_apps_summary">Exclude apps to be shown in the panel</string>
-  <string name="slim_blacklist_add_apps_title">Add app</string>
-  <string name="slim_blacklist_add_apps_summary">Tap here to add app to the blacklist</string>
-  <string name="slim_blacklist_apps_info">Tap on the added app to remove it</string>
-  <string name="slim_recents_hints_footer">To clear all apps, pinch-in with two fingers on the panel. To block an app from being cleared, long press on its icon to star it.\n\nFor additional recents features such as multiwindow or to kill an app, long press or drag an app card in the panel.</string>
+  <string name="slim_recents_corner_radius_title">Usar esquinas redondeadas para tarjetas</string>
+  <string name="slim_blacklist_apps_cat_title">Aplicaciones en lista negra</string>
+  <string name="slim_blacklist_apps_title">Lista negra de apps</string>
+  <string name="slim_blacklist_apps_summary">Excluir aplicaciones para mostrar en el panel</string>
+  <string name="slim_blacklist_add_apps_title">Agregar aplicación</string>
+  <string name="slim_blacklist_add_apps_summary">Pulse aquí para añadir la aplicación a la lista negra</string>
+  <string name="slim_blacklist_apps_info">Toque en la aplicación añadida para removerla</string>
+  <string name="slim_recents_hints_footer">Para borrar todas las aplicaciones, pellizca con dos dedos en el panel. Para bloquear el borrado de una aplicación, mantén pulsado su ícono para marcarla como permanente.\n\nPara otras funciones recientes como la ventana múltiple o para matar una aplicación, mantén presionada la ventana de la aplicación en el panel.</string>
   <!-- ATTENTION: RTL languages need to replace left with right -->
   <string name="recent_panel_lefty_mode_title">Mostrar en el borde izquierdo</string>
   <string name="recent_panel_lefty_mode_summary">Mostrar el panel de aplicaciones recientes en el borde izquierdo</string>
@@ -1172,36 +1173,37 @@
   <string name="disable_fc_notifications_title">Desactivar notificación de FC´s</string>
   <string name="disable_fc_notifications_summary">Ocultar todas las notificaciones de forzar cierre</string>
   <!-- OmniJaws -->
-  <string name="omnijaws_settings_title">Weather service</string>
-  <string name="omnijaws_settings_summary">Customize service settings and icon pack</string>
+  <string name="omnijaws_settings_title">Servicio meteorológico</string>
+  <string name="omnijaws_settings_summary">Personalizar configuración de servicios y paquete de iconos</string>
   <string name="weather_config_title">Configuración del servicio</string>
-  <string name="weather_config_summary">Configure service to enable weather details</string>
+  <string name="weather_config_summary">Configurar servicio para habilitar los detalles meteorológicos</string>
   <string name="weather_icon_pack_title">Paquete de iconos de condición</string>
-  <string name="weather_icon_pack_note">Note\u003a you can install new icon packs from play store by searching for \"Chronus icons\"</string>
+  <string name="weather_icon_pack_note">Nota:
+puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus iconos\"</string>
   <!-- 4G icon -->
-  <string name="show_fourg_icon_title">4G icon</string>
-  <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead LTE</string>
+  <string name="show_fourg_icon_title">Ícono 4G</string>
+  <string name="show_fourg_icon_summary">Mostrar ícono de 4G en lugar de LTE</string>
   <!-- Roaming indicator icon -->
   <string name="roaming_indicator_icon_title">Mostrar indicador roaming</string>
   <string name="roaming_indicator_icon_summary">Mostrar indicador roaming en el icono de señal cuando está activado el modo roaming</string>
   <!-- In-call DND -->
-  <string name="dnd_when_call_title">In-call do not disturb</string>
-  <string name="dnd_when_call_summary">Auto enable DND during calls</string>
+  <string name="dnd_when_call_title">No molestar en llamada</string>
+  <string name="dnd_when_call_summary">Auto habilitar DND durante las llamadas</string>
   <!-- Bluetooth status -->
-  <string name="bluetooth_battery_title">Bluetooth battery status</string>
-  <string name="bluetooth_battery_summary">Display battery status for the connected bluetooth device, if available</string>
+  <string name="bluetooth_battery_title">Estado de la batería Bluetooth</string>
+  <string name="bluetooth_battery_summary">Mostrar el estado de la batería del dispositivo bluetooth conectado actualmente, si esta disponible</string>
   <!-- Status bar temperature -->
-  <string name="status_bar_weather_title">Weather</string>
-  <string name="status_bar_weather_summary">Display and customize weather on status bar</string>
-  <string name="status_bar_temperature_title">Weather</string>
-  <string name="status_bar_temperature_hidden">Hidden</string>
-  <string name="status_bar_temperature_location_title">Position</string>
-  <string name="status_bar_temperature_location_right">Show on right</string>
-  <string name="status_bar_temperature_location_left">Show on left</string>
-  <string name="status_bar_weather_color_title">Temperature color</string>
-  <string name="status_bar_weather_hidden">Hide weather</string>
-  <string name="status_bar_temperature_image_show_scale">Display image and temp with scale</string>
-  <string name="status_bar_temperature_image_hide_scale">Display image and temp without scale</string>
+  <string name="status_bar_weather_title">Clima</string>
+  <string name="status_bar_weather_summary">Mostrar y personalizar el clima en la barra de estado</string>
+  <string name="status_bar_temperature_title">Clima</string>
+  <string name="status_bar_temperature_hidden">Oculto</string>
+  <string name="status_bar_temperature_location_title">Posición</string>
+  <string name="status_bar_temperature_location_right">Mostrar en la derecha</string>
+  <string name="status_bar_temperature_location_left">Mostrar en la izquierda</string>
+  <string name="status_bar_weather_color_title">Color de la temperatura</string>
+  <string name="status_bar_weather_hidden">Ocultar el clima</string>
+  <string name="status_bar_temperature_image_show_scale">Mostrar la imagen y la temperatura con escala</string>
+  <string name="status_bar_temperature_image_hide_scale">Mostrar imagen y temperatura sin escala</string>
   <string name="status_bar_temperature_show_scale_hide_image">Mostrar solo temperatura con escala</string>
   <string name="status_bar_temperature_hide_scale_hide_image">Mostrar solo temperatura sin escala</string>
   <string name="status_bar_show_image">Mostrar solo la condición de imagen</string>
@@ -1290,10 +1292,10 @@
   <string name="latest_version">Version mas reciente: %1$s</string>
   <string name="unknown">Desconocido</string>
   <string name="system_uptodate">Su sistema está actualizado</string>
-  <string name="maintainer_title">Maintainer</string>
-  <string name="maintainer_unknown">No official maintainer</string>
-  <string name="changelog_title">Changelog</string>
-  <string name="changelog_summary">View changelog</string>
+  <string name="maintainer_title">Desarrollador</string>
+  <string name="maintainer_unknown">Desarrolladores no oficiales</string>
+  <string name="changelog_title">Registro de cambios</string>
+  <string name="changelog_summary">Ver Registro de Cambios</string>
   <string name="download_title">Descargar las últimas versiones</string>
   <string name="download_summary">Visitar la página de descarga</string>
   <string name="gapps_title">Descargar Gapps</string>
@@ -1303,7 +1305,7 @@
   <string name="paypal_title">Donar</string>
   <string name="paypal_summary">Desarrollo de dispositivos de soporte</string>
   <string name="telegram_title">Telegram</string>
-  <string name="telegram_summary">Join latest discussions on telegram</string>
+  <string name="telegram_summary">Únete a las discusiones más recientes en telegram</string>
   <!-- Check update -->
   <string name="check_update_title">Buscar actualizaciones</string>
   <string name="last_check_summary">Última busqueda de actualizaciones:%1$s</string>
@@ -1328,12 +1330,12 @@
   <string name="dialog_message">Buscando actulizaciones de ROM, espere…</string>
   <!-- Navbar Animation -->
   <string name="pixel_navbar_anim_title">Animación de píxel</string>
-  <string name="pixel_navbar_anim_summary">Toggle pixel style animation for navigation bar</string>
+  <string name="pixel_navbar_anim_summary">Cambiar animación de estilo pixel para barra de navegación</string>
   <!-- Smart pulldown-->
   <string name="smart_pulldown_title">Despliegue inteligente</string>
-  <string name="smart_pulldown_summary">Open quick settings when there are %1$s notifications</string>
-  <string name="smart_pulldown_none_summary">Open quick settings when there are no notifications</string>
-  <string name="smart_pulldown_off">Off</string>
+  <string name="smart_pulldown_summary">Abrir las configuraciones rápidas cuando hay %1$s notificaciones</string>
+  <string name="smart_pulldown_none_summary">Abrir Configuraciónes rápidas cuando no hay notificaciones</string>
+  <string name="smart_pulldown_off">Desactivado</string>
   <string name="smart_pulldown_none">sin notificaciones</string>
   <string name="smart_pulldown_dismissable">no descartable</string>
   <string name="smart_pulldown_ongoing">no está en curso</string>
@@ -1341,16 +1343,16 @@
   <string name="statusbar_doubletap_sleep_title">Tocar para suspender</string>
   <string name="statusbar_doubletap_sleep_summary">Tocar dos veces en la barra de estado para poner el dispositivo en suspenso</string>
   <!-- Auto USB mode chooser -->
-  <string name="auto_usb_mode_chooser_title">Auto USB mode chooser</string>
-  <string name="auto_usb_mode_chooser_summary">Pop-up usb mode chooser when device connected to PC</string>
+  <string name="auto_usb_mode_chooser_title">Selector de modo auto USB</string>
+  <string name="auto_usb_mode_chooser_summary">Selector de modo usb emergente al dispositivo conectado a la PC</string>
   <!-- Vibrate on plugged -->
-  <string name="vibration_on_charge_state_changed_title">Vibrate on plug</string>
-  <string name="vibration_on_charge_state_changed_summary">Vibrate device when device connected to power source</string>
+  <string name="vibration_on_charge_state_changed_title">Vibrar al conectar</string>
+  <string name="vibration_on_charge_state_changed_summary">El dispositivo vibra al dispositivo al ser conectado a la fuente de alimentación</string>
   <!-- Recents deep clear -->
-  <string name="recents_deep_clear_title">Deep clear</string>
-  <string name="recents_deep_clear_summary">Clear background process when using dismiss icon to dismiss task from recents view. This may lead unitentional results. Some apps may stop working until you restart them.</string>
-  <string name="qs_tile_title_visibility_title">Tile title</string>
-  <string name="qs_tile_title_visibility_summary">Display title below each tile</string>
+  <string name="recents_deep_clear_title">Limpieza profunda</string>
+  <string name="recents_deep_clear_summary">Limpiar procesos en segundo plano al utilizar el icono de descartar para ignorar tareas de la vista reciente. Esto puede conducir a resultados indeseados. Algunas aplicaciones pueden dejar de funcionar hasta que los reinicie.</string>
+  <string name="qs_tile_title_visibility_title">Título de ajuste rápido</string>
+  <string name="qs_tile_title_visibility_summary">Mostrar titulo debajo de cada ajuste rápido</string>
   <!-- Dark SysUI Theme -->
   <string name="dark_theme_title">Tema</string>
   <string name="dark_theme_automatic">Automático</string>
@@ -1394,18 +1396,18 @@
   <string name="battery_percent_stock">Comportamiento de fábrica</string>
   <string name="battery_percent_always">Mostrar siempre</string>
   <string name="battery_percent_never">No mostrar nunca</string>
-  <string name="twilight_mode_location_dialog">Location disabled</string>
-  <string name="twilight_mode_location_disabled">Location access is disabled</string>
-  <string name="twilight_mode_location_enable">Enable</string>
+  <string name="twilight_mode_location_dialog">Localización deshabilitada</string>
+  <string name="twilight_mode_location_disabled">Servicios de ubicación desactivados</string>
+  <string name="twilight_mode_location_enable">Activado</string>
   <!-- Quick unlock -->
-  <string name="unlock_quick_unlock_control_title">Quick unlock</string>
-  <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
-  <string name="background_processes_settings_title">Background processes</string>
+  <string name="unlock_quick_unlock_control_title">Desbloqueo rápido</string>
+  <string name="unlock_quick_unlock_control_summary">Desbloquee automáticamente cuando se introduce el PIN o contraseña correcta</string>
+  <string name="background_processes_settings_title">Procesos en segundo plano</string>
   <!-- App details: open play store link if app is user installed -->
   <string name="app_play_store">Google Play</string>
   <!-- Dark Shade -->
-  <string name="berry_dark_shade_title">Dark style</string>
-  <string name="berry_dark_shade_stock">Deep Grey</string>
+  <string name="berry_dark_shade_title">Estilo oscuro</string>
+  <string name="berry_dark_shade_stock">Gris profundo</string>
   <string name="berry_dark_shade_black">Amoled Black</string>
   <!-- Screen off animation -->
   <string name="screen_off_animation_title">Screen off animation</string>
