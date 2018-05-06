@@ -82,6 +82,7 @@ public class Buttons extends SettingsPreferenceFragment implements
             "torch_long_press_power_gesture";
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
             "torch_long_press_power_timeout";
+    private static final String KEY_BACK_LONG_PRESS = "hardware_keys_back_long_press";
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -97,6 +98,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private SwitchPreference mAnbi;
     private ListPreference mHomeLongPressAction;
     private ListPreference mHomeDoubleTapAction;
+    private ListPreference mBackLongPressAction;
     private ListPreference mMenuPressAction;
     private ListPreference mMenuLongPressAction;
     private ListPreference mAssistPressAction;
@@ -175,8 +177,8 @@ public class Buttons extends SettingsPreferenceFragment implements
         // Long press power while display is off to activate torchlight
         mTorchLongPressPowerGesture =
                 (SwitchPreference) findPreference(KEY_TORCH_LONG_PRESS_POWER_GESTURE);
-        final int torchLongPressPowerTimeout = LineageSettings.System.getInt(resolver,
-                LineageSettings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0);
+        final int torchLongPressPowerTimeout = LineageSettings.System.getIntForUser(resolver,
+                LineageSettings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0, UserHandle.USER_CURRENT);
         mTorchLongPressPowerTimeout = initList(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT,
                 torchLongPressPowerTimeout);
 
@@ -193,6 +195,12 @@ public class Buttons extends SettingsPreferenceFragment implements
         Action homeDoubleTapAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
                 defaultHomeDoubleTapAction);
+
+        Action defaultBackLongPressAction = Action.fromIntSafe(res.getInteger(
+                org.lineageos.platform.internal.R.integer.config_longPressOnBackBehavior));
+        Action backLongPressAction = Action.fromSettings(resolver,
+                LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION,
+                defaultBackLongPressAction);
 
         backlight = (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
         if (!backlight.isButtonSupported() /*&& !backlight.isKeyboardSupported()*/) {
@@ -251,6 +259,8 @@ public class Buttons extends SettingsPreferenceFragment implements
             if (!showBackWake) {
                 backCategory.removePreference(findPreference(LineageSettings.System.BACK_WAKE_SCREEN));
             }
+
+            mBackLongPressAction = initList(KEY_BACK_LONG_PRESS, backLongPressAction);
         } else {
             prefScreen.removePreference(backCategory);
         }
@@ -338,13 +348,13 @@ public class Buttons extends SettingsPreferenceFragment implements
                         findPreference(LineageSettings.System.VOLUME_ANSWER_CALL));
             }
 
-            int cursorControlAction = Settings.System.getInt(resolver,
-                    Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
+            int cursorControlAction = Settings.System.getIntForUser(resolver,
+                    Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0, UserHandle.USER_CURRENT);
             mVolumeKeyCursorControl = initList(KEY_VOLUME_KEY_CURSOR_CONTROL,
                     cursorControlAction);
 
-            int swapVolumeKeys = LineageSettings.System.getInt(getContentResolver(),
-                    LineageSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION, 0);
+            int swapVolumeKeys = LineageSettings.System.getIntForUser(getContentResolver(),
+                    LineageSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION, 0, UserHandle.USER_CURRENT);
             mSwapVolumeButtons = (SwitchPreference)
                     prefScreen.findPreference(KEY_SWAP_VOLUME_BUTTONS);
             if (mSwapVolumeButtons != null) {
@@ -378,9 +388,9 @@ public class Buttons extends SettingsPreferenceFragment implements
 
         // Power button ends calls.
         if (mPowerEndCall != null) {
-            final int incallPowerBehavior = Settings.Secure.getInt(getContentResolver(),
+            final int incallPowerBehavior = Settings.Secure.getIntForUser(getContentResolver(),
                     Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR,
-                    Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_DEFAULT);
+                    Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_DEFAULT, UserHandle.USER_CURRENT);
             final boolean powerButtonEndsCall =
                     (incallPowerBehavior == Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_HANGUP);
             mPowerEndCall.setChecked(powerButtonEndsCall);
@@ -388,9 +398,9 @@ public class Buttons extends SettingsPreferenceFragment implements
 
         // Home button answers calls.
         if (mHomeAnswerCall != null) {
-            final int incallHomeBehavior = LineageSettings.Secure.getInt(getContentResolver(),
+            final int incallHomeBehavior = LineageSettings.Secure.getIntForUser(getContentResolver(),
                     LineageSettings.Secure.RING_HOME_BUTTON_BEHAVIOR,
-                    LineageSettings.Secure.RING_HOME_BUTTON_BEHAVIOR_DEFAULT);
+                    LineageSettings.Secure.RING_HOME_BUTTON_BEHAVIOR_DEFAULT, UserHandle.USER_CURRENT);
             final boolean homeButtonAnswersCall =
                 (incallHomeBehavior == LineageSettings.Secure.RING_HOME_BUTTON_BEHAVIOR_ANSWER);
             mHomeAnswerCall.setChecked(homeButtonAnswersCall);
@@ -414,14 +424,14 @@ public class Buttons extends SettingsPreferenceFragment implements
         String value = (String) newValue;
         int index = pref.findIndexOfValue(value);
         pref.setSummary(pref.getEntries()[index]);
-        LineageSettings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
+        LineageSettings.System.putIntForUser(getContentResolver(), setting, Integer.valueOf(value), UserHandle.USER_CURRENT);
     }
 
     private void handleSystemListChange(ListPreference pref, Object newValue, String setting) {
         String value = (String) newValue;
         int index = pref.findIndexOfValue(value);
         pref.setSummary(pref.getEntries()[index]);
-        Settings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
+        Settings.System.putIntForUser(getContentResolver(), setting, Integer.valueOf(value), UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -440,6 +450,10 @@ public class Buttons extends SettingsPreferenceFragment implements
         } else if (preference == mHomeDoubleTapAction) {
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_HOME_DOUBLE_TAP_ACTION);
+            return true;
+        } else if (preference == mBackLongPressAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION);
             return true;
         } else if (preference == mMenuPressAction) {
             handleListChange(mMenuPressAction, newValue,
@@ -493,8 +507,8 @@ public class Buttons extends SettingsPreferenceFragment implements
                     value = 1;
                 }
             }
-            LineageSettings.System.putInt(getActivity().getContentResolver(),
-                    LineageSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value);
+            LineageSettings.System.putIntForUser(getActivity().getContentResolver(),
+                    LineageSettings.System.SWAP_VOLUME_KEYS_ON_ROTATION, value, UserHandle.USER_CURRENT);
         } else if (preference == mPowerEndCall) {
             handleTogglePowerButtonEndsCallPreferenceClick();
             return true;
@@ -507,17 +521,17 @@ public class Buttons extends SettingsPreferenceFragment implements
     }
 
     private void handleTogglePowerButtonEndsCallPreferenceClick() {
-        Settings.Secure.putInt(getContentResolver(),
+        Settings.Secure.putIntForUser(getContentResolver(),
                 Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR, (mPowerEndCall.isChecked()
                         ? Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_HANGUP
-                        : Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_SCREEN_OFF));
+                        : Settings.Secure.INCALL_POWER_BUTTON_BEHAVIOR_SCREEN_OFF), UserHandle.USER_CURRENT);
     }
 
     private void handleToggleHomeButtonAnswersCallPreferenceClick() {
-        LineageSettings.Secure.putInt(getContentResolver(),
+        LineageSettings.Secure.putIntForUser(getContentResolver(),
                 LineageSettings.Secure.RING_HOME_BUTTON_BEHAVIOR, (mHomeAnswerCall.isChecked()
                         ? LineageSettings.Secure.RING_HOME_BUTTON_BEHAVIOR_ANSWER
-                        : LineageSettings.Secure.RING_HOME_BUTTON_BEHAVIOR_DO_NOTHING));
+                        : LineageSettings.Secure.RING_HOME_BUTTON_BEHAVIOR_DO_NOTHING), UserHandle.USER_CURRENT);
     }
 
     public static void reset(Context mContext) {

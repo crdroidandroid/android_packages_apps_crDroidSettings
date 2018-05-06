@@ -134,11 +134,20 @@
             android:summary="@string/button_wake_summary"
             android:defaultValue="false" />
 
-        <lineageos.preference.LineageSecureSettingSwitchPreference
+        <!--<lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="kill_app_longpress_back"
             android:icon="@drawable/ic_close"
             android:title="@string/kill_app_longpress_back"
-            android:summary="@string/kill_app_longpress_back_summary"/>
+            android:summary="@string/kill_app_longpress_back_summary"/>-->
+
+        <ListPreference
+            android:key="hardware_keys_back_long_press"
+            android:icon="@drawable/ic_single_tap"
+            android:dialogTitle="@string/hardware_keys_long_press_title"
+            android:title="@string/hardware_keys_long_press_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
     </PreferenceCategory>
 
     <PreferenceCategory
