@@ -45,6 +45,8 @@ import com.crdroid.settings.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import lineageos.providers.LineageSettings;
+
 public class UserInterface extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
@@ -311,6 +313,8 @@ public class UserInterface extends SettingsPreferenceFragment
                 Settings.System.ANIM_TILE_DURATION, 2000, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.FULL_SCREEN_ASPECT_RATIO, 0, UserHandle.USER_CURRENT);
         SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT);
         AnimationControls.reset(mContext);
         DozeFragment.reset(mContext);

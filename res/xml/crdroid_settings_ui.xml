@@ -16,6 +16,7 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     android:title="@string/ui_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
@@ -40,6 +41,14 @@
         android:entries="@array/berry_dark_shade_entries"
         android:entryValues="@array/berry_dark_shade_values"
         android:defaultValue="0" />
+
+    <!-- Full screen aspect ratio -->
+    <lineageos.preference.LineageSystemSettingSwitchPreference
+        android:key="full_screen_aspect_ratio"
+        android:icon="@drawable/ic_fullscreen"
+        android:title="@string/full_screen_aspect_ratio_title"
+        android:summary="@string/full_screen_aspect_ratio_summary"
+        lineage:requiresConfig="@*lineageos.platform:bool/config_haveHigherAspectRatioScreen" />
 
     <!-- Expanded Desktop -->
     <org.lineageos.internal.lineageparts.LineagePartsPreference
