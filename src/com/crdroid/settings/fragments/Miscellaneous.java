@@ -73,10 +73,14 @@ public class Miscellaneous extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.crdroid_settings_misc);
 
+        ContentResolver resolver = getActivity().getContentResolver();
+
         //Screenshot edit app
         mPackageAdapter = new ScreenshotEditPackageListAdapter(getActivity());
         mScreenshotEditAppPref = findPreference("screenshot_edit_app");
         mScreenshotEditAppPref.setOnPreferenceClickListener(this);
+
+       refreshScreenshotEditApp(resolver);
 
         // mLockClock
         if (!DevelopmentSettings.isPackageInstalled(mContext, KEY_LOCK_CLOCK_PACKAGE_NAME)) {
@@ -97,6 +101,15 @@ public class Miscellaneous extends SettingsPreferenceFragment
         mMSOB.setOnPreferenceChangeListener(this);
     }
 
+private void refreshScreenshotEditApp(ContentResolver resolver){
+ String currentScreenshotEditApp =  Settings.System.getStringForUser(resolver, Settings.System.SCREENSHOT_EDIT_USER_APP, UserHandle.USER_CURRENT);
+        if (currentScreenshotEditApp != null && currentScreenshotEditApp != "") {
+            mScreenshotEditAppPref.setSummary(currentScreenshotEditApp);
+        } else {
+            mScreenshotEditAppPref.setSummary(R.string.screenshot_edit_app_summary);
+        }
+}
+
     @Override
     public Dialog onCreateDialog(int dialogId) {
         switch (dialogId) {
@@ -115,6 +128,7 @@ public class Miscellaneous extends SettingsPreferenceFragment
                         PackageItem info = (PackageItem) parent.getItemAtPosition(position);
                         Settings.System.putString(getActivity().getContentResolver(),
                                 Settings.System.SCREENSHOT_EDIT_USER_APP, info.packageName);
+refreshScreenshotEditApp(getActivity().getContentResolver());
                         dialog.cancel();
                     }
                 });
