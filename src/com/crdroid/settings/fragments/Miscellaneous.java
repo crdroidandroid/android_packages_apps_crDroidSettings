@@ -58,6 +58,8 @@ public class Miscellaneous extends SettingsPreferenceFragment
     private static final String KEY_LOCK_CLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
     private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
     private static final String MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
+    private static final String SCREENSHOT_EDIT_APP = "screenshot_edit_app";
+
     private static final int DIALOG_SCREENSHOT_EDIT_APP = 1;
 
     private SwitchPreference mShowCpuInfo;
@@ -73,14 +75,12 @@ public class Miscellaneous extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.crdroid_settings_misc);
 
-        ContentResolver resolver = getActivity().getContentResolver();
+        ContentResolver resolver = mContext.getContentResolver();
 
         //Screenshot edit app
         mPackageAdapter = new ScreenshotEditPackageListAdapter(getActivity());
-        mScreenshotEditAppPref = findPreference("screenshot_edit_app");
+        mScreenshotEditAppPref = findPreference(SCREENSHOT_EDIT_APP);
         mScreenshotEditAppPref.setOnPreferenceClickListener(this);
-
-       refreshScreenshotEditApp(resolver);
 
         // mLockClock
         if (!DevelopmentSettings.isPackageInstalled(mContext, KEY_LOCK_CLOCK_PACKAGE_NAME)) {
@@ -88,21 +88,24 @@ public class Miscellaneous extends SettingsPreferenceFragment
         }
 
         mShowCpuInfo = (SwitchPreference) findPreference(SHOW_CPU_INFO_KEY);
-        mShowCpuInfo.setChecked(Settings.Global.getInt(mContext.getContentResolver(),
+        mShowCpuInfo.setChecked(Settings.Global.getInt(resolver,
                 Settings.Global.SHOW_CPU_OVERLAY, 0) == 1);
         mShowCpuInfo.setOnPreferenceChangeListener(this);
 
         // MediaScanner behavior on boot
         mMSOB = (ListPreference) findPreference(MEDIA_SCANNER_ON_BOOT);
-        int mMSOBValue = Settings.System.getIntForUser(mContext.getContentResolver(),
+        int mMSOBValue = Settings.System.getIntForUser(resolver,
                 Settings.System.MEDIA_SCANNER_ON_BOOT, 0, UserHandle.USER_CURRENT);
         mMSOB.setValue(String.valueOf(mMSOBValue));
         mMSOB.setSummary(mMSOB.getEntry());
         mMSOB.setOnPreferenceChangeListener(this);
+
+       refreshScreenshotEditApp();
     }
 
-private void refreshScreenshotEditApp(ContentResolver resolver){
- String currentScreenshotEditApp =  Settings.System.getStringForUser(resolver, Settings.System.SCREENSHOT_EDIT_USER_APP, UserHandle.USER_CURRENT);
+    private void refreshScreenshotEditApp() {
+        String currentScreenshotEditApp =  Settings.System.getStringForUser(getActivity().getContentResolver(),
+                Settings.System.SCREENSHOT_EDIT_USER_APP, UserHandle.USER_CURRENT);
         if (currentScreenshotEditApp != null && currentScreenshotEditApp != "") {
             mScreenshotEditAppPref.setSummary(currentScreenshotEditApp);
         } else {
@@ -126,9 +129,9 @@ private void refreshScreenshotEditApp(ContentResolver resolver){
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         // Add empty application definition, the user will be able to edit it later
                         PackageItem info = (PackageItem) parent.getItemAtPosition(position);
-                        Settings.System.putString(getActivity().getContentResolver(),
-                                Settings.System.SCREENSHOT_EDIT_USER_APP, info.packageName);
-refreshScreenshotEditApp(getActivity().getContentResolver());
+                        Settings.System.putStringForUser(getActivity().getContentResolver(),
+                                Settings.System.SCREENSHOT_EDIT_USER_APP, info.packageName, UserHandle.USER_CURRENT);
+                        refreshScreenshotEditApp();
                         dialog.cancel();
                     }
                 });
@@ -184,6 +187,8 @@ refreshScreenshotEditApp(getActivity().getContentResolver());
                 Settings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.VIBRATION_ON_CHARGE_STATE_CHANGED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putStringForUser(resolver,
+                Settings.System.SCREENSHOT_EDIT_USER_APP, "", UserHandle.USER_CURRENT);
         Settings.Global.putInt(resolver,
                 Settings.Global.TOAST_ICON, 1);
     }
