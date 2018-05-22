@@ -123,7 +123,7 @@
   <string name="hide_lockscreen_alarm_summary">Riasztás megjelenítése, ha be van állítva</string>
   <!-- Lockscreen notif count -->
   <string name="lockscreen_maxnotif_title">Értesítés számláló</string>
-  <string name="lockscreen_maxnotif_sumary">Enable adjustment of notifications</string>
+  <string name="lockscreen_maxnotif_sumary">Értesítéskijelzés módosításának engedélyezése</string>
   <string name="lockscreen_maxnotif_config">Max engedélyezett értesítés</string>
   <!-- Lockscreen tap-to sleep -->
   <string name="double_tap_sleep_anywhere_title">Alvómód érintésre</string>
@@ -133,7 +133,7 @@
   <string name="lockscreen_enable_power_menu_summary">Kikapcsoló menü elérhető a záróképernyőn</string>
   <!-- Quick settings on secure lockscreen -->
   <string name="lockscreen_enable_qs_title">Gyorsbeállítások</string>
-  <string name="lockscreen_enable_qs_summary">Allow accessing quick settings and swipe shortcuts on secure lock screen</string>
+  <string name="lockscreen_enable_qs_summary">Lehetővé teszi a gyorsbeállítások és húzási parancsikonok elérését a védett záróképernyőn</string>
   <!-- Screenshot Sound  -->
   <string name="screenshot_sound_title">Képernyőmentés hangja</string>
   <string name="screenshot_sound_summary">Hangos értesítés a képernyőmentés közben</string>
@@ -178,13 +178,13 @@
   <string name="qs_bt_easy_toggle_summary">Bluetooth gyorskapcsoló</string>
   <!-- Advanced data tile -->
   <string name="qs_advanced_data_title">Mobiladat gyorskapcsoló</string>
-  <string name="qs_advanced_data_summary">Enable one tap action to toggle data</string>
+  <string name="qs_advanced_data_summary">Egy érintéssel ki és bekapcsolhatja az adatforgalmat</string>
   <!-- Battery Saver easy toggle -->
   <string name="qs_battery_easy_toggle_title">Akkumulátor gyorskapcsoló</string>
   <string name="qs_battery_easy_toggle_summary">Akkumulátorkímélő gyorskapcsoló</string>
   <!-- Location easy toggle -->
   <string name="qs_location_easy_toggle_title">Tartózkodási hely gyorskapcsoló</string>
-  <string name="qs_location_easy_toggle_summary">Enable one tap action to toggle location</string>
+  <string name="qs_location_easy_toggle_summary">Egy érintéssel ki és bekapcsolhatja a helymeghatározást</string>
   <!-- Quick settings brightness slider -->
   <string name="qs_brightness_slider_title">Fényerőszabályzó-csúszka</string>
   <string name="qs_brightness_slider_summary">Fényerő csúszka megjelenítése a gyorsbeállítások panelen</string>
@@ -255,9 +255,9 @@
   <string name="expanded_hide_status">Állapotsáv elrejtése</string>
   <string name="expanded_hide_navigation">Navigációs sáv elrejtése</string>
   <string name="expanded_hide_both">Mindkettő elrejtése</string>
-  <string name="expanded_nothing_to_show">To add a custom per-app configuration for expanded state, set \"Enabled for all\" to the off position</string>
+  <string name="expanded_nothing_to_show">Kiterjesztett állapotban az alkalmazásonkénti konfiguráláshoz helyezze \'Az összesre engedélyezve\' menüt kikapcsolt állapotba</string>
   <string name="expanded_desktop_state">Kiterjesztett állapot</string>
-  <string name="expanded_enabled_for_all">Enabled for all</string>
+  <string name="expanded_enabled_for_all">Az összesre engedélyezve</string>
   <string name="expanded_user_configurable">Felhasználó által konfigurálható</string>
   <string name="expanded_desktop_style">A Kiterjesztett asztal stílusa</string>
   <string name="expanded_desktop_style_description">Válasszon alapértelmezett kiterjesztett asztalstílust</string>
@@ -306,7 +306,7 @@
   <string name="navbar_visibility">Navigációs sáv</string>
   <string name="navbar_visibility_summary">Navigációs sáv láthatósága</string>
   <string name="navigationbar_settings_title">Navigációs sáv</string>
-  <string name="navigationbar_settings_summary">Customize navigation style and behavior</string>
+  <string name="navigationbar_settings_summary">A navigáció stílusának és viselkedésének testreszabása</string>
   <string name="navbar_general_title">Egyéb beállítások</string>
   <string name="navigation_bar_left_title">Balkezes mód</string>
   <string name="navigation_bar_left_summary">Fekvő módban a navigációs sáv a bal oldalon jelenik meg</string>
@@ -314,7 +314,7 @@
   <string name="smartbar_interface">SmartBar</string>
   <string name="icon_pack_picker_dialog_title">Ikon csomagok</string>
   <string name="image_exceeds_max_allowed_size">A kép nem haladhatja meg az 512 x 512-es méretet</string>
-  <string name="invalid_icon_from_uri">Unable to load image from content provider</string>
+  <string name="invalid_icon_from_uri">Nem sikerült betölteni a képet a tartalomszolgáltatótól</string>
   <string name="picker_activities">Tevékenységek</string>
   <string name="select_custom_app_title">Egyéni alkalmazás választása</string>
   <string name="select_custom_activity_title">Egyéni művelet kiválasztása</string>
@@ -322,7 +322,7 @@
   <string name="smartbar_doubletap_sleep_title">Alvómód érintéssel</string>
   <string name="smartbar_doubletap_sleep_summary">A navigációs sáv üres területén dupla érintésre alvómód</string>
   <string name="one_handed_mode_title">Egykezes üzemmód</string>
-  <string name="one_handed_mode_summary">Allows swiping on the navigation bar to enable one handed mode</string>
+  <string name="one_handed_mode_summary">Megengedi az egykezes üzemmód engedélyezését a navigációs sávon való csúsztatással</string>
   <!-- Actions dialog and default task values set in ActionPreference xml-->
   <string name="choose_action_title">Művelet választása</string>
   <string name="action_entry_default_action">Alapértelmezett beállítások</string>
@@ -333,8 +333,8 @@
   <string name="fling_settings_summary">Fling gesztusok testreszabása</string>
   <string name="fling_interface">Fling</string>
   <string name="fling_enable_title">Fling engedélyezése</string>
-  <string name="fling_back_home_policy">Back and Home are required to be set at all times. To change a Back or Home assignment, set the desired assignment first</string>
-  <string name="fling_split_bar_policy">When only a right or left action is assigned, the action applies to the full bar</string>
+  <string name="fling_back_home_policy">A Vissza és a Kezdőgomb mindenkor be kell legyen állítva. A Vissza vagy Kezdőlap társítás megváltoztatásához, állítsa be először a kívánt műveletet</string>
+  <string name="fling_split_bar_policy">Ha csak jobb vagy bal művelet van hozzárendelve, akkor a művelet az egész sávra érvényes</string>
   <string name="fling_def_summary">Nincs művelet beállítva</string>
   <string name="fling_swipe_actions">Csúsztatási gesztus</string>
   <string name="fling_tap_actions">Érintési gesztusok</string>
@@ -384,7 +384,7 @@
   <string name="fling_longpress_title">Hosszan nyomás késleltetése</string>
   <string name="fling_longpress_summary">Növelheti vagy csökkentheti a hosszan nyomás művelet idejét</string>
   <string name="fling_keyboard_cursors_title">Dinamikus billentyűzet-kurzorok művelete</string>
-  <string name="fling_keyboard_cursors_summary">Double tap left and right actions becomes left and right keyboard cursor actions if keyboard is open</string>
+  <string name="fling_keyboard_cursors_summary">Dupla érintés jobbra vagy balra a kurzorok jobbra vagy balra mozgatásához megnyitott billentyűzet esetén</string>
   <string name="fling_logo_opacity_title">Fling logó átlátszósága</string>
   <!-- Pulse navigation bar music visualizer -->
   <string name="pulse_help_policy_notice_title">Pulse információk</string>
@@ -399,7 +399,7 @@
   <string name="fling_pulse_color">Pulzálás színe</string>
   <string name="fling_pulse_color_summary">Automatikus színegyeztetésként is használható</string>
   <string name="eos_fling_lavalamp_title">Lávalámpa bekapcsolása</string>
-  <string name="eos_fling_lavalamp_summary">Pulse animates a smooth lava lamp style color blend</string>
+  <string name="eos_fling_lavalamp_summary">A Pulse életre kelt egy lávalámpa stílusú lágy színkavalkádot</string>
   <string name="pulse_advanced_category">Haladó</string>
   <string name="pulse_legacy_mode_advanced_category">Halványuló blokkok üzemmód beállításai</string>
   <string name="pulse_custom_fudge_factor">Józan ész szint</string>
@@ -470,15 +470,15 @@
   <string name="smartbar_longpress_delay_long">Hosszú késleltetés</string>
   <string name="smartbar_custom_icon_size_title">Egyéni ikonméretezés</string>
   <!-- Allow fake signature -->
-  <string name="allow_signature_fake">Allow signature spoofing</string>
-  <string name="allow_signature_fake_summary">Allow apps to bypass security systems by pretending to be a different app.</string>
+  <string name="allow_signature_fake">Aláírás-utánzás engedélyezése</string>
+  <string name="allow_signature_fake_summary">A biztonsági rendszer kijátszása érdekében engedélyezi az alkalmazásoknak, hogy azok más alkalmazásnak adják ki magukat.</string>
   <!-- Status bar -->
   <string name="status_bar_toggle_brightness">Fényerőszabályozás</string>
   <string name="status_bar_toggle_brightness_summary">Fényerő változtatása az állapotsoron való csúsztatással</string>
   <string name="status_bar_notif_count_title">Értesítés számláló</string>
   <string name="status_bar_notif_count_summary">Függőben lévő értesítések számának megjelenítése</string>
   <string name="status_bar_quick_qs_pulldown_title">Gyors legördítés</string>
-  <string name="status_bar_quick_qs_pulldown_summary">%1$s edge of the status bar pulls down quick settings</string>
+  <string name="status_bar_quick_qs_pulldown_summary">Gyorsbeállítások megjelenítése az állapotsor %1$s oldalán történő lehúzáskor</string>
   <string name="status_bar_quick_qs_pulldown_summary_left">Bal</string>
   <string name="status_bar_quick_qs_pulldown_summary_right">Jobb</string>
   <string name="status_bar_quick_qs_pulldown_off">Ki</string>
@@ -511,13 +511,13 @@
   <string name="status_bar_battery_style_text">Szöveg</string>
   <string name="status_bar_battery_style_hidden">Rejtett</string>
   <string name="status_bar_battery_style_tile_title">Akkumulátor csempe felülírása</string>
-  <string name="status_bar_battery_style_tile_summary">Use same icon style as above in QS battery tile</string>
+  <string name="status_bar_battery_style_tile_summary">Használjon a Gyorsbeállítások ikoncsempéjéhez hasonló ikonstílust</string>
   <!-- Status bar - Battery custom charging symbol -->
   <string name="text_charging_symbol_title">Egyéni, szöveges stílusú töltési szimbólum</string>
   <string name="text_charging_symbol_dialog">Egyéni töltési szimbólum az akku százalék mellett</string>
   <string name="text_charging_symbol_default">Letiltva</string>
   <string name="text_charging_symbol_flash">Vaku</string>
-  <string name="text_charging_symbol_tilde">Tilde</string>
+  <string name="text_charging_symbol_tilde">Hullám</string>
   <!-- Status bar - Battery percentage -->
   <string name="status_bar_battery_percentage_title">Akkumulátor százalék</string>
   <string name="status_bar_battery_percentage_default">Rejtett</string>
@@ -541,7 +541,7 @@
   <string name="vol_zen_summary">DND megjelenítése a hangerő szabályozásakor</string>
   <!-- Battery Bar -->
   <string name="battery_bar_title">Akkumulátorsáv</string>
-  <string name="battery_bar_summary">Display and customize battery bar above status bar</string>
+  <string name="battery_bar_summary">Akkumulátorsáv megjelenítése és testreszabása az állapotsor felett</string>
   <string name="battery_bar">Tartózkodási hely</string>
   <string name="battery_bar_no_navbar">Tartózkodási hely</string>
   <string name="battery_bar_location_hide">Elrejt</string>
@@ -560,7 +560,7 @@
   <string name="battery_bar_style_reversed">Fordított</string>
   <string name="battery_bar_use_charging_color">Egyéni töltésjelző szín</string>
   <string name="battery_bar_blend_color_title">Kevert színek</string>
-  <string name="battery_bar_blend_color_summary">Blend full/empty colors corresponding to battery percentage</string>
+  <string name="battery_bar_blend_color_summary">Az akkumulátor töltöttségének megfelelően kombinálja az üres/teli színeket</string>
   <string name="battery_bar_blend_color_reverse_title">Fordított irányú színek</string>
   <string name="battery_bar_blend_color_reverse_summary_off">Teljesen &#8594; üres: piros &#8592; zöld &#8592; kék &#8592; piros</string>
   <string name="battery_bar_blend_color_reverse_summary_on">Teljesen &#8594; üres: piros &#8594; zöld &#8594; kék &#8594; piros</string>
@@ -605,18 +605,18 @@
   <!-- Breathing Notifications -->
   <string name="breathing_notifications_category">Pulzáló értesítések</string>
   <string name="missed_call_breath_title">Nem fogadott hívás</string>
-  <string name="missed_call_breath_summary">Give breathing effect to missed call notifications in the statusbar</string>
+  <string name="missed_call_breath_summary">Adjon pulzáló effektet a nem fogadott hívások jelzéséhez az állapotsávon</string>
   <string name="voicemail_breath_title">Hangüzenet</string>
-  <string name="voicemail_breath_summary">Give breathing effect to voicemail notifications in the statusbar</string>
+  <string name="voicemail_breath_summary">Adjon pulzáló effektet a hangüzenetek jelzéséhez az állapotsávon</string>
   <string name="sms_breath_title">SMS</string>
-  <string name="sms_breath_summary">Give breathing effect to SMS notifications in the statusbar</string>
+  <string name="sms_breath_summary">Adjon pulzáló effektet az SMS üzenetek jelzéséhez az állapotsávon</string>
   <!-- CPU Info -->
   <string name="show_cpu_info">CPU infó megjelenítése</string>
   <string name="show_cpu_info_summary">CPU infók megjelenítése a képernyővel átfedésben</string>
   <!-- Heads up timeout -->
   <string name="heads_up_category">Felugró értesítések</string>
   <string name="heads_up_time_out_title">Időtúllépés</string>
-  <string name="heads_up_time_out_summary">Peeking notifications will show for <xliff:g id="number">%d</xliff:g> seconds</string>
+  <string name="heads_up_time_out_summary">A Lebegő értesítések <xliff:g id="number">%d</xliff:g> másodpercig fognak megjelenni</string>
   <string name="heads_up_time_out_2sec">2 másodperc</string>
   <string name="heads_up_time_out_4sec">4 másodperc</string>
   <string name="heads_up_time_out_5sec">5 másodperc</string>
@@ -625,7 +625,7 @@
   <string name="heads_up_time_out_10sec">10 másodperc</string>
   <!-- Heads up snooze -->
   <string name="heads_up_snooze_title">Szundi időzítő</string>
-  <string name="heads_up_snooze_summary_one_minute">Swiping up on peeking notifications will snooze heads up from that application for 1 minute</string>
+  <string name="heads_up_snooze_summary_one_minute">A lebegő értesítésen való felfelé csúsztatás 1 percre késlelteti annak újbóli megjelenését</string>
   <string name="heads_up_snooze_summary">A lebegő értesítésen való felfelé csúsztatás <xliff:g id="number">%d</xliff:g> percre késlelteti annak újbóli megjelenését</string>
   <string name="heads_up_snooze_disabled_summary">Szundi időzítő letiltva</string>
   <string name="heads_up_snooze_1min">1 perc</string>
@@ -643,12 +643,17 @@
   <string name="screenshot_type_title">Részleges képernyőkép</string>
   <string name="screenshot_type_fullscreen">Teljes képernyős képernyőmentés</string>
   <string name="screenshot_type_partial">A kívánt képernyő-terület kijelölése a hangerő gombok segítségével</string>
+  <!-- Screenshot editor -->
+  <string name="screenshot_options_category">Képernyőmentés beállításai</string>
+  <string name="screenshot_edit_app">Képernyőmentés-szerkesztő</string>
+  <string name="screenshot_edit_app_summary">Válassza ki, melyik képszerkesztőt használja a képernyőképek szerkesztéshez</string>
+  <string name="screenshot_edit_app_no_editor">Nem található képszerkesztő</string>
   <!-- Three-fingers-swipe to screenshot -->
   <string name="three_finger_gesture">Képernyőkép csúsztatással</string>
   <string name="three_finger_gesture_summary">Képernyőmentés három ujjas csúsztatással</string>
   <!-- Transparency porn -->
   <string name="trans">Átlátszóság</string>
-  <string name="trans_summary">Customize transparency level for various elements</string>
+  <string name="trans_summary">Szabja személyre különböző elemek átlátszósági szintjét</string>
   <string name="trans_qs">Gyorsbeállítások</string>
   <string name="trans_vol_dialog">Hangerő párbeszédpanel</string>
   <string name="trans_power_menu">Kikapcsoló menü</string>
@@ -660,8 +665,8 @@
   <string name="qs_stroke_color_title">Gyorsbeállítások keretének színe</string>
   <string name="qs_stroke_thickness_title">Gyorsbeállítások keretének vastagsága</string>
   <string name="qs_corner_radius_title">A Gyorsbeállítások sarokkerekítés-sugara</string>
-  <string name="qs_dash_width_title">QS border dash width</string>
-  <string name="qs_dash_gap_title">QS border dash gap</string>
+  <string name="qs_dash_width_title">A Gyorsbeállítás-körvonal szélessége</string>
+  <string name="qs_dash_gap_title">A Gyorsbeállítás körvonaltérköze</string>
   <string name="volume_dialog_transparency">Hangerőpanel áttetszőssége</string>
   <string name="volume_dialog_stroke_title">Hangerőpanel kerete</string>
   <string name="volume_dialog_stroke_disabled">Letiltva</string>
@@ -670,16 +675,16 @@
   <string name="volume_dialog_stroke_color_title">Hangerőpanel keretszíne</string>
   <string name="volume_dialog_stroke_thickness_title">Hangerőpanel keretvastagsága</string>
   <string name="volume_dialog_corner_radius_title">Hangerőpanel sarkának sugara</string>
-  <string name="volume_dialog_dash_width_title">Volume dialog border dash width</string>
-  <string name="volume_dialog_dash_gap_title">Volume dialog border dash gap</string>
+  <string name="volume_dialog_dash_width_title">A Hangerőpanel körvonalának szélessége</string>
+  <string name="volume_dialog_dash_gap_title">A Hangerőpanel körvonaltérköze</string>
   <string name="power_menu_transparency">Kikapcsoló menü átlátszósága</string>
-  <string name="power_menu_dialog_dim">Power/reboot dialog dim background amount</string>
-  <string name="soft_restart_required">Soft restart required to apply changes</string>
+  <string name="power_menu_dialog_dim">A kikapcsoló/újraindító menü háttérelmosásának mértéke</string>
+  <string name="soft_restart_required">A változások életbelépéséhez egy felhasználói felület újraindítás szükséges</string>
   <!-- Doze pulse options -->
   <string name="summary_doze_enabled">Engedélyezve</string>
   <string name="summary_doze_disabled">Letiltva</string>
   <string name="doze_overwrite_value_title">Alapértékek felülírása</string>
-  <string name="doze_overwrite_value_summary">Allow override of default values with user config</string>
+  <string name="doze_overwrite_value_summary">Alapértékek felhasználó általi felülírásának engedélyezése</string>
   <string name="doze_pulse_title">Felhasználói beállítások</string>
   <string name="doze_fade_in_pickup_title">Előtűnő (kézbevétel)</string>
   <string name="doze_fade_in_doubletap_title">Előtűnő (dupla érintés)</string>
@@ -702,13 +707,13 @@
   <string name="four_second">4 s</string>
   <string name="fourhalf_second">4.5 s</string>
   <string name="five_second">5 s</string>
-  <string name="doze_notification_color_invert_title">Notification inversion</string>
+  <string name="doze_notification_color_invert_title">Értesítési szín megfordítása</string>
   <string name="doze_notification_color_invert_summary_off">Az értesítések nem lesznek invertálva. Sötét téma esetén használja.</string>
   <string name="doze_notification_color_invert_summary_on">Értesítések invertálása. Világos/gyári téma esetén használja.</string>
   <string name="doze_vibrate_on_pickup_title">Rezgés kézbevételkor</string>
   <string name="doze_check_proximity_before_pulse_title">Közelségérzékelő ellenőrzése pulzálás előtt</string>
   <string name="sensor_warning_title">Figyelmeztetés</string>
-  <string name="sensor_warning_message">Settings based on sensors are subject to hardware compatibility. Enabling sensors for ambient display may increase power drain.</string>
+  <string name="sensor_warning_message">Az érzékelőkön alapuló beállítások hardverkompatibilitás függők. A környezeti kijelző érzékelőinek engedélyezése növelheti a fogyasztást.</string>
   <!-- Doze: switches -->
   <string name="doze_display_title">Környezeti kijelző</string>
   <string name="doze_display_summary">A környezeti kijelző testreszabása</string>
@@ -734,7 +739,7 @@
   <!-- Share crDroid -->
   <string name="share_crdroid_title">A crDroid ajánlása</string>
   <string name="share_crdroid_summary">Tudassa másokkal a crDroid létezését</string>
-  <string name="share_message">Check out what #crDroid is all about @ https://plus.google.com/communities/118297646046960923906</string>
+  <string name="share_message">Tegyen látogatást a https://plus.google.com/communities/118297646046960923906 weboldalon, ahol mindent megtudhat a crDroidról</string>
   <string name="share_chooser_title">A crDroid ajánlása</string>
   <!-- Sites crDroid -->
   <string name="crdroid_source_title">GitHub</string>
@@ -773,10 +778,10 @@
   <string name="hardware_keys_action_close_app">Alkalmazás kilövése</string>
   <string name="hardware_keys_action_single_handed_left">Egykezes mód (balos)</string>
   <string name="hardware_keys_action_single_handed_right">Egykezes mód (jobbos)</string>
-  <string name="camera_sleep_on_release_title">Screen peek</string>
-  <string name="camera_sleep_on_release_summary">A half press will keep the screen on only while the button is held down</string>
+  <string name="camera_sleep_on_release_title">Betekintés a képernyőbe</string>
+  <string name="camera_sleep_on_release_summary">Bepillanthat a képernyőbe, amíg félig lenyomva tartja a gombot</string>
   <string name="camera_launch_title">Kamera indítása</string>
-  <string name="camera_launch_summary">A longpress and release will launch camera</string>
+  <string name="camera_launch_summary">Hosszan nyomva majd elengedve elindítja a kamerát</string>
   <string name="volbtn_music_controls_title">Lejátszás vezérlése</string>
   <string name="volbtn_music_controls_summary">Zeneszámok keresése a hangerőgombok hosszan nyomásával kikapcsolt kijelzőnél</string>
   <string name="volbtn_cursor_control_title">Billentyűzet kurzor működése</string>
@@ -799,7 +804,7 @@
   <string name="additional_buttons_title">További gombok</string>
   <!-- Key backlight -->
   <string name="button_backlight_title">Háttérvilágítás</string>
-  <string name="button_backlight_summary">Customize button backlight settings</string>
+  <string name="button_backlight_summary">Szabja személyre a gombok háttérvilágításának beállításait</string>
   <string name="button_backlight_enabled">Gombok megvilágítása</string>
   <string name="button_backlight_only_when_pressed_title">Gombok megvilágítása csak lenyomáskor</string>
   <string name="keyboard_backlight_enabled">Billentyűzet megvilágítása</string>
@@ -818,7 +823,7 @@
   <string name="power_menu_airplane_title">Repülőgép üzemmód</string>
   <string name="power_menu_users_title">Felhasználóváltás</string>
   <string name="power_menu_settings_title">Beállítások parancsikon</string>
-  <string name="power_menu_lockdown_title">Device lockdown</string>
+  <string name="power_menu_lockdown_title">Készüléklezárás</string>
   <string name="power_menu_sound_title">Hangpanel</string>
   <string name="volume_keys_control_ring_stream_title">Csengőhang hangerejének vezérlése</string>
   <string name="volume_keys_control_ring_stream_summary_on">A hangerőgombok vezérlik a csengőhang hangerejét</string>
@@ -911,17 +916,17 @@
   <!-- Dynamic Navbar -->
   <string name="navbar_dynamic_title">Dinamikus navigációs sáv színek</string>
   <string name="navbar_dynamic_summary">A navigációs sáv színe illeszkedik az előtérben futó alkalmazás színéhez</string>
-  <string name="restart_app_required">Restart respective app to see effect</string>
+  <string name="restart_app_required">Indítsa újra a megfelelő alkalmazást, hogy a hatás látható legyen</string>
   <!-- Scrolling Animation Controls -->
   <string name="scrolling_title">Görgetés animáció</string>
-  <string name="scrolling_summary">Customize scrolling animation parameters</string>
+  <string name="scrolling_summary">Szabja személyre a görgetési animációk paramétereit</string>
   <string name="animation_fling_velocity_title">Fling sebessége</string>
-  <string name="animation_scroll_friction_title">Scroll friction</string>
-  <string name="animation_overscroll_distance_title">Overscroll distance</string>
-  <string name="animation_overfling_distance_title">Overfling distance</string>
-  <string name="animation_duration_summary">Set duration</string>
+  <string name="animation_scroll_friction_title">A görgetés lassulása</string>
+  <string name="animation_overscroll_distance_title">Túlgörgetési távolság</string>
+  <string name="animation_overfling_distance_title">Túlhajítási távolság</string>
+  <string name="animation_duration_summary">Időtartam beállítása</string>
   <string name="animation_no_scroll_title">Egyéni értékek használata</string>
-  <string name="scroll_disclaimer_summary">Most apps need to be restarted for custom values to take effect</string>
+  <string name="scroll_disclaimer_summary">A legtöbb alkalmazást újra kell indítani a módosított értékek életbe léptetéséhez</string>
   <string name="animation_settings_reset_message">Animációs beállítások visszaállítása az alapértelmezettre?</string>
   <!-- Alarm Fullscreen -->
   <string name="show_alarm_fullscreen_title">Teljes képernyős riasztás</string>
@@ -938,8 +943,8 @@
   <string name="task_move_to_back_title">Háttérbeküldés animációja</string>
   <string name="wallpaper_open_title">Háttérkép-nyitás animációja</string>
   <string name="wallpaper_close_title">Háttérkép-zárás animációja</string>
-  <string name="wallpaper_intra_open_title">Wallpaper intra open animation</string>
-  <string name="wallpaper_intra_close_title">Wallpaper intra close animation</string>
+  <string name="wallpaper_intra_open_title">Háttérkép belülnyitási animáció</string>
+  <string name="wallpaper_intra_close_title">Háttérkép belülzárási animáció</string>
   <string name="animation_duration_title">Animáció hossza</string>
   <string name="animation_duration_default">Alapértelmezett</string>
   <string name="animation_duration_custom">Egyéni</string>
@@ -1024,7 +1029,7 @@
   <string name="disable_animations_summary">Áttűnési animációk letiltása, például az alkalmazások indításakor</string>
   <!-- XOSP Blur personalizations -->
   <string name="settings_blur_cat">Homályosítás</string>
-  <string name="settings_blur_cat_summary">Apply blur personalizations to various elements</string>
+  <string name="settings_blur_cat_summary">Alkalmazzon különböző homályosítást különböző elemekhez</string>
   <string name="blurred_status_bar_expanded_enabled_pref">Állapotsor hátterének homályosítása</string>
   <string name="blurred_status_bar_expanded_enabled_pref_summary">Háttér homályosítása, ha lehúzza az állapotsávot</string>
   <string name="translucent_notifications_pref">Áttetsző értesítések</string>
@@ -1065,7 +1070,7 @@
   <string name="wakelock_blocker_title">Wakelock blokkoló</string>
   <string name="wakelock_blocker_summary">Rendszerébresztések blokkolása</string>
   <string name="wakelock_blocker_save">Mentés</string>
-  <string name="wakelock_list_header">Available wakelocks</string>
+  <string name="wakelock_list_header">Meglévő rendszerébresztések</string>
   <string name="wakelock_blocker_reload">Újratöltés</string>
   <string name="wakelock_blocker_warning_title">Járjon el körültekintően</string>
   <string name="wakelock_blocker_warning">A rendszerébresztések blokkolása instabilitáshoz, összeomláshoz vagy adatvesztéshez vezethet</string>
@@ -1089,14 +1094,14 @@
   <string name="daylight_header_provider_title">Fejléckép gyűjtemény</string>
   <string name="custom_header_provider_title">Fejléc-szolgáltató</string>
   <string name="custom_header_browse_title">Tallózás a telepített fejlécek között</string>
-  <string name="custom_header_browse_summary">Click on any image to use for static mode</string>
-  <string name="custom_header_browse_summary_new">Browse all available header collections</string>
-  <string name="custom_header_pick_title">Select header image</string>
-  <string name="custom_header_pick_summary">Select an image to use for static mode</string>
-  <string name="style_enabled_summary">Custom header image is ON</string>
-  <string name="style_disabled_summary">Custom header image is OFF</string>
+  <string name="custom_header_browse_summary">Bármely képre kattintva, azt statikus módban használhatja</string>
+  <string name="custom_header_browse_summary_new">Böngészés az összes elérhető fejléckép gyűjteményben</string>
+  <string name="custom_header_pick_title">Fejléckép kiválasztása</string>
+  <string name="custom_header_pick_summary">Válasszon ki egy képet statikus módban való használathoz</string>
+  <string name="style_enabled_summary">Egyéni fejléckép bekapcsolva</string>
+  <string name="style_disabled_summary">Egyéni fejléckép kikapcsolva</string>
   <string name="header_provider_disabled">Letiltva</string>
-  <string name="custom_header_title">Custom header image</string>
+  <string name="custom_header_title">Egyéni fejléckép</string>
   <string name="file_header_select_title">Kép kiválasztása</string>
   <string name="file_header_select_summary">Egyéni kép kiválasztása</string>
   <string name="file_header_provider_title">Egyéni kép</string>
@@ -1123,7 +1128,7 @@
   <string name="wifi_activity_arrows_title">WiFi aktivitás</string>
   <string name="wifi_activity_arrows_summary">WiFi aktivitást jelző ikonok megjelenítése</string>
   <!-- The Drill -->
-  <string name="drill_title">The Drill</string>
+  <string name="drill_title">The Drill (a fejlesztők)</string>
   <string name="drill_summary">Talált egy hibát? Felmerült egy kérdése?</string>
   <!-- Hide Statusbar on Lockscreen -->
   <string name="lockscreen_hide_status_bar_title">Állapotsor</string>
@@ -1143,8 +1148,8 @@
   <string name="recent_panel_expanded_mode_auto">Auto (alapértelmezett)</string>
   <string name="recent_panel_expanded_mode_always">Mindig</string>
   <string name="recent_panel_expanded_mode_never">Soha</string>
-  <string name="recent_panel_show_topmost_title">Show topmost task</string>
-  <string name="recent_panel_show_topmost_summary">Don\'t exclude the topmost task in recents view</string>
+  <string name="recent_panel_show_topmost_title">A legfőbb feladatok megjelenítése</string>
+  <string name="recent_panel_show_topmost_summary">Ne zárja ki a legfőbb feladatot az előzmények nézetben</string>
   <string name="recent_panel_bg_color_title">Panel háttérszíne</string>
   <string name="recent_card_bg_color_title">Kártya háttérszíne</string>
   <string name="recent_card_text_color_title">Kártya szövegszíne</string>
@@ -1170,15 +1175,15 @@
   <string name="recent_panel_lefty_mode_title">Megjelenítés a bal oldalon</string>
   <string name="recent_panel_lefty_mode_summary">Az Előzmények panel megjelenítése a bal oldalon</string>
   <!-- Disable FC notifications -->
-  <string name="disable_fc_notifications_title">Disable force close</string>
-  <string name="disable_fc_notifications_summary">Hide all force close notification dialogs</string>
+  <string name="disable_fc_notifications_title">Ne értesítsen a kényszerített bezárásról</string>
+  <string name="disable_fc_notifications_summary">Rejtse el az összes értesítést a kényszerített bezárásokról</string>
   <!-- OmniJaws -->
   <string name="omnijaws_settings_title">Időjárás Szolgáltató</string>
-  <string name="omnijaws_settings_summary">Customize service settings and icon pack</string>
+  <string name="omnijaws_settings_summary">Szabja személyre a szolgáltatásbeállításokat és ikoncsomagokat</string>
   <string name="weather_config_title">Szolgáltatás beállítások</string>
-  <string name="weather_config_summary">Configure service to enable weather details</string>
+  <string name="weather_config_summary">Szabja személyre a szolgáltatást az időjárás részleteinek engedélyezéséhez</string>
   <string name="weather_icon_pack_title">Időjárás-állapot ikoncsomag</string>
-  <string name="weather_icon_pack_note">Note\u003a you can install new icon packs from play store by searching for \"Chronus icons\"</string>
+  <string name="weather_icon_pack_note">Megjegyzés: \u003a új ikoncsomagokat telepíthet, ha a Google Play Áruházban a \"Chronus icons\"-ra keres rá</string>
   <!-- 4G icon -->
   <string name="show_fourg_icon_title">4G ikon</string>
   <string name="show_fourg_icon_summary">4G ikon megjelenítése LTE helyett</string>
@@ -1205,8 +1210,8 @@
   <string name="status_bar_temperature_image_hide_scale">Kép és hőmérséklet skála nélkül</string>
   <string name="status_bar_temperature_show_scale_hide_image">Csak a hőmérséklet skálával</string>
   <string name="status_bar_temperature_hide_scale_hide_image">Csak a hőmérséklet skála nélkül</string>
-  <string name="status_bar_show_image">Display only condition image</string>
-  <string name="status_bar_weather_image_color_title">Condition image color</string>
+  <string name="status_bar_show_image">Csak az időjárási helyzet képét jelenítse meg</string>
+  <string name="status_bar_weather_image_color_title">Időjárási helyzet képének színe</string>
   <string name="volte_icon_title">VoLTE ikon</string>
   <string name="volte_icon_summary">VoLTE ikon megjelenítése, ha elérhető</string>
   <!-- Ad Away -->
@@ -1249,7 +1254,7 @@
   <string name="fp_unlock_keystore_summary">A készülék feloldása ujjlenyomattal PIN/Jelszó/Minta nélkül</string>
   <!-- Toast icon -->
   <string name="toast_icon_title">Buborékszöveg ikon</string>
-  <string name="toast_icon_summary">Display icon of activity that generates toast message</string>
+  <string name="toast_icon_summary">A buborékszöveghez tartozó alkalmazás ikonjának megjelenítése</string>
   <!-- Lockscreen battery info indicator -->
   <string name="lockscreen_battery_info_title">Akkumulátor információ</string>
   <string name="lockscreen_battery_info_summary">Akkuinfó megjelenítése töltés közben</string>
@@ -1264,13 +1269,13 @@
   <string name="recents_dismiss_icon_summary">A Taszk bezárása ikon megjelenítése az Előzményeken</string>
   <!-- Notification guts kill app button -->
   <string name="notification_guts_kill_app_button_title">Alkalmazás kilövése gomb</string>
-  <string name="notification_guts_kill_app_button_summary">Show a kill app button in the notification\'s longpress menu</string>
+  <string name="notification_guts_kill_app_button_summary">Jelenítse meg az értesítés hosszan nyomási menüjében az alkalmazás kilövése gombot</string>
   <!-- ANBI -->
-  <string name="anbi_title">Accidental touch</string>
-  <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
+  <string name="anbi_title">Véletlen érintés</string>
+  <string name="anbi_summary">A képernyő megérintése közben megakadályozza a navigációs gombokkal való akaratlan érintkezést</string>
   <!-- Sensor block -->
-  <string name="sensor_block_title">Sensor block</string>
-  <string name="sensor_block_summary">Block access to significant motion sensors for few battery intensive apps</string>
+  <string name="sensor_block_title">Érzékelőblokkolás</string>
+  <string name="sensor_block_summary">A legnagyobb fogyasztással bíró alkalmazásoknál letiltja a lényegesebb mozgásérzékelőket</string>
   <!-- Pocket judge -->
   <string name="pocket_judge_title">Zseb érzékelése</string>
   <string name="pocket_judge_summary">A képernyő és a gombok általi véletlen bevitelek blokkolása, ha a készülék a zsebben van</string>
@@ -1304,7 +1309,7 @@
   <string name="paypal_title">Támogatás</string>
   <string name="paypal_summary">A fejlesztés támogatása</string>
   <string name="telegram_title">Telegram</string>
-  <string name="telegram_summary">Join latest discussions on telegram</string>
+  <string name="telegram_summary">Csatlakozzon a legutóbbi Telegram beszélgetéshez</string>
   <!-- Check update -->
   <string name="check_update_title">Frissítés ellenőrzése</string>
   <string name="last_check_summary">Utolsó ellenőrzés: %1$s</string>
@@ -1332,15 +1337,15 @@
   <string name="pixel_navbar_anim_summary">Pixel stílusú animációk váltása a navigációs sávon</string>
   <!-- Smart pulldown-->
   <string name="smart_pulldown_title">Intelligens legördülő</string>
-  <string name="smart_pulldown_summary">Open quick settings when there are %1$s notifications</string>
-  <string name="smart_pulldown_none_summary">Open quick settings when there are no notifications</string>
+  <string name="smart_pulldown_summary">Gyorsbeállítások megnyitása, ha %1$s értesítés</string>
+  <string name="smart_pulldown_none_summary">Gyorsbeállítások megnyitása, ha nincsenek értesítések</string>
   <string name="smart_pulldown_off">Ki</string>
   <string name="smart_pulldown_none">nincsenek értesítések</string>
   <string name="smart_pulldown_dismissable">nem bezárható</string>
-  <string name="smart_pulldown_ongoing">no ongoing</string>
+  <string name="smart_pulldown_ongoing">nincs folyamatban lévő</string>
   <!-- Tap to sleep on status bar -->
   <string name="statusbar_doubletap_sleep_title">Alvómód érintésre</string>
-  <string name="statusbar_doubletap_sleep_summary">Double-tap on the status bar to put device asleep</string>
+  <string name="statusbar_doubletap_sleep_summary">Az állapotsor dupla érintésére a készülék alvó állapotba kerül</string>
   <!-- Auto USB mode chooser -->
   <string name="auto_usb_mode_chooser_title">Auto USB mód</string>
   <string name="auto_usb_mode_chooser_summary">Felugró USB mód választó, amikor a készülék csatlakozik egy számítógéphez</string>
@@ -1348,8 +1353,8 @@
   <string name="vibration_on_charge_state_changed_title">Rezgés töltőre helyezéskor</string>
   <string name="vibration_on_charge_state_changed_summary">A készülék megrezzen, amikor tápfeszültség-forráshoz csatlakoztatjuk</string>
   <!-- Recents deep clear -->
-  <string name="recents_deep_clear_title">Deep clear</string>
-  <string name="recents_deep_clear_summary">Clear background process when using dismiss icon to dismiss task from recents view. This may lead unitentional results. Some apps may stop working until you restart them.</string>
+  <string name="recents_deep_clear_title">Mélytiisztítás</string>
+  <string name="recents_deep_clear_summary">Ha az előzmények nézetben az Elvetés ikont használja egy feladat elutasítására, az törli a háttérfolyamatokat. Ez nem várt eredményekkel járhat. Néhány alkalmazás leállhat addig, amíg újraindítja nem őket.</string>
   <string name="qs_tile_title_visibility_title">Csempefeliratok</string>
   <string name="qs_tile_title_visibility_summary">Nevek a csempék alatt</string>
   <!-- Dark SysUI Theme -->
@@ -1359,7 +1364,7 @@
   <string name="dark_theme_dark">Sötét</string>
   <!-- Disable HW keys -->
   <string name="hwkeys_disabled_title">Hardveres gombok tiltása</string>
-  <string name="hwkeys_disabled_summary">Enabling this will disable hardware keys for navigation</string>
+  <string name="hwkeys_disabled_summary">Engedélyezése után a hardvergombok nem lesznek elérhetők</string>
   <!-- Quick QS scroller -->
   <string name="qqs_scroll_title">Gyorsbeállítások gyors görgetése</string>
   <string name="qqs_scroll_summary">Lehetővé teszi a kis gyorsbeállítási csempék görgetését</string>
