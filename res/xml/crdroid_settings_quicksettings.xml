@@ -213,11 +213,13 @@
             android:fragment="com.crdroid.settings.fragments.statusbar.Clock"
             settings:allowDividerAbove="false" />
 
-        <lineageos.preference.LineageSecureSettingSwitchPreference
+        <!-- QS Brightness Slider position -->
+        <com.crdroid.settings.preferences.LineageSecureSettingListPreference
             android:key="qs_show_brightness_slider"
             android:icon="@drawable/ic_brightness"
             android:title="@string/qs_brightness_slider_title"
-            android:summary="@string/qs_brightness_slider_summary"
+            android:entries="@array/qs_brightness_slider_entries"
+            android:entryValues="@array/qs_brightness_slider_values"
             android:defaultValue="true" />
 
         <lineageos.preference.LineageSecureSettingSwitchPreference
@@ -225,7 +227,6 @@
             android:icon="@drawable/ic_brightness_auto"
             android:title="@string/brightness_icon_title"
             android:summary="@string/brightness_icon_summary"
-            android:dependency="qs_show_brightness_slider"
             lineage:requiresConfig="@*android:bool/config_automatic_brightness_available"
             android:defaultValue="true" />
 
