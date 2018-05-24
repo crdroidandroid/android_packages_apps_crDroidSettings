@@ -513,10 +513,10 @@
   <string name="status_bar_battery_style_tile_title">Akkumulátor csempe felülírása</string>
   <string name="status_bar_battery_style_tile_summary">Használjon a Gyorsbeállítások ikoncsempéjéhez hasonló ikonstílust</string>
   <!-- Status bar - Battery custom charging symbol -->
-  <string name="text_charging_symbol_title">Egyéni, szöveges stílusú töltési szimbólum</string>
+  <string name="text_charging_symbol_title">Egyéni töltési szimbólum, a szöveges töltöttség-kijelzés mellé</string>
   <string name="text_charging_symbol_dialog">Egyéni töltési szimbólum az akku százalék mellett</string>
   <string name="text_charging_symbol_default">Letiltva</string>
-  <string name="text_charging_symbol_flash">Vaku</string>
+  <string name="text_charging_symbol_flash">Villám</string>
   <string name="text_charging_symbol_tilde">Hullám</string>
   <!-- Status bar - Battery percentage -->
   <string name="status_bar_battery_percentage_title">Akkumulátor százalék</string>
@@ -735,7 +735,7 @@
   <string name="changelog_crdroid_summary">A legfrissebb ROM-változások megtekintése</string>
   <string name="changelog_crdroid_error">Nem lehet betölteni a változáslistát</string>
   <!-- About crDroid -->
-  <string name="about_crdroid">A crDroid</string>
+  <string name="about_crdroid">A crDroidról</string>
   <!-- Share crDroid -->
   <string name="share_crdroid_title">A crDroid ajánlása</string>
   <string name="share_crdroid_summary">Tudassa másokkal a crDroid létezését</string>
@@ -905,7 +905,7 @@
   <string name="systemui_recents_mem_display_text_color">Memóriasáv szövegszíne</string>
   <!-- Recents panel settings -->
   <string name="show_clear_all_recents_button_title">Összes törlése</string>
-  <string name="show_clear_all_recents_button_summary">Az összes app eltávolítása gomb megjelenítése az előzmények lapon</string>
+  <string name="show_clear_all_recents_button_summary">Az összes alkalmazás eltávolítása gomb megjelenítése az előzmények lapon</string>
   <string name="recents_clear_all_location_title">Az Összes törlése gomb helye</string>
   <string name="recents_clear_all_location_top_right">Jobb felül</string>
   <string name="recents_clear_all_location_top_left">Bal felül</string>
@@ -1008,7 +1008,7 @@
   <string name="qs_tile_animation_style_off">Nincs animáció</string>
   <string name="qs_tile_animation_style_flip">Fordulás</string>
   <string name="qs_tile_animation_style_rotate">Forgatás</string>
-  <string name="qs_tile_animation_duration_low">Alacsony</string>
+  <string name="qs_tile_animation_duration_low">Lassú</string>
   <string name="qs_tile_animation_duration_default">Alapértelmezett</string>
   <string name="qs_tile_animation_duration_fast">Gyors</string>
   <!-- Tiles animation interpolator -->
@@ -1206,10 +1206,10 @@
   <string name="status_bar_temperature_location_left">Bal oldalon mutassa</string>
   <string name="status_bar_weather_color_title">Hőmérséklet színe</string>
   <string name="status_bar_weather_hidden">Időjárás elrejtése</string>
-  <string name="status_bar_temperature_image_show_scale">Kép és hőmérséklet skálával</string>
-  <string name="status_bar_temperature_image_hide_scale">Kép és hőmérséklet skála nélkül</string>
-  <string name="status_bar_temperature_show_scale_hide_image">Csak a hőmérséklet skálával</string>
-  <string name="status_bar_temperature_hide_scale_hide_image">Csak a hőmérséklet skála nélkül</string>
+  <string name="status_bar_temperature_image_show_scale">Kép és hőmérséklet mértékegységgel</string>
+  <string name="status_bar_temperature_image_hide_scale">Kép és hőmérséklet mértékegység nélkül</string>
+  <string name="status_bar_temperature_show_scale_hide_image">Csak a hőmérséklet mértékegységgel</string>
+  <string name="status_bar_temperature_hide_scale_hide_image">Csak a hőmérséklet mértékegység nélkül</string>
   <string name="status_bar_show_image">Csak az időjárási helyzet képét jelenítse meg</string>
   <string name="status_bar_weather_image_color_title">Időjárási helyzet képének színe</string>
   <string name="volte_icon_title">VoLTE ikon</string>
@@ -1259,14 +1259,14 @@
   <string name="lockscreen_battery_info_title">Akkumulátor információ</string>
   <string name="lockscreen_battery_info_summary">Akkuinfó megjelenítése töltés közben</string>
   <!-- Recents lock icon -->
-  <string name="recents_lock_icon_title">Taszk zárolása</string>
-  <string name="recents_lock_icon_summary">A Taszk zárolása ikon megjelenítése az Előzményeken</string>
+  <string name="recents_lock_icon_title">Feladat zárolása</string>
+  <string name="recents_lock_icon_summary">A feladat zárolása ikon megjelenítése az Előzményeken</string>
   <!-- AOSP Recents Grid -->
   <string name="recents_use_grid_title">Rács stílusú előzmények</string>
   <string name="recents_use_grid_summary">Előzménystílus átkapcsolása</string>
   <!-- Recents dismiss icon -->
-  <string name="recents_dismiss_icon_title">Taszk bezárása</string>
-  <string name="recents_dismiss_icon_summary">A Taszk bezárása ikon megjelenítése az Előzményeken</string>
+  <string name="recents_dismiss_icon_title">Feladat elvetése</string>
+  <string name="recents_dismiss_icon_summary">A feladat bezárása ikon megjelenítése az Előzményeken</string>
   <!-- Notification guts kill app button -->
   <string name="notification_guts_kill_app_button_title">Alkalmazás kilövése gomb</string>
   <string name="notification_guts_kill_app_button_summary">Jelenítse meg az értesítés hosszan nyomási menüjében az alkalmazás kilövése gombot</string>
@@ -1340,8 +1340,8 @@
   <string name="smart_pulldown_summary">Gyorsbeállítások megnyitása, ha %1$s értesítés</string>
   <string name="smart_pulldown_none_summary">Gyorsbeállítások megnyitása, ha nincsenek értesítések</string>
   <string name="smart_pulldown_off">Ki</string>
-  <string name="smart_pulldown_none">nincsenek értesítések</string>
-  <string name="smart_pulldown_dismissable">nem bezárható</string>
+  <string name="smart_pulldown_none">nincs</string>
+  <string name="smart_pulldown_dismissable">nincs elküldhető</string>
   <string name="smart_pulldown_ongoing">nincs folyamatban lévő</string>
   <!-- Tap to sleep on status bar -->
   <string name="statusbar_doubletap_sleep_title">Alvómód érintésre</string>
@@ -1448,4 +1448,55 @@
   <string name="qs_brightness_slider_hide">Elrejtés</string>
   <string name="qs_brightness_slider_top">Felül</string>
   <string name="qs_brightness_slider_bottom">Alul</string>
+  <!-- Notification light dialogs -->
+  <string name="edit_light_settings">Edit light settings</string>
+  <string name="pulse_speed_title">Pulse length and speed</string>
+  <string name="default_time">Normal</string>
+  <string name="custom_time">Custom</string>
+  <string name="brightness">Brightness level</string>
+  <!-- Values for the notification light pulse spinners -->
+  <string name="pulse_length_always_on">Always on</string>
+  <string name="pulse_length_very_short">Very short</string>
+  <string name="pulse_length_short">Short</string>
+  <string name="pulse_length_normal">Normal</string>
+  <string name="pulse_length_long">Long</string>
+  <string name="pulse_length_very_long">Very long</string>
+  <string name="pulse_speed_very_fast">Very fast</string>
+  <string name="pulse_speed_fast">Fast</string>
+  <string name="pulse_speed_normal">Normal</string>
+  <string name="pulse_speed_slow">Slow</string>
+  <string name="pulse_speed_very_slow">Very slow</string>
+  <!-- Common light settings strings -->
+  <string name="light_brightness_title">Brightness levels</string>
+  <string name="light_brightness_normal">Normal</string>
+  <string name="light_brightness_zen">Do Not Disturb</string>
+  <!-- Battery light settings -->
+  <string name="battery_light_title">Battery light</string>
+  <string name="battery_light_summary">Configure led color based on battery level and status</string>
+  <string name="battery_low_pulse_title">Pulse if battery low</string>
+  <string name="battery_light_list_title">Colors</string>
+  <string name="battery_light_low_color_title">Battery low</string>
+  <string name="battery_light_medium_color_title">Charging</string>
+  <string name="battery_light_full_color_title">Nearly Charged (&gt;90%)</string>
+  <string name="battery_light_really_full_color_title">Fully Charged (100%)</string>
+  <!-- Lights settings screen, notification light settings -->
+  <string name="notification_light_title">Notification light</string>
+  <string name="notification_light_summary">Configure led color for notifications</string>
+  <string name="notification_light_general_title">General</string>
+  <string name="notification_light_advanced_title">Advanced</string>
+  <string name="notification_light_applist_title">Apps</string>
+  <string name="notification_light_phonelist_title">Phone</string>
+  <string name="notification_light_use_custom">Use custom values</string>
+  <string name="notification_light_default_value">Default</string>
+  <string name="notification_light_missed_call_title">Missed call</string>
+  <string name="notification_light_voicemail_title">Voicemail</string>
+  <string name="notification_light_screen_on">Lights with screen on</string>
+  <string name="notification_light_zen_mode">Lights in Do Not Disturb mode</string>
+  <string name="keywords_lights_brightness_level">dim leds brightness</string>
+  <string name="notification_light_automagic">Choose colors automatically</string>
+  <string name="notification_light_automagic_summary">Choosing colors automatically</string>
+  <!-- Lights settings, LED notification -->
+  <string name="led_notification_title">Light settings</string>
+  <string name="led_notification_text">LED light enabled by settings</string>
+  <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
 </resources>
