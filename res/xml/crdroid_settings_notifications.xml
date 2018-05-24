@@ -44,20 +44,24 @@
             android:defaultValue="true" />
 
         <!-- Battery light -->
-       <org.lineageos.internal.lineageparts.LineagePartsPreference
+        <PreferenceScreen
             android:key="battery_lights"
             android:icon="@drawable/ic_led_on"
+            android:title="@string/battery_light_title" 
+            android:summary="@string/battery_light_summary" 
             lineage:requiresConfig="@*lineageos.platform:integer/config_deviceLightCapabilities"
             lineage:requiresConfigMask="64"
-            android:dependency="allow_lights" />
+            android:fragment="com.crdroid.settings.fragments.notifications.notificationlight.BatteryLightSettings" />
 
         <!-- Notification lights -->
-        <org.lineageos.internal.lineageparts.LineagePartsPreference
+        <PreferenceScreen
             android:key="notification_lights"
             android:icon="@drawable/ic_led_on"
+            android:title="@string/notification_light_title" 
+            android:summary="@string/notification_light_summary" 
             lineage:requiresConfig="@*android:bool/config_intrusiveNotificationLed"
             lineage:replacesKey="notification_pulse"
-            android:dependency="allow_lights" />
+            android:fragment="com.crdroid.settings.fragments.notifications.notificationlight.NotificationLightSettings" />
     </PreferenceCategory>
 
     <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
