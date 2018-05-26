@@ -606,6 +606,11 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
     }
 
     @Override
+    public int getDialogMetricsCategory(int dialogId) {
+        return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
+     }
+
+    @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
     }
