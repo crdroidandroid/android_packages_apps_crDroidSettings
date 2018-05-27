@@ -54,23 +54,29 @@
   <string name="lockclock_summary">Просмотр или изменение настроек отображения виджета cLock</string>
   <!-- Network traffic -->
   <string name="network_traffic_settings_title">Индикатор сетевого трафика</string>
-  <string name="network_traffic_settings_summary">Настройка индикатора сетевого трафика</string>
-  <string name="network_traffic_mode_title">Показывать скорость передачи данных</string>
-  <string name="network_traffic_show_units">Единицы измерения</string>
-  <string name="network_traffic_frequency_title">Частота обновления</string>
+  <string name="network_traffic_settings_summary">Отображать текущую скорость соединения в строке состояния</string>
+  <string name="network_traffic_mode_title">Режим отображения</string>
   <string name="network_traffic_mode_disable">Отключено</string>
-  <string name="network_traffic_mode_up">Исходящий</string>
-  <string name="network_traffic_mode_down">Входящий</string>
-  <string name="network_traffic_mode_all">Исходящий и входящий</string>
-  <string name="network_traffic_units_bits">Бит в секунду</string>
-  <string name="network_traffic_units_bytes">Байт в секунду</string>
+  <string name="network_traffic_mode_up">Только исходящий трафик</string>
+  <string name="network_traffic_mode_down">Только входящий трафик</string>
+  <string name="network_traffic_mode_all">Исходящий и входящий трафик</string>
+  <string name="network_traffic_autohide">Скрывать автоматически</string>
+  <string name="network_traffic_autohide_summary">Скрывать индикатор сетевого трафика, когда сеть неактивна</string>
+  <string name="network_traffic_autohide_threshold">Порог неактивности</string>
+  <string name="network_traffic_show_units">Показать единицы</string>
+  <string name="network_traffic_show_units_summary">Отображать скорость передачи данных в строке состояния</string>
+  <string name="network_traffic_units_title">Единицы измерения трафика</string>
+  <string name="network_traffic_units_bits">Бит в секунду (бит/с)</string>
+  <string name="network_traffic_units_kilobits">Килобит в секунду (кбит/с)</string>
+  <string name="network_traffic_units_megabits">Мегабит в секунду (Мбит/с)</string>
+  <string name="network_traffic_units_bytes">Байт в секунду (Б/с)</string>
+  <string name="network_traffic_units_kilobytes">Килобайт в секунду (кБ/с)</string>
+  <string name="network_traffic_units_megabytes">Мегабайт в секунду (МБ/с)</string>
+  <string name="network_traffic_frequency_title">Частота обновления</string>
   <string name="network_traffic_frequency_500">500 мс</string>
   <string name="network_traffic_frequency_1000">1000 мс</string>
   <string name="network_traffic_frequency_1500">1500 мс</string>
   <string name="network_traffic_frequency_2000">2000 мс</string>
-  <string name="network_traffic_autohide">Скрывать автоматически</string>
-  <string name="network_traffic_autohide_summary">Скрывать индикатор сетевого трафика, когда сеть неактивна</string>
-  <string name="network_traffic_autohide_threshold">Порог неактивности</string>
   <string name="network_traffic_hidearrow">Скрывать стрелки</string>
   <string name="network_traffic_hidearrow_summary">Скрывать стрелки индикатора сетевого трафика</string>
   <!-- Settings suggestions  -->
@@ -644,10 +650,10 @@
   <string name="screenshot_type_fullscreen">Скриншот всего экрана</string>
   <string name="screenshot_type_partial">Скриншот выбранной области</string>
   <!-- Screenshot editor -->
-  <string name="screenshot_options_category">Screenshot options</string>
-  <string name="screenshot_edit_app">Screenshot editor</string>
-  <string name="screenshot_edit_app_summary">Select which image editor to use to edit screenshots with</string>
-  <string name="screenshot_edit_app_no_editor">No image editor available</string>
+  <string name="screenshot_options_category">Настройки скриншота</string>
+  <string name="screenshot_edit_app">Редактор скриншотов</string>
+  <string name="screenshot_edit_app_summary">Выберите, какое приложение должно быть запущено при нажатии на кнопку редактирования в уведомлении скриншота</string>
+  <string name="screenshot_edit_app_no_editor">Нет доступного редактора изображения</string>
   <!-- Three-fingers-swipe to screenshot -->
   <string name="three_finger_gesture">Жест тремя пальцами</string>
   <string name="three_finger_gesture_summary">Проведите тремя пальцами для создания скриншота</string>
@@ -1442,61 +1448,75 @@
   <string name="fp_swipe_to_dismiss_notifications_title">Проведите пальцем по сканеру отпечатка пальца влево или вправо, чтобы убрать уведомления</string>
   <string name="fp_swipe_to_dismiss_notifications_summary">Чтобы очистить ваши уведомления, проведите пальцем влево или право по сканеру отпечатка пальца.</string>
   <!-- Full screen aspect ratio -->
-  <string name="full_screen_aspect_ratio_title">Full screen aspect ratio</string>
-  <string name="full_screen_aspect_ratio_summary">Force apps to use full screen aspect ratio, note that some apps may not work properly in full screen</string>
+  <string name="full_screen_aspect_ratio_title">Соотношение сторон в режиме полного экрана</string>
+  <string name="full_screen_aspect_ratio_summary">Заставить приложения использовать заданное соотношение сторон в режиме полного экрана. Обратите внимание, что некоторые приложения не будут работать в режиме полного экрана</string>
   <!-- QS Brightness Slider position -->
-  <string name="qs_brightness_slider_hide">Hide</string>
-  <string name="qs_brightness_slider_top">Top</string>
-  <string name="qs_brightness_slider_bottom">Bottom</string>
+  <string name="qs_brightness_slider_hide">Скрыт</string>
+  <string name="qs_brightness_slider_top">Вверху</string>
+  <string name="qs_brightness_slider_bottom">Внизу</string>
   <!-- Notification light dialogs -->
-  <string name="edit_light_settings">Edit light settings</string>
-  <string name="pulse_speed_title">Pulse length and speed</string>
-  <string name="default_time">Normal</string>
-  <string name="custom_time">Custom</string>
-  <string name="brightness">Brightness level</string>
+  <string name="edit_light_settings">Изменение настроек индикатора</string>
+  <string name="pulse_speed_title">Длительность и скорость мигания</string>
+  <string name="default_time">Обычный</string>
+  <string name="custom_time">Пользовательские настр.</string>
+  <string name="brightness">Уровень яркости</string>
   <!-- Values for the notification light pulse spinners -->
-  <string name="pulse_length_always_on">Always on</string>
-  <string name="pulse_length_very_short">Very short</string>
-  <string name="pulse_length_short">Short</string>
-  <string name="pulse_length_normal">Normal</string>
-  <string name="pulse_length_long">Long</string>
-  <string name="pulse_length_very_long">Very long</string>
-  <string name="pulse_speed_very_fast">Very fast</string>
-  <string name="pulse_speed_fast">Fast</string>
-  <string name="pulse_speed_normal">Normal</string>
-  <string name="pulse_speed_slow">Slow</string>
-  <string name="pulse_speed_very_slow">Very slow</string>
+  <string name="pulse_length_always_on">Всегда вкл</string>
+  <string name="pulse_length_very_short">Очень коротко</string>
+  <string name="pulse_length_short">Коротко</string>
+  <string name="pulse_length_normal">Обычный</string>
+  <string name="pulse_length_long">Долго</string>
+  <string name="pulse_length_very_long">Очень долго</string>
+  <string name="pulse_speed_very_fast">Очень быстро</string>
+  <string name="pulse_speed_fast">Быстро</string>
+  <string name="pulse_speed_normal">Обычный</string>
+  <string name="pulse_speed_slow">Медленно</string>
+  <string name="pulse_speed_very_slow">Очень медленно</string>
   <!-- Common light settings strings -->
-  <string name="light_brightness_title">Brightness levels</string>
-  <string name="light_brightness_normal">Normal</string>
-  <string name="light_brightness_zen">Do Not Disturb</string>
+  <string name="light_brightness_title">Уровень яркости</string>
+  <string name="light_brightness_normal">Обычный</string>
+  <string name="light_brightness_zen">Не беспокоить</string>
   <!-- Battery light settings -->
-  <string name="battery_light_title">Battery light</string>
-  <string name="battery_light_summary">Configure led color based on battery level and status</string>
-  <string name="battery_low_pulse_title">Pulse if battery low</string>
-  <string name="battery_light_list_title">Colors</string>
-  <string name="battery_light_low_color_title">Battery low</string>
-  <string name="battery_light_medium_color_title">Charging</string>
-  <string name="battery_light_full_color_title">Nearly Charged (&gt;90%)</string>
-  <string name="battery_light_really_full_color_title">Fully Charged (100%)</string>
+  <string name="battery_light_title">Индикация батареи</string>
+  <string name="battery_light_summary">Настроить цвет индикатора на основе уровня заряда батареи и статуса</string>
+  <string name="battery_low_pulse_title">Мигать при низком уровне заряда</string>
+  <string name="battery_light_list_title">Цвета</string>
+  <string name="battery_light_low_color_title">Батарея разряжена</string>
+  <string name="battery_light_medium_color_title">Заряжается</string>
+  <string name="battery_light_full_color_title">Заряжена (&gt;90%)</string>
+  <string name="battery_light_really_full_color_title">Заряжена (100%)</string>
   <!-- Lights settings screen, notification light settings -->
-  <string name="notification_light_title">Notification light</string>
-  <string name="notification_light_summary">Configure led color for notifications</string>
-  <string name="notification_light_general_title">General</string>
-  <string name="notification_light_advanced_title">Advanced</string>
-  <string name="notification_light_applist_title">Apps</string>
-  <string name="notification_light_phonelist_title">Phone</string>
-  <string name="notification_light_use_custom">Use custom values</string>
-  <string name="notification_light_default_value">Default</string>
-  <string name="notification_light_missed_call_title">Missed call</string>
-  <string name="notification_light_voicemail_title">Voicemail</string>
-  <string name="notification_light_screen_on">Lights with screen on</string>
-  <string name="notification_light_zen_mode">Lights in Do Not Disturb mode</string>
-  <string name="keywords_lights_brightness_level">dim leds brightness</string>
-  <string name="notification_light_automagic">Choose colors automatically</string>
-  <string name="notification_light_automagic_summary">Choosing colors automatically</string>
+  <string name="notification_light_title">Индикатор уведомлений</string>
+  <string name="notification_light_summary">Настроить цвет индикатора для уведомлений</string>
+  <string name="notification_light_general_title">Общие</string>
+  <string name="notification_light_advanced_title">Расширенные</string>
+  <string name="notification_light_applist_title">Приложения</string>
+  <string name="notification_light_phonelist_title">Телефон</string>
+  <string name="notification_light_use_custom">Собственные значения</string>
+  <string name="notification_light_default_value">По умолчанию</string>
+  <string name="notification_light_missed_call_title">Пропущенный звонок</string>
+  <string name="notification_light_voicemail_title">Голосовая почта</string>
+  <string name="notification_light_screen_on">Использовать при включенном экране</string>
+  <string name="notification_light_zen_mode">Использовать в режиме «Не беспокоить»</string>
+  <string name="keywords_lights_brightness_level">уменьшить яркость</string>
+  <string name="notification_light_automagic">Подбирать цвета автоматически</string>
+  <string name="notification_light_automagic_summary">Выбор цвета согласно цвету значка приложения</string>
   <!-- Lights settings, LED notification -->
-  <string name="led_notification_title">Light settings</string>
-  <string name="led_notification_text">LED light enabled by settings</string>
-  <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
+  <string name="led_notification_title">Индикатор событий</string>
+  <string name="led_notification_text">Светодиод включен в настройках</string>
+  <string name="notification_light_no_apps_summary">Чтобы разрешить управление приложениями, включите «%1$s» и нажмите «\u002b» в строке меню</string>
+  <!-- QuickSettings Panel Transparency -->
+  <string name="qs_panel_alpha_title">Прозрачность</string>
+  <string name="qs_panel_alpha_summary">Установить уровень прозрачности для панели быстрых настроек</string>
+  <!-- Substratum -->
+  <string name="substratum_title">Substratum</string>
+  <string name="themes_title">Темы</string>
+  <string name="themes_summary">Управление темами</string>
+  <!-- Force authorize substratum packages -->
+  <string name="force_authorize_substratum_packages_title">Разрешить установку тем из неизвестных источников</string>
+  <string name="force_authorize_substratum_packages_summary">Принудительно запрашивать разрешения для каждой темы</string>
+  <!-- Manage applications: show substratum overlays -->
+  <string name="filter_substratum_apps">Слои Substratum</string>
+  <string name="menu_show_substratum">Показать слои</string>
+  <string name="menu_hide_substratum">Скрыть слои</string>
 </resources>
