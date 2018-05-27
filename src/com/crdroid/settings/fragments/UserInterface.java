@@ -32,6 +32,8 @@ import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
+import android.support.v7.preference.PreferenceCategory;
+import android.support.v7.preference.PreferenceScreen;
 import android.widget.Toast;
 
 import com.android.settings.SettingsPreferenceFragment;
@@ -66,6 +68,8 @@ public class UserInterface extends SettingsPreferenceFragment
     private static final String KEY_FONT_PICKER_FRAGMENT_PREF = "custom_font";
     private static final String SUBS_PACKAGE = "projekt.substratum";
 
+    private static final String CATEGORY_SUBSTRATUM = "category_substratum";
+
     private FontDialogPreference mFontPreference;
     private IFontService mFontService;
 
@@ -83,6 +87,8 @@ public class UserInterface extends SettingsPreferenceFragment
     Toast mToast;
 
     private IntentFilter mIntentFilter;
+
+    private PreferenceCategory substratumCategory;
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         @Override
@@ -114,6 +120,7 @@ public class UserInterface extends SettingsPreferenceFragment
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.crdroid_settings_ui);
         final ContentResolver resolver = getActivity().getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
         int toastanimation = Settings.System.getIntForUser(resolver,
@@ -187,12 +194,16 @@ public class UserInterface extends SettingsPreferenceFragment
             mToast = null;
         }
 
+       substratumCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_SUBSTRATUM);
+
        mFontPreference =  (FontDialogPreference) findPreference(KEY_FONT_PICKER_FRAGMENT_PREF);
        mFontService = IFontService.Stub.asInterface(
                 ServiceManager.getService("fontservice"));
 
         if (!isPackageInstalled(SUBS_PACKAGE, getActivity())) {
             mFontPreference.setSummary(getCurrentFontInfo().fontName.replace("_", " "));
+            prefScreen.removePreference(substratumCategory);
         } else {
             mFontPreference.setSummary(getActivity().getString(
                     R.string.disable_fonts_installed_title));
@@ -313,6 +324,8 @@ public class UserInterface extends SettingsPreferenceFragment
                 Settings.System.ANIM_TILE_DURATION, 2000, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES, 0, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.FULL_SCREEN_ASPECT_RATIO, 0, UserHandle.USER_CURRENT);
         SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT);
