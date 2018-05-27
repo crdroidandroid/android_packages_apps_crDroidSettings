@@ -18,13 +18,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <DropDownPreference
+    <com.crdroid.settings.preferences.LineageSecureSettingListPreference
         android:key="network_traffic_mode"
         android:title="@string/network_traffic_mode_title"
         android:entries="@array/network_traffic_mode_entries"
         android:entryValues="@array/network_traffic_mode_values"
         android:summary="%s"
-        android:persistent="false" />
+        android:defaultValue="0" />
 
     <lineageos.preference.LineageSecureSettingSwitchPreference
         android:key="network_traffic_autohide"
@@ -32,13 +32,13 @@
         android:summary="@string/network_traffic_autohide_summary"
         android:defaultValue="false" />
 
-    <DropDownPreference
+    <com.crdroid.settings.preferences.LineageSecureSettingListPreference
         android:key="network_traffic_units"
         android:title="@string/network_traffic_show_units"
         android:entries="@array/network_traffic_units_entries"
         android:entryValues="@array/network_traffic_units_values"
         android:summary="%s"
-        android:persistent="false" />
+        android:defaultValue="1" />
 
     <lineageos.preference.LineageSecureSettingSwitchPreference
         android:key="network_traffic_show_units"

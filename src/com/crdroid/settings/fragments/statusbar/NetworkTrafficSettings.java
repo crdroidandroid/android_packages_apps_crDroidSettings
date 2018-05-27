@@ -17,9 +17,10 @@
 package com.crdroid.settings.fragments.statusbar;
 
 import android.content.ContentResolver;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.UserHandle;
-import android.support.v7.preference.DropDownPreference;
+import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 
 import lineageos.preference.LineageSecureSettingSwitchPreference;
@@ -35,9 +36,9 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
 
     private static final String TAG = "NetworkTrafficSettings";
 
-    private DropDownPreference mNetTrafficMode;
+    private ListPreference mNetTrafficMode;
     private LineageSecureSettingSwitchPreference mNetTrafficAutohide;
-    private DropDownPreference mNetTrafficUnits;
+    private ListPreference mNetTrafficUnits;
     private LineageSecureSettingSwitchPreference mNetTrafficShowUnits;
 
     @Override
@@ -46,7 +47,7 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.network_traffic_settings);
         final ContentResolver resolver = getActivity().getContentResolver();
 
-        mNetTrafficMode = (DropDownPreference)
+        mNetTrafficMode = (ListPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_MODE);
         int mode = LineageSettings.Secure.getIntForUser(resolver,
                 LineageSettings.Secure.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT);
@@ -56,12 +57,11 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         mNetTrafficAutohide = (LineageSecureSettingSwitchPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE);
 
-        mNetTrafficUnits = (DropDownPreference)
+        mNetTrafficUnits = (ListPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_UNITS);
         int units = LineageSettings.Secure.getIntForUser(resolver,
                 LineageSettings.Secure.NETWORK_TRAFFIC_UNITS, /* Mbps */ 1, UserHandle.USER_CURRENT);
         mNetTrafficUnits.setValue(String.valueOf(units));
-        mNetTrafficUnits.setOnPreferenceChangeListener(this);
 
         mNetTrafficShowUnits = (LineageSecureSettingSwitchPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS);
@@ -73,14 +73,7 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mNetTrafficMode) {
             int mode = Integer.valueOf((String) newValue);
-            LineageSettings.Secure.putIntForUser(getActivity().getContentResolver(),
-                    LineageSettings.Secure.NETWORK_TRAFFIC_MODE, mode, UserHandle.USER_CURRENT);
             updateEnabledStates(mode);
-            return true;
-        } else if (preference == mNetTrafficUnits) {
-            int units = Integer.valueOf((String) newValue);
-            LineageSettings.Secure.putIntForUser(getActivity().getContentResolver(),
-                    LineageSettings.Secure.NETWORK_TRAFFIC_UNITS, units, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
@@ -91,6 +84,18 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         mNetTrafficAutohide.setEnabled(enabled);
         mNetTrafficUnits.setEnabled(enabled);
         mNetTrafficShowUnits.setEnabled(enabled);
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.NETWORK_TRAFFIC_UNITS, 1, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS, 1, UserHandle.USER_CURRENT);
     }
 
     @Override

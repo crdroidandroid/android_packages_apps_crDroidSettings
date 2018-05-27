@@ -36,6 +36,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.crdroid.settings.fragments.statusbar.BatteryBar;
 import com.crdroid.settings.fragments.statusbar.CarrierLabel;
 import com.crdroid.settings.fragments.statusbar.Clock;
+import com.crdroid.settings.fragments.statusbar.NetworkTrafficSettings;
 import com.crdroid.settings.fragments.statusbar.StatusBarWeather;
 import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
 import com.crdroid.settings.R;
@@ -354,6 +355,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         BatteryBar.reset(mContext);
         CarrierLabel.reset(mContext);
         Clock.reset(mContext);
+        NetworkTrafficSettings.reset(mContext);
         StatusBarWeather.reset(mContext);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_SU_INDICATOR, 1, UserHandle.USER_CURRENT);
