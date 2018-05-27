@@ -29,6 +29,7 @@ import lineageos.providers.LineageSettings;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
+import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.R;
 
 public class NetworkTrafficSettings extends SettingsPreferenceFragment
@@ -37,7 +38,7 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
     private static final String TAG = "NetworkTrafficSettings";
 
     private ListPreference mNetTrafficMode;
-    private LineageSecureSettingSwitchPreference mNetTrafficAutohide;
+    private CustomSeekBarPreference mNetTrafficAutohide;
     private ListPreference mNetTrafficUnits;
     private LineageSecureSettingSwitchPreference mNetTrafficShowUnits;
 
@@ -54,8 +55,12 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         mNetTrafficMode.setValue(String.valueOf(mode));
         mNetTrafficMode.setOnPreferenceChangeListener(this);
 
-        mNetTrafficAutohide = (LineageSecureSettingSwitchPreference)
+        mNetTrafficAutohide = (CustomSeekBarPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE);
+        int mAutohideThreshold = LineageSettings.Secure.getIntForUser(resolver,
+                LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT);
+        mNetTrafficAutohide.setValue(mAutohideThreshold);
+        mNetTrafficAutohide.setOnPreferenceChangeListener(this);
 
         mNetTrafficUnits = (ListPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_UNITS);
@@ -74,6 +79,11 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         if (preference == mNetTrafficMode) {
             int mode = Integer.valueOf((String) newValue);
             updateEnabledStates(mode);
+            return true;
+        } else if (preference == mNetTrafficAutohide) {
+            int value = (Integer) newValue;
+            LineageSettings.Secure.putIntForUser(getActivity().getContentResolver(),
+                    LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, value, UserHandle.USER_CURRENT);
             return true;
         }
         return false;

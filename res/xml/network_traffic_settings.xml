@@ -26,11 +26,15 @@
         android:summary="%s"
         android:defaultValue="0" />
 
-    <lineageos.preference.LineageSecureSettingSwitchPreference
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
         android:key="network_traffic_autohide"
         android:title="@string/network_traffic_autohide"
         android:summary="@string/network_traffic_autohide_summary"
-        android:defaultValue="false" />
+        android:max="10000"
+        settings:min="0"
+        settings:units="@string/network_traffic_autohide_kilobits"
+        settings:interval="10"
+        android:persistent="false" />
 
     <com.crdroid.settings.preferences.LineageSecureSettingListPreference
         android:key="network_traffic_units"
