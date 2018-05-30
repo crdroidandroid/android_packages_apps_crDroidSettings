@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 crDroid Android Project
+     Copyright (C) 2017-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -49,31 +49,40 @@
         android:paddingTop="16dp"
         android:paddingBottom="16dp">
 
-        <TextView android:id="@android:id/title"
+        <TextView
+            android:id="@android:id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:textAppearance="?android:attr/textAppearanceListItem"
-            android:ellipsize="marquee" />
+            android:textAppearance="@android:style/TextAppearance.Material.Subhead"
+            android:textColor="?android:attr/textColorPrimary"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal" />
 
-        <TextView android:id="@android:id/summary"
+        <TextView
+            android:id="@android:id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@android:id/title"
             android:layout_alignStart="@android:id/title"
-            android:textAppearance="?android:attr/textAppearanceListItemSecondary"
+            android:textAlignment="viewStart"
+            android:textAppearance="@android:style/TextAppearance.Material.Body1"
             android:textColor="?android:attr/textColorSecondary"
-            android:maxLines="10" />
+            android:maxLines="10"
+            android:paddingBottom="4dp" />
 
-        <TextView android:id="@+id/seekBarPrefValue"
+        <TextView
+            android:id="@+id/seekBarPrefValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@android:id/summary"
             android:layout_alignParentRight="true"
             android:textAppearance="@android:style/TextAppearance.Material.Body1"
-            android:textColor="?android:attr/textColorSecondary" />
+            android:textColor="?android:attr/textColorSecondary"
+            android:maxLines="1" />
 
-        <LinearLayout android:id="@+id/seekBarPrefBarContainer"
+        <LinearLayout
+            android:id="@+id/seekBarPrefBarContainer"
             android:layout_centerInParent="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
