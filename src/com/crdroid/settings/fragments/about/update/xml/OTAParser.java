@@ -36,6 +36,10 @@ public class OTAParser {
     private static final String DOWNLOAD_TAG = "download";
     private static final String GAPPS_TAG = "gapps";
     private static final String FORUM_TAG = "forum";
+    private static final String FIRMWARE_TAG = "firmware";
+    private static final String MODEM_TAG = "modem";
+    private static final String BOOTLOADER_TAG = "bootloader";
+    private static final String RECOVERY_TAG = "recovery";
     private static final String PAYPAL_TAG = "paypal";
     private static final String TELEGRAM_TAG = "telegram";
     private static final String URL_TAG = "url";
@@ -133,6 +137,10 @@ public class OTAParser {
                     tagName.equalsIgnoreCase(DOWNLOAD_TAG) ||
                     tagName.equalsIgnoreCase(GAPPS_TAG) ||
                     tagName.equalsIgnoreCase(FORUM_TAG) ||
+                    tagName.equalsIgnoreCase(FIRMWARE_TAG) ||
+                    tagName.equalsIgnoreCase(MODEM_TAG) ||
+                    tagName.equalsIgnoreCase(BOOTLOADER_TAG) ||
+                    tagName.equalsIgnoreCase(RECOVERY_TAG) ||
                     tagName.equalsIgnoreCase(PAYPAL_TAG) ||
                     tagName.equalsIgnoreCase(TELEGRAM_TAG))) {
                 OTALink link = readLink(parser, tagName);
@@ -175,6 +183,18 @@ public class OTAParser {
         } else if (tag.equalsIgnoreCase(FORUM_TAG)) {
             title = mContext.getResources().getString(R.string.forum_title);
             description = mContext.getResources().getString(R.string.forum_summary);
+        } else if (tag.equalsIgnoreCase(FIRMWARE_TAG)) {
+            title = mContext.getResources().getString(R.string.firmware_title);
+            description = mContext.getResources().getString(R.string.firmware_summary);
+        } else if (tag.equalsIgnoreCase(MODEM_TAG)) {
+            title = mContext.getResources().getString(R.string.modem_title);
+            description = mContext.getResources().getString(R.string.modem_summary);
+        } else if (tag.equalsIgnoreCase(BOOTLOADER_TAG)) {
+            title = mContext.getResources().getString(R.string.bootloader_title);
+            description = mContext.getResources().getString(R.string.bootloader_summary);
+        } else if (tag.equalsIgnoreCase(RECOVERY_TAG)) {
+            title = mContext.getResources().getString(R.string.recovery_title);
+            description = mContext.getResources().getString(R.string.recovery_summary);
         } else if (tag.equalsIgnoreCase(PAYPAL_TAG)) {
             title = mContext.getResources().getString(R.string.paypal_title);
             description = mContext.getResources().getString(R.string.paypal_summary);

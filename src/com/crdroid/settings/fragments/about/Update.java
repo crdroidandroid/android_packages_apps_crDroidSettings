@@ -54,6 +54,10 @@ public class Update extends SettingsPreferenceFragment implements
     private static final String CHANGELOG_TAG = "changelog";
     private static final String GAPPS_TAG = "gapps";
     private static final String FORUM_TAG = "forum";
+    private static final String FIRMWARE_TAG = "firmware";
+    private static final String MODEM_TAG = "modem";
+    private static final String BOOTLOADER_TAG = "bootloader";
+    private static final String RECOVERY_TAG = "recovery";
     private static final String PAYPAL_TAG = "paypal";
     private static final String TELEGRAM_TAG = "telegram";
 
@@ -67,6 +71,10 @@ public class Update extends SettingsPreferenceFragment implements
     private static PreferenceScreen mChangelogLink;
     private static PreferenceScreen mGappsLink;
     private static PreferenceScreen mForumLink;
+    private static PreferenceScreen mFirmwareLink;
+    private static PreferenceScreen mModemLink;
+    private static PreferenceScreen mBootloaderLink;
+    private static PreferenceScreen mRecoveryLink;
     private static PreferenceScreen mPayPalLink;
     private static PreferenceScreen mTelegramLink;
 
@@ -99,6 +107,10 @@ public class Update extends SettingsPreferenceFragment implements
         mChangelogLink = (PreferenceScreen) getPreferenceScreen().findPreference(CHANGELOG_TAG);
         mGappsLink = (PreferenceScreen) getPreferenceScreen().findPreference(GAPPS_TAG);
         mForumLink = (PreferenceScreen) getPreferenceScreen().findPreference(FORUM_TAG);
+        mFirmwareLink = (PreferenceScreen) getPreferenceScreen().findPreference(FIRMWARE_TAG);
+        mModemLink = (PreferenceScreen) getPreferenceScreen().findPreference(MODEM_TAG);
+        mBootloaderLink = (PreferenceScreen) getPreferenceScreen().findPreference(BOOTLOADER_TAG);
+        mRecoveryLink = (PreferenceScreen) getPreferenceScreen().findPreference(RECOVERY_TAG);
         mPayPalLink = (PreferenceScreen) getPreferenceScreen().findPreference(PAYPAL_TAG);
         mTelegramLink = (PreferenceScreen) getPreferenceScreen().findPreference(TELEGRAM_TAG);
 
@@ -128,6 +140,10 @@ public class Update extends SettingsPreferenceFragment implements
         mChangelogLink.setVisible(false);
         mGappsLink.setVisible(false);
         mForumLink.setVisible(false);
+        mFirmwareLink.setVisible(false);
+        mModemLink.setVisible(false);
+        mBootloaderLink.setVisible(false);
+        mRecoveryLink.setVisible(false);
         mPayPalLink.setVisible(false);
         mTelegramLink.setVisible(false);
 
@@ -150,6 +166,22 @@ public class Update extends SettingsPreferenceFragment implements
                 mForumLink.setTitle(link.getTitle());
                 mForumLink.setSummary(link.getDescription());
                 mForumLink.setVisible(mShowLinks);
+            } else if (id.equalsIgnoreCase(FIRMWARE_TAG)) {
+                mFirmwareLink.setTitle(link.getTitle());
+                mFirmwareLink.setSummary(link.getDescription());
+                mFirmwareLink.setVisible(mShowLinks);
+            } else if (id.equalsIgnoreCase(MODEM_TAG)) {
+                mModemLink.setTitle(link.getTitle());
+                mModemLink.setSummary(link.getDescription());
+                mModemLink.setVisible(mShowLinks);
+            } else if (id.equalsIgnoreCase(BOOTLOADER_TAG)) {
+                mBootloaderLink.setTitle(link.getTitle());
+                mBootloaderLink.setSummary(link.getDescription());
+                mBootloaderLink.setVisible(mShowLinks);
+            } else if (id.equalsIgnoreCase(RECOVERY_TAG)) {
+                mRecoveryLink.setTitle(link.getTitle());
+                mRecoveryLink.setSummary(link.getDescription());
+                mRecoveryLink.setVisible(mShowLinks);
             } else if (id.equalsIgnoreCase(PAYPAL_TAG)) {
                 mPayPalLink.setTitle(link.getTitle());
                 mPayPalLink.setSummary(link.getDescription());
@@ -182,6 +214,10 @@ public class Update extends SettingsPreferenceFragment implements
                     id.equalsIgnoreCase(CHANGELOG_TAG) ||
                     id.equalsIgnoreCase(GAPPS_TAG) ||
                     id.equalsIgnoreCase(FORUM_TAG) ||
+                    id.equalsIgnoreCase(FIRMWARE_TAG) ||
+                    id.equalsIgnoreCase(MODEM_TAG) ||
+                    id.equalsIgnoreCase(BOOTLOADER_TAG) ||
+                    id.equalsIgnoreCase(RECOVERY_TAG) ||
                     id.equalsIgnoreCase(PAYPAL_TAG) ||
                     id.equalsIgnoreCase(TELEGRAM_TAG)) {
                 continue;
