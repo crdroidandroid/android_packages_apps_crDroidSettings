@@ -52,14 +52,6 @@
             android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
     </PreferenceScreen>
 
-    <!-- Pocket detection -->
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="pocket_judge"
-        android:icon="@drawable/ic_pocket"
-        android:title="@string/pocket_judge_title"
-        android:summary="@string/pocket_judge_summary"
-        android:defaultValue="false" />
-
     <!-- Wakelock blocker -->
     <Preference
         android:key="wakelock_blocker"
@@ -143,6 +135,13 @@
         android:icon="@drawable/ic_remote"
         android:title="@string/sensor_block_title"
         android:summary="@string/sensor_block_summary"
+        android:defaultValue="false" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="pocket_judge"
+        android:icon="@drawable/ic_pocket"
+        android:title="@string/pocket_judge_title"
+        android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference

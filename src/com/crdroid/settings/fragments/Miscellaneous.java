@@ -178,8 +178,6 @@ public class Miscellaneous extends SettingsPreferenceFragment
         WakeLockBlocker.reset(mContext);
         writeCpuInfoOptions(mContext, false);
         Settings.System.putIntForUser(resolver,
-                Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
                 Settings.System.MEDIA_SCANNER_ON_BOOT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.AUTO_USB_MODE_CHOOSER, 0, UserHandle.USER_CURRENT);
