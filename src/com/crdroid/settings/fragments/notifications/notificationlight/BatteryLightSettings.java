@@ -85,7 +85,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         mMultiColorLed =
                 LightsCapabilities.supports(context, LightsCapabilities.LIGHTS_RGB_BATTERY_LED);
         mHALAdjustableBrightness = LightsCapabilities.supports(
-                context, LightsCapabilities.LIGHTS_ADJUSTABLE_NOTIFICATION_LED_BRIGHTNESS);
+                context, LightsCapabilities.LIGHTS_ADJUSTABLE_BATTERY_LED_BRIGHTNESS);
         final boolean pulsatingLed =
                 LightsCapabilities.supports(context, LightsCapabilities.LIGHTS_PULSATING_LED);
         final boolean segmentedBatteryLed =
