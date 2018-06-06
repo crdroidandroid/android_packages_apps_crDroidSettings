@@ -53,27 +53,27 @@
   <string name="lockclock_title">Widget horloge</string>
   <string name="lockclock_summary">Afficher ou modifier le widget \"cLock\" (Horloge)</string>
   <!-- Network traffic -->
-  <string name="network_traffic_settings_title">Network traffic monitor</string>
-  <string name="network_traffic_settings_summary">Display and customize current network traffic levels</string>
-  <string name="network_traffic_mode_title">Display mode</string>
-  <string name="network_traffic_mode_disable">Disabled</string>
-  <string name="network_traffic_mode_up">Upload only</string>
-  <string name="network_traffic_mode_down">Download only</string>
-  <string name="network_traffic_mode_all">Upload and download</string>
+  <string name="network_traffic_settings_title">Moniteur de trafic réseau</string>
+  <string name="network_traffic_settings_summary">Afficher et paramétrer le trafic réseau</string>
+  <string name="network_traffic_mode_title">Mode d\'affichage</string>
+  <string name="network_traffic_mode_disable">Désactivé</string>
+  <string name="network_traffic_mode_up">Débit montant uniquement</string>
+  <string name="network_traffic_mode_down">Débit descendant uniquement</string>
+  <string name="network_traffic_mode_all">Débits montant et descendant</string>
   <string name="network_traffic_autohide">Masquer automatiquement</string>
   <string name="network_traffic_autohide_kilobits">kb/s</string>
-  <string name="network_traffic_autohide_summary">Hide the traffic monitor when below inactivity threshold</string>
+  <string name="network_traffic_autohide_summary">Masquer le moniteur de trafic lorsque inactif</string>
   <string name="network_traffic_autohide_threshold">Seuil d\'inactivité</string>
-  <string name="network_traffic_show_units">Show units</string>
-  <string name="network_traffic_show_units_summary">Whether to show traffic measurement units</string>
-  <string name="network_traffic_units_title">Traffic measurement units</string>
-  <string name="network_traffic_units_bits">Bits per second (b/s)</string>
-  <string name="network_traffic_units_kilobits">Kilobits per second (kb/s)</string>
-  <string name="network_traffic_units_megabits">Megabits per second (Mb/s)</string>
-  <string name="network_traffic_units_bytes">Bytes per second (B/s)</string>
-  <string name="network_traffic_units_kilobytes">Kilobytes per second (kB/s)</string>
-  <string name="network_traffic_units_megabytes">Megabytes per second (MB/s)</string>
-  <string name="network_traffic_frequency_title">Update interval</string>
+  <string name="network_traffic_show_units">Afficher les unités</string>
+  <string name="network_traffic_show_units_summary">Afficher ou non les unités du débit</string>
+  <string name="network_traffic_units_title">Unités de mesure du trafic</string>
+  <string name="network_traffic_units_bits">Bits par seconde (b/s)</string>
+  <string name="network_traffic_units_kilobits">Kilobits par seconde (kb/s)</string>
+  <string name="network_traffic_units_megabits">Megabits par seconde (Mb/s)</string>
+  <string name="network_traffic_units_bytes">Octets par seconde (o/s)</string>
+  <string name="network_traffic_units_kilobytes">Kilooctets par seconde (ko/s)</string>
+  <string name="network_traffic_units_megabytes">Mégaoctets par seconde (Mo/s)</string>
+  <string name="network_traffic_frequency_title">Intervalle d\'actualisation</string>
   <string name="network_traffic_frequency_500">500 ms</string>
   <string name="network_traffic_frequency_1000">1000 ms</string>
   <string name="network_traffic_frequency_1500">1500 ms</string>
@@ -99,7 +99,7 @@
   <string name="recents_omni_category">OmniSwitch</string>
   <!-- AOSP Recents -->
   <string name="aosp_first_time_title">AOSP récents</string>
-  <string name="aosp_first_time_message">Immersive recents setting is overridden if the expanded desktop is enabled.</string>
+  <string name="aosp_first_time_message">Réglage récent immersif est substitué si le Bureau élargi est activé.</string>
   <!-- Hide Apps from Recents -->
   <string name="hide_apps_from_recents_title">Applications masquées</string>
   <string name="hide_from_recents_add_app">Ajouter une application</string>
@@ -255,14 +255,21 @@
   <string name="status_bar_logo_style_gender_female">Femme</string>
   <string name="status_bar_logo_style_gender_male_female">Masculin &amp; féminin</string>
   <string name="status_bar_logo_style_guitar_electric">Guitare électrique</string>
+  <string name="status_bar_logo_style_batman">Batman</string>
+  <string name="status_bar_logo_style_deadpool">Deadpool</string>
+  <string name="status_bar_logo_style_decepticons">Decepticons</string>
+  <string name="status_bar_logo_style_ironman">Ironman</string>
+  <string name="status_bar_logo_style_minions">Minions</string>
+  <string name="status_bar_logo_style_spiderman">Spiderman</string>
+  <string name="status_bar_logo_style_superman">Superman</string>
   <!-- Expanded Desktop -->
   <string name="expanded_desktop_title">Bureau étendu</string>
-  <string name="expanded_desktop_summary">Expand your available desktop space by hiding the status bar, navigation bar, or both</string>
+  <string name="expanded_desktop_summary">Étend l\'espace de bureau disponible en cachant la barre d\'état, de navigation, ou les deux</string>
   <string name="expanded_hide_nothing">Ne rien masquer</string>
   <string name="expanded_hide_status">Masquer la barre d\'état</string>
   <string name="expanded_hide_navigation">Masquer la barre de navigation</string>
   <string name="expanded_hide_both">Masquer les deux</string>
-  <string name="expanded_nothing_to_show">To add a custom per-app configuration for expanded state, set \"Enabled for all\" to the off position</string>
+  <string name="expanded_nothing_to_show">Pour ajouter une configuration par-application personnalisée pour le bureau étendu, affectez «Activé pour tous» à la position off</string>
   <string name="expanded_desktop_state">Mode étendu</string>
   <string name="expanded_enabled_for_all">Activé pour tous</string>
   <string name="expanded_user_configurable">Configurable par l\'utilisateur</string>
@@ -309,7 +316,7 @@
   <string name="navbar_interface_title">Interface</string>
   <string name="navbar_size">Taille de la barre</string>
   <string name="navbar_mode">Mode de navigation</string>
-  <string name="navbar_mode_summary">Select to enable either smartbar or fling</string>
+  <string name="navbar_mode_summary">Sélectionnez cette option pour activer smartbar ou fling</string>
   <string name="navbar_visibility">Barre de navigation</string>
   <string name="navbar_visibility_summary">Activer/désactiver la visibilité de barre de navigation</string>
   <string name="navigationbar_settings_title">Barre de navigation</string>
@@ -391,7 +398,7 @@
   <string name="fling_longpress_title">Délai d\'appui prolongé</string>
   <string name="fling_longpress_summary">Augmenter ou diminuer le temps nécessaire pour exécuter une pression longue</string>
   <string name="fling_keyboard_cursors_title">Action des curseurs du clavier dynamique</string>
-  <string name="fling_keyboard_cursors_summary">Double tap left and right actions becomes left and right keyboard cursor actions if keyboard is open</string>
+  <string name="fling_keyboard_cursors_summary">Double appui à droite ou à gauche déplace le curseur si le clavier est ouvert</string>
   <string name="fling_logo_opacity_title">Opacité du logo Fling</string>
   <!-- Pulse navigation bar music visualizer -->
   <string name="pulse_help_policy_notice_title">À propos de Pulse</string>
@@ -399,31 +406,31 @@
   <string name="pulse_settings">Pulse</string>
   <string name="pulse_settings_summary">Égaliseur graphique dans la barre de navigation</string>
   <string name="fling_show_pulse_title">Afficher Pulse</string>
-  <string name="fling_show_pulse_summary">Audio graphic equalizer on the navigation bar</string>
+  <string name="fling_show_pulse_summary">Spectre audio affiché sur la barre de navigation</string>
   <string name="pulse_render_mode_title">Mode de rendu</string>
-  <string name="pulse_render_mode_fading_bars">Fading blocks</string>
-  <string name="pulse_render_mode_solid_lines">Solid lines</string>
-  <string name="fling_pulse_color">Pulse color</string>
-  <string name="fling_pulse_color_summary">Used also as fallback for automatic color</string>
-  <string name="eos_fling_lavalamp_title">Turn on Lava Lamp</string>
-  <string name="eos_fling_lavalamp_summary">Pulse animates a smooth lava lamp style color blend</string>
+  <string name="pulse_render_mode_fading_bars">Blocs en dégradé</string>
+  <string name="pulse_render_mode_solid_lines">Lignes pleines</string>
+  <string name="fling_pulse_color">Couleur d\'impulsion</string>
+  <string name="fling_pulse_color_summary">Également utiliser choix par défaut aux couleurs automatiques</string>
+  <string name="eos_fling_lavalamp_title">Activer la lampe Lava</string>
+  <string name="eos_fling_lavalamp_summary">Pulse anime la lampe Lava</string>
   <string name="pulse_advanced_category">Avancé</string>
-  <string name="pulse_legacy_mode_advanced_category">Fading blocks mode settings</string>
-  <string name="pulse_custom_fudge_factor">Sanity level</string>
-  <string name="lavamp_solid_speed_title">Lava Lamp speed</string>
-  <string name="pulse_solid_units_count">Solid lines count</string>
-  <string name="pulse_solid_units_opacity">Solid lines opacity</string>
-  <string name="pulse_solid_dimen_category">Solid lines mode settings</string>
-  <string name="fling_lavalamp_color_from">Lava Lamp start color</string>
-  <string name="fling_lavalamp_color_to">Lava Lamp end color</string>
-  <string name="pulse_custom_buttons_opacity_title">Smartbar buttons opacity on Pulse</string>
-  <string name="pulse_auto_color_title">Automatic Pulse color</string>
-  <string name="pulse_auto_color_summary">Sync color with album arts. Overrides Lava Lamp and lines opacity.</string>
+  <string name="pulse_legacy_mode_advanced_category">Paramètres fondu des blocs</string>
+  <string name="pulse_custom_fudge_factor">Fréquence de Pulse</string>
+  <string name="lavamp_solid_speed_title">Vitesse de la lampe Lava</string>
+  <string name="pulse_solid_units_count">Nombre des lignes pleines</string>
+  <string name="pulse_solid_units_opacity">Opacité des lignes pleines</string>
+  <string name="pulse_solid_dimen_category">Paramètres lignes pleines</string>
+  <string name="fling_lavalamp_color_from">Couleur de départ lampe Lava</string>
+  <string name="fling_lavalamp_color_to">Couleur de fin lampe Lava</string>
+  <string name="pulse_custom_buttons_opacity_title">Opacité des boutons sur Pulse</string>
+  <string name="pulse_auto_color_title">Couleur de Pulse automatique</string>
+  <string name="pulse_auto_color_summary">Synchronisation avec la couleur des pochettes d\'album. Remplace le mode lampe Lava et la transparence des lignes.</string>
   <!-- Pulse config -->
   <string name="pulse_custom_dimen">Largeur de la barre</string>
-  <string name="pulse_custom_div">Bar spacing</string>
-  <string name="pulse_filled_block_size">Block size</string>
-  <string name="pulse_empty_block_size">Block spacing</string>
+  <string name="pulse_custom_div">Espacement des barres</string>
+  <string name="pulse_filled_block_size">Taille des blocs</string>
+  <string name="pulse_empty_block_size">Espacement des blocs</string>
   <!-- Navbar height -->
   <string name="navigation_bar_size_title">Taille de la barre</string>
   <string name="portrait_title">Hauteur (Portrait)</string>
@@ -431,31 +438,31 @@
   <string name="land_hor_title">Hauteur (Paysage)</string>
   <string name="positive_done">Fait</string>
   <!-- Stock navbar -->
-  <string name="navbar_settings_title">Stock navbar settings</string>
+  <string name="navbar_settings_title">Paramètres de barre de navigation stock</string>
   <string name="navabar_settings_summary">Launch stock navbar tuner controls</string>
   <!-- SmartBar -->
   <string name="smartbar_category">Smartbar</string>
   <string name="smartbar_settings_title">Paramètres de Smartbar</string>
-  <string name="smartbar_settings_summary">Fully-customizable navigation bar</string>
+  <string name="smartbar_settings_summary">Barre de navigation entièrement personnalisable</string>
   <string name="smartbar_editor_title">Démarrer le mode édition</string>
-  <string name="smartbar_editor_summary">Open smartbar buttons editor</string>
-  <string name="smartbar_help_policy_notice_summary">When in editor mode, medium press and drag a button to change its position or long press a button to show the edit menu. Button position may be changed while menu is showing.\n\nSetting a double tap action will delay single tap a bit.</string>
-  <string name="smartbar_context_menu_position_title">Context buttons layout position</string>
-  <string name="smartbar_context_menu_position_summary">Set the position of contextual buttons such as menu and ime selector</string>
+  <string name="smartbar_editor_summary">Ouvrir l\'éditeur de boutons de la smartbar</string>
+  <string name="smartbar_help_policy_notice_summary">En mode éditeur, appuyer moyennement sur un bouton et faites-le glisser pour changer sa position, ou pressez longuement un bouton pour faire apparaître le menu d\'édition. La position du bouton peut être changée même quand le menu est visible.. \n\nParamétrer une action de double-clic imposera un léger délai au clic simple.</string>
+  <string name="smartbar_context_menu_position_title">Position des boutons contextuels</string>
+  <string name="smartbar_context_menu_position_summary">Définir la position des boutons contextuels tels que le bouton Menu ou le sélecteur de clavier</string>
   <string name="smartbar_right">Droite</string>
   <string name="smartbar_left">Gauche</string>
-  <string name="smartbar_button_animation_title">Button touch animation</string>
-  <string name="smartbar_button_animation_summary">Set the animation style of the primary buttons when they are pressed</string>
-  <string name="smartbar_button_animation_ripple">Ripple</string>
-  <string name="smartbar_button_animation_spring">Spring</string>
+  <string name="smartbar_button_animation_title">Animation des boutons de navigation</string>
+  <string name="smartbar_button_animation_summary">Définir le style d\'animation des boutons principales lorsqu\'ils sont activés</string>
+  <string name="smartbar_button_animation_ripple">Ondulation</string>
+  <string name="smartbar_button_animation_spring">Rebond</string>
   <string name="smartbar_button_animation_flip">Inverser</string>
   <string name="smartbar_button_animation_pixel">Pixel (tous les boutons)</string>
   <string name="smartbar_button_animation_pixel_home">Pixel (bouton Accueil seulement)</string>
   <string name="smartbar_button_animation_pixel_home_ripple">Pixel (bouton Accueil seulement) et Ondulation</string>
-  <string name="smartbar_factory_reset_title">Reset to stock</string>
-  <string name="smartbar_factory_reset_confirm">Are you sure you want to reset Smartbar to stock settings?</string>
-  <string name="smartbar_ime_action_title">Input method and media actions</string>
-  <string name="smartbar_ime_action_summary">Set what buttons to show when a on-screen keyboard is showing or music is playing</string>
+  <string name="smartbar_factory_reset_title">Réinitialiser les paramètres</string>
+  <string name="smartbar_factory_reset_confirm">Êtes-vous sûr de vouloir réinitialiser Smartbar aux paramètres par défaut?</string>
+  <string name="smartbar_ime_action_title">Mode de saisie et commandes médias</string>
+  <string name="smartbar_ime_action_summary">Définir les boutons à afficher lorsqu\'un clavier est affiché ou que la musique est en cours de lecture</string>
   <string name="smartbar_ime_action_none">Aucun</string>
   <string name="smartbar_ime_action_arrows">Input arrows</string>
   <string name="smartbar_ime_action_switcher">Sélecteur de clavier</string>
@@ -568,29 +575,29 @@
   <string name="battery_bar_use_charging_color">Couleur de charge personnalisée</string>
   <string name="battery_bar_blend_color_title">Blend colors</string>
   <string name="battery_bar_blend_color_summary">Blend full/empty colors corresponding to battery percentage</string>
-  <string name="battery_bar_blend_color_reverse_title">Reverse color direction</string>
-  <string name="battery_bar_blend_color_reverse_summary_off">Full &#8594; empty: red &#8592; green &#8592; blue &#8592; red</string>
-  <string name="battery_bar_blend_color_reverse_summary_on">Full &#8594; empty: red &#8594; green &#8594; blue &#8594; red</string>
+  <string name="battery_bar_blend_color_reverse_title">Inversion de la direction de la couleur</string>
+  <string name="battery_bar_blend_color_reverse_summary_off">Plein &#8594; vide : rouge &#8592; vert &#8592; bleu &#8592; rouge</string>
+  <string name="battery_bar_blend_color_reverse_summary_on">Plein &#8594; vide : rouge &#8594; vert &#8594; bleu &#8594; rouge</string>
   <!-- Status Bar Ticker -->
   <string name="ticker_screen_title">Ticker</string>
-  <string name="ticker_screen_summary">Show notifications ticker-style in status bar</string>
-  <string name="ticker_title">Status bar ticker</string>
-  <string name="ticker_summary">Enable the status bar ticker</string>
+  <string name="ticker_screen_summary">Afficher les notifications style ticker dans la barre d\'état</string>
+  <string name="ticker_title">Barre d\'état ticker</string>
+  <string name="ticker_summary">Activer l\'ancien ticker dans la barre d\'état</string>
   <string name="ticker_restore_defaults_title">Rétablir les paramètres par défaut</string>
   <string name="text_title">Texte</string>
   <string name="icon_title">Icône</string>
   <string name="colors_title">Couleurs</string>
   <string name="values_restored_title">Valeurs restaurées</string>
-  <string name="ticker_disabled">No ticker</string>
-  <string name="ticker_enabled">Notification ticker</string>
-  <string name="ticker_media_enabled">Notifications and music ticker</string>
-  <string name="ticker_animation_mode_title">Ticker animation style</string>
-  <string name="ticker_animation_mode_alpha_fade">Fade</string>
-  <string name="ticker_animation_mode_scroll">Scroll</string>
+  <string name="ticker_disabled">Pas de ticker</string>
+  <string name="ticker_enabled">Notification Ticker</string>
+  <string name="ticker_media_enabled">Aperçu pour les notifications et la musique</string>
+  <string name="ticker_animation_mode_title">Style d’animation de Ticker</string>
+  <string name="ticker_animation_mode_alpha_fade">Fondu</string>
+  <string name="ticker_animation_mode_scroll">Défilement</string>
   <!-- Pie -->
   <string name="pie_settings">Paramètres Pie</string>
   <string name="pie_enable_title">Activer le Pie</string>
-  <string name="pie_settings_summary">Adjust pie to your liking</string>
+  <string name="pie_settings_summary">Ajuster Pie selon vos goûts</string>
   <string name="pie_theme_mode_title">Thème</string>
   <string name="pie_auto">Automatique</string>
   <string name="pie_white">Blanc</string>
@@ -605,25 +612,25 @@
   <string name="pie_status_none">Aucun</string>
   <string name="pie_status_both">Les deux</string>
   <string name="pie_gravity_title">Gravité de Pie</string>
-  <string name="pie_gravity_summary">Select the location where the Pie will be placed</string>
+  <string name="pie_gravity_summary">Sélectionnez l’emplacement de Pie</string>
   <string name="pie_gravity_bottom">Bas</string>
   <string name="pie_gravity_right">Droite</string>
   <string name="pie_gravity_left">Gauche</string>
   <!-- Breathing Notifications -->
-  <string name="breathing_notifications_category">Breathing notifications</string>
+  <string name="breathing_notifications_category">Notifications animées</string>
   <string name="missed_call_breath_title">Appel manqué</string>
-  <string name="missed_call_breath_summary">Give breathing effect to missed call notifications in the statusbar</string>
+  <string name="missed_call_breath_summary">Animations aux notifications d’appels manqués dans la barre d\'état</string>
   <string name="voicemail_breath_title">Messagerie vocale</string>
-  <string name="voicemail_breath_summary">Give breathing effect to voicemail notifications in the statusbar</string>
+  <string name="voicemail_breath_summary">Animations aux notifications messagerie vocale dans la barre d\'état</string>
   <string name="sms_breath_title">SMS</string>
-  <string name="sms_breath_summary">Give breathing effect to SMS notifications in the statusbar</string>
+  <string name="sms_breath_summary">Animations aux notifications SMS dans la barre d\'état</string>
   <!-- CPU Info -->
   <string name="show_cpu_info">Afficher les infos du Processeur</string>
-  <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
+  <string name="show_cpu_info_summary">Superposition d\'écran montrant les infos CPU</string>
   <!-- Heads up timeout -->
-  <string name="heads_up_category">Heads up</string>
-  <string name="heads_up_time_out_title">Time out</string>
-  <string name="heads_up_time_out_summary">Peeking notifications will show for <xliff:g id="number">%d</xliff:g> seconds</string>
+  <string name="heads_up_category">Notifications flottantes</string>
+  <string name="heads_up_time_out_title">Durée d\'affichage</string>
+  <string name="heads_up_time_out_summary">Les notifications flottantes s\'afficheront pour <xliff:g id="number">%d</xliff:g> secondes</string>
   <string name="heads_up_time_out_2sec">2 secondes</string>
   <string name="heads_up_time_out_4sec">4 secondes</string>
   <string name="heads_up_time_out_5sec">5 secondes</string>
@@ -631,10 +638,10 @@
   <string name="heads_up_time_out_8sec">8 secondes</string>
   <string name="heads_up_time_out_10sec">10 secondes</string>
   <!-- Heads up snooze -->
-  <string name="heads_up_snooze_title">Snooze timer</string>
-  <string name="heads_up_snooze_summary_one_minute">Swiping up on peeking notifications will snooze heads up from that application for 1 minute</string>
-  <string name="heads_up_snooze_summary">Swiping up on peeking notifications will snooze heads up from that application for <xliff:g id="number">%d</xliff:g> minutes</string>
-  <string name="heads_up_snooze_disabled_summary">Snooze timer is disabled</string>
+  <string name="heads_up_snooze_title">Minuteur du rappel d\'alarme</string>
+  <string name="heads_up_snooze_summary_one_minute">Glisser les notifications désactivera les notifications flottantes de cette application pendant 1 minutes</string>
+  <string name="heads_up_snooze_summary">Glisser sur les notifications désactivera les notifications flottantes de cette application pour <xliff:g id="number">%d</xliff:g> minutes</string>
+  <string name="heads_up_snooze_disabled_summary">La minuterie Snooze est désactivée</string>
   <string name="heads_up_snooze_1min">1 minute</string>
   <string name="heads_up_snooze_5min">5 minutes</string>
   <string name="heads_up_snooze_10min">10 minutes</string>
@@ -645,26 +652,26 @@
   <string name="pref_scrollingcache_force_enable">Forcer l\'activation</string>
   <string name="pref_scrollingcache_default_enable">Activer par défaut</string>
   <string name="pref_scrollingcache_default_disable">Désactiver par défaut</string>
-  <string name="pref_scrollingcache_force_disable">Force disable</string>
+  <string name="pref_scrollingcache_force_disable">Forcer la désactivation</string>
   <!-- Optional screenshot type -->
-  <string name="screenshot_type_title">Partial screenshot</string>
+  <string name="screenshot_type_title">Capture d’écran partielle</string>
   <string name="screenshot_type_fullscreen">Prendre des captures d’écran en plein écran</string>
-  <string name="screenshot_type_partial">Drag selection on the area for screenshot via volume keys</string>
+  <string name="screenshot_type_partial">Faites glisser la sélection sur la zone de capture d’écran via les touches de volume</string>
   <!-- Screenshot editor -->
-  <string name="screenshot_options_category">Screenshot options</string>
-  <string name="screenshot_edit_app">Screenshot editor</string>
-  <string name="screenshot_edit_app_summary">Select which image editor to use to edit screenshots with</string>
-  <string name="screenshot_edit_app_no_editor">No image editor available</string>
+  <string name="screenshot_options_category">Options de capture d’écran</string>
+  <string name="screenshot_edit_app">Éditeur de capture d\'écran</string>
+  <string name="screenshot_edit_app_summary">Sélectionner l\'éditeur d\'image à utiliser pour modifier les captures d\'écran</string>
+  <string name="screenshot_edit_app_no_editor">Aucun éditeur d\'image disponible</string>
   <!-- Three-fingers-swipe to screenshot -->
-  <string name="three_finger_gesture">Swipe to screenshot</string>
+  <string name="three_finger_gesture">Glisser pour capturer l\'écran</string>
   <string name="three_finger_gesture_summary">Balayer l\'écran avec trois doigts pour faire une capture d\'écran</string>
   <!-- Transparency porn -->
   <string name="trans">Transparence</string>
-  <string name="trans_summary">Customize transparency level for various elements</string>
+  <string name="trans_summary">Personnaliser le niveau de transparence pour divers éléments</string>
   <string name="trans_qs">Réglages rapides</string>
-  <string name="trans_vol_dialog">Volume dialog</string>
+  <string name="trans_vol_dialog">Panneau du volume</string>
   <string name="trans_power_menu">Menu Marche/Arrêt</string>
-  <string name="qs_transparent_shade">QS shade opacity</string>
+  <string name="qs_transparent_shade">Transparence des réglages rapides</string>
   <string name="qs_stroke_title">QS shade border</string>
   <string name="qs_stroke_disabled">Désactivé</string>
   <string name="qs_stroke_accent">Couleur d\'accentuation</string>
@@ -1402,13 +1409,13 @@
   <string name="force_ambient_for_media_title">Select layout</string>
   <string name="force_ambient_for_media_off">Disabled</string>
   <string name="force_ambient_for_media_on">Normal</string>
-  <string name="force_ambient_for_media_on_forced">Normal (forced)</string>
-  <string name="force_ambient_for_media_on_forced_clean">Minimal (forced)</string>
+  <string name="force_ambient_for_media_on_forced">Normal (forcé)</string>
+  <string name="force_ambient_for_media_on_forced_clean">Minimal (forcé)</string>
   <!-- Face Auto Unlock -->
-  <string name="face_auto_unlock_title">Face auto unlock</string>
-  <string name="face_auto_unlock_summary">Dismiss lockscreen automatically after recognizing trusted face</string>
+  <string name="face_auto_unlock_title">Déverrouillage automatique par reconnaissance faciale</string>
+  <string name="face_auto_unlock_summary">Rejeter l\'écran de verrouillage après reconnaissance de visage</string>
   <!-- Battery image -->
-  <string name="battery_image_title">Battery image</string>
+  <string name="battery_image_title">Icône de batterie</string>
   <string name="battery_image_summary">Display battery image</string>
   <!-- Battery percent -->
   <string name="battery_percent_title">Pourcentage de la batterie</string>
@@ -1477,55 +1484,55 @@
   <string name="pulse_length_long">Long</string>
   <string name="pulse_length_very_long">Very long</string>
   <string name="pulse_speed_very_fast">Very fast</string>
-  <string name="pulse_speed_fast">Fast</string>
+  <string name="pulse_speed_fast">Rapide</string>
   <string name="pulse_speed_normal">Normal</string>
-  <string name="pulse_speed_slow">Slow</string>
-  <string name="pulse_speed_very_slow">Very slow</string>
+  <string name="pulse_speed_slow">Lent</string>
+  <string name="pulse_speed_very_slow">Très lent</string>
   <!-- Common light settings strings -->
-  <string name="light_brightness_title">Brightness levels</string>
+  <string name="light_brightness_title">Niveau de luminosité</string>
   <string name="light_brightness_normal">Normal</string>
-  <string name="light_brightness_zen">Do Not Disturb</string>
+  <string name="light_brightness_zen">Ne Pas Déranger</string>
   <!-- Battery light settings -->
-  <string name="battery_light_title">Battery light</string>
-  <string name="battery_light_summary">Configure led color based on battery level and status</string>
-  <string name="battery_low_pulse_title">Pulse if battery low</string>
-  <string name="battery_light_list_title">Colors</string>
-  <string name="battery_light_low_color_title">Battery low</string>
-  <string name="battery_light_medium_color_title">Charging</string>
-  <string name="battery_light_full_color_title">Nearly Charged (&gt;90%)</string>
-  <string name="battery_light_really_full_color_title">Fully Charged (100%)</string>
+  <string name="battery_light_title">Voyant de batterie</string>
+  <string name="battery_light_summary">Configurer la couleur led sur le statut et le niveau de batterie</string>
+  <string name="battery_low_pulse_title">Clignoter si batterie faible</string>
+  <string name="battery_light_list_title">Couleurs</string>
+  <string name="battery_light_low_color_title">Batterie faible</string>
+  <string name="battery_light_medium_color_title">Chargement</string>
+  <string name="battery_light_full_color_title">Presque chargé (&gt;90 %)</string>
+  <string name="battery_light_really_full_color_title">Complètement chargée (100 %)</string>
   <!-- Lights settings screen, notification light settings -->
-  <string name="notification_light_title">Notification light</string>
-  <string name="notification_light_summary">Configure led color for notifications</string>
-  <string name="notification_light_general_title">General</string>
-  <string name="notification_light_advanced_title">Advanced</string>
-  <string name="notification_light_applist_title">Apps</string>
-  <string name="notification_light_phonelist_title">Phone</string>
-  <string name="notification_light_use_custom">Use custom values</string>
-  <string name="notification_light_default_value">Default</string>
-  <string name="notification_light_missed_call_title">Missed call</string>
-  <string name="notification_light_voicemail_title">Voicemail</string>
-  <string name="notification_light_screen_on">Lights with screen on</string>
-  <string name="notification_light_zen_mode">Lights in Do Not Disturb mode</string>
-  <string name="keywords_lights_brightness_level">dim leds brightness</string>
-  <string name="notification_light_automagic">Choose colors automatically</string>
-  <string name="notification_light_automagic_summary">Choosing colors automatically</string>
+  <string name="notification_light_title">Voyant de notification</string>
+  <string name="notification_light_summary">Configurer les led de couleur pour les notifications</string>
+  <string name="notification_light_general_title">Général</string>
+  <string name="notification_light_advanced_title">Paramètres avancés</string>
+  <string name="notification_light_applist_title">Gestionnaire applications</string>
+  <string name="notification_light_phonelist_title">Téléphone</string>
+  <string name="notification_light_use_custom">Utiliser les valeurs personnalisées</string>
+  <string name="notification_light_default_value">Par défaut</string>
+  <string name="notification_light_missed_call_title">Appel manqué</string>
+  <string name="notification_light_voicemail_title">Messagerie vocale</string>
+  <string name="notification_light_screen_on">Voyants avec écran allumé</string>
+  <string name="notification_light_zen_mode">Voyants en mode « Ne pas déranger »</string>
+  <string name="keywords_lights_brightness_level">diminuer la luminosité des leds</string>
+  <string name="notification_light_automagic">Choix des couleurs automatique</string>
+  <string name="notification_light_automagic_summary">Choix des couleurs automatique</string>
   <!-- Lights settings, LED notification -->
-  <string name="led_notification_title">Light settings</string>
-  <string name="led_notification_text">LED light enabled by settings</string>
-  <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
+  <string name="led_notification_title">Paramètres du voyant</string>
+  <string name="led_notification_text">LED activée par les paramètres</string>
+  <string name="notification_light_no_apps_summary">Pour ajouter la gestion par application, activer \'%1$s\' et appuyer sur \'\u002b\' dans la barre de menu</string>
   <!-- QuickSettings Panel Transparency -->
-  <string name="qs_panel_alpha_title">Transparency</string>
-  <string name="qs_panel_alpha_summary">Set transparency level for QS panel</string>
+  <string name="qs_panel_alpha_title">Transparence</string>
+  <string name="qs_panel_alpha_summary">Définissez le niveau de transparence pour panneau des tuiles</string>
   <!-- Substratum -->
   <string name="substratum_title">Substratum</string>
-  <string name="themes_title">Themes</string>
-  <string name="themes_summary">Manage your themes</string>
+  <string name="themes_title">Thèmes</string>
+  <string name="themes_summary">Gérez vos thèmes</string>
   <!-- Force authorize substratum packages -->
-  <string name="force_authorize_substratum_packages_title">Force authorize every theme app</string>
-  <string name="force_authorize_substratum_packages_summary">Allow theme apps from unknown sources</string>
+  <string name="force_authorize_substratum_packages_title">Forcer la demande d\'autorisation pour chaque thème</string>
+  <string name="force_authorize_substratum_packages_summary">Autoriser les thème de sources inconnues</string>
   <!-- Manage applications: show substratum overlays -->
-  <string name="filter_substratum_apps">Substratum overlays</string>
-  <string name="menu_show_substratum">Show overlays</string>
-  <string name="menu_hide_substratum">Hide overlays</string>
+  <string name="filter_substratum_apps">Surcouches Substratum</string>
+  <string name="menu_show_substratum">Afficher les surcouches</string>
+  <string name="menu_hide_substratum">Masquer les surcouches</string>
 </resources>
