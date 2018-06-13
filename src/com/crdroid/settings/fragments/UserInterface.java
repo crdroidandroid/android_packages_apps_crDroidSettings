@@ -326,8 +326,8 @@ public class UserInterface extends SettingsPreferenceFragment
                 Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES, 0, UserHandle.USER_CURRENT);
-        LineageSettings.System.putIntForUser(resolver,
-                LineageSettings.System.FULL_SCREEN_ASPECT_RATIO, 0, UserHandle.USER_CURRENT);
+        LineageSettings.System.putStringForUser(resolver,
+                LineageSettings.System.LONG_SCREEN_APPS, null, UserHandle.USER_CURRENT);
         SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT);
         AnimationControls.reset(mContext);
         DozeFragment.reset(mContext);

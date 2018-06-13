@@ -43,11 +43,9 @@
         android:defaultValue="0" />
 
     <!-- Full screen aspect ratio -->
-    <lineageos.preference.LineageSystemSettingSwitchPreference
-        android:key="full_screen_aspect_ratio"
+    <org.lineageos.internal.lineageparts.LineagePartsPreference
+        android:key="long_screen_settings"
         android:icon="@drawable/ic_fullscreen"
-        android:title="@string/full_screen_aspect_ratio_title"
-        android:summary="@string/full_screen_aspect_ratio_summary"
         lineage:requiresConfig="@*lineageos.platform:bool/config_haveHigherAspectRatioScreen" />
 
     <!-- Expanded Desktop -->
