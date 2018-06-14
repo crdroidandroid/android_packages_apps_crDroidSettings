@@ -29,6 +29,10 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 public class PickupSensor implements SensorEventListener {
     private static final boolean DEBUG = false;
     private static final String TAG = "TiltSensor";
@@ -40,6 +44,7 @@ public class PickupSensor implements SensorEventListener {
     private Sensor mSensorPickup;
     private Context mContext;
     private TelephonyManager telephonyManager;
+    private ExecutorService mExecutorService;
 
     private float[] mGravity;
     private float mAccelLast;
@@ -53,12 +58,17 @@ public class PickupSensor implements SensorEventListener {
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         mSensorPickup = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         telephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+        mExecutorService = Executors.newSingleThreadExecutor();
         mAccelLast = SensorManager.GRAVITY_EARTH;
         mAccelCurrent = SensorManager.GRAVITY_EARTH;
         mVibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
         if (mVibrator == null || !mVibrator.hasVibrator()) {
             mVibrator = null;
         }
+    }
+
+    private Future<?> submit(Runnable runnable) {
+        return mExecutorService.submit(runnable);
     }
 
     @Override
@@ -111,13 +121,18 @@ public class PickupSensor implements SensorEventListener {
 
     protected void enable() {
         if (DEBUG) Log.d(TAG, "Enabling");
-        mSensorManager.registerListener(this, mSensorPickup, SensorManager.SENSOR_STATUS_ACCURACY_HIGH);
-        mEntryTimestamp = SystemClock.elapsedRealtime();
+        submit(() -> {
+            mSensorManager.registerListener(this, mSensorPickup,
+                    SensorManager.SENSOR_STATUS_ACCURACY_HIGH);
+            mEntryTimestamp = SystemClock.elapsedRealtime();
+        });
     }
 
     protected void disable() {
         if (DEBUG) Log.d(TAG, "Disabling");
-        mSensorManager.unregisterListener(this, mSensorPickup);
+        submit(() -> {
+            mSensorManager.unregisterListener(this, mSensorPickup);
+        });
     }
 
     private void doHapticFeedback() {

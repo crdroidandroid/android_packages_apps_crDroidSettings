@@ -27,6 +27,10 @@ import android.os.Vibrator;
 import android.provider.Settings;
 import android.util.Log;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 public class TiltSensor implements SensorEventListener {
 
     private static final boolean DEBUG = false;
@@ -38,6 +42,7 @@ public class TiltSensor implements SensorEventListener {
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
+    private ExecutorService mExecutorService;
 
     private long mEntryTimestamp;
 
@@ -47,10 +52,15 @@ public class TiltSensor implements SensorEventListener {
         mContext = context;
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_TILT_DETECTOR);
+        mExecutorService = Executors.newSingleThreadExecutor();
         mVibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
         if (mVibrator == null || !mVibrator.hasVibrator()) {
             mVibrator = null;
         }
+    }
+
+    private Future<?> submit(Runnable runnable) {
+        return mExecutorService.submit(runnable);
     }
 
     @Override
@@ -77,14 +87,18 @@ public class TiltSensor implements SensorEventListener {
 
     protected void enable() {
         if (DEBUG) Log.d(TAG, "Enabling");
-        mSensorManager.registerListener(this, mSensor,
-                SensorManager.SENSOR_DELAY_NORMAL, BATCH_LATENCY_IN_MS * 1000);
-        mEntryTimestamp = SystemClock.elapsedRealtime();
+        submit(() -> {
+            mSensorManager.registerListener(this, mSensor,
+                    SensorManager.SENSOR_DELAY_NORMAL, BATCH_LATENCY_IN_MS * 1000);
+            mEntryTimestamp = SystemClock.elapsedRealtime();
+        });
     }
 
     protected void disable() {
         if (DEBUG) Log.d(TAG, "Disabling");
-        mSensorManager.unregisterListener(this, mSensor);
+        submit(() -> {
+            mSensorManager.unregisterListener(this, mSensor);
+        });
     }
 
     private void doHapticFeedback() {
