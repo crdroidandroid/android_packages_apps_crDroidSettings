@@ -34,20 +34,23 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
+import com.android.internal.util.crdroid.Utils;
 import com.crdroid.settings.R;
 
 import java.util.List;
 import java.util.ArrayList;
 
-public class Notifications extends SettingsPreferenceFragment implements Indexable {
+public class Notifications extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener, Indexable {
 
     public static final String TAG = "Notifications";
 
     private static final String BATTERY_LIGHTS_PREF = "battery_lights";
     private static final String NOTIFICATION_LIGHTS_PREF = "notification_lights";
+    private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
 
     private Preference mBatLights;
     private Preference mNotLights;
+    private ListPreference mFlashlightOnCall;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +73,33 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
                 com.android.internal.R.bool.config_intrusiveNotificationLed);
         if (!mNotLightsSupported)
             prefScreen.removePreference(mNotLights);
+
+        mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
+        Preference FlashOnCall = findPreference("flashlight_on_call");
+        int flashlightValue = Settings.System.getInt(getContentResolver(),
+                Settings.System.FLASHLIGHT_ON_CALL, 0);
+        mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
+        mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
+        mFlashlightOnCall.setOnPreferenceChangeListener(this);
+        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+            prefScreen.removePreference(FlashOnCall);
+        }
+    }
+     @Override
+    public void onResume() {
+        super.onResume();
+    }
+     @Override
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        if (preference == mFlashlightOnCall) {
+            int flashlightValue = Integer.parseInt(((String) objValue).toString());
+            Settings.System.putInt(getContentResolver(),
+                  Settings.System.FLASHLIGHT_ON_CALL, flashlightValue);
+            mFlashlightOnCall.setValue(String.valueOf(flashlightValue));
+            mFlashlightOnCall.setSummary(mFlashlightOnCall.getEntry());
+            return true;
+        }
+        return false;
     }
 
     public static void reset(Context mContext) {
@@ -105,5 +135,5 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
 
                     return result;
                 }
-            };
+        };
 }

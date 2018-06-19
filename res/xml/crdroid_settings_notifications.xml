@@ -26,6 +26,14 @@
             <intent android:action="com.android.settings.action.POWER_NOTIF_CONTROLS" />
     </PreferenceScreen>-->
 
+     <!-- Flashlight on Call -->
+     <ListPreference
+        android:key="flashlight_on_call"
+        android:icon="@drawable/ic_led_on"
+        android:title="@string/flashlight_on_call_title"
+        android:entries="@array/flashlight_on_call_entries"
+        android:entryValues="@array/flashlight_on_call_values" />
+
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="force_expanded_notifications"
         android:icon="@drawable/ic_expanded_notification"
