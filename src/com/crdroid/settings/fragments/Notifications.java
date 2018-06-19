@@ -30,6 +30,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.crdroid.Utils;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
@@ -45,9 +46,11 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
 
     private static final String BATTERY_LIGHTS_PREF = "battery_lights";
     private static final String NOTIFICATION_LIGHTS_PREF = "notification_lights";
+    private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
 
     private Preference mBatLights;
     private Preference mNotLights;
+    private ListPreference mFlashlightOnCall;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,10 +73,16 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
                 com.android.internal.R.bool.config_intrusiveNotificationLed);
         if (!mNotLightsSupported)
             prefScreen.removePreference(mNotLights);
+
+        mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
+        if (!Utils.deviceSupportsFlashLight(mContext))
+            prefScreen.removePreference(mFlashlightOnCall);
     }
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.FORCE_EXPANDED_NOTIFICATIONS, 0, UserHandle.USER_CURRENT);
         Settings.Global.putInt(resolver,
