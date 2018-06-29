@@ -144,6 +144,10 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.Secure.FACE_AUTO_UNLOCK, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_DATE_SELECTION, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_CLOCK_SELECTION, 0, UserHandle.USER_CURRENT);
 /*
         Settings.System.putIntForUser(resolver,
                 Settings.System.FP_UNLOCK_KEYSTORE, 0, UserHandle.USER_CURRENT);
