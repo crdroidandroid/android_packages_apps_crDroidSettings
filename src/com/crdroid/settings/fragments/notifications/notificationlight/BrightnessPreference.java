@@ -134,6 +134,18 @@ public class BrightnessPreference extends CustomDialogPref<AlertDialog>
             public void onClick(DialogInterface dialog, int which) {
             }
         });
+        builder.setPositiveButton(R.string.dlg_ok,
+                new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        builder.setNegativeButton(R.string.cancel,
+                new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
     }
 
     @Override
