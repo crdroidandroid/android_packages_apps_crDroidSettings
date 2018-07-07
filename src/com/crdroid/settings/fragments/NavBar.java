@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.android.internal.utils.du.Config;
 import com.android.internal.utils.du.DUActionUtils;
 import com.android.internal.utils.du.Config.ButtonConfig;
 
+import com.crdroid.settings.fragments.navbar.EdgeGestureSettings;
 import com.crdroid.settings.fragments.navbar.Fling;
 import com.crdroid.settings.fragments.navbar.Pulse;
 import com.crdroid.settings.fragments.navbar.Smartbar;
@@ -47,6 +48,7 @@ public class NavBar extends SettingsPreferenceFragment implements
     public static final String TAG = "NavBar";
 
     private static final String NAVBAR_VISIBILITY = "navbar_visibility";
+    private static final String KEY_EDGE_GESTURES = "edge_gestures";
     private static final String KEY_NAVBAR_MODE = "navbar_mode";
     private static final String KEY_STOCK_NAVBAR_SETTINGS = "stock_settings";
     private static final String KEY_FLING_NAVBAR_SETTINGS = "fling_settings";
@@ -61,6 +63,7 @@ public class NavBar extends SettingsPreferenceFragment implements
     private static final String NAVBAR_DYNAMIC = "navbar_dynamic";
 
     private SwitchPreference mNavbarVisibility;
+    private Preference mEdgeGestures;
     private ListPreference mNavbarMode;
     private Preference mFlingSettings;
     private PreferenceCategory mNavInterface;
@@ -87,6 +90,7 @@ public class NavBar extends SettingsPreferenceFragment implements
         mNavInterface = (PreferenceCategory) findPreference(KEY_CATEGORY_NAVIGATION_INTERFACE);
         mNavGeneral = (PreferenceCategory) findPreference(KEY_CATEGORY_NAVIGATION_GENERAL);
         mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
+        mEdgeGestures = (Preference) findPreference(KEY_EDGE_GESTURES);
         mNavbarMode = (ListPreference) findPreference(KEY_NAVBAR_MODE);
         mStockSettings = (Preference) findPreference(KEY_STOCK_NAVBAR_SETTINGS);
         mFlingSettings = (Preference) findPreference(KEY_FLING_NAVBAR_SETTINGS);
@@ -175,6 +179,7 @@ public class NavBar extends SettingsPreferenceFragment implements
 
     private void updateBarVisibleAndUpdatePrefs(boolean showing) {
         mNavbarVisibility.setChecked(showing);
+        mEdgeGestures.setEnabled(!mNavbarVisibility.isChecked());
         mNavInterface.setEnabled(mNavbarVisibility.isChecked());
         mNavGeneral.setEnabled(mNavbarVisibility.isChecked());
         mNavbarDynamic.setEnabled(mNavbarVisibility.isChecked());
@@ -186,8 +191,8 @@ public class NavBar extends SettingsPreferenceFragment implements
 
         if (preference == mNavbarMode) {
             int mode = Integer.parseInt((String) newValue);
-            Settings.Secure.putInt(resolver,
-                    Settings.Secure.NAVIGATION_BAR_MODE, mode);
+            Settings.Secure.putIntForUser(resolver,
+                    Settings.Secure.NAVIGATION_BAR_MODE, mode, UserHandle.USER_CURRENT);
             updateBarModeSettings(mode);
             return true;
         } else if (preference == mNavbarVisibility) {
@@ -196,8 +201,11 @@ public class NavBar extends SettingsPreferenceFragment implements
             }
             mIsNavSwitchingMode = true;
             boolean showing = ((Boolean)newValue);
-            Settings.Secure.putInt(resolver, Settings.Secure.NAVIGATION_BAR_VISIBLE,
-                    showing ? 1 : 0);
+            Settings.Secure.putIntForUser(resolver, Settings.Secure.NAVIGATION_BAR_VISIBLE,
+                    showing ? 1 : 0, UserHandle.USER_CURRENT);
+            if (showing)
+                Settings.Secure.putIntForUser(resolver, Settings.Secure.EDGE_GESTURES_ENABLED,
+                        0, UserHandle.USER_CURRENT);
             updateBarVisibleAndUpdatePrefs(showing);
             mHandler.postDelayed(new Runnable() {
                 @Override
@@ -246,6 +254,7 @@ public class NavBar extends SettingsPreferenceFragment implements
             Settings.Secure.NAVIGATION_BAR_WIDTH, 80, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
             Settings.System.NAVBAR_DYNAMIC, 0, UserHandle.USER_CURRENT);
+        EdgeGestureSettings.reset(mContext);
         Fling.reset(mContext);
         Pulse.reset(mContext);
         Smartbar.reset(mContext);
