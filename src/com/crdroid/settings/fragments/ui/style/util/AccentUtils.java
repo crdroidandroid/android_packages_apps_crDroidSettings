@@ -46,11 +46,38 @@ public final class AccentUtils {
     private AccentUtils() {
     }
 
+    private static List<String> getTrustedAccents(Context context) {
+        List<String> results = new ArrayList<>();
+        String[] packages = context.getResources()
+                .getStringArray(R.array.trusted_accent_packages);
+
+        results.add(StyleInterface.ACCENT_DEFAULT);
+        for (String item : packages) {
+            results.add(item);
+        }
+
+        return results;
+    }
+
+    private static List<String> getTrustedAccentsNames(Context context) {
+        List<String> results = new ArrayList<>();
+        String[] packages = context.getResources()
+                .getStringArray(R.array.trusted_accent_names);
+
+        results.add(context.getString(R.string.style_accent_default_name));
+        for (String item : packages) {
+            results.add(item);
+        }
+
+        return results;
+    }
+
     public static List<Accent> getAccents(Context context, StyleStatus status) {
         List<Accent> accents = new ArrayList<>();
 
         StyleInterface styleInterface = StyleInterface.getInstance(context);
-        List<String> targets = styleInterface.getTrustedAccents();
+        List<String> targets = getTrustedAccents(context);
+
         for (String target : targets) {
             // Add default accent
             if (StyleInterface.ACCENT_DEFAULT.equals(target)) {
@@ -78,10 +105,14 @@ public final class AccentUtils {
             return getDefaultAccent(context);
         }
 
+        List<String> targets = getTrustedAccents(context);
+        List<String> names = getTrustedAccentsNames(context);
+        int index = targets.indexOf(target);
+        String name = names.get(index);
+
         PackageManager pm = context.getPackageManager();
         ApplicationInfo ai = pm.getApplicationInfo(target, PackageManager.GET_META_DATA);
 
-        String name = ai.loadLabel(pm).toString();
         int color = ai.metaData == null ? DEFAULT_COLOR :
                 ai.metaData.getInt(METADATA_COLOR, DEFAULT_COLOR);
 
