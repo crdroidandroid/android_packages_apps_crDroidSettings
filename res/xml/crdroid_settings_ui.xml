@@ -29,18 +29,12 @@
         android:fragment="com.crdroid.settings.fragments.ui.DozeFragment" />
 
     <!-- Color Styles -->
-    <org.lineageos.internal.lineageparts.LineagePartsPreference
+    <PreferenceScreen
         android:key="style"
-        android:icon="@drawable/ic_theme_light_dark" />
-
-    <!-- Dark Shade -->
-    <com.crdroid.settings.preferences.SystemSettingListPreference
-        android:key="berry_dark_shade"
-        android:icon="@drawable/ic_invert_colors"
-        android:title="@string/berry_dark_shade_title"
-        android:entries="@array/berry_dark_shade_entries"
-        android:entryValues="@array/berry_dark_shade_values"
-        android:defaultValue="0" />
+        android:icon="@drawable/ic_theme_light_dark"
+        android:title="@string/style_title"
+        android:summary="@string/style_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.style.StylePreferences" />
 
     <!-- Full screen aspect ratio -->
     <org.lineageos.internal.lineageparts.LineagePartsPreference

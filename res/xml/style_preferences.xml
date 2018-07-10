@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2018 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <lineageos.preference.LineageSystemSettingListPreference
+        android:defaultValue="0"
+        android:entries="@array/style_entries"
+        android:entryValues="@array/style_values"
+        android:key="berry_global_style"
+        android:summary="%s"
+        android:icon="@drawable/ic_style_auto"
+        android:title="@string/style_global_title" />
+
+    <lineageos.preference.LineageSystemSettingListPreference
+        android:defaultValue="com.android.system.theme.dark"
+        android:entries="@array/dark_overlay_entries"
+        android:entryValues="@array/dark_overlay_values"
+        android:key="berry_dark_overlay"
+        android:icon="@drawable/ic_style_darkmode"
+        android:summary="%s"
+        android:title="@string/style_dark_overlay_title" />
+
+    <Preference
+        android:key="style_accent"
+        android:title="@string/style_accent_title" />
+
+    <Preference
+        android:key="style_automagic"
+        android:icon="@drawable/ic_automagic"
+        android:summary="@string/style_automagic_description"
+        android:title="@string/style_automagic_title" />
+
+</PreferenceScreen>
