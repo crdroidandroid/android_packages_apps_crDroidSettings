@@ -40,6 +40,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.crdroid.settings.fragments.ui.AnimationControls;
+import com.crdroid.settings.fragments.ui.BlurPersonalizations;
 import com.crdroid.settings.fragments.ui.DozeFragment;
 import com.crdroid.settings.fragments.ui.FontDialogPreference;
 import com.crdroid.settings.R;
@@ -330,6 +331,7 @@ public class UserInterface extends SettingsPreferenceFragment
                 LineageSettings.System.LONG_SCREEN_APPS, null, UserHandle.USER_CURRENT);
         SystemProperties.set(SCROLLINGCACHE_PERSIST_PROP, SCROLLINGCACHE_DEFAULT);
         AnimationControls.reset(mContext);
+        BlurPersonalizations.reset(mContext);
         DozeFragment.reset(mContext);
     }
 

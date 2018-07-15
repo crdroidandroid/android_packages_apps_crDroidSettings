@@ -83,6 +83,13 @@
         android:summary="@string/show_alarm_fullscreen_summary"
         android:defaultValue="false" />-->
 
+    <Preference
+        android:key="blur"
+        android:icon="@drawable/ic_blur"
+        android:title="@string/settings_blur_cat"
+        android:summary="@string/settings_blur_cat_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.BlurPersonalizations" />
+
     <PreferenceCategory
         android:key="category_substratum"
         android:title="@string/substratum_title" >
