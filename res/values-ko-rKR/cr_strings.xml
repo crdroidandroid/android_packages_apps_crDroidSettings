@@ -1074,7 +1074,7 @@
   <string name="blur_notice_summary">흐림 효과는 암호 입력 화면에서는 비활성화 됩니다. 반투명 알림만 활성화 됩니다!</string>
   <string name="blur_colors_notice">이 색들의 용도는 무엇인가요?</string>
   <string name="blur_colors_notice_summary">배경을 흐리게 하는 색상을 변경합니다. 기본값인 회색 대신 사용자가 선호하는 색을 선택할 수 있습니다.\n세 가지 색상 필터: 밝은 배경, 어두운 배경과 혼합된 배경 색 필터를 사용할 수 있습니다.\n그래서 어떻게 설정된 색이 적용되나고요?\n간단합니다. 글자 그대로, 밝은 배경 필터는 밝은 배경에, 어두운 배경 필터는 어두운 배경에, 혼합된 배경 필터는 너무 밝지도, 너무 어둡지도 않은 배경에 사용됩니다.\n설정된 색상은 상태표시줄과 최근 앱 목록 모두에 사용됩니다.</string>
-  <string name="blur_expstatus_cat">확장된 상태표시줄</string>
+  <string name="blur_expstatus_cat">Expanded statusbar </string>
   <string name="blur_notifications_cat">알림</string>
   <string name="blur_qs_cat">빠른 설정</string>
   <string name="blur_recents_cat">최근 앱</string>
@@ -1355,12 +1355,18 @@
   <!-- Update interval -->
   <string name="interval_title">자동 업데이트 확인 간격</string>
   <string name="interval_entry_disable">사용 안 함</string>
+  <string name="interval_entry_15s">Every 15 seconds</string>
+  <string name="interval_entry_30s">Every 30 seconds</string>
+  <string name="interval_entry_1m">Every 1 minutes</string>
+  <string name="interval_entry_2m">Every 2 minutes</string>
+  <string name="interval_entry_5m">Every 5 minutes</string>
+  <string name="interval_entry_10m">Every 10 minutes</string>
   <string name="interval_entry_15m">15분 마다</string>
+  <string name="interval_entry_20m">Every 20 minutes</string>
   <string name="interval_entry_30m">매 30분 마다</string>
   <string name="interval_entry_1h">매 시간 마다</string>
   <string name="interval_entry_12h">매 12시간</string>
   <string name="interval_entry_24h">매 24시간</string>
-  <string name="interval_entry_1m">Every 1 min (Test only)</string>
   <string name="autoupdate_enabled">자동 업데이트 확인이 활성화됨</string>
   <string name="autoupdate_disabled">자동 업데이트 확인이 비활성화됨</string>
   <!-- Notification -->
@@ -1535,9 +1541,6 @@
   <string name="led_notification_title">표시등 설정</string>
   <string name="led_notification_text">설정 앱을 통해 LED 표시등을 활성화함</string>
   <string name="notification_light_no_apps_summary">앱 별 컨트롤을 추가하려면 \'%1$s\'을(를) 활성화하고 메뉴 바에서 \'\u002b\'을(를) 누르세요</string>
-  <!-- QuickSettings Panel Transparency -->
-  <string name="qs_panel_alpha_title">투명도</string>
-  <string name="qs_panel_alpha_summary">퀵세팅 패널 투명도 조절</string>
   <!-- Substratum -->
   <string name="substratum_title">Substratum (테마 엔진)</string>
   <string name="themes_title">테마</string>
@@ -1577,4 +1580,54 @@
   <string name="edge_gestures_back_edges_left">왼쪽</string>
   <string name="edge_gestures_back_edges_right">오른쪽</string>
   <string name="edge_gestures_back_edges_both">양면 모두</string>
+  <!-- Berry Lite -->
+  <string name="style_title">Style</string>
+  <string name="style_summary">Choose system colors</string>
+  <string name="style_global_title">Style</string>
+  <string name="style_global_entry_automatic">Automatic (wallpaper)</string>
+  <string name="style_global_entry_light">Light</string>
+  <string name="style_global_entry_dark">Dark</string>
+  <string name="style_global_entry_time">Automatic (time of the day)</string>
+  <string name="style_global_entry_app">Managed by %1$s</string>
+  <string name="style_accent_title">Accent color</string>
+  <string name="style_accent_configuration_not_supported">The current accent isn\'t compatible with the selected style. In order to proceed another accent has to be selected, do you want to continue?</string>
+  <string name="style_accent_configuration_positive">Proceed</string>
+  <string name="style_automagic_title">Automagic</string>
+  <string name="style_automagic_description">Tune the style to match your wallpaper</string>
+  <string name="style_automagic_dialog_content">Suggested style: <b>%1$s</b> with <b>%2$s</b> accent.\nDo you want to apply it?</string>
+  <string name="style_automagic_dialog_positive">Apply</string>
+  <string name="style_accent_default_name">Default</string>
+  <string name="style_dark_overlay_title">Dark mode</string>
+  <string name="style_dark_overlay_default">Deep Grey</string>
+  <string name="style_dark_overlay_black">Amoled Black</string>
+  <string name="style_permission_error">Storage access permission is needed to analyze your wallpaper, please grant it to use this feature</string>
+  <!-- Accent colors -->
+  <string name="accent_amber">Amber</string>
+  <string name="accent_black">Carbon</string>
+  <string name="accent_blue">Blueberry</string>
+  <string name="accent_brown">Cocoa</string>
+  <string name="accent_cyan">Cyan</string>
+  <string name="accent_demon">Demon</string>
+  <string name="accent_denim">Denim</string>
+  <string name="accent_green">Forest</string>
+  <string name="accent_gold">Gold</string>
+  <string name="accent_grey">Grey</string>
+  <string name="accent_orange">Pumpkin</string>
+  <string name="accent_pink">Cherry</string>
+  <string name="accent_purple">Lavender</string>
+  <string name="accent_red">Tomato</string>
+  <string name="accent_teal">Teal</string>
+  <string name="accent_turquoise">Turquoise</string>
+  <string name="accent_yellow">Banana</string>
+  <!-- Smart Pixels -->
+  <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see a significant improvement in battery life. For a good user experience, we recommend you set the amount of disabled pixels at 75 percent.</string>
+  <string name="smart_pixels_title">Smart Pixels</string>
+  <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
+  <string name="smart_pixels_enable_title">Enable Smart Pixels</string>
+  <string name="smart_pixels_enable_summary">Shut off pixels to reduce power consumption</string>
+  <string name="smart_pixels_on_power_save_title">Auto-enable on battery saver</string>
+  <string name="smart_pixels_on_power_save_summary">Enable Smart Pixels when battery saver is enabled</string>
+  <string name="smart_pixels_percent">Percent of pixels to disable</string>
+  <string name="smart_pixels_shift_title">Burn-in protection</string>
+  <string name="smart_pixels_shift_summary">Prevents burn-in on OLED devices by shifting pixels every so often</string>
 </resources>

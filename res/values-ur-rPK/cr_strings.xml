@@ -1074,7 +1074,7 @@
   <string name="blur_notice_summary">Blur personalizations are disabled during keyguard view. Only translucent notifications are enabled.</string>
   <string name="blur_colors_notice">What are these colors doing?</string>
   <string name="blur_colors_notice_summary">یہ رنگیں دھندلے پس منظر کو ٹھنڈا کر رہے ہیں. عام گرے کے بجائے،اب آپ اپنی مرضی کے راستے میں رنگ منتخب کر سکتے ہیں.\nتین رنگ فلٹر ہیں: ایک روشنی کے پس منظر کے لئے استعمال کیا جاتا ہے،ایک تاریک پس منظر کے لئے استعمال کیا جاتا ہے اور ایک روشنی/سیاہ پس منظر کے لئے استعمال کیا جاتا ہے.\nتو کس طرح یہ رنگ کام کرتے ہیں؟\nآسان،جیسا کہ عنوانات کا کہنا ہے کہ،لائٹ فلٹر لائٹر پس منظرکے لئے استعمال کیا جائے گا ،سیاہ پس منظر لئے گہرا فلٹراور مخلوط فلٹر ایسے پس منظر کے لئے استعمال کیا جاے گا جو زیادہ گہرے یا زیادہ لائٹ نہیں ہوں.\nیہ رنگ دونوںدھندلے بیک گراؤنڈکے لئے استعمال کیا جاتا ہے: اسٹیٹس باراورریسنٹس ایپس ونڈو</string>
-  <string name="blur_expstatus_cat">Expanded statusBar </string>
+  <string name="blur_expstatus_cat">Expanded statusbar </string>
   <string name="blur_notifications_cat">Notifications</string>
   <string name="blur_qs_cat">Quick settings</string>
   <string name="blur_recents_cat">Recent apps</string>
@@ -1355,12 +1355,18 @@
   <!-- Update interval -->
   <string name="interval_title">Automatic update interval</string>
   <string name="interval_entry_disable">Disabled</string>
+  <string name="interval_entry_15s">Every 15 seconds</string>
+  <string name="interval_entry_30s">Every 30 seconds</string>
+  <string name="interval_entry_1m">Every 1 minutes</string>
+  <string name="interval_entry_2m">Every 2 minutes</string>
+  <string name="interval_entry_5m">Every 5 minutes</string>
+  <string name="interval_entry_10m">Every 10 minutes</string>
   <string name="interval_entry_15m">Every 15 minutes</string>
+  <string name="interval_entry_20m">Every 20 minutes</string>
   <string name="interval_entry_30m">Every 30 minutes</string>
   <string name="interval_entry_1h">Every hour</string>
   <string name="interval_entry_12h">Every 12 hours</string>
   <string name="interval_entry_24h">Every 24 hours</string>
-  <string name="interval_entry_1m">Every 1 min (Test only)</string>
   <string name="autoupdate_enabled">Automatic update is enabled</string>
   <string name="autoupdate_disabled">خودکار اپ ڈیٹ غیر فعال ہے</string>
   <!-- Notification -->
@@ -1535,9 +1541,6 @@
   <string name="led_notification_title">Light settings</string>
   <string name="led_notification_text">LED light enabled by settings</string>
   <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
-  <!-- QuickSettings Panel Transparency -->
-  <string name="qs_panel_alpha_title">Transparency</string>
-  <string name="qs_panel_alpha_summary">Set transparency level for QS panel</string>
   <!-- Substratum -->
   <string name="substratum_title">Substratum</string>
   <string name="themes_title">Themes</string>
@@ -1577,4 +1580,54 @@
   <string name="edge_gestures_back_edges_left">Left</string>
   <string name="edge_gestures_back_edges_right">Right</string>
   <string name="edge_gestures_back_edges_both">Both sides</string>
+  <!-- Berry Lite -->
+  <string name="style_title">Style</string>
+  <string name="style_summary">Choose system colors</string>
+  <string name="style_global_title">Style</string>
+  <string name="style_global_entry_automatic">Automatic (wallpaper)</string>
+  <string name="style_global_entry_light">Light</string>
+  <string name="style_global_entry_dark">Dark</string>
+  <string name="style_global_entry_time">Automatic (time of the day)</string>
+  <string name="style_global_entry_app">Managed by %1$s</string>
+  <string name="style_accent_title">Accent color</string>
+  <string name="style_accent_configuration_not_supported">The current accent isn\'t compatible with the selected style. In order to proceed another accent has to be selected, do you want to continue?</string>
+  <string name="style_accent_configuration_positive">Proceed</string>
+  <string name="style_automagic_title">Automagic</string>
+  <string name="style_automagic_description">Tune the style to match your wallpaper</string>
+  <string name="style_automagic_dialog_content">Suggested style: <b>%1$s</b> with <b>%2$s</b> accent.\nDo you want to apply it?</string>
+  <string name="style_automagic_dialog_positive">Apply</string>
+  <string name="style_accent_default_name">Default</string>
+  <string name="style_dark_overlay_title">Dark mode</string>
+  <string name="style_dark_overlay_default">Deep Grey</string>
+  <string name="style_dark_overlay_black">Amoled Black</string>
+  <string name="style_permission_error">Storage access permission is needed to analyze your wallpaper, please grant it to use this feature</string>
+  <!-- Accent colors -->
+  <string name="accent_amber">Amber</string>
+  <string name="accent_black">Carbon</string>
+  <string name="accent_blue">Blueberry</string>
+  <string name="accent_brown">Cocoa</string>
+  <string name="accent_cyan">Cyan</string>
+  <string name="accent_demon">Demon</string>
+  <string name="accent_denim">Denim</string>
+  <string name="accent_green">Forest</string>
+  <string name="accent_gold">Gold</string>
+  <string name="accent_grey">Grey</string>
+  <string name="accent_orange">Pumpkin</string>
+  <string name="accent_pink">Cherry</string>
+  <string name="accent_purple">Lavender</string>
+  <string name="accent_red">Tomato</string>
+  <string name="accent_teal">Teal</string>
+  <string name="accent_turquoise">Turquoise</string>
+  <string name="accent_yellow">Banana</string>
+  <!-- Smart Pixels -->
+  <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see a significant improvement in battery life. For a good user experience, we recommend you set the amount of disabled pixels at 75 percent.</string>
+  <string name="smart_pixels_title">Smart Pixels</string>
+  <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
+  <string name="smart_pixels_enable_title">Enable Smart Pixels</string>
+  <string name="smart_pixels_enable_summary">Shut off pixels to reduce power consumption</string>
+  <string name="smart_pixels_on_power_save_title">Auto-enable on battery saver</string>
+  <string name="smart_pixels_on_power_save_summary">Enable Smart Pixels when battery saver is enabled</string>
+  <string name="smart_pixels_percent">Percent of pixels to disable</string>
+  <string name="smart_pixels_shift_title">Burn-in protection</string>
+  <string name="smart_pixels_shift_summary">Prevents burn-in on OLED devices by shifting pixels every so often</string>
 </resources>

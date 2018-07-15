@@ -400,17 +400,17 @@
   <string name="fling_keyboard_cursors_title">Dynamiczne działanie kursorów klawiatury</string>
   <string name="fling_keyboard_cursors_summary">Akcje dwukrotnego dotknięcia lewej i prawej strony stają się lewymi i prawymi klawiszami kursora, jeśli klawiatura jest otwarta</string>
   <string name="fling_logo_opacity_title">Przezroczystość loga Fling</string>
-  <string name="fling_factory_reset_title">Reset to stock</string>
-  <string name="fling_factory_reset_confirm">Are you sure you want to reset Fling to stock settings?</string>
-  <string name="fling_backup_current_config_title">Save profile</string>
-  <string name="fling_restore_config_title">Restore profile</string>
-  <string name="fling_config_name_edit_dialog_title">Fling profile name</string>
-  <string name="fling_config_name_edit_dialog_message">Enter name or leave blank</string>
-  <string name="fling_config_dialog_title">Fling profiles</string>
-  <string name="fling_config_backup_success_toast">Fling profile successfully saved</string>
-  <string name="fling_config_restore_success_toast">Fling profile successfully restored</string>
-  <string name="fling_config_backup_error_toast">Error saving Fling profile</string>
-  <string name="fling_config_restore_error_toast">Error restoring Fling profile</string>
+  <string name="fling_factory_reset_title">Przywróć kolor domyślny</string>
+  <string name="fling_factory_reset_confirm">Czy jesteś pewny, że chcesz przywrócić Fling do ustawień domyślnych?</string>
+  <string name="fling_backup_current_config_title">Zapisz profil</string>
+  <string name="fling_restore_config_title">Przywróć profil</string>
+  <string name="fling_config_name_edit_dialog_title">Nazwa profilu Fling</string>
+  <string name="fling_config_name_edit_dialog_message">Wpisz nazwę, lub zostaw puste</string>
+  <string name="fling_config_dialog_title">Profile Fling</string>
+  <string name="fling_config_backup_success_toast">Profil Fling zapisany pomyślnie</string>
+  <string name="fling_config_restore_success_toast">Pomyślnie przywrócono profil Fling</string>
+  <string name="fling_config_backup_error_toast">Błąd zapisywania profilu Fling</string>
+  <string name="fling_config_restore_error_toast">Błąd przywracania profilu Fling</string>
   <!-- Pulse navigation bar music visualizer -->
   <string name="pulse_help_policy_notice_title">O Pulsie</string>
   <string name="pulse_help_policy_notice_summary">Pulse jest genialną wizualizacją odtwarzanego dźwięku na pasku nawigacji. Pulse nie działa z niektórymi odtwarzaczami podczas odtwarzania przez głośnik urządzenia</string>
@@ -1359,12 +1359,18 @@ https://plus.google.com/communities/118297646046960923906</string>
   <!-- Update interval -->
   <string name="interval_title">Częstotliwość sprawdzania automatycznych aktualizacji</string>
   <string name="interval_entry_disable">Wyłączony</string>
+  <string name="interval_entry_15s">Co 15 sekund</string>
+  <string name="interval_entry_30s">Co 30 sekund</string>
+  <string name="interval_entry_1m">Co minutę</string>
+  <string name="interval_entry_2m">Co 2 minuty</string>
+  <string name="interval_entry_5m">Co 5 minut</string>
+  <string name="interval_entry_10m">Co 10 minut</string>
   <string name="interval_entry_15m">Co 15 minut</string>
+  <string name="interval_entry_20m">Co 20 minut</string>
   <string name="interval_entry_30m">Co 30 minut</string>
   <string name="interval_entry_1h">Co godzinę</string>
   <string name="interval_entry_12h">Co 12 godzin</string>
   <string name="interval_entry_24h">Co 24 godziny</string>
-  <string name="interval_entry_1m">Co 1 min (tylko Test)</string>
   <string name="autoupdate_enabled">Aktualizacje automatyczne są włączone</string>
   <string name="autoupdate_disabled">Aktualizacje automatyczne są wyłączone</string>
   <!-- Notification -->
@@ -1541,9 +1547,6 @@ https://plus.google.com/communities/118297646046960923906</string>
   <string name="led_notification_title">Ustawienia diody LED</string>
   <string name="led_notification_text">Dioda LED włączona przez ustawienia</string>
   <string name="notification_light_no_apps_summary">Aby dodać ustawienia dla konkretnych aplikacji, aktywuj \'%1$s\' i naciśnij \'\u002b\' na pasku menu</string>
-  <!-- QuickSettings Panel Transparency -->
-  <string name="qs_panel_alpha_title">Przezroczystość</string>
-  <string name="qs_panel_alpha_summary">Ustaw poziom przezroczystości dla panelu QS</string>
   <!-- Substratum -->
   <string name="substratum_title">Substratum</string>
   <string name="themes_title">Motywy</string>
@@ -1570,17 +1573,67 @@ https://plus.google.com/communities/118297646046960923906</string>
   <string name="lockscreen_date_selection_str_box">Półprzezroczysty</string>
   <string name="lockscreen_date_selection_str_round">Półprzezroczysty (zaokrąglony)</string>
   <!-- Edge gestures -->
-  <string name="edge_gestures_title">Edge gestures</string>
-  <string name="edge_gestures_summary">Navigate using edge gestures</string>
-  <string name="edge_gestures_description">Swipe from bottom to trigger Home gesture, keep it pressed to open recents. Swipe from bottom left or bottom right to go back.</string>
-  <string name="edge_gestures_feedback_duration_title">Haptic feedback duration</string>
-  <string name="edge_gestures_long_press_delay_title">Delay until long press action starts</string>
-  <string name="edge_gestures_back_category_title">Back gesture</string>
-  <string name="edge_gestures_back_edges_title">Trigger back gesture from</string>
+  <string name="edge_gestures_title">Gesty krawędzi</string>
+  <string name="edge_gestures_summary">Nawiguj używając gestów krawędzi</string>
+  <string name="edge_gestures_description">Przesuń palcem od dołu, aby wywołać gest przycisku Home, przytrzymaj go, aby otworzyć ostatnie aplikacje. Przesuń palcem od dołu w lewo lub od dołu w prawo, aby wrócić.</string>
+  <string name="edge_gestures_feedback_duration_title">Czas reakcji dotknięcia</string>
+  <string name="edge_gestures_long_press_delay_title">Opóźnienie startu akcji długiego naciśnięcia</string>
+  <string name="edge_gestures_back_category_title">Gest wstecz</string>
+  <string name="edge_gestures_back_edges_title">Wywołaj gest przycisku wstecz od</string>
   <string name="edge_gestures_landscape_back_edges_title">Trigger back gesture on landscape from</string>
   <string name="edge_gestures_back_screen_percent_title">Back gesture must start below this percentage of the screen</string>
   <string name="edge_gestures_back_screen_percent_summary">Trigger below % of screen</string>
   <string name="edge_gestures_back_edges_left">Left</string>
   <string name="edge_gestures_back_edges_right">Right</string>
   <string name="edge_gestures_back_edges_both">Both sides</string>
+  <!-- Berry Lite -->
+  <string name="style_title">Style</string>
+  <string name="style_summary">Choose system colors</string>
+  <string name="style_global_title">Style</string>
+  <string name="style_global_entry_automatic">Automatic (wallpaper)</string>
+  <string name="style_global_entry_light">Light</string>
+  <string name="style_global_entry_dark">Dark</string>
+  <string name="style_global_entry_time">Automatic (time of the day)</string>
+  <string name="style_global_entry_app">Managed by %1$s</string>
+  <string name="style_accent_title">Accent color</string>
+  <string name="style_accent_configuration_not_supported">The current accent isn\'t compatible with the selected style. In order to proceed another accent has to be selected, do you want to continue?</string>
+  <string name="style_accent_configuration_positive">Proceed</string>
+  <string name="style_automagic_title">Automagic</string>
+  <string name="style_automagic_description">Tune the style to match your wallpaper</string>
+  <string name="style_automagic_dialog_content">Suggested style: <b>%1$s</b> with <b>%2$s</b> accent.\nDo you want to apply it?</string>
+  <string name="style_automagic_dialog_positive">Apply</string>
+  <string name="style_accent_default_name">Default</string>
+  <string name="style_dark_overlay_title">Dark mode</string>
+  <string name="style_dark_overlay_default">Deep Grey</string>
+  <string name="style_dark_overlay_black">Amoled Black</string>
+  <string name="style_permission_error">Storage access permission is needed to analyze your wallpaper, please grant it to use this feature</string>
+  <!-- Accent colors -->
+  <string name="accent_amber">Amber</string>
+  <string name="accent_black">Carbon</string>
+  <string name="accent_blue">Blueberry</string>
+  <string name="accent_brown">Cocoa</string>
+  <string name="accent_cyan">Cyan</string>
+  <string name="accent_demon">Demon</string>
+  <string name="accent_denim">Denim</string>
+  <string name="accent_green">Forest</string>
+  <string name="accent_gold">Gold</string>
+  <string name="accent_grey">Grey</string>
+  <string name="accent_orange">Pumpkin</string>
+  <string name="accent_pink">Cherry</string>
+  <string name="accent_purple">Lavender</string>
+  <string name="accent_red">Tomato</string>
+  <string name="accent_teal">Teal</string>
+  <string name="accent_turquoise">Turquoise</string>
+  <string name="accent_yellow">Banana</string>
+  <!-- Smart Pixels -->
+  <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see a significant improvement in battery life. For a good user experience, we recommend you set the amount of disabled pixels at 75 percent.</string>
+  <string name="smart_pixels_title">Smart Pixels</string>
+  <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
+  <string name="smart_pixels_enable_title">Enable Smart Pixels</string>
+  <string name="smart_pixels_enable_summary">Shut off pixels to reduce power consumption</string>
+  <string name="smart_pixels_on_power_save_title">Auto-enable on battery saver</string>
+  <string name="smart_pixels_on_power_save_summary">Enable Smart Pixels when battery saver is enabled</string>
+  <string name="smart_pixels_percent">Percent of pixels to disable</string>
+  <string name="smart_pixels_shift_title">Burn-in protection</string>
+  <string name="smart_pixels_shift_summary">Prevents burn-in on OLED devices by shifting pixels every so often</string>
 </resources>
