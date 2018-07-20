@@ -65,7 +65,7 @@
   <string name="network_traffic_autohide_summary">Oculta el monitor de trafico cuando la inactividad este debajo del umbral</string>
   <string name="network_traffic_autohide_threshold">Límite de inactividad</string>
   <string name="network_traffic_show_units">Mostrar unidades</string>
-  <string name="network_traffic_show_units_summary">Whether to show traffic measurement units</string>
+  <string name="network_traffic_show_units_summary">Mostrar/ocultar unidades de medida de tráfico</string>
   <string name="network_traffic_units_title">Unidades de medida de tráfico</string>
   <string name="network_traffic_units_bits">Bits por segundo (b/s)</string>
   <string name="network_traffic_units_kilobits">Kilobits por segundo (kb/s)</string>
@@ -639,8 +639,8 @@
   <string name="show_cpu_info">Mostrar info de CPU</string>
   <string name="show_cpu_info_summary">Superposición de pantalla que muestra la información actual de la CPU</string>
   <!-- Heads up -->
-  <string name="notification_heads_up_title">Heads up</string>
-  <string name="notification_heads_up_summary">Allow pop up notifications</string>
+  <string name="notification_heads_up_title">Notificaciones flotantes</string>
+  <string name="notification_heads_up_summary">Permitir notificaciones emergentes</string>
   <!-- Heads up timeout -->
   <string name="heads_up_category">Notificaciones emergentes</string>
   <string name="heads_up_time_out_title">Límite de tiempo</string>
@@ -1074,7 +1074,7 @@
   <string name="blur_notice_summary">Los desenfoques personlizados se deshabilitan durante la vista protegida. Sólo las notificaciones traslúcidas estan habilitadas.</string>
   <string name="blur_colors_notice">Que hacen estos colores?</string>
   <string name="blur_colors_notice_summary">Estos son los colores que puedes elegir para el fondo desenfocado en lugar del gris.\nExisten tres filtros de color: el primero se usa para iluminar el fondo, otro para los fondos oscuros y el último para los fondos claro/oscuros.\nComo funcionan?\nFácil, como dice en el título, el filtro de luz se usa en los fondos claros, el oscuro en los fondos oscuros y el mixto cuando el no sea muy claro ni muy oscuro.\nEstos colores se usan en los fondos desenfocados de la barra de estado y la ventana de aplicaciones recientes</string>
-  <string name="blur_expstatus_cat">Expanded statusbar </string>
+  <string name="blur_expstatus_cat">Barra de estado expandida </string>
   <string name="blur_notifications_cat">Notificaciones</string>
   <string name="blur_qs_cat">Configuración rápida</string>
   <string name="blur_recents_cat">Aplicaciones recientes</string>
@@ -1335,14 +1335,14 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
   <string name="gapps_summary">Visitar la página de descargas de aplicaciones Google</string>
   <string name="forum_title">Foro</string>
   <string name="forum_summary">Ver las últimas discusiones</string>
-  <string name="firmware_title">Download compatible firmware</string>
-  <string name="firmware_summary">Visit firmware download page</string>
-  <string name="modem_title">Download compatible modem</string>
-  <string name="modem_summary">Visit modem download page</string>
+  <string name="firmware_title">Descargar firmware compatible</string>
+  <string name="firmware_summary">Visita la página de descarga de firmware</string>
+  <string name="modem_title">Descargar módem compatible</string>
+  <string name="modem_summary">Visita la página de descarga del módem</string>
   <string name="bootloader_title">Descargar bootloader compatible</string>
-  <string name="bootloader_summary">Visit bootloader download page</string>
-  <string name="recovery_title">Download compatible recovery</string>
-  <string name="recovery_summary">Visit recovery download page</string>
+  <string name="bootloader_summary">Visita la página de descarga del gestor de arranque</string>
+  <string name="recovery_title">Descargar recovery compatible</string>
+  <string name="recovery_summary">Visita la página de descarga del recovery</string>
   <string name="paypal_title">Donar</string>
   <string name="paypal_summary">Desarrollo de dispositivos de soporte</string>
   <string name="telegram_title">Telegram</string>
@@ -1356,14 +1356,14 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
   <!-- Update interval -->
   <string name="interval_title">Intervalo de actualizacion automático</string>
   <string name="interval_entry_disable">Desactivado</string>
-  <string name="interval_entry_15s">Every 15 seconds</string>
-  <string name="interval_entry_30s">Every 30 seconds</string>
-  <string name="interval_entry_1m">Every 1 minutes</string>
-  <string name="interval_entry_2m">Every 2 minutes</string>
-  <string name="interval_entry_5m">Every 5 minutes</string>
-  <string name="interval_entry_10m">Every 10 minutes</string>
+  <string name="interval_entry_15s">Cada 15 segundos</string>
+  <string name="interval_entry_30s">Cada 30 segundos</string>
+  <string name="interval_entry_1m">Cada minuto</string>
+  <string name="interval_entry_2m">Cada 2 minutos</string>
+  <string name="interval_entry_5m">Cada 5 minutos</string>
+  <string name="interval_entry_10m">Cada 10 minutos</string>
   <string name="interval_entry_15m">Cada 15 minutos</string>
-  <string name="interval_entry_20m">Every 20 minutes</string>
+  <string name="interval_entry_20m">Cada 20 minutos</string>
   <string name="interval_entry_30m">Cada 30 minutos</string>
   <string name="interval_entry_1h">Cada hora</string>
   <string name="interval_entry_12h">Cada 12 horas</string>
@@ -1482,11 +1482,11 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
   <string name="disable_transition_animations_title">Deshabilitar animaciones de transición</string>
   <string name="disable_transition_animations_summary">Fuerza a deshabilitar todas las animaciones de transición</string>
   <!-- Swipe FP to dismiss notifications -->
-  <string name="fp_swipe_to_dismiss_notifications_title">Swipe fingerprint left or right to dismiss notifications</string>
-  <string name="fp_swipe_to_dismiss_notifications_summary">To dismiss your notifications, swipe left or right on the fingerprint sensor on the back of your phone.</string>
+  <string name="fp_swipe_to_dismiss_notifications_title">Deslice el dedo a la derecha o izquierda para borrar las notificaciones</string>
+  <string name="fp_swipe_to_dismiss_notifications_summary">Para desechar las notificaciones, deslice el dedo a la izquierda o derecha en el lector de huellas de su teléfono.</string>
   <!-- Full screen aspect ratio -->
-  <string name="full_screen_aspect_ratio_title">Full screen aspect ratio</string>
-  <string name="full_screen_aspect_ratio_summary">Force apps to use full screen aspect ratio, note that some apps may not work properly in full screen</string>
+  <string name="full_screen_aspect_ratio_title">Relación de aspecto de pantalla completa</string>
+  <string name="full_screen_aspect_ratio_summary">Forzar aplicaciones a utilizar la relación de aspecto de pantalla completa, tenga en cuenta que quizás algunas aplicaciones no funcionen correctamente en pantalla completa</string>
   <!-- QS Brightness Slider position -->
   <string name="qs_brightness_slider_hide">Oculta</string>
   <string name="qs_brightness_slider_top">Arriba</string>
@@ -1515,7 +1515,7 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
   <string name="light_brightness_zen">No Molestar</string>
   <!-- Battery light settings -->
   <string name="battery_light_title">Led de batería</string>
-  <string name="battery_light_summary">Configure led color based on battery level and status</string>
+  <string name="battery_light_summary">Configurar el color del led según el estado y nivel de la batería</string>
   <string name="battery_low_pulse_title">Pulsar si la batería es baja</string>
   <string name="battery_light_list_title">Colores</string>
   <string name="battery_light_low_color_title">Nivel de batería bajo</string>
@@ -1529,19 +1529,19 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
   <string name="notification_light_advanced_title">Avanzado</string>
   <string name="notification_light_applist_title">Aplicaciones</string>
   <string name="notification_light_phonelist_title">Teléfono</string>
-  <string name="notification_light_use_custom">Use custom values</string>
+  <string name="notification_light_use_custom">Usar valores personalizados</string>
   <string name="notification_light_default_value">Por defecto</string>
   <string name="notification_light_missed_call_title">Llamada perdida</string>
   <string name="notification_light_voicemail_title">Buzón de voz</string>
-  <string name="notification_light_screen_on">Lights with screen on</string>
-  <string name="notification_light_zen_mode">Lights in Do Not Disturb mode</string>
-  <string name="keywords_lights_brightness_level">dim leds brightness</string>
+  <string name="notification_light_screen_on">Luces con la pantalla encendida</string>
+  <string name="notification_light_zen_mode">Luces en modo No Molestar</string>
+  <string name="keywords_lights_brightness_level">atenuar el brillo de los leds</string>
   <string name="notification_light_automagic">Elegir colores automáticamente</string>
-  <string name="notification_light_automagic_summary">Choosing colors automatically</string>
+  <string name="notification_light_automagic_summary">Elegir colores automáticamente</string>
   <!-- Lights settings, LED notification -->
-  <string name="led_notification_title">Light settings</string>
-  <string name="led_notification_text">LED light enabled by settings</string>
-  <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
+  <string name="led_notification_title">Ajustes de luz</string>
+  <string name="led_notification_text">Luz LED activada por ajustes</string>
+  <string name="notification_light_no_apps_summary">Para añadir el control por aplicación, activar \'%1$s\' y presionar \'\u002b\' en la barra de menú</string>
   <!-- Substratum -->
   <string name="substratum_title">Substratum</string>
   <string name="themes_title">Temas</string>
@@ -1583,53 +1583,54 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
   <string name="edge_gestures_back_edges_right">Derecha</string>
   <string name="edge_gestures_back_edges_both">Ambos lados</string>
   <!-- Berry Lite -->
-  <string name="style_title">Style</string>
-  <string name="style_summary">Choose system colors</string>
-  <string name="style_global_title">Style</string>
-  <string name="style_global_entry_automatic">Automatic (wallpaper)</string>
-  <string name="style_global_entry_light">Light</string>
-  <string name="style_global_entry_dark">Dark</string>
-  <string name="style_global_entry_time">Automatic (time of the day)</string>
-  <string name="style_global_entry_app">Managed by %1$s</string>
-  <string name="style_accent_title">Accent color</string>
-  <string name="style_accent_configuration_not_supported">The current accent isn\'t compatible with the selected style. In order to proceed another accent has to be selected, do you want to continue?</string>
-  <string name="style_accent_configuration_positive">Proceed</string>
-  <string name="style_automagic_title">Automagic</string>
-  <string name="style_automagic_description">Tune the style to match your wallpaper</string>
-  <string name="style_automagic_dialog_content">Suggested style: <b>%1$s</b> with <b>%2$s</b> accent.\nDo you want to apply it?</string>
-  <string name="style_automagic_dialog_positive">Apply</string>
-  <string name="style_accent_default_name">Default</string>
-  <string name="style_dark_overlay_title">Dark mode</string>
-  <string name="style_dark_overlay_default">Deep Grey</string>
-  <string name="style_dark_overlay_black">Amoled Black</string>
-  <string name="style_permission_error">Storage access permission is needed to analyze your wallpaper, please grant it to use this feature</string>
+  <string name="style_title">Estilo</string>
+  <string name="style_summary">Elegir colores del sistema</string>
+  <string name="style_global_title">Estilo</string>
+  <string name="style_global_entry_automatic">Automático (basado en el fondo de pantalla)</string>
+  <string name="style_global_entry_light">Claro</string>
+  <string name="style_global_entry_dark">Oscuro</string>
+  <string name="style_global_entry_time">Automático (hora del día)</string>
+  <string name="style_global_entry_app">Gestionado por %1$s</string>
+  <string name="style_accent_title">Color de acento</string>
+  <string name="style_accent_configuration_not_supported">El color de acento actual es incompatible con el estilo seleccionado. Debes seleccionar otro color para proceder, ¿continuar?</string>
+  <string name="style_accent_configuration_positive">Continuar</string>
+  <string name="style_automagic_title">Automágico</string>
+  <string name="style_automagic_description">Ajustar el estilo para coincidir con el fondo de pantalla</string>
+  <string name="style_automagic_dialog_content">Estilo sugerido: <b>%1$s</b> con el color de destaque en <b>%2$s</b>.\n¿Quieres aplicarlo?</string>
+  <string name="style_automagic_dialog_positive">Aplicar</string>
+  <string name="style_accent_default_name">Por defecto</string>
+  <string name="style_dark_overlay_title">Modo oscuro</string>
+  <string name="style_dark_overlay_default">Gris profundo</string>
+  <string name="style_dark_overlay_black">Negro Amoled</string>
+  <string name="style_permission_error">Es necesario acceder al almacenamiento del dispositivo para poder analizar el fondo de pantalla. Por favor, concede el permiso necesario para usar esta característica</string>
   <!-- Accent colors -->
-  <string name="accent_amber">Amber</string>
-  <string name="accent_black">Carbon</string>
-  <string name="accent_blue">Blueberry</string>
-  <string name="accent_brown">Cocoa</string>
-  <string name="accent_cyan">Cyan</string>
-  <string name="accent_demon">Demon</string>
-  <string name="accent_denim">Denim</string>
-  <string name="accent_green">Forest</string>
-  <string name="accent_gold">Gold</string>
-  <string name="accent_grey">Grey</string>
-  <string name="accent_orange">Pumpkin</string>
-  <string name="accent_pink">Cherry</string>
-  <string name="accent_purple">Lavender</string>
-  <string name="accent_red">Tomato</string>
-  <string name="accent_teal">Teal</string>
-  <string name="accent_turquoise">Turquoise</string>
-  <string name="accent_yellow">Banana</string>
+  <string name="accent_amber">Ámbar</string>
+  <string name="accent_black">Carbón</string>
+  <string name="accent_blue">Arándano</string>
+  <string name="accent_brown">Cacao</string>
+  <string name="accent_cyan">Cian</string>
+  <string name="accent_demon">Demonio</string>
+  <string name="accent_denim">Azul vaquero</string>
+  <string name="accent_green">Bosque</string>
+  <string name="accent_gold">Dorado</string>
+  <string name="accent_grey">Gris</string>
+  <string name="accent_orange">Calabaza</string>
+  <string name="accent_oxygen">Oxygen</string>
+  <string name="accent_pink">Cereza</string>
+  <string name="accent_purple">Lavanda</string>
+  <string name="accent_red">Tomate</string>
+  <string name="accent_teal">Verde Azulado</string>
+  <string name="accent_turquoise">Turquesa</string>
+  <string name="accent_yellow">Plátano</string>
   <!-- Smart Pixels -->
-  <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see a significant improvement in battery life. For a good user experience, we recommend you set the amount of disabled pixels at 75 percent.</string>
-  <string name="smart_pixels_title">Smart Pixels</string>
-  <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
-  <string name="smart_pixels_enable_title">Enable Smart Pixels</string>
-  <string name="smart_pixels_enable_summary">Shut off pixels to reduce power consumption</string>
-  <string name="smart_pixels_on_power_save_title">Auto-enable on battery saver</string>
-  <string name="smart_pixels_on_power_save_summary">Enable Smart Pixels when battery saver is enabled</string>
-  <string name="smart_pixels_percent">Percent of pixels to disable</string>
-  <string name="smart_pixels_shift_title">Burn-in protection</string>
-  <string name="smart_pixels_shift_summary">Prevents burn-in on OLED devices by shifting pixels every so often</string>
+  <string name="smart_pixels_warning_text">Píxeles Inteligentes es un característica para ahorrar energía. Podrás ver una mejoría significativa en la duración de la batería dependiendo de cuántos píxeles decidas apagar. Para garantizar una buena experiencia de usuario, recomendamos establecer la cantidad de píxeles deshabilitados al 75%.</string>
+  <string name="smart_pixels_title">Píxeles Inteligentes</string>
+  <string name="smart_pixels_summary">Ahorrar batería apagando píxeles adicionales</string>
+  <string name="smart_pixels_enable_title">Habilitar Píxeles Inteligentes</string>
+  <string name="smart_pixels_enable_summary">Apagar píxeles para reducir el consumo de energía</string>
+  <string name="smart_pixels_on_power_save_title">Activar automáticamente en modo ahorro de batería</string>
+  <string name="smart_pixels_on_power_save_summary">Habilitar Píxeles Inteligentes cuando el ahorro de batería esté habilitado</string>
+  <string name="smart_pixels_percent">Porcentaje de píxeles a desactivar</string>
+  <string name="smart_pixels_shift_title">Protección contra quemado</string>
+  <string name="smart_pixels_shift_summary">Previene el quemado de la pantalla en dispositivos con tecnología OLED alternando píxeles de vez en cuando</string>
 </resources>
