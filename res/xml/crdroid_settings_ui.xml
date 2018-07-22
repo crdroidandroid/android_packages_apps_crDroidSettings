@@ -28,6 +28,22 @@
         android:summary="@string/doze_display_summary"
         android:fragment="com.crdroid.settings.fragments.ui.DozeFragment" />
 
+    <!-- Animations -->
+    <Preference
+        android:key="animations"
+        android:icon="@drawable/ic_system_animation"
+        android:title="@string/animation_title"
+        android:summary="@string/animation_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.Animations" />
+
+    <!-- Blur -->
+    <Preference
+        android:key="blur"
+        android:icon="@drawable/ic_blur"
+        android:title="@string/settings_blur_cat"
+        android:summary="@string/settings_blur_cat_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.BlurPersonalizations" />
+
     <!-- Color Styles -->
     <PreferenceScreen
         android:key="style"
@@ -35,12 +51,6 @@
         android:title="@string/style_title"
         android:summary="@string/style_summary"
         android:fragment="com.crdroid.settings.fragments.ui.style.StylePreferences" />
-
-    <!-- Full screen aspect ratio -->
-    <org.lineageos.internal.lineageparts.LineagePartsPreference
-        android:key="long_screen_settings"
-        android:icon="@drawable/ic_fullscreen"
-        lineage:requiresConfig="@*lineageos.platform:bool/config_haveHigherAspectRatioScreen" />
 
     <!-- Expanded Desktop -->
     <org.lineageos.internal.lineageparts.LineagePartsPreference
@@ -53,6 +63,12 @@
         android:icon="@drawable/ic_font"
         android:title="@string/font_picker_title"
         android:persistent="false" />
+
+    <!-- Full screen aspect ratio -->
+    <org.lineageos.internal.lineageparts.LineagePartsPreference
+        android:key="long_screen_settings"
+        android:icon="@drawable/ic_fullscreen"
+        lineage:requiresConfig="@*lineageos.platform:bool/config_haveHigherAspectRatioScreen" />
 
     <!-- Gestures -->
     <Preference
@@ -83,19 +99,12 @@
         android:summary="@string/show_alarm_fullscreen_summary"
         android:defaultValue="false" />-->
 
-    <Preference
-        android:key="blur"
-        android:icon="@drawable/ic_blur"
-        android:title="@string/settings_blur_cat"
-        android:summary="@string/settings_blur_cat_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.BlurPersonalizations" />
-
     <PreferenceCategory
         android:key="category_substratum"
         android:title="@string/substratum_title" >
 
         <Preference
-            android:key="adaway"
+            android:key="substratum"
             android:icon="@drawable/ic_themes"
             android:title="@string/themes_title"
             android:summary="@string/themes_summary">
@@ -111,119 +120,6 @@
             android:title="@string/force_authorize_substratum_packages_title"
             android:summary="@string/force_authorize_substratum_packages_summary"
             android:defaultValue="false"/>
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="category_animations"
-        android:title="@string/animation_title" >
-
-        <com.crdroid.settings.preferences.GlobalSettingListPreference
-            android:key="screen_off_animation"
-            android:icon="@drawable/ic_fullscreen_exit"
-            android:title="@string/screen_off_animation_title"
-            android:entries="@array/screen_off_animation_entries"
-            android:entryValues="@array/screen_off_animation_values"
-            android:defaultValue="0" />
-
-        <PreferenceScreen
-            android:key="system_animation"
-            android:icon="@drawable/ic_system_animation"
-            android:title="@string/system_animation_title"
-            android:summary="@string/system_animation_summary"
-            android:fragment="com.crdroid.settings.fragments.ui.AnimationControls" />
-
-        <!-- <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="disable_transition_animations"
-            android:icon="@drawable/ic_system_animation"
-            android:title="@string/disable_animations"
-            android:summary="@string/disable_animations_summary"
-            android:defaultValue="false" /> -->
-
-        <ListPreference
-            android:key="listview_animation"
-            android:icon="@drawable/ic_listview"
-            android:dialogTitle="@string/listview_animation_title"
-            android:title="@string/listview_animation_title"
-            android:entries="@array/listview_animation_entries"
-            android:entryValues="@array/listview_animation_values"
-            android:defaultValue="0" />
-
-        <ListPreference
-            android:key="listview_interpolator"
-            android:icon="@drawable/ic_listview"
-            android:dialogTitle="@string/listview_interpolator_title"
-            android:title="@string/listview_interpolator_title"
-            android:entries="@array/listview_interpolator_entries"
-            android:entryValues="@array/listview_interpolator_values"
-            android:defaultValue="0" />
-
-        <ListPreference
-            android:key="toast_animation"
-            android:icon="@drawable/ic_toast"
-            android:title="@string/toast_animation_title"
-            android:entries="@array/toast_animation_entries"
-            android:entryValues="@array/toast_animation_values"
-            android:defaultValue="1" />
-
-        <!-- <ListPreference
-            android:key="power_menu_animation"
-            android:icon="@drawable/ic_power_menu_animation"
-            android:dialogTitle="@string/power_menu_animation_title"
-            android:title="@string/power_menu_animation_title"
-            android:entries="@array/power_menu_animation_entries"
-            android:entryValues="@array/power_menu_animation_values"
-            android:defaultValue="0" /> -->
-
-         <ListPreference
-            android:key="qs_tile_animation_style"
-            android:icon="@drawable/ic_qs_tile_animation_style"
-            android:dialogTitle="@string/qs_tile_animation_style_title"
-            android:title="@string/qs_tile_animation_style_title"
-            android:entries="@array/qs_tile_animation_style_entries"
-            android:entryValues="@array/qs_tile_animation_style_values"
-            android:defaultValue="0" />
-
-        <ListPreference
-            android:key="qs_tile_animation_duration"
-            android:icon="@drawable/ic_qs_tile_animation_style"
-            android:dialogTitle="@string/qs_tile_animation_duration_title"
-            android:title="@string/qs_tile_animation_duration_title"
-            android:entries="@array/qs_tile_animation_duration_entries"
-            android:entryValues="@array/qs_tile_animation_duration_values"
-            android:defaultValue="2000" />
-
-        <ListPreference
-            android:key="qs_tile_animation_interpolator"
-            android:icon="@drawable/ic_qs_tile_animation_style"
-            android:dialogTitle="@string/qs_tile_animation_interpolator_title"
-            android:title="@string/qs_tile_animation_interpolator_title"
-            android:entries="@array/qs_tile_animation_interpolator_entries"
-            android:entryValues="@array/qs_tile_animation_interpolator_values"
-            android:defaultValue="0" />
-
-        <!-- <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_fancy_animation"
-            android:icon="@drawable/ic_qs_tile_animation_style"
-            android:title="@string/qs_fancy_animation_title"
-            android:summary="@string/qs_fancy_animation_summary"
-            android:defaultValue="true" /> -->
-
-        <ListPreference
-            android:key="pref_scrollingcache"
-            android:icon="@drawable/ic_scroll"
-            android:dialogTitle="@string/pref_scrollingcache_title"
-            android:title="@string/pref_scrollingcache_title"
-            android:entries="@array/entries_scrollingcache"
-            android:entryValues="@array/values_scrollingcache"
-            android:defaultValue="1" />
-
-        <!-- <PreferenceScreen
-            android:key="interface_animation_scroll"
-            android:icon="@drawable/ic_scroll"
-            android:title="@string/scrolling_title"
-            android:summary="@string/scrolling_summary"
-            android:fragment="com.crdroid.settings.fragments.ScrollAnimationInterfaceSettings"
-            android:persistent="false" /> -->
     </PreferenceCategory>
 
     <PreferenceScreen
