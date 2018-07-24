@@ -22,10 +22,16 @@
 
     <PreferenceScreen
         android:key="carbon_gestures"
-        android:fragment="com.crdroid.settings.fragments.ui.CarbonGesturesSettings"
+        android:fragment="com.crdroid.settings.fragments.navbar.CarbonGesturesSettings"
         android:title="@string/carbon_gesture_preference_title"
         android:summary="@string/carbon_gestures_summary"
         android:persistent="false" />
+
+    <PreferenceScreen
+        android:key="edge_gestures"
+        android:title="@string/edge_gestures_title"
+        android:summary="@string/edge_gestures_summary"
+        android:fragment="com.crdroid.settings.fragments.navbar.EdgeGestureSettings" />
 
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="touchscreen_gesture_settings"

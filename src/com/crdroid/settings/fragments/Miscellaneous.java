@@ -44,7 +44,6 @@ import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
 import com.crdroid.settings.fragments.misc.AlarmBlocker;
 import com.crdroid.settings.fragments.misc.ScreenStateToggles;
-import com.crdroid.settings.fragments.misc.SmartPixels;
 import com.crdroid.settings.fragments.misc.WakeLockBlocker;
 import com.crdroid.settings.fragments.misc.ScreenshotEditPackageListAdapter;
 import com.crdroid.settings.fragments.misc.ScreenshotEditPackageListAdapter.PackageItem;
@@ -176,7 +175,6 @@ public class Miscellaneous extends SettingsPreferenceFragment
         ContentResolver resolver = mContext.getContentResolver();
         AlarmBlocker.reset(mContext);
         ScreenStateToggles.reset(mContext);
-        SmartPixels.reset(mContext);
         WakeLockBlocker.reset(mContext);
         writeCpuInfoOptions(mContext, false);
         Settings.System.putIntForUser(resolver,

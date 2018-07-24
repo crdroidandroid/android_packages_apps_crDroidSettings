@@ -40,9 +40,9 @@ import com.android.internal.logging.nano.MetricsProto;
 
 import com.crdroid.settings.fragments.ui.Animations;
 import com.crdroid.settings.fragments.ui.BlurPersonalizations;
-import com.crdroid.settings.fragments.ui.CarbonGesturesSettings;
 import com.crdroid.settings.fragments.ui.DozeFragment;
 import com.crdroid.settings.fragments.ui.FontDialogPreference;
+import com.crdroid.settings.fragments.ui.SmartPixels;
 import com.crdroid.settings.R;
 
 import java.util.ArrayList;
@@ -141,8 +141,8 @@ public class UserInterface extends SettingsPreferenceFragment {
                 LineageSettings.System.LONG_SCREEN_APPS, null, UserHandle.USER_CURRENT);
         Animations.reset(mContext);
         BlurPersonalizations.reset(mContext);
-        CarbonGesturesSettings.reset(mContext);
         DozeFragment.reset(mContext);
+        SmartPixels.reset(mContext);
     }
 
     @Override

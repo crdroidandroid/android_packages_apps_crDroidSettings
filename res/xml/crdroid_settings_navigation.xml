@@ -25,12 +25,13 @@
         android:title="@string/navbar_visibility"
         android:summary="@string/navbar_visibility_summary" />
 
-    <PreferenceScreen
-        android:key="edge_gestures"
-        android:icon="@drawable/ic_edge_gestures"
-        android:title="@string/edge_gestures_title"
-        android:summary="@string/edge_gestures_summary"
-        android:fragment="com.crdroid.settings.fragments.navbar.EdgeGestureSettings" />
+    <!-- Gestures -->
+    <Preference
+        android:key="gesture_settings"
+        android:icon="@drawable/ic_settings_gestures"
+        android:title="@string/gestures_title"
+        android:summary="@string/gestures_summary"
+        android:fragment="com.android.settings.gestures.GestureSettings" />
 
     <!--<PreferenceCategory
         android:key="navbar_gestures_category"
