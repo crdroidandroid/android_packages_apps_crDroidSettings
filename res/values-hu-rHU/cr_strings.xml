@@ -32,7 +32,6 @@
   <string name="sound_title">Hang</string>
   <string name="statusbar_title">Értesítési sáv</string>
   <string name="display_title">Kijelző</string>
-  <string name="animation_title">Animációk</string>
   <string name="ui_title">Felhasználói felület</string>
   <!-- Power Menu -->
   <string name="powermenu_title">Kikapcsoló menü</string>
@@ -959,6 +958,9 @@
   <!-- Alarm Fullscreen -->
   <string name="show_alarm_fullscreen_title">Teljes képernyős riasztás</string>
   <string name="show_alarm_fullscreen_summary">Teljes képernyős riasztások a felugró értesítések helyett</string>
+  <!-- Animations -->
+  <string name="animation_title">Animációk</string>
+  <string name="animation_summary">Különböző animáció-testreszabások</string>
   <!-- Custom System Animations -->
   <string name="system_animation_title">Rendszeranimációk</string>
   <string name="system_animation_summary">Rendszerablakok animációinak testreszabása</string>
@@ -1569,7 +1571,7 @@
   <!-- Edge gestures -->
   <string name="edge_gestures_title">Élvezérlési gesztusok</string>
   <string name="edge_gestures_summary">Navigálás élvezérlés használatával</string>
-  <string name="edge_gestures_description">Csúsztasson alulról fel a Kezdőképernyő megnyitásához. Csúsztasson alulról és állítsa meg a mozdulatot az Előzményekhez. Csúsztasson alulról balra vagy jobbra a visszalépéshez.</string>
+  <string name="edge_gestures_description">Alulról csúsztasson felfelé a kezdőképernyőre visszatéréshez, tartsa nyomva a mozdulatot az előzmények eléréséhez. Csúsztasson jobbról vagy balról a visszalépéshez.</string>
   <string name="edge_gestures_feedback_duration_title">Érintési visszajelzés hosszúsága</string>
   <string name="edge_gestures_long_press_delay_title">Késleltetés, amíg a hosszan érintési művelet elindul</string>
   <string name="edge_gestures_back_category_title">Vissza gesztus</string>
@@ -1621,7 +1623,7 @@
   <string name="accent_turquoise">Türkiz</string>
   <string name="accent_yellow">Banánsárga</string>
   <!-- Smart Pixels -->
-  <string name="smart_pixels_warning_text">Az Intelligens pixelek egy akkukímélő funkció. Attól függően, hogy Ön hány képpontot jelöl meg kikapcsolásra, akár az akkumulátor jelentős élettartam-javulását is tapasztalhatja. A felhasználói élmény megtartása érdekében javasoljuk állítsa a mennyiséget 75 százalékra.</string>
+  <string name="smart_pixels_warning_text">Az Intelligens Pixelek egy akkumulátorkímélő funkció. Attól függően, hogy hány képpontot kapcsol ki, láthatja az akkumulátor élettartamának javulását.</string>
   <string name="smart_pixels_title">Intelligens pixelek</string>
   <string name="smart_pixels_summary">Akkumulátorkímélés extra képpontok kikapcsolásával</string>
   <string name="smart_pixels_enable_title">Intelligens pixelek engedélyezése</string>
@@ -1632,26 +1634,26 @@
   <string name="smart_pixels_shift_title">Beégés elleni védelem</string>
   <string name="smart_pixels_shift_summary">Beégés elleni védelmet nyújt OLED kijelzőkön, a képpontok gyakori áthelyezésével</string>
   <!-- Carbon gestures -->
-  <string name="carbon_gesture_preference_title">Carbon gestures</string>
-  <string name="carbon_gestures_summary">Configure custom global gestures</string>
-  <string name="carbon_gestures_fingers_title">Fingers used for gesture (default 2)</string>
-  <string name="carbon_gestures_fingers_unit">fingers</string>
-  <string name="carbon_gestures_right_title">Right gesture</string>
-  <string name="carbon_gestures_left_title">Left gesture</string>
-  <string name="carbon_gestures_up_title">Up gesture</string>
-  <string name="carbon_gestures_down_title">Down gesture</string>
-  <string name="carbon_gesture_disabled">Disabled</string>
-  <string name="carbon_gesture_back">Back</string>
-  <string name="carbon_gesture_home">Home</string>
-  <string name="carbon_gesture_recents">Recents</string>
-  <string name="carbon_gesture_power">Power</string>
-  <string name="carbon_gesture_volume_down">Volume down</string>
-  <string name="carbon_gesture_volume_up">Volume up</string>
-  <string name="carbon_gesture_volume_mute">Volume mute</string>
-  <string name="carbon_gesture_screenshot">Screenshot</string>
-  <string name="carbon_gesture_media_play_pause">Play/Pause media</string>
-  <string name="carbon_gesture_media_skip">Skip media</string>
-  <string name="carbon_gesture_media_previous">Previous media</string>
-  <string name="carbon_gesture_customapp">Launch application</string>
-  <string name="carbon_gesture_launch">Launch</string>
+  <string name="carbon_gesture_preference_title">Carbon mozdulatok</string>
+  <string name="carbon_gestures_summary">Egyéni, globális mozdulatok beállítása</string>
+  <string name="carbon_gestures_fingers_title">Ujjmozdulatokkal való vezérlés (alapértelmezett 2)</string>
+  <string name="carbon_gestures_fingers_unit">ujjak</string>
+  <string name="carbon_gestures_right_title">Mozdulat jobbról</string>
+  <string name="carbon_gestures_left_title">Mozdulat balra</string>
+  <string name="carbon_gestures_up_title">Mozdulat felfelé</string>
+  <string name="carbon_gestures_down_title">Mozdulat lefelé</string>
+  <string name="carbon_gesture_disabled">Letiltva</string>
+  <string name="carbon_gesture_back">Vissza</string>
+  <string name="carbon_gesture_home">Kezdőlap</string>
+  <string name="carbon_gesture_recents">Előzmények</string>
+  <string name="carbon_gesture_power">Kikapcsolás</string>
+  <string name="carbon_gesture_volume_down">Hangerő le</string>
+  <string name="carbon_gesture_volume_up">Hangerő fel</string>
+  <string name="carbon_gesture_volume_mute">Némítás</string>
+  <string name="carbon_gesture_screenshot">Képernyőmentés</string>
+  <string name="carbon_gesture_media_play_pause">Zene lejátszás/szünet</string>
+  <string name="carbon_gesture_media_skip">Zeneszám átugrása</string>
+  <string name="carbon_gesture_media_previous">Előző zeneszám</string>
+  <string name="carbon_gesture_customapp">Alkalmazás indítása</string>
+  <string name="carbon_gesture_launch">Indítás</string>
 </resources>

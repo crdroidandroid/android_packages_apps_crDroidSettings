@@ -32,7 +32,6 @@
   <string name="sound_title">소리</string>
   <string name="statusbar_title">상태 표시줄</string>
   <string name="display_title">디스플레이</string>
-  <string name="animation_title">애니메이션</string>
   <string name="ui_title">사용자 인터페이스</string>
   <!-- Power Menu -->
   <string name="powermenu_title">전원 메뉴</string>
@@ -959,6 +958,9 @@
   <!-- Alarm Fullscreen -->
   <string name="show_alarm_fullscreen_title">전체 화면 알람</string>
   <string name="show_alarm_fullscreen_summary">Display alarm as full screen instead of heads up</string>
+  <!-- Animations -->
+  <string name="animation_title">애니메이션</string>
+  <string name="animation_summary">Customize various animations</string>
   <!-- Custom System Animations -->
   <string name="system_animation_title">시스템 애니메이션</string>
   <string name="system_animation_summary">시스템의 각 창에서 사용될 애니메이션을 설정합니다.</string>
@@ -1057,7 +1059,7 @@
   <string name="disable_animations_summary">앱을 실행할 때의 전환 효과를 비활성화 합니다</string>
   <!-- XOSP Blur personalizations -->
   <string name="settings_blur_cat">흐림 효과</string>
-  <string name="settings_blur_cat_summary">Apply blur personalizations to various elements</string>
+  <string name="settings_blur_cat_summary">흐림효과 개별 설정</string>
   <string name="blurred_status_bar_expanded_enabled_pref">상태 표시줄 배경 흐림</string>
   <string name="blurred_status_bar_expanded_enabled_pref_summary">상태바를 내렸을때 배경을 흐림</string>
   <string name="translucent_notifications_pref">반투명 알림</string>
@@ -1569,7 +1571,7 @@
   <!-- Edge gestures -->
   <string name="edge_gestures_title">가장자리 제스처</string>
   <string name="edge_gestures_summary">가장자리 동작을 사용하여 탐색</string>
-  <string name="edge_gestures_description">Swipe from bottom to trigger Home gesture, keep it pressed to open recents. Swipe from bottom left or bottom right to go back.</string>
+  <string name="edge_gestures_description">Swipe from bottom of the screen to trigger home action, keep it pressed to open recents screen. Swipe from left or right to go back.</string>
   <string name="edge_gestures_feedback_duration_title">햅틱 피드백 지속 시간</string>
   <string name="edge_gestures_long_press_delay_title">긴 누름 동작이 시작될 때까지 지연</string>
   <string name="edge_gestures_back_category_title">뒤로 가기 제스처</string>
@@ -1613,7 +1615,7 @@
   <string name="accent_gold">골드</string>
   <string name="accent_grey">회색</string>
   <string name="accent_orange">호박</string>
-  <string name="accent_oxygen">Oxygen</string>
+  <string name="accent_oxygen">산소</string>
   <string name="accent_pink">체리</string>
   <string name="accent_purple">라벤더</string>
   <string name="accent_red">토마토</string>
@@ -1621,7 +1623,7 @@
   <string name="accent_turquoise">터키석</string>
   <string name="accent_yellow">바나나</string>
   <!-- Smart Pixels -->
-  <string name="smart_pixels_warning_text">스마트 픽셀은 절전 기능입니다. 꺼질 픽셀 수에 따라 배터리 수명이 크게 향상 될 수 있습니다. 사용자 환경을 좋게하려면 사용 중지 된 픽셀의 양을 75 %로 설정하는 것이 좋습니다.</string>
+  <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see improvement in battery life.</string>
   <string name="smart_pixels_title">스마트 픽셀</string>
   <string name="smart_pixels_summary">여분의 픽셀을 차단하여 배터리 절약</string>
   <string name="smart_pixels_enable_title">스마트 픽셀 켜기</string>
@@ -1632,26 +1634,26 @@
   <string name="smart_pixels_shift_title">번인 보호</string>
   <string name="smart_pixels_shift_summary">픽셀을 너무 자주 이동시켜 OLED 장치의 번인을 방지합니다.</string>
   <!-- Carbon gestures -->
-  <string name="carbon_gesture_preference_title">Carbon gestures</string>
-  <string name="carbon_gestures_summary">Configure custom global gestures</string>
-  <string name="carbon_gestures_fingers_title">Fingers used for gesture (default 2)</string>
-  <string name="carbon_gestures_fingers_unit">fingers</string>
-  <string name="carbon_gestures_right_title">Right gesture</string>
-  <string name="carbon_gestures_left_title">Left gesture</string>
-  <string name="carbon_gestures_up_title">Up gesture</string>
-  <string name="carbon_gestures_down_title">Down gesture</string>
-  <string name="carbon_gesture_disabled">Disabled</string>
-  <string name="carbon_gesture_back">Back</string>
-  <string name="carbon_gesture_home">Home</string>
-  <string name="carbon_gesture_recents">Recents</string>
-  <string name="carbon_gesture_power">Power</string>
-  <string name="carbon_gesture_volume_down">Volume down</string>
-  <string name="carbon_gesture_volume_up">Volume up</string>
-  <string name="carbon_gesture_volume_mute">Volume mute</string>
-  <string name="carbon_gesture_screenshot">Screenshot</string>
-  <string name="carbon_gesture_media_play_pause">Play/Pause media</string>
-  <string name="carbon_gesture_media_skip">Skip media</string>
-  <string name="carbon_gesture_media_previous">Previous media</string>
-  <string name="carbon_gesture_customapp">Launch application</string>
-  <string name="carbon_gesture_launch">Launch</string>
+  <string name="carbon_gesture_preference_title">탄소 제스처</string>
+  <string name="carbon_gestures_summary">사용자 정의 제스처 구성</string>
+  <string name="carbon_gestures_fingers_title">손가락 제스처 (기본값 2)</string>
+  <string name="carbon_gestures_fingers_unit">손가락</string>
+  <string name="carbon_gestures_right_title">오른쪽 제스처</string>
+  <string name="carbon_gestures_left_title">왼쪽 제스처</string>
+  <string name="carbon_gestures_up_title">위쪽 제스처</string>
+  <string name="carbon_gestures_down_title">아래쪽 제스처</string>
+  <string name="carbon_gesture_disabled">비활성화</string>
+  <string name="carbon_gesture_back">뒤로</string>
+  <string name="carbon_gesture_home">홈</string>
+  <string name="carbon_gesture_recents">최근 앱</string>
+  <string name="carbon_gesture_power">전원</string>
+  <string name="carbon_gesture_volume_down">볼륨 낮추기</string>
+  <string name="carbon_gesture_volume_up">볼륨 높이기</string>
+  <string name="carbon_gesture_volume_mute">볼륨 음소거</string>
+  <string name="carbon_gesture_screenshot">스크린샷</string>
+  <string name="carbon_gesture_media_play_pause">미디어 재생/일시 정지</string>
+  <string name="carbon_gesture_media_skip">미디어 건너뛰기</string>
+  <string name="carbon_gesture_media_previous">이전 미디어</string>
+  <string name="carbon_gesture_customapp">응용 프로그램 실행</string>
+  <string name="carbon_gesture_launch">시작</string>
 </resources>
