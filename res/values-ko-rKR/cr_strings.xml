@@ -18,9 +18,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- App Title -->
   <string name="crdroid_settings_title">crDroid 설정</string>
-  <string name="crdroid_settings_summary">커스텀 고급설정</string>
+  <string name="crdroid_settings_summary">고급 설정 열기</string>
   <string name="crdroid_personalization_category">개인 설정</string>
-  <string name="crdroid_addons_category">부가 기능들</string>
+  <string name="crdroid_addons_category">추가 기능</string>
   <!-- Personalization Categories -->
   <string name="button_title">버튼</string>
   <string name="lockscreen_title">잠금 화면</string>
@@ -50,7 +50,7 @@
   <string name="save">저장</string>
   <!-- Misc strings -->
   <string name="lockclock_title">시계 위젯</string>
-  <string name="lockclock_summary">시계 홈 위젯이 어떻게 표시될지 보거나 바꿉니다.</string>
+  <string name="lockclock_summary">시계 위젯이 어떻게 표시될지 보거나 바꿉니다.</string>
   <!-- Network traffic -->
   <string name="network_traffic_settings_title">네트워크 트래픽 모니터</string>
   <string name="network_traffic_settings_summary">현네트워크 트래픽 수준 표시 및 커스텀 설정</string>
@@ -59,7 +59,7 @@
   <string name="network_traffic_mode_up">업로드만</string>
   <string name="network_traffic_mode_down">다운로드만</string>
   <string name="network_traffic_mode_all">업로드와 다운로드</string>
-  <string name="network_traffic_autohide">자동으로 숨기기</string>
+  <string name="network_traffic_autohide">자동 숨기기</string>
   <string name="network_traffic_autohide_kilobits">kb/초</string>
   <string name="network_traffic_autohide_summary">비 활동 임계 값 이하일 때 트래픽 모니터를 표시하지 않습니다</string>
   <string name="network_traffic_autohide_threshold">비활성 한계점</string>
@@ -81,14 +81,14 @@
   <string name="network_traffic_hidearrow_summary">네트워크 트래픽 표시기 화살표 숨기기</string>
   <!-- Settings suggestions  -->
   <string name="disable_settings_suggestions_title">제안 사용 안 함</string>
-  <string name="disable_settings_suggestions_summary">대시보드에 대 한 제안 해제</string>
+  <string name="disable_settings_suggestions_summary">대시 보드 제안 사용 중지</string>
   <!-- Settings summary  -->
   <string name="remove_settings_summary_title">설정 요약을 제거합니다</string>
-  <string name="remove_settings_summary_summary">타일 제목 아래 요약 제거</string>
+  <string name="remove_settings_summary_summary">타일 제목 아래의 요약 제거</string>
   <!-- Immersive Recents -->
-  <string name="immersive_recents_title">전체 화면 모드로 보기</string>
+  <string name="immersive_recents_title">전체 화면에서 최근 앱 화면 보기</string>
   <string name="immersive_recents_summary">최근 실행 목록 보기 방식을 변경합니다</string>
-  <string name="immersive_recents_dialog_title">최근 보기 선택</string>
+  <string name="immersive_recents_dialog_title">최근 사용앱 보기 방식 선택</string>
   <string name="immersive_recents_default">기본값</string>
   <string name="immersive_recents_fullscreen">전체 화면</string>
   <string name="immersive_recents_statusbar">상태 표시줄만 표시</string>
@@ -97,8 +97,8 @@
   <string name="recents_default_category">AOSP</string>
   <string name="recents_omni_category">OmniSwitch</string>
   <!-- AOSP Recents -->
-  <string name="aosp_first_time_title">AOSP recents</string>
-  <string name="aosp_first_time_message">Immersive recents setting is overridden if the expanded desktop is enabled.</string>
+  <string name="aosp_first_time_title">AOSP 최근 앱 화면</string>
+  <string name="aosp_first_time_message">몰입 형 최근 설정은 확장 된 데스크톱이 사용되는 경우 무시됩니다.</string>
   <!-- Hide Apps from Recents -->
   <string name="hide_apps_from_recents_title">숨겨진 앱</string>
   <string name="hide_from_recents_add_app">앱 추가</string>
@@ -109,7 +109,7 @@
   <string name="omniswitch_start_settings_title">환경설정</string>
   <string name="omniswitch_start_settings_summary">OmniSwitch 설정을 보려면</string>
   <string name="omniswitch_first_time_title">OmniSwitch Recents</string>
-  <string name="omniswitch_first_time_message">Make sure you have also enabled OmniSwitch by opening OmniSwitch settings.</string>
+  <string name="omniswitch_first_time_message">OmniSwitch 설정을 열어 OmniSwitch를 활성화했는지 확인하십시오.</string>
   <!-- Lockscreen categories -->
   <string name="lockscreen_shortcuts_category">바로가기</string>
   <string name="lockscreen_interface_category">인터페이스</string>
@@ -417,7 +417,7 @@
   <string name="pulse_settings_summary">내비게이션 바에 오디오 시각화를 표시합니다.</string>
   <string name="fling_show_pulse_title">Pulse 표시</string>
   <string name="fling_show_pulse_summary">내비게이션 바에 오디오 그래픽 이퀄라이저를 표시합니다</string>
-  <string name="pulse_render_mode_title">Render mode</string>
+  <string name="pulse_render_mode_title">렌더 모드</string>
   <string name="pulse_render_mode_fading_bars">페이딩 블록</string>
   <string name="pulse_render_mode_solid_lines">실선</string>
   <string name="fling_pulse_color">Pulse 색상</string>
@@ -435,7 +435,7 @@
   <string name="fling_lavalamp_color_to">라바 램프 마지막 색상</string>
   <string name="pulse_custom_buttons_opacity_title">Pulse 사용 시 버튼의 불투명도</string>
   <string name="pulse_auto_color_title">자동 펄스 색상</string>
-  <string name="pulse_auto_color_summary">Sync color with album arts. Overrides Lava Lamp and lines opacity.</string>
+  <string name="pulse_auto_color_summary">앨범 아트와 색상을 동기화하십시오. 선 불투명도를 재정의합니다.</string>
   <!-- Pulse config -->
   <string name="pulse_custom_dimen">바 너비</string>
   <string name="pulse_custom_div">바 간격</string>
@@ -456,7 +456,7 @@
   <string name="smartbar_settings_summary">스마트바 사용자 설정모음</string>
   <string name="smartbar_editor_title">편집모드 시작</string>
   <string name="smartbar_editor_summary">스마트바 버튼 편집</string>
-  <string name="smartbar_help_policy_notice_summary">When in editor mode, medium press and drag a button to change its position or long press a button to show the edit menu. Button position may be changed while menu is showing.\n\nSetting a double tap action will delay single tap a bit.</string>
+  <string name="smartbar_help_policy_notice_summary">에디터 모드 일 때, 버튼을 눌러서 위치를 변경하거나 버튼을 길게 누르면 편집 메뉴가 나타납니다. 메뉴가 표시되어있는 동안 버튼 위치가 변경 될 수 있습니다.\n\n 두 번 탭 동작을 설정하면 한 번 탭하는 것이 약간 지연됩니다.</string>
   <string name="smartbar_context_menu_position_title">상황별 버튼 레이아웃 위치</string>
   <string name="smartbar_context_menu_position_summary">메뉴 버튼이나 Ime 전환기 같이 상황에 따라 표시되는 상황별 버튼의 위치를 설정합니다</string>
   <string name="smartbar_right">오른쪽</string>
@@ -756,7 +756,7 @@
   <string name="pocket_title">주머니</string>
   <string name="pocket_summary">주머니에서 꺼내면 알림 표시</string>
   <string name="doze_vibrate">진동</string>
-  <string name="doze_vibrate_summary">Duration to vibrate when pulsing notifications</string>
+  <string name="doze_vibrate_summary">알림시 진동하는 시간</string>
   <!-- Changelog -->
   <string name="changelog_crdroid_title">변경 사항</string>
   <string name="changelog_crdroid_summary">ROM의 최근 변경 사항을 확인합니다.</string>
@@ -770,7 +770,7 @@
   <string name="share_chooser_title">CrDroid 공유</string>
   <!-- Sites crDroid -->
   <string name="crdroid_source_title">GitHub</string>
-  <string name="crdroid_source_summary">We love open source, check us out</string>
+  <string name="crdroid_source_summary">우리 사랑 오픈 소스, 확인 하십시요</string>
   <string name="crdroid_google_plus_title">Google+</string>
   <string name="crdroid_google_plus_summary">빠른 업데이트 및 지원을 위해 G +에 가입하십시오.</string>
   <!-- Maintainers -->
@@ -813,8 +813,8 @@
   <string name="volbtn_music_controls_summary">화면이 꺼진 상태에서 볼륨 키 길게 누르기로 음악 트랙 탐색</string>
   <string name="volbtn_cursor_control_title">키보드 커서 제어</string>
   <string name="volbtn_cursor_control_off">비활성화</string>
-  <string name="volbtn_cursor_control_on">볼륨 업/다운 버튼으로 커서를 왼쪽/오른쪽으로 이동</string>
-  <string name="volbtn_cursor_control_on_reverse">볼륨 위/아래 버튼으로 커서를 왼쪽/오른쪽으로 이동</string>
+  <string name="volbtn_cursor_control_on">볼륨 위/아래를 누르면 커서를 왼쪽/오른쪽으로 이동</string>
+  <string name="volbtn_cursor_control_on_reverse">볼륨 위/아래를 누르면 커서를 오른쪽/왼쪽으로 이동</string>
   <string name="power_end_call_title">통화 종료</string>
   <string name="power_end_call_summary">전원 버튼을 눌러 현재 진행 중인 통화 종료</string>
   <string name="swap_volume_buttons_title">버튼 재정렬</string>
@@ -915,7 +915,7 @@
   <string name="qs_settings_icon_title">설정 바로 가기</string>
   <string name="qs_settings_icon_summary">헤더에 설정 바로가기를 표시하지 않습니다</string>
   <string name="qs_settings_expanded_title">Settings shortcut expanded</string>
-  <string name="qs_settings_expanded_summary">Only enable the settings shortcut when expanded</string>
+  <string name="qs_settings_expanded_summary">확장시 설정 바로 가기만 활성화하십시오.</string>
   <string name="qs_edit_title">수정 아이콘</string>
   <string name="qs_edit_summary">헤더에 타일 수정 아이콘을 표시하지 않습니다</string>
   <string name="qs_multiuser_switch_title">다중 사용자 스위치</string>
@@ -932,7 +932,7 @@
   <string name="systemui_recents_mem_display_text_color">메모리바 텍스트 색상</string>
   <!-- Recents panel settings -->
   <string name="show_clear_all_recents_button_title">모두 지우기</string>
-  <string name="show_clear_all_recents_button_summary">최근 앱보기에서 모든 지우기 버튼 활성화</string>
+  <string name="show_clear_all_recents_button_summary">최근 앱보기에서 모두 지우기 버튼 활성화</string>
   <string name="recents_clear_all_location_title">모두 지우기 버튼 위치</string>
   <string name="recents_clear_all_location_top_right">오른쪽 상단</string>
   <string name="recents_clear_all_location_top_left">왼쪽 상단</string>
@@ -960,7 +960,7 @@
   <string name="show_alarm_fullscreen_summary">Display alarm as full screen instead of heads up</string>
   <!-- Animations -->
   <string name="animation_title">애니메이션</string>
-  <string name="animation_summary">Customize various animations</string>
+  <string name="animation_summary">사용자 정의 애니메이션</string>
   <!-- Custom System Animations -->
   <string name="system_animation_title">시스템 애니메이션</string>
   <string name="system_animation_summary">시스템의 각 창에서 사용될 애니메이션을 설정합니다.</string>
@@ -1075,7 +1075,7 @@
   <string name="blur_notice">흐림 기능 주의 사항</string>
   <string name="blur_notice_summary">흐림 효과는 암호 입력 화면에서는 비활성화 됩니다. 반투명 알림만 활성화 됩니다!</string>
   <string name="blur_colors_notice">이 색들의 용도는 무엇인가요?</string>
-  <string name="blur_colors_notice_summary">배경을 흐리게 하는 색상을 변경합니다. 기본값인 회색 대신 사용자가 선호하는 색을 선택할 수 있습니다.\n세 가지 색상 필터: 밝은 배경, 어두운 배경과 혼합된 배경 색 필터를 사용할 수 있습니다.\n그래서 어떻게 설정된 색이 적용되나고요?\n간단합니다. 글자 그대로, 밝은 배경 필터는 밝은 배경에, 어두운 배경 필터는 어두운 배경에, 혼합된 배경 필터는 너무 밝지도, 너무 어둡지도 않은 배경에 사용됩니다.\n설정된 색상은 상태표시줄과 최근 앱 목록 모두에 사용됩니다.</string>
+  <string name="blur_colors_notice_summary">배경을 흐리게 하는 색상을 변경합니다. 기본값인 회색 대신 사용자가 선호하는 색을 선택할 수 있습니다.\n세 가지 색상 필터: 밝은 배경, 어두운 배경과 혼합된 배경 색 필터를 사용할 수 있습니다.\n그래서 어떻게 설정된 색이 적용되냐고요?\n간단합니다. 글자 그대로, 밝은 배경 필터는 밝은 배경에, 어두운 배경 필터는 어두운 배경에, 혼합된 배경 필터는 너무 밝지도, 너무 어둡지도 않은 배경에 사용됩니다.\n설정된 색상은 상태표시줄과 최근 앱 목록 모두에 사용됩니다.</string>
   <string name="blur_expstatus_cat">확장된 상태표시줄 </string>
   <string name="blur_notifications_cat">알림</string>
   <string name="blur_qs_cat">빠른 설정</string>
@@ -1211,9 +1211,9 @@
   <string name="omnijaws_settings_title">날씨 서비스</string>
   <string name="omnijaws_settings_summary">서비스 설정 및 아이콘 사용자 지정</string>
   <string name="weather_config_title">서비스 설정</string>
-  <string name="weather_config_summary">Configure service to enable weather details</string>
+  <string name="weather_config_summary">날씨 세부 정보를 사용하도록 서비스 구성</string>
   <string name="weather_icon_pack_title">날씨 아이콘 팩</string>
-  <string name="weather_icon_pack_note">Note\u003a you can install new icon packs from play store by searching for \"Chronus icons\"</string>
+  <string name="weather_icon_pack_note">알림\u003a 플레이 스토어에 \"Chronus 아이콘\"을 검색하여 새로운 아이콘 팩을 설치할 수 있습니다.</string>
   <!-- 4G icon -->
   <string name="show_fourg_icon_title">4G 아이콘</string>
   <string name="show_fourg_icon_summary">LTE 아이콘 대신 4G 아이콘을 사용합니다</string>
@@ -1335,7 +1335,7 @@
   <string name="gapps_title">Gapps 다운로드</string>
   <string name="gapps_summary">Google Gapps 다운로드 페이지</string>
   <string name="forum_title">포럼</string>
-  <string name="forum_summary">View latest discussions</string>
+  <string name="forum_summary">기기의 XDA 포럼 바로가기</string>
   <string name="firmware_title">호환 가능한 펌웨어 다운로드</string>
   <string name="firmware_summary">펌웨어 다운로드 페이지에 방문</string>
   <string name="modem_title">호환되는 모뎀 다운로드</string>
@@ -1381,7 +1381,7 @@
   <string name="pixel_navbar_anim_summary">토글 픽셀 스타일 애니메이션</string>
   <!-- Smart pulldown-->
   <string name="smart_pulldown_title">스마트 풀 다운</string>
-  <string name="smart_pulldown_summary">%1$s개 이상의 알림이 있으면 빠른 설정을 표시합니다</string>
+  <string name="smart_pulldown_summary">표시할 알림이 없으면 빠른 설정을 표시합니다</string>
   <string name="smart_pulldown_none_summary">표시할 알림이 없으면 빠른 설정을 표시합니다</string>
   <string name="smart_pulldown_off">끄기</string>
   <string name="smart_pulldown_none">알림 없음</string>
@@ -1427,7 +1427,7 @@
   <!-- Ambient Ticker -->
   <string name="force_ambient_for_media_pref_title">음악 알림</string>
   <string name="force_ambient_for_media_pref_summary">음악 티커 구성</string>
-  <string name="ambient_ticker_footer">This feature allows for the ability to show the current music track info on the lockscreen with or without Ambient display enabled.\n\nYou can select from two layouts, normal and minimal. While this feature takes advantage of ambient display, it does not depend on it. It can be triggered without having ambient display enabled by using the (forced) options.\n\nNormal view includes the lockscreen clock, date and ticker.\n\nMinimal view includes just the ticker at the center of the screen.</string>
+  <string name="ambient_ticker_footer">이 기능은 잠금화면에 현재 음악 트랙 정보를 표시합니다.\n\n 보통과 간소화된 두개의 레이아웃을 선택할 수 있습니다.\n\n기본 레이아웃은 시계와 날짜 그리고 음악 정보를 포함합니다.\n\n간소화 레이아웃은 화면 중앙에 음악 정보만을 표시합니다.</string>
   <string name="force_ambient_for_media_title">레이아웃 선택</string>
   <string name="force_ambient_for_media_off">비활성화</string>
   <string name="force_ambient_for_media_on">기본</string>
@@ -1459,7 +1459,7 @@
   <string name="berry_dark_shade_black">Amoled Black</string>
   <!-- Screen off animation -->
   <string name="screen_off_animation_title">화면 꺼짐 애니메이션</string>
-  <string name="screen_off_animation_fade">Simple fade</string>
+  <string name="screen_off_animation_fade">간단한 페이드</string>
   <string name="screen_off_animation_color">Color fade</string>
   <string name="screen_off_animation_crt">CRT</string>
   <string name="screen_off_animation_scale">배율</string>
@@ -1571,7 +1571,7 @@
   <!-- Edge gestures -->
   <string name="edge_gestures_title">가장자리 제스처</string>
   <string name="edge_gestures_summary">가장자리 동작을 사용하여 탐색</string>
-  <string name="edge_gestures_description">Swipe from bottom of the screen to trigger home action, keep it pressed to open recents screen. Swipe from left or right to go back.</string>
+  <string name="edge_gestures_description">화면 하단에서 스와이프하여 홈에있는 작업을 시작하고 눌렀을 때 다시 작업 화면을 엽니 다. 왼쪽 또는 오른쪽으로 스와이프하여 뒤로 이동합니다.</string>
   <string name="edge_gestures_feedback_duration_title">햅틱 피드백 지속 시간</string>
   <string name="edge_gestures_long_press_delay_title">긴 누름 동작이 시작될 때까지 지연</string>
   <string name="edge_gestures_back_category_title">뒤로 가기 제스처</string>
@@ -1623,7 +1623,7 @@
   <string name="accent_turquoise">터키석</string>
   <string name="accent_yellow">바나나</string>
   <!-- Smart Pixels -->
-  <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see improvement in battery life.</string>
+  <string name="smart_pixels_warning_text">스마트 픽셀은 절전 기능입니다. 끄기로 결정한 픽셀 수에 따라 배터리 수명이 향상 될 수 있습니다.</string>
   <string name="smart_pixels_title">스마트 픽셀</string>
   <string name="smart_pixels_summary">여분의 픽셀을 차단하여 배터리 절약</string>
   <string name="smart_pixels_enable_title">스마트 픽셀 켜기</string>
