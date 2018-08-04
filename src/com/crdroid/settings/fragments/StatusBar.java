@@ -28,6 +28,7 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
+import android.view.View;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.development.DevelopmentSettings;
@@ -38,9 +39,11 @@ import com.crdroid.settings.fragments.statusbar.CarrierLabel;
 import com.crdroid.settings.fragments.statusbar.Clock;
 import com.crdroid.settings.fragments.statusbar.NetworkTrafficSettings;
 import com.crdroid.settings.fragments.statusbar.StatusBarWeather;
+import com.crdroid.settings.preferences.SystemSettingListPreference;
 import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
 import com.crdroid.settings.R;
 
+import lineageos.preference.LineageSystemSettingListPreference;
 import lineageos.providers.LineageSettings;
 
 public class StatusBar extends SettingsPreferenceFragment implements
@@ -48,8 +51,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     public static final String TAG = "StatusBar";
 
-    private static final String QUICK_PULLDOWN = "quick_pulldown";
-    private static final String SMART_PULLDOWN = "smart_pulldown";
+    private static final String QUICK_PULLDOWN = "qs_quick_pulldown";
+    private static final String SMART_PULLDOWN = "qs_smart_pulldown";
     private static final String DATA_ACTIVITY_ARROWS = "data_activity_arrows";
     private static final String WIFI_ACTIVITY_ARROWS = "wifi_activity_arrows";
     private static final String TICKER_MODE = "status_bar_show_ticker";
@@ -61,6 +64,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
     private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
+    private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
 
     public static final int BATTERY_STYLE_PORTRAIT = 0;
     public static final int BATTERY_STYLE_CIRCLE = 1;
@@ -69,8 +73,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
     public static final int BATTERY_STYLE_TEXT = 4;
     public static final int BATTERY_STYLE_HIDDEN = 5;
 
-    private ListPreference mQuickPulldown;
-    private ListPreference mSmartPulldown;
+    private static final int PULLDOWN_DIR_NONE = 0;
+    private static final int PULLDOWN_DIR_RIGHT = 1;
+    private static final int PULLDOWN_DIR_LEFT = 2;
+    private static final int PULLDOWN_DIR_ALWAYS = 3;
+
+    private SystemSettingListPreference mSmartPulldown;
     private SwitchPreference mDataActivityEnabled;
     private SwitchPreference mWifiActivityEnabled;
     private ListPreference mTickerMode;
@@ -83,6 +91,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ListPreference mBatteryPercent;
     private ListPreference mTextSymbol;
 
+    private LineageSystemSettingListPreference mQuickPulldown;
+    private LineageSystemSettingListPreference mStatusBarClock;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,19 +102,14 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         ContentResolver resolver = getActivity().getContentResolver();
 
-        mQuickPulldown = (ListPreference) findPreference(QUICK_PULLDOWN);
-        int quickPulldownValue = LineageSettings.System.getIntForUser(resolver,
-                LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
-        mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
-        updatePulldownSummary(quickPulldownValue);
+        mQuickPulldown =
+                (LineageSystemSettingListPreference) findPreference(QUICK_PULLDOWN);
         mQuickPulldown.setOnPreferenceChangeListener(this);
+        updateQuickPulldownSummary(mQuickPulldown.getIntValue(0));
 
-        mSmartPulldown = (ListPreference) findPreference(SMART_PULLDOWN);
-        int smartPulldown = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
-        mSmartPulldown.setValue(String.valueOf(smartPulldown));
-        updateSmartPulldownSummary(smartPulldown);
+        mSmartPulldown = (SystemSettingListPreference) findPreference(SMART_PULLDOWN);
         mSmartPulldown.setOnPreferenceChangeListener(this);
+        updateSmartPulldownSummary(mSmartPulldown.getIntValue(0));
 
         mDataActivityEnabled = (SwitchPreference) findPreference(DATA_ACTIVITY_ARROWS);
         boolean mActivityEnabled = Settings.System.getIntForUser(resolver,
@@ -189,6 +195,28 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mTextSymbol.setSummary(mTextSymbol.getEntry());
         updateBatteryOptions();
         mTextSymbol.setOnPreferenceChangeListener(this);
+
+        mStatusBarClock =
+                (LineageSystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
+
+        final boolean hasNotch = getResources().getBoolean(
+                org.lineageos.platform.internal.R.bool.config_haveNotch);
+
+        // Adjust status bar preferences for RTL
+        if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+            if (hasNotch) {
+                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch_rtl);
+                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch_rtl);
+            } else {
+                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
+                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_rtl);
+            }
+            mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries_rtl);
+            mQuickPulldown.setEntryValues(R.array.status_bar_quick_qs_pulldown_values_rtl);
+        } else if (hasNotch) {
+            mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
+            mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
+        }
     }
 
     @Override
@@ -196,13 +224,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mQuickPulldown) {
             int value = Integer.parseInt((String) newValue);
-            LineageSettings.System.putIntForUser(resolver, LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
-                    value, UserHandle.USER_CURRENT);
-            updatePulldownSummary(value);
+            updateQuickPulldownSummary(value);
             return true;
         } else if (preference == mSmartPulldown) {
             int value = Integer.parseInt((String) newValue);
-            Settings.System.putIntForUser(resolver, Settings.System.QS_SMART_PULLDOWN, value, UserHandle.USER_CURRENT);
             updateSmartPulldownSummary(value);
             return true;
         } else if (preference == mDataActivityEnabled) {
@@ -298,21 +323,27 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mTextSymbol.setEnabled(batterystyle == BATTERY_STYLE_TEXT);
     }
 
-    private void updatePulldownSummary(int value) {
-        Resources res = getResources();
-
-        if (value == 0) {
-            // quick pulldown deactivated
-            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_off));
-        } else if (value == 3) {
-            // quick pulldown always
-            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_always));
-        } else {
-            String direction = res.getString(value == 2
-                    ? R.string.status_bar_quick_qs_pulldown_left
-                    : R.string.status_bar_quick_qs_pulldown_right);
-            mQuickPulldown.setSummary(res.getString(R.string.status_bar_quick_qs_pulldown_summary, direction));
+    private void updateQuickPulldownSummary(int value) {
+        String summary="";
+        switch (value) {
+            case PULLDOWN_DIR_NONE:
+                summary = getResources().getString(
+                    R.string.status_bar_quick_qs_pulldown_off);
+                break;
+            case PULLDOWN_DIR_ALWAYS:
+                summary = getResources().getString(
+                    R.string.status_bar_quick_qs_pulldown_always);
+                break;
+            case PULLDOWN_DIR_LEFT:
+            case PULLDOWN_DIR_RIGHT:
+                summary = getResources().getString(
+                    R.string.status_bar_quick_qs_pulldown_summary,
+                    getResources().getString(value == PULLDOWN_DIR_LEFT
+                        ? R.string.status_bar_quick_qs_pulldown_summary_left
+                        : R.string.status_bar_quick_qs_pulldown_summary_right));
+                break;
         }
+        mQuickPulldown.setSummary(summary);
     }
 
     private void updateSmartPulldownSummary(int value) {
@@ -405,6 +436,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 LineageSettings.Secure.NETWORK_TRAFFIC_UNITS, 1, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS, 1, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.STATUS_BAR_CLOCK, 0, UserHandle.USER_CURRENT);
     }
 
     @Override

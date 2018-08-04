@@ -18,7 +18,7 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.crdroid.settings.preferences.LineageSecureSettingListPreference
+    <lineageos.preference.LineageSecureSettingListPreference
         android:key="network_traffic_mode"
         android:title="@string/network_traffic_mode_title"
         android:entries="@array/network_traffic_mode_entries"
@@ -36,7 +36,7 @@
         settings:interval="10"
         android:persistent="false" />
 
-    <com.crdroid.settings.preferences.LineageSecureSettingListPreference
+    <lineageos.preference.LineageSecureSettingListPreference
         android:key="network_traffic_units"
         android:title="@string/network_traffic_show_units"
         android:entries="@array/network_traffic_units_entries"

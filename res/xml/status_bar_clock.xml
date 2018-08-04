@@ -19,20 +19,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="statusbar_clock_seconds"
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="clock_seconds"
         android:title="@string/status_bar_clock_seconds_title"
         android:summary="@string/status_bar_clock_seconds_summary"
         android:defaultValue="false" />
 
-    <ListPreference
-        android:key="statusbar_clock_am_pm_style"
+    <lineageos.preference.LineageSystemSettingListPreference
+        android:key="status_bar_am_pm"
         android:title="@string/status_bar_am_pm_title"
+        android:summary="%s"
+        android:dialogTitle="@string/status_bar_am_pm_title"
         android:entries="@array/status_bar_am_pm_entries"
         android:entryValues="@array/status_bar_am_pm_values"
-        android:defaultValue="0" />
+        android:defaultValue="2" />
 
-    <ListPreference
+    <!--<ListPreference
         android:key="status_bar_date"
         android:title="@string/status_bar_date_title"
         android:entries="@array/status_bar_date_entries"
@@ -55,5 +57,5 @@
         android:key="status_bar_date_format"
         android:title="@string/status_bar_date_format_title"
         android:entries="@array/status_bar_date_format_entries_values"
-        android:entryValues="@array/status_bar_date_format_entries_values" />
+        android:entryValues="@array/status_bar_date_format_entries_values" />-->
 </PreferenceScreen>

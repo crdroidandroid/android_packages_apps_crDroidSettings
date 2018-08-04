@@ -73,4 +73,8 @@ public class SecureSettingListPreference extends ListPreference {
         // instead of catching an exception. (All values are stored as strings.)
         return Settings.Secure.getString(getContext().getContentResolver(), getKey()) != null;
     }
+
+    public int getIntValue(int defValue) {
+        return getValue() == null ? defValue : Integer.valueOf(getValue());
+    }
 }

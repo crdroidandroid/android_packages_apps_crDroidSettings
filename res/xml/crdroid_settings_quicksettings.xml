@@ -205,7 +205,7 @@
             android:max="255"
             settings:min="0"
             settings:units=""
-            android:persistent="false" />-->
+            android:persistent="false" />
 
         <com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="qs_clock_style"
@@ -221,10 +221,10 @@
             android:title="@string/status_bar_clock_title"
             android:summary="@string/status_bar_clock_summary"
             android:fragment="com.crdroid.settings.fragments.statusbar.Clock"
-            settings:allowDividerAbove="false" />
+            settings:allowDividerAbove="false" />-->
 
         <!-- QS Brightness Slider position -->
-        <com.crdroid.settings.preferences.LineageSecureSettingListPreference
+        <lineageos.preference.LineageSecureSettingListPreference
             android:key="qs_show_brightness_slider"
             android:icon="@drawable/ic_brightness"
             android:title="@string/qs_brightness_slider_title"
