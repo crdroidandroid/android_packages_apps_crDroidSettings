@@ -239,8 +239,6 @@ public class Clock extends SettingsPreferenceFragment {
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_CLOCK_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.STATUSBAR_CLOCK_SECONDS, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_CLOCK_DATE_DISPLAY, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_CLOCK_DATE_POSITION, 0, UserHandle.USER_CURRENT);
@@ -249,6 +247,8 @@ public class Clock extends SettingsPreferenceFragment {
         Settings.System.putString(resolver,
                 Settings.System.STATUSBAR_CLOCK_DATE_FORMAT, "");
 */
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_CLOCK_SECONDS, 0, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_AM_PM, 0, UserHandle.USER_CURRENT);
     }
