@@ -17,7 +17,6 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     android:title="@string/smart_pixels_title" >
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -48,6 +47,5 @@
         android:defaultValue="5"
         android:title="@string/smart_pixels_shift_title"
         android:summary="@string/smart_pixels_shift_summary"
-        android:dialogTitle="@string/smart_pixels_shift_title"
-        lineage:requiresConfig="@*android:bool/config_enableBurnInProtection" />
+        android:dialogTitle="@string/smart_pixels_shift_title" />
 </PreferenceScreen>

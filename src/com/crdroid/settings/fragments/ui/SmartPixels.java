@@ -37,16 +37,30 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.preferences.SystemSettingListPreference;
 
 public class SmartPixels extends SettingsPreferenceFragment {
 
     private static final String TAG = "SmartPixels";
+
+    private static final String SMART_PIXELS_SHIFT_TIMEOUT = "smart_pixels_shift_timeout";
+
+    private SystemSettingListPreference mShiftTimeout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.smart_pixels);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mShiftTimeout = (SystemSettingListPreference) prefScreen.findPreference(SMART_PIXELS_SHIFT_TIMEOUT);
+
+        boolean mShiftTimeoutSupported = getResources().getBoolean(
+                com.android.internal.R.bool.config_enableBurnInProtection);
+        if (!mShiftTimeoutSupported)
+            prefScreen.removePreference(mShiftTimeout);
 
         mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.smart_pixels_warning_text);
     }
