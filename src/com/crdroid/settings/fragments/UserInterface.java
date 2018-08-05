@@ -54,6 +54,7 @@ public class UserInterface extends SettingsPreferenceFragment {
 
     private static final String KEY_FONT_PICKER_FRAGMENT_PREF = "custom_font";
     private static final String SUBS_PACKAGE = "projekt.substratum";
+    private static final String SMART_PIXELS = "smart_pixels";
 
     private static final String CATEGORY_SUBSTRATUM = "category_substratum";
 
@@ -63,6 +64,7 @@ public class UserInterface extends SettingsPreferenceFragment {
     private IntentFilter mIntentFilter;
 
     private PreferenceCategory substratumCategory;
+    private Preference mSmartPixels;
 
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         @Override
@@ -113,6 +115,12 @@ public class UserInterface extends SettingsPreferenceFragment {
 
         mIntentFilter = new IntentFilter();
         mIntentFilter.addAction("com.android.server.ACTION_FONT_CHANGED");
+
+        mSmartPixels = (Preference) prefScreen.findPreference(SMART_PIXELS);
+        boolean mSmartPixelsSupported = getResources().getBoolean(
+                com.android.internal.R.bool.config_supportSmartPixels);
+        if (!mSmartPixelsSupported)
+            prefScreen.removePreference(mSmartPixels);
     }
 
     private FontInfo getCurrentFontInfo() {
