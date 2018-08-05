@@ -120,6 +120,25 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="blur_vd_cat"
+        android:title="@string/blur_vd_cat" >
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="blur_volumedialog_enabled"
+            android:title="@string/translucent_volume_dialog_pref"
+            android:summary="@string/translucent_volume_dialog_pref_summary"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="blur_volumedialog_percentage"
+            android:title="@string/transluency_level_universal"
+            android:max="100"
+            settings:min="0"
+            android:dependency="blur_volumedialog_enabled"
+            android:defaultValue="60" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="blur_recents_cat"
         android:title="@string/blur_recents_cat" >
 

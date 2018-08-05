@@ -42,6 +42,7 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
     private CustomSeekBarPreference mRecentsRadius;
     private CustomSeekBarPreference mRecentsScale;
     private CustomSeekBarPreference mQuickSettPerc;
+    private CustomSeekBarPreference mVolSettPerc;
     //private CustomSeekBarPreference mNotSettPerc;
 
     //Colors
@@ -86,6 +87,10 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
         mQuickSettPerc.setValue(Settings.System.getIntForUser(resolver, Settings.System.BLUR_QUICKSETTINGS_PERCENTAGE, 60, UserHandle.USER_CURRENT));
         mQuickSettPerc.setOnPreferenceChangeListener(this);
 
+        mVolSettPerc = (CustomSeekBarPreference) findPreference("blur_volumedialog_percentage");
+        mVolSettPerc.setValue(Settings.System.getIntForUser(resolver, Settings.System.BLUR_VOLUMEDIALOG_PERCENTAGE, 60, UserHandle.USER_CURRENT));
+        mVolSettPerc.setOnPreferenceChangeListener(this);
+
         mRecentsScale = (CustomSeekBarPreference) findPreference("blur_recent_scale");
         mRecentsScale.setValue(Settings.System.getIntForUser(resolver, Settings.System.BLUR_RECENT_SCALE, 6, UserHandle.USER_CURRENT));
         mRecentsScale.setOnPreferenceChangeListener(this);
@@ -128,6 +133,11 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
             int value = ((Integer)newValue).intValue();
             Settings.System.putIntForUser(
                 resolver, Settings.System.BLUR_STATUSBAR_RADIUS, value, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mVolSettPerc) {
+            int value = ((Integer)newValue).intValue();
+            Settings.System.putIntForUser(
+                resolver, Settings.System.BLUR_VOLUMEDIALOG_PERCENTAGE, value, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mQuickSettPerc) {
             int value = ((Integer)newValue).intValue();
@@ -197,6 +207,10 @@ public class BlurPersonalizations extends SettingsPreferenceFragment
                 Settings.System.BLUR_QUICKSETTINGS_ENABLED, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.BLUR_QUICKSETTINGS_PERCENTAGE, 60, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_VOLUMEDIALOG_ENABLED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUR_VOLUMEDIALOG_PERCENTAGE, 60, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.BLUR_RECENT_ENABLED, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
