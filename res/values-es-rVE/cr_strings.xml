@@ -960,7 +960,7 @@
   <string name="show_alarm_fullscreen_summary">Mostrar alarma en pantalla completa en lugar de heads up</string>
   <!-- Animations -->
   <string name="animation_title">Animaciones</string>
-  <string name="animation_summary">Customize various animations</string>
+  <string name="animation_summary">Personalizar diversas animaciones</string>
   <!-- Custom System Animations -->
   <string name="system_animation_title">Animaciones del sistema</string>
   <string name="system_animation_summary">Personalizar las animaciones de cada ventana en el sistema</string>
@@ -1066,6 +1066,8 @@
   <string name="translucent_notifications_pref_summary">Establecer como traslúcido el fondo de las notificaciones</string>
   <string name="translucent_quick_settings_pref">Configuración rápida de la opción desenfocar</string>
   <string name="translucent_quick_settings_pref_summary">Desenfocar los cuadros y fondos QS</string>
+  <string name="translucent_volume_dialog_pref">Blurred volume panel</string>
+  <string name="translucent_volume_dialog_pref_summary">Blur the volume dialog panel</string>
   <string name="transluency_level_universal">Nivel de transparencia</string>
   <string name="blurred_recent_app_enabled_pref">Desenfocar aplicaciones recientes</string>
   <string name="blurred_recent_app_enabled_pref_summary">Desenfocar el fondo de la ventana de aplicaciones recientes</string>
@@ -1079,6 +1081,7 @@
   <string name="blur_expstatus_cat">Barra de estado expandida </string>
   <string name="blur_notifications_cat">Notificaciones</string>
   <string name="blur_qs_cat">Configuración rápida</string>
+  <string name="blur_vd_cat">Volume panel</string>
   <string name="blur_recents_cat">Aplicaciones recientes</string>
   <string name="blur_colors_cat">Filtro de color desenfocado</string>
   <string name="blur_notices_cat">Avisos</string>
@@ -1572,7 +1575,8 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
   <!-- Edge gestures -->
   <string name="edge_gestures_title">Habilitar gestos</string>
   <string name="edge_gestures_summary">Navegar usando gestos \"Edge\"</string>
-  <string name="edge_gestures_description">Swipe from bottom of the screen to trigger home action, keep it pressed to open recents screen. Swipe from left or right to go back.</string>
+  <string name="edge_gestures_description">Desliza desde la parte de abajo de la pantalla para activar la acción de Home, mantén presionado para abrir recientes.
+Desliza de izquierda a derecha para regresar.</string>
   <string name="edge_gestures_feedback_duration_title">Duración de retroalimentación háptica</string>
   <string name="edge_gestures_long_press_delay_title">Demora hasta que comience la acción de presión prolongada</string>
   <string name="edge_gestures_back_category_title">Gesto de retroceso</string>
@@ -1617,7 +1621,7 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
   <string name="accent_gold">Dorado</string>
   <string name="accent_grey">Gris</string>
   <string name="accent_orange">Calabaza</string>
-  <string name="accent_oxygen">Oxygen</string>
+  <string name="accent_oxygen">Oxigeno</string>
   <string name="accent_pink">Cereza</string>
   <string name="accent_purple">Lavanda</string>
   <string name="accent_red">Tomate</string>
@@ -1625,7 +1629,7 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
   <string name="accent_turquoise">Turquesa</string>
   <string name="accent_yellow">Plátano</string>
   <!-- Smart Pixels -->
-  <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see improvement in battery life.</string>
+  <string name="smart_pixels_warning_text">Smart Pixels es una opción de ahorro de batería. Dependiendo cuantos pixeles tu decides apagar. Tal vez veas mejoras en la duración de batería.</string>
   <string name="smart_pixels_title">Píxeles Inteligentes</string>
   <string name="smart_pixels_summary">Ahorrar batería apagando píxeles adicionales</string>
   <string name="smart_pixels_enable_title">Habilitar Píxeles Inteligentes</string>
@@ -1636,26 +1640,26 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
   <string name="smart_pixels_shift_title">Protección contra quemado</string>
   <string name="smart_pixels_shift_summary">Previene el quemado de la pantalla en dispositivos con tecnología OLED alternando píxeles de vez en cuando</string>
   <!-- Carbon gestures -->
-  <string name="carbon_gesture_preference_title">Carbon gestures</string>
-  <string name="carbon_gestures_summary">Configure custom global gestures</string>
-  <string name="carbon_gestures_fingers_title">Fingers used for gesture (default 2)</string>
-  <string name="carbon_gestures_fingers_unit">fingers</string>
-  <string name="carbon_gestures_right_title">Right gesture</string>
-  <string name="carbon_gestures_left_title">Left gesture</string>
-  <string name="carbon_gestures_up_title">Up gesture</string>
-  <string name="carbon_gestures_down_title">Down gesture</string>
-  <string name="carbon_gesture_disabled">Disabled</string>
-  <string name="carbon_gesture_back">Back</string>
-  <string name="carbon_gesture_home">Home</string>
-  <string name="carbon_gesture_recents">Recents</string>
-  <string name="carbon_gesture_power">Power</string>
-  <string name="carbon_gesture_volume_down">Volume down</string>
-  <string name="carbon_gesture_volume_up">Volume up</string>
-  <string name="carbon_gesture_volume_mute">Volume mute</string>
-  <string name="carbon_gesture_screenshot">Screenshot</string>
-  <string name="carbon_gesture_media_play_pause">Play/Pause media</string>
-  <string name="carbon_gesture_media_skip">Skip media</string>
-  <string name="carbon_gesture_media_previous">Previous media</string>
-  <string name="carbon_gesture_customapp">Launch application</string>
-  <string name="carbon_gesture_launch">Launch</string>
+  <string name="carbon_gesture_preference_title">Gestos Carbón</string>
+  <string name="carbon_gestures_summary">Configurar gestos globales</string>
+  <string name="carbon_gestures_fingers_title">Dedos usados por el gesto (Predeterminado 2)</string>
+  <string name="carbon_gestures_fingers_unit">dedos</string>
+  <string name="carbon_gestures_right_title">Gesto derecho</string>
+  <string name="carbon_gestures_left_title">Gesto Izquiero</string>
+  <string name="carbon_gestures_up_title">Gesto arriba</string>
+  <string name="carbon_gestures_down_title">Gesto abajo</string>
+  <string name="carbon_gesture_disabled">Desactivado</string>
+  <string name="carbon_gesture_back">Atras</string>
+  <string name="carbon_gesture_home">Inicio</string>
+  <string name="carbon_gesture_recents">Recientes</string>
+  <string name="carbon_gesture_power">Encendido</string>
+  <string name="carbon_gesture_volume_down">Bajar volumen</string>
+  <string name="carbon_gesture_volume_up">Subir volumen</string>
+  <string name="carbon_gesture_volume_mute">Silencio</string>
+  <string name="carbon_gesture_screenshot">Captura de pantalla</string>
+  <string name="carbon_gesture_media_play_pause">Reproducir/Pausar media</string>
+  <string name="carbon_gesture_media_skip">Saltear media</string>
+  <string name="carbon_gesture_media_previous">Anterior media</string>
+  <string name="carbon_gesture_customapp">Lanzar aplicacion</string>
+  <string name="carbon_gesture_launch">Lanzar</string>
 </resources>

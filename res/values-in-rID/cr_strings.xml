@@ -960,7 +960,7 @@
   <string name="show_alarm_fullscreen_summary">Menampilkan alarm sebagai layar penuh bukan atas kepala</string>
   <!-- Animations -->
   <string name="animation_title">Animasi</string>
-  <string name="animation_summary">Customize various animations</string>
+  <string name="animation_summary">Menyesuaikan berbagai animasi</string>
   <!-- Custom System Animations -->
   <string name="system_animation_title">Sistem animasi</string>
   <string name="system_animation_summary">Sesuaikan animasi dari setiap jendela dalam sistem</string>
@@ -1066,6 +1066,8 @@
   <string name="translucent_notifications_pref_summary">Mengatur latar belakang dari notifikasi transparan</string>
   <string name="translucent_quick_settings_pref">Mengaburkan pengaturan cepat</string>
   <string name="translucent_quick_settings_pref_summary">Mengaburkan lantai dan latar belakang QS</string>
+  <string name="translucent_volume_dialog_pref">Panel volume blur</string>
+  <string name="translucent_volume_dialog_pref_summary">Dialog panel volume blur</string>
   <string name="transluency_level_universal">Tingkat transparan</string>
   <string name="blurred_recent_app_enabled_pref">Mengaburkan aplikasi terbaru</string>
   <string name="blurred_recent_app_enabled_pref_summary">Mengaburkan latar belakang dari jendela aplikasi terbaru</string>
@@ -1076,9 +1078,10 @@
   <string name="blur_notice_summary">Mengaburkan personalisai yang dinonaktifkan selama tampilan kunci. Hanya notifikasi transparan yang diaktifkan.</string>
   <string name="blur_colors_notice">Apa yang dilakukan warna ini?</string>
   <string name="blur_colors_notice_summary">Warna ini adalah sebuah pewarnaan latar belakang yang kabur. Bukannya biasa abu - abu, kamu sekarang bisa memilih warna yang kamu sukai.\n Ada tiga filter warna: Satu dipakai untuk latar belakang yang cerah, satu untuk latar belakang yang gelap dan satu lagi untuk latar belakang yang terang/gelap.\n Jadi bagaimana warna ini bekerja?\n Warna ini dipakai untuk kedua latar belakang yang kabur: Status bar dan jendela aplikasi terbaru</string>
-  <string name="blur_expstatus_cat">Expanded statusbar </string>
+  <string name="blur_expstatus_cat">Perluasan status bar </string>
   <string name="blur_notifications_cat">Pemberitahuan</string>
   <string name="blur_qs_cat">Pengaturan cepat</string>
+  <string name="blur_vd_cat">Panel volume</string>
   <string name="blur_recents_cat">Aplikasi terbaru</string>
   <string name="blur_colors_cat">Filter warna kabur</string>
   <string name="blur_notices_cat">Peringatan</string>
@@ -1359,12 +1362,12 @@
   <string name="interval_entry_disable">Dinonaktifkan</string>
   <string name="interval_entry_15s">Setiap 15 detik</string>
   <string name="interval_entry_30s">Setiap 30 detik</string>
-  <string name="interval_entry_1m">Every 1 minutes</string>
-  <string name="interval_entry_2m">Every 2 minutes</string>
-  <string name="interval_entry_5m">Every 5 minutes</string>
-  <string name="interval_entry_10m">Every 10 minutes</string>
+  <string name="interval_entry_1m">Setiap 1 menit</string>
+  <string name="interval_entry_2m">Setiap 2 menit</string>
+  <string name="interval_entry_5m">Setiap 5 menit</string>
+  <string name="interval_entry_10m">Setiap 10 menit</string>
   <string name="interval_entry_15m">Setiap 15 menit</string>
-  <string name="interval_entry_20m">Every 20 minutes</string>
+  <string name="interval_entry_20m">Setiap 20 menit</string>
   <string name="interval_entry_30m">Setiap 30 menit</string>
   <string name="interval_entry_1h">Setiap jam</string>
   <string name="interval_entry_12h">Setiap 12 jam</string>
@@ -1541,38 +1544,38 @@
   <string name="notification_light_automagic_summary">Memilih warna secara otomatis</string>
   <!-- Lights settings, LED notification -->
   <string name="led_notification_title">Pengaturan cahaya</string>
-  <string name="led_notification_text">LED light enabled by settings</string>
-  <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
+  <string name="led_notification_text">Lampu LED diaktifkan oleh pengaturan</string>
+  <string name="notification_light_no_apps_summary">Untuk menambahkan kontrol pada setiap aplikasi, aktifkan \'%1$s\' dan tekan \'\u002b\' pada bilah menu</string>
   <!-- Substratum -->
   <string name="substratum_title">Substratum</string>
-  <string name="themes_title">Themes</string>
-  <string name="themes_summary">Manage your themes</string>
+  <string name="themes_title">Tema</string>
+  <string name="themes_summary">Kelola tema Anda</string>
   <!-- Force authorize substratum packages -->
-  <string name="force_authorize_substratum_packages_title">Force authorize every theme app</string>
-  <string name="force_authorize_substratum_packages_summary">Allow theme apps from unknown sources</string>
+  <string name="force_authorize_substratum_packages_title">Paksa otorisasi setiap aplikasi tema</string>
+  <string name="force_authorize_substratum_packages_summary">Izinkan aplikasi tema dari sumber tidak dikenal</string>
   <!-- Manage applications: show substratum overlays -->
-  <string name="filter_substratum_apps">Substratum overlays</string>
-  <string name="menu_show_substratum">Show overlays</string>
-  <string name="menu_hide_substratum">Hide overlays</string>
+  <string name="filter_substratum_apps">Lapisan substratum</string>
+  <string name="menu_show_substratum">Tampilkan lapisan</string>
+  <string name="menu_hide_substratum">Menyembunyikan lapisan</string>
   <!-- Lockscreen clock -->
-  <string name="lockscreen_clock_selection_title">Clock style</string>
+  <string name="lockscreen_clock_selection_title">Tampilan jam</string>
   <string name="lockscreen_clock_selection_digital">Digital</string>
-  <string name="lockscreen_clock_selection_digital_bold">Digital (bold)</string>
+  <string name="lockscreen_clock_selection_digital_bold">Digital (tebal)</string>
   <string name="lockscreen_clock_selection_analog">Analog</string>
   <string name="lockscreen_clock_selection_analog_deadpool">Analog (deadpool)</string>
   <string name="lockscreen_clock_selection_analog_spidey">Analog (spidey)</string>
   <string name="lockscreen_clock_selection_sammy">Sammy</string>
-  <string name="lockscreen_clock_selection_sammy_bold">Sammy (bold)</string>
-  <string name="lockscreen_date_selection_title">Date style</string>
-  <string name="lockscreen_date_selection_default">Default</string>
-  <string name="lockscreen_date_selection_default_big">Default (Big)</string>
-  <string name="lockscreen_date_selection_str_box">Semi-transparent box</string>
-  <string name="lockscreen_date_selection_str_round">Semi-transparent box (round)</string>
+  <string name="lockscreen_clock_selection_sammy_bold">Sammy (tebal)</string>
+  <string name="lockscreen_date_selection_title">Gaya tanggal</string>
+  <string name="lockscreen_date_selection_default">Bawaan</string>
+  <string name="lockscreen_date_selection_default_big">Bawaan (besar)</string>
+  <string name="lockscreen_date_selection_str_box">Kotak semi-transparan</string>
+  <string name="lockscreen_date_selection_str_round">Kotak semi-transparan (bulat)</string>
   <!-- Edge gestures -->
-  <string name="edge_gestures_title">Edge gestures</string>
-  <string name="edge_gestures_summary">Navigate using edge gestures</string>
+  <string name="edge_gestures_title">Gestur Tepi</string>
+  <string name="edge_gestures_summary">Mengarahkan menggunakan gestur tepi</string>
   <string name="edge_gestures_description">Swipe from bottom of the screen to trigger home action, keep it pressed to open recents screen. Swipe from left or right to go back.</string>
-  <string name="edge_gestures_feedback_duration_title">Haptic feedback duration</string>
+  <string name="edge_gestures_feedback_duration_title">Durasi Umpan balik haptic</string>
   <string name="edge_gestures_long_press_delay_title">Delay until long press action starts</string>
   <string name="edge_gestures_back_category_title">Back gesture</string>
   <string name="edge_gestures_back_edges_title">Trigger back gesture from</string>
