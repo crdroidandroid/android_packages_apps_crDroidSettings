@@ -86,6 +86,8 @@ public class EdgeGestureSettings extends SettingsPreferenceFragment implements
             Settings.Secure.EDGE_GESTURES_LANDSCAPE_BACK_EDGES, 5, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
             Settings.Secure.EDGE_GESTURES_BACK_SCREEN_PERCENT, 60, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+            Settings.Secure.EDGE_GESTURES_BACK_SHOW_UI_FEEDBACK, 0, UserHandle.USER_CURRENT);
     }
 
     @Override

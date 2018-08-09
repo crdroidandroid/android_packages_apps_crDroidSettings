@@ -73,5 +73,12 @@
             settings:min="0"
             settings:units="%"
             android:dependency="edge_gestures_enabled" />
+
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="edge_gestures_back_show_ui_feedback"
+            android:title="@string/edge_gestures_back_show_ui_feedback_title"
+            android:summary="@string/edge_gestures_back_show_ui_feedback_summary"
+            android:defaultValue="true"
+            android:dependency="edge_gestures_enabled" />
     </PreferenceCategory>
 </PreferenceScreen>
