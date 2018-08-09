@@ -120,7 +120,7 @@ public class FontListAdapter extends BaseAdapter {
         holder.title.setTypeface(tf);
         holder.title.setText(info.fontName.replace("_", " "));
         holder.summary.setTypeface(tf);
-        holder.summary.setText(getPackageLabel(info.packageName).replace("_", " "));
+        holder.summary.setText(mContext.getString(R.string.font_picker_pangram));
         holder.icon.setImageDrawable(getPackageDrawable(info.packageName));
         return convertView;
     }
