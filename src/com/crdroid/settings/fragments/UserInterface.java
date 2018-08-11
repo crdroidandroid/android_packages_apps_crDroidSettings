@@ -39,6 +39,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.ui.DozeSettings;
+import com.crdroid.settings.fragments.ui.SmartPixels;
 import com.crdroid.settings.fragments.ui.MonetSettings;
 
 import java.util.List;
@@ -49,8 +50,10 @@ public class UserInterface extends SettingsPreferenceFragment {
     public static final String TAG = "UserInterface";
 
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
+    private static final String SMART_PIXELS = "smart_pixels";
 
     private Preference mShowCutoutForce;
+    private Preference mSmartPixels;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,6 +71,12 @@ public class UserInterface extends SettingsPreferenceFragment {
             mShowCutoutForce = (Preference) findPreference(KEY_FORCE_FULL_SCREEN);
             prefScreen.removePreference(mShowCutoutForce);
         }
+
+        mSmartPixels = (Preference) prefScreen.findPreference(SMART_PIXELS);
+        boolean mSmartPixelsSupported = getResources().getBoolean(
+                com.android.internal.R.bool.config_supportSmartPixels);
+        if (!mSmartPixelsSupported)
+            prefScreen.removePreference(mSmartPixels);
     }
 
     public static void reset(Context mContext) {
@@ -76,6 +85,7 @@ public class UserInterface extends SettingsPreferenceFragment {
                 Settings.System.CHARGING_ANIMATION, 1, UserHandle.USER_CURRENT);
         DozeSettings.reset(mContext);
         MonetSettings.reset(mContext);
+        SmartPixels.reset(mContext);
     }
 
     @Override
@@ -99,6 +109,11 @@ public class UserInterface extends SettingsPreferenceFragment {
                     if (TextUtils.isEmpty(displayCutout)) {
                         keys.add(KEY_FORCE_FULL_SCREEN);
                     }
+
+                    boolean mSmartPixelsSupported = context.getResources().getBoolean(
+                            com.android.internal.R.bool.config_supportSmartPixels);
+                    if (!mSmartPixelsSupported)
+                        keys.add(SMART_PIXELS);
 
                     return keys;
                 }
