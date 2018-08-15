@@ -38,6 +38,7 @@ import com.android.internal.utils.du.Config.ButtonConfig;
 import com.crdroid.settings.fragments.navbar.CarbonGesturesSettings;
 import com.crdroid.settings.fragments.navbar.EdgeGestureSettings;
 import com.crdroid.settings.fragments.navbar.Fling;
+import com.crdroid.settings.fragments.navbar.PieSettings;
 import com.crdroid.settings.fragments.navbar.Pulse;
 import com.crdroid.settings.fragments.navbar.Smartbar;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
@@ -251,6 +252,7 @@ public class NavBar extends SettingsPreferenceFragment implements
         CarbonGesturesSettings.reset(mContext);
         EdgeGestureSettings.reset(mContext);
         Fling.reset(mContext);
+        PieSettings.reset(mContext);
         Pulse.reset(mContext);
         Smartbar.reset(mContext);
     }

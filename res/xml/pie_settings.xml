@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2017 The ParanoidAndroid Project
-               (C) 2017 crDroid Android Project
+               (C) 2017-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -23,45 +23,44 @@
 
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="pie_state"
-        android:icon="@drawable/ic_pie"
         android:title="@string/pie_enable_title"
         android:defaultValue="false" />
 
-    <ListPreference
+    <com.crdroid.settings.preferences.SecureSettingListPreference
         android:key="pie_theme_mode"
         android:title="@string/pie_theme_mode_title"
-        android:icon="@drawable/ic_pie_theme"
         android:summary="%s"
         android:entries="@array/pie_theme_mode_entries"
         android:entryValues="@array/pie_theme_mode_values"
+        android:defaultValue="0"
         android:dependency="pie_state" />
 
-    <ListPreference
+    <com.crdroid.settings.preferences.SecureSettingListPreference
         android:key="pie_battery_mode"
-        android:icon="@drawable/ic_pie_battery"
         android:title="@string/pie_battery_title"
         android:summary="%s"
         android:entries="@array/pie_battery_mode_entries"
         android:entryValues="@array/pie_battery_mode_values"      
+        android:defaultValue="0"
         android:dependency="pie_state" />
 
-    <ListPreference
+    <com.crdroid.settings.preferences.SecureSettingListPreference
         android:key="pie_status_indicator"
-        android:icon="@drawable/ic_pie_status"
         android:title="@string/pie_status_indicator"
         android:summary="%s"
         android:entries="@array/pie_status_mode_entries"
         android:entryValues="@array/pie_status_mode_values"
+        android:defaultValue="0"
         android:dependency="pie_state" />
 
-    <ListPreference
+    <com.crdroid.settings.preferences.SecureSettingListPreference
         android:key="pie_gravity"
-        android:icon="@drawable/ic_pie_gravity"
         android:dialogTitle="@string/pie_gravity_title"
         android:title="@string/pie_gravity_title"
         android:summary="@string/pie_gravity_summary"
         android:entries="@array/entries_pie_gravity"
         android:entryValues="@array/values_pie_gravity"
+        android:defaultValue="2"
         android:dependency="pie_state" />
 
 </PreferenceScreen>
