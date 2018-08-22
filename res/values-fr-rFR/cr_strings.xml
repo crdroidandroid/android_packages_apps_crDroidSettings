@@ -917,7 +917,7 @@
   <string name="volume_dialog_stroke_thickness_title">Épaisseur de la bordure du panneau de volume</string>
   <string name="volume_dialog_corner_radius_title">Radius des angles pour le panneau de volume</string>
   <string name="volume_dialog_dash_width_title">Hauteur de la fenêtre de réglage du volume</string>
-  <string name="volume_dialog_dash_gap_title">Volume dialog border dash gap</string>
+  <string name="volume_dialog_dash_gap_title">Épaisseur de la bordure du panneau de volume</string>
   <string name="power_menu_transparency">Opacité du menu Marche/Arrêt</string>
   <string name="power_menu_dialog_dim">Transparence des dialogues du menu Marche/Arrêt</string>
   <string name="soft_restart_required">Démarrage rapide requis pour appliquer les changements</string>
@@ -952,9 +952,9 @@
   <string name="doze_notification_color_invert_summary_off">Les notifications du mode Veille ne seront pas inversées. À utiliser avec des thèmes sombres.</string>
   <string name="doze_notification_color_invert_summary_on">Les notifications du mode Veille seront inversées. À utiliser avec des thèmes clairs ou par défaut</string>
   <string name="doze_vibrate_on_pickup_title">Vibrer au ramassage</string>
-  <string name="doze_check_proximity_before_pulse_title">Check proximity before pulse</string>
+  <string name="doze_check_proximity_before_pulse_title">Vérifier la proximité avant d\'émettre un signal lumineux</string>
   <string name="sensor_warning_title">Attention</string>
-  <string name="sensor_warning_message">Settings based on sensors are subject to hardware compatibility. Enabling sensors for ambient display may increase power drain.</string>
+  <string name="sensor_warning_message">Les paramètres concernant des capteurs sont sous réserve de compatibilité matérielle. Activer des capteurs pour afficher des informations peut augmenter la consommation d\'énergie.</string>
   <!-- Doze: switches -->
   <string name="doze_display_title">Affichage ambient</string>
   <string name="doze_display_summary">Configurer les paramètres d’affichage ambiant</string>
@@ -970,7 +970,7 @@
   <string name="pocket_title">Poche</string>
   <string name="pocket_summary">Le voyant des notifications clignote lors de la sortie de la poche</string>
   <string name="doze_vibrate">Vibration</string>
-  <string name="doze_vibrate_summary">Duration to vibrate when pulsing notifications</string>
+  <string name="doze_vibrate_summary">Durée de vibration des notifications</string>
   <!-- Changelog -->
   <string name="changelog_crdroid_title">Note de version</string>
   <string name="changelog_crdroid_summary">Voir la dernière note de version de la ROM</string>
@@ -1248,8 +1248,8 @@ https://plus.google.com/communities/118297646046960923906</string>
   <string name="power_menu_animation_translucent_top">Transparence (haut)</string>
   <string name="power_menu_animation_translucent_bottom">Transparence (bas)</string>
   <!-- Tiles animation style  -->
-  <string name="qs_tile_animation_style_title">QS tile animation</string>
-  <string name="qs_tile_animation_duration_title">QS tile animation duration</string>
+  <string name="qs_tile_animation_style_title">Animations des tuiles des Réglages Rapides</string>
+  <string name="qs_tile_animation_duration_title">Durée de l\'animation des tuiles</string>
   <string name="qs_tile_animation_style_off">Aucune animation</string>
   <string name="qs_tile_animation_style_flip">Inverser</string>
   <string name="qs_tile_animation_style_rotate">Rotation</string>
@@ -1257,7 +1257,7 @@ https://plus.google.com/communities/118297646046960923906</string>
   <string name="qs_tile_animation_duration_default">Par défaut</string>
   <string name="qs_tile_animation_duration_fast">Rapide</string>
   <!-- Tiles animation interpolator -->
-  <string name="qs_tile_animation_interpolator_title">QS tile animation interpolator</string>
+  <string name="qs_tile_animation_interpolator_title">Effet supplémentaire pour les tuiles des Réglages Rapides</string>
   <string name="qs_tile_animation_interpolator_linearInterpolator">Linéaire</string>
   <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accélérer</string>
   <string name="qs_tile_animation_interpolator_decelerateInterpolator">Décélérer</string>
@@ -1292,7 +1292,7 @@ https://plus.google.com/communities/118297646046960923906</string>
   <string name="blur_notice">À propos de l\'effet de flou</string>
   <string name="blur_notice_summary">Les effets de flou sont désactivés sur l\'écran de verrouillage. Seules les notifications transparentes sont activées.</string>
   <string name="blur_colors_notice">Que font ces couleurs ?</string>
-  <string name="blur_colors_notice_summary">These colors are the ones tiniting the BlurBackground. Instead of the normal Grey, you can now choose the colors in the way you like.\nThere are three color filters: One used for light backgrounds, one used for Dark backgrounds and one used for light/dark backgrounds.\nSo how these colors work?\nSimple, as the titles say, the Light filter will be used for Lighter backgrounds, Dark filter for dark backgrounds and the mixed filter one will be used for backgrounds not too dark but neither too light.\nThese colors are used for both BlurBackgrounds: StatusBar and RecentsApps window</string>
+  <string name="blur_colors_notice_summary">Ces couleurs sont celles qui teintent le fond flouté. Au lieu du gris par défaut, vous pouvez maintenant choisir les couleurs que vous souhaitez. \n Il y a trois filtres de couleur : l\'un est utilisé pour les fonds clairs, l\'autre pour les fonds foncés et le dernier pour les fonds mixtes. \n Alors, comment fonctionnent ces couleurs ? \n C\'est simple, comme le précisent les intitulés, le filtre clair sera utilisé pour les fonds plus clairs, le filtre sombre pour les fonds plus foncés et le filtre mixte pour les fonds ni trop sombres ni trop clairs. \n Ces couleurs sont utilisées à la fois pour les fonds floutés de la barre d\'état et des applications récentes</string>
   <string name="blur_expstatus_cat">Barre d\'état déroulée</string>
   <string name="blur_notifications_cat">Notifications</string>
   <string name="blur_qs_cat">Réglages rapides</string>
@@ -1376,7 +1376,7 @@ https://plus.google.com/communities/118297646046960923906</string>
   <string name="wifi_activity_arrows_title">Activité WiFi</string>
   <string name="wifi_activity_arrows_summary">Afficher les flèches d’activité wifi</string>
   <!-- The Drill -->
-  <string name="drill_title">The Drill</string>
+  <string name="drill_title">La Sentence</string>
   <string name="drill_summary">Vous avez trouvé un bug ou détecté un problème ?</string>
   <!-- Hide Statusbar on Lockscreen -->
   <string name="lockscreen_hide_status_bar_title">Barre d\'état</string>
@@ -1508,13 +1508,13 @@ https://plus.google.com/communities/118297646046960923906</string>
   <string name="lockscreen_battery_info_summary">Afficher les infos de la batterie pendant la charge</string>
   <!-- Recents lock icon -->
   <string name="recents_lock_icon_title">Icône de verrouillage</string>
-  <string name="recents_lock_icon_summary">Toggle lock task icon in recent app view</string>
+  <string name="recents_lock_icon_summary">Activer l\'icône de verrouillage dans le panneau des apps récentes</string>
   <!-- AOSP Recents Grid -->
-  <string name="recents_use_grid_title">Grid-style recents</string>
-  <string name="recents_use_grid_summary">Toggle grid-style recents</string>
+  <string name="recents_use_grid_title">Apps récentes au format grille</string>
+  <string name="recents_use_grid_summary">Activer le style grille pour le panneau des apps récentes</string>
   <!-- Recents dismiss icon -->
   <string name="recents_dismiss_icon_title">Tâche rejetée</string>
-  <string name="recents_dismiss_icon_summary">Toggle dismiss task icon in recent app view</string>
+  <string name="recents_dismiss_icon_summary">Activer la croix de fermeture des apps récentes</string>
   <!-- Notification guts kill app button -->
   <string name="notification_guts_kill_app_button_title">Fermer l\'application à l\'aide du bouton</string>
   <string name="notification_guts_kill_app_button_summary">Afficher un bouton \"fermer l’application\" dans le menu lors d\'un appui long sur la notification</string>
@@ -1523,7 +1523,7 @@ https://plus.google.com/communities/118297646046960923906</string>
   <string name="anbi_summary">Empêcher l\'appui sur les boutons de navigation lorsque l\'écran est utilisé</string>
   <!-- Sensor block -->
   <string name="sensor_block_title">Capteur de block</string>
-  <string name="sensor_block_summary">Block access to significant motion sensors for few battery intensive apps</string>
+  <string name="sensor_block_summary">Bloquer l’accès aux principaux capteurs de mouvement pour les applications énergivores</string>
   <!-- Pocket judge -->
   <string name="pocket_judge_title">Détection de mise en poche</string>
   <string name="pocket_judge_summary">Bloquer l\'utilisation des boutons ou de l\'écran lorsque l\'appareil est dans une poche</string>
@@ -1629,13 +1629,13 @@ https://plus.google.com/communities/118297646046960923906</string>
   <string name="hwkeys_disabled_summary">Activer ceci désactivera les touches matérielles pour la navigation</string>
   <!-- Quick QS scroller -->
   <string name="qqs_scroll_title">Défilement rapide des tuiles</string>
-  <string name="qqs_scroll_summary">Allow scrolling through the small QS tiles</string>
+  <string name="qqs_scroll_summary">Autoriser le défilement à travers les petites tuiles de Réglages Rapides</string>
   <!-- Advanced restart options -->
   <string name="advanced_reboot_title">Redémarrage avancé</string>
   <string name="advanced_reboot_summary">Inclure les options de redémarrage en mode recovery et bootloader dans le menu Marche/Arrêt lorsque l\'appareil est déverrouillé</string>
   <!-- Allow lights in zen mode -->
   <string name="zen_allow_lights">Activer</string>
-  <string name="zen_allow_lights_summary">Permit pulsing the light when Do Not Disturb is active</string>
+  <string name="zen_allow_lights_summary">Autoriser des notifications lumineuses que le mode ne pas déranger est activé</string>
   <string name="light_brightness_category">Réglages de la luminosité</string>
   <!-- Suppress notification sound -->
   <string name="notification_sound_vib_screen_on_title">Notifications sonores et vibrations si l\'écran est allumé</string>
@@ -1693,10 +1693,10 @@ https://plus.google.com/communities/118297646046960923906</string>
   <string name="font_picker_progress">Application de la nouvelle police en cours\u2026</string>
   <!-- Ambient display battery percentage -->
   <string name="ambient_battery_percent_title">Informations sur la batterie</string>
-  <string name="ambient_battery_percent_summary">Display current battery info while dozing</string>
+  <string name="ambient_battery_percent_summary">Afficher les informations sur la batterie en mode sommeil</string>
   <!-- Wake And Unlock -->
-  <string name="fp_wake_and_unlock_title">Fingerprint wake and unlock</string>
-  <string name="fp_wake_and_unlock_summary">Allow unlocking device using fingerprint when screen is off or dozing</string>
+  <string name="fp_wake_and_unlock_title">Réveil et déverrouillage par empreinte digitale</string>
+  <string name="fp_wake_and_unlock_summary">Permettre de déverrouiller l\'appareil par empreinte digitale lorsque l\'écran est éteint ou en veille</string>
   <!-- Force disable transition animation -->
   <string name="disable_transition_animations_title">Désactiver les animations de transition</string>
   <string name="disable_transition_animations_summary">Forcer la désactivation de toutes les animations de transition</string>
@@ -1704,8 +1704,8 @@ https://plus.google.com/communities/118297646046960923906</string>
   <string name="fp_swipe_to_dismiss_notifications_title">Balayer le capteur d\'empreinte a droite ou a gauche pour faire disparaître les notifications</string>
   <string name="fp_swipe_to_dismiss_notifications_summary">Glisser vers la gauche ou la droite sur le capteur d\'empreintes digitales pour ignorer les notifications.</string>
   <!-- Full screen aspect ratio -->
-  <string name="full_screen_aspect_ratio_title">Full screen aspect ratio</string>
-  <string name="full_screen_aspect_ratio_summary">Force apps to use full screen aspect ratio, note that some apps may not work properly in full screen</string>
+  <string name="full_screen_aspect_ratio_title">Format du plein écran</string>
+  <string name="full_screen_aspect_ratio_summary">Forcer les applications à utiliser les proportions du plein écran, notez que certaines applications peuvent ne pas fonctionner correctement en mode plein écran</string>
   <!-- QS Brightness Slider position -->
   <string name="qs_brightness_slider_hide">Masquer</string>
   <string name="qs_brightness_slider_top">Haut</string>
@@ -1789,7 +1789,7 @@ https://plus.google.com/communities/118297646046960923906</string>
   <!-- Edge gestures -->
   <string name="edge_gestures_title">Geste latéral</string>
   <string name="edge_gestures_summary">Naviguer en utilisant les gestes latéraux</string>
-  <string name="edge_gestures_description">Swipe from bottom of the screen to trigger home action, keep it pressed to open recents screen. Swipe from left or right to go back.</string>
+  <string name="edge_gestures_description">Glisser du bas de l’écran pour déclencher l\'action de retour à l\'écran d\'accueil, maintenez une pression pour ouvrir la fenêtre des apps récentes. Glisser de la gauche ou la droite pour revenir en arrière.</string>
   <string name="edge_gestures_feedback_duration_title">Durée de retour au toucher</string>
   <string name="edge_gestures_long_press_delay_title">Durée pour activé l\'action \"d\'appui long\"</string>
   <string name="edge_gestures_back_category_title">Geste de retour</string>
@@ -1801,7 +1801,7 @@ https://plus.google.com/communities/118297646046960923906</string>
   <string name="edge_gestures_back_edges_right">Droite</string>
   <string name="edge_gestures_back_edges_both">Les deux côtés</string>
   <string name="edge_gestures_back_show_ui_feedback_title">Animation du geste de retour</string>
-  <string name="edge_gestures_back_show_ui_feedback_summary">Show animated feedback on edges when back gesture is used</string>
+  <string name="edge_gestures_back_show_ui_feedback_summary">Afficher un effet sur les bords lorsque le geste de retour arrière est utilisé</string>
   <!-- Berry Lite -->
   <string name="style_title">Style</string>
   <string name="style_summary">Choisir les couleurs système</string>
