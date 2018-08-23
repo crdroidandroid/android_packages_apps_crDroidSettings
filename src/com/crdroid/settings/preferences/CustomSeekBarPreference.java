@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -139,7 +139,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
             Log.e(TAG, "Error binding view: " + ex.toString());
         }
         mStatusText = (TextView) view.findViewById(R.id.seekBarPrefValue);
-        if (mCurrentValue == mDefaultValue) {
+        if (mCurrentValue == mDefaultValue && mStatusText != null) {
             mStatusText.setText(mDefaultText);
         } else {
             mStatusText.setText(String.valueOf(mCurrentValue) + mUnits);
