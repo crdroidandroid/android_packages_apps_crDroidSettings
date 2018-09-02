@@ -67,13 +67,6 @@ public class SecureSettingListPreference extends ListPreference {
         setValue(restoreValue ? getPersistedString((String) defaultValue) : (String) defaultValue);
     }
 
-    @Override
-    protected boolean isPersisted() {
-        // Using getString instead of getInt so we can simply check for null
-        // instead of catching an exception. (All values are stored as strings.)
-        return Settings.Secure.getString(getContext().getContentResolver(), getKey()) != null;
-    }
-
     public int getIntValue(int defValue) {
         return getValue() == null ? defValue : Integer.valueOf(getValue());
     }

@@ -13,52 +13,55 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.settings.fragments;
+package com.crdroid.settings.fragments.about;
 
 import android.app.Activity;
-import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
-import android.hardware.fingerprint.FingerprintManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.os.UserHandle;
-import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
-import android.support.v7.preference.Preference.OnPreferenceChangeListener;
-import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.R;
 
-import lineageos.providers.LineageSettings;
+public class Donate extends SettingsPreferenceFragment {
 
-public class LockScreen extends SettingsPreferenceFragment
-            implements Preference.OnPreferenceChangeListener  {
+    public static final String TAG = "Donate";
 
-    public static final String TAG = "LockScreen";
+    private String KEY_DONATE_TEAM = "crdroid_donate_team";
+    private String KEY_DONATE_DEV = "crdroid_donate_dev";
+
+    private Preference mDonateTeam;
+    private Preference mDonateDev;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        addPreferencesFromResource(R.xml.donate);
 
-        addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
+        mDonateTeam = findPreference(KEY_DONATE_TEAM);
+        mDonateDev = findPreference(KEY_DONATE_DEV);
     }
 
     @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return false;
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mDonateTeam) {
+            launchUrl("https://www.paypal.me/crdroidandroid");
+        } else if (preference == mDonateDev) {
+            launchUrl("https://www.paypal.me/neobuddy89");
+        }
+
+        return super.onPreferenceTreeClick(preference);
     }
 
-    public static void reset(Context mContext) {
-        ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putIntForUser(resolver,
-                Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT);
+    private void launchUrl(String url) {
+        Uri uriUrl = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uriUrl);
+        getActivity().startActivity(intent);
     }
 
     @Override

@@ -88,11 +88,6 @@ public class ColorPickerPreference extends Preference implements
         onColorChanged(restoreValue ? getPersistedInt(mValue) : (Integer) defaultValue);
     }
 
-    @Override
-    protected boolean isPersisted() {
-        return true;
-    }
-
     private void init(Context context, AttributeSet attrs) {
         mDensity = getContext().getResources().getDisplayMetrics().density;
         setOnPreferenceClickListener(this);

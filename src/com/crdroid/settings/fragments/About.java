@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,12 +35,10 @@ public class About extends SettingsPreferenceFragment {
     private String KEY_CRDROID_SOURCE = "crdroid_source";
     private String KEY_CRDROID_GPLUS = "crdroid_google_plus";
     private String KEY_CRDROID_SHARE = "crdroid_share";
-    private String KEY_CRDROID_DONATE = "crdroid_donate";
 
     private Preference mSourceUrl;
     private Preference mGoogleUrl;
     private Preference mShare;
-    private Preference mDonate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,7 +48,6 @@ public class About extends SettingsPreferenceFragment {
         mSourceUrl = findPreference(KEY_CRDROID_SOURCE);
         mGoogleUrl = findPreference(KEY_CRDROID_GPLUS);
         mShare = findPreference(KEY_CRDROID_SHARE);
-        mDonate = findPreference(KEY_CRDROID_DONATE);
     }
 
     @Override
@@ -66,8 +63,6 @@ public class About extends SettingsPreferenceFragment {
             intent.putExtra(Intent.EXTRA_TEXT, String.format(
                     getActivity().getString(R.string.share_message), Build.MODEL));
             startActivity(Intent.createChooser(intent, getActivity().getString(R.string.share_chooser_title)));
-        } else if (preference == mDonate) {
-            launchUrl("https://www.paypal.me/crdroidandroid");
         }
 
         return super.onPreferenceTreeClick(preference);

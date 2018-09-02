@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,7 +58,8 @@ public class SystemSettingSwitchPreference extends SwitchPreference {
     }
 
     @Override
-    protected boolean isPersisted() {
-        return Settings.System.getString(getContext().getContentResolver(), getKey()) != null;
+    protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
+        setChecked(Settings.System.getString(getContext().getContentResolver(), getKey()) != null ? getPersistedBoolean(isChecked())
+                : (Boolean) defaultValue);
     }
 }

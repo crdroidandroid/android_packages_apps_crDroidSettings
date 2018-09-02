@@ -20,7 +20,7 @@
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     android:title="@string/lockscreen_title">
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="lockscreen_shortcuts_category"
         android:title="@string/lockscreen_shortcuts_category">
 
@@ -45,21 +45,21 @@
                 <extra android:name="useAppPickerOnly" android:value="true" />
         </Preference>
 
-        <!--<Preference
+        <Preference
             android:title="@string/lockscreen_shortcuts_title"
             android:icon="@drawable/ic_format_bottom"
             android:summary="@string/lockscreen_shortcuts_summary">
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.tuner.LockscreenTunerActivity" />
-        </Preference>-->
-    </PreferenceCategory>
+        </Preference>
+    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:key="lockscreen_interface_category"
          android:title="@string/lockscreen_interface_category">
 
-        <PreferenceScreen
+        <!--<PreferenceScreen
             android:key="lock_screen_weather"
             android:icon="@drawable/ic_weather"
             android:title="@string/lock_screen_weather_title"
@@ -80,7 +80,7 @@
             android:summary="@string/media_art_summary"
             android:defaultValue="true" />
 
-         <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
+         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="hide_lockscreen_clock"
             android:icon="@drawable/ic_clock"
             android:title="@string/hide_lockscreen_clock_title"
@@ -115,7 +115,7 @@
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
 
-        <com.crdroid.settings.preferences.SystemSettingListPreference
+        <!--<com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="lockscreen_clock_selection"
             android:icon="@drawable/ic_lock_clock"
             android:title="@string/lockscreen_clock_selection_title"
@@ -129,10 +129,10 @@
             android:title="@string/lockscreen_date_selection_title"
             android:entries="@array/lockscreen_date_selection_entries"
             android:entryValues="@array/lockscreen_date_selection_values"
-            android:defaultValue="0" />
+            android:defaultValue="0" />-->
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="lockscreen_gestures_category"
         android:title="@string/gestures_title">
 
@@ -165,12 +165,12 @@
             android:defaultValue="true"
             android:persistent="false" />
 
-        <!--<SwitchPreference
+        <SwitchPreference
             android:key="fp_unlock_keystore"
             android:icon="@drawable/ic_fp"
             android:title="@string/fp_unlock_keystore_title"
             android:summary="@string/fp_unlock_keystore_summary"
-            android:persistent="false" />-->
+            android:persistent="false" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -207,7 +207,7 @@
                android:title="@string/lockscreen_enable_qs_title"
                android:summary="@string/lockscreen_enable_qs_summary"
                android:defaultValue="true" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceScreen
         android:title=""
