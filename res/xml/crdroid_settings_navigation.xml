@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -25,13 +25,13 @@
         android:title="@string/navbar_visibility"
         android:summary="@string/navbar_visibility_summary" />
 
-    <!-- Gestures -->
+    <!-- Gestures
     <Preference
         android:key="gesture_settings"
         android:icon="@drawable/ic_settings_gestures"
         android:title="@string/gestures_title"
         android:summary="@string/gestures_summary"
-        android:fragment="com.android.settings.gestures.GestureSettings" />
+        android:fragment="com.android.settings.gestures.GestureSettings" /> -->
 
     <!--<PreferenceCategory
         android:key="navbar_gestures_category"
@@ -54,15 +54,15 @@
             android:defaultValue="true" />
     </PreferenceCategory>-->
 
-    <!-- PIE -->
+    <!-- PIE
     <Preference
         android:key="pie_settings"
         android:icon="@drawable/ic_pie"
         android:title="@string/pie_settings"
         android:summary="@string/pie_settings_summary"
-        android:fragment="com.crdroid.settings.fragments.navbar.PieSettings" />
+        android:fragment="com.crdroid.settings.fragments.navbar.PieSettings" /> -->
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="category_navbar_interface"
         android:title="@string/navbar_interface_title" >
 
@@ -119,9 +119,9 @@
             android:max="135"
             settings:min="65"
             settings:units="%" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="category_navbar_general"
         android:title="@string/navbar_general_title" >
 
@@ -138,7 +138,7 @@
             android:title="@string/pulse_settings"
             android:summary="@string/pulse_settings_summary"
             android:fragment="com.crdroid.settings.fragments.navbar.Pulse" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceScreen
         android:title=""
