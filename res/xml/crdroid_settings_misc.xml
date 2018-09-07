@@ -62,6 +62,14 @@
         android:summary="@string/three_finger_gesture_summary"
         android:defaultValue="false" />
 
+    <!-- Sensor block per package -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="sensor_block"
+        android:icon="@drawable/ic_remote"
+        android:title="@string/sensor_block_title"
+        android:summary="@string/sensor_block_summary"
+        android:defaultValue="false" />
+
     <!-- Pocket Judge -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="pocket_judge"
