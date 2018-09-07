@@ -33,17 +33,17 @@
         android:summary="@string/gestures_summary"
         android:fragment="com.android.settings.gestures.GestureSettings" /> -->
 
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="navbar_gestures_category"
         android:title="@string/gestures_title">
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="double_tap_sleep_navbar"
             android:icon="@drawable/ic_double_tap"
             android:title="@string/smartbar_doubletap_sleep_title"
             android:summary="@string/smartbar_doubletap_sleep_summary"
             android:dependency="navbar_visibility"
-            android:defaultValue="false" />
+            android:defaultValue="false" />-->
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="pixel_nav_animation"
@@ -52,7 +52,7 @@
             android:summary="@string/pixel_navbar_anim_summary"
             android:dependency="navbar_visibility"
             android:defaultValue="true" />
-    </PreferenceCategory>-->
+    </PreferenceCategory>
 
     <!-- PIE
     <Preference
