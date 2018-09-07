@@ -102,6 +102,8 @@ public class Miscellaneous extends SettingsPreferenceFragment
         Settings.System.putIntForUser(resolver,
                 Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.SENSOR_BLOCK, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT);
         writeCpuInfoOptions(mContext, false);
         HAFRSettings.reset(mContext);
