@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -31,13 +31,13 @@
                 android:targetClass="org.adaway.ui.BaseActivity" />
     </Preference>
 
-    <!-- Suspend actions -->
+    <!-- Suspend actions
     <PreferenceScreen
         android:key="screenstate_category"
         android:icon="@drawable/ic_sleep"
         android:title="@string/screen_state_toggles_title" 
         android:summary="@string/screen_state_toggles_summary" 
-        android:fragment="com.crdroid.settings.fragments.misc.ScreenStateToggles" />
+        android:fragment="com.crdroid.settings.fragments.misc.ScreenStateToggles" /> -->
 
     <PreferenceScreen
         android:key="lock_clock"
@@ -52,67 +52,68 @@
             android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
     </PreferenceScreen>
 
-    <!-- Wakelock blocker -->
+    <!-- Wakelock blocker
     <Preference
         android:key="wakelock_blocker"
         android:icon="@drawable/ic_wakelock"
         android:title="@string/wakelock_blocker_title"
         android:summary="@string/wakelock_blocker_summary"
-        android:fragment="com.crdroid.settings.fragments.misc.WakeLockBlocker"/>
+        android:fragment="com.crdroid.settings.fragments.misc.WakeLockBlocker"/> -->
 
-    <!-- Alarm blocker -->
+    <!-- Alarm blocker
     <Preference
         android:key="alarm_blocker"
         android:icon="@drawable/ic_alarm"
         android:title="@string/alarm_blocker_title"
         android:summary="@string/alarm_blocker_summary"
-        android:fragment="com.crdroid.settings.fragments.misc.AlarmBlocker"/>
+        android:fragment="com.crdroid.settings.fragments.misc.AlarmBlocker"/> -->
 
-    <!-- CPU Info -->
+    <!-- CPU Info
     <SwitchPreference
         android:key="show_cpu_info"
         android:icon="@drawable/ic_info"
         android:title="@string/show_cpu_info"
-        android:summary="@string/show_cpu_info_summary" />
+        android:summary="@string/show_cpu_info_summary" /> -->
 
     <!-- MediaScanner behavior on boot -->
-    <ListPreference
+    <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="media_scanner_on_boot"
         android:icon="@drawable/ic_movie"
         android:title="@string/media_scanner_on_boot_title"
         android:entries="@array/media_scanner_on_boot_entries"
-        android:entryValues="@array/media_scanner_on_boot_values" />
+        android:entryValues="@array/media_scanner_on_boot_values"
+        android:defaultValue="0" />
 
-    <!-- Auto USB mode chooser -->
+    <!-- Auto USB mode chooser
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="auto_usb_mode_chooser"
         android:icon="@drawable/ic_usb"
         android:title="@string/auto_usb_mode_chooser_title"
         android:summary="@string/auto_usb_mode_chooser_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" /> -->
 
-    <!-- Vibrate on plugged -->
+    <!-- Vibrate on plugged
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="vibration_on_charge_state_changed"
         android:icon="@drawable/ic_vibrate"
         android:title="@string/vibration_on_charge_state_changed_title"
         android:summary="@string/vibration_on_charge_state_changed_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" /> -->
 
-    <!-- Partial screenshot -->
+    <!-- Partial screenshot
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="screenshot_type"
         android:icon="@drawable/ic_screenshot_type"
         android:title="@string/screenshot_type_title"
         android:summary="@string/screenshot_type_partial"
-        android:defaultValue="false" />
+        android:defaultValue="false" /> -->
 
-    <!-- Screenshot edit app -->
+    <!-- Screenshot edit app
     <Preference
         android:key="screenshot_edit_app"
         android:icon="@drawable/ic_screenshot_type"
         android:title="@string/screenshot_edit_app"
-        android:summary="@string/screenshot_edit_app_summary" />
+        android:summary="@string/screenshot_edit_app_summary" /> -->
 
     <!-- Three-fingers-swipe to screenshot
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -122,13 +123,13 @@
         android:summary="@string/three_finger_gesture_summary"
         android:defaultValue="false" /> -->
 
-    <!-- Toast Icon -->
+    <!-- Toast Icon
     <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
         android:key="toast_icon"
         android:icon="@drawable/ic_toast"
         android:title="@string/toast_icon_title"
         android:summary="@string/toast_icon_summary"
-        android:defaultValue="true" />
+        android:defaultValue="true" /> -->
 
     <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="sensor_block"
