@@ -78,10 +78,10 @@
             android:dependency="status_bar_custom_header" />
     </PreferenceCategory>-->
 
-    <!--<PreferenceCategory 
+    <PreferenceCategory 
          android:title="@string/qs_tiles_category">
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="bluetooth_qs_show_battery"
             android:icon="@drawable/ic_bluetooth_connect"
             android:title="@string/bluetooth_battery_title"
@@ -145,7 +145,7 @@
             android:max="10"
             settings:min="1"
             settings:units=""
-            android:persistent="false" />
+            android:persistent="false" />-->
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_title_visibility"
@@ -153,7 +153,7 @@
             android:title="@string/qs_tile_title_visibility_title"
             android:summary="@string/qs_tile_title_visibility_summary"
             android:defaultValue="true" />
-    </PreferenceCategory>-->
+    </PreferenceCategory>
 
     <!--<PreferenceCategory 
          android:title="@string/qs_toggles_category">
