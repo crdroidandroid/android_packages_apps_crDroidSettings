@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform">
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:title="@string/status_bar_header_title">
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -76,9 +76,9 @@
             settings:units=""
             android:persistent="false"
             android:dependency="status_bar_custom_header" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
-    <PreferenceCategory 
+    <!--<PreferenceCategory 
          android:title="@string/qs_tiles_category">
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -102,14 +102,14 @@
             android:summary="@string/omnijaws_settings_summary"
             android:fragment="com.crdroid.settings.fragments.quicksettings.OmniJaws" />
 
-        <!--<com.crdroid.settings.preferences.CustomSeekBarPreference
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="sysui_qqs_count_key"
             android:icon="@drawable/ic_qs_tile"
             android:title="@string/sysui_qqs_count_title"
             android:max="7"
             settings:min="1"
             settings:units=""
-            android:persistent="false" />-->
+            android:persistent="false" />
 
         <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="qs_rows_portrait"
@@ -153,7 +153,7 @@
             android:title="@string/qs_tile_title_visibility_title"
             android:summary="@string/qs_tile_title_visibility_summary"
             android:defaultValue="true" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <!--<PreferenceCategory 
          android:title="@string/qs_toggles_category">
@@ -239,14 +239,14 @@
             lineage:requiresConfig="@*android:bool/config_automatic_brightness_available"
             android:defaultValue="true" />
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="quick_settings_vibrate"
             android:icon="@drawable/ic_vibrate"
             android:title="@string/quick_settings_vibrate_title"
             android:summary="@string/quick_settings_vibrate_summary"
             android:defaultValue="false"/>
 
-        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_settings_icon_toggle"
             android:icon="@drawable/ic_settings"
             android:title="@string/qs_settings_icon_title"
