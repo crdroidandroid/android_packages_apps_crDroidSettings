@@ -62,6 +62,13 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
     private FloatingActionsMenu mFab;
     private FrameLayout mInterceptorFrame;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getActivity().setTitle(R.string.crdroid_settings_title);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContainer = container;
         View view = inflater.inflate(R.layout.crdroid_settings, container, false);
@@ -74,8 +81,6 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mTabs.setViewPager(mViewPager);
         mContext = getActivity().getApplicationContext();
-        getActivity().setTitle(R.string.crdroid_settings_title);
-        getActivity().getActionBar().setDisplayShowTitleEnabled(true);
 
         mInterceptorFrame.getBackground().setAlpha(0);
 

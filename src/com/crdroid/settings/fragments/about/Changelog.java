@@ -24,7 +24,7 @@ import android.widget.TextView;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.android.settings.R;
+import com.crdroid.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 import java.io.FileReader;
@@ -34,6 +34,12 @@ import java.io.InputStreamReader;
 public class Changelog extends SettingsPreferenceFragment {
 
     private static final String CHANGELOG_PATH = "/system/etc/Changelog.txt";
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getActivity().setTitle(R.string.changelog_crdroid_title);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

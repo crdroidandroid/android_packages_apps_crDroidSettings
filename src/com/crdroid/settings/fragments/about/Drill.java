@@ -23,7 +23,7 @@ import android.os.Handler;
 
 import com.android.internal.logging.nano.MetricsProto;
 
-import com.android.settings.R;
+import com.crdroid.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
