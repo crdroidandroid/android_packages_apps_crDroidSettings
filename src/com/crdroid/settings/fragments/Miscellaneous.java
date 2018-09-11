@@ -44,6 +44,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.misc.AlarmBlocker;
+import com.crdroid.settings.fragments.misc.WakeLockBlocker;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -76,6 +78,8 @@ public class Miscellaneous extends SettingsPreferenceFragment implements Indexab
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.MEDIA_SCANNER_ON_BOOT, 0, UserHandle.USER_CURRENT);
+        AlarmBlocker.reset(mContext);
+        WakeLockBlocker.reset(mContext);
     }
 
     @Override
