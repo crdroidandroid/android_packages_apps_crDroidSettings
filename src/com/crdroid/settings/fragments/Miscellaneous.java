@@ -50,13 +50,16 @@ import com.crdroid.settings.fragments.misc.WakeLockBlocker;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Miscellaneous extends SettingsPreferenceFragment implements Indexable {
+public class Miscellaneous extends SettingsPreferenceFragment 
+        implements Indexable, Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "Miscellaneous";
 
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_LOCK_CLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
+    private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
 
+    private SwitchPreference mShowCpuInfo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -72,14 +75,43 @@ public class Miscellaneous extends SettingsPreferenceFragment implements Indexab
         if (!Utils.isPackageInstalled(mContext, KEY_LOCK_CLOCK_PACKAGE_NAME)) {
             getPreferenceScreen().removePreference(findPreference(KEY_LOCK_CLOCK));
         }
+
+        mShowCpuInfo = (SwitchPreference) findPreference(SHOW_CPU_INFO_KEY);
+        mShowCpuInfo.setChecked(Settings.Global.getInt(resolver,
+                Settings.Global.SHOW_CPU_OVERLAY, 0) == 1);
+        mShowCpuInfo.setOnPreferenceChangeListener(this);
     }
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.MEDIA_SCANNER_ON_BOOT, 0, UserHandle.USER_CURRENT);
+        writeCpuInfoOptions(mContext, false);
         AlarmBlocker.reset(mContext);
         WakeLockBlocker.reset(mContext);
+    }
+
+    private static void writeCpuInfoOptions(Context mContext, boolean value) {
+        Settings.Global.putInt(mContext.getContentResolver(),
+                Settings.Global.SHOW_CPU_OVERLAY, value ? 1 : 0);
+        Intent service = (new Intent())
+                .setClassName("com.android.systemui", "com.android.systemui.CPUInfoService");
+        if (value) {
+            mContext.startService(service);
+        } else {
+            mContext.stopService(service);
+        }
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        Context mContext = getActivity().getApplicationContext();
+        if (preference == mShowCpuInfo) {
+            writeCpuInfoOptions(mContext, (Boolean) newValue);
+            return true;
+        }
+        return false;
     }
 
     @Override
