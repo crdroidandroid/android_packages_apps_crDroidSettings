@@ -22,24 +22,30 @@ import android.content.Intent;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
+import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 
-import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.R;
+import com.crdroid.settings.preferences.CustomSeekBarPreference;
+
+import java.util.List;
+import java.util.ArrayList;
 
 import lineageos.providers.LineageSettings;
 
 public class LockScreen extends SettingsPreferenceFragment
-            implements Preference.OnPreferenceChangeListener  {
+            implements Preference.OnPreferenceChangeListener, Indexable  {
 
     public static final String TAG = "LockScreen";
 
@@ -73,4 +79,22 @@ public class LockScreen extends SettingsPreferenceFragment
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
     }
+
+    /**
+     * For search
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.crdroid_settings_lockscreen;
+                    result.add(sir);
+
+                    return result;
+                }
+            };
 }

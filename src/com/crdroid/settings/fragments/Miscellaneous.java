@@ -24,27 +24,31 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
+import android.provider.SearchIndexableResource;
+import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
-
-import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.crdroid.Utils;
-import com.android.settings.SettingsPreferenceFragment;
-
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.crdroid.Utils;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
 
-public class Miscellaneous extends SettingsPreferenceFragment {
+import java.util.List;
+import java.util.ArrayList;
+
+public class Miscellaneous extends SettingsPreferenceFragment implements Indexable {
 
     public static final String TAG = "Miscellaneous";
 
@@ -78,4 +82,22 @@ public class Miscellaneous extends SettingsPreferenceFragment {
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
     }
+
+    /**
+     * For search
+     */
+    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+            new BaseSearchIndexProvider() {
+                @Override
+                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
+                        boolean enabled) {
+                    ArrayList<SearchIndexableResource> result =
+                            new ArrayList<SearchIndexableResource>();
+                    SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.crdroid_settings_misc;
+                    result.add(sir);
+
+                    return result;
+                }
+            };
 }
