@@ -172,11 +172,11 @@
             android:persistent="false" />-->
     </PreferenceCategory>
 
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="lockscreen_misc_category"
         android:title="@string/lockscreen_misc_category">
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
                android:key="lock_screen_custom_notif"
                android:icon="@drawable/ic_counter"
                android:title="@string/lockscreen_maxnotif_title"
@@ -191,7 +191,7 @@
                settings:min="0"
                settings:units=""
                android:persistent="false"
-               android:dependency="lock_screen_custom_notif" />
+               android:dependency="lock_screen_custom_notif" />-->
 
         <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
                android:key="lockscreen_enable_power_menu"
@@ -200,13 +200,13 @@
                android:summary="@string/lockscreen_enable_power_menu_summary"
                android:defaultValue="true" />
 
-        <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.GlobalSettingSwitchPreference
                android:key="lockscreen_enable_qs"
                android:icon="@drawable/ic_settings_quicksettings"
                android:title="@string/lockscreen_enable_qs_title"
                android:summary="@string/lockscreen_enable_qs_summary"
-               android:defaultValue="true" />
-    </PreferenceCategory>-->
+               android:defaultValue="true" />-->
+    </PreferenceCategory>
 
     <PreferenceScreen
         android:title=""
