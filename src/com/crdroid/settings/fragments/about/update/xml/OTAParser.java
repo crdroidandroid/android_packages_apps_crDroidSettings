@@ -184,8 +184,8 @@ public class OTAParser {
             title = mContext.getResources().getString(R.string.forum_title);
             description = mContext.getResources().getString(R.string.forum_summary);
         } else if (tag.equalsIgnoreCase(FIRMWARE_TAG)) {
-            title = mContext.getResources().getString(R.string.firmware_title);
-            description = mContext.getResources().getString(R.string.firmware_summary);
+            title = mContext.getResources().getString(R.string.ota_firmware_title);
+            description = mContext.getResources().getString(R.string.ota_firmware_summary);
         } else if (tag.equalsIgnoreCase(MODEM_TAG)) {
             title = mContext.getResources().getString(R.string.modem_title);
             description = mContext.getResources().getString(R.string.modem_summary);
