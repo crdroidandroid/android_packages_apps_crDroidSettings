@@ -40,6 +40,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.ui.DozeFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +57,7 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        DozeFragment.reset(mContext);
     }
 
     @Override
