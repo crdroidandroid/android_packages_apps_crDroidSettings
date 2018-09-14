@@ -40,10 +40,12 @@ public class About extends SettingsPreferenceFragment implements Indexable {
     public static final String TAG = "About";
 
     private String KEY_CRDROID_SOURCE = "crdroid_source";
+    private String KEY_CRDROID_TELEGRAM = "crdroid_telegram";
     private String KEY_CRDROID_GPLUS = "crdroid_google_plus";
     private String KEY_CRDROID_SHARE = "crdroid_share";
 
     private Preference mSourceUrl;
+    private Preference mTelegramUrl;
     private Preference mGoogleUrl;
     private Preference mShare;
 
@@ -53,6 +55,7 @@ public class About extends SettingsPreferenceFragment implements Indexable {
         addPreferencesFromResource(R.xml.crdroid_settings_about);
 
         mSourceUrl = findPreference(KEY_CRDROID_SOURCE);
+        mTelegramUrl = findPreference(KEY_CRDROID_TELEGRAM);
         mGoogleUrl = findPreference(KEY_CRDROID_GPLUS);
         mShare = findPreference(KEY_CRDROID_SHARE);
     }
@@ -61,6 +64,8 @@ public class About extends SettingsPreferenceFragment implements Indexable {
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mSourceUrl) {
             launchUrl("https://github.com/crdroidandroid");
+        } else if (preference == mTelegramUrl) {
+            launchUrl("https://t.me/crDroidAndroid");
         } else if (preference == mGoogleUrl) {
             launchUrl("https://plus.google.com/communities/118297646046960923906");
         } else if (preference == mShare) {
