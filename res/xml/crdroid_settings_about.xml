@@ -36,13 +36,13 @@
         android:summary="@string/share_crdroid_summary"
         settings:allowDividerAbove="false" />
 
-
     <!-- crDroid Donate -->
     <PreferenceScreen
         android:key="crdroid_donate"
         android:icon="@drawable/ic_donate"
         android:title="@string/donate_crdroid_title"
         android:summary="@string/donate_crdroid_summary"
+        android:fragment="com.crdroid.settings.fragments.about.Donate"
         settings:allowDividerAbove="false" />
 
     <!-- crDroid Source -->
@@ -53,6 +53,14 @@
         android:summary="@string/crdroid_source_summary"
         settings:allowDividerAbove="false" />
 
+    <!-- crDroid Telegram -->
+    <PreferenceScreen
+        android:key="crdroid_telegram"
+        android:icon="@drawable/ic_telegram"
+        android:title="@string/crdroid_telegram_title"
+        android:summary="@string/crdroid_telegram_summary"
+        settings:allowDividerAbove="false" />
+
     <!-- crDroid GooglePlus -->
     <PreferenceScreen
         android:key="crdroid_google_plus"
@@ -61,14 +69,14 @@
         android:summary="@string/crdroid_google_plus_summary"
         settings:allowDividerAbove="false" />
 
-    <!-- crDroid Maintainers -->
-    <!--<PreferenceScreen
+    <!-- crDroid Maintainers
+    <PreferenceScreen
         android:key="crdroid_maintainers"
         android:icon="@drawable/ic_maintainers"
         android:title="@string/maintainers_crdroid_title"
         android:summary="@string/maintainers_crdroid_summary"
         android:fragment="com.crdroid.settings.fragments.about.Maintainers"
-        settings:allowDividerAbove="false" />-->
+        settings:allowDividerAbove="false" /> -->
 
     <!-- crDroid OTA update -->
     <PreferenceScreen

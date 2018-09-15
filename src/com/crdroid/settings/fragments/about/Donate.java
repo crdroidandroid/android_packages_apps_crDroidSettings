@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.settings.fragments;
+package com.crdroid.settings.fragments.about;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -28,46 +28,31 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.R;
 
-public class About extends SettingsPreferenceFragment {
+public class Donate extends SettingsPreferenceFragment {
 
-    public static final String TAG = "About";
+    public static final String TAG = "Donate";
 
-    private String KEY_CRDROID_SOURCE = "crdroid_source";
-    private String KEY_CRDROID_TELEGRAM = "crdroid_telegram";
-    private String KEY_CRDROID_GPLUS = "crdroid_google_plus";
-    private String KEY_CRDROID_SHARE = "crdroid_share";
+    private String KEY_DONATE_TEAM = "crdroid_donate_team";
+    private String KEY_DONATE_DEV = "crdroid_donate_dev";
 
-    private Preference mSourceUrl;
-    private Preference mTelegramUrl;
-    private Preference mGoogleUrl;
-    private Preference mShare;
+    private Preference mDonateTeam;
+    private Preference mDonateDev;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.crdroid_settings_about);
+        addPreferencesFromResource(R.xml.donate);
 
-        mSourceUrl = findPreference(KEY_CRDROID_SOURCE);
-        mTelegramUrl = findPreference(KEY_CRDROID_TELEGRAM);
-        mGoogleUrl = findPreference(KEY_CRDROID_GPLUS);
-        mShare = findPreference(KEY_CRDROID_SHARE);
+        mDonateTeam = findPreference(KEY_DONATE_TEAM);
+        mDonateDev = findPreference(KEY_DONATE_DEV);
     }
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mSourceUrl) {
-            launchUrl("https://github.com/crdroidandroid");
-        } else if (preference == mTelegramUrl) {
-            launchUrl("https://t.me/crDroidAndroid");
-        } else if (preference == mGoogleUrl) {
-            launchUrl("https://plus.google.com/communities/118297646046960923906");
-        } else if (preference == mShare) {
-            Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_SEND);
-            intent.setType("text/plain");
-            intent.putExtra(Intent.EXTRA_TEXT, String.format(
-                    getActivity().getString(R.string.share_message), Build.MODEL));
-            startActivity(Intent.createChooser(intent, getActivity().getString(R.string.share_chooser_title)));
+        if (preference == mDonateTeam) {
+            launchUrl("https://www.paypal.me/crdroidandroid");
+        } else if (preference == mDonateDev) {
+            launchUrl("https://www.paypal.me/neobuddy89");
         }
 
         return super.onPreferenceTreeClick(preference);
