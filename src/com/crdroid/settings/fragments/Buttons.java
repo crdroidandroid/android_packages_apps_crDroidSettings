@@ -57,6 +57,7 @@ import org.lineageos.internal.util.ScreenType;
 import static org.lineageos.internal.util.DeviceKeysConstants.*;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import lineageos.providers.LineageSettings;
 
