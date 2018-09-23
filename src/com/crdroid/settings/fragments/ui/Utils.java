@@ -18,6 +18,7 @@ package com.crdroid.settings.fragments.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -31,6 +32,8 @@ public final class Utils {
     private static final boolean DEBUG = false;
     private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
 
+    protected static final String CATEG_PROX_SENSOR = "proximity_sensor";
+
     protected static void startService(Context context) {
         if (DEBUG) Log.d(TAG, "Starting service");
         context.startServiceAsUser(new Intent(context, DozeService.class),
@@ -41,6 +44,17 @@ public final class Utils {
         if (DEBUG) Log.d(TAG, "Stopping service");
         context.stopServiceAsUser(new Intent(context, DozeService.class),
                 UserHandle.CURRENT);
+    }
+
+    protected static boolean getProxCheckBeforePulse(Context context) {
+        try {
+            Context con = context.createPackageContext("com.android.systemui", 0);
+            int id = con.getResources().getIdentifier("doze_proximity_check_before_pulse",
+                    "bool", "com.android.systemui");
+            return con.getResources().getBoolean(id);
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
 
     protected static boolean isDozeEnabled(Context context) {

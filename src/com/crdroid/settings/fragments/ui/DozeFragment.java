@@ -29,6 +29,7 @@ import android.os.PowerManager;
 import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
@@ -81,6 +82,9 @@ public class DozeFragment extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.doze_settings);
 
+        PreferenceCategory proximitySensorCategory =
+                (PreferenceCategory) getPreferenceScreen().findPreference(Utils.CATEG_PROX_SENSOR);
+
         mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
         mDozePreference.setOnPreferenceChangeListener(this);
 
@@ -107,6 +111,11 @@ public class DozeFragment extends SettingsPreferenceFragment
 
         updateState();
         updateVibOptions();
+
+        // Hide proximity sensor related features if the device doesn't support them
+        if (!Utils.getProxCheckBeforePulse(getActivity())) {
+            getPreferenceScreen().removePreference(proximitySensorCategory);
+        }
     }
 
     private void updateVibOptions() {
