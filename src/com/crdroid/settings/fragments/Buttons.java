@@ -210,22 +210,20 @@ public class Buttons extends SettingsPreferenceFragment implements
         if (!backlight.isButtonSupported() /*&& !backlight.isKeyboardSupported()*/) {
             prefScreen.removePreference(backlight);
             backlight = null;
-        } else {
-            backlight.setEnabled(!(Settings.Secure.getIntForUser(resolver,
-                    Settings.Secure.HARDWARE_KEYS_DISABLE,
-                    Utils.hasNavbarByDefault(getActivity()) ? 1 : 0,
-                    UserHandle.USER_CURRENT) == 1));
         }
 
         if (!hasHomeKey && !hasBackKey && !hasMenuKey && !hasAssistKey && !hasAppSwitchKey) {
             prefScreen.removePreference(mHardwareKeysDisable);
             prefScreen.removePreference(mAnbi);
         } else {
+            boolean mHWKeysDisable = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.HARDWARE_KEYS_DISABLE,
+                Utils.hasNavbarByDefault(getActivity()) ? 1 : 0,
+                UserHandle.USER_CURRENT) == 1;
+            mHardwareKeysDisable.setChecked(mHWKeysDisable);
             mHardwareKeysDisable.setOnPreferenceChangeListener(this);
-            mAnbi.setEnabled(!(Settings.Secure.getIntForUser(resolver,
-                    Settings.Secure.HARDWARE_KEYS_DISABLE,
-                    Utils.hasNavbarByDefault(getActivity()) ? 1 : 0,
-                    UserHandle.USER_CURRENT) == 1));
+            mAnbi.setEnabled(!mHWKeysDisable);
+            if (backlight != null) backlight.setEnabled(!mHWKeysDisable);
         }
 
         if (hasPowerKey) {
@@ -440,8 +438,11 @@ public class Buttons extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        final ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mHardwareKeysDisable) {
             boolean value = (Boolean) newValue;
+            Settings.Secure.putIntForUser(resolver, Settings.Secure.HARDWARE_KEYS_DISABLE,
+                 value ? 1 : 0, UserHandle.USER_CURRENT);
             mAnbi.setEnabled(!value);
             if (backlight != null) {
                 backlight.setEnabled(!value);
