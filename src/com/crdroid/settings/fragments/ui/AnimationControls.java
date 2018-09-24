@@ -280,6 +280,8 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.Global.putInt(resolver,
+                Settings.Global.DISABLE_TRANSITION_ANIMATIONS, 0);
+        Settings.Global.putInt(resolver,
                 Settings.Global.ANIMATION_CONTROLS_DURATION, 0);
         Settings.Global.putInt(resolver,
                 Settings.Global.ACTIVITY_ANIMATION_CONTROLS[0], 0);
