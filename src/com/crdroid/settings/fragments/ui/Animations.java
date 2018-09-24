@@ -35,6 +35,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.ui.AnimationControls;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +58,7 @@ public class Animations extends SettingsPreferenceFragment {
                 Settings.System.ANIM_TILE_DURATION, 2000, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANIM_TILE_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
+        AnimationControls.reset(mContext);
     }
 
     @Override
