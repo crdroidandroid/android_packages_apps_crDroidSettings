@@ -46,9 +46,9 @@ public class Animations extends SettingsPreferenceFragment
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
-    private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
-    private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
-    private static final String PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
+    private static final String PREF_TILE_ANIM_STYLE = "anim_tile_style";
+    private static final String PREF_TILE_ANIM_DURATION = "anim_tile_duration";
+    private static final String PREF_TILE_ANIM_INTERPOLATOR = "anim_tile_interpolator";
     private static final String SCROLLINGCACHE_PREF = "pref_scrollingcache";
     private static final String SCROLLINGCACHE_PERSIST_PROP = "persist.sys.scrollingcache";
     private static final String SCROLLINGCACHE_DEFAULT = "1";
