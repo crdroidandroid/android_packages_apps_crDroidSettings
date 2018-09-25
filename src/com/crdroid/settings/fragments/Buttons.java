@@ -81,7 +81,6 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String KEY_POWER_END_CALL = "power_end_call";
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
     private static final String KEY_VOLUME_MUSIC_CONTROLS = "volbtn_music_controls";
-    private static final String KEY_VOLUME_CONTROL_RING_STREAM = "volume_keys_control_ring_stream";
     private static final String KEY_TORCH_LONG_PRESS_POWER_GESTURE =
             "torch_long_press_power_gesture";
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
