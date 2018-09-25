@@ -189,6 +189,8 @@ public class Miscellaneous extends SettingsPreferenceFragment
                 Settings.System.SCREENSHOT_EDIT_USER_APP, "", UserHandle.USER_CURRENT);
         Settings.Global.putInt(resolver,
                 Settings.Global.TOAST_ICON, 1);
+        Settings.Global.putInt(resolver,
+                Settings.Global.ALLOW_SIGNATURE_FAKE, 0);
     }
 
     @Override
