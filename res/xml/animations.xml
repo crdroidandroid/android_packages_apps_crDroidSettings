@@ -32,34 +32,28 @@
         android:summary="@string/system_animation_summary"
         android:fragment="com.crdroid.settings.fragments.ui.AnimationControls" />
 
-    <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="disable_transition_animations"
-        android:title="@string/disable_animations"
-        android:summary="@string/disable_animations_summary"
-        android:defaultValue="false" /> -->
-
-    <!--<ListPreference
+    <ListPreference
         android:key="listview_animation"
         android:dialogTitle="@string/listview_animation_title"
         android:title="@string/listview_animation_title"
         android:entries="@array/listview_animation_entries"
         android:entryValues="@array/listview_animation_values"
-        android:defaultValue="0" />-->
+        android:defaultValue="0" />
 
-    <!--<ListPreference
+    <ListPreference
         android:key="listview_interpolator"
         android:dialogTitle="@string/listview_interpolator_title"
         android:title="@string/listview_interpolator_title"
         android:entries="@array/listview_interpolator_entries"
         android:entryValues="@array/listview_interpolator_values"
-        android:defaultValue="0" />-->
+        android:defaultValue="0" />
 
-    <!--<ListPreference
+    <ListPreference
         android:key="toast_animation"
         android:title="@string/toast_animation_title"
         android:entries="@array/toast_animation_entries"
         android:entryValues="@array/toast_animation_values"
-        android:defaultValue="1" />-->
+        android:defaultValue="1" />
 
     <!-- <ListPreference
         android:key="power_menu_animation"
@@ -99,13 +93,13 @@
         android:summary="@string/qs_fancy_animation_summary"
         android:defaultValue="true" /> -->
 
-    <!--<ListPreference
+    <ListPreference
         android:key="pref_scrollingcache"
         android:dialogTitle="@string/pref_scrollingcache_title"
         android:title="@string/pref_scrollingcache_title"
         android:entries="@array/entries_scrollingcache"
         android:entryValues="@array/values_scrollingcache"
-        android:defaultValue="1" />-->
+        android:defaultValue="1" />
 
     <!-- <PreferenceScreen
         android:key="interface_animation_scroll"
