@@ -163,16 +163,17 @@
         android:icon="@drawable/ic_settings_ui"
         android:title="@string/remove_settings_summary_title"
         android:summary="@string/remove_settings_summary_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" />-->
 
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+    <!-- Signature Spoofing -->
+    <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
         android:key="allow_signature_fake"
         android:icon="@drawable/ic_sign_caution"
         android:title="@string/allow_signature_fake"
         android:summary="@string/allow_signature_fake_summary"
         android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="disable_fc_notifications"
         android:icon="@drawable/ic_close"
         android:title="@string/disable_fc_notifications_title"
