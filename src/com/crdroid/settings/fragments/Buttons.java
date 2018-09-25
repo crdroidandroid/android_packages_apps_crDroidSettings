@@ -59,6 +59,7 @@ import static org.lineageos.internal.util.DeviceKeysConstants.*;
 import java.util.List;
 import java.util.ArrayList;
 
+import lineageos.hardware.LineageHardwareManager;
 import lineageos.providers.LineageSettings;
 
 public class Buttons extends SettingsPreferenceFragment implements
@@ -96,6 +97,8 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String CATEGORY_CAMERA = "camera_key";
     private static final String CATEGORY_VOLUME = "volume_keys";
     private static final String CATEGORY_BACKLIGHT = "key_backlight";
+
+    private LineageHardwareManager mLineageHardware;
 
     private SwitchPreference mHardwareKeysDisable;
     private SwitchPreference mAnbi;
@@ -171,7 +174,15 @@ public class Buttons extends SettingsPreferenceFragment implements
         final PreferenceCategory cameraCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_CAMERA);
 
+        mLineageHardware = LineageHardwareManager.getInstance(getActivity());
         mHardwareKeysDisable = (SwitchPreference) findPreference(HWKEYS_DISABLED);
+
+        if (mLineageHardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE)) {
+            mHardwareKeysDisable.setOnPreferenceChangeListener(this);
+        } else {
+            prefScreen.removePreference(mHardwareKeysDisable);
+        }
+
         mAnbi = (SwitchPreference) findPreference(KEY_ANBI);
 
         // Power button ends calls.
@@ -209,21 +220,18 @@ public class Buttons extends SettingsPreferenceFragment implements
         if (!backlight.isButtonSupported() /*&& !backlight.isKeyboardSupported()*/) {
             prefScreen.removePreference(backlight);
             backlight = null;
-        } else {
+        } else if (mLineageHardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE)) {
             backlight.setEnabled(!(Settings.Secure.getIntForUser(resolver,
-                    Settings.Secure.HARDWARE_KEYS_DISABLE,
-                    Utils.hasNavbarByDefault(getActivity()) ? 1 : 0,
+                    Settings.Secure.HARDWARE_KEYS_DISABLE, 0,
                     UserHandle.USER_CURRENT) == 1));
         }
 
         if (!hasHomeKey && !hasBackKey && !hasMenuKey && !hasAssistKey && !hasAppSwitchKey) {
-            prefScreen.removePreference(mHardwareKeysDisable);
             prefScreen.removePreference(mAnbi);
-        } else {
-            mHardwareKeysDisable.setOnPreferenceChangeListener(this);
+            mAnbi = null;
+        } else if (mLineageHardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE)) {
             mAnbi.setEnabled(!(Settings.Secure.getIntForUser(resolver,
-                    Settings.Secure.HARDWARE_KEYS_DISABLE,
-                    Utils.hasNavbarByDefault(getActivity()) ? 1 : 0,
+                    Settings.Secure.HARDWARE_KEYS_DISABLE, 0,
                     UserHandle.USER_CURRENT) == 1));
         }
 
@@ -441,7 +449,9 @@ public class Buttons extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mHardwareKeysDisable) {
             boolean value = (Boolean) newValue;
-            mAnbi.setEnabled(!value);
+            if (mAnbi != null) {
+                mAnbi.setEnabled(!value);
+            }
             if (backlight != null) {
                 backlight.setEnabled(!value);
             }
@@ -541,8 +551,8 @@ public class Buttons extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.ADVANCED_REBOOT, 1, UserHandle.USER_CURRENT);
-        Settings.Secure.putIntForUser(resolver, Settings.Secure.HARDWARE_KEYS_DISABLE,
-             Utils.hasNavbarByDefault(mContext) ? 1 : 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.HARDWARE_KEYS_DISABLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANBI_ENABLED, 0, UserHandle.USER_CURRENT);
         ButtonBacklightBrightness.reset(mContext);
