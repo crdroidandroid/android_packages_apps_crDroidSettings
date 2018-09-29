@@ -178,9 +178,6 @@ public class Buttons extends SettingsPreferenceFragment implements
         mHardwareKeysDisable = (SwitchPreference) findPreference(HWKEYS_DISABLED);
 
         if (mLineageHardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE)) {
-            mHardwareKeysDisable.setChecked(Settings.Secure.getIntForUser(resolver,
-                    Settings.Secure.HARDWARE_KEYS_DISABLE, 0,
-                    UserHandle.USER_CURRENT) == 1);
             mHardwareKeysDisable.setOnPreferenceChangeListener(this);
         } else {
             prefScreen.removePreference(mHardwareKeysDisable);
