@@ -41,6 +41,8 @@ import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import java.util.List;
 import java.util.ArrayList;
 
+import lineageos.providers.LineageSettings;
+
 public class Navigation extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
@@ -64,8 +66,8 @@ public class Navigation extends SettingsPreferenceFragment implements
 
         mNavbarVisibility = (SwitchPreference) findPreference(NAVBAR_VISIBILITY);
 
-        boolean showing = Settings.Secure.getIntForUser(resolver,
-                Settings.Secure.NAVIGATION_BAR_VISIBLE,
+        boolean showing = LineageSettings.System.getIntForUser(resolver,
+                LineageSettings.System.FORCE_SHOW_NAVBAR,
                 Utils.hasNavbarByDefault(getActivity()) ? 1 : 0, UserHandle.USER_CURRENT) != 0;
         mNavbarVisibility.setChecked(showing);
         mNavbarVisibility.setOnPreferenceChangeListener(this);
@@ -81,7 +83,7 @@ public class Navigation extends SettingsPreferenceFragment implements
             }
             mIsNavSwitchingMode = true;
             boolean showing = ((Boolean)newValue);
-            Settings.Secure.putIntForUser(resolver, Settings.Secure.NAVIGATION_BAR_VISIBLE,
+            LineageSettings.System.putIntForUser(resolver, LineageSettings.System.FORCE_SHOW_NAVBAR,
                     showing ? 1 : 0, UserHandle.USER_CURRENT);
             mNavbarVisibility.setChecked(showing);
             mHandler.postDelayed(new Runnable() {
@@ -97,7 +99,7 @@ public class Navigation extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        Settings.Secure.putIntForUser(resolver, Settings.Secure.NAVIGATION_BAR_VISIBLE,
+        LineageSettings.System.putIntForUser(resolver, LineageSettings.System.FORCE_SHOW_NAVBAR,
              Utils.hasNavbarByDefault(mContext) ? 1 : 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver, Settings.System.PIXEL_NAV_ANIMATION,
              1, UserHandle.USER_CURRENT);
