@@ -30,7 +30,7 @@ public class SystemSettingsStore extends android.support.v7.preference.Preferenc
     }
 
     public boolean getBoolean(String key, boolean defValue) {
-        return getInt(key, defValue ? 1 : 0) != 0;
+        return Settings.System.getIntForUser(mContentResolver, key, defValue ? 1 : 0, UserHandle.USER_CURRENT) != 0;
     }
 
     public float getFloat(String key, float defValue) {
