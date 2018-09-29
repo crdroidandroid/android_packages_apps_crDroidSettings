@@ -56,6 +56,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String QUICK_PULLDOWN = "qs_quick_pulldown";
     private static final String SMART_PULLDOWN = "qs_smart_pulldown";
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
+    private static final String CRDROID_LOGO_COLOR = "status_bar_logo_color";
 
     private static final int PULLDOWN_DIR_NONE = 0;
     private static final int PULLDOWN_DIR_RIGHT = 1;
@@ -66,6 +67,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private LineageSystemSettingListPreference mQuickPulldown;
     private LineageSystemSettingListPreference mStatusBarClock;
+    private ColorPickerPreference mCrDroidLogoColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -105,6 +107,20 @@ public class StatusBar extends SettingsPreferenceFragment implements
             mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
             mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
         }
+
+        mCrDroidLogoColor =
+                (ColorPickerPreference) findPreference(CRDROID_LOGO_COLOR);
+        int intColor = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_LOGO_COLOR, 0xFFFFFFFF,
+                UserHandle.USER_CURRENT);
+        String hexColor = ColorPickerPreference.convertToARGB(intColor);
+        mCrDroidLogoColor.setNewPreviewColor(intColor);
+        if (intColor != 0xFFFFFFFF) {
+            mCrDroidLogoColor.setSummary(hexColor);
+        } else {
+            mCrDroidLogoColor.setSummary(R.string.default_string);
+        }
+        mCrDroidLogoColor.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -117,6 +133,19 @@ public class StatusBar extends SettingsPreferenceFragment implements
         } else if (preference == mSmartPulldown) {
             int value = Integer.parseInt((String) newValue);
             updateSmartPulldownSummary(value);
+            return true;
+        } else if (preference == mCrDroidLogoColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                Integer.parseInt(String.valueOf(newValue)));
+            int value = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_LOGO_COLOR, value,
+                UserHandle.USER_CURRENT);
+            if (value != 0xFFFFFFFF) {
+                mCrDroidLogoColor.setSummary(hex);
+            } else {
+                mCrDroidLogoColor.setSummary(R.string.default_string);
+            }
             return true;
         }
         return false;
@@ -170,6 +199,14 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_LOGO, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_LOGO_COLOR, 0xFFFFFFFF, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_LOGO_POSITION, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_LOGO_STYLE, 0, UserHandle.USER_CURRENT);
         Clock.reset(mContext);
         NetworkTrafficSettings.reset(mContext);
     }
