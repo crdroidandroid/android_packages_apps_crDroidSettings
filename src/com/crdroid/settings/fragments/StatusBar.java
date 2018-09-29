@@ -37,6 +37,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.statusbar.Clock;
 import com.crdroid.settings.fragments.statusbar.NetworkTrafficSettings;
 import com.crdroid.settings.preferences.SystemSettingListPreference;
 import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
@@ -54,6 +55,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private static final String QUICK_PULLDOWN = "qs_quick_pulldown";
     private static final String SMART_PULLDOWN = "qs_smart_pulldown";
+    private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
 
     private static final int PULLDOWN_DIR_NONE = 0;
     private static final int PULLDOWN_DIR_RIGHT = 1;
@@ -63,6 +65,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SystemSettingListPreference mSmartPulldown;
 
     private LineageSystemSettingListPreference mQuickPulldown;
+    private LineageSystemSettingListPreference mStatusBarClock;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -80,6 +83,28 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mSmartPulldown = (SystemSettingListPreference) findPreference(SMART_PULLDOWN);
         mSmartPulldown.setOnPreferenceChangeListener(this);
         updateSmartPulldownSummary(mSmartPulldown.getIntValue(0));
+
+        mStatusBarClock =
+                (LineageSystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
+
+        final boolean hasNotch = getResources().getBoolean(
+                org.lineageos.platform.internal.R.bool.config_haveNotch);
+
+        // Adjust status bar preferences for RTL
+        if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+            if (hasNotch) {
+                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch_rtl);
+                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch_rtl);
+            } else {
+                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
+                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_rtl);
+            }
+            mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries_rtl);
+            mQuickPulldown.setEntryValues(R.array.status_bar_quick_qs_pulldown_values_rtl);
+        } else if (hasNotch) {
+            mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
+            mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
+        }
     }
 
     @Override
@@ -140,9 +165,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
 
         LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.STATUS_BAR_CLOCK, 2, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
+        Clock.reset(mContext);
         NetworkTrafficSettings.reset(mContext);
     }
 
