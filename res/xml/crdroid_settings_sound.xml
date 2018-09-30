@@ -16,6 +16,7 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/sound_title">
 
@@ -28,13 +29,10 @@
         android:entryValues="@array/notification_sound_vib_screen_on_values"
         android:summary="%s" />
 
-    <!-- Charging sounds
-    <PreferenceScreen
-        android:key="charging_sounds_settings"
-        android:icon="@drawable/ic_charger"
-        android:title="@string/charging_sounds_settings_title"
-        android:summary="@string/charging_sounds_settings_summary"
-        android:fragment="com.crdroid.settings.fragments.ChargingSoundsSettings" /> -->
+    <!-- Custom charging sounds -->
+    <org.lineageos.internal.lineageparts.LineagePartsPreference
+      android:icon="@drawable/ic_charger"
+      android:key="charging_sounds_settings"/>
 
    <!-- Screenshot Sound  -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
