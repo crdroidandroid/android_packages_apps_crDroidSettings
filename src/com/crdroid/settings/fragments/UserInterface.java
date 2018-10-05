@@ -42,6 +42,7 @@ import com.android.settings.search.Indexable;
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.ui.Animations;
 import com.crdroid.settings.fragments.ui.DozeFragment;
+import com.crdroid.settings.fragments.ui.SmartPixels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,16 +51,29 @@ import lineageos.providers.LineageSettings;
 
 public class UserInterface extends SettingsPreferenceFragment implements Indexable {
 
+    private static final String SMART_PIXELS = "smart_pixels";
+
+    private Preference mSmartPixels;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.crdroid_settings_ui);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mSmartPixels = (Preference) prefScreen.findPreference(SMART_PIXELS);
+        boolean mSmartPixelsSupported = getResources().getBoolean(
+                com.android.internal.R.bool.config_supportSmartPixels);
+        if (!mSmartPixelsSupported)
+            prefScreen.removePreference(mSmartPixels);
     }
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Animations.reset(mContext);
         DozeFragment.reset(mContext);
+        SmartPixels.reset(mContext);
     }
 
     @Override
