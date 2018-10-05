@@ -14,24 +14,24 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
-    android:title="@string/gestures_title" >
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:title="@string/gestures_title">
 
-    <PreferenceScreen
+    <!--<PreferenceScreen
         android:key="carbon_gestures"
         android:fragment="com.crdroid.settings.fragments.navbar.CarbonGesturesSettings"
         android:title="@string/carbon_gesture_preference_title"
         android:summary="@string/carbon_gestures_summary"
-        android:persistent="false" />
+        android:persistent="false" />-->
 
-    <PreferenceScreen
+    <!--<PreferenceScreen
         android:key="edge_gestures"
         android:title="@string/edge_gestures_title"
         android:summary="@string/edge_gestures_summary"
-        android:fragment="com.crdroid.settings.fragments.navbar.EdgeGestureSettings" />
+        android:fragment="com.crdroid.settings.fragments.navbar.EdgeGestureSettings" />-->
 
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="touchscreen_gesture_settings"
@@ -49,31 +49,49 @@
     <Preference
         android:key="gesture_assist_input_summary"
         android:title="@string/assist_gesture_title"
-        android:fragment="com.android.settings.gestures.AssistGestureSettings" />
+        android:fragment="com.android.settings.gestures.AssistGestureSettings"
+        settings:controller="com.android.settings.gestures.AssistGestureSettingsPreferenceController" />
 
     <Preference
         android:key="gesture_swipe_down_fingerprint_input_summary"
         android:title="@string/fingerprint_swipe_for_notifications_title"
-        android:fragment="com.android.settings.gestures.SwipeToNotificationSettings" />
+        android:fragment="com.android.settings.gestures.SwipeToNotificationSettings"
+        settings:controller="com.android.settings.gestures.SwipeToNotificationPreferenceController" />
 
     <Preference
         android:key="gesture_double_tap_power_input_summary"
         android:title="@string/double_tap_power_for_camera_title"
-        android:fragment="com.android.settings.gestures.DoubleTapPowerSettings" />
+        android:fragment="com.android.settings.gestures.DoubleTapPowerSettings"
+        settings:controller="com.android.settings.gestures.DoubleTapPowerPreferenceController" />
 
     <Preference
         android:key="gesture_double_twist_input_summary"
         android:title="@string/double_twist_for_camera_mode_title"
-        android:fragment="com.android.settings.gestures.DoubleTwistGestureSettings" />
+        android:fragment="com.android.settings.gestures.DoubleTwistGestureSettings"
+        settings:controller="com.android.settings.gestures.DoubleTwistPreferenceController" />
+
+    <Preference
+        android:key="gesture_swipe_up_input_summary"
+        android:title="@string/swipe_up_to_switch_apps_title"
+        android:fragment="com.android.settings.gestures.SwipeUpGestureSettings"
+        settings:controller="com.android.settings.gestures.SwipeUpPreferenceController" />
 
     <Preference
         android:key="gesture_double_tap_screen_input_summary"
         android:title="@string/ambient_display_title"
-        android:fragment="com.android.settings.gestures.DoubleTapScreenSettings" />
+        android:fragment="com.android.settings.gestures.DoubleTapScreenSettings"
+        settings:controller="com.android.settings.gestures.DoubleTapScreenPreferenceController" />
 
     <Preference
         android:key="gesture_pick_up_input_summary"
         android:title="@string/ambient_display_pickup_title"
-        android:fragment="com.android.settings.gestures.PickupGestureSettings" />
+        android:fragment="com.android.settings.gestures.PickupGestureSettings"
+        settings:controller="com.android.settings.gestures.PickupGesturePreferenceController" />
+
+    <Preference
+        android:key="gesture_prevent_ringing_summary"
+        android:title="@string/gesture_prevent_ringing_screen_title"
+        android:fragment="com.android.settings.gestures.PreventRingingGestureSettings"
+        settings:controller="com.android.settings.gestures.PreventRingingPreferenceController" />
 
 </PreferenceScreen>

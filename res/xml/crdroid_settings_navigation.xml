@@ -24,34 +24,35 @@
         android:title="@string/navbar_visibility"
         android:summary="@string/navbar_visibility_summary" />
 
-    <!-- Gestures
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="pixel_nav_animation"
+        android:icon="@drawable/ic_google_circles"
+        android:title="@string/pixel_navbar_anim_title"
+        android:summary="@string/pixel_navbar_anim_summary"
+        android:dependency="navbar_visibility"
+        android:defaultValue="true" />
+
+    <!-- Gestures -->
     <Preference
         android:key="gesture_settings"
         android:icon="@drawable/ic_settings_gestures"
         android:title="@string/gestures_title"
         android:summary="@string/gestures_summary"
-        android:fragment="com.android.settings.gestures.GestureSettings" /> -->
+        android:fragment="com.android.settings.gestures.GestureSettings"
+        settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="navbar_gestures_category"
         android:title="@string/gestures_title">
 
-        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="double_tap_sleep_navbar"
             android:icon="@drawable/ic_double_tap"
             android:title="@string/smartbar_doubletap_sleep_title"
             android:summary="@string/smartbar_doubletap_sleep_summary"
             android:dependency="navbar_visibility"
-            android:defaultValue="false" />-->
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="pixel_nav_animation"
-            android:icon="@drawable/ic_google_circles"
-            android:title="@string/pixel_navbar_anim_title"
-            android:summary="@string/pixel_navbar_anim_summary"
-            android:dependency="navbar_visibility"
-            android:defaultValue="true" />
-    </PreferenceCategory>
+            android:defaultValue="false" />
+    </PreferenceCategory>-->
 
     <!-- PIE
     <Preference
