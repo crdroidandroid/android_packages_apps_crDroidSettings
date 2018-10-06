@@ -200,6 +200,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.BLUETOOTH_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_LOGO, 0, UserHandle.USER_CURRENT);
