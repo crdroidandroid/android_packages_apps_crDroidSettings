@@ -32,6 +32,7 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.crdroid.Utils;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
@@ -49,11 +50,24 @@ public class LockScreen extends SettingsPreferenceFragment
 
     public static final String TAG = "LockScreen";
 
+    private static final String FACE_UNLOCK_PREF = "face_auto_unlock";
+    private static final String FACE_UNLOCK_PACKAGE = "com.android.facelock";
+
+    private Preference mFaceUnlock;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
+
+        mFaceUnlock = (Preference) findPreference(FACE_UNLOCK_PREF);
+
+        if (!Utils.isPackageInstalled(getActivity(), FACE_UNLOCK_PACKAGE)) {
+            mFaceUnlock.setEnabled(false);
+            mFaceUnlock.setSummary(getActivity().getString(
+                    R.string.face_auto_unlock_not_available));
+        }
     }
 
     @Override
