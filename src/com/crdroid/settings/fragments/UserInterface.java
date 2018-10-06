@@ -65,7 +65,9 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
         mSmartPixels = (Preference) prefScreen.findPreference(SMART_PIXELS);
         boolean mSmartPixelsSupported = getResources().getBoolean(
                 com.android.internal.R.bool.config_supportSmartPixels);
-        if (!mSmartPixelsSupported)
+        boolean mBurnInSupported = getResources().getBoolean(
+                com.android.internal.R.bool.config_enableBurnInProtection);
+        if (!mSmartPixelsSupported || !mBurnInSupported)
             prefScreen.removePreference(mSmartPixels);
     }
 
