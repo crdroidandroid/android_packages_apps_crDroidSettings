@@ -31,6 +31,7 @@ import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.crdroid.Utils;
 import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -50,12 +51,15 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String FP_WAKE_AND_UNLOCK = "fp_wake_and_unlock";
 //    private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
+    private static final String FACE_UNLOCK_PREF = "face_auto_unlock";
+    private static final String FACE_UNLOCK_PACKAGE = "com.android.facelock";
 
     private CustomSeekBarPreference mMaxKeyguardNotifConfig;
     private FingerprintManager mFingerprintManager;
     private SwitchPreference mFingerprintVib;
     private SwitchPreference mFpWakeAndUnlock;
 //    private SwitchPreference mFpKeystore;
+    private Preference mFaceUnlock;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -98,6 +102,14 @@ public class LockScreen extends SettingsPreferenceFragment
             gestCategory.removePreference(mFingerprintVib);
             gestCategory.removePreference(mFpWakeAndUnlock);
 //            gestCategory.removePreference(mFpKeystore);
+        }
+
+        mFaceUnlock = (Preference) findPreference(FACE_UNLOCK_PREF);
+
+        if (!Utils.isPackageInstalled(getActivity(), FACE_UNLOCK_PACKAGE)) {
+            mFaceUnlock.setEnabled(false);
+            mFaceUnlock.setSummary(getActivity().getString(
+                    R.string.face_auto_unlock_not_available));
         }
     }
 
