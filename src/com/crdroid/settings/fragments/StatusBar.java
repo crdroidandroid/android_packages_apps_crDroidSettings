@@ -57,10 +57,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String WIFI_ACTIVITY_ARROWS = "wifi_activity_arrows";
     private static final String TICKER_MODE = "status_bar_show_ticker";
     private static final String TICKER_MODE_ANIMATION = "status_bar_ticker_animation_mode";
-    private static final String CRDROID_LOGO = "status_bar_crdroid_logo";
-    private static final String CRDROID_LOGO_COLOR = "status_bar_crdroid_logo_color";
-    private static final String CRDROID_LOGO_POSITION = "status_bar_crdroid_logo_position";
-    private static final String CRDROID_LOGO_STYLE = "status_bar_crdroid_logo_style";
+    private static final String CRDROID_LOGO_COLOR = "status_bar_logo_color";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
     private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
@@ -83,10 +80,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SwitchPreference mWifiActivityEnabled;
     private ListPreference mTickerMode;
     private ListPreference mTickerModeAnimation;
-    private SwitchPreference mCrDroidLogo;
     private ColorPickerPreference mCrDroidLogoColor;
-    private ListPreference mCrDroidLogoPosition;
-    private ListPreference mCrDroidLogoStyle;
     private ListPreference mBatteryStyle;
     private ListPreference mBatteryPercent;
     private ListPreference mTextSymbol;
@@ -133,21 +127,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_SHOW_TICKER, 0, UserHandle.USER_CURRENT);
         mTickerModeAnimation.setEnabled(tickerMode > 0);
 
-        mCrDroidLogo = (SwitchPreference) findPreference(CRDROID_LOGO);
-        mCrDroidLogo.setOnPreferenceChangeListener(this);
-
-        mCrDroidLogoPosition = (ListPreference) findPreference(CRDROID_LOGO_POSITION);
-        int crdroidLogoPosition = Settings.System.getIntForUser(resolver,
-                Settings.System.STATUS_BAR_CRDROID_LOGO_POSITION, 0,
-                UserHandle.USER_CURRENT);
-        mCrDroidLogoPosition.setValue(String.valueOf(crdroidLogoPosition));
-        mCrDroidLogoPosition.setSummary(mCrDroidLogoPosition.getEntry());
-        mCrDroidLogoPosition.setOnPreferenceChangeListener(this);
-
         mCrDroidLogoColor =
                 (ColorPickerPreference) findPreference(CRDROID_LOGO_COLOR);
         int intColor = Settings.System.getIntForUser(resolver,
-                Settings.System.STATUS_BAR_CRDROID_LOGO_COLOR, 0xFFFFFFFF,
+                Settings.System.STATUS_BAR_LOGO_COLOR, 0xFFFFFFFF,
                 UserHandle.USER_CURRENT);
         String hexColor = ColorPickerPreference.convertToARGB(intColor);
         mCrDroidLogoColor.setNewPreviewColor(intColor);
@@ -157,19 +140,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
             mCrDroidLogoColor.setSummary(R.string.default_string);
         }
         mCrDroidLogoColor.setOnPreferenceChangeListener(this);
-
-        mCrDroidLogoStyle = (ListPreference) findPreference(CRDROID_LOGO_STYLE);
-        int crdroidLogoStyle = Settings.System.getIntForUser(resolver,
-                Settings.System.STATUS_BAR_CRDROID_LOGO_STYLE, 0,
-                UserHandle.USER_CURRENT);
-        mCrDroidLogoStyle.setValue(String.valueOf(crdroidLogoStyle));
-        mCrDroidLogoStyle.setSummary(mCrDroidLogoStyle.getEntry());
-        mCrDroidLogoStyle.setOnPreferenceChangeListener(this);
-
-        boolean mLogoEnabled = Settings.System.getIntForUser(resolver,
-                Settings.System.STATUS_BAR_CRDROID_LOGO,
-                0, UserHandle.USER_CURRENT) != 0;
-        toggleLogo(mLogoEnabled);
 
         mBatteryStyle = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         int batterystyle = Settings.System.getIntForUser(resolver,
@@ -246,40 +216,18 @@ public class StatusBar extends SettingsPreferenceFragment implements
             int value = Integer.parseInt((String) newValue);
             mTickerModeAnimation.setEnabled(value > 0);
             return true;
-        } else if (preference == mCrDroidLogo) {
-            boolean value = (Boolean) newValue;
-            toggleLogo(value);
-            return true;
         } else if (preference == mCrDroidLogoColor) {
             String hex = ColorPickerPreference.convertToARGB(
                 Integer.parseInt(String.valueOf(newValue)));
             int value = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_CRDROID_LOGO_COLOR, value,
+                Settings.System.STATUS_BAR_LOGO_COLOR, value,
                 UserHandle.USER_CURRENT);
             if (value != 0xFFFFFFFF) {
                 mCrDroidLogoColor.setSummary(hex);
             } else {
                 mCrDroidLogoColor.setSummary(R.string.default_string);
             }
-            return true;
-        } else if (preference == mCrDroidLogoPosition) {
-            int value = Integer.parseInt((String) newValue);
-            int index = mCrDroidLogoPosition.findIndexOfValue((String) newValue);
-            Settings.System.putIntForUser(
-                resolver, Settings.System.STATUS_BAR_CRDROID_LOGO_POSITION, value,
-                UserHandle.USER_CURRENT);
-            mCrDroidLogoPosition.setSummary(
-                    mCrDroidLogoPosition.getEntries()[index]);
-            return true;
-        } else if (preference == mCrDroidLogoStyle) {
-            int value = Integer.parseInt((String) newValue);
-            int index = mCrDroidLogoStyle.findIndexOfValue((String) newValue);
-            Settings.System.putIntForUser(
-                resolver, Settings.System.STATUS_BAR_CRDROID_LOGO_STYLE, value,
-                UserHandle.USER_CURRENT);
-            mCrDroidLogoStyle.setSummary(
-                    mCrDroidLogoStyle.getEntries()[index]);
             return true;
         } else if (preference == mBatteryStyle) {
             int value = Integer.parseInt((String) newValue);
@@ -374,12 +322,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
         return 0;
     }
 
-    public void toggleLogo(boolean enabled) {
-        mCrDroidLogoColor.setEnabled(enabled);
-        mCrDroidLogoPosition.setEnabled(enabled);
-        mCrDroidLogoStyle.setEnabled(enabled);
-    }
-
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
 
@@ -421,13 +363,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_CRDROID_LOGO, 0, UserHandle.USER_CURRENT);
+                Settings.System.STATUS_BAR_LOGO, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_CRDROID_LOGO_COLOR, 0xFFFFFFFF, UserHandle.USER_CURRENT);
+                Settings.System.STATUS_BAR_LOGO_COLOR, 0xFFFFFFFF, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_CRDROID_LOGO_POSITION, 0, UserHandle.USER_CURRENT);
+                Settings.System.STATUS_BAR_LOGO_POSITION, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_CRDROID_LOGO_STYLE, 0, UserHandle.USER_CURRENT);
+                Settings.System.STATUS_BAR_LOGO_STYLE, 0, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
