@@ -22,17 +22,16 @@ import android.content.Intent;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.crdroid.Utils;
-import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
@@ -106,7 +105,7 @@ public class LockScreen extends SettingsPreferenceFragment
 
         mFaceUnlock = (Preference) findPreference(FACE_UNLOCK_PREF);
 
-        if (!Utils.isPackageInstalled(getActivity(), FACE_UNLOCK_PACKAGE)) {
+        if (!Utils.isPackageInstalled(mContext, FACE_UNLOCK_PACKAGE)) {
             mFaceUnlock.setEnabled(false);
             mFaceUnlock.setSummary(getActivity().getString(
                     R.string.face_auto_unlock_not_available));

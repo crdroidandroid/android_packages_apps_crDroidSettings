@@ -32,7 +32,7 @@ import android.support.v14.preference.SwitchPreference;
 import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.development.DevelopmentSettings;
+import com.android.internal.util.crdroid.Utils;
 import com.android.settings.SettingsPreferenceFragment;
 
 import android.view.View;
@@ -83,7 +83,7 @@ public class Miscellaneous extends SettingsPreferenceFragment
         mScreenshotEditAppPref.setOnPreferenceClickListener(this);
 
         // mLockClock
-        if (!DevelopmentSettings.isPackageInstalled(mContext, KEY_LOCK_CLOCK_PACKAGE_NAME)) {
+        if (!Utils.isPackageInstalled(mContext, KEY_LOCK_CLOCK_PACKAGE_NAME)) {
             getPreferenceScreen().removePreference(findPreference(KEY_LOCK_CLOCK));
         }
 

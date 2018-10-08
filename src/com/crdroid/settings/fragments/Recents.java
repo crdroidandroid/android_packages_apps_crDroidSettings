@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2017 crDroid Android Project
+ * Copyright (C) 2016-2018 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,18 +50,17 @@ import android.widget.Toast;
 import android.widget.ListView;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
-import com.crdroid.settings.fragments.recents.SlimRecentsPanel;
 
+import com.crdroid.settings.fragments.recents.SlimRecentsPanel;
 import com.crdroid.settings.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.List;
+import java.util.Map;
 
 public class Recents extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, DialogInterface.OnDismissListener {

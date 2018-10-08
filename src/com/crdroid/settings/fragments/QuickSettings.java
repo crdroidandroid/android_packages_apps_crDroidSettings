@@ -34,7 +34,6 @@ import android.support.v14.preference.SwitchPreference;
 import android.text.TextUtils;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.fragments.quicksettings.OmniJaws;
@@ -43,8 +42,6 @@ import com.crdroid.settings.R;
 
 import java.util.List;
 import java.util.ArrayList;
-
-import com.crdroid.settings.preferences.CustomSeekBarPreference;
 
 import lineageos.providers.LineageSettings;
 

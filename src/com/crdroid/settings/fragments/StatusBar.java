@@ -22,16 +22,15 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
-import android.provider.Settings;
 import android.view.View;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.development.DevelopmentSettings;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.fragments.statusbar.BatteryBar;
