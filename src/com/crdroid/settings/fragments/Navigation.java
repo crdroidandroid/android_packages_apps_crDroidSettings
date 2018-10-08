@@ -104,6 +104,8 @@ public class Navigation extends SettingsPreferenceFragment implements
              Utils.hasNavbarByDefault(mContext) ? 1 : 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver, Settings.System.PIXEL_NAV_ANIMATION,
              1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+            Settings.System.USE_BOTTOM_GESTURE_NAVIGATION, 0, UserHandle.USER_CURRENT);
         CarbonGesturesSettings.reset(mContext);
     }
 
