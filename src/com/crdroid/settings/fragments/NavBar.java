@@ -248,6 +248,8 @@ public class NavBar extends SettingsPreferenceFragment implements
             Settings.Secure.NAVIGATION_BAR_WIDTH, 80, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
             Settings.System.NAVBAR_DYNAMIC, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+            Settings.System.USE_BOTTOM_GESTURE_NAVIGATION, 0, UserHandle.USER_CURRENT);
         CarbonGesturesSettings.reset(mContext);
         Fling.reset(mContext);
         PieSettings.reset(mContext);
