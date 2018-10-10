@@ -85,7 +85,7 @@ public class Miscellaneous extends SettingsPreferenceFragment
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.Global.putInt(resolver,
-                Settings.Global.ALLOW_SIGNATURE_FAKE, 0);
+                Settings.Global.ALLOW_SIGNATURE_FAKE, 1);
         Settings.Global.putInt(resolver,
                 Settings.Global.TOAST_ICON, 1);
         Settings.System.putIntForUser(resolver,
