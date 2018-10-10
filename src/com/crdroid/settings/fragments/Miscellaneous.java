@@ -190,7 +190,7 @@ public class Miscellaneous extends SettingsPreferenceFragment
         Settings.Global.putInt(resolver,
                 Settings.Global.TOAST_ICON, 1);
         Settings.Global.putInt(resolver,
-                Settings.Global.ALLOW_SIGNATURE_FAKE, 0);
+                Settings.Global.ALLOW_SIGNATURE_FAKE, 1);
         Settings.System.putIntForUser(resolver,
                 Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
     }
