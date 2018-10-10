@@ -37,6 +37,12 @@ public class Notifications extends SettingsPreferenceFragment {
 
     public static final String TAG = "Notifications";
 
+    private static final String BATTERY_LIGHTS_PREF = "battery_lights";
+    private static final String NOTIFICATION_LIGHTS_PREF = "notification_lights";
+
+    private Preference mBatLights;
+    private Preference mNotLights;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +50,20 @@ public class Notifications extends SettingsPreferenceFragment {
         Context mContext = getActivity().getApplicationContext();
 
         addPreferencesFromResource(R.xml.crdroid_settings_notifications);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mBatLights = (Preference) prefScreen.findPreference(BATTERY_LIGHTS_PREF);
+        boolean mBatLightsSupported = getResources().getInteger(
+                org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities) >= 64;
+        if (!mBatLightsSupported)
+            prefScreen.removePreference(mBatLights);
+
+        mNotLights = (Preference) prefScreen.findPreference(NOTIFICATION_LIGHTS_PREF);
+        boolean mNotLightsSupported = getResources().getBoolean(
+                com.android.internal.R.bool.config_intrusiveNotificationLed);
+        if (!mNotLightsSupported)
+            prefScreen.removePreference(mNotLights);
     }
 
     public static void reset(Context mContext) {
