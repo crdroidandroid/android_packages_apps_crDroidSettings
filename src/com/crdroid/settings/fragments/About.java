@@ -34,12 +34,10 @@ public class About extends SettingsPreferenceFragment {
 
     private String KEY_CRDROID_SOURCE = "crdroid_source";
     private String KEY_CRDROID_TELEGRAM = "crdroid_telegram";
-    private String KEY_CRDROID_GPLUS = "crdroid_google_plus";
     private String KEY_CRDROID_SHARE = "crdroid_share";
 
     private Preference mSourceUrl;
     private Preference mTelegramUrl;
-    private Preference mGoogleUrl;
     private Preference mShare;
 
     @Override
@@ -49,7 +47,6 @@ public class About extends SettingsPreferenceFragment {
 
         mSourceUrl = findPreference(KEY_CRDROID_SOURCE);
         mTelegramUrl = findPreference(KEY_CRDROID_TELEGRAM);
-        mGoogleUrl = findPreference(KEY_CRDROID_GPLUS);
         mShare = findPreference(KEY_CRDROID_SHARE);
     }
 
@@ -59,8 +56,6 @@ public class About extends SettingsPreferenceFragment {
             launchUrl("https://github.com/crdroidandroid");
         } else if (preference == mTelegramUrl) {
             launchUrl("https://t.me/crDroidAndroid");
-        } else if (preference == mGoogleUrl) {
-            launchUrl("https://plus.google.com/communities/118297646046960923906");
         } else if (preference == mShare) {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_SEND);
