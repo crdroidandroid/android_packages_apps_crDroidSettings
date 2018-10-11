@@ -125,9 +125,9 @@
             android:defaultValue="true" /> -->
     </PreferenceCategory>
 
-    <!-- Status bar battery customizations
+    <!-- Status bar battery customizations -->
     <PreferenceCategory
-        android:title="@string/status_bar_battery_category_title"> -->
+        android:title="@string/status_bar_battery_category_title">
 
         <!-- Battery styles
         <ListPreference
@@ -140,14 +140,15 @@
             android:entryValues="@array/status_bar_battery_style_values"
             android:defaultValue="0" /> -->
 
-        <!-- Show Battery percent on Statusbar
-       <ListPreference
+        <!-- Show Battery percent on Statusbar -->
+       <com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="show_battery_percent"
             android:icon="@drawable/ic_percent"
             android:title="@string/battery_percent_title"
             android:dialogTitle="@string/battery_percent_title"
             android:entries="@array/battery_percent_entries"
-            android:entryValues="@array/battery_percent_values" /> -->
+            android:entryValues="@array/battery_percent_values"
+            android:defaultValue="0" />
 
         <!-- Text charging symbol
         <ListPreference
@@ -185,7 +186,7 @@
             android:entries="@array/status_bar_battery_percentage_entries"
             android:entryValues="@array/status_bar_battery_percentage_values"
             android:defaultValue="0" /> -->
-    <!--</PreferenceCategory>-->
+    </PreferenceCategory>
 
     <!-- Status bar crDroid logo -->
     <PreferenceCategory
