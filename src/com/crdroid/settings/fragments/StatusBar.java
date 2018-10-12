@@ -59,6 +59,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String CRDROID_LOGO_COLOR = "status_bar_logo_color";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
+    private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
 
     private static final int PULLDOWN_DIR_NONE = 0;
     private static final int PULLDOWN_DIR_RIGHT = 1;
@@ -79,6 +80,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ColorPickerPreference mCrDroidLogoColor;
     private ListPreference mBatteryStyle;
     private ListPreference mBatteryPercent;
+    private ListPreference mTextSymbol;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -134,6 +136,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mCrDroidLogoColor.setOnPreferenceChangeListener(this);
 
         mBatteryPercent = (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
+        mTextSymbol = (ListPreference) findPreference(TEXT_CHARGING_SYMBOL);
 
         mBatteryStyle = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         int batterystyle = Settings.System.getIntForUser(resolver,
@@ -217,6 +220,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private void updateBatteryOptions(int batterystyle) {
         mBatteryPercent.setEnabled(batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
+        mTextSymbol.setEnabled(batterystyle == BATTERY_STYLE_TEXT);
     }
 
     public static void reset(Context mContext) {
@@ -248,6 +252,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_LOGO_POSITION, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_LOGO_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.TEXT_CHARGING_SYMBOL, 0, UserHandle.USER_CURRENT);
         Clock.reset(mContext);
         NetworkTrafficSettings.reset(mContext);
     }
