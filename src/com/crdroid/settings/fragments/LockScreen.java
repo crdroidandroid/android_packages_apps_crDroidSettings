@@ -52,8 +52,13 @@ public class LockScreen extends SettingsPreferenceFragment
 
     private static final String FACE_UNLOCK_PREF = "face_auto_unlock";
     private static final String FACE_UNLOCK_PACKAGE = "com.android.facelock";
+    private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
+    private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
+
+    private FingerprintManager mFingerprintManager;
 
     private Preference mFaceUnlock;
+    private Preference mFingerprintVib;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,12 +66,21 @@ public class LockScreen extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
 
+        PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
+
         mFaceUnlock = (Preference) findPreference(FACE_UNLOCK_PREF);
 
         if (!Utils.isPackageInstalled(getActivity(), FACE_UNLOCK_PACKAGE)) {
             mFaceUnlock.setEnabled(false);
             mFaceUnlock.setSummary(getActivity().getString(
                     R.string.face_auto_unlock_not_available));
+        }
+
+        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mFingerprintVib = (Preference) findPreference(FP_SUCCESS_VIBRATE);
+
+        if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
+            gestCategory.removePreference(mFingerprintVib);
         }
     }
 
@@ -79,10 +93,12 @@ public class LockScreen extends SettingsPreferenceFragment
         ContentResolver resolver = mContext.getContentResolver();
         Settings.Global.putInt(resolver,
                 Settings.Global.LOCKSCREEN_ENABLE_POWER_MENU, 1);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, 1, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.FACE_AUTO_UNLOCK, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
