@@ -57,17 +57,28 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String SMART_PULLDOWN = "qs_smart_pulldown";
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String CRDROID_LOGO_COLOR = "status_bar_logo_color";
+    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+    private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
 
     private static final int PULLDOWN_DIR_NONE = 0;
     private static final int PULLDOWN_DIR_RIGHT = 1;
     private static final int PULLDOWN_DIR_LEFT = 2;
     private static final int PULLDOWN_DIR_ALWAYS = 3;
 
+    public static final int BATTERY_STYLE_PORTRAIT = 0;
+    public static final int BATTERY_STYLE_CIRCLE = 1;
+    public static final int BATTERY_STYLE_DOTTED_CIRCLE = 2;
+    public static final int BATTERY_STYLE_SQUARE = 3;
+    public static final int BATTERY_STYLE_TEXT = 4;
+    public static final int BATTERY_STYLE_HIDDEN = 5;
+
     private SystemSettingListPreference mSmartPulldown;
 
     private LineageSystemSettingListPreference mQuickPulldown;
     private LineageSystemSettingListPreference mStatusBarClock;
     private ColorPickerPreference mCrDroidLogoColor;
+    private ListPreference mBatteryStyle;
+    private ListPreference mBatteryPercent;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -121,6 +132,16 @@ public class StatusBar extends SettingsPreferenceFragment implements
             mCrDroidLogoColor.setSummary(R.string.default_string);
         }
         mCrDroidLogoColor.setOnPreferenceChangeListener(this);
+
+        mBatteryPercent = (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
+
+        mBatteryStyle = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
+        int batterystyle = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_CIRCLE,
+                UserHandle.USER_CURRENT);
+        mBatteryStyle.setOnPreferenceChangeListener(this);
+
+        updateBatteryOptions(batterystyle);
     }
 
     @Override
@@ -146,6 +167,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
             } else {
                 mCrDroidLogoColor.setSummary(R.string.default_string);
             }
+            return true;
+        } else if (preference == mBatteryStyle) {
+            int value = Integer.parseInt((String) newValue);
+            updateBatteryOptions(value);
             return true;
         }
         return false;
@@ -190,6 +215,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
         }
     }
 
+    private void updateBatteryOptions(int batterystyle) {
+        mBatteryPercent.setEnabled(batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
+    }
+
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
 
@@ -209,6 +238,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_CIRCLE, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_LOGO, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
