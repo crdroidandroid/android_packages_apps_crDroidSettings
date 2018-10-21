@@ -142,7 +142,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         mBatteryStyle = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
         int batterystyle = Settings.System.getIntForUser(resolver,
-                Settings.System.STATUS_BAR_BATTERY_STYLE, 0,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_CIRCLE,
                 UserHandle.USER_CURRENT);
         mBatteryStyle.setValue(String.valueOf(batterystyle));
         mBatteryStyle.setSummary(mBatteryStyle.getEntry());
@@ -264,7 +264,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private void updateBatteryOptions() {
         ContentResolver resolver = getActivity().getContentResolver();
         int batterystyle = Settings.System.getIntForUser(resolver,
-                Settings.System.STATUS_BAR_BATTERY_STYLE, 1,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_CIRCLE,
                 UserHandle.USER_CURRENT);
         mBatteryPercent.setEnabled(batterystyle != BATTERY_STYLE_TEXT && batterystyle != BATTERY_STYLE_HIDDEN);
         mTextSymbol.setEnabled(batterystyle == BATTERY_STYLE_TEXT);
@@ -340,7 +340,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_VOLTE_ICON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_BATTERY_STYLE, 0, UserHandle.USER_CURRENT);
+                Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_CIRCLE, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
