@@ -34,4 +34,19 @@
         app:controller="com.android.settings.gestures.SwipeUpPreferenceController"
         app:allowDividerAbove="true" />
 
+    <SwitchPreference
+        android:key="full_gesture_mode"
+        android:title="@string/full_gesture_mode_title"
+        android:summary="@string/full_gesture_mode_summary"
+        app:keywords="@string/keywords_gesture"
+        app:controller="com.android.settings.gestures.SwipeUpPreferenceController"
+        app:allowDividerAbove="true" />
+
+    <SwitchPreference
+        android:key="full_gesture_mode_dt2s"
+        android:title="@string/full_gesture_mode_dt2s_title"
+        android:summary="@string/full_gesture_mode_dt2s_summary"
+        app:keywords="@string/keywords_gesture"
+        app:controller="com.android.settings.gestures.SwipeUpPreferenceController"
+        app:allowDividerAbove="true" />
 </PreferenceScreen>

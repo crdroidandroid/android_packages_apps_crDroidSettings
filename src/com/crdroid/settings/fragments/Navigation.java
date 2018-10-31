@@ -228,6 +228,10 @@ public class Navigation extends SettingsPreferenceFragment implements
             Settings.Secure.NAVIGATION_BAR_WIDTH, 100, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
             Settings.Secure.ONE_HANDED_MODE_UI, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+            Settings.System.FULL_GESTURE_NAVBAR, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+            Settings.System.FULL_GESTURE_NAVBAR_DT2S, 0, UserHandle.USER_CURRENT);
         CarbonGesturesSettings.reset(mContext);
         FlingSettings.reset(mContext);
         SmartbarSettings.reset(mContext);
