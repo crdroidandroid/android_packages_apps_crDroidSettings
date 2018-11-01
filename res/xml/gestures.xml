@@ -26,6 +26,12 @@
         android:title="@string/carbon_gesture_preference_title"
         android:summary="@string/carbon_gestures_summary" />
 
+    <PreferenceScreen
+        android:key="swipeup_gestures"
+        android:fragment="com.crdroid.settings.fragments.navigation.SwipeUpGesturesSettings"
+        android:title="@string/use_bottom_gesture_title"
+        android:summary="@string/use_bottom_gesture_summary" />
+
     <!--<PreferenceScreen
         android:key="edge_gestures"
         android:title="@string/edge_gestures_title"
@@ -44,12 +50,6 @@
             lineage:requiresFeature="lineagehardware:FEATURE_TOUCHSCREEN_GESTURES">
         <intent android:action="org.lineageos.settings.device.GESTURE_SETTINGS" />
     </lineageos.preference.RemotePreference>
-
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="use_bottom_gesture_navigation"
-        android:title="@string/use_bottom_gesture_title"
-        android:summary="@string/use_bottom_gesture_summary"
-        android:defaultValue="false" />
 
     <Preference
         android:key="gesture_assist_input_summary"
