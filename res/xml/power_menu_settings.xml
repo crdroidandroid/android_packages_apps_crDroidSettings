@@ -30,13 +30,14 @@
         android:key="screenshot"
         android:icon="@drawable/ic_screenshot"
         android:title="@string/power_menu_screenshot_title"
+        android:summary="@string/power_menu_screenshot_summary"
         android:defaultValue="false" />
 
-    <CheckBoxPreference
+    <!--<CheckBoxPreference
         android:key="onthego"
         android:icon="@drawable/ic_onthego"
         android:title="@string/power_menu_onthego_title"
-        android:defaultValue="false" />
+        android:defaultValue="false" />-->
 
     <CheckBoxPreference
         android:key="airplane"
@@ -48,6 +49,11 @@
         android:key="users"
         android:icon="@drawable/ic_user"
         android:title="@string/power_menu_users_title"
+        android:defaultValue="false" />
+
+    <CheckBoxPreference
+        android:key="lockdown"
+        android:title="@string/power_menu_lockdown_title"
         android:defaultValue="false" />
 
     <!--<CheckBoxPreference
