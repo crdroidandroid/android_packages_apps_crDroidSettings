@@ -313,6 +313,8 @@ public class PulseSettings extends SettingsPreferenceFragment implements
              200, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver, Settings.Secure.PULSE_CUSTOM_BUTTONS_OPACITY,
              200, UserHandle.USER_CURRENT);
+        Settings.Secure.putStringForUser(resolver, Settings.Secure.PULSE_APPS_BLACKLIST,
+             "", UserHandle.USER_CURRENT);
     }
 
     @Override
