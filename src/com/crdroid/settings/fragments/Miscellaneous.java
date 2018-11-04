@@ -55,6 +55,8 @@ public class Miscellaneous extends SettingsPreferenceFragment
 
     public static final String TAG = "Miscellaneous";
 
+    private static final String KEY_ADAWAY = "adaway";
+    private static final String KEY_ADAWAY_PACKAGE_NAME = "org.adaway";
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_LOCK_CLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
     private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
@@ -70,6 +72,10 @@ public class Miscellaneous extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.crdroid_settings_misc);
 
         ContentResolver resolver = mContext.getContentResolver();
+
+        if (!Utils.isPackageInstalled(mContext, KEY_ADAWAY_PACKAGE_NAME)) {
+            getPreferenceScreen().removePreference(findPreference(KEY_ADAWAY));
+        }
 
         // mLockClock
         if (!Utils.isPackageInstalled(mContext, KEY_LOCK_CLOCK_PACKAGE_NAME)) {
