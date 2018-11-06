@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,7 +18,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceCategory 
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="recents_component"
+        android:icon="@drawable/ic_recents"
+        android:title="@string/recents_style_title"
+        android:dialogTitle="@string/recents_style_title"
+        android:entries="@array/recents_style_entries"
+        android:entryValues="@array/recents_style_values"
+        android:defaultValue="0" />
+
+    <!--<PreferenceCategory 
         android:title="@string/recents_default_category">
 
         <Preference
@@ -37,7 +46,7 @@
             android:entryValues="@array/immersive_recents_values"
             android:persistent="false" />
 
-        <!--<PreferenceScreen
+        <PreferenceScreen
             android:key="hide_app_from_recents"
             android:icon="@drawable/ic_recents_hide_app"
             android:title="@string/hide_apps_from_recents_title"
@@ -45,7 +54,7 @@
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.settings"
                 android:targetClass="com.crdroid.settings.fragments.HAFRAppListActivity" />
-        </PreferenceScreen>-->
+        </PreferenceScreen>
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="systemui_recents_mem_display"
@@ -54,7 +63,7 @@
             android:summary="@string/systemui_recents_mem_display_summary"
             android:defaultValue="false" />
 
-        <!--<com.crdroid.settings.preferences.ColorPickerPreference
+        <com.crdroid.settings.preferences.ColorPickerPreference
             android:key="systemui_recents_mem_barcolor"
             android:icon="@drawable/ic_memory"
             android:title="@string/systemui_recents_mem_display_color"
@@ -68,7 +77,7 @@
             android:title="@string/systemui_recents_mem_display_text_color"
             android:defaultValue="#00ffffff"
             android:dependency="systemui_recents_mem_display"
-            alphaSlider="true" /> -->
+            alphaSlider="true" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="show_clear_all_recents"
@@ -108,12 +117,12 @@
             android:summary="@string/recents_lock_icon_summary"
             android:defaultValue="true" />
 
-       <!-- <SwitchPreference
+       <SwitchPreference
             android:key="recents_use_grid"
             android:icon="@drawable/ic_grid_view"
             android:title="@string/recents_use_grid_title"
-            android:summary="@string/recents_use_grid_summary" />-->
-    </PreferenceCategory>
+            android:summary="@string/recents_use_grid_summary" />
+    </PreferenceCategory>-->
 
     <!--<PreferenceCategory 
         android:title="@string/recents_omni_category">
@@ -133,7 +142,7 @@
             android:persistent="false" />
     </PreferenceCategory> -->
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="slim_recents"
         android:title="@string/slim_recents_title">
 
@@ -152,7 +161,7 @@
             android:fragment="com.crdroid.settings.fragments.recents.SlimRecentsPanel"
             android:dependency="use_slim_recents"
             android:persistent="false" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceScreen
         android:title=""
