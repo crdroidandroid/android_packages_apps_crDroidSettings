@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2017 crDroid Android Project
+     Copyright (C) 2016-2018 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -56,8 +56,9 @@
     <!-- Base attributes available to CustomSeekBarPreference. -->
     <declare-styleable name="CustomSeekBarPreference">
         <attr name="interval" format="integer" />
-        <attr name="min" format="integer" />
+        <attr name="showSign" format="boolean" />
         <attr name="units" format="string|reference" />
+        <attr name="continuousUpdates" format="boolean" />
         <attr name="defaultText" format="string|reference" />
     </declare-styleable>
 
