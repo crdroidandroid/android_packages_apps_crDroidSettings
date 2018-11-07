@@ -33,6 +33,7 @@ import com.crdroid.settings.R;
 public class CustomSeekBarPreference extends Preference implements SeekBar.OnSeekBarChangeListener,
         View.OnClickListener, View.OnLongClickListener {
     protected final String TAG = getClass().getName();
+    private static final String SETTINGS_NS = "http://schemas.android.com/apk/res/com.android.settings";
     protected static final String ANDROIDNS = "http://schemas.android.com/apk/res/android";
 
     protected int mInterval = 1;
@@ -71,7 +72,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
             a.recycle();
         }
 
-        mMinValue = attrs.getAttributeIntValue(ANDROIDNS, "min", mMinValue);
+        mMinValue = attrs.getAttributeIntValue(SETTINGS_NS, "min", mMinValue);
         mMaxValue = attrs.getAttributeIntValue(ANDROIDNS, "max", mMaxValue);
         if (mMaxValue < mMinValue)
             mMaxValue = mMinValue;
@@ -272,6 +273,11 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         } else if (newValue != null && !newValue.isEmpty()) {
             setDefaultValue(Integer.parseInt(newValue), update);
         }
+    }
+
+    public void setValue(int newValue) {
+        mValue = getLimitedValue(newValue);
+        if (mSeekBar != null) mSeekBar.setProgress(getSeekValue(mValue));
     }
 
     public void setValue(int newValue, boolean update) {
