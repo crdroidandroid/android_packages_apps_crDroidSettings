@@ -22,7 +22,7 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.Settings;
-import android.support.v7.preference.CheckBoxPreference;
+import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -41,11 +41,11 @@ import static org.lineageos.internal.util.PowerMenuConstants.*;
 public class PowerMenuActions extends SettingsPreferenceFragment {
     final static String TAG = "PowerMenuActions";
 
-    private CheckBoxPreference mScreenshotPref;
-    private CheckBoxPreference mOnTheGoPref;
-    private CheckBoxPreference mAirplanePref;
-    private CheckBoxPreference mUsersPref;
-    //private CheckBoxPreference mBugReportPref;
+    private SwitchPreference mScreenshotPref;
+    private SwitchPreference mOnTheGoPref;
+    private SwitchPreference mAirplanePref;
+    private SwitchPreference mUsersPref;
+    //private SwitchPreference mBugReportPref;
 
     Context mContext;
     private ArrayList<String> mLocalUserConfig = new ArrayList<String>();
@@ -62,15 +62,15 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
 
         for (String action : mAllActions) {
             if (action.equals(GLOBAL_ACTION_KEY_SCREENSHOT)) {
-                mScreenshotPref = (CheckBoxPreference) findPreference(GLOBAL_ACTION_KEY_SCREENSHOT);
+                mScreenshotPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SCREENSHOT);
             } else if (action.equals(GLOBAL_ACTION_KEY_ONTHEGO)) {
-                mOnTheGoPref = (CheckBoxPreference) findPreference(GLOBAL_ACTION_KEY_ONTHEGO);
+                mOnTheGoPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_ONTHEGO);
             } else if (action.equals(GLOBAL_ACTION_KEY_AIRPLANE)) {
-                mAirplanePref = (CheckBoxPreference) findPreference(GLOBAL_ACTION_KEY_AIRPLANE);
+                mAirplanePref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_AIRPLANE);
             } else if (action.equals(GLOBAL_ACTION_KEY_USERS)) {
-                mUsersPref = (CheckBoxPreference) findPreference(GLOBAL_ACTION_KEY_USERS);
+                mUsersPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_USERS);
 //            } else if (action.equals(GLOBAL_ACTION_KEY_BUGREPORT)) {
-//                mBugReportPref = (CheckBoxPreference) findPreference(GLOBAL_ACTION_KEY_BUGREPORT);
+//                mBugReportPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_BUGREPORT);
             }
         }
 
