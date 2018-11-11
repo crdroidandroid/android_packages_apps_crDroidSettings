@@ -27,14 +27,14 @@
         android:entryValues="@array/recents_style_values"
         android:defaultValue="0" />
 
+    <Preference
+        android:key="recents_icon_pack"
+        android:icon="@drawable/ic_android_head"
+        android:title="@string/recents_icon_pack_title"
+        android:summary="@string/recents_icon_pack_summary" />
+
     <!--<PreferenceCategory 
         android:title="@string/recents_default_category">
-
-        <Preference
-            android:key="recents_icon_pack"
-            android:icon="@drawable/ic_android_head"
-            android:title="@string/recents_icon_pack_title"
-            android:summary="@string/recents_icon_pack_summary" />
 
         <ListPreference
             android:key="immersive_recents"
