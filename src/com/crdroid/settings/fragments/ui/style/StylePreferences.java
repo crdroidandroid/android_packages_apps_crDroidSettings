@@ -15,6 +15,8 @@
  */
 package com.crdroid.settings.fragments.ui.style;
 
+import static android.Manifest.permission.CHANGE_OVERLAY_PACKAGES;
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -47,17 +49,17 @@ import com.crdroid.settings.fragments.ui.style.util.AccentAdapter;
 import com.crdroid.settings.fragments.ui.style.util.AccentUtils;
 import com.crdroid.settings.fragments.ui.style.util.UIUtils;
 
-import java.util.Arrays;
-import java.util.List;
-
 import lineageos.providers.LineageSettings;
 import lineageos.style.StyleInterface;
 import lineageos.style.Suggestion;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class StylePreferences extends SettingsPreferenceFragment {
     private static final String TAG = "StylePreferences";
     private static final String CHANGE_STYLE_PERMISSION =
-            lineageos.platform.Manifest.permission.CHANGE_STYLE;
+            CHANGE_OVERLAY_PACKAGES;
     private static final int REQUEST_CHANGE_STYLE = 68;
 
     private Preference mStylePref;
