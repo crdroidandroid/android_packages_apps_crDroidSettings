@@ -49,8 +49,8 @@ public class SwipeUpPreferenceController extends GesturePreferenceController {
         boolean configEnabled;
         boolean mQuickStepEnabled;
 
-        mQuickStepEnabled = Settings.System.getIntForUser(context.getContentResolver(),
-                      Settings.System.RECENTS_COMPONENT, 0, UserHandle.USER_CURRENT) == 0;
+        mQuickStepEnabled = Settings.System.getInt(context.getContentResolver(),
+                      Settings.System.RECENTS_COMPONENT, 0) == 0;
         if (!mQuickStepEnabled)
             return false;
 
