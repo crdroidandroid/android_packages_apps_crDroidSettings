@@ -121,7 +121,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true" />
 
-            <SeekBar
+            <LinearLayout
                 android:id="@+id/seekbar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -129,9 +129,14 @@
                 android:layout_toEndOf="@id/minus"
                 android:layout_toStartOf="@id/plus"
                 android:layout_centerVertical="true" />
-
         </RelativeLayout>
-
     </RelativeLayout>
 
+    <!-- Preference should place its actual preference widget here. -->
+    <LinearLayout android:id="@android:id/widget_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="end|center_vertical"
+        android:paddingStart="16dp"
+        android:orientation="vertical" />
 </LinearLayout>
