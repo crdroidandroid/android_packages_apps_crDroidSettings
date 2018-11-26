@@ -48,6 +48,7 @@ public class SwipeUpPreferenceController extends GesturePreferenceController {
         boolean hasNav = false;
         boolean configEnabled;
         boolean mQuickStepEnabled;
+        boolean mStockNavMode;
 
         mQuickStepEnabled = Settings.System.getInt(context.getContentResolver(),
                       Settings.System.RECENTS_COMPONENT, 0) == 0;
@@ -65,6 +66,11 @@ public class SwipeUpPreferenceController extends GesturePreferenceController {
             // no window manager? good luck with that
         }
         if (!hasNav)
+            return false;
+
+        mStockNavMode = Settings.Secure.getInt(context.getContentResolver(),
+                      Settings.Secure.NAVIGATION_BAR_MODE, 0) == 0;
+        if (!mStockNavMode)
             return false;
 
         final ComponentName recentsComponentName = ComponentName.unflattenFromString(
