@@ -41,6 +41,7 @@ import com.android.internal.util.crdroid.Utils;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.navigation.CarbonGesturesSettings;
+import com.crdroid.settings.fragments.navigation.StockNavBarSettings;
 import com.crdroid.settings.fragments.navigation.SwipeUpGesturesSettings;
 import com.crdroid.settings.fragments.navigation.smartnav.FlingSettings;
 import com.crdroid.settings.fragments.navigation.smartnav.PulseSettings;
@@ -224,11 +225,10 @@ public class Navigation extends SettingsPreferenceFragment implements
             Settings.Secure.NAVIGATION_BAR_HEIGHT_LANDSCAPE, 100, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
             Settings.Secure.NAVIGATION_BAR_WIDTH, 100, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver, Settings.System.PIXEL_NAV_ANIMATION,
-             1, UserHandle.USER_CURRENT);
         CarbonGesturesSettings.reset(mContext);
         FlingSettings.reset(mContext);
         SmartbarSettings.reset(mContext);
+        StockNavBarSettings.reset(mContext);
         SwipeUpGesturesSettings.reset(mContext);
         PulseSettings.reset(mContext);
     }

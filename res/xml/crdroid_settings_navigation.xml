@@ -16,43 +16,8 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-
-    <SwitchPreference
-        android:key="navbar_visibility"
-        android:icon="@drawable/ic_navbar"
-        android:title="@string/navbar_visibility"
-        android:summary="@string/navbar_visibility_summary" />
-
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="pixel_nav_animation"
-        android:icon="@drawable/ic_google_circles"
-        android:title="@string/pixel_navbar_anim_title"
-        android:summary="@string/pixel_navbar_anim_summary"
-        android:dependency="navbar_visibility"
-        android:defaultValue="true" />
-
-    <!-- Gestures -->
-    <Preference
-        android:key="gesture_settings"
-        android:icon="@drawable/ic_settings_gestures"
-        android:title="@string/gestures_title"
-        android:summary="@string/gestures_summary"
-        android:fragment="com.android.settings.gestures.GestureSettings"
-        settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
-
-    <!--<PreferenceCategory
-        android:key="navbar_gestures_category"
-        android:title="@string/gestures_title">
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="double_tap_sleep_navbar"
-            android:icon="@drawable/ic_double_tap"
-            android:title="@string/smartbar_doubletap_sleep_title"
-            android:summary="@string/smartbar_doubletap_sleep_summary"
-            android:dependency="navbar_visibility"
-            android:defaultValue="false" />
-    </PreferenceCategory>-->
 
     <!-- PIE
     <Preference
@@ -66,6 +31,12 @@
         android:key="category_navbar_interface"
         android:title="@string/navbar_interface_title" >
 
+        <SwitchPreference
+            android:key="navbar_visibility"
+            android:icon="@drawable/ic_navbar"
+            android:title="@string/navbar_visibility"
+            android:summary="@string/navbar_visibility_summary" />
+
        <com.crdroid.settings.preferences.SecureSettingListPreference
             android:key="navigation_bar_mode"
             android:icon="@drawable/ic_navbar_mode"
@@ -77,13 +48,20 @@
             android:defaultValue="0"/>
 
         <Preference
+            android:key="pulse_settings"
+            android:icon="@drawable/ic_pulse"
+            android:title="@string/pulse_settings"
+            android:summary="@string/pulse_settings_summary"
+            android:dependency="navbar_visibility"
+            android:fragment="com.crdroid.settings.fragments.navigation.smartnav.PulseSettings" />
+
+        <Preference
             android:key="stock_settings"
             android:icon="@drawable/ic_shapes"
             android:title="@string/navbar_settings_title"
             android:dependency="navbar_visibility"
-            android:summary="@string/navabar_settings_summary">
-                <intent android:action="com.android.settings.action.NAV_BAR_TUNER" />
-        </Preference>
+            android:summary="@string/navbar_settings_summary"
+            android:fragment="com.crdroid.settings.fragments.navigation.StockNavBarSettings" />
 
         <Preference
             android:key="smartbar_settings"
@@ -129,25 +107,74 @@
             android:dependency="navbar_visibility" />
     </PreferenceCategory>
 
+    <!-- Gestures -->
     <PreferenceCategory
+        android:key="navbar_gestures_category"
+        android:title="@string/gestures_title">
+
+        <PreferenceScreen
+            android:key="carbon_gestures"
+            android:icon="@drawable/ic_gesture_swipe_horizontal"
+            android:fragment="com.crdroid.settings.fragments.navigation.CarbonGesturesSettings"
+            android:title="@string/carbon_gesture_preference_title"
+            android:summary="@string/carbon_gestures_summary" />
+
+        <PreferenceScreen
+            android:key="swipeup_gestures"
+            android:icon="@drawable/ic_gesture_swipe_up"
+            android:fragment="com.crdroid.settings.fragments.navigation.SwipeUpGesturesSettings"
+            android:title="@string/use_bottom_gesture_title"
+            android:summary="@string/use_bottom_gesture_summary" />
+
+        <!--<PreferenceScreen
+            android:key="edge_gestures"
+            android:title="@string/edge_gestures_title"
+            android:summary="@string/edge_gestures_summary"
+            android:fragment="com.crdroid.settings.fragments.navbar.EdgeGestureSettings" />-->
+
+        <org.lineageos.internal.lineageparts.LineagePartsPreference
+            android:key="touchscreen_gesture_settings"
+            android:icon="@drawable/ic_double_tap"
+            lineage:requiresFeature="lineagehardware:FEATURE_TOUCHSCREEN_GESTURES" />
+
+        <lineageos.preference.RemotePreference
+            android:key="device_touchscreen_gesture_settings"
+            android:icon="@drawable/ic_double_tap"
+            android:title="@string/touchscreen_gesture_settings_title"
+            android:summary="@string/touchscreen_gesture_settings_summary"
+            lineage:replacesKey="touchscreen_gesture_settings"
+            lineage:requiresFeature="lineagehardware:FEATURE_TOUCHSCREEN_GESTURES">
+                <intent android:action="org.lineageos.settings.device.GESTURE_SETTINGS" />
+        </lineageos.preference.RemotePreference>
+
+        <Preference
+            android:key="system_gesture_settings"
+            android:icon="@drawable/ic_settings_gestures"
+            android:title="@string/system_gestures_title"
+            android:summary="@string/system_gestures_summary"
+            android:fragment="com.android.settings.gestures.GestureSettings"
+            settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
+
+        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_navbar"
+            android:icon="@drawable/ic_double_tap"
+            android:title="@string/smartbar_doubletap_sleep_title"
+            android:summary="@string/smartbar_doubletap_sleep_summary"
+            android:dependency="navbar_visibility"
+            android:defaultValue="false" />-->
+    </PreferenceCategory>
+
+    <!--<PreferenceCategory
         android:key="category_navbar_general"
         android:title="@string/navbar_general_title" >
 
-        <!--<SwitchPreference
+        <SwitchPreference
             android:key="navbar_dynamic"
             android:icon="@drawable/ic_color_bucket"
             android:title="@string/navbar_dynamic_title"
             android:summary="@string/navbar_dynamic_summary"
-            android:defaultValue="false"/>-->
-
-        <Preference
-            android:key="pulse_settings"
-            android:icon="@drawable/ic_pulse"
-            android:title="@string/pulse_settings"
-            android:summary="@string/pulse_settings_summary"
-            android:dependency="navbar_visibility"
-            android:fragment="com.crdroid.settings.fragments.navigation.smartnav.PulseSettings" />
-    </PreferenceCategory>
+            android:defaultValue="false"/>
+    </PreferenceCategory>-->
 
     <PreferenceScreen
         android:title=""
