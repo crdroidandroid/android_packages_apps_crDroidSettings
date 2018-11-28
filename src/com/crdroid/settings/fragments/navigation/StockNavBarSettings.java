@@ -31,10 +31,12 @@ import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.ListPreference;
 import android.support.v14.preference.SwitchPreference;
 
-import com.crdroid.settings.R;
-
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
+
+import com.crdroid.settings.R;
+
+import lineageos.providers.LineageSettings;
 
 public class StockNavBarSettings extends SettingsPreferenceFragment {
 
@@ -49,6 +51,8 @@ public class StockNavBarSettings extends SettingsPreferenceFragment {
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        LineageSettings.System.putIntForUser(resolver, LineageSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS,
+             0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver, Settings.System.PIXEL_NAV_ANIMATION,
              1, UserHandle.USER_CURRENT);
     }
