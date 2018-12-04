@@ -17,14 +17,20 @@
 package com.crdroid.settings;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -33,8 +39,6 @@ import android.widget.LinearLayout;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.crdroid.settings.fab.FloatingActionsMenu;
-import com.crdroid.settings.fab.FloatingActionButton;
 import com.crdroid.settings.fragments.About;
 import com.crdroid.settings.fragments.Buttons;
 import com.crdroid.settings.fragments.LockScreen;
@@ -57,8 +61,8 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
     SectionsPagerAdapter mSectionsPagerAdapter;
     protected Context mContext;
     private LinearLayout mLayout;
-    private FloatingActionsMenu mFab;
-    private FrameLayout mInterceptorFrame;
+
+    private static final int MENU_RESET = Menu.FIRST;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,8 +74,6 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContainer = container;
         View view = inflater.inflate(R.layout.crdroid_settings, container, false);
-        mFab = (FloatingActionsMenu) view.findViewById(R.id.fab_menu);
-        mInterceptorFrame = (FrameLayout) view.findViewById(R.id.fl_interceptor);
         mLayout = (LinearLayout) view.findViewById(R.id.crdroid_content);
         mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
         mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
@@ -79,61 +81,6 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
         mViewPager.setAdapter(mSectionsPagerAdapter);
         mTabs.setViewPager(mViewPager);
         mContext = getActivity().getApplicationContext();
-
-        mInterceptorFrame.getBackground().setAlpha(0);
-
-        mFab.setOnFloatingActionsMenuUpdateListener(new FloatingActionsMenu.OnFloatingActionsMenuUpdateListener() {
-        @Override
-        public void onMenuExpanded() {
-        mInterceptorFrame.getBackground().setAlpha(240);
-        mInterceptorFrame.setOnTouchListener(new View.OnTouchListener() {
-             @Override
-             public boolean onTouch(View v, MotionEvent event) {
-                   mFab.collapse();
-                   return true;
-                   }
-             });
-        }
-
-        @Override
-        public void onMenuCollapsed() {
-                    mInterceptorFrame.getBackground().setAlpha(0);
-                    mInterceptorFrame.setOnTouchListener(null);
-    	            }
-        });
-
-        mInterceptorFrame.setOnTouchListener(new View.OnTouchListener() {
-             @Override
-             public boolean onTouch(View v, MotionEvent event) {
-                if (mFab.isExpanded()) {
-                    mFab.collapse();
-                    return true;
-                }
-                return false;
-            }
-        });
-
-        FloatingActionButton mFab1 = (FloatingActionButton) view.findViewById(R.id.fab_reset);
-        mFab1.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 Buttons.reset(mContext);
-                 LockScreen.reset(mContext);
-                 Miscellaneous.reset(mContext);
-                 Navigation.reset(mContext);
-                 Notifications.reset(mContext);
-                 QuickSettings.reset(mContext);
-                 Recents.reset(mContext);
-                 Sound.reset(mContext);
-                 StatusBar.reset(mContext);
-                 UserInterface.reset(mContext);
-                 mSectionsPagerAdapter.notifyDataSetChanged();
-                 if (mFab.isExpanded())
-                     mFab.collapse();
-                 finish();
-                 startActivity(getIntent());
-             }
-        });
 
         return view;
     }
@@ -146,6 +93,69 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
     @Override
     public void onSaveInstanceState(Bundle saveState) {
         super.onSaveInstanceState(saveState);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        menu.add(0, MENU_RESET, 0, R.string.reset_settings_title)
+                .setIcon(R.drawable.ic_reset)
+                .setAlphabeticShortcut('r')
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
+                        MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+    }
+
+    public void resetAll(Context context) {
+        new ResetAllTask(context).execute();
+    }
+
+    public void showResetAllDialog(Context context) {
+        new AlertDialog.Builder(context)
+                .setTitle(R.string.reset_settings_title)
+                .setMessage(R.string.reset_settings_message)
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        resetAll(context);
+                    }
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show();
+    }
+
+    private class ResetAllTask extends AsyncTask<Void, Void, Void> {
+        private Context rContext;
+
+        public ResetAllTask(Context context) {
+            super();
+            rContext = context;
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            Buttons.reset(rContext);
+            LockScreen.reset(rContext);
+            Miscellaneous.reset(rContext);
+            Navigation.reset(rContext);
+            Notifications.reset(rContext);
+            QuickSettings.reset(rContext);
+            Recents.reset(rContext);
+            Sound.reset(rContext);
+            StatusBar.reset(rContext);
+            UserInterface.reset(rContext);
+            finish();
+            startActivity(getIntent());
+            return null;
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_RESET:
+                 showResetAllDialog(getActivity());
+                return true;
+            default:
+                return false;
+        }
     }
 
     class SectionsPagerAdapter extends FragmentPagerAdapter {
