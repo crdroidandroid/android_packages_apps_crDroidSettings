@@ -43,6 +43,7 @@ import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.ui.Animations;
 import com.crdroid.settings.fragments.ui.DozeFragment;
 import com.crdroid.settings.fragments.ui.SmartPixels;
+import com.crdroid.settings.fragments.ui.ThemeSettings;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,6 +77,7 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
         Animations.reset(mContext);
         DozeFragment.reset(mContext);
         SmartPixels.reset(mContext);
+        ThemeSettings.reset(mContext);
     }
 
     @Override
