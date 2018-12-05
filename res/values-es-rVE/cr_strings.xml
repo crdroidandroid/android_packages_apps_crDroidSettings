@@ -1553,8 +1553,9 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
     <string name="media_scanner_on_boot_enabled">Escanear multimedia</string>
     <string name="media_scanner_on_boot_ask">Pregunte para escanear (notificación)</string>
     <string name="media_scanner_on_boot_disabled">No escanear multimedia</string>
-    <!-- FAB -->
-    <string name="fab_reset">Reestablecer configuración de fábrica</string>
+    <!-- Reset settings -->
+    <string name="reset_settings_title">Reset settings</string>
+    <string name="reset_settings_message">This will reset most crdroid settings to their default values for the current user. Would you like to continue?</string>
     <!-- OTA -->
     <string name="ota_crdroid_title">Actualizacaciones</string>
     <string name="ota_crdroid_summary">Comprobar si hay actualizaciones OTA para el equipo</string>
@@ -1689,10 +1690,6 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
     <string name="background_processes_settings_title">Procesos en segundo plano</string>
     <!-- App details: open play store link if app is user installed -->
     <string name="app_play_store">Google Play</string>
-    <!-- Dark Shade -->
-    <string name="berry_dark_shade_title">Estilo oscuro</string>
-    <string name="berry_dark_shade_stock">Gris profundo</string>
-    <string name="berry_dark_shade_black">Negro Amoled</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Animación de apagado de pantalla</string>
     <string name="screen_off_animation_fade">Atenuación simple</string>
@@ -1823,46 +1820,6 @@ Desliza de izquierda a derecha para regresar.</string>
     <string name="edge_gestures_back_edges_both">Ambos lados</string>
     <string name="edge_gestures_back_show_ui_feedback_title">Animación del gesto atrás</string>
     <string name="edge_gestures_back_show_ui_feedback_summary">Mostrar animación en los bordes cuando se utiliza el gesto atrás</string>
-    <!-- Berry Lite -->
-    <string name="style_title">Estilo</string>
-    <string name="style_summary">Elegir colores del sistema</string>
-    <string name="style_global_title">Estilo</string>
-    <string name="style_global_entry_automatic">Automático (basado en el fondo de pantalla)</string>
-    <string name="style_global_entry_light">Claro</string>
-    <string name="style_global_entry_dark">Oscuro</string>
-    <string name="style_global_entry_time">Automático (hora del día)</string>
-    <string name="style_global_entry_app">Gestionado por %1$s</string>
-    <string name="style_accent_title">Color de acento</string>
-    <string name="style_accent_configuration_not_supported">El color de acento actual es incompatible con el estilo seleccionado. Debes seleccionar otro color para proceder, ¿continuar?</string>
-    <string name="style_accent_configuration_positive">Continuar</string>
-    <string name="style_automagic_title">Automágico</string>
-    <string name="style_automagic_description">Ajustar el estilo para coincidir con el fondo de pantalla</string>
-    <string name="style_automagic_dialog_content">Estilo sugerido: <b>%1$s</b> con el color de destaque en <b>%2$s</b>.\n¿Quieres aplicarlo?</string>
-    <string name="style_automagic_dialog_positive">Aplicar</string>
-    <string name="style_accent_default_name">Por defecto</string>
-    <string name="style_dark_overlay_title">Modo oscuro</string>
-    <string name="style_dark_overlay_default">Gris profundo</string>
-    <string name="style_dark_overlay_black">Negro Amoled</string>
-    <string name="style_permission_error">Es necesario acceder al almacenamiento del dispositivo para poder analizar el fondo de pantalla. Por favor, concede el permiso necesario para usar esta característica</string>
-    <!-- Accent colors -->
-    <string name="accent_amber">Ámbar</string>
-    <string name="accent_black">Carbón</string>
-    <string name="accent_blue">Arándano</string>
-    <string name="accent_brown">Cacao</string>
-    <string name="accent_cyan">Cian</string>
-    <string name="accent_demon">Demonio</string>
-    <string name="accent_denim">Azul vaquero</string>
-    <string name="accent_green">Bosque</string>
-    <string name="accent_gold">Dorado</string>
-    <string name="accent_grey">Gris</string>
-    <string name="accent_orange">Calabaza</string>
-    <string name="accent_oxygen">Oxigeno</string>
-    <string name="accent_pink">Cereza</string>
-    <string name="accent_purple">Lavanda</string>
-    <string name="accent_red">Tomate</string>
-    <string name="accent_teal">Verde Azulado</string>
-    <string name="accent_turquoise">Turquesa</string>
-    <string name="accent_yellow">Plátano</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Smart Pixels es una opción de ahorro de batería. Dependiendo cuantos pixeles tu decides apagar. Tal vez veas mejoras en la duración de batería.</string>
     <string name="smart_pixels_title">Píxeles Inteligentes</string>
@@ -1916,4 +1873,26 @@ Desliza de izquierda a derecha para regresar.</string>
     <string name="flashlight_on_call_not_dnd">Only in ringer mode</string>
     <string name="flashlight_on_call_dnd">Only in DND mode</string>
     <string name="flashlight_on_call_always">Always</string>
+    <!-- Themes -->
+    <string name="style_title">Estilo</string>
+    <string name="style_summary">Elegir colores del sistema</string>
+    <string name="style_global_title">Estilo</string>
+    <string name="style_global_entry_automatic">Automático (basado en el fondo de pantalla)</string>
+    <string name="style_global_entry_light">Claro</string>
+    <string name="style_global_entry_dark">Oscuro</string>
+    <string name="style_global_entry_time">Automático (hora del día)</string>
+    <string name="accent_picker_dialog_title">Select an accent color</string>
+    <string name="theme_accent_picker_title">Accent color</string>
+    <string name="theme_accent_picker_summary">Select system theme accent color</string>
+    <string name="theme_accent_picker_default">Default</string>
+    <string name="accent_picker_material_colors">Material palette</string>
+    <string name="accent_picker_custom_colors">User requested</string>
+    <string name="style_dark_overlay_title">Modo oscuro</string>
+    <string name="style_dark_overlay_default">Gris profundo</string>
+    <string name="style_dark_overlay_black">Negro Amoled</string>
+    <string name="style_notification_title">Notification style</string>
+    <string name="style_notification_auto">Automatic (system theme)</string>
+    <string name="style_notification_light">Light</string>
+    <string name="style_notification_dark">Deep Grey</string>
+    <string name="style_notification_black">Amoled Black</string>
 </resources>

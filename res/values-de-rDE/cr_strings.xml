@@ -1552,8 +1552,9 @@
     <string name="media_scanner_on_boot_enabled">Nach Mediendateien suchen</string>
     <string name="media_scanner_on_boot_ask">Nachfragen (Benachrichtigung)</string>
     <string name="media_scanner_on_boot_disabled">Nicht nach Mediendateien suchen</string>
-    <!-- FAB -->
-    <string name="fab_reset">Einstellungen zurücksetzen</string>
+    <!-- Reset settings -->
+    <string name="reset_settings_title">Einstellungen zurücksetzen</string>
+    <string name="reset_settings_message">Dadurch werden die meisten Crdroid Einstellungen auf ihre Standardwerte für den aktuellen Benutzer zurückgesetzt. Möchten Sie fortfahren?</string>
     <!-- OTA -->
     <string name="ota_crdroid_title">Updates</string>
     <string name="ota_crdroid_summary">Nach OTA-Update und Links für Ihr Gerät suchen</string>
@@ -1688,10 +1689,6 @@
     <string name="background_processes_settings_title">Hintergrundprozesse</string>
     <!-- App details: open play store link if app is user installed -->
     <string name="app_play_store">Google Play</string>
-    <!-- Dark Shade -->
-    <string name="berry_dark_shade_title">Dunkler Stil</string>
-    <string name="berry_dark_shade_stock">Dunkles grau</string>
-    <string name="berry_dark_shade_black">Amoled schwarz</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Abschaltanimation</string>
     <string name="screen_off_animation_fade">Simples verblassen</string>
@@ -1821,46 +1818,6 @@
     <string name="edge_gestures_back_edges_both">Beide Seiten</string>
     <string name="edge_gestures_back_show_ui_feedback_title">Animation der Zurück-Geste</string>
     <string name="edge_gestures_back_show_ui_feedback_summary">Zeige animiertes Feedback an den Kanten, wenn die Zurück-Geste verwendet wird</string>
-    <!-- Berry Lite -->
-    <string name="style_title">Stil</string>
-    <string name="style_summary">Systemfarben wählen</string>
-    <string name="style_global_title">Stil</string>
-    <string name="style_global_entry_automatic">Automatisch (Hintergrundbild)</string>
-    <string name="style_global_entry_light">Hell</string>
-    <string name="style_global_entry_dark">Dunkel</string>
-    <string name="style_global_entry_time">Automatisch (Tageszeit)</string>
-    <string name="style_global_entry_app">Gesteuert durch %1$s</string>
-    <string name="style_accent_title">Akzentfarbe</string>
-    <string name="style_accent_configuration_not_supported">Der aktuelle Akzent ist nicht mit dem gewählten Design kompatibel. Um fortzufahren, muss ein anderer Akzent gewählt werden, wollen Sie fortfahren?</string>
-    <string name="style_accent_configuration_positive">Fortfahren</string>
-    <string name="style_automagic_title">Automagisch</string>
-    <string name="style_automagic_description">Passt das Design an Ihr Hintergrundbild an</string>
-    <string name="style_automagic_dialog_content">Vorgeschlagenes Design: <b>%1$s</b> mit <b>%2$s</b> Akzent.\nWollen Sie es anwenden?</string>
-    <string name="style_automagic_dialog_positive">Anwenden</string>
-    <string name="style_accent_default_name">Standard</string>
-    <string name="style_dark_overlay_title">Dunkler Modus</string>
-    <string name="style_dark_overlay_default">Dunkles grau</string>
-    <string name="style_dark_overlay_black">Amoled schwarz</string>
-    <string name="style_permission_error">Speicherzugriffsberechtigung ist erforderlich, um Ihr Hintergrundbild zu analysieren. Bitte gewähren Sie diese, um die Funktion nutzen zu können</string>
-    <!-- Accent colors -->
-    <string name="accent_amber">Bernsteingelb</string>
-    <string name="accent_black">Carbon</string>
-    <string name="accent_blue">Blaubeere</string>
-    <string name="accent_brown">Kakao</string>
-    <string name="accent_cyan">Cyan</string>
-    <string name="accent_demon">Dämon</string>
-    <string name="accent_denim">Denim</string>
-    <string name="accent_green">Wald</string>
-    <string name="accent_gold">Gold</string>
-    <string name="accent_grey">Grau</string>
-    <string name="accent_orange">Kürbis</string>
-    <string name="accent_oxygen">Oxygen</string>
-    <string name="accent_pink">Kirsche</string>
-    <string name="accent_purple">Lavendel</string>
-    <string name="accent_red">Tomate</string>
-    <string name="accent_teal">Blaugrün</string>
-    <string name="accent_turquoise">Türkis</string>
-    <string name="accent_yellow">Banane</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Smart Pixel ist eine Energiesparfunktion. Je nachdem, wie viele Pixel Sie ausschalten möchten, können Sie eine Verbesserung der Akkulaufzeit feststellen.</string>
     <string name="smart_pixels_title">Smart Pixels</string>
@@ -1914,4 +1871,26 @@
     <string name="flashlight_on_call_not_dnd">Nur im Klingelton Modus</string>
     <string name="flashlight_on_call_dnd">Nur im Nicht stören Modus</string>
     <string name="flashlight_on_call_always">Immer</string>
+    <!-- Themes -->
+    <string name="style_title">Stil</string>
+    <string name="style_summary">Systemfarben wählen</string>
+    <string name="style_global_title">Stil</string>
+    <string name="style_global_entry_automatic">Automatisch (Hintergrundbild)</string>
+    <string name="style_global_entry_light">Hell</string>
+    <string name="style_global_entry_dark">Dunkel</string>
+    <string name="style_global_entry_time">Automatisch (Tageszeit)</string>
+    <string name="accent_picker_dialog_title">Select an accent color</string>
+    <string name="theme_accent_picker_title">Accent color</string>
+    <string name="theme_accent_picker_summary">Select system theme accent color</string>
+    <string name="theme_accent_picker_default">Default</string>
+    <string name="accent_picker_material_colors">Material palette</string>
+    <string name="accent_picker_custom_colors">User requested</string>
+    <string name="style_dark_overlay_title">Dunkler Modus</string>
+    <string name="style_dark_overlay_default">Dunkles grau</string>
+    <string name="style_dark_overlay_black">Amoled schwarz</string>
+    <string name="style_notification_title">Notification style</string>
+    <string name="style_notification_auto">Automatic (system theme)</string>
+    <string name="style_notification_light">Light</string>
+    <string name="style_notification_dark">Deep Grey</string>
+    <string name="style_notification_black">Amoled Black</string>
 </resources>

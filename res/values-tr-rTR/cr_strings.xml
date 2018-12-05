@@ -17,8 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">crDroid Ayarları</string>
-    <string name="crdroid_settings_summary">Çeşitli özelleştirmeler</string>
+    <string name="crdroid_settings_title">Eklentiler</string>
+    <string name="crdroid_settings_summary">Cihazınızı özelleştirin!</string>
     <string name="crdroid_personalization_category">Kişileştirme</string>
     <string name="crdroid_addons_category">Eklentiler</string>
     <!-- Personalization Categories -->
@@ -1554,8 +1554,9 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <string name="media_scanner_on_boot_enabled">Medyayı tara</string>
     <string name="media_scanner_on_boot_ask">Taramak için sor</string>
     <string name="media_scanner_on_boot_disabled">Medyayı tarama</string>
-    <!-- FAB -->
-    <string name="fab_reset">Ayarları sıfırla</string>
+    <!-- Reset settings -->
+    <string name="reset_settings_title">Ayarları sıfırla</string>
+    <string name="reset_settings_message">Bu mevcut kullanıcı için çoğu crdroid ayarlarını varsayılan değerlerine sıfırlar. Devam etmek ister misin?</string>
     <!-- OTA -->
     <string name="ota_crdroid_title">Güncellemeler</string>
     <string name="ota_crdroid_summary">crDroid güncellemelerini kontrol et</string>
@@ -1690,10 +1691,6 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <string name="background_processes_settings_title">Arka plan işlemleri</string>
     <!-- App details: open play store link if app is user installed -->
     <string name="app_play_store">Google play</string>
-    <!-- Dark Shade -->
-    <string name="berry_dark_shade_title">Karanlık stil</string>
-    <string name="berry_dark_shade_stock">Koyu gri</string>
-    <string name="berry_dark_shade_black">Siyah amoled</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Ekran kapanma animasyonu</string>
     <string name="screen_off_animation_fade">Basit karart</string>
@@ -1823,46 +1820,6 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <string name="edge_gestures_back_edges_both">Her iki taraf</string>
     <string name="edge_gestures_back_show_ui_feedback_title">Geri hareketi animasyonu</string>
     <string name="edge_gestures_back_show_ui_feedback_summary">Geri hareketi kullanıldığında kenarlarda animasyonlu geri bildirim gösterir</string>
-    <!-- Berry Lite -->
-    <string name="style_title">Stil</string>
-    <string name="style_summary">Sistem renkleri seçin</string>
-    <string name="style_global_title">Stil</string>
-    <string name="style_global_entry_automatic">Otomatik (duvar kağıdı)</string>
-    <string name="style_global_entry_light">Aydınlık</string>
-    <string name="style_global_entry_dark">Karanlık</string>
-    <string name="style_global_entry_time">Otomatik (gün saati)</string>
-    <string name="style_global_entry_app">%1$s tarafından yönetiliyor</string>
-    <string name="style_accent_title">Vurgu rengi</string>
-    <string name="style_accent_configuration_not_supported">Mevcut vurgu seçilen stille uyumlu değil. Devam etmek için başka bir vurgu seçilmesi gerekiyor, devam etmek istiyor musunuz?</string>
-    <string name="style_accent_configuration_positive">Devam et</string>
-    <string name="style_automagic_title">Otomatik</string>
-    <string name="style_automagic_description">Stilinizi duvar kağıdınızla eşleşecek şekilde ayarlayın</string>
-    <string name="style_automagic_dialog_content">Önerilen stil: <b>%1$s</b> arka plan <b>%2$s</b> vurgu rengi.\nUygulamak istiyor musunuz?</string>
-    <string name="style_automagic_dialog_positive">Uygula</string>
-    <string name="style_accent_default_name">Varsayılan</string>
-    <string name="style_dark_overlay_title">Karanlık modu</string>
-    <string name="style_dark_overlay_default">Koyu gri</string>
-    <string name="style_dark_overlay_black">Siyah amoled</string>
-    <string name="style_permission_error">Depolama alanına erişim izni, duvar kağıdınızı analiz etmek için gereklidir lütfen bu özelliğin kullanılmasına izin verin</string>
-    <!-- Accent colors -->
-    <string name="accent_amber">Koyu sarı</string>
-    <string name="accent_black">Siyah</string>
-    <string name="accent_blue">Mavi</string>
-    <string name="accent_brown">Kahverengi</string>
-    <string name="accent_cyan">Camgöbeği</string>
-    <string name="accent_demon">Şeytan</string>
-    <string name="accent_denim">Denim</string>
-    <string name="accent_green">Yeşil</string>
-    <string name="accent_gold">Altın sarısı</string>
-    <string name="accent_grey">Gri</string>
-    <string name="accent_orange">Turuncu</string>
-    <string name="accent_oxygen">Oxygen</string>
-    <string name="accent_pink">Pembe</string>
-    <string name="accent_purple">Mor</string>
-    <string name="accent_red">Kırmızı</string>
-    <string name="accent_teal">Deniz mavisi</string>
-    <string name="accent_turquoise">Turkuaz</string>
-    <string name="accent_yellow">Sarı</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Akıllı pikseller bir güç tasarrufu özelliğidir. Kaç piksele karar verdiğinize bağlı olarak pil ömründe iyileşme görebilirsiniz.</string>
     <string name="smart_pixels_title">Akıllı pikseller</string>
@@ -1916,4 +1873,26 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <string name="flashlight_on_call_not_dnd">Yalnızca zil sesi modunda</string>
     <string name="flashlight_on_call_dnd">Yalnızca rahatsız etmeyin modunda</string>
     <string name="flashlight_on_call_always">Her zaman</string>
+    <!-- Themes -->
+    <string name="style_title">Stil</string>
+    <string name="style_summary">Sistem renkleri seçin</string>
+    <string name="style_global_title">Stil</string>
+    <string name="style_global_entry_automatic">Otomatik (duvar kağıdı)</string>
+    <string name="style_global_entry_light">Aydınlık</string>
+    <string name="style_global_entry_dark">Karanlık</string>
+    <string name="style_global_entry_time">Otomatik (gün saati)</string>
+    <string name="accent_picker_dialog_title">Bir vurgu rengi seçin</string>
+    <string name="theme_accent_picker_title">Vurgu rengi</string>
+    <string name="theme_accent_picker_summary">Sistem teması için vurgu rengi seçin</string>
+    <string name="theme_accent_picker_default">Varsayılan</string>
+    <string name="accent_picker_material_colors">Material renkler</string>
+    <string name="accent_picker_custom_colors">Özel renkler</string>
+    <string name="style_dark_overlay_title">Karanlık modu</string>
+    <string name="style_dark_overlay_default">Koyu gri</string>
+    <string name="style_dark_overlay_black">Siyah amoled</string>
+    <string name="style_notification_title">Bildirim stili</string>
+    <string name="style_notification_auto">Otomatik (sistem teması)</string>
+    <string name="style_notification_light">Aydınlık</string>
+    <string name="style_notification_dark">Koyu gri</string>
+    <string name="style_notification_black">Siyah amoled</string>
 </resources>

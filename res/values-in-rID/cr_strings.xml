@@ -1552,8 +1552,9 @@
     <string name="media_scanner_on_boot_enabled">Media pindai</string>
     <string name="media_scanner_on_boot_ask">Minta untuk memindai (notifikasi)</string>
     <string name="media_scanner_on_boot_disabled">Jangan pindai media</string>
-    <!-- FAB -->
-    <string name="fab_reset">Kembalikan ke pengaturan awal</string>
+    <!-- Reset settings -->
+    <string name="reset_settings_title">Kembalikan pengaturan</string>
+    <string name="reset_settings_message">Ini akan mengembalikan kebanyakan pengaturan crdroid ke nilai bawaannya untuk pengguna saat ini. Apakah anda yakin untuk melanjutkan?</string>
     <!-- OTA -->
     <string name="ota_crdroid_title">Pembaruan</string>
     <string name="ota_crdroid_summary">Cek untuk pembaruan OTA dan hubungkan ke perangkat anda</string>
@@ -1688,10 +1689,6 @@
     <string name="background_processes_settings_title">Proses di latar belakang</string>
     <!-- App details: open play store link if app is user installed -->
     <string name="app_play_store">Google Play</string>
-    <!-- Dark Shade -->
-    <string name="berry_dark_shade_title">Gaya gelap</string>
-    <string name="berry_dark_shade_stock">Abu-abu gelap</string>
-    <string name="berry_dark_shade_black">AMOLED hitam</string>
     <!-- Screen off animation -->
     <string name="screen_off_animation_title">Animasi layar mati</string>
     <string name="screen_off_animation_fade">Memudar sederhana</string>
@@ -1821,46 +1818,6 @@
     <string name="edge_gestures_back_edges_both">Kedua sisi</string>
     <string name="edge_gestures_back_show_ui_feedback_title">Animasi gestur kembali</string>
     <string name="edge_gestures_back_show_ui_feedback_summary">Tampilkan umpan balik animasi pada tepi ketika gestur kembali digunakan</string>
-    <!-- Berry Lite -->
-    <string name="style_title">Gaya</string>
-    <string name="style_summary">Pilih warna sistem</string>
-    <string name="style_global_title">Gaya</string>
-    <string name="style_global_entry_automatic">Otomatis (wallpaper)</string>
-    <string name="style_global_entry_light">Terang</string>
-    <string name="style_global_entry_dark">Gelap</string>
-    <string name="style_global_entry_time">Otomatis (waktu dalam sehari)</string>
-    <string name="style_global_entry_app">Dikelola oleh %1$s</string>
-    <string name="style_accent_title">Warna aksen</string>
-    <string name="style_accent_configuration_not_supported">Aksen terakhir tidak kompatibel dengan gaya yang dipilih. Aksen lain harus dipilih untuk melanjutkan, lanjutkan?</string>
-    <string name="style_accent_configuration_positive">Proses</string>
-    <string name="style_automagic_title">Automagic</string>
-    <string name="style_automagic_description">Menyetel gaya untuk mencocokkan wallpaper Anda</string>
-    <string name="style_automagic_dialog_content">Gaya yang disarankan: <b>%1$s</b> dengan aksen <b>%2$s</b>.\nApakah Anda ingin menerapkannya?</string>
-    <string name="style_automagic_dialog_positive">Terapkan</string>
-    <string name="style_accent_default_name">Bawaan</string>
-    <string name="style_dark_overlay_title">Mode gelap</string>
-    <string name="style_dark_overlay_default">Abu-abu gelap</string>
-    <string name="style_dark_overlay_black">Hitam AMOLED</string>
-    <string name="style_permission_error">Membutuhkan izin untuk mengakses penyimpanan agar dapat menganalisa wallpaper anda, tuolong izinkan untuk menggunakan fitur ini</string>
-    <!-- Accent colors -->
-    <string name="accent_amber">Sawo matang</string>
-    <string name="accent_black">Karbon</string>
-    <string name="accent_blue">Blueberry</string>
-    <string name="accent_brown">Cokelat</string>
-    <string name="accent_cyan">Biru kehijauan</string>
-    <string name="accent_demon">Merah setan</string>
-    <string name="accent_denim">Biru tua</string>
-    <string name="accent_green">Hijau hutan</string>
-    <string name="accent_gold">Emas</string>
-    <string name="accent_grey">Abu-abu</string>
-    <string name="accent_orange">Labu</string>
-    <string name="accent_oxygen">Oksigen</string>
-    <string name="accent_pink">Ceri</string>
-    <string name="accent_purple">Lavender</string>
-    <string name="accent_red">Tomat</string>
-    <string name="accent_teal">Hijau kebiruan</string>
-    <string name="accent_turquoise">Biru langit</string>
-    <string name="accent_yellow">Pisang</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Smart pixel adalah fitur penghematan daya. Tergantung pada berapa banyak piksel yang anda putuskan untuk dinonaktifkan, Anda bisa melihat peningkatan dalam baterai.</string>
     <string name="smart_pixels_title">Smart Pixels</string>
@@ -1914,4 +1871,26 @@
     <string name="flashlight_on_call_not_dnd">Hanya saat mode dering</string>
     <string name="flashlight_on_call_dnd">Hanya saat mode Jangan Ganggu</string>
     <string name="flashlight_on_call_always">Selalu</string>
+    <!-- Themes -->
+    <string name="style_title">Gaya</string>
+    <string name="style_summary">Pilih warna sistem</string>
+    <string name="style_global_title">Gaya</string>
+    <string name="style_global_entry_automatic">Otomatis (wallpaper)</string>
+    <string name="style_global_entry_light">Terang</string>
+    <string name="style_global_entry_dark">Gelap</string>
+    <string name="style_global_entry_time">Otomatis (waktu dalam sehari)</string>
+    <string name="accent_picker_dialog_title">Pilih warna aksen</string>
+    <string name="theme_accent_picker_title">Warna aksen</string>
+    <string name="theme_accent_picker_summary">Pilih tema warna aksen sistem</string>
+    <string name="theme_accent_picker_default">Bawaan</string>
+    <string name="accent_picker_material_colors">Palet material</string>
+    <string name="accent_picker_custom_colors">Permintaan pengguna</string>
+    <string name="style_dark_overlay_title">Mode gelap</string>
+    <string name="style_dark_overlay_default">Abu-abu gelap</string>
+    <string name="style_dark_overlay_black">Hitam AMOLED</string>
+    <string name="style_notification_title">Gaya notifikasi</string>
+    <string name="style_notification_auto">Otomatis (tema sistem)</string>
+    <string name="style_notification_light">Terang</string>
+    <string name="style_notification_dark">Abu-abu Gelap</string>
+    <string name="style_notification_black">Hitam Amoled</string>
 </resources>
