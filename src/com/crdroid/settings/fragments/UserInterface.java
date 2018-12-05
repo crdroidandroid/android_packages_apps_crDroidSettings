@@ -18,6 +18,8 @@ package com.crdroid.settings.fragments;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.FontInfo;
+import android.content.IFontService;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
@@ -36,12 +38,14 @@ import android.support.v7.preference.PreferenceScreen;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.crdroid.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.ui.Animations;
 import com.crdroid.settings.fragments.ui.DozeFragment;
+import com.crdroid.settings.fragments.ui.FontDialogPreference;
 import com.crdroid.settings.fragments.ui.SmartPixels;
 import com.crdroid.settings.fragments.ui.ThemeSettings;
 
@@ -53,8 +57,12 @@ import lineageos.providers.LineageSettings;
 public class UserInterface extends SettingsPreferenceFragment implements Indexable {
 
     private static final String SMART_PIXELS = "smart_pixels";
+    private static final String KEY_FONT_PICKER_FRAGMENT_PREF = "custom_font";
+    private static final String SUBS_PACKAGE = "projekt.substratum";
 
     private Preference mSmartPixels;
+    private FontDialogPreference mFontPreference;
+    private IFontService mFontService;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +78,24 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
                 com.android.internal.R.bool.config_enableBurnInProtection);
         if (!mSmartPixelsSupported || !mBurnInSupported)
             prefScreen.removePreference(mSmartPixels);
+
+       mFontPreference =  (FontDialogPreference) findPreference(KEY_FONT_PICKER_FRAGMENT_PREF);
+       mFontService = IFontService.Stub.asInterface(
+                ServiceManager.getService("fontservice"));
+        if (!Utils.isPackageInstalled(getActivity(), SUBS_PACKAGE)) {
+            mFontPreference.setSummary(getCurrentFontInfo().fontName.replace("_", " "));
+        } else {
+            mFontPreference.setSummary(getActivity().getString(
+                    R.string.disable_fonts_installed_title));
+        }
+    }
+
+    private FontInfo getCurrentFontInfo() {
+        try {
+            return mFontService.getFontInfo();
+        } catch (RemoteException e) {
+            return FontInfo.getDefaultFontInfo();
+        }
     }
 
     public static void reset(Context mContext) {
