@@ -670,11 +670,11 @@
     <string name="positive_done">Zakończono</string>
     <!-- Stock navbar -->
     <string name="navbar_settings_title">Stockowe ustawienia dla paska nawigacji</string>
-    <string name="navbar_settings_summary">Customizations for stock navigation bar</string>
-    <string name="navbar_tuner_title">Navbar tuner</string>
-    <string name="navbar_tuner_summary">Customize buttons and layout</string>
-    <string name="navbar_arrow_keys_title">Show arrow keys while typing</string>
-    <string name="navbar_arrow_keys_summary">Display left and right cursor buttons while typing. Overrides IME switcher.</string>
+    <string name="navbar_settings_summary">Dostosowanie domyślnego pasku statusu</string>
+    <string name="navbar_tuner_title">Ustawienia paska nawigacji</string>
+    <string name="navbar_tuner_summary">Dostosuj przyciski i układ</string>
+    <string name="navbar_arrow_keys_title">Pokaż klawisze strzałek podczas pisania</string>
+    <string name="navbar_arrow_keys_summary">Pokaż przyciski lewego i prawego kursora podczas pisania. Zastępuje przełącznik IME.</string>
     <!-- SmartBar -->
     <string name="smartbar_category">Inteligentny pasek</string>
     <string name="smartbar_settings_title">Ustawienia Smartbar</string>
@@ -1554,8 +1554,8 @@ https://plus.google.com/communities/118297646046960923906</string>
     <string name="media_scanner_on_boot_ask">Zapytaj czy skanować (powiadomienie)</string>
     <string name="media_scanner_on_boot_disabled">Nie skanuj mediów</string>
     <!-- Reset settings -->
-    <string name="reset_settings_title">Reset settings</string>
-    <string name="reset_settings_message">This will reset most crdroid settings to their default values for the current user. Would you like to continue?</string>
+    <string name="reset_settings_title">Resetuj ustawienia</string>
+    <string name="reset_settings_message">To spowoduje zresetowanie większości ustawień crDroid do wartości domyślnych dla bieżącego użytkownika. Czy chcesz kontynuować?</string>
     <!-- OTA -->
     <string name="ota_crdroid_title">Aktualizacje</string>
     <string name="ota_crdroid_summary">Sprawdzenie dla aplikacji OTA oraz linków dla twojego urządzenia</string>
@@ -1667,8 +1667,8 @@ https://plus.google.com/communities/118297646046960923906</string>
     <!-- Ambient Ticker -->
     <string name="force_ambient_for_media_pref_title">Otaczająca serce muzyka</string>
     <string name="force_ambient_for_media_pref_summary">Konfiguracja notowań ambientowej muzyki</string>
-    <string name="ambient_ticker_footer">Ambient Music Ticker shows playing music track info within Ambient display screen.\n\nIt\'s triggered also if Ambient Display is disabled when a new track is started, forcing a clean ambient screen with track info in the middle of the screen.\n\nYou can also double tap on track info to skip track.</string>
-    <string name="force_ambient_for_media_title">Enable</string>
+    <string name="ambient_ticker_footer">Ambient Music Ticker pokazuje informacje o odtwarzanej muzyce w ekranie Ambient Display.\n\nZostanie także pokazany, jeśli ekran Ambient Display jest wyłączony i zostanie odtworzony nowy utwór, wyświetlając czysty ekran Ambient z informacjami o utworze na środku ekranu.\n\nMożesz także nacisnąć dwukrotnie informacje o utworze, aby go przeskoczyć.</string>
+    <string name="force_ambient_for_media_title">Włącz</string>
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">Automatyczne odblokowywanie twarzą</string>
     <string name="face_auto_unlock_summary">Odrzucenie blokady automatycznie po rozpoznaniu zaufanej twarzy</string>
@@ -1702,8 +1702,8 @@ https://plus.google.com/communities/118297646046960923906</string>
     <!-- Gestures -->
     <string name="gestures_title">Gesty</string>
     <string name="gestures_summary">Dostosuj ustawienia gestów</string>
-    <string name="system_gestures_title">System gestures</string>
-    <string name="system_gestures_summary">Customize other gesture settings</string>
+    <string name="system_gestures_title">Gesty systemowe</string>
+    <string name="system_gestures_summary">Dostosuj inne ustawienia gestów</string>
     <!-- Font picker -->
     <string name="font_picker_title">Czcionka</string>
     <string name="disable_fonts_installed_title">Niestandardowa czcionka wyłączona</string>
@@ -1868,9 +1868,9 @@ https://plus.google.com/communities/118297646046960923906</string>
     <string name="custom_seekbar_default_value_is_set">Wartość domyślna jest  ustawiona</string>
     <!-- Blink flashlight for incoming calls -->
     <string name="flashlight_on_call_title">Migaj latarką podczas połączenia</string>
-    <string name="flashlight_on_call_disabled">Disabled</string>
-    <string name="flashlight_on_call_not_dnd">Only in ringer mode</string>
-    <string name="flashlight_on_call_dnd">Only in DND mode</string>
+    <string name="flashlight_on_call_disabled">Wyłączony</string>
+    <string name="flashlight_on_call_not_dnd">Tylko w trybie dzwonka</string>
+    <string name="flashlight_on_call_dnd">Tylko w trybie Nie Przeszkadzać</string>
     <string name="flashlight_on_call_always">Zawsze</string>
     <!-- Themes -->
     <string name="style_title">Styl</string>
@@ -1880,18 +1880,18 @@ https://plus.google.com/communities/118297646046960923906</string>
     <string name="style_global_entry_light">Jasny</string>
     <string name="style_global_entry_dark">Ciemny</string>
     <string name="style_global_entry_time">Automatycznie (pora dnia)</string>
-    <string name="accent_picker_dialog_title">Select an accent color</string>
-    <string name="theme_accent_picker_title">Accent color</string>
-    <string name="theme_accent_picker_summary">Select system theme accent color</string>
-    <string name="theme_accent_picker_default">Default</string>
-    <string name="accent_picker_material_colors">Material palette</string>
-    <string name="accent_picker_custom_colors">User requested</string>
+    <string name="accent_picker_dialog_title">Wybierz kolor akcentu</string>
+    <string name="theme_accent_picker_title">Kolor akcentów</string>
+    <string name="theme_accent_picker_summary">Wybierz kolor akcentu motywu systemowego</string>
+    <string name="theme_accent_picker_default">Domyślne</string>
+    <string name="accent_picker_material_colors">Paleta Material</string>
+    <string name="accent_picker_custom_colors">Wybrane przez użytkownika</string>
     <string name="style_dark_overlay_title">Tryb ciemny</string>
     <string name="style_dark_overlay_default">Ciemny szary</string>
     <string name="style_dark_overlay_black">Czarny Amoled</string>
-    <string name="style_notification_title">Notification style</string>
-    <string name="style_notification_auto">Automatic (system theme)</string>
-    <string name="style_notification_light">Light</string>
-    <string name="style_notification_dark">Deep Grey</string>
-    <string name="style_notification_black">Amoled Black</string>
+    <string name="style_notification_title">Styl powiadomień</string>
+    <string name="style_notification_auto">Automatyczny (motyw systemu)</string>
+    <string name="style_notification_light">Jasny</string>
+    <string name="style_notification_dark">Ciemny szary</string>
+    <string name="style_notification_black">Czarny Amoled</string>
 </resources>
