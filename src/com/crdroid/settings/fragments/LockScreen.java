@@ -57,7 +57,7 @@ public class LockScreen extends SettingsPreferenceFragment
 
     private FingerprintManager mFingerprintManager;
 
-    private Preference mFaceUnlock;
+    private SwitchPreference mFaceUnlock;
     private Preference mFingerprintVib;
 
     @Override
@@ -68,7 +68,13 @@ public class LockScreen extends SettingsPreferenceFragment
 
         PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
 
-        mFaceUnlock = (Preference) findPreference(FACE_UNLOCK_PREF);
+        boolean mFaceUnlockEnabled = Settings.Secure.getIntForUser(getActivity().getContentResolver(),
+                Settings.Secure.FACE_AUTO_UNLOCK, getActivity().getResources().getBoolean(
+                com.android.internal.R.bool.config_face_unlock_enabled_by_default) ? 1 : 0,
+                UserHandle.USER_CURRENT) != 0;
+
+        mFaceUnlock = (SwitchPreference) findPreference(FACE_UNLOCK_PREF);
+        mFaceUnlock.setChecked(mFaceUnlockEnabled);
 
         if (!Utils.isPackageInstalled(getActivity(), FACE_UNLOCK_PACKAGE)) {
             mFaceUnlock.setEnabled(false);
@@ -94,7 +100,9 @@ public class LockScreen extends SettingsPreferenceFragment
         Settings.Global.putInt(resolver,
                 Settings.Global.LOCKSCREEN_ENABLE_POWER_MENU, 1);
         Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.FACE_AUTO_UNLOCK, 0, UserHandle.USER_CURRENT);
+                Settings.Secure.FACE_AUTO_UNLOCK, mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_face_unlock_enabled_by_default) ? 1 : 0,
+                UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
