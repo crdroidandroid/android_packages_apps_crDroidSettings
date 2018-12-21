@@ -73,10 +73,10 @@
     <string name="network_traffic_units_kilobytes">கிலோ பைட் ஒரு நொடிக்கு (கி.பைட்/நொ)</string>
     <string name="network_traffic_units_megabytes">மெகா பைட் ஒரு நொடிக்கு (மெ.பைட்/நொ)</string>
     <string name="network_traffic_frequency_title">புதுப்பித்தல் இடைவேளை</string>
-    <string name="network_traffic_frequency_500">500 ms</string>
-    <string name="network_traffic_frequency_1000">1000 ms</string>
-    <string name="network_traffic_frequency_1500">1500 ms</string>
-    <string name="network_traffic_frequency_2000">2000 ms</string>
+    <string name="network_traffic_frequency_500">500 மி.நொ</string>
+    <string name="network_traffic_frequency_1000">1000 மி.நொ</string>
+    <string name="network_traffic_frequency_1500">1500 மி.நொ</string>
+    <string name="network_traffic_frequency_2000">2000 மி.நொ</string>
     <string name="network_traffic_hidearrow">அம்புகள் மறை</string>
     <string name="network_traffic_hidearrow_summary">பிணைய போக்குவரத்து காட்டி அம்புகளை மறை</string>
     <!-- Settings suggestions  -->
@@ -95,7 +95,7 @@
     <string name="immersive_recents_navbar">வழிசெல்பட்டி மட்டுமே</string>
     <!-- Recents categories -->
     <string name="recents_default_category">AOSP</string>
-    <string name="recents_omni_category">OmniSwitch</string>
+    <string name="recents_omni_category">ஓம்னி மாற்று</string>
     <!-- AOSP Recents -->
     <string name="aosp_first_time_title">சமீபத்திய AOSP க்கள்</string>
     <string name="aosp_first_time_message">விரிவாக்கப்பட்ட டெஸ்க்டாப் செயல்படுத்தப்பட்டால் தேர்ந்தெடுத்தால் ஆழ்த்தப்படுதலின் சமீபத்தியவற்றுடன் அமைப்பு.</string>
@@ -115,41 +115,45 @@
     <string name="lockscreen_interface_category">இடைமுகம்</string>
     <string name="lockscreen_misc_category">பல்வகை</string>
     <!-- Lockscreen shortcuts -->
-    <string name="lockscreen_shortcuts_slim_title">Upper Shortcuts</string>
-    <string name="lockscreen_shortcuts_slim_summary">Change the shortcuts right under the lockscreen clock</string>
-    <string name="lockscreen_shorcuts_launch_type_title">Shortcut click type</string>
+    <string name="lockscreen_shortcuts_slim_title">குறுக்குவழிகள் மேம்படுத்தல்</string>
+    <string name="lockscreen_shortcuts_slim_summary">பூட்டுத்திரைக் கடிகாரம் கீழ் குறுக்குவழிகளை மாற்ற</string>
+    <string name="lockscreen_shorcuts_launch_type_title">குறுக்குவழி கிளிக் வகை</string>
     <string name="lockscreen_shortcuts_single_tap">அழுத்து</string>
-    <string name="lockscreen_shortcuts_double_tap">Double tap</string>
+    <string name="lockscreen_shortcuts_double_tap">இருமுறை தட்டு</string>
     <string name="lockscreen_shortcuts_longpress">நீண்டு அழுத்தவும்</string>
     <!-- Slim DSLV -->
     <string name="shortcut_action_longpress">நீண்ட அழுத்து</string>
-    <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
-    <string name="shortcut_action_select_action">Choose action:</string>
-    <string name="shortcut_action_select_action_newaction">Choose new action:</string>
-    <string name="shortcut_action_reset">Reset</string>
-    <string name="shortcut_action_add">Add</string>
-    <string name="shortcut_action_reset_message">Reset all entries to default?</string>
-    <string name="shortcut_action_max">Maximum entries size has been reached</string>
-    <string name="shortcut_action_warning">Warning</string>
-    <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
-    <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
-    <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
-    <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
-    <string name="shortcut_action_help_shortcut">shortcut</string>
-    <string name="shortcut_action_help_button">button</string>
-    <string name="shortcut_action_help_app">app</string>
-    <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
-    <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
-    <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>
-    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
-    <string name="shortcuts_applications">Applications</string>
-    <string name="shortcuts_select_custom_app_title">Select custom application</string>
-    <string name="shortcuts_icon_picker_type">Select icon type:</string>
-    <string name="shortcuts_icon_default">Default</string>
-    <string name="shortcuts_icon_presets">System icons</string>
-    <string name="shortcuts_icon_custom">Gallery</string>
-    <string name="shortcuts_icon_picker_choose_icon_title">Choose icon</string>
-    <string name="shortcuts_icon_picker_alarm">Alarm</string>
+    <string name="shortcut_action_select_action_longpress">நீண்ட அழுத்து செயலை தேர்ந்தெடுக்கவும்:</string>
+    <string name="shortcut_action_select_action">செயலைத் தேர்வுசெய்க
+
+choose_action_title
+செயல்கள் உரையாடல் மற்றும் இயல்புநிலை பணி மதிப்புகள் ActionPreference xml இல் அமைக்கப்பட்டுள்ளன
+கோப்பு: strings. xml</string>
+    <string name="shortcut_action_select_action_newaction">புதிய செயலைத் தேர்வுசெய்க</string>
+    <string name="shortcut_action_reset">மீட்டமை</string>
+    <string name="shortcut_action_add">சேர்</string>
+    <string name="shortcut_action_reset_message">அனைத்து உள்ளீடுகளும் இயல்புநிலைக்கு மீட்கவா ₹?</string>
+    <string name="shortcut_action_max">பதிவுகள் அதிகபட்ச அளவை எட்டிவிட்டது</string>
+    <string name="shortcut_action_warning">எச்சரிக்கை</string>
+    <string name="shortcut_action_warning_message">கடைசி உள்ளீட்டை நீக்க இயலாது</string>
+    <string name="shortcut_action_disable_message">இந்த வசதியை செயல்படுத்த உள்ளீடு Disabled\nAdd</string>
+    <string name="shortcut_image_not_valid">தேர்ந்தெடுக்கப்பட்ட பயன்பாடு ஒரு செல்லாத படவுரு திரும்ப அல்லது படத்தை நறுக்க ஆதரிக்கவில்லை. மற்றொரு பயன்பாட்டை உபயோகிக்கவும்.</string>
+    <string name="shortcut_duplicate_entry">தேர்வு நடவடிக்கை இருமுறை சேர்க்க முடியாது</string>
+    <string name="shortcut_action_help_shortcut">குறுக்குவழிகள்</string>
+    <string name="shortcut_action_help_button">பொத்தான்</string>
+    <string name="shortcut_action_help_app">பயன்பாடு</string>
+    <string name="shortcut_action_help_icon">, அந்த ஐகானை தனிப்பட்ட விருப்பங்களை கொண்டுவரும் போது</string>
+    <string name="shortcut_action_help_main">%1$sசேர்க்க, சேர் படவுருவை தேர்ந்தெடு. %1$s சேர்க்கப்படுகிறது ஒருமுறை வரிசையை தேர்ந்தெடுத்து மாற்றம் இலக்கு%2$s\n\nTo %1$s, கிடைமட்டமாக வரிசையை விட்டு தேய்க்கவும் அல்லது வலது நீக்கும். %1$s , left.\n\nTo செங்குத்தாக தொகுப்பாளர் இழுப்பதன் மூலம் பட்டியலில் தெளிவாக மீண்டும் ஒழுங்கு அல்லது இயல்புநிலைகளுக்கு மீட்டமைக்க, மீட்டமை படவுரு தேர்ந்தெடுக்கவும்.</string>
+    <string name="shortcut_action_help_delete_last_entry">இந்த அம்சம் முற்றிலும் முடக்கும் பட்டியலில் ஒவ்வொரு %1$s அகற்றுகிறது.</string>
+    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">இந்த அம்சம் முற்றிலும் முடக்கும் பட்டியலில் ஒவ்வொரு %1$s அகற்றுகிறது.</string>
+    <string name="shortcuts_applications">பயன்பாடுகள்</string>
+    <string name="shortcuts_select_custom_app_title">விரும்பிய பயன்பாட்டை தெரிவு செய்க</string>
+    <string name="shortcuts_icon_picker_type">சின்னத்தின் வகையை தேர்ந்தெடுக்கவும்:</string>
+    <string name="shortcuts_icon_default">இயல்புநிலை</string>
+    <string name="shortcuts_icon_presets">முறைமை படவுருக்கள்</string>
+    <string name="shortcuts_icon_custom">படத்தொகுப்பு</string>
+    <string name="shortcuts_icon_picker_choose_icon_title">சின்னம் தேர்வு</string>
+    <string name="shortcuts_icon_picker_alarm">அலாரம்</string>
     <string name="shortcuts_icon_picker_andy">Andy</string>
     <string name="shortcuts_icon_picker_battery">Battery</string>
     <string name="shortcuts_icon_picker_browser">Browser</string>
