@@ -59,4 +59,13 @@
         android:entries="@array/qs_header_style_entries"
         android:entryValues="@array/qs_header_style_values"
         android:defaultValue="0" />
+
+    <com.crdroid.settings.preferences.CustomSeekBarPreference
+        android:key="qs_panel_alpha"
+        android:title="@string/qs_panel_alpha_title"
+        android:max="255"
+        android:min="100"
+        android:defaultValue="255"
+        settings:units=""
+        android:persistent="false" />       
 </PreferenceScreen>
