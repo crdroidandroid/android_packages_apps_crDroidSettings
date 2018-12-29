@@ -35,6 +35,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.preferences.SystemSettingListPreference;
 
 import java.util.Date;
@@ -52,11 +53,14 @@ public class Clock extends SettingsPreferenceFragment
     private static final String CLOCK_DATE_POSITION = "status_bar_clock_date_position";
     private static final String CLOCK_DATE_STYLE = "status_bar_clock_date_style";
     private static final String CLOCK_DATE_FORMAT = "status_bar_clock_date_format";
+    private static final String CLOCK_DATE_AUTO_HIDE_HDUR = "status_bar_clock_auto_hide_hduration";
+    private static final String CLOCK_DATE_AUTO_HIDE_SDUR = "status_bar_clock_auto_hide_sduration";
 
     private static final int CLOCK_DATE_STYLE_LOWERCASE = 1;
     private static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
 
+    private CustomSeekBarPreference mHideDuration, mShowDuration;
     private LineageSystemSettingListPreference mStatusBarAmPm;
     private SystemSettingListPreference mClockDateDisplay;
     private SystemSettingListPreference mClockDatePosition;
@@ -70,6 +74,18 @@ public class Clock extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.status_bar_clock);
 
         ContentResolver resolver = getActivity().getContentResolver();
+
+        mHideDuration = (CustomSeekBarPreference) findPreference(CLOCK_DATE_AUTO_HIDE_HDUR);
+        int hideVal = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_HDURATION, 60, UserHandle.USER_CURRENT);
+        mHideDuration.setValue(hideVal);
+        mHideDuration.setOnPreferenceChangeListener(this);
+
+        mShowDuration = (CustomSeekBarPreference) findPreference(CLOCK_DATE_AUTO_HIDE_SDUR);
+        int showVal = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_SDURATION, 5, UserHandle.USER_CURRENT);
+        mShowDuration.setValue(showVal);
+        mShowDuration.setOnPreferenceChangeListener(this);
 
         mStatusBarAmPm =
                 (LineageSystemSettingListPreference) findPreference(STATUS_BAR_AM_PM);
@@ -106,7 +122,17 @@ public class Clock extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
       AlertDialog dialog;
       ContentResolver resolver = getActivity().getContentResolver();
-      if (preference == mClockDateDisplay) {
+      if (preference == mHideDuration) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_HDURATION, value, UserHandle.USER_CURRENT);
+            return true;
+      } else if (preference == mShowDuration) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_SDURATION, value, UserHandle.USER_CURRENT);
+            return true;
+      } else if (preference == mClockDateDisplay) {
           int val = Integer.parseInt((String) newValue);
           if (val == 0) {
               mClockDatePosition.setEnabled(false);
@@ -206,6 +232,12 @@ public class Clock extends SettingsPreferenceFragment
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
 
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_HDURATION, 60, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_SDURATION, 5, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_CLOCK_DATE_DISPLAY, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
