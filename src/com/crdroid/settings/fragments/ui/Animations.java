@@ -164,8 +164,6 @@ public class Animations extends SettingsPreferenceFragment
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.Global.putInt(resolver,
-                Settings.Global.SCREEN_OFF_ANIMATION, 0);
-        Settings.Global.putInt(resolver,
                 Settings.Global.TOAST_ANIMATION, 1);
         Settings.Global.putInt(resolver,
                 Settings.Global.LISTVIEW_ANIMATION, 0);
