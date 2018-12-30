@@ -65,6 +65,15 @@
             android:summary="@string/lock_screen_weather_summary"
             android:fragment="com.crdroid.settings.fragments.lockscreen.LockScreenWeather" />-->
 
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="weather_lockscreen_unit"
+            android:icon="@drawable/ic_weather"
+            android:title="@string/weather_unit"
+            android:summary="%s"
+            android:entries="@array/weather_unit_entries"
+            android:entryValues="@array/weather_unit_values"
+            android:defaultValue="0" />
+
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="lockscreen_visualizer"
             android:icon="@drawable/ic_visualizer"
