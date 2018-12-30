@@ -655,13 +655,13 @@
     <string name="pulse_custom_div">Balk ruimte</string>
     <string name="pulse_filled_block_size">Blok grootte</string>
     <string name="pulse_empty_block_size">Blok ruimte</string>
-    <string name="pulse_blacklist_title">Apps blacklist</string>
-    <string name="pulse_blacklist_summary">Apps to be skipped for Pulse</string>
-    <string name="pulse_blacklist_apps_cat_title">Blacklist</string>
-    <string name="pulse_blacklist_apps_title">Apps blacklist</string>
-    <string name="pulse_blacklist_apps_summary">Apps to not show in the panel</string>
-    <string name="pulse_blacklist_add_apps_title">Add app</string>
-    <string name="pulse_blacklist_add_apps_summary">Tap here to add, tap on added app to remove it</string>
+    <string name="pulse_blacklist_title">Geblokkeerde apps</string>
+    <string name="pulse_blacklist_summary">Apps die niet worden gebruikt voor Pulse</string>
+    <string name="pulse_blacklist_apps_cat_title">Zwarte lijst</string>
+    <string name="pulse_blacklist_apps_title">Geblokkeerde apps</string>
+    <string name="pulse_blacklist_apps_summary">Niet getoonde of geblokkeerde apps</string>
+    <string name="pulse_blacklist_add_apps_title">App toevoegen</string>
+    <string name="pulse_blacklist_add_apps_summary">Tik hier om toe te voegen, tik op een app in de lijst om deze te verwijderen</string>
     <!-- Navbar height -->
     <string name="navigation_bar_size_title">Balk grootte</string>
     <string name="portrait_title">Portret hoogte</string>
@@ -670,11 +670,11 @@
     <string name="positive_done">Klaar</string>
     <!-- Stock navbar -->
     <string name="navbar_settings_title">Standaard navbar instellingen</string>
-    <string name="navbar_settings_summary">Customizations for stock navigation bar</string>
-    <string name="navbar_tuner_title">Navbar tuner</string>
-    <string name="navbar_tuner_summary">Customize buttons and layout</string>
-    <string name="navbar_arrow_keys_title">Show arrow keys while typing</string>
-    <string name="navbar_arrow_keys_summary">Display left and right cursor buttons while typing. Overrides IME switcher.</string>
+    <string name="navbar_settings_summary">Aanpassingen voor standaard navigatie balk</string>
+    <string name="navbar_tuner_title">Navigatie balk tuner</string>
+    <string name="navbar_tuner_summary">Knoppen en lay-out aanpassen</string>
+    <string name="navbar_arrow_keys_title">Toon pijltjes toetsen tijdens het typen</string>
+    <string name="navbar_arrow_keys_summary">Links en rechts knoppen weergegeven terwijl u typt. Verbergt de IME wisselaar.</string>
     <!-- SmartBar -->
     <string name="smartbar_category">Smartbar</string>
     <string name="smartbar_settings_title">Smartbar instellingen</string>
@@ -744,6 +744,12 @@
     <string name="status_bar_clock_position_left">Links</string>
     <string name="status_bar_clock_position_center">Midden</string>
     <string name="status_bar_clock_position_hidden">Verborgen</string>
+    <string name="status_bar_clock_auto_hide_title">Automatisch verbergen</string>
+    <string name="status_bar_clock_auto_hide_summary">Verbergen en weergeven van de klok voor regelmatige interval om statusbar ruimte te besparen</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">Duur van verbergen</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Duur van verbergen klok in seconden</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Laat tijdsduur zien</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Aantal seconden dat moet worden gewacht voordat de klok verborgen word</string>
     <string name="status_bar_am_pm_title">AM/PM stijl</string>
     <string name="status_bar_am_pm_info">24-uur klok aan</string>
     <string name="status_bar_am_pm_normal">Normaal</string>
@@ -1553,8 +1559,8 @@
     <string name="media_scanner_on_boot_ask">Vragen om te scannen (melding)</string>
     <string name="media_scanner_on_boot_disabled">Media niet scannen</string>
     <!-- Reset settings -->
-    <string name="reset_settings_title">Reset settings</string>
-    <string name="reset_settings_message">This will reset most crdroid settings to their default values for the current user. Would you like to continue?</string>
+    <string name="reset_settings_title">Instellingen resetten</string>
+    <string name="reset_settings_message">Dit zal de meeste crdroid instellingen terugzetten op de standaardwaarden voor de huidige gebruiker. Wilt u doorgaan?</string>
     <!-- OTA -->
     <string name="ota_crdroid_title">Bijwerken</string>
     <string name="ota_crdroid_summary">Selectievakje voor OTA update en links voor uw apparaat</string>
@@ -1666,8 +1672,8 @@
     <!-- Ambient Ticker -->
     <string name="force_ambient_for_media_pref_title">Ambient muziek ticker</string>
     <string name="force_ambient_for_media_pref_summary">Configureren van de Ambient muziek ticker</string>
-    <string name="ambient_ticker_footer">Ambient Music Ticker shows playing music track info within Ambient display screen.\n\nIt\'s triggered also if Ambient Display is disabled when a new track is started, forcing a clean ambient screen with track info in the middle of the screen.\n\nYou can also double tap on track info to skip track.</string>
-    <string name="force_ambient_for_media_title">Enable</string>
+    <string name="ambient_ticker_footer">Toont huidige muziektrack-info op inactiviteitsdisplay.\n\nHet display wordt ook geactiveerd als een nieuw nummer is gestart; dit zorgt voor een leeg inactiviteitsdisplay met de trackinfo in het midden van het scherm.\n\nU kunt ook op de trackinfo dubbeltikken om het nummer over te slaan.</string>
+    <string name="force_ambient_for_media_title">Inschakelen</string>
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">Gezicht automatisch ontgrendelen</string>
     <string name="face_auto_unlock_summary">Vergrendelscherm overslaan na vertrouwde gezicht herkenning</string>
@@ -1701,8 +1707,8 @@
     <!-- Gestures -->
     <string name="gestures_title">Gebaren</string>
     <string name="gestures_summary">Gebaren instellingen aanpassen</string>
-    <string name="system_gestures_title">System gestures</string>
-    <string name="system_gestures_summary">Customize other gesture settings</string>
+    <string name="system_gestures_title">Systeem gebaren</string>
+    <string name="system_gestures_summary">Andere gebaar-instellingen aanpassen</string>
     <!-- Font picker -->
     <string name="font_picker_title">Lettertype</string>
     <string name="disable_fonts_installed_title">Aangepaste lettertypen uitgeschakeld</string>
@@ -1866,11 +1872,11 @@
     <string name="custom_seekbar_default_value_to_set">Standaard waarde: <xliff:g id="v">%s</xliff:g>\nLang indrukken om in te stellen</string>
     <string name="custom_seekbar_default_value_is_set">Standaard waarde is ingesteld</string>
     <!-- Blink flashlight for incoming calls -->
-    <string name="flashlight_on_call_title">Blink Flashlight on call</string>
-    <string name="flashlight_on_call_disabled">Disabled</string>
-    <string name="flashlight_on_call_not_dnd">Only in ringer mode</string>
-    <string name="flashlight_on_call_dnd">Only in DND mode</string>
-    <string name="flashlight_on_call_always">Always</string>
+    <string name="flashlight_on_call_title">Zaklamp bij oproep laten knipperen</string>
+    <string name="flashlight_on_call_disabled">Uitgeschakeld</string>
+    <string name="flashlight_on_call_not_dnd">Alleen in de bel stand</string>
+    <string name="flashlight_on_call_dnd">Alleen in de DND modus</string>
+    <string name="flashlight_on_call_always">Altijd</string>
     <!-- Themes -->
     <string name="style_title">Stijl</string>
     <string name="style_summary">Selecteer de systeemkleur</string>
@@ -1879,29 +1885,29 @@
     <string name="style_global_entry_light">Licht</string>
     <string name="style_global_entry_dark">Donker</string>
     <string name="style_global_entry_time">Automatisch (tijdstip van de dag)</string>
-    <string name="accent_picker_dialog_title">Select an accent color</string>
-    <string name="theme_accent_picker_title">Accent color</string>
-    <string name="theme_accent_picker_summary">Select system theme accent color</string>
-    <string name="theme_accent_picker_default">Default</string>
-    <string name="accent_picker_material_colors">Material palette</string>
-    <string name="accent_picker_custom_colors">User requested</string>
+    <string name="accent_picker_dialog_title">Selecteer een accentkleur</string>
+    <string name="theme_accent_picker_title">Accent kleur</string>
+    <string name="theme_accent_picker_summary">Selecteer systeem themakleur accent</string>
+    <string name="theme_accent_picker_default">Standaard</string>
+    <string name="accent_picker_material_colors">Materiële palet</string>
+    <string name="accent_picker_custom_colors">Gebruikers voorkeur</string>
     <string name="style_dark_overlay_title">Donkere modus</string>
     <string name="style_dark_overlay_default">Diep Grijs</string>
     <string name="style_dark_overlay_black">Amoled Zwart</string>
-    <string name="style_notification_title">Notification style</string>
-    <string name="style_notification_auto">Automatic (system theme)</string>
-    <string name="style_notification_light">Light</string>
-    <string name="style_notification_dark">Deep Grey</string>
-    <string name="style_notification_black">Amoled Black</string>
+    <string name="style_notification_title">Meldingen stijl</string>
+    <string name="style_notification_auto">Automatisch (systeemthema)</string>
+    <string name="style_notification_light">Licht</string>
+    <string name="style_notification_dark">Diep grijs</string>
+    <string name="style_notification_black">Amoled Zwart</string>
     <!-- Audio Panel view  -->
-    <string name="audio_panel_view_title">Volume panel</string>
-    <string name="audio_panel_view_summary">Customize volume panel dialog</string>
-    <string name="audio_panel_view_info">Active volume stream will be displayed on the screen even if disabled here. Volume streams enabled here would be displayed forcefully.</string>
+    <string name="audio_panel_view_title">Volume paneel</string>
+    <string name="audio_panel_view_summary">Volume paneel aanpassen</string>
+    <string name="audio_panel_view_info">Actief volume wordt getoond op het scherm, zelfs als het is uitgeschakeld.</string>
     <string name="audio_panel_view_media_title">Media</string>
-    <string name="audio_panel_view_ringer_title">Ring</string>
-    <string name="audio_panel_view_notification_title">Notification</string>
-    <string name="audio_panel_view_notification_disabled">Ring &amp; notification volumes are linked</string>
+    <string name="audio_panel_view_ringer_title">Beltoon</string>
+    <string name="audio_panel_view_notification_title">Melding</string>
+    <string name="audio_panel_view_notification_disabled">Ring &amp; volumes zijn gekoppeld</string>
     <string name="audio_panel_view_alarm_title">Alarm</string>
-    <string name="audio_panel_view_voice_title">Voice</string>
+    <string name="audio_panel_view_voice_title">Stem</string>
     <string name="audio_panel_view_bt_sco_title">Bluetooth</string>
 </resources>
