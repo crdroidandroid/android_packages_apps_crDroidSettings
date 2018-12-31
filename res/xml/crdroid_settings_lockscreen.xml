@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2018 crDroid Android Project
+     Copyright (C) 2016-2019 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -58,21 +58,12 @@
         android:key="lockscreen_interface_category"
          android:title="@string/lockscreen_interface_category">
 
-        <!--<PreferenceScreen
+        <Preference
             android:key="lock_screen_weather"
             android:icon="@drawable/ic_weather"
             android:title="@string/lock_screen_weather_title"
             android:summary="@string/lock_screen_weather_summary"
-            android:fragment="com.crdroid.settings.fragments.lockscreen.LockScreenWeather" />-->
-
-        <com.crdroid.settings.preferences.SystemSettingListPreference
-            android:key="weather_lockscreen_unit"
-            android:icon="@drawable/ic_weather"
-            android:title="@string/weather_unit"
-            android:summary="%s"
-            android:entries="@array/weather_unit_entries"
-            android:entryValues="@array/weather_unit_values"
-            android:defaultValue="0" />
+            android:fragment="com.crdroid.settings.fragments.lockscreen.LockScreenWeather" />
 
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="lockscreen_visualizer"

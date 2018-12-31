@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 crDroid Android Project
+ * Copyright (C) 2016-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.lockscreen.LockScreenWeather;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.preferences.SystemSettingListPreference;
 
@@ -55,13 +56,13 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String FACE_UNLOCK_PACKAGE = "com.android.facelock";
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
     private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
-    private static final String KEY_WEATHER_TEMP = "weather_lockscreen_unit";
+    private static final String KEY_LOCK_SCREEN_WEATHER = "lock_screen_weather";
 
     private FingerprintManager mFingerprintManager;
 
     private SwitchPreference mFaceUnlock;
     private Preference mFingerprintVib;
-    private SystemSettingListPreference mWeatherTemp;
+    private Preference mWeatherSettings;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -92,10 +93,10 @@ public class LockScreen extends SettingsPreferenceFragment
             gestCategory.removePreference(mFingerprintVib);
         }
 
-        mWeatherTemp = (SystemSettingListPreference) findPreference(KEY_WEATHER_TEMP);
+        mWeatherSettings = findPreference(KEY_LOCK_SCREEN_WEATHER);
         if (!Utils.isPackageInstalled(getActivity(), "com.crdroid.weather.client")) {
-            mWeatherTemp.setEnabled(false);
-            mWeatherTemp.setSummary(getActivity().getString(
+            mWeatherSettings.setEnabled(false);
+            mWeatherSettings.setSummary(getActivity().getString(
                     R.string.weather_client_not_available));
         }
     }
@@ -119,12 +120,11 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.WEATHER_LOCKSCREEN_UNIT, 0, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.LOCKSCREEN_VISUALIZER_ENABLED, 1, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT);
+        LockScreenWeather.reset(mContext);
     }
 
     @Override
