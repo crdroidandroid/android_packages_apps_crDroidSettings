@@ -744,12 +744,12 @@
     <string name="status_bar_clock_position_left">Trái</string>
     <string name="status_bar_clock_position_center">Giữa</string>
     <string name="status_bar_clock_position_hidden">Ẩn</string>
-    <string name="status_bar_clock_auto_hide_title">Auto-hide</string>
-    <string name="status_bar_clock_auto_hide_summary">Hide and display clock for regular interval to save statusbar space</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Hide duration</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Number of seconds to hide clock</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Show duration</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Number of seconds to wait before hiding clock</string>
+    <string name="status_bar_clock_auto_hide_title">Tự động ẩn</string>
+    <string name="status_bar_clock_auto_hide_summary">Ẩn và hiển thị đồng hồ cho khoảng thời gian thường xuyên để tiết kiệm không gian statusbar</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">Ẩn thời gian</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Số giây để ẩn đồng hồ</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Hiển thị thời gian</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Số giây để chờ đợi trước khi ẩn đồng hồ</string>
     <string name="status_bar_am_pm_title">Kiểu AM/PM</string>
     <string name="status_bar_am_pm_info">Đồng hồ dạng 24-giờ được bật</string>
     <string name="status_bar_am_pm_normal">Bình thường</string>
@@ -1672,7 +1672,7 @@
     <!-- Ambient Ticker -->
     <string name="force_ambient_for_media_pref_title">Thẻ âm nhạc ẩn hiện</string>
     <string name="force_ambient_for_media_pref_summary">Cấu hình thẻ âm nhạc</string>
-    <string name="ambient_ticker_footer">Ambient Music Ticker shows playing music track info within Ambient display screen.\n\nIt\'s triggered also if Ambient Display is disabled when a new track is started, forcing a clean ambient screen with track info in the middle of the screen.\n\nYou can also double tap on track info to skip track.</string>
+    <string name="ambient_ticker_footer">Môi trường xung quanh âm nhạc Ticker cho thấy chơi nhạc theo dõi các thông tin trong môi trường xung quanh màn hình screen.\n\nIt\'s kích hoạt cũng nếu Ambient Hiển thị vô hiệu hóa khi một ca khúc mới được bắt đầu, buộc một màn hình làm sạch môi trường xung quanh với các thông tin rãnh ở giữa là screen.\n\nYou có thể cũng tăng gấp đôi nhấp vào theo dõi thông tin để bỏ qua việc theo dõi.</string>
     <string name="force_ambient_for_media_title">Bật</string>
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">Tự động mở khoá khuôn mặt</string>
@@ -1867,9 +1867,9 @@
     <string name="recents_style_quickstep">QuickStep</string>
     <string name="recents_style_aosp">AOSP</string>
     <!-- Custom seekbar -->
-    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_value">Giá trị: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">theo mặc định</string>
-    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
+    <string name="custom_seekbar_default_value_to_set">Mặc định giá trị: <xliff:g id="v">%s</xliff:g>\nLong tap để thiết lập</string>
     <string name="custom_seekbar_default_value_is_set">Giá trị mặc định được thiết lập</string>
     <!-- Blink flashlight for incoming calls -->
     <string name="flashlight_on_call_title">Đèn nhấp nháy khi có cuộc gọi</string>
@@ -1889,8 +1889,8 @@
     <string name="theme_accent_picker_title">Màu nhấn</string>
     <string name="theme_accent_picker_summary">Chọn màu nhấn của chủ đề hệ thống</string>
     <string name="theme_accent_picker_default">Mặc định</string>
-    <string name="accent_picker_material_colors">Material palette</string>
-    <string name="accent_picker_custom_colors">User requested</string>
+    <string name="accent_picker_material_colors">Bảng màu vật liệu</string>
+    <string name="accent_picker_custom_colors">Người dùng được yêu cầu</string>
     <string name="style_dark_overlay_title">Chế độ tối</string>
     <string name="style_dark_overlay_default">Xám</string>
     <string name="style_dark_overlay_black">Amoled đen</string>
@@ -1900,17 +1900,17 @@
     <string name="style_notification_dark">Xám đậm</string>
     <string name="style_notification_black">Đen</string>
     <!-- Audio Panel view  -->
-    <string name="audio_panel_view_title">Volume panel</string>
-    <string name="audio_panel_view_summary">Customize volume panel dialog</string>
-    <string name="audio_panel_view_info">Active volume stream will be displayed on the screen even if disabled here. Volume streams enabled here would be displayed forcefully.</string>
-    <string name="audio_panel_view_media_title">Media</string>
-    <string name="audio_panel_view_ringer_title">Ring</string>
-    <string name="audio_panel_view_notification_title">Notification</string>
-    <string name="audio_panel_view_notification_disabled">Ring &amp; notification volumes are linked</string>
-    <string name="audio_panel_view_alarm_title">Alarm</string>
-    <string name="audio_panel_view_voice_title">Voice</string>
+    <string name="audio_panel_view_title">Bảng điều chỉnh âm lượng</string>
+    <string name="audio_panel_view_summary">Tùy chỉnh hộp thoại bảng điều khiển âm lượng</string>
+    <string name="audio_panel_view_info">Hoạt động khối lượng dòng sẽ được hiển thị trên màn hình ngay cả khi tắt ở đây Khối lượng dòng cho phép ở đây sẽ được hiển thị mạnh mẽ.</string>
+    <string name="audio_panel_view_media_title">Phương tiện truyền thông</string>
+    <string name="audio_panel_view_ringer_title">Chuông</string>
+    <string name="audio_panel_view_notification_title">Thông báo</string>
+    <string name="audio_panel_view_notification_disabled">Vòng &amp; amp; thông báo tập được liên kết</string>
+    <string name="audio_panel_view_alarm_title">Báo thức</string>
+    <string name="audio_panel_view_voice_title">Thoại</string>
     <string name="audio_panel_view_bt_sco_title">Bluetooth</string>
     <!-- Weather -->
-    <string name="weather_unit">Temperature unit</string>
-    <string name="weather_client_not_available">Weather client not available</string>
+    <string name="weather_unit">Đơn vị nhiệt độ</string>
+    <string name="weather_client_not_available">Thời tiết khách hàng không có sẵn</string>
 </resources>
