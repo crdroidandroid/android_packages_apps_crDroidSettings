@@ -656,7 +656,7 @@
     <string name="pulse_filled_block_size">Памер блокаў</string>
     <string name="pulse_empty_block_size">Адлегласць паміж блокамі</string>
     <string name="pulse_blacklist_title">Чорны спіс праграм</string>
-    <string name="pulse_blacklist_summary">Apps to be skipped for Pulse</string>
+    <string name="pulse_blacklist_summary">Праграмы, якія будуць прапушчаны Pulse</string>
     <string name="pulse_blacklist_apps_cat_title">Чорны спіс</string>
     <string name="pulse_blacklist_apps_title">Чорны спіс праграм</string>
     <string name="pulse_blacklist_apps_summary">Праграмы, якія не адлюстроўваюцца на панэлі</string>
@@ -670,9 +670,9 @@
     <string name="positive_done">Гатова</string>
     <!-- Stock navbar -->
     <string name="navbar_settings_title">Налады Stock</string>
-    <string name="navbar_settings_summary">Customizations for stock navigation bar</string>
-    <string name="navbar_tuner_title">Navbar tuner</string>
-    <string name="navbar_tuner_summary">Customize buttons and layout</string>
+    <string name="navbar_settings_summary">Налады стоковой панэлі навігацыі</string>
+    <string name="navbar_tuner_title">Налада панэлі навігацыі</string>
+    <string name="navbar_tuner_summary">Налады і размяшчэння кнопак</string>
     <string name="navbar_arrow_keys_title">Паказваць стрэлкі падчас друкаваньня тэксту</string>
     <string name="navbar_arrow_keys_summary">Паказваць кнопки левага и правага курсору падчас друкавання. Кнопка варыянту друкавання будзе схавана.</string>
     <!-- SmartBar -->
@@ -744,12 +744,12 @@
     <string name="status_bar_clock_position_left">Злева</string>
     <string name="status_bar_clock_position_center">Па цэнтры</string>
     <string name="status_bar_clock_position_hidden">Схавана</string>
-    <string name="status_bar_clock_auto_hide_title">Auto-hide</string>
-    <string name="status_bar_clock_auto_hide_summary">Hide and display clock for regular interval to save statusbar space</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Hide duration</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Number of seconds to hide clock</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Show duration</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Number of seconds to wait before hiding clock</string>
+    <string name="status_bar_clock_auto_hide_title">Хаваць аўтаматычна</string>
+    <string name="status_bar_clock_auto_hide_summary">Хаваць і адлюстроўваць гадзіны з рэгулярным інтэрвалам для захавання месца ў радку стану</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">Схаваць працягласць</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Колькасць секунд да ўтойвання гадзін</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Паказаць працягласць</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Колькасць секунд чакання да ўтойвання гадзін</string>
     <string name="status_bar_am_pm_title">Варыянт \"AM/PM\"</string>
     <string name="status_bar_am_pm_info">24-гадзінны фармат часу</string>
     <string name="status_bar_am_pm_normal">Звычайны</string>
@@ -1559,8 +1559,8 @@
     <string name="media_scanner_on_boot_ask">Па запыце (апавяшчэнне)</string>
     <string name="media_scanner_on_boot_disabled">Не сканаваць медыя</string>
     <!-- Reset settings -->
-    <string name="reset_settings_title">Reset settings</string>
-    <string name="reset_settings_message">This will reset most crdroid settings to their default values for the current user. Would you like to continue?</string>
+    <string name="reset_settings_title">Скінуць налады</string>
+    <string name="reset_settings_message">Гэта прывядзе да скіду большасці налад crdroid да значэнняў па змаўчанні для бягучага карыстальніка. Працягнуць?</string>
     <!-- OTA -->
     <string name="ota_crdroid_title">Абнаўленні</string>
     <string name="ota_crdroid_summary">Праверыць OTA абнаўленне і спасылкі для вашай прылады</string>
@@ -1672,7 +1672,7 @@
     <!-- Ambient Ticker -->
     <string name="force_ambient_for_media_pref_title">Музычны цікер на Ambient Display</string>
     <string name="force_ambient_for_media_pref_summary">Налады музычнага цікера на Ambient Display</string>
-    <string name="ambient_ticker_footer">Ambient Music Ticker shows playing music track info within Ambient display screen.\n\nIt\'s triggered also if Ambient Display is disabled when a new track is started, forcing a clean ambient screen with track info in the middle of the screen.\n\nYou can also double tap on track info to skip track.</string>
+    <string name="ambient_ticker_footer">Ambient Music Ticker адлюстроўвае інфармацыю аб бягучым трэку выкарыстоўваючы «Ambient Display»\n\nСпрацоўвае таксама, калі «Ambient Display» адключаны пры прайграванні новага трэка, прымусова ачышчае экран і паказвае інфармацыю аб трэку ў сярэдзіне экрана.\n\nДля пропуску двойчы краніце інфармацыю аб трэку.</string>
     <string name="force_ambient_for_media_title">Уключыць</string>
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">Аўтаматычная разблакоўка сканарам асобы</string>
@@ -1885,32 +1885,32 @@
     <string name="style_global_entry_light">Светлы</string>
     <string name="style_global_entry_dark">Цёмны</string>
     <string name="style_global_entry_time">Аўтаматычны (час сутак)</string>
-    <string name="accent_picker_dialog_title">Select an accent color</string>
-    <string name="theme_accent_picker_title">Accent color</string>
-    <string name="theme_accent_picker_summary">Select system theme accent color</string>
-    <string name="theme_accent_picker_default">Default</string>
-    <string name="accent_picker_material_colors">Material palette</string>
-    <string name="accent_picker_custom_colors">User requested</string>
+    <string name="accent_picker_dialog_title">Выберыце адценне колеру</string>
+    <string name="theme_accent_picker_title">Асноўны колер</string>
+    <string name="theme_accent_picker_summary">Выберыце адценне колеру сістэмнай тэмы</string>
+    <string name="theme_accent_picker_default">Па змаўчанні</string>
+    <string name="accent_picker_material_colors">Матэрыяльная палітра</string>
+    <string name="accent_picker_custom_colors">Карыстацкая палітра</string>
     <string name="style_dark_overlay_title">Цёмны рэжым</string>
     <string name="style_dark_overlay_default">Цёмна-шэры</string>
     <string name="style_dark_overlay_black">Чорны amoled</string>
-    <string name="style_notification_title">Notification style</string>
-    <string name="style_notification_auto">Automatic (system theme)</string>
-    <string name="style_notification_light">Light</string>
-    <string name="style_notification_dark">Deep Grey</string>
-    <string name="style_notification_black">Amoled Black</string>
+    <string name="style_notification_title">Стыль апавяшчэнняў</string>
+    <string name="style_notification_auto">Аўтаматычна (сістэмная тэма)</string>
+    <string name="style_notification_light">Светлы</string>
+    <string name="style_notification_dark">Цёмна-шэры</string>
+    <string name="style_notification_black">Насычана чорная</string>
     <!-- Audio Panel view  -->
-    <string name="audio_panel_view_title">Volume panel</string>
-    <string name="audio_panel_view_summary">Customize volume panel dialog</string>
-    <string name="audio_panel_view_info">Active volume stream will be displayed on the screen even if disabled here. Volume streams enabled here would be displayed forcefully.</string>
-    <string name="audio_panel_view_media_title">Media</string>
-    <string name="audio_panel_view_ringer_title">Ring</string>
-    <string name="audio_panel_view_notification_title">Notification</string>
-    <string name="audio_panel_view_notification_disabled">Ring &amp; notification volumes are linked</string>
-    <string name="audio_panel_view_alarm_title">Alarm</string>
-    <string name="audio_panel_view_voice_title">Voice</string>
+    <string name="audio_panel_view_title">Панэль гучнасці</string>
+    <string name="audio_panel_view_summary">Налада дыялогавага акна панэлі гучнасці</string>
+    <string name="audio_panel_view_info">Актыўны паток гучнасці будзе адлюстроўвацца на экране, нават калі ён выключаны. Патокі гучнасці, уключаныя тут, будуць паказвацца прымусова.</string>
+    <string name="audio_panel_view_media_title">Медыя</string>
+    <string name="audio_panel_view_ringer_title">Званок</string>
+    <string name="audio_panel_view_notification_title">Апавяшчэнне</string>
+    <string name="audio_panel_view_notification_disabled">Гучнасць званка і апавяшчэнняў звязаныя</string>
+    <string name="audio_panel_view_alarm_title">Будзільнік</string>
+    <string name="audio_panel_view_voice_title">Голас</string>
     <string name="audio_panel_view_bt_sco_title">Bluetooth</string>
     <!-- Weather -->
-    <string name="weather_unit">Temperature unit</string>
-    <string name="weather_client_not_available">Weather client not available</string>
+    <string name="weather_unit">Адзінкі тэмпературы</string>
+    <string name="weather_client_not_available">Кліент надвор\'я не даступны</string>
 </resources>
