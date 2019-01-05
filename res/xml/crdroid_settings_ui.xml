@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2018 crDroid Android Project
+     Copyright (C) 2016-2019 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -60,6 +60,14 @@
         android:key="long_screen_settings"
         android:icon="@drawable/ic_fullscreen"
         lineage:requiresConfig="@*lineageos.platform:bool/config_haveHigherAspectRatioScreen" /> -->
+
+    <!-- Rounded Corners -->
+    <PreferenceScreen
+        android:key="rounded_corners"
+        android:icon="@drawable/ic_rounded_corner"
+        android:title="@string/corners_title"
+        android:summary="@string/corners_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.RoundedCorners" />
 
     <!-- Smart Pixels -->
     <PreferenceScreen
