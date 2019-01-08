@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2019 crDroid Android Project
+ * Copyright (C) 2017-2020 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,9 +88,9 @@ public class TiltSensor implements SensorEventListener {
     protected void enable() {
         if (DEBUG) Log.d(TAG, "Enabling");
         submit(() -> {
+            mEntryTimestamp = SystemClock.elapsedRealtime();
             mSensorManager.registerListener(this, mSensor,
                     SensorManager.SENSOR_DELAY_NORMAL, BATCH_LATENCY_IN_MS * 1000);
-            mEntryTimestamp = SystemClock.elapsedRealtime();
         });
     }
 
