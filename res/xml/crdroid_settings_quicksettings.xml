@@ -81,13 +81,6 @@
     <PreferenceCategory 
          android:title="@string/qs_tiles_category">
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="bluetooth_qs_show_battery"
-            android:icon="@drawable/ic_bluetooth_connect"
-            android:title="@string/bluetooth_battery_title"
-            android:summary="@string/bluetooth_battery_summary"
-            android:defaultValue="true"/>
-
         <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_quickbar_scroll_enabled"
             android:icon="@drawable/ic_gesture_swipe_left"
@@ -231,6 +224,13 @@
             android:summary="@string/status_bar_clock_summary"
             android:fragment="com.crdroid.settings.fragments.statusbar.Clock"
             settings:allowDividerAbove="false" />-->
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="bluetooth_qs_show_battery"
+            android:icon="@drawable/ic_bluetooth_connect"
+            android:title="@string/bluetooth_battery_title"
+            android:summary="@string/bluetooth_battery_summary"
+            android:defaultValue="true"/>
 
         <!-- QS Brightness Slider position -->
         <lineageos.preference.LineageSecureSettingListPreference
