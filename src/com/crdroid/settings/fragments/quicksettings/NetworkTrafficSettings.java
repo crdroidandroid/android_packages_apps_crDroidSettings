@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2018 crDroid Android Project
+ * Copyright (C) 2017-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.crdroid.settings.fragments.statusbar;
+package com.crdroid.settings.fragments.quicksettings;
 
 import android.content.ContentResolver;
 import android.content.Context;

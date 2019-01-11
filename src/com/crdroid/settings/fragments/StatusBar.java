@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 crDroid Android Project
+ * Copyright (C) 2016-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,6 @@ import com.android.settings.search.Indexable;
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.statusbar.BatteryBar;
 import com.crdroid.settings.fragments.statusbar.Clock;
-import com.crdroid.settings.fragments.statusbar.NetworkTrafficSettings;
 import com.crdroid.settings.preferences.SystemSettingListPreference;
 import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
 
@@ -259,7 +258,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.TEXT_CHARGING_SYMBOL, 0, UserHandle.USER_CURRENT);
         BatteryBar.reset(mContext);
         Clock.reset(mContext);
-        NetworkTrafficSettings.reset(mContext);
     }
 
     @Override

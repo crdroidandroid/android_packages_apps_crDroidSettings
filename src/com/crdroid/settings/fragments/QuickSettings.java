@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 crDroid Android Project
+ * Copyright (C) 2016-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
+import com.crdroid.settings.fragments.quicksettings.NetworkTrafficSettings;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -142,6 +143,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements Indexab
                 Settings.System.QS_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_ROWS_PORTRAIT, 2, UserHandle.USER_CURRENT);
+        NetworkTrafficSettings.reset(mContext);
     }
 
     @Override
