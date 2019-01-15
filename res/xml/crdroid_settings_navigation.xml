@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2018 crDroid Android Project
+     Copyright (C) 2016-2019 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -111,6 +111,15 @@
     <PreferenceCategory
         android:key="navbar_gestures_category"
         android:title="@string/gestures_title">
+
+        <!-- One hand mode -->
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="one_handed_mode_ui"
+            android:icon="@drawable/ic_gesture_swipe_horizontal"
+            android:title="@string/one_handed_mode_title"
+            android:summary="@string/one_handed_mode_summary"
+            android:dependency="navbar_visibility"
+            android:defaultValue="false" />
 
         <PreferenceScreen
             android:key="carbon_gestures"

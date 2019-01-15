@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 crDroid Android Project
+ * Copyright (C) 2016-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -225,6 +225,8 @@ public class Navigation extends SettingsPreferenceFragment implements
             Settings.Secure.NAVIGATION_BAR_HEIGHT_LANDSCAPE, 100, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
             Settings.Secure.NAVIGATION_BAR_WIDTH, 100, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+            Settings.Secure.ONE_HANDED_MODE_UI, 0, UserHandle.USER_CURRENT);
         CarbonGesturesSettings.reset(mContext);
         FlingSettings.reset(mContext);
         SmartbarSettings.reset(mContext);
