@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2018 crDroid Android Project
+     Copyright (C) 2016-2019 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -33,10 +33,11 @@
         android:title="@string/recents_icon_pack_title"
         android:summary="@string/recents_icon_pack_summary" />
 
-    <!--<PreferenceCategory 
+    <PreferenceCategory 
+        android:key="stock_recents"
         android:title="@string/recents_default_category">
 
-        <ListPreference
+        <!--<ListPreference
             android:key="immersive_recents"
             android:icon="@drawable/ic_recents"
             android:title="@string/immersive_recents_title"
@@ -77,7 +78,7 @@
             android:title="@string/systemui_recents_mem_display_text_color"
             android:defaultValue="#00ffffff"
             android:dependency="systemui_recents_mem_display"
-            alphaSlider="true" />
+            alphaSlider="true" />-->
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="show_clear_all_recents"
@@ -86,7 +87,7 @@
             android:summary="@string/show_clear_all_recents_button_summary"
             android:defaultValue="true" />
 
-        <ListPreference
+        <com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="recents_clear_all_location"
             android:icon="@drawable/ic_recents_clear_all"
             android:title="@string/recents_clear_all_location_title"
@@ -95,7 +96,7 @@
             android:defaultValue="3"
             android:dependency="show_clear_all_recents" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="recents_dismiss_icon"
             android:icon="@drawable/ic_dismiss"
             android:title="@string/recents_dismiss_icon_title"
@@ -121,8 +122,8 @@
             android:key="recents_use_grid"
             android:icon="@drawable/ic_grid_view"
             android:title="@string/recents_use_grid_title"
-            android:summary="@string/recents_use_grid_summary" />
-    </PreferenceCategory>-->
+            android:summary="@string/recents_use_grid_summary" />-->
+    </PreferenceCategory>
 
     <!--<PreferenceCategory 
         android:title="@string/recents_omni_category">

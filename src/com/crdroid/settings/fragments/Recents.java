@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 crDroid Android Project
+ * Copyright (C) 2016-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
@@ -71,6 +72,7 @@ public class Recents extends SettingsPreferenceFragment
 
     private static final String PREF_RECENTS_STYLE = "recents_component";
     private static final String PREF_RECENTS_ICONPACK = "recents_icon_pack";
+    private static final String CATEGORY_STOCK = "stock_recents";
 
     private final static String[] sSupportedActions = new String[] {
         "org.adw.launcher.THEMES",
@@ -87,6 +89,7 @@ public class Recents extends SettingsPreferenceFragment
     private ListView mListView;
 
     private ListPreference mRecentsStyle;
+    private PreferenceCategory stockCategory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -94,8 +97,16 @@ public class Recents extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.crdroid_settings_recents);
 
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
         mRecentsStyle = (ListPreference) findPreference(PREF_RECENTS_STYLE);
         mRecentsStyle.setOnPreferenceChangeListener(this);
+
+        int recentsStyle = Settings.System.getIntForUser(getContentResolver(),
+                Settings.System.RECENTS_COMPONENT, 0, UserHandle.USER_CURRENT);
+
+        stockCategory = (PreferenceCategory) prefScreen.findPreference(CATEGORY_STOCK);
+        stockCategory.setEnabled(recentsStyle == 1);
     }
 
     @Override
@@ -106,6 +117,7 @@ public class Recents extends SettingsPreferenceFragment
             Settings.System.putIntForUser(resolver,
                 Settings.System.RECENTS_COMPONENT, value, UserHandle.USER_CURRENT);
             Utils.showSystemUiRestartDialog(getActivity());
+            stockCategory.setEnabled(value == 1);
             return true;
         }
         return false;
@@ -280,9 +292,13 @@ public class Recents extends SettingsPreferenceFragment
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.RECENTS_COMPONENT, 0, UserHandle.USER_CURRENT);
         Settings.System.putString(resolver,
                 Settings.System.RECENTS_ICON_PACK, "");
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_CLEAR_ALL_RECENTS, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
