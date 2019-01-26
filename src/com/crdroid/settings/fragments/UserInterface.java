@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 crDroid Android Project
+ * Copyright (C) 2016-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.ui.Animations;
+import com.crdroid.settings.fragments.ui.BlurPersonalizations;
 import com.crdroid.settings.fragments.ui.DozeFragment;
 import com.crdroid.settings.fragments.ui.FontDialogPreference;
 import com.crdroid.settings.fragments.ui.RoundedCorners;
@@ -102,6 +103,7 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Animations.reset(mContext);
+        BlurPersonalizations.reset(mContext);
         DozeFragment.reset(mContext);
         RoundedCorners.reset(mContext);
         SmartPixels.reset(mContext);
