@@ -48,6 +48,8 @@ import java.util.ArrayList;
 import lineageos.preference.LineageSystemSettingListPreference;
 import lineageos.providers.LineageSettings;
 
+import org.lineageos.internal.util.FileUtils;
+
 public class StatusBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 
@@ -60,6 +62,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
     private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
+    private static final String SU_INDICATOR = "show_su_indicator";
 
     private static final int PULLDOWN_DIR_NONE = 0;
     private static final int PULLDOWN_DIR_RIGHT = 1;
@@ -81,6 +84,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ListPreference mBatteryStyle;
     private ListPreference mBatteryPercent;
     private ListPreference mTextSymbol;
+    private SwitchPreference mSuIndicator;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -89,6 +93,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.crdroid_settings_statusbar);
 
         ContentResolver resolver = getActivity().getContentResolver();
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
 
         mQuickPulldown =
                 (LineageSystemSettingListPreference) findPreference(QUICK_PULLDOWN);
@@ -145,6 +151,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mBatteryStyle.setOnPreferenceChangeListener(this);
 
         updateBatteryOptions(batterystyle);
+
+        mSuIndicator = (SwitchPreference) findPreference(SU_INDICATOR);
+        if (!FileUtils.fileExists("/system/xbin/su"))
+            prefScreen.removePreference(mSuIndicator);
     }
 
     @Override
@@ -242,6 +252,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_SU_INDICATOR, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_VOLTE_ICON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
