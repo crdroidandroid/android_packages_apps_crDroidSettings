@@ -116,7 +116,7 @@ public class Recents extends SettingsPreferenceFragment
             int value = Integer.parseInt((String) newValue);
             Settings.System.putIntForUser(resolver,
                 Settings.System.RECENTS_COMPONENT, value, UserHandle.USER_CURRENT);
-            Utils.showSystemUiRestartDialog(getActivity());
+            Toast.makeText(context, R.string.device_restart_required, Toast.LENGTH_SHORT).show();
             stockCategory.setEnabled(value == 1);
             return true;
         }
