@@ -23,6 +23,7 @@ import android.content.IFontService;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
@@ -72,11 +73,12 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
         addPreferencesFromResource(R.xml.crdroid_settings_ui);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = getResources();
 
         mSmartPixels = (Preference) prefScreen.findPreference(SMART_PIXELS);
-        boolean mSmartPixelsSupported = getResources().getBoolean(
+        boolean mSmartPixelsSupported = res.getBoolean(
                 com.android.internal.R.bool.config_supportSmartPixels);
-        boolean mBurnInSupported = getResources().getBoolean(
+        boolean mBurnInSupported = res.getBoolean(
                 com.android.internal.R.bool.config_enableBurnInProtection);
         if (!mSmartPixelsSupported || !mBurnInSupported)
             prefScreen.removePreference(mSmartPixels);
@@ -130,6 +132,21 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
                     result.add(sir);
 
                     return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    final Resources res = context.getResources();
+
+                    boolean mSmartPixelsSupported = res.getBoolean(
+                            com.android.internal.R.bool.config_supportSmartPixels);
+                    boolean mBurnInSupported = res.getBoolean(
+                            com.android.internal.R.bool.config_enableBurnInProtection);
+                    if (!mSmartPixelsSupported || !mBurnInSupported)
+                        keys.add(SMART_PIXELS);
+
+                    return keys;
                 }
             };
 }

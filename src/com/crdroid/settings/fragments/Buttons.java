@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 crDroid Android Project
+ * Copyright (C) 2016-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,22 +71,35 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_HOME_LONG_PRESS = "hardware_keys_home_long_press";
     private static final String KEY_HOME_DOUBLE_TAP = "hardware_keys_home_double_tap";
+    private static final String KEY_MENU_WAKE_SCREEN = "menu_wake_screen";
     private static final String KEY_MENU_PRESS = "hardware_keys_menu_press";
     private static final String KEY_MENU_LONG_PRESS = "hardware_keys_menu_long_press";
+    private static final String KEY_ASSIST_WAKE_SCREEN = "assist_wake_screen";
     private static final String KEY_ASSIST_PRESS = "hardware_keys_assist_press";
     private static final String KEY_ASSIST_LONG_PRESS = "hardware_keys_assist_long_press";
+    private static final String KEY_APP_SWITCH_WAKE_SCREEN = "app_switch_wake_screen";
     private static final String KEY_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
     private static final String KEY_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
+    private static final String KEY_VOLUME_WAKE_SCREEN = "volume_wake_screen";
+    private static final String KEY_VOLUME_ANSWER_CALL = "volume_answer_call";
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
+    private static final String KEY_ADVANCED_REBOOT = "advanced_reboot";
+    private static final String KEY_POWER_MENU = "power_menu";
     private static final String KEY_POWER_END_CALL = "power_end_call";
+    private static final String KEY_HOME_WAKE_SCREEN = "home_wake_screen";
     private static final String KEY_HOME_ANSWER_CALL = "home_answer_call";
     private static final String KEY_VOLUME_MUSIC_CONTROLS = "volbtn_music_controls";
     private static final String KEY_TORCH_LONG_PRESS_POWER_GESTURE =
             "torch_long_press_power_gesture";
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
             "torch_long_press_power_timeout";
+    private static final String KEY_BACK_WAKE_SCREEN = "back_wake_screen";
     private static final String KEY_BACK_LONG_PRESS = "hardware_keys_back_long_press";
+    private static final String KEY_CAMERA_WAKE_SCREEN = "camera_wake_screen";
+    private static final String KEY_CAMERA_SLEEP_ON_RELEASE = "camera_sleep_on_release";
+    private static final String KEY_CAMERA_LAUNCH = "camera_launch";
+    private static final String KEY_ADDITIONAL_BUTTONS = "additional_buttons";
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -97,8 +110,6 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String CATEGORY_CAMERA = "camera_key";
     private static final String CATEGORY_VOLUME = "volume_keys";
     private static final String CATEGORY_BACKLIGHT = "key_backlight";
-
-    private LineageHardwareManager mLineageHardware;
 
     private SwitchPreference mHardwareKeysDisable;
     private SwitchPreference mAnbi;
@@ -146,7 +157,6 @@ public class Buttons extends SettingsPreferenceFragment implements
         final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
         final boolean hasCameraKey = (deviceKeys & KEY_MASK_CAMERA) != 0;
-        final boolean hasVolumeKeys = (deviceKeys & KEY_MASK_VOLUME) != 0;
 
         final boolean showHomeWake = (deviceWakeKeys & KEY_MASK_HOME) != 0;
         final boolean showBackWake = (deviceWakeKeys & KEY_MASK_BACK) != 0;
@@ -174,7 +184,7 @@ public class Buttons extends SettingsPreferenceFragment implements
         final PreferenceCategory cameraCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_CAMERA);
 
-        mLineageHardware = LineageHardwareManager.getInstance(getActivity());
+        LineageHardwareManager mLineageHardware = LineageHardwareManager.getInstance(getActivity());
         mHardwareKeysDisable = (SwitchPreference) findPreference(HWKEYS_DISABLED);
 
         if (mLineageHardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE)) {
@@ -250,7 +260,7 @@ public class Buttons extends SettingsPreferenceFragment implements
 
         if (hasHomeKey) {
             if (!showHomeWake) {
-                homeCategory.removePreference(findPreference(LineageSettings.System.HOME_WAKE_SCREEN));
+                homeCategory.removePreference(findPreference(KEY_HOME_WAKE_SCREEN));
             }
 
             if (!TelephonyUtils.isVoiceCapable(getActivity())) {
@@ -268,7 +278,7 @@ public class Buttons extends SettingsPreferenceFragment implements
 
         if (hasBackKey) {
             if (!showBackWake) {
-                backCategory.removePreference(findPreference(LineageSettings.System.BACK_WAKE_SCREEN));
+                backCategory.removePreference(findPreference(KEY_BACK_WAKE_SCREEN));
             }
 
             mBackLongPressAction = initList(KEY_BACK_LONG_PRESS, backLongPressAction);
@@ -278,7 +288,7 @@ public class Buttons extends SettingsPreferenceFragment implements
 
         if (hasMenuKey) {
             if (!showMenuWake) {
-                menuCategory.removePreference(findPreference(LineageSettings.System.MENU_WAKE_SCREEN));
+                menuCategory.removePreference(findPreference(KEY_MENU_WAKE_SCREEN));
             }
 
             Action pressAction = Action.fromSettings(resolver,
@@ -297,7 +307,7 @@ public class Buttons extends SettingsPreferenceFragment implements
 
         if (hasAssistKey) {
             if (!showAssistWake) {
-                assistCategory.removePreference(findPreference(LineageSettings.System.ASSIST_WAKE_SCREEN));
+                assistCategory.removePreference(findPreference(KEY_ASSIST_WAKE_SCREEN));
             }
 
             Action pressAction = Action.fromSettings(resolver,
@@ -315,8 +325,7 @@ public class Buttons extends SettingsPreferenceFragment implements
 
         if (hasAppSwitchKey) {
             if (!showAppSwitchWake) {
-                appSwitchCategory.removePreference(findPreference(
-                        LineageSettings.System.APP_SWITCH_WAKE_SCREEN));
+                appSwitchCategory.removePreference(findPreference(KEY_APP_SWITCH_WAKE_SCREEN));
             }
 
             Action pressAction = Action.fromSettings(resolver,
@@ -333,10 +342,10 @@ public class Buttons extends SettingsPreferenceFragment implements
         }
 
         if (hasCameraKey) {
-            mCameraWakeScreen = (SwitchPreference) findPreference(LineageSettings.System.CAMERA_WAKE_SCREEN);
+            mCameraWakeScreen = (SwitchPreference) findPreference(KEY_CAMERA_WAKE_SCREEN);
             mCameraSleepOnRelease =
-                    (SwitchPreference) findPreference(LineageSettings.System.CAMERA_SLEEP_ON_RELEASE);
-            mCameraLaunch = (SwitchPreference) findPreference(LineageSettings.System.CAMERA_LAUNCH);
+                    (SwitchPreference) findPreference(KEY_CAMERA_SLEEP_ON_RELEASE);
+            mCameraLaunch = (SwitchPreference) findPreference(KEY_CAMERA_LAUNCH);
 
             if (!showCameraWake) {
                 prefScreen.removePreference(mCameraWakeScreen);
@@ -351,12 +360,11 @@ public class Buttons extends SettingsPreferenceFragment implements
 
         if (DeviceUtils.hasVolumeRocker(getActivity())) {
             if (!showVolumeWake) {
-                volumeCategory.removePreference(findPreference(LineageSettings.System.VOLUME_WAKE_SCREEN));
+                volumeCategory.removePreference(findPreference(KEY_VOLUME_WAKE_SCREEN));
             }
 
             if (!TelephonyUtils.isVoiceCapable(getActivity())) {
-                volumeCategory.removePreference(
-                        findPreference(LineageSettings.System.VOLUME_ANSWER_CALL));
+                volumeCategory.removePreference(findPreference(KEY_VOLUME_ANSWER_CALL));
             }
 
             int cursorControlAction = Settings.System.getIntForUser(resolver,
@@ -378,7 +386,7 @@ public class Buttons extends SettingsPreferenceFragment implements
         if (mCameraWakeScreen != null) {
             if (mCameraSleepOnRelease != null && !getResources().getBoolean(
                     org.lineageos.platform.internal.R.bool.config_singleStageCameraKey)) {
-                mCameraSleepOnRelease.setDependency(LineageSettings.System.CAMERA_WAKE_SCREEN);
+                mCameraSleepOnRelease.setDependency(KEY_CAMERA_WAKE_SCREEN);
             }
         }
 
@@ -387,7 +395,7 @@ public class Buttons extends SettingsPreferenceFragment implements
 
         if (mVolumeWakeScreen != null) {
             if (mVolumeMusicControls != null) {
-                mVolumeMusicControls.setDependency(LineageSettings.System.VOLUME_WAKE_SCREEN);
+                mVolumeMusicControls.setDependency(KEY_VOLUME_WAKE_SCREEN);
                 mVolumeWakeScreen.setDisableDependentsState(true);
             }
         }
@@ -578,6 +586,94 @@ public class Buttons extends SettingsPreferenceFragment implements
                     result.add(sir);
 
                     return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+
+                    final Resources res = context.getResources();
+
+                    final int deviceKeys = res.getInteger(
+                            org.lineageos.platform.internal.R.integer.config_deviceHardwareKeys);
+                    final int deviceWakeKeys = res.getInteger(
+                            org.lineageos.platform.internal.R.integer.config_deviceHardwareWakeKeys);
+
+                    final boolean hasPowerKey = KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_POWER);
+                    final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
+                    final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
+                    final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
+                    final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
+                    final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
+                    final boolean hasCameraKey = (deviceKeys & KEY_MASK_CAMERA) != 0;
+
+                    LineageHardwareManager mLineageHardware = LineageHardwareManager.getInstance(context);
+
+                    if (!mLineageHardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE))
+                        keys.add(HWKEYS_DISABLED);
+
+                    if (!hasHomeKey && !hasBackKey && !hasMenuKey && !hasAssistKey && !hasAppSwitchKey)
+                        keys.add(KEY_ANBI);
+
+                    if (!hasPowerKey) {
+                        keys.add(KEY_ADVANCED_REBOOT);
+                        keys.add(KEY_POWER_MENU);
+                        keys.add(KEY_POWER_END_CALL);
+                        keys.add(KEY_TORCH_LONG_PRESS_POWER_GESTURE);
+                        keys.add(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
+                    } else {
+                        if (!TelephonyUtils.isVoiceCapable(context)) {
+                            keys.add(KEY_POWER_END_CALL);
+                        }
+                        if (!DeviceUtils.deviceSupportsFlashLight(context)) {
+                            keys.add(KEY_TORCH_LONG_PRESS_POWER_GESTURE);
+                            keys.add(KEY_TORCH_LONG_PRESS_POWER_TIMEOUT);
+                        }
+                    }
+
+                    keys.add(KEY_HOME_WAKE_SCREEN);
+                    keys.add(KEY_HOME_LONG_PRESS);
+                    keys.add(KEY_HOME_DOUBLE_TAP);
+
+                    if (!hasHomeKey || !TelephonyUtils.isVoiceCapable(context)) {
+                        keys.add(KEY_HOME_ANSWER_CALL);
+                    }
+
+                    keys.add(KEY_BACK_WAKE_SCREEN);
+                    keys.add(KEY_BACK_LONG_PRESS);
+                    keys.add(KEY_BACK_WAKE_SCREEN);
+                    keys.add(KEY_MENU_WAKE_SCREEN);
+                    keys.add(KEY_MENU_PRESS);
+                    keys.add(KEY_MENU_LONG_PRESS);
+                    keys.add(KEY_ASSIST_WAKE_SCREEN);
+                    keys.add(KEY_ASSIST_PRESS);
+                    keys.add(KEY_ASSIST_LONG_PRESS);
+                    keys.add(KEY_APP_SWITCH_WAKE_SCREEN);
+                    keys.add(KEY_APP_SWITCH_PRESS);
+                    keys.add(KEY_APP_SWITCH_LONG_PRESS);
+                    keys.add(KEY_CAMERA_WAKE_SCREEN);
+
+                    if (!hasCameraKey) {
+                        keys.add(KEY_CAMERA_SLEEP_ON_RELEASE);
+                        keys.add(KEY_CAMERA_LAUNCH);
+                    }
+
+                    keys.add(KEY_VOLUME_WAKE_SCREEN);
+
+                    if (!DeviceUtils.hasVolumeRocker(context)) {
+                        keys.add(KEY_VOLUME_ANSWER_CALL);
+                        keys.add(KEY_VOLUME_MUSIC_CONTROLS);
+                        keys.add(KEY_VOLUME_KEY_CURSOR_CONTROL);
+                        keys.add(KEY_SWAP_VOLUME_BUTTONS);
+                    } else {
+                        if (!TelephonyUtils.isVoiceCapable(context)) {
+                            keys.add(KEY_VOLUME_ANSWER_CALL);
+                        }
+                    }
+
+                    keys.add(KEY_ADDITIONAL_BUTTONS);
+
+                    return keys;
                 }
             };
 }

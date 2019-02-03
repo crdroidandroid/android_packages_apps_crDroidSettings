@@ -58,8 +58,6 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String KEY_LOCK_SCREEN_WEATHER = "lock_screen_weather";
 
-    private FingerprintManager mFingerprintManager;
-
     private SwitchPreference mFaceUnlock;
     private Preference mFingerprintVib;
     private Preference mWeatherSettings;
@@ -86,7 +84,8 @@ public class LockScreen extends SettingsPreferenceFragment
                     R.string.face_auto_unlock_not_available));
         }
 
-        mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        FingerprintManager mFingerprintManager = (FingerprintManager) 
+                getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (Preference) findPreference(FP_SUCCESS_VIBRATE);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
@@ -147,6 +146,18 @@ public class LockScreen extends SettingsPreferenceFragment
                     result.add(sir);
 
                     return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    FingerprintManager mFingerprintManager = (FingerprintManager)
+                            context.getSystemService(Context.FINGERPRINT_SERVICE);
+                    if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
+                        keys.add(FP_SUCCESS_VIBRATE);
+                    }
+
+                    return keys;
                 }
             };
 }

@@ -41,6 +41,7 @@ import com.crdroid.settings.fragments.statusbar.BatteryBar;
 import com.crdroid.settings.fragments.statusbar.Clock;
 import com.crdroid.settings.preferences.SystemSettingListPreference;
 import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
+import com.crdroid.settings.utils.TelephonyUtils;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -63,6 +64,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
     private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
     private static final String SU_INDICATOR = "show_su_indicator";
+    private static final String KEY_SHOW_FOURG = "show_fourg_icon";
+    private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
+    private static final String KEY_SHOW_VOLTE = "show_volte_icon";
 
     private static final int PULLDOWN_DIR_NONE = 0;
     private static final int PULLDOWN_DIR_RIGHT = 1;
@@ -85,6 +89,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ListPreference mBatteryPercent;
     private ListPreference mTextSymbol;
     private SwitchPreference mSuIndicator;
+    private SwitchPreference mShowFourg;
+    private SwitchPreference mShowRoaming;
+    private SwitchPreference mShowVolte;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -155,6 +162,16 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mSuIndicator = (SwitchPreference) findPreference(SU_INDICATOR);
         if (!FileUtils.fileExists("/system/xbin/su"))
             prefScreen.removePreference(mSuIndicator);
+
+        mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
+        mShowRoaming = (SwitchPreference) findPreference(KEY_SHOW_ROAMING);
+        mShowVolte = (SwitchPreference) findPreference(KEY_SHOW_VOLTE);
+
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(mShowFourg);
+            prefScreen.removePreference(mShowRoaming);
+            prefScreen.removePreference(mShowVolte);
+        }
     }
 
     @Override
@@ -292,6 +309,22 @@ public class StatusBar extends SettingsPreferenceFragment implements
                     result.add(sir);
 
                     return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+
+                    if (!FileUtils.fileExists("/system/xbin/su"))
+                        keys.add(SU_INDICATOR);
+
+                    if (!TelephonyUtils.isVoiceCapable(context)) {
+                        keys.add(KEY_SHOW_FOURG);
+                        keys.add(KEY_SHOW_ROAMING);
+                        keys.add(KEY_SHOW_VOLTE);
+                    }
+
+                    return keys;
                 }
             };
 }

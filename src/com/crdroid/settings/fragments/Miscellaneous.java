@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 crDroid Android Project
+ * Copyright (C) 2016-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -142,6 +142,16 @@ public class Miscellaneous extends SettingsPreferenceFragment
                     result.add(sir);
 
                     return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    if (!Utils.isPackageInstalled(context, KEY_LOCK_CLOCK_PACKAGE_NAME)) {
+                        keys.add(KEY_LOCK_CLOCK);
+                    }
+
+                    return keys;
                 }
             };
 }

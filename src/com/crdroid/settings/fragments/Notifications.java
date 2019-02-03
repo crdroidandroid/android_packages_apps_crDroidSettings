@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 crDroid Android Project
+ * Copyright (C) 2016-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
@@ -61,15 +62,16 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
         addPreferencesFromResource(R.xml.crdroid_settings_notifications);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = getResources();
 
         mBatLights = (Preference) prefScreen.findPreference(BATTERY_LIGHTS_PREF);
-        boolean mBatLightsSupported = getResources().getInteger(
+        boolean mBatLightsSupported = res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities) >= 64;
         if (!mBatLightsSupported)
             prefScreen.removePreference(mBatLights);
 
         mNotLights = (Preference) prefScreen.findPreference(NOTIFICATION_LIGHTS_PREF);
-        boolean mNotLightsSupported = getResources().getBoolean(
+        boolean mNotLightsSupported = res.getBoolean(
                 com.android.internal.R.bool.config_intrusiveNotificationLed);
         if (!mNotLightsSupported)
             prefScreen.removePreference(mNotLights);
@@ -113,6 +115,27 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
                     result.add(sir);
 
                     return result;
+                }
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    final Resources res = context.getResources();
+
+                    boolean mBatLightsSupported = res.getInteger(
+                            org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities) >= 64;
+                    if (!mBatLightsSupported)
+                        keys.add(BATTERY_LIGHTS_PREF);
+
+                    boolean mNotLightsSupported = res.getBoolean(
+                            com.android.internal.R.bool.config_intrusiveNotificationLed);
+                    if (!mNotLightsSupported)
+                        keys.add(NOTIFICATION_LIGHTS_PREF);
+
+                    if (!Utils.deviceSupportsFlashLight(context))
+                        keys.add(FLASHLIGHT_ON_CALL);
+
+                    return keys;
                 }
             };
 }
