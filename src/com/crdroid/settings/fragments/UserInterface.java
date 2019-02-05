@@ -63,9 +63,12 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
     private static final String KEY_FONT_PICKER_FRAGMENT_PREF = "custom_font";
     private static final String SUBS_PACKAGE = "projekt.substratum";
 
+    private static final String CATEGORY_SUBSTRATUM = "category_substratum";
+
     private Preference mSmartPixels;
     private FontDialogPreference mFontPreference;
     private IFontService mFontService;
+    private PreferenceCategory substratumCategory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -83,11 +86,15 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
         if (!mSmartPixelsSupported || !mBurnInSupported)
             prefScreen.removePreference(mSmartPixels);
 
+       substratumCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_SUBSTRATUM);
+
        mFontPreference =  (FontDialogPreference) findPreference(KEY_FONT_PICKER_FRAGMENT_PREF);
        mFontService = IFontService.Stub.asInterface(
                 ServiceManager.getService("fontservice"));
         if (!Utils.isPackageInstalled(getActivity(), SUBS_PACKAGE)) {
             mFontPreference.setSummary(getCurrentFontInfo().fontName.replace("_", " "));
+            prefScreen.removePreference(substratumCategory);
         } else {
             mFontPreference.setSummary(getActivity().getString(
                     R.string.disable_fonts_installed_title));
@@ -104,6 +111,8 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES, 0, UserHandle.USER_CURRENT);
         Animations.reset(mContext);
         BlurPersonalizations.reset(mContext);
         DozeFragment.reset(mContext);
