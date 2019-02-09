@@ -41,6 +41,7 @@ import com.android.internal.util.crdroid.Utils;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.navigation.CarbonGesturesSettings;
+import com.crdroid.settings.fragments.navigation.PieSettings;
 import com.crdroid.settings.fragments.navigation.StockNavBarSettings;
 import com.crdroid.settings.fragments.navigation.SwipeUpGesturesSettings;
 import com.crdroid.settings.fragments.navigation.smartnav.FlingSettings;
@@ -232,6 +233,7 @@ public class Navigation extends SettingsPreferenceFragment implements
         SmartbarSettings.reset(mContext);
         StockNavBarSettings.reset(mContext);
         SwipeUpGesturesSettings.reset(mContext);
+        PieSettings.reset(mContext);
         PulseSettings.reset(mContext);
     }
 
