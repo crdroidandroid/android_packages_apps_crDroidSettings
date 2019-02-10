@@ -21,6 +21,12 @@
     android:title="@string/pie_settings"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="edge_service_for_gestures"
+        android:title="@string/edge_gesture_service_title"
+        android:summary="@string/edge_gesture_service_summary"
+        android:defaultValue="false" />
+
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="pie_state"
         android:title="@string/pie_enable_title"

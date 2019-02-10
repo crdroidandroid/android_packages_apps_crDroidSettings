@@ -55,6 +55,8 @@ public class PieSettings extends SettingsPreferenceFragment {
              0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver, Settings.Secure.PIE_GRAVITY,
              2, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver, Settings.System.USE_EDGE_SERVICE_FOR_GESTURES,
+             0, UserHandle.USER_CURRENT);
     }
 
     @Override
