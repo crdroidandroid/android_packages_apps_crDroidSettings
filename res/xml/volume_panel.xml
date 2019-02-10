@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018 crDroid Android Project
+     Copyright (C) 2018-2019 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,6 +18,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/audio_panel_view_title">
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="audio_panel_view_position"
+        android:title="@string/audio_panel_view_position_title" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="audio_panel_view_media"

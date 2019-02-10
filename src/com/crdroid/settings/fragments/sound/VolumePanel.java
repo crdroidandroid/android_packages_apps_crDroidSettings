@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 crDroid Android Project
+ * Copyright (C) 2018-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,8 +41,10 @@ public class VolumePanel extends SettingsPreferenceFragment {
     private static final String TAG = "VolumePanel";
 
     private static final String KEY_NOTIFICATION = "audio_panel_view_notification";
+    private static final String KEY_POSITION = "audio_panel_view_position";
 
     private SwitchPreference mNotification;
+    private SwitchPreference mPosition;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,7 +63,25 @@ public class VolumePanel extends SettingsPreferenceFragment {
             mNotification.setEnabled(false);
         }
 
+        boolean isAudioPanelOnLeft = Settings.System.getIntForUser(resolver,
+                Settings.System.AUDIO_PANEL_VIEW_POSITION, isAudioPanelOnLeftSide(getActivity()) ? 1 : 0,
+                UserHandle.USER_CURRENT) != 0;
+
+        mPosition = (SwitchPreference) findPreference(KEY_POSITION);
+        mPosition.setChecked(isAudioPanelOnLeft);
+
         mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.audio_panel_view_info);
+    }
+
+    private static boolean isAudioPanelOnLeftSide(Context context) {
+        try {
+            Context con = context.createPackageContext("com.android.systemui", 0);
+            int id = con.getResources().getIdentifier("config_audioPanelOnLeftSide",
+                    "bool", "com.android.systemui");
+            return con.getResources().getBoolean(id);
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
 
     public static void reset(Context mContext) {
@@ -78,6 +98,9 @@ public class VolumePanel extends SettingsPreferenceFragment {
                 Settings.System.AUDIO_PANEL_VIEW_VOICE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.AUDIO_PANEL_VIEW_BT_SCO, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.AUDIO_PANEL_VIEW_POSITION, isAudioPanelOnLeftSide(mContext) ? 1 : 0,
+                UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.VOLUME_LINK_NOTIFICATION, 1, UserHandle.USER_CURRENT);
     }
