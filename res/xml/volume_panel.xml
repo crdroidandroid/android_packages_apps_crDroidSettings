@@ -23,6 +23,14 @@
         android:key="audio_panel_view_position"
         android:title="@string/audio_panel_view_position_title" />
 
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="audio_panel_view_timeout"
+        android:title="@string/audio_panel_view_timeout_title"
+        android:defaultValue="3"
+        android:max="10"
+        settings:min="1"
+        settings:interval="1" />
+
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="audio_panel_view_media"
         android:title="@string/audio_panel_view_media_title"
