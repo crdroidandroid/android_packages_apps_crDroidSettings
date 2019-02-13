@@ -45,6 +45,14 @@
         android:defaultValue="0" />
 
     <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="berry_switch_style"
+        android:title="@string/switch_style_title"
+        android:dialogTitle="@string/switch_style_title"
+        android:entries="@array/switch_style_entries"
+        android:entryValues="@array/switch_style_values"
+        android:defaultValue="0" />
+
+    <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="berry_qs_tile_style"
         android:title="@string/qs_tile_style_title"
         android:dialogTitle="@string/qs_tile_style_title"
