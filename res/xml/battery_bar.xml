@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-     Copyright (C) 2016-2018 crDroid Android Project
+     Copyright (C) 2016-2019 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -30,12 +30,13 @@
         android:title="@string/battery_bar_title"
         android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.CustomSeekBarPreference
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
         android:key="statusbar_battery_bar_thickness"
         android:title="@string/battery_bar_thickness_title"
+        android:defaultValue="2"
         android:max="4"
         settings:min="1"
-        settings:units="dp"
+        settings:units="@string/unit_pixels"
         android:dependency="statusbar_battery_bar" />
 
     <com.crdroid.settings.preferences.SystemSettingListPreference

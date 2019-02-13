@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2016 The DirtyUnicorns Project
- *           (C) 2018 crDroid Android Project
+ *           (C) 2018-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,6 @@ import com.android.internal.utils.Config;
 import com.android.internal.utils.Config.ButtonConfig;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.R;
 
 import java.io.File;
@@ -67,16 +66,12 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
     private static final String SMARTBAR_CONFIGS_PREFIX = "smartbar_config_";
     private static final String KEY_SMARTBAR_BACKUP = "smartbar_profile_save";
     private static final String KEY_SMARTBAR_RESTORE = "smartbar_profile_restore";
-    private static final String PREF_NAVBAR_BUTTONS_ALPHA = "navbar_buttons_alpha";
-    private static final String PREF_SMARTBAR_CUSTOM_ICON_SIZE = "smartbar_custom_icon_size";
     private static final String PREF_SMARTBAR_DOUBLE_TAP_SLEEP = "smartbar_doubletap_sleep";
 
     private ListPreference mSmartBarContext;
     private ListPreference mImeActions;
     private ListPreference mButtonAnim;
     private ListPreference mButtonLongpressDelay;
-    private CustomSeekBarPreference mButtonsAlpha;
-    private CustomSeekBarPreference mCustomButtonScaling;
     private SwitchPreference mDoubleTapSleep;
 
     private static final int MENU_RESET = Menu.FIRST;
@@ -118,25 +113,11 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
         mButtonAnim.setValue(String.valueOf(buttonAnimVal));
         mButtonAnim.setOnPreferenceChangeListener(this);
 
-        mButtonsAlpha =
-                (CustomSeekBarPreference) findPreference(PREF_NAVBAR_BUTTONS_ALPHA);
-        int bAlpha = Settings.Secure.getIntForUser(resolver,
-                Settings.Secure.NAVBAR_BUTTONS_ALPHA, 255, UserHandle.USER_CURRENT);
-        mButtonsAlpha.setValue(bAlpha);
-        mButtonsAlpha.setOnPreferenceChangeListener(this);
-
         int longpressDelayVal = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.SMARTBAR_LONGPRESS_DELAY, 0, UserHandle.USER_CURRENT);
         mButtonLongpressDelay = (ListPreference) findPreference("smartbar_longpress_delay");
         mButtonLongpressDelay.setValue(String.valueOf(longpressDelayVal));
         mButtonLongpressDelay.setOnPreferenceChangeListener(this);
-
-        mCustomButtonScaling =
-                (CustomSeekBarPreference) findPreference(PREF_SMARTBAR_CUSTOM_ICON_SIZE);
-        int size = Settings.Secure.getIntForUser(resolver,
-                Settings.Secure.SMARTBAR_CUSTOM_ICON_SIZE, 60, UserHandle.USER_CURRENT);
-        mCustomButtonScaling.setValue(size);
-        mCustomButtonScaling.setOnPreferenceChangeListener(this);
 
         mDoubleTapSleep = (SwitchPreference) findPreference(PREF_SMARTBAR_DOUBLE_TAP_SLEEP);
 
@@ -290,20 +271,10 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
             Settings.Secure.putIntForUser(resolver, Settings.Secure.SMARTBAR_IME_HINT_MODE,
                     val, UserHandle.USER_CURRENT);
             return true;
-        } else if (preference == mButtonsAlpha) {
-            int val = (Integer) newValue;
-            Settings.Secure.putIntForUser(resolver,
-                    Settings.Secure.NAVBAR_BUTTONS_ALPHA, val, UserHandle.USER_CURRENT);
-            return true;
         } else if (preference == mButtonLongpressDelay) {
             int val = Integer.parseInt((String) newValue);
             Settings.Secure.putIntForUser(resolver,
                     Settings.Secure.SMARTBAR_LONGPRESS_DELAY, val, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mCustomButtonScaling) {
-            int val = (Integer) newValue;
-            Settings.Secure.putIntForUser(resolver,
-                    Settings.Secure.SMARTBAR_CUSTOM_ICON_SIZE, val, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
@@ -337,19 +308,9 @@ public class SmartbarSettings extends SettingsPreferenceFragment implements
         mButtonAnim.setOnPreferenceChangeListener(this);
 
         Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.NAVBAR_BUTTONS_ALPHA, 255, UserHandle.USER_CURRENT);
-        mButtonsAlpha.setValue(255);
-        mButtonsAlpha.setOnPreferenceChangeListener(this);
-
-        Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.SMARTBAR_LONGPRESS_DELAY, 0, UserHandle.USER_CURRENT);
         mButtonLongpressDelay.setValue(String.valueOf(0));
         mButtonLongpressDelay.setOnPreferenceChangeListener(this);
-
-        Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.SMARTBAR_CUSTOM_ICON_SIZE, 60, UserHandle.USER_CURRENT);
-        mCustomButtonScaling.setValue(60);
-        mCustomButtonScaling.setOnPreferenceChangeListener(this);
 
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.SMARTBAR_DOUBLETAP_SLEEP, 0, UserHandle.USER_CURRENT);

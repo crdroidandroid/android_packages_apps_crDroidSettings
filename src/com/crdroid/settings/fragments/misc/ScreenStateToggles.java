@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2013 Android Open Kang Project
  *           (C) 2017 faust93 at monumentum@gmail.com
- *           (C) 2017-2018 crDroid Android Project
+ *           (C) 2017-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,6 @@ import android.util.Log;
 import android.net.ConnectivityManager;
 
 import com.crdroid.settings.R;
-import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.nano.MetricsProto;
@@ -50,8 +49,6 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
     private static final String SCREEN_STATE_TOGGLES_TWOG = "screen_state_toggles_twog";
     private static final String SCREEN_STATE_TOGGLES_GPS = "screen_state_toggles_gps";
     private static final String SCREEN_STATE_TOGGLES_MOBILE_DATA = "screen_state_toggles_mobile_data";
-    private static final String SCREEN_STATE_ON_DELAY = "screen_state_on_delay";
-    private static final String SCREEN_STATE_OFF_DELAY = "screen_state_off_delay";
     private static final String SCREEN_STATE_CATGEGORY_LOCATION = "screen_state_toggles_location_key";
     private static final String SCREEN_STATE_CATGEGORY_MOBILE_DATA = "screen_state_toggles_mobile_key";
 
@@ -61,8 +58,6 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
     private SwitchPreference mEnableScreenStateTogglesTwoG;
     private SwitchPreference mEnableScreenStateTogglesGps;
     private SwitchPreference mEnableScreenStateTogglesMobileData;
-    private CustomSeekBarPreference mSecondsOffDelay;
-    private CustomSeekBarPreference mSecondsOnDelay;
     private PreferenceCategory mMobileDateCategory;
     private PreferenceCategory mLocationCategory;
 
@@ -83,18 +78,6 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
 
         mEnableScreenStateToggles.setChecked(enabled != 0);
         mEnableScreenStateToggles.setOnPreferenceChangeListener(this);
-
-        mSecondsOffDelay = (CustomSeekBarPreference) findPreference(SCREEN_STATE_OFF_DELAY);
-        int offd = Settings.System.getIntForUser(resolver,
-                Settings.System.SCREEN_STATE_OFF_DELAY, 0, UserHandle.USER_CURRENT);
-        mSecondsOffDelay.setValue(offd);
-        mSecondsOffDelay.setOnPreferenceChangeListener(this);
-
-        mSecondsOnDelay = (CustomSeekBarPreference) findPreference(SCREEN_STATE_ON_DELAY);
-        int ond = Settings.System.getIntForUser(resolver,
-                Settings.System.SCREEN_STATE_ON_DELAY, 0, UserHandle.USER_CURRENT);
-        mSecondsOnDelay.setValue(ond);
-        mSecondsOnDelay.setOnPreferenceChangeListener(this);
 
         mMobileDateCategory = (PreferenceCategory) findPreference(
                 SCREEN_STATE_CATGEGORY_MOBILE_DATA);
@@ -194,17 +177,6 @@ public class ScreenStateToggles extends SettingsPreferenceFragment
 
             Intent intent = new Intent("android.intent.action.SCREEN_STATE_SERVICE_UPDATE");
             mContext.sendBroadcast(intent);
-            return true;
-        } else if (preference == mSecondsOffDelay) {
-            int delay = (Integer) newValue;
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.SCREEN_STATE_OFF_DELAY, delay, UserHandle.USER_CURRENT);
-
-            return true;
-        } else if (preference == mSecondsOnDelay) {
-            int delay = (Integer) newValue;
-            Settings.System.putIntForUser(resolver,
-                    Settings.System.SCREEN_STATE_ON_DELAY, delay, UserHandle.USER_CURRENT);
             return true;
         }
 

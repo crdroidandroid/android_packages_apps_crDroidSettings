@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 crDroid Android Project
+ * Copyright (C) 2016-2019 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,13 +42,11 @@ public class BatteryBar extends SettingsPreferenceFragment
     private static final String PREF_BATT_BAR_COLOR = "statusbar_battery_bar_color";
     private static final String PREF_BATT_BAR_CHARGING_COLOR = "statusbar_battery_bar_charging_color";
     private static final String PREF_BATT_BAR_BATTERY_LOW_COLOR = "statusbar_battery_bar_battery_low_color";
-    private static final String PREF_BATT_BAR_WIDTH = "statusbar_battery_bar_thickness";
     private static final String PREF_BATT_USE_CHARGING_COLOR = "statusbar_battery_bar_enable_charging_color";
     private static final String PREF_BATT_BLEND_COLOR = "statusbar_battery_bar_blend_color";
     private static final String PREF_BATT_BLEND_COLOR_REVERSE = "statusbar_battery_bar_blend_color_reverse";
 
     private SwitchPreference mBatteryBar;
-    private CustomSeekBarPreference mBatteryBarThickness;
     private ColorPickerPreference mBatteryBarColor;
     private ColorPickerPreference mBatteryBarChargingColor;
     private ColorPickerPreference mBatteryBarBatteryLowColor;
@@ -101,11 +99,6 @@ public class BatteryBar extends SettingsPreferenceFragment
         mBatteryBarBatteryLowColor.setNewPreviewColor(intColor);
         mBatteryBarBatteryLowColor.setSummary(hexColor);
         mBatteryBarBatteryLowColor.setOnPreferenceChangeListener(this);
-
-        mBatteryBarThickness = (CustomSeekBarPreference) prefSet.findPreference(PREF_BATT_BAR_WIDTH);
-        mBatteryBarThickness.setValue(Settings.System.getIntForUser(resolver,
-            Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, 2, UserHandle.USER_CURRENT));
-        mBatteryBarThickness.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -150,11 +143,6 @@ public class BatteryBar extends SettingsPreferenceFragment
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_BATTERY_BAR_BATTERY_LOW_COLOR, intHex, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mBatteryBarThickness) {
-            int val =  (Integer) newValue;
-            Settings.System.putIntForUser(resolver,
-                Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, val, UserHandle.USER_CURRENT);
             return true;
         }
         return false;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2018 crDroid Android Project
+     Copyright (C) 2016-2019 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -63,9 +63,10 @@
             android:key="doze_vibrate_tilt"
             android:title="@string/doze_vibrate"
             android:summary="@string/doze_vibrate_summary"
+            android:defaultValue="0"
             android:max="2000"
             settings:min="0"
-            settings:units="ms"
+            settings:units="@string/unit_milliseconds"
             android:persistent="false"
             android:dependency="doze_trigger_tilt" />
     </PreferenceCategory>
@@ -85,9 +86,10 @@
             android:key="doze_vibrate_pickup"
             android:title="@string/doze_vibrate"
             android:summary="@string/doze_vibrate_summary"
+            android:defaultValue="0"
             android:max="2000"
             settings:min="0"
-            settings:units="ms"
+            settings:units="@string/unit_milliseconds"
             android:persistent="false"
             android:dependency="doze_trigger_pickup" />
     </PreferenceCategory>
@@ -114,9 +116,10 @@
             android:key="doze_vibrate_prox"
             android:title="@string/doze_vibrate"
             android:summary="@string/doze_vibrate_summary"
+            android:defaultValue="0"
             android:max="2000"
             settings:min="0"
-            settings:units="ms"
+            settings:units="@string/unit_milliseconds"
             android:persistent="false"
             android:dependency="doze_enabled" />
     </PreferenceCategory>

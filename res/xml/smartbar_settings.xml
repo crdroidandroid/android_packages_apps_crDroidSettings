@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2016-2017 The DirtyUnicorns Project
-               (C) 2018 crDroid Android Project
+               (C) 2018-2019 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -52,17 +52,18 @@
         android:entryValues="@array/smartbar_longpress_delay_values"
         android:summary="@string/smartbar_longpress_delay_summary" />
 
-    <com.crdroid.settings.preferences.CustomSeekBarPreference
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
         android:key="navbar_buttons_alpha"
         android:title="@string/navbar_buttons_alpha_title"
+        android:defaultValue="255"
         android:max="255"
         settings:min="0"
-        settings:units=""
         android:persistent="false" />
 
-    <com.crdroid.settings.preferences.CustomSeekBarPreference
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
         android:key="smartbar_custom_icon_size"
         android:title="@string/smartbar_custom_icon_size_title"
+        android:defaultValue="60"
         android:max="100"
         settings:min="10"
         settings:units="%"

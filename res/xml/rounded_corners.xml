@@ -29,7 +29,7 @@
         android:title="@string/corner_radius"
         android:max="60"
         settings:min="0"
-        settings:units="dp"
+        settings:units="@string/unit_pixels"
         android:persistent="false"
         android:dependency="sysui_rounded_fwvals" />
 
@@ -38,7 +38,7 @@
         android:title="@string/content_padding"
         android:max="30"
         settings:min="0"
-        settings:units="dp"
+        settings:units="@string/unit_pixels"
         android:persistent="false"
         android:dependency="sysui_rounded_fwvals" />
 
@@ -47,7 +47,7 @@
         android:title="@string/status_bar_padding"
         android:max="30"
         settings:min="0"
-        settings:units="dp"
+        settings:units="@string/unit_pixels"
         android:persistent="false"
         android:dependency="sysui_rounded_fwvals" />
 </PreferenceScreen>
