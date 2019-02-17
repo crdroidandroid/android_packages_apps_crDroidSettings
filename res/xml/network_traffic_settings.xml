@@ -19,6 +19,14 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <lineageos.preference.LineageSecureSettingListPreference
+        android:key="network_traffic_location"
+        android:title="@string/network_traffic_location_title"
+        android:entries="@array/network_traffic_location_entries"
+        android:entryValues="@array/network_traffic_location_values"
+        android:summary="%s"
+        android:defaultValue="0" />
+
+    <lineageos.preference.LineageSecureSettingListPreference
         android:key="network_traffic_mode"
         android:title="@string/network_traffic_mode_title"
         android:entries="@array/network_traffic_mode_entries"

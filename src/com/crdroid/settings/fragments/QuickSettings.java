@@ -41,7 +41,6 @@ import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
-import com.crdroid.settings.fragments.quicksettings.NetworkTrafficSettings;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -143,7 +142,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements Indexab
                 Settings.System.QS_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_ROWS_PORTRAIT, 2, UserHandle.USER_CURRENT);
-        NetworkTrafficSettings.reset(mContext);
     }
 
     @Override

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.crdroid.settings.fragments.quicksettings;
+package com.crdroid.settings.fragments.statusbar;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -37,6 +37,7 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
 
     private static final String TAG = "NetworkTrafficSettings";
 
+    private ListPreference mNetTrafficLocation;
     private ListPreference mNetTrafficMode;
     private CustomSeekBarPreference mNetTrafficAutohide;
     private ListPreference mNetTrafficUnits;
@@ -48,12 +49,12 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.network_traffic_settings);
         final ContentResolver resolver = getActivity().getContentResolver();
 
+        mNetTrafficLocation = (ListPreference)
+                findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_LOCATION);
+        mNetTrafficLocation.setOnPreferenceChangeListener(this);
+
         mNetTrafficMode = (ListPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_MODE);
-        int mode = LineageSettings.Secure.getIntForUser(resolver,
-                LineageSettings.Secure.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT);
-        mNetTrafficMode.setValue(String.valueOf(mode));
-        mNetTrafficMode.setOnPreferenceChangeListener(this);
 
         mNetTrafficAutohide = (CustomSeekBarPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE);
@@ -71,14 +72,16 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         mNetTrafficShowUnits = (LineageSecureSettingSwitchPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS);
 
-        updateEnabledStates(mode);
+        int location = LineageSettings.Secure.getIntForUser(resolver,
+                LineageSettings.Secure.NETWORK_TRAFFIC_LOCATION, 0, UserHandle.USER_CURRENT);
+        updateEnabledStates(location);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mNetTrafficMode) {
-            int mode = Integer.valueOf((String) newValue);
-            updateEnabledStates(mode);
+        if (preference == mNetTrafficLocation) {
+            int location = Integer.valueOf((String) newValue);
+            updateEnabledStates(location);
             return true;
         } else if (preference == mNetTrafficAutohide) {
             int value = (Integer) newValue;
@@ -89,8 +92,9 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         return false;
     }
 
-    private void updateEnabledStates(int mode) {
-        final boolean enabled = mode != 0;
+    private void updateEnabledStates(int location) {
+        final boolean enabled = location != 0;
+        mNetTrafficMode.setEnabled(enabled);
         mNetTrafficAutohide.setEnabled(enabled);
         mNetTrafficUnits.setEnabled(enabled);
         mNetTrafficShowUnits.setEnabled(enabled);
@@ -98,6 +102,8 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.NETWORK_TRAFFIC_LOCATION, 0, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
