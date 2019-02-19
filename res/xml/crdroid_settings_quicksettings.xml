@@ -199,6 +199,14 @@
     <PreferenceCategory 
          android:title="@string/qs_misc_category">
 
+        <!-- QS clock -->
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="show_qs_clock"
+            android:icon="@drawable/ic_clock"
+            android:title="@string/qs_clock_title"
+            android:summary="@string/qs_clock_summary"
+            android:defaultValue="true" />
+
         <!--<com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="qs_panel_alpha"
             android:title="@string/qs_panel_alpha_title"
@@ -207,23 +215,7 @@
             android:max="255"
             settings:min="0"
             settings:units=""
-            android:persistent="false" />
-
-        <com.crdroid.settings.preferences.SystemSettingListPreference
-            android:key="qs_clock_style"
-            android:icon="@drawable/ic_clock"
-            android:title="@string/status_bar_clock_position_title"
-            android:entries="@array/qs_clock_position_entries"
-            android:entryValues="@array/qs_clock_position_values"
-            android:defaultValue="0" />
-
-        <PreferenceScreen
-            android:key="clock"
-            android:icon="@drawable/ic_clock"
-            android:title="@string/status_bar_clock_title"
-            android:summary="@string/status_bar_clock_summary"
-            android:fragment="com.crdroid.settings.fragments.statusbar.Clock"
-            settings:allowDividerAbove="false" />-->
+            android:persistent="false" />-->
 
         <!-- QS Brightness Slider position -->
         <lineageos.preference.LineageSecureSettingListPreference
