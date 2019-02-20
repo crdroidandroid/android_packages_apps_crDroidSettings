@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018 crDroid Android Project
+     Copyright (C) 2018-2019 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,6 +18,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/navbar_settings_title">
+
+    <Preference
+        android:key="gesture_swipe_up_input_summary"
+        android:title="@string/swipe_up_to_switch_apps_title"
+        android:fragment="com.android.settings.gestures.SwipeUpGestureSettings"
+        settings:controller="com.android.settings.gestures.SwipeUpPreferenceController" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="pixel_nav_animation"
