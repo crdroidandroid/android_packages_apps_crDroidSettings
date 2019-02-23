@@ -43,11 +43,13 @@ public class About extends SettingsPreferenceFragment implements Indexable {
     private String KEY_CRDROID_TELEGRAM = "crdroid_telegram";
     private String KEY_CRDROID_SHARE = "crdroid_share";
     private String KEY_CRDROID_TRANSLATE = "crdroid_translate";
+    private String KEY_CRDROID_WEBSITE = "crdroid_website";
 
     private Preference mSourceUrl;
     private Preference mTelegramUrl;
     private Preference mShare;
     private Preference mTranslate;
+    private Preference mWebsite;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class About extends SettingsPreferenceFragment implements Indexable {
         mTelegramUrl = findPreference(KEY_CRDROID_TELEGRAM);
         mShare = findPreference(KEY_CRDROID_SHARE);
         mTranslate = findPreference(KEY_CRDROID_TRANSLATE);
+        mWebsite = findPreference(KEY_CRDROID_WEBSITE);
     }
 
     @Override
@@ -74,7 +77,9 @@ public class About extends SettingsPreferenceFragment implements Indexable {
                     getActivity().getString(R.string.share_message), Build.MODEL));
             startActivity(Intent.createChooser(intent, getActivity().getString(R.string.share_chooser_title)));
         } else if (preference == mTranslate) {
-            launchUrl("https://crdroid.net/translate.php");
+            launchUrl("https://crdroid.net/translations.php");
+        } else if (preference == mWebsite) {
+            launchUrl("https://crdroid.net");
         }
 
         return super.onPreferenceTreeClick(preference);
