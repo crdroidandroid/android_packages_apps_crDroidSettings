@@ -234,6 +234,13 @@
             lineage:requiresConfig="@*android:bool/config_automatic_brightness_available"
             android:defaultValue="true" />
 
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="qs_show_security_footer"
+            android:icon="@drawable/ic_key"
+            android:title="@string/qs_footer_warnings_title"
+            android:summary="@string/qs_footer_warnings_summary"
+            android:defaultValue="true"/>
+
         <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_settings_icon_toggle"
             android:icon="@drawable/ic_settings"
