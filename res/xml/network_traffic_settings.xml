@@ -34,16 +34,30 @@
         android:summary="%s"
         android:defaultValue="0" />
 
-    <com.crdroid.settings.preferences.CustomSeekBarPreference
+    <lineageos.preference.LineageSecureSettingSwitchPreference
         android:key="network_traffic_autohide"
         android:title="@string/network_traffic_autohide"
         android:summary="@string/network_traffic_autohide_summary"
+        android:defaultValue="true" />
+
+    <com.crdroid.settings.preferences.LineageSecureSettingSeekBarPreference
+        android:key="network_traffic_autohide_threshold"
+        android:title="@string/network_traffic_autohide_threshold"
         android:defaultValue="0"
         android:max="10000"
         settings:min="0"
         settings:units="@string/network_traffic_autohide_kilobits"
         settings:interval="10"
-        android:persistent="false" />
+        android:dependency="network_traffic_autohide" />
+
+    <com.crdroid.settings.preferences.LineageSecureSettingSeekBarPreference
+        android:key="network_traffic_refresh_interval"
+        android:title="@string/network_traffic_refresh_interval_title"
+        android:summary="@string/network_traffic_refresh_interval_summary"
+        android:defaultValue="2"
+        android:max="10"
+        settings:min="1"
+        settings:units="@string/unit_seconds" />
 
     <lineageos.preference.LineageSecureSettingListPreference
         android:key="network_traffic_units"

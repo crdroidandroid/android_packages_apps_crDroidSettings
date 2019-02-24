@@ -22,8 +22,8 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
+import android.support.v14.preference.SwitchPreference;
 
-import lineageos.preference.LineageSecureSettingSwitchPreference;
 import lineageos.providers.LineageSettings;
 
 import com.android.settings.SettingsPreferenceFragment;
@@ -37,11 +37,13 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
 
     private static final String TAG = "NetworkTrafficSettings";
 
+    private CustomSeekBarPreference mNetTrafficAutohideThreshold;
+    private CustomSeekBarPreference mNetTrafficRefreshInterval;
     private ListPreference mNetTrafficLocation;
     private ListPreference mNetTrafficMode;
-    private CustomSeekBarPreference mNetTrafficAutohide;
     private ListPreference mNetTrafficUnits;
-    private LineageSecureSettingSwitchPreference mNetTrafficShowUnits;
+    private SwitchPreference mNetTrafficAutohide;
+    private SwitchPreference mNetTrafficShowUnits;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,27 +51,20 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.network_traffic_settings);
         final ContentResolver resolver = getActivity().getContentResolver();
 
+        mNetTrafficAutohideThreshold = (CustomSeekBarPreference)
+                findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD);
+        mNetTrafficRefreshInterval = (CustomSeekBarPreference)
+                findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_REFRESH_INTERVAL);
         mNetTrafficLocation = (ListPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_LOCATION);
         mNetTrafficLocation.setOnPreferenceChangeListener(this);
-
         mNetTrafficMode = (ListPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_MODE);
-
-        mNetTrafficAutohide = (CustomSeekBarPreference)
-                findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE);
-        int mAutohideThreshold = LineageSettings.Secure.getIntForUser(resolver,
-                LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT);
-        mNetTrafficAutohide.setValue(mAutohideThreshold);
-        mNetTrafficAutohide.setOnPreferenceChangeListener(this);
-
         mNetTrafficUnits = (ListPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_UNITS);
-        int units = LineageSettings.Secure.getIntForUser(resolver,
-                LineageSettings.Secure.NETWORK_TRAFFIC_UNITS, /* Mbps */ 1, UserHandle.USER_CURRENT);
-        mNetTrafficUnits.setValue(String.valueOf(units));
-
-        mNetTrafficShowUnits = (LineageSecureSettingSwitchPreference)
+        mNetTrafficAutohide = (SwitchPreference)
+                findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE);
+        mNetTrafficShowUnits = (SwitchPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS);
 
         int location = LineageSettings.Secure.getIntForUser(resolver,
@@ -83,11 +78,6 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
             int location = Integer.valueOf((String) newValue);
             updateEnabledStates(location);
             return true;
-        } else if (preference == mNetTrafficAutohide) {
-            int value = (Integer) newValue;
-            LineageSettings.Secure.putIntForUser(getActivity().getContentResolver(),
-                    LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, value, UserHandle.USER_CURRENT);
-            return true;
         }
         return false;
     }
@@ -96,6 +86,8 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         final boolean enabled = location != 0;
         mNetTrafficMode.setEnabled(enabled);
         mNetTrafficAutohide.setEnabled(enabled);
+        mNetTrafficAutohideThreshold.setEnabled(enabled);
+        mNetTrafficRefreshInterval.setEnabled(enabled);
         mNetTrafficUnits.setEnabled(enabled);
         mNetTrafficShowUnits.setEnabled(enabled);
     }
@@ -107,11 +99,15 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.NETWORK_TRAFFIC_MODE, 0, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
-                LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 0, UserHandle.USER_CURRENT);
+                LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE, 1, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD, 0, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.NETWORK_TRAFFIC_UNITS, 1, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.NETWORK_TRAFFIC_SHOW_UNITS, 1, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.NETWORK_TRAFFIC_REFRESH_INTERVAL, 2, UserHandle.USER_CURRENT);
     }
 
     @Override
