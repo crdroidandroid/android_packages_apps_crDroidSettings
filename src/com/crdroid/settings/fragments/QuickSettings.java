@@ -77,6 +77,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_SHOW_BATTERY_PERCENT, 2, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_SHOW_BATTERY_ESTIMATE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_FOOTER_WARNINGS, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
