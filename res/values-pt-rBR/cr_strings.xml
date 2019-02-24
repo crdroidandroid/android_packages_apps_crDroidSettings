@@ -63,8 +63,8 @@
     <string name="network_traffic_mode_down">Apenas baixar</string>
     <string name="network_traffic_mode_all">Envio e receção</string>
     <string name="network_traffic_autohide">Ocultar automaticamente</string>
+    <string name="network_traffic_autohide_summary">Ocultar o monitor de tráfego quando não houver atividade</string>
     <string name="network_traffic_autohide_kilobits">kb/s</string>
-    <string name="network_traffic_autohide_summary">Esconder o monitor de tráfego quando abaixo do limite de inatividade</string>
     <string name="network_traffic_autohide_threshold">Limite de inatividade</string>
     <string name="network_traffic_show_units">Mostrar unidades</string>
     <string name="network_traffic_show_units_summary">Mostrar as unidades de medida do tráfego na barra de estado</string>
@@ -82,6 +82,8 @@
     <string name="network_traffic_frequency_2000">2000 ms</string>
     <string name="network_traffic_hidearrow">Ocultar setas</string>
     <string name="network_traffic_hidearrow_summary">Esconder as setas dos indicadores de tráfego</string>
+    <string name="network_traffic_refresh_interval_title">Intervalo de atualização</string>
+    <string name="network_traffic_refresh_interval_summary">Duração após a qual velocidade é remediada</string>
     <!-- Settings suggestions  -->
     <string name="disable_settings_suggestions_title">Desativar sugestões</string>
     <string name="disable_settings_suggestions_summary">Desativar as sugestões nas configurações</string>
@@ -1009,6 +1011,8 @@
     <string name="crdroid_google_plus_summary">Participe do G+ para suporte e atualizações rápidas</string>
     <string name="crdroid_telegram_title">Telegram</string>
     <string name="crdroid_telegram_summary">Estamos no telegram. Junte-se a nós!</string>
+    <string name="crdroid_website_title">Website oficial</string>
+    <string name="crdroid_website_summary">Visite nosso site oficial</string>
     <string name="crdroid_translate_title">Traduções</string>
     <string name="crdroid_translate_summary">Ajude com a localização da ROM no seu idioma!</string>
     <!-- Maintainers -->
@@ -1977,14 +1981,17 @@
     <string name="thermal_control_per_app_games">Jogos</string>
     <string name="thermal_control_per_app_browser">Navegador</string>
     <string name="thermal_control_per_app_video_playback">Reprodução de vídeo</string>
-    <string name="thermal_control_per_app_dialer">Marcador</string>
-    <string name="thermal_control_per_app_camera">Câmara</string>
+    <string name="thermal_control_per_app_dialer">Discador</string>
+    <string name="thermal_control_per_app_camera">Câmera</string>
     <!-- QS clock -->
     <string name="qs_clock_title">Relógio</string>
     <string name="qs_clock_summary">Mostrar relógio no cabeçalho da barra de definições rápidas</string>
     <!-- Full gesture mode -->
-    <string name="full_gesture_mode_title">Enable full gesture mode</string>
-    <string name="full_gesture_mode_summary">This mode disables the back button and you can trigger a back button action by a left swipe on navbar. Right swipe still triggers the last-app and the overview apps scrolling. To go home you can tap on any navbar empty space, not only the home button. When keyboard is showing, long press on navbar to move the text cursor.</string>
-    <string name="full_gesture_mode_dt2s_title">Enable double tap to sleep</string>
-    <string name="full_gesture_mode_dt2s_summary">Tap on an empty navbar space but not the home button to switch the screen off.</string>
+    <string name="full_gesture_mode_title">Ativar modo de gestos completo</string>
+    <string name="full_gesture_mode_summary">Este modo também desativará o botão voltar. Para usar o gesto voltar deslize a barra para a esquerda, O ato de deslizar para a direita ainda acionará a ação do último aplicativo, e o deslizamento para a esquerda moverá os aplicativos caso deslize e segure. Para ir para o Home, você poderá tocar em qualquer espaço vazio da barra de navegação, não apenas no botão de início.</string>
+    <string name="full_gesture_mode_dt2s_title">Ativar toque duplo para dormir</string>
+    <string name="full_gesture_mode_dt2s_summary">Toque em um espaço vazio da barra de navegação, mas não no botão home, para desativar a tela.</string>
+    <!-- QS footer warnings -->
+    <string name="qs_footer_warnings_title">Aviso VPN</string>
+    <string name="qs_footer_warnings_summary">Exibir aviso no rodapé do painel quando a rede é monitorada ou conectada via VPN</string>
 </resources>

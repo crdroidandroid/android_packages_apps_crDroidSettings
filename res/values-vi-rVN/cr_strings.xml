@@ -63,8 +63,8 @@
     <string name="network_traffic_mode_down">Chỉ tải xuống</string>
     <string name="network_traffic_mode_all">Tải lên và tải xuống</string>
     <string name="network_traffic_autohide">Tự động ẩn</string>
+    <string name="network_traffic_autohide_summary">Ẩn tốc độ mạng khi không có hoạt động</string>
     <string name="network_traffic_autohide_kilobits">kbit/s</string>
-    <string name="network_traffic_autohide_summary">Ẩn bộ đo lưu lượng mạng khi lưu lượng ở dưới ngưỡng không hoạt động</string>
     <string name="network_traffic_autohide_threshold">Ngưỡng không hoạt động</string>
     <string name="network_traffic_show_units">Hiển thị đơn vị đo</string>
     <string name="network_traffic_show_units_summary">Hiển thị đơn vị đo lưu lượng mạng</string>
@@ -82,6 +82,8 @@
     <string name="network_traffic_frequency_2000">2000 ms</string>
     <string name="network_traffic_hidearrow">Ẩn mũi tên</string>
     <string name="network_traffic_hidearrow_summary">Ẩn biểu tượng mũi tên chỉ lưu lượng mạng</string>
+    <string name="network_traffic_refresh_interval_title">Thời gian làm mới</string>
+    <string name="network_traffic_refresh_interval_summary">Khoảng thời gian sau đó tốc độ được phục hồi</string>
     <!-- Settings suggestions  -->
     <string name="disable_settings_suggestions_title">Tắt gợi ý</string>
     <string name="disable_settings_suggestions_summary">Tắt gợi ý trên bảng điều khiển</string>
@@ -1009,6 +1011,8 @@
     <string name="crdroid_google_plus_summary">Tham gia với chúng tôi trên G + để nhanh chóng Cập Nhật và hỗ trợ</string>
     <string name="crdroid_telegram_title">Telegram</string>
     <string name="crdroid_telegram_summary">Chúng tôi đang trên Telegram. Tham gia với chúng tôi!</string>
+    <string name="crdroid_website_title">Trang web chính thức</string>
+    <string name="crdroid_website_summary">Truy cập vào trang web chính thức</string>
     <string name="crdroid_translate_title">Dịch thuật</string>
     <string name="crdroid_translate_summary">Giúp bản ROM phù hợp với ngôn ngữ của bạn!</string>
     <!-- Maintainers -->
@@ -1970,21 +1974,24 @@
     <string name="unit_milliseconds">mili giây</string>
     <string name="unit_pixels">dp</string>
     <!-- Thermal control -->
-    <string name="thermal_controller">Thermal Controller</string>
-    <string name="thermal_control_per_app">Thermal profile</string>
-    <string name="thermal_control_per_app_default">None</string>
-    <string name="thermal_control_per_app_benchmark">Performance</string>
-    <string name="thermal_control_per_app_games">Games</string>
-    <string name="thermal_control_per_app_browser">Browser</string>
-    <string name="thermal_control_per_app_video_playback">Video playback</string>
-    <string name="thermal_control_per_app_dialer">Dialer</string>
-    <string name="thermal_control_per_app_camera">Camera</string>
+    <string name="thermal_controller">Bộ điều khiển nhiệt</string>
+    <string name="thermal_control_per_app">Hồ sơ nhiệt</string>
+    <string name="thermal_control_per_app_default">Trống</string>
+    <string name="thermal_control_per_app_benchmark">Hiệu suất cao</string>
+    <string name="thermal_control_per_app_games">Trò chơi</string>
+    <string name="thermal_control_per_app_browser">Trình duyệt</string>
+    <string name="thermal_control_per_app_video_playback">Phát lại video</string>
+    <string name="thermal_control_per_app_dialer">Trình quay số</string>
+    <string name="thermal_control_per_app_camera">Máy ảnh</string>
     <!-- QS clock -->
-    <string name="qs_clock_title">Clock</string>
-    <string name="qs_clock_summary">Display clock in quick status bar header</string>
+    <string name="qs_clock_title">Đồng hồ</string>
+    <string name="qs_clock_summary">Hiển thị đồng hồ ở phía trên thanh phím tắt nhanh</string>
     <!-- Full gesture mode -->
-    <string name="full_gesture_mode_title">Enable full gesture mode</string>
-    <string name="full_gesture_mode_summary">This mode disables the back button and you can trigger a back button action by a left swipe on navbar. Right swipe still triggers the last-app and the overview apps scrolling. To go home you can tap on any navbar empty space, not only the home button. When keyboard is showing, long press on navbar to move the text cursor.</string>
-    <string name="full_gesture_mode_dt2s_title">Enable double tap to sleep</string>
-    <string name="full_gesture_mode_dt2s_summary">Tap on an empty navbar space but not the home button to switch the screen off.</string>
+    <string name="full_gesture_mode_title">Bật chế độ cử chỉ đầy đủ</string>
+    <string name="full_gesture_mode_summary">Chế độ này vô hiệu hóa nút quay lại và bạn có thể kích hoạt một hành động nút quay lại bởi một vệt trái trên thanh phím. Vệt đúng vẫn gây nên cuối cùng các ứng dụng và các ứng dụng tổng quan về di chuyển. Để đi Trang chủ bạn có thể tap vào thanh phím bất kỳ không gian trống rỗng, không phải chỉ có nút home. Khi bàn phím Hiển thị, bấm giữ trên thanh phím để di chuyển con trỏ văn bản.</string>
+    <string name="full_gesture_mode_dt2s_title">Bật nhấn đúp để tắt màn hình</string>
+    <string name="full_gesture_mode_dt2s_summary">Chạm vào khoảng trống trên thanh điều hướng nhưng không phải nút home để tắt màn hình.</string>
+    <!-- QS footer warnings -->
+    <string name="qs_footer_warnings_title">VPN warning</string>
+    <string name="qs_footer_warnings_summary">Display warning in panel footer when network is monitored or connected via VPN</string>
 </resources>
