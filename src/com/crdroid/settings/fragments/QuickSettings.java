@@ -131,6 +131,14 @@ public class QuickSettings extends SettingsPreferenceFragment implements Indexab
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.QS_SHOW_SECURITY_FOOTER, 1, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.QSFOOTER_SHOW_USER, 1, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.QSFOOTER_SHOW_EDIT, 1, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.QSFOOTER_SHOW_SERVICES, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.QSFOOTER_SHOW_SETTINGS, 1, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.QUICK_SETTINGS_VIBRATE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.BLUETOOTH_QS_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);

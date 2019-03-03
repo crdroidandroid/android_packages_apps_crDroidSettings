@@ -233,6 +233,10 @@
             android:summary="@string/brightness_icon_summary"
             lineage:requiresConfig="@*android:bool/config_automatic_brightness_available"
             android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory 
+         android:title="@string/qs_footer_category">
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="qs_show_security_footer"
@@ -241,48 +245,31 @@
             android:summary="@string/qs_footer_warnings_summary"
             android:defaultValue="true"/>
 
-        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_settings_icon_toggle"
-            android:icon="@drawable/ic_settings"
-            android:title="@string/qs_settings_icon_title"
-            android:summary="@string/qs_settings_icon_summary"
-            android:disableDependentsState="true"
-            android:defaultValue="true" />
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_settings_expanded_toggle"
-            android:icon="@drawable/ic_settings"
-            android:title="@string/qs_settings_expanded_title"
-            android:summary="@string/qs_settings_expanded_summary"
-            android:dependency="qs_settings_icon_toggle"
-            android:defaultValue="false" />
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_edit_toggle"
-            android:icon="@drawable/ic_pencil"
-            android:title="@string/qs_edit_title"
-            android:summary="@string/qs_edit_summary"
-            android:defaultValue="true" />
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_multiuser_switch_toggle"
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="qsfooter_show_user"
             android:icon="@drawable/ic_account"
-            android:title="@string/qs_multiuser_switch_title"
-            android:summary="@string/qs_multiuser_switch_summary"
+            android:title="@string/qs_footer_users_icon_title"
+            android:summary="@string/qs_footer_users_icon_summary"
             android:defaultValue="true" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_expand_indicator_toggle"
-            android:icon="@drawable/ic_expand_indicator"
-            android:title="@string/qs_expand_indicator_title"
-            android:summary="@string/qs_expand_indicator_summary"
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="qsfooter_show_edit"
+            android:icon="@drawable/ic_pencil"
+            android:title="@string/qs_footer_edit_icon_title"
+            android:summary="@string/qs_footer_edit_icon_summary"
             android:defaultValue="true" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_date_time_center"
-            android:icon="@drawable/ic_calendar_clock"
-            android:title="@string/qs_date_time_center_title"
-            android:summary="@string/qs_date_time_center_summary"
-            android:defaultValue="false" />-->
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="qsfooter_show_services"
+            android:icon="@drawable/ic_memory"
+            android:title="@string/qs_footer_services_icon_title"
+            android:summary="@string/qs_footer_services_icon_summary" />
+
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="qsfooter_show_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/qs_footer_settings_icon_title"
+            android:summary="@string/qs_footer_settings_icon_summary"
+            android:defaultValue="true" />
     </PreferenceCategory>
 </PreferenceScreen>
