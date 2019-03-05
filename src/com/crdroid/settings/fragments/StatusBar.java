@@ -65,6 +65,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
     private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
     private static final String SU_INDICATOR = "show_su_indicator";
+    private static final String KEY_OLD_MOBILETYPE = "use_old_mobiletype";
     private static final String KEY_SHOW_FOURG = "show_fourg_icon";
     private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
     private static final String KEY_SHOW_VOLTE = "show_volte_icon";
@@ -90,6 +91,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ListPreference mBatteryPercent;
     private ListPreference mTextSymbol;
     private SwitchPreference mSuIndicator;
+    private SwitchPreference mOldType;
     private SwitchPreference mShowFourg;
     private SwitchPreference mShowRoaming;
     private SwitchPreference mShowVolte;
@@ -164,11 +166,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
         if (!FileUtils.fileExists("/system/xbin/su"))
             prefScreen.removePreference(mSuIndicator);
 
+        mOldType = (SwitchPreference) findPreference(KEY_OLD_MOBILETYPE);
         mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
         mShowRoaming = (SwitchPreference) findPreference(KEY_SHOW_ROAMING);
         mShowVolte = (SwitchPreference) findPreference(KEY_SHOW_VOLTE);
 
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(mOldType);
             prefScreen.removePreference(mShowFourg);
             prefScreen.removePreference(mShowRoaming);
             prefScreen.removePreference(mShowVolte);
@@ -286,6 +290,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_LOGO_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.TEXT_CHARGING_SYMBOL, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.USE_OLD_MOBILETYPE, 0, UserHandle.USER_CURRENT);
         BatteryBar.reset(mContext);
         Clock.reset(mContext);
         NetworkTrafficSettings.reset(mContext);
