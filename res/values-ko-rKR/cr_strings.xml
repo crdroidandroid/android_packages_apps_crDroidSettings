@@ -54,10 +54,10 @@
     <!-- Network traffic -->
     <string name="network_traffic_settings_title">네트워크 트래픽 모니터</string>
     <string name="network_traffic_settings_summary">현제 네트워크 트래픽 수준 표시 및 커스텀 설정</string>
-    <string name="network_traffic_location_title">Location</string>
-    <string name="network_traffic_location_disable">Disabled</string>
-    <string name="network_traffic_location_statusbar">Statusbar</string>
-    <string name="network_traffic_location_quick_statusbar">Quick Statusbar</string>
+    <string name="network_traffic_location_title">위치</string>
+    <string name="network_traffic_location_disable">비활성화</string>
+    <string name="network_traffic_location_statusbar">상태 표시줄</string>
+    <string name="network_traffic_location_quick_statusbar">빠른 상태 표시줄</string>
     <string name="network_traffic_mode_title">표시 모드</string>
     <string name="network_traffic_mode_up">업로드만</string>
     <string name="network_traffic_mode_down">다운로드만</string>
@@ -384,7 +384,7 @@
     <string name="qs_tiles_category">타일</string>
     <string name="qs_toggles_category">토글</string>
     <string name="qs_misc_category">기타 설정</string>
-    <string name="qs_footer_category">Footer</string>
+    <string name="qs_footer_category">하단</string>
     <!-- Quick settings tiles -->
     <string name="sysui_qqs_count_title">작은 빠른 설정 타일 사용</string>
     <string name="qs_rows_portrait_title">열 (가로 모드)</string>
@@ -853,7 +853,7 @@
     <string name="pie_status_mobile">모바일 네트워크만 표시</string>
     <string name="pie_status_none">없음</string>
     <string name="pie_status_both">모두표시</string>
-    <string name="pie_gravity_title">Pie gravity</string>
+    <string name="pie_gravity_title">Pie 컨트롤 위치</string>
     <string name="pie_gravity_summary">Pie 컨트롤이 노출될 위치를 선택합니다</string>
     <string name="pie_gravity_bottom">맨 아래로</string>
     <string name="pie_gravity_right">오른쪽</string>
@@ -1007,8 +1007,8 @@
     <string name="crdroid_google_plus_summary">빠른 업데이트 및 지원을 위해 G +에 가입하십시오.</string>
     <string name="crdroid_telegram_title">텔레그램</string>
     <string name="crdroid_telegram_summary">We are on telegram. Join us!</string>
-    <string name="crdroid_website_title">Official website</string>
-    <string name="crdroid_website_summary">Visit our official website</string>
+    <string name="crdroid_website_title">공식 웹사이트</string>
+    <string name="crdroid_website_summary">공식 웹사이트 방문하기</string>
     <string name="crdroid_translate_title">변역</string>
     <string name="crdroid_translate_summary">귀하의 언어로 된 ROM의 현지화에 대한 도움을 받으십시오!</string>
     <!-- Maintainers -->
@@ -1858,7 +1858,7 @@
     <string name="recents_style_title">최근 앱 스타일</string>
     <string name="recents_style_quickstep">퀵 스텝</string>
     <string name="recents_style_aosp">AOSP</string>
-    <string name="device_restart_required">Restart your device to apply changes</string>
+    <string name="device_restart_required">기기를 재시작하여 변경사항을 적용하세요</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">값: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">기본값으로 설정</string>
@@ -1872,7 +1872,7 @@
     <string name="flashlight_on_call_always">항상</string>
     <!-- Themes -->
     <string name="style_title">종류</string>
-    <string name="style_summary">Choose system colors and styles</string>
+    <string name="style_summary">시스템 색상과 스타일을 선택합니다</string>
     <string name="style_global_title">종류</string>
     <string name="style_global_entry_automatic">자동 (배경화면)</string>
     <string name="style_global_entry_light">약하게</string>
@@ -1937,17 +1937,17 @@
     <string name="qstile_teardrop">물방울</string>
     <string name="qstile_wavey">Wavey</string>
     <!-- QS header styles -->
-    <string name="qs_header_style_title">Quick settings header style</string>
+    <string name="qs_header_style_title">빠른 설정 헤더 스타일</string>
     <string name="qs_header_default">기본값</string>
     <string name="qs_header_grey">회색</string>
     <string name="qs_header_lightgrey">밝은 회색</string>
     <string name="qs_header_accent">Accent Based</string>
     <string name="qs_header_transparent">투명</string>
     <!-- Switch styles -->
-    <string name="switch_style_title">Preference switch style</string>
-    <string name="switch_default">Default</string>
-    <string name="switch_md2">Material Design 2</string>
-    <string name="switch_oneplus">OnePlus</string>
+    <string name="switch_style_title">스위치 스타일</string>
+    <string name="switch_default">기본값</string>
+    <string name="switch_md2">머티리얼 디자인 2</string>
+    <string name="switch_oneplus">원플러스</string>
     <!-- Battery stats reset -->
     <string name="battery_stats_reset">Reset stats</string>
     <string name="battery_stats_message">This will reset battery history stats. Would you like to continue?</string>
@@ -1958,33 +1958,33 @@
     <!-- Thermal control -->
     <string name="thermal_controller">Thermal Controller</string>
     <string name="thermal_control_per_app">Thermal profile</string>
-    <string name="thermal_control_per_app_default">None</string>
-    <string name="thermal_control_per_app_benchmark">Performance</string>
-    <string name="thermal_control_per_app_games">Games</string>
-    <string name="thermal_control_per_app_browser">Browser</string>
-    <string name="thermal_control_per_app_video_playback">Video playback</string>
-    <string name="thermal_control_per_app_dialer">Dialer</string>
-    <string name="thermal_control_per_app_camera">Camera</string>
+    <string name="thermal_control_per_app_default">없음</string>
+    <string name="thermal_control_per_app_benchmark">성능</string>
+    <string name="thermal_control_per_app_games">게임</string>
+    <string name="thermal_control_per_app_browser">브라우저</string>
+    <string name="thermal_control_per_app_video_playback">영상</string>
+    <string name="thermal_control_per_app_dialer">전화</string>
+    <string name="thermal_control_per_app_camera">카메라</string>
     <!-- QS clock -->
-    <string name="qs_clock_title">Clock</string>
-    <string name="qs_clock_summary">Display clock in quick status bar header</string>
+    <string name="qs_clock_title">시계</string>
+    <string name="qs_clock_summary">빠른 상태 표시줄의 헤더 부분에 시계 보이기</string>
     <!-- Full gesture mode -->
     <string name="full_gesture_mode_title">Enable full gesture mode</string>
     <string name="full_gesture_mode_summary">This mode disables the back button and you can trigger a back button action by a left swipe on navbar. Right swipe still triggers the last-app and the overview apps scrolling. To go home you can tap on any navbar empty space, not only the home button. When keyboard is showing, long press on navbar to move the text cursor.</string>
     <string name="full_gesture_mode_dt2s_title">Enable double tap to sleep</string>
     <string name="full_gesture_mode_dt2s_summary">Tap on an empty navbar space but not the home button to switch the screen off.</string>
     <!-- QS footer warnings -->
-    <string name="qs_footer_warnings_title">VPN alert</string>
-    <string name="qs_footer_warnings_summary">Display alert when network is monitored or connected via VPN</string>
+    <string name="qs_footer_warnings_title">VPN 경고</string>
+    <string name="qs_footer_warnings_summary">VPN에 연결되어 있거나 네트워크가 감시되고 있을때 경고를 표시합니다.</string>
     <!-- QS footer icons -->
     <string name="qs_footer_users_icon_title">User account icon</string>
     <string name="qs_footer_users_icon_summary">Display multiuser accessibility icon when available</string>
     <string name="qs_footer_edit_icon_title">Edit tiles icon</string>
     <string name="qs_footer_edit_icon_summary">Display edit tiles icon</string>
-    <string name="qs_footer_services_icon_title">Running services shortcut</string>
-    <string name="qs_footer_services_icon_summary">Display running services shortcut</string>
-    <string name="qs_footer_settings_icon_title">Settings shortcut</string>
-    <string name="qs_footer_settings_icon_summary">Display settings app shortcut</string>
+    <string name="qs_footer_services_icon_title">실행 중인 서비스 바로 가기</string>
+    <string name="qs_footer_services_icon_summary">실행 중인 서비스 바로 가기를 표시합니다</string>
+    <string name="qs_footer_settings_icon_title">설정 바로 가기</string>
+    <string name="qs_footer_settings_icon_summary">설정 바로 가기를 표시합니다</string>
     <!-- Old mobiletype icon style -->
     <string name="old_mobiletype_title">Old style signal icon</string>
     <string name="old_mobiletype_summary">Merge signal and signal type icons</string>
