@@ -56,7 +56,7 @@
 
     <PreferenceCategory
         android:key="lockscreen_interface_category"
-         android:title="@string/lockscreen_interface_category">
+        android:title="@string/lockscreen_interface_category">
 
         <Preference
             android:key="lock_screen_weather"
@@ -129,6 +129,19 @@
             android:entries="@array/lockscreen_date_selection_entries"
             android:entryValues="@array/lockscreen_date_selection_values"
             android:defaultValue="0" />-->
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="lockscreen_clock_category"
+        android:title="@string/lockscreen_clock_category">
+
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="lock_clock_font_style"
+            android:icon="@drawable/ic_font"
+            android:title="@string/font_style_title"
+            android:entries="@array/font_style_entries"
+            android:entryValues="@array/font_style_values"
+            android:defaultValue="4" />
     </PreferenceCategory>
 
     <PreferenceCategory
