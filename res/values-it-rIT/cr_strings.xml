@@ -1993,4 +1993,34 @@
     <string name="old_mobiletype_summary">Unisci le icone del segnale e del tipo di segnale</string>
     <string name="battery_charging">In carica</string>
     <string name="battery_discharging">In fase di scarica</string>
+    <!-- Menu option to do WPS Push Button [CHAR LIMIT=25]-->
+    <string name="wifi_menu_wps_pbc">Pulsante WPS</string>
+    <!-- Menu option to do WPS Pin Entry [CHAR LIMIT=25]-->
+    <string name="wifi_menu_wps_pin">Inserisci il Pin WPS</string>
+    <!-- Title for the WPS setup dialog [CHAR LIMIT=50] -->
+    <string name="wifi_wps_setup_title">Wi-Fi Protected Setup (WPS)</string>
+    <!-- Message in WPS dialog at start up [CHAR LIMIT=150] -->
+    <string name="wifi_wps_setup_msg">Inizializzazione WPS</string>
+    <!-- Message in WPS dialog for PBC after start up [CHAR LIMIT=150] -->
+    <string name="wifi_wps_onstart_pbc">Premi il pulsante di impostazione protetta Wi-Fi che trovi sul router. Il pulsante potrebbe essere denominato \"Wps\" o essere contrassegnato da questo simbolo:</string>
+    <!-- Message in WPS dialog for PIN after start up [CHAR LIMIT=150] -->
+    <string name="wifi_wps_onstart_pin">Inserisci il Pin <xliff:g id="Number">%1$s</xliff:g> sul router Wi‑Fi. Il completamento della configurazione può richiedere fino a due minuti.</string>
+    <!-- Text displayed when WPS succeeds [CHAR LIMIT=150] -->
+    <string name="wifi_wps_complete">Configurazione WPS riuscita. Connessione alla rete in corso</string>
+    <!-- Text displayed when Wi-Fi is connected through WPS [CHAR LIMIT=150] -->
+    <string name="wifi_wps_connected">Connesso alla rete Wi‑Fi <xliff:g id="NETWORK_NAME">%s</xliff:g></string>
+    <!-- Text displayed when WPS setup is in progress [CHAR LIMIT=150] -->
+    <string name="wifi_wps_in_progress">La configurazione WPS è già in corso e il suo completamento può richiedere fino a due minuti</string>
+    <!-- Text displayed when WPS fails to start [CHAR LIMIT=150] -->
+    <string name="wifi_wps_failed_generic">Connessione WPS non riuscita. Riprova fra pochi minuti.</string>
+    <!-- Text displayed when WPS fails due to WEP [CHAR LIMIT=150] -->
+    <string name="wifi_wps_failed_wep">L\'impostazione di sicurezza del router wireless (WEP) non è supportata</string>
+    <!-- Text displayed when WPS fails to TKIP [CHAR LIMIT=150] -->
+    <string name="wifi_wps_failed_tkip">L\'impostazione di sicurezza del router wireless (TKIP) non è supportata</string>
+    <!-- Text displayed when WPS fails due to authentication issues [CHAR LIMIT=150] -->
+    <string name="wifi_wps_failed_auth">Autenticazione fallita. Riprova.</string>
+    <!-- Text displayed when WPS fails due to another session [CHAR LIMIT=150] -->
+    <string name="wifi_wps_failed_overlap">È stata rilevata un\'altra sessione WPS. Riprova fra pochi minuti.</string>
+    <!-- Text displayed when WPS fails due to wifi disconnected [CHAR LIMIT=150] -->
+    <string name="wifi_wps_failed_wifi_disconnected">Disconnesso dalla rete Wi-Fi. Configurazione WPS annullata.</string>
 </resources>
