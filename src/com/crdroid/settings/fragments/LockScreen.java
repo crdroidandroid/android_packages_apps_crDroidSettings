@@ -109,6 +109,8 @@ public class LockScreen extends SettingsPreferenceFragment
         ContentResolver resolver = mContext.getContentResolver();
         Settings.Global.putInt(resolver,
                 Settings.Global.LOCKSCREEN_ENABLE_POWER_MENU, 1);
+        Settings.Global.putInt(resolver,
+                Settings.Global.LOCKSCREEN_ENABLE_QS, 1);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.FACE_AUTO_UNLOCK, mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_face_unlock_enabled_by_default) ? 1 : 0,
