@@ -44,6 +44,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.misc.AggressiveBattery;
 import com.crdroid.settings.fragments.misc.AlarmBlocker;
 import com.crdroid.settings.fragments.misc.GamingMode;
 import com.crdroid.settings.fragments.misc.ImeSettings;
@@ -94,6 +95,7 @@ public class Miscellaneous extends SettingsPreferenceFragment
         Settings.System.putIntForUser(resolver,
                 Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
         writeCpuInfoOptions(mContext, false);
+        AggressiveBattery.reset(mContext);
         AlarmBlocker.reset(mContext);
         GamingMode.reset(mContext);
         ImeSettings.reset(mContext);
