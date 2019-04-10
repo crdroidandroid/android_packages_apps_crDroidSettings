@@ -69,6 +69,14 @@
         android:summary="@string/corners_summary"
         android:fragment="com.crdroid.settings.fragments.ui.RoundedCorners" />
 
+    <!-- Display cutout options -->
+    <PreferenceScreen
+        android:key="cutout_settings"
+        android:icon="@drawable/ic_cutout"
+        android:title="@string/cutout_main"
+        android:summary="@string/cutout_main_summary"
+        android:fragment="com.crdroid.settings.fragments.CutoutFragment" />
+
     <!-- Smart Pixels -->
     <PreferenceScreen
         android:key="smart_pixels"

@@ -62,6 +62,7 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
     private static final String SMART_PIXELS = "smart_pixels";
     private static final String KEY_FONT_PICKER_FRAGMENT_PREF = "custom_font";
     private static final String SUBS_PACKAGE = "projekt.substratum";
+    private static final String PREF_KEY_CUTOUT = "cutout_settings";
 
     private Preference mSmartPixels;
     private FontDialogPreference mFontPreference;
@@ -92,6 +93,15 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
             mFontPreference.setSummary(getActivity().getString(
                     R.string.disable_fonts_installed_title));
         }
+        Preference mCutoutPref = (Preference) findPreference(PREF_KEY_CUTOUT);
+        if (!hasPhysicalDisplayCutout(getContext())) {
+            getPreferenceScreen().removePreference(mCutoutPref);
+        }
+    }
+
+    private static boolean hasPhysicalDisplayCutout(Context context) {
+        return context.getResources().getBoolean(
+                com.android.internal.R.bool.config_physicalDisplayCutout);
     }
 
     private FontInfo getCurrentFontInfo() {
