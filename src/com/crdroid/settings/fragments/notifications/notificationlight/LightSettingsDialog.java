@@ -21,6 +21,7 @@ package com.crdroid.settings.fragments.notifications.notificationlight;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.graphics.Color;
@@ -50,7 +51,6 @@ import org.lineageos.internal.notification.LightsCapabilities;
 import org.lineageos.internal.notification.LineageNotification;
 
 import com.crdroid.settings.R;
-import com.crdroid.settings.fragments.notifications.notificationlight.ColorPickerView.OnColorChangedListener;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -73,8 +73,6 @@ public class LightSettingsDialog extends AlertDialog implements
     private Spinner mPulseSpeedOn;
     private Spinner mPulseSpeedOff;
     private LayoutInflater mInflater;
-
-    private OnColorChangedListener mListener;
 
     private NotificationManager mNotificationManager;
 
@@ -244,10 +242,6 @@ public class LightSettingsDialog extends AlertDialog implements
         mNewColor.setColor(color);
         mHexColorInput.setText(String.format(Locale.US, format, color & mask));
 
-        if (mListener != null) {
-            mListener.onColorChanged(color);
-        }
-
         updateLed();
     }
 
@@ -325,14 +319,23 @@ public class LightSettingsDialog extends AlertDialog implements
         if  (mLedBrightness > 0 && mLedBrightness < LedValues.LIGHT_BRIGHTNESS_MAXIMUM) {
             b.putInt(LineageNotification.EXTRA_FORCE_LIGHT_BRIGHTNESS, mLedBrightness);
         }
-        final Notification.Builder builder = new Notification.Builder(mContext);
+        b.putInt(LineageNotification.EXTRA_FORCE_COLOR, color);
+        b.putInt(LineageNotification.EXTRA_FORCE_LIGHT_ON_MS, speedOn);
+        b.putInt(LineageNotification.EXTRA_FORCE_LIGHT_OFF_MS, speedOff);
+
+        createNotificationChannel();
+
+        final String channelId = mContext.getString(R.string.channel_light_settings_id);
+        final Notification.Builder builder = new Notification.Builder(mContext, channelId);
         builder.setLights(color, speedOn, speedOff);
         builder.setExtras(b);
         builder.setSmallIcon(R.drawable.ic_settings_24dp);
         builder.setContentTitle(mContext.getString(R.string.led_notification_title));
         builder.setContentText(mContext.getString(R.string.led_notification_text));
         builder.setOngoing(true);
-        mNotificationManager.notify(1, builder.build());
+
+        final Notification notification = builder.build();
+        mNotificationManager.notify(channelId, 1, notification);
 
         mLedLastColor = color;
         mLedLastSpeedOn = speedOn;
@@ -341,10 +344,23 @@ public class LightSettingsDialog extends AlertDialog implements
     }
 
     public void dismissLed() {
-        mNotificationManager.cancel(1);
+        final String channelId = mContext.getString(R.string.channel_light_settings_id);
+        mNotificationManager.cancel(channelId, 1);
         // ensure we later reset LED if dialog is
         // hidden and then made visible
         mLedLastColor = 0;
+    }
+
+    private void createNotificationChannel() {
+        final String channelId = mContext.getString(R.string.channel_light_settings_id);
+        final String channelName = mContext.getString(R.string.channel_light_settings_name);
+        final NotificationChannel notificationChannel = new NotificationChannel(
+                channelId, channelName, NotificationManager.IMPORTANCE_LOW);
+        notificationChannel.enableLights(true);
+        notificationChannel.enableVibration(false);
+        notificationChannel.setShowBadge(false);
+
+        mNotificationManager.createNotificationChannel(notificationChannel);
     }
 
     class PulseSpeedAdapter extends BaseAdapter implements SpinnerAdapter {
@@ -448,9 +464,6 @@ public class LightSettingsDialog extends AlertDialog implements
                 mColorPicker.setColor(color);
                 mNewColor.setColor(color);
                 updateLed();
-                if (mListener != null) {
-                    mListener.onColorChanged(color);
-                }
             } catch (IllegalArgumentException ex) {
                 // Number format is incorrect, ignore
             }
