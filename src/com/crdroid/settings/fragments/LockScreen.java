@@ -113,6 +113,8 @@ public class LockScreen extends SettingsPreferenceFragment
         Settings.Global.putInt(resolver,
                 Settings.Global.LOCKSCREEN_ENABLE_QS, 1);
         Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.LOCKSCREEN_ALBUMART_FILTER, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.FACE_AUTO_UNLOCK, mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_face_unlock_enabled_by_default) ? 1 : 0,
                 UserHandle.USER_CURRENT);
