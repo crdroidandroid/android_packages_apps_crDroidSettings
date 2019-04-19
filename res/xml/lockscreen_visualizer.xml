@@ -48,4 +48,29 @@
         settings:interval="200"
         settings:units="@string/unit_milliseconds"
         android:dependency="lockscreen_lavalamp_enabled"/>
+
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        android:key="lockscreen_solid_units_count"
+        android:title="@string/lockscreen_solid_units_count_title"
+        android:defaultValue="32"
+        android:max="128"
+        settings:min="16"
+        settings:interval="16"
+        android:dependency="lockscreen_visualizer_enabled"/>
+
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        android:key="lockscreen_solid_fudge_factor"
+        android:title="@string/lockscreen_solid_fudge_factor_title"
+        android:defaultValue="16"
+        android:max="32"
+        settings:min="2"
+        android:dependency="lockscreen_visualizer_enabled"/>
+
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        android:key="lockscreen_solid_units_opacity"
+        android:title="@string/lockscreen_solid_units_opacity_title"
+        android:defaultValue="140"
+        android:max="255"
+        settings:min="0"
+        android:dependency="lockscreen_visualizer_enabled"/>
 </PreferenceScreen>
