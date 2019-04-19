@@ -46,6 +46,7 @@ import com.android.settings.search.Indexable;
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.ui.Animations;
 import com.crdroid.settings.fragments.ui.BlurPersonalizations;
+import com.crdroid.settings.fragments.ui.CutoutSettings;
 import com.crdroid.settings.fragments.ui.DozeFragment;
 import com.crdroid.settings.fragments.ui.FontDialogPreference;
 import com.crdroid.settings.fragments.ui.RoundedCorners;
@@ -62,10 +63,12 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
     private static final String SMART_PIXELS = "smart_pixels";
     private static final String KEY_FONT_PICKER_FRAGMENT_PREF = "custom_font";
     private static final String SUBS_PACKAGE = "projekt.substratum";
+    private static final String DISPLAY_CUTOUT = "cutout_settings";
 
     private Preference mSmartPixels;
     private FontDialogPreference mFontPreference;
     private IFontService mFontService;
+    private Preference mDisplayCutout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,6 +77,13 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
+
+        final boolean hasNotch = res.getBoolean(
+                org.lineageos.platform.internal.R.bool.config_haveNotch);
+
+        mDisplayCutout = (Preference) prefScreen.findPreference(DISPLAY_CUTOUT);
+        if (!hasNotch)
+            prefScreen.removePreference(mDisplayCutout);
 
         mSmartPixels = (Preference) prefScreen.findPreference(SMART_PIXELS);
         boolean mSmartPixelsSupported = res.getBoolean(
@@ -106,6 +116,7 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
         ContentResolver resolver = mContext.getContentResolver();
         Animations.reset(mContext);
         BlurPersonalizations.reset(mContext);
+        CutoutSettings.reset(mContext);
         DozeFragment.reset(mContext);
         RoundedCorners.reset(mContext);
         SmartPixels.reset(mContext);
@@ -139,6 +150,10 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
                     List<String> keys = super.getNonIndexableKeys(context);
                     final Resources res = context.getResources();
 
+                    boolean hasNotch = res.getBoolean(
+                            org.lineageos.platform.internal.R.bool.config_haveNotch);
+                    if (!hasNotch)
+                        keys.add(DISPLAY_CUTOUT);
                     boolean mSmartPixelsSupported = res.getBoolean(
                             com.android.internal.R.bool.config_supportSmartPixels);
                     boolean mBurnInSupported = res.getBoolean(
