@@ -43,7 +43,7 @@
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="notification_sound_vib_screen_on"
-        android:icon="@drawable/ic_settings_sound"
+        android:icon="@drawable/ic_bell_ring"
         android:title="@string/notification_sound_vib_screen_on_title"
         android:summary="@string/notification_sound_vib_screen_on_summary"
         android:defaultValue="true" />
@@ -54,16 +54,19 @@
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="vibrate_on_connect"
+            android:icon="@drawable/ic_vibrate"
             android:title="@string/incall_vibrate_connect_title"
             android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="vibrate_on_callwaiting"
+            android:icon="@drawable/ic_vibrate"
             android:title="@string/incall_vibrate_call_wait_title"
             android:defaultValue="false" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="vibrate_on_disconnect"
+            android:icon="@drawable/ic_vibrate"
             android:title="@string/incall_vibrate_disconnect_title"
             android:defaultValue="false" />
     </PreferenceCategory>
