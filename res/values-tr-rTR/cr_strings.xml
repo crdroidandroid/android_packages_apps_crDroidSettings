@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">Eklentiler</string>
+    <string name="crdroid_settings_title">crDroid Ayarları</string>
     <string name="crdroid_settings_summary">Cihazınızı özelleştirin!</string>
     <string name="crdroid_personalization_category">Kişiselleştirme</string>
     <string name="crdroid_addons_category">Eklentiler</string>
@@ -1658,11 +1658,6 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <string name="zen_allow_lights">Etkinleştir</string>
     <string name="zen_allow_lights_summary">Rahatsız etmeyinde ışığı yak söndür</string>
     <string name="light_brightness_category">Işıklar</string>
-    <!-- Suppress notification sound -->
-    <string name="notification_sound_vib_screen_on_title">Ekran açıkken ses ve titreşim bildirimleri</string>
-    <string name="notification_sound_vib_screen_on_never">Asla</string>
-    <string name="notification_sound_vib_screen_on_always">Her zaman (varsayılan)</string>
-    <string name="notification_sound_vib_screen_on_nomedia">Medya oynatılmıyorsa</string>
     <!-- Ambient Ticker -->
     <string name="force_ambient_for_media_pref_title">Ortam müzik bilgisi</string>
     <string name="force_ambient_for_media_pref_summary">Ortam ekranında müzik bilgisini yapılandır</string>
@@ -1792,11 +1787,16 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <string name="menu_hide_substratum">Temaları gizle</string>
     <!-- Lockscreen clock -->
     <string name="lockscreen_clock_selection_title">Saat stili</string>
+    <string name="lockscreen_clock_selection_hidden">Gizle</string>
     <string name="lockscreen_clock_selection_digital">Dijital</string>
     <string name="lockscreen_clock_selection_digital_bold">Dijital (kalın)</string>
     <string name="lockscreen_clock_selection_analog">Analog</string>
-    <string name="lockscreen_clock_selection_analog_deadpool">Analog (deadpool)</string>
-    <string name="lockscreen_clock_selection_analog_spidey">Analog (örümcek)</string>
+    <string name="lockscreen_clock_selection_analog_dark">Analog (karanlık)</string>
+    <string name="lockscreen_clock_selection_analog_deadpool">Deadpool</string>
+    <string name="lockscreen_clock_selection_analog_spidey">Örümcek</string>
+    <string name="lockscreen_clock_selection_analog_dot">Noktalı</string>
+    <string name="lockscreen_clock_selection_analog_spectrum">Spektrum</string>
+    <string name="lockscreen_clock_selection_analog_sneeky">Sneeky</string>
     <string name="lockscreen_clock_selection_sammy">Sammy</string>
     <string name="lockscreen_clock_selection_sammy_bold">Sammy (kalın)</string>
     <string name="lockscreen_date_selection_title">Tarih stili</string>
@@ -1998,7 +1998,7 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <string name="battery_charging">Şarj oluyor</string>
     <string name="battery_discharging">Şarj olmuyor</string>
     <!-- Menu option to do WPS Push Button [CHAR LIMIT=25]-->
-    <string name="wifi_menu_wps_pbc">WPS dokunma tuşu</string>
+    <string name="wifi_menu_wps_pbc">WPS tuşu</string>
     <!-- Menu option to do WPS Pin Entry [CHAR LIMIT=25]-->
     <string name="wifi_menu_wps_pin">WPS pin girişi</string>
     <!-- Title for the WPS setup dialog [CHAR LIMIT=50] -->
@@ -2012,11 +2012,11 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <!-- Text displayed when WPS succeeds [CHAR LIMIT=150] -->
     <string name="wifi_wps_complete">WPS başarılı. Ağa bağlanılıyor\u2026</string>
     <!-- Text displayed when Wi-Fi is connected through WPS [CHAR LIMIT=150] -->
-    <string name="wifi_wps_connected">Wi\u2011Fi ağına <xliff:g id="network_name">%s</xliff:g> bağlandı</string>
+    <string name="wifi_wps_connected">Wi\u2011Fi <xliff:g id="network_name">%s</xliff:g> ağına bağlandı</string>
     <!-- Text displayed when WPS setup is in progress [CHAR LIMIT=150] -->
-    <string name="wifi_wps_in_progress">WPS zaten işlemde ve bitmesi iki dakika kadar sürebilir</string>
+    <string name="wifi_wps_in_progress">WPS zaten devam ediyor ve tamamlanması iki dakika alabilir</string>
     <!-- Text displayed when WPS fails to start [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_generic">WPS başarısız oldu. Lütfen birkaç dakika içinde tekrar deneyin.</string>
+    <string name="wifi_wps_failed_generic">WPS başarısız. Lütfen birkaç dakika sonra yeniden deneyin.</string>
     <!-- Text displayed when WPS fails due to WEP [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_wep">Kablosuz yönlendirici güvenlik ayarı (WEP) desteklenmiyor</string>
     <!-- Text displayed when WPS fails to TKIP [CHAR LIMIT=150] -->
@@ -2024,7 +2024,7 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <!-- Text displayed when WPS fails due to authentication issues [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_auth">Kimlik doğrulama başarısız oldu. Lütfen tekrar deneyin.</string>
     <!-- Text displayed when WPS fails due to another session [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_overlap">Başka bir WPS oturumu saptandı. Lütfen birkaç dakika sonra tekrar deneyin.</string>
+    <string name="wifi_wps_failed_overlap">Başka bir WPS oturumu bulundu. Lütfen birkaç dakika sonra yeniden deneyin.</string>
     <!-- Text displayed when WPS fails due to wifi disconnected [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_wifi_disconnected">Wi\u2011Fi bağlantısı kesildi. WPS kurulumu iptal edildi.</string>
     <!-- Lockscreen Visualizer -->
@@ -2053,4 +2053,12 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <string name="lockscreen_albumart_filter_tint">Vurgu renkli</string>
     <string name="lockscreen_albumart_filter_blur">Bulanık</string>
     <string name="lockscreen_albumart_filter_grayblur">Gri tonlamalı ve bulanık</string>
+    <!-- Notifications while screen on -->
+    <string name="notification_sound_vib_screen_on_title">Ekran açıkken bildirimler</string>
+    <string name="notification_sound_vib_screen_on_summary">Ekran açıkken bildirimler için ses ve titreşim</string>
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">Çağrı titreşimi</string>
+    <string name="incall_vibrate_connect_title">Bağlandığında titret</string>
+    <string name="incall_vibrate_call_wait_title">Çağrı bekletildiğinde titret</string>
+    <string name="incall_vibrate_disconnect_title">Bağlantı kesildiğinde titret</string>
 </resources>

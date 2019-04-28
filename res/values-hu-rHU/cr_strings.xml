@@ -1656,11 +1656,6 @@
     <string name="zen_allow_lights">Engedélyezés</string>
     <string name="zen_allow_lights_summary">Engedélyezi a LED pulzálását ha a Ne zavarjanak (DND) üzemmód aktív</string>
     <string name="light_brightness_category">LED fényerő beállítások</string>
-    <!-- Suppress notification sound -->
-    <string name="notification_sound_vib_screen_on_title">Értesítési hangok és rezgések, ha a képernyő be van kapcsolva</string>
-    <string name="notification_sound_vib_screen_on_never">Soha</string>
-    <string name="notification_sound_vib_screen_on_always">Mindig (alapértelmezés)</string>
-    <string name="notification_sound_vib_screen_on_nomedia">Ha épp nem játszik le médiafájlt</string>
     <!-- Ambient Ticker -->
     <string name="force_ambient_for_media_pref_title">Ambient Music jelzőszalag</string>
     <string name="force_ambient_for_media_pref_summary">Ambient Music jelzőszalag konfigurálása</string>
@@ -1790,11 +1785,16 @@
     <string name="menu_hide_substratum">Fedőrétegek elrejtése</string>
     <!-- Lockscreen clock -->
     <string name="lockscreen_clock_selection_title">Órastílus</string>
+    <string name="lockscreen_clock_selection_hidden">Rejtett</string>
     <string name="lockscreen_clock_selection_digital">Digitális</string>
     <string name="lockscreen_clock_selection_digital_bold">Digitális (félkövér)</string>
     <string name="lockscreen_clock_selection_analog">Analóg</string>
-    <string name="lockscreen_clock_selection_analog_deadpool">Analóg (deadpool)</string>
-    <string name="lockscreen_clock_selection_analog_spidey">Analóg (spidey)</string>
+    <string name="lockscreen_clock_selection_analog_dark">Analóg (sötét)</string>
+    <string name="lockscreen_clock_selection_analog_deadpool">Deadpool</string>
+    <string name="lockscreen_clock_selection_analog_spidey">Spidey</string>
+    <string name="lockscreen_clock_selection_analog_dot">Pont</string>
+    <string name="lockscreen_clock_selection_analog_spectrum">Spektrum</string>
+    <string name="lockscreen_clock_selection_analog_sneeky">Sneeky</string>
     <string name="lockscreen_clock_selection_sammy">Sammy</string>
     <string name="lockscreen_clock_selection_sammy_bold">Sammy (félkövér)</string>
     <string name="lockscreen_date_selection_title">Dátumstílus</string>
@@ -2051,4 +2051,12 @@
     <string name="lockscreen_albumart_filter_tint">Kiemelőszínhez igazodó</string>
     <string name="lockscreen_albumart_filter_blur">Homályosított</string>
     <string name="lockscreen_albumart_filter_grayblur">Szürkeárnyalatos és homályosított</string>
+    <!-- Notifications while screen on -->
+    <string name="notification_sound_vib_screen_on_title">Feltűnőbb értesítések</string>
+    <string name="notification_sound_vib_screen_on_summary">Ha a képernyő bekapcsolt állapotba van, az értesítéseknek hangja is van és rezegnek is</string>
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">Hívás közbeni rezgésbeállítások</string>
+    <string name="incall_vibrate_connect_title">Rezgés a kapcsolat létrejöttekor</string>
+    <string name="incall_vibrate_call_wait_title">Rezgés hívásvárakoztatásnál</string>
+    <string name="incall_vibrate_disconnect_title">Rezgés a kapcsolat bontásakor</string>
 </resources>

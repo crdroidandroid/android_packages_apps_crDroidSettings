@@ -1657,11 +1657,6 @@ https://plus.google.com/communities/118297646046960923906</string>
     <string name="zen_allow_lights">Activer</string>
     <string name="zen_allow_lights_summary">Autoriser des notifications lumineuses que le mode ne pas déranger est activé</string>
     <string name="light_brightness_category">Réglages de la luminosité</string>
-    <!-- Suppress notification sound -->
-    <string name="notification_sound_vib_screen_on_title">Notifications sonores et vibrations si l\'écran est allumé</string>
-    <string name="notification_sound_vib_screen_on_never">Jamais</string>
-    <string name="notification_sound_vib_screen_on_always">Toujours (par défaut)</string>
-    <string name="notification_sound_vib_screen_on_nomedia">Si aucun média n’est en cours de lecture</string>
     <!-- Ambient Ticker -->
     <string name="force_ambient_for_media_pref_title">Afficher les infos du média en mode Veille</string>
     <string name="force_ambient_for_media_pref_summary">Configurer les infos du média en mode Veille</string>
@@ -1726,7 +1721,7 @@ https://plus.google.com/communities/118297646046960923906</string>
     <string name="qs_brightness_slider_top">Haut</string>
     <string name="qs_brightness_slider_bottom">Bas</string>
     <!-- Notification channels -->
-    <string name="channel_light_settings_name">Light settings preview</string>
+    <string name="channel_light_settings_name">Aperçu des paramètres d\'éclairage</string>
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">Editer les paramètres de la LED</string>
     <string name="pulse_speed_title">Durée et vitesse de clignotement</string>
@@ -1791,11 +1786,16 @@ https://plus.google.com/communities/118297646046960923906</string>
     <string name="menu_hide_substratum">Masquer les surcouches</string>
     <!-- Lockscreen clock -->
     <string name="lockscreen_clock_selection_title">Style de l\'horloge</string>
+    <string name="lockscreen_clock_selection_hidden">Hidden</string>
     <string name="lockscreen_clock_selection_digital">Numérique</string>
     <string name="lockscreen_clock_selection_digital_bold">Numérique (gras)</string>
     <string name="lockscreen_clock_selection_analog">Analogique</string>
-    <string name="lockscreen_clock_selection_analog_deadpool">Analogique (Deadpool)</string>
-    <string name="lockscreen_clock_selection_analog_spidey">Analogique (Spidey)</string>
+    <string name="lockscreen_clock_selection_analog_dark">Analog (dark)</string>
+    <string name="lockscreen_clock_selection_analog_deadpool">Deadpool</string>
+    <string name="lockscreen_clock_selection_analog_spidey">Spidey</string>
+    <string name="lockscreen_clock_selection_analog_dot">Dot</string>
+    <string name="lockscreen_clock_selection_analog_spectrum">Spectrum</string>
+    <string name="lockscreen_clock_selection_analog_sneeky">Sneeky</string>
     <string name="lockscreen_clock_selection_sammy">Empilée</string>
     <string name="lockscreen_clock_selection_sammy_bold">Empilée (gras)</string>
     <string name="lockscreen_date_selection_title">Style de la date</string>
@@ -2028,28 +2028,36 @@ https://plus.google.com/communities/118297646046960923906</string>
     <string name="wifi_wps_failed_wifi_disconnected">Wi\u2011Fi déconnecté. Configuration WPS annulée.</string>
     <!-- Lockscreen Visualizer -->
     <string name="lockscreen_autocolor_title">Couleur automatique</string>
-    <string name="lockscreen_autocolor_summary">Sync color with background</string>
+    <string name="lockscreen_autocolor_summary">Synchroniser la couleur avec l\'arrière-plan</string>
     <string name="lockscreen_autocolor_lavalamp">Nécessite une lampe de lave désactivée</string>
     <string name="lockscreen_lavalamp_title">Lampe à lave</string>
     <string name="lockscreen_lavalamp_summary">Animate smooth lava lamp style color blend</string>
     <string name="lockscreen_lavalamp_speed_title">Lava lamp color blend interval</string>
-    <string name="lockscreen_solid_units_count_title">Solid lines count</string>
+    <string name="lockscreen_solid_units_count_title">Nombre de lignes</string>
     <string name="lockscreen_solid_fudge_factor_title">Sanity level</string>
-    <string name="lockscreen_solid_units_opacity_title">Solid lines opacity</string>
+    <string name="lockscreen_solid_units_opacity_title">Opacité des lignes</string>
     <!-- Display cutout options -->
-    <string name="cutout_main">Display cutout</string>
-    <string name="cutout_main_summary">Customize notch settings</string>
-    <string name="display_cutout_style_title">Cutout style</string>
+    <string name="cutout_main">Afficher la coupure</string>
+    <string name="cutout_main_summary">Personnaliser les paramètres de l\'encoche</string>
+    <string name="display_cutout_style_title">Style de découpe</string>
     <string name="display_cutout_style_normal">Normal</string>
-    <string name="display_cutout_style_immerse">Immerse</string>
-    <string name="display_cutout_style_hide">Hide</string>
-    <string name="stock_statusbar_in_hide">Stock statusbar height</string>
-    <string name="stock_statusbar_in_hide_summary">Use default statusbar height in Hide</string>
+    <string name="display_cutout_style_immerse">Immersif</string>
+    <string name="display_cutout_style_hide">Masquer</string>
+    <string name="stock_statusbar_in_hide">Taille de la barre d\'état par défaut</string>
+    <string name="stock_statusbar_in_hide_summary">Utiliser la taille par défaut de la barre de statut dans le mode cacher</string>
     <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Media cover art filter</string>
-    <string name="lockscreen_albumart_filter_none">None</string>
-    <string name="lockscreen_albumart_filter_grayscale">Grayscale</string>
-    <string name="lockscreen_albumart_filter_tint">Accent tinted</string>
-    <string name="lockscreen_albumart_filter_blur">Blur</string>
-    <string name="lockscreen_albumart_filter_grayblur">Grayscale and blurred</string>
+    <string name="lockscreen_albumart_filter_title">Filtre du cover art des médias</string>
+    <string name="lockscreen_albumart_filter_none">Aucun</string>
+    <string name="lockscreen_albumart_filter_grayscale">Niveaux de gris</string>
+    <string name="lockscreen_albumart_filter_tint">Accent teinté</string>
+    <string name="lockscreen_albumart_filter_blur">Flou</string>
+    <string name="lockscreen_albumart_filter_grayblur">Niveaux de gris et flou</string>
+    <!-- Notifications while screen on -->
+    <string name="notification_sound_vib_screen_on_title">Noisy notifications</string>
+    <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
+    <!-- Incall vibrate options -->
+    <string name="incall_vibration_category">In-call vibration options</string>
+    <string name="incall_vibrate_connect_title">Vibrate on connect</string>
+    <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
+    <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
 </resources>
