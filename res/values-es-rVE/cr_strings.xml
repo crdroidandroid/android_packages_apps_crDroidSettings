@@ -63,7 +63,7 @@
     <string name="network_traffic_mode_down">Sólo Bajada</string>
     <string name="network_traffic_mode_all">Subida y Bajada</string>
     <string name="network_traffic_autohide">Ocultar automaticamente</string>
-    <string name="network_traffic_autohide_summary">Oculta el monitor automaticamente cuando no hay actividad de red</string>
+    <string name="network_traffic_autohide_summary">Ocultar el monitor de tráfico de red automáticamente cuando no haya actividad de red</string>
     <string name="network_traffic_autohide_kilobits">Kb/s</string>
     <string name="network_traffic_autohide_threshold">Límite de inactividad</string>
     <string name="network_traffic_show_units">Mostrar unidades</string>
@@ -78,7 +78,7 @@
     <string name="network_traffic_hidearrow">Ocultar flechas</string>
     <string name="network_traffic_hidearrow_summary">Oculta las flechas de actividad del monitor</string>
     <string name="network_traffic_refresh_interval_title">Intervalo de actualización</string>
-    <string name="network_traffic_refresh_interval_summary">Duración después de la cual la velocidad es releida</string>
+    <string name="network_traffic_refresh_interval_summary">Duración después de la cual se vuelve a medir la velocidad</string>
     <!-- Settings suggestions  -->
     <string name="disable_settings_suggestions_title">Desactivar sugerencias</string>
     <string name="disable_settings_suggestions_summary">Desactiva las sugerencias en el panel de ajustes</string>
@@ -138,7 +138,7 @@
     <string name="shortcut_duplicate_entry">La acción elegida no puede añadirse dos veces</string>
     <string name="shortcut_action_help_shortcut">acceso directo</string>
     <string name="shortcut_action_help_button">botón</string>
-    <string name="shortcut_action_help_app">app</string>
+    <string name="shortcut_action_help_app">aplicación</string>
     <string name="shortcut_action_help_icon">, al seleccionar el ícono mostrará las opciones para personalizar</string>
     <string name="shortcut_action_help_main">Para agregar un %1$s, seleccione el icono Agregar. Una vez que %1$s \" fue agregado, seleccionando la fila se cambiará el destino de %2$s.\n\nPara eliminar %1$s, deslice la fila horizontalmente a izquierda o derecha. Reordene %1$s en la lista arrastrando verticalmente el ancla a su izquierda.\n\nPara limpiar o restablecer los valores predeterminados, seleccione el icono Restablecer.</string>
     <string name="shortcut_action_help_delete_last_entry">Remover todos los %1$s de la lista, deshabilitará completamente la característica.</string>
@@ -222,7 +222,7 @@
     <string name="dolphin2">Dolphin</string>
     <string name="downloads">Descargas</string>
     <string name="dropbox">Dropbox</string>
-    <string name="ebay">Ebay</string>
+    <string name="ebay">eBay</string>
     <string name="email">E-Mail</string>
     <string name="evernote">Evernote</string>
     <string name="explorer">Explorador</string>
@@ -250,7 +250,7 @@
     <string name="maps2">Maps2</string>
     <string name="memorycleaner">Limpiador de memoria</string>
     <string name="navigation">Navegación</string>
-    <string name="pulse">Pulse</string>
+    <string name="pulse">Pulso</string>
     <string name="shazam">Shazam</string>
     <string name="swiftkey">SwiftKey</string>
     <string name="tmobile">T-mobile</string>
@@ -275,7 +275,7 @@
     <string name="mxplayer">Reproductor Mx</string>
     <string name="notepad">Mensaje directo</string>
     <string name="opera">Ópera</string>
-    <string name="paint">Pintar</string>
+    <string name="paint">Paint</string>
     <string name="paypal">Paypal</string>
     <string name="phone">Teléfono</string>
     <string name="picasa">Picasa</string>
@@ -288,12 +288,12 @@
     <string name="soundscloud">Sound Cloud</string>
     <string name="spotifiy">Spotify</string>
     <string name="tapatalk">Tapatalk</string>
-    <string name="tunein">TuneIn</string>
+    <string name="tunein">Tunein</string>
     <string name="twitter">Twitter</string>
     <string name="viber">Viber</string>
     <string name="videocamera">Cámara de vídeo</string>
     <string name="whatsapp">WhatsApp</string>
-    <string name="wifi">Wifi</string>
+    <string name="wifi">Wi-Fi</string>
     <string name="xda">XDA</string>
     <string name="yahoo">Yahoo</string>
     <string name="youtube">YouTube</string>
@@ -455,7 +455,7 @@
     <string name="status_bar_logo_style_blogger">Blogger</string>
     <string name="status_bar_logo_style_biohazard">Riesgo biológico</string>
     <string name="status_bar_logo_style_linux">Linux</string>
-    <string name="status_bar_logo_style_yin_yang">Yin- Yang</string>
+    <string name="status_bar_logo_style_yin_yang">Yin-Yang</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_robot">Robot</string>
     <string name="status_bar_logo_style_ninja">Ninja</string>
@@ -657,10 +657,10 @@
     <string name="pulse_custom_div">Espaciado de las barras</string>
     <string name="pulse_filled_block_size">Tamaño del bloque</string>
     <string name="pulse_empty_block_size">Espaciado de los bloques</string>
-    <string name="pulse_blacklist_title">Lista negra de apps</string>
-    <string name="pulse_blacklist_summary">Aplicaciones a ser omitidas en Pulse</string>
+    <string name="pulse_blacklist_title">Lista negra de aplicaciones</string>
+    <string name="pulse_blacklist_summary">Aplicaciones omitidas por el pulso</string>
     <string name="pulse_blacklist_apps_cat_title">Lista negra</string>
-    <string name="pulse_blacklist_apps_title">Lista negra de apps</string>
+    <string name="pulse_blacklist_apps_title">Lista negra de aplicaciones</string>
     <string name="pulse_blacklist_apps_summary">Ocultar aplicaciones en el panel</string>
     <string name="pulse_blacklist_add_apps_title">Agregar aplicación</string>
     <string name="pulse_blacklist_add_apps_summary">Toque aquí para agregar, toque en una aplicación agregada para quitarla</string>
@@ -1786,11 +1786,16 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
     <string name="menu_hide_substratum">Ocultar capas</string>
     <!-- Lockscreen clock -->
     <string name="lockscreen_clock_selection_title">Estilo de reloj</string>
+    <string name="lockscreen_clock_selection_hidden">Hidden</string>
     <string name="lockscreen_clock_selection_digital">Digital</string>
     <string name="lockscreen_clock_selection_digital_bold">Digital (negrita)</string>
     <string name="lockscreen_clock_selection_analog">Análogo</string>
-    <string name="lockscreen_clock_selection_analog_deadpool">Analógico (deadpool)</string>
-    <string name="lockscreen_clock_selection_analog_spidey">Analógico (Spiderman)</string>
+    <string name="lockscreen_clock_selection_analog_dark">Analog (dark)</string>
+    <string name="lockscreen_clock_selection_analog_deadpool">Deadpool</string>
+    <string name="lockscreen_clock_selection_analog_spidey">Spidey</string>
+    <string name="lockscreen_clock_selection_analog_dot">Dot</string>
+    <string name="lockscreen_clock_selection_analog_spectrum">Spectrum</string>
+    <string name="lockscreen_clock_selection_analog_sneeky">Sneeky</string>
     <string name="lockscreen_clock_selection_sammy">Sammy</string>
     <string name="lockscreen_clock_selection_sammy_bold">Sammy (negrita)</string>
     <string name="lockscreen_date_selection_title">Estilo de la fecha</string>
@@ -1869,8 +1874,8 @@ Desliza de izquierda a derecha para regresar.</string>
     <!-- Blink flashlight for incoming calls -->
     <string name="flashlight_on_call_title">Parpadeo de flash en llamada</string>
     <string name="flashlight_on_call_disabled">Deshabilitado</string>
-    <string name="flashlight_on_call_not_dnd">Sólo en modo de timbre</string>
-    <string name="flashlight_on_call_dnd">Sólo en modo DND</string>
+    <string name="flashlight_on_call_not_dnd">Solo en modo de timbre</string>
+    <string name="flashlight_on_call_dnd">Solo en modo DND</string>
     <string name="flashlight_on_call_always">Siempre</string>
     <!-- Themes -->
     <string name="style_title">Estilo</string>
