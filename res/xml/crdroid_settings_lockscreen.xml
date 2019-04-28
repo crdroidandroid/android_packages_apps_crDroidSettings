@@ -59,6 +59,14 @@
         android:title="@string/lockscreen_clockdate_category">
 
         <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="lockscreen_clock_selection"
+            android:icon="@drawable/ic_lock_clock"
+            android:title="@string/lockscreen_clock_selection_title"
+            android:entries="@array/lockscreen_clock_selection_entries"
+            android:entryValues="@array/lockscreen_clock_selection_values"
+            android:defaultValue="1" />
+
+        <com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="lock_clock_font_style"
             android:icon="@drawable/ic_font"
             android:title="@string/clock_font_style_title"
@@ -145,14 +153,6 @@
             android:defaultValue="true" />
 
         <!--<com.crdroid.settings.preferences.SystemSettingListPreference
-            android:key="lockscreen_clock_selection"
-            android:icon="@drawable/ic_lock_clock"
-            android:title="@string/lockscreen_clock_selection_title"
-            android:entries="@array/lockscreen_clock_selection_entries"
-            android:entryValues="@array/lockscreen_clock_selection_values"
-            android:defaultValue="0" />
-
-        <com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="lockscreen_date_selection"
             android:icon="@drawable/ic_calendar_range"
             android:title="@string/lockscreen_date_selection_title"
