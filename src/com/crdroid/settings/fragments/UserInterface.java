@@ -59,8 +59,10 @@ import lineageos.providers.LineageSettings;
 public class UserInterface extends SettingsPreferenceFragment implements Indexable {
 
     private static final String SMART_PIXELS = "smart_pixels";
+    private static final String DISPLAY_CUTOUT = "display_cutout_force_fullscreen_settings";
 
     private Preference mSmartPixels;
+    private Preference mDisplayCutout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,6 +77,13 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
                 com.android.internal.R.bool.config_supportSmartPixels);
         if (!mSmartPixelsSupported)
             prefScreen.removePreference(mSmartPixels);
+
+        final boolean hasNotch = res.getBoolean(
+                org.lineageos.platform.internal.R.bool.config_haveNotch);
+
+        mDisplayCutout = (Preference) prefScreen.findPreference(DISPLAY_CUTOUT);
+        if (!hasNotch)
+            prefScreen.removePreference(mDisplayCutout);
     }
 
     public static void reset(Context mContext) {
@@ -111,6 +120,16 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+                    final Resources res = context.getResources();
+
+                    boolean hasNotch = res.getBoolean(
+                            org.lineageos.platform.internal.R.bool.config_haveNotch);
+                    if (!hasNotch)
+                        keys.add(DISPLAY_CUTOUT);
+                    boolean mSmartPixelsSupported = res.getBoolean(
+                            com.android.internal.R.bool.config_supportSmartPixels);
+                    if (!mSmartPixelsSupported)
+                        keys.add(SMART_PIXELS);
 
                     return keys;
                 }
