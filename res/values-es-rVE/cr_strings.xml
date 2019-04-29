@@ -673,10 +673,10 @@
     <!-- Stock navbar -->
     <string name="navbar_settings_title">Ajustes por defecto de la barra de navegación</string>
     <string name="navbar_settings_summary">Personalizar la barra de navegación </string>
-    <string name="navbar_tuner_title">Configuración Barra de Navegación</string>
+    <string name="navbar_tuner_title">Configuración de la barra de navegación</string>
     <string name="navbar_tuner_summary">Personalizar botones y diseño</string>
-    <string name="navbar_arrow_keys_title">Mostrar las flechas mientras se escribe</string>
-    <string name="navbar_arrow_keys_summary">Mostrar los cursores izquierda y derecha mientras se escribe. Reemplaza al selector IME.</string>
+    <string name="navbar_arrow_keys_title">Mostrar flechas mientras estás escribiendo</string>
+    <string name="navbar_arrow_keys_summary">Mostrar los cursores izquierda y derecha mientras estás escribiendo. Reemplaza al selector de métodos de entrada.</string>
     <!-- SmartBar -->
     <string name="smartbar_category">SmartBar</string>
     <string name="smartbar_settings_title">Ajustes smartbar</string>
@@ -691,7 +691,7 @@
     <string name="smartbar_button_animation_title">Animación al tocar el botón</string>
     <string name="smartbar_button_animation_summary">Establecer el estilo de animación de los botones primarios cuando se presionan</string>
     <string name="smartbar_button_animation_ripple">Ondulación</string>
-    <string name="smartbar_button_animation_spring">Spring</string>
+    <string name="smartbar_button_animation_spring">Resorte</string>
     <string name="smartbar_button_animation_flip">Voltear</string>
     <string name="smartbar_button_animation_pixel">Pixel (todos los botones)</string>
     <string name="smartbar_button_animation_pixel_home">Pixel (sólo botón inicio)</string>
@@ -747,11 +747,11 @@
     <string name="status_bar_clock_position_center">Centrado</string>
     <string name="status_bar_clock_position_hidden">Oculto</string>
     <string name="status_bar_clock_auto_hide_title">Ocultar automáticamente</string>
-    <string name="status_bar_clock_auto_hide_summary">Ocultar y mostrar reloj de intervalos regulares ahorrar el espacio de la barra de estado</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Duración de vídeo</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Número de segundos para ocultar el reloj</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Duración de visualización</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Número de segundos para esperar antes de ocultar el reloj</string>
+    <string name="status_bar_clock_auto_hide_summary">Oculta y muestra el reloj en intervalos regulares para ahorrar espacio en la barra de estado</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">Ocultar durante</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Tiempo que el reloj va a permanecer oculto</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Mostrar durante</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Tiempo que el reloj va a permanecer visible</string>
     <string name="status_bar_am_pm_title">Estilo AM/PM</string>
     <string name="status_bar_am_pm_info">Reloj 24 horas activado</string>
     <string name="status_bar_am_pm_normal">Normal</string>
@@ -1660,7 +1660,7 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
     <!-- Ambient Ticker -->
     <string name="force_ambient_for_media_pref_title">Música de ambiente</string>
     <string name="force_ambient_for_media_pref_summary">Configurar la música de ambiente</string>
-    <string name="ambient_ticker_footer">Ambiente música Ticker espectáculos música pista info dentro de screen.\n\nIt\'s ambiente pantalla activado también si Mostrar ambiente está desactivado cuando se inicia una nueva pista, obligando a una ambiente limpio pantalla con información de la pista en medio de la screen.\n\nYou puede también doble toque en info de pista para saltar a pista.</string>
+    <string name="ambient_ticker_footer">El indicador de música ambiente muestra la pista de música que se está reproduciendo en la pantalla ambiente.\n\nEs activado también si la pantalla ambiente está desactivada y una nueva pista se reproduce, forzando una pantalla ambiente limpia con información de la pista en medio de la pantalla. \n\nTambién puedes hacer doble toque en la información de la canción para saltar a la siguiente pista.</string>
     <string name="force_ambient_for_media_title">Habilitar</string>
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">Desbloqueo facial</string>
@@ -1789,6 +1789,13 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
     <string name="lockscreen_clock_selection_hidden">Hidden</string>
     <string name="lockscreen_clock_selection_digital">Digital</string>
     <string name="lockscreen_clock_selection_digital_bold">Digital (negrita)</string>
+    <string name="lockscreen_clock_selection_digital_accent">Digital (accent)</string>
+    <string name="lockscreen_clock_selection_digital_accent_hour">Digital (accent - hour)</string>
+    <string name="lockscreen_clock_selection_digital_accent_min">Digital (accent - minutes)</string>
+    <string name="lockscreen_clock_selection_sammy">Sammy</string>
+    <string name="lockscreen_clock_selection_sammy_bold">Sammy (negrita)</string>
+    <string name="lockscreen_clock_selection_sammy_accent">Sammy (accent)</string>
+    <string name="lockscreen_clock_selection_sammy_accent_dark">Sammy (dark - accent)</string>
     <string name="lockscreen_clock_selection_analog">Análogo</string>
     <string name="lockscreen_clock_selection_analog_dark">Analog (dark)</string>
     <string name="lockscreen_clock_selection_analog_deadpool">Deadpool</string>
@@ -1796,8 +1803,6 @@ puede instalar nuevos paquetes de iconos desde la play store buscando \"Chronus 
     <string name="lockscreen_clock_selection_analog_dot">Dot</string>
     <string name="lockscreen_clock_selection_analog_spectrum">Spectrum</string>
     <string name="lockscreen_clock_selection_analog_sneeky">Sneeky</string>
-    <string name="lockscreen_clock_selection_sammy">Sammy</string>
-    <string name="lockscreen_clock_selection_sammy_bold">Sammy (negrita)</string>
     <string name="lockscreen_date_selection_title">Estilo de la fecha</string>
     <string name="lockscreen_date_selection_default">Por defecto</string>
     <string name="lockscreen_date_selection_default_big">Por defecto (grande)</string>
@@ -1923,24 +1928,24 @@ Desliza de izquierda a derecha para regresar.</string>
     <string name="status_bar_padding">Espacio extra en la barra de estado</string>
     <string name="corner_fwvals">Usar valores predeterminados</string>
     <!-- QS tile styles -->
-    <string name="qs_tile_style_title">Controles de ajustes rápidos</string>
-    <string name="qstile_default">Por defecto</string>
-    <string name="qstile_circle_gradient">Circular (Gradiente)</string>
-    <string name="qstile_circle_trim">Círculo (Borde)</string>
-    <string name="qstile_dottedcircle">Círculo punteado</string>
-    <string name="qstile_circle_dualtone">Círculo de Doble Tono</string>
+    <string name="qs_tile_style_title">Estilo de los ajustes rápidos</string>
+    <string name="qstile_default">Predeterminado</string>
+    <string name="qstile_circle_gradient">Círculos gradientes</string>
+    <string name="qstile_circle_trim">Círculos con borde</string>
+    <string name="qstile_dottedcircle">Círculos punteados</string>
+    <string name="qstile_circle_dualtone">Círculos de doble tono</string>
     <string name="qstile_dual_tone_circle">Círculo de Doble Tono (Borde)</string>
-    <string name="qstile_ink">Tinta</string>
-    <string name="qstile_inkdrop">Gota de Tinta</string>
-    <string name="qstile_mountain">Montaña</string>
-    <string name="qstile_ninja">Ninja</string>
-    <string name="qstile_oreo">Oreo</string>
-    <string name="qstile_oreo_circle_trim">Oreo (Borde de Círculo)</string>
-    <string name="qstile_squaremedo">Cuadradomedo</string>
-    <string name="qstile_squircle">Esquinas redondeadas</string>
-    <string name="qstile_oreo_squircle_trim">Oreo (Borde de Cuadrado Circular)</string>
-    <string name="qstile_pokesign">Señal Pokemon</string>
-    <string name="qstile_squircle_trim">Cuadrado Circular (Borde)</string>
+    <string name="qstile_ink">Círculos de tinta</string>
+    <string name="qstile_inkdrop">Gotas de tinta</string>
+    <string name="qstile_mountain">Montañas</string>
+    <string name="qstile_ninja">Estrellas ninja</string>
+    <string name="qstile_oreo">Solo iconos</string>
+    <string name="qstile_oreo_circle_trim">Iconos con bordes circulares</string>
+    <string name="qstile_squaremedo">Cuadrado y rombo</string>
+    <string name="qstile_squircle">Cuadrados circulares</string>
+    <string name="qstile_oreo_squircle_trim">Iconos con bordes cuadrados con esquinas redondas</string>
+    <string name="qstile_pokesign">Pokeparada</string>
+    <string name="qstile_squircle_trim">Cuadrados con esquinas redondas con borde</string>
     <string name="qstile_teardrop">Lágrima</string>
     <string name="qstile_wavey">Ondulado</string>
     <!-- QS header styles -->
@@ -1986,8 +1991,8 @@ Desliza de izquierda a derecha para regresar.</string>
     <!-- QS footer icons -->
     <string name="qs_footer_users_icon_title">Icono de cuenta de usuario</string>
     <string name="qs_footer_users_icon_summary">Mostrar icono de accesibilidad multiusuario cuando esté disponible</string>
-    <string name="qs_footer_edit_icon_title">Icono de edición de ajustes rápidos</string>
-    <string name="qs_footer_edit_icon_summary">Mostrar icono de edición de ajustes rápidos</string>
+    <string name="qs_footer_edit_icon_title">Icono de edición de los ajustes rápidos</string>
+    <string name="qs_footer_edit_icon_summary">Mostrar el icono de edición de los ajustes rápidos</string>
     <string name="qs_footer_services_icon_title">Acceso directo a servicios en ejecución</string>
     <string name="qs_footer_services_icon_summary">Mostrar Acceso directo a servicios en ejecución</string>
     <string name="qs_footer_settings_icon_title">Acceso directo a ajustes</string>
