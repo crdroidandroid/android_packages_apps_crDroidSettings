@@ -54,6 +54,7 @@ public class DozeFragment extends SettingsPreferenceFragment
     private static final String TAG = "DozeFragment";
 
     private static final String KEY_DOZE = "doze_enabled";
+    private static final String KEY_DOZE_ALWAYS_ON = "doze_always_on";
 
     private static final String KEY_DOZE_TRIGGER_TILT = "doze_trigger_tilt";
     private static final String KEY_DOZE_TRIGGER_PICKUP = "doze_trigger_pickup";
@@ -116,6 +117,12 @@ public class DozeFragment extends SettingsPreferenceFragment
         // Hide proximity sensor related features if the device doesn't support them
         if (!Utils.getProxCheckBeforePulse(getActivity())) {
             getPreferenceScreen().removePreference(proximitySensorCategory);
+        }
+
+        // Hides always on toggle if device doesn't support it (based on config_dozeAlwaysOnDisplayAvailable overlay)
+        boolean mAlwaysOnAvailable = getResources().getBoolean(com.android.internal.R.bool.config_dozeAlwaysOnDisplayAvailable);
+        if (!mAlwaysOnAvailable) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DOZE_ALWAYS_ON));
         }
     }
 
