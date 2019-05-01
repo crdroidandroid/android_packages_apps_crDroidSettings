@@ -63,7 +63,7 @@
     <string name="network_traffic_mode_down">다운로드만</string>
     <string name="network_traffic_mode_all">업로드와 다운로드</string>
     <string name="network_traffic_autohide">자동 숨기기</string>
-    <string name="network_traffic_autohide_summary">Hide the traffic monitor when inactive</string>
+    <string name="network_traffic_autohide_summary">비활성 상태 일 때 트래픽 모니터 숨기기</string>
     <string name="network_traffic_autohide_kilobits">kb/초</string>
     <string name="network_traffic_autohide_threshold">비활성 한계점</string>
     <string name="network_traffic_show_units">단위 표시</string>
@@ -77,8 +77,8 @@
     <string name="network_traffic_units_megabytes">메가바이트/초 (MB/초)</string>
     <string name="network_traffic_hidearrow">화살표 숨기기</string>
     <string name="network_traffic_hidearrow_summary">네트워크 트래픽 표시기 화살표 숨기기</string>
-    <string name="network_traffic_refresh_interval_title">Refresh interval</string>
-    <string name="network_traffic_refresh_interval_summary">Duration after which speed is remeasured</string>
+    <string name="network_traffic_refresh_interval_title">새로고침 간격</string>
+    <string name="network_traffic_refresh_interval_summary">속도가 재 측정 된 후의 시간</string>
     <!-- Settings suggestions  -->
     <string name="disable_settings_suggestions_title">제안 사용 안 함</string>
     <string name="disable_settings_suggestions_summary">대시 보드 제안 사용 중지</string>
@@ -113,7 +113,7 @@
     <!-- Lockscreen categories -->
     <string name="lockscreen_shortcuts_category">바로가기</string>
     <string name="lockscreen_interface_category">인터페이스</string>
-    <string name="lockscreen_clockdate_category">Clock &amp; date</string>
+    <string name="lockscreen_clockdate_category">날짜와 시간</string>
     <string name="lockscreen_misc_category">기타 설정</string>
     <!-- Lockscreen shortcuts -->
     <string name="lockscreen_shortcuts_slim_title">잠금 화면 단축키</string>
@@ -747,11 +747,11 @@
     <string name="status_bar_clock_position_center">가운데</string>
     <string name="status_bar_clock_position_hidden">숨김</string>
     <string name="status_bar_clock_auto_hide_title">자동 숨기기</string>
-    <string name="status_bar_clock_auto_hide_summary">Hide and display clock for regular interval to save statusbar space</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Hide duration</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Number of seconds to hide clock</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Show duration</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Number of seconds to wait before hiding clock</string>
+    <string name="status_bar_clock_auto_hide_summary">상태 표시 줄 공간을 절약하기 위해 일정한 간격으로 시계 숨기기 및 표시</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">숨김 기간</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">시계를 숨길 시간 (초)</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">지연시간 표시</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">시계를 숨기기 전에 기다리는 시간 (초)</string>
     <string name="status_bar_am_pm_title">오전/오후 스타일</string>
     <string name="status_bar_am_pm_info">24시간제 시계 활성화됨</string>
     <string name="status_bar_am_pm_normal">기본</string>
@@ -1127,7 +1127,7 @@
     <string name="clock_date_position">날짜 위치</string>
     <string name="clock_date_right">시간 오른쪽</string>
     <string name="clock_date_left">시간 왼쪽</string>
-    <string name="font_style_title">Font style</string>
+    <string name="font_style_title">폰트 스타일</string>
     <string name="font_normal">기본</string>
     <string name="font_italic">기울임꼴</string>
     <string name="font_bold">굵기</string>
@@ -1154,8 +1154,8 @@
     <string name="font_notoserif_bold">굵은 NotoSerif</string>
     <string name="font_notoserif_bold_italic">NotoSerif 굵은 기울임꼴</string>
     <string name="font_size_title">글꼴 크기</string>
-    <string name="clock_font_style_title">Clock font style</string>
-    <string name="date_font_style_title">Date font style</string>
+    <string name="clock_font_style_title">시계 글꼴 스타일</string>
+    <string name="date_font_style_title">날짜 폰트 스타일</string>
     <string name="menu_save">저장</string>
     <string name="menu_cancel">저장 안함</string>
     <!-- Recents Membar -->
@@ -1310,7 +1310,7 @@
     <string name="blur_notice">흐림 기능 주의 사항</string>
     <string name="blur_notice_summary">흐림 효과는 암호 입력 화면에서는 비활성화 됩니다. 반투명 알림만 활성화 됩니다!</string>
     <string name="blur_colors_notice">이 색들의 용도는 무엇인가요?</string>
-    <string name="blur_colors_notice_summary">These colors are the ones tinting the BlurBackground. Instead of the normal Grey, you can now choose the colors in the way you like.\nThere are three color filters: One used for light backgrounds, one used for Dark backgrounds and one used for light/dark backgrounds.\nSo how these colors work?\nSimple, as the titles say, the Light filter will be used for Lighter backgrounds, Dark filter for dark backgrounds and the mixed filter one will be used for backgrounds not too dark but neither too light.\nThese colors are used for both BlurBackgrounds: StatusBar and RecentsApps window</string>
+    <string name="blur_colors_notice_summary">이 색상은 BlurBackground을 변경합니다.  일반 회색 대신 원하는 색상을 선택할 수 있습니다. \ n 세 가지 색상 필터가 있습니다. 하나는 밝은 배경, 다른 하나는 어두운 배경, 다른 하나는 밝은 / 어두운 배경에 사용됩니다.  작동합니까? \ n 간단히 말해 제목에서 밝히는 것처럼 밝은 필터는 밝은 배경, 어두운 필터는 어두운 배경에 사용되며 혼합 필터는 너무 어둡지 않지만 너무 밝지 않은 배경에 사용됩니다. \ n 선택된 색상은 상태표시줄과 최근 앱 목록에 사용 됩니다</string>
     <string name="blur_expstatus_cat">확장된 상태표시줄 </string>
     <string name="blur_notifications_cat">알림</string>
     <string name="blur_qs_cat">빠른 설정</string>
@@ -1394,7 +1394,7 @@
     <string name="wifi_activity_arrows_title">Wifi 활동</string>
     <string name="wifi_activity_arrows_summary">WiFi 활동 표시기를 표시합니다</string>
     <!-- The Drill -->
-    <string name="drill_title">The drill</string>
+    <string name="drill_title">The Drill</string>
     <string name="drill_summary">버그를 찾았나요? 문제가 생겼나요?</string>
     <!-- Hide Statusbar on Lockscreen -->
     <string name="lockscreen_hide_status_bar_title">상태 표시줄</string>
@@ -1504,7 +1504,7 @@
     <string name="quick_settings_carrier_summary">상태 표시줄에 통신사 표시</string>
     <!-- Lockscreen Weather -->
     <string name="lock_screen_weather_title">날씨</string>
-    <string name="lock_screen_weather_summary">Display weather info next to date</string>
+    <string name="lock_screen_weather_summary">날짜 옆에 날씨 정보 표시</string>
     <string name="lock_screen_weather_summaryOn">잠금 화면에 표시</string>
     <string name="lock_screen_location_title">장소</string>
     <string name="lock_screen_location_summary">잠금 화면에 위치를 표시합니다</string>
@@ -1635,7 +1635,7 @@
     <string name="vibration_on_charge_state_changed_summary">장치가 전원에 연결될 경우 진동이 울립니다</string>
     <!-- Recents deep clear -->
     <string name="recents_deep_clear_title">짙은 투명</string>
-    <string name="recents_deep_clear_summary">Clear background process when using dismiss icon to dismiss task from recents view. This may lead unintentional results. Some apps may stop working until you restart them.</string>
+    <string name="recents_deep_clear_summary">백그라운드 프로세스를 종료합니다. 뜻 하지 않은 결과가 발생할 수 있습니다. 일부 앱은 다시 시작할 때까지 작동 중지할 수 있습니다.</string>
     <string name="qs_tile_title_visibility_title">타일 제목</string>
     <string name="qs_tile_title_visibility_summary">각 타일 아래에 상세 표시</string>
     <!-- Dark SysUI Theme -->
@@ -1720,7 +1720,7 @@
     <string name="qs_brightness_slider_top">상단</string>
     <string name="qs_brightness_slider_bottom">화면 하단</string>
     <!-- Notification channels -->
-    <string name="channel_light_settings_name">Light settings preview</string>
+    <string name="channel_light_settings_name">조명 설정 미리보기</string>
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">표시등 설정 변경</string>
     <string name="pulse_speed_title">깜빡임 시간과 속도</string>
@@ -1785,22 +1785,22 @@
     <string name="menu_hide_substratum">오버레이 숨기기</string>
     <!-- Lockscreen clock -->
     <string name="lockscreen_clock_selection_title">시계 스타일</string>
-    <string name="lockscreen_clock_selection_hidden">Hidden</string>
+    <string name="lockscreen_clock_selection_hidden">숨김</string>
     <string name="lockscreen_clock_selection_digital">디지털</string>
     <string name="lockscreen_clock_selection_digital_bold">디지털 (굵게 표시)</string>
-    <string name="lockscreen_clock_selection_digital_accent">Digital (accent)</string>
-    <string name="lockscreen_clock_selection_digital_accent_hour">Digital (accent - hour)</string>
-    <string name="lockscreen_clock_selection_digital_accent_min">Digital (accent - minutes)</string>
+    <string name="lockscreen_clock_selection_digital_accent">디지털 (악센트)</string>
+    <string name="lockscreen_clock_selection_digital_accent_hour">디지털 (악센트-시간)</string>
+    <string name="lockscreen_clock_selection_digital_accent_min">디지털 (악센트-분)</string>
     <string name="lockscreen_clock_selection_sammy">세로 배열</string>
     <string name="lockscreen_clock_selection_sammy_bold">Sammy (굵게 표시)</string>
     <string name="lockscreen_clock_selection_sammy_accent">Sammy (accent)</string>
     <string name="lockscreen_clock_selection_sammy_accent_dark">Sammy (dark - accent)</string>
     <string name="lockscreen_clock_selection_analog">아날로그</string>
-    <string name="lockscreen_clock_selection_analog_dark">Analog (dark)</string>
+    <string name="lockscreen_clock_selection_analog_dark">아날로그 (어둠)</string>
     <string name="lockscreen_clock_selection_analog_deadpool">Deadpool</string>
     <string name="lockscreen_clock_selection_analog_spidey">Spidey</string>
-    <string name="lockscreen_clock_selection_analog_dot">Dot</string>
-    <string name="lockscreen_clock_selection_analog_spectrum">Spectrum</string>
+    <string name="lockscreen_clock_selection_analog_dot">점</string>
+    <string name="lockscreen_clock_selection_analog_spectrum">스펙트럼</string>
     <string name="lockscreen_clock_selection_analog_sneeky">Sneeky</string>
     <string name="lockscreen_date_selection_title">날짜 스타일</string>
     <string name="lockscreen_date_selection_default">기본값</string>
@@ -1824,8 +1824,8 @@
     <string name="edge_gestures_back_show_ui_feedback_title"> 제스처 애니메이션</string>
     <string name="edge_gestures_back_show_ui_feedback_summary">뒷 동작이 사용될 때 가장자리에 애니메이션 된 피드백 표시</string>
     <!-- EdgeGesture service -->
-    <string name="edge_gesture_service_title">Block gesture touch events</string>
-    <string name="edge_gesture_service_summary">Don\'t send touch events for navigation and status bar gestures to apps</string>
+    <string name="edge_gesture_service_title">제스처 터치 이벤트 차단</string>
+    <string name="edge_gesture_service_summary">내비게이션 바 및 상태 표시줄 제스쳐의 터치 이벤트를 앱에 전달하지 않기</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">스마트 픽셀은 절전 기능입니다. 끄기로 결정한 픽셀 수에 따라 배터리 수명이 향상 될 수 있습니다.</string>
     <string name="smart_pixels_title">스마트 픽셀</string>
@@ -1904,8 +1904,8 @@
     <string name="style_notification_black">완벽한 검정색</string>
     <!-- Audio Panel view  -->
     <string name="audio_panel_view_title">볼륨 조절 창</string>
-    <string name="audio_panel_view_summary">Customize volume panel dialog</string>
-    <string name="audio_panel_view_info">Active volume stream will be displayed on the screen even if disabled here. Volume streams enabled here would be displayed forcefully.</string>
+    <string name="audio_panel_view_summary">볼륨 패널 대화 상자 사용자 지정</string>
+    <string name="audio_panel_view_info">여기에서 비활성화 된 경우에도 활성 볼륨 스트림이 화면에 표시됩니다.  여기에서 활성화 된 볼륨 스트림은 강제로 표시됩니다.</string>
     <string name="audio_panel_view_media_title">미디어</string>
     <string name="audio_panel_view_ringer_title">벨소리</string>
     <string name="audio_panel_view_notification_title">알림</string>
@@ -1913,8 +1913,8 @@
     <string name="audio_panel_view_alarm_title">알람</string>
     <string name="audio_panel_view_voice_title">음성</string>
     <string name="audio_panel_view_bt_sco_title">블루투스</string>
-    <string name="audio_panel_view_position_title">Volume panel on left</string>
-    <string name="audio_panel_view_timeout_title">Volume panel timeout</string>
+    <string name="audio_panel_view_position_title">왼쪽의 볼륨 패널</string>
+    <string name="audio_panel_view_timeout_title">볼륨 패널 시간 초과</string>
     <!-- Weather -->
     <string name="weather_unit">온도 단위</string>
     <string name="weather_client_not_available">날씨 클라이언트를 사용할 수 없습니다</string>
@@ -1922,15 +1922,15 @@
     <string name="corners_title">둥근 모서리</string>
     <string name="corners_summary">사용자 지정 둥근 모서리를 허용</string>
     <string name="corner_radius">모서리 반경</string>
-    <string name="content_padding">Corner content padding</string>
-    <string name="status_bar_padding">Statusbar extra padding</string>
+    <string name="content_padding">모서리 조절</string>
+    <string name="status_bar_padding">상태 표시 줄 추가 패딩</string>
     <string name="corner_fwvals">기본 값 사용하기</string>
     <!-- QS tile styles -->
-    <string name="qs_tile_style_title">Quick settings tile style</string>
+    <string name="qs_tile_style_title">빠른 설정 타일 스타일</string>
     <string name="qstile_default">기본값</string>
     <string name="qstile_circle_gradient">원 (그라데이션)</string>
     <string name="qstile_circle_trim">원 (자름)</string>
-    <string name="qstile_cookie">Cookie</string>
+    <string name="qstile_cookie">쿠키</string>
     <string name="qstile_dottedcircle">점선 원</string>
     <string name="qstile_circle_dualtone">듀얼 톤 원</string>
     <string name="qstile_dual_tone_circle">듀얼 톤 원 (자름)</string>
@@ -1960,15 +1960,15 @@
     <string name="switch_md2">머티리얼 디자인 2</string>
     <string name="switch_oneplus">원플러스</string>
     <!-- Battery stats reset -->
-    <string name="battery_stats_reset">Reset stats</string>
-    <string name="battery_stats_message">This will reset battery history stats. Would you like to continue?</string>
+    <string name="battery_stats_reset">상태 초기화</string>
+    <string name="battery_stats_message">이렇게하면 배터리 기록 통계가 재설정됩니다.  계속 하시겠습니까?</string>
     <!-- Units -->
-    <string name="unit_seconds">seconds</string>
-    <string name="unit_milliseconds">milliseconds</string>
+    <string name="unit_seconds">초</string>
+    <string name="unit_milliseconds">밀리초</string>
     <string name="unit_pixels">dp</string>
     <!-- Thermal control -->
-    <string name="thermal_controller">Thermal Controller</string>
-    <string name="thermal_control_per_app">Thermal profile</string>
+    <string name="thermal_controller">열 컨트롤러</string>
+    <string name="thermal_control_per_app">온도 프로파일</string>
     <string name="thermal_control_per_app_default">없음</string>
     <string name="thermal_control_per_app_benchmark">성능</string>
     <string name="thermal_control_per_app_games">게임</string>
@@ -1980,89 +1980,89 @@
     <string name="qs_clock_title">시계</string>
     <string name="qs_clock_summary">빠른 상태 표시줄의 헤더 부분에 시계 보이기</string>
     <!-- Full gesture mode -->
-    <string name="full_gesture_mode_title">Enable full gesture mode</string>
-    <string name="full_gesture_mode_summary">This mode disables the back button and you can trigger a back button action by a left swipe on navbar. Right swipe still triggers the last-app and the overview apps scrolling. To go home you can tap on any navbar empty space, not only the home button. When keyboard is showing, long press on navbar to move the text cursor.</string>
-    <string name="full_gesture_mode_dt2s_title">Enable double tap to sleep</string>
-    <string name="full_gesture_mode_dt2s_summary">Tap on an empty navbar space but not the home button to switch the screen off.</string>
+    <string name="full_gesture_mode_title">전체 제스처 모드를 활성화</string>
+    <string name="full_gesture_mode_summary">이 모드에서는 뒤로 가기 버튼이 비활성화되며, 내비게이션 바에서 왼쪽으로 밀어서 뒤로 가기 버튼 기능을 대체할 수 있습니다. 오른쪽 밀기는 여전히 최근 앱 목록을 불러들이게 됩니다. 홈으로 가려면 홈 버튼이나 내비게이션 바의 아무 곳이나 누르십시오. 키보드가 표시되면 내비게이션 바를 길게 눌러 텍스트 커서를 이동하십시오.</string>
+    <string name="full_gesture_mode_dt2s_title">두 번 탭하여 끄기</string>
+    <string name="full_gesture_mode_dt2s_summary">화면을 끄려면 홈 버튼을 제외한 내비게이션 바의 빈 공간을 누르십시오.</string>
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">VPN 경고</string>
     <string name="qs_footer_warnings_summary">VPN에 연결되어 있거나 네트워크가 감시되고 있을때 경고를 표시합니다.</string>
     <!-- QS footer icons -->
-    <string name="qs_footer_users_icon_title">User account icon</string>
-    <string name="qs_footer_users_icon_summary">Display multiuser accessibility icon when available</string>
-    <string name="qs_footer_edit_icon_title">Edit tiles icon</string>
-    <string name="qs_footer_edit_icon_summary">Display edit tiles icon</string>
+    <string name="qs_footer_users_icon_title">사용자 계정 아이콘</string>
+    <string name="qs_footer_users_icon_summary">사용 가능한 경우 다중 사용자 액세스 아이콘 표시</string>
+    <string name="qs_footer_edit_icon_title">타일 아이콘 편집</string>
+    <string name="qs_footer_edit_icon_summary">디스플레이 타일 아이콘 편집</string>
     <string name="qs_footer_services_icon_title">실행 중인 서비스 바로 가기</string>
     <string name="qs_footer_services_icon_summary">실행 중인 서비스 바로 가기를 표시합니다</string>
     <string name="qs_footer_settings_icon_title">설정 바로 가기</string>
     <string name="qs_footer_settings_icon_summary">설정 바로 가기를 표시합니다</string>
     <!-- Old mobiletype icon style -->
-    <string name="old_mobiletype_title">Old style signal icon</string>
-    <string name="old_mobiletype_summary">Merge signal and signal type icons</string>
-    <string name="battery_charging">Charging</string>
-    <string name="battery_discharging">Discharging</string>
+    <string name="old_mobiletype_title">오래 된 스타일 신호 아이콘</string>
+    <string name="old_mobiletype_summary">병합 신호 및 신호 유형 아이콘</string>
+    <string name="battery_charging">충전 중</string>
+    <string name="battery_discharging">방전 중</string>
     <!-- Menu option to do WPS Push Button [CHAR LIMIT=25]-->
-    <string name="wifi_menu_wps_pbc">WPS Push Button</string>
+    <string name="wifi_menu_wps_pbc">WPS 푸시 버튼</string>
     <!-- Menu option to do WPS Pin Entry [CHAR LIMIT=25]-->
-    <string name="wifi_menu_wps_pin">WPS Pin Entry</string>
+    <string name="wifi_menu_wps_pin">WPS PIN 입력</string>
     <!-- Title for the WPS setup dialog [CHAR LIMIT=50] -->
-    <string name="wifi_wps_setup_title">Wi\u2011Fi Protected Setup</string>
+    <string name="wifi_wps_setup_title">Wi-Fi Protected 설정</string>
     <!-- Message in WPS dialog at start up [CHAR LIMIT=150] -->
-    <string name="wifi_wps_setup_msg">Starting WPS\u2026</string>
+    <string name="wifi_wps_setup_msg">WPS을 시작하는 중…</string>
     <!-- Message in WPS dialog for PBC after start up [CHAR LIMIT=150] -->
-    <string name="wifi_wps_onstart_pbc">Press the Wi\u2011Fi Protected Setup button on your router. It may be called \u201cWPS\u201d or marked with this symbol:</string>
+    <string name="wifi_wps_onstart_pbc">라우터에서 Wi‑Fi 보호 설정 버튼을 누르세요. \'WPS\'라고 쓰여있거나 이 기호가 표시되어 있을 수도 있습니다.</string>
     <!-- Message in WPS dialog for PIN after start up [CHAR LIMIT=150] -->
-    <string name="wifi_wps_onstart_pin">Enter pin <xliff:g id="number">%1$s</xliff:g> on your Wi\u2011Fi router. The setup can take up to two minutes to complete.</string>
+    <string name="wifi_wps_onstart_pin">Wi-Fi 공유기에 PIN(<xliff:g id="NUMBER">%1$s</xliff:g>)을 입력하세요. 설정을 완료하는 데 최대 2분이 소요됩니다.</string>
     <!-- Text displayed when WPS succeeds [CHAR LIMIT=150] -->
-    <string name="wifi_wps_complete">WPS succeeded. Connecting to the network\u2026</string>
+    <string name="wifi_wps_complete">WPS에 성공했습니다. 네트워크에 연결\u2026</string>
     <!-- Text displayed when Wi-Fi is connected through WPS [CHAR LIMIT=150] -->
-    <string name="wifi_wps_connected">Connected to Wi\u2011Fi network <xliff:g id="network_name">%s</xliff:g></string>
+    <string name="wifi_wps_connected">Wi-Fi 네트워크 <xliff:g id="NETWORK_NAME">%s</xliff:g>에 연결됨</string>
     <!-- Text displayed when WPS setup is in progress [CHAR LIMIT=150] -->
-    <string name="wifi_wps_in_progress">WPS is already in progress and can take up to two minutes to complete</string>
+    <string name="wifi_wps_in_progress">WPS는 이미 진행 중입니다 완료하는 데 최대 2 분 정도 걸릴 수 있습니다</string>
     <!-- Text displayed when WPS fails to start [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_generic">WPS failed. Please try again in a few minutes.</string>
+    <string name="wifi_wps_failed_generic">WPS가 실패하였습니다. 잠시 후 다시 시도해 주세요.</string>
     <!-- Text displayed when WPS fails due to WEP [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_wep">The wireless router security setting (WEP) is not supported</string>
+    <string name="wifi_wps_failed_wep">무선 공유기 보안 설정(WEP)은 지원되지 않습니다.</string>
     <!-- Text displayed when WPS fails to TKIP [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_tkip">The wireless router security setting (TKIP) is not supported</string>
+    <string name="wifi_wps_failed_tkip">무선 공유기 보안 설정(TKIP)은 지원되지 않습니다.</string>
     <!-- Text displayed when WPS fails due to authentication issues [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_auth">Authentication failure. Please try again.</string>
+    <string name="wifi_wps_failed_auth">인증하지 못했습니다. 다시 시도하세요.</string>
     <!-- Text displayed when WPS fails due to another session [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_overlap">Another WPS session was detected. Please try again in a few minutes.</string>
+    <string name="wifi_wps_failed_overlap">다른 WPS 세션이 감지되었습니다. 잠시 후 다시 시도해 주세요.</string>
     <!-- Text displayed when WPS fails due to wifi disconnected [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_wifi_disconnected">Wi\u2011Fi disconnected. WPS setup canceled.</string>
+    <string name="wifi_wps_failed_wifi_disconnected">Wi\u2011Fi가 연결이 끊어졌습니다.  WPS 설정이 취소되었습니다.</string>
     <!-- Lockscreen Visualizer -->
-    <string name="lockscreen_autocolor_title">Automatic color</string>
-    <string name="lockscreen_autocolor_summary">Sync color with background</string>
+    <string name="lockscreen_autocolor_title">자동 색상</string>
+    <string name="lockscreen_autocolor_summary">배경과 색상 동기화</string>
     <string name="lockscreen_autocolor_lavalamp">Requires lava lamp disabled</string>
     <string name="lockscreen_lavalamp_title">Lava lamp</string>
     <string name="lockscreen_lavalamp_summary">Animate smooth lava lamp style color blend</string>
     <string name="lockscreen_lavalamp_speed_title">Lava lamp color blend interval</string>
-    <string name="lockscreen_solid_units_count_title">Solid lines count</string>
-    <string name="lockscreen_solid_fudge_factor_title">Sanity level</string>
-    <string name="lockscreen_solid_units_opacity_title">Solid lines opacity</string>
+    <string name="lockscreen_solid_units_count_title">실선 수</string>
+    <string name="lockscreen_solid_fudge_factor_title">바 구분 정도</string>
+    <string name="lockscreen_solid_units_opacity_title">실선 불투명도</string>
     <!-- Display cutout options -->
-    <string name="cutout_main">Display cutout</string>
-    <string name="cutout_main_summary">Customize notch settings</string>
-    <string name="display_cutout_style_title">Cutout style</string>
-    <string name="display_cutout_style_normal">Normal</string>
-    <string name="display_cutout_style_immerse">Immerse</string>
-    <string name="display_cutout_style_hide">Hide</string>
-    <string name="stock_statusbar_in_hide">Stock statusbar height</string>
-    <string name="stock_statusbar_in_hide_summary">Use default statusbar height in Hide</string>
+    <string name="cutout_main">컷 아웃 표시</string>
+    <string name="cutout_main_summary">노치 설정 사용자 정의</string>
+    <string name="display_cutout_style_title">컷아웃 스타일</string>
+    <string name="display_cutout_style_normal">기본</string>
+    <string name="display_cutout_style_immerse">집중 학습</string>
+    <string name="display_cutout_style_hide">숨기기</string>
+    <string name="stock_statusbar_in_hide">기본 상태바 높이</string>
+    <string name="stock_statusbar_in_hide_summary">숨기기에서 기본 상태 표시 줄 높이 사용</string>
     <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Media cover art filter</string>
-    <string name="lockscreen_albumart_filter_none">None</string>
-    <string name="lockscreen_albumart_filter_grayscale">Grayscale</string>
-    <string name="lockscreen_albumart_filter_tint">Accent tinted</string>
-    <string name="lockscreen_albumart_filter_blur">Blur</string>
-    <string name="lockscreen_albumart_filter_grayblur">Grayscale and blurred</string>
+    <string name="lockscreen_albumart_filter_title">미디어 커버 아트 필터</string>
+    <string name="lockscreen_albumart_filter_none">없음</string>
+    <string name="lockscreen_albumart_filter_grayscale">회색조</string>
+    <string name="lockscreen_albumart_filter_tint">엑센트 엷게</string>
+    <string name="lockscreen_albumart_filter_blur">흐림 효과</string>
+    <string name="lockscreen_albumart_filter_grayblur">회색조 &amp; 흐리게</string>
     <!-- Notifications while screen on -->
-    <string name="notification_sound_vib_screen_on_title">Noisy notifications</string>
-    <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
+    <string name="notification_sound_vib_screen_on_title">소리 알림</string>
+    <string name="notification_sound_vib_screen_on_summary">화면이 켜져있을 때 소리 및 진동 알림을 재생합니다.</string>
     <!-- Incall vibrate options -->
-    <string name="incall_vibration_category">In-call vibration options</string>
-    <string name="incall_vibrate_connect_title">Vibrate on connect</string>
-    <string name="incall_vibrate_call_wait_title">Vibrate on call waiting</string>
-    <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
+    <string name="incall_vibration_category">통화 중 진동 옵션</string>
+    <string name="incall_vibrate_connect_title">통화 연결 시 진동</string>
+    <string name="incall_vibrate_call_wait_title">통화 대기 중에 진동</string>
+    <string name="incall_vibrate_disconnect_title">통화 종료 시 진동</string>
 </resources>
