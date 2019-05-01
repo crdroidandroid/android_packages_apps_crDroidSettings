@@ -63,7 +63,7 @@
     <string name="network_traffic_mode_down">다운로드만</string>
     <string name="network_traffic_mode_all">업로드와 다운로드</string>
     <string name="network_traffic_autohide">자동 숨기기</string>
-    <string name="network_traffic_autohide_summary">Hide the traffic monitor when inactive</string>
+    <string name="network_traffic_autohide_summary">비활성 상태 일 때 트래픽 모니터 숨기기</string>
     <string name="network_traffic_autohide_kilobits">kb/초</string>
     <string name="network_traffic_autohide_threshold">비활성 한계점</string>
     <string name="network_traffic_show_units">단위 표시</string>
@@ -77,8 +77,8 @@
     <string name="network_traffic_units_megabytes">메가바이트/초 (MB/초)</string>
     <string name="network_traffic_hidearrow">화살표 숨기기</string>
     <string name="network_traffic_hidearrow_summary">네트워크 트래픽 표시기 화살표 숨기기</string>
-    <string name="network_traffic_refresh_interval_title">Refresh interval</string>
-    <string name="network_traffic_refresh_interval_summary">Duration after which speed is remeasured</string>
+    <string name="network_traffic_refresh_interval_title">새로고침 간격</string>
+    <string name="network_traffic_refresh_interval_summary">속도가 재 측정 된 후의 시간</string>
     <!-- Settings suggestions  -->
     <string name="disable_settings_suggestions_title">제안 사용 안 함</string>
     <string name="disable_settings_suggestions_summary">대시 보드 제안 사용 중지</string>
@@ -113,7 +113,7 @@
     <!-- Lockscreen categories -->
     <string name="lockscreen_shortcuts_category">바로가기</string>
     <string name="lockscreen_interface_category">인터페이스</string>
-    <string name="lockscreen_clockdate_category">Clock &amp; date</string>
+    <string name="lockscreen_clockdate_category">날짜와 시간</string>
     <string name="lockscreen_misc_category">기타 설정</string>
     <!-- Lockscreen shortcuts -->
     <string name="lockscreen_shortcuts_slim_title">잠금 화면 단축키</string>
@@ -747,11 +747,11 @@
     <string name="status_bar_clock_position_center">가운데</string>
     <string name="status_bar_clock_position_hidden">숨김</string>
     <string name="status_bar_clock_auto_hide_title">자동 숨기기</string>
-    <string name="status_bar_clock_auto_hide_summary">Hide and display clock for regular interval to save statusbar space</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Hide duration</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Number of seconds to hide clock</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Show duration</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Number of seconds to wait before hiding clock</string>
+    <string name="status_bar_clock_auto_hide_summary">상태 표시 줄 공간을 절약하기 위해 일정한 간격으로 시계 숨기기 및 표시</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">숨김 기간</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">시계를 숨길 시간 (초)</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">지연시간 표시</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">시계를 숨기기 전에 기다리는 시간 (초)</string>
     <string name="status_bar_am_pm_title">오전/오후 스타일</string>
     <string name="status_bar_am_pm_info">24시간제 시계 활성화됨</string>
     <string name="status_bar_am_pm_normal">기본</string>
@@ -1127,7 +1127,7 @@
     <string name="clock_date_position">날짜 위치</string>
     <string name="clock_date_right">시간 오른쪽</string>
     <string name="clock_date_left">시간 왼쪽</string>
-    <string name="font_style_title">Font style</string>
+    <string name="font_style_title">폰트 스타일</string>
     <string name="font_normal">기본</string>
     <string name="font_italic">기울임꼴</string>
     <string name="font_bold">굵기</string>
@@ -1154,8 +1154,8 @@
     <string name="font_notoserif_bold">굵은 NotoSerif</string>
     <string name="font_notoserif_bold_italic">NotoSerif 굵은 기울임꼴</string>
     <string name="font_size_title">글꼴 크기</string>
-    <string name="clock_font_style_title">Clock font style</string>
-    <string name="date_font_style_title">Date font style</string>
+    <string name="clock_font_style_title">시계 글꼴 스타일</string>
+    <string name="date_font_style_title">날짜 폰트 스타일</string>
     <string name="menu_save">저장</string>
     <string name="menu_cancel">저장 안함</string>
     <!-- Recents Membar -->
@@ -1310,7 +1310,7 @@
     <string name="blur_notice">흐림 기능 주의 사항</string>
     <string name="blur_notice_summary">흐림 효과는 암호 입력 화면에서는 비활성화 됩니다. 반투명 알림만 활성화 됩니다!</string>
     <string name="blur_colors_notice">이 색들의 용도는 무엇인가요?</string>
-    <string name="blur_colors_notice_summary">These colors are the ones tinting the BlurBackground. Instead of the normal Grey, you can now choose the colors in the way you like.\nThere are three color filters: One used for light backgrounds, one used for Dark backgrounds and one used for light/dark backgrounds.\nSo how these colors work?\nSimple, as the titles say, the Light filter will be used for Lighter backgrounds, Dark filter for dark backgrounds and the mixed filter one will be used for backgrounds not too dark but neither too light.\nThese colors are used for both BlurBackgrounds: StatusBar and RecentsApps window</string>
+    <string name="blur_colors_notice_summary">이 색상은 BlurBackground을 변경합니다.  일반 회색 대신 원하는 색상을 선택할 수 있습니다. \ n 세 가지 색상 필터가 있습니다. 하나는 밝은 배경, 다른 하나는 어두운 배경, 다른 하나는 밝은 / 어두운 배경에 사용됩니다.  작동합니까? \ n 간단히 말해 제목에서 밝히는 것처럼 밝은 필터는 밝은 배경, 어두운 필터는 어두운 배경에 사용되며 혼합 필터는 너무 어둡지 않지만 너무 밝지 않은 배경에 사용됩니다. \ n 선택된 색상은 상태표시줄과 최근 앱 목록에 사용 됩니다</string>
     <string name="blur_expstatus_cat">확장된 상태표시줄 </string>
     <string name="blur_notifications_cat">알림</string>
     <string name="blur_qs_cat">빠른 설정</string>
@@ -1394,7 +1394,7 @@
     <string name="wifi_activity_arrows_title">Wifi 활동</string>
     <string name="wifi_activity_arrows_summary">WiFi 활동 표시기를 표시합니다</string>
     <!-- The Drill -->
-    <string name="drill_title">The drill</string>
+    <string name="drill_title">The Drill</string>
     <string name="drill_summary">버그를 찾았나요? 문제가 생겼나요?</string>
     <!-- Hide Statusbar on Lockscreen -->
     <string name="lockscreen_hide_status_bar_title">상태 표시줄</string>
@@ -1504,7 +1504,7 @@
     <string name="quick_settings_carrier_summary">상태 표시줄에 통신사 표시</string>
     <!-- Lockscreen Weather -->
     <string name="lock_screen_weather_title">날씨</string>
-    <string name="lock_screen_weather_summary">Display weather info next to date</string>
+    <string name="lock_screen_weather_summary">날짜 옆에 날씨 정보 표시</string>
     <string name="lock_screen_weather_summaryOn">잠금 화면에 표시</string>
     <string name="lock_screen_location_title">장소</string>
     <string name="lock_screen_location_summary">잠금 화면에 위치를 표시합니다</string>
