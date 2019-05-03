@@ -19,11 +19,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform">
 
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="lockscreen_shortcuts_category"
         android:title="@string/lockscreen_shortcuts_category">
 
-        <com.crdroid.settings.preferences.SystemSettingListPreference
+        <!--<com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="lockscreen_shortcuts_longpress"
             android:icon="@drawable/ic_format_center"
             android:title="@string/lockscreen_shorcuts_launch_type_title"
@@ -42,17 +42,15 @@
                 <extra android:name="maxAllowedActions" android:value="20" />
                 <extra android:name="disableLongpress" android:value="true" />
                 <extra android:name="useAppPickerOnly" android:value="true" />
-        </Preference>
+        </Preference>-->
 
         <Preference
             android:title="@string/lockscreen_shortcuts_title"
             android:icon="@drawable/ic_format_bottom"
             android:summary="@string/lockscreen_shortcuts_summary">
-            <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="com.android.systemui"
-                android:targetClass="com.android.systemui.tuner.LockscreenTunerActivity" />
+            <intent android:action="com.android.settings.action.LOCK_SCREEN_TUNER" />
         </Preference>
-    </PreferenceCategory>-->
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="lockscreen_clockdate_category"
