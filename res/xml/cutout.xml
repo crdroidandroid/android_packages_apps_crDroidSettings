@@ -31,4 +31,10 @@
         android:title="@string/stock_statusbar_in_hide"
         android:summary="@string/stock_statusbar_in_hide_summary"
         android:defaultValue="true" />
+
+    <Preference
+        android:key="display_cutout_force_fullscreen_settings"
+        android:title="@string/display_cutout_force_fullscreen_title"
+        android:summary="@string/display_cutout_force_fullscreen_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.DisplayCutoutForceFullscreenSettings" />
 </PreferenceScreen>
