@@ -62,7 +62,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String CRDROID_LOGO_COLOR = "status_bar_logo_color";
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
-    private static final String SHOW_BATTERY_PERCENT = "show_battery_percent";
+    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
     private static final String SU_INDICATOR = "show_su_indicator";
     private static final String KEY_OLD_MOBILETYPE = "use_old_mobiletype";
@@ -151,12 +151,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
         }
         mCrDroidLogoColor.setOnPreferenceChangeListener(this);
 
-        mBatteryPercent = (ListPreference) findPreference(SHOW_BATTERY_PERCENT);
+        mBatteryPercent = (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
         mTextSymbol = (ListPreference) findPreference(TEXT_CHARGING_SYMBOL);
 
         mBatteryStyle = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
-        int batterystyle = Settings.System.getIntForUser(resolver,
-                Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_CIRCLE,
+        int batterystyle = LineageSettings.System.getIntForUser(resolver,
+                LineageSettings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_CIRCLE,
                 UserHandle.USER_CURRENT);
         mBatteryStyle.setOnPreferenceChangeListener(this);
 
@@ -270,16 +270,16 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ROAMING_INDICATOR_ICON, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_SU_INDICATOR, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_VOLTE_ICON, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_CIRCLE, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_CIRCLE, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_LOGO, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
