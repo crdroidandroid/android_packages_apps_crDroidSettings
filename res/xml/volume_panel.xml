@@ -17,10 +17,11 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     android:title="@string/audio_panel_view_title">
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="audio_panel_view_position"
+    <lineageos.preference.LineageSecureSettingSwitchPreference
+        android:key="volume_panel_on_left"
         android:title="@string/audio_panel_view_position_title" />
 
     <com.crdroid.settings.preferences.SystemSettingSeekBarPreference

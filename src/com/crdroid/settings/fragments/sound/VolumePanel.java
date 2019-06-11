@@ -36,12 +36,14 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.crdroid.settings.R;
 
+import lineageos.providers.LineageSettings;
+
 public class VolumePanel extends SettingsPreferenceFragment {
 
     private static final String TAG = "VolumePanel";
 
     private static final String KEY_NOTIFICATION = "audio_panel_view_notification";
-    private static final String KEY_POSITION = "audio_panel_view_position";
+    private static final String KEY_POSITION = "volume_panel_on_left";
 
     private SwitchPreference mNotification;
     private SwitchPreference mPosition;
@@ -63,8 +65,8 @@ public class VolumePanel extends SettingsPreferenceFragment {
             mNotification.setEnabled(false);
         }
 
-        boolean isAudioPanelOnLeft = Settings.System.getIntForUser(resolver,
-                Settings.System.AUDIO_PANEL_VIEW_POSITION, isAudioPanelOnLeftSide(getActivity()) ? 1 : 0,
+        boolean isAudioPanelOnLeft = LineageSettings.Secure.getIntForUser(resolver,
+                LineageSettings.Secure.VOLUME_PANEL_ON_LEFT, isAudioPanelOnLeftSide(getActivity()) ? 1 : 0,
                 UserHandle.USER_CURRENT) != 0;
 
         mPosition = (SwitchPreference) findPreference(KEY_POSITION);
@@ -98,8 +100,8 @@ public class VolumePanel extends SettingsPreferenceFragment {
                 Settings.System.AUDIO_PANEL_VIEW_VOICE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.AUDIO_PANEL_VIEW_BT_SCO, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.AUDIO_PANEL_VIEW_POSITION, isAudioPanelOnLeftSide(mContext) ? 1 : 0,
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.VOLUME_PANEL_ON_LEFT, isAudioPanelOnLeftSide(mContext) ? 1 : 0,
                 UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.AUDIO_PANEL_VIEW_TIMEOUT, 3, UserHandle.USER_CURRENT);
