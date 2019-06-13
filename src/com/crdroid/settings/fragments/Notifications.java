@@ -96,6 +96,8 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD, 30000, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.VIBRATE_ON_CONNECT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.VIBRATE_ON_CALLWAITING, 0, UserHandle.USER_CURRENT);
