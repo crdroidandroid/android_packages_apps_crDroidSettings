@@ -261,6 +261,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.DOUBLE_TAP_SLEEP_GESTURE, 1, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_CLOCK, 2, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
