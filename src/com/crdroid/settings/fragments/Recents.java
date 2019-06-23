@@ -299,6 +299,8 @@ public class Recents extends SettingsPreferenceFragment
                 Settings.System.RECENTS_ICON_PACK, "");
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_CLEAR_ALL_RECENTS, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SYSTEMUI_RECENTS_MEM_DISPLAY, 0, UserHandle.USER_CURRENT);
     }
 
     @Override

@@ -55,7 +55,7 @@
             <intent android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.settings"
                 android:targetClass="com.crdroid.settings.fragments.HAFRAppListActivity" />
-        </PreferenceScreen>
+        </PreferenceScreen>-->
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="systemui_recents_mem_display"
@@ -64,7 +64,7 @@
             android:summary="@string/systemui_recents_mem_display_summary"
             android:defaultValue="false" />
 
-        <com.crdroid.settings.preferences.ColorPickerPreference
+        <!--<com.crdroid.settings.preferences.ColorPickerPreference
             android:key="systemui_recents_mem_barcolor"
             android:icon="@drawable/ic_memory"
             android:title="@string/systemui_recents_mem_display_color"
