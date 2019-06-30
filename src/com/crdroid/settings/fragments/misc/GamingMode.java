@@ -31,6 +31,7 @@ import android.support.v7.preference.Preference;
 import android.support.v7.preference.PreferenceGroup;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.PreferenceViewHolder;
+import android.support.v14.preference.SwitchPreference;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,10 +52,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import lineageos.hardware.LineageHardwareManager;
+
 public class GamingMode extends SettingsPreferenceFragment
         implements Preference.OnPreferenceClickListener {
 
     private static final int DIALOG_GAMING_APPS = 1;
+    private static final String GAMING_MODE_HW_KEYS = "gaming_mode_hw_keys_toggle";
+    private SwitchPreference mHardwareKeysDisable;
 
     private PackageListAdapter mPackageAdapter;
     private PackageManager mPackageManager;
@@ -69,6 +74,15 @@ public class GamingMode extends SettingsPreferenceFragment
         super.onCreate(savedInstanceState);
         // Get launch-able applications
         addPreferencesFromResource(R.xml.gaming_mode_settings);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        LineageHardwareManager mLineageHardware = LineageHardwareManager.getInstance(getActivity());
+        mHardwareKeysDisable = (SwitchPreference) findPreference(GAMING_MODE_HW_KEYS);
+
+        if (!mLineageHardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE)) {
+            prefScreen.removePreference(mHardwareKeysDisable);
+        }
+        
         mPackageManager = getPackageManager();
         mPackageAdapter = new PackageListAdapter(getActivity());
 
