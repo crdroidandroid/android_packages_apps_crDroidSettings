@@ -19,12 +19,18 @@ package com.crdroid.settings.fragments.misc;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.Resources;
+import android.database.ContentObserver;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.support.v7.preference.ListPreference;
 import android.support.v7.preference.Preference;
@@ -58,7 +64,10 @@ public class GamingMode extends SettingsPreferenceFragment
         implements Preference.OnPreferenceClickListener {
 
     private static final int DIALOG_GAMING_APPS = 1;
+    private static final String GAMING_MODE_ENABLED = "gaming_mode_enabled";
     private static final String GAMING_MODE_HW_KEYS = "gaming_mode_hw_keys_toggle";
+
+    private SwitchPreference mGamingModeEnabled;
     private SwitchPreference mHardwareKeysDisable;
 
     private PackageListAdapter mPackageAdapter;
@@ -68,6 +77,7 @@ public class GamingMode extends SettingsPreferenceFragment
 
     private String mGamingPackageList;
     private Map<String, Package> mGamingPackages;
+    private Context mContext;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,9 +86,11 @@ public class GamingMode extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.gaming_mode_settings);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
-        LineageHardwareManager mLineageHardware = LineageHardwareManager.getInstance(getActivity());
+
+        mGamingModeEnabled = (SwitchPreference) findPreference(GAMING_MODE_ENABLED);
         mHardwareKeysDisable = (SwitchPreference) findPreference(GAMING_MODE_HW_KEYS);
 
+        LineageHardwareManager mLineageHardware = LineageHardwareManager.getInstance(getActivity());
         if (!mLineageHardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE)) {
             prefScreen.removePreference(mHardwareKeysDisable);
         }
@@ -95,13 +107,10 @@ public class GamingMode extends SettingsPreferenceFragment
 
         mAddGamingPref.setOnPreferenceClickListener(this);
 
-        Resources systemUiResources;
-        try {
-            systemUiResources = getPackageManager().getResourcesForApplication("com.android.systemui");
-        } catch (Exception e) {
-            return;
-        }
+        mContext = getActivity().getApplicationContext();
 
+        SettingsObserver observer = new SettingsObserver(new Handler(Looper.getMainLooper()));
+        observer.observe();
     }
 
     @Override
@@ -150,6 +159,34 @@ public class GamingMode extends SettingsPreferenceFragment
                 });
         }
         return dialog;
+    }
+
+    class SettingsObserver extends ContentObserver {
+        SettingsObserver(Handler handler) {
+            super(handler);
+        }
+
+        void observe() {
+            ContentResolver resolver = mContext.getContentResolver();
+
+            resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.GAMING_MODE_ACTIVE), false, this,
+                    UserHandle.USER_ALL);
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            if (uri.equals(Settings.System.getUriFor(
+                                   Settings.System.GAMING_MODE_ACTIVE))) {
+                boolean enable = Settings.System.getInt(mContext.getContentResolver(),
+                    Settings.System.GAMING_MODE_ACTIVE, 0) == 1;
+                setGamingControls(!enable);
+            }
+        }
+    }
+
+    private void setGamingControls(boolean enable) {
+        mGamingModeEnabled.setEnabled(enable);
     }
 
     /**
