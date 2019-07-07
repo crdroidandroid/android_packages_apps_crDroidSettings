@@ -191,6 +191,28 @@ public class GamingMode extends SettingsPreferenceFragment
         mGamingModeEnabled.setEnabled(enable);
     }
 
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.GAMING_MODE_ACTIVE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.GAMING_MODE_ENABLED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putStringForUser(resolver,
+                Settings.System.GAMING_MODE_VALUES, "", UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.GAMING_MODE_HW_KEYS_TOGGLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.GAMING_MODE_HEADSUP_TOGGLE, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.GAMING_MODE_RINGER_MODE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.GAMING_MODE_NOTIFICATIONS, 3, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.GAMING_MODE_MANUAL_BRIGHTNESS_TOGGLE, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.GAMING_MODE_DYNAMIC_STATE, 0, UserHandle.USER_CURRENT);
+    }
+
     /**
      * Application class
      */

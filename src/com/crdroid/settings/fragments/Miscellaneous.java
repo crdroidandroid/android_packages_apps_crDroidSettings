@@ -45,6 +45,7 @@ import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.misc.AlarmBlocker;
+import com.crdroid.settings.fragments.misc.GamingMode;
 import com.crdroid.settings.fragments.misc.ImeSettings;
 import com.crdroid.settings.fragments.misc.ScreenStateToggles;
 import com.crdroid.settings.fragments.misc.WakeLockBlocker;
@@ -94,6 +95,7 @@ public class Miscellaneous extends SettingsPreferenceFragment
                 Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
         writeCpuInfoOptions(mContext, false);
         AlarmBlocker.reset(mContext);
+        GamingMode.reset(mContext);
         ImeSettings.reset(mContext);
         ScreenStateToggles.reset(mContext);
         WakeLockBlocker.reset(mContext);
