@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2019 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/ticker_screen_title" >
+
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="status_bar_show_ticker"
+        android:title="@string/ticker_screen_title"
+        android:entries="@array/ticker_mode_entries"
+        android:entryValues="@array/ticker_mode_values"
+        android:defaultValue="0" />
+
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="status_bar_ticker_animation_mode"
+        android:title="@string/ticker_animation_mode_title"
+        android:entries="@array/ticker_animation_mode_entries"
+        android:entryValues="@array/ticker_animation_mode_values"
+        android:defaultValue="1" />
+
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="status_bar_ticker_tick_duration"
+        android:title="@string/ticker_tick_duration_title"
+        settings:min="500"
+        settings:interval="100"
+        android:max="10000"
+        android:defaultValue="3000"
+        settings:units="@string/unit_milliseconds" />
+</PreferenceScreen>

@@ -40,6 +40,7 @@ import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.statusbar.BatteryBar;
 import com.crdroid.settings.fragments.statusbar.Clock;
 import com.crdroid.settings.fragments.statusbar.NetworkTrafficSettings;
+import com.crdroid.settings.fragments.statusbar.Ticker;
 import com.crdroid.settings.preferences.SystemSettingListPreference;
 import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
 import com.crdroid.settings.utils.TelephonyUtils;
@@ -297,6 +298,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         BatteryBar.reset(mContext);
         Clock.reset(mContext);
         NetworkTrafficSettings.reset(mContext);
+        Ticker.reset(mContext);
     }
 
     @Override
