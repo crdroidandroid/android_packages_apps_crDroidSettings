@@ -95,6 +95,13 @@
             android:summary="@string/old_mobiletype_summary" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="data_disabled_icon"
+            android:icon="@drawable/ic_network"
+            android:title="@string/data_disabled_icon_title"
+            android:summary="@string/data_disabled_icon_summary"
+            android:defaultValue="true"/>
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="show_fourg_icon"
             android:icon="@drawable/ic_fourg"
             android:title="@string/show_fourg_icon_title"

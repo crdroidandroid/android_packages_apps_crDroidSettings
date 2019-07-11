@@ -67,6 +67,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String TEXT_CHARGING_SYMBOL = "text_charging_symbol";
     private static final String SU_INDICATOR = "show_su_indicator";
     private static final String KEY_OLD_MOBILETYPE = "use_old_mobiletype";
+    private static final String KEY_SHOW_DATA_DISABLED = "data_disabled_icon";
     private static final String KEY_SHOW_FOURG = "show_fourg_icon";
     private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
     private static final String KEY_SHOW_VOLTE = "show_volte_icon";
@@ -93,6 +94,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private ListPreference mTextSymbol;
     private SwitchPreference mSuIndicator;
     private SwitchPreference mOldType;
+    private SwitchPreference mDataDisabled;
     private SwitchPreference mShowFourg;
     private SwitchPreference mShowRoaming;
     private SwitchPreference mShowVolte;
@@ -168,12 +170,14 @@ public class StatusBar extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mSuIndicator);
 
         mOldType = (SwitchPreference) findPreference(KEY_OLD_MOBILETYPE);
+        mDataDisabled = (SwitchPreference) findPreference(KEY_SHOW_DATA_DISABLED);
         mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
         mShowRoaming = (SwitchPreference) findPreference(KEY_SHOW_ROAMING);
         mShowVolte = (SwitchPreference) findPreference(KEY_SHOW_VOLTE);
 
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(mOldType);
+            prefScreen.removePreference(mDataDisabled);
             prefScreen.removePreference(mShowFourg);
             prefScreen.removePreference(mShowRoaming);
             prefScreen.removePreference(mShowVolte);
@@ -269,6 +273,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.BLUETOOTH_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.DATA_DISABLED_ICON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
