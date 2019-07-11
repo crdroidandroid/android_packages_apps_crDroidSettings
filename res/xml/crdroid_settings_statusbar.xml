@@ -102,6 +102,13 @@
             android:defaultValue="false"/>
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="data_disabled_icon"
+            android:icon="@drawable/ic_network"
+            android:title="@string/data_disabled_icon_title"
+            android:summary="@string/data_disabled_icon_summary"
+            android:defaultValue="true"/>
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="roaming_indicator_icon"
             android:icon="@drawable/ic_roaming_indicator"
             android:title="@string/roaming_indicator_icon_title"
