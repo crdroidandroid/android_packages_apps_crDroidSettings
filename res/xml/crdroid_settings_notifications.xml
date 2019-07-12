@@ -56,6 +56,44 @@
         android:defaultValue="true" />
 
     <PreferenceCategory
+        android:key="heads_up"
+        android:title="@string/heads_up_category">
+
+        <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
+            android:key="heads_up_notifications_enabled"
+            android:icon="@drawable/ic_headsup"
+            android:title="@string/notification_heads_up_title"
+            android:summary="@string/notification_heads_up_summary"
+            android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="less_boring_heads_up"
+            android:icon="@drawable/ic_headsup_sleep"
+            android:title="@string/less_boring_heads_up_title"
+            android:summary="@string/less_boring_heads_up_summary"
+            android:defaultValue="false"
+            android:dependency="heads_up_notifications_enabled" />
+
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="heads_up_timeout"
+            android:icon="@drawable/ic_headsup_sleep"
+            android:title="@string/heads_up_time_out_title"
+            android:entries="@array/heads_up_time_out_entries"
+            android:entryValues="@array/heads_up_time_out_values"
+            android:defaultValue="5000"
+            android:dependency="heads_up_notifications_enabled" />
+
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="heads_up_notification_snooze"
+            android:icon="@drawable/ic_headsup_sleep"
+            android:title="@string/heads_up_snooze_title"
+            android:entries="@array/heads_up_snooze_entries"
+            android:entryValues="@array/heads_up_snooze_values"
+            android:defaultValue="0"
+            android:dependency="heads_up_notifications_enabled" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="incall_vib_options"
         android:title="@string/incall_vibration_category" >
 
@@ -142,34 +180,4 @@
             android:summary="@string/sms_breath_summary"
             android:persistent="false"/>
     </PreferenceCategory>-->
-
-    <PreferenceCategory
-        android:key="heads_up"
-        android:title="@string/heads_up_category">
-
-        <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
-            android:key="heads_up_notifications_enabled"
-            android:icon="@drawable/ic_headsup"
-            android:title="@string/notification_heads_up_title"
-            android:summary="@string/notification_heads_up_summary"
-            android:defaultValue="true" />
-
-        <com.crdroid.settings.preferences.SystemSettingListPreference
-            android:key="heads_up_timeout"
-            android:icon="@drawable/ic_headsup"
-            android:title="@string/heads_up_time_out_title"
-            android:entries="@array/heads_up_time_out_entries"
-            android:entryValues="@array/heads_up_time_out_values"
-            android:defaultValue="5000"
-            android:dependency="heads_up_notifications_enabled" />
-
-        <com.crdroid.settings.preferences.SystemSettingListPreference
-            android:key="heads_up_notification_snooze"
-            android:icon="@drawable/ic_headsup_sleep"
-            android:title="@string/heads_up_snooze_title"
-            android:entries="@array/heads_up_snooze_entries"
-            android:entryValues="@array/heads_up_snooze_values"
-            android:defaultValue="0"
-            android:dependency="heads_up_notifications_enabled" />
-     </PreferenceCategory>
 </PreferenceScreen>
