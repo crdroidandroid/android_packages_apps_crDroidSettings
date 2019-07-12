@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2018 crDroid Android Project
+     Copyright (C) 2016-2019 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,6 +18,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <Preference
+        android:key="ticker_settings"
+        android:icon="@drawable/ic_cursor"
+        android:title="@string/ticker_screen_title"
+        android:summary="@string/ticker_screen_summary"
+        android:fragment="com.crdroid.settings.fragments.notifications.Ticker"/>
 
      <!-- Flashlight on Call -->
      <com.crdroid.settings.preferences.SystemSettingListPreference

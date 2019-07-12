@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.crdroid.settings.fragments.statusbar;
+package com.crdroid.settings.fragments.notifications;
 
 import android.app.AlertDialog;
 import android.content.ContentResolver;
