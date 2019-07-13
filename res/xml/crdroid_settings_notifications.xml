@@ -55,6 +55,15 @@
         android:summary="@string/notification_sound_vib_screen_on_summary"
         android:defaultValue="true" />
 
+    <!-- Less Notification sounds -->
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="mute_annoying_notifications_threshold"
+        android:icon="@drawable/ic_headsup"
+        android:title="@string/less_notification_sounds_title"
+        android:summary="@string/less_notification_sounds_summary"
+        android:entries="@array/less_notification_sounds_entries"
+        android:entryValues="@array/less_notification_sounds_values"
+        android:defaultValue="30000" />
     <PreferenceCategory
         android:key="heads_up"
         android:title="@string/heads_up_category">
