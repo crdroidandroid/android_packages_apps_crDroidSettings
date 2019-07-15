@@ -62,6 +62,8 @@ public class Miscellaneous extends SettingsPreferenceFragment
     private static final String KEY_LOCK_CLOCK = "lock_clock";
     private static final String KEY_LOCK_CLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
     private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
+    private static final String KEY_DEVICE_PART = "advanced_controls";
+    private static final String KEY_DEVICE_PART_PACKAGE_NAME = "com.thht.settings.device";
 
     private SwitchPreference mShowCpuInfo;
 
@@ -74,6 +76,11 @@ public class Miscellaneous extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.crdroid_settings_misc);
 
         ContentResolver resolver = mContext.getContentResolver();
+
+	// Advanced Controls
+        if (!Utils.isPackageInstalled(getActivity(), KEY_DEVICE_PART_PACKAGE_NAME)) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_PART));
+        }
 
         // mLockClock
         if (!Utils.isPackageInstalled(mContext, KEY_LOCK_CLOCK_PACKAGE_NAME)) {
