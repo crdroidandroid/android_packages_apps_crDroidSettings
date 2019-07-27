@@ -87,5 +87,31 @@
 
             </GridLayout>
         </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="23dp"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:text="@string/accent_picker_brand_colors" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="1"
+                android:columnOrderPreserved="true">
+
+                <include layout="@layout/brand_colors" />
+
+            </GridLayout>
+        </HorizontalScrollView>
     </LinearLayout>
 </ScrollView>
