@@ -161,6 +161,67 @@ public class AccentPicker extends InstrumentedDialogFragment implements OnClickL
 
         Button userAccentSeven = mView.findViewById(R.id.userAccentSeven);
         setAccent("28", userAccentSeven);
+
+        Button aospaGreen = mView.findViewById(R.id.aospaGreen);
+                setAccent("29", aospaGreen);
+
+        Button androidOneGreen = mView.findViewById(R.id.androidOneGreen);
+                setAccent("30", androidOneGreen);
+
+        Button cocaColaRed = mView.findViewById(R.id.cocaColaRed);
+                setAccent("31", cocaColaRed);
+
+        Button discordPurple = mView.findViewById(R.id.discordPurple);
+                setAccent("32", discordPurple);
+
+        Button facebookBlue = mView.findViewById(R.id.facebookBlue);
+                setAccent("33", facebookBlue);
+
+        Button instagramCerise = mView.findViewById(R.id.instagramCerise);
+                setAccent("34", instagramCerise);
+
+        Button jollibeeCrimson = mView.findViewById(R.id.jollibeeCrimson);
+                setAccent("35", jollibeeCrimson);
+
+        Button monsterEnergyGreen = mView.findViewById(R.id.monsterEnergyGreen);
+                setAccent("36", monsterEnergyGreen);
+
+        Button nextbitMint = mView.findViewById(R.id.nextbitMint);
+                setAccent("37", nextbitMint);
+
+        Button oneplusRed = mView.findViewById(R.id.oneplusRed);
+                setAccent("38", oneplusRed);
+
+        Button pepsiBlue = mView.findViewById(R.id.pepsiBlue);
+                setAccent("39", pepsiBlue);
+
+        Button pocophoneYellow = mView.findViewById(R.id.pocophoneYellow);
+                setAccent("40", pocophoneYellow);
+
+        Button razerGreen = mView.findViewById(R.id.razerGreen);
+                setAccent("41", razerGreen);
+
+        Button samsungBlue = mView.findViewById(R.id.samsungBlue);
+                setAccent("42", samsungBlue);
+
+        Button spotifyGreen = mView.findViewById(R.id.spotifyGreen);
+                setAccent("43", spotifyGreen);
+
+        Button starbucksGreen = mView.findViewById(R.id.starbucksGreen);
+                setAccent("44", starbucksGreen);
+
+        Button twitchPurple = mView.findViewById(R.id.twitchPurple);
+                setAccent("45", twitchPurple);
+
+        Button twitterBlue = mView.findViewById(R.id.twitterBlue);
+                setAccent("46", twitterBlue);
+
+        Button xboxGreen = mView.findViewById(R.id.xboxGreen);
+                setAccent("47", xboxGreen);
+
+        Button xiaomiOrange = mView.findViewById(R.id.xiaomiOrange);
+                setAccent("48", xiaomiOrange);
+
     }
 
     @Override
