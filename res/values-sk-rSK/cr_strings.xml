@@ -381,14 +381,14 @@
     <string name="show_su_indicator_title">Ikona Superuser</string>
     <string name="show_su_indicator_summary">Ak používate natívny root, zobrazí sa ikona Superuser</string>
     <!-- Launch music player when headset is connected -->
-    <string name="headset_connect_player_title">Launch music app</string>
-    <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
-    <string name="headset_connect_player_disabled">Disabled</string>
-    <string name="headset_connect_player_wired">When wired headset is plugged in</string>
-    <string name="headset_connect_player_bt_no_carkit">When BT headset (no carkit) is plugged in</string>
-    <string name="headset_connect_player_bt">When BT headset is plugged in</string>
-    <string name="headset_connect_player_both_no_carkit">When wired or BT headset (no carkit) is plugged in</string>
-    <string name="headset_connect_player_both">When wired or BT headset is plugged in</string>
+    <string name="headset_connect_player_title">Spustiť hudobný prehrávač</string>
+    <string name="headset_connect_player_summary">Spustiť predvolenú hudobnú aplikáciu po pripojení slúchadiel</string>
+    <string name="headset_connect_player_disabled">Vypnuté</string>
+    <string name="headset_connect_player_wired">Keď sú pripojené káblové slúchadlá</string>
+    <string name="headset_connect_player_bt_no_carkit">Keď sú pripojené BT slúchadlá (nie pripojenie v aute)</string>
+    <string name="headset_connect_player_bt">Keď sú pripojené BT slúchadlá</string>
+    <string name="headset_connect_player_both_no_carkit">Keď sú pripojené káblové alebo BT slúchadlá (nie pripojenie v aute)</string>
+    <string name="headset_connect_player_both">Keď sú pripojené káblové alebo BT slúchadlá</string>
     <!-- Quick setting categories -->
     <string name="qs_tiles_category">Dláždice</string>
     <string name="qs_toggles_category">Prepínače</string>
@@ -789,11 +789,11 @@
     <string name="status_bar_battery_percentage_default">Skryté</string>
     <string name="status_bar_battery_percentage_text_inside">Vnútri ikony</string>
     <string name="status_bar_battery_percentage_text_next">Vedľa ikony</string>
-    <string name="status_bar_battery_text_position_title">Battery percent position</string>
-    <string name="status_bar_battery_text_position_left">Left of the icon</string>
-    <string name="status_bar_battery_text_position_right">Right of the icon</string>
-    <string name="status_bar_battery_text_charging_title">Battery percentage when charging</string>
-    <string name="status_bar_battery_text_charging_summary">Always display battery percentage when charging</string>
+    <string name="status_bar_battery_text_position_title">Umiestnenie percent nabitia batérie</string>
+    <string name="status_bar_battery_text_position_left">Naľavo od ikony</string>
+    <string name="status_bar_battery_text_position_right">Napravo od ikony</string>
+    <string name="status_bar_battery_text_charging_title">Percentá nabitia batérie pri nabíjaní</string>
+    <string name="status_bar_battery_text_charging_summary">Pri nabíjaní vždy zobraziť percentá nabitia batérie</string>
     <!-- Status bar - icon blacklist -->
     <string name="status_bar_icons_title">Ikony v stavovom riadku</string>
     <string name="status_bar_icons_summary">Vyberte ikony, ktoré budú zobrazené v stavovom riadku</string>
@@ -851,7 +851,7 @@
     <string name="ticker_animation_mode_title">Štýl animácie upozornenia</string>
     <string name="ticker_animation_mode_alpha_fade">Miznutie</string>
     <string name="ticker_animation_mode_scroll">Rolovanie</string>
-    <string name="ticker_tick_duration_title">Ticker duration</string>
+    <string name="ticker_tick_duration_title">Časový interval zobrazenia textu upozornenia</string>
     <!-- Pie -->
     <string name="pie_settings">Nastavenia kruhového ovládania</string>
     <string name="pie_enable_title">Povoliť ovládací kruh</string>
@@ -1911,7 +1911,7 @@
     <string name="theme_accent_picker_default">Predvolená</string>
     <string name="accent_picker_material_colors">Paleta farby Material</string>
     <string name="accent_picker_custom_colors">Podľa požiadavky používateľa</string>
-    <string name="accent_picker_brand_colors">Brand colors</string>
+    <string name="accent_picker_brand_colors">Farby značky</string>
     <string name="style_dark_overlay_title">Tmavý mód</string>
     <string name="style_dark_overlay_default">Tmavo šedá</string>
     <string name="style_dark_overlay_black">Čierna Amoled</string>
@@ -1983,10 +1983,10 @@
     <string name="switch_default">Predvolený</string>
     <string name="switch_md2">Material Design 2</string>
     <string name="switch_oneplus">OnePlus</string>
-    <string name="switch_narrow">Narrow</string>
-    <string name="switch_contained">Contained</string>
+    <string name="switch_narrow">Úzky</string>
+    <string name="switch_contained">Zapustený</string>
     <string name="switch_retro">Retro</string>
-    <string name="switch_stockish">Stockish</string>
+    <string name="switch_stockish">Predvolený</string>
     <!-- Battery stats reset -->
     <string name="battery_stats_reset">Vynulovať štatistiky</string>
     <string name="battery_stats_message">Týmto sa vymažú štatistiky batérie. Chcete pokračovať?</string>
@@ -2134,19 +2134,19 @@
     <string name="gaming_mode_dynamic_title">Dynamický režim</string>
     <string name="gaming_mode_dynamic_summary">Skúsiť rozpoznať a pridať herné aplikácie automaticky</string>
     <!-- Data disabled indicator -->
-    <string name="data_disabled_icon_title">Data disabled indicator</string>
-    <string name="data_disabled_icon_summary">Display the cross sign next to signal icon when data is disabled</string>
+    <string name="data_disabled_icon_title">Indikátor vypnutých mobilných dát</string>
+    <string name="data_disabled_icon_summary">Zobraziť znak X vedľa ikony signálu siete, keď sú dáta vypnuté</string>
     <!-- Less boring heads up -->
-    <string name="less_boring_heads_up_title">Less boring</string>
-    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
+    <string name="less_boring_heads_up_title">Menej obťažujúce</string>
+    <string name="less_boring_heads_up_summary">Zobrazovať vyskakovacie upozornenia iba pre budík, volania a správy</string>
     <!-- Aggressive battery -->
-    <string name="aggressive_battery_title">Aggressive Battery</string>
-    <string name="aggressive_battery_summary">More strict battery savings</string>
-    <string name="aggressive_battery_warning_text">These are power saving features. They may interfere with services intended to run at idle, like navigation apps. You can whitelist these apps from being affected in the app battery settings.</string>
-    <string name="aggressive_idle_title">Aggressive Idle</string>
-    <string name="aggressive_idle_summary">Enter device idle more frequently and wake up less</string>
-    <string name="aggressive_standby_title">Aggressive Standby</string>
-    <string name="aggressive_standby_summary">Restrict apps from running the background</string>
-    <string name="aggressive_battery_saver_title">Auto-enable on battery saver</string>
-    <string name="aggressive_battery_saver_summary">Enable Aggressive Battery automatically when using battery saver</string>
+    <string name="aggressive_battery_title">Agresívna batéria</string>
+    <string name="aggressive_battery_summary">Prísnejšia úspora batérie</string>
+    <string name="aggressive_battery_warning_text">Jedná sa o funkcie pre úsporu energie. Môžu zasahovať do služieb, ktoré majú bežať na pozadí, napr. navigačné aplikácie. Aby tieto aplikácie neboli ovplyvnené, môžete ich povoliť v nastaveniach batérie.</string>
+    <string name="aggressive_idle_title">Agresívna nečinnosť</string>
+    <string name="aggressive_idle_summary">Uvedie zariadenie do nečinnosti častejšie a viac zamedzí prebudeniam</string>
+    <string name="aggressive_standby_title">Agresívny pohotovostný režim</string>
+    <string name="aggressive_standby_summary">Obmedzí aplikáciám činnosť na pozadí</string>
+    <string name="aggressive_battery_saver_title">Automatické zapnutie pri spustení šetriča batérie</string>
+    <string name="aggressive_battery_saver_summary">Pri používaní šetriča batérie automaticky aktivovať funkciu \"Agresívna batéria\"</string>
 </resources>
