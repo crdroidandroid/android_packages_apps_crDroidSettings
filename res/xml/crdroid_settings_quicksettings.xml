@@ -19,65 +19,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform">
 
-    <!--<PreferenceCategory
-        android:title="@string/status_bar_header_title">
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="status_bar_custom_header"
-            android:icon="@drawable/ic_header"
-            android:title="@string/status_bar_custom_header_title"
-            android:summary="@string/status_bar_custom_header_summary"
-            android:defaultValue="false" />
-
-        <ListPreference
-            android:key="custom_header_provider"
-            android:icon="@drawable/ic_header_provider"
-            android:title="@string/custom_header_provider_title"
-            android:persistent="false"
-            android:entries="@array/custom_header_provider_entries"
-            android:entryValues="@array/custom_header_provider_values"
-            android:dependency="status_bar_custom_header" />
-
-        <ListPreference
-            android:key="daylight_header_pack"
-            android:icon="@drawable/ic_weather"
-            android:title="@string/daylight_header_pack_title"
-            android:persistent="false"
-            android:dependency="status_bar_custom_header" />
-
-        <PreferenceScreen
-            android:key="custom_header_browse"
-            android:icon="@drawable/ic_weather"
-            android:title="@string/custom_header_browse_title"
-            android:summary="@string/custom_header_browse_summary"
-            android:dependency="status_bar_custom_header"
-            android:persistent="false" >
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="org.omnirom.omnistyle"
-                    android:targetClass="org.omnirom.omnistyle.PickHeaderActivity" />
-        </PreferenceScreen>
-
-        <Preference
-            android:key="file_header_select"
-            android:icon="@drawable/ic_weather"
-            android:title="@string/file_header_select_title"
-            android:summary="@string/file_header_select_summary"
-            android:persistent="false"
-            android:dependency="status_bar_custom_header" >
-        </Preference>
-
-        <com.crdroid.settings.preferences.CustomSeekBarPreference
-            android:key="status_bar_custom_header_shadow"
-            android:icon="@drawable/ic_text_shadow"
-            android:title="@string/status_bar_custom_header_shadow_title"
-            android:summary="@string/status_bar_custom_header_shadow_summary"
-            android:max="255"
-            settings:min="0"
-            settings:units=""
-            android:persistent="false"
-            android:dependency="status_bar_custom_header" />
-    </PreferenceCategory>-->
-
     <PreferenceCategory 
          android:title="@string/qs_tiles_category">
 
@@ -202,6 +143,14 @@
 
     <PreferenceCategory 
          android:title="@string/qs_misc_category">
+
+        <!-- Custom header -->
+        <Preference
+            android:key="custom_header"
+            android:icon="@drawable/ic_header"
+            android:fragment="com.crdroid.settings.fragments.quicksettings.CustomHeader"
+            android:title="@string/custom_header_title"
+            android:summary="@string/custom_header_summary" />
 
         <!-- QS clock -->
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
