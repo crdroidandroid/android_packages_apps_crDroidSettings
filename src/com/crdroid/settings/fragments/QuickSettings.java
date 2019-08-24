@@ -40,6 +40,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.quicksettings.CustomHeader;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
 
 import java.util.List;
@@ -154,6 +155,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements Indexab
                 Settings.System.QS_ROWS_PORTRAIT, 2, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_QS_CLOCK, 1, UserHandle.USER_CURRENT);
+        CustomHeader.reset(mContext);
     }
 
     @Override
