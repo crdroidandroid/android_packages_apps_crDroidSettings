@@ -114,7 +114,7 @@
     <string name="lockscreen_shortcuts_category">Zástupci</string>
     <string name="lockscreen_interface_category">Rozhraní</string>
     <string name="lockscreen_clockdate_category">Hodiny a datum</string>
-    <string name="lockscreen_misc_category">Různé</string>
+    <string name="lockscreen_misc_category">Zabezpečení</string>
     <!-- Lockscreen shortcuts -->
     <string name="lockscreen_shortcuts_slim_title">Horní zástupci</string>
     <string name="lockscreen_shortcuts_slim_summary">Změnit zástupce přímo pod hodinami obrazovky uzamčení</string>
@@ -382,7 +382,7 @@
     <string name="show_su_indicator_summary">Zobrazit ikonu Superuser, používáte‑li nativní root</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Spustit aplikaci pro přehrávání hudby</string>
-    <string name="headset_connect_player_summary">Spustit výchozí aplikaci pro přehrávání hudby po připojení sluchátek</string>
+    <string name="headset_connect_player_summary">Po připojení sluchátek spustit výchozí aplikaci pro přehrávání hudby</string>
     <string name="headset_connect_player_disabled">Nespouštět</string>
     <string name="headset_connect_player_wired">Po připojení kabelových sluchátek</string>
     <string name="headset_connect_player_bt_no_carkit">Po připojení BT sluchátek (kromě sady handsfree)</string>
@@ -438,7 +438,7 @@
     <string name="status_bar_misc_category_title">Různé</string>
     <!-- Statusbar crDroid logo -->
     <string name="status_bar_crdroid_logo_title">Zobrazit logo</string>
-    <string name="status_bar_crdroid_logo_summary">Povolením zobrazit logo ve stavovém řádku</string>
+    <string name="status_bar_crdroid_logo_summary">Zobrazit logo ve stavovém řádku</string>
     <string name="status_bar_crdroid_logo_color">Barva loga</string>
     <string name="status_bar_crdroid_logo_position">Umístění loga</string>
     <string name="status_bar_crdroid_logo_position_summary">Vyberte, na které straně chcete zobrazit logo, vlevo nebo vpravo</string>
@@ -514,8 +514,8 @@
     <string name="less_notification_sounds_5m">5 minut</string>
     <!-- General strings -->
     <string name="attention">Upozornění</string>
-    <string name="enabled">Povoleno</string>
-    <string name="disabled">Zakázán(o)</string>
+    <string name="enabled">Zap.</string>
+    <string name="disabled">Vyp.</string>
     <string name="default_string">Výchozí</string>
     <string name="default_settings">Výchozí nastavení</string>
     <string name="add">Přidat</string>
@@ -538,10 +538,10 @@
     <!-- Navigation Bar -->
     <string name="navbar_interface_title">Rozhraní</string>
     <string name="navbar_size">Velikost panelu</string>
-    <string name="navbar_mode">Navigační režim</string>
+    <string name="navbar_mode">Způsob navigace</string>
     <string name="navbar_mode_summary">Vyberte, zda chcete zobrazit výchozí navigační panel, SmartBar nebo Fling</string>
     <string name="navbar_visibility">Navigační panel</string>
-    <string name="navbar_visibility_summary">Přepnout viditelnost navigačního panelu</string>
+    <string name="navbar_visibility_summary">Zobrazit/skrýt navigační panel</string>
     <string name="navigationbar_settings_title">Navigační panel</string>
     <string name="navigationbar_settings_summary">Upravit styl a způsob navigace</string>
     <string name="navbar_general_title">Další nastavení</string>
@@ -623,7 +623,7 @@
     <string name="fling_keyboard_cursors_title">Dynamická akce kurzorů klávesnice</string>
     <string name="fling_keyboard_cursors_summary">Pokud je otevřená klávesnice, tak se dvojím poklepáním vlevo nebo vpravo vyvolá posun ukazatele kurzoru doleva nebo doprava</string>
     <string name="fling_logo_opacity_title">Neprůhlednost loga Fling</string>
-    <string name="fling_factory_reset_title">Obnovit výchozí</string>
+    <string name="fling_factory_reset_title">Obnovit výchozí hodnoty</string>
     <string name="fling_factory_reset_confirm">Opravdu chcete obnovit nastavení Fling na výchozí hodnoty?</string>
     <string name="fling_backup_current_config_title">Uložit profil</string>
     <string name="fling_restore_config_title">Obnovit profil</string>
@@ -682,7 +682,7 @@
     <string name="navbar_settings_title">Nastavení výchozího navigačního panelu</string>
     <string name="navbar_settings_summary">Přizpůsobení výchozího navigačního panelu</string>
     <string name="navbar_tuner_title">Přizpůsobení navigačního panelu</string>
-    <string name="navbar_tuner_summary">Přizpůsobit tlačítka a rozložení</string>
+    <string name="navbar_tuner_summary">Přizpůsobit určení, rozvržení a rozložení tlačítek</string>
     <string name="navbar_arrow_keys_title">Zobrazit při psaní navigační šipky</string>
     <string name="navbar_arrow_keys_summary">Zobrazit při psaní levé a pravé kurzorové tlačítko. Potlačí nastavení voliče metody vstupu (IME).</string>
     <!-- SmartBar -->
@@ -696,19 +696,19 @@
     <string name="smartbar_context_menu_position_summary">Nastavit umístění kontextových tlačítek („Menu,“ „Volič IME,“ atd.)</string>
     <string name="smartbar_right">Vpravo</string>
     <string name="smartbar_left">Vlevo</string>
-    <string name="smartbar_button_animation_title">Animace stisku tlačítka</string>
+    <string name="smartbar_button_animation_title">Animace stisku tlačítek</string>
     <string name="smartbar_button_animation_summary">Nastavit styl animace hlavních tlačítek při jejich stisknutí</string>
     <string name="smartbar_button_animation_ripple">Zvlnění</string>
     <string name="smartbar_button_animation_spring">Odskočení</string>
     <string name="smartbar_button_animation_flip">Překlopení</string>
     <string name="smartbar_button_animation_pixel">Pixel (všechna tlačítka)</string>
     <string name="smartbar_button_animation_pixel_home">Pixel (pouze tlačítko „Domů“)</string>
-    <string name="smartbar_button_animation_pixel_home_ripple">Pixel a Zvlnění (pouze tlačítko „Domů“)</string>
-    <string name="smartbar_factory_reset_title">Obnovit výchozí</string>
+    <string name="smartbar_button_animation_pixel_home_ripple">Pixel (pouze tlačítko „Domů“) a Zvlnění</string>
+    <string name="smartbar_factory_reset_title">Obnovit výchozí hodnoty</string>
     <string name="smartbar_factory_reset_confirm">Opravdu chcete obnovit nastavení panelu SmartBar na výchozí hodnoty?</string>
     <string name="smartbar_ime_action_title">Metody vstupu a mediální akce</string>
     <string name="smartbar_ime_action_summary">Nastavit, která tlačítka se mají zobrazit, když je zobrazena klávesnice nebo se přehrává hudba</string>
-    <string name="smartbar_ime_action_none">Žádné</string>
+    <string name="smartbar_ime_action_none">Žádná</string>
     <string name="smartbar_ime_action_arrows">Vstupní šipky</string>
     <string name="smartbar_ime_action_switcher">Přepínač klávesnice</string>
     <string name="smartbar_ime_action_dynamic">Šipky vstupu/médií</string>
@@ -724,7 +724,7 @@
     <string name="navbar_buttons_alpha_title">Průhlednost tlačítek</string>
     <string name="smartbar_longpress_delay_title">Prodleva dlouhého stisku tlačítek</string>
     <string name="smartbar_longpress_delay_summary">Nastavit, jak dlouho bude systém čekat před spuštěním akce dlouhého stisku tlačítek</string>
-    <string name="smartbar_longpress_delay_default">Výchozí prodleva (krátká)</string>
+    <string name="smartbar_longpress_delay_default">Výchozí (krátká) prodleva</string>
     <string name="smartbar_longpress_delay_normal">Běžná prodleva</string>
     <string name="smartbar_longpress_delay_long">Dlouhá prodleva</string>
     <string name="smartbar_custom_icon_size_title">Vlastní velikost ikon</string>
@@ -736,7 +736,7 @@
     <string name="status_bar_toggle_brightness_summary">Regulovat jas displeje tažením prstu po stavovém řádku</string>
     <string name="status_bar_notif_count_title">Počet oznámení</string>
     <string name="status_bar_notif_count_summary">Ukázat ve stavovém řádku počet nezobrazených oznámení</string>
-    <string name="status_bar_quick_qs_pulldown_title">Rychlé rozbalení panelu QS</string>
+    <string name="status_bar_quick_qs_pulldown_title">Rychlé rozbalení Rychlého nastavení</string>
     <string name="status_bar_quick_qs_pulldown_summary">Stažením stavového řádku dolů z %1$s strany se rozbalí Rychlé nastavení</string>
     <string name="status_bar_quick_qs_pulldown_summary_left">levé</string>
     <string name="status_bar_quick_qs_pulldown_summary_right">pravé</string>
