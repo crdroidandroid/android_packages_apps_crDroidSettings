@@ -96,19 +96,17 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
         if (!mSmartPixelsSupported || !mBurnInSupported)
             prefScreen.removePreference(mSmartPixels);
 
-       substratumCategory =
+        substratumCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_SUBSTRATUM);
-
-       mFontPreference =  (FontDialogPreference) findPreference(KEY_FONT_PICKER_FRAGMENT_PREF);
-       mFontService = IFontService.Stub.asInterface(
-                ServiceManager.getService("fontservice"));
         if (!Utils.isPackageInstalled(getActivity(), SUBS_PACKAGE)) {
-            mFontPreference.setSummary(getCurrentFontInfo().fontName.replace("_", " "));
             prefScreen.removePreference(substratumCategory);
-        } else {
-            mFontPreference.setSummary(getActivity().getString(
-                    R.string.disable_fonts_installed_title));
         }
+
+        mFontService = IFontService.Stub.asInterface(
+                ServiceManager.getService("fontservice"));
+        mFontPreference =  (FontDialogPreference) findPreference(KEY_FONT_PICKER_FRAGMENT_PREF);
+        mFontPreference.setSummary(getCurrentFontInfo().fontName.replace("_", " "));
+
     }
 
     private FontInfo getCurrentFontInfo() {
