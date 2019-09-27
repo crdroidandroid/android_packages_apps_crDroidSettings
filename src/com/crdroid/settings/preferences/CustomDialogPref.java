@@ -20,9 +20,9 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v14.preference.PreferenceDialogFragment;
-import android.support.v7.preference.DialogPreference;
+import androidx.annotation.NonNull;
+import androidx.preference.PreferenceDialogFragment;
+import androidx.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.View;
 

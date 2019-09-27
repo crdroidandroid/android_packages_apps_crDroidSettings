@@ -22,7 +22,7 @@ import android.os.UserHandle;
 import lineageos.providers.LineageSettings;
 
 
-public class LineageSecureSettingsStore extends android.support.v7.preference.PreferenceDataStore
+public class LineageSecureSettingsStore extends androidx.preference.PreferenceDataStore
         implements PreferenceDataStore {
 
     private ContentResolver mContentResolver;

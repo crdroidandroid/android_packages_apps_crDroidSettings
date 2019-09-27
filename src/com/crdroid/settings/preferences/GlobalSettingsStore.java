@@ -19,7 +19,7 @@ import android.content.ContentResolver;
 import android.preference.PreferenceDataStore;
 import android.provider.Settings;
 
-public class GlobalSettingsStore extends android.support.v7.preference.PreferenceDataStore
+public class GlobalSettingsStore extends androidx.preference.PreferenceDataStore
         implements PreferenceDataStore {
 
     private ContentResolver mContentResolver;

@@ -18,14 +18,10 @@ package com.crdroid.settings;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v13.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.Menu;
@@ -39,7 +35,13 @@ import android.widget.LinearLayout;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
 import com.crdroid.settings.fragments.About;
+/*
 import com.crdroid.settings.fragments.Buttons;
 import com.crdroid.settings.fragments.LockScreen;
 import com.crdroid.settings.fragments.Miscellaneous;
@@ -50,6 +52,7 @@ import com.crdroid.settings.fragments.Recents;
 import com.crdroid.settings.fragments.Sound;
 import com.crdroid.settings.fragments.StatusBar;
 import com.crdroid.settings.fragments.UserInterface;
+*/
 import com.crdroid.settings.R;
 
 public class crDroidSettingsLayout extends SettingsPreferenceFragment {
@@ -131,6 +134,7 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
 
         @Override
         protected Void doInBackground(Void... params) {
+/*
             Buttons.reset(rContext);
             LockScreen.reset(rContext);
             Miscellaneous.reset(rContext);
@@ -141,6 +145,7 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             Sound.reset(rContext);
             StatusBar.reset(rContext);
             UserInterface.reset(rContext);
+*/
             finish();
             startActivity(getIntent());
             return null;
@@ -165,6 +170,7 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
+/*
             frags[0] = new StatusBar();
             frags[1] = new QuickSettings();
             frags[2] = new LockScreen();
@@ -175,7 +181,8 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             frags[7] = new Notifications();
             frags[8] = new Sound();
             frags[9] = new Miscellaneous();
-            frags[10] = new About();
+*/
+            frags[0] = new About();
         }
 
         @Override
@@ -197,6 +204,7 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[] {
+/*
             getString(R.string.statusbar_title),
             getString(R.string.quicksettings_title),
             getString(R.string.lockscreen_title),
@@ -207,6 +215,7 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
             getString(R.string.notifications_title),
             getString(R.string.sound_title),
             getString(R.string.misc_title),
+*/
             getString(R.string.about_crdroid)
         };
         return titleString;
