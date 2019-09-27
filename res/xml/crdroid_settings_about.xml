@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-     Copyright (C) 2016-2018 crDroid Android Project
+     Copyright (C) 2016-2019 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,95 +19,84 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <!-- crDroid Changelog -->
-    <PreferenceScreen
+    <Preference
         android:key="crdroid_changelog"
         android:icon="@drawable/ic_changelog"
         android:title="@string/changelog_crdroid_title"
         android:summary="@string/changelog_crdroid_summary"
-        android:fragment="com.crdroid.settings.fragments.about.Changelog"
-        settings:allowDividerAbove="false" />
+        android:fragment="com.crdroid.settings.fragments.about.Changelog" />
 
     <!-- crDroid Website -->
-    <PreferenceScreen
+    <Preference
         android:key="crdroid_website"
         android:icon="@drawable/ic_web"
         android:title="@string/crdroid_website_title"
-        android:summary="@string/crdroid_website_summary"
-        settings:allowDividerAbove="false" />
+        android:summary="@string/crdroid_website_summary" />
 
     <!-- crDroid Translate -->
-    <PreferenceScreen
+    <Preference
         android:key="crdroid_translate"
         android:icon="@drawable/ic_translate"
         android:title="@string/crdroid_translate_title"
-        android:summary="@string/crdroid_translate_summary"
-        settings:allowDividerAbove="false" />
+        android:summary="@string/crdroid_translate_summary" />
 
     <!-- crDroid Share -->
-    <PreferenceScreen
+    <Preference
         android:key="crdroid_share"
         android:icon="@drawable/ic_share"
         android:title="@string/share_crdroid_title"
-        android:summary="@string/share_crdroid_summary"
-        settings:allowDividerAbove="false" />
+        android:summary="@string/share_crdroid_summary" />
 
     <!-- crDroid Donate -->
-    <PreferenceScreen
+    <Preference
         android:key="crdroid_donate"
         android:icon="@drawable/ic_donate"
         android:title="@string/donate_crdroid_title"
         android:summary="@string/donate_crdroid_summary"
-        android:fragment="com.crdroid.settings.fragments.about.Donate"
-        settings:allowDividerAbove="false" />
+        android:fragment="com.crdroid.settings.fragments.about.Donate" />
 
     <!-- crDroid Source -->
-    <PreferenceScreen
+    <Preference
         android:key="crdroid_source"
         android:icon="@drawable/ic_source"
         android:title="@string/crdroid_source_title"
-        android:summary="@string/crdroid_source_summary"
-        settings:allowDividerAbove="false" />
+        android:summary="@string/crdroid_source_summary" />
 
     <!-- crDroid Telegram -->
-    <PreferenceScreen
+    <Preference
         android:key="crdroid_telegram"
         android:icon="@drawable/ic_telegram"
         android:title="@string/crdroid_telegram_title"
-        android:summary="@string/crdroid_telegram_summary"
-        settings:allowDividerAbove="false" />
+        android:summary="@string/crdroid_telegram_summary" />
 
     <!-- crDroid GooglePlus
-    <PreferenceScreen
+    <Preference
         android:key="crdroid_google_plus"
         android:icon="@drawable/ic_gplus"
         android:title="@string/crdroid_google_plus_title"
-        android:summary="@string/crdroid_google_plus_summary"
-        settings:allowDividerAbove="false" /> -->
+        android:summary="@string/crdroid_google_plus_summary" /> -->
 
     <!-- crDroid Maintainers
-    <PreferenceScreen
+    <Preference
         android:key="crdroid_maintainers"
         android:icon="@drawable/ic_maintainers"
         android:title="@string/maintainers_crdroid_title"
         android:summary="@string/maintainers_crdroid_summary"
-        android:fragment="com.crdroid.settings.fragments.about.Maintainers"
-        settings:allowDividerAbove="false" /> -->
+        android:fragment="com.crdroid.settings.fragments.about.Maintainers" /> -->
 
-    <!-- crDroid OTA update -->
-    <PreferenceScreen
+    <!-- crDroid OTA update
+    <Preference
         android:key="crdroid_update"
         android:icon="@drawable/ic_update"
         android:title="@string/ota_crdroid_title"
         android:summary="@string/ota_crdroid_summary"
-        android:fragment="com.crdroid.settings.fragments.about.Update"
-        settings:allowDividerAbove="false" />
+        android:fragment="com.crdroid.settings.fragments.about.Update" /> -->
 
     <!-- crDroid Drill -->
-    <PreferenceScreen
+    <Preference
         android:key="crdroid_drill"
         android:icon="@drawable/ic_drill"
         android:title="@string/drill_title"
         android:summary="@string/drill_summary"
-        android:fragment="com.crdroid.settings.fragments.about.Drill"
-        settings:allowDividerAbove="false" />
+        android:fragment="com.crdroid.settings.fragments.about.Drill" />
 </PreferenceScreen>
