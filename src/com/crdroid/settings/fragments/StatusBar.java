@@ -55,8 +55,14 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     public static final String TAG = "StatusBar";
 
+    private static final String KEY_SHOW_DATA_DISABLED = "data_disabled_icon";
+    private static final String KEY_SHOW_FOURG = "show_fourg_icon";
+    private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
     private static final String KEY_SHOW_VOLTE = "show_volte_icon";
 
+    private SwitchPreference mDataDisabled;
+    private SwitchPreference mShowFourg;
+    private SwitchPreference mShowRoaming;
     private SwitchPreference mShowVolte;
 
     @Override
@@ -69,9 +75,15 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
+        mDataDisabled = (SwitchPreference) findPreference(KEY_SHOW_DATA_DISABLED);
+        mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
+        mShowRoaming = (SwitchPreference) findPreference(KEY_SHOW_ROAMING);
         mShowVolte = (SwitchPreference) findPreference(KEY_SHOW_VOLTE);
 
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(mDataDisabled);
+            prefScreen.removePreference(mShowFourg);
+            prefScreen.removePreference(mShowRoaming);
             prefScreen.removePreference(mShowVolte);
         }
     }
@@ -84,6 +96,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
 
+        Settings.System.putIntForUser(resolver,
+                Settings.System.DATA_DISABLED_ICON, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.ROAMING_INDICATOR_ICON, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_VOLTE_ICON, 0, UserHandle.USER_CURRENT);
     }
@@ -115,6 +133,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
                     List<String> keys = super.getNonIndexableKeys(context);
 
                     if (!TelephonyUtils.isVoiceCapable(context)) {
+                        keys.add(KEY_SHOW_DATA_DISABLED);
+                        keys.add(KEY_SHOW_FOURG);
+                        keys.add(KEY_SHOW_ROAMING);
                         keys.add(KEY_SHOW_VOLTE);
                     }
 
