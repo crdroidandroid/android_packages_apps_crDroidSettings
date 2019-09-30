@@ -16,7 +16,6 @@
  */
 package com.crdroid.settings.fragments.buttons;
 
-import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -34,6 +33,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
 
 import com.crdroid.settings.preferences.CustomDialogPref;
 import com.crdroid.settings.R;

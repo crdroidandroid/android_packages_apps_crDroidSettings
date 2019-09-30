@@ -15,7 +15,6 @@
  */
 package com.crdroid.settings.preferences;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -24,8 +23,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.preference.DialogPreference;
-import androidx.preference.PreferenceDialogFragment;
+import androidx.preference.PreferenceDialogFragmentCompat;
 
 public class CustomDialogPref<T extends DialogInterface> extends DialogPreference {
 
@@ -97,7 +97,7 @@ public class CustomDialogPref<T extends DialogInterface> extends DialogPreferenc
         return true;
     }
 
-    public static class CustomPreferenceDialogFragment extends PreferenceDialogFragment {
+    public static class CustomPreferenceDialogFragment extends PreferenceDialogFragmentCompat {
 
         public static CustomPreferenceDialogFragment newInstance(String key) {
             final CustomPreferenceDialogFragment fragment = new CustomPreferenceDialogFragment();

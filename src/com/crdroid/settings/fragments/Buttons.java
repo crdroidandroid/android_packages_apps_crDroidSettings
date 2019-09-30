@@ -214,10 +214,10 @@ public class Buttons extends SettingsPreferenceFragment implements
                 defaultBackLongPressAction);
 
         backlight = (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
-//        if (!backlight.isButtonSupported() /*&& !backlight.isKeyboardSupported()*/) {
+        if (!backlight.isButtonSupported() /*&& !backlight.isKeyboardSupported()*/) {
             prefScreen.removePreference(backlight);
             backlight = null;
-//        }
+        }
 
         if (hasPowerKey) {
             if (!TelephonyUtils.isVoiceCapable(getActivity())) {
