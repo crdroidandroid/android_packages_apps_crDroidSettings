@@ -256,7 +256,7 @@
             android:dependency="status_bar_logo" />
     </PreferenceCategory> -->
 
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:title="@string/gestures_title">
 
         <lineageos.preference.LineageSystemSettingSwitchPreference
@@ -273,7 +273,7 @@
             android:summary="@string/status_bar_toggle_brightness_summary"
             android:defaultValue="false" />
 
-        <lineageos.preference.LineageSystemSettingListPreference
+        <!--<lineageos.preference.LineageSystemSettingListPreference
             android:key="qs_quick_pulldown"
             android:icon="@drawable/ic_arrow_down"
             android:title="@string/status_bar_quick_qs_pulldown_title"
@@ -287,8 +287,8 @@
             android:title="@string/smart_pulldown_title"
             android:entries="@array/smart_pulldown_entries"
             android:entryValues="@array/smart_pulldown_values"
-            android:defaultValue="0" />
-    </PreferenceCategory> -->
+            android:defaultValue="0" />-->
+    </PreferenceCategory>
 
     <!--<PreferenceCategory
         android:title="@string/status_bar_misc_category_title">
