@@ -20,11 +20,11 @@
     android:key="button_settings"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!--<com.crdroid.settings.preferences.SecureSettingSwitchPreference
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="hardware_keys_disable"
         android:icon="@drawable/ic_buttons"
         android:title="@string/hwkeys_disabled_title"
-        android:summary="@string/hwkeys_disabled_summary" />-->
+        android:summary="@string/hwkeys_disabled_summary" />
 
     <com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness
         android:key="button_backlight"
@@ -34,12 +34,12 @@
         android:dialogTitle="@string/button_backlight_title"
         android:persistent="false" />
 
-    <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="anbi_enabled"
         android:icon="@drawable/ic_anbi"
         android:title="@string/anbi_title"
         android:summary="@string/anbi_summary"
-        android:defaultValue="false" />-->
+        android:defaultValue="false" />
 
     <PreferenceCategory
         android:key="power_key"
