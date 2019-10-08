@@ -15,22 +15,23 @@
   limitations under the License.
   -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-                  xmlns:app="http://schemas.android.com/apk/res-auto"
-                  android:key="gesture_swipe_down_fingerprint_screen"
-                  android:title="@string/fingerprint_gesture_screen_title">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:key="gesture_double_twist_screen"
+    android:title="@string/double_twist_for_camera_mode_title">
 
     <com.android.settings.widget.VideoPreference
-        android:key="gesture_swipe_down_fingerprint_video"
-        app:animation="@raw/gesture_fingerprint_swipe"
-        app:preview="@drawable/gesture_fingerprint_swipe" />
+        android:key="gesture_double_twist_video"
+        app:animation="@raw/gesture_twist"
+        app:preview="@drawable/gesture_twist" />
 
     <SwitchPreference
-        android:key="gesture_swipe_down_fingerprint"
-        android:title="@string/fingerprint_swipe_for_notifications_title"
-        android:summary="@string/fingerprint_swipe_for_notifications_summary"
+        android:key="gesture_double_twist"
+        android:title="@string/double_twist_for_camera_mode_title"
+        android:summary="@string/double_twist_for_camera_mode_summary"
         app:keywords="@string/keywords_gesture"
-        app:controller="com.android.settings.gestures.SwipeToNotificationPreferenceController"
+        app:controller="com.android.settings.gestures.DoubleTwistPreferenceController"
         app:allowDividerAbove="true" />
 
 </PreferenceScreen>
