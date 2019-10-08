@@ -29,9 +29,9 @@
         android:key="stock_settings"
         android:icon="@drawable/ic_shapes"
         android:title="@string/navbar_settings_title"
-        android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
         android:dependency="navbar_visibility"
-        settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
+        android:summary="@string/navbar_settings_summary"
+        android:fragment="com.crdroid.settings.fragments.navigation.StockNavBarSettings" />
 
     <!-- PIE
     <Preference
@@ -62,14 +62,6 @@
             android:summary="@string/pulse_settings_summary"
             android:dependency="navbar_visibility"
             android:fragment="com.crdroid.settings.fragments.navigation.smartnav.PulseSettings" />
-
-        <Preference
-            android:key="stock_settings"
-            android:icon="@drawable/ic_shapes"
-            android:title="@string/navbar_settings_title"
-            android:dependency="navbar_visibility"
-            android:summary="@string/navbar_settings_summary"
-            android:fragment="com.crdroid.settings.fragments.navigation.StockNavBarSettings" />
 
         <Preference
             android:key="smartbar_settings"

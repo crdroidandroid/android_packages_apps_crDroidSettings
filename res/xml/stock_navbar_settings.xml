@@ -20,12 +20,12 @@
     android:title="@string/navbar_settings_title">
 
     <Preference
-        android:key="gesture_swipe_up_input_summary"
-        android:title="@string/swipe_up_to_switch_apps_title"
-        android:fragment="com.android.settings.gestures.SwipeUpGestureSettings"
-        settings:controller="com.android.settings.gestures.SwipeUpPreferenceController" />
+        android:key="gesture_system_navigation_input_summary"
+        android:title="@string/system_navigation_title"
+        android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
+        settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="pixel_nav_animation"
         android:title="@string/pixel_navbar_anim_title"
         android:summary="@string/pixel_navbar_anim_summary"
@@ -35,12 +35,18 @@
         android:key="navigation_bar_menu_arrow_keys"
         android:title="@string/navbar_arrow_keys_title"
         android:summary="@string/navbar_arrow_keys_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" />-->
 
-    <Preference
-        android:key="navbar_tuner"
-        android:title="@string/navbar_tuner_title"
-        android:summary="@string/navbar_tuner_summary">
-            <intent android:action="com.android.settings.action.NAV_BAR_TUNER" />
-    </Preference>
+    <com.crdroid.settings.preferences.SecureSettingListPreference
+        android:key="navbar_layout_views"
+        android:title="@string/navbar_layout_title"
+        android:summary="%s"
+        android:entries="@array/navbar_layout_entries"
+        android:entryValues="@array/navbar_layout_values"
+        android:defaultValue="default" />
+
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="navbar_inverse_layout"
+        android:title="@string/navbar_invert_layout_title"
+        android:defaultValue="false" />
 </PreferenceScreen>

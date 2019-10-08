@@ -2149,4 +2149,19 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+
+    <!-- SysUI Tuner: Labels for different types of navigation bar layouts [CHAR LIMIT=60] -->
+    <string-array name="navbar_layout_entries">
+        <item>@string/navbar_layout_normal</item>
+        <item>@string/navbar_layout_compact</item>
+        <item>@string/navbar_layout_leftleaning</item>
+        <item>@string/navbar_layout_rightleaning</item>
+    </string-array>
+
+    <string-array name="navbar_layout_values" translatable="false">
+        <item>default</item>
+        <item>left;back,home,recent;right</item>
+        <item>left,back,home,recent,right;space;space</item>
+        <item>space;space;left,back,home,recent,right</item>
+    </string-array>
 </resources>
