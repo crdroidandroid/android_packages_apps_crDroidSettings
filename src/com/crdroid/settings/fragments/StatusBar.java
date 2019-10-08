@@ -55,11 +55,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     public static final String TAG = "StatusBar";
 
+    private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String KEY_SHOW_DATA_DISABLED = "data_disabled_icon";
     private static final String KEY_SHOW_FOURG = "show_fourg_icon";
     private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
     private static final String KEY_SHOW_VOLTE = "show_volte_icon";
 
+    private LineageSystemSettingListPreference mStatusBarClock;
     private SwitchPreference mDataDisabled;
     private SwitchPreference mShowFourg;
     private SwitchPreference mShowRoaming;
@@ -74,6 +76,26 @@ public class StatusBar extends SettingsPreferenceFragment implements
         ContentResolver resolver = getActivity().getContentResolver();
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mStatusBarClock =
+                (LineageSystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
+
+        final boolean hasNotch = getResources().getBoolean(
+                org.lineageos.platform.internal.R.bool.config_haveNotch);
+
+        // Adjust status bar preferences for RTL
+        if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
+            if (hasNotch) {
+                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch_rtl);
+                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch_rtl);
+            } else {
+                mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
+                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_rtl);
+            }
+        } else if (hasNotch) {
+            mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
+            mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
+        }
 
         mDataDisabled = (SwitchPreference) findPreference(KEY_SHOW_DATA_DISABLED);
         mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
@@ -100,6 +122,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 LineageSettings.System.DOUBLE_TAP_SLEEP_GESTURE, 1, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.STATUS_BAR_CLOCK, 2, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.DATA_DISABLED_ICON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
