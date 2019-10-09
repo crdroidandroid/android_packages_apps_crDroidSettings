@@ -41,15 +41,14 @@
             android:entryValues="@array/status_bar_clock_position_values"
             android:defaultValue="2" />
 
-        <!--<PreferenceScreen
+        <Preference
             android:key="clock"
             android:icon="@drawable/ic_clock"
             android:title="@string/status_bar_clock_title"
             android:summary="@string/status_bar_clock_summary"
-            android:fragment="com.crdroid.settings.fragments.statusbar.Clock"
-            settings:allowDividerAbove="false" />
+            android:fragment="com.crdroid.settings.fragments.statusbar.Clock" />
 
-        <PreferenceScreen
+        <!--<PreferenceScreen
             android:key="network_traffic_settings"
             android:icon="@drawable/ic_traffic"
             android:title="@string/network_traffic_settings_title"
