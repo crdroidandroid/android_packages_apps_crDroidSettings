@@ -22,14 +22,14 @@
     <PreferenceCategory 
          android:title="@string/qs_tiles_category">
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="bluetooth_qs_show_battery"
             android:icon="@drawable/ic_bluetooth_connect"
             android:title="@string/bluetooth_battery_title"
             android:summary="@string/bluetooth_battery_summary"
             android:defaultValue="true"/>
 
-        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_quickbar_scroll_enabled"
             android:icon="@drawable/ic_gesture_swipe_left"
             android:title="@string/qqs_scroll_title"
@@ -50,7 +50,7 @@
             android:max="7"
             settings:min="1"
             settings:units=""
-            android:persistent="false" />-->
+            android:persistent="false" />
 
         <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="qs_rows_portrait"
@@ -86,7 +86,7 @@
             android:defaultValue="4"
             android:max="10"
             settings:min="1"
-            settings:units="" />
+            settings:units="" />-->
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_title_visibility"
@@ -95,12 +95,12 @@
             android:summary="@string/qs_tile_title_visibility_summary"
             android:defaultValue="true" />
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="quick_settings_vibrate"
             android:icon="@drawable/ic_vibrate"
             android:title="@string/quick_settings_vibrate_title"
             android:summary="@string/quick_settings_vibrate_summary"
-            android:defaultValue="false"/>
+            android:defaultValue="false"/>-->
     </PreferenceCategory>
 
     <!--<PreferenceCategory 
@@ -144,13 +144,13 @@
     <PreferenceCategory 
          android:title="@string/qs_misc_category">
 
-        <!-- Custom header -->
+        <!-- Custom header
         <Preference
             android:key="custom_header"
             android:icon="@drawable/ic_header"
             android:fragment="com.crdroid.settings.fragments.quicksettings.CustomHeader"
             android:title="@string/custom_header_title"
-            android:summary="@string/custom_header_summary" />
+            android:summary="@string/custom_header_summary" /> -->
 
         <!-- QS clock -->
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -188,7 +188,7 @@
             android:defaultValue="true" />
     </PreferenceCategory>
 
-    <PreferenceCategory 
+    <!--<PreferenceCategory 
          android:title="@string/qs_footer_category">
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
@@ -224,5 +224,5 @@
             android:title="@string/qs_footer_settings_icon_title"
             android:summary="@string/qs_footer_settings_icon_summary"
             android:defaultValue="true" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 </PreferenceScreen>
