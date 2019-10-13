@@ -19,13 +19,13 @@
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!-- Ambient Display -->
+    <!-- Ambient Display
     <PreferenceScreen
         android:key="doze_fragment"
         android:icon="@drawable/ic_ambient"
         android:title="@string/doze_display_title"
         android:summary="@string/doze_display_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.DozeFragment" />
+        android:fragment="com.crdroid.settings.fragments.ui.DozeFragment" /> -->
 
     <!-- Animations -->
     <Preference
@@ -35,33 +35,33 @@
         android:summary="@string/animation_summary"
         android:fragment="com.crdroid.settings.fragments.ui.Animations" />
 
-    <!-- Blur -->
+    <!-- Blur
     <Preference
         android:key="blur"
         android:icon="@drawable/ic_blur"
         android:title="@string/settings_blur_cat"
         android:summary="@string/settings_blur_cat_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.BlurPersonalizations" />
+        android:fragment="com.crdroid.settings.fragments.ui.BlurPersonalizations" /> -->
 
-    <!-- Display cutout options -->
+    <!-- Display cutout options
     <Preference
         android:key="cutout_settings"
         android:icon="@drawable/ic_cutout"
         android:title="@string/cutout_main"
         android:summary="@string/cutout_main_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.CutoutSettings" />
+        android:fragment="com.crdroid.settings.fragments.ui.CutoutSettings" /> -->
 
-    <!-- Expanded Desktop-->
+    <!-- Expanded Desktop
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="expanded_desktop_settings"
-        android:icon="@drawable/ic_expanded" />
+        android:icon="@drawable/ic_expanded" /> -->
 
-    <!-- Font -->
+    <!-- Font
     <com.crdroid.settings.fragments.ui.FontDialogPreference
         android:key="custom_font"
         android:icon="@drawable/ic_font"
         android:title="@string/font_picker_title"
-        android:persistent="false" />
+        android:persistent="false" /> -->
 
     <!-- Full screen aspect ratio
     <org.lineageos.internal.lineageparts.LineagePartsPreference
@@ -69,29 +69,29 @@
         android:icon="@drawable/ic_fullscreen"
         lineage:requiresConfig="@*lineageos.platform:bool/config_haveHigherAspectRatioScreen" /> -->
 
-    <!-- Rounded Corners -->
+    <!-- Rounded Corners
     <PreferenceScreen
         android:key="rounded_corners"
         android:icon="@drawable/ic_rounded_corner"
         android:title="@string/corners_title"
         android:summary="@string/corners_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.RoundedCorners" />
+        android:fragment="com.crdroid.settings.fragments.ui.RoundedCorners" /> -->
 
-    <!-- Smart Pixels -->
+    <!-- Smart Pixels
     <PreferenceScreen
         android:key="smart_pixels"
         android:icon="@drawable/ic_smart_pixels"
         android:title="@string/smart_pixels_title" 
         android:summary="@string/smart_pixels_summary" 
-        android:fragment="com.crdroid.settings.fragments.ui.SmartPixels" />
+        android:fragment="com.crdroid.settings.fragments.ui.SmartPixels" /> -->
 
-    <!-- Styles -->
+    <!-- Styles
     <PreferenceScreen
         android:key="style"
         android:icon="@drawable/ic_theme_light_dark"
         android:title="@string/style_title"
         android:summary="@string/style_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.ThemeSettings" />
+        android:fragment="com.crdroid.settings.fragments.ui.ThemeSettings" /> -->
 
     <!--<Preference
         android:key="trans_porn"
@@ -107,7 +107,7 @@
         android:summary="@string/show_alarm_fullscreen_summary"
         android:defaultValue="false" />-->
 
-    <!-- Substratum -->
+    <!-- Substratum
     <PreferenceCategory
         android:key="category_substratum"
         android:title="@string/substratum_title" >
@@ -129,5 +129,5 @@
             android:title="@string/force_authorize_substratum_packages_title"
             android:summary="@string/force_authorize_substratum_packages_summary"
             android:defaultValue="false"/>
-    </PreferenceCategory>
+    </PreferenceCategory> -->
 </PreferenceScreen>
