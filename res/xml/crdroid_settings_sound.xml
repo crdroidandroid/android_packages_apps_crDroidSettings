@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2018 crDroid Android Project
+     Copyright (C) 2016-2019 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@
       android:icon="@drawable/ic_charger"
       android:key="charging_sounds_settings"/>
 
-    <!-- Launch music player when headset is connected -->
+    <!-- Launch music player when headset is connected
     <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="headset_connect_player"
         android:icon="@drawable/ic_headphones"
@@ -32,7 +32,7 @@
         android:summary="@string/headset_connect_player_summary"
         android:entries="@array/headset_connect_player_entries"
         android:entryValues="@array/headset_connect_player_values"
-        android:defaultValue="0" />
+        android:defaultValue="0" /> -->
 
    <!-- Screenshot Sound  -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -42,21 +42,21 @@
         android:summary="@string/screenshot_sound_summary"
         android:defaultValue="true" />
 
-    <!-- Volume Steps -->
+    <!-- Volume Steps
     <PreferenceScreen
         android:key="volume_steps"
         android:icon="@drawable/ic_settings_sound"
         android:title="@string/volume_steps_title"
         android:summary="@string/volume_steps_summary"
-        android:fragment="com.crdroid.settings.fragments.sound.VolumeSteps" />
+        android:fragment="com.crdroid.settings.fragments.sound.VolumeSteps" /> -->
 
-    <!-- Audio Panel view  -->
+    <!-- Audio Panel view
     <PreferenceScreen
         android:key="volume_panel"
         android:icon="@drawable/ic_tune"
         android:title="@string/audio_panel_view_title"
         android:summary="@string/audio_panel_view_summary"
-        android:fragment="com.crdroid.settings.fragments.sound.VolumePanel" />
+        android:fragment="com.crdroid.settings.fragments.sound.VolumePanel" />  -->
 
     <!-- Do not disturb
     <PreferenceCategory 
