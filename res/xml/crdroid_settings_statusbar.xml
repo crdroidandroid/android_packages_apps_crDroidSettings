@@ -136,9 +136,9 @@
             android:defaultValue="true" /> -->
     </PreferenceCategory>
 
-    <!-- Status bar battery customizations
+    <!-- Status bar battery customizations -->
     <PreferenceCategory
-        android:title="@string/status_bar_battery_category_title"> -->
+        android:title="@string/status_bar_battery_category_title">
 
         <!-- Battery styles
         <lineageos.preference.LineageSystemSettingListPreference
@@ -191,13 +191,13 @@
             android:entryValues="@array/text_charging_symbol_values"
             android:defaultValue="0" /> -->
 
-        <!-- Battery bar
+        <!-- Battery bar -->
         <PreferenceScreen
             android:key="batterybar"
             android:icon="@drawable/ic_car_battery"
             android:title="@string/battery_bar_title"
             android:summary="@string/battery_bar_summary"
-            android:fragment="com.crdroid.settings.fragments.statusbar.BatteryBar" /> -->
+            android:fragment="com.crdroid.settings.fragments.statusbar.BatteryBar" />
 
         <!--<com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="status_bar_battery_style_tile"
@@ -215,7 +215,7 @@
             android:entries="@array/status_bar_battery_percentage_entries"
             android:entryValues="@array/status_bar_battery_percentage_values"
             android:defaultValue="0" /> -->
-    <!--</PreferenceCategory> -->
+    </PreferenceCategory>
 
     <!-- Status bar crDroid logo
     <PreferenceCategory
