@@ -47,7 +47,7 @@ import com.crdroid.settings.R;
 
 public class PagerSlidingTabStrip extends HorizontalScrollView {
 
-    public static final int DEF_VALUE_TAB_TEXT_ALPHA = 150;
+    public static final int DEF_VALUE_TAB_TEXT_ALPHA = 255;
     private static final int[] ANDROID_ATTRS = new int[]{
             android.R.attr.textColorPrimary,
             android.R.attr.padding,

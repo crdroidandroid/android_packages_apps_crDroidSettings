@@ -45,6 +45,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.misc.ImeSettings;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -54,21 +55,54 @@ public class Miscellaneous extends SettingsPreferenceFragment
 
     public static final String TAG = "Miscellaneous";
 
+    private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
+
+    private SwitchPreference mShowCpuInfo;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Context mContext = getActivity().getApplicationContext();
+
         addPreferencesFromResource(R.xml.crdroid_settings_misc);
+
+        ContentResolver resolver = mContext.getContentResolver();
+
+        mShowCpuInfo = (SwitchPreference) findPreference(SHOW_CPU_INFO_KEY);
+        mShowCpuInfo.setChecked(Settings.Global.getInt(resolver,
+                Settings.Global.SHOW_CPU_OVERLAY, 0) == 1);
+        mShowCpuInfo.setOnPreferenceChangeListener(this);
     }
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.Global.putInt(resolver,
                 Settings.Global.TOAST_ICON, 1);
+        writeCpuInfoOptions(mContext, false);
+        ImeSettings.reset(mContext);
+    }
+
+    private static void writeCpuInfoOptions(Context mContext, boolean value) {
+        Settings.Global.putInt(mContext.getContentResolver(),
+                Settings.Global.SHOW_CPU_OVERLAY, value ? 1 : 0);
+        Intent service = (new Intent())
+                .setClassName("com.android.systemui", "com.android.systemui.CPUInfoService");
+        if (value) {
+            mContext.startService(service);
+        } else {
+            mContext.stopService(service);
+        }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        Context mContext = getActivity().getApplicationContext();
+        if (preference == mShowCpuInfo) {
+            writeCpuInfoOptions(mContext, (Boolean) newValue);
+            return true;
+        }
         return false;
     }
 
