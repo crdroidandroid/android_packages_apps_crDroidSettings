@@ -23,14 +23,24 @@
         android:key="berry_accent_picker"
         android:title="@string/theme_accent_picker_title" />
 
-    <ListPreference
+    <Preference
+        android:key="theme_picker"
+        android:title="@string/theme_picker_title"
+        android:summary="@string/theme_picker_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.wallpaper"
+                android:targetClass="com.android.customization.picker.CustomizationPickerActivity" />
+    </Preference>
+
+    <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="berry_theme_override"
         android:title="@string/style_global_title"
         android:entries="@array/style_entries"
         android:entryValues="@array/style_values"
         android:defaultValue="0" />
 
-    <ListPreference
+    <!--<ListPreference
         android:key="berry_dark_style"
         android:title="@string/style_dark_overlay_title"
         android:entries="@array/dark_overlay_entries"
@@ -66,5 +76,5 @@
         android:dialogTitle="@string/qs_header_style_title"
         android:entries="@array/qs_header_style_entries"
         android:entryValues="@array/qs_header_style_values"
-        android:defaultValue="0" />
+        android:defaultValue="0" />-->
 </PreferenceScreen>
