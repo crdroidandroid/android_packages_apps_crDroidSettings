@@ -41,7 +41,6 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
-import com.crdroid.settings.fragments.ui.AccentPicker;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -51,18 +50,10 @@ public class ThemeSettings extends SettingsPreferenceFragment implements Indexab
 
     public static final String TAG = "ThemeSettings";
 
-    private String KEY_ACCENT_PICKER = "berry_accent_picker";
-
-    private Preference mAccentPicker;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.theme_settings);
-
-        ContentResolver resolver = getActivity().getContentResolver();
-
-        mAccentPicker = findPreference(KEY_ACCENT_PICKER);
     }
 
     @Override
@@ -72,17 +63,11 @@ public class ThemeSettings extends SettingsPreferenceFragment implements Indexab
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mAccentPicker) {
-            AccentPicker.show(this);
-        }
-
         return super.onPreferenceTreeClick(preference);
     }
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putIntForUser(resolver,
-                Settings.System.BERRY_ACCENT_PICKER, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.BERRY_THEME_OVERRIDE, 0, UserHandle.USER_CURRENT);
     }
