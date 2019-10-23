@@ -38,6 +38,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.lockscreen.LockScreenVisualizer;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.preferences.SystemSettingListPreference;
 
@@ -69,6 +70,7 @@ public class LockScreen extends SettingsPreferenceFragment
                 LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT);
+        LockScreenVisualizer.reset(mContext);
     }
 
     @Override
