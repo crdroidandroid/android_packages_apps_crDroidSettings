@@ -134,8 +134,8 @@
     <string name="shortcut_action_reset_message">Lähtesta kõik kirjed vaikeseadetele?</string>
     <string name="shortcut_action_max">Kirjete maksimaalne suurus on saavutatud</string>
     <string name="shortcut_action_warning">Hoiatus</string>
-    <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
-    <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
+    <string name="shortcut_action_warning_message">Viimast kirjet pole võimalik kustutada</string>
+    <string name="shortcut_action_disable_message">Keelatud\nSelle funktsiooni lubamiseks lisa kirje</string>
     <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
     <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
     <string name="shortcut_action_help_shortcut">otsetee</string>
@@ -333,10 +333,10 @@
     <string name="shortcut_picker_icon_type_custom_title">Galerii</string>
     <!-- Music Visualizer -->
     <string name="music_visualizer_title">Muusika visualiseerija</string>
-    <string name="music_visualizer_summary">Display music visualizer when available</string>
+    <string name="music_visualizer_summary">Kuva saadavusel muusika visualiseerija</string>
     <!-- Media art -->
     <string name="media_art_title">Meedia kaanepilt</string>
-    <string name="media_art_summary">Display media cover art when available</string>
+    <string name="media_art_summary">Kuva saadavusel meedia kaanepilt</string>
     <!-- Hide Lockscreen clock, date & alarm -->
     <string name="hide_lockscreen_clock_title">Kell</string>
     <string name="hide_lockscreen_clock_summary">Kuva praegune kellaaeg</string>
@@ -706,7 +706,7 @@
     <string name="smartbar_button_animation_pixel_home_ripple">Pixel (ainult kodunupp) ja lainetus</string>
     <string name="smartbar_factory_reset_title">Lähtesta vaikeseadetele</string>
     <string name="smartbar_factory_reset_confirm">Are you sure you want to reset Smartbar to stock settings?</string>
-    <string name="smartbar_ime_action_title">Input method and media actions</string>
+    <string name="smartbar_ime_action_title">Sisendmeetod ja meediatoimingud</string>
     <string name="smartbar_ime_action_summary">Set what buttons to show when a on-screen keyboard is showing or music is playing</string>
     <string name="smartbar_ime_action_none">Puudub</string>
     <string name="smartbar_ime_action_arrows">Sisendnooled</string>
@@ -1303,7 +1303,7 @@
     <string name="qs_fancy_animation_title">Uhke kiirseadete animatsioon</string>
     <string name="qs_fancy_animation_summary">Animate when pulling down the statusbar</string>
     <!-- Disable animations -->
-    <string name="disable_animations">Disable animations</string>
+    <string name="disable_animations">Keela animatsioonid</string>
     <string name="disable_animations_summary">Disables transition animations such as when launching an app</string>
     <!-- XOSP Blur personalizations -->
     <string name="settings_blur_cat">Hägustamine</string>
@@ -1366,8 +1366,8 @@
     <!-- Custom header -->
     <string name="custom_header_title">Kohandatud päis</string>
     <string name="custom_header_summary">Display image at top of the notification panel</string>
-    <string name="daylight_header_pack_title">Header image collection</string>
-    <string name="status_bar_custom_header_shadow_title">Header image shadow</string>
+    <string name="daylight_header_pack_title">Päisepildi kollektsioon</string>
+    <string name="status_bar_custom_header_shadow_title">Päisepildi vari</string>
     <string name="status_bar_custom_header_shadow_summary">For better visibility on bright images</string>
     <string name="unit_percent">\u0025</string>
     <string name="static_header_provider_title">Staatiline pilt</string>
@@ -1426,7 +1426,7 @@
     <string name="recent_panel_expanded_mode_always">Alati</string>
     <string name="recent_panel_expanded_mode_never">Mitte kunagi</string>
     <string name="recent_panel_show_topmost_title">Kuva ülemist tegevust</string>
-    <string name="recent_panel_show_topmost_summary">Don\'t exclude the topmost task in recents view</string>
+    <string name="recent_panel_show_topmost_summary">Ära välista viimatiste vaates ülemist tegevust</string>
     <string name="recent_panel_bg_color_title">Paneeli taustavärv</string>
     <string name="recent_card_bg_color_title">Kaardi taustavärv</string>
     <string name="recent_card_text_color_title">Kaardi teksti värv</string>
@@ -1450,7 +1450,7 @@
     <string name="slim_recents_hints_footer">To clear all apps, pinch-in with two fingers on the panel. To block an app from being cleared, long press on its icon to star it.\n\nFor additional recents features such as multiwindow or to kill an app, long press or drag an app card in the panel.</string>
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Kuva vasakus servas</string>
-    <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
+    <string name="recent_panel_lefty_mode_summary">Kuva hiljutiste rakenduste paneel vasakpoolses servas</string>
     <!-- Disable FC notifications -->
     <string name="disable_fc_notifications_title">Keela sundsulgemine</string>
     <string name="disable_fc_notifications_summary">Keela kõik sundsulgemise teavituse dialoogid</string>
@@ -1509,7 +1509,7 @@
     <string name="status_bar_carrier_size">Operaatori nime tekstisuurus</string>
     <string name="status_bar_carrier_title">Olekuriba operaator</string>
     <string name="status_bar_carrier_summary">Kuva olekuribal operaator</string>
-    <string name="lock_screen_carrier_title">Lock screen carrier</string>
+    <string name="lock_screen_carrier_title">Lukustuskuva operaator</string>
     <string name="lock_screen_carrier_summary">Kuva lukustuskuval operaatorit</string>
     <string name="quick_settings_carrier_title">Kiirseadete operaator</string>
     <string name="quick_settings_carrier_summary">Kuva kiirseadetes operaator</string>
@@ -1527,8 +1527,8 @@
     <string name="fp_success_vibrate_title">Fingerprint authentication vibration</string>
     <string name="fp_success_vibrate_summary">Vibrate on successful fingerprint authentication</string>
     <!-- Fingerprint unlock keystore -->
-    <string name="fp_unlock_keystore_title">Fingerprint unlock</string>
-    <string name="fp_unlock_keystore_summary">Unlock device with fingerprint after reboot without pin/password/pattern</string>
+    <string name="fp_unlock_keystore_title">Sõrmejäljega avamine</string>
+    <string name="fp_unlock_keystore_summary">Avada seade sõrmejäljega pärast taaskäivitust ilma PINi/parooli/mustrita</string>
     <!-- Toast icon -->
     <string name="toast_icon_title">Hüpiku ikoon</string>
     <string name="toast_icon_summary">Kuva hüpikul seda kuvava rakenduse ikoon</string>
@@ -1639,7 +1639,7 @@
     <string name="statusbar_doubletap_sleep_title">Koputa unerežiimiks</string>
     <string name="statusbar_doubletap_sleep_summary">Double-tap on the status bar to put device asleep</string>
     <!-- Auto USB mode chooser -->
-    <string name="auto_usb_mode_chooser_title">Auto USB mode chooser</string>
+    <string name="auto_usb_mode_chooser_title">Automaatne USB-režiimi valija</string>
     <string name="auto_usb_mode_chooser_summary">Pop-up usb mode chooser when device connected to PC</string>
     <!-- Vibrate on plugged -->
     <string name="vibration_on_charge_state_changed_title">Vibrate on plug</string>
