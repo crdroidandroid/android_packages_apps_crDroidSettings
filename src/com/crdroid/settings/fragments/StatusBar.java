@@ -137,6 +137,13 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_VOLTE_ICON, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_BATTERY_TEXT_CHARGING, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
+
         BatteryBar.reset(mContext);
         Clock.reset(mContext);
         NetworkTrafficSettings.reset(mContext);

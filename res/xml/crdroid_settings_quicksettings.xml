@@ -144,6 +144,15 @@
     <PreferenceCategory 
          android:title="@string/qs_misc_category">
 
+        <!-- Battery mode -->
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="qs_battery_mode"
+            android:icon="@drawable/ic_battery_alert"
+            android:title="@string/battery_percentage_title"
+            android:entries="@array/qs_battery_mode_entries"
+            android:entryValues="@array/qs_battery_mode_values"
+            android:defaultValue="1" />
+
         <!-- Custom header
         <Preference
             android:key="custom_header"
