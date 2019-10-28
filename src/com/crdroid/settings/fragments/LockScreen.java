@@ -68,6 +68,8 @@ public class LockScreen extends SettingsPreferenceFragment
         ContentResolver resolver = mContext.getContentResolver();
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.LOCKSCREEN_ALBUMART_FILTER, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT);
         LockScreenVisualizer.reset(mContext);
