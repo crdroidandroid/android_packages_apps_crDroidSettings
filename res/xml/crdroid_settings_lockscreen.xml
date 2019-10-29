@@ -166,15 +166,15 @@
             android:defaultValue="0" />-->
     </PreferenceCategory>
 
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="lockscreen_gestures_category"
         android:title="@string/gestures_title">
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="face_auto_unlock"
             android:icon="@drawable/ic_face"
             android:title="@string/face_auto_unlock_title"
-            android:summary="@string/face_auto_unlock_summary" />
+            android:summary="@string/face_auto_unlock_summary" />-->
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="double_tap_sleep_lockscreen"
@@ -183,7 +183,7 @@
             android:summary="@string/double_tap_sleep_anywhere_summary"
             android:defaultValue="true" />
 
-        <SwitchPreference
+        <!--<SwitchPreference
             android:key="fp_wake_and_unlock"
             android:icon="@drawable/ic_fp"
             android:title="@string/fp_wake_and_unlock_title"
@@ -202,8 +202,8 @@
             android:icon="@drawable/ic_fp"
             android:title="@string/fp_unlock_keystore_title"
             android:summary="@string/fp_unlock_keystore_summary"
-            android:persistent="false" />
-    </PreferenceCategory>-->
+            android:persistent="false" />-->
+    </PreferenceCategory>
 
     <!--<PreferenceCategory
         android:key="lockscreen_misc_category"
