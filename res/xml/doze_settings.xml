@@ -109,6 +109,29 @@
             settings:units="@string/unit_milliseconds" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/doze_brightness_category">
+
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="ambient_doze_brightness"
+            android:title="@string/ambient_doze_brightness_title"
+            android:summary="@string/ambient_doze_brightness_summary"
+            android:max="255"
+            settings:min="1"
+            android:persistent="false" />
+
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="ambient_pulse_brightness"
+            android:title="@string/ambient_pulse_brightness_title"
+            android:summary="@string/ambient_pulse_brightness_summary"
+            android:max="255"
+            settings:min="1"
+            android:persistent="false" />
+
+        <Preference
+            android:summary="@string/doze_brightness_footer" />
+    </PreferenceCategory>
+
     <!--<PreferenceCategory
         android:key="doze_pulse_category"
         android:title="@string/doze_pulse_title" >

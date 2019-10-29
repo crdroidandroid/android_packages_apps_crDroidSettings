@@ -69,6 +69,8 @@ public class DozeSettings extends SettingsPreferenceFragment implements Indexabl
     private static final String KEY_DOZE_HANDWAVE_GESTURE = "doze_handwave_gesture";
     private static final String KEY_DOZE_POCKET_GESTURE = "doze_pocket_gesture";
     private static final String KEY_DOZE_GESTURE_VIBRATE = "doze_gesture_vibrate";
+    private static final String KEY_PULSE_BRIGHTNESS = "ambient_pulse_brightness";
+    private static final String KEY_DOZE_BRIGHTNESS = "ambient_doze_brightness";
 
     private ColorPickerPreference mEdgeLightColorPreference;
 
@@ -77,6 +79,9 @@ public class DozeSettings extends SettingsPreferenceFragment implements Indexabl
     private SwitchPreference mPickUpPreference;
     private SwitchPreference mHandwavePreference;
     private SwitchPreference mPocketPreference;
+
+    private CustomSeekBarPreference mPulseBrightness;
+    private CustomSeekBarPreference mDozeBrightness;
 
     private SharedPreferences mPreferences;
 
@@ -136,6 +141,29 @@ public class DozeSettings extends SettingsPreferenceFragment implements Indexabl
         if (!mAlwaysOnAvailable) {
             getPreferenceScreen().removePreference(mDozeAlwaysOnPreference);
         }
+
+        int defaultDoze = getResources().getInteger(
+                com.android.internal.R.integer.config_screenBrightnessDoze);
+        int defaultPulse = getResources().getInteger(
+                com.android.internal.R.integer.config_screenBrightnessPulse);
+        if (defaultPulse == -1) {
+            defaultPulse = defaultDoze;
+        }
+
+        mPulseBrightness = (CustomSeekBarPreference) findPreference(KEY_PULSE_BRIGHTNESS);
+        int value = Settings.System.getInt(getContentResolver(),
+                Settings.System.PULSE_BRIGHTNESS, defaultPulse);
+        mPulseBrightness.setValue(value);
+        mPulseBrightness.setOnPreferenceChangeListener(this);
+
+        mDozeBrightness = (CustomSeekBarPreference) findPreference(KEY_DOZE_BRIGHTNESS);
+        value = Settings.System.getInt(getContentResolver(),
+                Settings.System.DOZE_BRIGHTNESS, defaultDoze);
+        mDozeBrightness.setValue(value);
+        mDozeBrightness.setOnPreferenceChangeListener(this);
+        if (!mAlwaysOnAvailable) {
+            getPreferenceScreen().removePreference(mDozeBrightness);
+        }
     }
 
     @Override
@@ -186,6 +214,16 @@ public class DozeSettings extends SettingsPreferenceFragment implements Indexabl
             Utils.enableService(context);
             if (newValue != null)
                 sensorWarning(context);
+            return true;
+        } else if (preference == mPulseBrightness) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(), Settings.System.PULSE_BRIGHTNESS,
+                    value, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mDozeBrightness) {
+            int value = (Integer) newValue;
+            Settings.System.putIntForUser(getContentResolver(), Settings.System.DOZE_BRIGHTNESS,
+                    value, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
@@ -243,6 +281,17 @@ public class DozeSettings extends SettingsPreferenceFragment implements Indexabl
                 Settings.Secure.DOZE_POCKET_GESTURE, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.DOZE_GESTURE_VIBRATE, 0, UserHandle.USER_CURRENT);
+        int defaultDoze = mContext.getResources().getInteger(
+                com.android.internal.R.integer.config_screenBrightnessDoze);
+        int defaultPulse = mContext.getResources().getInteger(
+                com.android.internal.R.integer.config_screenBrightnessPulse);
+        if (defaultPulse == -1) {
+            defaultPulse = defaultDoze;
+        }
+        Settings.System.putIntForUser(resolver,
+                Settings.System.PULSE_BRIGHTNESS, defaultPulse, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.DOZE_BRIGHTNESS, defaultDoze, UserHandle.USER_CURRENT);
     }
 
     @Override
