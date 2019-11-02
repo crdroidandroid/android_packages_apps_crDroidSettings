@@ -188,7 +188,7 @@
             android:icon="@drawable/ic_fp"
             android:title="@string/fp_wake_and_unlock_title"
             android:summary="@string/fp_wake_and_unlock_summary"
-            android:persistent="false" />
+            android:persistent="false" />-->
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="fp_success_vibrate"
@@ -197,7 +197,14 @@
             android:summary="@string/fp_success_vibrate_summary"
             android:defaultValue="true" />
 
-        <SwitchPreference
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="fp_error_vibrate"
+            android:icon="@drawable/ic_fp"
+            android:title="@string/fp_error_vibrate_title"
+            android:summary="@string/fp_error_vibrate_summary"
+            android:defaultValue="true" />
+
+        <!--<SwitchPreference
             android:key="fp_unlock_keystore"
             android:icon="@drawable/ic_fp"
             android:title="@string/fp_unlock_keystore_title"
