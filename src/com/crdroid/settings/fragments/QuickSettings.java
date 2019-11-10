@@ -71,6 +71,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements Indexab
                 LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.QS_SHOW_AUTO_BRIGHTNESS, 1, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.QUICK_SETTINGS_VIBRATE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TILE_TITLE_VISIBILITY, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
