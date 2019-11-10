@@ -37,6 +37,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.sound.VolumePanel;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -57,6 +58,7 @@ public class Sound extends SettingsPreferenceFragment implements Indexable {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.SCREENSHOT_SOUND, 1, UserHandle.USER_CURRENT);
+        VolumePanel.reset(mContext);
     }
 
     @Override
