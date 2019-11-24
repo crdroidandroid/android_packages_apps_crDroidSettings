@@ -25,8 +25,8 @@
 
     <Preference
         android:key="theme_picker"
-        android:title="@string/theme_picker_title"
-        android:summary="@string/theme_picker_summary">
+        android:title="@string/style_and_wallpaper_title"
+        android:summary="@string/style_and_wallpaper_summary">
             <intent
                 android:action="android.intent.action.MAIN"
                 android:targetPackage="com.android.wallpaper"
@@ -35,9 +35,9 @@
 
     <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="berry_theme_override"
-        android:title="@string/style_global_title"
-        android:entries="@array/style_entries"
-        android:entryValues="@array/style_values"
+        android:title="@string/style_dark_theme_title"
+        android:entries="@array/style_dark_theme_entries"
+        android:entryValues="@array/style_dark_theme_values"
         android:defaultValue="0" />
 
     <!--<ListPreference
