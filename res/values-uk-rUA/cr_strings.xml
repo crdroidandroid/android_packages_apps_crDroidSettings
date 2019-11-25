@@ -681,6 +681,12 @@
     <!-- Stock navbar -->
     <string name="navbar_settings_title">Параметри складі навігації</string>
     <string name="navbar_settings_summary">Налаштування для стокової панелі навігації</string>
+    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Compact</string>
+    <string name="navbar_layout_leftleaning">Left-leaning</string>
+    <string name="navbar_layout_rightleaning">Right-leaning</string>
+    <string name="navbar_invert_layout_title">Invert layout</string>
     <string name="navbar_tuner_title">Налаштування панелі навігації</string>
     <string name="navbar_tuner_summary">Налаштування кнопок та макету</string>
     <string name="navbar_arrow_keys_title">Показувати стрілки під час введення тексту</string>
@@ -1526,6 +1532,8 @@
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Вібрація при розпізнаванні відбитку пальця</string>
     <string name="fp_success_vibrate_summary">Вібрувати при успішному розпізнаванні відбитку пальця</string>
+    <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
+    <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
     <!-- Fingerprint unlock keystore -->
     <string name="fp_unlock_keystore_title">Розблокування відбитком пальця</string>
     <string name="fp_unlock_keystore_summary">Відімкнути за допомогою відбитку пальця після перезавантаження без Pin-коду/Паролю/, Графічного паролю\nПримітка: на свій ризик</string>
@@ -1896,11 +1904,11 @@
     <!-- Themes -->
     <string name="style_title">Стиль</string>
     <string name="style_summary">Виберіть системні кольори та стилі</string>
-    <string name="style_global_title">Стиль</string>
-    <string name="style_global_entry_automatic">Автоматично (в залежності від шпалер)</string>
-    <string name="style_global_entry_light">Світлий</string>
-    <string name="style_global_entry_dark">Темний</string>
-    <string name="style_global_entry_time">Автоматично (час доби)</string>
+    <string name="style_dark_theme_title">Dark theme</string>
+    <string name="style_dark_theme_automatic">Automatic (wallpaper)</string>
+    <string name="style_dark_theme_disabled">Disabled</string>
+    <string name="style_dark_theme_enabled">Enabled</string>
+    <string name="style_dark_theme_livedisplay">Automatic (livedisplay)</string>
     <string name="accent_picker_dialog_title">Виберіть колір акцентів</string>
     <string name="theme_accent_picker_title">Колір акцентів</string>
     <string name="theme_accent_picker_summary">Оберіть колір акцентів системної теми</string>
@@ -1916,6 +1924,8 @@
     <string name="style_notification_light">Світла</string>
     <string name="style_notification_dark">Темно-сіра</string>
     <string name="style_notification_black">Насичена чорна</string>
+    <string name="style_and_wallpaper_title">Styles &amp; wallpapers</string>
+    <string name="style_and_wallpaper_summary">Select accent color, clock interface and more</string>
     <!-- Audio Panel view  -->
     <string name="audio_panel_view_title">Панель гучності</string>
     <string name="audio_panel_view_summary">Налаштування діалогового вікна панелі гучності</string>
@@ -2145,4 +2155,10 @@
     <string name="aggressive_standby_summary">Обмежити роботу додатків в фоновому режимі</string>
     <string name="aggressive_battery_saver_title">Включати автоматично в режимі економії заряду</string>
     <string name="aggressive_battery_saver_summary">Ввімкнути агресивне енергозбереження автоматично в режимі збереження заряду</string>
+    <!-- Battery mode -->
+    <string name="battery_percentage_title">Battery percentage</string>
+    <string name="battery_percentage_off">Disabled</string>
+    <string name="battery_percentage_next">Enabled</string>
+    <string name="battery_percentage_inside">Enabled (inside icon)</string>
+    <string name="battery_percentage_estimate">Enabled (estimate)</string>
 </resources>
