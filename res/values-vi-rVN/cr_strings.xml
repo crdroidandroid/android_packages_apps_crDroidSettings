@@ -681,6 +681,12 @@
     <!-- Stock navbar -->
     <string name="navbar_settings_title">Cài đặt thanh điều hướng mặc định</string>
     <string name="navbar_settings_summary">Tuỳ chỉnh thanh điều hướng</string>
+    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Compact</string>
+    <string name="navbar_layout_leftleaning">Left-leaning</string>
+    <string name="navbar_layout_rightleaning">Right-leaning</string>
+    <string name="navbar_invert_layout_title">Invert layout</string>
     <string name="navbar_tuner_title">Navbar tuner</string>
     <string name="navbar_tuner_summary">Tùy chỉnh nút và bố trí</string>
     <string name="navbar_arrow_keys_title">Hiển thị phím mũi tên trong khi gõ</string>
@@ -1526,6 +1532,8 @@
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Rung khi xác thực dấu vân tay</string>
     <string name="fp_success_vibrate_summary">Rung khi xác thực dấu vân tay thành công</string>
+    <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
+    <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
     <!-- Fingerprint unlock keystore -->
     <string name="fp_unlock_keystore_title">Mở khóa bằng vân tay</string>
     <string name="fp_unlock_keystore_summary">Mở khóa điện thoại bằng vân tay sau khi khởi động lại mà không cần Pin/Mật khẩu/Mẫu hình</string>
@@ -1896,11 +1904,11 @@
     <!-- Themes -->
     <string name="style_title">Phong cách</string>
     <string name="style_summary">Chọn màu hệ thống và phong cách</string>
-    <string name="style_global_title">Phong cách</string>
-    <string name="style_global_entry_automatic">Tự động (dựa trên hình nền)</string>
-    <string name="style_global_entry_light">Sáng</string>
-    <string name="style_global_entry_dark">Tối</string>
-    <string name="style_global_entry_time">Tự động (thời gian trong ngày)</string>
+    <string name="style_dark_theme_title">Dark theme</string>
+    <string name="style_dark_theme_automatic">Automatic (wallpaper)</string>
+    <string name="style_dark_theme_disabled">Disabled</string>
+    <string name="style_dark_theme_enabled">Enabled</string>
+    <string name="style_dark_theme_livedisplay">Automatic (livedisplay)</string>
     <string name="accent_picker_dialog_title">Chọn màu nhấn</string>
     <string name="theme_accent_picker_title">Màu nhấn</string>
     <string name="theme_accent_picker_summary">Chọn màu nhấn của chủ đề hệ thống</string>
@@ -1916,6 +1924,8 @@
     <string name="style_notification_light">Sáng</string>
     <string name="style_notification_dark">Xám đậm</string>
     <string name="style_notification_black">Đen</string>
+    <string name="style_and_wallpaper_title">Styles &amp; wallpapers</string>
+    <string name="style_and_wallpaper_summary">Select accent color, clock interface and more</string>
     <!-- Audio Panel view  -->
     <string name="audio_panel_view_title">Bảng điều chỉnh âm lượng</string>
     <string name="audio_panel_view_summary">Tùy chỉnh hộp thoại bảng điều khiển âm lượng</string>
@@ -2145,4 +2155,10 @@
     <string name="aggressive_standby_summary">Hạn chế ứng dụng chạy nền</string>
     <string name="aggressive_battery_saver_title">Tự động bật khi bật trình tiết kiệm pin</string>
     <string name="aggressive_battery_saver_summary">Tự động kích hoạt tiết kiệm pin tích cực khi dùng chế độ tiết kiệm pin</string>
+    <!-- Battery mode -->
+    <string name="battery_percentage_title">Battery percentage</string>
+    <string name="battery_percentage_off">Disabled</string>
+    <string name="battery_percentage_next">Enabled</string>
+    <string name="battery_percentage_inside">Enabled (inside icon)</string>
+    <string name="battery_percentage_estimate">Enabled (estimate)</string>
 </resources>
