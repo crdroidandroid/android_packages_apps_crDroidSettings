@@ -681,6 +681,12 @@
     <!-- Stock navbar -->
     <string name="navbar_settings_title">原生導航設置</string>
     <string name="navbar_settings_summary">自定義原生導航列</string>
+    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Compact</string>
+    <string name="navbar_layout_leftleaning">Left-leaning</string>
+    <string name="navbar_layout_rightleaning">Right-leaning</string>
+    <string name="navbar_invert_layout_title">Invert layout</string>
     <string name="navbar_tuner_title">導航列調諧器</string>
     <string name="navbar_tuner_summary">自定義按鈕和佈局</string>
     <string name="navbar_arrow_keys_title">鍵入時顯示箭頭鍵</string>
@@ -1526,6 +1532,8 @@
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">驗證指紋時震動</string>
     <string name="fp_success_vibrate_summary">驗證指紋成功時震動</string>
+    <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
+    <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
     <!-- Fingerprint unlock keystore -->
     <string name="fp_unlock_keystore_title">指紋解鎖</string>
     <string name="fp_unlock_keystore_summary">在重啟後無須輸入密碼直接使用指紋解鎖設備</string>
@@ -1896,11 +1904,11 @@
     <!-- Themes -->
     <string name="style_title">風格</string>
     <string name="style_summary">選擇系統顏色和样式</string>
-    <string name="style_global_title">風格</string>
-    <string name="style_global_entry_automatic">自動 (桌布)</string>
-    <string name="style_global_entry_light">亮色</string>
-    <string name="style_global_entry_dark">黑色</string>
-    <string name="style_global_entry_time">自動 (一天之中)</string>
+    <string name="style_dark_theme_title">Dark theme</string>
+    <string name="style_dark_theme_automatic">Automatic (wallpaper)</string>
+    <string name="style_dark_theme_disabled">Disabled</string>
+    <string name="style_dark_theme_enabled">Enabled</string>
+    <string name="style_dark_theme_livedisplay">Automatic (livedisplay)</string>
     <string name="accent_picker_dialog_title">選取一個強調色</string>
     <string name="theme_accent_picker_title">強調顏色</string>
     <string name="theme_accent_picker_summary">選擇系統主題強調色</string>
@@ -1916,6 +1924,8 @@
     <string name="style_notification_light">亮色</string>
     <string name="style_notification_dark">深灰色</string>
     <string name="style_notification_black">AMOLED 黑色</string>
+    <string name="style_and_wallpaper_title">Styles &amp; wallpapers</string>
+    <string name="style_and_wallpaper_summary">Select accent color, clock interface and more</string>
     <!-- Audio Panel view  -->
     <string name="audio_panel_view_title">音量面板</string>
     <string name="audio_panel_view_summary">自定義音量面板對話框</string>
@@ -2145,4 +2155,10 @@
     <string name="aggressive_standby_summary">限制應用程序後台運行</string>
     <string name="aggressive_battery_saver_title">省電模式時自動啟用</string>
     <string name="aggressive_battery_saver_summary">使用省電模式時自動開啟極限省電</string>
+    <!-- Battery mode -->
+    <string name="battery_percentage_title">Battery percentage</string>
+    <string name="battery_percentage_off">Disabled</string>
+    <string name="battery_percentage_next">Enabled</string>
+    <string name="battery_percentage_inside">Enabled (inside icon)</string>
+    <string name="battery_percentage_estimate">Enabled (estimate)</string>
 </resources>
