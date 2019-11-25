@@ -681,6 +681,12 @@
     <!-- Stock navbar -->
     <string name="navbar_settings_title">標準のナビゲーションバーの設定</string>
     <string name="navbar_settings_summary">標準のナビゲーションバーのカスタマイズ</string>
+    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Compact</string>
+    <string name="navbar_layout_leftleaning">Left-leaning</string>
+    <string name="navbar_layout_rightleaning">Right-leaning</string>
+    <string name="navbar_invert_layout_title">Invert layout</string>
     <string name="navbar_tuner_title">ナビゲーションバーの編集</string>
     <string name="navbar_tuner_summary">ボタンとレイアウトをカスタマイズします</string>
     <string name="navbar_arrow_keys_title">入力中に矢印キーを表示する</string>
@@ -1526,6 +1532,8 @@
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">指紋認証時の振動</string>
     <string name="fp_success_vibrate_summary">指紋認証が成功した際に振動させます</string>
+    <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
+    <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
     <!-- Fingerprint unlock keystore -->
     <string name="fp_unlock_keystore_title">指紋認証でのロック解除</string>
     <string name="fp_unlock_keystore_summary">再起動後に PIN / パスワード / パターンなしに指紋認証でロック解除できるようにします</string>
@@ -1896,11 +1904,11 @@
     <!-- Themes -->
     <string name="style_title">テーマとスタイル</string>
     <string name="style_summary">システムの色とスタイルを選択</string>
-    <string name="style_global_title">スタイル</string>
-    <string name="style_global_entry_automatic">自動設定（壁紙に合わせる）</string>
-    <string name="style_global_entry_light">ライト</string>
-    <string name="style_global_entry_dark">ダーク</string>
-    <string name="style_global_entry_time">自動設定（時間帯に合わせる）</string>
+    <string name="style_dark_theme_title">Dark theme</string>
+    <string name="style_dark_theme_automatic">Automatic (wallpaper)</string>
+    <string name="style_dark_theme_disabled">Disabled</string>
+    <string name="style_dark_theme_enabled">Enabled</string>
+    <string name="style_dark_theme_livedisplay">Automatic (livedisplay)</string>
     <string name="accent_picker_dialog_title">アクセントカラーを選択</string>
     <string name="theme_accent_picker_title">アクセントカラー</string>
     <string name="theme_accent_picker_summary">システムテーマのアクセントカラーを選択</string>
@@ -1916,6 +1924,8 @@
     <string name="style_notification_light">ライト</string>
     <string name="style_notification_dark">暗いグレー</string>
     <string name="style_notification_black">ブラック</string>
+    <string name="style_and_wallpaper_title">Styles &amp; wallpapers</string>
+    <string name="style_and_wallpaper_summary">Select accent color, clock interface and more</string>
     <!-- Audio Panel view  -->
     <string name="audio_panel_view_title">音量パネル</string>
     <string name="audio_panel_view_summary">音量パネルのダイアログを編集します</string>
@@ -2145,4 +2155,10 @@
     <string name="aggressive_standby_summary">バックグラウンド実行するアプリを制限します</string>
     <string name="aggressive_battery_saver_title">バッテリーセーバー時に自動的に有効化</string>
     <string name="aggressive_battery_saver_summary">バッテリーセーバー使用時は自動で有効化します</string>
+    <!-- Battery mode -->
+    <string name="battery_percentage_title">Battery percentage</string>
+    <string name="battery_percentage_off">Disabled</string>
+    <string name="battery_percentage_next">Enabled</string>
+    <string name="battery_percentage_inside">Enabled (inside icon)</string>
+    <string name="battery_percentage_estimate">Enabled (estimate)</string>
 </resources>
