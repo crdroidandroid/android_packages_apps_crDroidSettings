@@ -681,6 +681,12 @@
     <!-- Stock navbar -->
     <string name="navbar_settings_title">메뉴바 설정</string>
     <string name="navbar_settings_summary">탐색바 사용자 지정</string>
+    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Compact</string>
+    <string name="navbar_layout_leftleaning">Left-leaning</string>
+    <string name="navbar_layout_rightleaning">Right-leaning</string>
+    <string name="navbar_invert_layout_title">Invert layout</string>
     <string name="navbar_tuner_title">Navbar 튜너</string>
     <string name="navbar_tuner_summary">버튼 및 레이아웃 사용자 정의</string>
     <string name="navbar_arrow_keys_title">입력시 커서 방향키 표시</string>
@@ -1526,6 +1532,8 @@
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">지문 인증 진동</string>
     <string name="fp_success_vibrate_summary">지문이 인식되면 진동이 울립니다</string>
+    <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
+    <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
     <!-- Fingerprint unlock keystore -->
     <string name="fp_unlock_keystore_title">지문 인식 잠금 해제</string>
     <string name="fp_unlock_keystore_summary">기기를 재시작 한 이후 Pin/비밀번호/패턴을 입력하지 않고 지문으로 잠금을 해제합니다.\n주의: 모든 책임은 사용자에게 있습니다!</string>
@@ -1896,11 +1904,11 @@
     <!-- Themes -->
     <string name="style_title">종류</string>
     <string name="style_summary">시스템 색상과 스타일을 선택합니다</string>
-    <string name="style_global_title">종류</string>
-    <string name="style_global_entry_automatic">자동 (배경화면)</string>
-    <string name="style_global_entry_light">약하게</string>
-    <string name="style_global_entry_dark">어둡게</string>
-    <string name="style_global_entry_time">자동 (시간에 따라)</string>
+    <string name="style_dark_theme_title">Dark theme</string>
+    <string name="style_dark_theme_automatic">Automatic (wallpaper)</string>
+    <string name="style_dark_theme_disabled">Disabled</string>
+    <string name="style_dark_theme_enabled">Enabled</string>
+    <string name="style_dark_theme_livedisplay">Automatic (livedisplay)</string>
     <string name="accent_picker_dialog_title">강조 색 선택</string>
     <string name="theme_accent_picker_title">강조 색상</string>
     <string name="theme_accent_picker_summary">시스템 테마 강조 색상 선택</string>
@@ -1916,6 +1924,8 @@
     <string name="style_notification_light">약하게</string>
     <string name="style_notification_dark">짙은 회색</string>
     <string name="style_notification_black">완벽한 검정색</string>
+    <string name="style_and_wallpaper_title">Styles &amp; wallpapers</string>
+    <string name="style_and_wallpaper_summary">Select accent color, clock interface and more</string>
     <!-- Audio Panel view  -->
     <string name="audio_panel_view_title">볼륨 조절 창</string>
     <string name="audio_panel_view_summary">볼륨 패널 대화 상자 사용자 지정</string>
@@ -2145,4 +2155,10 @@
     <string name="aggressive_standby_summary">앱이 백그라운드에서 실행되는 것을 제한합니다.</string>
     <string name="aggressive_battery_saver_title">배터리 절약 기능으로 자동 실행</string>
     <string name="aggressive_battery_saver_summary">배터리 세이버를 사용 할 때 자동으로 배터리 초절약을 사용합니다</string>
+    <!-- Battery mode -->
+    <string name="battery_percentage_title">Battery percentage</string>
+    <string name="battery_percentage_off">Disabled</string>
+    <string name="battery_percentage_next">Enabled</string>
+    <string name="battery_percentage_inside">Enabled (inside icon)</string>
+    <string name="battery_percentage_estimate">Enabled (estimate)</string>
 </resources>

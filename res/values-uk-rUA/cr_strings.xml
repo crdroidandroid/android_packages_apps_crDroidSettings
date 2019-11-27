@@ -34,17 +34,17 @@
     <string name="display_title">Екран</string>
     <string name="ui_title">Інтерфейс користувача</string>
     <!-- Power Menu -->
-    <string name="powermenu_title">Меню ввімкнення</string>
+    <string name="powermenu_title">Меню живлення</string>
     <string name="powermenu_summary">Налаштуйте опції меню ввімкнення</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Палітра кольорів</string>
     <string name="press_color_to_apply">Натисніть на колір для вибору</string>
-    <string name="hex">Hex:</string>
+    <string name="hex">Шістнадцятковий:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Застосувати</string>
     <string name="color_default">За замовчуванням</string>
     <!-- General strings -->
-    <string name="ok">OK</string>
+    <string name="ok">Гаразд</string>
     <string name="reset">Скинути</string>
     <string name="cancel">Скасувати</string>
     <string name="save">Зберегти</string>
@@ -446,7 +446,7 @@
     <string name="status_bar_logo_position_right">Праворуч</string>
     <string name="status_bar_logo_position_left">Ліворуч</string>
     <string name="status_bar_logo_style_crdroid">crDroid</string>
-    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_android">Андроїд</string>
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_ios">iOS</string>
     <string name="status_bar_logo_style_emoticon">Усміхайлики</string>
@@ -681,6 +681,12 @@
     <!-- Stock navbar -->
     <string name="navbar_settings_title">Параметри складі навігації</string>
     <string name="navbar_settings_summary">Налаштування для стокової панелі навігації</string>
+    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Компактний</string>
+    <string name="navbar_layout_leftleaning">Панель ліворуч</string>
+    <string name="navbar_layout_rightleaning">Панель праворуч</string>
+    <string name="navbar_invert_layout_title">Інвертувати порядок кнопок</string>
     <string name="navbar_tuner_title">Налаштування панелі навігації</string>
     <string name="navbar_tuner_summary">Налаштування кнопок та макету</string>
     <string name="navbar_arrow_keys_title">Показувати стрілки під час введення тексту</string>
@@ -1021,7 +1027,7 @@
     <string name="crdroid_source_summary">Ми любимо з відкритим вихідним кодом, перевірте нас</string>
     <string name="crdroid_google_plus_title">Google+</string>
     <string name="crdroid_google_plus_summary">Приєднуйтесь до нас на G+ для швидкого оновлення і підтримку</string>
-    <string name="crdroid_telegram_title">Telegram</string>
+    <string name="crdroid_telegram_title">Телеграм</string>
     <string name="crdroid_telegram_summary">Ми також є в Telegram. Приєднуйтесь!</string>
     <string name="crdroid_website_title">Офіційний сайт</string>
     <string name="crdroid_website_summary">Відвідати наш офіційний сайт</string>
@@ -1163,7 +1169,7 @@
     <string name="font_black_italic">Чорний курсив</string>
     <string name="font_dancingscript">DancingScript</string>
     <string name="font_dancingscript_bold">DancingScript Жирний</string>
-    <string name="font_comingsoon">ComingSoon</string>
+    <string name="font_comingsoon">Незабаром</string>
     <string name="font_notoserif">NotoSerif Звичайний</string>
     <string name="font_notoserif_italic">NotoSerif Курсив</string>
     <string name="font_notoserif_bold">NotoSerif Жирний</string>
@@ -1526,6 +1532,8 @@
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Вібрація при розпізнаванні відбитку пальця</string>
     <string name="fp_success_vibrate_summary">Вібрувати при успішному розпізнаванні відбитку пальця</string>
+    <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
+    <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
     <!-- Fingerprint unlock keystore -->
     <string name="fp_unlock_keystore_title">Розблокування відбитком пальця</string>
     <string name="fp_unlock_keystore_summary">Відімкнути за допомогою відбитку пальця після перезавантаження без Pin-коду/Паролю/, Графічного паролю\nПримітка: на свій ризик</string>
@@ -1896,11 +1904,11 @@
     <!-- Themes -->
     <string name="style_title">Стиль</string>
     <string name="style_summary">Виберіть системні кольори та стилі</string>
-    <string name="style_global_title">Стиль</string>
-    <string name="style_global_entry_automatic">Автоматично (в залежності від шпалер)</string>
-    <string name="style_global_entry_light">Світлий</string>
-    <string name="style_global_entry_dark">Темний</string>
-    <string name="style_global_entry_time">Автоматично (час доби)</string>
+    <string name="style_dark_theme_title">Темна тема</string>
+    <string name="style_dark_theme_automatic">Автоматично (на основі шпалер)</string>
+    <string name="style_dark_theme_disabled">Вимкнено</string>
+    <string name="style_dark_theme_enabled">Ввімкнено</string>
+    <string name="style_dark_theme_livedisplay">Automatic (livedisplay)</string>
     <string name="accent_picker_dialog_title">Виберіть колір акцентів</string>
     <string name="theme_accent_picker_title">Колір акцентів</string>
     <string name="theme_accent_picker_summary">Оберіть колір акцентів системної теми</string>
@@ -1916,6 +1924,8 @@
     <string name="style_notification_light">Світла</string>
     <string name="style_notification_dark">Темно-сіра</string>
     <string name="style_notification_black">Насичена чорна</string>
+    <string name="style_and_wallpaper_title">Styles &amp; wallpapers</string>
+    <string name="style_and_wallpaper_summary">Select accent color, clock interface and more</string>
     <!-- Audio Panel view  -->
     <string name="audio_panel_view_title">Панель гучності</string>
     <string name="audio_panel_view_summary">Налаштування діалогового вікна панелі гучності</string>
@@ -1926,7 +1936,7 @@
     <string name="audio_panel_view_notification_disabled">Гучність дзвінка і сповіщень зв\'язані</string>
     <string name="audio_panel_view_alarm_title">Будильник</string>
     <string name="audio_panel_view_voice_title">Голос</string>
-    <string name="audio_panel_view_bt_sco_title">Bluetooth</string>
+    <string name="audio_panel_view_bt_sco_title">Блютуз</string>
     <string name="audio_panel_view_position_title">Панель гучності ліворуч</string>
     <string name="audio_panel_view_timeout_title">Час показу панелі гучності</string>
     <!-- Weather -->
@@ -1944,7 +1954,7 @@
     <string name="qstile_default">За замовчуванням</string>
     <string name="qstile_circle_gradient">Коло (Градієнт)</string>
     <string name="qstile_circle_trim">Коло (З обрізкою)</string>
-    <string name="qstile_cookie">Cookie</string>
+    <string name="qstile_cookie">Куки</string>
     <string name="qstile_cosmos">Космос</string>
     <string name="qstile_dottedcircle">Пунктирне коло</string>
     <string name="qstile_circle_dualtone">Подвійне тоноване коло</string>
@@ -2145,4 +2155,10 @@
     <string name="aggressive_standby_summary">Обмежити роботу додатків в фоновому режимі</string>
     <string name="aggressive_battery_saver_title">Включати автоматично в режимі економії заряду</string>
     <string name="aggressive_battery_saver_summary">Ввімкнути агресивне енергозбереження автоматично в режимі збереження заряду</string>
+    <!-- Battery mode -->
+    <string name="battery_percentage_title">Відсоток заряду батареї</string>
+    <string name="battery_percentage_off">Вимкнено</string>
+    <string name="battery_percentage_next">Ввімкнено</string>
+    <string name="battery_percentage_inside">Enabled (inside icon)</string>
+    <string name="battery_percentage_estimate">Enabled (estimate)</string>
 </resources>

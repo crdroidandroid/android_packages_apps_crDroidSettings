@@ -681,6 +681,12 @@
     <!-- Stock navbar -->
     <string name="navbar_settings_title">Sisseehitatud navigeerimisriba seaded</string>
     <string name="navbar_settings_summary">Sisseehitatud navigeerimisriba kohandused</string>
+    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Compact</string>
+    <string name="navbar_layout_leftleaning">Left-leaning</string>
+    <string name="navbar_layout_rightleaning">Right-leaning</string>
+    <string name="navbar_invert_layout_title">Invert layout</string>
     <string name="navbar_tuner_title">Navigeerimisriba seadistaja</string>
     <string name="navbar_tuner_summary">Kohanda nuppe ja paigutust</string>
     <string name="navbar_arrow_keys_title">Näita tippimise ajal nooleklahve</string>
@@ -1492,7 +1498,7 @@
     <string name="volte_icon_title">VoLTE ikoon</string>
     <string name="volte_icon_summary">Kuva võimalusel VoLTE ikoon</string>
     <!-- Ad Away -->
-    <string name="adaway_title">Ad Away</string>
+    <string name="adaway_title">AdAway</string>
     <string name="adaway_summary">Keela ebavajalikud reklaamid</string>
     <!-- Carrier Label -->
     <string name="custom_carrier_title">Operaatori nimi</string>
@@ -1526,6 +1532,8 @@
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Fingerprint authentication vibration</string>
     <string name="fp_success_vibrate_summary">Vibrate on successful fingerprint authentication</string>
+    <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
+    <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
     <!-- Fingerprint unlock keystore -->
     <string name="fp_unlock_keystore_title">Sõrmejäljega avamine</string>
     <string name="fp_unlock_keystore_summary">Avada seade sõrmejäljega pärast taaskäivitust ilma PINi/parooli/mustrita</string>
@@ -1568,7 +1576,7 @@
     <string name="ota_crdroid_title">Uuendused</string>
     <string name="ota_crdroid_summary">Kontrolli üle õhu uuendusi ja linke oma seadme jaoks</string>
     <!-- Categories -->
-    <string name="ota_category">OTA</string>
+    <string name="ota_category">Üle-õhu uuendus</string>
     <string name="links_category">Lingid</string>
     <!-- ROM info -->
     <string name="latest_version">Uusim versioon: %1$s</string>
@@ -1697,7 +1705,7 @@
     <string name="screen_off_animation_title">Ekraani väljalülituse animatsioon</string>
     <string name="screen_off_animation_fade">Lihtne hajumine</string>
     <string name="screen_off_animation_color">Värvi hajumine</string>
-    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_crt">Kineskoop</string>
     <string name="screen_off_animation_scale">Skaala</string>
     <!-- System default animation -->
     <string name="system_default_animation_title">Android Pie animatsioonistiil</string>
@@ -1896,11 +1904,11 @@
     <!-- Themes -->
     <string name="style_title">Stiil</string>
     <string name="style_summary">Vali süsteemi värvid ja stiilid</string>
-    <string name="style_global_title">Stiil</string>
-    <string name="style_global_entry_automatic">Automaatne (taustapildi järgi)</string>
-    <string name="style_global_entry_light">Hele</string>
-    <string name="style_global_entry_dark">Tume</string>
-    <string name="style_global_entry_time">Automaatne (kellaaja järgi)</string>
+    <string name="style_dark_theme_title">Dark theme</string>
+    <string name="style_dark_theme_automatic">Automatic (wallpaper)</string>
+    <string name="style_dark_theme_disabled">Keelatud</string>
+    <string name="style_dark_theme_enabled">Lubatud</string>
+    <string name="style_dark_theme_livedisplay">Automaatne (LiveDisplay)</string>
     <string name="accent_picker_dialog_title">Valige aktsentvärv</string>
     <string name="theme_accent_picker_title">Aktsentvärv</string>
     <string name="theme_accent_picker_summary">Valige süsteemi teema aktsentvärv</string>
@@ -1916,6 +1924,8 @@
     <string name="style_notification_light">Hele</string>
     <string name="style_notification_dark">Tumehall</string>
     <string name="style_notification_black">AMOLED-must</string>
+    <string name="style_and_wallpaper_title">Stiilid ja taustapildid</string>
+    <string name="style_and_wallpaper_summary">Select accent color, clock interface and more</string>
     <!-- Audio Panel view  -->
     <string name="audio_panel_view_title">Helitugevuse paneel</string>
     <string name="audio_panel_view_summary">Kohanda helitugevuse paneeli dialoogi</string>
@@ -2030,7 +2040,7 @@
     <!-- Menu option to do WPS Pin Entry [CHAR LIMIT=25]-->
     <string name="wifi_menu_wps_pin">WPS Pin sisestus</string>
     <!-- Title for the WPS setup dialog [CHAR LIMIT=50] -->
-    <string name="wifi_wps_setup_title">Wi\u2011Fi Protected Setup</string>
+    <string name="wifi_wps_setup_title">Kaitstud WiFi seadistamine</string>
     <!-- Message in WPS dialog at start up [CHAR LIMIT=150] -->
     <string name="wifi_wps_setup_msg">WPSi käivitamine\u2026</string>
     <!-- Message in WPS dialog for PBC after start up [CHAR LIMIT=150] -->
@@ -2145,4 +2155,10 @@
     <string name="aggressive_standby_summary">Restrict apps from running the background</string>
     <string name="aggressive_battery_saver_title">Auto-enable on battery saver</string>
     <string name="aggressive_battery_saver_summary">Enable Aggressive Battery automatically when using battery saver</string>
+    <!-- Battery mode -->
+    <string name="battery_percentage_title">Battery percentage</string>
+    <string name="battery_percentage_off">Keelatud</string>
+    <string name="battery_percentage_next">Lubatud</string>
+    <string name="battery_percentage_inside">Lubatud (ikooni sees)</string>
+    <string name="battery_percentage_estimate">Enabled (estimate)</string>
 </resources>
