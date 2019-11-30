@@ -441,7 +441,7 @@
     <string name="status_bar_crdroid_logo_summary">Luba, et kuvada logo olekuribal</string>
     <string name="status_bar_crdroid_logo_color">Logo värv</string>
     <string name="status_bar_crdroid_logo_position">Logo positsioon</string>
-    <string name="status_bar_crdroid_logo_position_summary">Choose which side to display the logo on, left or right</string>
+    <string name="status_bar_crdroid_logo_position_summary">Vali logo kuvamise külg - vasakul või paremal</string>
     <string name="status_bar_crdroid_logo_style">Logo stiil</string>
     <string name="status_bar_logo_position_right">Paremal</string>
     <string name="status_bar_logo_position_left">Vasakul</string>
@@ -640,7 +640,7 @@
     <string name="pulse_settings">Pulseerimine</string>
     <string name="pulse_settings_summary">Navigeerimisriba heli graafiline ekvalaiser</string>
     <string name="fling_show_pulse_title">Kuva Pulse</string>
-    <string name="fling_show_pulse_summary">Audio graphic equalizer on the navigation bar</string>
+    <string name="fling_show_pulse_summary">Heli graafiline ekvalaiser navigeerimisribal</string>
     <string name="pulse_render_mode_title">Renderdamise viis</string>
     <string name="pulse_render_mode_fading_bars">Hääbuvad kastid</string>
     <string name="pulse_render_mode_solid_lines">Pidevjooned</string>
@@ -649,12 +649,12 @@
     <string name="eos_fling_lavalamp_title">Lülita laavalamp sisse</string>
     <string name="eos_fling_lavalamp_summary">Pulseerimine animeerib sujuva laavalambi stiilis värvide üleminekut</string>
     <string name="pulse_advanced_category">Lisavalikud</string>
-    <string name="pulse_legacy_mode_advanced_category">Fading blocks mode settings</string>
+    <string name="pulse_legacy_mode_advanced_category">Hääbuva plokeerimise režiimi seaded</string>
     <string name="pulse_custom_fudge_factor">Tervislikkuse tase</string>
     <string name="lavamp_solid_speed_title">Laavalambi kiirus</string>
     <string name="pulse_solid_units_count">Pidevjoonte arv</string>
     <string name="pulse_solid_units_opacity">Pidevjoonte läbipaistmatus</string>
-    <string name="pulse_solid_dimen_category">Solid lines mode settings</string>
+    <string name="pulse_solid_dimen_category">Ühtlaste joonte režiimi seaded</string>
     <string name="fling_lavalamp_color_from">Laavalambi algusvärv</string>
     <string name="fling_lavalamp_color_to">Laavalambi lõpuvärv</string>
     <string name="pulse_custom_buttons_opacity_title">Smartbar nuppude läbipaistmatus Pulse puhul</string>
@@ -1941,13 +1941,13 @@
     <string name="audio_panel_view_timeout_title">Helitugevuse paneeli ajalõpp</string>
     <!-- Weather -->
     <string name="weather_unit">Temperatuuriühik</string>
-    <string name="weather_client_not_available">Weather client not available</string>
+    <string name="weather_client_not_available">Ilma klient pole saadaval</string>
     <!-- Rounded corners -->
     <string name="corners_title">Ümardatud nurgad</string>
     <string name="corners_summary">Luba kohandatud ümardatud nurgad</string>
     <string name="corner_radius">Ümardatud nurkade raadius</string>
     <string name="content_padding">Corner content padding</string>
-    <string name="status_bar_padding">Statusbar extra padding</string>
+    <string name="status_bar_padding">Olekuriba lisatühimik</string>
     <string name="corner_fwvals">Kasuta vaikeväärtuseid</string>
     <!-- QS tile styles -->
     <string name="qs_tile_style_title">Kiirseadete paani stiil</string>
@@ -1978,14 +1978,14 @@
     <string name="qstile_triangle">Kolmnurk</string>
     <string name="qstile_wavey">Laineline</string>
     <!-- QS header styles -->
-    <string name="qs_header_style_title">Quick settings header style</string>
+    <string name="qs_header_style_title">Kiirseadete päise stiil</string>
     <string name="qs_header_default">Vaikimisi</string>
     <string name="qs_header_grey">Hall</string>
     <string name="qs_header_lightgrey">Helehall</string>
     <string name="qs_header_accent">Aktsentvärvi põhine</string>
     <string name="qs_header_transparent">Läbipaistev</string>
     <!-- Switch styles -->
-    <string name="switch_style_title">Preference switch style</string>
+    <string name="switch_style_title">Eelistuste lülitite stiil</string>
     <string name="switch_default">Vaikimisi</string>
     <string name="switch_md2">Materiaalne disain 2</string>
     <string name="switch_oneplus">OnePlus</string>
@@ -2060,7 +2060,7 @@
     <!-- Text displayed when WPS fails to TKIP [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_tkip">The wireless router security setting (TKIP) is not supported</string>
     <!-- Text displayed when WPS fails due to authentication issues [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_auth">Authentication failure. Please try again.</string>
+    <string name="wifi_wps_failed_auth">Autentimine ebaõnnestus. Proovige uuesti.</string>
     <!-- Text displayed when WPS fails due to another session [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_overlap">Another WPS session was detected. Please try again in a few minutes.</string>
     <!-- Text displayed when WPS fails due to wifi disconnected [CHAR LIMIT=150] -->
@@ -2093,52 +2093,52 @@
     <string name="lockscreen_albumart_filter_grayscale">Hallskaala</string>
     <string name="lockscreen_albumart_filter_tint">Accent tinted</string>
     <string name="lockscreen_albumart_filter_blur">Hägustamine</string>
-    <string name="lockscreen_albumart_filter_grayblur">Grayscale and blurred</string>
+    <string name="lockscreen_albumart_filter_grayblur">Hallskaalas ja hägustatud</string>
     <!-- Notifications while screen on -->
     <string name="notification_sound_vib_screen_on_title">Häälekad teatised</string>
     <string name="notification_sound_vib_screen_on_summary">Vibreeri ja esita teadete puhul heli, kui ekraan on sees</string>
     <!-- Incall vibrate options -->
-    <string name="incall_vibration_category">In-call vibration options</string>
+    <string name="incall_vibration_category">Kõne vibratsiooni valikud</string>
     <string name="incall_vibrate_connect_title">Vibreeri ühendamisel</string>
     <string name="incall_vibrate_call_wait_title">Vibreeri kõne koputusel</string>
     <string name="incall_vibrate_disconnect_title">Vibreeri katkemisel</string>
     <!-- Keyboard and IME  -->
     <string name="ime_settings_title">Klaviatuuri seaded</string>
-    <string name="ime_settings_summary">Customize advanced keyboard settings</string>
+    <string name="ime_settings_summary">Kohanda täpsemaid klaviatuurisätteid</string>
     <string name="ime_switcher_notification_title">IME valija teavitus</string>
-    <string name="ime_switcher_notification_summary">Display input method selector in notification</string>
+    <string name="ime_switcher_notification_summary">Kuva sisestamismeetodi valiku teadet</string>
     <string name="ime_fullscreen_title">Täisekraanis klaviatuur</string>
     <string name="ime_fullscreen_summary">Allow keyboard to take up entire screen in landscape</string>
     <string name="ime_show_enter_key_title">Kuva sisestusklahvi</string>
-    <string name="ime_show_enter_key_summary">Force keyboard to show enter instead of emoticon key</string>
+    <string name="ime_show_enter_key_summary">Sunni klaviatuuri kuvama sisestusklahvi emojide asemel</string>
     <!-- Charging animation -->
     <string name="lockscreen_charging_animation_title">Laadimise animatsioon</string>
-    <string name="lockscreen_charging_animation_summary">Display animation when charging</string>
+    <string name="lockscreen_charging_animation_summary">Kuva laadimise ajal animatsiooni</string>
     <!-- Gaming mode -->
-    <string name="gaming_mode_title">Mängurežiim</string>
-    <string name="gaming_mode_summary">Customize Gaming mode preferences</string>
-    <string name="gaming_mode_enabled_summary">Allow turning on Gaming mode</string>
-    <string name="gaming_mode_app_picker_title">Automatically turn on for these apps</string>
-    <string name="add_gaming_mode_package_title">Add apps for Gaming mode</string>
+    <string name="gaming_mode_title">Mängimisrežiim</string>
+    <string name="gaming_mode_summary">Kohanda mängimisrežiimi eelistusi</string>
+    <string name="gaming_mode_enabled_summary">Luba mängimisrežiimi sisselülitamine</string>
+    <string name="gaming_mode_app_picker_title">Lülita nende rakenduste jaoks automaatselt sisse</string>
+    <string name="add_gaming_mode_package_title">Lisa mängimisrežiimi rakendusi</string>
     <string name="add_gaming_mode_package_summary">Gaming mode will turn on automatically when these apps are opened and turn off when they are closed</string>
     <string name="gaming_mode_headsup_title">Blokeeri teated</string>
-    <string name="gaming_mode_headsup_summary">Calls and alarms are exempted</string>
+    <string name="gaming_mode_headsup_summary">Kõned ja äratused välistatakse</string>
     <string name="gaming_mode_hardware_keys_title">Lukusta nupud</string>
-    <string name="gaming_mode_hardware_keys_summary">When Gaming mode is turned on, buttons will be locked</string>
-    <string name="gaming_mode_brightness_title">Disable automatic brightness</string>
-    <string name="gaming_mode_brightness_summary">Lock screen brightness when Gaming mode is turned on</string>
-    <string name="gaming_mode_ringer_title">Ringer in Gaming mode</string>
+    <string name="gaming_mode_hardware_keys_summary">Mängimisrežiimi sisselülitamisel lukustatakse nupud</string>
+    <string name="gaming_mode_brightness_title">Keela automaatne heleduse reguleerimine</string>
+    <string name="gaming_mode_brightness_summary">Lukustage ekraani heledus, kui mängimisrežiim on sisse lülitatud</string>
+    <string name="gaming_mode_ringer_title">Helin mängimisrežiimis</string>
     <string name="gaming_mode_ringer_off_title">Ära muuda</string>
     <string name="gaming_mode_ringer_vibrate_title">Vibreeri</string>
     <string name="gaming_mode_ringer_dnd_title">Mitte segada</string>
     <string name="gaming_mode_ringer_silent_title">Hääletu</string>
-    <string name="gaming_mode_notifications_title">Gaming mode indication</string>
+    <string name="gaming_mode_notifications_title">Mängimisrežiimi indikaator</string>
     <string name="gaming_mode_notifications_off_title">Keelatud</string>
     <string name="gaming_mode_notifications_notif_title">Näita teadet</string>
     <string name="gaming_mode_notifications_toast_title">Kuva hüpikud</string>
     <string name="gaming_mode_notifications_all_title">Kuva hüpikud ja teated</string>
     <string name="gaming_mode_dynamic_title">Dünaamiline režiim</string>
-    <string name="gaming_mode_dynamic_summary">Try detecting and adding gaming apps automatically</string>
+    <string name="gaming_mode_dynamic_summary">Proovi mängurakendusi automaatselt tuvastada ja lisada</string>
     <!-- Data disabled indicator -->
     <string name="data_disabled_icon_title">Andmeside keelamise indikaator</string>
     <string name="data_disabled_icon_summary">Display the cross sign next to signal icon when data is disabled</string>
