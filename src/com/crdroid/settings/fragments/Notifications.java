@@ -36,12 +36,14 @@ import com.android.internal.util.crdroid.Utils;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.R;
 
 import java.util.List;
 import java.util.ArrayList;
 
+@SearchIndexable
 public class Notifications extends SettingsPreferenceFragment implements Indexable {
 
     public static final String TAG = "Notifications";
@@ -120,6 +122,7 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
                             com.android.internal.R.bool.config_intrusiveNotificationLed);
                     if (!mNotLightsSupported)
                         keys.add(NOTIFICATION_LIGHTS_PREF);
+
 
                     return keys;
                 }

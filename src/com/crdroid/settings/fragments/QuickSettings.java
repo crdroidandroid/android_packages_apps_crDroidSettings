@@ -39,6 +39,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
@@ -48,6 +49,7 @@ import java.util.ArrayList;
 
 import lineageos.providers.LineageSettings;
 
+@SearchIndexable
 public class QuickSettings extends SettingsPreferenceFragment implements Indexable,
         Preference.OnPreferenceChangeListener {
 

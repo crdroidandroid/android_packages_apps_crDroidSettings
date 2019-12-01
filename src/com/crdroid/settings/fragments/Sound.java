@@ -35,6 +35,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.sound.VolumePanel;
@@ -42,6 +43,7 @@ import com.crdroid.settings.fragments.sound.VolumePanel;
 import java.util.List;
 import java.util.ArrayList;
 
+@SearchIndexable
 public class Sound extends SettingsPreferenceFragment implements Indexable {
 
     public static final String TAG = "Sound";

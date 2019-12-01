@@ -41,6 +41,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.crdroid.Utils;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.ui.Animations;
@@ -53,6 +54,7 @@ import java.util.List;
 
 import lineageos.providers.LineageSettings;
 
+@SearchIndexable
 public class UserInterface extends SettingsPreferenceFragment implements Indexable {
 
     private static final String SMART_PIXELS = "smart_pixels";

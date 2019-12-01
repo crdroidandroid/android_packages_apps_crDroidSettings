@@ -33,6 +33,8 @@ import androidx.preference.SwitchPreference;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
+
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.crdroid.Utils;
 
@@ -45,6 +47,7 @@ import java.util.ArrayList;
 
 import lineageos.providers.LineageSettings;
 
+@SearchIndexable
 public class Navigation extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
 

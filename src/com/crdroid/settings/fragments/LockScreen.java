@@ -36,6 +36,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.lockscreen.LockScreenVisualizer;
@@ -47,6 +48,7 @@ import java.util.ArrayList;
 
 import lineageos.providers.LineageSettings;
 
+@SearchIndexable
 public class LockScreen extends SettingsPreferenceFragment
             implements Preference.OnPreferenceChangeListener, Indexable  {
 

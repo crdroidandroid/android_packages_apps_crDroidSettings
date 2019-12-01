@@ -47,6 +47,7 @@ import com.android.internal.util.crdroid.Utils;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
+import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness;
 import com.crdroid.settings.R;
@@ -63,6 +64,7 @@ import java.util.ArrayList;
 import lineageos.hardware.LineageHardwareManager;
 import lineageos.providers.LineageSettings;
 
+@SearchIndexable
 public class Buttons extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
     private static final String TAG = "SystemSettings";
