@@ -84,6 +84,8 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
                 Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LESS_BORING_HEADS_UP, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
