@@ -496,7 +496,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         mMenu = menu;
         mMenu.add(0, MENU_ADD, 0, R.string.add)
-                .setIcon(R.drawable.ic_menu_add)
+                .setIcon(R.drawable.ic_menu_add_white)
                 .setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
     }
 
