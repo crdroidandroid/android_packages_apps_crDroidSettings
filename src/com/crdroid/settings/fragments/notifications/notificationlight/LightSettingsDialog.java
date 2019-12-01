@@ -19,7 +19,6 @@
 package com.crdroid.settings.fragments.notifications.notificationlight;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -45,6 +44,8 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
 
 import org.lineageos.internal.notification.LedValues;
 import org.lineageos.internal.notification.LightsCapabilities;
