@@ -65,6 +65,14 @@
         android:entryValues="@array/less_notification_sounds_values"
         android:defaultValue="30000" /> -->
 
+    <!-- Notification guts kill app button -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="notification_guts_kill_app_button"
+        android:icon="@drawable/ic_kill"
+        android:title="@string/notification_guts_kill_app_button_title"
+        android:summary="@string/notification_guts_kill_app_button_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
         android:key="heads_up"
         android:title="@string/heads_up_category">
@@ -150,15 +158,9 @@
         android:key="disable_immersive_message"
         android:icon="@drawable/ic_immersive_notification"
         android:title="@string/disable_immersive_message_title"
-        android:summary="@string/disable_immersive_message_summary" />
+        android:summary="@string/disable_immersive_message_summary" />-->
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="notification_guts_kill_app_button"
-        android:icon="@drawable/ic_immersive_notification"
-        android:title="@string/notification_guts_kill_app_button_title"
-        android:summary="@string/notification_guts_kill_app_button_summary" />
-
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="breathing_notifications"
         android:title="@string/breathing_notifications_category">
 
