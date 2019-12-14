@@ -42,24 +42,55 @@ import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
 
 import java.util.List;
 import java.util.ArrayList;
 
 @SearchIndexable
-public class ThemeSettings extends SettingsPreferenceFragment implements Indexable,
+public class DozeSettings extends SettingsPreferenceFragment implements Indexable,
         Preference.OnPreferenceChangeListener {
 
-    public static final String TAG = "ThemeSettings";
+    public static final String TAG = "DozeSettings";
+
+    private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
+
+    private ColorPickerPreference mEdgeLightColorPreference;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.theme_settings);
+        addPreferencesFromResource(R.xml.doze_settings);
+
+        mEdgeLightColorPreference = (ColorPickerPreference) findPreference(PULSE_AMBIENT_LIGHT_COLOR);
+        int edgeLightColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.PULSE_AMBIENT_LIGHT_COLOR, 0xFF3980FF);
+        mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
+        mEdgeLightColorPreference.setAlphaSliderEnabled(false);
+        String edgeLightColorHex = String.format("#%08x", (0xFF3980FF & edgeLightColor));
+        if (edgeLightColorHex.equals("#ff3980ff")) {
+            mEdgeLightColorPreference.setSummary(R.string.default_string);
+        } else {
+            mEdgeLightColorPreference.setSummary(edgeLightColorHex);
+        }
+        mEdgeLightColorPreference.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mEdgeLightColorPreference) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            if (hex.equals("#ff3980ff")) {
+                preference.setSummary(R.string.default_string);
+            } else {
+                preference.setSummary(hex);
+            }
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putIntForUser(getContentResolver(),
+                    Settings.System.PULSE_AMBIENT_LIGHT_COLOR, intHex, UserHandle.USER_CURRENT);
+            return true;
+        }
         return false;
     }
 
@@ -71,7 +102,9 @@ public class ThemeSettings extends SettingsPreferenceFragment implements Indexab
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
-                Settings.System.BERRY_THEME_OVERRIDE, 0, UserHandle.USER_CURRENT);
+                Settings.System.PULSE_AMBIENT_LIGHT, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.PULSE_AMBIENT_LIGHT_COLOR, 0xFF3980FF, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -90,7 +123,7 @@ public class ThemeSettings extends SettingsPreferenceFragment implements Indexab
                     ArrayList<SearchIndexableResource> result =
                             new ArrayList<SearchIndexableResource>();
                     SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.theme_settings;
+                    sir.xmlResId = R.xml.doze_settings;
                     result.add(sir);
 
                     return result;

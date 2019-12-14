@@ -45,6 +45,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.ui.Animations;
+import com.crdroid.settings.fragments.ui.DozeSettings;
 import com.crdroid.settings.fragments.ui.RoundedCorners;
 import com.crdroid.settings.fragments.ui.SmartPixels;
 import com.crdroid.settings.fragments.ui.ThemeSettings;
@@ -79,6 +80,7 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Animations.reset(mContext);
+        DozeSettings.reset(mContext);
         RoundedCorners.reset(mContext);
         SmartPixels.reset(mContext);
         ThemeSettings.reset(mContext);

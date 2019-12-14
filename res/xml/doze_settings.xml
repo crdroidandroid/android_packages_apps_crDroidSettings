@@ -25,11 +25,11 @@
             android:action="org.lineageos.settings.device.DOZE_SETTINGS" />
     </lineageos.preference.RemotePreference>
 
-    <Preference
+    <!--<Preference
         android:key="force_ambient_for_media_pref"
         android:fragment="com.crdroid.settings.fragments.ui.AmbientTicker"
         android:title="@string/force_ambient_for_media_pref_title"
-        android:summary="@string/force_ambient_for_media_pref_summary"/>
+        android:summary="@string/force_ambient_for_media_pref_summary"/>-->
 
     <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="ambient_battery_percent"
@@ -37,18 +37,31 @@
         android:summary="@string/ambient_battery_percent_summary"
         android:defaultValue="false" />-->
 
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+    <!--<com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="doze_always_on"
         android:title="@string/doze_always_on_title"
-        android:summary="@string/doze_always_on_summary" />
+        android:summary="@string/doze_always_on_summary" />-->
 
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+    <!--<com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="doze_enabled"
         android:title="@string/doze_title"
         android:summary="@string/doze_summary"
-        android:persistent="false" />
+        android:persistent="false" />-->
 
-    <PreferenceCategory
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="pulse_ambient_light"
+        android:title="@string/pulse_ambient_light_title"
+        android:summary="@string/pulse_ambient_light_summary"
+        android:defaultValue="false" />
+
+    <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
+        android:key="pulse_ambient_light_color"
+        android:title="@string/pulse_ambient_light_color_title"
+        android:persistent="false"
+        android:dependency="pulse_ambient_light"
+        settings:defaultColorValue="0xFF3980FF" />
+
+    <!--<PreferenceCategory
         android:key="tilt_sensor"
         android:title="@string/tilt_sensor_title" >
 
@@ -69,9 +82,9 @@
             settings:units="@string/unit_milliseconds"
             android:persistent="false"
             android:dependency="doze_trigger_tilt" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="pickup"
         android:title="@string/pickup_sensor_title" >
 
@@ -92,9 +105,9 @@
             settings:units="@string/unit_milliseconds"
             android:persistent="false"
             android:dependency="doze_trigger_pickup" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="proximity_sensor"
         android:title="@string/proximity_sensor_title" >
 
@@ -122,7 +135,7 @@
             settings:units="@string/unit_milliseconds"
             android:persistent="false"
             android:dependency="doze_enabled" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <!--<PreferenceCategory
         android:key="doze_pulse_category"
