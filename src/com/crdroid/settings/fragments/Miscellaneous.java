@@ -83,6 +83,8 @@ public class Miscellaneous extends SettingsPreferenceFragment
         Settings.Global.putInt(resolver,
                 Settings.Global.TOAST_ICON, 1);
         Settings.System.putIntForUser(resolver,
+                Settings.System.DISABLE_FC_NOTIFICATIONS, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT);
