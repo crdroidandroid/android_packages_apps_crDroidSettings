@@ -18,12 +18,15 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/doze_display_title">
 
-    <lineageos.preference.RemotePreference
-        android:key="doze_device_settings"
-        android:title="@string/ambient_display_screen_title">
-        <intent
-            android:action="org.lineageos.settings.device.DOZE_SETTINGS" />
-    </lineageos.preference.RemotePreference>
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="doze_enabled"
+        android:title="@string/doze_title"
+        android:summary="@string/doze_summary" />
+
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="doze_always_on"
+        android:title="@string/doze_always_on_title"
+        android:summary="@string/doze_always_on_summary" />
 
     <!--<Preference
         android:key="force_ambient_for_media_pref"
@@ -37,17 +40,6 @@
         android:summary="@string/ambient_battery_percent_summary"
         android:defaultValue="false" />-->
 
-    <!--<com.crdroid.settings.preferences.SecureSettingSwitchPreference
-        android:key="doze_always_on"
-        android:title="@string/doze_always_on_title"
-        android:summary="@string/doze_always_on_summary" />-->
-
-    <!--<com.crdroid.settings.preferences.SecureSettingSwitchPreference
-        android:key="doze_enabled"
-        android:title="@string/doze_title"
-        android:summary="@string/doze_summary"
-        android:persistent="false" />-->
-
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="pulse_ambient_light"
         android:title="@string/pulse_ambient_light_title"
@@ -57,85 +49,54 @@
     <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
         android:key="pulse_ambient_light_color"
         android:title="@string/pulse_ambient_light_color_title"
-        android:persistent="false"
         android:dependency="pulse_ambient_light"
         settings:defaultColorValue="0xFF3980FF" />
 
-    <!--<PreferenceCategory
-        android:key="tilt_sensor"
-        android:title="@string/tilt_sensor_title" >
+    <lineageos.preference.RemotePreference
+        android:key="doze_device_settings"
+        android:title="@string/ambient_display_screen_title">
+        <intent
+            android:action="org.lineageos.settings.device.DOZE_SETTINGS" />
+    </lineageos.preference.RemotePreference>
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="doze_trigger_tilt"
+    <PreferenceCategory
+        android:key="doze_sensor"
+        android:title="@string/doze_sensor_title" >
+
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="doze_tilt_gesture"
             android:defaultValue="false"
             android:title="@string/tilt_title"
-            android:summary="@string/tilt_summary"
-            android:dependency="doze_enabled" />
+            android:summary="@string/tilt_summary" />
 
-        <com.crdroid.settings.preferences.CustomSeekBarPreference
-            android:key="doze_vibrate_tilt"
-            android:title="@string/doze_vibrate"
-            android:summary="@string/doze_vibrate_summary"
-            android:defaultValue="0"
-            android:max="2000"
-            settings:min="0"
-            settings:units="@string/unit_milliseconds"
-            android:persistent="false"
-            android:dependency="doze_trigger_tilt" />
-    </PreferenceCategory>-->
-
-    <!--<PreferenceCategory
-        android:key="pickup"
-        android:title="@string/pickup_sensor_title" >
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="doze_trigger_pickup"
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="doze_pick_up_gesture"
             android:defaultValue="false"
             android:title="@string/pickup_title"
-            android:summary="@string/pickup_summary"
-            android:dependency="doze_enabled" />
+            android:summary="@string/pickup_summary" />
 
-        <com.crdroid.settings.preferences.CustomSeekBarPreference
-            android:key="doze_vibrate_pickup"
-            android:title="@string/doze_vibrate"
-            android:summary="@string/doze_vibrate_summary"
-            android:defaultValue="0"
-            android:max="2000"
-            settings:min="0"
-            settings:units="@string/unit_milliseconds"
-            android:persistent="false"
-            android:dependency="doze_trigger_pickup" />
-    </PreferenceCategory>-->
-
-    <!--<PreferenceCategory
-        android:key="proximity_sensor"
-        android:title="@string/proximity_sensor_title" >
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="doze_trigger_handwave"
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="doze_handwave_gesture"
             android:defaultValue="false"
             android:title="@string/handwave_title"
-            android:summary="@string/handwave_summary"
-            android:dependency="doze_enabled" />
+            android:summary="@string/handwave_summary" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="doze_trigger_pocket"
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="doze_pocket_gesture"
             android:defaultValue="false"
             android:title="@string/pocket_title"
-            android:summary="@string/pocket_summary"
-            android:dependency="doze_enabled" />
+            android:summary="@string/pocket_summary" />
 
-        <com.crdroid.settings.preferences.CustomSeekBarPreference
-            android:key="doze_vibrate_prox"
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="doze_gesture_vibrate"
             android:title="@string/doze_vibrate"
             android:summary="@string/doze_vibrate_summary"
             android:defaultValue="0"
             android:max="2000"
             settings:min="0"
-            settings:units="@string/unit_milliseconds"
-            android:persistent="false"
-            android:dependency="doze_enabled" />
-    </PreferenceCategory>-->
+            settings:interval="10"
+            settings:units="@string/unit_milliseconds" />
+    </PreferenceCategory>
 
     <!--<PreferenceCategory
         android:key="doze_pulse_category"
@@ -144,13 +105,11 @@
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="doze_overwrite_value"
             android:title="@string/doze_overwrite_value_title"
-            android:summary="@string/doze_overwrite_value_summary"
-            android:dependency="doze_enabled" />
+            android:summary="@string/doze_overwrite_value_summary" />
 
         <Preference
             android:key="doze_brightness_level"
             android:title="@string/doze_brightness_level_title"
-            android:persistent="false"
             android:dependency="doze_overwrite_value" />
 
         <ListPreference
@@ -159,7 +118,6 @@
             android:key="doze_fade_in_pickup"
             android:title="@string/doze_fade_in_pickup_title"
             android:summary="@string/doze_pulse_duration_in_summary"
-            android:persistent="false"
             android:dependency="doze_overwrite_value" />
 
         <ListPreference
@@ -168,7 +126,6 @@
             android:key="doze_fade_in_doubletap"
             android:title="@string/doze_fade_in_doubletap_title"
             android:summary="@string/doze_pulse_duration_in_summary"
-            android:persistent="false"
             android:dependency="doze_overwrite_value" />
 
         <ListPreference
@@ -177,7 +134,6 @@
             android:key="doze_pulse_visible"
             android:title="@string/doze_pulse_duration_visible_title"
             android:summary="@string/doze_pulse_duration_visible_summary"
-            android:persistent="false"
             android:dependency="doze_overwrite_value" />
 
         <ListPreference
@@ -186,7 +142,6 @@
             android:key="doze_pulse_out"
             android:title="@string/doze_pulse_duration_out_title"
             android:summary="@string/doze_pulse_duration_out_summary"
-            android:persistent="false"
             android:dependency="doze_overwrite_value" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
