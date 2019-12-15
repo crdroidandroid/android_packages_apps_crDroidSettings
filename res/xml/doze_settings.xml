@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2019 crDroid Android Project
+     Copyright (C) 2016-2021 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -28,10 +28,10 @@
         android:title="@string/doze_always_on_title"
         android:summary="@string/doze_always_on_summary" />
 
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+    <!--<com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="pulse_on_new_tracks"
         android:title="@string/pulse_on_new_tracks_title"
-        android:summary="@string/pulse_on_new_tracks_summary" />
+        android:summary="@string/pulse_on_new_tracks_summary" />-->
 
     <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="ambient_battery_percent"
@@ -39,7 +39,7 @@
         android:summary="@string/ambient_battery_percent_summary"
         android:defaultValue="false" />-->
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="pulse_ambient_light"
         android:title="@string/pulse_ambient_light_title"
         android:summary="@string/pulse_ambient_light_summary"
@@ -68,7 +68,7 @@
             settings:min="1"
             settings:units="@string/unit_seconds"
             settings:interval="1"
-            android:dependency="pulse_ambient_light" />
+            android:dependency="pulse_ambient_light" />-->
 
     <lineageos.preference.RemotePreference
         android:key="doze_device_settings"

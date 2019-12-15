@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2020 crDroid Android Project
+ * Copyright (C) 2016-2021 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.fragments.ui.DozeSettings;
 import com.crdroid.settings.fragments.ui.SmartPixels;
 import com.crdroid.settings.utils.DeviceUtils;
 
@@ -76,6 +77,7 @@ public class UserInterface extends SettingsPreferenceFragment {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.NAVBAR_STYLE, 0, UserHandle.USER_CURRENT);
+        DozeSettings.reset(mContext);
         SmartPixels.reset(mContext);
     }
 
