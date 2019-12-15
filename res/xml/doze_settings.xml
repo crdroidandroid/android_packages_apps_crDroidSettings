@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2021 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/doze_display_title">
+
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="doze_enabled"
+        android:title="@string/doze_title"
+        android:summary="@string/doze_summary" />
+
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="doze_always_on"
+        android:title="@string/doze_always_on_title"
+        android:summary="@string/doze_always_on_summary" />
+
+    <lineageos.preference.RemotePreference
+        android:key="doze_device_settings"
+        android:title="@string/doze_additional_settings_title"
+        android:summary="@string/doze_additional_settings_summary">
+        <intent
+            android:action="org.lineageos.settings.device.DOZE_SETTINGS" />
+    </lineageos.preference.RemotePreference>
+
+    <PreferenceCategory
+        android:key="doze_sensor"
+        android:title="@string/doze_sensor_title" >
+
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="doze_tilt_gesture"
+            android:defaultValue="false"
+            android:title="@string/tilt_title"
+            android:summary="@string/tilt_summary" />
+
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="doze_pick_up_gesture"
+            android:defaultValue="false"
+            android:title="@string/pickup_title"
+            android:summary="@string/pickup_summary" />
+
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="doze_handwave_gesture"
+            android:defaultValue="false"
+            android:title="@string/handwave_title"
+            android:summary="@string/handwave_summary" />
+
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="doze_pocket_gesture"
+            android:defaultValue="false"
+            android:title="@string/pocket_title"
+            android:summary="@string/pocket_summary" />
+
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="doze_gesture_vibrate"
+            android:title="@string/doze_vibrate"
+            android:summary="@string/doze_vibrate_summary"
+            android:defaultValue="0"
+            settings:defaultValueText="@string/disabled"
+            android:max="2000"
+            settings:min="0"
+            settings:interval="10"
+            settings:units="@string/unit_milliseconds" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
