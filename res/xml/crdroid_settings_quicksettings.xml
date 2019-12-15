@@ -50,9 +50,9 @@
             android:max="7"
             settings:min="1"
             settings:units=""
-            android:persistent="false" />
+            android:persistent="false" />-->
 
-        <com.crdroid.settings.preferences.CustomSeekBarPreference
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_rows_portrait"
             android:icon="@drawable/ic_qs_tile"
             android:title="@string/qs_rows_portrait_title"
@@ -61,7 +61,7 @@
             settings:min="1"
             settings:units="" />
 
-        <com.crdroid.settings.preferences.CustomSeekBarPreference
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_rows_landscape"
             android:icon="@drawable/ic_qs_tile"
             android:title="@string/qs_rows_landscape_title"
@@ -70,7 +70,7 @@
             settings:min="1"
             settings:units="" />
 
-        <com.crdroid.settings.preferences.CustomSeekBarPreference
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_columns_portrait"
             android:icon="@drawable/ic_qs_tile"
             android:title="@string/qs_columns_portrait_title"
@@ -79,14 +79,14 @@
             settings:min="1"
             settings:units="" />
 
-        <com.crdroid.settings.preferences.CustomSeekBarPreference
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_columns_landscape"
             android:icon="@drawable/ic_qs_tile"
             android:title="@string/qs_columns_landscape_title"
             android:defaultValue="4"
             android:max="10"
             settings:min="1"
-            settings:units="" />-->
+            settings:units="" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_title_visibility"
