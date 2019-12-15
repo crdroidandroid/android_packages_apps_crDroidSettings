@@ -781,7 +781,6 @@
     <string name="status_bar_battery_style_solid">Optrukken</string>
     <string name="status_bar_battery_style_text">Tekst</string>
     <string name="status_bar_battery_style_hidden">Skjult</string>
-    <string name="status_bar_battery_style_q">Q-stil</string>
     <string name="status_bar_battery_style_tile_title">Tilsidesætte batteriflise</string>
     <string name="status_bar_battery_style_tile_summary">Benyt samme ikonstil som ovenfor i QS-batteriflise</string>
     <!-- Status bar - Battery custom charging symbol -->
@@ -1533,8 +1532,8 @@
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Vibration ved fingeraftryksgodkendelse</string>
     <string name="fp_success_vibrate_summary">Vibrér, når fingeraftryksgodkendelse lykkes</string>
-    <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
-    <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
+    <string name="fp_error_vibrate_title">Vibration ved fejllæst fingeraftryk</string>
+    <string name="fp_error_vibrate_summary">Vibrér ved fejllæst fingeraftryk</string>
     <!-- Fingerprint unlock keystore -->
     <string name="fp_unlock_keystore_title">Fingeraftryksoplåsning</string>
     <string name="fp_unlock_keystore_summary">Oplås enhed efter genstart med kun fingeraftryk</string>
@@ -1906,17 +1905,17 @@
     <string name="style_title">Stil</string>
     <string name="style_summary">Vælg systemfarver og -stil</string>
     <string name="style_dark_theme_title">Dark theme</string>
-    <string name="style_dark_theme_automatic">Automatic (wallpaper)</string>
-    <string name="style_dark_theme_disabled">Disabled</string>
-    <string name="style_dark_theme_enabled">Enabled</string>
-    <string name="style_dark_theme_livedisplay">Automatic (livedisplay)</string>
+    <string name="style_dark_theme_automatic">Automatisk (baseret på baggrunden)</string>
+    <string name="style_dark_theme_disabled">Deaktiveret</string>
+    <string name="style_dark_theme_enabled">Aktiveret</string>
+    <string name="style_dark_theme_livedisplay">Automatisk (livedisplay)</string>
     <string name="accent_picker_dialog_title">Vælg en markeringsfarve</string>
     <string name="theme_accent_picker_title">Markeringsfarve</string>
     <string name="theme_accent_picker_summary">Vælg systemtema fremhævningsfarve</string>
     <string name="theme_accent_picker_default">Standard</string>
     <string name="accent_picker_material_colors">Material-palette</string>
     <string name="accent_picker_custom_colors">Brugerdefineret</string>
-    <string name="accent_picker_brand_colors">Brand colors</string>
+    <string name="accent_picker_brand_colors">Brandets farver</string>
     <string name="style_dark_overlay_title">Mørk tilstand</string>
     <string name="style_dark_overlay_default">Mørkegrå</string>
     <string name="style_dark_overlay_black">AMOLED-sort</string>
@@ -1925,8 +1924,8 @@
     <string name="style_notification_light">Lyst</string>
     <string name="style_notification_dark">Mørkegråt</string>
     <string name="style_notification_black">AMOLED-sort</string>
-    <string name="style_and_wallpaper_title">Styles &amp; wallpapers</string>
-    <string name="style_and_wallpaper_summary">Select accent color, clock interface and more</string>
+    <string name="style_and_wallpaper_title">Stil &amp; baggrund</string>
+    <string name="style_and_wallpaper_summary">Vælg accentfarve, ur og mere</string>
     <!-- Audio Panel view  -->
     <string name="audio_panel_view_title">Lydstyrkepanel</string>
     <string name="audio_panel_view_summary">Tilpas lydstyrkepaneldialog</string>
@@ -1959,24 +1958,24 @@
     <string name="qstile_cosmos">Cosmos</string>
     <string name="qstile_dottedcircle">Stiplet cirkel</string>
     <string name="qstile_circle_dualtone">Dobbeltonet cirkel</string>
-    <string name="qstile_divided_circle">Divided Circle</string>
+    <string name="qstile_divided_circle">Delt cirkel</string>
     <string name="qstile_dual_tone_circle">Dobbeltonet cirkel (trim)</string>
     <string name="qstile_ink">Blæk</string>
     <string name="qstile_inkdrop">Blækdråbe</string>
-    <string name="qstile_just_icons">Just Icons</string>
+    <string name="qstile_just_icons">Kun ikoner</string>
     <string name="qstile_mountain">Bjerg</string>
     <string name="qstile_ninja">Ninja</string>
     <string name="qstile_oreo">Oreo</string>
     <string name="qstile_oreo_circle_trim">Oreo (circel trim)</string>
     <string name="qstile_squaremedo">Squaremedo</string>
     <string name="qstile_squircle">Rundhjørnet kvadrat</string>
-    <string name="qstile_neon_like">Neon Like</string>
+    <string name="qstile_neon_like">Neonagtigt</string>
     <string name="qstile_oos">OxygenOS</string>
     <string name="qstile_oreo_squircle_trim">Oreo (rundhjørnet trim)</string>
     <string name="qstile_pokesign">Pokesign</string>
     <string name="qstile_squircle_trim">Rundhjørnet (trin)</string>
     <string name="qstile_teardrop">En tåre</string>
-    <string name="qstile_triangle">Triangle</string>
+    <string name="qstile_triangle">Triangel</string>
     <string name="qstile_wavey">Bølgeformet</string>
     <!-- QS header styles -->
     <string name="qs_header_style_title">Hurtigindstillingers overskriftsstil</string>
@@ -2128,14 +2127,14 @@
     <string name="gaming_mode_hardware_keys_summary">When Gaming mode is turned on, buttons will be locked</string>
     <string name="gaming_mode_brightness_title">Disable automatic brightness</string>
     <string name="gaming_mode_brightness_summary">Lock screen brightness when Gaming mode is turned on</string>
-    <string name="gaming_mode_ringer_title">Ringer in Gaming mode</string>
-    <string name="gaming_mode_ringer_off_title">Do not change</string>
-    <string name="gaming_mode_ringer_vibrate_title">Vibrate</string>
-    <string name="gaming_mode_ringer_dnd_title">Do Not Disturb</string>
-    <string name="gaming_mode_ringer_silent_title">Silent</string>
-    <string name="gaming_mode_notifications_title">Gaming mode indication</string>
-    <string name="gaming_mode_notifications_off_title">Disabled</string>
-    <string name="gaming_mode_notifications_notif_title">Show notification</string>
+    <string name="gaming_mode_ringer_title">Ringer i Gaming mode</string>
+    <string name="gaming_mode_ringer_off_title">Ændr ikke</string>
+    <string name="gaming_mode_ringer_vibrate_title">Vibrér</string>
+    <string name="gaming_mode_ringer_dnd_title">Forstyr ikke</string>
+    <string name="gaming_mode_ringer_silent_title">Lydløs</string>
+    <string name="gaming_mode_notifications_title">Indikator for gaming mode</string>
+    <string name="gaming_mode_notifications_off_title">Deaktiveret</string>
+    <string name="gaming_mode_notifications_notif_title">Vis notifikationer</string>
     <string name="gaming_mode_notifications_toast_title">Show toasts</string>
     <string name="gaming_mode_notifications_all_title">Show toasts and notification</string>
     <string name="gaming_mode_dynamic_title">Dynamic mode</string>
@@ -2168,4 +2167,8 @@
     <string name="refresh_rate_summary_60">60Hz / Refresh rate locked at 60Hz for all content</string>
     <string name="refresh_rate_summary_90">90Hz / Refresh rate locked at 90Hz for all content. Increased battery usage</string>
     <string name="auto_refresh_rate">Auto</string>
+    <!-- Ambient edge lighting -->
+    <string name="pulse_ambient_light_title">Edge lighting</string>
+    <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="pulse_ambient_light_color_title">Edge light color</string>
 </resources>
