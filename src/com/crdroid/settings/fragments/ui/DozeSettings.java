@@ -58,7 +58,6 @@ public class DozeSettings extends SettingsPreferenceFragment implements Indexabl
 
     public static final String TAG = "DozeSettings";
 
-    private static final String KEY_DOZE = "doze_enabled";
     private static final String KEY_DOZE_ALWAYS_ON = "doze_always_on";
 
     private static final String PULSE_AMBIENT_LIGHT_COLOR = "pulse_ambient_light_color";
@@ -73,7 +72,6 @@ public class DozeSettings extends SettingsPreferenceFragment implements Indexabl
 
     private ColorPickerPreference mEdgeLightColorPreference;
 
-    private SwitchPreference mDozePreference;
     private SwitchPreference mDozeAlwaysOnPreference;
     private SwitchPreference mTiltPreference;
     private SwitchPreference mPickUpPreference;
@@ -105,10 +103,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements Indexabl
         PreferenceCategory dozeSensorCategory =
                 (PreferenceCategory) getPreferenceScreen().findPreference(CATEG_DOZE_SENSOR);
 
-        mDozePreference = (SwitchPreference) findPreference(KEY_DOZE);
-
         mDozeAlwaysOnPreference = (SwitchPreference) findPreference(KEY_DOZE_ALWAYS_ON);
-        mDozeAlwaysOnPreference.setOnPreferenceChangeListener(this);
 
         mTiltPreference = (SwitchPreference) findPreference(KEY_DOZE_TILT_GESTURE);
         mTiltPreference.setOnPreferenceChangeListener(this);
@@ -121,8 +116,6 @@ public class DozeSettings extends SettingsPreferenceFragment implements Indexabl
 
         mPocketPreference = (SwitchPreference) findPreference(KEY_DOZE_POCKET_GESTURE);
         mPocketPreference.setOnPreferenceChangeListener(this);
-
-        updateState();
 
         // Hide sensor related features if the device doesn't support them
         if (!Utils.getTiltSensor(context) && !Utils.getPickupSensor(context) && !Utils.getProximitySensor(context)) {
@@ -141,36 +134,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements Indexabl
         // Hides always on toggle if device doesn't support it (based on config_dozeAlwaysOnDisplayAvailable overlay)
         boolean mAlwaysOnAvailable = getResources().getBoolean(com.android.internal.R.bool.config_dozeAlwaysOnDisplayAvailable);
         if (!mAlwaysOnAvailable) {
-            getPreferenceScreen().removePreference(findPreference(KEY_DOZE_ALWAYS_ON));
-        }
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        updateState();
-    }
-
-    private void updateState() {
-        Context context = getContext();
-
-        if (mDozePreference != null) {
-            mDozePreference.setChecked(Utils.isDozeEnabled(context));
-        }
-        if (mDozeAlwaysOnPreference != null) {
-            mDozeAlwaysOnPreference.setChecked(Utils.isDozeAlwaysOnEnabled(context));
-        }
-        if (mTiltPreference != null) {
-            mTiltPreference.setChecked(Utils.tiltEnabled(context));
-        }
-        if (mPickUpPreference != null) {
-            mPickUpPreference.setChecked(Utils.pickUpEnabled(context));
-        }
-        if (mHandwavePreference != null) {
-            mHandwavePreference.setChecked(Utils.handwaveGestureEnabled(context));
-        }
-        if (mPocketPreference != null) {
-            mPocketPreference.setChecked(Utils.pocketGestureEnabled(context));
+            getPreferenceScreen().removePreference(mDozeAlwaysOnPreference);
         }
     }
 
@@ -179,12 +143,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements Indexabl
         Context context = getContext();
         ContentResolver resolver = context.getContentResolver();
 
-        if (preference == mDozePreference) {
-            boolean value = (Boolean) newValue;
-            Settings.Secure.putIntForUser(resolver, Settings.Secure.DOZE_ENABLED, 
-                 value ? 1 : 0, UserHandle.USER_CURRENT);
-            return true;
-        } else if (preference == mEdgeLightColorPreference) {
+        if (preference == mEdgeLightColorPreference) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
             if (hex.equals("#ff3980ff")) {

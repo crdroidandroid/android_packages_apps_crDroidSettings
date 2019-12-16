@@ -63,25 +63,25 @@
         android:key="doze_sensor"
         android:title="@string/doze_sensor_title" >
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        <SwitchPreference
             android:key="doze_tilt_gesture"
             android:defaultValue="false"
             android:title="@string/tilt_title"
             android:summary="@string/tilt_summary" />
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        <SwitchPreference
             android:key="doze_pick_up_gesture"
             android:defaultValue="false"
             android:title="@string/pickup_title"
             android:summary="@string/pickup_summary" />
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        <SwitchPreference
             android:key="doze_handwave_gesture"
             android:defaultValue="false"
             android:title="@string/handwave_title"
             android:summary="@string/handwave_summary" />
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        <SwitchPreference
             android:key="doze_pocket_gesture"
             android:defaultValue="false"
             android:title="@string/pocket_title"
