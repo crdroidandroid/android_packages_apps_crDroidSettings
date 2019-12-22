@@ -51,10 +51,12 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
 
     private static final String BATTERY_LIGHTS_PREF = "battery_lights";
     private static final String NOTIFICATION_LIGHTS_PREF = "notification_lights";
+    private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
 
     private Preference mBatLights;
     private Preference mNotLights;
     private PreferenceCategory lightsCategory;
+    private ListPreference mFlashlightOnCall;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -83,6 +85,11 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
             lightsCategory = (PreferenceCategory) prefScreen.findPreference("light_brightness");
             prefScreen.removePreference(lightsCategory);
         }
+
+        mFlashlightOnCall = (ListPreference) findPreference(FLASHLIGHT_ON_CALL);
+        if (!Utils.deviceSupportsFlashLight(mContext)){
+            prefScreen.removePreference(mFlashlightOnCall);
+        }
     }
 
     public static void reset(Context mContext) {
@@ -95,6 +102,8 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
                 Settings.System.NOTIFICATION_GUTS_KILL_APP_BUTTON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
