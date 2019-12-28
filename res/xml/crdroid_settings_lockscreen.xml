@@ -61,4 +61,16 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="lockscreen_misc_category"
+        android:title="@string/lockscreen_misc_category">
+
+        <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
+            android:key="lockscreen_enable_power_menu"
+            android:icon="@drawable/ic_power"
+            android:title="@string/lockscreen_enable_power_menu_title"
+            android:summary="@string/lockscreen_enable_power_menu_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
 </PreferenceScreen>
