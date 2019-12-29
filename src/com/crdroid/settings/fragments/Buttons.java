@@ -566,6 +566,8 @@ public class Buttons extends SettingsPreferenceFragment implements
                 Settings.Secure.HARDWARE_KEYS_DISABLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANBI_ENABLED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SCREENSHOT_TYPE, 0, UserHandle.USER_CURRENT);
         ButtonBacklightBrightness.reset(mContext);
     }
 
