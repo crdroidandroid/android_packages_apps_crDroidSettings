@@ -92,6 +92,13 @@
         android:key="lockscreen_interface_category"
         android:title="@string/lockscreen_interface_category">
 
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_status_bar"
+            android:icon="@drawable/ic_shapes"
+            android:title="@string/lockscreen_status_bar_title"
+            android:summary="@string/lockscreen_status_bar_summary"
+            android:defaultValue="true" />
+
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="lockscreen_media_metadata"
             android:icon="@drawable/ic_movie"
@@ -134,13 +141,6 @@
             android:icon="@drawable/ic_alarm"
             android:title="@string/hide_lockscreen_alarm_title"
             android:summary="@string/hide_lockscreen_alarm_summary"
-            android:defaultValue="true" />
-
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-            android:key="lockscreen_hide_status_bar"
-            android:icon="@drawable/ic_shapes"
-            android:title="@string/lockscreen_hide_status_bar_title"
-            android:summary="@string/lockscreen_hide_status_bar_summary"
             android:defaultValue="true" /> -->
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
