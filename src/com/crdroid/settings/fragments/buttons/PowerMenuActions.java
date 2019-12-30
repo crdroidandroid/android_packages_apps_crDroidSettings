@@ -16,6 +16,7 @@
  */
 package com.crdroid.settings.fragments.buttons;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.UserInfo;
@@ -206,6 +207,16 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         Intent u = new Intent();
         u.setAction(lineageos.content.Intent.ACTION_UPDATE_POWER_MENU);
         mContext.sendBroadcastAsUser(u, UserHandle.ALL);
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.ADVANCED_REBOOT, 1, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.ADVANCED_REBOOT_SECURED, 1, UserHandle.USER_CURRENT);
+        Settings.Global.putInt(resolver,
+                Settings.Global.POWER_MENU_EMERGENCY_AFFORDANCE, 1);
     }
 
     @Override

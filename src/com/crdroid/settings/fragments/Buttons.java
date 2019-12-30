@@ -49,8 +49,9 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness;
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness;
+import com.crdroid.settings.fragments.buttons.PowerMenuActions;
 import com.crdroid.settings.utils.DeviceUtils;
 import com.crdroid.settings.utils.TelephonyUtils;
 
@@ -87,7 +88,6 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String KEY_VOLUME_ANSWER_CALL = "volume_answer_call";
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
-    private static final String KEY_ADVANCED_REBOOT = "advanced_reboot";
     private static final String KEY_POWER_MENU = "power_menu";
     private static final String KEY_POWER_END_CALL = "power_end_call";
     private static final String KEY_HOME_WAKE_SCREEN = "home_wake_screen";
@@ -569,6 +569,7 @@ public class Buttons extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.SCREENSHOT_TYPE, 0, UserHandle.USER_CURRENT);
         ButtonBacklightBrightness.reset(mContext);
+        PowerMenuActions.reset(mContext);
     }
 
     @Override
@@ -621,7 +622,6 @@ public class Buttons extends SettingsPreferenceFragment implements
                         keys.add(KEY_ANBI);
 
                     if (!hasPowerKey) {
-                        keys.add(KEY_ADVANCED_REBOOT);
                         keys.add(KEY_POWER_MENU);
                         keys.add(KEY_POWER_END_CALL);
                         keys.add(KEY_TORCH_LONG_PRESS_POWER_GESTURE);
