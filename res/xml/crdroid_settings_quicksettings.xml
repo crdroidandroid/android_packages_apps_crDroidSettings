@@ -144,14 +144,21 @@
     <PreferenceCategory 
          android:title="@string/qs_misc_category">
 
-        <!-- Battery mode -->
+        <!-- Battery percent -->
         <com.crdroid.settings.preferences.SystemSettingListPreference
-            android:key="qs_battery_mode"
+            android:key="qs_show_battery_percent"
             android:icon="@drawable/ic_battery_alert"
             android:title="@string/battery_percentage_title"
-            android:entries="@array/qs_battery_mode_entries"
-            android:entryValues="@array/qs_battery_mode_values"
-            android:defaultValue="1" />
+            android:entries="@array/battery_percentage_entries"
+            android:entryValues="@array/battery_percentage_values"
+            android:defaultValue="2" />
+
+        <!-- Battery estimate -->
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_show_battery_estimate"
+            android:icon="@drawable/ic_timelapse"
+            android:title="@string/battery_estimate_title"
+            android:summary="@string/battery_estimate_summary" />
 
         <!-- Custom header
         <Preference
