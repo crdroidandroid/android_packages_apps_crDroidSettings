@@ -38,17 +38,34 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.preferences.SystemSettingSeekBarPreference;
+import com.crdroid.settings.utils.TelephonyUtils;
+
+import java.util.List;
+
 @SearchIndexable
 public class StatusBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "StatusBar";
 
+    private static final String KEY_VOLTE_ICON_STYLE = "volte_icon_style";
+
+    private SystemSettingSeekBarPreference mVolteIconStyle;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.crdroid_settings_statusbar);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mVolteIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOLTE_ICON_STYLE);
+
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(mVolteIconStyle);
+        }
     }
 
     @Override
@@ -57,7 +74,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
     }
 
     public static void reset(Context mContext) {
-
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VOLTE_ICON_STYLE, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -74,6 +93,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+
+                    if (!TelephonyUtils.isVoiceCapable(context)) {
+                        keys.add(KEY_VOLTE_ICON_STYLE);
+                    }
 
                     return keys;
                 }

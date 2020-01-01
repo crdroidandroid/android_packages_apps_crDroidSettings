@@ -19,5 +19,21 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform">
 
+    <!-- Status bar icons customizations -->
+    <PreferenceCategory
+        android:title="@string/status_bar_icons_category_title">
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="volte_icon_style"
+            android:icon="@drawable/ic_volte"
+            android:title="@string/volte_icon_title"
+            android:summary="@string/volte_icon_summary"
+            android:defaultValue="0"
+            settings:defaultValueText="@string/disabled"
+            android:max="9"
+            settings:min="0"
+            settings:units="" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
