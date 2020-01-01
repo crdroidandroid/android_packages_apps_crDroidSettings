@@ -178,11 +178,22 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
 
     protected void updateValueViews() {
         if (mValueTextView != null) {
-            mValueTextView.setText(getContext().getString(R.string.custom_seekbar_value,
-                (!mTrackingTouch || mContinuousUpdates ? getTextValue(mValue) +
-                (mDefaultValueExists && mValue == mDefaultValue ? " (" +
-                getContext().getString(R.string.custom_seekbar_default_value) + ")" : "")
-                    : "[" + getTextValue(mTrackingValue) + "]")));
+            if (!mTrackingTouch || mContinuousUpdates) {
+                if (mDefaultValueTextExists && mDefaultValueExists && mValue == mDefaultValue) {
+                    mValueTextView.setText(mDefaultValueText + " (" +
+                        getContext().getString(R.string.custom_seekbar_default_value) + ")");
+                } else {
+                    mValueTextView.setText(getContext().getString(R.string.custom_seekbar_value, getTextValue(mValue)) +
+                        (mDefaultValueExists && mValue == mDefaultValue ? " (" +
+                        getContext().getString(R.string.custom_seekbar_default_value) + ")" : ""));
+                }
+            } else {
+                if (mDefaultValueTextExists && mDefaultValueExists && mTrackingValue == mDefaultValue) {
+                    mValueTextView.setText("[" + mDefaultValueText + "]");
+                } else {
+                    mValueTextView.setText(getContext().getString(R.string.custom_seekbar_value, "[" + getTextValue(mTrackingValue) + "]"));
+                }
+            }
         }
         if (mResetImageView != null) {
             if (!mDefaultValueExists || mValue == mDefaultValue || mTrackingTouch)
