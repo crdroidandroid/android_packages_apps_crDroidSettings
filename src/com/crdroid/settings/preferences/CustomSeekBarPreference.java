@@ -71,6 +71,11 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
             if (units != null)
                 mUnits = " " + units;
             mContinuousUpdates = a.getBoolean(R.styleable.CustomSeekBarPreference_continuousUpdates, mContinuousUpdates);
+            String defaultValueText = a.getString(R.styleable.CustomSeekBarPreference_defaultValueText);
+            mDefaultValueTextExists = defaultValueText != null && !defaultValueText.isEmpty();
+            if (mDefaultValueTextExists) {
+                mDefaultValueText = defaultValueText;
+            }
         } finally {
             a.recycle();
         }
@@ -93,12 +98,6 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
             mValue = mDefaultValue;
         } else {
             mValue = mMinValue;
-        }
-
-        String defaultValueText = attrs.getAttributeValue(SETTINGS_NS, "defaultValueText");
-        mDefaultValueTextExists = defaultValueText != null && !defaultValueText.isEmpty();
-        if (mDefaultValueTextExists) {
-            mDefaultValueText = defaultValueText;
         }
 
         mSeekBar = new SeekBar(context, attrs);
