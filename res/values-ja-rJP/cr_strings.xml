@@ -919,7 +919,7 @@
     <string name="pref_scrollingcache_default_enable">デフォルトで有効化</string>
     <string name="pref_scrollingcache_default_disable">デフォルトで無効化</string>
     <string name="pref_scrollingcache_force_disable">強制的に無効化</string>
-    <!-- Optional screenshot type -->
+    <!-- Screenshot type  -->
     <string name="screenshot_type_title">範囲を選択してスクリーンショット</string>
     <string name="screenshot_type_fullscreen">画面全体のスクリーンショットを撮影</string>
     <string name="screenshot_type_partial">音量ボタンでスクリーンショットを取得する範囲をドラッグする</string>
@@ -1109,6 +1109,7 @@
     <string name="power_menu_reboot_title">再起動メニュー</string>
     <string name="power_menu_screenshot_title">スクリーンショット</string>
     <string name="power_menu_screenshot_summary">長押しして指定した範囲を撮影します</string>
+    <string name="power_menu_screenrecord_title">Screenrecord</string>
     <string name="power_menu_onthego_title">On-The-Go モード</string>
     <string name="power_menu_airplane_title">機内モード</string>
     <string name="power_menu_users_title">ユーザーの切り替え</string>
@@ -1411,9 +1412,9 @@
     <!-- The Drill -->
     <string name="drill_title">正しいやり方</string>
     <string name="drill_summary">バグを見つけましたか？問題に遭遇しましたか？</string>
-    <!-- Hide Statusbar on Lockscreen -->
-    <string name="lockscreen_hide_status_bar_title">ステータスバー</string>
-    <string name="lockscreen_hide_status_bar_summary">ステータスバーを表示します</string>
+    <!-- Show Statusbar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Status bar</string>
+    <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Slim Recents</string>
     <string name="use_slim_recents_title">Slim Recents</string>
@@ -1669,6 +1670,8 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">高度な再起動</string>
     <string name="advanced_reboot_summary">ロック解除時に、リカバリーやブートローダーへ再起動するオプションを電源メニューに含めます</string>
+    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
+    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
     <!-- Allow lights in zen mode -->
     <string name="zen_allow_lights">有効</string>
     <string name="zen_allow_lights_summary">サイレントモードが有効な時ライトの点滅を許可します</string>
@@ -1916,7 +1919,8 @@
     <string name="accent_picker_brand_colors">ブランドカラー</string>
     <string name="style_dark_overlay_title">ダークモード</string>
     <string name="style_dark_overlay_default">暗いグレー</string>
-    <string name="style_dark_overlay_black">ブラック</string>
+    <string name="style_dark_overlay_charcoal_black">Charcoal Black</string>
+    <string name="style_dark_overlay_amoled_black">Amoled Black</string>
     <string name="style_notification_title">通知のスタイル</string>
     <string name="style_notification_auto">自動設定（システムに合わせる）</string>
     <string name="style_notification_light">ライト</string>
@@ -2153,12 +2157,14 @@
     <string name="aggressive_standby_summary">バックグラウンド実行するアプリを制限します</string>
     <string name="aggressive_battery_saver_title">バッテリーセーバー時に自動的に有効化</string>
     <string name="aggressive_battery_saver_summary">バッテリーセーバー使用時は自動で有効化します</string>
-    <!-- Battery mode -->
+    <!-- Battery percent -->
     <string name="battery_percentage_title">Battery percentage</string>
     <string name="battery_percentage_off">Disabled</string>
     <string name="battery_percentage_next">Enabled</string>
     <string name="battery_percentage_inside">Enabled (inside icon)</string>
-    <string name="battery_percentage_estimate">Enabled (estimate)</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Battery estimate</string>
+    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">Screen refresh rate</string>
     <string name="refresh_rate_summary_auto">Auto / Automatically raises the refresh rate from 60 to 90Hz for some content</string>
@@ -2169,4 +2175,11 @@
     <string name="pulse_ambient_light_title">Edge lighting</string>
     <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
     <string name="pulse_ambient_light_color_title">Edge light color</string>
+    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
+    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <!-- QS battery -->
+    <string name="qs_battery_location_title">Battery location</string>
+    <string name="qs_battery_location_qs_panel">QS Panel</string>
+    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
+    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
 </resources>
