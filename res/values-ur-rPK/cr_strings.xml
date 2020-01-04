@@ -919,7 +919,7 @@
     <string name="pref_scrollingcache_default_enable">طے شدہ فعال کریں</string>
     <string name="pref_scrollingcache_default_disable">طے شدہ نااہل کریں</string>
     <string name="pref_scrollingcache_force_disable">جبری غیر فعال بنائیں</string>
-    <!-- Optional screenshot type -->
+    <!-- Screenshot type  -->
     <string name="screenshot_type_title">جزوی سکرین شاٹ</string>
     <string name="screenshot_type_fullscreen">مکمل سکرین پہ سکرین شاٹ لیں</string>
     <string name="screenshot_type_partial">Drag selection on the area for screenshot via volume keys</string>
@@ -1109,6 +1109,7 @@
     <string name="power_menu_reboot_title">Restart menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_screenshot_summary">Long-press for partial screenshot</string>
+    <string name="power_menu_screenrecord_title">Screenrecord</string>
     <string name="power_menu_onthego_title">On-The-Go mode</string>
     <string name="power_menu_airplane_title">Airplane mode</string>
     <string name="power_menu_users_title">User switcher</string>
@@ -1411,9 +1412,9 @@
     <!-- The Drill -->
     <string name="drill_title">The drill</string>
     <string name="drill_summary">Found a bug? Ran into an issue?</string>
-    <!-- Hide Statusbar on Lockscreen -->
-    <string name="lockscreen_hide_status_bar_title">Status bar</string>
-    <string name="lockscreen_hide_status_bar_summary">Display status bar</string>
+    <!-- Show Statusbar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Status bar</string>
+    <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Slim recents</string>
     <string name="use_slim_recents_title">Slim recents</string>
@@ -1669,6 +1670,8 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Advanced restart</string>
     <string name="advanced_reboot_summary">جب کھلا ہوتو، ریکوری یا بوٹ لوڈر میں دوبارہ شروع کرنے کیلئے پاور مینو میں اختیارات شامل ہیں</string>
+    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
+    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
     <!-- Allow lights in zen mode -->
     <string name="zen_allow_lights">Enable</string>
     <string name="zen_allow_lights_summary">Permit pulsing the light when Do Not Disturb is active</string>
@@ -1916,7 +1919,8 @@
     <string name="accent_picker_brand_colors">Brand colors</string>
     <string name="style_dark_overlay_title">Dark mode</string>
     <string name="style_dark_overlay_default">Deep Grey</string>
-    <string name="style_dark_overlay_black">Amoled Black</string>
+    <string name="style_dark_overlay_charcoal_black">Charcoal Black</string>
+    <string name="style_dark_overlay_amoled_black">Amoled Black</string>
     <string name="style_notification_title">Notification style</string>
     <string name="style_notification_auto">Automatic (system theme)</string>
     <string name="style_notification_light">Light</string>
@@ -2153,12 +2157,14 @@
     <string name="aggressive_standby_summary">Restrict apps from running the background</string>
     <string name="aggressive_battery_saver_title">Auto-enable on battery saver</string>
     <string name="aggressive_battery_saver_summary">Enable Aggressive Battery automatically when using battery saver</string>
-    <!-- Battery mode -->
+    <!-- Battery percent -->
     <string name="battery_percentage_title">Battery percentage</string>
     <string name="battery_percentage_off">Disabled</string>
     <string name="battery_percentage_next">Enabled</string>
     <string name="battery_percentage_inside">Enabled (inside icon)</string>
-    <string name="battery_percentage_estimate">Enabled (estimate)</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Battery estimate</string>
+    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">Screen refresh rate</string>
     <string name="refresh_rate_summary_auto">Auto / Automatically raises the refresh rate from 60 to 90Hz for some content</string>
@@ -2169,4 +2175,11 @@
     <string name="pulse_ambient_light_title">Edge lighting</string>
     <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
     <string name="pulse_ambient_light_color_title">Edge light color</string>
+    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
+    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <!-- QS battery -->
+    <string name="qs_battery_location_title">Battery location</string>
+    <string name="qs_battery_location_qs_panel">QS Panel</string>
+    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
+    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
 </resources>
