@@ -359,7 +359,7 @@
     <string name="lockscreen_enable_qs_summary">Umožnit přístup do Rychlého nastavení a\u00a0k\u00a0zástupcům na zabezpečené obrazovce uzamčení</string>
     <!-- Screenshot Sound  -->
     <string name="screenshot_sound_title">Zvuk snímku obrazovky</string>
-    <string name="screenshot_sound_summary">Přehrát zvuk při pořízení snímku obrazovky</string>
+    <string name="screenshot_sound_summary">Play sound when screenshot is taken</string>
     <!-- Volume Steps -->
     <string name="volume_steps_title">Kroky hlasitosti</string>
     <string name="volume_steps_summary">Přizpůsobit počet kroků v\u00a0Panelu hlasitosti</string>
@@ -919,9 +919,9 @@
     <string name="pref_scrollingcache_default_enable">Povolit výchozí</string>
     <string name="pref_scrollingcache_default_disable">Zakázat výchozí</string>
     <string name="pref_scrollingcache_force_disable">Vynuceně zakázat</string>
-    <!-- Optional screenshot type -->
-    <string name="screenshot_type_title">Částečný snímek obrazovky</string>
-    <string name="screenshot_type_fullscreen">Zhotovit snímek celé obrazovky</string>
+    <!-- Screenshot type  -->
+    <string name="screenshot_type_title">Screenshot type</string>
+    <string name="screenshot_type_fullscreen">Take fullscreen screenshot via volume keys</string>
     <string name="screenshot_type_partial">Vyberte pomocí tlačítek hlasitosti oblast, ze které chcete zhotovit snímek obrazovky</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">Možnosti snímku obrazovky</string>
@@ -1109,6 +1109,7 @@
     <string name="power_menu_reboot_title">Menu restartu</string>
     <string name="power_menu_screenshot_title">Snímek obrazovky</string>
     <string name="power_menu_screenshot_summary">Dlouhým stiskem zhotovit částečný snímek obrazovky</string>
+    <string name="power_menu_screenrecord_title">Screenrecord</string>
     <string name="power_menu_onthego_title">Režim On‑The‑Go</string>
     <string name="power_menu_airplane_title">Režim Letadlo</string>
     <string name="power_menu_users_title">Přepínání uživatelů</string>
@@ -1411,9 +1412,9 @@
     <!-- The Drill -->
     <string name="drill_title">Výcvik</string>
     <string name="drill_summary">Našli jste chybu? Narazili jste na problém?</string>
-    <!-- Hide Statusbar on Lockscreen -->
-    <string name="lockscreen_hide_status_bar_title">Stavový řádek</string>
-    <string name="lockscreen_hide_status_bar_summary">Zobrazit stavový řádek</string>
+    <!-- Show Statusbar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Status bar</string>
+    <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Nedávné aplikace Slim</string>
     <string name="use_slim_recents_title">Nedávné aplikace Slim</string>
@@ -1669,6 +1670,8 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Rozšířený restart</string>
     <string name="advanced_reboot_summary">Pokud je povolen, v\u00a0Menu napájení jsou také zahrnuty možnosti restartovat zařízení do recovery nebo bootloaderu</string>
+    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
+    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
     <!-- Allow lights in zen mode -->
     <string name="zen_allow_lights">Světlo LED v\u00a0režimu „Nerušit“</string>
     <string name="zen_allow_lights_summary">Povolit blikání světla LED, je‑li aktivní režim „Nerušit“</string>
@@ -1916,7 +1919,8 @@
     <string name="accent_picker_brand_colors">Barvy značky</string>
     <string name="style_dark_overlay_title">Tmavý režim</string>
     <string name="style_dark_overlay_default">Tmavě šedá</string>
-    <string name="style_dark_overlay_black">(AM)OLED černá</string>
+    <string name="style_dark_overlay_charcoal_black">Charcoal Black</string>
+    <string name="style_dark_overlay_amoled_black">Amoled Black</string>
     <string name="style_notification_title">Styl oznámení</string>
     <string name="style_notification_auto">Automaticky (dle motivu systému)</string>
     <string name="style_notification_light">Světlý</string>
@@ -2097,9 +2101,9 @@
     <string name="notification_sound_vib_screen_on_summary">Přehrát zvuk a\u00a0vibrovat při přijetí oznámení, když je obrazovka zapnutá</string>
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">Možnosti vibrací během hovoru</string>
-    <string name="incall_vibrate_connect_title">Zavibrovat při spojení</string>
+    <string name="incall_vibrate_connect_title">Vibrate on answer</string>
     <string name="incall_vibrate_call_wait_title">Zavibrovat při dalším hovoru</string>
-    <string name="incall_vibrate_disconnect_title">Zavibrovat při odpojení</string>
+    <string name="incall_vibrate_disconnect_title">Vibrate on hang up</string>
     <!-- Keyboard and IME  -->
     <string name="ime_settings_title">Nastavení klávesnice</string>
     <string name="ime_settings_summary">Přizpůsobit pokročilá nastavení klávesnice</string>
@@ -2153,12 +2157,14 @@
     <string name="aggressive_standby_summary">Omezí aplikacím činnost na pozadí</string>
     <string name="aggressive_battery_saver_title">Automaticky zapnout při spořiči baterie</string>
     <string name="aggressive_battery_saver_summary">Při použití spořiče baterie automaticky aktivovat funkci „Agresivní baterie“</string>
-    <!-- Battery mode -->
+    <!-- Battery percent -->
     <string name="battery_percentage_title">Procenta baterie</string>
     <string name="battery_percentage_off">Zakázáno</string>
     <string name="battery_percentage_next">Povoleno</string>
     <string name="battery_percentage_inside">Povoleno (uvnitř ikony)</string>
-    <string name="battery_percentage_estimate">Povoleno (odhad)</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Battery estimate</string>
+    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">Obnovovací frekvence obrazovky</string>
     <string name="refresh_rate_summary_auto">Automaticky / Pro určitý obsah se automaticky zvýší obnovovací frekvence obrazovky z 60\u00a0Hz na 90\u00a0Hz</string>
@@ -2169,4 +2175,11 @@
     <string name="pulse_ambient_light_title">Nasvícení okrajů</string>
     <string name="pulse_ambient_light_summary">Rozsvítit boční okraje obrazovky po přijetí oznámení</string>
     <string name="pulse_ambient_light_color_title">Barva světla okrajů</string>
+    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
+    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <!-- QS battery -->
+    <string name="qs_battery_location_title">Battery location</string>
+    <string name="qs_battery_location_qs_panel">QS Panel</string>
+    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
+    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
 </resources>
