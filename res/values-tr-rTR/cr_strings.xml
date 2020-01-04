@@ -919,7 +919,7 @@
     <string name="pref_scrollingcache_default_enable">Varsayılan etkin</string>
     <string name="pref_scrollingcache_default_disable">Varsayılan devre dışı</string>
     <string name="pref_scrollingcache_force_disable">Zorla devre dışı</string>
-    <!-- Optional screenshot type -->
+    <!-- Screenshot type  -->
     <string name="screenshot_type_title">Kısmi ekran görüntüsü</string>
     <string name="screenshot_type_fullscreen">Tam ekran görüntüsü al</string>
     <string name="screenshot_type_partial">Ekran görüntüsü almak için güç tuşuna ve ses kısma tuşlarına dokunun, sonra ekran görüntüsü alacağınız bölümü çizin</string>
@@ -1109,6 +1109,7 @@
     <string name="power_menu_reboot_title">Yeniden başlatma menüsü</string>
     <string name="power_menu_screenshot_title">Ekran görüntüsü</string>
     <string name="power_menu_screenshot_summary">Kısmi ekran görüntüsü için basılı tutun</string>
+    <string name="power_menu_screenrecord_title">Screenrecord</string>
     <string name="power_menu_onthego_title">Yürüme modu</string>
     <string name="power_menu_airplane_title">Uçak modu</string>
     <string name="power_menu_users_title">Kullanıcılar</string>
@@ -1413,9 +1414,9 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <!-- The Drill -->
     <string name="drill_title">The drill</string>
     <string name="drill_summary">Bir hata veya bir sorun bulursanız lütfen bize bildirin!</string>
-    <!-- Hide Statusbar on Lockscreen -->
-    <string name="lockscreen_hide_status_bar_title">Durum çubuğu</string>
-    <string name="lockscreen_hide_status_bar_summary">Durum çubuğunu göster</string>
+    <!-- Show Statusbar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Status bar</string>
+    <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Slim son uygulamalar</string>
     <string name="use_slim_recents_title">Slim son uygulamalar</string>
@@ -1671,6 +1672,8 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Gelişmiş yeniden başlatma</string>
     <string name="advanced_reboot_summary">Kilit açıldığında kurtarma veya önyükleme modunda yeniden başlatmak için güç menüsüne seçenekler ekler</string>
+    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
+    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
     <!-- Allow lights in zen mode -->
     <string name="zen_allow_lights">Etkinleştir</string>
     <string name="zen_allow_lights_summary">Rahatsız etmeyinde ışığı yak söndür</string>
@@ -1918,7 +1921,8 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <string name="accent_picker_brand_colors">Marka renkleri</string>
     <string name="style_dark_overlay_title">Karanlık modu</string>
     <string name="style_dark_overlay_default">Koyu gri</string>
-    <string name="style_dark_overlay_black">Siyah amoled</string>
+    <string name="style_dark_overlay_charcoal_black">Charcoal Black</string>
+    <string name="style_dark_overlay_amoled_black">Amoled Black</string>
     <string name="style_notification_title">Bildirim stili</string>
     <string name="style_notification_auto">Otomatik (sistem teması)</string>
     <string name="style_notification_light">Aydınlık</string>
@@ -2155,12 +2159,14 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <string name="aggressive_standby_summary">Uygulamaların arkaplan da çalışmasını engeller</string>
     <string name="aggressive_battery_saver_title">Pil tasarrufu için otomatik etkinleştir</string>
     <string name="aggressive_battery_saver_summary">Pil tasarrufunu kullanırken agresif pili otomatik olarak etkinleştirir</string>
-    <!-- Battery mode -->
+    <!-- Battery percent -->
     <string name="battery_percentage_title">Pil yüzdesi</string>
     <string name="battery_percentage_off">Devre dışı</string>
     <string name="battery_percentage_next">Etkin</string>
     <string name="battery_percentage_inside">Etkin (simge içinde)</string>
-    <string name="battery_percentage_estimate">Etkin (tahmin)</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Battery estimate</string>
+    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">Ekran Yenileme aralığı</string>
     <string name="refresh_rate_summary_auto">Otomatik / Bazı içeriklerin ekran yenileme hızını otomatik olarak 60\'dan 90\'a yükseltir</string>
@@ -2171,4 +2177,11 @@ Sadece yarı şeffaf bildirimler etkin.</string>
     <string name="pulse_ambient_light_title">Ortam Ekranı Kenar Aydınlatması</string>
     <string name="pulse_ambient_light_summary">Bildirim geldiğinde ortam ekranın yan kenarlarını aydınlat</string>
     <string name="pulse_ambient_light_color_title">Ortam Ekranı kenar aydınlatma rengi</string>
+    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
+    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <!-- QS battery -->
+    <string name="qs_battery_location_title">Battery location</string>
+    <string name="qs_battery_location_qs_panel">QS Panel</string>
+    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
+    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
 </resources>
