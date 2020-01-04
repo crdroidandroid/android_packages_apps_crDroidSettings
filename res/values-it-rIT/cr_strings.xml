@@ -359,7 +359,7 @@
     <string name="lockscreen_enable_qs_summary">Consenti l\'accesso alle impostazioni rapide e alle scorciatoie sulla schermata di blocco sicura</string>
     <!-- Screenshot Sound  -->
     <string name="screenshot_sound_title">Suono screenshot</string>
-    <string name="screenshot_sound_summary">Opzione per abilitare o disabilitare il suono dello screenshot</string>
+    <string name="screenshot_sound_summary">Play sound when screenshot is taken</string>
     <!-- Volume Steps -->
     <string name="volume_steps_title">Livelli volume</string>
     <string name="volume_steps_summary">Personalizza i livelli del volume</string>
@@ -919,9 +919,9 @@
     <string name="pref_scrollingcache_default_enable">Abilitato predefinito</string>
     <string name="pref_scrollingcache_default_disable">Disabilitato predefinito</string>
     <string name="pref_scrollingcache_force_disable">Forza disabilitazione</string>
-    <!-- Optional screenshot type -->
-    <string name="screenshot_type_title">Tipo di screenshot</string>
-    <string name="screenshot_type_fullscreen">Screenshot dell\'intero schermo</string>
+    <!-- Screenshot type  -->
+    <string name="screenshot_type_title">Screenshot type</string>
+    <string name="screenshot_type_fullscreen">Take fullscreen screenshot via volume keys</string>
     <string name="screenshot_type_partial">Trascinare la selezione sulla zona che si vuole catturare</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">Opzioni screenshot</string>
@@ -1109,6 +1109,7 @@
     <string name="power_menu_reboot_title">Menù riavvio</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_screenshot_summary">Premi a lungo per creare uno screenshot parziale</string>
+    <string name="power_menu_screenrecord_title">Screenrecord</string>
     <string name="power_menu_onthego_title">Modalità On-The-Go</string>
     <string name="power_menu_airplane_title">Modalità aereo</string>
     <string name="power_menu_users_title">Cambio utente</string>
@@ -1411,9 +1412,9 @@
     <!-- The Drill -->
     <string name="drill_title">The Drill</string>
     <string name="drill_summary">Trovato un bug? Sono entrato in un problema?</string>
-    <!-- Hide Statusbar on Lockscreen -->
-    <string name="lockscreen_hide_status_bar_title">Barra di stato</string>
-    <string name="lockscreen_hide_status_bar_summary">Mostra la barra di stato</string>
+    <!-- Show Statusbar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Status bar</string>
+    <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Recenti Slim</string>
     <string name="use_slim_recents_title">Usa i recenti Slim</string>
@@ -1669,6 +1670,8 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Riavvio avanzato</string>
     <string name="advanced_reboot_summary">Una volta sbloccato, include le opzioni nel menù di accensione per riavviare in recovery o in bootloader</string>
+    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
+    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
     <!-- Allow lights in zen mode -->
     <string name="zen_allow_lights">Abilita</string>
     <string name="zen_allow_lights_summary">Permetti di far lampeggiare la luce quando Non Disturbare è attivo</string>
@@ -1916,7 +1919,8 @@
     <string name="accent_picker_brand_colors">Colori dei marchi</string>
     <string name="style_dark_overlay_title">Modalità stile scuro</string>
     <string name="style_dark_overlay_default">Grigio profondo</string>
-    <string name="style_dark_overlay_black">Amoled nero</string>
+    <string name="style_dark_overlay_charcoal_black">Charcoal Black</string>
+    <string name="style_dark_overlay_amoled_black">Amoled Black</string>
     <string name="style_notification_title">Stile di notifica</string>
     <string name="style_notification_auto">Automatico (basato sul tema di sistema)</string>
     <string name="style_notification_light">Chiaro</string>
@@ -2097,9 +2101,9 @@
     <string name="notification_sound_vib_screen_on_summary">Riproduci il suono e la vibrazione delle notifiche quando lo schermo è acceso</string>
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">Opzioni di vibrazione per le chiamate</string>
-    <string name="incall_vibrate_connect_title">Vibra alla risposta</string>
+    <string name="incall_vibrate_connect_title">Vibrate on answer</string>
     <string name="incall_vibrate_call_wait_title">Vibra per chiamate in attesa</string>
-    <string name="incall_vibrate_disconnect_title">Vibra alla chiusura</string>
+    <string name="incall_vibrate_disconnect_title">Vibrate on hang up</string>
     <!-- Keyboard and IME  -->
     <string name="ime_settings_title">Impostazioni della tastiera</string>
     <string name="ime_settings_summary">Personalizza le impostazioni avanzate della tastiera</string>
@@ -2153,12 +2157,14 @@
     <string name="aggressive_standby_summary">Limita l\'utilizzo delle applicazioni in esecuzione in background</string>
     <string name="aggressive_battery_saver_title">Attiva automaticamente con risparmio energetico</string>
     <string name="aggressive_battery_saver_summary">Abilita automaticamente la batteria aggressiva quando il risparmio energetico viene attivato</string>
-    <!-- Battery mode -->
+    <!-- Battery percent -->
     <string name="battery_percentage_title">Battery percentage</string>
     <string name="battery_percentage_off">Disabled</string>
     <string name="battery_percentage_next">Enabled</string>
     <string name="battery_percentage_inside">Enabled (inside icon)</string>
-    <string name="battery_percentage_estimate">Enabled (estimate)</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Battery estimate</string>
+    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">Screen refresh rate</string>
     <string name="refresh_rate_summary_auto">Auto / Automatically raises the refresh rate from 60 to 90Hz for some content</string>
@@ -2169,4 +2175,11 @@
     <string name="pulse_ambient_light_title">Edge lighting</string>
     <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
     <string name="pulse_ambient_light_color_title">Edge light color</string>
+    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
+    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <!-- QS battery -->
+    <string name="qs_battery_location_title">Battery location</string>
+    <string name="qs_battery_location_qs_panel">QS Panel</string>
+    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
+    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
 </resources>
