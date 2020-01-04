@@ -919,7 +919,7 @@
     <string name="pref_scrollingcache_default_enable">Mặc định bật</string>
     <string name="pref_scrollingcache_default_disable">Mặc định tắt</string>
     <string name="pref_scrollingcache_force_disable">Buộc tắt</string>
-    <!-- Optional screenshot type -->
+    <!-- Screenshot type  -->
     <string name="screenshot_type_title">Chụp một phần màn hình</string>
     <string name="screenshot_type_fullscreen">Chụp ảnh toàn màn hình</string>
     <string name="screenshot_type_partial">Kéo lựa chọn vùng cần chụp màn hình thông qua phím âm lượng</string>
@@ -1109,6 +1109,7 @@
     <string name="power_menu_reboot_title">Menu khởi động lại</string>
     <string name="power_menu_screenshot_title">Chụp ảnh màn hình</string>
     <string name="power_menu_screenshot_summary">Nhấn giữ để chụp ảnh màn hình một phần</string>
+    <string name="power_menu_screenrecord_title">Screenrecord</string>
     <string name="power_menu_onthego_title">Chế độ On-The-Go</string>
     <string name="power_menu_airplane_title">Chế độ Máy bay</string>
     <string name="power_menu_users_title">Chuyển người dùng</string>
@@ -1411,9 +1412,9 @@
     <!-- The Drill -->
     <string name="drill_title">Luyện tập</string>
     <string name="drill_summary">Tìm thấy một lỗi? Có vấn đề phát sinh?</string>
-    <!-- Hide Statusbar on Lockscreen -->
-    <string name="lockscreen_hide_status_bar_title">Thanh trạng thái</string>
-    <string name="lockscreen_hide_status_bar_summary">Hiển thị thanh trạng thái</string>
+    <!-- Show Statusbar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Status bar</string>
+    <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Màn hình gần đây Slim</string>
     <string name="use_slim_recents_title">Màn hình gần đây Slim</string>
@@ -1669,6 +1670,8 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Khởi động lại nâng cao</string>
     <string name="advanced_reboot_summary">Khi mở khóa, các tùy chọn trong trình đơn nguồn để khởi động vào phục hồi hoặc trình nạp khởi động</string>
+    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
+    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
     <!-- Allow lights in zen mode -->
     <string name="zen_allow_lights">Bật</string>
     <string name="zen_allow_lights_summary">Cho phép thông báo đèn khi Không Làm Phiền đang mở</string>
@@ -1916,7 +1919,8 @@
     <string name="accent_picker_brand_colors">Màu sắc nhãn hiệu</string>
     <string name="style_dark_overlay_title">Chế độ tối</string>
     <string name="style_dark_overlay_default">Xám</string>
-    <string name="style_dark_overlay_black">Amoled đen</string>
+    <string name="style_dark_overlay_charcoal_black">Charcoal Black</string>
+    <string name="style_dark_overlay_amoled_black">Amoled Black</string>
     <string name="style_notification_title">Kiểu thông báo</string>
     <string name="style_notification_auto">Tự động (chủ đề hệ thống)</string>
     <string name="style_notification_light">Sáng</string>
@@ -2153,12 +2157,14 @@
     <string name="aggressive_standby_summary">Hạn chế ứng dụng chạy nền</string>
     <string name="aggressive_battery_saver_title">Tự động bật khi bật trình tiết kiệm pin</string>
     <string name="aggressive_battery_saver_summary">Tự động kích hoạt tiết kiệm pin tích cực khi dùng chế độ tiết kiệm pin</string>
-    <!-- Battery mode -->
+    <!-- Battery percent -->
     <string name="battery_percentage_title">Battery percentage</string>
     <string name="battery_percentage_off">Disabled</string>
     <string name="battery_percentage_next">Enabled</string>
     <string name="battery_percentage_inside">Enabled (inside icon)</string>
-    <string name="battery_percentage_estimate">Enabled (estimate)</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Battery estimate</string>
+    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">Screen refresh rate</string>
     <string name="refresh_rate_summary_auto">Auto / Automatically raises the refresh rate from 60 to 90Hz for some content</string>
@@ -2169,4 +2175,11 @@
     <string name="pulse_ambient_light_title">Edge lighting</string>
     <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
     <string name="pulse_ambient_light_color_title">Edge light color</string>
+    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
+    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <!-- QS battery -->
+    <string name="qs_battery_location_title">Battery location</string>
+    <string name="qs_battery_location_qs_panel">QS Panel</string>
+    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
+    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
 </resources>
