@@ -359,7 +359,7 @@
     <string name="lockscreen_enable_qs_summary">允許在安全鎖定螢幕界面訪問快速設置和滑動捷徑</string>
     <!-- Screenshot Sound  -->
     <string name="screenshot_sound_title">截圖提示音</string>
-    <string name="screenshot_sound_summary">截圖時播放切換聲音</string>
+    <string name="screenshot_sound_summary">Play sound when screenshot is taken</string>
     <!-- Volume Steps -->
     <string name="volume_steps_title">音量步進</string>
     <string name="volume_steps_summary">自訂聲音面板中的步進數</string>
@@ -919,9 +919,9 @@
     <string name="pref_scrollingcache_default_enable">預設開啟</string>
     <string name="pref_scrollingcache_default_disable">預設停用</string>
     <string name="pref_scrollingcache_force_disable">強制停用</string>
-    <!-- Optional screenshot type -->
-    <string name="screenshot_type_title">部分截圖</string>
-    <string name="screenshot_type_fullscreen">全螢幕截圖</string>
+    <!-- Screenshot type  -->
+    <string name="screenshot_type_title">Screenshot type</string>
+    <string name="screenshot_type_fullscreen">Take fullscreen screenshot via volume keys</string>
     <string name="screenshot_type_partial">通過卷鍵在區域上拖動選區以進行截圖</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">螢幕擷取畫面選項</string>
@@ -1109,6 +1109,7 @@
     <string name="power_menu_reboot_title">重啟選單</string>
     <string name="power_menu_screenshot_title">螢幕截圖</string>
     <string name="power_menu_screenshot_summary">長按即可部分螢幕截圖</string>
+    <string name="power_menu_screenrecord_title">Screenrecord</string>
     <string name="power_menu_onthego_title">行走模式 (On-The-go)</string>
     <string name="power_menu_airplane_title">飛行模式</string>
     <string name="power_menu_users_title">使用者切換器</string>
@@ -1411,9 +1412,9 @@
     <!-- The Drill -->
     <string name="drill_title">回報</string>
     <string name="drill_summary">發現了一個錯誤？遇到問題？</string>
-    <!-- Hide Statusbar on Lockscreen -->
-    <string name="lockscreen_hide_status_bar_title">狀態列</string>
-    <string name="lockscreen_hide_status_bar_summary">顯示狀態列</string>
+    <!-- Show Statusbar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Status bar</string>
+    <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Slim 最近任務視圖</string>
     <string name="use_slim_recents_title">Slim 最近任務視圖</string>
@@ -1669,6 +1670,8 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">高級重啟</string>
     <string name="advanced_reboot_summary">設備已解鎖時，在電源選單的重啟選項下加入重啟至恢復模式與引導程序的選項</string>
+    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
+    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
     <!-- Allow lights in zen mode -->
     <string name="zen_allow_lights">啟用</string>
     <string name="zen_allow_lights_summary">在不干擾時允許脈闖紅燈活動</string>
@@ -1916,7 +1919,8 @@
     <string name="accent_picker_brand_colors">品牌顏色</string>
     <string name="style_dark_overlay_title">暗色主題</string>
     <string name="style_dark_overlay_default">深灰色</string>
-    <string name="style_dark_overlay_black">Amoled 黑色</string>
+    <string name="style_dark_overlay_charcoal_black">Charcoal Black</string>
+    <string name="style_dark_overlay_amoled_black">Amoled Black</string>
     <string name="style_notification_title">通知風格</string>
     <string name="style_notification_auto">自動 (系統主題)</string>
     <string name="style_notification_light">亮色</string>
@@ -2097,9 +2101,9 @@
     <string name="notification_sound_vib_screen_on_summary">在螢幕開啟時播放音效和震動通知</string>
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">通話中震動選項</string>
-    <string name="incall_vibrate_connect_title">接通時震動</string>
+    <string name="incall_vibrate_connect_title">Vibrate on answer</string>
     <string name="incall_vibrate_call_wait_title">等待時震動</string>
-    <string name="incall_vibrate_disconnect_title">掛斷時震動</string>
+    <string name="incall_vibrate_disconnect_title">Vibrate on hang up</string>
     <!-- Keyboard and IME  -->
     <string name="ime_settings_title">鍵盤設定</string>
     <string name="ime_settings_summary">自定義高級鍵盤設置</string>
@@ -2153,12 +2157,14 @@
     <string name="aggressive_standby_summary">限制應用程序後台運行</string>
     <string name="aggressive_battery_saver_title">省電模式時自動啟用</string>
     <string name="aggressive_battery_saver_summary">使用省電模式時自動開啟極限省電</string>
-    <!-- Battery mode -->
+    <!-- Battery percent -->
     <string name="battery_percentage_title">電量百分比</string>
     <string name="battery_percentage_off">已停用</string>
     <string name="battery_percentage_next">已啟用</string>
     <string name="battery_percentage_inside">已啟用 (內部圖標)</string>
-    <string name="battery_percentage_estimate">啟用 (估算)</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Battery estimate</string>
+    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">螢幕更新率</string>
     <string name="refresh_rate_summary_auto">自動將部分內容的螢幕更新率從 60Hz 提升到 90Hz</string>
@@ -2169,4 +2175,11 @@
     <string name="pulse_ambient_light_title">側邊亮螢幕</string>
     <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
     <string name="pulse_ambient_light_color_title">Edge light color</string>
+    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
+    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <!-- QS battery -->
+    <string name="qs_battery_location_title">Battery location</string>
+    <string name="qs_battery_location_qs_panel">QS Panel</string>
+    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
+    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
 </resources>
