@@ -55,6 +55,13 @@
         android:summary="@string/notification_sound_vib_screen_on_summary"
         android:defaultValue="true" />
 
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="vibrate_on_notifications"
+        android:icon="@drawable/ic_vibrate"
+        android:title="@string/vibrate_on_notifications_title"
+        android:summary="@string/vibrate_on_notifications_summary"
+        android:defaultValue="true" />
+
     <!-- Less Notification sounds
     <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="mute_annoying_notifications_threshold"
