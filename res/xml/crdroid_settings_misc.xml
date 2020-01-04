@@ -195,4 +195,19 @@
         android:title="@string/disable_fc_notifications_title"
         android:summary="@string/disable_fc_notifications_summary"
         android:defaultValue="false" />
+
+    <PreferenceCategory
+            android:key="hafr_category"
+            android:title="@string/hafr_category_title" >
+
+        <Preference
+            android:icon="@drawable/ic_hafr"
+            android:title="@string/hide_apps_from_recents_title"
+            android:summary="@string/hide_apps_from_recents_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.crdroid.settings.fragments.misc.HAFRAppListActivity" />
+        </Preference>
+
+    </PreferenceCategory>
 </PreferenceScreen>
