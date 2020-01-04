@@ -359,7 +359,7 @@
     <string name="lockscreen_enable_qs_summary">잠금 화면에서 빠른 설정에 액세스하고 바로 가기를 스 와이프 할 수 있습니다.</string>
     <!-- Screenshot Sound  -->
     <string name="screenshot_sound_title">스크린샷 소리</string>
-    <string name="screenshot_sound_summary">스크린 샷을 찍을 때에 사운드 소리를 설정합니다</string>
+    <string name="screenshot_sound_summary">Play sound when screenshot is taken</string>
     <!-- Volume Steps -->
     <string name="volume_steps_title">불륨 단계</string>
     <string name="volume_steps_summary">볼륨 패널에 단계를 조정합니다</string>
@@ -919,9 +919,9 @@
     <string name="pref_scrollingcache_default_enable">기본 활성화</string>
     <string name="pref_scrollingcache_default_disable">기본 비활성화</string>
     <string name="pref_scrollingcache_force_disable">강제 비활성화</string>
-    <!-- Optional screenshot type -->
-    <string name="screenshot_type_title">부분 스크린샷</string>
-    <string name="screenshot_type_fullscreen">전체 화면 스크린샷</string>
+    <!-- Screenshot type  -->
+    <string name="screenshot_type_title">Screenshot type</string>
+    <string name="screenshot_type_fullscreen">Take fullscreen screenshot via volume keys</string>
     <string name="screenshot_type_partial">볼륨키를 이용하여 스크린샷 영역을 선택합니다</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">화면 캡처 설정</string>
@@ -1109,6 +1109,7 @@
     <string name="power_menu_reboot_title">다시 시작 메뉴</string>
     <string name="power_menu_screenshot_title">스크린샷</string>
     <string name="power_menu_screenshot_summary">길게 눌러 부분 스크린샷 촬영</string>
+    <string name="power_menu_screenrecord_title">Screenrecord</string>
     <string name="power_menu_onthego_title">On-The-Go 모드</string>
     <string name="power_menu_airplane_title">비행기 모드</string>
     <string name="power_menu_users_title">사용자 전환</string>
@@ -1411,9 +1412,9 @@
     <!-- The Drill -->
     <string name="drill_title">The Drill</string>
     <string name="drill_summary">버그를 찾았나요? 문제가 생겼나요?</string>
-    <!-- Hide Statusbar on Lockscreen -->
-    <string name="lockscreen_hide_status_bar_title">상태 표시줄</string>
-    <string name="lockscreen_hide_status_bar_summary">상태표시줄에 표시</string>
+    <!-- Show Statusbar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Status bar</string>
+    <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Slim 최근 실행 목록</string>
     <string name="use_slim_recents_title">Slim 최근 실행 목록</string>
@@ -1669,6 +1670,8 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">고급 다시 시작 기능</string>
     <string name="advanced_reboot_summary">잠금 해제했을 때 전원 메뉴에 다운로드 모드, 복구 모드 진입 옵션 생성</string>
+    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
+    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
     <!-- Allow lights in zen mode -->
     <string name="zen_allow_lights">활성화</string>
     <string name="zen_allow_lights_summary">방해 금지가 활성화되어있을 때 표시 등 켜기 허용 합니다</string>
@@ -1916,7 +1919,8 @@
     <string name="accent_picker_brand_colors">브랜드 색상</string>
     <string name="style_dark_overlay_title">어두운 모드</string>
     <string name="style_dark_overlay_default">짙은 회색</string>
-    <string name="style_dark_overlay_black">완벽한 검정색</string>
+    <string name="style_dark_overlay_charcoal_black">Charcoal Black</string>
+    <string name="style_dark_overlay_amoled_black">Amoled Black</string>
     <string name="style_notification_title">알림 스타일</string>
     <string name="style_notification_auto">자동 (시스템 테마)</string>
     <string name="style_notification_light">약하게</string>
@@ -2097,9 +2101,9 @@
     <string name="notification_sound_vib_screen_on_summary">화면이 켜져있을 때 소리 및 진동 알림을 재생합니다.</string>
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">통화 중 진동 옵션</string>
-    <string name="incall_vibrate_connect_title">통화 연결 시 진동</string>
+    <string name="incall_vibrate_connect_title">Vibrate on answer</string>
     <string name="incall_vibrate_call_wait_title">통화 대기 중에 진동</string>
-    <string name="incall_vibrate_disconnect_title">통화 종료 시 진동</string>
+    <string name="incall_vibrate_disconnect_title">Vibrate on hang up</string>
     <!-- Keyboard and IME  -->
     <string name="ime_settings_title">키보드 설정</string>
     <string name="ime_settings_summary">키보드 고급 설정 사용자 정의</string>
@@ -2153,12 +2157,14 @@
     <string name="aggressive_standby_summary">앱이 백그라운드에서 실행되는 것을 제한합니다.</string>
     <string name="aggressive_battery_saver_title">배터리 절약 기능으로 자동 실행</string>
     <string name="aggressive_battery_saver_summary">배터리 세이버를 사용 할 때 자동으로 배터리 초절약을 사용합니다</string>
-    <!-- Battery mode -->
+    <!-- Battery percent -->
     <string name="battery_percentage_title">배터리 잔량 표시</string>
     <string name="battery_percentage_off">비활성화</string>
     <string name="battery_percentage_next">활성화됨</string>
     <string name="battery_percentage_inside">사용 (아이콘 내부)</string>
-    <string name="battery_percentage_estimate">사용 (추정)</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Battery estimate</string>
+    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">화면 새로 고침 빈도</string>
     <string name="refresh_rate_summary_auto">자동 / 일부 컨텐츠의 새로 고침 빈도를 60에서 90Hz로 자동으로 높입니다.</string>
@@ -2169,4 +2175,11 @@
     <string name="pulse_ambient_light_title">가장자리 조명</string>
     <string name="pulse_ambient_light_summary">알림 펄스에서 화면의 측면 가장자리를 밝게합니다.</string>
     <string name="pulse_ambient_light_color_title">가장자리 밝은 색</string>
+    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
+    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <!-- QS battery -->
+    <string name="qs_battery_location_title">Battery location</string>
+    <string name="qs_battery_location_qs_panel">QS Panel</string>
+    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
+    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
 </resources>
