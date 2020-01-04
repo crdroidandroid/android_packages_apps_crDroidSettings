@@ -359,7 +359,7 @@
     <string name="lockscreen_enable_qs_summary">Надати доступ до швидких налаштувань та гортання ярликів на заблокованомв екрані</string>
     <!-- Screenshot Sound  -->
     <string name="screenshot_sound_title">Звук скріншоту</string>
-    <string name="screenshot_sound_summary">Увімкнути звук в момент створення скріншоту</string>
+    <string name="screenshot_sound_summary">Play sound when screenshot is taken</string>
     <!-- Volume Steps -->
     <string name="volume_steps_title">Рівні гучності</string>
     <string name="volume_steps_summary">Налаштування кроків гучності звукової панелі</string>
@@ -919,9 +919,9 @@
     <string name="pref_scrollingcache_default_enable">Увімкнути за замовчуванням</string>
     <string name="pref_scrollingcache_default_disable">Вимкнути за замовчуванням</string>
     <string name="pref_scrollingcache_force_disable">Примусово вимкнути</string>
-    <!-- Optional screenshot type -->
-    <string name="screenshot_type_title">Знімок частини екрану</string>
-    <string name="screenshot_type_fullscreen">Повноекранний скріншот</string>
+    <!-- Screenshot type  -->
+    <string name="screenshot_type_title">Screenshot type</string>
+    <string name="screenshot_type_fullscreen">Take fullscreen screenshot via volume keys</string>
     <string name="screenshot_type_partial">Перетягніть виділення області для скріншота з допомогою клавіші регулювання гучності</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">Опції скріншота</string>
@@ -1109,6 +1109,7 @@
     <string name="power_menu_reboot_title">Меню перезавантаження</string>
     <string name="power_menu_screenshot_title">Знімок екрана</string>
     <string name="power_menu_screenshot_summary">Утримуйте для скріншоту виділеної області</string>
+    <string name="power_menu_screenrecord_title">Screenrecord</string>
     <string name="power_menu_onthego_title">Режим On-The-Go</string>
     <string name="power_menu_airplane_title">Режим польоту</string>
     <string name="power_menu_users_title">Зміна користувача</string>
@@ -1411,9 +1412,9 @@
     <!-- The Drill -->
     <string name="drill_title">Від розробників</string>
     <string name="drill_summary">Знайшли помилку? Зіткнувся з проблемою?</string>
-    <!-- Hide Statusbar on Lockscreen -->
-    <string name="lockscreen_hide_status_bar_title">Панель статусу</string>
-    <string name="lockscreen_hide_status_bar_summary">Відображати рядок стану</string>
+    <!-- Show Statusbar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Status bar</string>
+    <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Панель останніх програм із Slim</string>
     <string name="use_slim_recents_title">Панель останніх програм із Slim</string>
@@ -1669,6 +1670,8 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Розширене перезавантаження</string>
     <string name="advanced_reboot_summary">Коли пристрій розблоковано, в меню живлення доступні опції перезавантаження в режим відновлення і завантажувач</string>
+    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
+    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
     <!-- Allow lights in zen mode -->
     <string name="zen_allow_lights">Увімкнути</string>
     <string name="zen_allow_lights_summary">Дозволити блимання в режимі \"Не турбувати\"</string>
@@ -1916,7 +1919,8 @@
     <string name="accent_picker_brand_colors">Поєднання кольорів</string>
     <string name="style_dark_overlay_title">Темний режим</string>
     <string name="style_dark_overlay_default">Темно-сірий</string>
-    <string name="style_dark_overlay_black">Чорний Amoled</string>
+    <string name="style_dark_overlay_charcoal_black">Charcoal Black</string>
+    <string name="style_dark_overlay_amoled_black">Amoled Black</string>
     <string name="style_notification_title">Стиль сповіщення</string>
     <string name="style_notification_auto">Автоматично (системна тема)</string>
     <string name="style_notification_light">Світла</string>
@@ -2097,9 +2101,9 @@
     <string name="notification_sound_vib_screen_on_summary">Відтворювання звуку та вібрації для сповіщень при увімкненому екрані</string>
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">Параметри вібрації під час дзвінка</string>
-    <string name="incall_vibrate_connect_title">Вибрація при з\'єднанні</string>
+    <string name="incall_vibrate_connect_title">Vibrate on answer</string>
     <string name="incall_vibrate_call_wait_title">Вібрувати при паралельному виклику</string>
-    <string name="incall_vibrate_disconnect_title">Вібрація при роз\'єднанні</string>
+    <string name="incall_vibrate_disconnect_title">Vibrate on hang up</string>
     <!-- Keyboard and IME  -->
     <string name="ime_settings_title">Налаштування клавіатури</string>
     <string name="ime_settings_summary">Налаштування розширених можливостей клавіатури</string>
@@ -2153,12 +2157,14 @@
     <string name="aggressive_standby_summary">Обмежити роботу додатків в фоновому режимі</string>
     <string name="aggressive_battery_saver_title">Включати автоматично в режимі економії заряду</string>
     <string name="aggressive_battery_saver_summary">Ввімкнути агресивне енергозбереження автоматично в режимі збереження заряду</string>
-    <!-- Battery mode -->
+    <!-- Battery percent -->
     <string name="battery_percentage_title">Відсоток заряду батареї</string>
     <string name="battery_percentage_off">Вимкнено</string>
     <string name="battery_percentage_next">Ввімкнено</string>
     <string name="battery_percentage_inside">Увімкнено (всередині значка)</string>
-    <string name="battery_percentage_estimate">Увімкнено (оцінити)</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Battery estimate</string>
+    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">Частота оновлення екрана</string>
     <string name="refresh_rate_summary_auto">Авто / Автоматично підвищує швидкість оновлення з 60 на 90 Гц</string>
@@ -2169,4 +2175,11 @@
     <string name="pulse_ambient_light_title">Підсвічування контуру</string>
     <string name="pulse_ambient_light_summary">Підсвічувати краї екрана при імпульсі сповіщень</string>
     <string name="pulse_ambient_light_color_title">Колір підсвічування контуру</string>
+    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
+    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <!-- QS battery -->
+    <string name="qs_battery_location_title">Battery location</string>
+    <string name="qs_battery_location_qs_panel">QS Panel</string>
+    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
+    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
 </resources>
