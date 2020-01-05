@@ -921,7 +921,7 @@
     <string name="pref_scrollingcache_force_disable">Принудительно отключить</string>
     <!-- Screenshot type  -->
     <string name="screenshot_type_title">Тип скриншота</string>
-    <string name="screenshot_type_fullscreen">Скриншот всего экрана</string>
+    <string name="screenshot_type_fullscreen">Скриншот всего экрана кнопками громкости</string>
     <string name="screenshot_type_partial">Скриншот выбранной области</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">Настройки скриншота</string>
@@ -1109,7 +1109,7 @@
     <string name="power_menu_reboot_title">Перезагрузка</string>
     <string name="power_menu_screenshot_title">Скриншот</string>
     <string name="power_menu_screenshot_summary">Удерживайте, чтобы выделить область для скриншота</string>
-    <string name="power_menu_screenrecord_title">Screenrecord</string>
+    <string name="power_menu_screenrecord_title">Запись экрана</string>
     <string name="power_menu_onthego_title">Режим \"На ходу\"</string>
     <string name="power_menu_airplane_title">Режим полёта</string>
     <string name="power_menu_users_title">Пользователи</string>
@@ -1413,8 +1413,8 @@
     <string name="drill_title">Послание от разработчиков</string>
     <string name="drill_summary">Нашел баг? Столкнулся с проблемой?</string>
     <!-- Show Statusbar on Lockscreen -->
-    <string name="lockscreen_status_bar_title">Status bar</string>
-    <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
+    <string name="lockscreen_status_bar_title">Строка состояния</string>
+    <string name="lockscreen_status_bar_summary">Отображать строку состояния на экране блокировки</string>
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Недавние Slim</string>
     <string name="use_slim_recents_title">Использовать для недавних</string>
@@ -1670,8 +1670,8 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Расширенная перезагрузка</string>
     <string name="advanced_reboot_summary">Когда устройство разблокировано, в меню питания доступны опции перезагрузки в режим восстановления и в загрузчик</string>
-    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
-    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
+    <string name="advanced_reboot_secured_title">Защищённый экран блокировки</string>
+    <string name="advanced_reboot_secured_summary">Отображать дополнительные параметры перезагрузки на экране блокировки</string>
     <!-- Allow lights in zen mode -->
     <string name="zen_allow_lights">Включено</string>
     <string name="zen_allow_lights_summary">Разрешить мигание в режиме \"Не беспокоить\"</string>
@@ -1919,8 +1919,8 @@
     <string name="accent_picker_brand_colors">Фирменные цвета</string>
     <string name="style_dark_overlay_title">Тёмный режим</string>
     <string name="style_dark_overlay_default">Тёмно-серый</string>
-    <string name="style_dark_overlay_charcoal_black">Charcoal Black</string>
-    <string name="style_dark_overlay_amoled_black">Amoled Black</string>
+    <string name="style_dark_overlay_charcoal_black">Тёмно-серый</string>
+    <string name="style_dark_overlay_amoled_black">Чёрный amoled</string>
     <string name="style_notification_title">Стиль уведомлений</string>
     <string name="style_notification_auto">Автоматический (системная тема)</string>
     <string name="style_notification_light">Светлый</string>
@@ -2101,9 +2101,9 @@
     <string name="notification_sound_vib_screen_on_summary">Проигрывать звук и вибрацию для уведомлений при включённом экране</string>
     <!-- Incall vibrate options -->
     <string name="incall_vibration_category">Параметры вибрации при входящем вызове</string>
-    <string name="incall_vibrate_connect_title">Вибрация при соединении</string>
+    <string name="incall_vibrate_connect_title">Вибрация при ответе</string>
     <string name="incall_vibrate_call_wait_title">Вибрация при ожидании ответа на звонок</string>
-    <string name="incall_vibrate_disconnect_title">Вибрация при отключении</string>
+    <string name="incall_vibrate_disconnect_title">Вибрировать при отбое</string>
     <!-- Keyboard and IME  -->
     <string name="ime_settings_title">Настройки клавиатуры</string>
     <string name="ime_settings_summary">Настройка дополнительных параметров клавиатуры</string>
@@ -2163,8 +2163,8 @@
     <string name="battery_percentage_next">Включен</string>
     <string name="battery_percentage_inside">Включен (внутри значка)</string>
     <!-- Battery estimate -->
-    <string name="battery_estimate_title">Battery estimate</string>
-    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
+    <string name="battery_estimate_title">Уровень заряда</string>
+    <string name="battery_estimate_summary">Показывать ожидаемое время работы от аккумулятора, если доступно</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">Частота обновления экрана</string>
     <string name="refresh_rate_summary_auto">Авто / Автоматическое повышение частоты обновления с 60 до 90 Гц для некоторого контента</string>
@@ -2175,11 +2175,14 @@
     <string name="pulse_ambient_light_title">Подсветка краёв экрана</string>
     <string name="pulse_ambient_light_summary">Подсвечивать края экрана при получении уведомления в режиме AOD</string>
     <string name="pulse_ambient_light_color_title">Цвет подсветки</string>
-    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
-    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <string name="pulse_ambient_light_duration_title">Длительность подсветки</string>
+    <string name="pulse_ambient_light_duration_summary">Установить длительность подсветки краёв экрана</string>
     <!-- QS battery -->
-    <string name="qs_battery_location_title">Battery location</string>
-    <string name="qs_battery_location_qs_panel">QS Panel</string>
-    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
-    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
+    <string name="qs_battery_location_title">Расположение батареи</string>
+    <string name="qs_battery_location_qs_panel">Панель быстрых настроек</string>
+    <string name="qs_battery_location_qs_statusbar">Строка состояния быстрых настроек</string>
+    <string name="qs_use_status_bar_battery_style">Следовать стилю строки состояния</string>
+    <!-- QS battery -->
+    <string name="lockscreen_lock_icon_title">Значок блокировки</string>
+    <string name="lockscreen_lock_icon_summary">Показывать на экране блокировки</string>
 </resources>
