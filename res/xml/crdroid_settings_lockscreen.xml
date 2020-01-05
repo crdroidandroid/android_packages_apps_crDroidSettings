@@ -151,18 +151,18 @@
             android:defaultValue="true" /> -->
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_charging_animation"
+            android:icon="@drawable/ic_flash_outline"
+            android:title="@string/lockscreen_charging_animation_title"
+            android:summary="@string/lockscreen_charging_animation_summary"
+            android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
             android:icon="@drawable/ic_battery_charging"
             android:title="@string/lockscreen_battery_info_title"
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
-
-        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_charging_animation"
-            android:icon="@drawable/ic_flash_outline"
-            android:title="@string/lockscreen_charging_animation_title"
-            android:summary="@string/lockscreen_charging_animation_summary"
-            android:defaultValue="true" />-->
 
         <!--<com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="lockscreen_date_selection"
