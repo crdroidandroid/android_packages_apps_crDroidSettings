@@ -28,11 +28,10 @@
         android:title="@string/doze_always_on_title"
         android:summary="@string/doze_always_on_summary" />
 
-    <!--<Preference
-        android:key="force_ambient_for_media_pref"
-        android:fragment="com.crdroid.settings.fragments.ui.AmbientTicker"
-        android:title="@string/force_ambient_for_media_pref_title"
-        android:summary="@string/force_ambient_for_media_pref_summary"/>-->
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="pulse_on_new_tracks"
+        android:title="@string/pulse_on_new_tracks_title"
+        android:summary="@string/pulse_on_new_tracks_summary" />
 
     <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="ambient_battery_percent"

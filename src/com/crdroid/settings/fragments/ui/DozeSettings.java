@@ -225,6 +225,8 @@ public class DozeSettings extends SettingsPreferenceFragment implements Indexabl
                 Settings.Secure.DOZE_ALWAYS_ON, mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_dozeAlwaysOnEnabled) ? 1 : 0,
                 UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PULSE_ON_NEW_TRACKS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.PULSE_AMBIENT_LIGHT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
