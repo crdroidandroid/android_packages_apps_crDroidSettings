@@ -359,7 +359,7 @@
     <string name="lockscreen_enable_qs_summary">允许在安全锁屏界面访问快速设置和滑动快捷方式</string>
     <!-- Screenshot Sound  -->
     <string name="screenshot_sound_title">截图提示音</string>
-    <string name="screenshot_sound_summary">截图时播放提示声音</string>
+    <string name="screenshot_sound_summary">截图时提示音效</string>
     <!-- Volume Steps -->
     <string name="volume_steps_title">音量等级</string>
     <string name="volume_steps_summary">自定义声音面板中的等级</string>
@@ -920,8 +920,8 @@
     <string name="pref_scrollingcache_default_disable">默认禁用</string>
     <string name="pref_scrollingcache_force_disable">强制禁用</string>
     <!-- Screenshot type  -->
-    <string name="screenshot_type_title">部分截图</string>
-    <string name="screenshot_type_fullscreen">全屏截图</string>
+    <string name="screenshot_type_title">窗口截图</string>
+    <string name="screenshot_type_fullscreen">同时按住音量键全屏截图</string>
     <string name="screenshot_type_partial">通过音量键在区域上拖动选区以进行截图</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">屏幕截图选项</string>
@@ -1109,7 +1109,7 @@
     <string name="power_menu_reboot_title">重启菜单</string>
     <string name="power_menu_screenshot_title">屏幕截图</string>
     <string name="power_menu_screenshot_summary">长按以进行局部截图</string>
-    <string name="power_menu_screenrecord_title">Screenrecord</string>
+    <string name="power_menu_screenrecord_title">屏幕录制</string>
     <string name="power_menu_onthego_title">行走模式</string>
     <string name="power_menu_airplane_title">飞行模式</string>
     <string name="power_menu_users_title">用户切换器</string>
@@ -1413,8 +1413,8 @@
     <string name="drill_title">实锤</string>
     <string name="drill_summary">发现了一个错误？遇到问题？</string>
     <!-- Show Statusbar on Lockscreen -->
-    <string name="lockscreen_status_bar_title">Status bar</string>
-    <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
+    <string name="lockscreen_status_bar_title">状态栏</string>
+    <string name="lockscreen_status_bar_summary">锁屏界面显示状态栏</string>
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Slim 最近任务视图</string>
     <string name="use_slim_recents_title">Slim 最近任务视图</string>
@@ -1670,17 +1670,15 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">高级重启</string>
     <string name="advanced_reboot_summary">设备已解锁时，在电源菜单的重启选项下加入重启至恢复模式与引导程序的选项</string>
-    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
-    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
+    <string name="advanced_reboot_secured_title">安全锁屏</string>
+    <string name="advanced_reboot_secured_summary">在安全锁屏界面显示高级重启选项</string>
     <!-- Allow lights in zen mode -->
     <string name="zen_allow_lights">启用</string>
     <string name="zen_allow_lights_summary">在不干扰时允许脉冲灯活动</string>
     <string name="light_brightness_category">亮度设置</string>
     <!-- Ambient Ticker -->
-    <string name="force_ambient_for_media_pref_title">环境音乐</string>
-    <string name="force_ambient_for_media_pref_summary">配置环境音乐通知</string>
-    <string name="ambient_ticker_footer">环境音乐收录器显示在环境显示屏幕内播放音乐曲目信息。\n\n如果在启动新曲目时禁用环境显示，则会触发此操作，从而在屏幕中间强制显示带有曲目信息的干净环境屏幕。\n\n您也可以双击轨道信息以跳过轨道。</string>
-    <string name="force_ambient_for_media_title">启用</string>
+    <string name="pulse_on_new_tracks_title">提示音乐</string>
+    <string name="pulse_on_new_tracks_summary">主动显示新音乐播放</string>
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">面部自动解锁</string>
     <string name="face_auto_unlock_summary">识别受信任的面部后自动关闭锁屏</string>
@@ -1919,8 +1917,8 @@
     <string name="accent_picker_brand_colors">品牌颜色</string>
     <string name="style_dark_overlay_title">暗色主题</string>
     <string name="style_dark_overlay_default">深灰色</string>
-    <string name="style_dark_overlay_charcoal_black">Charcoal Black</string>
-    <string name="style_dark_overlay_amoled_black">Amoled Black</string>
+    <string name="style_dark_overlay_charcoal_black">墨色</string>
+    <string name="style_dark_overlay_amoled_black">纯黑</string>
     <string name="style_notification_title">通知样式</string>
     <string name="style_notification_auto">自动 (系统主题)</string>
     <string name="style_notification_light">亮色</string>
@@ -2163,8 +2161,8 @@
     <string name="battery_percentage_next">启用</string>
     <string name="battery_percentage_inside">启用 (图标内)</string>
     <!-- Battery estimate -->
-    <string name="battery_estimate_title">Battery estimate</string>
-    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
+    <string name="battery_estimate_title">电量预估</string>
+    <string name="battery_estimate_summary">显示电量可用时间</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">屏幕刷新率</string>
     <string name="refresh_rate_summary_auto">自动/自动将某些内容的刷新率从 60Hz 提升到 90Hz</string>
@@ -2175,14 +2173,14 @@
     <string name="pulse_ambient_light_title">侧边亮屏</string>
     <string name="pulse_ambient_light_summary">在通知脉冲上照亮屏幕的侧面边缘</string>
     <string name="pulse_ambient_light_color_title">侧边亮屏颜色</string>
-    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
-    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <string name="pulse_ambient_light_duration_title">侧光持续时间</string>
+    <string name="pulse_ambient_light_duration_summary">设置环境光动画时间</string>
     <!-- QS battery -->
-    <string name="qs_battery_location_title">Battery location</string>
-    <string name="qs_battery_location_qs_panel">QS Panel</string>
-    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
-    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
+    <string name="qs_battery_location_title">电池图标位置</string>
+    <string name="qs_battery_location_qs_panel">快速设置面板</string>
+    <string name="qs_battery_location_qs_statusbar">快速状态栏</string>
+    <string name="qs_use_status_bar_battery_style">跟随状态栏样式</string>
     <!-- QS battery -->
-    <string name="lockscreen_lock_icon_title">Lock icon</string>
-    <string name="lockscreen_lock_icon_summary">Display lock icon on the lockscreen</string>
+    <string name="lockscreen_lock_icon_title">锁定图标</string>
+    <string name="lockscreen_lock_icon_summary">在锁屏界面显示锁定图标</string>
 </resources>
