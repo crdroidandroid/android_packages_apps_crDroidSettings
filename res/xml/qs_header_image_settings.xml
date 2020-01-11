@@ -58,6 +58,15 @@
     </Preference>
 
     <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="status_bar_custom_header_height"
+        android:title="@string/qs_header_offset_title"
+        android:summary="@string/qs_header_offset_summary"
+        android:max="200"
+        settings:min="100"
+        android:defaultValue="142"
+        android:dependency="status_bar_custom_header" />
+
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
         android:key="status_bar_custom_header_shadow"
         android:title="@string/qs_header_shadow_title"
         android:summary="@string/qs_header_shadow_summary"
