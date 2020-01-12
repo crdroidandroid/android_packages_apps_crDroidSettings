@@ -78,7 +78,7 @@ public class HAFRSettings extends SettingsPreferenceFragment
         // Get launch-able applications
         addPreferencesFromResource(R.xml.hafr_settings);
 
-        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.hide_apps_from_recents_summary);
+        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.hide_from_recents_picker_summary);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
