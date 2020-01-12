@@ -82,6 +82,13 @@
         android:title="@string/show_cpu_info"
         android:summary="@string/show_cpu_info_summary" />
 
+    <!-- HAFR -->
+    <Preference
+        android:icon="@drawable/ic_hafr"
+        android:title="@string/hide_apps_from_recents_title"
+        android:summary="@string/hide_apps_from_recents_summary"
+        android:fragment="com.crdroid.settings.fragments.misc.HAFRSettings" />
+
     <!-- Gaming Mode -->
     <Preference
         android:key="gaming_mode"

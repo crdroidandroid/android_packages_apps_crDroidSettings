@@ -47,6 +47,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.misc.AggressiveBattery;
+import com.crdroid.settings.fragments.misc.HAFRSettings;
 import com.crdroid.settings.fragments.misc.GamingMode;
 import com.crdroid.settings.fragments.misc.ImeSettings;
 
@@ -91,6 +92,7 @@ public class Miscellaneous extends SettingsPreferenceFragment
                 Settings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT);
         writeCpuInfoOptions(mContext, false);
         AggressiveBattery.reset(mContext);
+        HAFRSettings.reset(mContext);
         GamingMode.reset(mContext);
         ImeSettings.reset(mContext);
     }
