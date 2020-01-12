@@ -49,6 +49,13 @@
         android:summary="@string/force_expanded_notifications_summary" />-->
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="vibrate_on_notifications"
+        android:icon="@drawable/ic_vibrate"
+        android:title="@string/vibrate_on_notifications_title"
+        android:summary="@string/vibrate_on_notifications_summary"
+        android:defaultValue="true" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="notification_sound_vib_screen_on"
         android:icon="@drawable/ic_bell_ring"
         android:title="@string/notification_sound_vib_screen_on_title"
