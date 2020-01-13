@@ -117,8 +117,7 @@ public class LightSettingsDialog extends AlertDialog implements
     private void init(Context context, int color, int speedOn, int speedOff,
             boolean onOffChangeable, int brightness) {
         mContext = context;
-        mNotificationManager =
-                (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager = mContext.getSystemService(NotificationManager.class);
 
         mReadyForLed = false;
         mLedLastColor = 0;
@@ -138,7 +137,7 @@ public class LightSettingsDialog extends AlertDialog implements
      */
     private void setUp(int color, int speedOn, int speedOff, boolean onOffChangeable,
                int brightness) {
-        mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        mInflater = mContext.getSystemService(LayoutInflater.class);
         View layout = mInflater.inflate(R.layout.dialog_light_settings, null);
 
         mColorPicker = (ColorPickerView) layout.findViewById(R.id.color_picker_view);
@@ -476,7 +475,7 @@ public class LightSettingsDialog extends AlertDialog implements
         if (!hasFocus) {
             mHexColorInput.removeTextChangedListener(this);
             InputMethodManager inputMethodManager =
-                    (InputMethodManager) mContext.getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    mContext.getSystemService(InputMethodManager.class);
             inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
         } else {
             mHexColorInput.addTextChangedListener(this);

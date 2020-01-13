@@ -165,7 +165,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
         }
 
         // Missed call and Voicemail preferences should only show on devices with a voice capabilities
-        TelephonyManager tm = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+        TelephonyManager tm = getActivity().getSystemService(TelephonyManager.class);
         if (tm.getPhoneType() == TelephonyManager.PHONE_TYPE_NONE
                 || (!mLedCanPulse && !mMultiColorLed)) {
             removePreference(PHONE_SECTION);
@@ -527,6 +527,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
             case DIALOG_APPS:
                 final ListView list = new ListView(getActivity());
                 list.setAdapter(mPackageAdapter);
+                list.setDivider(null);
 
                 builder.setTitle(R.string.choose_app);
                 builder.setView(list);

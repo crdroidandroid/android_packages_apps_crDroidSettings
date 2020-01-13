@@ -95,8 +95,7 @@ public class BrightnessPreference extends CustomDialogPref<AlertDialog>
         // Message handler used for led notification update throttling.
         mHandler = new Handler();
 
-        mNotificationManager =
-                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager = context.getSystemService(NotificationManager.class);
 
         // Force lights on when screen is on and also force maximum brightness.
         Bundle bundle = new Bundle();
