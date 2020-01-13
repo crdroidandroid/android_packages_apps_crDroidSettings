@@ -40,6 +40,7 @@ import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.notifications.Ticker;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -112,6 +113,7 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
                 Settings.System.VIBRATE_ON_CALLWAITING, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.VIBRATE_ON_DISCONNECT, 0, UserHandle.USER_CURRENT);
+        Ticker.reset(mContext);
     }
 
     @Override
