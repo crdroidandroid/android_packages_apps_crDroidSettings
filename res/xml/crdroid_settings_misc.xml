@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-     Copyright (C) 2016-2019 crDroid Android Project
+     Copyright (C) 2016-2020 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -104,6 +104,14 @@
         android:title="@string/ime_settings_title"
         android:summary="@string/ime_settings_summary"
         android:fragment="com.crdroid.settings.fragments.misc.ImeSettings"/>
+
+    <!-- Smart Charging -->
+    <Preference
+        android:key="smart_charging"
+        android:icon="@drawable/ic_battery_charging_80"
+        android:title="@string/smart_charging_title"
+        android:summary="@string/smart_charging_summary"
+        android:fragment="com.crdroid.settings.fragments.misc.SmartCharging"/>
 
     <!-- MediaScanner behavior on boot
     <com.crdroid.settings.preferences.SystemSettingListPreference

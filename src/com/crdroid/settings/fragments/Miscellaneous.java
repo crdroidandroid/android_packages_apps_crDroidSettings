@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2019 crDroid Android Project
+ * Copyright (C) 2016-2020 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
@@ -50,6 +51,7 @@ import com.crdroid.settings.fragments.misc.AggressiveBattery;
 import com.crdroid.settings.fragments.misc.HAFRSettings;
 import com.crdroid.settings.fragments.misc.GamingMode;
 import com.crdroid.settings.fragments.misc.ImeSettings;
+import com.crdroid.settings.fragments.misc.SmartCharging;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -61,23 +63,33 @@ public class Miscellaneous extends SettingsPreferenceFragment
     public static final String TAG = "Miscellaneous";
 
     private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
+    private static final String SMART_CHARGING = "smart_charging";
 
     private SwitchPreference mShowCpuInfo;
+    private Preference mSmartCharging;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Context mContext = getActivity().getApplicationContext();
+        ContentResolver resolver = mContext.getContentResolver();
 
         addPreferencesFromResource(R.xml.crdroid_settings_misc);
 
-        ContentResolver resolver = mContext.getContentResolver();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = getResources();
 
-        mShowCpuInfo = (SwitchPreference) findPreference(SHOW_CPU_INFO_KEY);
+        mShowCpuInfo = (SwitchPreference) prefScreen.findPreference(SHOW_CPU_INFO_KEY);
         mShowCpuInfo.setChecked(Settings.Global.getInt(resolver,
                 Settings.Global.SHOW_CPU_OVERLAY, 0) == 1);
         mShowCpuInfo.setOnPreferenceChangeListener(this);
+
+        mSmartCharging = (Preference) prefScreen.findPreference(SMART_CHARGING);
+        boolean mSmartChargingSupported = res.getBoolean(
+                com.android.internal.R.bool.config_smartChargingAvailable);
+        if (!mSmartChargingSupported)
+            prefScreen.removePreference(mSmartCharging);
     }
 
     public static void reset(Context mContext) {
@@ -95,6 +107,7 @@ public class Miscellaneous extends SettingsPreferenceFragment
         HAFRSettings.reset(mContext);
         GamingMode.reset(mContext);
         ImeSettings.reset(mContext);
+        SmartCharging.reset(mContext);
     }
 
     private static void writeCpuInfoOptions(Context mContext, boolean value) {
@@ -145,6 +158,12 @@ public class Miscellaneous extends SettingsPreferenceFragment
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+                    final Resources res = context.getResources();
+
+                    boolean mSmartChargingSupported = res.getBoolean(
+                            com.android.internal.R.bool.config_smartChargingAvailable);
+                    if (!mSmartChargingSupported)
+                        keys.add(SMART_CHARGING);
 
                     return keys;
                 }
