@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2019 crDroid Android Project
+ * Copyright (C) 2016-2020 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.notifications.Ticker;
+import com.crdroid.settings.utils.DeviceUtils;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -53,9 +54,11 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
     private static final String BATTERY_LIGHTS_PREF = "battery_lights";
     private static final String NOTIFICATION_LIGHTS_PREF = "notification_lights";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
+    private static final String TICKER_SETTINGS = "ticker_settings";
 
     private Preference mBatLights;
     private Preference mNotLights;
+    private Preference mTickerSettings;
     private PreferenceCategory lightsCategory;
     private ListPreference mFlashlightOnCall;
 
@@ -69,6 +72,10 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
+
+        mTickerSettings = (Preference) prefScreen.findPreference(TICKER_SETTINGS);
+        if (DeviceUtils.hasNotch(mContext))
+            prefScreen.removePreference(mTickerSettings);
 
         mBatLights = (Preference) prefScreen.findPreference(BATTERY_LIGHTS_PREF);
         boolean mBatLightsSupported = res.getInteger(
@@ -142,6 +149,9 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
                     final Resources res = context.getResources();
+
+                    if (DeviceUtils.hasNotch(context))
+                        keys.add(TICKER_SETTINGS);
 
                     boolean mBatLightsSupported = res.getInteger(
                             org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities) >= 64;

@@ -48,6 +48,7 @@ public class Ticker extends SettingsPreferenceFragment {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.statusbar_ticker);
+        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.ticker_screen_footer);
     }
 
     public static void reset(Context mContext) {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 crDroid Android Project
+ * Copyright (C) 2016-2020 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -135,5 +135,10 @@ public class DeviceUtils {
             // Ignore
         }
         return false;
+    }
+
+    public static boolean hasNotch(Context context) {
+        return context.getResources().getBoolean(
+                org.lineageos.platform.internal.R.bool.config_haveNotch);
     }
 }

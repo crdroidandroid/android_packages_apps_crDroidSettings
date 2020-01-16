@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2019 crDroid Android Project
+ * Copyright (C) 2016-2020 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ import com.crdroid.settings.fragments.statusbar.Clock;
 import com.crdroid.settings.fragments.statusbar.NetworkTrafficSettings;
 import com.crdroid.settings.preferences.SystemSettingListPreference;
 import com.crdroid.settings.preferences.colorpicker.ColorPickerPreference;
+import com.crdroid.settings.utils.DeviceUtils;
 import com.crdroid.settings.utils.TelephonyUtils;
 
 import java.util.List;
@@ -88,19 +89,16 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mStatusBarClock =
                 (LineageSystemSettingListPreference) findPreference(STATUS_BAR_CLOCK_STYLE);
 
-        final boolean hasNotch = getResources().getBoolean(
-                org.lineageos.platform.internal.R.bool.config_haveNotch);
-
         // Adjust status bar preferences for RTL
         if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
-            if (hasNotch) {
+            if (DeviceUtils.hasNotch(mContext)) {
                 mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch_rtl);
                 mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch_rtl);
             } else {
                 mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
                 mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_rtl);
             }
-        } else if (hasNotch) {
+        } else if (DeviceUtils.hasNotch(mContext)) {
             mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
             mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
         }
