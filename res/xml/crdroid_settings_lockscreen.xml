@@ -174,6 +174,26 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+            android:key="fod_icon_picker"
+            android:title="@string/fod_icon_picker_title" >
+
+            <!-- FOD icon picker -->
+            <Preference
+                android:key="fod_icon_picker_category"
+                android:icon="@drawable/ic_fp"
+                android:title="@string/fod_icon_picker_title"
+                android:summary="@string/fod_icon_picker_summary"
+                android:fragment="com.crdroid.settings.fragments.lockscreen.FODIconPickerFragment" />
+
+            <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+                android:key="fod_icon_wallpaper_color"
+                android:title="@string/fod_wallpaper_color"
+                android:summary="@string/fod_wallpaper_color_summary"
+                android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="lockscreen_gestures_category"
         android:title="@string/gestures_title">
 
