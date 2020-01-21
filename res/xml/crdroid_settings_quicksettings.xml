@@ -205,6 +205,14 @@
             android:title="@string/qs_blur_title"
             android:summary="@string/qs_blur_summary" />
 
+        <!-- QS data usage  -->
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_datausage"
+            android:title="@string/qs_datausage_title"
+            android:icon="@drawable/ic_traffic"
+            android:summary="@string/qs_datausage_subtitle"
+            android:defaultValue="false" />
+
         <!-- QS clock -->
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="show_qs_clock"
