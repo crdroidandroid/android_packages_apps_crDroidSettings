@@ -101,10 +101,10 @@
     <string name="aosp_first_time_message">Täisekraanis viimatiste valik kirjutatakse üle kui laiendatud töölaud on lubatud.</string>
     <!-- Hide Apps from Recents -->
     <string name="hide_apps_from_recents_title">Peida rakendused viimatiste seast</string>
-    <string name="hide_apps_from_recents_summary">Hide apps from appearing in recents screen</string>
+    <string name="hide_apps_from_recents_summary">Peida rakendused viimatiste loendis kuvamisest</string>
     <string name="hide_from_recents_add_app">Lisa rakendus peitmisnimekirja</string>
     <string name="hide_from_recents_picker_title">Peida automaatselt nende rakenduste jaoks</string>
-    <string name="hide_from_recents_picker_summary">These apps will be automatically hide from recents screen when they are opened next time</string>
+    <string name="hide_from_recents_picker_summary">Need rakendused peidetakse viimatiste vaatest järgmisel avamisel automaatselt</string>
     <!-- OmniSwitch Recents -->
     <string name="recents_use_omniswitch_title">Kasuta viimatistena</string>
     <string name="recents_use_omniswitch_summary">Kasuta vaikimisi hiljutiste vaate asemel OmniSwitchi</string>
@@ -143,7 +143,7 @@
     <string name="shortcut_action_help_shortcut">otsetee</string>
     <string name="shortcut_action_help_button">nupp</string>
     <string name="shortcut_action_help_app">rakendus</string>
-    <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
+    <string name="shortcut_action_help_icon">, ikooni valimine toob esile kohandamisvalikud</string>
     <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
     <string name="shortcut_action_help_delete_last_entry">Iga %1$s eemaldamisel keelatakse see funktsioon täielikult.</string>
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Iga %1$s eemaldamisel keelatakse teine pirukakiht täielikult.</string>
@@ -1002,15 +1002,15 @@
     <string name="doze_display_summary">Seadista säästliku ekraani seadeid</string>
     <string name="doze_sensor_title">Anduripõhine</string>
     <string name="tilt_title">Kallutus</string>
-    <string name="tilt_summary">Pulse notifications on tilt</string>
+    <string name="tilt_summary">Näita teavitusi kallutusel</string>
     <string name="pickup_title">Tõsta üles</string>
-    <string name="pickup_summary">Pulse notifications on pick up</string>
+    <string name="pickup_summary">Näita teavitusi seadme tõstmisel</string>
     <string name="handwave_title">Käeviibutus</string>
     <string name="handwave_summary">Näita teavitusi käeviibutusel</string>
     <string name="pocket_title">Tasku</string>
     <string name="pocket_summary">Näita teavitusi taskust välja võtmisel</string>
     <string name="doze_vibrate">Vibreeri</string>
-    <string name="doze_vibrate_summary">Duration to vibrate when pulsing notifications</string>
+    <string name="doze_vibrate_summary">Vibreerimise kestus teavituste kuvamisel</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Praegune muudatuste logi</string>
     <string name="changelog_crdroid_summary">Vaata paigaldatud ROMi muudatusi</string>
@@ -1210,7 +1210,7 @@
     <string name="animation_duration_summary">Määra kestus</string>
     <string name="animation_no_scroll_title">Kasuta kohandatud väärtusi</string>
     <string name="scroll_disclaimer_summary">Most apps need to be restarted for custom values to take effect</string>
-    <string name="animation_settings_reset_message">Reset all animation settings to default?</string>
+    <string name="animation_settings_reset_message">Lähtestad kõik animatsiooniseaded vaikeväärtustele?</string>
     <!-- Alarm Fullscreen -->
     <string name="show_alarm_fullscreen_title">Täisekraanis äratus</string>
     <string name="show_alarm_fullscreen_summary">Display alarm as full screen instead of heads up</string>
@@ -1680,8 +1680,8 @@
     <string name="zen_allow_lights_summary">Luba märgutule vilgutamine Mitte segada režiimis</string>
     <string name="light_brightness_category">Valguse heleduse seaded</string>
     <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Music ticker</string>
-    <string name="pulse_on_new_tracks_summary">Show Ambient Display when a new music track is played</string>
+    <string name="pulse_on_new_tracks_title">Muusika tiksuja</string>
+    <string name="pulse_on_new_tracks_summary">Kuva säästlik ekraan uue muusikaloo esitamisel</string>
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">Automaatne lahtilukustus näo peale</string>
     <string name="face_auto_unlock_summary">Väldi lukustusekraani peale usaldatud näo tuvastamist</string>
@@ -1844,7 +1844,7 @@
     <string name="edge_gestures_back_edges_left">Vasakul</string>
     <string name="edge_gestures_back_edges_right">Paremal</string>
     <string name="edge_gestures_back_edges_both">Mõlemad küljed</string>
-    <string name="edge_gestures_back_show_ui_feedback_title">Back gesture animation</string>
+    <string name="edge_gestures_back_show_ui_feedback_title">Tagasiviipe animatsioon</string>
     <string name="edge_gestures_back_show_ui_feedback_summary">Show animated feedback on edges when back gesture is used</string>
     <!-- EdgeGesture service -->
     <string name="edge_gesture_service_title">Block gesture touch events</string>
@@ -1898,9 +1898,9 @@
     <string name="custom_seekbar_default_value_to_set">Vaikeväärtus: <xliff:g id="v">%s</xliff:g>\nMääramiseks vajuta pikalt</string>
     <string name="custom_seekbar_default_value_is_set">Vaikeväärtus on määratud</string>
     <!-- Blink flashlight for incoming calls -->
-    <string name="flashlight_on_call_title">Blink Flashlight on call</string>
+    <string name="flashlight_on_call_title">Taskulambi vilkumine saabuva kõne ajal</string>
     <string name="flashlight_on_call_disabled">Keelatud</string>
-    <string name="flashlight_on_call_not_dnd">Only in ringer mode</string>
+    <string name="flashlight_on_call_not_dnd">Ainult helinarežiimis</string>
     <string name="flashlight_on_call_dnd">Ainult Mitte segada režiimis</string>
     <string name="flashlight_on_call_always">Alati</string>
     <!-- Themes -->
@@ -1919,6 +1919,7 @@
     <string name="accent_picker_custom_colors">Kasutaja valitud</string>
     <string name="accent_picker_brand_colors">Brändivärvid</string>
     <string name="style_dark_overlay_title">Tume režiim</string>
+    <string name="style_dark_overlay_midnight_blue">Kesköiselt sinakas</string>
     <string name="style_dark_overlay_default">Tumehall</string>
     <string name="style_dark_overlay_charcoal_black">Süsimust</string>
     <string name="style_dark_overlay_amoled_black">AMOLED-must</string>
@@ -2089,7 +2090,7 @@
     <string name="stock_statusbar_in_hide_summary">Use default statusbar height in Hide</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Täisekraanis rakendused</string>
-    <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
+    <string name="display_cutout_force_fullscreen_summary">Sunni rakendused kulmuala ignoreerima</string>
     <!-- Lockscreen album art filter -->
     <string name="lockscreen_albumart_filter_title">Meedia kaanepildi filter</string>
     <string name="lockscreen_albumart_filter_none">Puudub</string>
@@ -2174,7 +2175,7 @@
     <string name="auto_refresh_rate">Automaatne</string>
     <!-- Ambient edge lighting -->
     <string name="pulse_ambient_light_title">Äärevalgustus</string>
-    <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="pulse_ambient_light_summary">Valgusta ekraani servasid teavituse saabumisel</string>
     <string name="pulse_ambient_light_color_title">Äärevalguse värv</string>
     <string name="pulse_ambient_light_duration_title">Äärevalguse kestus</string>
     <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
@@ -2197,5 +2198,5 @@
     <string name="smart_charging_resume_level_title">Nutika laadimise algtase</string>
     <string name="smart_charging_reset_stats_title">Lähtesta aku statistika</string>
     <string name="smart_charging_reset_stats_summary">Lähtesta aku statistika pärast kasutaja määratletud laadimistaseme saavutamist</string>
-    <string name="smart_charging_footer">Nutikas laadimine võimaldab teil aku maksimaalse kasutusaja pikendamiseks seada maksimaalse laadimistaseme</string>
+    <string name="smart_charging_footer">Nutikas laadimine võimaldab teil määrata maksimaalne laadimistase, parandamaks aku eluiga. Lubamisel lõpetab aku laadimise nutika laadimise peatumise tasemel ning jätkab laadimist nutika laadimise algtasemel. Peatumise tase peaks alati olema suurem, kui algtase.</string>
 </resources>

@@ -100,11 +100,11 @@
     <string name="aosp_first_time_title">AOSP 최근 앱 화면</string>
     <string name="aosp_first_time_message">몰입 형 최근 설정은 확장 된 데스크톱이 사용되는 경우 무시됩니다.</string>
     <!-- Hide Apps from Recents -->
-    <string name="hide_apps_from_recents_title">Hide apps from recents</string>
-    <string name="hide_apps_from_recents_summary">Hide apps from appearing in recents screen</string>
-    <string name="hide_from_recents_add_app">Add app to Hide list</string>
-    <string name="hide_from_recents_picker_title">Automatically hide for these apps</string>
-    <string name="hide_from_recents_picker_summary">These apps will be automatically hide from recents screen when they are opened next time</string>
+    <string name="hide_apps_from_recents_title">최근 앱에서 앱 숨기기</string>
+    <string name="hide_apps_from_recents_summary">최근 화면에 앱이 나타나지 않도록 숨기기</string>
+    <string name="hide_from_recents_add_app">숨기기 목록에 앱 추가</string>
+    <string name="hide_from_recents_picker_title">이 앱을 자동으로 숨기기</string>
+    <string name="hide_from_recents_picker_summary">이 앱은 다음에 열 때 최근 화면에서 자동으로 숨겨집니다</string>
     <!-- OmniSwitch Recents -->
     <string name="recents_use_omniswitch_title">최근 사용</string>
     <string name="recents_use_omniswitch_summary">기본 최근 항목 대신 OmniSwitch 사용하기</string>
@@ -845,7 +845,7 @@
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">자막 알림</string>
     <string name="ticker_screen_summary">\"상태 표시줄의 알림 표시\"</string>
-    <string name="ticker_screen_footer">Ticker is visible only when notification heads-up is not shown</string>
+    <string name="ticker_screen_footer">티커는 알림 헤드 업이 표시되지 않은 경우에만 표시됩니다</string>
     <string name="ticker_title">상태표시줄 자막 알림</string>
     <string name="ticker_summary">상태 표시줄 자막 알림을 활성화</string>
     <string name="ticker_restore_defaults_title">기본 값 복원</string>
@@ -1681,7 +1681,7 @@
     <string name="light_brightness_category">밝기 설정</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">음악 티커</string>
-    <string name="pulse_on_new_tracks_summary">Show Ambient Display when a new music track is played</string>
+    <string name="pulse_on_new_tracks_summary">새로운 음악 트랙이 재생 될 때 앰비언트 디스플레이 표시합니다</string>
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">얼굴 자동 잠금 해제</string>
     <string name="face_auto_unlock_summary">신뢰할 수 있는 얼굴 인식 후 lockscreen를 자동으로 해제</string>
@@ -1919,9 +1919,10 @@
     <string name="accent_picker_custom_colors">사용자가 요청</string>
     <string name="accent_picker_brand_colors">브랜드 색상</string>
     <string name="style_dark_overlay_title">어두운 모드</string>
+    <string name="style_dark_overlay_midnight_blue">미드나잇 블루</string>
     <string name="style_dark_overlay_default">짙은 회색</string>
-    <string name="style_dark_overlay_charcoal_black">Charcoal Black</string>
-    <string name="style_dark_overlay_amoled_black">Amoled Black</string>
+    <string name="style_dark_overlay_charcoal_black">차콜 블랙</string>
+    <string name="style_dark_overlay_amoled_black">Amoled 블랙</string>
     <string name="style_notification_title">알림 스타일</string>
     <string name="style_notification_auto">자동 (시스템 테마)</string>
     <string name="style_notification_light">약하게</string>
@@ -2176,26 +2177,27 @@
     <string name="pulse_ambient_light_title">가장자리 조명</string>
     <string name="pulse_ambient_light_summary">알림 펄스에서 화면의 측면 가장자리를 밝게합니다.</string>
     <string name="pulse_ambient_light_color_title">가장자리 밝은 색</string>
-    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
-    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <string name="pulse_ambient_light_duration_title">가장자리 조명 지속 시간</string>
+    <string name="pulse_ambient_light_duration_summary">주변 조명 애니메이션 지속 시간을 설정합니다</string>
     <!-- QS battery -->
-    <string name="qs_battery_location_title">Battery location</string>
+    <string name="qs_battery_location_title">배터리 위치</string>
     <string name="qs_battery_location_qs_panel">빠른 설정 패널</string>
-    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
+    <string name="qs_battery_location_qs_statusbar">빠른 상태 표시 줄</string>
     <string name="qs_use_status_bar_battery_style">상태 표시줄 스타일에 따름</string>
     <!-- QS battery -->
     <string name="lockscreen_lock_icon_title">잠김 아이콘</string>
     <string name="lockscreen_lock_icon_summary">잠금 화면에 잠김 아이콘 표시</string>
     <!-- Notification Vibration -->
-    <string name="vibrate_on_notifications_title">Notification vibration</string>
-    <string name="vibrate_on_notifications_summary">Vibrate on notifications</string>
+    <string name="vibrate_on_notifications_title">알림 진동</string>
+    <string name="vibrate_on_notifications_summary">알림 진동</string>
     <!-- Smart charging -->
-    <string name="smart_charging_title">Smart Charging</string>
-    <string name="smart_charging_summary">Set maximum charging level</string>
-    <string name="smart_charging_switch_title">Enable Smart Charging</string>
-    <string name="smart_charging_level_title">Stop trigger level</string>
-    <string name="smart_charging_resume_level_title">Start trigger level</string>
-    <string name="smart_charging_reset_stats_title">Reset battery statistics</string>
-    <string name="smart_charging_reset_stats_summary">Reset battery statistics after reaching user defined charging level</string>
-    <string name="smart_charging_footer">Smart Charging allows you to set maximum charging level to extend the lifespan of your battery</string>
+    <string name="smart_charging_title">스마트 충전</string>
+    <string name="smart_charging_summary">최대 충전 수준 설정</string>
+    <string name="smart_charging_switch_title">스마트 충전 활성화</string>
+    <string name="smart_charging_level_title">정지 트리거 레벨</string>
+    <string name="smart_charging_resume_level_title">시작 트리거 레벨</string>
+    <string name="smart_charging_reset_stats_title">배터리 통계 재설정</string>
+    <string name="smart_charging_reset_stats_summary">사용자 정의 충전 수준에 도달 한 후 배터리 통계 재설정</string>
+    <string name="smart_charging_footer">스마트 충전을 사용하면 배터리 수명을 연장하기 위해 최대 충전 수준을 설정할 수 있습니다.  활성화되면 배터리가 중지 트리거 수준에서 충전을 중지하고 시작 트리거 수준에서 충전을 다시 시작합니다.  정지 트리거 레벨은 항상 기동 트리거 레벨보다 커야합니다.
+ 컨텍스트 요청</string>
 </resources>
