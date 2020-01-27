@@ -100,11 +100,11 @@
     <string name="aosp_first_time_title">AOSP 最近使用</string>
     <string name="aosp_first_time_message">如果啟用擴展桌面，沉浸式最近設置將會被覆蓋。</string>
     <!-- Hide Apps from Recents -->
-    <string name="hide_apps_from_recents_title">Hide apps from recents</string>
+    <string name="hide_apps_from_recents_title">從 \"最近\" 隱藏應用</string>
     <string name="hide_apps_from_recents_summary">Hide apps from appearing in recents screen</string>
-    <string name="hide_from_recents_add_app">Add app to Hide list</string>
-    <string name="hide_from_recents_picker_title">Automatically hide for these apps</string>
-    <string name="hide_from_recents_picker_summary">These apps will be automatically hide from recents screen when they are opened next time</string>
+    <string name="hide_from_recents_add_app">將應用添加到隱藏列表</string>
+    <string name="hide_from_recents_picker_title">自動隱藏這些應用</string>
+    <string name="hide_from_recents_picker_summary">下次打開這些應用程序時，它們會自動從“最新記錄”屏幕中隱藏</string>
     <!-- OmniSwitch Recents -->
     <string name="recents_use_omniswitch_title">用於最近使用</string>
     <string name="recents_use_omniswitch_summary">使用OmniSwitch替代預設最近使用面板</string>
@@ -1112,7 +1112,7 @@
     <string name="power_menu_reboot_title">重啟選單</string>
     <string name="power_menu_screenshot_title">螢幕截圖</string>
     <string name="power_menu_screenshot_summary">長按即可部分螢幕截圖</string>
-    <string name="power_menu_screenrecord_title">Screenrecord</string>
+    <string name="power_menu_screenrecord_title">螢幕錄製</string>
     <string name="power_menu_onthego_title">行走模式 (On-The-go)</string>
     <string name="power_menu_airplane_title">飛行模式</string>
     <string name="power_menu_users_title">使用者切換器</string>
@@ -1416,7 +1416,7 @@
     <string name="drill_title">回報</string>
     <string name="drill_summary">發現了一個錯誤？遇到問題？</string>
     <!-- Show Statusbar on Lockscreen -->
-    <string name="lockscreen_status_bar_title">Status bar</string>
+    <string name="lockscreen_status_bar_title">狀態列</string>
     <string name="lockscreen_status_bar_summary">Display status bar on the lockscreen</string>
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Slim 最近任務視圖</string>
@@ -1680,7 +1680,7 @@
     <string name="zen_allow_lights_summary">在不干擾時允許脈闖紅燈活動</string>
     <string name="light_brightness_category">亮度設置</string>
     <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Music ticker</string>
+    <string name="pulse_on_new_tracks_title">音樂提示訊息</string>
     <string name="pulse_on_new_tracks_summary">Show Ambient Display when a new music track is played</string>
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">臉部自動解鎖</string>
@@ -1919,9 +1919,8 @@
     <string name="accent_picker_custom_colors">用戶請求</string>
     <string name="accent_picker_brand_colors">品牌顏色</string>
     <string name="style_dark_overlay_title">暗色主題</string>
-    <string name="style_dark_overlay_midnight_blue">Midnight Blue</string>
     <string name="style_dark_overlay_default">深灰色</string>
-    <string name="style_dark_overlay_charcoal_black">Charcoal Black</string>
+    <string name="style_dark_overlay_charcoal_black">木炭黑</string>
     <string name="style_dark_overlay_amoled_black">Amoled Black</string>
     <string name="style_notification_title">通知風格</string>
     <string name="style_notification_auto">自動 (系統主題)</string>
@@ -2165,8 +2164,8 @@
     <string name="battery_percentage_next">已啟用</string>
     <string name="battery_percentage_inside">已啟用 (內部圖標)</string>
     <!-- Battery estimate -->
-    <string name="battery_estimate_title">Battery estimate</string>
-    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
+    <string name="battery_estimate_title">預計電池可用時間</string>
+    <string name="battery_estimate_summary">顯示可用的估計剩餘電池壽命</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">螢幕更新率</string>
     <string name="refresh_rate_summary_auto">自動將部分內容的螢幕更新率從 60Hz 提升到 90Hz</string>
@@ -2180,23 +2179,29 @@
     <string name="pulse_ambient_light_duration_title">Edge light duration</string>
     <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
     <!-- QS battery -->
-    <string name="qs_battery_location_title">Battery location</string>
+    <string name="qs_battery_location_title">電池位置</string>
     <string name="qs_battery_location_qs_panel">QS Panel</string>
-    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
-    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
+    <string name="qs_battery_location_qs_statusbar">快速狀態列</string>
+    <string name="qs_use_status_bar_battery_style">遵循狀態欄樣式</string>
     <!-- QS battery -->
-    <string name="lockscreen_lock_icon_title">Lock icon</string>
-    <string name="lockscreen_lock_icon_summary">Display lock icon on the lockscreen</string>
+    <string name="lockscreen_lock_icon_title">鎖定圖示</string>
+    <string name="lockscreen_lock_icon_summary">在鎖定螢幕顯示鎖頭圖示</string>
     <!-- Notification Vibration -->
-    <string name="vibrate_on_notifications_title">Notification vibration</string>
-    <string name="vibrate_on_notifications_summary">Vibrate on notifications</string>
+    <string name="vibrate_on_notifications_title">通知震動</string>
+    <string name="vibrate_on_notifications_summary">當有通知時震動</string>
     <!-- Smart charging -->
-    <string name="smart_charging_title">Smart Charging</string>
-    <string name="smart_charging_summary">Set maximum charging level</string>
-    <string name="smart_charging_switch_title">Enable Smart Charging</string>
-    <string name="smart_charging_level_title">Stop trigger level</string>
-    <string name="smart_charging_resume_level_title">Start trigger level</string>
-    <string name="smart_charging_reset_stats_title">Reset battery statistics</string>
-    <string name="smart_charging_reset_stats_summary">Reset battery statistics after reaching user defined charging level</string>
-    <string name="smart_charging_footer">Smart Charging allows you to set maximum charging level to extend the lifespan of your battery. When enabled, battery stops charging at Stop trigger level and resumes charging at Start trigger level. Stop trigger level should be always greater than Start trigger level.</string>
+    <string name="smart_charging_title">智能充電</string>
+    <string name="smart_charging_summary">設置最大充電水平</string>
+    <string name="smart_charging_switch_title">開啟智能充電</string>
+    <string name="smart_charging_level_title">開始觸發水平</string>
+    <string name="smart_charging_resume_level_title">開始觸發水平</string>
+    <string name="smart_charging_reset_stats_title">重置電池統計信息</string>
+    <string name="smart_charging_reset_stats_summary">達到用戶定義的充電水平後重置電池統計信息</string>
+    <string name="smart_charging_footer">智能充電允許您設置最大充電水平，以延長電池的使用壽命。 啟用後，電池將在“停止”觸發水平停止充電，並在“開始”觸發水平恢復充電。 停止觸發水平應始終大於開始觸發水平。</string>
+    <!--FOD -->
+    <string name="fod_icon_picker_title">FOD icon picker</string>
+    <string name="fod_icon_picker_summary">Pick your favourite fingerprint icon</string>
+    <string name="fod_icon_picker_footer">In order to add your own icon, select the top left icon and use the OnePlus 6T FP Customizer app to select the icon you want.</string>
+    <string name="fod_wallpaper_color">Use wallpaper color for FOD icon</string>
+    <string name="fod_wallpaper_color_summary">Uses adjusted primary wallpaper color for FOD icon\nNOTE: might look good only with some wallpapers</string>
 </resources>
