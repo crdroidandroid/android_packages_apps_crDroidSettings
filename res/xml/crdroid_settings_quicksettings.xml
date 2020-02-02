@@ -196,15 +196,16 @@
             android:summary="@string/qs_clock_summary"
             android:defaultValue="true" />
 
-        <!--<com.crdroid.settings.preferences.CustomSeekBarPreference
-            android:key="qs_panel_alpha"
+        <!-- QS panel opacity -->
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_panel_bg_alpha"
             android:title="@string/qs_panel_alpha_title"
             android:summary="@string/qs_panel_alpha_summary"
             android:icon="@drawable/ic_invert_colors"
+            android:defaultValue="255"
             android:max="255"
             settings:min="0"
-            settings:units=""
-            android:persistent="false" />-->
+            settings:units="" />
 
         <!-- QS Brightness Slider position -->
         <lineageos.preference.LineageSecureSettingListPreference
