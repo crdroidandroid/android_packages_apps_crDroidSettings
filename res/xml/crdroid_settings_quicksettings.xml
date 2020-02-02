@@ -188,6 +188,16 @@
             android:title="@string/custom_header_title"
             android:summary="@string/custom_header_summary" />
 
+        <!-- QS panel opacity -->
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_panel_bg_alpha"
+            android:title="@string/qs_panel_alpha_title"
+            android:icon="@drawable/ic_invert_colors"
+            android:defaultValue="255"
+            android:max="255"
+            settings:min="0"
+            settings:units="" />
+
         <!-- QS clock -->
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="show_qs_clock"
@@ -195,17 +205,6 @@
             android:title="@string/qs_clock_title"
             android:summary="@string/qs_clock_summary"
             android:defaultValue="true" />
-
-        <!-- QS panel opacity -->
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qs_panel_bg_alpha"
-            android:title="@string/qs_panel_alpha_title"
-            android:summary="@string/qs_panel_alpha_summary"
-            android:icon="@drawable/ic_invert_colors"
-            android:defaultValue="255"
-            android:max="255"
-            settings:min="0"
-            settings:units="" />
 
         <!-- QS Brightness Slider position -->
         <lineageos.preference.LineageSecureSettingListPreference
