@@ -18,6 +18,7 @@ package com.crdroid.settings.fragments.notifications.notificationlight;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -80,6 +81,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
 
         final Context context = getContext();
         final Resources res = getResources();
+        ContentResolver resolver = context.getContentResolver();
 
         // Collect battery led capabilities.
         mMultiColorLed =
@@ -107,6 +109,10 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         mBatteryBrightnessZenPref =
                 (BatteryBrightnessZenPreference) prefSet.findPreference(BRIGHTNESS_ZEN_PREFERENCE);
 
+        boolean isLightEnabled = LineageSettings.System.getIntForUser(resolver,
+                LineageSettings.System.BATTERY_LIGHT_ENABLED, isBatteryLightEnabled(context) ? 1 : 0, UserHandle.USER_CURRENT) != 0;
+        mLightEnabledPref.setChecked(isLightEnabled);
+
         mDefaultLowColor = res.getInteger(
                 com.android.internal.R.integer.config_notificationsBatteryLowARGB);
         mDefaultMediumColor = res.getInteger(
@@ -120,6 +126,10 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
 
         if (!pulsatingLed || segmentedBatteryLed) {
             generalPrefs.removePreference(mPulseEnabledPref);
+        } else {
+            boolean isPulseEnabled = LineageSettings.System.getIntForUser(resolver,
+                    LineageSettings.System.BATTERY_LIGHT_PULSE, isBatteryLightPulseEnabled(context) ? 1 : 0, UserHandle.USER_CURRENT) != 0;
+            mPulseEnabledPref.setChecked(isPulseEnabled);
         }
 
         if (mMultiColorLed) {
@@ -275,15 +285,34 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         refreshColors();
     }
 
-    protected void resetToDefaults() {
-/*
-        final Resources res = getResources();
-        final boolean batteryLightEnabled = res.getBoolean(R.bool.def_battery_light_enabled);
-        final boolean batteryLightPulseEnabled = res.getBoolean(R.bool.def_battery_light_pulse);
+    private static boolean isBatteryLightEnabled(Context context) {
+        try {
+            Context con = context.createPackageContext("org.lineageos.lineageparts", 0);
+            int id = con.getResources().getIdentifier("def_battery_light_enabled",
+                    "bool", "org.lineageos.lineageparts");
+            return con.getResources().getBoolean(id);
+        } catch (PackageManager.NameNotFoundException e) {
+            return true;
+        }
+    }
 
-        if (mLightEnabledPref != null) mLightEnabledPref.setChecked(batteryLightEnabled);
-        if (mPulseEnabledPref != null) mPulseEnabledPref.setChecked(batteryLightPulseEnabled);
-*/
+    private static boolean isBatteryLightPulseEnabled(Context context) {
+        try {
+            Context con = context.createPackageContext("org.lineageos.lineageparts", 0);
+            int id = con.getResources().getIdentifier("def_battery_light_pulse",
+                    "bool", "org.lineageos.lineageparts");
+            return con.getResources().getBoolean(id);
+        } catch (PackageManager.NameNotFoundException e) {
+            return true;
+        }
+    }
+
+    protected void resetToDefaults() {
+        final Context context = getContext();
+
+        if (mLightEnabledPref != null) mLightEnabledPref.setChecked(isBatteryLightEnabled(context));
+        if (mPulseEnabledPref != null) mPulseEnabledPref.setChecked(isBatteryLightPulseEnabled(context));
+
         resetColors();
     }
 
