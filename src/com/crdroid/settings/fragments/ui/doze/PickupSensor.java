@@ -22,6 +22,8 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
+import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
 import android.os.UserHandle;
 import android.os.VibrationEffect;
@@ -40,14 +42,16 @@ public class PickupSensor implements SensorEventListener {
     private static final boolean DEBUG = false;
     private static final String TAG = "PickupSensor";
 
-    private static final int BATCH_LATENCY_IN_MS = 100;
     private static final int MIN_PULSE_INTERVAL_MS = 2500;
+    private static final int WAKELOCK_TIMEOUT_MS = 300;
 
     private SensorManager mSensorManager;
     private Sensor mSensorPickup;
     private Context mContext;
     private TelephonyManager telephonyManager;
     private ExecutorService mExecutorService;
+    private PowerManager mPowerManager;
+    private WakeLock mWakeLock;
 
     private boolean mIsCustomPickupSensor;
 
@@ -75,6 +79,8 @@ public class PickupSensor implements SensorEventListener {
         }
         if (DEBUG) Log.d(TAG, "Pickup sensor: " + mSensorPickup.getStringType());
         telephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+        mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
         mExecutorService = Executors.newSingleThreadExecutor();
         mAccelLast = SensorManager.GRAVITY_EARTH;
         mAccelCurrent = SensorManager.GRAVITY_EARTH;
@@ -112,19 +118,28 @@ public class PickupSensor implements SensorEventListener {
                 mAccelCurrent = (float) Math.sqrt(x * x + y * y + z * z);
                 float accDelta = Math.abs(mAccelCurrent - mAccelLast);
                 if (accDelta >= 0.1 && accDelta <= 1.5) {
-                    Utils.launchDozePulse(mContext);
-                    doHapticFeedback();
+                    launchWakeOrPulse();
                 }
             } else {
                 if (event.values[0] == 1) {
-                    Utils.launchDozePulse(mContext);
-                    doHapticFeedback();
+                    launchWakeOrPulse();
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    private void launchWakeOrPulse() {
+        boolean isRaiseToWake = Utils.isRaiseToWakeEnabled(mContext);
+        if (isRaiseToWake) {
+            mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
+            mPowerManager.wakeUp(SystemClock.uptimeMillis(),
+                PowerManager.WAKE_REASON_GESTURE, TAG);
+        } else {
+            Utils.launchDozePulse(mContext);
+            doHapticFeedback();
+        }
     }
 
     protected boolean isCallActive(Context context) {

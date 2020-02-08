@@ -121,6 +121,12 @@
             android:title="@string/pocket_title"
             android:summary="@string/pocket_summary" />
 
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="raise_to_wake_gesture"
+            android:defaultValue="false"
+            android:title="@string/raise_to_wake_title"
+            android:summary="@string/raise_to_wake_summary" />
+
         <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
             android:key="doze_gesture_vibrate"
             android:title="@string/doze_vibrate"
