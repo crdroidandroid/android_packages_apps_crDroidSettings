@@ -21,6 +21,8 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
 import android.os.UserHandle;
 import android.os.VibrationEffect;
@@ -39,11 +41,14 @@ public class TiltSensor implements SensorEventListener {
 
     private static final int BATCH_LATENCY_IN_MS = 100;
     private static final int MIN_PULSE_INTERVAL_MS = 2500;
+    private static final int WAKELOCK_TIMEOUT_MS = 300;
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
     private ExecutorService mExecutorService;
+    private PowerManager mPowerManager;
+    private WakeLock mWakeLock;
 
     private long mEntryTimestamp;
 
@@ -53,6 +58,8 @@ public class TiltSensor implements SensorEventListener {
         mContext = context;
         mSensorManager = mContext.getSystemService(SensorManager.class);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_TILT_DETECTOR);
+        mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+        mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
         mExecutorService = Executors.newSingleThreadExecutor();
         mVibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
         if (mVibrator == null || !mVibrator.hasVibrator()) {
@@ -66,6 +73,8 @@ public class TiltSensor implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent event) {
+        boolean isRaiseToWake = Utils.isRaiseToWakeEnabled(mContext);
+
         if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
 
         long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
@@ -76,8 +85,14 @@ public class TiltSensor implements SensorEventListener {
         }
 
         if (event.values[0] == 1) {
-            Utils.launchDozePulse(mContext);
-            doHapticFeedback();
+            if (isRaiseToWake) {
+                mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
+                mPowerManager.wakeUp(SystemClock.uptimeMillis(),
+                    PowerManager.WAKE_REASON_GESTURE, TAG);
+            } else {
+                Utils.launchDozePulse(mContext);
+                doHapticFeedback();
+            }
         }
     }
 

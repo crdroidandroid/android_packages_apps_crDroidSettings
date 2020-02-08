@@ -63,6 +63,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
     private static final String KEY_DOZE_PICK_UP_GESTURE = "doze_pick_up_gesture";
     private static final String KEY_DOZE_HANDWAVE_GESTURE = "doze_handwave_gesture";
     private static final String KEY_DOZE_POCKET_GESTURE = "doze_pocket_gesture";
+    private static final String KEY_RAISE_TO_WAKE_GESTURE = "raise_to_wake_gesture";
     private static final String KEY_DOZE_GESTURE_VIBRATE = "doze_gesture_vibrate";
 
     private SwitchPreference mDozeAlwaysOnPreference;
@@ -70,6 +71,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mPickUpPreference;
     private SwitchPreference mHandwavePreference;
     private SwitchPreference mPocketPreference;
+    private SwitchPreference mRaiseToWakePreference;
     private SecureSettingSeekBarPreference mDozeVibratePreference;
 
     private SharedPreferences mPreferences;
@@ -90,6 +92,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         mPickUpPreference = (SwitchPreference) findPreference(KEY_DOZE_PICK_UP_GESTURE);
         mHandwavePreference = (SwitchPreference) findPreference(KEY_DOZE_HANDWAVE_GESTURE);
         mPocketPreference = (SwitchPreference) findPreference(KEY_DOZE_POCKET_GESTURE);
+        mRaiseToWakePreference = (SwitchPreference) findPreference(KEY_RAISE_TO_WAKE_GESTURE);
         mDozeVibratePreference = (SecureSettingSeekBarPreference) findPreference(KEY_DOZE_GESTURE_VIBRATE);
 
         // Hide sensor related features if the device doesn't support them
@@ -114,6 +117,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 mHandwavePreference.setOnPreferenceChangeListener(this);
                 mPocketPreference.setOnPreferenceChangeListener(this);
             }
+            mRaiseToWakePreference.setOnPreferenceChangeListener(this);
             checkService(context);
         }
 
@@ -160,6 +164,12 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                  value ? 1 : 0, UserHandle.USER_CURRENT);
             checkService(context);
             return true;
+        } else if (preference == mRaiseToWakePreference) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putIntForUser(resolver, Settings.Secure.RAISE_TO_WAKE_GESTURE, 
+                 value ? 1 : 0, UserHandle.USER_CURRENT);
+            checkService(context);
+            return true;
         }
         return false;
     }
@@ -167,7 +177,11 @@ public class DozeSettings extends SettingsPreferenceFragment implements
     private void checkService(Context context) {
         boolean serviceEnabled = Utils.enableService(context);
         boolean alwaysOnEnabled = Utils.isDozeAlwaysOnEnabled(context);
-        mDozeVibratePreference.setEnabled(serviceEnabled);
+        boolean raiseToWakeEnabled = Settings.Secure.getIntForUser(context.getContentResolver(), 
+                 Settings.Secure.RAISE_TO_WAKE_GESTURE, 0, UserHandle.USER_CURRENT) != 0;
+        mRaiseToWakePreference.setEnabled(serviceEnabled);
+        mDozeVibratePreference.setEnabled(serviceEnabled &&
+                !raiseToWakeEnabled);
         if (mTiltPreference != null) {
             mTiltPreference.setEnabled(!alwaysOnEnabled);
         }
@@ -222,6 +236,8 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 Settings.Secure.DOZE_HANDWAVE_GESTURE, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.DOZE_POCKET_GESTURE, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.RAISE_TO_WAKE_GESTURE, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.DOZE_GESTURE_VIBRATE, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,

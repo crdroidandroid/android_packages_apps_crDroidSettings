@@ -131,6 +131,11 @@ public final class Utils {
                 Settings.Secure.DOZE_POCKET_GESTURE, 0, UserHandle.USER_CURRENT) == 1;
     }
 
+    protected static boolean isRaiseToWakeEnabled(Context context) {
+        return Settings.Secure.getIntForUser(context.getContentResolver(),
+                Settings.Secure.RAISE_TO_WAKE_GESTURE, 0, UserHandle.USER_CURRENT) == 1;
+    }
+
     public static boolean sensorsEnabled(Context context) {
         return tiltEnabled(context) || pickUpEnabled(context) || handwaveGestureEnabled(context)
                 || pocketGestureEnabled(context);
