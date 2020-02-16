@@ -94,6 +94,8 @@ public class Miscellaneous extends SettingsPreferenceFragment
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.Global.putInt(resolver,
+                Settings.Global.PRIVILEGED_DEVICE_IDENTIFIER_CHECK_RELAXED, 0);
+        Settings.Global.putInt(resolver,
                 Settings.Global.TOAST_ICON, 1);
         Settings.System.putIntForUser(resolver,
                 Settings.System.DISABLE_FC_NOTIFICATIONS, 0, UserHandle.USER_CURRENT);

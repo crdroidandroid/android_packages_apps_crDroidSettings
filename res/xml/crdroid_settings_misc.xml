@@ -82,6 +82,13 @@
         android:title="@string/show_cpu_info"
         android:summary="@string/show_cpu_info_summary" />
 
+    <!-- Disable device identifier restrictions -->
+    <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
+        android:key="privileged_device_identifier_check_relaxed"
+        android:icon="@drawable/ic_identifier"
+        android:title="@string/device_identifier_access_restrictions_title"
+        android:summary="@string/device_identifier_access_restrictions_summary" />
+
     <!-- HAFR -->
     <Preference
         android:icon="@drawable/ic_hafr"
