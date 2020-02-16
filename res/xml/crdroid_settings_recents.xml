@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2019 crDroid Android Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <Preference
+        android:key="recents_info"
+        android:title="@string/recents_information"
+        android:summary="@string/recents_information_summary" />
+
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="recents_component"
+        android:icon="@drawable/ic_recents"
+        android:title="@string/recents_style_title"
+        android:dialogTitle="@string/recents_style_title"
+        android:entries="@array/recents_style_entries"
+        android:entryValues="@array/recents_style_values"
+        android:defaultValue="0" />
+
+    <!--Preference
+        android:key="recents_icon_pack"
+        android:icon="@drawable/ic_android_head"
+        android:title="@string/recents_icon_pack_title"
+        android:summary="@string/recents_icon_pack_summary" />
+
+    <PreferenceCategory
+        android:key="stock_recents"
+        android:title="@string/recents_default_category">
+        <ListPreference
+            android:key="immersive_recents"
+            android:icon="@drawable/ic_recents"
+            android:title="@string/immersive_recents_title"
+            android:summary="@string/immersive_recents_summary"
+            android:dialogTitle="@string/immersive_recents_dialog_title"
+            android:entries="@array/immersive_recents_entries"
+            android:entryValues="@array/immersive_recents_values"
+            android:persistent="false" />
+        <PreferenceScreen
+            android:key="hide_app_from_recents"
+            android:icon="@drawable/ic_recents_hide_app"
+            android:title="@string/hide_apps_from_recents_title"
+            android:summary="@string/hide_apps_from_recents_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.settings"
+                android:targetClass="com.crdroid.settings.fragments.HAFRAppListActivity" />
+        </PreferenceScreen>
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="systemui_recents_mem_display"
+            android:icon="@drawable/ic_memory"
+            android:title="@string/systemui_recents_mem_display_title"
+            android:summary="@string/systemui_recents_mem_display_summary"
+            android:defaultValue="false" />
+        <com.crdroid.settings.preferences.ColorPickerPreference
+            android:key="systemui_recents_mem_barcolor"
+            android:icon="@drawable/ic_memory"
+            android:title="@string/systemui_recents_mem_display_color"
+            android:defaultValue="#00ffffff"
+            android:dependency="systemui_recents_mem_display"
+            alphaSlider="true" />
+        <com.crdroid.settings.preferences.ColorPickerPreference
+            android:key="systemui_recents_mem_textcolor"
+            android:icon="@drawable/ic_memory"
+            android:title="@string/systemui_recents_mem_display_text_color"
+            android:defaultValue="#00ffffff"
+            android:dependency="systemui_recents_mem_display"
+            alphaSlider="true" />
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="show_clear_all_recents"
+            android:icon="@drawable/ic_recents_clear_all"
+            android:title="@string/show_clear_all_recents_button_title"
+            android:summary="@string/show_clear_all_recents_button_summary"
+            android:defaultValue="true" />
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="recents_clear_all_location"
+            android:icon="@drawable/ic_recents_clear_all"
+            android:title="@string/recents_clear_all_location_title"
+            android:entries="@array/recents_clear_all_location_entries"
+            android:entryValues="@array/recents_clear_all_location_values"
+            android:defaultValue="3"
+            android:dependency="show_clear_all_recents" />
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="recents_dismiss_icon"
+            android:icon="@drawable/ic_dismiss"
+            android:title="@string/recents_dismiss_icon_title"
+            android:summary="@string/recents_dismiss_icon_summary"
+            android:defaultValue="true" />
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="recents_deep_clear"
+            android:icon="@drawable/ic_dismiss"
+            android:title="@string/recents_deep_clear_title"
+            android:summary="@string/recents_deep_clear_summary"
+            android:defaultValue="false"
+            android:dependency="recents_dismiss_icon" />
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="recents_lock_icon"
+            android:icon="@drawable/ic_lock_outline"
+            android:title="@string/recents_lock_icon_title"
+            android:summary="@string/recents_lock_icon_summary"
+            android:defaultValue="true" />
+       <SwitchPreference
+            android:key="recents_use_grid"
+            android:icon="@drawable/ic_grid_view"
+            android:title="@string/recents_use_grid_title"
+            android:summary="@string/recents_use_grid_summary" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/recents_omni_category">
+        <SwitchPreference
+            android:key="recents_use_omniswitch"
+            android:icon="@drawable/ic_omni"
+            android:title="@string/recents_use_omniswitch_title"
+            android:summary="@string/recents_use_omniswitch_summary"
+            android:persistent="false" />
+        <Preference
+            android:key="omniswitch_start_settings"
+            android:icon="@drawable/ic_omni"
+            android:title="@string/omniswitch_start_settings_title"
+            android:summary="@string/omniswitch_start_settings_summary"
+            android:persistent="false" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="slim_recents"
+        android:title="@string/slim_recents_title">
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="use_slim_recents"
+            android:icon="@drawable/ic_slim"
+            android:title="@string/use_slim_recents_title"
+            android:summary="@string/use_slim_recents_summary"
+            android:defaultValue="false" />
+        <PreferenceScreen
+            android:key="slim_recent_panel"
+            android:icon="@drawable/ic_slim"
+            android:title="@string/slim_recents_settings_title"
+            android:summary="@string/slim_recents_settings_summary"
+            android:fragment="com.crdroid.settings.fragments.recents.SlimRecentsPanel"
+            android:dependency="use_slim_recents"
+            android:persistent="false" />
+    </PreferenceCategory>-->
+
+    <PreferenceCategory
+        android:key="omni_recents"
+        android:title="@string/recents_omni_category">
+        <Preference
+            android:key="recents_omni_switch"
+            android:icon="@drawable/ic_omni"
+            android:title="@string/recents_use_omniswitch_title"
+            android:summary="@string/recents_use_omniswitch_summary"
+            android:persistent="false"
+            android:defaultValue="false">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="org.omnirom.omniswitch"
+                android:targetClass="org.omnirom.omniswitch.SettingsActivity" />
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>
