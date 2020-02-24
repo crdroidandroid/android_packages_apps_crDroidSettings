@@ -560,7 +560,7 @@
     <string name="smartbar_doubletap_sleep_title">Koputa unerežiimiks</string>
     <string name="smartbar_doubletap_sleep_summary">Topeltkoputa navigeerimisriba tühje alasid, et viia ekraan unerežiimi</string>
     <string name="one_handed_mode_title">Ühe käe režiim</string>
-    <string name="one_handed_mode_summary">Allows swiping on the navigation bar to enable one handed mode</string>
+    <string name="one_handed_mode_summary">Võimaldab ühe käe režiimi lubamiseks navigeerimisriba pühkimise</string>
     <!-- Actions dialog and default task values set in ActionPreference xml-->
     <string name="choose_action_title">Vali tegevus</string>
     <string name="action_entry_default_action">Vaikeseaded</string>
@@ -572,7 +572,7 @@
     <string name="fling_interface">Fling</string>
     <string name="fling_enable_title">Luba Fling</string>
     <string name="fling_back_home_policy">Back and Home are required to be set at all times. To change a Back or Home assignment, set the desired assignment first</string>
-    <string name="fling_split_bar_policy">When only a right or left action is assigned, the action applies to the full bar</string>
+    <string name="fling_split_bar_policy">Kui määratud on ainult parem- või vasakpoolne toiming, rakendub see kogu ribale</string>
     <string name="fling_def_summary">Tegevus määramata</string>
     <string name="fling_swipe_actions">Viipežestid</string>
     <string name="fling_tap_actions">Koputusžestid</string>
@@ -600,7 +600,7 @@
     <string name="down_swipe_title">Viipa alla</string>
     <string name="long_swipe_reset">Lähtesta</string>
     <string name="fling_advanced">Lisavalikud</string>
-    <string name="fling_long_swipe_title">Long swipe thresholds</string>
+    <string name="fling_long_swipe_title">Pika pühkimise künnised</string>
     <string name="fling_long_swipe_summary">Fine tune long swipe thresholds based on a percentage of Fling interface width or height</string>
     <string name="fling_trails_enable_title">Luba žestijäljed</string>
     <string name="fling_trails_enable_summary">Kuva viipežestidel jälge</string>
@@ -609,13 +609,13 @@
     <string name="fling_appearance">Välimus</string>
     <string name="fling_show_logo_title">Kuva Flingi logo</string>
     <string name="fling_animate_logo_title">Animeeri logo</string>
-    <string name="fling_animate_logo_summary">Logo animates on touch events</string>
+    <string name="fling_animate_logo_summary">Puutesündmuste logo animeerimine</string>
     <string name="fling_logo_color">Logo värv</string>
     <string name="fling_logo_custom_logo_pick_title">Kohandatud logo ikoon</string>
     <string name="fling_logo_custom_logo_image_pick_title">Kohandatud logo pilt</string>
     <string name="fling_logo_custom_logo_reset_title">Lähtesta logo ikoon</string>
     <string name="fling_show_ripple_title">Näita lainetust</string>
-    <string name="fling_show_ripple_summary">Ripple effect on touch events</string>
+    <string name="fling_show_ripple_summary">Lainetuse efekt puutesündmustele</string>
     <string name="fling_ripple_color">Lainetuse värv</string>
     <string name="fling_longpress_timeout_label_left">Väiksem viivitus</string>
     <string name="fling_longpress_timeout_label_right">Pikem viivitus</string>
@@ -1201,14 +1201,14 @@
     <string name="restart_app_required">Efekti nägemiseks taaskäivita vastav rakendus</string>
     <!-- Scrolling Animation Controls -->
     <string name="scrolling_title">Kerimise animatsioon</string>
-    <string name="scrolling_summary">Customize scrolling animation parameters</string>
+    <string name="scrolling_summary">Kohanda kerimise animatsiooni parameetreid</string>
     <string name="animation_fling_velocity_title">Flingi kiirus</string>
     <string name="animation_scroll_friction_title">Kerimise hõõrdumine</string>
     <string name="animation_overscroll_distance_title">Ülekerimise kaugus</string>
     <string name="animation_overfling_distance_title">Overflingi kaugus</string>
     <string name="animation_duration_summary">Määra kestus</string>
     <string name="animation_no_scroll_title">Kasuta kohandatud väärtusi</string>
-    <string name="scroll_disclaimer_summary">Most apps need to be restarted for custom values to take effect</string>
+    <string name="scroll_disclaimer_summary">Enamik rakendusi tuleb kohandatud väärtuste jõustamiseks taaskäivitada</string>
     <string name="animation_settings_reset_message">Lähtestad kõik animatsiooniseaded vaikeväärtustele?</string>
     <!-- Alarm Fullscreen -->
     <string name="show_alarm_fullscreen_title">Täisekraanis äratus</string>
@@ -1219,11 +1219,11 @@
     <!-- Custom System Animations -->
     <string name="system_animation_title">Süsteemianimatsioonid</string>
     <string name="system_animation_summary">Kohanda iga süsteemiakna animatsioone</string>
-    <string name="activity_open_title">Activity open animation</string>
-    <string name="activity_close_title">Activity close animation</string>
-    <string name="task_open_title">Task open animation</string>
+    <string name="activity_open_title">Tegevuse avamise animatsioon</string>
+    <string name="activity_close_title">Tegevuse sulgemise animatsioon</string>
+    <string name="task_open_title">Ülesande avamise animatsioon</string>
     <string name="task_open_behind_title">Task open behind animation</string>
-    <string name="task_close_title">Task close animation</string>
+    <string name="task_close_title">Ülesande sulgemise animatsioon</string>
     <string name="task_move_to_front_title">Move to front animation</string>
     <string name="task_move_to_back_title">Move to back animation</string>
     <string name="wallpaper_open_title">Wallpaper open animation</string>
@@ -1328,7 +1328,7 @@
     <string name="blurred_recent_app_enabled_pref_summary">Hägusta viimatiste rakenduste vaate tausta</string>
     <string name="blur_light_color">Hele pildi värvifilter</string>
     <string name="blur_dark_color">Tume pildi värvifilter</string>
-    <string name="blur_mixed_color">Mixed image color filter</string>
+    <string name="blur_mixed_color">Segatud pildi värvifilter</string>
     <string name="blur_notice">Hägustamise teave</string>
     <string name="blur_notice_summary">Blur personalizations are disabled during keyguard view. Only translucent notifications are enabled.</string>
     <string name="blur_colors_notice">Mida need värvid teevad?</string>
@@ -1428,7 +1428,7 @@
     <string name="recents_max_apps_title">Maksimaalne lubatud rakenduste hulk</string>
     <string name="recent_panel_scale_title">Suurus</string>
     <string name="recent_panel_expanded_mode_title">Laiendatud režiim</string>
-    <string name="recent_panel_expanded_mode_summary">Recent tasks expanded preview mode</string>
+    <string name="recent_panel_expanded_mode_summary">Täpsem eelvaade hiljutiste rakenduste jaoks</string>
     <string name="recent_panel_expanded_mode_auto">Automaatne (vaikimisi)</string>
     <string name="recent_panel_expanded_mode_always">Alati</string>
     <string name="recent_panel_expanded_mode_never">Mitte kunagi</string>
@@ -1441,7 +1441,7 @@
     <string name="recent_reset_confirm">Are you sure you want to reset Slim Recents to stock settings?</string>
     <string name="default_auto_string">Vaikimisi (rakendusepõhine)</string>
     <string name="recents_icon_pack_title">Ikoonipakk</string>
-    <string name="recents_icon_pack_summary">Apply a custom icon pack for apps in the panel</string>
+    <string name="recents_icon_pack_summary">Rakendage rakenduste jaoks paneelil kohandatud ikoonipakk</string>
     <string name="no_iconpacks_summary">Ühtegi ikoonipakki pole installitud</string>
     <string name="dialog_pick_iconpack_title">Vali ikoonipakk</string>
     <string name="default_iconpack_title">Vaikimisi ikoonid</string>
@@ -1450,10 +1450,10 @@
     <string name="slim_recents_corner_radius_title">Kasuta kaartidel ümardatud nurki</string>
     <string name="slim_blacklist_apps_cat_title">Mustas nimekirjas rakendused</string>
     <string name="slim_blacklist_apps_title">Rakenduste must nimekiri</string>
-    <string name="slim_blacklist_apps_summary">Exclude apps to be shown in the panel</string>
+    <string name="slim_blacklist_apps_summary">Välistage paneelis kuvatavad rakendused</string>
     <string name="slim_blacklist_add_apps_title">Lisa rakendus</string>
-    <string name="slim_blacklist_add_apps_summary">Tap here to add app to the blacklist</string>
-    <string name="slim_blacklist_apps_info">Tap on the added app to remove it</string>
+    <string name="slim_blacklist_add_apps_summary">Rakenduse lisamiseks musta nimekirja puudutage siin</string>
+    <string name="slim_blacklist_apps_info">Eemaldamiseks puudutage lisatud rakendust</string>
     <string name="slim_recents_hints_footer">To clear all apps, pinch-in with two fingers on the panel. To block an app from being cleared, long press on its icon to star it.\n\nFor additional recents features such as multiwindow or to kill an app, long press or drag an app card in the panel.</string>
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Kuva vasakus servas</string>
@@ -2003,8 +2003,8 @@
     <string name="unit_milliseconds">millisekundid</string>
     <string name="unit_pixels">dp</string>
     <!-- Thermal control -->
-    <string name="thermal_controller">Thermal Controller</string>
-    <string name="thermal_control_per_app">Thermal profile</string>
+    <string name="thermal_controller">Temperatuuri kontroller</string>
+    <string name="thermal_control_per_app">Temperatuuri profiil</string>
     <string name="thermal_control_per_app_default">Puudub</string>
     <string name="thermal_control_per_app_benchmark">Jõudlus</string>
     <string name="thermal_control_per_app_games">Mängud</string>
@@ -2069,7 +2069,7 @@
     <string name="wifi_wps_failed_wifi_disconnected">Wi\u2011Fi katkestatud. WPS-seadistus tühistatud.</string>
     <!-- Lockscreen Visualizer -->
     <string name="lockscreen_autocolor_title">Automaatne värv</string>
-    <string name="lockscreen_autocolor_summary">Sync color with background</string>
+    <string name="lockscreen_autocolor_summary">Sünkrooni värv taustaga</string>
     <string name="lockscreen_autocolor_lavalamp">Nõuab laavalambi keelamist</string>
     <string name="lockscreen_lavalamp_title">Laavalamp</string>
     <string name="lockscreen_lavalamp_summary">Animeeri sujuv laavalambi stiilis värvide üleminek</string>
@@ -2151,12 +2151,12 @@
     <string name="aggressive_battery_title">Agressiivne aku</string>
     <string name="aggressive_battery_summary">More strict battery savings</string>
     <string name="aggressive_battery_warning_text">These are power saving features. They may interfere with services intended to run at idle, like navigation apps. You can whitelist these apps from being affected in the app battery settings.</string>
-    <string name="aggressive_idle_title">Aggressive Idle</string>
+    <string name="aggressive_idle_title">Agressiivne jõudeolek</string>
     <string name="aggressive_idle_summary">Enter device idle more frequently and wake up less</string>
-    <string name="aggressive_standby_title">Aggressive Standby</string>
-    <string name="aggressive_standby_summary">Restrict apps from running the background</string>
+    <string name="aggressive_standby_title">Agressiivne ooteseisund</string>
+    <string name="aggressive_standby_summary">Piirake rakenduste taustal töötamist</string>
     <string name="aggressive_battery_saver_title">Luba akusäästjaga automaatselt</string>
-    <string name="aggressive_battery_saver_summary">Enable Aggressive Battery automatically when using battery saver</string>
+    <string name="aggressive_battery_saver_summary">Lubage agressiivne sääst automaatselt, kui kasutad akusäästjat</string>
     <!-- Battery percent -->
     <string name="battery_percentage_title">Aku protsent</string>
     <string name="battery_percentage_off">Keelatud</string>
