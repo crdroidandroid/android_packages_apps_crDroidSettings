@@ -200,7 +200,7 @@ choose_action_title
     <string name="shortcuts_icon_picker_pocket">பாக்கெட்</string>
     <string name="shortcuts_icon_picker_quicksettings">விரைவு அமைப்புகள்</string>
     <string name="shortcuts_icon_picker_rss">RSS ஊட்டம்</string>
-    <string name="shortcuts_icon_picker_sdcard">SDCard</string>
+    <string name="shortcuts_icon_picker_sdcard">SDஅட்டை</string>
     <string name="shortcuts_icon_picker_search">தேடு</string>
     <string name="shortcuts_icon_picker_sms">செய்தி</string>
     <string name="shortcuts_icon_picker_tasks">பணிகள்</string>
@@ -386,9 +386,9 @@ choose_action_title
     <string name="show_su_indicator_title">சிறப்புப்பயனர் படவுரு</string>
     <string name="show_su_indicator_summary">சொந்த வேர் பயன்படுத்தும்போது சிறப்புப்பயனர் படவுருவை காண்பி</string>
     <!-- Launch music player when headset is connected -->
-    <string name="headset_connect_player_title">Launch music app</string>
+    <string name="headset_connect_player_title">இசை செயலியை திற</string>
     <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
-    <string name="headset_connect_player_disabled">Disabled</string>
+    <string name="headset_connect_player_disabled">முடக்கப்பட்டது</string>
     <string name="headset_connect_player_wired">When wired headset is plugged in</string>
     <string name="headset_connect_player_bt_no_carkit">When BT headset (no carkit) is plugged in</string>
     <string name="headset_connect_player_bt">When BT headset is plugged in</string>
@@ -701,15 +701,15 @@ fling_left_up_swipe
     <string name="navbar_arrow_keys_summary">Display left and right cursor buttons while typing. Overrides IME switcher.</string>
     <!-- SmartBar -->
     <string name="smartbar_category">Smartbar</string>
-    <string name="smartbar_settings_title">Smartbar settings</string>
+    <string name="smartbar_settings_title">Smartbar அமைப்புகள்</string>
     <string name="smartbar_settings_summary">Fully-customizable navigation bar</string>
     <string name="smartbar_editor_title">Start edit mode</string>
     <string name="smartbar_editor_summary">Open smartbar buttons editor</string>
     <string name="smartbar_help_policy_notice_summary">When in editor mode, medium press and drag a button to change its position or long press a button to show the edit menu. Button position may be changed while menu is showing.\n\nSetting a double tap action will delay single tap a bit.</string>
     <string name="smartbar_context_menu_position_title">Context buttons layout position</string>
     <string name="smartbar_context_menu_position_summary">Set the position of contextual buttons such as menu and ime selector</string>
-    <string name="smartbar_right">Right</string>
-    <string name="smartbar_left">Left</string>
+    <string name="smartbar_right">வலது</string>
+    <string name="smartbar_left">இடது</string>
     <string name="smartbar_button_animation_title">Button touch animation</string>
     <string name="smartbar_button_animation_summary">Set the animation style of the primary buttons when they are pressed</string>
     <string name="smartbar_button_animation_ripple">Ripple</string>
@@ -722,7 +722,7 @@ fling_left_up_swipe
     <string name="smartbar_factory_reset_confirm">Are you sure you want to reset Smartbar to stock settings?</string>
     <string name="smartbar_ime_action_title">Input method and media actions</string>
     <string name="smartbar_ime_action_summary">Set what buttons to show when a on-screen keyboard is showing or music is playing</string>
-    <string name="smartbar_ime_action_none">None</string>
+    <string name="smartbar_ime_action_none">எதுவுமில்லை</string>
     <string name="smartbar_ime_action_arrows">Input arrows</string>
     <string name="smartbar_ime_action_switcher">Keyboard switcher</string>
     <string name="smartbar_ime_action_dynamic">Input/media arrows</string>
@@ -752,11 +752,11 @@ fling_left_up_swipe
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
     <string name="status_bar_quick_qs_pulldown_title">Quick pulldown</string>
     <string name="status_bar_quick_qs_pulldown_summary">%1$s edge of the status bar pulls down quick settings</string>
-    <string name="status_bar_quick_qs_pulldown_summary_left">Left</string>
-    <string name="status_bar_quick_qs_pulldown_summary_right">Right</string>
-    <string name="status_bar_quick_qs_pulldown_off">Off</string>
-    <string name="status_bar_quick_qs_pulldown_left">Left</string>
-    <string name="status_bar_quick_qs_pulldown_right">Right</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">இடது</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">வலது</string>
+    <string name="status_bar_quick_qs_pulldown_off">அணை</string>
+    <string name="status_bar_quick_qs_pulldown_left">இடது</string>
+    <string name="status_bar_quick_qs_pulldown_right">வலது</string>
     <string name="status_bar_quick_qs_pulldown_always">Always show quick settings on status bar pull down</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Clock &amp; date</string>
@@ -2217,6 +2217,7 @@ fling_left_up_swipe
     <string name="back_height_high_label">Bottom</string>
     <string name="back_options_dialog_title">Options</string>
     <string name="back_height_message">Amount of screen height used as touchable region for back gesture.</string>
+    <string name="back_gesture_haptic">Enable haptic tick effect on back gesture</string>
     <!-- FOD pressed state behavior -->
     <string name="fod_pressed_state_title">FOD pressed state behavior</string>
     <string name="fod_pressed_state_summary">Choose the appropriate pressed state behavior for your device</string>
@@ -2238,4 +2239,12 @@ fling_left_up_swipe
     <string name="platform_revision">Platform</string>
     <!-- Label for device's hardware ram size [CHAR LIMIT=40] -->
     <string name="total_ram">Total RAM</string>
+    <!-- Label for estimated remaining duration of dash battery charging -->
+    <string name="power_remaining_dash_charging_duration_only">Dash charging (<xliff:g id="time">%1$s</xliff:g> left until full)</string>
+    <!-- Battery use screen.  Battery status shown in chart label when charging from a dash source.  -->
+    <string name="battery_info_status_dash_charging">Dash charging</string>
+    <!-- Title for the new device identifier access restrictions -->
+    <string name="device_identifier_access_restrictions_title">Disable device identifier restrictions</string>
+    <!-- Summary for the new device identifier access restrictions -->
+    <string name="device_identifier_access_restrictions_summary">Disable the new access restrictions for device identifiers</string>
 </resources>
