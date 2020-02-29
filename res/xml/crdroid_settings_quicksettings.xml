@@ -198,6 +198,13 @@
             settings:min="0"
             settings:units="" />
 
+        <!-- QS blur -->
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_background_blur"
+            android:icon="@drawable/ic_blur"
+            android:title="@string/qs_blur_title"
+            android:summary="@string/qs_blur_summary" />
+
         <!-- QS clock -->
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="show_qs_clock"
