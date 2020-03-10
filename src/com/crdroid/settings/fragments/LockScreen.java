@@ -60,10 +60,12 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String FP_ERROR_VIBRATE = "fp_error_vibrate";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
+    private static final String FOD_ANIMATION = "fod_anim";
 
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
     private PreferenceCategory mFODIconPickerCategory;
+    private Preference mFODAnimation;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,6 +93,12 @@ public class LockScreen extends SettingsPreferenceFragment
         mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
         if (mFODIconPickerCategory != null && !hasFod) {
             prefSet.removePreference(mFODIconPickerCategory);
+        }
+        boolean showFODAnimationPicker = mContext.getResources().getBoolean(R.bool.showFODAnimationPicker);
+        mFODAnimation = (Preference) findPreference(FOD_ANIMATION);
+        if ((mFODIconPickerCategory != null && mFODAnimation != null && !hasFod) ||
+                (mFODIconPickerCategory != null && mFODAnimation != null && !showFODAnimationPicker)) {
+            mFODIconPickerCategory.removePreference(mFODAnimation);
         }
     }
 
