@@ -72,8 +72,6 @@ public class ThemeSettings extends SettingsPreferenceFragment implements Indexab
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.BERRY_DARK_STYLE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.BERRY_THEME_OVERRIDE, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
