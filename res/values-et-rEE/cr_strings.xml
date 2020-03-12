@@ -1304,7 +1304,7 @@
     <string name="qs_tile_animation_interpolator_bounceInterpolator">Hüpita</string>
     <string name="qs_tile_animation_interpolator_overshootInterpolator">Ületage</string>
     <string name="qs_tile_animation_interpolator_anticipateInterpolator">Prognoosige</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
+    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Enneta ületamist</string>
     <!-- Fancy tiles animation -->
     <string name="qs_fancy_animation_title">Uhke kiirseadete animatsioon</string>
     <string name="qs_fancy_animation_summary">Animatsioon olekuribal alla tõmmates</string>
@@ -1355,7 +1355,7 @@
     <string name="file_header_select_summary">Vali kohandatud pilt</string>
     <string name="file_header_provider_title">Kohandatud pilt</string>
     <!-- Screen state service -->
-    <string name="screen_state_toggles_title">Suspend actions</string>
+    <string name="screen_state_toggles_title">Peata tegevused</string>
     <string name="screen_state_toggles_summary">Väljalülitatud ekraaniga sooritatavad tegevused</string>
     <string name="screen_state_toggles_enable_title">Luba</string>
     <string name="screen_state_toggles_enable_summary">Tegevused sooritatakse väljalülitatud ekraaniga. Ekraani sisselülitamisel eelmine olukord taastatakse.</string>
@@ -1826,7 +1826,7 @@
     <string name="smart_pixels_shift_summary">Väldib OLED ekraanidel sissepõlemist nihutades piksleid aeg-ajalt</string>
     <!-- Carbon gestures -->
     <string name="carbon_gesture_preference_title">Carboni žestid</string>
-    <string name="carbon_gestures_summary">Configure custom global gestures</string>
+    <string name="carbon_gestures_summary">Konfigureerige kohandatud globaalseid žeste</string>
     <string name="carbon_gestures_fingers_title">Žesti käivitamiseks vajalikud sõrmed (vaikimisi 2)</string>
     <string name="carbon_gestures_fingers_unit">sõrmed</string>
     <string name="carbon_gestures_right_title">Žest paremale</string>
@@ -1896,7 +1896,7 @@
     <!-- Audio Panel view  -->
     <string name="audio_panel_view_title">Helitugevuse paneel</string>
     <string name="audio_panel_view_summary">Kohanda helitugevuse paneeli dialoogi</string>
-    <string name="audio_panel_view_info">Active volume stream will be displayed on the screen even if disabled here. Volume streams enabled here would be displayed forcefully.</string>
+    <string name="audio_panel_view_info">Aktiivne helitugevus kuvatakse ekraanil ka siis, kui see on siin keelatud. Siin lubatavad mahtuvused kuvatakse jõuliselt.</string>
     <string name="audio_panel_view_media_title">Meedia</string>
     <string name="audio_panel_view_ringer_title">Helin</string>
     <string name="audio_panel_view_notification_title">Teade</string>
@@ -1982,9 +1982,9 @@
     <string name="qs_clock_summary">Kuva kiirseadete päises kella</string>
     <!-- Full gesture mode -->
     <string name="full_gesture_mode_title">Luba täielik viiperežiim</string>
-    <string name="full_gesture_mode_summary">This mode disables the back button and you can trigger a back button action by a left swipe on navbar. Right swipe still triggers the last-app and the overview apps scrolling. To go home you can tap on any navbar empty space, not only the home button. When keyboard is showing, long press on navbar to move the text cursor.</string>
+    <string name="full_gesture_mode_summary">See režiim blokeerib tagasi-nupu ja saate käivitada nuppuklahvi abil vasakpoolse nihutamise nupu tagasi. Parempoolne pühkimine käivitab endiselt viimase rakenduse ja rakenduste kerimise. Kodu juurde minemiseks võite puudutada mis tahes naviriba tühja ruumi, mitte ainult kodu nuppu. Kui klaviatuur kuvatakse, vajutage teksti kursori liigutamiseks pikalt klahvile.</string>
     <string name="full_gesture_mode_dt2s_title">Luba topeltkoputus ekraani väljalülitamiseks</string>
-    <string name="full_gesture_mode_dt2s_summary">Tap on an empty navbar space but not the home button to switch the screen off.</string>
+    <string name="full_gesture_mode_dt2s_summary">Puudutage tühja naviriba, aga mitte avakuva nuppu ekraani väljalülitamiseks.</string>
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">VPN-teade</string>
     <string name="qs_footer_warnings_summary">Display alert when network is monitored or connected via VPN</string>
@@ -2023,9 +2023,9 @@
     <!-- Text displayed when WPS fails to start [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_generic">WPS ebaõnnestus. Proovi mõne minuti pärast uuesti.</string>
     <!-- Text displayed when WPS fails due to WEP [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_wep">The wireless router security setting (WEP) is not supported</string>
+    <string name="wifi_wps_failed_wep">Ruuteri turvaseadet (WEP) ei toetata</string>
     <!-- Text displayed when WPS fails to TKIP [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_tkip">The wireless router security setting (TKIP) is not supported</string>
+    <string name="wifi_wps_failed_tkip">Ruuteri turvaseadet (TKIP) ei toetata</string>
     <!-- Text displayed when WPS fails due to authentication issues [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_auth">Autentimine ebaõnnestus. Proovige uuesti.</string>
     <!-- Text displayed when WPS fails due to another session [CHAR LIMIT=150] -->
@@ -2121,7 +2121,7 @@
     <string name="aggressive_battery_summary">Rangem aku säästmine</string>
     <string name="aggressive_battery_warning_text">Need on energiasäästufunktsioonid. Nad võivad segada teenuseid, mis on mõeldud töötama tühikäigul, nagu navigeerimisrakendused. Patare rakenduse seadetes saab neid rakendusi mõjutada.</string>
     <string name="aggressive_idle_title">Agressiivne jõudeolek</string>
-    <string name="aggressive_idle_summary">Enter device idle more frequently and wake up less</string>
+    <string name="aggressive_idle_summary">Sisestage seade sagedamini tühikäigul ja äratage vähem</string>
     <string name="aggressive_standby_title">Agressiivne ooteseisund</string>
     <string name="aggressive_standby_summary">Piirake rakenduste taustal töötamist</string>
     <string name="aggressive_battery_saver_title">Luba akusäästjaga automaatselt</string>
