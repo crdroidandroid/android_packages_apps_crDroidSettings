@@ -601,7 +601,7 @@
     <string name="long_swipe_reset">Lähtesta</string>
     <string name="fling_advanced">Lisavalikud</string>
     <string name="fling_long_swipe_title">Pika pühkimise künnised</string>
-    <string name="fling_long_swipe_summary">Fine tune long swipe thresholds based on a percentage of Fling interface width or height</string>
+    <string name="fling_long_swipe_summary">Pikkade libistatavate lävede peenhäälestamine, mis põhineb protsendil paisu liidese laiusest või kõrgusest</string>
     <string name="fling_trails_enable_title">Luba žestijäljed</string>
     <string name="fling_trails_enable_summary">Kuva viipežestidel jälge</string>
     <string name="fling_trails_color_title">Jälje värv</string>
@@ -622,7 +622,7 @@
     <string name="fling_longpress_title">Pika vajutuse viivitus</string>
     <string name="fling_longpress_summary">Pika vajutamise aja suurendamine või vähendamine</string>
     <string name="fling_keyboard_cursors_title">Dünaamilise klaviatuurikursori tegevus</string>
-    <string name="fling_keyboard_cursors_summary">Double tap left and right actions becomes left and right keyboard cursor actions if keyboard is open</string>
+    <string name="fling_keyboard_cursors_summary">Topeltpuudutus vasakule/paremale meetmele muudab vasakule/paremale klaviatuuri kursori meetmeid, kui klaviatuur on nähtav</string>
     <string name="fling_logo_opacity_title">Flingi logo läbipaistmatus</string>
     <string name="fling_factory_reset_title">Lähtesta vaikeseadetele</string>
     <string name="fling_factory_reset_confirm">Kas soovid kindlasti Flingi lähtestada algseadetele?</string>
@@ -660,7 +660,7 @@
     <string name="fling_lavalamp_color_to">Laavalambi lõpuvärv</string>
     <string name="pulse_custom_buttons_opacity_title">Smartbar nuppude läbipaistmatus Pulse puhul</string>
     <string name="pulse_auto_color_title">Automaatne Pulse värv</string>
-    <string name="pulse_auto_color_summary">Sync color with album arts. Overrides Lava Lamp and lines opacity.</string>
+    <string name="pulse_auto_color_summary">Sünkroonige värvi albumikunstitega. Tühistab Laavalambi ja liinide läbipaistmatuse.</string>
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">Riba laius</string>
     <string name="pulse_custom_div">Riba vahed</string>
@@ -714,7 +714,7 @@
     <string name="smartbar_factory_reset_title">Lähtesta vaikeseadetele</string>
     <string name="smartbar_factory_reset_confirm">Kas soovid kindlasti lähtestada Smartbari vaikeseadetele?</string>
     <string name="smartbar_ime_action_title">Sisendmeetod ja meediatoimingud</string>
-    <string name="smartbar_ime_action_summary">Set what buttons to show when a on-screen keyboard is showing or music is playing</string>
+    <string name="smartbar_ime_action_summary">Valige, milliseid nuppe kuvatakse ekraanil klaviatuuri kuvamise või muusika esitamise ajal</string>
     <string name="smartbar_ime_action_none">Puudub</string>
     <string name="smartbar_ime_action_arrows">Sisendnooled</string>
     <string name="smartbar_ime_action_switcher">Klaviatuuri vahetaja</string>
@@ -730,7 +730,7 @@
     <string name="smartbar_config_restore_error_toast">Viga Smartbar profiili taastamisel</string>
     <string name="navbar_buttons_alpha_title">Nupu läbipaistvus</string>
     <string name="smartbar_longpress_delay_title">Nupu pikalt vajutamise aeg</string>
-    <string name="smartbar_longpress_delay_summary">Set how long the system will wait before triggering a longpress action</string>
+    <string name="smartbar_longpress_delay_summary">Seadke, kui kaua süsteem ootab enne pika vajutuse käivitamist</string>
     <string name="smartbar_longpress_delay_default">Vaikimisi viivitus (kiire)</string>
     <string name="smartbar_longpress_delay_normal">Tavaline viivitus</string>
     <string name="smartbar_longpress_delay_long">Pikk viivitus</string>
@@ -907,8 +907,8 @@
     <string name="heads_up_time_out_10sec">10 sekundit</string>
     <!-- Heads up snooze -->
     <string name="heads_up_snooze_title">Unetaimer</string>
-    <string name="heads_up_snooze_summary_one_minute">Swiping up on peeking notifications will snooze heads up from that application for 1 minute</string>
-    <string name="heads_up_snooze_summary">Swiping up on peeking notifications will snooze heads up from that application for <xliff:g id="number">%d</xliff:g> minutes</string>
+    <string name="heads_up_snooze_summary_one_minute">Pühkides üles lükkate vaadatava teate rakendumise edasi 1 minuti</string>
+    <string name="heads_up_snooze_summary">Pühkides üles lükkate vaadatava teate rakendumise edasi <xliff:g id="number">%d</xliff:g> minutit</string>
     <string name="heads_up_snooze_disabled_summary">Unetaimer on keelatud</string>
     <string name="heads_up_snooze_1min">1 minut</string>
     <string name="heads_up_snooze_5min">5 minutit</string>
@@ -1221,14 +1221,14 @@
     <string name="activity_open_title">Tegevuse avamise animatsioon</string>
     <string name="activity_close_title">Tegevuse sulgemise animatsioon</string>
     <string name="task_open_title">Ülesande avamise animatsioon</string>
-    <string name="task_open_behind_title">Task open behind animation</string>
+    <string name="task_open_behind_title">Ava tagumise animatsiooni ülesanne</string>
     <string name="task_close_title">Ülesande sulgemise animatsioon</string>
     <string name="task_move_to_front_title">Ette liigutamise animatsioon</string>
     <string name="task_move_to_back_title">Taha liigutamise animatsioon</string>
     <string name="wallpaper_open_title">Taustapildi avamise animatsioon</string>
     <string name="wallpaper_close_title">Taustapildi sulgemise animatsioon</string>
-    <string name="wallpaper_intra_open_title">Wallpaper intra open animation</string>
-    <string name="wallpaper_intra_close_title">Wallpaper intra close animation</string>
+    <string name="wallpaper_intra_open_title">Taustapildi avatud animatsioon avatud</string>
+    <string name="wallpaper_intra_close_title">Taustapildi avatud animatsioon suletud</string>
     <string name="animation_duration_title">Animatsiooni kestus</string>
     <string name="animation_duration_default">Vaikimisi</string>
     <string name="animation_duration_custom">Kohandatud</string>
@@ -1245,9 +1245,9 @@
     <string name="toast_Tn_animation">Tn</string>
     <string name="toast_Honami_animation">Honami</string>
     <string name="toast_FastFade_animation">Kiire hajumine</string>
-    <string name="toast_GrowFade_animation">Grow fade</string>
-    <string name="toast_GrowFadeCenter_animation">Grow fade center</string>
-    <string name="toast_GrowFadeBottom_animation">Grow fade bottom</string>
+    <string name="toast_GrowFade_animation">Muutuv tuhmumine</string>
+    <string name="toast_GrowFadeCenter_animation">Muutuva tuhmumise keskpaik</string>
+    <string name="toast_GrowFadeBottom_animation">Muutuva tuhmumise madalaim tase</string>
     <string name="toast_Translucent_animation">Läbipaistev</string>
     <string name="toast_SlideLeftRight_animation">Libista vasakule paremale</string>
     <string name="toast_SlideRightLeft_animation">Libista paremalt vasakule</string>
@@ -1262,17 +1262,17 @@
     <string name="listview_stack_bottom">Virn (alumine)</string>
     <string name="listview_unfold">Voldi lahti</string>
     <string name="listview_fold">Voldi kokku</string>
-    <string name="listview_translate_left">Translate (left)</string>
-    <string name="listview_translate_right">Translate (right)</string>
+    <string name="listview_translate_left">Tõlgi (vasakul)</string>
+    <string name="listview_translate_right">Tõlgi (paremal)</string>
     <!-- ListView interpolator -->
     <string name="listview_interpolator_title">Loendivaate interpolaator</string>
     <string name="listview_accelerate_interpolator">Kiirenda</string>
     <string name="listview_decelerate_interpolator">Aeglusta</string>
     <string name="listview_accelerate_decelerate_interpolator">Kiirenda ja aeglusta</string>
-    <string name="listview_anticipate_interpolator">Anticipate</string>
-    <string name="listview_overshoot_interpolator">Overshoot</string>
-    <string name="listview_anticipate_overshoot_interpolator">Anticipate and overshoot</string>
-    <string name="listview_bounce_interpolator">Bounce</string>
+    <string name="listview_anticipate_interpolator">Prognoosige</string>
+    <string name="listview_overshoot_interpolator">Ületage</string>
+    <string name="listview_anticipate_overshoot_interpolator">Prognoosige ja ületage</string>
+    <string name="listview_bounce_interpolator">Hüpita</string>
     <!-- Power menu animation -->
     <string name="power_menu_animation_title">Toitemenüü animatsioon</string>
     <string name="power_menu_animation_default">Vaikimisi</string>
@@ -1302,9 +1302,9 @@
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Aeglusta</string>
     <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Kiirenda aeglustamist</string>
     <string name="qs_tile_animation_interpolator_bounceInterpolator">Hüpita</string>
-    <string name="qs_tile_animation_interpolator_overshootInterpolator">Overshoot</string>
-    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipate</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
+    <string name="qs_tile_animation_interpolator_overshootInterpolator">Ületage</string>
+    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Prognoosige</string>
+    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Enneta ületamist</string>
     <!-- Fancy tiles animation -->
     <string name="qs_fancy_animation_title">Uhke kiirseadete animatsioon</string>
     <string name="qs_fancy_animation_summary">Animatsioon olekuribal alla tõmmates</string>
@@ -1355,7 +1355,7 @@
     <string name="file_header_select_summary">Vali kohandatud pilt</string>
     <string name="file_header_provider_title">Kohandatud pilt</string>
     <!-- Screen state service -->
-    <string name="screen_state_toggles_title">Suspend actions</string>
+    <string name="screen_state_toggles_title">Peata tegevused</string>
     <string name="screen_state_toggles_summary">Väljalülitatud ekraaniga sooritatavad tegevused</string>
     <string name="screen_state_toggles_enable_title">Luba</string>
     <string name="screen_state_toggles_enable_summary">Tegevused sooritatakse väljalülitatud ekraaniga. Ekraani sisselülitamisel eelmine olukord taastatakse.</string>
@@ -1826,7 +1826,7 @@
     <string name="smart_pixels_shift_summary">Väldib OLED ekraanidel sissepõlemist nihutades piksleid aeg-ajalt</string>
     <!-- Carbon gestures -->
     <string name="carbon_gesture_preference_title">Carboni žestid</string>
-    <string name="carbon_gestures_summary">Configure custom global gestures</string>
+    <string name="carbon_gestures_summary">Konfigureerige kohandatud globaalseid žeste</string>
     <string name="carbon_gestures_fingers_title">Žesti käivitamiseks vajalikud sõrmed (vaikimisi 2)</string>
     <string name="carbon_gestures_fingers_unit">sõrmed</string>
     <string name="carbon_gestures_right_title">Žest paremale</string>
@@ -1896,7 +1896,7 @@
     <!-- Audio Panel view  -->
     <string name="audio_panel_view_title">Helitugevuse paneel</string>
     <string name="audio_panel_view_summary">Kohanda helitugevuse paneeli dialoogi</string>
-    <string name="audio_panel_view_info">Active volume stream will be displayed on the screen even if disabled here. Volume streams enabled here would be displayed forcefully.</string>
+    <string name="audio_panel_view_info">Aktiivne helitugevus kuvatakse ekraanil ka siis, kui see on siin keelatud. Siin lubatavad mahtuvused kuvatakse jõuliselt.</string>
     <string name="audio_panel_view_media_title">Meedia</string>
     <string name="audio_panel_view_ringer_title">Helin</string>
     <string name="audio_panel_view_notification_title">Teade</string>
@@ -1982,9 +1982,9 @@
     <string name="qs_clock_summary">Kuva kiirseadete päises kella</string>
     <!-- Full gesture mode -->
     <string name="full_gesture_mode_title">Luba täielik viiperežiim</string>
-    <string name="full_gesture_mode_summary">This mode disables the back button and you can trigger a back button action by a left swipe on navbar. Right swipe still triggers the last-app and the overview apps scrolling. To go home you can tap on any navbar empty space, not only the home button. When keyboard is showing, long press on navbar to move the text cursor.</string>
+    <string name="full_gesture_mode_summary">See režiim blokeerib tagasi-nupu ja saate käivitada nuppuklahvi abil vasakpoolse nihutamise nupu tagasi. Parempoolne pühkimine käivitab endiselt viimase rakenduse ja rakenduste kerimise. Kodu juurde minemiseks võite puudutada mis tahes naviriba tühja ruumi, mitte ainult kodu nuppu. Kui klaviatuur kuvatakse, vajutage teksti kursori liigutamiseks pikalt klahvile.</string>
     <string name="full_gesture_mode_dt2s_title">Luba topeltkoputus ekraani väljalülitamiseks</string>
-    <string name="full_gesture_mode_dt2s_summary">Tap on an empty navbar space but not the home button to switch the screen off.</string>
+    <string name="full_gesture_mode_dt2s_summary">Puudutage tühja naviriba, aga mitte avakuva nuppu ekraani väljalülitamiseks.</string>
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">VPN-teade</string>
     <string name="qs_footer_warnings_summary">Display alert when network is monitored or connected via VPN</string>
@@ -2023,13 +2023,13 @@
     <!-- Text displayed when WPS fails to start [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_generic">WPS ebaõnnestus. Proovi mõne minuti pärast uuesti.</string>
     <!-- Text displayed when WPS fails due to WEP [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_wep">The wireless router security setting (WEP) is not supported</string>
+    <string name="wifi_wps_failed_wep">Ruuteri turvaseadet (WEP) ei toetata</string>
     <!-- Text displayed when WPS fails to TKIP [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_tkip">The wireless router security setting (TKIP) is not supported</string>
+    <string name="wifi_wps_failed_tkip">Ruuteri turvaseadet (TKIP) ei toetata</string>
     <!-- Text displayed when WPS fails due to authentication issues [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_auth">Autentimine ebaõnnestus. Proovige uuesti.</string>
     <!-- Text displayed when WPS fails due to another session [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_overlap">Another WPS session was detected. Please try again in a few minutes.</string>
+    <string name="wifi_wps_failed_overlap">Tuvastati teine WPS-i seanss. Proovige mõne minuti pärast uuesti.</string>
     <!-- Text displayed when WPS fails due to wifi disconnected [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_wifi_disconnected">Wi\u2011Fi katkestatud. WPS-seadistus tühistatud.</string>
     <!-- Lockscreen Visualizer -->
@@ -2080,11 +2080,11 @@
     <string name="ime_show_enter_key_summary">Sunni klaviatuuri kuvama sisestusklahvi emojide asemel</string>
     <!-- Charging animation -->
     <string name="lockscreen_charging_animation_title">Laadimise animatsioon</string>
-    <string name="lockscreen_charging_animation_flash">Flash</string>
-    <string name="lockscreen_charging_animation_battery">Battery</string>
-    <string name="lockscreen_charging_animation_drop">Drop</string>
-    <string name="lockscreen_charging_animation_explosion">Explosion</string>
-    <string name="lockscreen_charging_animation_water">Water</string>
+    <string name="lockscreen_charging_animation_flash">Välk</string>
+    <string name="lockscreen_charging_animation_battery">Aku</string>
+    <string name="lockscreen_charging_animation_drop">Vabasta</string>
+    <string name="lockscreen_charging_animation_explosion">Plahvatus</string>
+    <string name="lockscreen_charging_animation_water">Vesi</string>
     <!-- Gaming mode -->
     <string name="gaming_mode_title">Mängimisrežiim</string>
     <string name="gaming_mode_summary">Kohanda mängimisrežiimi eelistusi</string>
@@ -2119,9 +2119,9 @@
     <!-- Aggressive battery -->
     <string name="aggressive_battery_title">Agressiivne aku</string>
     <string name="aggressive_battery_summary">Rangem aku säästmine</string>
-    <string name="aggressive_battery_warning_text">These are power saving features. They may interfere with services intended to run at idle, like navigation apps. You can whitelist these apps from being affected in the app battery settings.</string>
+    <string name="aggressive_battery_warning_text">Need on energiasäästufunktsioonid. Nad võivad segada teenuseid, mis on mõeldud töötama tühikäigul, nagu navigeerimisrakendused. Patare rakenduse seadetes saab neid rakendusi mõjutada.</string>
     <string name="aggressive_idle_title">Agressiivne jõudeolek</string>
-    <string name="aggressive_idle_summary">Enter device idle more frequently and wake up less</string>
+    <string name="aggressive_idle_summary">Sisestage seade sagedamini tühikäigul ja äratage vähem</string>
     <string name="aggressive_standby_title">Agressiivne ooteseisund</string>
     <string name="aggressive_standby_summary">Piirake rakenduste taustal töötamist</string>
     <string name="aggressive_battery_saver_title">Luba akusäästjaga automaatselt</string>
@@ -2184,7 +2184,7 @@
     <string name="back_gesture_haptic">Enable haptic tick effect on back gesture</string>
     <!-- FOD pressed state behavior -->
     <string name="fod_pressed_state_title">Ekraanisõrmejälje vajutatud oleku tegevus</string>
-    <string name="fod_pressed_state_summary">Choose the appropriate pressed state behavior for your device</string>
+    <string name="fod_pressed_state_summary">Vali oma seadmele vastav vajutatud oleku tegevus</string>
     <string name="fod_pressed_state_footer">Ikoonid/värvid võivad sõltuvalt seadmest varieeruda.</string>
     <string name="fod_pressed_state_icon">Ikoon (tavaliselt tsüaansinine)</string>
     <string name="fod_pressed_state_icon_white">Ikoon (valge)</string>
