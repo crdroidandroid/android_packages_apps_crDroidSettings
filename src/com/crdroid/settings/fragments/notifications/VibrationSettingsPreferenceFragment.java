@@ -34,6 +34,7 @@ import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
 
 import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.notification.VibrateOnTouchPreferenceController;
 import com.android.settings.widget.RadioButtonPreference;
 import com.android.settingslib.core.AbstractPreferenceController;
 
