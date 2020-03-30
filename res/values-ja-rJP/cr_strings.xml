@@ -63,7 +63,7 @@
     <string name="network_traffic_mode_all">アップロード/ダウンロード</string>
     <string name="network_traffic_autohide">自動的に隠す</string>
     <string name="network_traffic_autohide_summary">非アクティブ時にトラフィックモニターを非表示にします</string>
-    <string name="network_traffic_autohide_kilobits">kb/s</string>
+    <string name="network_traffic_autohide_kilobits">KB/s</string>
     <string name="network_traffic_autohide_threshold">非アクティブ判定のしきい値</string>
     <string name="network_traffic_show_units">単位を表示</string>
     <string name="network_traffic_show_units_summary">ネットワークトラフィックの単位を表示します</string>
@@ -354,10 +354,10 @@
     <string name="double_tap_sleep_anywhere_summary">ロック画面をダブルタップして端末をスリープさせます</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">電源メニュー</string>
-    <string name="lockscreen_enable_power_menu_summary">ロック画面でも電源メニューを表示します</string>
+    <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lockscreen</string>
     <!-- Quick settings on secure lockscreen -->
     <string name="lockscreen_enable_qs_title">クイック設定</string>
-    <string name="lockscreen_enable_qs_summary">保護されたロック画面でクイック設定の表示とスワイプを許可します</string>
+    <string name="lockscreen_enable_qs_summary">Allow accessing quick settings on secure lockscreen</string>
     <!-- Screenshot Sound  -->
     <string name="screenshot_sound_title">スクリーンショットの音</string>
     <string name="screenshot_sound_summary">スクリーンショットを撮る時の効果音を再生するかどうかを切り替えます</string>
@@ -687,14 +687,14 @@
     <string name="navbar_layout_compact">Compact</string>
     <string name="navbar_layout_leftleaning">Left-leaning</string>
     <string name="navbar_layout_rightleaning">Right-leaning</string>
-    <string name="navbar_invert_layout_title">Invert layout</string>
+    <string name="navbar_invert_layout_title">レイアウトを反転</string>
     <string name="navbar_tuner_title">ナビゲーションバーの編集</string>
     <string name="navbar_tuner_summary">ボタンとレイアウトをカスタマイズします</string>
     <string name="navbar_arrow_keys_title">入力中に矢印キーを表示する</string>
     <string name="navbar_arrow_keys_summary">入力中は左右の矢印ボタンを表示します。IMEの切り替えアイコンを上書きします。</string>
     <string name="navbar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
-    <string name="navbar_home_long_press_title">Home long press action</string>
-    <string name="navbar_home_double_tap_title">Home double tap action</string>
+    <string name="navbar_home_long_press_title">ホームボタン長押しの動作</string>
+    <string name="navbar_home_double_tap_title">ホームボタンダブルタップの動作</string>
     <string name="navbar_app_switch_long_press_title">Recents long press action</string>
     <string name="navbar_edge_long_swipe_title">Edge long swipe action</string>
     <!-- SmartBar -->
@@ -1116,6 +1116,7 @@
     <string name="power_menu_reboot_title">再起動メニュー</string>
     <string name="power_menu_screenshot_title">スクリーンショット</string>
     <string name="power_menu_screenshot_summary">長押しして指定した範囲を撮影します</string>
+    <string name="power_menu_screenrecord_title">Screenrecord</string>
     <string name="power_menu_onthego_title">On-The-Go モード</string>
     <string name="power_menu_airplane_title">機内モード</string>
     <string name="power_menu_users_title">ユーザーの切り替え</string>
@@ -1154,22 +1155,22 @@
     <string name="clock_date_right">時刻の右</string>
     <string name="clock_date_left">時刻の左</string>
     <string name="font_style_title">フォントスタイル</string>
-    <string name="font_normal">Normal</string>
-    <string name="font_italic">Italic</string>
-    <string name="font_bold">Bold</string>
-    <string name="font_bold_italic">Bold Italic</string>
-    <string name="font_light">Light</string>
-    <string name="font_light_italic">Light Italic</string>
-    <string name="font_thin">Thin</string>
-    <string name="font_thin_italic">Thin Italic</string>
-    <string name="font_condensed">Condensed</string>
-    <string name="font_condensed_italic">Condensed Italic</string>
-    <string name="font_condensed_light">Condensed Light</string>
-    <string name="font_condensed_light_italic">Condensed Light Italic</string>
-    <string name="font_condensed_bold">Condensed Bold</string>
-    <string name="font_condensed_bold_italic">Condensed Bold Italic</string>
-    <string name="font_medium">Medium</string>
-    <string name="font_medium_italic">Medium Italic</string>
+    <string name="font_normal">中</string>
+    <string name="font_italic">斜体</string>
+    <string name="font_bold">太字</string>
+    <string name="font_bold_italic">太字斜体</string>
+    <string name="font_light">中細体</string>
+    <string name="font_light_italic">中細斜体</string>
+    <string name="font_thin">細字</string>
+    <string name="font_thin_italic">細斜体</string>
+    <string name="font_condensed">長体</string>
+    <string name="font_condensed_italic">長体斜体</string>
+    <string name="font_condensed_light">中細長体</string>
+    <string name="font_condensed_light_italic">中細長斜体</string>
+    <string name="font_condensed_bold">長体太字</string>
+    <string name="font_condensed_bold_italic">長体太字斜体</string>
+    <string name="font_medium">中体</string>
+    <string name="font_medium_italic">中斜体</string>
     <string name="font_black">Black</string>
     <string name="font_black_italic">Black Italic</string>
     <string name="font_dancingscript">DancingScript</string>
@@ -2081,7 +2082,7 @@
     <!-- Charging animation -->
     <string name="lockscreen_charging_animation_title">充電時のアニメーション</string>
     <string name="lockscreen_charging_animation_flash">Flash</string>
-    <string name="lockscreen_charging_animation_battery">Battery</string>
+    <string name="lockscreen_charging_animation_battery">バッテリー</string>
     <string name="lockscreen_charging_animation_drop">Drop</string>
     <string name="lockscreen_charging_animation_explosion">Explosion</string>
     <string name="lockscreen_charging_animation_water">Water</string>
@@ -2195,19 +2196,19 @@
     <!-- Back gesture animation -->
     <string name="back_gesture_arrow_message">Show an animated arrow for back gesture.</string>
     <!-- About phone screen, setting option name [CHAR LIMIT=40] -->
-    <string name="selinux_status">SELinux status</string>
-    <string name="selinux_status_disabled">Disabled</string>
-    <string name="selinux_status_permissive">Permissive</string>
-    <string name="selinux_status_enforcing">Enforcing</string>
+    <string name="selinux_status">SELinuxの状態</string>
+    <string name="selinux_status_disabled">無効</string>
+    <string name="selinux_status_permissive">ログを出力してアクセスを許可</string>
+    <string name="selinux_status_enforcing">有効</string>
     <!-- Hardware info -->
     <!-- Label for device's hardware platform value [CHAR LIMIT=40] -->
     <string name="platform_revision">Platform</string>
     <!-- Label for device's hardware ram size [CHAR LIMIT=40] -->
-    <string name="total_ram">Total RAM</string>
+    <string name="total_ram">RAM容量合計</string>
     <!-- Label for estimated remaining duration of dash battery charging -->
-    <string name="power_remaining_dash_charging_duration_only">Dash charging (<xliff:g id="time">%1$s</xliff:g> left until full)</string>
+    <string name="power_remaining_dash_charging_duration_only">急速充電中 (充電完了まで<xliff:g id="time">%1$s</xliff:g>)</string>
     <!-- Battery use screen.  Battery status shown in chart label when charging from a dash source.  -->
-    <string name="battery_info_status_dash_charging">Dash charging</string>
+    <string name="battery_info_status_dash_charging">急速充電中</string>
     <!-- Title for the new device identifier access restrictions -->
     <string name="device_identifier_access_restrictions_title">Disable device identifier restrictions</string>
     <!-- Summary for the new device identifier access restrictions -->
@@ -2242,7 +2243,7 @@
     <string name="qs_datausage_title">Show data usage in qs header</string>
     <string name="qs_datausage_subtitle">Shows data usage in quick settings header of sim used for data</string>
     <!-- Sound: Title for the option defining the phone ringtone for slot1 on Muilti SIM device. [CHAR LIMIT=50] -->
-    <string name="ringtone1_title">Phone ringtone - SIM 1</string>
+    <string name="ringtone1_title">着信音 - SIM 1</string>
     <!-- Sound: Title for the option defining the phone ringtone for slot2 on Muilti SIM device. [CHAR LIMIT=50] -->
-    <string name="ringtone2_title">Phone ringtone - SIM 2</string>
+    <string name="ringtone2_title">着信音 - SIM 2</string>
 </resources>
