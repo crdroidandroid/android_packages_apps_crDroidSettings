@@ -51,6 +51,8 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
     private SwitchPreference mUsersPref;
     private SwitchPreference mLockDownPref;
 
+    private boolean mScreenRecordAvailable;
+
     Context mContext;
     private ArrayList<String> mLocalUserConfig = new ArrayList<String>();
     private String[] mAllActions;
@@ -61,6 +63,9 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
 
         addPreferencesFromResource(R.xml.power_menu_settings);
         mContext = getActivity().getApplicationContext();
+
+        mScreenRecordAvailable = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_showScreenRecord);
 
         mAllActions = PowerMenuConstants.getAllActions();
 
@@ -90,7 +95,11 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         }
 
         if (mScreenrecordPref != null) {
-            mScreenrecordPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_SCREENRECORD));
+            if (!mScreenRecordAvailable) {
+                getPreferenceScreen().removePreference(mScreenrecordPref);
+            } else {
+                mScreenrecordPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_SCREENRECORD));
+            }
         }
 
         if (mAirplanePref != null) {
