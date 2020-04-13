@@ -57,11 +57,13 @@ public class LockScreen extends SettingsPreferenceFragment
     public static final String TAG = "LockScreen";
 
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
+    private static final String UNLOCK_WITHOUT_BOUNCER = "unlock_without_bouncer";
     private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String FP_ERROR_VIBRATE = "fp_error_vibrate";
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
     private static final String FOD_ANIMATION = "fod_anim";
 
+    private Preference mUnlockWithoutBouncer;
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
     private PreferenceCategory mFODIconPickerCategory;
@@ -79,16 +81,22 @@ public class LockScreen extends SettingsPreferenceFragment
 
         FingerprintManager mFingerprintManager = (FingerprintManager) 
                 getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mUnlockWithoutBouncer = (Preference) findPreference(UNLOCK_WITHOUT_BOUNCER);
         mFingerprintVib = (Preference) findPreference(FP_SUCCESS_VIBRATE);
         mFingerprintVibErr = (Preference) findPreference(FP_ERROR_VIBRATE);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             gestCategory.removePreference(mFingerprintVib);
             gestCategory.removePreference(mFingerprintVibErr);
+            gestCategory.removePreference(mUnlockWithoutBouncer);
         }
 
         PackageManager packageManager = mContext.getPackageManager();
         boolean hasFod = packageManager.hasSystemFeature(LineageContextConstants.Features.FOD);
+
+        if (mUnlockWithoutBouncer != null && !hasFod) {
+            gestCategory.removePreference(mUnlockWithoutBouncer);
+        }
 
         mFODIconPickerCategory = (PreferenceCategory) findPreference(FOD_ICON_PICKER_CATEGORY);
         if (mFODIconPickerCategory != null && !hasFod) {
@@ -131,6 +139,8 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.FP_ERROR_VIBRATE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.Secure.UNLOCK_WITHOUT_BOUNCER, 0, UserHandle.USER_CURRENT);
         LockScreenVisualizer.reset(mContext);
     }
 
