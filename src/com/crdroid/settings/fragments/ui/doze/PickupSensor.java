@@ -29,13 +29,15 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import com.crdroid.settings.R;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class PickupSensor implements SensorEventListener {
     private static final boolean DEBUG = false;
-    private static final String TAG = "TiltSensor";
+    private static final String TAG = "PickupSensor";
 
     private static final int BATCH_LATENCY_IN_MS = 100;
     private static final int MIN_PULSE_INTERVAL_MS = 2500;
@@ -56,7 +58,18 @@ public class PickupSensor implements SensorEventListener {
     public PickupSensor(Context context) {
         mContext = context;
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
-        mSensorPickup = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        final String pickup_sensor = context.getResources().getString(R.string.pickup_sensor);
+        if (pickup_sensor != null && !pickup_sensor.isEmpty()) {
+            for (Sensor sensor : mSensorManager.getSensorList(Sensor.TYPE_ALL)) {
+                if (pickup_sensor.equals(sensor.getStringType())) {
+                    mSensorPickup = sensor;
+                    break;
+                }
+            }
+        } else {
+            mSensorPickup = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        }
+        if (DEBUG) Log.d(TAG, "Pickup sensor: " + mSensorPickup.getStringType());
         telephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
         mExecutorService = Executors.newSingleThreadExecutor();
         mAccelLast = SensorManager.GRAVITY_EARTH;
@@ -95,6 +108,11 @@ public class PickupSensor implements SensorEventListener {
                 mAccelCurrent = (float) Math.sqrt(x * x + y * y + z * z);
                 float accDelta = Math.abs(mAccelCurrent - mAccelLast);
                 if (accDelta >= 0.1 && accDelta <= 1.5) {
+                    Utils.launchDozePulse(mContext);
+                    doHapticFeedback();
+                }
+            } else {
+                if (event.values[0] == 1) {
                     Utils.launchDozePulse(mContext);
                     doHapticFeedback();
                 }
