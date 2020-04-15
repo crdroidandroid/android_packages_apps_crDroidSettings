@@ -83,4 +83,26 @@
             android:summary="@string/vol_zen_summary"
             android:defaultValue="false"/>
     </PreferenceCategory> -->
+
+    <!-- Adaptive Playback -->
+    <PreferenceCategory
+        android:key="media"
+        android:title="@string/media_title">
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="adaptive_playback_enabled"
+            android:icon="@drawable/ic_settings_sound"
+            android:title="@string/adaptive_playback_title"
+            android:summary="@string/adaptive_playback_summary"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="adaptive_playback_timeout"
+            android:icon="@drawable/ic_settings_sound"
+            android:title="@string/adaptive_playback_timeout_title"
+            android:entries="@array/adaptive_playback_timeout_entries"
+            android:entryValues="@array/adaptive_playback_timeout_values"
+            android:defaultValue="30000"
+            android:dependency="adaptive_playback_enabled" />
+    </PreferenceCategory>
 </PreferenceScreen>
