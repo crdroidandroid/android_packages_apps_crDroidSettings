@@ -309,6 +309,13 @@
                android:defaultValue="true" />
 
         <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
+               android:key="lockscreen_power_menu_secure"
+               android:icon="@drawable/ic_lock_outline"
+               android:title="@string/lockscreen_secure_power_menu_title"
+               android:summary="@string/lockscreen_secure_power_menu_summary"
+               android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
                android:key="lockscreen_enable_qs"
                android:icon="@drawable/ic_settings_quicksettings"
                android:title="@string/lockscreen_enable_qs_title"
