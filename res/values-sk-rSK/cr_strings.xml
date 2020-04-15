@@ -101,8 +101,8 @@
     <!-- Hide Apps from Recents -->
     <string name="hide_apps_from_recents_title">Skryť aplikácie z Nedávnych</string>
     <string name="hide_apps_from_recents_summary">Hide apps from appearing in recents screen</string>
-    <string name="hide_from_recents_add_app">Add app to Hide list</string>
-    <string name="hide_from_recents_picker_title">Automatically hide for these apps</string>
+    <string name="hide_from_recents_add_app">Pridať aplikáciu do zoznamu skrytých</string>
+    <string name="hide_from_recents_picker_title">Automaticky skryť tieto aplikácie</string>
     <string name="hide_from_recents_picker_summary">These apps will be automatically hide from recents screen when they are opened next time</string>
     <!-- OmniSwitch Recents -->
     <string name="recents_use_omniswitch_title">Použiť pre Nedávne</string>
@@ -354,10 +354,10 @@
     <string name="double_tap_sleep_anywhere_summary">Dvojklikom hocikde na obrazovke uzamknutia uspať zariadenie</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Ponuka tlačidla Napájanie</string>
-    <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lockscreen</string>
+    <string name="lockscreen_enable_power_menu_summary">Povoliť prístup do Menu napájania na zabezpečenej obrazovke uzamknutia</string>
     <!-- Quick settings on secure lockscreen -->
     <string name="lockscreen_enable_qs_title">Rýchle nastavenia</string>
-    <string name="lockscreen_enable_qs_summary">Allow accessing quick settings on secure lockscreen</string>
+    <string name="lockscreen_enable_qs_summary">Povoliť prístup do Rýchleho nastavenia na zabezpečenej obrazovke uzamknutia</string>
     <!-- Screenshot Sound  -->
     <string name="screenshot_sound_title">Zvuk pri snímke obrazovky</string>
     <string name="screenshot_sound_summary">Prepnúť zvuk prehrávaný pri zhotovení snímky obrazovky</string>
@@ -692,11 +692,11 @@
     <string name="navbar_tuner_summary">Prispôsobenie tlačidiel a rozloženie</string>
     <string name="navbar_arrow_keys_title">Zobraziť šípky pri písaní</string>
     <string name="navbar_arrow_keys_summary">Zobraziť ľavé a pravé kurzorové tlačidlá pri písaní. Potlačí prepínač metódy vstupu.</string>
-    <string name="navbar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
-    <string name="navbar_home_long_press_title">Home long press action</string>
-    <string name="navbar_home_double_tap_title">Home double tap action</string>
-    <string name="navbar_app_switch_long_press_title">Recents long press action</string>
-    <string name="navbar_edge_long_swipe_title">Edge long swipe action</string>
+    <string name="navbar_left_summary">V režime na šírku umiestniť navigačný panel na ľavú stranu obrazovky</string>
+    <string name="navbar_home_long_press_title">Akcia dlhého stlačenia tlačidla \"Domov\"</string>
+    <string name="navbar_home_double_tap_title">Akcia dvojitého poklepanie na tlačidlo \"Domov\"</string>
+    <string name="navbar_app_switch_long_press_title">Akcia dlhého stlačenia tlačidla \"Nedávne aplikácie\"</string>
+    <string name="navbar_edge_long_swipe_title">Akcia dlhým prejdením na okraji</string>
     <!-- SmartBar -->
     <string name="smartbar_category">Smartbar</string>
     <string name="smartbar_settings_title">Nastavenia Smartbar</string>
@@ -849,7 +849,7 @@
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Text upozornenia</string>
     <string name="ticker_screen_summary">Zobraziť text upozornenia v stavovom riadku</string>
-    <string name="ticker_screen_footer">Ticker is visible only when notification heads-up is not shown</string>
+    <string name="ticker_screen_footer">Text oznámenia je viditeľný iba ak nie je zobrazené plávajúce oznámenia</string>
     <string name="ticker_title">Upozornenia v stavovom riadku</string>
     <string name="ticker_summary">Povoliť text upozornení v stavovom riadku</string>
     <string name="ticker_restore_defaults_title">Obnoviť predvolené</string>
@@ -1116,7 +1116,7 @@
     <string name="power_menu_reboot_title">Ponuka reštartu</string>
     <string name="power_menu_screenshot_title">Snímka obrazovky</string>
     <string name="power_menu_screenshot_summary">Dlhé stlačenie pre získanie čiastočnej snímky obrazovky</string>
-    <string name="power_menu_screenrecord_title">Screenrecord</string>
+    <string name="power_menu_screenrecord_title">Záznam obrazovky</string>
     <string name="power_menu_onthego_title">Režim na cestách</string>
     <string name="power_menu_airplane_title">Režim Lietadlo</string>
     <string name="power_menu_users_title">Prepínač používateľov</string>
@@ -1643,15 +1643,15 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Rozšířený reštart</string>
     <string name="advanced_reboot_summary">Ak je povolené, do ponuky tlačidla Napájanie budú pridané ďalšie voľby pre reštart do Recovery alebo Bootloadera</string>
-    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
-    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
+    <string name="advanced_reboot_secured_title">Zabezpečená obrazovka uzamknutia</string>
+    <string name="advanced_reboot_secured_summary">Zobraziť rozšírené možnosti reštartu na zabezpečenej obrazovke uzamknutia</string>
     <!-- Allow lights in zen mode -->
     <string name="zen_allow_lights">Zapnúť</string>
     <string name="zen_allow_lights_summary">Povoliť blikanie LED, keď je aktívny režim Nerušiť</string>
     <string name="light_brightness_category">Nastavenie jasu svetla</string>
     <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Music ticker</string>
-    <string name="pulse_on_new_tracks_summary">Show Ambient Display when a new music track is played</string>
+    <string name="pulse_on_new_tracks_title">Hudobný text oznámenia</string>
+    <string name="pulse_on_new_tracks_summary">Zobraziť Ambientní displej po spustení novej hudobnej skladby</string>
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">Automatické odomknutie pomocou tváre</string>
     <string name="face_auto_unlock_summary">Po rozpoznaní tváre automaticky odomknúť obrazovku uzamknutia</string>
@@ -2081,11 +2081,11 @@
     <string name="ime_show_enter_key_summary">Vynútiť zobrazenie klávesy Enter namiesto klávesy emotikonu</string>
     <!-- Charging animation -->
     <string name="lockscreen_charging_animation_title">Animácia nabíjania</string>
-    <string name="lockscreen_charging_animation_flash">Flash</string>
-    <string name="lockscreen_charging_animation_battery">Battery</string>
-    <string name="lockscreen_charging_animation_drop">Drop</string>
-    <string name="lockscreen_charging_animation_explosion">Explosion</string>
-    <string name="lockscreen_charging_animation_water">Water</string>
+    <string name="lockscreen_charging_animation_flash">Blesk</string>
+    <string name="lockscreen_charging_animation_battery">Batéria</string>
+    <string name="lockscreen_charging_animation_drop">Kvapka</string>
+    <string name="lockscreen_charging_animation_explosion">Explózia</string>
+    <string name="lockscreen_charging_animation_water">Voda</string>
     <!-- Gaming mode -->
     <string name="gaming_mode_title">Herný režim</string>
     <string name="gaming_mode_summary">Prispôsobiť predvoľby Herného režimu</string>
@@ -2133,11 +2133,11 @@
     <string name="battery_percentage_next">Povolené</string>
     <string name="battery_percentage_inside">Povolené (vnútri ikony)</string>
     <!-- Battery estimate -->
-    <string name="battery_estimate_title">Battery estimate</string>
+    <string name="battery_estimate_title">Odhad výdrže batérie</string>
     <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">Obnovovacia frekvencia obrazovky</string>
-    <string name="refresh_rate_summary_automatic">Auto / Automatically raise refresh rate</string>
+    <string name="refresh_rate_summary_automatic">Auto / Automaticky zvyšovať obnovovaciu frekvenciu</string>
     <string name="refresh_rate_summary_60">60Hz / Refresh rate locked at 60Hz</string>
     <string name="refresh_rate_summary_90">90Hz / Refresh rate locked at 90Hz</string>
     <string name="refresh_rate_summary_120">120Hz / Refresh rate locked at 120Hz</string>
@@ -2146,21 +2146,21 @@
     <string name="pulse_ambient_light_title">Nasvietenie okrajov</string>
     <string name="pulse_ambient_light_summary">Rozsvietiť bočné okraje obrazovky po prijatí oznámenia</string>
     <string name="pulse_ambient_light_color_title">Farba svetla okrajov</string>
-    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
-    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <string name="pulse_ambient_light_duration_title">Trvanie svetla okrajov</string>
+    <string name="pulse_ambient_light_duration_summary">Nastaviť dobu trvania animácie okolitého svetla</string>
     <!-- QS battery -->
-    <string name="qs_battery_location_title">Battery location</string>
-    <string name="qs_battery_location_qs_panel">QS Panel</string>
-    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
-    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
+    <string name="qs_battery_location_title">Umiestnenie batérie</string>
+    <string name="qs_battery_location_qs_panel">Panel Rýchleho nastavenia</string>
+    <string name="qs_battery_location_qs_statusbar">Stavový riadok Rýchleho nastavenia</string>
+    <string name="qs_use_status_bar_battery_style">Použiť štýl stavového riadka</string>
     <!-- QS battery -->
-    <string name="lockscreen_lock_icon_title">Lock icon</string>
-    <string name="lockscreen_lock_icon_summary">Display lock icon on the lockscreen</string>
+    <string name="lockscreen_lock_icon_title">Ikona zámku</string>
+    <string name="lockscreen_lock_icon_summary">Zobraziť ikonu zámku na obrazovke uzamknutia</string>
     <!-- Notification Vibration -->
-    <string name="vibrate_on_notifications_title">Notification vibration</string>
-    <string name="vibrate_on_notifications_summary">Vibrate on notifications</string>
+    <string name="vibrate_on_notifications_title">Vibrácie pri oznámení</string>
+    <string name="vibrate_on_notifications_summary">Vibrovať pri oznámení</string>
     <!-- Smart charging -->
-    <string name="smart_charging_title">Smart Charging</string>
+    <string name="smart_charging_title">Inteligentné nabíjanie</string>
     <string name="smart_charging_summary">Set maximum charging level</string>
     <string name="smart_charging_switch_title">Enable Smart Charging</string>
     <string name="smart_charging_level_title">Stop trigger level</string>
