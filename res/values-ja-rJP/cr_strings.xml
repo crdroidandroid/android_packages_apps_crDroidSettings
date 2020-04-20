@@ -100,10 +100,10 @@
     <string name="aosp_first_time_message">拡張デスクトップが有効になっている場合は、全画面アプリ履歴設定は無視されます</string>
     <!-- Hide Apps from Recents -->
     <string name="hide_apps_from_recents_title">アプリ履歴からアプリを隠す</string>
-    <string name="hide_apps_from_recents_summary">Hide apps from appearing in recents screen</string>
+    <string name="hide_apps_from_recents_summary">アプリ履歴にアプリが表示されないようにします</string>
     <string name="hide_from_recents_add_app">アプリを非表示リストに追加する</string>
-    <string name="hide_from_recents_picker_title">Automatically hide for these apps</string>
-    <string name="hide_from_recents_picker_summary">These apps will be automatically hide from recents screen when they are opened next time</string>
+    <string name="hide_from_recents_picker_title">指定したアプリを自動的に非表示にします</string>
+    <string name="hide_from_recents_picker_summary">これらのアプリは、次回開いたときにアプリ履歴から自動的に非表示になります</string>
     <!-- OmniSwitch Recents -->
     <string name="recents_use_omniswitch_title">アプリ履歴として使用</string>
     <string name="recents_use_omniswitch_summary">OmniSwitch をアプリ履歴表示に使用します</string>
@@ -355,6 +355,8 @@
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">電源メニュー</string>
     <string name="lockscreen_enable_power_menu_summary">パスワードロック時にも電源メニューを表示できるようにする</string>
+    <string name="lockscreen_secure_power_menu_title">電源メニューの保護</string>
+    <string name="lockscreen_secure_power_menu_summary">認証後にのみ電源メニューの表示を許可する</string>
     <!-- Quick settings on secure lockscreen -->
     <string name="lockscreen_enable_qs_title">クイック設定</string>
     <string name="lockscreen_enable_qs_summary">パスワードロック時にもクイック設定を表示できるようにする</string>
@@ -683,20 +685,20 @@
     <string name="navbar_settings_title">標準のナビゲーションバーの設定</string>
     <string name="navbar_settings_summary">標準のナビゲーションバーのカスタマイズ</string>
     <string name="navbar_layout_title">表示順序</string>
-    <string name="navbar_layout_normal">Normal</string>
-    <string name="navbar_layout_compact">Compact</string>
-    <string name="navbar_layout_leftleaning">Left-leaning</string>
-    <string name="navbar_layout_rightleaning">Right-leaning</string>
+    <string name="navbar_layout_normal">標準</string>
+    <string name="navbar_layout_compact">コンパクト</string>
+    <string name="navbar_layout_leftleaning">左寄り</string>
+    <string name="navbar_layout_rightleaning">右寄り</string>
     <string name="navbar_invert_layout_title">レイアウトを反転</string>
     <string name="navbar_tuner_title">ナビゲーションバーの編集</string>
     <string name="navbar_tuner_summary">ボタンとレイアウトをカスタマイズします</string>
     <string name="navbar_arrow_keys_title">入力中に矢印キーを表示する</string>
     <string name="navbar_arrow_keys_summary">入力中は左右の矢印ボタンを表示します。IMEの切り替えアイコンを上書きします。</string>
-    <string name="navbar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
+    <string name="navbar_left_summary">画面が横向きの時にナビゲーションバーを画面の左側に配置します</string>
     <string name="navbar_home_long_press_title">ホームボタン長押しの動作</string>
     <string name="navbar_home_double_tap_title">ホームボタンダブルタップの動作</string>
-    <string name="navbar_app_switch_long_press_title">Recents long press action</string>
-    <string name="navbar_edge_long_swipe_title">Edge long swipe action</string>
+    <string name="navbar_app_switch_long_press_title">アプリ履歴ボタンの長押しの動作</string>
+    <string name="navbar_edge_long_swipe_title">端からの長いスワイプ時の動作</string>
     <!-- SmartBar -->
     <string name="smartbar_category">SmartBar</string>
     <string name="smartbar_settings_title">SmartBar の設定</string>
@@ -849,7 +851,7 @@
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">ティッカー</string>
     <string name="ticker_screen_summary">ステータスバーに通知ティッカーを表示する</string>
-    <string name="ticker_screen_footer">Ticker is visible only when notification heads-up is not shown</string>
+    <string name="ticker_screen_footer">ティッカーはヘッドアップ通知が表示されていない場合にのみ表示されます</string>
     <string name="ticker_title">ステータスバー上のティッカー</string>
     <string name="ticker_summary">ステータスバーのティッカーを有効化します</string>
     <string name="ticker_restore_defaults_title">デフォルトに戻す</string>
@@ -1004,7 +1006,7 @@
     <!-- Doze: switches -->
     <string name="doze_display_title">アンビエント表示</string>
     <string name="doze_display_summary">アンビエント表示の設定を編集します</string>
-    <string name="doze_sensor_title">Sensor based</string>
+    <string name="doze_sensor_title">センサー基準</string>
     <string name="tilt_title">傾き</string>
     <string name="tilt_summary">傾けたときに通知を表示します</string>
     <string name="pickup_title">持ち上げ</string>
@@ -1940,7 +1942,7 @@
     <string name="qstile_ninja">忍者</string>
     <string name="qstile_oreo">Oreo</string>
     <string name="qstile_oreo_circle_trim">Oreo（サークルトリム）</string>
-    <string name="qstile_squaremedo">Squaremedo</string>
+    <string name="qstile_squaremedo">星型八角形</string>
     <string name="qstile_squircle">角丸四角形</string>
     <string name="qstile_neon_like">ネオン風</string>
     <string name="qstile_oos">OxygenOS</string>
@@ -1962,7 +1964,7 @@
     <string name="switch_default">デフォルト</string>
     <string name="switch_md2">Material Design 2</string>
     <string name="switch_oneplus">OnePlus</string>
-    <string name="switch_narrow">Narrow</string>
+    <string name="switch_narrow">狭い</string>
     <string name="switch_contained">Contained</string>
     <string name="switch_retro">Retro</string>
     <string name="switch_stockish">Stockish</string>
@@ -2081,11 +2083,11 @@
     <string name="ime_show_enter_key_summary">キーボードで絵文字キーの代わりに Enter キーを表示させます</string>
     <!-- Charging animation -->
     <string name="lockscreen_charging_animation_title">充電時のアニメーション</string>
-    <string name="lockscreen_charging_animation_flash">Flash</string>
+    <string name="lockscreen_charging_animation_flash">稲妻</string>
     <string name="lockscreen_charging_animation_battery">バッテリー</string>
-    <string name="lockscreen_charging_animation_drop">Drop</string>
-    <string name="lockscreen_charging_animation_explosion">Explosion</string>
-    <string name="lockscreen_charging_animation_water">Water</string>
+    <string name="lockscreen_charging_animation_drop">ドロップ</string>
+    <string name="lockscreen_charging_animation_explosion">爆発</string>
+    <string name="lockscreen_charging_animation_water">水</string>
     <!-- Gaming mode -->
     <string name="gaming_mode_title">ゲームモード</string>
     <string name="gaming_mode_summary">ゲームモードの設定を編集します</string>
@@ -2137,10 +2139,10 @@
     <string name="battery_estimate_summary">利用可能な場合、バッテリーの推定残り時間を表示します</string>
     <!-- Refresh rate -->
     <string name="refresh_rate_title">画面リフレッシュレート</string>
-    <string name="refresh_rate_summary_automatic">Auto / Automatically raise refresh rate</string>
-    <string name="refresh_rate_summary_60">60Hz / Refresh rate locked at 60Hz</string>
-    <string name="refresh_rate_summary_90">90Hz / Refresh rate locked at 90Hz</string>
-    <string name="refresh_rate_summary_120">120Hz / Refresh rate locked at 120Hz</string>
+    <string name="refresh_rate_summary_automatic">Auto / リフレッシュレートを自動的に上げる</string>
+    <string name="refresh_rate_summary_60">60Hz / リフレッシュレートを60Hzに固定する</string>
+    <string name="refresh_rate_summary_90">90Hz / リフレッシュレートを90Hzに固定する</string>
+    <string name="refresh_rate_summary_120">120Hz / リフレッシュレートを120Hzに固定する</string>
     <string name="auto_refresh_rate">自動</string>
     <!-- Ambient edge lighting -->
     <string name="pulse_ambient_light_title">エッジライト</string>
@@ -2169,33 +2171,33 @@
     <string name="smart_charging_reset_stats_summary">ユーザーが設定した充電レベルに到達後、バッテリー統計情報をリセットする</string>
     <string name="smart_charging_footer">Smart Chargingは充電を停止/開始する閾（しきい）値を設定してバッテリーの寿命を延ばすことができます。この機能を有効にすると、バッテリーは充電を停止する閾値を上回ると充電を停止し、充電を開始する閾値を下回ると充電を再開します。充電を停止する閾値は充電を開始する閾値より大きく設定してください。</string>
     <!--FOD -->
-    <string name="fod_icon_picker_category_title">FOD customization options</string>
-    <string name="fod_icon_picker_title">FOD icon picker</string>
-    <string name="fod_icon_picker_summary">Pick your favourite fingerprint icon</string>
-    <string name="fod_icon_picker_footer">In order to add your own icon, select the top left icon and use the OnePlus 6T FP Customizer app to select the icon you want.</string>
-    <string name="fod_wallpaper_color">Use wallpaper color for FOD icon</string>
-    <string name="fod_wallpaper_color_summary">Uses adjusted primary wallpaper color for FOD icon\nNOTE: might look good only with some wallpapers</string>
-    <string name="fod_recog_animation">FOD recognizing animation</string>
-    <string name="fod_recog_animation_summary">Shows animation while reading your finger</string>
-    <string name="fod_recog_animation_effect_title">FOD recognizing animation effect</string>
+    <string name="fod_icon_picker_category_title">指紋認証オプション</string>
+    <string name="fod_icon_picker_title">指紋アイコンの選択</string>
+    <string name="fod_icon_picker_summary">お気に入りの指紋アイコンを選択する</string>
+    <string name="fod_icon_picker_footer">独自のアイコンを追加するには、左上のアイコンを選択し、OnePlus 6T 指紋カスタマイズアプリを使用して必要なアイコンを選択して下さい。</string>
+    <string name="fod_wallpaper_color">指紋アイコンに壁紙の色を使う</string>
+    <string name="fod_wallpaper_color_summary">指紋アイコンを壁紙に合わせて調整します\n注意: 一部の壁紙でのみ見栄えが良くなる場合があります。</string>
+    <string name="fod_recog_animation">指紋認証アニメーション</string>
+    <string name="fod_recog_animation_summary">指紋認証中にアニメーションを表示する</string>
+    <string name="fod_recog_animation_effect_title">指紋認証アニメーション効果</string>
     <!-- QS background opacity -->
-    <string name="qs_panel_alpha_title">Background opacity</string>
+    <string name="qs_panel_alpha_title">背景の透明度</string>
     <!-- Navigation mode settings -->
-    <string name="back_height_low_label">Full</string>
-    <string name="back_height_high_label">Bottom</string>
-    <string name="back_options_dialog_title">Options</string>
-    <string name="back_height_message">Amount of screen height used as touchable region for back gesture.</string>
-    <string name="back_gesture_haptic">Enable haptic tick effect on back gesture</string>
+    <string name="back_height_low_label">全体</string>
+    <string name="back_height_high_label">下部</string>
+    <string name="back_options_dialog_title">オプション</string>
+    <string name="back_height_message">戻るジェスチャーに使用される操作可能な画面領域の高さ</string>
+    <string name="back_gesture_haptic">戻るジェスチャー時に振動を有効化</string>
     <!-- FOD pressed state behavior -->
-    <string name="fod_pressed_state_title">FOD pressed state behavior</string>
-    <string name="fod_pressed_state_footer">Icons/colors may vary depending on which device you are using.</string>
-    <string name="fod_pressed_state_icon">Icon (usually Cyan)</string>
-    <string name="fod_pressed_state_icon_white">Icon (White)</string>
-    <string name="fod_pressed_state_solid_color">Solid color (usually Green)</string>
+    <string name="fod_pressed_state_title">指紋認証時の状態</string>
+    <string name="fod_pressed_state_footer">アイコン/色は、使用しているデバイスによって異なる場合があります</string>
+    <string name="fod_pressed_state_icon">アイコン (通常はシアン)</string>
+    <string name="fod_pressed_state_icon_white">アイコン(白)</string>
+    <string name="fod_pressed_state_solid_color">無色 (通常は緑)</string>
     <!-- NavigationBar Gestural Mode Tweaks -->
-    <string name="gesture_pill_message">Hide the navigation bar pill for seamless fullscreen gestures.</string>
+    <string name="gesture_pill_message">シームレスなフルスクリーンジェスチャーのためにナビゲーションバーのピルを隠す</string>
     <!-- Back gesture animation -->
-    <string name="back_gesture_arrow_message">Show an animated arrow for back gesture.</string>
+    <string name="back_gesture_arrow_message">戻るジェスチャーの矢印をアニメーションする</string>
     <!-- About phone screen, setting option name [CHAR LIMIT=40] -->
     <string name="selinux_status">SELinuxの状態</string>
     <string name="selinux_status_disabled">無効</string>
@@ -2203,7 +2205,7 @@
     <string name="selinux_status_enforcing">有効</string>
     <!-- Hardware info -->
     <!-- Label for device's hardware platform value [CHAR LIMIT=40] -->
-    <string name="platform_revision">Platform</string>
+    <string name="platform_revision">プラットフォーム</string>
     <!-- Label for device's hardware ram size [CHAR LIMIT=40] -->
     <string name="total_ram">RAM容量合計</string>
     <!-- Label for estimated remaining duration of dash battery charging -->
@@ -2211,30 +2213,30 @@
     <!-- Battery use screen.  Battery status shown in chart label when charging from a dash source.  -->
     <string name="battery_info_status_dash_charging">急速充電中</string>
     <!-- Title for the new device identifier access restrictions -->
-    <string name="device_identifier_access_restrictions_title">Disable device identifier restrictions</string>
+    <string name="device_identifier_access_restrictions_title">デバイス識別の制限を無効化</string>
     <!-- Summary for the new device identifier access restrictions -->
-    <string name="device_identifier_access_restrictions_summary">Disable the new access restrictions for device identifiers</string>
+    <string name="device_identifier_access_restrictions_summary">デバイス識別子の新しいアクセス制限を無効にする</string>
     <!-- Alert Slider Notifications (OnePlus devices) -->
-    <string name="alert_slider_notifications_title">Alert slider notifications</string>
-    <string name="alert_slider_notifications_summary">Display notification when changing alert slider position</string>
+    <string name="alert_slider_notifications_title">Alert Slider 通知</string>
+    <string name="alert_slider_notifications_summary">充電中に Alert Slider の位置に通知を表示する</string>
     <!-- QS blur -->
-    <string name="qs_blur_title">Background blur</string>
-    <string name="qs_blur_summary">Blur empty space in notification panel below quick settings</string>
+    <string name="qs_blur_title">背景ぼかし</string>
+    <string name="qs_blur_summary">クイック設定の下の通知パネルの空きスペースをぼかします</string>
     <!-- In-call feedback -->
-    <string name="incall_feeedback_vibrate_title">In-Call vibration</string>
-    <string name="incall_feeedback_summary">Vibrate to indicate call status</string>
+    <string name="incall_feeedback_vibrate_title">着信時に振動する</string>
+    <string name="incall_feeedback_summary">振動で通話状態を知らせる</string>
     <!-- Custom Vibration fragment -->
-    <string name="vibration_preferences">Vibration &amp; haptics</string>
-    <string name="summary_vibration_preferences">Change intensities, patterns and more</string>
-    <string name="keywords_vibration_preferences">vibration pattern, vibration intensity, incall, haptics, tap, vibration strength</string>
-    <string name="ringtone_vibration_pattern">Ringtone vibration pattern</string>
-    <string name="vibration_intensity_ringer">Ringtone vibration intensity</string>
-    <string name="vibration_intensity_notification">Notification vibration intensity</string>
-    <string name="vibration_intensity_disabled">Disabled</string>
-    <string name="vibration_intensity_light">Low</string>
-    <string name="vibration_intensity_medium">Medium</string>
-    <string name="vibration_intensity_strong">High</string>
-    <string name="vibration_intensity_custom">Custom</string>
+    <string name="vibration_preferences">振動と触覚フィードバック</string>
+    <string name="summary_vibration_preferences">強さやパターンなど変更する</string>
+    <string name="keywords_vibration_preferences">振動パターン、振動強度、着信時、触覚フィードバック、タップ</string>
+    <string name="ringtone_vibration_pattern">着信音の振動のパターン</string>
+    <string name="vibration_intensity_ringer">着信音の振動の強さ</string>
+    <string name="vibration_intensity_notification">通知の振動の強さ</string>
+    <string name="vibration_intensity_disabled">無効</string>
+    <string name="vibration_intensity_light">低</string>
+    <string name="vibration_intensity_medium">中</string>
+    <string name="vibration_intensity_strong">高</string>
+    <string name="vibration_intensity_custom">カスタム</string>
     <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
     <string name="pattern_dzzz_da">dzzz-da</string>
     <string name="pattern_mm_mm_mm">mm-mm-mm</string>
@@ -2245,6 +2247,6 @@
     <!-- Sound: Title for the option defining the phone ringtone for slot2 on Muilti SIM device. [CHAR LIMIT=50] -->
     <string name="ringtone2_title">着信音 - SIM 2</string>
     <!-- Fingerprint unlock without bouncer -->
-    <string name="unlock_without_bouncer_title">Use fingerprint unlock to view notification</string>
-    <string name="unlock_without_bouncer_summary">Allows to unlock device with fingerprint on notification double tap without need to input pin/password/pattern</string>
+    <string name="unlock_without_bouncer_title">指紋ロック解除機能を使用して通知を確認</string>
+    <string name="unlock_without_bouncer_summary">PIN/パスワード/パターンの入力無しで通知のダブルタップで指紋を使って端末のロック解除を許可する</string>
 </resources>
