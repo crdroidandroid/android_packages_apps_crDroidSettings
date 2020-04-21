@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2019 crDroid Android Project
+     Copyright (C) 2016-2020 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -83,4 +83,23 @@
             android:summary="@string/vol_zen_summary"
             android:defaultValue="false"/>
     </PreferenceCategory> -->
+
+    <!-- Adaptive Playback -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="adaptive_playback_enabled"
+        android:icon="@drawable/ic_settings_sound"
+        android:title="@string/adaptive_playback_title"
+        android:summary="@string/adaptive_playback_summary"
+        android:defaultValue="false" />
+
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="adaptive_playback_timeout"
+        android:icon="@drawable/ic_settings_sound"
+        android:title="@string/adaptive_playback_timeout_title"
+        android:defaultValue="30"
+        android:max="600"
+        settings:min="10"
+        settings:interval="10"
+        settings:units="@string/unit_seconds"
+        android:dependency="adaptive_playback_enabled" />
 </PreferenceScreen>
