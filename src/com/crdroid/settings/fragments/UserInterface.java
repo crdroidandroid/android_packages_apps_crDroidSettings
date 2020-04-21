@@ -59,9 +59,11 @@ import lineageos.providers.LineageSettings;
 public class UserInterface extends SettingsPreferenceFragment implements Indexable {
 
     private static final String SMART_PIXELS = "smart_pixels";
-    private static final String DISPLAY_CUTOUT = "display_cutout_force_fullscreen_settings";
+    private static final String DISPLAY_CUTOUT_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
+    private static final String DISPLAY_CUTOUT = "sysui_display_cutout";
 
     private Preference mSmartPixels;
+    private Preference mDisplayCutoutFullScreen;
     private Preference mDisplayCutout;
 
     @Override
@@ -80,13 +82,22 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
         if (!mSmartPixelsSupported)
             prefScreen.removePreference(mSmartPixels);
 
-        mDisplayCutout = (Preference) prefScreen.findPreference(DISPLAY_CUTOUT);
+        mDisplayCutoutFullScreen = (Preference) prefScreen.findPreference(DISPLAY_CUTOUT_FULL_SCREEN);
         if (!DeviceUtils.hasNotch(mContext))
+            prefScreen.removePreference(mDisplayCutoutFullScreen);
+
+        boolean hasDisplayCutout = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_fillMainBuiltInDisplayCutout);
+
+        mDisplayCutout = (Preference) prefScreen.findPreference(DISPLAY_CUTOUT);
+        if (!hasDisplayCutout)
             prefScreen.removePreference(mDisplayCutout);
     }
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.SYSUI_DISPLAY_CUTOUT, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.BERRY_DARK_STYLE, 0, UserHandle.USER_CURRENT);
         Animations.reset(mContext);
@@ -123,7 +134,13 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
                     final Resources res = context.getResources();
 
                     if (!DeviceUtils.hasNotch(context))
+                        keys.add(DISPLAY_CUTOUT_FULL_SCREEN);
+
+                    boolean hasDisplayCutout = context.getResources().getBoolean(
+                            com.android.internal.R.bool.config_fillMainBuiltInDisplayCutout);
+                    if (!hasDisplayCutout)
                         keys.add(DISPLAY_CUTOUT);
+
                     boolean mSmartPixelsSupported = res.getBoolean(
                             com.android.internal.R.bool.config_supportSmartPixels);
                     if (!mSmartPixelsSupported)

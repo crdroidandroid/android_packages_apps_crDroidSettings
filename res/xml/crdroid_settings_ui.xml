@@ -59,6 +59,14 @@
         android:summary="@string/display_cutout_force_fullscreen_summary"
         android:fragment="com.crdroid.settings.fragments.ui.DisplayCutoutForceFullscreenSettings" />
 
+    <!-- Display cutout -->
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="sysui_display_cutout"
+        android:icon="@drawable/ic_cutout"
+        android:title="@string/sysui_display_cutout_title"
+        android:summary="@string/sysui_display_cutout_summary"
+        android:defaultValue="true"/>
+
     <!-- Expanded Desktop
     <org.lineageos.internal.lineageparts.LineagePartsPreference
         android:key="expanded_desktop_settings"
