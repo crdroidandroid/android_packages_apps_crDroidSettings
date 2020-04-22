@@ -152,26 +152,22 @@ public class Buttons extends SettingsPreferenceFragment implements
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        final int deviceKeys = res.getInteger(
-                org.lineageos.platform.internal.R.integer.config_deviceHardwareKeys);
-        final int deviceWakeKeys = res.getInteger(
-                org.lineageos.platform.internal.R.integer.config_deviceHardwareWakeKeys);
+        final boolean hasPowerKey = DeviceUtils.hasPowerKey();
+        final boolean hasHomeKey = DeviceUtils.hasHomeKey(getActivity());
+        final boolean hasBackKey = DeviceUtils.hasBackKey(getActivity());
+        final boolean hasMenuKey = DeviceUtils.hasMenuKey(getActivity());
+        final boolean hasAssistKey = DeviceUtils.hasAssistKey(getActivity());
+        final boolean hasAppSwitchKey = DeviceUtils.hasAppSwitchKey(getActivity());
+        final boolean hasCameraKey = DeviceUtils.hasCameraKey(getActivity());
+        final boolean hasVolumeKeys = DeviceUtils.hasVolumeKeys(getActivity());
 
-        final boolean hasPowerKey = KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_POWER);
-        final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
-        final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
-        final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
-        final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
-        final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
-        final boolean hasCameraKey = (deviceKeys & KEY_MASK_CAMERA) != 0;
-
-        final boolean showHomeWake = (deviceWakeKeys & KEY_MASK_HOME) != 0;
-        final boolean showBackWake = (deviceWakeKeys & KEY_MASK_BACK) != 0;
-        final boolean showMenuWake = (deviceWakeKeys & KEY_MASK_MENU) != 0;
-        final boolean showAssistWake = (deviceWakeKeys & KEY_MASK_ASSIST) != 0;
-        final boolean showAppSwitchWake = (deviceWakeKeys & KEY_MASK_APP_SWITCH) != 0;
-        final boolean showCameraWake = (deviceWakeKeys & KEY_MASK_CAMERA) != 0;
-        final boolean showVolumeWake = (deviceWakeKeys & KEY_MASK_VOLUME) != 0;
+        final boolean showHomeWake = DeviceUtils.canWakeUsingHomeKey(getActivity());
+        final boolean showBackWake = DeviceUtils.canWakeUsingBackKey(getActivity());
+        final boolean showMenuWake = DeviceUtils.canWakeUsingMenuKey(getActivity());
+        final boolean showAssistWake = DeviceUtils.canWakeUsingAssistKey(getActivity());
+        final boolean showAppSwitchWake = DeviceUtils.canWakeUsingAppSwitchKey(getActivity());
+        final boolean showCameraWake = DeviceUtils.canWakeUsingCameraKey(getActivity());
+        final boolean showVolumeWake = DeviceUtils.canWakeUsingVolumeKeys(getActivity());
 
         boolean hasAnyBindableKey = false;
         final PreferenceCategory powerCategory =
@@ -234,7 +230,7 @@ public class Buttons extends SettingsPreferenceFragment implements
                 defaultBackLongPressAction);
 
         backlight = (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
-        if (!backlight.isButtonSupported()
+        if (!backlight.isButtonSupported(getActivity())
                 && !backlight.isKeyboardSupported(getActivity())) {
             prefScreen.removePreference(backlight);
             backlight = null;
@@ -366,7 +362,7 @@ public class Buttons extends SettingsPreferenceFragment implements
             prefScreen.removePreference(cameraCategory);
         }
 
-        if (DeviceUtils.hasVolumeRocker(getActivity())) {
+        if (hasVolumeKeys) {
             if (!showVolumeWake) {
                 volumeCategory.removePreference(findPreference(KEY_VOLUME_WAKE_SCREEN));
             }
@@ -610,20 +606,14 @@ public class Buttons extends SettingsPreferenceFragment implements
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
 
-                    final Resources res = context.getResources();
-
-                    final int deviceKeys = res.getInteger(
-                            org.lineageos.platform.internal.R.integer.config_deviceHardwareKeys);
-                    final int deviceWakeKeys = res.getInteger(
-                            org.lineageos.platform.internal.R.integer.config_deviceHardwareWakeKeys);
-
-                    final boolean hasPowerKey = KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_POWER);
-                    final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
-                    final boolean hasBackKey = (deviceKeys & KEY_MASK_BACK) != 0;
-                    final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
-                    final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
-                    final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
-                    final boolean hasCameraKey = (deviceKeys & KEY_MASK_CAMERA) != 0;
+                    final boolean hasPowerKey = DeviceUtils.hasPowerKey();
+                    final boolean hasHomeKey = DeviceUtils.hasHomeKey(context);
+                    final boolean hasBackKey = DeviceUtils.hasBackKey(context);
+                    final boolean hasMenuKey = DeviceUtils.hasMenuKey(context);
+                    final boolean hasAssistKey = DeviceUtils.hasAssistKey(context);
+                    final boolean hasAppSwitchKey = DeviceUtils.hasAppSwitchKey(context);
+                    final boolean hasCameraKey = DeviceUtils.hasCameraKey(context);
+                    final boolean hasVolumeKeys = DeviceUtils.hasVolumeKeys(context);
 
                     LineageHardwareManager mLineageHardware = LineageHardwareManager.getInstance(context);
 
@@ -676,7 +666,7 @@ public class Buttons extends SettingsPreferenceFragment implements
 
                     keys.add(KEY_VOLUME_WAKE_SCREEN);
 
-                    if (!DeviceUtils.hasVolumeRocker(context)) {
+                    if (!hasVolumeKeys) {
                         keys.add(KEY_VOLUME_ANSWER_CALL);
                         keys.add(KEY_VOLUME_MUSIC_CONTROLS);
                         keys.add(KEY_VOLUME_KEY_CURSOR_CONTROL);
@@ -687,7 +677,7 @@ public class Buttons extends SettingsPreferenceFragment implements
                         }
                     }
 
-                    if (!ButtonBacklightBrightness.isButtonSupported()
+                    if (!ButtonBacklightBrightness.isButtonSupported(context)
                             && !ButtonBacklightBrightness.isKeyboardSupported(context)) {
                         keys.add(KEY_BUTTON_BACKLIGHT);
                     }

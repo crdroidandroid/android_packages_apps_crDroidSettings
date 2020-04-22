@@ -32,17 +32,97 @@ import android.os.Build;
 import android.os.SystemProperties;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.view.KeyCharacterMap;
+import android.view.KeyEvent;
 import android.view.Surface;
 
 import static org.lineageos.internal.util.DeviceKeysConstants.*;
 
 public class DeviceUtils {
 
-    /* returns whether the device has volume rocker or not. */
-    public static boolean hasVolumeRocker(Context context) {
-        final int deviceKeys = context.getResources().getInteger(
+    public static int getDeviceKeys(Context context) {
+        return context.getResources().getInteger(
                 org.lineageos.platform.internal.R.integer.config_deviceHardwareKeys);
-        return (deviceKeys & KEY_MASK_VOLUME) != 0;
+    }
+
+    public static int getDeviceWakeKeys(Context context) {
+        return context.getResources().getInteger(
+                org.lineageos.platform.internal.R.integer.config_deviceHardwareWakeKeys);
+    }
+
+    /* returns whether the device has power key or not. */
+    public static boolean hasPowerKey() {
+        return KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_POWER);
+    }
+
+    /* returns whether the device has home key or not. */
+    public static boolean hasHomeKey(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_HOME) != 0;
+    }
+
+    /* returns whether the device has back key or not. */
+    public static boolean hasBackKey(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_BACK) != 0;
+    }
+
+    /* returns whether the device has menu key or not. */
+    public static boolean hasMenuKey(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_MENU) != 0;
+    }
+
+    /* returns whether the device has assist key or not. */
+    public static boolean hasAssistKey(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_ASSIST) != 0;
+    }
+
+    /* returns whether the device has app switch key or not. */
+    public static boolean hasAppSwitchKey(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_APP_SWITCH) != 0;
+    }
+
+    /* returns whether the device has camera key or not. */
+    public static boolean hasCameraKey(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_CAMERA) != 0;
+    }
+
+    /* returns whether the device has volume rocker or not. */
+    public static boolean hasVolumeKeys(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_VOLUME) != 0;
+    }
+
+    /* returns whether the device can be waken using the home key or not. */
+    public static boolean canWakeUsingHomeKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_HOME) != 0;
+    }
+
+    /* returns whether the device can be waken using the back key or not. */
+    public static boolean canWakeUsingBackKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_BACK) != 0;
+    }
+
+    /* returns whether the device can be waken using the menu key or not. */
+    public static boolean canWakeUsingMenuKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_MENU) != 0;
+    }
+
+    /* returns whether the device can be waken using the assist key or not. */
+    public static boolean canWakeUsingAssistKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_ASSIST) != 0;
+    }
+
+    /* returns whether the device can be waken using the app switch key or not. */
+    public static boolean canWakeUsingAppSwitchKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_APP_SWITCH) != 0;
+    }
+
+    /* returns whether the device can be waken using the camera key or not. */
+    public static boolean canWakeUsingCameraKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_CAMERA) != 0;
+    }
+
+    /* returns whether the device can be waken using the volume rocker or not. */
+    public static boolean canWakeUsingVolumeKeys(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_VOLUME) != 0;
     }
 
     public static boolean isPackageInstalled(Context context, String pkg, boolean ignoreState) {

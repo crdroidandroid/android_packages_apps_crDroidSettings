@@ -36,8 +36,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 
-import com.crdroid.settings.preferences.CustomDialogPref;
 import com.crdroid.settings.R;
+import com.crdroid.settings.preferences.CustomDialogPref;
+import com.crdroid.settings.utils.DeviceUtils;
 
 import static org.lineageos.internal.util.DeviceKeysConstants.*;
 
@@ -76,7 +77,7 @@ public class ButtonBacklightBrightness extends CustomDialogPref<AlertDialog> imp
                     LineageSettings.Secure.KEYBOARD_BRIGHTNESS, isSingleValue);
             mActiveControl = mKeyboardBrightness;
         }
-        if (isButtonSupported()) {
+        if (isButtonSupported(context)) {
             boolean isSingleValue = !context.getResources().getBoolean(
                     com.android.internal.R.bool.config_deviceHasVariableButtonBrightness);
 
@@ -239,16 +240,14 @@ public class ButtonBacklightBrightness extends CustomDialogPref<AlertDialog> imp
         }
     }
 
-    public boolean isButtonSupported() {
-        final Resources res = getContext().getResources();
-        final int deviceKeys = res.getInteger(
-                org.lineageos.platform.internal.R.integer.config_deviceHardwareKeys);
+    public static boolean isButtonSupported(Context context) {
+        final Resources res = context.getResources();
         // All hardware keys besides volume and camera can possibly have a backlight
-        boolean hasBacklightKey = (deviceKeys & KEY_MASK_HOME) != 0
-                || (deviceKeys & KEY_MASK_BACK) != 0
-                || (deviceKeys & KEY_MASK_MENU) != 0
-                || (deviceKeys & KEY_MASK_ASSIST) != 0
-                || (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
+        boolean hasBacklightKey = DeviceUtils.hasHomeKey(context)
+                || DeviceUtils.hasBackKey(context)
+                || DeviceUtils.hasMenuKey(context)
+                || DeviceUtils.hasAssistKey(context)
+                || DeviceUtils.hasAppSwitchKey(context);
         boolean hasBacklight = res.getInteger(
                 com.android.internal.R.integer.config_buttonBrightnessSettingDefault) > 0;
 
