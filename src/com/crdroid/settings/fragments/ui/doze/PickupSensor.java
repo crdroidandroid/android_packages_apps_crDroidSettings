@@ -48,6 +48,8 @@ public class PickupSensor implements SensorEventListener {
     private TelephonyManager telephonyManager;
     private ExecutorService mExecutorService;
 
+    private boolean mIsCustomPickupSensor;
+
     private float[] mGravity;
     private float mAccelLast;
     private float mAccelCurrent;
@@ -59,7 +61,8 @@ public class PickupSensor implements SensorEventListener {
         mContext = context;
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         final String pickup_sensor = context.getResources().getString(R.string.pickup_sensor);
-        if (pickup_sensor != null && !pickup_sensor.isEmpty()) {
+        mIsCustomPickupSensor = pickup_sensor != null && !pickup_sensor.isEmpty();
+        if (mIsCustomPickupSensor) {
             for (Sensor sensor : mSensorManager.getSensorList(Sensor.TYPE_ALL)) {
                 if (pickup_sensor.equals(sensor.getStringType())) {
                     mSensorPickup = sensor;
@@ -141,7 +144,8 @@ public class PickupSensor implements SensorEventListener {
         if (DEBUG) Log.d(TAG, "Enabling");
         submit(() -> {
             mSensorManager.registerListener(this, mSensorPickup,
-                    SensorManager.SENSOR_STATUS_ACCURACY_HIGH);
+                    mIsCustomPickupSensor ? SensorManager.SENSOR_DELAY_NORMAL
+                    : SensorManager.SENSOR_STATUS_ACCURACY_HIGH);
             mEntryTimestamp = SystemClock.elapsedRealtime();
         });
     }
