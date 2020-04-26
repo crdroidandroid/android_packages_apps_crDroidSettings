@@ -20,7 +20,9 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemProperties;
@@ -56,11 +58,63 @@ public class QuickSettings extends SettingsPreferenceFragment implements Indexab
 
     public static final String TAG = "QuickSettings";
 
+    private static final String KEY_COL_PORTRAIT = "qs_columns_portrait";
+    private static final String KEY_ROW_PORTRAIT = "qs_rows_portrait";
+    private static final String KEY_COL_LANDSCAPE = "qs_columns_landscape";
+    private static final String KEY_ROW_LANDSCAPE = "qs_rows_landscape";
+
+    CustomSeekBarPreference mColPortrait;
+    CustomSeekBarPreference mRowPortrait;
+    CustomSeekBarPreference mColLandscape;
+    CustomSeekBarPreference mRowLandscape;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.crdroid_settings_quicksettings);
+
+        mColPortrait = (CustomSeekBarPreference) findPreference(KEY_COL_PORTRAIT);
+        mRowPortrait = (CustomSeekBarPreference) findPreference(KEY_ROW_PORTRAIT);
+        mColLandscape = (CustomSeekBarPreference) findPreference(KEY_COL_LANDSCAPE);
+        mRowLandscape = (CustomSeekBarPreference) findPreference(KEY_ROW_LANDSCAPE);
+
+        Resources res = null;
+        Context ctx = getContext();
+
+        try {
+            res = ctx.getPackageManager().getResourcesForApplication("com.android.systemui");
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        int col_portrait = res.getInteger(res.getIdentifier(
+                "com.android.systemui:integer/config_qs_columns_portrait", null, null));
+        int row_portrait = res.getInteger(res.getIdentifier(
+                "com.android.systemui:integer/config_qs_rows_portrait", null, null));
+        int col_landscape = res.getInteger(res.getIdentifier(
+                "com.android.systemui:integer/config_qs_columns_landscape", null, null));
+        int row_landscape = res.getInteger(res.getIdentifier(
+                "com.android.systemui:integer/config_qs_rows_landscape", null, null));
+
+        mColPortrait.setDefaultValue(col_portrait);
+        mRowPortrait.setDefaultValue(row_portrait);
+        mColLandscape.setDefaultValue(col_landscape);
+        mRowLandscape.setDefaultValue(row_landscape);
+
+        int mColPortraitVal = Settings.System.getIntForUser(ctx.getContentResolver(),
+                Settings.System.QS_COLUMNS_PORTRAIT, col_portrait, UserHandle.USER_CURRENT);
+        int mRowPortraitVal = Settings.System.getIntForUser(ctx.getContentResolver(),
+                Settings.System.QS_ROWS_PORTRAIT, row_portrait, UserHandle.USER_CURRENT);
+        int mColLandscapeVal = Settings.System.getIntForUser(ctx.getContentResolver(),
+                Settings.System.QS_COLUMNS_LANDSCAPE, col_landscape, UserHandle.USER_CURRENT);
+        int mRowLandscapeVal = Settings.System.getIntForUser(ctx.getContentResolver(),
+                Settings.System.QS_ROWS_LANDSCAPE, row_landscape, UserHandle.USER_CURRENT);
+
+        mColPortrait.setValue(mColPortraitVal);
+        mRowPortrait.setValue(mRowPortraitVal);
+        mColLandscape.setValue(mColLandscapeVal);
+        mRowLandscape.setValue(mRowLandscapeVal);        
     }
 
     @Override
@@ -70,6 +124,23 @@ public class QuickSettings extends SettingsPreferenceFragment implements Indexab
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Resources res = null;
+
+        try {
+            res = mContext.getPackageManager().getResourcesForApplication("com.android.systemui");
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        int col_portrait = res.getInteger(res.getIdentifier(
+                "com.android.systemui:integer/config_qs_columns_portrait", null, null));
+        int row_portrait = res.getInteger(res.getIdentifier(
+                "com.android.systemui:integer/config_qs_rows_portrait", null, null));
+        int col_landscape = res.getInteger(res.getIdentifier(
+                "com.android.systemui:integer/config_qs_columns_landscape", null, null));
+        int row_landscape = res.getInteger(res.getIdentifier(
+                "com.android.systemui:integer/config_qs_rows_landscape", null, null));
+
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
@@ -77,9 +148,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements Indexab
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.QUICK_SETTINGS_VIBRATE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.QS_COLUMNS_LANDSCAPE, 4, UserHandle.USER_CURRENT);
+                Settings.System.QS_COLUMNS_LANDSCAPE, col_landscape, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.QS_COLUMNS_PORTRAIT, 4, UserHandle.USER_CURRENT);
+                Settings.System.QS_COLUMNS_PORTRAIT, col_portrait, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TILE_TITLE_VISIBILITY, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -97,9 +168,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements Indexab
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_PANEL_BG_ALPHA, 255, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.QS_ROWS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
+                Settings.System.QS_ROWS_LANDSCAPE, row_landscape, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.QS_ROWS_PORTRAIT, 2, UserHandle.USER_CURRENT);
+                Settings.System.QS_ROWS_PORTRAIT, row_portrait, UserHandle.USER_CURRENT);
         CustomHeader.reset(mContext);
     }
 
