@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2019 crDroid Android Project
+     Copyright (C) 2017-2020 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -20,18 +20,18 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="weather_lockscreen_enabled"
+        android:key="lockscreen_weather_enabled"
         android:title="@string/lock_screen_weather_title"
         android:summary="@string/lock_screen_weather_summaryOn" />
 
-    <com.crdroid.settings.preferences.SystemSettingListPreference
+    <!--<com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="weather_lockscreen_unit"
         android:title="@string/weather_unit"
         android:summary="%s"
         android:entries="@array/weather_unit_entries"
         android:entryValues="@array/weather_unit_values"
         android:defaultValue="0"
-        android:dependency="weather_lockscreen_enabled" />
+        android:dependency="weather_lockscreen_enabled" />-->
 
     <!-- OmniJaws
     <PreferenceScreen

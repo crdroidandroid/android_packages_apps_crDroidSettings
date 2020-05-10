@@ -41,6 +41,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.lockscreen.LockScreenVisualizer;
+import com.crdroid.settings.fragments.lockscreen.LockScreenWeather;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.preferences.SystemSettingListPreference;
 
@@ -134,6 +135,7 @@ public class LockScreen extends SettingsPreferenceFragment
         Settings.System.putIntForUser(resolver,
                 Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT);
         LockScreenVisualizer.reset(mContext);
+        LockScreenWeather.reset(mContext);
     }
 
     @Override
