@@ -47,9 +47,11 @@ import java.util.ArrayList;
 
 public class OmniJawsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener, Indexable {
+
     private static final String TAG = "OmniJawsSettings";
     private static final String CATEGORY_WEATHER = "weather_category";
     private static final String WEATHER_ICON_PACK = "weather_icon_pack";
+    private static final String FIND_ICON_PACK = "find_icon_pack";
     private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
     private static final String DEFAULT_WEATHER_ICON_PREFIX = "outline";
     private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
@@ -57,12 +59,15 @@ public class OmniJawsSettings extends SettingsPreferenceFragment implements
 
     private PreferenceCategory mWeatherCategory;
     private ListPreference mWeatherIconPack;
+    private Preference mFindIconPack;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.omnijaws_settings);
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mFindIconPack = findPreference(FIND_ICON_PACK);
 
         mWeatherCategory = (PreferenceCategory) prefScreen.findPreference(CATEGORY_WEATHER);
         if (mWeatherCategory != null && !isOmniJawsServiceInstalled()) {
@@ -93,7 +98,6 @@ public class OmniJawsSettings extends SettingsPreferenceFragment implements
             mWeatherIconPack.setSummary(mWeatherIconPack.getEntry());
             mWeatherIconPack.setOnPreferenceChangeListener(this);
         }
-        mFooterPreferenceMixin.createFooterPreference().setTitle(R.string.weather_icon_pack_note);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
@@ -105,6 +109,20 @@ public class OmniJawsSettings extends SettingsPreferenceFragment implements
             mWeatherIconPack.setSummary(mWeatherIconPack.getEntries()[valueIndex]);
         }
         return true;
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (preference == mFindIconPack) {
+            launchPlaystore();
+        }
+        return super.onPreferenceTreeClick(preference);
+    }
+
+    private void launchPlaystore() {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("market://search?q=Chronus+icons&c=apps"));
+        startActivity(intent);
     }
 
     private boolean isOmniJawsServiceInstalled() {
