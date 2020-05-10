@@ -24,6 +24,13 @@
         android:title="@string/lock_screen_weather_title"
         android:summary="@string/lock_screen_weather_summaryOn" />
 
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_weather_style"
+        android:title="@string/lock_screen_weather_style_title"
+        android:summary="@string/lock_screen_weather_style_summary"
+        android:dependency="lockscreen_weather_enabled"
+        android:defaultValue="true" />
+
     <!--<com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="weather_lockscreen_unit"
         android:title="@string/weather_unit"

@@ -50,6 +50,8 @@ public class LockScreenWeather extends SettingsPreferenceFragment {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_WEATHER_ENABLED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_WEATHER_STYLE, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
