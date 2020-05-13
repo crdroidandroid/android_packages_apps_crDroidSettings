@@ -423,7 +423,7 @@
     <string name="qs_brightness_slider_summary">Zeigt einen Helligkeitsregler in den Schnelleinstellungen an</string>
     <!-- Quick settings brightness icon -->
     <string name="brightness_icon_title">Automatische Helligkeit</string>
-    <string name="brightness_icon_summary">Umschalter für adaptive Helligkeit neben dem Schieberegler anzeigen</string>
+    <string name="brightness_icon_summary">Schalter für adaptive Helligkeit neben dem Schieberegler anzeigen</string>
     <!-- Quick settings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrieren bei Berührung</string>
     <string name="quick_settings_vibrate_summary">Vibrieren beim Berühren der Kacheln</string>
@@ -613,7 +613,7 @@
     <string name="fling_animate_logo_title">Logo animieren</string>
     <string name="fling_animate_logo_summary">Logo wird bei Berührungen animiert</string>
     <string name="fling_logo_color">Logofarbe</string>
-    <string name="fling_logo_custom_logo_pick_title">Benutzerdefiniertes Logosymbol</string>
+    <string name="fling_logo_custom_logo_pick_title">Benutzerdefiniertes Logo-Symbol</string>
     <string name="fling_logo_custom_logo_image_pick_title">Benutzerdefiniertes Logobild</string>
     <string name="fling_logo_custom_logo_reset_title">Logosymbol zurücksetzen</string>
     <string name="fling_show_ripple_title">Wellen anzeigen</string>
@@ -1074,10 +1074,10 @@
     <string name="hardware_keys_action_close_app">App beenden</string>
     <string name="hardware_keys_action_torch">Taschenlampe</string>
     <string name="hardware_keys_action_screenshot">Screenshot</string>
-    <string name="hardware_keys_action_volume_panel">Lautstärkeregler umschalten</string>
+    <string name="hardware_keys_action_volume_panel">Regler Lautstärke-Panel</string>
     <string name="hardware_keys_action_clear_all_notifications">Alle Benachrichtigungen löschen</string>
-    <string name="hardware_keys_action_notifications_panel">Benachrichtigungs-Panel umschalten</string>
-    <string name="hardware_keys_action_toggle_qs_panel">QS-Panel umschalten</string>
+    <string name="hardware_keys_action_notifications_panel">Schalter Benachrichtigungs-Panel</string>
+    <string name="hardware_keys_action_toggle_qs_panel">Schalter QS-Panel</string>
     <string name="hardware_keys_action_ringer_modes">Klingelmodus</string>
     <string name="hardware_keys_action_single_handed_left">Einhandmodus (links)</string>
     <string name="hardware_keys_action_single_handed_right">Einhandmodus (rechts)</string>
@@ -1433,7 +1433,7 @@ Ein-/Aus-Taste, während das Display aus ist</string>
     <string name="slim_blacklist_add_apps_title">App hinzufügen</string>
     <string name="slim_blacklist_add_apps_summary">Tippen Sie hier, um eine App zur Blacklist hinzuzufügen</string>
     <string name="slim_blacklist_apps_info">Tippe auf die hinzugefügte App, um sie zu entfernen</string>
-    <string name="slim_recents_hints_footer">Um alle Apps zu löschen, drücke mit zwei Fingern auf das Panel. Um das Löschen einer App zu verhindern, drücke lange auf das Symbol, um es mit einem Stern zu versehen.\n\nFür zusätzliche neue Funktionen wie z. B. mehrere Fenster oder zum Beenden einer App drücken oder ziehe eine Karte in das Panel.</string>
+    <string name="slim_recents_hints_footer">Um alle Apps zu löschen, mit zwei Fingern auf das Panel drücken. Um zu verhindern, dass eine App gelöscht wird, lange auf das entsprechende Symbol drücken, um es zu markieren.\n\nFür zusätzliche neue Funktionen wie z. B. mehrere Fenster oder das Beenden einer App, lange drücken oder App-Karte in das Panel ziehen.</string>
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Am linken Bildschirmrand anzeigen</string>
     <string name="recent_panel_lefty_mode_summary">Zeige das App-Verlauf Panel am linken Rand an</string>
@@ -1442,17 +1442,19 @@ Ein-/Aus-Taste, während das Display aus ist</string>
     <string name="disable_fc_notifications_summary">Alle Dialogfelder über die App-Abstürze ausblenden</string>
     <!-- OmniJaws -->
     <string name="omnijaws_settings_title">Wetterdienst</string>
-    <string name="omnijaws_settings_summary">Serviceeinstellungen und das Symbolpaket anpassen</string>
+    <string name="omnijaws_settings_summary">Serviceeinstellungen und Symbolpaket anpassen</string>
     <string name="weather_config_title">Service-Einstellungen</string>
     <string name="weather_config_summary">Den Dienst konfigurieren, um Wetterdetails zu aktivieren</string>
     <string name="weather_icon_pack_title">Wettersymbolpaket</string>
+    <string name="find_icon_pack_title">Symbolpakete finden</string>
+    <string name="find_icon_pack_summary">Neue Symbolpakete im Play Store finden und installieren</string>
     <string name="weather_icon_pack_note">Hinweis\u003a Sie können neue Symbolpakete aus dem Play Store installieren, indem Sie nach \"Chronus Icons\" suchen</string>
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G-Symbol</string>
     <string name="show_fourg_icon_summary">4G-Symbol anstelle LTE anzeigen</string>
     <!-- Roaming indicator icon -->
-    <string name="roaming_indicator_icon_title">Roaming-Indikator</string>
-    <string name="roaming_indicator_icon_summary">Roaming-Indikator anzeigen, wenn man im Roaming-Modus ist</string>
+    <string name="roaming_indicator_icon_title">Roaming-Anzeige</string>
+    <string name="roaming_indicator_icon_summary">Im Roaming-Modus die Anzeige im Signalsymbol einblenden</string>
     <!-- In-call DND -->
     <string name="dnd_when_call_title">\"Nicht stören\" während des Anrufs</string>
     <string name="dnd_when_call_summary">\"Nicht stören\" automatisch bei Anrufen aktivieren</string>
@@ -1509,6 +1511,8 @@ Ein-/Aus-Taste, während das Display aus ist</string>
     <string name="lock_screen_weather_condition_icon_summary">Wettersymbol auf dem Sperrbildschirm anzeigen</string>
     <string name="lock_screen_ambient_weather_title">Wetter auf dem Ambient Display</string>
     <string name="lock_screen_ambient_weather_summary">Wetter auf dem Ambient Display anzeigen</string>
+    <string name="lock_screen_weather_style_title">Pixel-Stil</string>
+    <string name="lock_screen_weather_style_summary">Wetter neben dem Datum anstelle des großen Widgets anzeigen</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Vibrieren bei Fingerabdruck-Authentifizierung</string>
     <string name="fp_success_vibrate_summary">Vibrieren, wenn die Fingerabdruck-Authentifizierung erfolgreich ist</string>
@@ -1519,19 +1523,19 @@ Ein-/Aus-Taste, während das Display aus ist</string>
     <string name="fp_unlock_keystore_summary">Gerät mit Fingerabdruck nach Neustart ohne Pin/Passwort/Muster entsperren</string>
     <!-- Toast icon -->
     <string name="toast_icon_title">Toast-Symbol</string>
-    <string name="toast_icon_summary">Zeigt das Aktivitätssymbol das eine Toastnachricht generiert an</string>
+    <string name="toast_icon_summary">Aktivitätssymbol anzeigen, das eine Toast-Nachricht generiert</string>
     <!-- Lockscreen battery info indicator -->
     <string name="lockscreen_battery_info_title">Akku-Info</string>
     <string name="lockscreen_battery_info_summary">Anzeige der Akku-Informationen beim Aufladen</string>
     <!-- Recents lock icon -->
     <string name="recents_lock_icon_title">Aufgabe sperren</string>
-    <string name="recents_lock_icon_summary">Schloss-Symbol auf der Karte im App-Verlauf anzeigen</string>
+    <string name="recents_lock_icon_summary">Schalter Aufgabe-Sperrsymbol im App-Verlauf anzeigen</string>
     <!-- AOSP Recents Grid -->
     <string name="recents_use_grid_title">Raster-Stil für App-Verlauf</string>
-    <string name="recents_use_grid_summary">Auf Raster-Stil umschalten</string>
+    <string name="recents_use_grid_summary">Schalter Raster-Stilverlauf</string>
     <!-- Recents dismiss icon -->
     <string name="recents_dismiss_icon_title">Aufgabe verwerfen</string>
-    <string name="recents_dismiss_icon_summary">Symbol im App-Verlauf anzeigen</string>
+    <string name="recents_dismiss_icon_summary">Schalter Aufgabensymbol in der letzten App-Ansicht verwerfen</string>
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">\"Alle beenden\" - Taste</string>
     <string name="notification_guts_kill_app_button_summary">Eine \"App beenden\"-Taste anzeigen, wenn eine Benachrichtigung lange gedrückt wird</string>
@@ -1614,7 +1618,7 @@ Ein-/Aus-Taste, während das Display aus ist</string>
     <string name="dialog_message">Suche nach Updates, bitte warten…</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Pixel-Animation</string>
-    <string name="pixel_navbar_anim_summary">Pixel-Art-Animation für Navigationsleiste</string>
+    <string name="pixel_navbar_anim_summary">Schalter Pixel-Art-Animation für Navigationsleiste</string>
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Intelligentes Herunterziehen</string>
     <string name="smart_pulldown_summary">Schnelleinstellungen öffnen, wenn %1$s Benachtichtigungen vorliegen</string>
@@ -2004,16 +2008,16 @@ Ein-/Aus-Taste, während das Display aus ist</string>
     <string name="qs_footer_warnings_summary">Benachrichtigung anzeigen, wenn das Netzwerk über VPN überwacht oder verbunden wird</string>
     <!-- QS footer icons -->
     <string name="qs_footer_users_icon_title">Benutzerkontosymbol</string>
-    <string name="qs_footer_users_icon_summary">Multiuser-Zugänglichkeitssymbol anzeigen, wenn verfügbar</string>
-    <string name="qs_footer_edit_icon_title">Kachel-Symbole bearbeiten</string>
-    <string name="qs_footer_edit_icon_summary">Symbol für Kachelbearbeitung anzeigen</string>
-    <string name="qs_footer_services_icon_title">Symbol für laufende Prozesse</string>
-    <string name="qs_footer_services_icon_summary">Verknüpfung für laufende Services anzeigen</string>
-    <string name="qs_footer_settings_icon_title">Einstellungsverknüpfung</string>
-    <string name="qs_footer_settings_icon_summary">Verknüpfung für Einstellungen anzeigen</string>
+    <string name="qs_footer_users_icon_summary">Symbol für Mehrbenutzerzugriff anzeigen, falls verfügbar</string>
+    <string name="qs_footer_edit_icon_title">Kachelsymbole bearbeiten</string>
+    <string name="qs_footer_edit_icon_summary">Kachelsymbol bearbeiten anzeigen</string>
+    <string name="qs_footer_services_icon_title">Verknüpfung für laufende Dienste</string>
+    <string name="qs_footer_services_icon_summary">Verknüpfung für laufende Dienste anzeigen</string>
+    <string name="qs_footer_settings_icon_title">Verknüpfung zu Einstellungen</string>
+    <string name="qs_footer_settings_icon_summary">Verknüpfung für App-Einstellungen anzeigen</string>
     <!-- Old mobiletype icon style -->
-    <string name="old_mobiletype_title">Altes Signalsymbol</string>
-    <string name="old_mobiletype_summary">Signal- und Signaltyp-Symbole zusammenführen</string>
+    <string name="old_mobiletype_title">Signalsymbol im alten Stil</string>
+    <string name="old_mobiletype_summary">Signal- und Signaltypsymbole zusammenführen</string>
     <string name="battery_charging">Wird aufgeladen</string>
     <string name="battery_discharging">Wird entladen</string>
     <!-- Menu option to do WPS Push Button [CHAR LIMIT=25]-->
@@ -2086,7 +2090,7 @@ Ein-/Aus-Taste, während das Display aus ist</string>
     <string name="ime_fullscreen_title">Vollbildtastatur</string>
     <string name="ime_fullscreen_summary">Tastatur erlauben, im Querformat den gesamten Bildschirm zu belegen</string>
     <string name="ime_show_enter_key_title">Zeige Eingabe Taste</string>
-    <string name="ime_show_enter_key_summary">Zwinge Tastatur Eingabetaste statt Emojitaste zu zeigen</string>
+    <string name="ime_show_enter_key_summary">Erzwingen, dass die Tastatur die Eingabetaste anstelle der Emoticon-Taste anzeigt</string>
     <!-- Charging animation -->
     <string name="lockscreen_charging_animation_title">Ladeanimation</string>
     <string name="lockscreen_charging_animation_flash">Blitz</string>
@@ -2120,8 +2124,8 @@ Ein-/Aus-Taste, während das Display aus ist</string>
     <string name="gaming_mode_dynamic_title">Dynamischer Modus</string>
     <string name="gaming_mode_dynamic_summary">Versuchen Sie, Spiele-Apps automatisch zu erkennen und hinzuzufügen</string>
     <!-- Data disabled indicator -->
-    <string name="data_disabled_icon_title">Symbol für ausgeschaltete mobile Daten anzeigen</string>
-    <string name="data_disabled_icon_summary">Zeige das Kreuzzeichen neben dem Signalbalken wenn mobile Daten ausgeschaltet sind</string>
+    <string name="data_disabled_icon_title">Daten deaktiviert Anzeige</string>
+    <string name="data_disabled_icon_summary">Kreuzzeichens neben dem Signalsymbol anzeigen, wenn Daten deaktiviert sind</string>
     <!-- Less boring heads up -->
     <string name="less_boring_heads_up_title">Weniger langweilig</string>
     <string name="less_boring_heads_up_summary">Popup-Benachrichtigungen nur für Alarm-, Dialer- und Nachrichten-App anzeigen</string>
@@ -2178,9 +2182,9 @@ Ein-/Aus-Taste, während das Display aus ist</string>
     <string name="smart_charging_footer">Intelligentes Laden erlaubt es, einen maximalen Ladezustand zu setzen um die Lebensdauer des Akku zu erhöhen. Wenn es aktiviert ist, hört der Akku beim gesetzten Stop-Level auf zu laden und fährt beim gesetzten Start-Level fort. Das Stop-Level muss höher sein als das Start-Level.</string>
     <!--FOD -->
     <string name="fod_icon_picker_category_title">FOD-Anpassungsoptionen</string>
-    <string name="fod_icon_picker_title">FOD Symbolauswahl</string>
+    <string name="fod_icon_picker_title">FOD-Symbolauswahl</string>
     <string name="fod_icon_picker_summary">Dein bevorzugtes Fingerabdrucksymbol auswählen</string>
-    <string name="fod_icon_picker_footer">Um dein eigenes Symbol hinzuzufügen, wähle das Symbol oben links und verwende die OnePlus 6T FP Customizer App, um das Symbol auszuwählen, das du willst.</string>
+    <string name="fod_icon_picker_footer">Um dein eigenes Symbol hinzuzufügen, wähle das Symbol oben links und verwende die OnePlus 6T FP Customizer App, um das gewünschte Symbol auszuwählen.</string>
     <string name="fod_wallpaper_color">Hintergrundfarbe für das FOD-Symbol verwenden</string>
     <string name="fod_wallpaper_color_summary">Verwendet die angepasste Hintergrundfarbe für das FOD-Symbol\nHINWEIS: Kann nur bei einigen Hintergrundbildern gut aussehen</string>
     <string name="fod_recog_animation">FOD erkennt Animation</string>
