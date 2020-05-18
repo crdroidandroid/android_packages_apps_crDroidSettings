@@ -125,6 +125,7 @@ public class HAFRSettings extends SettingsPreferenceFragment
         final Dialog dialog;
         final ListView list = new ListView(getActivity());
         list.setAdapter(mPackageAdapter);
+        list.setDivider(null);
 
         builder.setTitle(R.string.profile_choose_app);
         builder.setView(list);

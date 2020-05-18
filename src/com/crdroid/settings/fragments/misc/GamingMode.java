@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 crDroid Android Project
+ * Copyright (C) 2019-2020 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -143,6 +143,7 @@ public class GamingMode extends SettingsPreferenceFragment
         final Dialog dialog;
         final ListView list = new ListView(getActivity());
         list.setAdapter(mPackageAdapter);
+        list.setDivider(null);
 
         builder.setTitle(R.string.profile_choose_app);
         builder.setView(list);
