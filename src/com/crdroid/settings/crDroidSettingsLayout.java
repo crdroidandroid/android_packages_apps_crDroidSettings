@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2019 crDroid Android Project
+ * Copyright (C) 2017-2020 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,6 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
     PagerSlidingTabStrip mTabs;
     SectionsPagerAdapter mSectionsPagerAdapter;
     protected Context mContext;
-    private LinearLayout mLayout;
 
     private static final int MENU_RESET = Menu.FIRST;
 
@@ -77,11 +76,12 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContainer = container;
         View view = inflater.inflate(R.layout.crdroid_settings, container, false);
-        mLayout = (LinearLayout) view.findViewById(R.id.crdroid_content);
         mViewPager = (ViewPager) view.findViewById(R.id.viewpager);
         mTabs = (PagerSlidingTabStrip) view.findViewById(R.id.tabs);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setClipChildren(true);
+        mViewPager.setClipToPadding(true);
         mTabs.setViewPager(mViewPager);
         mContext = getActivity().getApplicationContext();
 
