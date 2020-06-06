@@ -171,6 +171,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements Indexab
                 Settings.System.QS_ROWS_LANDSCAPE, row_landscape, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_ROWS_PORTRAIT, row_portrait, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.DISMISS_ALL_BUTTON, 0, UserHandle.USER_CURRENT);
         CustomHeader.reset(mContext);
     }
 
