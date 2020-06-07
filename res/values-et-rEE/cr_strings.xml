@@ -690,6 +690,7 @@
     <string name="navbar_layout_leftleaning">Vasakule kalduv</string>
     <string name="navbar_layout_rightleaning">Paremale kalduv</string>
     <string name="navbar_invert_layout_title">Pööra paigutus</string>
+    <string name="navbar_invert_layout_summary">Inverts the layout of the navigation bar and other items, such as the IME switcher</string>
     <string name="navbar_tuner_title">Navigeerimisriba seadistaja</string>
     <string name="navbar_tuner_summary">Kohanda nuppe ja paigutust</string>
     <string name="navbar_arrow_keys_title">Näita tippimise ajal nooleklahve</string>
@@ -851,7 +852,7 @@
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Tiksuja</string>
     <string name="ticker_screen_summary">Kuva teatisi olekuribal tiksuja-stiilis</string>
-    <string name="ticker_screen_footer">Ticker is visible only when notification heads-up is not shown</string>
+    <string name="ticker_screen_footer">Uudisteriba on nähtav ainult siis, kui hüpikakent ei kuvata</string>
     <string name="ticker_title">Olekuriba tiksuja</string>
     <string name="ticker_summary">Luba olekuriba tiksuja</string>
     <string name="ticker_restore_defaults_title">Taasta vaikesätted</string>
@@ -967,7 +968,7 @@
     <string name="volume_dialog_dash_width_title">Helitugevuse dialoogi ääre joone paksus</string>
     <string name="volume_dialog_dash_gap_title">Helitugevuse dialoogi ääre joone tühimik</string>
     <string name="power_menu_transparency">Toitemenüü läbipaistmatus</string>
-    <string name="power_menu_dialog_dim">Power/reboot dialog dim background amount</string>
+    <string name="power_menu_dialog_dim">Toite/taaskäivituse menüü tausta tuhmistamine</string>
     <string name="soft_restart_required">Muutuste rakendamiseks on vajalik kerge taaskäivitus</string>
     <!-- Doze pulse options -->
     <string name="summary_doze_enabled">Lubatud</string>
@@ -1002,7 +1003,7 @@
     <string name="doze_vibrate_on_pickup_title">Vibreeri tõstmisel</string>
     <string name="doze_check_proximity_before_pulse_title">Kontrolli lähedussensorit enne vilgutamist</string>
     <string name="sensor_warning_title">Ettevaatust</string>
-    <string name="sensor_warning_message">Settings based on sensors are subject to hardware compatibility. Enabling sensors for ambient display may increase power drain.</string>
+    <string name="sensor_warning_message">Anduritel põhinevad sätted sõltuvad riistvara ühilduvusest. Andurite lubamine lukustusekraani kuvamiseks võib energiatarbimist suurendada.</string>
     <!-- Doze: switches -->
     <string name="doze_display_title">Ambientne ekraan</string>
     <string name="doze_display_summary">Seadista säästliku ekraani seadeid</string>
@@ -1224,7 +1225,7 @@
     <string name="animation_settings_reset_message">Lähtestad kõik animatsiooniseaded vaikeväärtustele?</string>
     <!-- Alarm Fullscreen -->
     <string name="show_alarm_fullscreen_title">Täisekraanis äratus</string>
-    <string name="show_alarm_fullscreen_summary">Display alarm as full screen instead of heads up</string>
+    <string name="show_alarm_fullscreen_summary">Kuva äratus täisekraanil, mitte hüpikaknas</string>
     <!-- Animations -->
     <string name="animation_title">Animatsioonid</string>
     <string name="animation_summary">Kohanda mitmesuguseid animatsioone</string>
@@ -1323,7 +1324,7 @@
     <string name="qs_fancy_animation_summary">Animatsioon olekuribal alla tõmmates</string>
     <!-- Disable animations -->
     <string name="disable_animations">Keela animatsioonid</string>
-    <string name="disable_animations_summary">Disables transition animations such as when launching an app</string>
+    <string name="disable_animations_summary">Keelab üleminekuanimatsioonid, näiteks rakenduse käivitamisel</string>
     <!-- Sounds: Charging sounds -->
     <string name="charging_sounds_settings_title">Laadimise helid</string>
     <string name="charging_sounds_settings_summary">Kohanda vooluallika ühendamisel või lahtiühendamisel esitatav heli</string>
@@ -1446,7 +1447,7 @@
     <string name="weather_config_summary">Seadista teenus ilmateate lubamiseks</string>
     <string name="weather_icon_pack_title">Ilmateate ikoonid</string>
     <string name="find_icon_pack_title">Leia ikoonpakk</string>
-    <string name="find_icon_pack_summary">Find and install new icon packs from Play Store</string>
+    <string name="find_icon_pack_summary">Leia ja paigalda uued ikoonipakid Play poest</string>
     <string name="weather_icon_pack_note">Märkus\u003a uusi ikoonipakke saab Play poest, otsides \"Chronus icons\"</string>
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G ikoon</string>
@@ -1511,7 +1512,7 @@
     <string name="lock_screen_ambient_weather_title">Ilm säästlikul ekraanil</string>
     <string name="lock_screen_ambient_weather_summary">Kuva säästlikul ekraanil ilmateadet</string>
     <string name="lock_screen_weather_style_title">Pikslite stiil</string>
-    <string name="lock_screen_weather_style_summary">Display weather next to date instead big widget</string>
+    <string name="lock_screen_weather_style_summary">Kuva ilmateade kuupäeva kõrval, mitte suures vidinas</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Vibratsioon sõrmejälje autentimisel</string>
     <string name="fp_success_vibrate_summary">Vibrate on successful fingerprint authentication</string>
@@ -1541,7 +1542,7 @@
     <!-- ANBI -->
     <string name="anbi_title">Juhuslik puudutus</string>
     <string name="anbi_summary">Kaitse ekraani juhuslike puudutuste eest navigeerimisnuppudega töötamisel</string>
-    <!-- Sensor block -->
+    <!-- Sensor block per-package -->
     <string name="sensor_block_title">Andurilukk</string>
     <string name="sensor_block_summary">Blokeeri oluliste andurite ligipääs teatud akut nõudvate rakenduste jaoks</string>
     <!-- Pocket judge -->
@@ -1717,6 +1718,10 @@
     <!-- Full screen aspect ratio -->
     <string name="full_screen_aspect_ratio_title">Täisekraanis kuvasuhe</string>
     <string name="full_screen_aspect_ratio_summary">Sunni rakendusi kasutama täisekraanis kuvasuhet, teatud rakendused ei pruugi täisekraanis korralikult töötada</string>
+    <!-- QS Brightness Slider -->
+    <string name="qs_brightness_slider_show_never">Never show</string>
+    <string name="qs_brightness_slider_show_expanded">Show when expanded</string>
+    <string name="qs_brightness_slider_show_always">Show always</string>
     <!-- QS Brightness Slider position -->
     <string name="qs_brightness_slider_hide">Peida</string>
     <string name="qs_brightness_slider_top">Üleval</string>
@@ -1770,7 +1775,7 @@
     <string name="keywords_lights_brightness_level">tumenda ledid heledus</string>
     <string name="notification_light_automagic">Vali värvid automaatselt</string>
     <string name="notification_light_automagic_summary">Valib värvid automaatselt</string>
-    <string name="notification_light_override">Override all apps</string>
+    <string name="notification_light_override">Alista kõik rakendused</string>
     <!-- Lights settings, LED notification -->
     <string name="led_notification_title">Märgutule seaded</string>
     <string name="led_notification_text">LED-tuli seadetega lubatud</string>
@@ -1980,7 +1985,7 @@
     <string name="switch_stockish">Sisseehitatu-sarnane</string>
     <!-- Battery stats reset -->
     <string name="battery_stats_reset">Lähtesta statistika</string>
-    <string name="battery_stats_message">This will reset battery history stats. Would you like to continue?</string>
+    <string name="battery_stats_message">See lähtestab aku ajaloo statistika. Kas jätkata?</string>
     <!-- Units -->
     <string name="unit_seconds">sekundit</string>
     <string name="unit_milliseconds">millisekundid</string>
@@ -2008,7 +2013,7 @@
     <string name="qs_footer_warnings_summary">Display alert when network is monitored or connected via VPN</string>
     <!-- QS footer icons -->
     <string name="qs_footer_users_icon_title">Kasutajakonto ikoon</string>
-    <string name="qs_footer_users_icon_summary">Display multiuser accessibility icon when available</string>
+    <string name="qs_footer_users_icon_summary">Kuva saadavusel hulgikasutaja juurdepääsetavuse ikoon</string>
     <string name="qs_footer_edit_icon_title">Paanide muutmise ikoon</string>
     <string name="qs_footer_edit_icon_summary">Kuva paanide muutmise ikooni</string>
     <string name="qs_footer_services_icon_title">Töötavate teenuste otsetee</string>
@@ -2088,7 +2093,7 @@
     <string name="ime_switcher_notification_title">IME valija teavitus</string>
     <string name="ime_switcher_notification_summary">Kuva sisestamismeetodi valiku teadet</string>
     <string name="ime_fullscreen_title">Täisekraanis klaviatuur</string>
-    <string name="ime_fullscreen_summary">Allow keyboard to take up entire screen in landscape</string>
+    <string name="ime_fullscreen_summary">Luba klaviatuuril rõhtasendis hõivata kogu ekraan</string>
     <string name="ime_show_enter_key_title">Kuva sisestusklahvi</string>
     <string name="ime_show_enter_key_summary">Sunni klaviatuuri kuvama sisestusklahvi emojide asemel</string>
     <!-- Charging animation -->
@@ -2104,7 +2109,7 @@
     <string name="gaming_mode_enabled_summary">Luba mängimisrežiimi sisselülitamine</string>
     <string name="gaming_mode_app_picker_title">Lülita nende rakenduste jaoks automaatselt sisse</string>
     <string name="add_gaming_mode_package_title">Lisa mängimisrežiimi rakendusi</string>
-    <string name="add_gaming_mode_package_summary">Gaming mode will turn on automatically when these apps are opened and turn off when they are closed</string>
+    <string name="add_gaming_mode_package_summary">Mängurežiim lülitub nende rakenduste avamisel automaatselt sisse ja välja nende sulgemisel</string>
     <string name="gaming_mode_headsup_title">Blokeeri teated</string>
     <string name="gaming_mode_headsup_summary">Kõned ja äratused välistatakse</string>
     <string name="gaming_mode_hardware_keys_title">Lukusta nupud</string>
@@ -2128,7 +2133,7 @@
     <string name="data_disabled_icon_summary">Kui andmed on keelatud, kuvatakse signaali ikooni kõrval rist</string>
     <!-- Less boring heads up -->
     <string name="less_boring_heads_up_title">Vähem igav</string>
-    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
+    <string name="less_boring_heads_up_summary">Kuva hüpikteateid ainult häire, telefoni ja sõnumside rakenduste jaoks</string>
     <!-- Aggressive battery -->
     <string name="aggressive_battery_title">Agressiivne aku</string>
     <string name="aggressive_battery_summary">Rangem aku säästmine</string>
@@ -2160,6 +2165,9 @@
     <string name="pulse_ambient_light_color_title">Äärevalguse värv</string>
     <string name="pulse_ambient_light_duration_title">Äärevalguse kestus</string>
     <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <string name="pulse_ambient_light_layout_title">Edge light view</string>
+    <string name="pulse_ambient_light_layout_solid">Solid</string>
+    <string name="pulse_ambient_light_layout_faded">Faded</string>
     <!-- QS battery -->
     <string name="qs_battery_location_title">Aku asukoht</string>
     <string name="qs_battery_location_qs_panel">Kiirseadete paneel</string>
@@ -2262,10 +2270,10 @@
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptiivne taasesitus</string>
     <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
-    <string name="adaptive_playback_timeout_title">Playback timeout</string>
+    <string name="adaptive_playback_timeout_title">Taasesituse aegumine</string>
     <!-- Headset ringtone audio focus -->
-    <string name="ringtone_focus_mode_title">When headset connected, incoming call plays on</string>
-    <string name="ringtone_focus_mode_dynamic">Headset only if music is active</string>
+    <string name="ringtone_focus_mode_title">Peakomplekti ühendamisel kestab kõne edasi</string>
+    <string name="ringtone_focus_mode_dynamic">Peakomplekt ainult siis, kui muusika on aktiivne</string>
     <string name="ringtone_focus_mode_stock">Kõlar ja kõrvaklapid</string>
     <!-- Battery temperature -->
     <string name="battery_temperature">Aku temperatuur</string>
