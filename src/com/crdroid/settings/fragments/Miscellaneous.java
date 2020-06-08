@@ -51,6 +51,7 @@ import com.crdroid.settings.fragments.misc.HAFRSettings;
 import com.crdroid.settings.fragments.misc.GamingMode;
 import com.crdroid.settings.fragments.misc.ImeSettings;
 import com.crdroid.settings.fragments.misc.SmartCharging;
+import com.crdroid.settings.fragments.misc.SensorBlock;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -110,6 +111,7 @@ public class Miscellaneous extends SettingsPreferenceFragment
         GamingMode.reset(mContext);
         ImeSettings.reset(mContext);
         SmartCharging.reset(mContext);
+        SensorBlock.reset(mContext);
     }
 
     private static void writeCpuInfoOptions(Context mContext, boolean value) {
