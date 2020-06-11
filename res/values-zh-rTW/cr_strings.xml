@@ -690,7 +690,7 @@
     <string name="navbar_layout_leftleaning">靠左</string>
     <string name="navbar_layout_rightleaning">靠右</string>
     <string name="navbar_invert_layout_title">反轉佈局</string>
-    <string name="navbar_invert_layout_summary">Inverts the layout of the navigation bar and other items, such as the IME switcher</string>
+    <string name="navbar_invert_layout_summary">反轉導覽列和其他項目的版面配置，例如輸入法選擇器</string>
     <string name="navbar_tuner_title">導航列調諧器</string>
     <string name="navbar_tuner_summary">自定義按鈕和佈局</string>
     <string name="navbar_arrow_keys_title">鍵入時顯示箭頭鍵</string>
@@ -1543,8 +1543,8 @@
     <string name="anbi_title">誤觸</string>
     <string name="anbi_summary">當觸摸螢幕時防止和導航按鍵交互</string>
     <!-- Sensor block per-package -->
-    <string name="sensor_block_title">感測器塊</string>
-    <string name="sensor_block_summary">為少數電池密集型應用程式阻止對重要運動感測器的訪問</string>
+    <string name="sensor_block_title">阻止個別套件存取感應器</string>
+    <string name="sensor_block_summary">阻止應用程式存取某些感應器以節省電量</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">口袋檢測</string>
     <string name="pocket_judge_summary">當設備在口袋中時屏蔽螢幕和按鍵操作</string>
@@ -1719,9 +1719,9 @@
     <string name="full_screen_aspect_ratio_title">全畫面寛高比例</string>
     <string name="full_screen_aspect_ratio_summary">強制應用程序使用全屏寬高比例, 請注意, 某些應用程序可能無法在全屏下正常工作</string>
     <!-- QS Brightness Slider -->
-    <string name="qs_brightness_slider_show_never">Never show</string>
-    <string name="qs_brightness_slider_show_expanded">Show when expanded</string>
-    <string name="qs_brightness_slider_show_always">Show always</string>
+    <string name="qs_brightness_slider_show_never">永不顯示</string>
+    <string name="qs_brightness_slider_show_expanded">當展開時顯示</string>
+    <string name="qs_brightness_slider_show_always">一律顯示</string>
     <!-- QS Brightness Slider position -->
     <string name="qs_brightness_slider_hide">隱藏</string>
     <string name="qs_brightness_slider_top">頂部</string>
@@ -2165,9 +2165,9 @@
     <string name="pulse_ambient_light_color_title">邊緣光色</string>
     <string name="pulse_ambient_light_duration_title">邊緣光持續時間</string>
     <string name="pulse_ambient_light_duration_summary">設置環境光動畫的持續時間</string>
-    <string name="pulse_ambient_light_layout_title">Edge light view</string>
-    <string name="pulse_ambient_light_layout_solid">Solid</string>
-    <string name="pulse_ambient_light_layout_faded">Faded</string>
+    <string name="pulse_ambient_light_layout_title">邊緣發光畫面</string>
+    <string name="pulse_ambient_light_layout_solid">純色</string>
+    <string name="pulse_ambient_light_layout_faded">漸淡</string>
     <!-- QS battery -->
     <string name="qs_battery_location_title">電池位置</string>
     <string name="qs_battery_location_qs_panel">快速設定面板</string>
@@ -2278,6 +2278,9 @@
     <!-- Battery temperature -->
     <string name="battery_temperature">電池溫度</string>
     <!-- OOS style material dismiss all button for notifications -->
-    <string name="notification_material_dismiss_button_title">Material dimiss button</string>
-    <string name="notification_material_dismiss_button_summary">Replace clear all notification text with floating button</string>
+    <string name="notification_material_dismiss_button_title">Material 樣式的清除按鈕</string>
+    <string name="notification_material_dismiss_button_summary">以浮動按鈕取代「清除所有通知」文字</string>
+    <!-- Per-app data restrictions -->
+    <string name="data_usage_app_restrict_all">允許網路</string>
+    <string name="data_usage_app_restrict_all_summary">允許網路流量</string>
 </resources>
