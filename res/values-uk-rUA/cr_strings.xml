@@ -744,15 +744,15 @@
     <string name="smartbar_longpress_delay_long">Довга затримка</string>
     <string name="smartbar_custom_icon_size_title">Налаштування масштабування піктограм</string>
     <!-- Allow fake signature -->
-    <string name="allow_signature_fake">Дозволити підпису спуфинг</string>
-    <string name="allow_signature_fake_summary">Дозволити програмам для обходу систем безпеки, прикидаючись іншим додатком.</string>
+    <string name="allow_signature_fake">Дозволити підробку підписів</string>
+    <string name="allow_signature_fake_summary">Дозволити додаткам обходити системи безпеки, прикидаючись іншим додатком.</string>
     <!-- Status bar -->
     <string name="status_bar_toggle_brightness">Керування яскравістю</string>
-    <string name="status_bar_toggle_brightness_summary">Змінювати яскравість рухом пальця по панелі статусу</string>
+    <string name="status_bar_toggle_brightness_summary">Змінювати яскравість рухом пальця по рядку стану</string>
     <string name="status_bar_notif_count_title">Показувати кількість сповіщень</string>
-    <string name="status_bar_notif_count_summary">Показувати кількість нових сповіщень на панелі статусу</string>
+    <string name="status_bar_notif_count_summary">Показувати кількість нових сповіщень у рядку стану</string>
     <string name="status_bar_quick_qs_pulldown_title">Швидке розгортання</string>
-    <string name="status_bar_quick_qs_pulldown_summary">%1$s панелі статусу відкриває швидкі налаштування</string>
+    <string name="status_bar_quick_qs_pulldown_summary">%1$s рядку стану відкриває швидкі налаштування</string>
     <string name="status_bar_quick_qs_pulldown_summary_left">Ліворуч</string>
     <string name="status_bar_quick_qs_pulldown_summary_right">Праворуч</string>
     <string name="status_bar_quick_qs_pulldown_off">Вимкнено</string>
@@ -825,8 +825,8 @@
     <string name="vol_zen_title">Панель гучності</string>
     <string name="vol_zen_summary">Показувати регулятори гучності</string>
     <!-- Battery Bar -->
-    <string name="battery_bar_title">Індикатор заряду батареї</string>
-    <string name="battery_bar_summary">Дисплей і налаштувати панель батареї вище рядку стану</string>
+    <string name="battery_bar_title">Панель індикації заряду батареї</string>
+    <string name="battery_bar_summary">Відображення і налаштування панелі батареї над рядком стану</string>
     <string name="battery_bar">Геодані</string>
     <string name="battery_bar_no_navbar">Геодані</string>
     <string name="battery_bar_location_hide">Приховати</string>
@@ -1438,8 +1438,8 @@
     <string name="recent_panel_lefty_mode_title">Показати у лівому краю</string>
     <string name="recent_panel_lefty_mode_summary">Показати панель останніх програм у лівому краю</string>
     <!-- Disable FC notifications -->
-    <string name="disable_fc_notifications_title">Відключити примусово закрити</string>
-    <string name="disable_fc_notifications_summary">Приховати всі сповіщення про збої у програмах</string>
+    <string name="disable_fc_notifications_title">Вимкнути сповіщення про збої</string>
+    <string name="disable_fc_notifications_summary">Приховати всі сповіщення про збої у додатках</string>
     <!-- OmniJaws -->
     <string name="omnijaws_settings_title">Служба погоди</string>
     <string name="omnijaws_settings_summary">Налаштування параментів служби і пакету значків</string>
@@ -1459,11 +1459,11 @@
     <string name="dnd_when_call_title">Не турбувати під час дзвінка</string>
     <string name="dnd_when_call_summary">Автоматичне ввімкнення DND під час дзвінків</string>
     <!-- Bluetooth status -->
-    <string name="bluetooth_battery_title">Заряд Bluetooth-пристроя</string>
-    <string name="bluetooth_battery_summary">Показувати заряд батареї під\'єднаних в даний час bluetooth-пристрої, якщо доступно</string>
+    <string name="bluetooth_battery_title">Заряд Bluetooth-пристрою</string>
+    <string name="bluetooth_battery_summary">Показувати заряд батареї під\'єднаних в даний час bluetooth-пристроїв, якщо доступно</string>
     <!-- Status bar temperature -->
     <string name="status_bar_weather_title">Погода</string>
-    <string name="status_bar_weather_summary">Дисплей і налаштувати панель батареї вище рядку стану</string>
+    <string name="status_bar_weather_summary">Відображення і налаштування погоди в рядку стану</string>
     <string name="status_bar_temperature_title">Погода</string>
     <string name="status_bar_temperature_hidden">Прихований</string>
     <string name="status_bar_temperature_location_title">Позиція</string>
@@ -1629,7 +1629,7 @@
     <string name="smart_pulldown_ongoing">без постійних</string>
     <!-- Tap to sleep on status bar -->
     <string name="statusbar_doubletap_sleep_title">Торкніться для сну</string>
-    <string name="statusbar_doubletap_sleep_summary">Двічі клацніть на рядку стану, щоб поставити пристрій спить</string>
+    <string name="statusbar_doubletap_sleep_summary">Двічі торкніться рядку стану, щоб перевести пристрій в режим сну</string>
     <!-- Auto USB mode chooser -->
     <string name="auto_usb_mode_chooser_title">Вибір режиму USB</string>
     <string name="auto_usb_mode_chooser_summary">Спливаюче вікно вибору режиму USB, коли пристрій підключено до ПК</string>
@@ -2273,9 +2273,9 @@
     <!-- Battery temperature -->
     <string name="battery_temperature">Температура батареї</string>
     <!-- OOS style material dismiss all button for notifications -->
-    <string name="notification_material_dismiss_button_title">Кнопка відхилення матеріалу</string>
-    <string name="notification_material_dismiss_button_summary">Замінити очищення всіх повідомлень плаваючою кнопкою</string>
+    <string name="notification_material_dismiss_button_title">Кнопка очищення сповіщень</string>
+    <string name="notification_material_dismiss_button_summary">Замінити текст \"Очистити все\" плаваючою кнопкою</string>
     <!-- Per-app data restrictions -->
-    <string name="data_usage_app_restrict_all">Дозволити мережу</string>
-    <string name="data_usage_app_restrict_all_summary">Увімкнути використання мережі</string>
+    <string name="data_usage_app_restrict_all">Дозволити передачу даних</string>
+    <string name="data_usage_app_restrict_all_summary">Увімкнути використання передачі даних</string>
 </resources>
