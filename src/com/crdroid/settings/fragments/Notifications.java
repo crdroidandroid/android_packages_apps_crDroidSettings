@@ -39,10 +39,13 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.android.internal.util.crdroid.Utils;
 
+import com.crdroid.settings.preferences.CustomSeekBarPreference;
+
 import java.util.List;
 
 @SearchIndexable
-public class Notifications extends SettingsPreferenceFragment {
+public class Notifications extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
 
     public static final String TAG = "Notifications";
 
@@ -51,19 +54,25 @@ public class Notifications extends SettingsPreferenceFragment {
     private static final String NOTIFICATION_LIGHTS_PREF = "notification_lights";
     private static final String FLASHLIGHT_CATEGORY = "flashlight_category";
     private static final String FLASHLIGHT_CALL_PREF = "flashlight_on_call";
+    private static final String FLASHLIGHT_DND_PREF = "flashlight_on_call_ignore_dnd";
+    private static final String FLASHLIGHT_RATE_PREF = "flashlight_on_call_rate";
 
     private Preference mBatLights;
     private Preference mNotLights;
+
+    private ListPreference mFlashOnCall;
+    private SwitchPreference mFlashOnCallIgnoreDND;
+    private CustomSeekBarPreference mFlashOnCallRate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Context mContext = getActivity().getApplicationContext();
-
         addPreferencesFromResource(R.xml.crdroid_settings_notifications);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Context mContext = getActivity().getApplicationContext();
+        final ContentResolver resolver = mContext.getContentResolver();
         final Resources res = mContext.getResources();
 
         mBatLights = (Preference) prefScreen.findPreference(BATTERY_LIGHTS_PREF);
@@ -88,7 +97,33 @@ public class Notifications extends SettingsPreferenceFragment {
             final PreferenceCategory flashlightCategory =
                     (PreferenceCategory) prefScreen.findPreference(FLASHLIGHT_CATEGORY);
             prefScreen.removePreference(flashlightCategory);
+        } else {
+            mFlashOnCall = (ListPreference)
+                    prefScreen.findPreference(FLASHLIGHT_CALL_PREF);
+            mFlashOnCall.setOnPreferenceChangeListener(this);
+
+            mFlashOnCallIgnoreDND = (SwitchPreference)
+                    prefScreen.findPreference(FLASHLIGHT_DND_PREF);
+            int value = Settings.System.getInt(resolver,
+                    Settings.System.FLASHLIGHT_ON_CALL, 0);
+
+            mFlashOnCallRate = (CustomSeekBarPreference)
+                    prefScreen.findPreference(FLASHLIGHT_RATE_PREF);
+
+            mFlashOnCallIgnoreDND.setEnabled(value > 1);
+            mFlashOnCallRate.setEnabled(value > 0);
         }
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mFlashOnCall) {
+            int value = Integer.parseInt((String) newValue);
+            mFlashOnCallIgnoreDND.setEnabled(value > 1);
+            mFlashOnCallRate.setEnabled(value > 0);
+            return true;
+        }
+        return false;
     }
 
     public static void reset(Context mContext) {
@@ -101,6 +136,10 @@ public class Notifications extends SettingsPreferenceFragment {
                 Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.FLASHLIGHT_ON_CALL, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL_IGNORE_DND, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL_RATE, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -131,6 +170,8 @@ public class Notifications extends SettingsPreferenceFragment {
 
                     if (!Utils.deviceHasFlashlight(context)) {
                         keys.add(FLASHLIGHT_CALL_PREF);
+                        keys.add(FLASHLIGHT_DND_PREF);
+                        keys.add(FLASHLIGHT_RATE_PREF);
                     }
 
                     return keys;

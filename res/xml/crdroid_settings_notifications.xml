@@ -58,6 +58,22 @@
             android:entryValues="@array/flashlight_on_call_values"
             android:defaultValue="0" />
 
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="flashlight_on_call_ignore_dnd"
+            android:icon="@drawable/ic_flashlight"
+            android:title="@string/flashlight_on_call_ignore_dnd_title"
+            android:summary="@string/flashlight_on_call_ignore_dnd_summary"
+            android:defaultValue="false" /> 
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="flashlight_on_call_rate"
+            android:icon="@drawable/ic_flashlight"
+            android:title="@string/flashlight_on_call_rate_title"
+            android:defaultValue="1"
+            android:max="5"
+            settings:min="1"
+            settings:units="@string/unit_hz" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
