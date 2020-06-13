@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2019 crDroid Android Project
+     Copyright (C) 2017-2020 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@
         android:defaultValue="0"
         android:max="10000"
         settings:min="0"
-        settings:units="@string/network_traffic_autohide_kilobits"
+        settings:units="@string/network_traffic_autohide_kilobytes"
         settings:interval="10"
         android:dependency="network_traffic_autohide" />
 
@@ -59,7 +59,7 @@
         settings:min="1"
         settings:units="@string/unit_seconds" />
 
-    <lineageos.preference.LineageSecureSettingSwitchPreference
+    <!--<lineageos.preference.LineageSecureSettingSwitchPreference
         android:key="network_traffic_show_units"
         android:title="@string/network_traffic_show_units"
         android:summary="@string/network_traffic_show_units_summary"
@@ -72,7 +72,7 @@
         android:entryValues="@array/network_traffic_units_values"
         android:summary="%s"
         android:defaultValue="1"
-        android:dependency="network_traffic_show_units" />
+        android:dependency="network_traffic_show_units" />-->
 
     <lineageos.preference.LineageSecureSettingSwitchPreference
         android:key="network_traffic_hidearrow"
