@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">Параметри crDroid</string>
+    <string name="crdroid_settings_title">Налаштування crDroid</string>
     <string name="crdroid_settings_summary">Додаткові налаштування</string>
     <string name="crdroid_personalization_category">Персоналізація</string>
     <string name="crdroid_addons_category">Доповнення</string>
@@ -56,14 +56,15 @@
     <string name="network_traffic_location_title">Місцезнаходження</string>
     <string name="network_traffic_location_disable">Вимкнено</string>
     <string name="network_traffic_location_statusbar">Рядок стану</string>
-    <string name="network_traffic_location_quick_statusbar">Рядок стану</string>
+    <string name="network_traffic_location_quick_statusbar">Рядок стану швидких налаштувань</string>
     <string name="network_traffic_mode_title">Режим відображення</string>
     <string name="network_traffic_mode_up">Тільки вихідний трафік</string>
     <string name="network_traffic_mode_down">Тільки вхідний трафік</string>
     <string name="network_traffic_mode_all">Вихідний і вхідний трафік</string>
     <string name="network_traffic_autohide">Приховувати автоматично</string>
     <string name="network_traffic_autohide_summary">Приховувати індикатор трафіку, коли відсутня активність</string>
-    <string name="network_traffic_autohide_kilobits">кб/с</string>
+    <string name="network_traffic_autohide_kilobits">Кб/с</string>
+    <string name="network_traffic_autohide_kilobytes">КБ/с</string>
     <string name="network_traffic_autohide_threshold">Поріг неактивності</string>
     <string name="network_traffic_show_units">Відображення одиниць</string>
     <string name="network_traffic_show_units_summary">Відображати швидкість передачі даних в рядку стану</string>
@@ -76,14 +77,14 @@
     <string name="network_traffic_units_megabytes">Мегабайт за секунду (МБ/с)</string>
     <string name="network_traffic_hidearrow">Приховати стрілки</string>
     <string name="network_traffic_hidearrow_summary">Приховати стрілки в індикаторі трафіку</string>
-    <string name="network_traffic_refresh_interval_title">Оновити значення</string>
+    <string name="network_traffic_refresh_interval_title">Інтервал оновлення</string>
     <string name="network_traffic_refresh_interval_summary">Проміжок часу оновлення швидкості</string>
     <!-- Settings suggestions  -->
     <string name="disable_settings_suggestions_title">Вимкнути пропозиції</string>
     <string name="disable_settings_suggestions_summary">Вимкнути пропозиції на інформаційній панелі</string>
     <!-- Settings summary  -->
-    <string name="remove_settings_summary_title">Сумарно видалити налаштування</string>
-    <string name="remove_settings_summary_summary">Приховати додаткову інформацію під пунктами головного меню</string>
+    <string name="remove_settings_summary_title">Вимкнути аннотації налаштувань</string>
+    <string name="remove_settings_summary_summary">Приховати аннотації під пунктами головного меню</string>
     <!-- Immersive Recents -->
     <string name="immersive_recents_title">Вигляд панелі нещодавніх</string>
     <string name="immersive_recents_summary">Змінити вигляд екрану нещодавніх</string>
@@ -1544,7 +1545,10 @@
     <string name="anbi_summary">Запобігати взаємодії з кнопками навігації при натисканні на екран</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Блокування датчиків</string>
-    <string name="sensor_block_summary">Заблокувати доступ до значних датчики руху для декількох інтенсивних батареї додатків</string>
+    <string name="sensor_block_summary">Блокування доступу окремих додатків до деяких датчиків для економії батареї</string>
+    <string name="sensor_block_app_picker_title">Блокувати датчики для цих додатків</string>
+    <string name="add_sensor_block_package_title">Додати додатки для блокування датчиків</string>
+    <string name="add_sensor_block_package_summary">Для цих додатків буде заблоковано датчики руху, прискорення, лінійного прискорення</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Виявлення телефону в кишені</string>
     <string name="pocket_judge_summary">Заблокувати екран і кнопки, коли пристрій перебуває в кишені</string>

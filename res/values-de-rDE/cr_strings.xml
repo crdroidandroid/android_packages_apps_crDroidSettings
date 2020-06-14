@@ -63,7 +63,8 @@
     <string name="network_traffic_mode_all">Up- und Download</string>
     <string name="network_traffic_autohide">Automatisch ausblenden</string>
     <string name="network_traffic_autohide_summary">Netzwerkverkehr-Monitor ausblenden, wenn inaktiv</string>
-    <string name="network_traffic_autohide_kilobits">kb/s</string>
+    <string name="network_traffic_autohide_kilobits">Kb/s</string>
+    <string name="network_traffic_autohide_kilobytes">KB/s</string>
     <string name="network_traffic_autohide_threshold">Inaktivitätsschwelle</string>
     <string name="network_traffic_show_units">Einheiten anzeigen</string>
     <string name="network_traffic_show_units_summary">Ob Datenübertragungseinheiten angezeigt werden sollen</string>
@@ -100,7 +101,7 @@
     <string name="aosp_first_time_message">Einstellung für immersiven App-Verlauf wird überschrieben, wenn der erweiterte Desktop aktiviert ist.</string>
     <!-- Hide Apps from Recents -->
     <string name="hide_apps_from_recents_title">Apps im App-Verlauf ausblenden</string>
-    <string name="hide_apps_from_recents_summary">Ausblenden von Apps vor dem Erscheinen auf dem App-Verlauf-Bildschirm</string>
+    <string name="hide_apps_from_recents_summary">Apps vor dem Erscheinen auf dem App-Verlauf-Bildschirm ausblenden</string>
     <string name="hide_from_recents_add_app">App zur Ausblendliste hinzufügen</string>
     <string name="hide_from_recents_picker_title">Für diese Apps automatisch ausblenden</string>
     <string name="hide_from_recents_picker_summary">Diese Apps werden automatisch vom App-Verlauf ausgeblendet, wenn sie das nächste Mal geöffnet werden</string>
@@ -365,7 +366,7 @@
     <string name="screenshot_sound_summary">Ton abspielen, wenn Screenshot aufgenommen wird</string>
     <!-- Volume Steps -->
     <string name="volume_steps_title">Lautstärkestufen</string>
-    <string name="volume_steps_summary">Anzahl der Stufen im Laustärke-Panel anpassen</string>
+    <string name="volume_steps_summary">Anzahl der Stufen im Lautstärke-Panel anpassen</string>
     <string name="volume_steps_alarm_title">Lautstärkestufen: Wecker</string>
     <string name="volume_steps_dtmf_title">Lautstärkestufen: DTMF</string>
     <string name="volume_steps_music_title">Lautstärkestufen: Musik</string>
@@ -931,16 +932,16 @@
     <string name="pref_scrollingcache_force_disable">Deaktivieren erzwingen</string>
     <!-- Screenshot type  -->
     <string name="screenshot_type_title">Screenshot-Typ</string>
-    <string name="screenshot_type_fullscreen">Vollbild-Screenshot über Lautstärketasten erstellen</string>
-    <string name="screenshot_type_partial">Ziehe die Auswahl auf den Bereich für den Screenshot per Lautstärketasten</string>
+    <string name="screenshot_type_fullscreen">Vollbild-Screenshot per Lautstärketasten erstellen</string>
+    <string name="screenshot_type_partial">Auswahl auf den Bereich für den Screenshot per Lautstärketasten ziehen</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">Screenshot Optionen</string>
     <string name="screenshot_edit_app">Screenshot-Editor</string>
     <string name="screenshot_edit_app_summary">Wähle Bildeditor zum Screenshot bearbeiten aus mit</string>
     <string name="screenshot_edit_app_no_editor">Kein Bildeditor vorhanden</string>
     <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture">Wischen erstellt Screenshot</string>
-    <string name="three_finger_gesture_summary">Wische mit drei Fingern, um einen Screenshot zu erstellen</string>
+    <string name="three_finger_gesture">Screenshot durch wischen</string>
+    <string name="three_finger_gesture_summary">Mit drei Fingern wischen, um einen Screenshot zu erstellen</string>
     <!-- Transparency porn -->
     <string name="trans">Transparenz</string>
     <string name="trans_summary">Passe Transparenzstufe für verschiedene Elemente an</string>
@@ -965,8 +966,8 @@
     <string name="volume_dialog_stroke_color_title">Randfarbe des Lautstärkereglers</string>
     <string name="volume_dialog_stroke_thickness_title">Randstärke des Lautstärkereglers</string>
     <string name="volume_dialog_corner_radius_title">Eckenradius des Lautstärkereglers</string>
-    <string name="volume_dialog_dash_width_title">Breite des Laustärkereglerumrandung</string>
-    <string name="volume_dialog_dash_gap_title">Abstand der Laustärkereglerumrandung</string>
+    <string name="volume_dialog_dash_width_title">Breite der Lautstärkereglerumrandung</string>
+    <string name="volume_dialog_dash_gap_title">Abstand der Lautstärkereglerumrandung</string>
     <string name="power_menu_transparency">Deckkraft des Ausschaltmenüs</string>
     <string name="power_menu_dialog_dim">Verdunklung des Hintergrundes bei geöffnetem Ausschaltmenü</string>
     <string name="soft_restart_required">Soft-Neustart erforderlich, um die Änderungen zu übernehmen</string>
@@ -1006,7 +1007,7 @@
     <string name="sensor_warning_message">Einstellungen, die auf Sensoren basieren, unterliegen der Hardware-Kompatibilität. Die Aktivierung von Ambient Display-Sensoren kann die Stromaufnahme erhöhen.</string>
     <!-- Doze: switches -->
     <string name="doze_display_title">Ambient Display</string>
-    <string name="doze_display_summary">Konfiguriere Einstellungen für Ambient Display</string>
+    <string name="doze_display_summary">Einstellungen für Ambient Display konfigurieren</string>
     <string name="doze_sensor_title">Sensorbasiert</string>
     <string name="tilt_title">Neigen</string>
     <string name="tilt_summary">Pulsbenachrichtigungen beim Neigen</string>
@@ -1026,9 +1027,9 @@
     <string name="about_crdroid">Über crDroid</string>
     <!-- Share crDroid -->
     <string name="share_crdroid_title">Teile crDroid</string>
-    <string name="share_crdroid_summary">Informiere andere über crDroid</string>
+    <string name="share_crdroid_summary">Andere über crDroid informieren</string>
     <string name="share_message">Finde heraus, was es mit #crDroid Android auf sich hat @ https://crdroid.net/</string>
-    <string name="share_chooser_title">Teile crDroid</string>
+    <string name="share_chooser_title">crDroid teilen</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Wir lieben Open Source, teste uns</string>
@@ -1039,14 +1040,14 @@
     <string name="crdroid_website_title">Offizielle Webseite</string>
     <string name="crdroid_website_summary">Besuche unsere offizielle Webseite</string>
     <string name="crdroid_translate_title">Übersetzungen</string>
-    <string name="crdroid_translate_summary">Helfe bei der Übersetzung der Rom in deine Sprache!</string>
+    <string name="crdroid_translate_summary">Bei der Übersetzung des ROMs in deine Sprache helfen!</string>
     <!-- Maintainers -->
     <string name="maintainers_crdroid_title">Geräte und Betreuer</string>
     <string name="maintainers_crdroid_summary">Liste der unterstützten Geräte und deren offizielle Betreuer</string>
     <string name="maintainers_crdroid_error">Die Liste der Geräte und Betreuer kann nicht geladen werden</string>
     <!-- Donate crDroid -->
     <string name="donate_crdroid_title">Unterstütze uns</string>
-    <string name="donate_crdroid_summary">Spende, um die Entwicklung und unseren Server zu unterstützen</string>
+    <string name="donate_crdroid_summary">Zur Unterstützung der Entwicklung und unserer Server spenden</string>
     <string name="donate_team_title">crDroid Team</string>
     <string name="donate_team_summary">Spende für Server-Hosting-Unterstützung, Webseitenverfügbarkeit und allgemeine Verwaltung</string>
     <string name="donate_dev_summary">Kernentwickler - Spende ein Bier oder einen Kaffee!</string>
@@ -1130,7 +1131,7 @@
     <string name="power_menu_users_title">Benutzer wechseln</string>
     <string name="power_menu_settings_title">Einstellungsverknüpfung</string>
     <string name="power_menu_lockdown_title">Sperren</string>
-    <string name="power_menu_sound_title">Laustärkeregler</string>
+    <string name="power_menu_sound_title">Lautstärkeregler</string>
     <string name="power_menu_emergency_title">Notfall</string>
     <string name="volume_keys_control_ring_stream_title">Klingeltonlautstärke steuern</string>
     <string name="volume_keys_control_ring_stream_summary_on">Lautstärketasten steuern Klingeltonlautstärke</string>
@@ -1139,8 +1140,7 @@
     <!-- Description of setting that controls gesture to open camera by double tapping the power button [CHAR LIMIT=NONE] -->
     <string name="camera_double_tap_power_gesture_desc">Schnelles Öffnen der Kamera, ohne den Bildschirm zu entsperren</string>
     <string name="torch_long_press_power_gesture_title">Langes Ein-/Aus-Taste drücken für Taschenlampe</string>
-    <string name="torch_long_press_power_gesture_desc">Aktiviere die Taschenlampe durch langes Drücken auf die 
-Ein-/Aus-Taste, während der Bildschirm aus ist</string>
+    <string name="torch_long_press_power_gesture_desc">Taschenlampe durch langes Drücken auf die Ein-/Aus-Taste einschalten, während der Bildschirm aus ist</string>
     <string name="torch_long_press_power_timeout_title">Taschenlampe automatisch ausschalten</string>
     <string name="auto_power_save_never">Nie</string>
     <string name="torch_long_press_power_timeout_1min">1 Minute</string>
@@ -1461,7 +1461,7 @@ Ein-/Aus-Taste, während der Bildschirm aus ist</string>
     <string name="dnd_when_call_summary">DND während Anrufen automatisch aktivieren</string>
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Bluetooth-Akkustatus</string>
-    <string name="bluetooth_battery_summary">Zeige Akkustatus für das derzeit verbundene Bluetooth-Gerät an, falls vorhanden</string>
+    <string name="bluetooth_battery_summary">Akkustatus für das derzeit verbundene Bluetooth-Gerät anzeigen, falls vorhanden</string>
     <!-- Status bar temperature -->
     <string name="status_bar_weather_title">Wetter</string>
     <string name="status_bar_weather_summary">Wetter in der Statusleiste anzeigen und anpassen</string>
@@ -1515,7 +1515,7 @@ Ein-/Aus-Taste, während der Bildschirm aus ist</string>
     <string name="lock_screen_weather_style_title">Pixel-Stil</string>
     <string name="lock_screen_weather_style_summary">Wetter neben dem Datum anstelle des großen Widgets anzeigen</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fp_success_vibrate_title">Vibrieren bei Fingerabdruck-Authentifizierung</string>
+    <string name="fp_success_vibrate_title">Bei Fingerabdruck-Authentifizierung vibrieren</string>
     <string name="fp_success_vibrate_summary">Vibrieren, wenn die Fingerabdruck-Authentifizierung erfolgreich ist</string>
     <string name="fp_error_vibrate_title">Bei Fingerabdruckfehler vibrieren</string>
     <string name="fp_error_vibrate_summary">Vibrieren, wenn Fingerabdruck-Authentifizierung fehlschlägt</string>
@@ -1527,7 +1527,7 @@ Ein-/Aus-Taste, während der Bildschirm aus ist</string>
     <string name="toast_icon_summary">Aktivitätssymbol anzeigen, das eine Toast-Nachricht generiert</string>
     <!-- Lockscreen battery info indicator -->
     <string name="lockscreen_battery_info_title">Akku-Info</string>
-    <string name="lockscreen_battery_info_summary">Anzeige der Akku-Informationen beim Aufladen</string>
+    <string name="lockscreen_battery_info_summary">Akku-Informationen beim Aufladen anzeigen</string>
     <!-- Recents lock icon -->
     <string name="recents_lock_icon_title">Aufgabe sperren</string>
     <string name="recents_lock_icon_summary">Schalter Aufgabe-Sperrsymbol im App-Verlauf anzeigen</string>
@@ -1546,6 +1546,9 @@ Ein-/Aus-Taste, während der Bildschirm aus ist</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Sensor blockieren</string>
     <string name="sensor_block_summary">Den Zugriff auf bestimmte Sensoren für einige Apps blockieren, um den Akku zu schonen</string>
+    <string name="sensor_block_app_picker_title">Sensoren für diese Apps blockieren</string>
+    <string name="add_sensor_block_package_title">Apps für Sensorblockierung hinzufügen</string>
+    <string name="add_sensor_block_package_summary">Signifikante Bewegung, Beschleunigungsmesser, lineare Beschleunigungssensoren werden für diese Apps blockiert</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Taschenmodus</string>
     <string name="pocket_judge_summary">Bildschirm- und Tasteneingaben blockieren, wenn das Gerät in der Tasche steckt</string>
@@ -2131,7 +2134,7 @@ Ein-/Aus-Taste, während der Bildschirm aus ist</string>
     <string name="gaming_mode_dynamic_summary">Versuchen Sie, Spiele-Apps automatisch zu erkennen und hinzuzufügen</string>
     <!-- Data disabled indicator -->
     <string name="data_disabled_icon_title">Daten deaktiviert Anzeige</string>
-    <string name="data_disabled_icon_summary">Kreuzzeichens neben dem Signalsymbol anzeigen, wenn Daten deaktiviert sind</string>
+    <string name="data_disabled_icon_summary">Kreuzzeichen neben dem Signalsymbol anzeigen, wenn Daten deaktiviert sind</string>
     <!-- Less boring heads up -->
     <string name="less_boring_heads_up_title">Weniger langweilig</string>
     <string name="less_boring_heads_up_summary">Popup-Benachrichtigungen nur für Alarm-, Dialer- und Nachrichten-App anzeigen</string>
@@ -2196,8 +2199,8 @@ Ein-/Aus-Taste, während der Bildschirm aus ist</string>
     <string name="fod_icon_picker_footer">Um dein eigenes Symbol hinzuzufügen, wähle das Symbol oben links und verwende die OnePlus 6T FP Customizer App, um das gewünschte Symbol auszuwählen.</string>
     <string name="fod_wallpaper_color">Hintergrundfarbe für das FOD-Symbol verwenden</string>
     <string name="fod_wallpaper_color_summary">Verwendet die angepasste Hintergrundfarbe für das FOD-Symbol\nHINWEIS: Kann nur bei einigen Hintergrundbildern gut aussehen</string>
-    <string name="fod_recog_animation">FOD erkennt Animation</string>
-    <string name="fod_recog_animation_summary">Zeigt Animation beim Erfassen deines Fingerabdrucks</string>
+    <string name="fod_recog_animation">FOD Erkennungsanimation</string>
+    <string name="fod_recog_animation_summary">Animation beim Lesen deines Fingerabdrucks anzeigen</string>
     <string name="fod_recog_animation_effect_title">FOD-Animationseffekt erkennen</string>
     <!-- QS background opacity -->
     <string name="qs_panel_alpha_title">Hintergrunddeckkraft</string>
@@ -2265,18 +2268,18 @@ Ein-/Aus-Taste, während der Bildschirm aus ist</string>
     <string name="sysui_display_cutout_summary">Erzwinge, dass der Bildschirmausschnitt schwarz wird</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Angepasste Wiedergabe</string>
-    <string name="adaptive_playback_summary">Wurde die Lautstärke stummgeschaltet, werden Medien anhalten und durch Erhöhen der Lautstärke innerhalb der Auszeit weiter abspielt</string>
+    <string name="adaptive_playback_summary">Wenn die Lautstärke stumm geschaltet ist, Medien anhalten und durch Erhöhen der Lautstärke innerhalb der Auszeit wieder abspielen</string>
     <string name="adaptive_playback_timeout_title">Wiedergabe-Auszeit</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Bei Anschluss eines Headsets, wird der eingehende Anruf weiter abgespielt</string>
     <string name="ringtone_focus_mode_dynamic">Nur Headset, wenn Musik aktiv ist</string>
-    <string name="ringtone_focus_mode_stock">Sowohl Lautsprecher als auch Headset</string>
+    <string name="ringtone_focus_mode_stock">Beide Lautsprecher und Headset</string>
     <!-- Battery temperature -->
     <string name="battery_temperature">Akku-Temperatur</string>
     <!-- OOS style material dismiss all button for notifications -->
     <string name="notification_material_dismiss_button_title">Material-Abbruchtaste</string>
     <string name="notification_material_dismiss_button_summary">Entfernt löschen des gesamten Benachrichtigungstextes mit schwebender Taste</string>
     <!-- Per-app data restrictions -->
-    <string name="data_usage_app_restrict_all">Allow network</string>
-    <string name="data_usage_app_restrict_all_summary">Enable network usage</string>
+    <string name="data_usage_app_restrict_all">Netzwerk erlauben</string>
+    <string name="data_usage_app_restrict_all_summary">Netzwerk-Datennutzung aktivieren</string>
 </resources>
