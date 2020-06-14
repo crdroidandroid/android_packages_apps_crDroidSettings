@@ -39,6 +39,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.crdroid.Utils;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.navigation.PulseSettings;
 import com.crdroid.settings.fragments.navigation.StockNavBarSettings;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
 
@@ -107,6 +108,7 @@ public class Navigation extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         LineageSettings.System.putIntForUser(resolver, LineageSettings.System.FORCE_SHOW_NAVBAR,
              Utils.hasNavbarByDefault(mContext) ? 1 : 0, UserHandle.USER_CURRENT);
+        PulseSettings.reset(mContext);
         StockNavBarSettings.reset(mContext);
     }
 
