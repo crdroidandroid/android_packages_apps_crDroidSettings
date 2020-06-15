@@ -53,6 +53,7 @@ public class PulseSettings extends SettingsPreferenceFragment implements
     private static final int COLOR_TYPE_ACCENT = 0;
     private static final int COLOR_TYPE_USER = 1;
     private static final int COLOR_TYPE_LAVALAMP = 2;
+    private static final int COLOR_TYPE_AUTO = 3;
 
     private Preference mRenderMode;
     private ListPreference mColorModePref;
@@ -108,6 +109,10 @@ public class PulseSettings extends SettingsPreferenceFragment implements
             case COLOR_TYPE_LAVALAMP:
                 mColorPickerPref.setEnabled(false);
                 mLavaSpeedPref.setEnabled(true);
+                break;
+            case COLOR_TYPE_AUTO:
+                mColorPickerPref.setEnabled(false);
+                mLavaSpeedPref.setEnabled(false);
                 break;
         }
     }
