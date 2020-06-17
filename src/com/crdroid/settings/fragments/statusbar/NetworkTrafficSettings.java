@@ -44,6 +44,7 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
     private CustomSeekBarPreference mNetTrafficRefreshInterval;
     private ListPreference mNetTrafficLocation;
     private ListPreference mNetTrafficMode;
+    private ListPreference mNetTrafficUnits;
     private SwitchPreference mNetTrafficAutohide;
     private SwitchPreference mNetTrafficHideArrow;
 
@@ -64,6 +65,8 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_MODE);
         mNetTrafficAutohide = (SwitchPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_AUTOHIDE);
+        mNetTrafficUnits = (ListPreference)
+                findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_UNITS);
         mNetTrafficHideArrow = (SwitchPreference)
                 findPreference(LineageSettings.Secure.NETWORK_TRAFFIC_HIDEARROW);
 
@@ -89,6 +92,7 @@ public class NetworkTrafficSettings extends SettingsPreferenceFragment
         mNetTrafficAutohideThreshold.setEnabled(enabled);
         mNetTrafficHideArrow.setEnabled(enabled);
         mNetTrafficRefreshInterval.setEnabled(enabled);
+        mNetTrafficUnits.setEnabled(enabled);
     }
 
     public static void reset(Context mContext) {
