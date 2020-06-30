@@ -33,6 +33,14 @@
         android:summary="@string/navbar_settings_summary"
         android:fragment="com.crdroid.settings.fragments.navigation.StockNavBarSettings" />
 
+    <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
+        android:key="show_rotation_button"
+        android:icon="@drawable/ic_rotation_button"
+        android:title="@string/rotation_button_settings"
+        android:summary="@string/rotation_button_summary"
+        android:dependency="show_rotation_button"
+        android:defaultValue="true" />
+
     <!-- PIE
     <Preference
         android:key="pie_settings"

@@ -108,6 +108,8 @@ public class Navigation extends SettingsPreferenceFragment implements
         LineageSettings.System.putIntForUser(resolver, LineageSettings.System.FORCE_SHOW_NAVBAR,
              Utils.hasNavbarByDefault(mContext) ? 1 : 0, UserHandle.USER_CURRENT);
         StockNavBarSettings.reset(mContext);
+        Settings.Global.putInt(resolver,
+                Settings.Global.SHOW_ROTATION_BUTTON, 1);
     }
 
     @Override
