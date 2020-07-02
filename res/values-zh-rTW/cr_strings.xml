@@ -663,7 +663,7 @@
     <string name="fling_lavalamp_color_to">熔岩燈結束顏色</string>
     <string name="pulse_custom_buttons_opacity_title">使用 Pulse 時的智慧導覽列按鈕透明度</string>
     <string name="pulse_auto_color_title">自動選擇 Pulse 顏色</string>
-    <string name="pulse_auto_color_summary">與專輯封面色彩同步。熔岩燈及線條透明度等設定將會被覆蓋。</string>
+    <string name="pulse_auto_color_summary">與專輯封面色彩同步。熔岩燈及線條透明度等設定將會被覆寫。</string>
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">欄寬度</string>
     <string name="pulse_custom_div">欄間距</string>
@@ -791,7 +791,7 @@
     <string name="status_bar_battery_style_solid">純色</string>
     <string name="status_bar_battery_style_text">文字</string>
     <string name="status_bar_battery_style_hidden">隱藏</string>
-    <string name="status_bar_battery_style_tile_title">覆蓋電池圖塊</string>
+    <string name="status_bar_battery_style_tile_title">覆寫電池圖塊</string>
     <string name="status_bar_battery_style_tile_summary">在快速設定的電池圖塊中使用相同的圖示樣式</string>
     <!-- Status bar - Battery custom charging symbol -->
     <string name="text_charging_symbol_title">文字樣式的自訂充電圖示</string>
@@ -975,7 +975,7 @@
     <string name="summary_doze_enabled">啟用</string>
     <string name="summary_doze_disabled">停用</string>
     <string name="doze_overwrite_value_title">覆寫預設值</string>
-    <string name="doze_overwrite_value_summary">允許使用者設定覆蓋預設值</string>
+    <string name="doze_overwrite_value_summary">允許使用者設定覆寫預設值</string>
     <string name="doze_pulse_title">使用者可配置的設定</string>
     <string name="doze_fade_in_pickup_title">淡入（被動）</string>
     <string name="doze_fade_in_doubletap_title">淡入（點兩下）</string>
@@ -987,27 +987,27 @@
     <string name="doze_brightness_level_title">亮度級別</string>
     <string name="onehundred_ms">100 毫秒</string>
     <string name="twofifty_ms">250 毫秒</string>
-    <string name="fivehundred_ms_default">500 毫秒 (預設)</string>
+    <string name="fivehundred_ms_default">500 毫秒（預設）</string>
     <string name="sevenfifty_ms">750 毫秒</string>
     <string name="one_second">1 秒</string>
     <string name="onehalf_second">1.5 秒</string>
     <string name="two_second">2 秒</string>
     <string name="twohalf_second">2.5 秒</string>
-    <string name="three_second_default">3 秒 (預設)</string>
+    <string name="three_second_default">3 秒（預設）</string>
     <string name="threehalf_second">3.5 秒</string>
     <string name="four_second">4 秒</string>
     <string name="fourhalf_second">4.5 秒</string>
     <string name="five_second">5 秒</string>
-    <string name="doze_notification_color_invert_title">通知反色</string>
-    <string name="doze_notification_color_invert_summary_off">使用暗色主題時，通知將不會反轉顏色。</string>
-    <string name="doze_notification_color_invert_summary_on">使用亮色主題時，通知將會反轉顏色。</string>
-    <string name="doze_vibrate_on_pickup_title">掛斷時震動</string>
-    <string name="doze_check_proximity_before_pulse_title">檢查脈衝前的接近度</string>
-    <string name="sensor_warning_title">警告</string>
-    <string name="sensor_warning_message">基於感測器的設置受到硬體相容性的限制。啟用環境顯示感測器可能會增加功耗。</string>
+    <string name="doze_notification_color_invert_title">反轉通知顏色</string>
+    <string name="doze_notification_color_invert_summary_off">通知的顏色不會被反轉。 用於暗色主題</string>
+    <string name="doze_notification_color_invert_summary_on">通知的顏色將反轉。 用於淡色／原始主題。</string>
+    <string name="doze_vibrate_on_pickup_title">接電話時震動</string>
+    <string name="doze_check_proximity_before_pulse_title">在閃爍之前檢查接近度</string>
+    <string name="sensor_warning_title">注意</string>
+    <string name="sensor_warning_message">有關感測器的設定受到硬體相容性的限制。為「環境顯示」畫面啟用感測器可能會增加功耗。</string>
     <!-- Doze: switches -->
-    <string name="doze_display_title">主動顯示</string>
-    <string name="doze_display_summary">設定主動顯示</string>
+    <string name="doze_display_title">環境顯示</string>
+    <string name="doze_display_summary">設定環境顯示</string>
     <string name="doze_sensor_title">以感測器為主</string>
     <string name="tilt_title">傾斜</string>
     <string name="tilt_summary">揮手時顯示通知</string>
@@ -1484,8 +1484,8 @@
     <!-- VoWiFi icon -->
     <string name="vowifi_icon_title">VoWiFi 圖示</string>
     <string name="vowifi_icon_summary">可用時顯示 VoWiFi 圖示</string>
-    <string name="volte_vowifi_override_title">覆蓋 VoWiFi</string>
-    <string name="volte_vowifi_override_summary">當 VoWiFi 可用時隱藏 VoLTE。這也會覆蓋舊式的 VoWiFi 訊號圖示。</string>
+    <string name="volte_vowifi_override_title">覆寫 VoWiFi</string>
+    <string name="volte_vowifi_override_summary">當 VoWiFi 可用時隱藏 VoLTE。這也會覆寫舊式的 VoWiFi 訊號圖示。</string>
     <!-- Ad Away -->
     <string name="adaway_title">擋廣告</string>
     <string name="adaway_summary">使用 root 阻止不需要的廣告</string>
@@ -1550,11 +1550,11 @@
     <string name="anbi_title">誤觸</string>
     <string name="anbi_summary">當觸摸螢幕時防止和導航按鍵交互</string>
     <!-- Sensor block per-package -->
-    <string name="sensor_block_title">阻止個別組件存取感應器</string>
-    <string name="sensor_block_summary">阻止應用程式存取某些感應器以節省電量</string>
-    <string name="sensor_block_app_picker_title">阻止這些應用程式存取感應器</string>
-    <string name="add_sensor_block_package_title">加入應用程式以阻止它們存取感應器</string>
-    <string name="add_sensor_block_package_summary">這些應用程式無法存取顯著動作感應器、加速計、以及直線加速感應器</string>
+    <string name="sensor_block_title">阻止個別組件存取感測器</string>
+    <string name="sensor_block_summary">阻止應用程式存取某些感測器以節省電量</string>
+    <string name="sensor_block_app_picker_title">阻止這些應用程式存取感測器</string>
+    <string name="add_sensor_block_package_title">加入應用程式以阻止它們存取感測器</string>
+    <string name="add_sensor_block_package_summary">這些應用程式無法存取顯著動作感測器、加速計、以及直線加速度感測器</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">口袋檢測</string>
     <string name="pocket_judge_summary">當設備在口袋中時屏蔽螢幕和按鍵操作</string>
@@ -1785,7 +1785,7 @@
     <string name="keywords_lights_brightness_level">降低 Led 亮度</string>
     <string name="notification_light_automagic">自動選擇顏色</string>
     <string name="notification_light_automagic_summary">正在自動選擇顏色</string>
-    <string name="notification_light_override">覆蓋所有應用程式</string>
+    <string name="notification_light_override">覆寫所有應用程式</string>
     <!-- Lights settings, LED notification -->
     <string name="led_notification_title">指示燈設定</string>
     <string name="led_notification_text">已透過設定啟用 LED 指示燈</string>
