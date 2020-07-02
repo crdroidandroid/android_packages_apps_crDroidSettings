@@ -100,6 +100,8 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
                 Settings.Secure.SYSUI_DISPLAY_CUTOUT, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.BERRY_DARK_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BERRY_SWITCH_STYLE, 0, UserHandle.USER_CURRENT);
         Animations.reset(mContext);
         DozeSettings.reset(mContext);
         RoundedCorners.reset(mContext);

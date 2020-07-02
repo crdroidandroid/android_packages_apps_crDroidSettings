@@ -101,6 +101,16 @@
         android:summary="@string/smart_pixels_summary" 
         android:fragment="com.crdroid.settings.fragments.ui.SmartPixels" />
 
+    <!-- Switch Style -->
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="berry_switch_style"
+        android:icon="@drawable/ic_toggle_switch"
+        android:title="@string/switch_style_title"
+        android:dialogTitle="@string/switch_style_title"
+        android:entries="@array/switch_style_entries"
+        android:entryValues="@array/switch_style_values"
+        android:defaultValue="0" />
+
     <!-- Weather -->
     <PreferenceScreen
         android:key="omnijaws_settings"
