@@ -22,6 +22,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.UserHandle;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
 import android.util.Log;
@@ -121,7 +122,8 @@ public class ProximitySensor implements SensorEventListener {
         int val = Settings.Secure.getIntForUser(mContext.getContentResolver(),
                 Settings.Secure.DOZE_GESTURE_VIBRATE, 0, UserHandle.USER_CURRENT);
         if (val > 0) {
-            mVibrator.vibrate(val);
+            mVibrator.vibrate(VibrationEffect.createOneShot(val,
+                    VibrationEffect.DEFAULT_AMPLITUDE));
         }
     }
 }
