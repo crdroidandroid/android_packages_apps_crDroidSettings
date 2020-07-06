@@ -153,6 +153,8 @@ public class StockNavBarSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         LineageSettings.System.putIntForUser(resolver,
              LineageSettings.System.NAVIGATION_BAR_MENU_ARROW_KEYS, 0, UserHandle.USER_CURRENT);
+        Settings.Global.putInt(resolver,
+                Settings.Global.SHOW_ROTATION_BUTTON, 1);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.NAVBAR_INVERSE_LAYOUT, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putStringForUser(resolver,
