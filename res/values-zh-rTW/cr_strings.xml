@@ -759,7 +759,7 @@
     <string name="status_bar_quick_qs_pulldown_off">關閉</string>
     <string name="status_bar_quick_qs_pulldown_left">左側</string>
     <string name="status_bar_quick_qs_pulldown_right">右側</string>
-    <string name="status_bar_quick_qs_pulldown_always">下拉狀態列時永遠開啟快速設定</string>
+    <string name="status_bar_quick_qs_pulldown_always">下拉狀態列時一律開啟快速設定</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">時鐘與日期</string>
     <string name="status_bar_clock_summary">自訂時鐘和日期</string>
@@ -808,7 +808,7 @@
     <string name="status_bar_battery_text_position_left">圖示左側</string>
     <string name="status_bar_battery_text_position_right">圖示右側</string>
     <string name="status_bar_battery_text_charging_title">充電時的電量百分比</string>
-    <string name="status_bar_battery_text_charging_summary">充電時始終顯示電量百分比</string>
+    <string name="status_bar_battery_text_charging_summary">充電時一律顯示電量百分比</string>
     <!-- Status bar - icon blacklist -->
     <string name="status_bar_icons_title">狀態列圖示</string>
     <string name="status_bar_icons_summary">控制狀態列顯示的圖示</string>
@@ -1717,17 +1717,17 @@
     <string name="ambient_battery_percent_title">電池資訊</string>
     <string name="ambient_battery_percent_summary">當處於打盹模式時顯示目前電池資訊</string>
     <!-- Wake And Unlock -->
-    <string name="fp_wake_and_unlock_title">指紋喚醒和解鎖</string>
-    <string name="fp_wake_and_unlock_summary">當屏幕關閉或打盹時，允許使用指紋解鎖設備</string>
+    <string name="fp_wake_and_unlock_title">指紋喚醒與解鎖</string>
+    <string name="fp_wake_and_unlock_summary">當螢幕關閉或打盹時，允許使用指紋解鎖裝置</string>
     <!-- Force disable transition animation -->
-    <string name="disable_transition_animations_title">停用過渡動畫</string>
-    <string name="disable_transition_animations_summary">強制停用所有過渡動畫</string>
+    <string name="disable_transition_animations_title">停用轉場動畫</string>
+    <string name="disable_transition_animations_summary">強制停用所有轉場動畫</string>
     <!-- Swipe FP to dismiss notifications -->
     <string name="fp_swipe_to_dismiss_notifications_title">向左或向右滑動指紋以清除通知</string>
     <string name="fp_swipe_to_dismiss_notifications_summary">要清除通知，請在手機背面的指紋感測器上向左或向右滑動。</string>
     <!-- Full screen aspect ratio -->
-    <string name="full_screen_aspect_ratio_title">全畫面寛高比例</string>
-    <string name="full_screen_aspect_ratio_summary">強制應用程序使用全屏寬高比例, 請注意, 某些應用程序可能無法在全屏下正常工作</string>
+    <string name="full_screen_aspect_ratio_title">全螢幕畫面比例</string>
+    <string name="full_screen_aspect_ratio_summary">強制應用程式使用全螢幕畫面比例。請注意，某些應用程式可能無法在全螢幕下正常運作</string>
     <!-- QS Brightness Slider -->
     <string name="qs_brightness_slider_show_never">永不顯示</string>
     <string name="qs_brightness_slider_show_expanded">當展開時顯示</string>
@@ -1737,16 +1737,16 @@
     <string name="qs_brightness_slider_top">頂部</string>
     <string name="qs_brightness_slider_bottom">底部</string>
     <!-- Notification channels -->
-    <string name="channel_light_settings_name">淺色設置預覽</string>
+    <string name="channel_light_settings_name">通知燈設定預覽</string>
     <!-- Notification light dialogs -->
-    <string name="edit_light_settings">修改提示燈設定</string>
+    <string name="edit_light_settings">修改通知燈設定</string>
     <string name="pulse_speed_title">閃爍長度與速度</string>
     <string name="default_time">正常</string>
     <string name="custom_time">自訂</string>
     <string name="brightness">亮度等級</string>
     <!-- Values for the notification light pulse spinners -->
     <string name="pulse_length_always_on">一律顯示</string>
-    <string name="pulse_length_very_short">極短</string>
+    <string name="pulse_length_very_short">非常短</string>
     <string name="pulse_length_short">短</string>
     <string name="pulse_length_normal">正常</string>
     <string name="pulse_length_long">長</string>
@@ -1759,19 +1759,19 @@
     <!-- Common light settings strings -->
     <string name="light_brightness_title">亮度等級</string>
     <string name="light_brightness_normal">正常</string>
-    <string name="light_brightness_zen">勿擾模式</string>
+    <string name="light_brightness_zen">請勿打擾</string>
     <!-- Battery light settings -->
     <string name="battery_light_title">電池指示燈</string>
-    <string name="battery_light_summary">根據電池級別和狀態配置 led 顏色</string>
-    <string name="battery_low_pulse_title">電量低時閃動指示燈</string>
+    <string name="battery_light_summary">根據電量和電池狀態設定 LED 顏色</string>
+    <string name="battery_low_pulse_title">低電量時閃爍指示燈</string>
     <string name="battery_light_list_title">顏色</string>
     <string name="battery_light_low_color_title">低電量</string>
     <string name="battery_light_medium_color_title">充電中</string>
-    <string name="battery_light_full_color_title">接近充满 (&gt;90%)</string>
+    <string name="battery_light_full_color_title">接近充滿 (&gt;90%)</string>
     <string name="battery_light_really_full_color_title">已充滿 (100%)</string>
     <!-- Lights settings screen, notification light settings -->
     <string name="notification_light_title">通知指示燈</string>
-    <string name="notification_light_summary">設定通知led 顏色</string>
+    <string name="notification_light_summary">設定通知指示燈的 LED 顏色</string>
     <string name="notification_light_general_title">一般</string>
     <string name="notification_light_advanced_title">進階選項</string>
     <string name="notification_light_applist_title">應用程式</string>
@@ -1780,9 +1780,9 @@
     <string name="notification_light_default_value">預設</string>
     <string name="notification_light_missed_call_title">未接來電</string>
     <string name="notification_light_voicemail_title">語音信箱</string>
-    <string name="notification_light_screen_on">螢幕開啟時依然啟用指示燈</string>
-    <string name="notification_light_zen_mode">在勿擾模式下啟用指示燈</string>
-    <string name="keywords_lights_brightness_level">降低 Led 亮度</string>
+    <string name="notification_light_screen_on">螢幕開啟時啟用指示燈</string>
+    <string name="notification_light_zen_mode">在請勿打擾模式下啟用指示燈</string>
+    <string name="keywords_lights_brightness_level">降低 LED 亮度</string>
     <string name="notification_light_automagic">自動選擇顏色</string>
     <string name="notification_light_automagic_summary">正在自動選擇顏色</string>
     <string name="notification_light_override">覆寫所有應用程式</string>
@@ -2198,7 +2198,7 @@
     <string name="smart_charging_resume_level_title">開始觸發水平</string>
     <string name="smart_charging_reset_stats_title">重置電池統計信息</string>
     <string name="smart_charging_reset_stats_summary">達到用戶定義的充電水平後重置電池統計信息</string>
-    <string name="smart_charging_footer">智能充電允許您設置最大充電水平，以延長電池的使用壽命。 啟用後，電池將在“停止”觸發水平停止充電，並在“開始”觸發水平恢復充電。 停止觸發水平應始終大於開始觸發水平。</string>
+    <string name="smart_charging_footer">智慧充電允許您設定最大充電百分比，以延長電池的使用壽命。 啟用後，電池將在達到「停止充電百分比」時停止充電，並在達到「開始充電百分比」時重新開始充電。 「停止充電百分比」應始終大於「開始充電百分比」。</string>
     <!--FOD -->
     <string name="fod_icon_picker_category_title">FOD自訂選項</string>
     <string name="fod_icon_picker_title">FOD圖標選擇器</string>
