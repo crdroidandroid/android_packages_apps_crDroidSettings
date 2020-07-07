@@ -79,6 +79,8 @@ public class Sound extends SettingsPreferenceFragment implements Indexable {
         Settings.System.putIntForUser(resolver,
                 Settings.System.ADAPTIVE_PLAYBACK_TIMEOUT, 30, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.SBC_HD_PRIORITY, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.SCREENSHOT_SOUND, 1, UserHandle.USER_CURRENT);
         Settings.Global.putInt(resolver, Settings.Global.RINGTONE_FOCUS_MODE_V2, 1);
         VolumePanel.reset(mContext);
