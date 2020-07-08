@@ -1485,7 +1485,7 @@
     <string name="vowifi_icon_title">VoWiFi ikoon</string>
     <string name="vowifi_icon_summary">Kuvage VoWiFi ikoon, kui see on saadaval</string>
     <string name="volte_vowifi_override_title">VoWiFi üle kirjutada</string>
-    <string name="volte_vowifi_override_summary">Hide VoLTE when VoWiFi is available. This also overrides old style signal icon for VoWiFi.</string>
+    <string name="volte_vowifi_override_summary">Peida VoLTE, kui VoWiFi on saadaval. See tühistab ka VoWiFi vanastiilis signaaliikooni.</string>
     <!-- Ad Away -->
     <string name="adaway_title">AdAway</string>
     <string name="adaway_summary">Keela ebavajalikud reklaamid</string>
@@ -1554,7 +1554,7 @@
     <string name="sensor_block_summary">Blokeeri oluliste andurite ligipääs teatud akut nõudvate rakenduste jaoks</string>
     <string name="sensor_block_app_picker_title">Blokeerige nende rakenduste andurid</string>
     <string name="add_sensor_block_package_title">Lisage sensoriploki rakendused</string>
-    <string name="add_sensor_block_package_summary">Significant motion, accelerometer, linear acceleration sensors will be blocked for these apps</string>
+    <string name="add_sensor_block_package_summary">Nende rakenduste jaoks blokeeritakse oluline liikumine, kiirendusmõõtur, lineaarkiirenduse andurid</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Taskutuvastus</string>
     <string name="pocket_judge_summary">Blokeeri ekraan ja nupusisendid, kui seade on taskus</string>
@@ -1715,10 +1715,10 @@
     <string name="font_picker_progress">Uue fondi rakendamine\u2026</string>
     <!-- Ambient display battery percentage -->
     <string name="ambient_battery_percent_title">Akuinfo</string>
-    <string name="ambient_battery_percent_summary">Display current battery info while dozing</string>
+    <string name="ambient_battery_percent_summary">Kuva aktiveerimise ajal praegune aku teave</string>
     <!-- Wake And Unlock -->
     <string name="fp_wake_and_unlock_title">Sõrmejäljega äratamine ja lahtilukustus</string>
-    <string name="fp_wake_and_unlock_summary">Allow unlocking device using fingerprint when screen is off or dozing</string>
+    <string name="fp_wake_and_unlock_summary">Kui ekraan on välja lülitatud või pimedas, lubage seadme lukust vabastamist sõrmejälje abil</string>
     <!-- Force disable transition animation -->
     <string name="disable_transition_animations_title">Keela üleminekuanimatsioonid</string>
     <string name="disable_transition_animations_summary">Keela jõuga kõik üleminekuanimatsioonid</string>
@@ -1836,7 +1836,7 @@
     <string name="edge_gestures_back_category_title">Tagasižest</string>
     <string name="edge_gestures_back_edges_title">Käivita tagasiviibe asukohast</string>
     <string name="edge_gestures_landscape_back_edges_title">Käivita tagasiviibe rõhtasendis asukohast</string>
-    <string name="edge_gestures_back_screen_percent_title">Back gesture must start below this percentage of the screen</string>
+    <string name="edge_gestures_back_screen_percent_title">Tagasi žest peab algama sellest ekraani protsendist</string>
     <string name="edge_gestures_back_screen_percent_summary">Käivita ekraani % allosast</string>
     <string name="edge_gestures_back_edges_left">Vasakul</string>
     <string name="edge_gestures_back_edges_right">Paremal</string>
@@ -2175,7 +2175,7 @@
     <string name="pulse_ambient_light_summary">Valgusta ekraani servasid teavituse saabumisel</string>
     <string name="pulse_ambient_light_color_title">Äärevalguse värv</string>
     <string name="pulse_ambient_light_duration_title">Äärevalguse kestus</string>
-    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <string name="pulse_ambient_light_duration_summary">Määrab ümbritseva valguse animatsiooni kestuse</string>
     <string name="pulse_ambient_light_layout_title">Äärevalgustuse vaade</string>
     <string name="pulse_ambient_light_layout_solid">Ühtlane</string>
     <string name="pulse_ambient_light_layout_faded">Hajuv</string>
@@ -2275,7 +2275,7 @@
     <string name="sysui_display_cutout_summary">Tee ekraani väljalõike ala mustaks</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptiivne taasesitus</string>
-    <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
+    <string name="adaptive_playback_summary">Meedia paus, kui helitugevus on vaigistatud ja jätkake selle suurendamist, suurendades aja jooksul helitugevust</string>
     <string name="adaptive_playback_timeout_title">Taasesituse aegumine</string>
     <!-- Headset ringtone audio focus -->
     <string name="ringtone_focus_mode_title">Peakomplekti ühendamisel kestab kõne edasi</string>
@@ -2284,17 +2284,17 @@
     <!-- Battery temperature -->
     <string name="battery_temperature">Aku temperatuur</string>
     <!-- OOS style material dismiss all button for notifications -->
-    <string name="notification_material_dismiss_button_title">Material dimiss button</string>
-    <string name="notification_material_dismiss_button_summary">Replace clear all notification text with floating button</string>
+    <string name="notification_material_dismiss_button_title">Materjalist loobumise nupp</string>
+    <string name="notification_material_dismiss_button_summary">Asendage kogu teatise teksti tühjendamine ujuva nupuga</string>
     <!-- Per-app data restrictions -->
-    <string name="data_usage_app_restrict_all">Allow network</string>
-    <string name="data_usage_app_restrict_all_summary">Enable network usage</string>
+    <string name="data_usage_app_restrict_all">Luba võrk</string>
+    <string name="data_usage_app_restrict_all_summary">Luba võrgu kasutamine</string>
     <!-- A2DP codec priority -->
-    <string name="a2dp_source_codec_priority_title">Bluetooth Audio Codec (preferred)</string>
+    <string name="a2dp_source_codec_priority_title">Bluetoothi helikodek (soovitatav)</string>
     <!-- Rotation button -->
-    <string name="show_rotation_button_title">Rotation button</string>
-    <string name="show_rotation_button_summary">Display rotation button on navigation bar when available</string>
+    <string name="show_rotation_button_title">Pöördnupp</string>
+    <string name="show_rotation_button_summary">Kuvage navigeerimisriba pöördenupp, kui see on saadaval</string>
     <!-- SBC HD (Dual Channel) priority -->
     <string name="sbc_hd_priority_title">SBC HD audio</string>
-    <string name="sbc_hd_priority_summary">Whether to use Dual Channel mode for SBC codec by default</string>
+    <string name="sbc_hd_priority_summary">Kas kasutada vaikimisi SBC-kodeki jaoks kahekanalilist režiimi</string>
 </resources>
