@@ -191,13 +191,6 @@
         android:defaultValue="true" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="disable_settings_suggestions"
-        android:icon="@drawable/ic_dashboard"
-        android:title="@string/disable_settings_suggestions_title"
-        android:summary="@string/disable_settings_suggestions_summary"
-        android:defaultValue="false" />
-
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="remove_settings_summary"
         android:icon="@drawable/ic_settings_ui"
         android:title="@string/remove_settings_summary_title"
@@ -211,6 +204,20 @@
         android:title="@string/allow_signature_fake"
         android:summary="@string/allow_signature_fake_summary"
         android:defaultValue="true" /> -->
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="settings_show_conditions"
+        android:icon="@drawable/ic_cog"
+        android:title="@string/settings_show_conditions_title"
+        android:summary="@string/settings_show_conditions_summary"
+        android:defaultValue="true" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="settings_show_suggestions"
+        android:icon="@drawable/ic_cog"
+        android:title="@string/settings_show_suggestions_title"
+        android:summary="@string/settings_show_suggestions_summary"
+        android:defaultValue="true" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="disable_fc_notifications"
