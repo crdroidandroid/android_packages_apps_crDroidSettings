@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 crDroid Android Project
+ * Copyright (C) 2016-2020 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,12 +41,14 @@ public class About extends SettingsPreferenceFragment implements Indexable {
 
     public static final String TAG = "About";
 
+    private String KEY_CRDROID_DONATE = "crdroid_donate";
     private String KEY_CRDROID_SOURCE = "crdroid_source";
     private String KEY_CRDROID_TELEGRAM = "crdroid_telegram";
     private String KEY_CRDROID_SHARE = "crdroid_share";
     private String KEY_CRDROID_TRANSLATE = "crdroid_translate";
     private String KEY_CRDROID_WEBSITE = "crdroid_website";
 
+    private Preference mDonate;
     private Preference mSourceUrl;
     private Preference mTelegramUrl;
     private Preference mShare;
@@ -58,6 +60,7 @@ public class About extends SettingsPreferenceFragment implements Indexable {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.crdroid_settings_about);
 
+        mDonate = findPreference(KEY_CRDROID_DONATE);
         mSourceUrl = findPreference(KEY_CRDROID_SOURCE);
         mTelegramUrl = findPreference(KEY_CRDROID_TELEGRAM);
         mShare = findPreference(KEY_CRDROID_SHARE);
@@ -67,7 +70,9 @@ public class About extends SettingsPreferenceFragment implements Indexable {
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mSourceUrl) {
+        if (preference == mDonate) {
+            launchUrl("https://www.paypal.me/crdroidandroid");
+        } else if (preference == mSourceUrl) {
             launchUrl("https://github.com/crdroidandroid");
         } else if (preference == mTelegramUrl) {
             launchUrl("https://t.me/crDroidAndroid");
