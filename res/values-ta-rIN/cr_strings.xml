@@ -79,9 +79,6 @@
     <string name="network_traffic_hidearrow_summary">பிணைய போக்குவரத்து காட்டி அம்புகளை மறை</string>
     <string name="network_traffic_refresh_interval_title">இடைவெளியைப் புதுப்பிக்கவும்</string>
     <string name="network_traffic_refresh_interval_summary">எந்த வேகத்தை மறுபரிசீலனை செய்த பிறகு</string>
-    <!-- Settings suggestions  -->
-    <string name="disable_settings_suggestions_title">பரிந்துரைகளை முடக்கு</string>
-    <string name="disable_settings_suggestions_summary">டேஷ்போர்டில் மீது பரிந்துரைகளை முடக்கு</string>
     <!-- Settings summary  -->
     <string name="remove_settings_summary_title">சுருக்க அமைப்புகளை அகற்று</string>
     <string name="remove_settings_summary_summary">சுருக்க கீழே அடுக்கு தலைப்புகள் நீக்கு</string>
@@ -913,7 +910,7 @@ fling_left_up_swipe
     <string name="notification_heads_up_summary">Allow pop up notifications</string>
     <!-- Heads up timeout -->
     <string name="heads_up_category">Heads up</string>
-    <string name="heads_up_time_out_title">Time out</string>
+    <string name="heads_up_time_out_title">நேரம் முடிந்தது</string>
     <string name="heads_up_time_out_summary">Peeking notifications will show for <xliff:g id="number">%d</xliff:g> seconds</string>
     <string name="heads_up_time_out_2sec">2 நொடிகள்</string>
     <string name="heads_up_time_out_4sec">4 நொடிகள்</string>
@@ -996,15 +993,15 @@ fling_left_up_swipe
     <string name="twofifty_ms">250 மி.நொ</string>
     <string name="fivehundred_ms_default">500 மி.நொ (இயல்பு)</string>
     <string name="sevenfifty_ms">750 மி.நொ</string>
-    <string name="one_second">1 s</string>
-    <string name="onehalf_second">1.5 s</string>
-    <string name="two_second">2 s</string>
-    <string name="twohalf_second">2.5 s</string>
-    <string name="three_second_default">3 s (default)</string>
-    <string name="threehalf_second">3.5 s</string>
-    <string name="four_second">4 s</string>
-    <string name="fourhalf_second">4.5 s</string>
-    <string name="five_second">5 s</string>
+    <string name="one_second">1 நொ</string>
+    <string name="onehalf_second">1.5 நொ</string>
+    <string name="two_second">2 நொ</string>
+    <string name="twohalf_second">2.5 நொ</string>
+    <string name="three_second_default">3 நொ (இயல்பு)</string>
+    <string name="threehalf_second">3.5 நொ</string>
+    <string name="four_second">4 நொ</string>
+    <string name="fourhalf_second">4.5 நொ</string>
+    <string name="five_second">5 நொ</string>
     <string name="doze_notification_color_invert_title">அறிவிப்பு சுழற்றல்</string>
     <string name="doze_notification_color_invert_summary_off">அறிவிப்புகள் சுழற்றபடும். இருள் கருப்பொருளுக்காகப் பயன்படுத்து.</string>
     <string name="doze_notification_color_invert_summary_on">அறிவிப்புகள் சுழற்றபடும். வெளிச்சம்/Stock கருப்பொருளுக்காகப் பயன்படுத்து.</string>
@@ -1299,13 +1296,13 @@ recents_clear_all_location_title
     <string name="listview_anticipate_overshoot_interpolator">Anticipate and overshoot</string>
     <string name="listview_bounce_interpolator">Bounce</string>
     <!-- Power menu animation -->
-    <string name="power_menu_animation_title">Power menu animation</string>
+    <string name="power_menu_animation_title">மின்சக்தி பட்டியல் அசைவூட்டல்</string>
     <string name="power_menu_animation_default">இயல்புநிலை</string>
     <string name="power_menu_animation_bottom">கீழ்</string>
     <string name="power_menu_animation_top">மேல்</string>
-    <string name="power_menu_animation_rotate">Rotation</string>
-    <string name="power_menu_animation_xylon">Fly</string>
-    <string name="power_menu_animation_slide">Slide</string>
+    <string name="power_menu_animation_rotate">சுழற்றல்</string>
+    <string name="power_menu_animation_xylon">பறக்கவும்</string>
+    <string name="power_menu_animation_slide">ஸ்லைடு</string>
     <string name="power_menu_animation_turn">Turn</string>
     <string name="power_menu_animation_fly">Glow</string>
     <string name="power_menu_animation_card">3D</string>
@@ -1315,8 +1312,8 @@ recents_clear_all_location_title
     <string name="qs_tile_animation_style_title">QS tile animation</string>
     <string name="qs_tile_animation_duration_title">QS tile animation duration</string>
     <string name="qs_tile_animation_style_off">No animation</string>
-    <string name="qs_tile_animation_style_flip">Flip</string>
-    <string name="qs_tile_animation_style_rotate">Rotate</string>
+    <string name="qs_tile_animation_style_flip">திருப்பு</string>
+    <string name="qs_tile_animation_style_rotate">சுழற்று</string>
     <string name="qs_tile_animation_duration_low">குறைவு</string>
     <string name="qs_tile_animation_duration_default">இயல்புநிலை</string>
     <string name="qs_tile_animation_duration_fast">வேகமானவை</string>
@@ -1398,9 +1395,9 @@ recents_clear_all_location_title
     <string name="screen_state_on_delay_summary">Number of seconds to wait before performing actions after screen on</string>
     <!-- Data/Wifi activity arrows -->
     <string name="data_activity_arrows_title">தரவு செயற்பாடு</string>
-    <string name="data_activity_arrows_summary">Display data activity arrows</string>
+    <string name="data_activity_arrows_summary">தரவு செயற்பாட்டு அம்புகளைக் காண்பி</string>
     <string name="wifi_activity_arrows_title">WiFi செயல்பாடு</string>
-    <string name="wifi_activity_arrows_summary">Display wifi activity arrows</string>
+    <string name="wifi_activity_arrows_summary">WiFi செயற்பாட்டு அம்புகளைக் காண்பி</string>
     <!-- The Drill -->
     <string name="drill_title">The drill</string>
     <string name="drill_summary">ஒரு பிழையைக் கண்டறிந்தீர்களா? சிக்கலில் மாட்டிக்கொண்டீர்களா?</string>
@@ -1457,12 +1454,12 @@ recents_clear_all_location_title
     <string name="weather_config_title">சேவை அமைப்புகள்</string>
     <string name="weather_config_summary">Configure service to enable weather details</string>
     <string name="weather_icon_pack_title">வானிலை படவுரு தொகுப்பு</string>
-    <string name="find_icon_pack_title">Find icon packs</string>
+    <string name="find_icon_pack_title">படவுருத் தொகுப்புக்களைக் கண்டுபிடி</string>
     <string name="find_icon_pack_summary">Find and install new icon packs from Play Store</string>
     <string name="weather_icon_pack_note">Note\u003a you can install new icon packs from play store by searching for \"Chronus icons\"</string>
     <!-- 4G icon -->
     <string name="show_fourg_icon_title">4G படவுரு</string>
-    <string name="show_fourg_icon_summary">Display 4G icon in signal icon instead LTE</string>
+    <string name="show_fourg_icon_summary">LTEக்கு பதிலாக சிக்னல் படவுருவில் 4G படவுருவை காண்பி</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Roaming indicator</string>
     <string name="roaming_indicator_icon_summary">Display roaming indicator in signal icon when in roaming mode</string>
@@ -1590,7 +1587,7 @@ recents_clear_all_location_title
     <string name="maintainer_unknown">No official maintainer</string>
     <string name="changelog_title">Server changelog</string>
     <string name="changelog_summary">View changelog of latest available update</string>
-    <string name="download_title">Download latest build</string>
+    <string name="download_title">சமீபத்திய பில்ட்டை பதிவிறக்கு</string>
     <string name="download_summary">பதிவிறக்கப் பக்கத்தை காண்க</string>
     <string name="gapps_title">Download gapps</string>
     <string name="gapps_summary">Google Apps பதிவிறக்கம் பக்கத்துக்கு செல்க</string>
@@ -1771,11 +1768,11 @@ recents_clear_all_location_title
     <string name="light_brightness_normal">Normal</string>
     <string name="light_brightness_zen">Do Not Disturb</string>
     <!-- Battery light settings -->
-    <string name="battery_light_title">Battery light</string>
+    <string name="battery_light_title">பேட்டரி ஒளி</string>
     <string name="battery_light_summary">Configure led color based on battery level and status</string>
     <string name="battery_low_pulse_title">Pulse if battery low</string>
     <string name="battery_light_list_title">வண்ணங்கள்</string>
-    <string name="battery_light_low_color_title">Battery low</string>
+    <string name="battery_light_low_color_title">குறைந்த மின்கலம்</string>
     <string name="battery_light_medium_color_title">மின்னூட்டுகிறது</string>
     <string name="battery_light_full_color_title">Nearly Charged (&gt;90%)</string>
     <string name="battery_light_really_full_color_title">Fully Charged (100%)</string>
@@ -1803,7 +1800,7 @@ recents_clear_all_location_title
     <!-- Substratum -->
     <string name="substratum_title">Substratum</string>
     <string name="themes_title">கருப்பொருள்</string>
-    <string name="themes_summary">Manage your themes</string>
+    <string name="themes_summary">உங்கள் கருப்பொருட்களை நிர்வகி</string>
     <!-- Force authorize substratum packages -->
     <string name="force_authorize_substratum_packages_title">Force authorize every theme app</string>
     <string name="force_authorize_substratum_packages_summary">Allow theme apps from unknown sources</string>
@@ -1992,7 +1989,7 @@ recents_clear_all_location_title
     <string name="qs_header_default">இயல்புநிலை</string>
     <string name="qs_header_grey">சாம்பல்</string>
     <string name="qs_header_lightgrey">வெளிச்சமான சாம்பல்</string>
-    <string name="qs_header_accent">Accent Based</string>
+    <string name="qs_header_accent">அழுத்த வண்ண அடிபடையில்</string>
     <string name="qs_header_transparent">Transparent</string>
     <!-- Switch styles -->
     <string name="switch_style_title">Preference switch style</string>
@@ -2015,7 +2012,7 @@ recents_clear_all_location_title
     <string name="thermal_controller">Thermal Controller</string>
     <string name="thermal_control_per_app">Thermal profile</string>
     <string name="thermal_control_per_app_default">எதுவுமில்லை</string>
-    <string name="thermal_control_per_app_benchmark">Performance</string>
+    <string name="thermal_control_per_app_benchmark">செயல்திறன்</string>
     <string name="thermal_control_per_app_games">விளையாட்டுகள்</string>
     <string name="thermal_control_per_app_browser">உலாவி</string>
     <string name="thermal_control_per_app_video_playback">காணொளி இயங்குதல்</string>
@@ -2075,9 +2072,9 @@ recents_clear_all_location_title
     <!-- Text displayed when WPS fails due to another session [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_overlap">Another WPS session was detected. Please try again in a few minutes.</string>
     <!-- Text displayed when WPS fails due to wifi disconnected [CHAR LIMIT=150] -->
-    <string name="wifi_wps_failed_wifi_disconnected">Wi\u2011Fi disconnected. WPS setup canceled.</string>
+    <string name="wifi_wps_failed_wifi_disconnected">Wi\u2011Fi துண்டிக்கப்பட்டது. WPS அமைத்தல் ரத்தானது.</string>
     <!-- Lockscreen Visualizer -->
-    <string name="lockscreen_autocolor_title">Automatic color</string>
+    <string name="lockscreen_autocolor_title">தானியங்கு வண்ணம்</string>
     <string name="lockscreen_autocolor_summary">பின்னணியுடன் வண்ணத்தை ஒத்திசைக்கவும்</string>
     <string name="lockscreen_autocolor_lavalamp">Requires lava lamp disabled</string>
     <string name="lockscreen_lavalamp_title">Lava lamp</string>
@@ -2103,7 +2100,7 @@ recents_clear_all_location_title
     <string name="lockscreen_albumart_filter_none">எதுவுமில்லை</string>
     <string name="lockscreen_albumart_filter_grayscale">Grayscale</string>
     <string name="lockscreen_albumart_filter_tint">Accent tinted</string>
-    <string name="lockscreen_albumart_filter_blur">Blur</string>
+    <string name="lockscreen_albumart_filter_blur">தெளிவின்மை</string>
     <string name="lockscreen_albumart_filter_grayblur">Grayscale and blurred</string>
     <!-- Notifications while screen on -->
     <string name="notification_sound_vib_screen_on_title">Noisy notifications</string>
@@ -2220,7 +2217,7 @@ recents_clear_all_location_title
     <string name="fod_recog_animation_summary">Shows animation while reading your finger</string>
     <string name="fod_recog_animation_effect_title">FOD recognizing animation effect</string>
     <!-- QS background opacity -->
-    <string name="qs_panel_alpha_title">Background opacity</string>
+    <string name="qs_panel_alpha_title">பின்னணி ஒளிபுகாத்தன்மை</string>
     <!-- Navigation mode settings -->
     <string name="back_height_low_label">முழு</string>
     <string name="back_height_high_label">கீழ்</string>
@@ -2297,14 +2294,19 @@ recents_clear_all_location_title
     <string name="notification_material_dismiss_button_title">Material dimiss button</string>
     <string name="notification_material_dismiss_button_summary">Replace clear all notification text with floating button</string>
     <!-- Per-app data restrictions -->
-    <string name="data_usage_app_restrict_all">Allow network</string>
-    <string name="data_usage_app_restrict_all_summary">Enable network usage</string>
+    <string name="data_usage_app_restrict_all">பிணையத்தை அனுமதி</string>
+    <string name="data_usage_app_restrict_all_summary">பிணையப் பயன்பாட்டை இயக்கு</string>
     <!-- A2DP codec priority -->
     <string name="a2dp_source_codec_priority_title">Bluetooth Audio Codec (preferred)</string>
     <!-- Rotation button -->
     <string name="show_rotation_button_title">Rotation button</string>
     <string name="show_rotation_button_summary">Display rotation button on navigation bar when available</string>
     <!-- SBC HD (Dual Channel) priority -->
-    <string name="sbc_hd_priority_title">SBC HD audio</string>
+    <string name="sbc_hd_priority_title">SBC HD ஒலி</string>
     <string name="sbc_hd_priority_summary">Whether to use Dual Channel mode for SBC codec by default</string>
+    <!-- Settings Dashboard conditions and suggestions -->
+    <string name="settings_show_conditions_title">Dashboard conditions</string>
+    <string name="settings_show_conditions_summary">Display condition cards in Settings screen</string>
+    <string name="settings_show_suggestions_title">Dashboard suggestions</string>
+    <string name="settings_show_suggestions_summary">Display suggestion cards in Settings screen</string>
 </resources>
