@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2019 crDroid Android Project
+     Copyright (C) 2016-2020 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -43,29 +43,13 @@
         android:summary="@string/settings_blur_cat_summary"
         android:fragment="com.crdroid.settings.fragments.ui.BlurPersonalizations" /> -->
 
-    <!-- Display cutout options
+    <!-- Display cutout options -->
     <Preference
         android:key="cutout_settings"
         android:icon="@drawable/ic_cutout"
         android:title="@string/cutout_main"
         android:summary="@string/cutout_main_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.CutoutSettings" /> -->
-
-    <!-- Display cutout options -->
-    <Preference
-        android:key="display_cutout_force_fullscreen_settings"
-        android:icon="@drawable/ic_cutout"
-        android:title="@string/display_cutout_force_fullscreen_title"
-        android:summary="@string/display_cutout_force_fullscreen_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.DisplayCutoutForceFullscreenSettings" />
-
-    <!-- Display cutout -->
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-        android:key="sysui_display_cutout"
-        android:icon="@drawable/ic_cutout"
-        android:title="@string/sysui_display_cutout_title"
-        android:summary="@string/sysui_display_cutout_summary"
-        android:defaultValue="true"/>
+        android:fragment="com.crdroid.settings.fragments.ui.CutoutSettings" />
 
     <!-- Expanded Desktop
     <org.lineageos.internal.lineageparts.LineagePartsPreference
