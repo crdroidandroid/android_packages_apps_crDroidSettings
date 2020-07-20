@@ -42,7 +42,6 @@ import com.android.settingslib.search.SearchIndexable;
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.notifications.VibrationSettingsPreferenceFragment;
 import com.crdroid.settings.fragments.notifications.Ticker;
-import com.crdroid.settings.utils.DeviceUtils;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -56,12 +55,10 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
     private static final String BATTERY_LIGHTS_PREF = "battery_lights";
     private static final String NOTIFICATION_LIGHTS_PREF = "notification_lights";
     private static final String FLASHLIGHT_ON_CALL = "flashlight_on_call";
-    private static final String TICKER_SETTINGS = "ticker_settings";
 
     private Preference mAlertSlider;
     private Preference mBatLights;
     private Preference mNotLights;
-    private Preference mTickerSettings;
     private PreferenceCategory lightsCategory;
     private ListPreference mFlashlightOnCall;
 
@@ -81,10 +78,6 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
                 com.android.internal.R.bool.config_hasAlertSlider);
         if (!mAlertSliderAvailable)
             prefScreen.removePreference(mAlertSlider);
-
-        mTickerSettings = (Preference) prefScreen.findPreference(TICKER_SETTINGS);
-        if (DeviceUtils.hasNotch(mContext))
-            prefScreen.removePreference(mTickerSettings);
 
         mBatLights = (Preference) prefScreen.findPreference(BATTERY_LIGHTS_PREF);
         boolean mBatLightsSupported = res.getInteger(
@@ -155,9 +148,6 @@ public class Notifications extends SettingsPreferenceFragment implements Indexab
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
                     final Resources res = context.getResources();
-
-                    if (DeviceUtils.hasNotch(context))
-                        keys.add(TICKER_SETTINGS);
 
                     boolean mAlertSliderAvailable = res.getBoolean(
                             com.android.internal.R.bool.config_hasAlertSlider);
