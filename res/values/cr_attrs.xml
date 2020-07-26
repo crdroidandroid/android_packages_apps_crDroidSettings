@@ -42,15 +42,12 @@
     </declare-styleable>
 
     <!-- ColorPicker -->
-    <declare-styleable name="ColorPickPref">
+    <declare-styleable name="ColorPickerPreference">
         <attr name="alphaSlider" format="boolean" />
-        <attr name="alphaText" format="boolean" />
-        <attr name="colorgroupname" format="string" />
-    </declare-styleable>
-
-    <!-- Value to pass to callback when restore button is pressed -->
-    <declare-styleable name="ColorPreference">
-        <attr name="defaultColorValue" format="integer" />
+        <attr name="showPreview" format="boolean" />
+        <attr name="showReset" format="boolean" />
+        <attr name="dividerAbove" format="boolean" />
+        <attr name="dividerBelow" format="boolean" />
     </declare-styleable>
 
     <!-- Base attributes available to CustomSeekBarPreference. -->

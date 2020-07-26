@@ -17,11 +17,12 @@
 
 package com.crdroid.settings.preferences.colorpicker;
 
-import android.app.Dialog;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -31,13 +32,12 @@ import android.widget.LinearLayout;
 
 import com.crdroid.settings.R;
 
-public class ColorPickerDialog extends Dialog implements
-        ColorPickerView.OnColorChangedListener, View.OnClickListener {
+public class ColorPickerDialog extends AlertDialog implements ColorPickerView.OnColorChangedListener, View.OnClickListener {
 
     private ColorPickerView mColorPicker;
-
     private ColorPickerPanelView mOldColor;
     private ColorPickerPanelView mNewColor;
+    private EditText mHex;
 
     private ColorPickerPanelView mWhite;
     private ColorPickerPanelView mBlack;
@@ -45,9 +45,6 @@ public class ColorPickerDialog extends Dialog implements
     private ColorPickerPanelView mRed;
     private ColorPickerPanelView mGreen;
     private ColorPickerPanelView mYellow;
-
-    private EditText mHex;
-    private ImageButton mSetButton;
 
     private OnColorChangedListener mListener;
 
@@ -57,7 +54,6 @@ public class ColorPickerDialog extends Dialog implements
 
     public ColorPickerDialog(Context context, int initialColor) {
         super(context);
-
         init(initialColor);
     }
 
@@ -74,32 +70,25 @@ public class ColorPickerDialog extends Dialog implements
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
 
+        assert inflater != null;
         View layout = inflater.inflate(R.layout.dialog_color_picker, null);
 
-        setContentView(layout);
+        mColorPicker = layout.findViewById(R.id.color_picker_view);
+        mOldColor = layout.findViewById(R.id.old_color_panel);
+        mNewColor = layout.findViewById(R.id.new_color_panel);
 
-        setTitle(R.string.dialog_color_picker);
+        mWhite = layout.findViewById(R.id.white_panel);
+        mBlack = layout.findViewById(R.id.black_panel);
+        mCyan = layout.findViewById(R.id.cyan_panel);
+        mRed = layout.findViewById(R.id.red_panel);
+        mGreen = layout.findViewById(R.id.green_panel);
+        mYellow = layout.findViewById(R.id.yellow_panel);
 
-        mColorPicker = (ColorPickerView) layout.findViewById(R.id.color_picker_view);
-        mOldColor = (ColorPickerPanelView) layout.findViewById(R.id.old_color_panel);
-        mNewColor = (ColorPickerPanelView) layout.findViewById(R.id.new_color_panel);
+        mHex = layout.findViewById(R.id.hex);
+        ImageButton mSetButton = layout.findViewById(R.id.enter);
 
-        mWhite = (ColorPickerPanelView) layout.findViewById(R.id.white_panel);
-        mBlack = (ColorPickerPanelView) layout.findViewById(R.id.black_panel);
-        mCyan = (ColorPickerPanelView) layout.findViewById(R.id.cyan_panel);
-        mRed = (ColorPickerPanelView) layout.findViewById(R.id.red_panel);
-        mGreen = (ColorPickerPanelView) layout.findViewById(R.id.green_panel);
-        mYellow = (ColorPickerPanelView) layout.findViewById(R.id.yellow_panel);
-
-        mHex = (EditText) layout.findViewById(R.id.hex);
-        mSetButton = (ImageButton) layout.findViewById(R.id.enter);
-
-        ((LinearLayout) mOldColor.getParent()).setPadding(
-                Math.round(mColorPicker.getDrawingOffset()),
-                0,
-                Math.round(mColorPicker.getDrawingOffset()),
-                0
-                );
+        ((LinearLayout) mOldColor.getParent()).setPadding(Math.round(mColorPicker.getDrawingOffset()),
+                0, Math.round(mColorPicker.getDrawingOffset()), 0);
 
         mOldColor.setOnClickListener(this);
         mNewColor.setOnClickListener(this);
@@ -118,19 +107,17 @@ public class ColorPickerDialog extends Dialog implements
             mHex.setText(ColorPickerPreference.convertToARGB(color));
         }
         if (mSetButton != null) {
-           mSetButton.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-                    String text = mHex.getText().toString();
-                    try {
-                        int newColor = ColorPickerPreference.convertToColorInt(text);
-                        mColorPicker.setColor(newColor, true);
-                    } catch (Exception e) {
-                    }
+            mSetButton.setOnClickListener(v -> {
+                String text = mHex.getText().toString();
+                try {
+                    int newColor = ColorPickerPreference.convertToColorInt(text);
+                    mColorPicker.setColor(newColor, true);
+                } catch (Exception e) {
                 }
             });
         }
+
+        setView(layout);
     }
 
     @Override
@@ -142,12 +129,7 @@ public class ColorPickerDialog extends Dialog implements
                 mHex.setText(ColorPickerPreference.convertToARGB(color));
             }
         } catch (Exception e) {
-
         }
-        /*
-         * if (mListener != null) { mListener.onColorChanged(color); }
-         */
-
     }
 
     public void setAlphaSliderVisible(boolean visible) {
@@ -157,13 +139,10 @@ public class ColorPickerDialog extends Dialog implements
     public void setColorAndClickAction(ColorPickerPanelView previewRect, final int color) {
         if (previewRect != null) {
             previewRect.setColor(color);
-            previewRect.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    try {
-                        mColorPicker.setColor(color, true);
-                    } catch (Exception e) {
-                    }
+            previewRect.setOnClickListener(v -> {
+                try {
+                    mColorPicker.setColor(color, true);
+                } catch (Exception e) {
                 }
             });
         }
@@ -192,6 +171,7 @@ public class ColorPickerDialog extends Dialog implements
         dismiss();
     }
 
+    @NonNull
     @Override
     public Bundle onSaveInstanceState() {
         Bundle state = super.onSaveInstanceState();
@@ -202,10 +182,9 @@ public class ColorPickerDialog extends Dialog implements
     }
 
     @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
+    public void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         mOldColor.setColor(savedInstanceState.getInt("old_color"));
         mColorPicker.setColor(savedInstanceState.getInt("new_color"), true);
     }
-
 }

@@ -54,7 +54,9 @@ public class AlphaPatternDrawable extends Drawable {
 
     @Override
     public void draw(Canvas canvas) {
-        canvas.drawBitmap(mBitmap, null, getBounds(), mPaint);
+        if (mBitmap != null) {
+            canvas.drawBitmap(mBitmap, null, getBounds(), mPaint);
+        }
     }
 
     @Override
