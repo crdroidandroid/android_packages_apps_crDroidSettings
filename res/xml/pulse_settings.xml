@@ -19,55 +19,53 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/pulse_settings" >
 
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+    <SwitchPreference
         android:key="navbar_pulse_enabled"
-        android:title="@string/show_pulse_title"
-        android:summary="@string/show_pulse_summary"
-        android:defaultValue="false"/>
+        android:title="@string/show_navbar_pulse_title"
+        android:summary="@string/show_navbar_pulse_summary"/>
+
+    <SwitchPreference
+        android:key="lockscreen_pulse_enabled"
+        android:title="@string/show_lockscreen_pulse_title"
+        android:summary="@string/show_lockscreen_pulse_summary"/>
 
     <!--<Preference
         android:key="blacklist_fragment"
         android:fragment="com.crdroid.settings.fragments.navigation.smartnav.PulseBlacklist"
         android:title="@string/pulse_blacklist_title"
-        android:summary="@string/pulse_blacklist_summary"
-        android:dependency="navbar_pulse_enabled"/>-->
+        android:summary="@string/pulse_blacklist_summary"/>-->
 
     <com.crdroid.settings.preferences.SecureSettingListPreference
         android:key="pulse_render_style"
         android:title="@string/pulse_render_mode_title"
         android:entries="@array/pulse_render_mode_entries"
         android:entryValues="@array/pulse_render_mode_values"
-        android:defaultValue="1"
-        android:dependency="navbar_pulse_enabled" />
+        android:defaultValue="1"/>
 
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="pulse_smoothing_enabled"
         android:title="@string/pulse_smoothing_enabled_title"
         android:summary="@string/pulse_smoothing_enabled_summary"
-        android:defaultValue="false"
-        android:dependency="navbar_pulse_enabled" />
+        android:defaultValue="false"/>
 
     <com.crdroid.settings.preferences.SecureSettingListPreference
         android:key="pulse_color_mode"
         android:title="@string/pulse_color_mode_title"
         android:entries="@array/pulse_color_mode_entries"
         android:entryValues="@array/pulse_color_mode_values"
-        android:defaultValue="2"
-        android:dependency="navbar_pulse_enabled" />
+        android:defaultValue="2"/>
 
     <com.crdroid.settings.preferences.colorpicker.SecureSettingColorPickerPreference
         android:key="pulse_color_user"
         android:title="@string/pulse_color_user_title"
-        android:defaultValue="0x92FFFFFF"
-        android:dependency="navbar_pulse_enabled"/>
+        android:defaultValue="0x92FFFFFF"/>
 
     <!--<com.crdroid.settings.preferences.SecureSettingSeekBarPreference
         android:key="pulse_custom_buttons_opacity"
         android:title="@string/pulse_custom_buttons_opacity_title"
         android:defaultValue="200"
         android:max="255"
-        settings:min="0"
-        android:dependency="navbar_pulse_enabled"/>-->
+        settings:min="0"/>-->
 
     <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
         android:key="pulse_lavalamp_speed"
@@ -76,13 +74,11 @@
         android:max="30000"
         settings:min="200"
         settings:interval="200"
-        settings:units="@string/unit_milliseconds"
-        android:dependency="navbar_pulse_enabled"/>
+        settings:units="@string/unit_milliseconds"/>
 
     <PreferenceCategory
         android:key="pulse_fading_bars_category"
-        android:title="@string/pulse_legacy_mode_advanced_category"
-        android:dependency="navbar_pulse_enabled">
+        android:title="@string/pulse_legacy_mode_advanced_category">
 
         <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
             android:key="pulse_custom_dimen"
@@ -132,20 +128,17 @@
         <!--<com.crdroid.settings.preferences.ColorPickerPreference
             android:key="fling_lavalamp_color_from"
             android:title="@string/fling_lavalamp_color_from"
-            android:defaultValue="0xffff8080"
-            android:dependency="navbar_pulse_enabled" />
+            android:defaultValue="0xffff8080"/>
 
         <com.crdroid.settings.preferences.ColorPickerPreference
             android:key="fling_lavalamp_color_to"
             android:title="@string/fling_lavalamp_color_to"
-            android:defaultValue="0xff8080ff"
-            android:dependency="navbar_pulse_enabled" />-->
+            android:defaultValue="0xff8080ff"/>-->
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="pulse_2"
-        android:title="@string/pulse_solid_dimen_category"
-        android:dependency="navbar_pulse_enabled">
+        android:title="@string/pulse_solid_dimen_category">
 
         <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
             android:key="pulse_solid_units_opacity"
@@ -158,17 +151,17 @@
         <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
             android:key="pulse_solid_units_count"
             android:title="@string/pulse_solid_units_count"
-            android:defaultValue="64"
+            android:defaultValue="32"
             android:max="128"
-            settings:min="32"
+            settings:min="16"
             settings:interval="16"
             android:dependency="pulse_2"/>
 
         <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
             android:key="pulse_solid_fudge_factor"
             android:title="@string/pulse_custom_fudge_factor"
-            android:defaultValue="5"
-            android:max="7"
+            android:defaultValue="4"
+            android:max="6"
             settings:min="2"
             android:dependency="pulse_2"/>
     </PreferenceCategory>

@@ -39,6 +39,7 @@ import com.android.settings.search.Indexable;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.R;
+import com.crdroid.settings.fragments.sound.PulseSettings;
 import com.crdroid.settings.fragments.sound.VolumePanel;
 
 import java.util.List;
@@ -83,6 +84,7 @@ public class Sound extends SettingsPreferenceFragment implements Indexable {
         Settings.System.putIntForUser(resolver,
                 Settings.System.SCREENSHOT_SOUND, 1, UserHandle.USER_CURRENT);
         Settings.Global.putInt(resolver, Settings.Global.RINGTONE_FOCUS_MODE_V2, 1);
+        PulseSettings.reset(mContext);
         VolumePanel.reset(mContext);
     }
 
