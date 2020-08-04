@@ -330,9 +330,6 @@
     <string name="shortcut_picker_icon_type_system_title">Системні іконки</string>
     <string name="shortcut_picker_select_system_icon_title">Виберіть піктограму системи:</string>
     <string name="shortcut_picker_icon_type_custom_title">Галерея</string>
-    <!-- Music Visualizer -->
-    <string name="music_visualizer_title">Візуалізатор музики</string>
-    <string name="music_visualizer_summary">Відображати музичний візуалізатор (за наявності)</string>
     <!-- Media art -->
     <string name="media_art_title">Обкладинка медіа</string>
     <string name="media_art_summary">Відображати обкладинку медіа (за наявності)</string>
@@ -637,30 +634,34 @@
     <string name="fling_config_restore_error_toast">Помилка під час відновлення профілю Fling</string>
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">Про Pulse</string>
-    <string name="pulse_help_policy_notice_summary">Pulse це графічний аудіо еквалайзер на панелі навігації, що відображається коли ґрає музика. Pulse не працює з деякими джерелами звуку при прослуховуванні через динамік пристрою</string>
+    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>
     <string name="pulse_settings">Пульс</string>
-    <string name="pulse_settings_summary">Панель навігації з аудіо графічним еквалайзером</string>
-    <string name="fling_show_pulse_title">Показати Pulse</string>
-    <string name="fling_show_pulse_summary">Увімкнути візуалізацію аудіо на панелі навігації</string>
+    <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
+    <string name="show_navbar_pulse_title">Navbar Pulse</string>
+    <string name="show_navbar_pulse_summary">Audio graphic equalizer on the navigation bar</string>
+    <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
+    <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
     <string name="pulse_render_mode_title">Режим візуалізації</string>
     <string name="pulse_render_mode_fading_bars">Згасаючі блоки</string>
     <string name="pulse_render_mode_solid_lines">Суцільні лінії</string>
-    <string name="fling_pulse_color">Колір Pulse</string>
-    <string name="fling_pulse_color_summary">Також використовується як резервний для автоматичного підбору кольору</string>
-    <string name="eos_fling_lavalamp_title">Увімкнути Лавову лампу</string>
-    <string name="eos_fling_lavalamp_summary">Випадкові кольори в стилі \"Лава Лампи\"</string>
     <string name="pulse_advanced_category">Розширені налаштування</string>
     <string name="pulse_legacy_mode_advanced_category">Налаштування згасаючих блоків</string>
     <string name="pulse_custom_fudge_factor">Рівень розсудливості</string>
-    <string name="lavamp_solid_speed_title">Швидкість Лавової лампи</string>
+    <string name="pulse_lavalamp_speed_title">Швидкість лавової лампи</string>
     <string name="pulse_solid_units_count">Кількість суцільних ліній</string>
     <string name="pulse_solid_units_opacity">Прозорість суцільних ліній</string>
     <string name="pulse_solid_dimen_category">Налаштування режиму суцільних ліній</string>
     <string name="fling_lavalamp_color_from">Початковий колір лавової лампи</string>
     <string name="fling_lavalamp_color_to">Кінцевий колір лавової лампи</string>
     <string name="pulse_custom_buttons_opacity_title">Smartbar непрозорість кнопок на Pulse</string>
-    <string name="pulse_auto_color_title">Автоматичний колір Pulse</string>
-    <string name="pulse_auto_color_summary">Встановити колір відповідно до кольору обкладинки альбому. Перевизначає непрозорість ліній лавової лампи</string>
+    <string name="pulse_color_mode_title">Колір</string>
+    <string name="pulse_color_accent">Акцент</string>
+    <string name="pulse_color_custom">Користувацький</string>
+    <string name="pulse_color_lava_lamp">Лава лампа</string>
+    <string name="pulse_color_auto">Обкладинка альбому</string>
+    <string name="pulse_color_user_title">Вибір кольору</string>
+    <string name="pulse_smoothing_enabled_title">Увімкнути згладжування</string>
+    <string name="pulse_smoothing_enabled_summary">Кожний блок анімовується більш плавно</string>
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">Ширина блоків</string>
     <string name="pulse_custom_div">Відстань між блоками</string>
@@ -848,9 +849,9 @@
     <string name="battery_bar_blend_color_reverse_summary_off">Повний &#8594; пустий: червоний &#8592; зелений &#8592; блакитний &#8592; червоний</string>
     <string name="battery_bar_blend_color_reverse_summary_on">Повний &#8594; пустий: червоний &#8594; зелений &#8594; блакитний &#8594; червоний</string>
     <!-- Status Bar Ticker -->
-    <string name="ticker_screen_title">Текст сповіщень</string>
+    <string name="ticker_screen_title">Рухомий рядок</string>
     <string name="ticker_screen_summary">Показувати повідомлення тікер в рядку стану</string>
-    <string name="ticker_screen_footer">Ticker is visible only when notification heads-up is not shown. Devices with center notch should hide cutout under User Interface settings or under Developer options.</string>
+    <string name="ticker_screen_footer">Рухомий рядок видно лише тоді, коли не відображаються спливаючі сповіщення. На пристроях з вирізом у центрі останній має бути прихований в налаштуваннях Інтерфейсу користувача або в Параметрах розробника.</string>
     <string name="ticker_title">Смужка стану тексту сповіщень</string>
     <string name="ticker_summary">Увімкнути рядок сповіщень</string>
     <string name="ticker_restore_defaults_title">Відновити типові</string>
@@ -859,9 +860,9 @@
     <string name="colors_title">Кольори</string>
     <string name="values_restored_title">Значення відновлені</string>
     <string name="ticker_disabled">Жодних сповіщень</string>
-    <string name="ticker_enabled">Текст сповіщень</string>
+    <string name="ticker_enabled">Рухомий рядок</string>
     <string name="ticker_media_enabled">Текст сповіщень і музики</string>
-    <string name="ticker_animation_mode_title">Стиль анімації бігаючої строки</string>
+    <string name="ticker_animation_mode_title">Стиль анімації рухомого рядка</string>
     <string name="ticker_animation_mode_alpha_fade">Згасання</string>
     <string name="ticker_animation_mode_scroll">Прокрутка</string>
     <string name="ticker_tick_duration_title">Тривалість анімації рухомого рядка</string>
@@ -2063,16 +2064,6 @@
     <string name="wifi_wps_failed_overlap">Виявлено ще один сеанс WPS. Повторіть спробу через декілька хвилин.</string>
     <!-- Text displayed when WPS fails due to wifi disconnected [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_wifi_disconnected">Від\'єднано від Wi\u2011Fi. Налаштування WPS скасовано.</string>
-    <!-- Lockscreen Visualizer -->
-    <string name="lockscreen_autocolor_title">Автоматичний колір</string>
-    <string name="lockscreen_autocolor_summary">Синхронізувати колір з фоном</string>
-    <string name="lockscreen_autocolor_lavalamp">Потребує вимкненого лава лампа</string>
-    <string name="lockscreen_lavalamp_title">Лава лампа</string>
-    <string name="lockscreen_lavalamp_summary">Анімація кольорів в стилі Lava lamp</string>
-    <string name="lockscreen_lavalamp_speed_title">Інтервар колірної суміші Lava lamp</string>
-    <string name="lockscreen_solid_units_count_title">Кількість суцільних ліній</string>
-    <string name="lockscreen_solid_fudge_factor_title">Рівень чутливості</string>
-    <string name="lockscreen_solid_units_opacity_title">Прозорість суцільних ліній</string>
     <!-- Display cutout options -->
     <string name="cutout_main">Відображення вирізу</string>
     <string name="cutout_main_summary">Налаштування країв</string>
