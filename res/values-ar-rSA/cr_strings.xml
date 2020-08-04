@@ -330,9 +330,6 @@
     <string name="shortcut_picker_icon_type_system_title">أيقونات النظام</string>
     <string name="shortcut_picker_select_system_icon_title">إختر ايقونة النظام:</string>
     <string name="shortcut_picker_icon_type_custom_title">معرض الصور</string>
-    <!-- Music Visualizer -->
-    <string name="music_visualizer_title">مرئيات الموسيقى</string>
-    <string name="music_visualizer_summary">عرض موسيقى مرئي عند توفرها</string>
     <!-- Media art -->
     <string name="media_art_title">تزيـين واجهة الوسائط</string>
     <string name="media_art_summary">عرض صورة غلاف الوسائط عند توفرها</string>
@@ -637,30 +634,34 @@
     <string name="fling_config_restore_error_toast">حدث خطأ أثناء إستعادة الملف</string>
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">حول النبض المرئي</string>
-    <string name="pulse_help_policy_notice_summary">النبض المرئي هو التعادل الرسم الصوت الرائعة على شريط التنقل عند تشغيل الموسيقى. لا يعمل النبض مع بعض مصادر الصوت عند الاستماع على مكبر صوت الجهاز</string>
+    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>
     <string name="pulse_settings">النبض المرئي</string>
-    <string name="pulse_settings_summary">التعادل الرسم الصوتي لشريط التنقل</string>
-    <string name="fling_show_pulse_title">إضهار النبض المرئي</string>
-    <string name="fling_show_pulse_summary">معادل الرسم الصوتي على شريط التنقل</string>
+    <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
+    <string name="show_navbar_pulse_title">Navbar Pulse</string>
+    <string name="show_navbar_pulse_summary">Audio graphic equalizer on the navigation bar</string>
+    <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
+    <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
     <string name="pulse_render_mode_title">وضع التقديم</string>
     <string name="pulse_render_mode_fading_bars">كتل تتلاشى</string>
     <string name="pulse_render_mode_solid_lines">خطوط صلبة</string>
-    <string name="fling_pulse_color">لون النبض المرئي</string>
-    <string name="fling_pulse_color_summary">تستخدم أيضا كاخلفية للون التلقائي</string>
-    <string name="eos_fling_lavalamp_title">تشغيل ألإضاءة السلسة</string>
-    <string name="eos_fling_lavalamp_summary">تحريك سلس للألوان كنمط مزيج اللون على النبض المرئي</string>
     <string name="pulse_advanced_category">متقدم</string>
     <string name="pulse_legacy_mode_advanced_category">إعدادات وضع كتل التلاشي</string>
     <string name="pulse_custom_fudge_factor">مستوي الإستقامة</string>
-    <string name="lavamp_solid_speed_title">سرعة الإضاءة السلسة</string>
+    <string name="pulse_lavalamp_speed_title">Lava lamp speed</string>
     <string name="pulse_solid_units_count">عدد الخطوط الصلبة</string>
     <string name="pulse_solid_units_opacity">عتامة الخطوط الصلبة</string>
     <string name="pulse_solid_dimen_category">إعدادات وضع الخطوط الصلبة</string>
     <string name="fling_lavalamp_color_from">بداية اللون للإضاءة السلسة</string>
     <string name="fling_lavalamp_color_to">نهاية اللون للإضاءة السلسة</string>
     <string name="pulse_custom_buttons_opacity_title">عتامة أزرار الشريط الذكي على النبض المرئي</string>
-    <string name="pulse_auto_color_title">لون تلقائي للنبض المرئي</string>
-    <string name="pulse_auto_color_summary">مزامنة اللون مع فنون الألبوم. سيتم تجاوز الإضاءة السلسة وعتمامة الخطوط.</string>
+    <string name="pulse_color_mode_title">Color</string>
+    <string name="pulse_color_accent">Accent</string>
+    <string name="pulse_color_custom">Custom</string>
+    <string name="pulse_color_lava_lamp">Lava lamp</string>
+    <string name="pulse_color_auto">Album art</string>
+    <string name="pulse_color_user_title">Choose color</string>
+    <string name="pulse_smoothing_enabled_title">Turn on smoothing</string>
+    <string name="pulse_smoothing_enabled_summary">Each bar is animated more smoothly</string>
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">عرض الشريط</string>
     <string name="pulse_custom_div">تباعد الأسطر</string>
@@ -2063,16 +2064,6 @@
     <string name="wifi_wps_failed_overlap">تم الكشف عن جلسة عمل WPS أخرى. الرجاء المحاولة مرة أخرى خلال بضع دقائق.</string>
     <!-- Text displayed when WPS fails due to wifi disconnected [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_wifi_disconnected">تم قطع اتصال Wi\u2011Fi. تم إلغاء إعداد WPS.</string>
-    <!-- Lockscreen Visualizer -->
-    <string name="lockscreen_autocolor_title">لون تلقائي</string>
-    <string name="lockscreen_autocolor_summary">مزامنة اللون مع الخلفية</string>
-    <string name="lockscreen_autocolor_lavalamp">يتطلب تعطيل الإضاءة السلسة</string>
-    <string name="lockscreen_lavalamp_title">الإضاءة السلسة</string>
-    <string name="lockscreen_lavalamp_summary">تحريك سلس للألوان كنمط مزيج اللون</string>
-    <string name="lockscreen_lavalamp_speed_title">الفاصل الزمني لمزج الألوان للإضاءة السلسة</string>
-    <string name="lockscreen_solid_units_count_title">عدد الخطوط الصلبة</string>
-    <string name="lockscreen_solid_fudge_factor_title">مستوى منتظم</string>
-    <string name="lockscreen_solid_units_opacity_title">عتامة الخطوط الصلبة</string>
     <!-- Display cutout options -->
     <string name="cutout_main">صورة مقطوعة من الشاشة</string>
     <string name="cutout_main_summary">تخصيص إعدادات النوتش</string>
