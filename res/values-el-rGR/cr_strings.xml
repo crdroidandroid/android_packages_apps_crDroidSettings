@@ -330,9 +330,6 @@
     <string name="shortcut_picker_icon_type_system_title">Εικονίδια συστήματος</string>
     <string name="shortcut_picker_select_system_icon_title">Επιλέξτε το εικονίδιο συστήματος:</string>
     <string name="shortcut_picker_icon_type_custom_title">Συλλογή</string>
-    <!-- Music Visualizer -->
-    <string name="music_visualizer_title">Οπτικό εφέ μουσικής</string>
-    <string name="music_visualizer_summary">Προβολή οπτικού εφέ εάν είναι διαθέσιμο</string>
     <!-- Media art -->
     <string name="media_art_title">Εξώφυλλο άλμπουμ</string>
     <string name="media_art_summary">Προβολή εξώφυλλου άλμπουμ εάν είναι διαθέσιμο</string>
@@ -637,30 +634,34 @@
     <string name="fling_config_restore_error_toast">Σφάλμα επαναφοράς προφίλ Fling</string>
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">Σχετικά με το Pulse</string>
-    <string name="pulse_help_policy_notice_summary">To Pulse είναι ένα ιδιοφυές γραφικό ισοσταθμιστή ήχου στην μπάρα πλοήγησης όταν παίζει μουσική. Ο παλμός δεν δουλεύει με κάποιες πηγές ήχου όταν ακούτε στο ηχείο της συσκευής</string>
+    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>
     <string name="pulse_settings">Pulse</string>
-    <string name="pulse_settings_summary">Γραμμή ήχου ισοσταθμιστή γραφικών πλοήγησης</string>
-    <string name="fling_show_pulse_title">Εμφάνιση Pulse</string>
-    <string name="fling_show_pulse_summary">Γραφικός ισοσταθμιστής ήχου στην μπάρα πλοήγησης</string>
+    <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
+    <string name="show_navbar_pulse_title">Navbar Pulse</string>
+    <string name="show_navbar_pulse_summary">Audio graphic equalizer on the navigation bar</string>
+    <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
+    <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
     <string name="pulse_render_mode_title">Λειτουργία render</string>
     <string name="pulse_render_mode_fading_bars">Ξεθώριασμα μπλοκ</string>
     <string name="pulse_render_mode_solid_lines">Συμπαγείς γραμμές</string>
-    <string name="fling_pulse_color">Χρώμα Pulse</string>
-    <string name="fling_pulse_color_summary">Χρήση επίσης ως εναλλακτική για αυτόματο χρώμα</string>
-    <string name="eos_fling_lavalamp_title">Ενεργοποιήστε τη λάμπα λάβα</string>
-    <string name="eos_fling_lavalamp_summary">Ο παλμός χρησιμοποιεί μια μείξη χρωμάτων σε στυλ λάμπας λάβας</string>
     <string name="pulse_advanced_category">Για προχωρημένους</string>
     <string name="pulse_legacy_mode_advanced_category">Ρυθμίσεις λειτουργίας ξεθωριασμένων μπλοκ</string>
     <string name="pulse_custom_fudge_factor">Επίπεδο</string>
-    <string name="lavamp_solid_speed_title">Ταχύτητα λαμπτήρα λάβας</string>
+    <string name="pulse_lavalamp_speed_title">Lava lamp speed</string>
     <string name="pulse_solid_units_count">Μέτρηση συμπαγών γραμμών</string>
     <string name="pulse_solid_units_opacity">Αδιαφάνεια συμπαγών γραμμών</string>
     <string name="pulse_solid_dimen_category">Ρυθμίσεις λειτουργίας συμπαγών γραμμών</string>
     <string name="fling_lavalamp_color_from">Αρχικό χρώμα λάμπας λάβας</string>
     <string name="fling_lavalamp_color_to">Τελικό χρώμα λαμπτήρα λάβας</string>
     <string name="pulse_custom_buttons_opacity_title">Αδιαφάνεια πλήκτρων έξυπνης μπάρας στον Παλμό</string>
-    <string name="pulse_auto_color_title">Αυτόματο χρώμα παλμού</string>
-    <string name="pulse_auto_color_summary">Συγχρονίζει το χρώμα με το άλμπουμ μουσικών κομματιών. Παρακάμπτει την λάμπα λάβας και τις γραμμές της αδιαφάνειας.</string>
+    <string name="pulse_color_mode_title">Color</string>
+    <string name="pulse_color_accent">Accent</string>
+    <string name="pulse_color_custom">Custom</string>
+    <string name="pulse_color_lava_lamp">Lava lamp</string>
+    <string name="pulse_color_auto">Album art</string>
+    <string name="pulse_color_user_title">Choose color</string>
+    <string name="pulse_smoothing_enabled_title">Turn on smoothing</string>
+    <string name="pulse_smoothing_enabled_summary">Each bar is animated more smoothly</string>
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">Πλάτος μπάρας</string>
     <string name="pulse_custom_div">Κενό μπάρας</string>
@@ -2065,16 +2066,6 @@
     <string name="wifi_wps_failed_overlap">Another WPS session was detected. Please try again in a few minutes.</string>
     <!-- Text displayed when WPS fails due to wifi disconnected [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_wifi_disconnected">Wi\u2011Fi disconnected. WPS setup canceled.</string>
-    <!-- Lockscreen Visualizer -->
-    <string name="lockscreen_autocolor_title">Αυτόματος χρωματισμός</string>
-    <string name="lockscreen_autocolor_summary">Συνχρονισμός χρώματος με το παρασκήνιο</string>
-    <string name="lockscreen_autocolor_lavalamp">Απαιτείται η απενεργοποίηση της λάμπας λάβας</string>
-    <string name="lockscreen_lavalamp_title">Λάμπα λάβας</string>
-    <string name="lockscreen_lavalamp_summary">Animate smooth lava lamp style color blend</string>
-    <string name="lockscreen_lavalamp_speed_title">Lava lamp color blend interval</string>
-    <string name="lockscreen_solid_units_count_title">Solid lines count</string>
-    <string name="lockscreen_solid_fudge_factor_title">Sanity level</string>
-    <string name="lockscreen_solid_units_opacity_title">Solid lines opacity</string>
     <!-- Display cutout options -->
     <string name="cutout_main">Display cutout</string>
     <string name="cutout_main_summary">Επεξεργασία ρυθμίσεων εγκοπής</string>
