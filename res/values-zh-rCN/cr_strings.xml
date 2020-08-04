@@ -330,9 +330,6 @@
     <string name="shortcut_picker_icon_type_system_title">系统图标</string>
     <string name="shortcut_picker_select_system_icon_title">选择系统图标：</string>
     <string name="shortcut_picker_icon_type_custom_title">图库</string>
-    <!-- Music Visualizer -->
-    <string name="music_visualizer_title">音乐可视化</string>
-    <string name="music_visualizer_summary">显示音乐可视化</string>
     <!-- Media art -->
     <string name="media_art_title">媒体封面</string>
     <string name="media_art_summary">可用时显示媒体封面</string>
@@ -637,30 +634,34 @@
     <string name="fling_config_restore_error_toast">恢复快滑配置文件时出错</string>
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">关于脉冲</string>
-    <string name="pulse_help_policy_notice_summary">Pulse 是一种在播放音乐时，位于导航栏的智能均衡器式的音频显示方式。当使用扬声器时， Pulse 在某些音源下可能不工作</string>
+    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>
     <string name="pulse_settings">脉冲信号</string>
-    <string name="pulse_settings_summary">导航栏音乐可视化</string>
-    <string name="fling_show_pulse_title">显示脉冲</string>
-    <string name="fling_show_pulse_summary">在导航栏上的音频可视化效果</string>
+    <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
+    <string name="show_navbar_pulse_title">Navbar Pulse</string>
+    <string name="show_navbar_pulse_summary">Audio graphic equalizer on the navigation bar</string>
+    <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
+    <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
     <string name="pulse_render_mode_title">渲染模式</string>
     <string name="pulse_render_mode_fading_bars">虚线</string>
     <string name="pulse_render_mode_solid_lines">实线</string>
-    <string name="fling_pulse_color">脉冲颜色</string>
-    <string name="fling_pulse_color_summary">也用作自动颜色的回退</string>
-    <string name="eos_fling_lavalamp_title">开启熔岩灯</string>
-    <string name="eos_fling_lavalamp_summary">可视化样式以平滑的霓虹灯风格颜色混合</string>
     <string name="pulse_advanced_category">高级选项</string>
     <string name="pulse_legacy_mode_advanced_category">渐变模式设置</string>
     <string name="pulse_custom_fudge_factor">清晰等级</string>
-    <string name="lavamp_solid_speed_title">霓虹灯速度</string>
+    <string name="pulse_lavalamp_speed_title">熔岩灯速度</string>
     <string name="pulse_solid_units_count">实线计数</string>
     <string name="pulse_solid_units_opacity">实线不透明度</string>
     <string name="pulse_solid_dimen_category">实线模式设置</string>
     <string name="fling_lavalamp_color_from">霓虹灯开始颜色</string>
     <string name="fling_lavalamp_color_to">霓虹灯末端颜色</string>
     <string name="pulse_custom_buttons_opacity_title">脉冲上的智能导航栏按钮不透明</string>
-    <string name="pulse_auto_color_title">自动脉冲颜色</string>
-    <string name="pulse_auto_color_summary">与专辑封面颜色同步。将会覆盖熔岩灯和线的不透明度。</string>
+    <string name="pulse_color_mode_title">颜色</string>
+    <string name="pulse_color_accent">强调色</string>
+    <string name="pulse_color_custom">自定义</string>
+    <string name="pulse_color_lava_lamp">熔岩灯</string>
+    <string name="pulse_color_auto">专辑封面</string>
+    <string name="pulse_color_user_title">选择颜色</string>
+    <string name="pulse_smoothing_enabled_title">开启平滑模式</string>
+    <string name="pulse_smoothing_enabled_summary">每条频谱线动画更平滑</string>
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">栏宽度</string>
     <string name="pulse_custom_div">栏间距</string>
@@ -850,7 +851,7 @@
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">通知提示</string>
     <string name="ticker_screen_summary">在状态栏中显示通知样式</string>
-    <string name="ticker_screen_footer">Ticker is visible only when notification heads-up is not shown. Devices with center notch should hide cutout under User Interface settings or under Developer options.</string>
+    <string name="ticker_screen_footer">仅当未显示通知提示时，股票代码才可见。 具有中心凹口的设备应在用户界面设置或开发人员选项下隐藏切口。</string>
     <string name="ticker_title">状态栏图标</string>
     <string name="ticker_summary">使用旧的时钟样式</string>
     <string name="ticker_restore_defaults_title">恢复默认值</string>
@@ -2063,16 +2064,6 @@
     <string name="wifi_wps_failed_overlap">检测到另一个 WPS 会话。请几分钟后再试。</string>
     <!-- Text displayed when WPS fails due to wifi disconnected [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_wifi_disconnected">Wi\u2011Fi 断开连接。WPS 设置已取消。</string>
-    <!-- Lockscreen Visualizer -->
-    <string name="lockscreen_autocolor_title">自动调整颜色</string>
-    <string name="lockscreen_autocolor_summary">同步背景颜色</string>
-    <string name="lockscreen_autocolor_lavalamp">需要禁用熔岩灯</string>
-    <string name="lockscreen_lavalamp_title">熔岩灯</string>
-    <string name="lockscreen_lavalamp_summary">动画平滑的熔岩灯风格的颜色混合</string>
-    <string name="lockscreen_lavalamp_speed_title">熔岩灯颜色混合间隔</string>
-    <string name="lockscreen_solid_units_count_title">实线计数</string>
-    <string name="lockscreen_solid_fudge_factor_title">清晰等级</string>
-    <string name="lockscreen_solid_units_opacity_title">实线不透明度</string>
     <!-- Display cutout options -->
     <string name="cutout_main">显示缺口</string>
     <string name="cutout_main_summary">自定义刘海设置</string>
