@@ -141,4 +141,15 @@ public class DeviceUtils {
         return context.getResources().getBoolean(
                 org.lineageos.platform.internal.R.bool.config_haveNotch);
     }
+
+    public static boolean hasCustomCutout(Context context) {
+        try {
+            Context con = context.createPackageContext("com.android.systemui", 0);
+            int id = con.getResources().getIdentifier("config_customCutout",
+                    "bool", "com.android.systemui");
+            return con.getResources().getBoolean(id);
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+    }
 }

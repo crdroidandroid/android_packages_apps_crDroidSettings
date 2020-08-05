@@ -80,7 +80,7 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
             prefScreen.removePreference(mSmartPixels);
 
         mDisplayCutout = (Preference) prefScreen.findPreference(DISPLAY_CUTOUT);
-        if (!DeviceUtils.hasNotch(mContext))
+        if (!DeviceUtils.hasNotch(mContext) || DeviceUtils.hasCustomCutout(mContext))
             prefScreen.removePreference(mDisplayCutout);
     }
 
@@ -124,7 +124,7 @@ public class UserInterface extends SettingsPreferenceFragment implements Indexab
                     List<String> keys = super.getNonIndexableKeys(context);
                     final Resources res = context.getResources();
 
-                    if (!DeviceUtils.hasNotch(context))
+                    if (!DeviceUtils.hasNotch(context) || DeviceUtils.hasCustomCutout(context))
                         keys.add(DISPLAY_CUTOUT);
 
                     boolean mSmartPixelsSupported = res.getBoolean(
