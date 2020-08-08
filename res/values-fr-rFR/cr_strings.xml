@@ -330,9 +330,6 @@
     <string name="shortcut_picker_icon_type_system_title">Icônes système</string>
     <string name="shortcut_picker_select_system_icon_title">Sélectionnez l\'icône système :</string>
     <string name="shortcut_picker_icon_type_custom_title">Galerie</string>
-    <!-- Music Visualizer -->
-    <string name="music_visualizer_title">Spectre sonore</string>
-    <string name="music_visualizer_summary">Afficher le visualiseur de musique si disponible</string>
     <!-- Media art -->
     <string name="media_art_title">Pochette de l\'album</string>
     <string name="media_art_summary">Afficher les pochettes d\'albums si disponibles</string>
@@ -637,30 +634,34 @@
     <string name="fling_config_restore_error_toast">Erreur lors de la restauration du profil Fling</string>
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">À propos de Pulse</string>
-    <string name="pulse_help_policy_notice_summary">Pulse est un égaliseur audio qui s\'affiche sur la barre de navigation lors de l\'écoute de musique. Pulse ne fonctionne pas avec certaines sources audio lors de l\'écoute de musique sur le(s) haut-parleur(s) de l\'appareil</string>
+    <string name="pulse_help_policy_notice_summary">Pulse est un égaliseur graphique audio génial lorsque la musique est joué sur l\'appareil</string>
     <string name="pulse_settings">Impulsions</string>
-    <string name="pulse_settings_summary">Égaliseur graphique dans la barre de navigation</string>
-    <string name="fling_show_pulse_title">Afficher Pulse</string>
-    <string name="fling_show_pulse_summary">Spectre audio affiché sur la barre de navigation</string>
+    <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
+    <string name="show_navbar_pulse_title">Navbar Pulse</string>
+    <string name="show_navbar_pulse_summary">Audio graphic equalizer on the navigation bar</string>
+    <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
+    <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
     <string name="pulse_render_mode_title">Mode de rendu</string>
     <string name="pulse_render_mode_fading_bars">Blocs en dégradé</string>
     <string name="pulse_render_mode_solid_lines">Lignes pleines</string>
-    <string name="fling_pulse_color">Couleur d\'impulsion</string>
-    <string name="fling_pulse_color_summary">Également utiliser choix par défaut aux couleurs automatiques</string>
-    <string name="eos_fling_lavalamp_title">Activer la lampe Lava</string>
-    <string name="eos_fling_lavalamp_summary">Pulse anime la lampe Lava</string>
     <string name="pulse_advanced_category">Avancé</string>
     <string name="pulse_legacy_mode_advanced_category">Paramètres fondu des blocs</string>
     <string name="pulse_custom_fudge_factor">Fréquence de Pulse</string>
-    <string name="lavamp_solid_speed_title">Vitesse de la lampe Lava</string>
+    <string name="pulse_lavalamp_speed_title">Vitesse de la lampe à lave</string>
     <string name="pulse_solid_units_count">Nombre des lignes pleines</string>
     <string name="pulse_solid_units_opacity">Opacité des lignes pleines</string>
     <string name="pulse_solid_dimen_category">Paramètres lignes pleines</string>
     <string name="fling_lavalamp_color_from">Couleur de départ lampe Lava</string>
     <string name="fling_lavalamp_color_to">Couleur de fin lampe Lava</string>
     <string name="pulse_custom_buttons_opacity_title">Opacité des boutons sur Pulse</string>
-    <string name="pulse_auto_color_title">Couleur de Pulse automatique</string>
-    <string name="pulse_auto_color_summary">Synchronisation avec la couleur des pochettes d\'album. Remplace le mode lampe Lava et la transparence des lignes.</string>
+    <string name="pulse_color_mode_title">Couleur</string>
+    <string name="pulse_color_accent">Couleur d\'accentuation</string>
+    <string name="pulse_color_custom">Personnalisée</string>
+    <string name="pulse_color_lava_lamp">Lampe à lave</string>
+    <string name="pulse_color_auto">Pochette d\'album</string>
+    <string name="pulse_color_user_title">Sélectionnez la couleur</string>
+    <string name="pulse_smoothing_enabled_title">Activer le lissage</string>
+    <string name="pulse_smoothing_enabled_summary">Chaque barre est animée de manière plus fluide</string>
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">Largeur de la barre</string>
     <string name="pulse_custom_div">Espacement des barres</string>
@@ -850,7 +851,7 @@
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Défilant</string>
     <string name="ticker_screen_summary">Afficher les notifications style ticker dans la barre d\'état</string>
-    <string name="ticker_screen_footer">Ticker is visible only when notification heads-up is not shown. Devices with center notch should hide cutout under User Interface settings or under Developer options.</string>
+    <string name="ticker_screen_footer">Pulsation est seulement visible lorsque les notifications flottantes ne sont pas affichées. Les appareils avec encoche de centre doivent masquer la découpe dans les paramètres de l\'interface utilisateur ou dans les options de développeur.</string>
     <string name="ticker_title">Barre d\'état ticker</string>
     <string name="ticker_summary">Activer l\'ancien ticker dans la barre d\'état</string>
     <string name="ticker_restore_defaults_title">Rétablir les paramètres par défaut</string>
@@ -2064,16 +2065,6 @@ https://plus.google.com/communities/118297646046960923906</string>
     <string name="wifi_wps_failed_overlap">Une autre session WPS a été détectée. Veuillez réessayer dans quelques minutes.</string>
     <!-- Text displayed when WPS fails due to wifi disconnected [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_wifi_disconnected">Wi\u2011Fi déconnecté. Configuration WPS annulée.</string>
-    <!-- Lockscreen Visualizer -->
-    <string name="lockscreen_autocolor_title">Couleur automatique</string>
-    <string name="lockscreen_autocolor_summary">Synchroniser la couleur avec l\'arrière-plan</string>
-    <string name="lockscreen_autocolor_lavalamp">Nécessite une lampe de lave désactivée</string>
-    <string name="lockscreen_lavalamp_title">Lampe à lave</string>
-    <string name="lockscreen_lavalamp_summary">Animation lisse de l\'effet mélange de couleurs \"Lampe Lava\"</string>
-    <string name="lockscreen_lavalamp_speed_title">Intervalle de changement de couleur</string>
-    <string name="lockscreen_solid_units_count_title">Nombre de lignes</string>
-    <string name="lockscreen_solid_fudge_factor_title">Niveau d\'intensité</string>
-    <string name="lockscreen_solid_units_opacity_title">Opacité des lignes</string>
     <!-- Display cutout options -->
     <string name="cutout_main">Afficher la coupure</string>
     <string name="cutout_main_summary">Personnaliser les paramètres de l\'encoche</string>

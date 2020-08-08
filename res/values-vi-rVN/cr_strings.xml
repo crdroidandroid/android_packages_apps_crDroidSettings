@@ -330,9 +330,6 @@
     <string name="shortcut_picker_icon_type_system_title">Biểu tượng hệ thống</string>
     <string name="shortcut_picker_select_system_icon_title">Chọn biểu tượng hệ thống:</string>
     <string name="shortcut_picker_icon_type_custom_title">Thư viện ảnh</string>
-    <!-- Music Visualizer -->
-    <string name="music_visualizer_title">Trình hiển thị nhạc</string>
-    <string name="music_visualizer_summary">Hiện trình hiển thị nhạc khi có sẵn</string>
     <!-- Media art -->
     <string name="media_art_title">Ảnh bìa phương tiện</string>
     <string name="media_art_summary">Hiển thị ảnh bìa phương tiện khi có sẵn</string>
@@ -637,30 +634,34 @@
     <string name="fling_config_restore_error_toast">Lỗi khôi phục cấu hình Fling</string>
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">Về Pulse</string>
-    <string name="pulse_help_policy_notice_summary">Pulse là một trình trực quan đồ họa âm thanh rực rỡ trên thanh điều hướng khi âm nhạc được phát. Pulse không làm việc với một số nguồn âm thanh khi nghe trên loa thiết bị</string>
+    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>
     <string name="pulse_settings">Nháy</string>
-    <string name="pulse_settings_summary">Trình trực quan đồ họa âm thanh trên thanh điều hướng</string>
-    <string name="fling_show_pulse_title">Hiện Pulse</string>
-    <string name="fling_show_pulse_summary">Trình trực quan đồ họa âm thanh trên thanh điều hướng</string>
+    <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
+    <string name="show_navbar_pulse_title">Navbar Pulse</string>
+    <string name="show_navbar_pulse_summary">Audio graphic equalizer on the navigation bar</string>
+    <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
+    <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
     <string name="pulse_render_mode_title">Chế độ hiển thị</string>
     <string name="pulse_render_mode_fading_bars">Khối mờ dần</string>
     <string name="pulse_render_mode_solid_lines">Đường liền nét</string>
-    <string name="fling_pulse_color">Màu Pulse</string>
-    <string name="fling_pulse_color_summary">Được sử dụng màu tự động</string>
-    <string name="eos_fling_lavalamp_title">Bật đèn dung nham</string>
-    <string name="eos_fling_lavalamp_summary">Các hoạt ảnh Pulse pha trộn kiểu màu đèn dung nham sống động</string>
     <string name="pulse_advanced_category">Tuỳ chọn nâng cao</string>
     <string name="pulse_legacy_mode_advanced_category">Cài đặt chế độ khối mờ dần</string>
     <string name="pulse_custom_fudge_factor">Mức độ mạnh</string>
-    <string name="lavamp_solid_speed_title">Tốc độ đèn dung nham</string>
+    <string name="pulse_lavalamp_speed_title">Tốc độ đèn dung nham</string>
     <string name="pulse_solid_units_count">Số đường liền nét</string>
     <string name="pulse_solid_units_opacity">Độ đậm đường liền nét</string>
     <string name="pulse_solid_dimen_category">Cài đặt chế độ đường liền nét</string>
     <string name="fling_lavalamp_color_from">Màu bắt đầu Đèn dung nham</string>
     <string name="fling_lavalamp_color_to">Màu kết thúc Đèn dung nham</string>
     <string name="pulse_custom_buttons_opacity_title">Độ mờ nút bấm thanh thông minh khi nhấp nháy</string>
-    <string name="pulse_auto_color_title">Màu sắc nhấp nháy tự động</string>
-    <string name="pulse_auto_color_summary">Đồng bộ hóa màu sắc với ảnh album. Ghi đè Đèn Dung Nham và độ mờ đường viền.</string>
+    <string name="pulse_color_mode_title">Màu sắc</string>
+    <string name="pulse_color_accent">Màu nhấn</string>
+    <string name="pulse_color_custom">Tùy chỉnh</string>
+    <string name="pulse_color_lava_lamp">Đèn dung nham</string>
+    <string name="pulse_color_auto">Ảnh album</string>
+    <string name="pulse_color_user_title">Chọn màu sắc</string>
+    <string name="pulse_smoothing_enabled_title">Bật làm mượt</string>
+    <string name="pulse_smoothing_enabled_summary">Thanh hoạt cảnh mượt hơn</string>
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">Độ rộng thanh</string>
     <string name="pulse_custom_div">Khoảng cách thanh</string>
@@ -850,7 +851,7 @@
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Thông báo dạng ticker</string>
     <string name="ticker_screen_summary">Hiển thị thông báo trong thanh trạng thái</string>
-    <string name="ticker_screen_footer">Ticker is visible only when notification heads-up is not shown. Devices with center notch should hide cutout under User Interface settings or under Developer options.</string>
+    <string name="ticker_screen_footer">Ticker chỉ hiển thị khi thông báo bật lên không được hiển thị. Các thiết bị có notch trung tâm sẽ ẩn phần bị cắt trong cài đặt Giao diện người dùng hoặc bên dưới tùy chọn Nhà phát triển.</string>
     <string name="ticker_title">Biểu tượng trên thanh trạng thái</string>
     <string name="ticker_summary">Bật kiểu thông báo ticker trên thanh trạng thái</string>
     <string name="ticker_restore_defaults_title">Khôi phục mặc định</string>
@@ -1481,8 +1482,8 @@
     <!-- VoWiFi icon -->
     <string name="vowifi_icon_title">Biểu tượng VoWifi</string>
     <string name="vowifi_icon_summary">Hiện ảnh biểu tượng VoWifi khi khả dụng</string>
-    <string name="volte_vowifi_override_title">VoWiFi override</string>
-    <string name="volte_vowifi_override_summary">Hide VoLTE when VoWiFi is available. This also overrides old style signal icon for VoWiFi.</string>
+    <string name="volte_vowifi_override_title">Ghi đè VoWiFi</string>
+    <string name="volte_vowifi_override_summary">Ẩn VoLTE khi VoWiFi có sẵn. Điều này cũng ghi đè biểu tượng tín hiệu kiểu cũ cho VoWiFi.</string>
     <!-- Ad Away -->
     <string name="adaway_title">Ad Away</string>
     <string name="adaway_summary">Chặn quảng cáo cần Roof</string>
@@ -2063,16 +2064,6 @@
     <string name="wifi_wps_failed_overlap">Đã phát hiện một phiên WPS khác. Vui lòng thử lại sau ít phút.</string>
     <!-- Text displayed when WPS fails due to wifi disconnected [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_wifi_disconnected">Wi\u2011Fi đã ngắt kết nối. Cài đặt WPS bị hủy bỏ.</string>
-    <!-- Lockscreen Visualizer -->
-    <string name="lockscreen_autocolor_title">Màu tự động</string>
-    <string name="lockscreen_autocolor_summary">Đồng bộ màu với nền</string>
-    <string name="lockscreen_autocolor_lavalamp">Yêu cầu tắt đèn dung nham</string>
-    <string name="lockscreen_lavalamp_title">Đèn dung nham</string>
-    <string name="lockscreen_lavalamp_summary">Các hoạt ảnh Pulse pha trộn kiểu màu đèn dung nham sống động</string>
-    <string name="lockscreen_lavalamp_speed_title">Dung nham đèn màu pha trộn khoảng thời gian</string>
-    <string name="lockscreen_solid_units_count_title">Số đường liền nét</string>
-    <string name="lockscreen_solid_fudge_factor_title">Mức độ mạnh</string>
-    <string name="lockscreen_solid_units_opacity_title">Độ đậm đường liền nét</string>
     <!-- Display cutout options -->
     <string name="cutout_main">Hiển thị Cutout</string>
     <string name="cutout_main_summary">Tùy chỉnh cài đặt notch</string>
@@ -2287,16 +2278,16 @@
     <string name="data_usage_app_restrict_all">Cho phép mạng</string>
     <string name="data_usage_app_restrict_all_summary">Cho phép sử dụng mạng</string>
     <!-- A2DP codec priority -->
-    <string name="a2dp_source_codec_priority_title">Bluetooth Audio Codec (preferred)</string>
+    <string name="a2dp_source_codec_priority_title">Bộ giải mã âm thanh Bluetooth (ưu tiên)</string>
     <!-- Rotation button -->
-    <string name="show_rotation_button_title">Rotation button</string>
-    <string name="show_rotation_button_summary">Display rotation button on navigation bar when available</string>
+    <string name="show_rotation_button_title">Nút xoay</string>
+    <string name="show_rotation_button_summary">Hiển thị nút xoay trên thanh điều hướng khi khả dụng</string>
     <!-- SBC HD (Dual Channel) priority -->
     <string name="sbc_hd_priority_title">SBC HD audio</string>
-    <string name="sbc_hd_priority_summary">Whether to use Dual Channel mode for SBC codec by default</string>
+    <string name="sbc_hd_priority_summary">Có nên sử dụng chế độ Kênh đôi cho codec SBC theo mặc định</string>
     <!-- Settings Dashboard conditions and suggestions -->
-    <string name="settings_show_conditions_title">Dashboard conditions</string>
-    <string name="settings_show_conditions_summary">Display condition cards in Settings screen</string>
-    <string name="settings_show_suggestions_title">Dashboard suggestions</string>
-    <string name="settings_show_suggestions_summary">Display suggestion cards in Settings screen</string>
+    <string name="settings_show_conditions_title">Bảng điều khiển đề xuất</string>
+    <string name="settings_show_conditions_summary">Hiển thị thẻ điều kiện trong màn hình Cài đặt</string>
+    <string name="settings_show_suggestions_title">Bảng điều khiển đề xuất</string>
+    <string name="settings_show_suggestions_summary">Hiển thị thẻ gợi ý trong màn hình Cài đặt</string>
 </resources>

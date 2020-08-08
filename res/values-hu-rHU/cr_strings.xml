@@ -330,9 +330,6 @@
     <string name="shortcut_picker_icon_type_system_title">Rendszerikonok</string>
     <string name="shortcut_picker_select_system_icon_title">Válasszon rendszerikont:</string>
     <string name="shortcut_picker_icon_type_custom_title">Galéria</string>
-    <!-- Music Visualizer -->
-    <string name="music_visualizer_title">Zene vizuális megjelenítése</string>
-    <string name="music_visualizer_summary">Ha elérhető, megjelenítia a zenét vizuálisan is</string>
     <!-- Media art -->
     <string name="media_art_title">A média albumborítója</string>
     <string name="media_art_summary">Ha elérhető, jelenítse meg a zenei album borítóját</string>
@@ -637,30 +634,34 @@
     <string name="fling_config_restore_error_toast">Hiba keletkezett a Fling-profil visszaállításakor</string>
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">Pulse információk</string>
-    <string name="pulse_help_policy_notice_summary">A Pulse egy briliáns audiovizualizáció a navigációs sávon zenehallgatás közben. A Pulse néhány audioforrással nem működik, miközben a hangszórón hallani a zenét</string>
+    <string name="pulse_help_policy_notice_summary">A Pulse egy brilliáns audiógrafikus hangszínszabályozó a zenelejátszáshoz</string>
     <string name="pulse_settings">Pulse</string>
-    <string name="pulse_settings_summary">Grafikus hangszínszabályzó a navigációs sávon</string>
-    <string name="fling_show_pulse_title">Pulse megjelenítése</string>
-    <string name="fling_show_pulse_summary">Grafikus hangszínszabályzó a navigációs sávon</string>
+    <string name="pulse_settings_summary">Egy audiógrafikus hangszínszabályozó a navigációs sávhoz és a záróképernyőhöz</string>
+    <string name="show_navbar_pulse_title">Pulse a navigációs sávhoz</string>
+    <string name="show_navbar_pulse_summary">A navigációs sáv audiógrafikus hangszínszabályozója</string>
+    <string name="show_lockscreen_pulse_title">Pulse a záróképernyőhöz</string>
+    <string name="show_lockscreen_pulse_summary">A záróképernyő audiógrafikus hangszínszabályozója</string>
     <string name="pulse_render_mode_title">Renderelés módja</string>
     <string name="pulse_render_mode_fading_bars">Halványuló blokkok</string>
     <string name="pulse_render_mode_solid_lines">Folytonos vonalak</string>
-    <string name="fling_pulse_color">Pulzálás színe</string>
-    <string name="fling_pulse_color_summary">Automatikus színegyeztetésként is használható</string>
-    <string name="eos_fling_lavalamp_title">Lávalámpa bekapcsolása</string>
-    <string name="eos_fling_lavalamp_summary">A Pulse életre kelt egy lávalámpa stílusú lágy színkavalkádot</string>
     <string name="pulse_advanced_category">Haladó</string>
     <string name="pulse_legacy_mode_advanced_category">Halványuló blokkok üzemmód beállításai</string>
     <string name="pulse_custom_fudge_factor">Józan ész szint</string>
-    <string name="lavamp_solid_speed_title">Lávalámpa sebessége</string>
+    <string name="pulse_lavalamp_speed_title">A Lávalámpa sebessége</string>
     <string name="pulse_solid_units_count">Folytonos vonalak száma</string>
     <string name="pulse_solid_units_opacity">Folytonos vonalak átlátszósága</string>
     <string name="pulse_solid_dimen_category">Folytonos vonalak üzemmód beállításai</string>
     <string name="fling_lavalamp_color_from">Lávalámpa indítási színe</string>
     <string name="fling_lavalamp_color_to">Lávalámpa befejező színe</string>
     <string name="pulse_custom_buttons_opacity_title">Okossáv-gombok átlátszósága a Pulse-ban</string>
-    <string name="pulse_auto_color_title">Automatikus Pulse szín</string>
-    <string name="pulse_auto_color_summary">Szinkronizálja a színeket az album borítójához. A Lávalámpát és a vonalak átlátszóságát felülbírálja.</string>
+    <string name="pulse_color_mode_title">Színek</string>
+    <string name="pulse_color_accent">Kiemelőszín</string>
+    <string name="pulse_color_custom">Egyéni</string>
+    <string name="pulse_color_lava_lamp">Lávalámpa</string>
+    <string name="pulse_color_auto">Borítókép</string>
+    <string name="pulse_color_user_title">Válasszon színt</string>
+    <string name="pulse_smoothing_enabled_title">Az egyenletesség bekapcsolása</string>
+    <string name="pulse_smoothing_enabled_summary">Az összes sávanimáció sokkal egyenletesebb</string>
     <!-- Pulse config -->
     <string name="pulse_custom_dimen">Sáv szélessége</string>
     <string name="pulse_custom_div">Sáv térköz</string>
@@ -850,7 +851,7 @@
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">Jelzőszalag</string>
     <string name="ticker_screen_summary">Értesítések jelzőszalag stílusa</string>
-    <string name="ticker_screen_footer">Ticker is visible only when notification heads-up is not shown. Devices with center notch should hide cutout under User Interface settings or under Developer options.</string>
+    <string name="ticker_screen_footer">A jelölő csak akkor látható, ha a felugró értesítések ki vannak kapcsolva. Azoknál a készülékeknél, ahol a kivágás (notch) középen van, a felhasználói vagy a fejlesztői beállításokban el kell rejteni a képernyőkivágást.</string>
     <string name="ticker_title">Állapotsori jelzőszalag</string>
     <string name="ticker_summary">Gördülő állapotsori értesítések engedélyezése</string>
     <string name="ticker_restore_defaults_title">Alapértelmezések visszaállítása</string>
@@ -2063,16 +2064,6 @@
     <string name="wifi_wps_failed_overlap">Egy másik WPS munkamenet is fut. Kérjük, próbálja újra néhány perc múlva.</string>
     <!-- Text displayed when WPS fails due to wifi disconnected [CHAR LIMIT=150] -->
     <string name="wifi_wps_failed_wifi_disconnected">Wi\u2011Fi szétkapcsolva. A WPS-beállítás megszakítva.</string>
-    <!-- Lockscreen Visualizer -->
-    <string name="lockscreen_autocolor_title">Automatikus szín</string>
-    <string name="lockscreen_autocolor_summary">A szín szinkronizálása a háttérhez</string>
-    <string name="lockscreen_autocolor_lavalamp">Szükséges hozzá, hogy a Lávalámpa le legyen tiltva</string>
-    <string name="lockscreen_lavalamp_title">Lávalámpa</string>
-    <string name="lockscreen_lavalamp_summary">Egy lávalámpa stílusú lágy színkavalkádot kelt életre</string>
-    <string name="lockscreen_lavalamp_speed_title">A Lávalámpa színkeverési sebessége</string>
-    <string name="lockscreen_solid_units_count_title">A folytonos vonalak száma</string>
-    <string name="lockscreen_solid_fudge_factor_title">Az ésszerűség szintje</string>
-    <string name="lockscreen_solid_units_opacity_title">A folytonos vonalak átlátszósága</string>
     <!-- Display cutout options -->
     <string name="cutout_main">Kijelzőkivágás</string>
     <string name="cutout_main_summary">A képernyőkivágás (notch) beállításai</string>
