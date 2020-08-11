@@ -568,6 +568,8 @@ public class Buttons extends SettingsPreferenceFragment implements
                 Settings.System.ANBI_ENABLED, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SCREENSHOT_TYPE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SCREENSHOT_DELAY, 500, UserHandle.USER_CURRENT);
         ButtonBacklightBrightness.reset(mContext);
         PowerMenuActions.reset(mContext);
     }

@@ -270,6 +270,16 @@
             android:entryValues="@array/screenshot_type_values"
             android:defaultValue="0" /> 
 
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="screenshot_delay"
+            android:icon="@drawable/ic_screenshot"
+            android:title="@string/screenshot_delay_title"
+            android:summary="@string/screenshot_delay_summary"
+            android:defaultValue="500"
+            android:max="3000"
+            settings:min="0"
+            settings:units="@string/unit_milliseconds" />
+
         <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="volume_wake_screen"
             android:icon="@drawable/ic_wake"
