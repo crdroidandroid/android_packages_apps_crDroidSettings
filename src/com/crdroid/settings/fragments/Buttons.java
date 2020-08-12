@@ -34,6 +34,7 @@ import android.view.DisplayInfo;
 import android.view.IWindowManager;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
+import android.view.ViewConfiguration;
 import android.view.WindowManagerGlobal;
 
 import androidx.preference.SwitchPreference;
@@ -52,6 +53,7 @@ import com.android.settingslib.search.SearchIndexable;
 import com.crdroid.settings.R;
 import com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness;
 import com.crdroid.settings.fragments.buttons.PowerMenuActions;
+import com.crdroid.settings.preferences.CustomSeekBarPreference;
 import com.crdroid.settings.utils.DeviceUtils;
 import com.crdroid.settings.utils.TelephonyUtils;
 
@@ -84,6 +86,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String KEY_APP_SWITCH_WAKE_SCREEN = "app_switch_wake_screen";
     private static final String KEY_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
     private static final String KEY_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
+    private static final String KEY_SCREENSHOT_DELAY = "screenshot_delay";
     private static final String KEY_VOLUME_WAKE_SCREEN = "volume_wake_screen";
     private static final String KEY_VOLUME_ANSWER_CALL = "volume_answer_call";
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
@@ -137,6 +140,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private SwitchPreference mTorchLongPressPowerGesture;
     private ListPreference mTorchLongPressPowerTimeout;
     private ButtonBacklightBrightness backlight;
+    private CustomSeekBarPreference mScreenshotDelay;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -382,6 +386,20 @@ public class Buttons extends SettingsPreferenceFragment implements
             if (mSwapVolumeButtons != null) {
                 mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);
             }
+
+            mVolumeWakeScreen = (SwitchPreference) findPreference(LineageSettings.System.VOLUME_WAKE_SCREEN);
+            mVolumeMusicControls = (SwitchPreference) findPreference(KEY_VOLUME_MUSIC_CONTROLS);
+
+            if (mVolumeWakeScreen != null) {
+                if (mVolumeMusicControls != null) {
+                    mVolumeMusicControls.setDependency(KEY_VOLUME_WAKE_SCREEN);
+                    mVolumeWakeScreen.setDisableDependentsState(true);
+                }
+            }
+
+            mScreenshotDelay = (CustomSeekBarPreference) findPreference(KEY_SCREENSHOT_DELAY);
+            int delay = (int) ViewConfiguration.get(getActivity()).getScreenshotChordKeyTimeout();
+            mScreenshotDelay.setDefaultValue(delay);
         } else {
             prefScreen.removePreference(volumeCategory);
         }
@@ -390,16 +408,6 @@ public class Buttons extends SettingsPreferenceFragment implements
             if (mCameraSleepOnRelease != null && !getResources().getBoolean(
                     org.lineageos.platform.internal.R.bool.config_singleStageCameraKey)) {
                 mCameraSleepOnRelease.setDependency(KEY_CAMERA_WAKE_SCREEN);
-            }
-        }
-
-        mVolumeWakeScreen = (SwitchPreference) findPreference(LineageSettings.System.VOLUME_WAKE_SCREEN);
-        mVolumeMusicControls = (SwitchPreference) findPreference(KEY_VOLUME_MUSIC_CONTROLS);
-
-        if (mVolumeWakeScreen != null) {
-            if (mVolumeMusicControls != null) {
-                mVolumeMusicControls.setDependency(KEY_VOLUME_WAKE_SCREEN);
-                mVolumeWakeScreen.setDisableDependentsState(true);
             }
         }
     }
@@ -569,7 +577,8 @@ public class Buttons extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.SCREENSHOT_TYPE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.SCREENSHOT_DELAY, 500, UserHandle.USER_CURRENT);
+                Settings.System.SCREENSHOT_DELAY,
+                (int) ViewConfiguration.get(mContext).getScreenshotChordKeyTimeout(), UserHandle.USER_CURRENT);
         ButtonBacklightBrightness.reset(mContext);
         PowerMenuActions.reset(mContext);
     }

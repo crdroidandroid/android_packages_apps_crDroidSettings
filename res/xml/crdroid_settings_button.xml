@@ -275,9 +275,9 @@
             android:icon="@drawable/ic_screenshot"
             android:title="@string/screenshot_delay_title"
             android:summary="@string/screenshot_delay_summary"
-            android:defaultValue="500"
             android:max="3000"
             settings:min="0"
+            settings:interval="10"
             settings:units="@string/unit_milliseconds" />
 
         <lineageos.preference.LineageSystemSettingSwitchPreference
