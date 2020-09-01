@@ -44,12 +44,15 @@ public class StockNavBarSettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "StockNavBarSettings";
 
+    private static final String KEY_NAVIGATION_BACK_LONG_PRESS =
+            "navigation_back_long_press";
     private static final String KEY_NAVIGATION_HOME_LONG_PRESS = "navigation_home_long_press";
     private static final String KEY_NAVIGATION_HOME_DOUBLE_TAP = "navigation_home_double_tap";
     private static final String KEY_NAVIGATION_APP_SWITCH_LONG_PRESS =
             "navigation_app_switch_long_press";
     private static final String KEY_EDGE_LONG_SWIPE = "navigation_bar_edge_long_swipe";
 
+    private ListPreference mNavigationBackLongPressAction;
     private ListPreference mNavigationHomeLongPressAction;
     private ListPreference mNavigationHomeDoubleTapAction;
     private ListPreference mNavigationAppSwitchLongPressAction;
@@ -65,12 +68,17 @@ public class StockNavBarSettings extends SettingsPreferenceFragment implements
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
+        Action defaultBackLongPressAction = Action.fromIntSafe(res.getInteger(
+                org.lineageos.platform.internal.R.integer.config_longPressOnBackBehavior));
         Action defaultHomeLongPressAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_longPressOnHomeBehavior));
         Action defaultHomeDoubleTapAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_doubleTapOnHomeBehavior));
         Action defaultAppSwitchLongPressAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_longPressOnAppSwitchBehavior));
+        Action backLongPressAction = Action.fromSettings(resolver,
+                LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION,
+                defaultBackLongPressAction);
         Action homeLongPressAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION,
                 defaultHomeLongPressAction);
@@ -83,6 +91,10 @@ public class StockNavBarSettings extends SettingsPreferenceFragment implements
         Action edgeLongSwipeAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_EDGE_LONG_SWIPE_ACTION,
                 Action.NOTHING);
+
+        // Navigation bar back long press
+        mNavigationBackLongPressAction = initList(KEY_NAVIGATION_BACK_LONG_PRESS,
+                backLongPressAction);
 
         // Navigation bar home long press
         mNavigationHomeLongPressAction = initList(KEY_NAVIGATION_HOME_LONG_PRESS,
@@ -129,7 +141,11 @@ public class StockNavBarSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mNavigationHomeLongPressAction) {
+        if (preference == mNavigationBackLongPressAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION);
+            return true;
+        } else if (preference == mNavigationHomeLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION);
             return true;
