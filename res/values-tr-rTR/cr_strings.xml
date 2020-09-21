@@ -60,7 +60,7 @@
     <string name="network_traffic_mode_title">Görüntüleme modu</string>
     <string name="network_traffic_mode_up">Yalnızca yükleme</string>
     <string name="network_traffic_mode_down">Yalnızca indirme</string>
-    <string name="network_traffic_mode_all">Etkin</string>
+    <string name="network_traffic_mode_all">Yükleme ve indirme</string>
     <string name="network_traffic_autohide">Otomatik gizle</string>
     <string name="network_traffic_autohide_summary">Veri etkinliği olmadığında ağ göstergesini gizle</string>
     <string name="network_traffic_autohide_kilobits">Kb/s</string>
@@ -117,7 +117,7 @@
     <!-- Lockscreen shortcuts -->
     <string name="lockscreen_shortcuts_slim_title">Üst kısayollar</string>
     <string name="lockscreen_shortcuts_slim_summary">Kilit ekranı saatinin altındaki kısayolları değiştirin</string>
-    <string name="lockscreen_shorcuts_launch_type_title">Kısayol dokunma tipi</string>
+    <string name="lockscreen_shorcuts_launch_type_title">Kısayol dokunma türü</string>
     <string name="lockscreen_shortcuts_single_tap">Tek dokunma</string>
     <string name="lockscreen_shortcuts_double_tap">Çift dokunma</string>
     <string name="lockscreen_shortcuts_longpress">Uzun dokunma</string>
@@ -146,7 +146,7 @@
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Listedeki her %1$s kaldırılması ikinci pie katmanını tamamen devre dışı bırakır.</string>
     <string name="shortcuts_applications">Uygulamalar</string>
     <string name="shortcuts_select_custom_app_title">Özel uygulama seç</string>
-    <string name="shortcuts_icon_picker_type">Simge tipi seç:</string>
+    <string name="shortcuts_icon_picker_type">Simge türü seç:</string>
     <string name="shortcuts_icon_default">Varsayılan</string>
     <string name="shortcuts_icon_presets">Sistem simgeleri</string>
     <string name="shortcuts_icon_custom">Galeri</string>
@@ -325,7 +325,7 @@
     <string name="shortcut_picker_activities_title">Etkinlikler</string>
     <string name="shortcut_picker_select_app_title">Uygulama seç:</string>
     <string name="shortcut_picker_select_activity_title">Etkinlik seç:</string>
-    <string name="shortcut_picker_choose_icon_type_title">Simge tipi seç:</string>
+    <string name="shortcut_picker_choose_icon_type_title">Simge türü seç:</string>
     <string name="shortcut_picker_icon_type_default_title">Varsayılan</string>
     <string name="shortcut_picker_icon_type_system_title">Sistem simgeleri</string>
     <string name="shortcut_picker_select_system_icon_title">Sistem simgesi seç:</string>
@@ -349,12 +349,12 @@
     <string name="double_tap_sleep_anywhere_summary">Cihazı uyutmak için kilit ekranının boş bir alanına iki kez hafifçe dokunun</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Güç menüsü</string>
-    <string name="lockscreen_enable_power_menu_summary">Güvenli kilit ekranında güç menüsüne erişime izin ver</string>
+    <string name="lockscreen_enable_power_menu_summary">Güvenli kilit ekranında güç menüsünü göster</string>
     <string name="lockscreen_secure_power_menu_title">Güvenli güç menüsü</string>
     <string name="lockscreen_secure_power_menu_summary">Güç menüsü işlemine yalnızca kimlik doğrulamasından sonra izin ver</string>
     <!-- Quick settings on secure lockscreen -->
     <string name="lockscreen_enable_qs_title">Hızlı ayarlar</string>
-    <string name="lockscreen_enable_qs_summary">Güvenli kilit ekranında hızlı ayarlara erişime izin ver</string>
+    <string name="lockscreen_enable_qs_summary">Güvenli kilit ekranında hızlı ayarlar erişimine izin ver</string>
     <!-- Screenshot Sound  -->
     <string name="screenshot_sound_title">Ekran görüntüsü sesi</string>
     <string name="screenshot_sound_summary">Ekran görüntüsü alınırken ses çıkar</string>
@@ -405,22 +405,22 @@
     <string name="qs_bt_easy_toggle_title">Bluetooth kolay geçiş</string>
     <string name="qs_bt_easy_toggle_summary">Tek dokunuşla bluetoothu etkinleştir</string>
     <!-- Advanced data tile -->
-    <string name="qs_advanced_data_title">Veri kolay geçiş</string>
+    <string name="qs_advanced_data_title">Mobil veri kolay geçiş</string>
     <string name="qs_advanced_data_summary">Tek dokunuşla mobil veriyi etkinleştir</string>
     <!-- Battery Saver easy toggle -->
-    <string name="qs_battery_easy_toggle_title">Pil kolay geçiş</string>
+    <string name="qs_battery_easy_toggle_title">Pil tasarrufu kolay geçiş</string>
     <string name="qs_battery_easy_toggle_summary">Tek dokunuşla pil tasarrufunu etkinleştir</string>
     <!-- Location easy toggle -->
     <string name="qs_location_easy_toggle_title">Konum kolay geçiş</string>
     <string name="qs_location_easy_toggle_summary">Tek dokunuşla konumu etkinleştir</string>
     <!-- Quick settings brightness slider -->
-    <string name="qs_brightness_slider_title">Parlaklık kaydırıcı</string>
+    <string name="qs_brightness_slider_title">Parlaklık kaydırıcısı</string>
     <string name="qs_brightness_slider_summary">Hızlı ayarlar panelinde parlaklık kaydırıcısını göster</string>
     <!-- Quick settings brightness icon -->
     <string name="brightness_icon_title">Otomatik parlaklık</string>
     <string name="brightness_icon_summary">Hızlı ayarlar panelinde otomatik parlaklık simgesini göster</string>
     <!-- Quick settings haptic feedback -->
-    <string name="quick_settings_vibrate_title">Dokunulduğunda titre</string>
+    <string name="quick_settings_vibrate_title">Dokunulduğunda titret</string>
     <string name="quick_settings_vibrate_summary">Karelere dokunulduğunda titret</string>
     <!-- Force expanded notifications -->
     <string name="force_expanded_notifications_title">Bildirimleri genişletmeye zorla</string>
@@ -435,7 +435,7 @@
     <string name="status_bar_logo_category_title">Logo</string>
     <string name="status_bar_misc_category_title">Diğer</string>
     <!-- Statusbar crDroid logo -->
-    <string name="status_bar_crdroid_logo_title">Logo göster</string>
+    <string name="status_bar_crdroid_logo_title">Logoyu göster</string>
     <string name="status_bar_crdroid_logo_summary">Durum çubuğunda logo göstermeyi etkinleştir</string>
     <string name="status_bar_crdroid_logo_color">Logo rengi</string>
     <string name="status_bar_crdroid_logo_position">Logo konumu</string>
@@ -542,7 +542,7 @@
     <string name="navbar_visibility_summary">Gezinme çubuğunu etkinleştirme veya devre dışı bırakma</string>
     <string name="navigationbar_settings_title">Gezinme çubuğu</string>
     <string name="navigationbar_settings_summary">Gezinme çubuğu stilini ve davranışını özelleştirme</string>
-    <string name="navbar_general_title">Diğer</string>
+    <string name="navbar_general_title">Diğer ayarlar</string>
     <string name="navigation_bar_left_title">Sol el modu</string>
     <string name="navigation_bar_left_summary">Yatay moda geçildiğinde gezinme çubuğunu sol tarafta gösterir</string>
     <string name="info_pref_note_title">Not</string>
