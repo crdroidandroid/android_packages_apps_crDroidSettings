@@ -60,7 +60,7 @@ public class PickupSensor implements SensorEventListener {
 
     public PickupSensor(Context context) {
         mContext = context;
-        mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
+        mSensorManager = mContext.getSystemService(SensorManager.class);
         final String pickup_sensor = context.getResources().getString(R.string.pickup_sensor);
         mIsCustomPickupSensor = pickup_sensor != null && !pickup_sensor.isEmpty();
         if (mIsCustomPickupSensor) {
