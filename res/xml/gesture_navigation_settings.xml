@@ -43,13 +43,16 @@
             android:selectable="true"
             settings:textStart="@string/low_label"
             settings:textEnd="@string/high_label"/>
+
     </PreferenceCategory>
 
-    <com.android.settingslib.widget.FooterPreference
-        android:key="gesture_navigation_settings_footer"
-        android:title="@string/back_sensitivity_dialog_message"
-        android:selectable="false"
-        settings:searchable="false"
-        settings:allowDividerAbove="true"/>
+    <com.android.settings.widget.LabeledSeekBarPreference
+        android:key="gesture_navbar_length"
+        android:title="@string/navbar_length"
+        android:max="2"
+        android:selectable="true"
+        settings:textStart="@string/short_label"
+        settings:textEnd="@string/long_label"/>
+
 </PreferenceScreen>
 
