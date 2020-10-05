@@ -68,13 +68,14 @@ public class ButtonBacklightBrightness extends CustomDialogPref<AlertDialog> imp
 
         setDialogLayoutResource(R.layout.button_backlight);
 
-        /*
-        if (isKeyboardSupported()) {
+        if (isKeyboardSupported(context)) {
+            boolean isSingleValue = !context.getResources().getBoolean(
+                    com.android.internal.R.bool.config_deviceHasVariableKeyboardBrightness);
+
             mKeyboardBrightness = new BrightnessControl(
-                    LineageSettings.Secure.KEYBOARD_BRIGHTNESS, false);
+                    LineageSettings.Secure.KEYBOARD_BRIGHTNESS, isSingleValue);
             mActiveControl = mKeyboardBrightness;
         }
-        */
         if (isButtonSupported()) {
             boolean isSingleValue = !context.getResources().getBoolean(
                     com.android.internal.R.bool.config_deviceHasVariableButtonBrightness);
@@ -254,12 +255,10 @@ public class ButtonBacklightBrightness extends CustomDialogPref<AlertDialog> imp
         return hasBacklightKey && hasBacklight;
     }
 
-    /*
-    public boolean isKeyboardSupported() {
-        return getContext().getResources().getInteger(
+    public static boolean isKeyboardSupported(Context context) {
+        return context.getResources().getInteger(
                 com.android.internal.R.integer.config_keyboardBrightnessSettingDefault) > 0;
     }
-    */
 
     public void updateSummary() {
         if (mButtonBrightness != null) {
@@ -495,7 +494,7 @@ public class ButtonBacklightBrightness extends CustomDialogPref<AlertDialog> imp
             mOnlyWhenPressedSetting = onlyWhenPressedSetting;
         }
 
-       @Override
+        @Override
         public void init(ViewGroup container) {
             super.init(container);
 

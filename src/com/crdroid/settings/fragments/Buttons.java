@@ -234,7 +234,8 @@ public class Buttons extends SettingsPreferenceFragment implements
                 defaultBackLongPressAction);
 
         backlight = (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
-        if (!backlight.isButtonSupported() /*&& !backlight.isKeyboardSupported()*/) {
+        if (!backlight.isButtonSupported()
+                && !backlight.isKeyboardSupported(getActivity())) {
             prefScreen.removePreference(backlight);
             backlight = null;
         } else if (mLineageHardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE)) {
@@ -657,7 +658,6 @@ public class Buttons extends SettingsPreferenceFragment implements
 
                     keys.add(KEY_BACK_WAKE_SCREEN);
                     keys.add(KEY_BACK_LONG_PRESS);
-                    keys.add(KEY_BACK_WAKE_SCREEN);
                     keys.add(KEY_MENU_WAKE_SCREEN);
                     keys.add(KEY_MENU_PRESS);
                     keys.add(KEY_MENU_LONG_PRESS);
@@ -685,6 +685,11 @@ public class Buttons extends SettingsPreferenceFragment implements
                         if (!TelephonyUtils.isVoiceCapable(context)) {
                             keys.add(KEY_VOLUME_ANSWER_CALL);
                         }
+                    }
+
+                    if (!ButtonBacklightBrightness.isButtonSupported()
+                            && !ButtonBacklightBrightness.isKeyboardSupported(context)) {
+                        keys.add(KEY_BUTTON_BACKLIGHT);
                     }
 
                     keys.add(KEY_ADDITIONAL_BUTTONS);
