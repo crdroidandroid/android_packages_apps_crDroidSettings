@@ -32,7 +32,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.crdroid.settings.R;
+import com.android.settings.R;
 
 import java.util.Collections;
 import java.util.LinkedList;

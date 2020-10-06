@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2019 crDroid Android Project
+ * Copyright (C) 2016-2020 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,10 +30,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.crdroid.settings.R;
+import com.android.settings.R;
 
-public class CustomSeekBarPreference extends Preference implements SeekBar.OnSeekBarChangeListener,
-        View.OnClickListener, View.OnLongClickListener {
+public class CustomSeekBarPreference extends Preference implements SeekBar.OnSeekBarChangeListener {
     protected final String TAG = getClass().getName();
     private static final String SETTINGS_NS = "http://schemas.android.com/apk/res/com.android.settings";
     protected static final String ANDROIDNS = "http://schemas.android.com/apk/res/android";
@@ -119,6 +118,20 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
     }
 
     @Override
+    public void onDependencyChanged(Preference dependency, boolean disableDependent) {
+        super.onDependencyChanged(dependency, disableDependent);
+        this.setShouldDisableView(true);
+        if (mSeekBar != null)
+            mSeekBar.setEnabled(!disableDependent);
+        if (mResetImageView != null)
+            mResetImageView.setEnabled(!disableDependent);
+        if (mPlusImageView != null)
+            mPlusImageView.setEnabled(!disableDependent);
+        if (mMinusImageView != null)
+            mMinusImageView.setEnabled(!disableDependent);
+    }
+
+    @Override
     public void onBindViewHolder(PreferenceViewHolder holder) {
         super.onBindViewHolder(holder);
         try
@@ -152,12 +165,46 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
         updateValueViews();
 
         mSeekBar.setOnSeekBarChangeListener(this);
-        mResetImageView.setOnClickListener(this);
-        mMinusImageView.setOnClickListener(this);
-        mPlusImageView.setOnClickListener(this);
-        mResetImageView.setOnLongClickListener(this);
-        mMinusImageView.setOnLongClickListener(this);
-        mPlusImageView.setOnLongClickListener(this);
+        mResetImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), getContext().getString(R.string.custom_seekbar_default_value_to_set, getTextValue(mDefaultValue)),
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+        mResetImageView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                setValue(mDefaultValue, true);
+                return true;
+            }
+        });
+        mMinusImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setValue(mValue - mInterval, true);
+            }
+        });
+        mMinusImageView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                setValue(mMaxValue - mMinValue > mInterval * 2 && mMaxValue + mMinValue < mValue * 2 ? Math.floorDiv(mMaxValue + mMinValue, 2) : mMinValue, true);
+                return true;
+            }
+        });
+        mPlusImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setValue(mValue + mInterval, true);
+            }
+        });
+        mPlusImageView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                setValue(mMaxValue - mMinValue > mInterval * 2 && mMaxValue + mMinValue > mValue * 2 ? -1 * Math.floorDiv(-1 * (mMaxValue + mMinValue), 2) : mMaxValue, true);
+                return true;
+            }
+        });
     }
 
     protected int getLimitedValue(int v) {
@@ -261,43 +308,6 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
     }
 
     @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.reset:
-                Toast.makeText(getContext(), getContext().getString(R.string.custom_seekbar_default_value_to_set, getTextValue(mDefaultValue)),
-                        Toast.LENGTH_LONG).show();
-                break;
-            case R.id.minus:
-                setValue(mValue - mInterval, true);
-                break;
-            case R.id.plus:
-                setValue(mValue + mInterval, true);
-                break;
-        }
-    }
-
-    @Override
-    public boolean onLongClick(View v) {
-        switch (v.getId()) {
-            case R.id.reset:
-                setValue(mDefaultValue, true);
-                //Toast.makeText(getContext(), getContext().getString(R.string.custom_seekbar_default_value_is_set),
-                //        Toast.LENGTH_LONG).show();
-                break;
-            case R.id.minus:
-                setValue(mMaxValue - mMinValue > mInterval * 2 && mMaxValue + mMinValue < mValue * 2 ? Math.floorDiv(mMaxValue + mMinValue, 2) : mMinValue, true);
-                break;
-            case R.id.plus:
-                setValue(mMaxValue - mMinValue > mInterval * 2 && mMaxValue + mMinValue > mValue * 2 ? -1 * Math.floorDiv(-1 * (mMaxValue + mMinValue), 2) : mMaxValue, true);
-                break;
-        }
-        return true;
-    }
-
-    // dont need too much shit about initial and default values
-    // its all done in constructor already
-
-    @Override
     protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
         if (restoreValue)
             mValue = getPersistedInt(mValue);
@@ -349,9 +359,6 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
     public int getValue() {
         return mValue;
     }
-
-    // need some methods here to set/get other attrs at runtime,
-    // but who really need this ...
 
     public void refresh(int newValue) {
         // this will ...
