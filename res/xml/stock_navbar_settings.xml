@@ -23,7 +23,8 @@
         android:key="gesture_system_navigation_input_summary"
         android:title="@string/system_navigation_title"
         android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
-        settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController" />
+        settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController"
+        settings:keywords="@string/keywords_system_navigation" />
 
     <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="pixel_nav_animation"
@@ -37,7 +38,7 @@
         android:summary="@string/navbar_arrow_keys_summary"
         android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.SecureSettingListPreference
+    <!--<com.crdroid.settings.preferences.SecureSettingListPreference
         android:key="navbar_layout_views"
         android:title="@string/navbar_layout_title"
         android:summary="%s"
@@ -95,5 +96,5 @@
         android:title="@string/navbar_edge_long_swipe_title"
         android:entries="@array/hardware_keys_action_entries"
         android:entryValues="@array/hardware_keys_action_values"
-        android:persistent="false" />
+        android:persistent="false" />-->
 </PreferenceScreen>
