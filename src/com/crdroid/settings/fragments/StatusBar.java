@@ -40,6 +40,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.statusbar.Clock;
 import com.crdroid.settings.fragments.statusbar.NetworkTrafficSettings;
+import com.crdroid.settings.preferences.SystemSettingSeekBarPreference;
 import com.crdroid.settings.utils.DeviceUtils;
 import com.crdroid.settings.utils.TelephonyUtils;
 
@@ -56,8 +57,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
     public static final String TAG = "StatusBar";
 
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
+    private static final String KEY_VOLTE_ICON_STYLE = "volte_icon_style";
 
     private LineageSystemSettingListPreference mStatusBarClock;
+    private SystemSettingSeekBarPreference mVolteIconStyle;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -86,6 +89,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
             mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
             mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
         }
+
+        mVolteIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOLTE_ICON_STYLE);
+
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(mVolteIconStyle);
+        }
     }
 
     @Override
@@ -105,6 +114,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.BLUETOOTH_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VOLTE_ICON_STYLE, 0, UserHandle.USER_CURRENT);
 
         Clock.reset(mContext);
         NetworkTrafficSettings.reset(mContext);
@@ -119,5 +130,17 @@ public class StatusBar extends SettingsPreferenceFragment implements
      * For search
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.crdroid_settings_statusbar);
+            new BaseSearchIndexProvider(R.xml.crdroid_settings_statusbar) {
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+
+                    if (!TelephonyUtils.isVoiceCapable(context)) {
+                        keys.add(KEY_VOLTE_ICON_STYLE);
+                    }
+
+                    return keys;
+                }
+            };
 }
