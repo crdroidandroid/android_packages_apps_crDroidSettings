@@ -103,6 +103,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 LineageSettings.System.STATUS_BAR_CLOCK, 2, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BLUETOOTH_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);
 
         Clock.reset(mContext);
         NetworkTrafficSettings.reset(mContext);
