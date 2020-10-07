@@ -59,10 +59,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String KEY_VOLTE_ICON_STYLE = "volte_icon_style";
     private static final String KEY_VOWIFI_ICON_STYLE = "vowifi_icon_style";
+    private static final String KEY_VOLTE_VOWIFI_OVERRIDE = "volte_vowifi_override";
 
     private LineageSystemSettingListPreference mStatusBarClock;
     private SystemSettingSeekBarPreference mVolteIconStyle;
     private SystemSettingSeekBarPreference mVowifiIconStyle;
+    private SwitchPreference mOverride;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -94,10 +96,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         mVolteIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOLTE_ICON_STYLE);
         mVowifiIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOWIFI_ICON_STYLE);
+        mOverride = (SwitchPreference) findPreference(KEY_VOLTE_VOWIFI_OVERRIDE);
 
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(mVolteIconStyle);
             prefScreen.removePreference(mVowifiIconStyle);
+            prefScreen.removePreference(mOverride);
         }
     }
 
@@ -122,6 +126,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.VOLTE_ICON_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.VOWIFI_ICON_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VOLTE_VOWIFI_OVERRIDE, 1, UserHandle.USER_CURRENT);
 
         Clock.reset(mContext);
         NetworkTrafficSettings.reset(mContext);
@@ -145,6 +151,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
                     if (!TelephonyUtils.isVoiceCapable(context)) {
                         keys.add(KEY_VOLTE_ICON_STYLE);
                         keys.add(KEY_VOWIFI_ICON_STYLE);
+                        keys.add(KEY_VOLTE_VOWIFI_OVERRIDE);
                     }
 
                     return keys;
