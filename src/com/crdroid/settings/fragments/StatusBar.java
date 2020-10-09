@@ -38,6 +38,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.fragments.statusbar.BatteryBar;
 import com.crdroid.settings.fragments.statusbar.Clock;
 import com.crdroid.settings.fragments.statusbar.NetworkTrafficSettings;
 import com.crdroid.settings.preferences.SystemSettingSeekBarPreference;
@@ -153,6 +154,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0, UserHandle.USER_CURRENT);
 
+        BatteryBar.reset(mContext);
         Clock.reset(mContext);
         NetworkTrafficSettings.reset(mContext);
     }
