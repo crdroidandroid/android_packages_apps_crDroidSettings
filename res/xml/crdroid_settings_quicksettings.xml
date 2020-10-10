@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2019 crDroid Android Project
+     Copyright (C) 2016-2020 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@
             android:key="qs_columns_landscape"
             android:icon="@drawable/ic_qs_tile"
             android:title="@string/qs_columns_landscape_title"
-            android:defaultValue="4"
+            android:defaultValue="5"
             android:max="10"
             settings:min="1"
             settings:units="" />
@@ -76,7 +76,7 @@
             android:key="qs_rows_landscape"
             android:icon="@drawable/ic_qs_tile"
             android:title="@string/qs_rows_landscape_title"
-            android:defaultValue="2"
+            android:defaultValue="1"
             android:max="3"
             settings:min="1"
             settings:units="" />
@@ -88,7 +88,7 @@
             android:summary="@string/qs_tile_title_visibility_summary"
             android:defaultValue="true" />
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="quick_settings_vibrate"
             android:icon="@drawable/ic_vibrate"
             android:title="@string/quick_settings_vibrate_title"
@@ -191,12 +191,12 @@
             settings:min="0"
             settings:units="" />
 
-        <!-- QS blur -->
+        <!-- QS blur
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_background_blur"
             android:icon="@drawable/ic_blur"
             android:title="@string/qs_blur_title"
-            android:summary="@string/qs_blur_summary" />
+            android:summary="@string/qs_blur_summary" /> -->
 
         <!-- QS clock -->
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -223,13 +223,13 @@
             lineage:requiresConfig="@*android:bool/config_automatic_brightness_available"
             android:defaultValue="true" />
 
-        <!-- OOS style material dismiss all button for notifications -->
+        <!-- OOS style material dismiss all button for notifications
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="notification_material_dismiss"
             android:icon="@drawable/ic_notification_clear_all"
             android:title="@string/notification_material_dismiss_button_title"
             android:summary="@string/notification_material_dismiss_button_summary"
-            android:defaultValue="false" />
+            android:defaultValue="false" /> -->
     </PreferenceCategory>
 
     <!--<PreferenceCategory 
