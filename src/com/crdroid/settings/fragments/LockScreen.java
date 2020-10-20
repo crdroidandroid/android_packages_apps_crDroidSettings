@@ -39,6 +39,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import java.util.List;
+
 import lineageos.providers.LineageSettings;
 
 @SearchIndexable
@@ -47,11 +49,32 @@ public class LockScreen extends SettingsPreferenceFragment
 
     public static final String TAG = "LockScreen";
 
+    private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
+    private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
+    private static final String FP_ERROR_VIBRATE = "fp_error_vibrate";
+
+    private Preference mFingerprintVib;
+    private Preference mFingerprintVibErr;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
+        PreferenceScreen prefSet = getPreferenceScreen();
+        Context mContext = getContext();
+
+        PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
+
+        FingerprintManager mFingerprintManager = (FingerprintManager) 
+                getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mFingerprintVib = (Preference) findPreference(FP_SUCCESS_VIBRATE);
+        mFingerprintVibErr = (Preference) findPreference(FP_ERROR_VIBRATE);
+
+        if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
+            gestCategory.removePreference(mFingerprintVib);
+            gestCategory.removePreference(mFingerprintVibErr);
+        }
     }
 
     @Override
@@ -65,6 +88,10 @@ public class LockScreen extends SettingsPreferenceFragment
                 LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FP_ERROR_VIBRATE, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_ALBUMART_FILTER, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -90,5 +117,19 @@ public class LockScreen extends SettingsPreferenceFragment
      * For search
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.crdroid_settings_lockscreen);
+            new BaseSearchIndexProvider(R.xml.crdroid_settings_lockscreen) {
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+                    FingerprintManager mFingerprintManager = (FingerprintManager)
+                            context.getSystemService(Context.FINGERPRINT_SERVICE);
+                    if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
+                        keys.add(FP_SUCCESS_VIBRATE);
+                        keys.add(FP_ERROR_VIBRATE);
+                    }
+
+                    return keys;
+                }
+            };
 }
