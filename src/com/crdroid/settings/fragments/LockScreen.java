@@ -105,6 +105,8 @@ public class LockScreen extends SettingsPreferenceFragment
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_LOCK_ICON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_POWERMENU_SECURE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_STATUS_BAR, 1, UserHandle.USER_CURRENT);
     }
 
