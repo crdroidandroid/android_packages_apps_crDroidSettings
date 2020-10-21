@@ -99,12 +99,19 @@
             android:summary="@string/lockscreen_lock_icon_summary"
             android:defaultValue="true" />
 
-        <!--<Preference
+        <Preference
             android:key="lock_screen_weather"
             android:icon="@drawable/ic_weather"
             android:title="@string/lock_screen_weather_title"
             android:summary="@string/lock_screen_weather_summaryOn"
-            android:fragment="com.crdroid.settings.fragments.lockscreen.LockScreenWeather" />-->
+            android:fragment="com.crdroid.settings.fragments.lockscreen.LockScreenWeather" />
+
+        <PreferenceScreen
+            android:key="omnijaws_settings"
+            android:icon="@drawable/ic_omnijaws"
+            android:title="@string/omnijaws_settings_title"
+            android:summary="@string/omnijaws_settings_summary"
+            android:fragment="com.crdroid.settings.fragments.ui.OmniJawsSettings" />
 
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="lockscreen_media_metadata"
