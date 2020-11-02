@@ -15,6 +15,9 @@
  */
 package com.crdroid.settings.utils;
 
+import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_2BUTTON;
+import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_GESTURAL;
+
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.content.ContentResolver;
@@ -32,17 +35,121 @@ import android.os.Build;
 import android.os.SystemProperties;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.view.KeyCharacterMap;
+import android.view.KeyEvent;
 import android.view.Surface;
 
 import static org.lineageos.internal.util.DeviceKeysConstants.*;
 
 public class DeviceUtils {
 
-    /* returns whether the device has volume rocker or not. */
-    public static boolean hasVolumeRocker(Context context) {
-        final int deviceKeys = context.getResources().getInteger(
+    /* returns whether the device has a notch or not. */
+    public static boolean hasNotch(Context context) {
+        return context.getResources().getBoolean(
+                org.lineageos.platform.internal.R.bool.config_haveNotch);
+    }
+
+    public static int getDeviceKeys(Context context) {
+        return context.getResources().getInteger(
                 org.lineageos.platform.internal.R.integer.config_deviceHardwareKeys);
-        return (deviceKeys & KEY_MASK_VOLUME) != 0;
+    }
+
+    public static int getDeviceWakeKeys(Context context) {
+        return context.getResources().getInteger(
+                org.lineageos.platform.internal.R.integer.config_deviceHardwareWakeKeys);
+    }
+
+    /* returns whether the device has power key or not. */
+    public static boolean hasPowerKey() {
+        return KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_POWER);
+    }
+
+    /* returns whether the device has home key or not. */
+    public static boolean hasHomeKey(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_HOME) != 0;
+    }
+
+    /* returns whether the device has back key or not. */
+    public static boolean hasBackKey(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_BACK) != 0;
+    }
+
+    /* returns whether the device has menu key or not. */
+    public static boolean hasMenuKey(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_MENU) != 0;
+    }
+
+    /* returns whether the device has assist key or not. */
+    public static boolean hasAssistKey(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_ASSIST) != 0;
+    }
+
+    /* returns whether the device has app switch key or not. */
+    public static boolean hasAppSwitchKey(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_APP_SWITCH) != 0;
+    }
+
+    /* returns whether the device has camera key or not. */
+    public static boolean hasCameraKey(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_CAMERA) != 0;
+    }
+
+    /* returns whether the device has volume rocker or not. */
+    public static boolean hasVolumeKeys(Context context) {
+        return (getDeviceKeys(context) & KEY_MASK_VOLUME) != 0;
+    }
+
+    /* returns whether the device can be waken using the home key or not. */
+    public static boolean canWakeUsingHomeKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_HOME) != 0;
+    }
+
+    /* returns whether the device can be waken using the back key or not. */
+    public static boolean canWakeUsingBackKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_BACK) != 0;
+    }
+
+    /* returns whether the device can be waken using the menu key or not. */
+    public static boolean canWakeUsingMenuKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_MENU) != 0;
+    }
+
+    /* returns whether the device can be waken using the assist key or not. */
+    public static boolean canWakeUsingAssistKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_ASSIST) != 0;
+    }
+
+    /* returns whether the device can be waken using the app switch key or not. */
+    public static boolean canWakeUsingAppSwitchKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_APP_SWITCH) != 0;
+    }
+
+    /* returns whether the device can be waken using the camera key or not. */
+    public static boolean canWakeUsingCameraKey(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_CAMERA) != 0;
+    }
+
+    /* returns whether the device can be waken using the volume rocker or not. */
+    public static boolean canWakeUsingVolumeKeys(Context context) {
+        return (getDeviceWakeKeys(context) & KEY_MASK_VOLUME) != 0;
+    }
+
+    /* returns whether the device supports button backlight adjusment or not. */
+    public static boolean hasButtonBacklightSupport(Context context) {
+        final boolean buttonBrightnessControlSupported = context.getResources().getInteger(
+                org.lineageos.platform.internal.R.integer
+                        .config_deviceSupportsButtonBrightnessControl) != 0;
+
+        // All hardware keys besides volume and camera can possibly have a backlight
+        return buttonBrightnessControlSupported
+                && (hasHomeKey(context) || hasBackKey(context) || hasMenuKey(context)
+                || hasAssistKey(context) || hasAppSwitchKey(context));
+    }
+
+    /* returns whether the device supports keyboard backlight adjusment or not. */
+    public static boolean hasKeyboardBacklightSupport(Context context) {
+        return context.getResources().getInteger(org.lineageos.platform.internal.R.integer
+                .config_deviceSupportsKeyboardBrightnessControl) != 0;
     }
 
     public static boolean isPackageInstalled(Context context, String pkg, boolean ignoreState) {
@@ -103,7 +210,7 @@ public class DeviceUtils {
     }
 
     public static boolean deviceSupportsMobileData(Context ctx) {
-        ConnectivityManager cm = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = ctx.getSystemService(ConnectivityManager.class);
         return cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE);
     }
 
@@ -116,8 +223,7 @@ public class DeviceUtils {
     }
 
     public static boolean deviceSupportsFlashLight(Context context) {
-        CameraManager cameraManager = (CameraManager) context.getSystemService(
-                Context.CAMERA_SERVICE);
+        CameraManager cameraManager = context.getSystemService(CameraManager.class);
         try {
             String[] ids = cameraManager.getCameraIdList();
             for (String id : ids) {
@@ -137,9 +243,17 @@ public class DeviceUtils {
         return false;
     }
 
-    public static boolean hasNotch(Context context) {
-        return context.getResources().getBoolean(
-                org.lineageos.platform.internal.R.bool.config_haveNotch);
+    public static boolean isSwipeUpEnabled(Context context) {
+        if (isEdgeToEdgeEnabled(context)) {
+            return false;
+        }
+        return NAV_BAR_MODE_2BUTTON == context.getResources().getInteger(
+                com.android.internal.R.integer.config_navBarInteractionMode);
+    }
+
+    public static boolean isEdgeToEdgeEnabled(Context context) {
+        return NAV_BAR_MODE_GESTURAL == context.getResources().getInteger(
+                com.android.internal.R.integer.config_navBarInteractionMode);
     }
 
     public static boolean hasCustomCutout(Context context) {
