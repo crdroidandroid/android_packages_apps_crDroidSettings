@@ -935,7 +935,7 @@
     <string name="screenshot_type_partial">Скриншот выбранной области</string>
     <!-- Screenshot delay  -->
     <string name="screenshot_delay_title">Задержка скриншота</string>
-    <string name="screenshot_delay_summary">Время, в течение которого необходимо удерживать кнопки питания и громкости, чтобы сделать снимок экрана</string>
+    <string name="screenshot_delay_summary">Время нажатия кнопок питания и громкости, для снимка экрана</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">Настройки скриншота</string>
     <string name="screenshot_edit_app">Редактор скриншотов</string>
@@ -2317,7 +2317,9 @@
     <string name="applock_show_only_on_wake">Аутентифицировать только один раз</string>
     <string name="applock_show_only_on_wake_on_summary">После аутентификации приложение остается разблокированным, пока экран не выключится</string>
     <string name="applock_show_only_on_wake_off_summary">После аутентификации приложение остается разблокированным в течение 15 секунд после выхода</string>
-    <string name="applock_lock_notifications">Скрывать содержимое уведомлений, когдаприложение заблокировано</string>
+    <string name="applock_notification_info">You can show/hide the notification content on a per-app basis by clicking on the notification icon shown on each locked apps\' preference</string>
+    <string name="applock_show_notif">Showing notification content</string>
+    <string name="applock_hide_notif">Hiding notification content</string>
     <string name="applock_setup">Настройка блокировки приложений</string>
     <string name="applock_overlay_summary">Эта функция недоступна, так как приложение заблокировано</string>
     <plurals name="applock_summary">
@@ -2326,6 +2328,19 @@
         <item quantity="many">приложений заблокировано: %d</item>
         <item quantity="other">%d приложений заблокировано</item>
     </plurals>
+    <!-- DC Dimming -->
+    <string name="dc_dimming_title">DC Dimming</string>
+    <string name="dc_dimming_info">Reduces eye strain in low light conditions but may result in reduced image quality and poor color production.</string>
+    <string name="dc_dimming_auto_mode_title">Schedule</string>
+    <string name="dc_dimming_mode_brightness">Turn on when brightness is below the threshold</string>
+    <string name="dc_dimming_mode_full">Dependent on time and brightness</string>
+    <string name="dc_dimming_brightness_title">Brightness threshold</string>
+    <string name="dc_dimming_brightness_disabled">Disabled</string>
+    <string name="dc_dimming_restore_auto_mode">Restore auto mode</string>
+    <string name="dc_dimming_brightness_info">Only activate DC Dimming when the average brightness is below the threshold</string>
+    <string name="dc_dimming_off_auto_mode_auto">Will turn on automatically</string>
+    <string name="dc_dimming_on_auto_mode_auto">Will turn off automatically</string>
+    <string name="keywords_display_dc_dimming">dc dimming, flicker, eye, strain</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroidlicense_title">Лицензия ОС</string>
+    <string name="crdroidlicense_title">Лицензия crDroid</string>
 </resources>
