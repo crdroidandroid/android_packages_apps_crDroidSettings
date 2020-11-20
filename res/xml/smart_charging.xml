@@ -48,4 +48,10 @@
         settings:units="%"
         android:defaultValue="60"
         android:dependency="smart_charging" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="smart_charging_footer"
+        android:selectable="false"
+        settings:searchable="false"
+        android:dependency="smart_charging" />
 </PreferenceScreen>

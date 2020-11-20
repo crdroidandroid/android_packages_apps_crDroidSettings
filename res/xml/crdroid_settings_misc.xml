@@ -75,35 +75,35 @@
         android:summary="@string/alarm_blocker_summary"
         android:fragment="com.crdroid.settings.fragments.misc.AlarmBlocker"/> -->
 
-    <!-- Clipboard toast info -->
+    <!-- Clipboard toast info
     <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="clipboard_toast_info"
         android:icon="@drawable/ic_movie"
         android:title="@string/clipboard_toast_info_title"
         android:entries="@array/clipboard_toast_info_entries"
         android:entryValues="@array/clipboard_toast_info_values"
-        android:defaultValue="0" />
+        android:defaultValue="0" /> -->
 
     <!-- CPU Info -->
-    <SwitchPreference
-        android:key="show_cpu_info"
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="show_cpu_overlay"
         android:icon="@drawable/ic_info"
         android:title="@string/show_cpu_info"
         android:summary="@string/show_cpu_info_summary" />
 
-    <!-- Disable device identifier restrictions -->
+    <!-- Disable device identifier restrictions
     <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
         android:key="privileged_device_identifier_check_relaxed"
         android:icon="@drawable/ic_identifier"
         android:title="@string/device_identifier_access_restrictions_title"
-        android:summary="@string/device_identifier_access_restrictions_summary" />
+        android:summary="@string/device_identifier_access_restrictions_summary" /> -->
 
-    <!-- HAFR -->
+    <!-- HAFR
     <Preference
         android:icon="@drawable/ic_hafr"
         android:title="@string/hide_apps_from_recents_title"
         android:summary="@string/hide_apps_from_recents_summary"
-        android:fragment="com.crdroid.settings.fragments.misc.HAFRSettings" />
+        android:fragment="com.crdroid.settings.fragments.misc.HAFRSettings" /> -->
 
     <!-- Gaming Mode -->
     <Preference
@@ -113,13 +113,13 @@
         android:summary="@string/gaming_mode_summary"
         android:fragment="com.crdroid.settings.fragments.misc.GamingMode"/>
 
-    <!-- Keyboard -->
+    <!-- Keyboard
     <Preference
         android:key="ime_settings"
         android:icon="@drawable/ic_keyboard"
         android:title="@string/ime_settings_title"
         android:summary="@string/ime_settings_summary"
-        android:fragment="com.crdroid.settings.fragments.misc.ImeSettings"/>
+        android:fragment="com.crdroid.settings.fragments.misc.ImeSettings"/> -->
 
     <!-- Smart Charging -->
     <Preference
@@ -161,36 +161,37 @@
         android:title="@string/screenshot_edit_app"
         android:summary="@string/screenshot_edit_app_summary" /> -->
 
-    <!-- Three-fingers-swipe to screenshot -->
+    <!-- Three-fingers-swipe to screenshot
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="three_finger_gesture"
         android:icon="@drawable/ic_three_finger_gesture"
         android:title="@string/three_finger_gesture"
         android:summary="@string/three_finger_gesture_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" /> -->
 
-    <!-- Toast Icon -->
+    <!-- Toast Icon
     <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
         android:key="toast_icon"
         android:icon="@drawable/ic_toast"
         android:title="@string/toast_icon_title"
         android:summary="@string/toast_icon_summary"
-        android:defaultValue="true" />
+        android:defaultValue="true" /> -->
 
-    <!-- Sensor Block -->
+    <!-- Sensor Block
     <Preference
         android:key="sensor_block_settings"
         android:icon="@drawable/ic_remote"
         android:title="@string/sensor_block_title"
         android:summary="@string/sensor_block_summary"
-        android:fragment="com.crdroid.settings.fragments.misc.SensorBlock"/>
+        android:fragment="com.crdroid.settings.fragments.misc.SensorBlock"/> -->
 
+    <!-- Pocket Judge
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="pocket_judge"
         android:icon="@drawable/ic_pocket"
         android:title="@string/pocket_judge_title"
         android:summary="@string/pocket_judge_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" /> -->
 
     <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="dnd_when_call"
@@ -214,7 +215,7 @@
         android:summary="@string/allow_signature_fake_summary"
         android:defaultValue="true" /> -->
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="settings_show_conditions"
         android:icon="@drawable/ic_cog"
         android:title="@string/settings_show_conditions_title"
@@ -233,5 +234,5 @@
         android:icon="@drawable/ic_close"
         android:title="@string/disable_fc_notifications_title"
         android:summary="@string/disable_fc_notifications_summary"
-        android:defaultValue="false" />
+        android:defaultValue="false" /> -->
 </PreferenceScreen>
