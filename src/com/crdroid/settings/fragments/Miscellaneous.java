@@ -80,6 +80,8 @@ public class Miscellaneous extends SettingsPreferenceFragment {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_CPU_OVERLAY, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT);
         GamingMode.reset(mContext);
         SmartCharging.reset(mContext);
     }
