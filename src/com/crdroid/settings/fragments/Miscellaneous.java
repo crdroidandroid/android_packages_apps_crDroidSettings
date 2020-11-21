@@ -58,14 +58,12 @@ import java.util.ArrayList;
 
 @SearchIndexable
 public class Miscellaneous extends SettingsPreferenceFragment 
-        implements Indexable, Preference.OnPreferenceChangeListener {
+        implements Indexable {
 
     public static final String TAG = "Miscellaneous";
 
-    private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
     private static final String SMART_CHARGING = "smart_charging";
 
-    private SwitchPreference mShowCpuInfo;
     private Preference mSmartCharging;
 
     @Override
@@ -80,11 +78,6 @@ public class Miscellaneous extends SettingsPreferenceFragment
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
 
-        mShowCpuInfo = (SwitchPreference) prefScreen.findPreference(SHOW_CPU_INFO_KEY);
-        mShowCpuInfo.setChecked(Settings.Global.getInt(resolver,
-                Settings.Global.SHOW_CPU_OVERLAY, 0) == 1);
-        mShowCpuInfo.setOnPreferenceChangeListener(this);
-
         mSmartCharging = (Preference) prefScreen.findPreference(SMART_CHARGING);
         boolean mSmartChargingSupported = res.getBoolean(
                 com.android.internal.R.bool.config_smartChargingAvailable);
@@ -96,6 +89,8 @@ public class Miscellaneous extends SettingsPreferenceFragment
         ContentResolver resolver = mContext.getContentResolver();
         Settings.Global.putInt(resolver,
                 Settings.Global.PRIVILEGED_DEVICE_IDENTIFIER_CHECK_RELAXED, 0);
+        Settings.Global.putInt(resolver,
+                Settings.Global.SHOW_CPU_OVERLAY, 0);
         Settings.Global.putInt(resolver,
                 Settings.Global.TOAST_ICON, 1);
         Settings.System.putIntForUser(resolver,
@@ -110,35 +105,11 @@ public class Miscellaneous extends SettingsPreferenceFragment
                 Settings.System.SETTINGS_SHOW_SUGGESTIONS, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.CLIPBOARD_TOAST_INFO, 0, UserHandle.USER_CURRENT);
-        writeCpuInfoOptions(mContext, false);
         HAFRSettings.reset(mContext);
         GamingMode.reset(mContext);
         ImeSettings.reset(mContext);
         SmartCharging.reset(mContext);
         SensorBlock.reset(mContext);
-    }
-
-    private static void writeCpuInfoOptions(Context mContext, boolean value) {
-        Settings.Global.putInt(mContext.getContentResolver(),
-                Settings.Global.SHOW_CPU_OVERLAY, value ? 1 : 0);
-        Intent service = (new Intent())
-                .setClassName("com.android.systemui", "com.android.systemui.CPUInfoService");
-        if (value) {
-            mContext.startService(service);
-        } else {
-            mContext.stopService(service);
-        }
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        Context mContext = getActivity().getApplicationContext();
-        if (preference == mShowCpuInfo) {
-            writeCpuInfoOptions(mContext, (Boolean) newValue);
-            return true;
-        }
-        return false;
     }
 
     @Override
