@@ -935,7 +935,7 @@
     <string name="screenshot_type_partial">Скриншот выбранной области</string>
     <!-- Screenshot delay  -->
     <string name="screenshot_delay_title">Задержка скриншота</string>
-    <string name="screenshot_delay_summary">Время, в течение которого необходимо удерживать кнопки питания и громкости, чтобы сделать снимок экрана</string>
+    <string name="screenshot_delay_summary">Время нажатия кнопок питания и громкости, для снимка экрана</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">Настройки скриншота</string>
     <string name="screenshot_edit_app">Редактор скриншотов</string>
@@ -2317,7 +2317,9 @@
     <string name="applock_show_only_on_wake">Аутентифицировать только один раз</string>
     <string name="applock_show_only_on_wake_on_summary">После аутентификации приложение остается разблокированным, пока экран не выключится</string>
     <string name="applock_show_only_on_wake_off_summary">После аутентификации приложение остается разблокированным в течение 15 секунд после выхода</string>
-    <string name="applock_lock_notifications">Скрывать содержимое уведомлений, когдаприложение заблокировано</string>
+    <string name="applock_notification_info">Вы можете показать/скрыть содержимое уведомлений для каждого приложения, нажав на значок уведомления, отображаемый в настройках каждого заблокированного приложения</string>
+    <string name="applock_show_notif">Показывать уведомления полностью</string>
+    <string name="applock_hide_notif">Скрыть содержимое уведомлений</string>
     <string name="applock_setup">Настройка блокировки приложений</string>
     <string name="applock_overlay_summary">Эта функция недоступна, так как приложение заблокировано</string>
     <plurals name="applock_summary">
@@ -2326,6 +2328,19 @@
         <item quantity="many">приложений заблокировано: %d</item>
         <item quantity="other">%d приложений заблокировано</item>
     </plurals>
+    <!-- DC Dimming -->
+    <string name="dc_dimming_title">Диммирование</string>
+    <string name="dc_dimming_info">Уменьшает напряжение глаз в низких условиях света, но может привести к снижению качества изображения и плохим цветовым решениям.</string>
+    <string name="dc_dimming_auto_mode_title">Расписание</string>
+    <string name="dc_dimming_mode_brightness">Включить, когда яркость ниже порога</string>
+    <string name="dc_dimming_mode_full">Зависимость от времени и яркости</string>
+    <string name="dc_dimming_brightness_title">Порог яркости</string>
+    <string name="dc_dimming_brightness_disabled">Выключено</string>
+    <string name="dc_dimming_restore_auto_mode">Восстановить режим авто</string>
+    <string name="dc_dimming_brightness_info">Активировать DC Dimming, если средняя яркость ниже порога</string>
+    <string name="dc_dimming_off_auto_mode_auto">Автоматическое включение</string>
+    <string name="dc_dimming_on_auto_mode_auto">Автоматическое выключение</string>
+    <string name="keywords_display_dc_dimming">dc dimming, мерцание, глаза, штамм</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroidlicense_title">Лицензия ОС</string>
+    <string name="crdroidlicense_title">Лицензия crDroid</string>
 </resources>
