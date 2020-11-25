@@ -46,11 +46,11 @@ import com.crdroid.settings.fragments.Buttons;
 import com.crdroid.settings.fragments.LockScreen;
 import com.crdroid.settings.fragments.Miscellaneous;
 import com.crdroid.settings.fragments.Navigation;
+import com.crdroid.settings.fragments.Notifications;
 import com.crdroid.settings.fragments.QuickSettings;
 import com.crdroid.settings.fragments.Sound;
 import com.crdroid.settings.fragments.StatusBar;
 /*
-import com.crdroid.settings.fragments.Notifications;
 import com.crdroid.settings.fragments.UserInterface;
 import com.crdroid.settings.fragments.Recents;
 */
@@ -136,13 +136,13 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
         protected Void doInBackground(Void... params) {
 /*
             Recents.reset(rContext);
-            Notifications.reset(rContext);
             UserInterface.reset(rContext);
 */
             Buttons.reset(rContext);
             LockScreen.reset(rContext);
             Miscellaneous.reset(rContext);
             Navigation.reset(rContext);
+            Notifications.reset(rContext);
             QuickSettings.reset(rContext);
             Sound.reset(rContext);
             StatusBar.reset(rContext);
@@ -173,16 +173,16 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
 /*
             frags[3] = new Recents();
             frags[5] = new UserInterface();
-            frags[6] = new Notifications();
 */
             frags[0] = new StatusBar();
             frags[1] = new QuickSettings();
             frags[2] = new LockScreen();
             frags[3] = new Navigation();
             frags[4] = new Buttons();
-            frags[5] = new Sound();
-            frags[6] = new Miscellaneous();
-            frags[7] = new About();
+            frags[5] = new Notifications();
+            frags[6] = new Sound();
+            frags[7] = new Miscellaneous();
+            frags[8] = new About();
         }
 
         @Override
@@ -207,13 +207,13 @@ public class crDroidSettingsLayout extends SettingsPreferenceFragment {
 /*
             getString(R.string.recents_title),
             getString(R.string.ui_title),
-            getString(R.string.notifications_title),
 */
             getString(R.string.statusbar_title),
             getString(R.string.quicksettings_title),
             getString(R.string.lockscreen_title),
             getString(R.string.navbar_title),
             getString(R.string.button_title),
+            getString(R.string.notifications_title),
             getString(R.string.sound_title),
             getString(R.string.misc_title),
             getString(R.string.about_crdroid)
