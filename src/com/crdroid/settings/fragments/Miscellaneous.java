@@ -57,8 +57,10 @@ public class Miscellaneous extends SettingsPreferenceFragment {
     public static final String TAG = "Miscellaneous";
 
     private static final String SMART_CHARGING = "smart_charging";
+    private static final String POCKET_JUDGE = "pocket_judge";
 
     private Preference mSmartCharging;
+    private Preference mPocketJudge;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,6 +76,12 @@ public class Miscellaneous extends SettingsPreferenceFragment {
                 com.android.internal.R.bool.config_smartChargingAvailable);
         if (!mSmartChargingSupported)
             prefScreen.removePreference(mSmartCharging);
+
+        mPocketJudge = (Preference) prefScreen.findPreference(POCKET_JUDGE);
+        boolean mPocketJudgeSupported = res.getBoolean(
+                com.android.internal.R.bool.config_pocketModeSupported);
+        if (!mPocketJudgeSupported)
+            prefScreen.removePreference(mPocketJudge);
     }
 
     public static void reset(Context mContext) {
@@ -82,6 +90,8 @@ public class Miscellaneous extends SettingsPreferenceFragment {
                 Settings.System.SHOW_CPU_OVERLAY, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
         GamingMode.reset(mContext);
         SmartCharging.reset(mContext);
     }
@@ -106,6 +116,11 @@ public class Miscellaneous extends SettingsPreferenceFragment {
                             com.android.internal.R.bool.config_smartChargingAvailable);
                     if (!mSmartChargingSupported)
                         keys.add(SMART_CHARGING);
+
+                    boolean mPocketJudgeSupported = res.getBoolean(
+                            com.android.internal.R.bool.config_pocketModeSupported);
+                    if (!mPocketJudgeSupported)
+                        keys.add(POCKET_JUDGE);
 
                     return keys;
                 }
