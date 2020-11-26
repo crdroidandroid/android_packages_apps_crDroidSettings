@@ -92,6 +92,8 @@ public class Miscellaneous extends SettingsPreferenceFragment {
                 Settings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.TOAST_ICON, 1, UserHandle.USER_CURRENT);
         GamingMode.reset(mContext);
         SmartCharging.reset(mContext);
     }
