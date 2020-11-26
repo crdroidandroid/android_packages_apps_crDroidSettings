@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018-2019 crDroid Android Project
+     Copyright (C) 2018-2020 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -48,4 +48,9 @@
         android:title="@string/smart_pixels_shift_title"
         android:summary="@string/smart_pixels_shift_summary"
         android:dialogTitle="@string/smart_pixels_shift_title" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="smart_pixels_footer"
+        android:selectable="false"
+        settings:searchable="false" />
 </PreferenceScreen>

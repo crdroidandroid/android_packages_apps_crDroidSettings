@@ -19,21 +19,21 @@
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!-- Ambient Display -->
+    <!-- Ambient Display
     <PreferenceScreen
         android:key="doze_fragment"
         android:icon="@drawable/ic_ambient"
         android:title="@string/doze_display_title"
         android:summary="@string/doze_display_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.DozeSettings" />
+        android:fragment="com.crdroid.settings.fragments.ui.DozeSettings" /> -->
 
-    <!-- Animations -->
+    <!-- Animations
     <Preference
         android:key="animations"
         android:icon="@drawable/ic_system_animation"
         android:title="@string/animation_title"
         android:summary="@string/animation_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.Animations" />
+        android:fragment="com.crdroid.settings.fragments.ui.Animations" /> -->
 
     <!-- Blur
     <Preference
@@ -43,13 +43,13 @@
         android:summary="@string/settings_blur_cat_summary"
         android:fragment="com.crdroid.settings.fragments.ui.BlurPersonalizations" /> -->
 
-    <!-- Display cutout options -->
+    <!-- Display cutout options
     <Preference
         android:key="cutout_settings"
         android:icon="@drawable/ic_cutout"
         android:title="@string/cutout_main"
         android:summary="@string/cutout_main_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.CutoutSettings" />
+        android:fragment="com.crdroid.settings.fragments.ui.CutoutSettings" /> -->
 
     <!-- Expanded Desktop
     <org.lineageos.internal.lineageparts.LineagePartsPreference
@@ -69,13 +69,13 @@
         android:icon="@drawable/ic_fullscreen"
         lineage:requiresConfig="@*lineageos.platform:bool/config_haveHigherAspectRatioScreen" /> -->
 
-    <!-- Rounded Corners -->
+    <!-- Rounded Corners
     <PreferenceScreen
         android:key="rounded_corners"
         android:icon="@drawable/ic_rounded_corner"
         android:title="@string/corners_title"
         android:summary="@string/corners_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.RoundedCorners" />
+        android:fragment="com.crdroid.settings.fragments.ui.RoundedCorners" /> -->
 
     <!-- Smart Pixels -->
     <PreferenceScreen
@@ -85,7 +85,7 @@
         android:summary="@string/smart_pixels_summary" 
         android:fragment="com.crdroid.settings.fragments.ui.SmartPixels" />
 
-    <!-- Switch Style -->
+    <!-- Switch Style
     <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="berry_switch_style"
         android:icon="@drawable/ic_toggle_switch"
@@ -93,9 +93,9 @@
         android:dialogTitle="@string/switch_style_title"
         android:entries="@array/switch_style_entries"
         android:entryValues="@array/switch_style_values"
-        android:defaultValue="0" />
+        android:defaultValue="0" /> -->
 
-    <!-- Navbar Style -->
+    <!-- Navbar Style
     <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="navbar_style"
         android:icon="@drawable/ic_toggle_navbar"
@@ -103,7 +103,7 @@
         android:dialogTitle="@string/navbar_style_title"
         android:entries="@array/navbar_style_entries"
         android:entryValues="@array/navbar_style_values"
-        android:defaultValue="0" />
+        android:defaultValue="0" /> -->
 
     <!-- Weather -->
     <PreferenceScreen
