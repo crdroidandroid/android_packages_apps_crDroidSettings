@@ -25,6 +25,7 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import com.android.internal.util.crdroid.FodUtils;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -55,6 +56,10 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String FP_ERROR_VIBRATE = "fp_error_vibrate";
 
+    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
+
+    private PreferenceCategory mFODIconPickerCategory;
+
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
 
@@ -66,9 +71,14 @@ public class LockScreen extends SettingsPreferenceFragment
         PreferenceScreen prefSet = getPreferenceScreen();
         Context mContext = getContext();
 
+        mFODIconPickerCategory = findPreference(FOD_ICON_PICKER_CATEGORY);
+        if (mFODIconPickerCategory != null && !FodUtils.hasFodSupport(getContext())) {
+            prefSet.removePreference(mFODIconPickerCategory);
+        }
+
         PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
 
-        FingerprintManager mFingerprintManager = (FingerprintManager) 
+        FingerprintManager mFingerprintManager = (FingerprintManager)
                 getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (Preference) findPreference(FP_SUCCESS_VIBRATE);
         mFingerprintVibErr = (Preference) findPreference(FP_ERROR_VIBRATE);
