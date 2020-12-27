@@ -37,6 +37,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.fragments.sound.PulseSettings;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -54,6 +56,7 @@ public class Sound extends SettingsPreferenceFragment {
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        PulseSettings.reset(mContext);
     }
 
     @Override

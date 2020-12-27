@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2021 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/pulse_settings" >
+
+    <SwitchPreference
+        android:key="navbar_pulse_enabled"
+        android:title="@string/show_navbar_pulse_title"
+        android:summary="@string/show_navbar_pulse_summary"/>
+
+    <SwitchPreference
+        android:key="lockscreen_pulse_enabled"
+        android:title="@string/show_lockscreen_pulse_title"
+        android:summary="@string/show_lockscreen_pulse_summary"/>
+
+    <SwitchPreference
+        android:key="ambient_pulse_enabled"
+        android:title="@string/show_ambient_pulse_title"
+        android:summary="@string/show_ambient_pulse_summary"/>
+
+    <com.crdroid.settings.preferences.SecureSettingListPreference
+        android:key="pulse_render_style"
+        android:title="@string/pulse_render_mode_title"
+        android:entries="@array/pulse_render_mode_entries"
+        android:entryValues="@array/pulse_render_mode_values"
+        android:defaultValue="1"/>
+
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="pulse_smoothing_enabled"
+        android:title="@string/pulse_smoothing_enabled_title"
+        android:summary="@string/pulse_smoothing_enabled_summary"
+        android:defaultValue="false"/>
+
+    <com.crdroid.settings.preferences.SecureSettingListPreference
+        android:key="pulse_color_mode"
+        android:title="@string/pulse_color_mode_title"
+        android:entries="@array/pulse_color_mode_entries"
+        android:entryValues="@array/pulse_color_mode_values"
+        android:defaultValue="2"/>
+
+    <com.crdroid.settings.preferences.colorpicker.SecureSettingColorPickerPreference
+        android:key="pulse_color_user"
+        android:title="@string/pulse_color_user_title"
+        android:defaultValue="0x92FFFFFF"/>
+
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        android:key="pulse_lavalamp_speed"
+        android:title="@string/pulse_lavalamp_speed_title"
+        android:defaultValue="10000"
+        android:max="30000"
+        settings:min="200"
+        settings:interval="200"
+        settings:units="@string/unit_milliseconds"/>
+
+    <PreferenceCategory
+        android:key="pulse_fading_bars_category"
+        android:title="@string/pulse_legacy_mode_advanced_category">
+
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="pulse_custom_dimen"
+            android:title="@string/pulse_custom_dimen"
+            android:defaultValue="14"
+            android:max="30"
+            settings:min="1"
+            settings:units="@string/unit_pixels"
+            android:dependency="pulse_fading_bars_category"/>
+
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="pulse_custom_div"
+            android:title="@string/pulse_custom_div"
+            android:defaultValue="16"
+            android:max="44"
+            settings:min="2"
+            settings:interval="2"
+            settings:units="@string/unit_pixels"
+            android:dependency="pulse_fading_bars_category"/>
+
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="pulse_filled_block_size"
+            android:title="@string/pulse_filled_block_size"
+            android:defaultValue="4"
+            android:max="8"
+            settings:min="4"
+            settings:units="@string/unit_pixels"
+            android:dependency="pulse_fading_bars_category"/>
+
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="pulse_empty_block_size"
+            android:title="@string/pulse_empty_block_size"
+            android:defaultValue="1"
+            android:max="4"
+            settings:min="0"
+            settings:units="@string/unit_pixels"
+            android:dependency="pulse_fading_bars_category"/>
+
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="pulse_custom_fudge_factor"
+            android:title="@string/pulse_custom_fudge_factor"
+            android:defaultValue="4"
+            android:max="6"
+            settings:min="2"
+            android:dependency="pulse_fading_bars_category"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pulse_2"
+        android:title="@string/pulse_solid_dimen_category">
+
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="pulse_solid_units_opacity"
+            android:title="@string/pulse_solid_units_opacity"
+            android:defaultValue="200"
+            android:max="255"
+            settings:min="0"
+            android:dependency="pulse_2"/>
+
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="pulse_solid_units_count"
+            android:title="@string/pulse_solid_units_count"
+            android:defaultValue="32"
+            android:max="128"
+            settings:min="16"
+            settings:interval="16"
+            android:dependency="pulse_2"/>
+
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="pulse_solid_fudge_factor"
+            android:title="@string/pulse_custom_fudge_factor"
+            android:defaultValue="4"
+            android:max="6"
+            settings:min="2"
+            android:dependency="pulse_2"/>
+    </PreferenceCategory>
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="pulse_settings_footer"
+        android:selectable="false"
+        settings:searchable="false" />
+</PreferenceScreen>
