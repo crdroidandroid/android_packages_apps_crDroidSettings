@@ -37,6 +37,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.fragments.sound.PulseSettings;
 import com.crdroid.settings.fragments.sound.VolumePanel;
 
 import java.util.List;
@@ -62,6 +63,7 @@ public class Sound extends SettingsPreferenceFragment {
                 Settings.System.ADAPTIVE_PLAYBACK_TIMEOUT, 30, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SCREENSHOT_SOUND, 1, UserHandle.USER_CURRENT);
+        PulseSettings.reset(mContext);
         VolumePanel.reset(mContext);
     }
 
