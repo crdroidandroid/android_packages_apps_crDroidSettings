@@ -187,6 +187,14 @@
                 android:defaultValue="false" /> -->
 
             <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+                android:key="fod_gesture"
+                android:icon="@drawable/ic_fp"
+                android:title="@string/fod_gesture_title"
+                android:summary="@string/fod_gesture_summary"
+                android:defaultValue="false"
+                settings:controller="com.android.settings.security.screenlock.ScreenOffFodPreferenceController" />
+
+            <com.crdroid.settings.preferences.SystemSettingSwitchPreference
                 android:key="fod_recognizing_animation"
                 android:icon="@drawable/ic_fp"
                 android:title="@string/fod_recog_animation"
