@@ -55,5 +55,10 @@
         settings:textStart="@string/hidden_label"
         settings:textEnd="@string/long_label"/>
 
-</PreferenceScreen>
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="show_back_arrow_gesture"
+        android:title="@string/back_gesture_arrow_message"
+        android:summary="@string/back_gesture_arrow_summary"
+        android:defaultValue="true" />
 
+</PreferenceScreen>
