@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2019 crDroid Android Project
+     Copyright (C) 2016-2021 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -25,6 +25,13 @@
         android:icon="@drawable/ic_buttons"
         android:title="@string/hwkeys_disabled_title"
         android:summary="@string/hwkeys_disabled_summary" />
+
+    <SwitchPreference
+        android:key="swap_capacitive_keys"
+        android:icon="@drawable/ic_buttons"
+        android:title="@string/swap_capacitive_keys_title"
+        android:summary="@string/swap_capacitive_keys_summary"
+        android:defaultValue="false" />
 
     <com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness
         android:key="button_backlight"

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2020 crDroid Android Project
+ * Copyright (C) 2016-2021 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import android.util.Log;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
+import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
@@ -88,6 +89,7 @@ public class Buttons extends SettingsPreferenceFragment implements
             "torch_long_press_power_timeout";
     private static final String KEY_ADDITIONAL_BUTTONS = "additional_buttons";
     private static final String KEY_POWER_MENU = "power_menu";
+    private static final String KEY_SWAP_CAPACITIVE_KEYS = "swap_capacitive_keys";
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -122,10 +124,15 @@ public class Buttons extends SettingsPreferenceFragment implements
     private SwitchPreference mTorchLongPressPowerGesture;
     private ListPreference mTorchLongPressPowerTimeout;
     private ButtonBacklightBrightness backlight;
+    private SwitchPreference mSwapCapacitiveKeys;
+
+    private LineageHardwareManager mHardware;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mHardware = LineageHardwareManager.getInstance(getActivity());
 
         addPreferencesFromResource(R.xml.crdroid_settings_button);
 
@@ -161,6 +168,7 @@ public class Buttons extends SettingsPreferenceFragment implements
         final PreferenceCategory cameraCategory = prefScreen.findPreference(CATEGORY_CAMERA);
 
         mHardwareKeysDisable = (SwitchPreference) findPreference(HWKEYS_DISABLED);
+        mSwapCapacitiveKeys = findPreference(KEY_SWAP_CAPACITIVE_KEYS);
         mAnbi = (SwitchPreference) findPreference(KEY_ANBI);
 
         // Power button ends calls.
@@ -201,6 +209,12 @@ public class Buttons extends SettingsPreferenceFragment implements
             mHardwareKeysDisable.setOnPreferenceChangeListener(this);
         } else {
             prefScreen.removePreference(mHardwareKeysDisable);
+        }
+
+        if (mSwapCapacitiveKeys != null && !isKeySwapperSupported(getActivity())) {
+            prefScreen.removePreference(mSwapCapacitiveKeys);
+        } else {
+            mSwapCapacitiveKeys.setOnPreferenceChangeListener(this);
         }
 
         if (!hasHomeKey && !hasBackKey && !hasMenuKey && !hasAssistKey && !hasAppSwitchKey) {
@@ -438,6 +452,9 @@ public class Buttons extends SettingsPreferenceFragment implements
                 backlight.setEnabled(!value);
             }
             return true;
+        } else if (preference == mSwapCapacitiveKeys) {
+            mHardware.set(LineageHardwareManager.FEATURE_KEY_SWAP, (Boolean) newValue);
+            return true;
         } else if (preference == mHomeLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION);
@@ -489,6 +506,11 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static boolean isKeyDisablerSupported(Context context) {
         final LineageHardwareManager hardware = LineageHardwareManager.getInstance(context);
         return hardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE);
+    }
+
+    private static boolean isKeySwapperSupported(Context context) {
+        final LineageHardwareManager hardware = LineageHardwareManager.getInstance(context);
+        return hardware.isSupported(LineageHardwareManager.FEATURE_KEY_SWAP);
     }
 
     @Override
@@ -566,6 +588,9 @@ public class Buttons extends SettingsPreferenceFragment implements
 
                     if (!isKeyDisablerSupported(context))
                         keys.add(HWKEYS_DISABLED);
+
+                    if (!isKeySwapperSupported(context))
+                        keys.add(KEY_SWAP_CAPACITIVE_KEYS);
 
                     if (!DeviceUtils.hasPowerKey()) {
                         keys.add(KEY_POWER_MENU);
