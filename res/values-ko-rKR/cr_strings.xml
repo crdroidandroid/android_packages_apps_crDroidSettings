@@ -988,9 +988,9 @@
     <string name="doze_pulse_duration_out_summary"></string>
     <string name="doze_brightness_level_title">밝기 수준</string>
     <string name="onehundred_ms">100 밀리초</string>
-    <string name="twofifty_ms">250 ms</string>
+    <string name="twofifty_ms">250 밀리초</string>
     <string name="fivehundred_ms_default">500 ms (기본)</string>
-    <string name="sevenfifty_ms">750 ms</string>
+    <string name="sevenfifty_ms">750 밀리초</string>
     <string name="one_second">1초</string>
     <string name="onehalf_second">1.5초</string>
     <string name="two_second">2초</string>
@@ -1011,7 +1011,7 @@
     <string name="doze_display_title">절전 모드 자동 해제</string>
     <string name="doze_display_summary">절전모드 자동해제 설정</string>
     <string name="doze_sensor_title">센서 기반</string>
-    <string name="tilt_title">Tilt</string>
+    <string name="tilt_title">기울기</string>
     <string name="tilt_summary">기기를 들면 알림 표시</string>
     <string name="pickup_title">기기 들기</string>
     <string name="pickup_summary">기기를 들면 알림 깜빡임</string>
@@ -1484,10 +1484,10 @@
     <string name="volte_icon_title">VoLTE 아이콘</string>
     <string name="volte_icon_summary">VoLTE 아이콘을 표시합니다</string>
     <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWiFi icon</string>
-    <string name="vowifi_icon_summary">Display VoWiFi icon when available</string>
-    <string name="volte_vowifi_override_title">VoWiFi override</string>
-    <string name="volte_vowifi_override_summary">Hide VoLTE when VoWiFi is available. This also overrides old style signal icon for VoWiFi.</string>
+    <string name="vowifi_icon_title">VoWiFi 아이콘</string>
+    <string name="vowifi_icon_summary">VoLTE 아이콘을 표시합니다</string>
+    <string name="volte_vowifi_override_title">VoWiFi 대체</string>
+    <string name="volte_vowifi_override_summary">VoWiFi를 사용할 수 있을 때 VoLTE를 숨깁니다. 또한 VoWiFi의 이전 스타일 신호 아이콘을 대체합니다.</string>
     <!-- Ad Away -->
     <string name="adaway_title">광고 차단</string>
     <string name="adaway_summary">원치않는 광고를 차단합니다 (루트권한 필요)</string>
@@ -1554,8 +1554,8 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">센서 블록</string>
     <string name="sensor_block_summary">배터리 사용량이 적은 앱을 위해 중요한 모션 센서에 대한 액세스 차단</string>
-    <string name="sensor_block_app_picker_title">Block sensors for these apps</string>
-    <string name="add_sensor_block_package_title">Add apps for Sensor block</string>
+    <string name="sensor_block_app_picker_title">이 앱의 센서 차단</string>
+    <string name="add_sensor_block_package_title">센서를 차단할 앱 추가</string>
     <string name="add_sensor_block_package_summary">Significant motion, accelerometer, linear acceleration sensors will be blocked for these apps</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">주머니 감지</string>
@@ -2316,17 +2316,17 @@
     <string name="applock_unlocked">잠금 해제됨</string>
     <string name="applock_locked_apps">잠긴 앱</string>
     <string name="applock_unlocked_apps">잠금 해제된 앱</string>
-    <string name="applock_show_only_on_wake">Authenticate only once</string>
-    <string name="applock_show_only_on_wake_on_summary">Once authenticated, an app stays unlocked until the screen turns off</string>
-    <string name="applock_show_only_on_wake_off_summary">Once authenticated, an app stays unlocked for 15 seconds after exiting</string>
-    <string name="applock_lock_notifications">Hide notification content while app is locked</string>
-    <string name="applock_setup">Setup app locker</string>
-    <string name="applock_overlay_summary">This feature is not available because this app is locked</string>
+    <string name="applock_show_only_on_wake">한번만 인증</string>
+    <string name="applock_show_only_on_wake_on_summary">한 번 인증 된 앱은 화면이 꺼질 때까지 잠금 해제 상태를 유지합니다</string>
+    <string name="applock_show_only_on_wake_off_summary">한 번 인증된 앱은 종료 후 15초 동안 잠금 해제 상태를 유지합니다</string>
+    <string name="applock_lock_notifications">앱이 잠겨있을 때 알림 내용을 숨김</string>
+    <string name="applock_setup">앱 잠금 설정</string>
+    <string name="applock_overlay_summary">앱이 잠겨있기 때문에 이 기능을 사용할 수 없습니다</string>
     <plurals name="applock_summary">
-        <item quantity="other">%d apps locked</item>
+        <item quantity="other">앱 %d개 잠김</item>
     </plurals>
     <!-- Navbar length -->
-    <string name="navbar_length">Gesture bar length</string>
-    <string name="hidden_label">Hidden</string>
-    <string name="long_label">Long</string>
+    <string name="navbar_length">제스처 바 길이</string>
+    <string name="hidden_label">숨김</string>
+    <string name="long_label">길게</string>
 </resources>
