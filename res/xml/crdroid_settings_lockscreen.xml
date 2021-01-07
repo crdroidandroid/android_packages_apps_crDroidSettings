@@ -210,17 +210,17 @@
                 android:dependency="fod_recognizing_animation" />
 
             <com.crdroid.settings.preferences.SystemSettingListPreference
-                android:key="fod_pressed_state"
+                android:key="fod_color"
                 android:icon="@drawable/ic_fp"
-                android:dialogTitle="@string/fod_pressed_state_title"
-                android:title="@string/fod_pressed_state_title"
+                android:dialogTitle="@string/fod_pressed_color_title"
+                android:title="@string/fod_pressed_color_title"
                 android:summary="%s"
-                android:entries="@array/fod_pressed_state_entries"
-                android:entryValues="@array/fod_pressed_state_values"
+                android:entries="@array/fod_pressed_color_entries"
+                android:entryValues="@array/fod_pressed_color_values"
                 android:defaultValue="0" />
 
             <Preference
-                android:summary="@string/fod_pressed_state_footer" />
+                android:summary="@string/fod_pressed_color_footer" />
 
     </PreferenceCategory>
 
