@@ -94,6 +94,13 @@
             android:title="@string/quick_settings_vibrate_title"
             android:summary="@string/quick_settings_vibrate_summary"
             android:defaultValue="false"/>
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_panel_bg_use_new_tint"
+            android:title="@string/qs_bg_use_new_tint"
+            android:icon="@drawable/ic_invert_colors"
+            android:summary="@string/qs_bg_use_new_tint_summary"
+            android:defaultValue="false" />
     </PreferenceCategory>
 
     <!--<PreferenceCategory 
