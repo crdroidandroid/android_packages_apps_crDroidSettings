@@ -90,6 +90,29 @@
         android:defaultValue="false" /> -->
 
     <PreferenceCategory
+        android:key="incall_vib_options"
+        android:title="@string/incall_vibration_category" >
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_connect"
+            android:icon="@drawable/ic_vibrate"
+            android:title="@string/incall_vibrate_connect_title"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_callwaiting"
+            android:icon="@drawable/ic_vibrate"
+            android:title="@string/incall_vibrate_call_wait_title"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="vibrate_on_disconnect"
+            android:icon="@drawable/ic_vibrate"
+            android:title="@string/incall_vibrate_disconnect_title"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="heads_up"
         android:title="@string/heads_up_category">
 

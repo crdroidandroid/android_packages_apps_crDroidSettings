@@ -88,6 +88,12 @@ public class Notifications extends SettingsPreferenceFragment {
                 Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LESS_BORING_HEADS_UP, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VIBRATE_ON_CONNECT, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VIBRATE_ON_CALLWAITING, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VIBRATE_ON_DISCONNECT, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
