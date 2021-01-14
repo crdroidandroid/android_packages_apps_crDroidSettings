@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2020 crDroid Android Project
+     Copyright (C) 2016-2021 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -180,6 +180,24 @@
             android:fragment="com.crdroid.settings.fragments.quicksettings.CustomHeader"
             android:title="@string/custom_header_title"
             android:summary="@string/custom_header_summary" />
+
+        <!-- QS status bar opacity -->
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_sb_bg_alpha"
+            android:title="@string/qs_sb_bg_alpha_title"
+            android:icon="@drawable/ic_invert_colors"
+            android:defaultValue="255"
+            android:max="255"
+            settings:min="0"
+            settings:units="" />
+
+        <!-- QS panel gradient below status bar -->
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_sb_bg_gradient"
+            android:icon="@drawable/ic_invert_colors"
+            android:title="@string/qs_panel_gradient_title"
+            android:summary="@string/qs_panel_gradient_summary"
+            android:defaultValue="true"/>
 
         <!-- QS panel opacity -->
         <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
