@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2020 crDroid Android Project
+     Copyright (C) 2016-2021 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -48,8 +48,8 @@
     <string name="cancel">منسوخ</string>
     <string name="save">محفوظ</string>
     <!-- Misc strings -->
-    <string name="lockclock_title">گھڑی ویجیٹ</string>
-    <string name="lockclock_summary">دیکھیں یا تبدیل کریں کیسے ’گھڑی‘ کا ویجیٹ ظاہر ہو گا</string>
+    <string name="lockclock_title">Clock widget</string>
+    <string name="lockclock_summary">View or change how the \'cLock\' widget will display</string>
     <!-- Network traffic -->
     <string name="network_traffic_settings_title">انٹرنیٹ سپیڈ کی نگرانی</string>
     <string name="network_traffic_settings_summary">نیٹ ورک ٹریفک کی نگرانی اور اپنے حساب سے تبدیل کریں</string>
@@ -94,8 +94,8 @@
     <string name="recents_default_category">AOSP</string>
     <string name="recents_omni_category">OmniSwitch</string>
     <!-- AOSP Recents -->
-    <string name="aosp_first_time_title">حالیہ AOSP</string>
-    <string name="aosp_first_time_message">جب توسیع شدہ ڈیسک ٹاپ کو فعال کیا جاتا ہے توحالیہ مستغرق کی ترتیب ختم ہو گئی ہے۔</string>
+    <string name="aosp_first_time_title">AOSP recents</string>
+    <string name="aosp_first_time_message">Immersive recents setting is overridden if the expanded desktop is enabled.</string>
     <!-- Hide Apps from Recents -->
     <string name="hide_apps_from_recents_title">Hide apps from recents</string>
     <string name="hide_apps_from_recents_summary">Hide apps from appearing in recents screen</string>
@@ -103,12 +103,12 @@
     <string name="hide_from_recents_picker_title">Automatically hide for these apps</string>
     <string name="hide_from_recents_picker_summary">These apps will be automatically hide from recents screen when they are opened next time</string>
     <!-- OmniSwitch Recents -->
-    <string name="recents_use_omniswitch_title">حالیہ کے لیے استعمال کریں</string>
-    <string name="recents_use_omniswitch_summary">پہلے سے طے شدہ حالیہ منظر کی بجائے OmniSwitch استعمال کریں</string>
-    <string name="omniswitch_start_settings_title">ترتیب</string>
-    <string name="omniswitch_start_settings_summary">OmniSwitch کی ترتیبات دیکھیں</string>
-    <string name="omniswitch_first_time_title">OmniSwitch حالیہ</string>
-    <string name="omniswitch_first_time_message">اس بات کا یقین کر لیں کہ آپ نے OmniSwitch کو بھی OmniSwitch کی ترتیبات کھول کر فعال کر دیا ہے ۔</string>
+    <string name="recents_use_omniswitch_title">Use for recents</string>
+    <string name="recents_use_omniswitch_summary">Use OmniSwitch instead of the default recents view</string>
+    <string name="omniswitch_start_settings_title">Settings</string>
+    <string name="omniswitch_start_settings_summary">View the settings for OmniSwitch</string>
+    <string name="omniswitch_first_time_title">OmniSwitch Recents</string>
+    <string name="omniswitch_first_time_message">Make sure you have also enabled OmniSwitch by opening OmniSwitch settings.</string>
     <!-- Lockscreen categories -->
     <string name="lockscreen_shortcuts_category">شارٹ کٹ</string>
     <string name="lockscreen_interface_category">انٹرفیس</string>
@@ -137,7 +137,7 @@
     <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
     <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
     <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
-    <string name="shortcut_action_help_shortcut">شارٹ کٹ</string>
+    <string name="shortcut_action_help_shortcut">shortcut</string>
     <string name="shortcut_action_help_button">button</string>
     <string name="shortcut_action_help_app">app</string>
     <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
@@ -376,8 +376,8 @@
     <string name="volume_steps_7">7</string>
     <string name="volume_steps_5">5</string>
     <!-- SU indicator -->
-    <string name="show_su_indicator_title">سپر صارف آئکون</string>
-    <string name="show_su_indicator_summary">جب مقامی روٹ استعمال ہو رہا ہو تو سپر صارف آئیکون ظاہر کریں</string>
+    <string name="show_su_indicator_title">Superuser icon</string>
+    <string name="show_su_indicator_summary">Display superuser icon when using native root</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Launch music app</string>
     <string name="headset_connect_player_summary">Launch the default music app when headset is connected</string>
@@ -435,27 +435,27 @@
     <string name="status_bar_logo_category_title">علامت</string>
     <string name="status_bar_misc_category_title">متفرق</string>
     <!-- Statusbar crDroid logo -->
-    <string name="status_bar_crdroid_logo_title">علامت دیکھائیں</string>
-    <string name="status_bar_crdroid_logo_summary">علامت کو سٹیٹس بار میں ظاہر کرنے کے فعال بنائیں</string>
-    <string name="status_bar_crdroid_logo_color">علامت کا رنگ</string>
-    <string name="status_bar_crdroid_logo_position">علامت کی جگہ</string>
-    <string name="status_bar_crdroid_logo_position_summary">علامت کو کس طرف ظاہر کرنا ہے منتخب کریں، بائیں یا دائیں</string>
-    <string name="status_bar_crdroid_logo_style">علامت کا طرز</string>
-    <string name="status_bar_logo_position_right">دائیں</string>
-    <string name="status_bar_logo_position_left">بائیں</string>
+    <string name="status_bar_crdroid_logo_title">Show Logo</string>
+    <string name="status_bar_crdroid_logo_summary">Enable to display logo in the status bar</string>
+    <string name="status_bar_crdroid_logo_color">Logo color</string>
+    <string name="status_bar_crdroid_logo_position">Logo position</string>
+    <string name="status_bar_crdroid_logo_position_summary">Choose which side to display the logo on, left or right</string>
+    <string name="status_bar_crdroid_logo_style">Logo style</string>
+    <string name="status_bar_logo_position_right">Right</string>
+    <string name="status_bar_logo_position_left">Left</string>
     <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_ios">iOS</string>
     <string name="status_bar_logo_style_emoticon">Emoticon</string>
-    <string name="status_bar_logo_style_emoticon_cool">امیٹیکان کول</string>
-    <string name="status_bar_logo_style_emoticon_dead">امیٹیکان ہلاک</string>
-    <string name="status_bar_logo_style_emoticon_devil">امیٹیکان شیطان</string>
-    <string name="status_bar_logo_style_emoticon_happy">امیٹیکان خوش</string>
-    <string name="status_bar_logo_style_emoticon_neutral">امیٹیکان غیر جانبدار</string>
-    <string name="status_bar_logo_style_emoticon_poop">امیٹیکان پووپ</string>
-    <string name="status_bar_logo_style_emoticon_sad">امیٹیکان افسردہ</string>
-    <string name="status_bar_logo_style_emoticon_tongue">امیٹیکان زبان</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emoticon cool</string>
+    <string name="status_bar_logo_style_emoticon_dead">Emoticon dead</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emoticon devil</string>
+    <string name="status_bar_logo_style_emoticon_happy">Emoticon happy</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Emoticon neutral</string>
+    <string name="status_bar_logo_style_emoticon_poop">Emoticon poop</string>
+    <string name="status_bar_logo_style_emoticon_sad">Emoticon sad</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Emoticon tongue</string>
     <string name="status_bar_logo_style_blackberry">Blackberry</string>
     <string name="status_bar_logo_style_cake">Cake</string>
     <string name="status_bar_logo_style_blogger">Blogger</string>
@@ -463,19 +463,19 @@
     <string name="status_bar_logo_style_linux">Linux</string>
     <string name="status_bar_logo_style_yin_yang">Yin-Yang</string>
     <string name="status_bar_logo_style_windows">Windows</string>
-    <string name="status_bar_logo_style_robot">روبوٹ</string>
+    <string name="status_bar_logo_style_robot">Robot</string>
     <string name="status_bar_logo_style_ninja">Ninja</string>
-    <string name="status_bar_logo_style_heart">دل</string>
-    <string name="status_bar_logo_style_flower">پھول</string>
-    <string name="status_bar_logo_style_ghost">بھوت</string>
+    <string name="status_bar_logo_style_heart">Heart</string>
+    <string name="status_bar_logo_style_flower">Flower</string>
+    <string name="status_bar_logo_style_ghost">Ghost</string>
     <string name="status_bar_logo_style_google">Google</string>
-    <string name="status_bar_logo_style_human_male">آدمی</string>
-    <string name="status_bar_logo_style_human_female">عورت</string>
-    <string name="status_bar_logo_style_human_male_female">آدمی &amp; عورت</string>
-    <string name="status_bar_logo_style_gender_male">مرد</string>
-    <string name="status_bar_logo_style_gender_female">مادہ</string>
-    <string name="status_bar_logo_style_gender_male_female">مرد &amp; عورت</string>
-    <string name="status_bar_logo_style_guitar_electric">برقی گیٹار</string>
+    <string name="status_bar_logo_style_human_male">Man</string>
+    <string name="status_bar_logo_style_human_female">Woman</string>
+    <string name="status_bar_logo_style_human_male_female">Man &amp; woman</string>
+    <string name="status_bar_logo_style_gender_male">Male</string>
+    <string name="status_bar_logo_style_gender_female">Female</string>
+    <string name="status_bar_logo_style_gender_male_female">Male &amp; female</string>
+    <string name="status_bar_logo_style_guitar_electric">Electric guitar</string>
     <string name="status_bar_logo_style_batman">Batman</string>
     <string name="status_bar_logo_style_deadpool">Deadpool</string>
     <string name="status_bar_logo_style_decepticons">Decepticons</string>
@@ -564,63 +564,63 @@
     <string name="action_entry_select_app">ایپلیکیشن منتخب کریں</string>
     <string name="action_entry_custom_action">اپنی مرضی کے عمل کا انتخاب کریں</string>
     <!-- Fling -->
-    <string name="fling_settings">فلنگ ترتیبات</string>
-    <string name="fling_settings_summary">فلنگ اشاروں کو اپنی مرضی کے مطابق بنائیں</string>
-    <string name="fling_interface">فلنگ</string>
-    <string name="fling_enable_title">فلنگ فعال بنائیں</string>
-    <string name="fling_back_home_policy">بیک اور ہوم ہر وقت سیٹ کرنے کی ضرورت ہے. بیک یا ہوم تفویض کو تبدیل کرنے کے لئے، مطلوبہ تفویض پہلے مقرر کریں</string>
-    <string name="fling_split_bar_policy">جب صرف دائیں یا بائیں کارروائی کو تفویض کیا جاتا ہے، تو کارروائی مکمل بار پر جارئ ہوتی ہے</string>
-    <string name="fling_def_summary">کوئی عمل سیٹ نہیں کیا گیا</string>
-    <string name="fling_swipe_actions">اشارے سوائپ کریں</string>
-    <string name="fling_tap_actions">اشارے ٹیپ کریں</string>
-    <string name="fling_short_swipe_right">دائیں مختصر سوائپ</string>
-    <string name="fling_short_swipe_left">بائیں مختصر سوائپ</string>
-    <string name="fling_long_swipe_right">دائیں لمبا سوائپ</string>
-    <string name="fling_long_swipe_left">بائیں لمبا سوائپ</string>
-    <string name="fling_right_up_swipe">دائیں اوپر کی طرف سوائپ</string>
-    <string name="fling_left_up_swipe">بائیں اوپر کی طرف سوائپ</string>
-    <string name="fling_single_tap">سنگل ٹیپ دائیں</string>
-    <string name="fling_double_tap">دو بار ٹیپ دائیں</string>
-    <string name="fling_long_press">دائیں طرف لمبا دبائیں</string>
-    <string name="fling_single_left_tap">اکیلا دائیں دبائیں</string>
-    <string name="fling_double_left_tap">دو دفع بائیں دبائیں</string>
-    <string name="fling_long_left_press">دیر تک بائیں دبائیں</string>
-    <string name="long_swipe_portrait_title">عمودی انداز</string>
-    <string name="long_swipe_landscape_title">افقی انداز</string>
-    <string name="portrait_right_swipe_title">تصویر دائیں گھمائیں</string>
-    <string name="portrait_left_swipe_title">تصویر بائیں گھمائیں</string>
-    <string name="landscape_right_swipe_title">زمین دائیں گھائیں</string>
-    <string name="landscape_left_swipe_title">زمین بائیں گھمائیں</string>
-    <string name="vertical_up_swipe_title">عمودی اوپر گھمائیں</string>
-    <string name="vertical_down_swipe_title">عمودی نیچے گھمائیں</string>
-    <string name="up_swipe_title">اوپر گھمائیں</string>
-    <string name="down_swipe_title">نیچے گھمائیں</string>
-    <string name="long_swipe_reset">دوبارہ ترتیب دیں</string>
-    <string name="fling_advanced">اعلیٰ</string>
-    <string name="fling_long_swipe_title">لمبا سوائپ کرنے کی حد</string>
-    <string name="fling_long_swipe_summary">ٹھیک دھن لمبی سوائپ کی حد فلنگ انٹرفیس کی چوڑائی یا اونچائی کی شرح فی صد پر ہے</string>
-    <string name="fling_trails_enable_title">اشارہ کے نشانات کو فعال بنائیں</string>
-    <string name="fling_trails_enable_summary">سوائپ کے اشاروں پر ایک راستہ دکھائیں</string>
-    <string name="fling_trails_color_title">نشان کے رنگ</string>
-    <string name="fling_trails_width_title">اشارہ کی چوڑائی</string>
-    <string name="fling_appearance">ظاہری شکل</string>
-    <string name="fling_show_logo_title">فلنگ لوگو دکھائیں</string>
-    <string name="fling_animate_logo_title">لوگو کو متحرک کریں</string>
-    <string name="fling_animate_logo_summary">علامت رابطے کے واقعات پر حرکت کرتا ہے</string>
-    <string name="fling_logo_color">لوگو کا رنگ</string>
-    <string name="fling_logo_custom_logo_pick_title">لوگو آئیکون کو اپنی مرضی کے مطابق کریں</string>
-    <string name="fling_logo_custom_logo_image_pick_title">لوگو تصویر کو اپنی مرضی کے مطابق کریں</string>
-    <string name="fling_logo_custom_logo_reset_title">لوگو آئیکون کو دوبارہ ترتیب دینا</string>
-    <string name="fling_show_ripple_title">لہر دکھائیں</string>
-    <string name="fling_show_ripple_summary">چھونے کی صورت میں لہراتا اثر</string>
-    <string name="fling_ripple_color">لہر کا رنگ</string>
-    <string name="fling_longpress_timeout_label_left">کم تاخیر</string>
-    <string name="fling_longpress_timeout_label_right">مزید تاخیر</string>
-    <string name="fling_longpress_title">طویل دبانیں کی تاخیر</string>
-    <string name="fling_longpress_summary">ایک طویل پریس کو انجام دینے کے لۓ وقت بڑھائیں یا کم کریں</string>
-    <string name="fling_keyboard_cursors_title">متحرک کی بورڈ کرسرز کی کارروائی</string>
-    <string name="fling_keyboard_cursors_summary">اگر کی بورڈ کھلا ہے تو بائیں اور دائیں حرکت کو دو بار کرنے سے بائیں اور دائیں کی بورڈ کرسر کے اعمال بن جاتے ہیں</string>
-    <string name="fling_logo_opacity_title">فلنگ لوگو کا دھندلا پن</string>
+    <string name="fling_settings">Fling settings</string>
+    <string name="fling_settings_summary">Customize fling gestures</string>
+    <string name="fling_interface">Fling</string>
+    <string name="fling_enable_title">Enable Fling</string>
+    <string name="fling_back_home_policy">Back and Home are required to be set at all times. To change a Back or Home assignment, set the desired assignment first</string>
+    <string name="fling_split_bar_policy">When only a right or left action is assigned, the action applies to the full bar</string>
+    <string name="fling_def_summary">No action set</string>
+    <string name="fling_swipe_actions">Swipe gestures</string>
+    <string name="fling_tap_actions">Tap gestures</string>
+    <string name="fling_short_swipe_right">Right short swipe</string>
+    <string name="fling_short_swipe_left">Left short swipe</string>
+    <string name="fling_long_swipe_right">Right long swipe</string>
+    <string name="fling_long_swipe_left">Left long swipe</string>
+    <string name="fling_right_up_swipe">Right side swipe up</string>
+    <string name="fling_left_up_swipe">Left side swipe up</string>
+    <string name="fling_single_tap">Single tap right</string>
+    <string name="fling_double_tap">Double tap right</string>
+    <string name="fling_long_press">Long press right</string>
+    <string name="fling_single_left_tap">Single tap left</string>
+    <string name="fling_double_left_tap">Double tap left</string>
+    <string name="fling_long_left_press">Long press left</string>
+    <string name="long_swipe_portrait_title">Portrait</string>
+    <string name="long_swipe_landscape_title">Landscape</string>
+    <string name="portrait_right_swipe_title">Portrait right swipe</string>
+    <string name="portrait_left_swipe_title">Portrait left swipe</string>
+    <string name="landscape_right_swipe_title">Landscape right swipe</string>
+    <string name="landscape_left_swipe_title">Landscape left swipe</string>
+    <string name="vertical_up_swipe_title">Vertical up swipe</string>
+    <string name="vertical_down_swipe_title">Vertical down swipe</string>
+    <string name="up_swipe_title">Up swipe</string>
+    <string name="down_swipe_title">Down swipe</string>
+    <string name="long_swipe_reset">Reset</string>
+    <string name="fling_advanced">Advanced</string>
+    <string name="fling_long_swipe_title">Long swipe thresholds</string>
+    <string name="fling_long_swipe_summary">Fine tune long swipe thresholds based on a percentage of Fling interface width or height</string>
+    <string name="fling_trails_enable_title">Enable gesture trails</string>
+    <string name="fling_trails_enable_summary">Show a trail on swipe gestures</string>
+    <string name="fling_trails_color_title">Trail color</string>
+    <string name="fling_trails_width_title">Trail width</string>
+    <string name="fling_appearance">Appearance</string>
+    <string name="fling_show_logo_title">Show Fling logo</string>
+    <string name="fling_animate_logo_title">Animate logo</string>
+    <string name="fling_animate_logo_summary">Logo animates on touch events</string>
+    <string name="fling_logo_color">Logo color</string>
+    <string name="fling_logo_custom_logo_pick_title">Custom logo icon</string>
+    <string name="fling_logo_custom_logo_image_pick_title">Custom logo image</string>
+    <string name="fling_logo_custom_logo_reset_title">Reset logo icon</string>
+    <string name="fling_show_ripple_title">Show ripple</string>
+    <string name="fling_show_ripple_summary">Ripple effect on touch events</string>
+    <string name="fling_ripple_color">Ripple color</string>
+    <string name="fling_longpress_timeout_label_left">Less delay</string>
+    <string name="fling_longpress_timeout_label_right">More delay</string>
+    <string name="fling_longpress_title">Long press delay</string>
+    <string name="fling_longpress_summary">Increase or decrease the time it takes to execute a long press</string>
+    <string name="fling_keyboard_cursors_title">Dynamic keyboard cursors action</string>
+    <string name="fling_keyboard_cursors_summary">Double tap left and right actions becomes left and right keyboard cursor actions if keyboard is open</string>
+    <string name="fling_logo_opacity_title">Fling logo opacity</string>
     <string name="fling_factory_reset_title">Reset to stock</string>
     <string name="fling_factory_reset_confirm">Are you sure you want to reset Fling to stock settings?</string>
     <string name="fling_backup_current_config_title">Save profile</string>
@@ -872,20 +872,20 @@
     <string name="pie_enable_title">Enable pie</string>
     <string name="pie_settings_summary">Adjust pie to your liking</string>
     <string name="pie_theme_mode_title">Theme</string>
-    <string name="pie_auto">خودکار</string>
-    <string name="pie_white">سفید</string>
-    <string name="pie_dark">گہرا</string>
+    <string name="pie_auto">Automatic</string>
+    <string name="pie_white">White</string>
+    <string name="pie_dark">Dark</string>
     <string name="pie_battery_title">Battery indicator</string>
-    <string name="pie_battery_text">صرف متن</string>
-    <string name="pie_battery_circle">صرف دائرہ</string>
-    <string name="pie_battery_both">دونوں</string>
+    <string name="pie_battery_text">Text only</string>
+    <string name="pie_battery_circle">Circle only</string>
+    <string name="pie_battery_both">Both</string>
     <string name="pie_status_indicator">Network indicator</string>
     <string name="pie_status_wifi">Wifi only</string>
     <string name="pie_status_mobile">Mobile network only</string>
-    <string name="pie_status_none">کوئی بھی نہیں</string>
-    <string name="pie_status_both">دونوں</string>
+    <string name="pie_status_none">None</string>
+    <string name="pie_status_both">Both</string>
     <string name="pie_gravity_title">Pie gravity</string>
-    <string name="pie_gravity_summary">اس مقام کو منتخب کریں جہاں پائی رکھی جائے گی</string>
+    <string name="pie_gravity_summary">Select the location where the Pie will be placed</string>
     <string name="pie_gravity_bottom">Bottom</string>
     <string name="pie_gravity_right">Right</string>
     <string name="pie_gravity_left">Left</string>
@@ -1045,8 +1045,8 @@
     <string name="crdroid_translate_summary">Help with localisation of ROM in your language!</string>
     <!-- Maintainers -->
     <string name="maintainers_crdroid_title">Devices and maintainers</string>
-    <string name="maintainers_crdroid_summary">معاون آلات اور ان کےمحافظوں کی فہرست</string>
-    <string name="maintainers_crdroid_error">آلات اور برقرار رکھنے والی فہرست کو لوڈ کرنے میں ناکام</string>
+    <string name="maintainers_crdroid_summary">List of supported devices and their official maintainers</string>
+    <string name="maintainers_crdroid_error">Unable to load devices and maintainers list</string>
     <!-- Donate crDroid -->
     <string name="donate_crdroid_title">ہماری مددکریں</string>
     <string name="donate_crdroid_summary">Donate to support development and our server</string>
@@ -2198,23 +2198,54 @@
     <string name="fod_icon_picker_footer">In order to add your own icon, select the top left icon and use the OnePlus 6T FP Customizer app to select the icon you want.</string>
     <string name="fod_wallpaper_color">Use wallpaper color for FOD icon</string>
     <string name="fod_wallpaper_color_summary">Uses adjusted primary wallpaper color for FOD icon\nNOTE: might look good only with some wallpapers</string>
-    <string name="fod_recog_animation">FOD recognizing animation</string>
-    <string name="fod_recog_animation_summary">Shows animation while reading your finger</string>
-    <string name="fod_recog_animation_effect_title">FOD recognizing animation effect</string>
-    <!-- QS background opacity -->
-    <string name="qs_panel_alpha_title">Background opacity</string>
+    <!-- QS panel background opacity -->
+    <string name="qs_panel_alpha_title">Panel opacity</string>
+    <!-- QS panel gradient below status bar -->
+    <string name="qs_panel_gradient_title">tatus bar gradient</string>
+    <string name="qs_panel_gradient_summary">Show gradient below status bar in QS panel</string>
+    <!-- QS status bar background opacity -->
+    <string name="qs_sb_bg_alpha_title">Status bar opacity</string>
     <!-- Navigation mode settings -->
     <string name="back_height_low_label">Full</string>
     <string name="back_height_high_label">Bottom</string>
     <string name="back_options_dialog_title">Options</string>
     <string name="back_height_message">Amount of screen height used as touchable region for back gesture.</string>
     <string name="back_gesture_haptic">Enable haptic tick effect on back gesture</string>
-    <!-- FOD pressed state behavior -->
-    <string name="fod_pressed_state_title">FOD pressed state behavior</string>
-    <string name="fod_pressed_state_footer">Icons/colors may vary depending on which device you are using.</string>
-    <string name="fod_pressed_state_icon">Icon (usually Cyan)</string>
-    <string name="fod_pressed_state_icon_white">Icon (White)</string>
-    <string name="fod_pressed_state_solid_color">Solid color (usually Green)</string>
+    <!-- FOD pressed color -->
+    <string name="fod_pressed_color_title">Fingerprint pressed color</string>
+    <string name="fod_pressed_color_footer">Icons/colors may vary depending on which device you are using.</string>
+    <string name="fod_pressed_color_white">White</string>
+    <string name="fod_pressed_color_cyan">Cyan</string>
+    <string name="fod_pressed_color_green">Green</string>
+    <string name="fod_pressed_color_yellow">Yellow</string>
+    <!-- FOD animations -->
+    <string name="fod_recog_animation">Fingerprint animation</string>
+    <string name="fod_recog_animation_summary">Shows an animation while reading your finger</string>
+    <string name="fod_recog_animation_effect_title">Select fingerprint animation effect</string>
+    <string name="fod_recog_animation_miui_normal">MIUI default</string>
+    <string name="fod_recog_animation_miui_aod">MIUI AOD</string>
+    <string name="fod_recog_animation_miui_aurora">Aurora (K30 Pro)</string>
+    <string name="fod_recog_animation_miui_aurora_cas">Aurora (Mi 10 Ultra)</string>
+    <string name="fod_recog_animation_miui_light">Light</string>
+    <string name="fod_recog_animation_miui_pop">Pop</string>
+    <string name="fod_recog_animation_miui_pulse">Pulse</string>
+    <string name="fod_recog_animation_miui_pulse_white">Pulse (White)</string>
+    <string name="fod_recog_animation_miui_rhythm">Rhythm</string>
+    <string name="fod_recog_animation_miui_star_cas">Starlight</string>
+    <string name="fod_recog_animation_op_cosmos">Cosmos</string>
+    <string name="fod_recog_animation_op_energy">Energy</string>
+    <string name="fod_recog_animation_op_mclaren">McLaren</string>
+    <string name="fod_recog_animation_op_ripple">Ripple</string>
+    <string name="fod_recog_animation_op_scanning">Scanning (Cyberpunk 2077)</string>
+    <string name="fod_recog_animation_op_stripe">Stripe</string>
+    <string name="fod_recog_animation_op_wave">Wave</string>
+    <string name="fod_recog_animation_pureview_dna">DNA</string>
+    <string name="fod_recog_animation_pureview_future">Future</string>
+    <string name="fod_recog_animation_pureview_halo_ring">Halo ring</string>
+    <string name="fod_recog_animation_pureview_molecular">Molecular</string>
+    <string name="fod_recog_animation_rog_fusion">Fusion</string>
+    <string name="fod_recog_animation_rog_pulsar">Pulsar</string>
+    <string name="fod_recog_animation_rog_supernova">Supernova</string>
     <!-- NavigationBar Gestural Mode Tweaks -->
     <string name="gesture_pill_message">Hide the navigation bar pill for seamless fullscreen gestures.</string>
     <!-- Back gesture animation -->
