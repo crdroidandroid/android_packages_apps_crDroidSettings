@@ -38,8 +38,6 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Selector de color</string>
     <string name="press_color_to_apply">Toca el color de abajo para aplicarlo</string>
-    <string name="hex">Hex:</string>
-    <string name="hex_hint">#ff000000</string>
     <string name="set">Establecer</string>
     <string name="color_default">Predeterminado</string>
     <!-- General strings -->
@@ -47,9 +45,6 @@
     <string name="reset">Restablecer</string>
     <string name="cancel">Cancelar</string>
     <string name="save">Guardar</string>
-    <!-- Misc strings -->
-    <string name="lockclock_title">Widget del reloj</string>
-    <string name="lockclock_summary">Visualizar o cambiar forma en la que se mostrará el widget del reloj</string>
     <!-- Network traffic -->
     <string name="network_traffic_settings_title">Monitor de tráfico de red</string>
     <string name="network_traffic_settings_summary">Mostrar y configurar el monitor de tráfico de red actual</string>
@@ -90,25 +85,6 @@
     <string name="immersive_recents_fullscreen">Pantalla completa</string>
     <string name="immersive_recents_statusbar">Solo barra de estado</string>
     <string name="immersive_recents_navbar">Solo barra de navegación</string>
-    <!-- Recents categories -->
-    <string name="recents_default_category">AOSP</string>
-    <string name="recents_omni_category">OmniSwitch</string>
-    <!-- AOSP Recents -->
-    <string name="aosp_first_time_title">Recientes AOSP</string>
-    <string name="aosp_first_time_message">La pantalla de recientes inmersivos queda anulada si está activado el escritorio expandido.</string>
-    <!-- Hide Apps from Recents -->
-    <string name="hide_apps_from_recents_title">Ocultar aplicaciones de recientes</string>
-    <string name="hide_apps_from_recents_summary">Ocultar aplicaciones de aparecer en la pantalla de recientes</string>
-    <string name="hide_from_recents_add_app">Añadir aplicación a lista oculta</string>
-    <string name="hide_from_recents_picker_title">Ocultar automaticamente para estas aplicaciones</string>
-    <string name="hide_from_recents_picker_summary">Estas aplicaciones se ocultarán automáticamente en la pantalla de recientes cuando se abran la próxima vez</string>
-    <!-- OmniSwitch Recents -->
-    <string name="recents_use_omniswitch_title">Usar para recientes</string>
-    <string name="recents_use_omniswitch_summary">Usar OmniSwitch en lugar de la pantalla de recientes predeterminada</string>
-    <string name="omniswitch_start_settings_title">Ajustes</string>
-    <string name="omniswitch_start_settings_summary">Ver los ajustes de OmniSwitch</string>
-    <string name="omniswitch_first_time_title">Recientes OmniSwitch</string>
-    <string name="omniswitch_first_time_message">Asegurate de haber activado OmniSwitch abriendo los ajustes OmniSwitch.</string>
     <!-- Lockscreen categories -->
     <string name="lockscreen_shortcuts_category">Accesos directos</string>
     <string name="lockscreen_interface_category">Interfaz</string>
@@ -124,212 +100,24 @@
     <string name="lockscreen_shortcuts_title">Accesos directos</string>
     <string name="lockscreen_shortcuts_summary">Configurar los accesos directos de la parte inferior de la pantalla</string>
     <!-- Slim DSLV -->
-    <string name="shortcut_action_longpress">Pulsación larga:</string>
-    <string name="shortcut_action_select_action_longpress">Elegir la acción de la pulsación larga:</string>
-    <string name="shortcut_action_select_action">Elegir acción:</string>
-    <string name="shortcut_action_select_action_newaction">Seleccionar nueva acción:</string>
-    <string name="shortcut_action_reset">Restablecer</string>
-    <string name="shortcut_action_add">Añadir</string>
-    <string name="shortcut_action_reset_message">¿Resetear todas las entradas a su valor predeterminado?</string>
-    <string name="shortcut_action_max">Número máximo de entradas alcanzado</string>
-    <string name="shortcut_action_warning">Advertencia</string>
-    <string name="shortcut_action_warning_message">No es posible eliminar la última entrada</string>
-    <string name="shortcut_action_disable_message">Desactivada\nAñadir una entrada para activar esta función</string>
-    <string name="shortcut_image_not_valid">La aplicación elegida no devolvió un icono válido o no admite recortes en la imagen. Usa otra aplicación.</string>
-    <string name="shortcut_duplicate_entry">La acción elegida no puede añadirse dos veces</string>
-    <string name="shortcut_action_help_shortcut">acceso directo</string>
-    <string name="shortcut_action_help_button">botón</string>
-    <string name="shortcut_action_help_app">aplicación</string>
-    <string name="shortcut_action_help_icon">, al seleccionar el icono mostrará las opciones para personalizar</string>
-    <string name="shortcut_action_help_main">Para agregar un %1$s, seleccione el icono Agregar. Una vez que %1$s fue agregado, seleccionando la fila se cambiará el destino de%2$s\n\nPara eliminar un %1$s, deslice la fila horizontalmente a izquierda o a la derecha. Reordene un %1$s en la lista arrastrando verticalmente el ancla a su izquierda.\n\nPara limpiar o restablecer los valores predeterminados, seleccione el icono Restablecer.</string>
-    <string name="shortcut_action_help_delete_last_entry">Eliminar todos los %1$s de la lista, desactivará completamente la característica.</string>
-    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Eliminar todos los %1$s en la lista, desactivará completamente la segunda capa de Pie.</string>
-    <string name="shortcuts_applications">Aplicaciones</string>
-    <string name="shortcuts_select_custom_app_title">Seleccionar aplicación personalizada</string>
-    <string name="shortcuts_icon_picker_type">Selecciona el tipo de icono:</string>
-    <string name="shortcuts_icon_default">Predeterminado</string>
+    <string name="shortcuts_icon_default">Por defecto</string>
     <string name="shortcuts_icon_presets">Iconos del sistema</string>
     <string name="shortcuts_icon_custom">Galería</string>
-    <string name="shortcuts_icon_picker_choose_icon_title">Seleccionar icono</string>
-    <string name="shortcuts_icon_picker_alarm">Alarma</string>
-    <string name="shortcuts_icon_picker_andy">Andy</string>
-    <string name="shortcuts_icon_picker_battery">Batería</string>
-    <string name="shortcuts_icon_picker_browser">Navegador</string>
-    <string name="shortcuts_icon_picker_calendar">Calendario</string>
-    <string name="shortcuts_icon_picker_camera">Cámara</string>
-    <string name="shortcuts_icon_picker_cloud">Nube</string>
-    <string name="shortcuts_icon_picker_contact">Contacto</string>
-    <string name="shortcuts_icon_picker_directdial">Marcación directa</string>
-    <string name="shortcuts_icon_picker_directmessage">Mensaje directo</string>
-    <string name="shortcuts_icon_picker_drive">Drive</string>
-    <string name="shortcuts_icon_picker_dropbox">Dropbox</string>
-    <string name="shortcuts_icon_picker_email">Correo electrónico</string>
-    <string name="shortcuts_icon_picker_email2">Correo electrónico alternativo</string>
-    <string name="shortcuts_icon_picker_evernote">Evernote</string>
-    <string name="shortcuts_icon_picker_facebook">Facebook</string>
-    <string name="shortcuts_icon_picker_favorite">Favorito</string>
-    <string name="shortcuts_icon_picker_file_browser">Explorador de archivos</string>
-    <string name="shortcuts_icon_picker_file_browser2">Explorador de archivos alternativo</string>
-    <string name="shortcuts_icon_picker_fitness">Fitness</string>
-    <string name="shortcuts_icon_picker_gallery">Galería</string>
-    <string name="shortcuts_icon_picker_gears">Engranajes</string>
-    <string name="shortcuts_icon_picker_google_small">Google </string>
-    <string name="shortcuts_icon_picker_gplus">Google+</string>
-    <string name="shortcuts_icon_picker_gtalk">Hangouts</string>
-    <string name="shortcuts_icon_picker_help">Ayuda</string>
-    <string name="shortcuts_icon_picker_joystick">Joystick</string>
-    <string name="shortcuts_icon_picker_key">Claves/cuentas</string>
-    <string name="shortcuts_icon_picker_laptop">Ordenador portátil</string>
-    <string name="shortcuts_icon_picker_notes">Notas</string>
-    <string name="shortcuts_icon_picker_luggage">Viajar</string>
-    <string name="shortcuts_icon_picker_maps">Mapas</string>
-    <string name="shortcuts_icon_picker_market">Tienda</string>
-    <string name="shortcuts_icon_picker_movie">Películas</string>
-    <string name="shortcuts_icon_picker_music">Música</string>
-    <string name="shortcuts_icon_picker_nav">Navegación</string>
-    <string name="shortcuts_icon_picker_phone">Teléfono</string>
-    <string name="shortcuts_icon_picker_package">Paquete</string>
-    <string name="shortcuts_icon_picker_pinterest">Pinterest</string>
-    <string name="shortcuts_icon_picker_play">Reproducir</string>
-    <string name="shortcuts_icon_picker_pocket">Bolsillo</string>
-    <string name="shortcuts_icon_picker_quicksettings">Ajustes rápidos</string>
-    <string name="shortcuts_icon_picker_rss">RSS Feed</string>
-    <string name="shortcuts_icon_picker_sdcard">Tarjeta SD</string>
-    <string name="shortcuts_icon_picker_search">Búsqueda</string>
-    <string name="shortcuts_icon_picker_sms">Mensajería</string>
-    <string name="shortcuts_icon_picker_tasks">Tareas</string>
-    <string name="shortcuts_icon_picker_terminal">Terminal</string>
-    <string name="shortcuts_icon_picker_transit">Tránsito</string>
-    <string name="shortcuts_icon_picker_tv">TV</string>
-    <string name="shortcuts_icon_picker_twitter">Twitter</string>
-    <string name="shortcuts_icon_picker_unlock">Desbloquear</string>
-    <string name="airplay">Airplay</string>
-    <string name="android">Android</string>
-    <string name="badoo">Badoo</string>
-    <string name="battery">Batería</string>
-    <string name="bluetooth">Bluetooth</string>
-    <string name="bookmarks">Marcadores</string>
-    <string name="browser">Navegador</string>
-    <string name="browser2">Navegador2</string>
-    <string name="calculator">Calculadora</string>
-    <string name="calendar">Calendario</string>
-    <string name="calls">Llamadas</string>
-    <string name="camera">Cámara</string>
-    <string name="chrome">Chrome</string>
-    <string name="clock">Reloj</string>
-    <string name="cnn">Cnn</string>
-    <string name="deezer2">Deezer2</string>
-    <string name="deezer">Deezer</string>
-    <string name="dolphin2">Dolphin</string>
-    <string name="downloads">Descargas</string>
-    <string name="dropbox">Dropbox</string>
-    <string name="ebay">eBay</string>
-    <string name="email">Correo electrónico</string>
-    <string name="evernote">Evernote</string>
-    <string name="explorer">Explorador</string>
-    <string name="falcon">Falcon</string>
-    <string name="fb">Facebook</string>
-    <string name="flipboard">Flipboard</string>
-    <string name="foursquare">Foursquare</string>
-    <string name="firefox">Firefox</string>
-    <string name="googlebuzz">Google Buzz</string>
-    <string name="googledocs">Documentos de Google</string>
-    <string name="googlewallet">Cartera de Google</string>
-    <string name="line">Line</string>
-    <string name="mic">Micrófono</string>
-    <string name="newyorktimes">New York times</string>
-    <string name="rootexplorer">Explorador root</string>
-    <string name="sim">SIM</string>
-    <string name="teamviewer">TeamViewer</string>
-    <string name="totalcommander">Total Commander</string>
-    <string name="weather">Información meteorológica</string>
-    <string name="golocker">Go Locker</string>
-    <string name="googlecurrents">Google Currents</string>
-    <string name="googletalk">Google Talk</string>
-    <string name="gosms">Go SMS</string>
-    <string name="meebo">Meebo</string>
-    <string name="maps2">Maps2</string>
-    <string name="memorycleaner">Limpiador de memoria RAM</string>
-    <string name="navigation">Navegación</string>
-    <string name="pulse">Pulso</string>
-    <string name="shazam">Shazam</string>
-    <string name="swiftkey">SwiftKey</string>
-    <string name="tmobile">T-mobile</string>
-    <string name="trash">Basura</string>
-    <string name="games">Juegos</string>
-    <string name="gmail">Gmail</string>
-    <string name="docs">Documentos</string>
-    <string name="googledrive">Google Drive</string>
-    <string name="googleearth">Google Earth</string>
-    <string name="googlehangouts">Google Hangouts</string>
-    <string name="googlekeep">Google Keep (notas)</string>
-    <string name="googleplay">Google Play</string>
-    <string name="googletranslate">Traductor de Google</string>
-    <string name="google">Google</string>
-    <string name="googleplus">Google+</string>
-    <string name="imdb">imdb</string>
-    <string name="instagram">Instagram</string>
-    <string name="lastfm">Lastfm</string>
-    <string name="maps">Mapas</string>
-    <string name="messages">Mensajes</string>
-    <string name="music">Música</string>
-    <string name="mxplayer">Reproductor Mx</string>
-    <string name="notepad">Mensaje directo</string>
-    <string name="opera">Opera</string>
-    <string name="paint">Paint</string>
-    <string name="paypal">Paypal</string>
-    <string name="phone">Teléfono</string>
-    <string name="picasa">Picasa</string>
-    <string name="pictures2">Pictures2</string>
-    <string name="player_pro">Player pro</string>
-    <string name="playstation">Play Station</string>
-    <string name="reddit">Reddit</string>
-    <string name="settings">Ajustes</string>
-    <string name="skype">Skype</string>
-    <string name="soundscloud">SoundCloud</string>
-    <string name="spotifiy">Spotify</string>
-    <string name="tapatalk">Tapatalk</string>
-    <string name="tunein">TuneIn</string>
-    <string name="twitter">Twitter</string>
-    <string name="viber">Viber</string>
-    <string name="videocamera">Cámara de vídeo</string>
-    <string name="whatsapp">WhatsApp</string>
-    <string name="wifi">Wi-Fi</string>
-    <string name="xda">XDA</string>
-    <string name="yahoo">Yahoo</string>
-    <string name="youtube">YouTube</string>
-    <string name="zedge">Zedge</string>
-    <string name="shortcut_action_none">Ninguna</string>
     <string name="shortcut_action_app">Aplicación personalizada</string>
     <string name="shortcut_action_home">Inicio</string>
     <string name="shortcut_action_back">Atrás</string>
     <string name="shortcut_action_menu">Menú</string>
     <string name="shortcut_action_ime">Abrir el selector de IME</string>
-    <string name="shortcut_action_power_menu">Menú de apagado</string>
+    <string name="shortcut_action_power_menu">Menu de apagado</string>
     <string name="shortcut_action_recent">Recientes</string>
-    <string name="shortcut_action_power">Pantalla apagada</string>
-    <string name="shortcut_action_search">Buscar en la aplicación</string>
-    <string name="shortcut_action_ring_vib">Timbre/Vibración</string>
-    <string name="shortcut_action_ring_silent">Timbre/Silencio</string>
-    <string name="shortcut_action_ring_vib_silent">Timbre/Vibración/Silencio</string>
-    <string name="shortcut_action_camera">Cámara</string>
-    <string name="shortcut_action_media_next">Música - siguiente pista</string>
+    <string name="shortcut_action_power">Apagar pantalla</string>
+    <string name="shortcut_action_search">Búsqueda en la aplicación</string>
+    <string name="shortcut_action_none">Ninguno</string>
+    <string name="shortcut_action_media_next">Música - pista siguiente</string>
     <string name="shortcut_action_media_play_pause">Música - reproducir/pausar</string>
     <string name="shortcut_action_media_previous">Música - pista anterior</string>
-    <string name="shortcut_action_wake_device">Despertar dispositivo</string>
-    <string name="shortcut_picker_choose_longpress_action">Elegir la acción de la pulsación larga:</string>
-    <string name="shortcut_picker_choose_new_action">Seleccionar nueva acción:</string>
-    <string name="shortcut_picker_reassign_action">Reasignar la acción:</string>
-    <string name="shortcut_picker_choose_action">Elegir acción:</string>
-    <string name="shortcut_picker_applications_title">Aplicaciones</string>
-    <string name="shortcut_picker_activities_title">Actividades</string>
-    <string name="shortcut_picker_select_app_title">Seleccionar aplicación:</string>
-    <string name="shortcut_picker_select_activity_title">Seleccionar actividad:</string>
-    <string name="shortcut_picker_choose_icon_type_title">Elegir un estilo de icono:</string>
-    <string name="shortcut_picker_icon_type_default_title">Predeterminado</string>
-    <string name="shortcut_picker_icon_type_system_title">Iconos del sistema</string>
-    <string name="shortcut_picker_select_system_icon_title">Seleccionar el icono del sistema:</string>
-    <string name="shortcut_picker_icon_type_custom_title">Galería</string>
+    <string name="shortcut_action_ring_silent">Sonar/Silencio</string>
+    <string name="shortcut_action_ring_vib_silent">Sonar/Vibrar/Silencio</string>
     <!-- Media art -->
     <string name="media_art_title">Carátula multimedia</string>
     <string name="media_art_summary">Mostrar carátula multimedia si está disponible</string>
@@ -369,15 +157,6 @@
     <string name="volume_steps_system_title">Pasos de volumen: Sistema</string>
     <string name="volume_steps_voice_call_title">Pasos de volumen: Llamada de voz</string>
     <string name="volume_steps_reset">Restablecer</string>
-    <string name="volume_steps_60">60</string>
-    <string name="volume_steps_45">45</string>
-    <string name="volume_steps_30">30</string>
-    <string name="volume_steps_15">15</string>
-    <string name="volume_steps_7">7</string>
-    <string name="volume_steps_5">5</string>
-    <!-- SU indicator -->
-    <string name="show_su_indicator_title">Icono de superusuario</string>
-    <string name="show_su_indicator_summary">Mostrar icono de superusuario cuando se esté usando el root nativo</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">Abrir aplicación de música al conectar auriculares</string>
     <string name="headset_connect_player_summary">Iniciar el reproductor de música por defecto al conectar los auriculares</string>
@@ -434,55 +213,6 @@
     <string name="status_bar_battery_category_title">Personalización de la batería</string>
     <string name="status_bar_logo_category_title">Logo</string>
     <string name="status_bar_misc_category_title">Ajustes varios</string>
-    <!-- Statusbar crDroid logo -->
-    <string name="status_bar_crdroid_logo_title">Mostrar logo</string>
-    <string name="status_bar_crdroid_logo_summary">Mostrar logo en la barra de estado</string>
-    <string name="status_bar_crdroid_logo_color">Color del logo</string>
-    <string name="status_bar_crdroid_logo_position">Posición del logo</string>
-    <string name="status_bar_crdroid_logo_position_summary">Elegir dónde mostrar el logo, en la izquierda o derecha</string>
-    <string name="status_bar_crdroid_logo_style">Estilo del logo</string>
-    <string name="status_bar_logo_position_right">Derecha</string>
-    <string name="status_bar_logo_position_left">Izquierda</string>
-    <string name="status_bar_logo_style_crdroid">crDroid</string>
-    <string name="status_bar_logo_style_android">Android</string>
-    <string name="status_bar_logo_style_apple">Apple</string>
-    <string name="status_bar_logo_style_ios">iOS</string>
-    <string name="status_bar_logo_style_emoticon">Emoticono</string>
-    <string name="status_bar_logo_style_emoticon_cool">Emoticono con gafas</string>
-    <string name="status_bar_logo_style_emoticon_dead">Emoticono muerto</string>
-    <string name="status_bar_logo_style_emoticon_devil">Emoticono diablo</string>
-    <string name="status_bar_logo_style_emoticon_happy">Emoticono feliz</string>
-    <string name="status_bar_logo_style_emoticon_neutral">Emoticono neutral</string>
-    <string name="status_bar_logo_style_emoticon_poop">Emoticono mousse de chocolate</string>
-    <string name="status_bar_logo_style_emoticon_sad">Emoticono triste</string>
-    <string name="status_bar_logo_style_emoticon_tongue">Emoticono lengua</string>
-    <string name="status_bar_logo_style_blackberry">Blackberry</string>
-    <string name="status_bar_logo_style_cake">Tarta</string>
-    <string name="status_bar_logo_style_blogger">Blogger</string>
-    <string name="status_bar_logo_style_biohazard">Riesgo biológico</string>
-    <string name="status_bar_logo_style_linux">Linux</string>
-    <string name="status_bar_logo_style_yin_yang">Yin-Yang</string>
-    <string name="status_bar_logo_style_windows">Windows</string>
-    <string name="status_bar_logo_style_robot">Robot</string>
-    <string name="status_bar_logo_style_ninja">Ninja</string>
-    <string name="status_bar_logo_style_heart">Corazón</string>
-    <string name="status_bar_logo_style_flower">Flor</string>
-    <string name="status_bar_logo_style_ghost">Fantasma</string>
-    <string name="status_bar_logo_style_google">Google </string>
-    <string name="status_bar_logo_style_human_male">Hombre</string>
-    <string name="status_bar_logo_style_human_female">Mujer</string>
-    <string name="status_bar_logo_style_human_male_female">Hombre &amp; mujer</string>
-    <string name="status_bar_logo_style_gender_male">Masculino</string>
-    <string name="status_bar_logo_style_gender_female">Femenino</string>
-    <string name="status_bar_logo_style_gender_male_female">Masculino &amp; femenino</string>
-    <string name="status_bar_logo_style_guitar_electric">Guitarra eléctrica</string>
-    <string name="status_bar_logo_style_batman">Batman</string>
-    <string name="status_bar_logo_style_deadpool">Deadpool</string>
-    <string name="status_bar_logo_style_decepticons">Decepticons</string>
-    <string name="status_bar_logo_style_ironman">Ironman</string>
-    <string name="status_bar_logo_style_minions">Minions</string>
-    <string name="status_bar_logo_style_spiderman">Spider-Man</string>
-    <string name="status_bar_logo_style_superman">Superman</string>
     <!-- Expanded Desktop -->
     <string name="expanded_desktop_title">Escritorio expandido</string>
     <string name="expanded_desktop_summary">Expandir el espacio disponible de tu escritorio ocultando la barra de estado, barra de navegación o ambas</string>
@@ -563,75 +293,6 @@
     <string name="action_entry_default_action">Ajustes predeterminados</string>
     <string name="action_entry_select_app">Seleccionar aplicación</string>
     <string name="action_entry_custom_action">Seleccionar acción personalizada</string>
-    <!-- Fling -->
-    <string name="fling_settings">Configuración de fling</string>
-    <string name="fling_settings_summary">Personalizar los gestos de fling</string>
-    <string name="fling_interface">Fling</string>
-    <string name="fling_enable_title">Activar fling</string>
-    <string name="fling_back_home_policy">Se requiere que los botones de atrás e inicio estén establecidos en todo momento. Para cambiar una asignación de atrás o inicio, configure primero la asignación deseada</string>
-    <string name="fling_split_bar_policy">Cuando solo se asigna una acción derecha o izquierda, la acción se aplica a toda la barra</string>
-    <string name="fling_def_summary">Ninguna acción establecida</string>
-    <string name="fling_swipe_actions">Gestos de desplazamiento</string>
-    <string name="fling_tap_actions">Gestos de toque</string>
-    <string name="fling_short_swipe_right">Desplazamiento corto a la derecha</string>
-    <string name="fling_short_swipe_left">Desplazamiento corto a la izquierda</string>
-    <string name="fling_long_swipe_right">Desplazamiento largo a la derecha</string>
-    <string name="fling_long_swipe_left">Desplazamiento largo a la izquierda</string>
-    <string name="fling_right_up_swipe">Deslizar hacia arriba en el lado derecho</string>
-    <string name="fling_left_up_swipe">Deslizar hacia arriba en el lado izquierdo</string>
-    <string name="fling_single_tap">Toca una vez a la derecha</string>
-    <string name="fling_double_tap">Toca dos veces a la derecha</string>
-    <string name="fling_long_press">Mantén pulsado a la derecha</string>
-    <string name="fling_single_left_tap">Toca una vez a la izquierda</string>
-    <string name="fling_double_left_tap">Toca dos veces a la izquierda</string>
-    <string name="fling_long_left_press">Mantén pulsado a la izquierda</string>
-    <string name="long_swipe_portrait_title">Vertical</string>
-    <string name="long_swipe_landscape_title">Horizontal</string>
-    <string name="portrait_right_swipe_title">Deslizar hacia la derecha en vertical</string>
-    <string name="portrait_left_swipe_title">Deslizar hacia la izquierda en vertical</string>
-    <string name="landscape_right_swipe_title">Deslizar hacia la derecha en horizontal</string>
-    <string name="landscape_left_swipe_title">Deslizar hacia la izquierda en horizontal</string>
-    <string name="vertical_up_swipe_title">Deslizar hacia arriba en vertical</string>
-    <string name="vertical_down_swipe_title">Deslizar hacia abajo en vertical</string>
-    <string name="up_swipe_title">Deslizar hacia arriba</string>
-    <string name="down_swipe_title">Deslizar hacia abajo</string>
-    <string name="long_swipe_reset">Restablecer</string>
-    <string name="fling_advanced">Avanzado</string>
-    <string name="fling_long_swipe_title">Umbral de deslizamiento largo</string>
-    <string name="fling_long_swipe_summary">Ajustar con precisión los umbrales de deslizamiento largo basado en un porcentaje de ancho o alto de la interfaz de fling</string>
-    <string name="fling_trails_enable_title">Activar rastos de gestos</string>
-    <string name="fling_trails_enable_summary">Mostrar un rastro en los gestos de deslizamiento</string>
-    <string name="fling_trails_color_title">Color del rastro</string>
-    <string name="fling_trails_width_title">Ancho del rastro</string>
-    <string name="fling_appearance">Apariencia</string>
-    <string name="fling_show_logo_title">Mostrar logo de fling</string>
-    <string name="fling_animate_logo_title">Logo animado</string>
-    <string name="fling_animate_logo_summary">El logo reproduce una animación cuando se producen eventos táctiles</string>
-    <string name="fling_logo_color">Color del logo</string>
-    <string name="fling_logo_custom_logo_pick_title">Icono del logo personalizado</string>
-    <string name="fling_logo_custom_logo_image_pick_title">Imagen del logo personalizado</string>
-    <string name="fling_logo_custom_logo_reset_title">Restablecer el logo del icono</string>
-    <string name="fling_show_ripple_title">Mostrar onda</string>
-    <string name="fling_show_ripple_summary">Efecto de ondulación cuando se producen eventos táctiles</string>
-    <string name="fling_ripple_color">Color de la onda</string>
-    <string name="fling_longpress_timeout_label_left">Menos retraso</string>
-    <string name="fling_longpress_timeout_label_right">Más retraso</string>
-    <string name="fling_longpress_title">Retraso de la pulsación larga</string>
-    <string name="fling_longpress_summary">Aumentar o disminuir el tiempo que lleva ejecutar una pulsación larga</string>
-    <string name="fling_keyboard_cursors_title">Acciones dinámicas de cursores en teclado</string>
-    <string name="fling_keyboard_cursors_summary">Las acciones de doble toque a la izquierda y derecha se convertirán en acciones de cursor a la izquierda y derecha del teclado si el teclado está abierto</string>
-    <string name="fling_logo_opacity_title">Opacidad del logo de fling</string>
-    <string name="fling_factory_reset_title">Restablecer los valores predeterminados</string>
-    <string name="fling_factory_reset_confirm">¿Está seguro que desea restablecer fling a los valores predeterminados?</string>
-    <string name="fling_backup_current_config_title">Guardar perfil</string>
-    <string name="fling_restore_config_title">Restaurar perfil</string>
-    <string name="fling_config_name_edit_dialog_title">Nombre de perfil de fling</string>
-    <string name="fling_config_name_edit_dialog_message">Introducir nombre o dejar en blanco</string>
-    <string name="fling_config_dialog_title">Perfiles de fling</string>
-    <string name="fling_config_backup_success_toast">Perfil de fling guardado con éxito</string>
-    <string name="fling_config_restore_success_toast">Perfil de fling restaurado con éxito</string>
-    <string name="fling_config_backup_error_toast">Error al guardar el perfil de fling</string>
-    <string name="fling_config_restore_error_toast">Error al restaurar el perfil de fling</string>
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">Acerca del pulso</string>
     <string name="pulse_help_policy_notice_summary">Pulse es un brillante ecualizador gráfico de audio para cuando se reproduce música en el dispositivo</string>
@@ -777,7 +438,7 @@
     <string name="status_bar_clock_auto_hide_sdur_summary">Tiempo que el reloj va a permanecer visible</string>
     <string name="status_bar_am_pm_title">Formato AM/PM</string>
     <string name="status_bar_am_pm_info">El reloj de 24 horas está activado</string>
-    <string name="status_bar_am_pm_normal">Normal</string>
+    <string name="status_bar_am_pm_normal">Predeterminado</string>
     <string name="status_bar_am_pm_small">Pequeño</string>
     <string name="status_bar_am_pm_hidden">Oculto</string>
     <!-- Status bar - Battery -->
@@ -840,7 +501,7 @@
     <string name="battery_bar_style_title">Alineación</string>
     <string name="battery_bar_thickness_title">Grosor</string>
     <string name="battery_bar_animate_title">Animación de carga</string>
-    <string name="battery_bar_style_regular">Regular</string>
+    <string name="battery_bar_style_regular">Normal</string>
     <string name="battery_bar_style_center_mirrored">Centro-reflejada</string>
     <string name="battery_bar_style_reversed">Invertida</string>
     <string name="battery_bar_use_charging_color">Color de carga personalizado</string>
@@ -870,10 +531,10 @@
     <!-- Pie -->
     <string name="pie_settings">Ajustes de los controles Pie</string>
     <string name="pie_enable_title">Activar los controles Pie</string>
-    <string name="pie_settings_summary">Personalizar controles Pie a tu gusto</string>
+    <string name="pie_settings_summary">Personalizar los controles Pie a tu gusto</string>
     <string name="pie_theme_mode_title">Tema</string>
     <string name="pie_auto">Automático</string>
-    <string name="pie_white">Blanco</string>
+    <string name="pie_white">Claro</string>
     <string name="pie_dark">Oscuro</string>
     <string name="pie_battery_title">Indicador de batería</string>
     <string name="pie_battery_text">Solo texto</string>
@@ -885,8 +546,8 @@
     <string name="pie_status_none">Ninguno</string>
     <string name="pie_status_both">Ambos</string>
     <string name="pie_gravity_title">Gravedad de los controles Pie</string>
-    <string name="pie_gravity_summary">Seleccionar ubicación de los controles Pie</string>
-    <string name="pie_gravity_bottom">En la parte inferior</string>
+    <string name="pie_gravity_summary">Seleccionar la ubicación de los controles Pie</string>
+    <string name="pie_gravity_bottom">Abajo</string>
     <string name="pie_gravity_right">Derecha</string>
     <string name="pie_gravity_left">Izquierda</string>
     <!-- Breathing Notifications -->
@@ -935,7 +596,7 @@
     <string name="screenshot_type_partial">Selecciona el área que desea tomar la captura de pantalla mediante los botones de volúmen</string>
     <!-- Screenshot delay  -->
     <string name="screenshot_delay_title">Retardo al capturar pantalla</string>
-    <string name="screenshot_delay_summary">Amount of time you need to hold power and volume buttons to take screenshot</string>
+    <string name="screenshot_delay_summary">Cantidad de tiempo que se necesitan mantener los botones de encendido y volumen para realizar una captura</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">Opciones de capturas de pantalla</string>
     <string name="screenshot_edit_app">Editor de capturas de pantalla</string>
@@ -987,19 +648,6 @@
     <string name="doze_pulse_duration_out_title">Desvanecer</string>
     <string name="doze_pulse_duration_out_summary"></string>
     <string name="doze_brightness_level_title">Nivel de brillo</string>
-    <string name="onehundred_ms">100 milisegundos</string>
-    <string name="twofifty_ms">250 milisegundos</string>
-    <string name="fivehundred_ms_default">500 milisegundos (predeterminado)</string>
-    <string name="sevenfifty_ms">750 milisegundos</string>
-    <string name="one_second">1 segundo</string>
-    <string name="onehalf_second">1,5 segundos</string>
-    <string name="two_second">2 segundos</string>
-    <string name="twohalf_second">2,5 segundos</string>
-    <string name="three_second_default">3 segundos (predeterminado)</string>
-    <string name="threehalf_second">3,5 segundos</string>
-    <string name="four_second">4 segundos</string>
-    <string name="fourhalf_second">4,5 segundos</string>
-    <string name="five_second">5 segundos</string>
     <string name="doze_notification_color_invert_title">Invertir notificaciones</string>
     <string name="doze_notification_color_invert_summary_off">Las notificaciones no se invertirán. Úsalo para temas oscuros.</string>
     <string name="doze_notification_color_invert_summary_on">Las notificaciones se invertirán. Úsalo para temas claros.</string>
@@ -1036,18 +684,12 @@ https://plus.google.com/u/0/communities/118297646046960923906</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">Nos encanta el código abierto, échanos un vistazo</string>
-    <string name="crdroid_google_plus_title">Google+</string>
-    <string name="crdroid_google_plus_summary">Únete a nosotros en Google+ para actualizaciones rápidas y soporte</string>
     <string name="crdroid_telegram_title">Telegram</string>
     <string name="crdroid_telegram_summary">También estamos en Telegram. ¡Únete a nosotros!</string>
     <string name="crdroid_website_title">Página web oficial</string>
     <string name="crdroid_website_summary">Visita nuestra página web oficial</string>
     <string name="crdroid_translate_title">Traducciones</string>
     <string name="crdroid_translate_summary">¡Ayuda con la traducción de la ROM en tu idioma!</string>
-    <!-- Maintainers -->
-    <string name="maintainers_crdroid_title">Dispositivos y mantenedores</string>
-    <string name="maintainers_crdroid_summary">Lista de dispositivos compatibles y sus mantenedores oficiales</string>
-    <string name="maintainers_crdroid_error">No se puede cargar la lista de dispositivos y mantenedores</string>
     <!-- Donate crDroid -->
     <string name="donate_crdroid_title">Apóyanos</string>
     <string name="donate_crdroid_summary">Dona para apoyar el desarrollo y nuestro servidor</string>
@@ -1359,7 +1001,6 @@ https://plus.google.com/u/0/communities/118297646046960923906</string>
     <string name="daylight_header_pack_title">Colección de encabezados de imagen</string>
     <string name="status_bar_custom_header_shadow_title">Sombra del encabezado de imagen</string>
     <string name="status_bar_custom_header_shadow_summary">Para mejor visibilidad en imagenes brillantes</string>
-    <string name="unit_percent">\u0025</string>
     <string name="static_header_provider_title">Imagen estática</string>
     <string name="daylight_header_provider_title">Colección de imágenes</string>
     <string name="custom_header_provider_title">Proveedor de encabezados</string>
@@ -1818,11 +1459,6 @@ https://plus.google.com/u/0/communities/118297646046960923906</string>
     <string name="lockscreen_clock_selection_sammy_accent_dark">Vertical (oscuro en las horas y color de realce en los minutos)</string>
     <string name="lockscreen_clock_selection_analog">Analógico</string>
     <string name="lockscreen_clock_selection_analog_dark">Analógico (oscuro)</string>
-    <string name="lockscreen_clock_selection_analog_deadpool">Deadpool</string>
-    <string name="lockscreen_clock_selection_analog_spidey">Spider-Man</string>
-    <string name="lockscreen_clock_selection_analog_dot">Punto</string>
-    <string name="lockscreen_clock_selection_analog_spectrum">Espectro</string>
-    <string name="lockscreen_clock_selection_analog_sneeky">Sneeky</string>
     <string name="lockscreen_clock_selection_qstyle">Estilo Android Q</string>
     <string name="lockscreen_clock_selection_qstyle_accent">Estilo Android Q (Acento)</string>
     <string name="lockscreen_date_selection_title">Estilo de la fecha</string>
@@ -2162,7 +1798,7 @@ https://plus.google.com/u/0/communities/118297646046960923906</string>
     <string name="refresh_rate_summary_60">60Hz / Frecuencia de actualización bloqueada a 60Hz</string>
     <string name="refresh_rate_summary_90">90Hz / Frecuencia de actualización bloqueada a 90Hz</string>
     <string name="refresh_rate_summary_120">120Hz / Frecuencia de actualización bloqueada a 120Hz</string>
-    <string name="auto_refresh_rate">Auto</string>
+    <string name="auto_refresh_rate">Automático</string>
     <!-- Ambient edge lighting -->
     <string name="pulse_ambient_light_title">Iluminación de borde</string>
     <string name="pulse_ambient_light_summary">Ilumina los bordes laterales de la pantalla en el pulso de notificación</string>
@@ -2199,9 +1835,6 @@ https://plus.google.com/u/0/communities/118297646046960923906</string>
     <string name="fod_icon_picker_footer">Para añadir tu propio icono, selecciona el icono superior izquierdo y usa la aplicación Personalizador OnePlus 6T FP para seleccionar el icono deseado.</string>
     <string name="fod_wallpaper_color">Usar el color del fondo de pantalla para el icono FOD</string>
     <string name="fod_wallpaper_color_summary">Utiliza el color primario del fondo de pantalla para el icono de FOD\nNOTA: puede verse bien sólo con algunos fondos de pantalla</string>
-    <string name="fod_recog_animation">Animación de reconocimiento de FOD</string>
-    <string name="fod_recog_animation_summary">Muestra la animación mientras lee tu huella</string>
-    <string name="fod_recog_animation_effect_title">Efecto de animación de reconocimiento</string>
     <!-- QS background opacity -->
     <string name="qs_panel_alpha_title">Opacidad de fondo</string>
     <!-- Navigation mode settings -->
@@ -2210,17 +1843,22 @@ https://plus.google.com/u/0/communities/118297646046960923906</string>
     <string name="back_options_dialog_title">Opciones</string>
     <string name="back_height_message">Cantidad de altura de pantalla usada como una región para el gesto de atrás.</string>
     <string name="back_gesture_haptic">Activar efecto de ticks hápticos en el gesto de atrás</string>
-    <!-- FOD pressed state behavior -->
-    <string name="fod_pressed_state_title">Comportamiento de estado presionado FOD</string>
-    <string name="fod_pressed_state_footer">Los iconos/colores pueden variar dependiendo de su dispositivo.</string>
-    <string name="fod_pressed_state_icon">Icono (normalmente cyan)</string>
-    <string name="fod_pressed_state_icon_white">Icono (blanco)</string>
-    <string name="fod_pressed_state_solid_color">Color sólido (normalmente verde)</string>
+    <!-- FOD pressed color -->
+    <string name="fod_pressed_color_title">Color al presionar la huella digital</string>
+    <string name="fod_pressed_color_footer">Los iconos/colores pueden variar dependiendo de su dispositivo.</string>
+    <string name="fod_pressed_color_white">Blanco</string>
+    <string name="fod_pressed_color_cyan">Cian</string>
+    <string name="fod_pressed_color_green">Verde</string>
+    <string name="fod_pressed_color_yellow">Amarillo</string>
+    <!-- FOD animations -->
+    <string name="fod_recog_animation">Animación de huella digital</string>
+    <string name="fod_recog_animation_summary">Muestra una animación mientras se lee tu huella</string>
+    <string name="fod_recog_animation_effect_title">Efecto de animación de huella digital</string>
     <!-- NavigationBar Gestural Mode Tweaks -->
     <string name="gesture_pill_message">Ocultar la píldora de la barra de navegación para gestos de pantalla completa.</string>
     <!-- Back gesture animation -->
     <string name="back_gesture_arrow_message">Mostrar una flecha animada para el gesto de atrás.</string>
-    <string name="back_gesture_arrow_summary">Show an animated arrow for back gesture.</string>
+    <string name="back_gesture_arrow_summary">Mostrar una flecha animada para el gesto de atrás.</string>
     <!-- Hardware info -->
     <!-- Label for device's hardware platform value [CHAR LIMIT=40] -->
     <string name="platform_revision">Plataforma</string>
@@ -2255,11 +1893,6 @@ https://plus.google.com/u/0/communities/118297646046960923906</string>
     <string name="vibration_intensity_medium">Medio</string>
     <string name="vibration_intensity_strong">Alto</string>
     <string name="vibration_intensity_custom">Personalizado</string>
-    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
-    <string name="pattern_dzzz_da">dzzz-da</string>
-    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
-    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
-    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
     <!-- Sound: Title for the option defining the phone ringtone for slot1 on Muilti SIM device. [CHAR LIMIT=50] -->
     <string name="ringtone1_title">Tono de llamada - SIM 1</string>
     <!-- Sound: Title for the option defining the phone ringtone for slot2 on Muilti SIM device. [CHAR LIMIT=50] -->
@@ -2306,10 +1939,6 @@ https://plus.google.com/u/0/communities/118297646046960923906</string>
     <!-- Navbar styles -->
     <string name="navbar_style_title">Estilo de la Barra de navegación</string>
     <string name="navbar_default">Por defecto</string>
-    <string name="navbar_asus">ASUS</string>
-    <string name="navbar_oneplus">OnePlus</string>
-    <string name="navbar_oneui">One UI</string>
-    <string name="navbar_tecno">Tecno Camon</string>
     <!-- App lock -->
     <string name="applock_title">Bloqueador App</string>
     <string name="applock_locked">Bloqueado</string>
@@ -2327,7 +1956,7 @@ https://plus.google.com/u/0/communities/118297646046960923906</string>
         <item quantity="other">%d aplicaciones bloqueadas</item>
     </plurals>
     <!-- Navbar length -->
-    <string name="navbar_length">Gesture bar length</string>
-    <string name="hidden_label">Hidden</string>
-    <string name="long_label">Long</string>
+    <string name="navbar_length">Longitud de la barra de gestos</string>
+    <string name="hidden_label">Oculto</string>
+    <string name="long_label">Largo</string>
 </resources>
