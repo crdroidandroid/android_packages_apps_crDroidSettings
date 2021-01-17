@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2020 crDroid Android Project
+     Copyright (C) 2016-2021 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -48,8 +48,8 @@
     <string name="cancel">Скасувати</string>
     <string name="save">Зберегти</string>
     <!-- Misc strings -->
-    <string name="lockclock_title">Віджет \"cLock\"</string>
-    <string name="lockclock_summary">Переглянути або змінити відображення віджету \"cLock\"</string>
+    <string name="lockclock_title">Віджет годинника</string>
+    <string name="lockclock_summary">Переглянути або змінити, як віджет Годиника буде показано</string>
     <!-- Network traffic -->
     <string name="network_traffic_settings_title">Індикатор мережевого трафіку</string>
     <string name="network_traffic_settings_summary">Показувати поточну швидкість мережі в рядку стану</string>
@@ -95,16 +95,16 @@
     <string name="recents_omni_category">OmniSwitch</string>
     <!-- AOSP Recents -->
     <string name="aosp_first_time_title">AOSP нещодавні</string>
-    <string name="aosp_first_time_message">Захоплюючий налаштування споруда змінюється, якщо розширений робочий стіл включено.</string>
+    <string name="aosp_first_time_message">Параметри нещодавніх програм буде перевизначено, якщо увімкнено розширений екран.</string>
     <!-- Hide Apps from Recents -->
-    <string name="hide_apps_from_recents_title">Сховати програму з недавніх</string>
+    <string name="hide_apps_from_recents_title">Сховати програму з нещодавних</string>
     <string name="hide_apps_from_recents_summary">Сховати програму з панелі нещодавніх</string>
     <string name="hide_from_recents_add_app">Додати програму у список прихованих</string>
     <string name="hide_from_recents_picker_title">Автоматично приховувати для цих додатків</string>
-    <string name="hide_from_recents_picker_summary">Ці програми будуть автоматично приховуватись з нещодавніх, коли вони відкриються наступного разу</string>
+    <string name="hide_from_recents_picker_summary">Ці програми будуть автоматично приховувати екран з нещодавніх, коли вони відкриваються наступного разу</string>
     <!-- OmniSwitch Recents -->
     <string name="recents_use_omniswitch_title">Використовувати для нещодавніх</string>
-    <string name="recents_use_omniswitch_summary">Використовувати OmniSwtich для перемикання між нещодавніми додатками</string>
+    <string name="recents_use_omniswitch_summary">Використовувати OmniSwitch замість стандартного перегляду нещодавніх додатків</string>
     <string name="omniswitch_start_settings_title">Налаштування</string>
     <string name="omniswitch_start_settings_summary">Переглянути налаштування для OmniSwitch</string>
     <string name="omniswitch_first_time_title">Нещодавні OmniSwitch</string>
@@ -125,14 +125,14 @@
     <string name="lockscreen_shortcuts_summary">Налаштувати ярлики знизу екрана</string>
     <!-- Slim DSLV -->
     <string name="shortcut_action_longpress">Тривале натискання:</string>
-    <string name="shortcut_action_select_action_longpress">Виберіть дію при тривалому натисканні:</string>
+    <string name="shortcut_action_select_action_longpress">Виберіть дію для тривалого натискання:</string>
     <string name="shortcut_action_select_action">Виберіть дію:</string>
     <string name="shortcut_action_select_action_newaction">Виберіть нову дію:</string>
     <string name="shortcut_action_reset">Скинути</string>
     <string name="shortcut_action_add">Додати</string>
     <string name="shortcut_action_reset_message">Скинути усі значення до стандартних?</string>
-    <string name="shortcut_action_max">Досягнуто максимальний розмір записів</string>
-    <string name="shortcut_action_warning">Увага</string>
+    <string name="shortcut_action_max">Досягнуто максимальну кількість записів</string>
+    <string name="shortcut_action_warning">Застереження</string>
     <string name="shortcut_action_warning_message">Неможливо видалити останній запис</string>
     <string name="shortcut_action_disable_message">Вимкнено\nДодайте запис, щоб увімкнути цю функцію</string>
     <string name="shortcut_image_not_valid">Вибраний додаток не повертає допустимий значок або не підтримує кадрування зображень. Використайте інший додаток.</string>
@@ -140,33 +140,33 @@
     <string name="shortcut_action_help_shortcut">ярлик</string>
     <string name="shortcut_action_help_button">кнопка</string>
     <string name="shortcut_action_help_app">додаток</string>
-    <string name="shortcut_action_help_icon">, вибір значка виведе параметри персоналізації</string>
-    <string name="shortcut_action_help_main">Щоб додати %1$s, виберіть піктограму Додати. Після того, як %1$s додано, вибраний рядок змінить ціль%2$s\n\nЩоб видалити %1$s, проведіть пальцем по рядку горизонтально вправи чи вліво. Змініть порядок %1$s в списку, пересунувши вертикально якір вліво.\n\nЩоб очистити значення, або скинути по замовчуванням - виберіть піктограму Скинути.</string>
+    <string name="shortcut_action_help_icon">, під час вибору значка з\'являться параметри налаштування</string>
+    <string name="shortcut_action_help_main">Щоб додати %1$s, виберіть піктограму Додати. Як тільки %1$s додано, вибраний рядок змінить ціль%2$s\n\nЩоб видалити %1$s, проведення по рядку горизонтально вліво або вправо. Перевпорядкувати %1$s в списку, перетягуючи відтік ліворуч.\n\nщоб очистити або скинути до стандартних значень, виберіть піктограму Скидання.</string>
     <string name="shortcut_action_help_delete_last_entry">Видалення кожного %1$s в списку повністю вимкне функцію.</string>
-    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Видалення кожного %1$s в списку повністю вимкне другий шар pie.</string>
+    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Видалення кожного %1$s в списку повністю вимкне другий шар.</string>
     <string name="shortcuts_applications">Додатки</string>
     <string name="shortcuts_select_custom_app_title">Виберіть користувацький додаток</string>
     <string name="shortcuts_icon_picker_type">Виберіть тип піктограми:</string>
     <string name="shortcuts_icon_default">За замовчуванням</string>
-    <string name="shortcuts_icon_presets">Системні іконки</string>
+    <string name="shortcuts_icon_presets">Системні значки</string>
     <string name="shortcuts_icon_custom">Галерея</string>
     <string name="shortcuts_icon_picker_choose_icon_title">Оберіть іконку</string>
     <string name="shortcuts_icon_picker_alarm">Будильник</string>
-    <string name="shortcuts_icon_picker_andy">Andy</string>
+    <string name="shortcuts_icon_picker_andy">Енді</string>
     <string name="shortcuts_icon_picker_battery">Батарея</string>
-    <string name="shortcuts_icon_picker_browser">Браузер</string>
+    <string name="shortcuts_icon_picker_browser">Веб-переглядач</string>
     <string name="shortcuts_icon_picker_calendar">Календар</string>
     <string name="shortcuts_icon_picker_camera">Камера</string>
     <string name="shortcuts_icon_picker_cloud">Хмара</string>
     <string name="shortcuts_icon_picker_contact">Контакт</string>
     <string name="shortcuts_icon_picker_directdial">Швидкий виклик</string>
-    <string name="shortcuts_icon_picker_directmessage">Приватне повідомлення</string>
+    <string name="shortcuts_icon_picker_directmessage">Швидке повідомлення</string>
     <string name="shortcuts_icon_picker_drive">Диск</string>
     <string name="shortcuts_icon_picker_dropbox">Dropbox</string>
     <string name="shortcuts_icon_picker_email">Електронна пошта</string>
     <string name="shortcuts_icon_picker_email2">Альтернативна електронна пошта</string>
-    <string name="shortcuts_icon_picker_evernote">Evernote</string>
-    <string name="shortcuts_icon_picker_facebook">Facebook</string>
+    <string name="shortcuts_icon_picker_evernote">Евернот</string>
+    <string name="shortcuts_icon_picker_facebook">Фейсбук</string>
     <string name="shortcuts_icon_picker_favorite">Улюблене</string>
     <string name="shortcuts_icon_picker_file_browser">Файловий менеджер</string>
     <string name="shortcuts_icon_picker_file_browser2">Альтернативний файловий менеджер</string>
@@ -184,14 +184,14 @@
     <string name="shortcuts_icon_picker_luggage">Подорож</string>
     <string name="shortcuts_icon_picker_maps">Карти</string>
     <string name="shortcuts_icon_picker_market">Маркет</string>
-    <string name="shortcuts_icon_picker_movie">Фільми</string>
+    <string name="shortcuts_icon_picker_movie">Відео</string>
     <string name="shortcuts_icon_picker_music">Музика</string>
     <string name="shortcuts_icon_picker_nav">Навігація</string>
     <string name="shortcuts_icon_picker_phone">Телефон</string>
     <string name="shortcuts_icon_picker_package">Пакунок</string>
     <string name="shortcuts_icon_picker_pinterest">Pinterest</string>
-    <string name="shortcuts_icon_picker_play">Грати</string>
-    <string name="shortcuts_icon_picker_pocket">Кишеня</string>
+    <string name="shortcuts_icon_picker_play">Відтворити</string>
+    <string name="shortcuts_icon_picker_pocket">У кишені</string>
     <string name="shortcuts_icon_picker_quicksettings">Швидкі налаштування</string>
     <string name="shortcuts_icon_picker_rss">Стрічка RSS</string>
     <string name="shortcuts_icon_picker_sdcard">SD-карта</string>
@@ -200,34 +200,34 @@
     <string name="shortcuts_icon_picker_tasks">Завдання</string>
     <string name="shortcuts_icon_picker_terminal">Термінал</string>
     <string name="shortcuts_icon_picker_transit">Транзит</string>
-    <string name="shortcuts_icon_picker_tv">Телевізор</string>
-    <string name="shortcuts_icon_picker_twitter">Twitter</string>
+    <string name="shortcuts_icon_picker_tv">ТВ</string>
+    <string name="shortcuts_icon_picker_twitter">Твіттер</string>
     <string name="shortcuts_icon_picker_unlock">Розблокувати</string>
     <string name="airplay">AirPlay</string>
-    <string name="android">Android</string>
+    <string name="android">Андроїд</string>
     <string name="badoo">Badoo</string>
     <string name="battery">Батарея</string>
-    <string name="bluetooth">Bluetooth</string>
+    <string name="bluetooth">Пристрій Bluetooth</string>
     <string name="bookmarks">Закладки</string>
-    <string name="browser">Браузер</string>
+    <string name="browser">Веб-переглядач</string>
     <string name="browser2">Браузер2</string>
     <string name="calculator">Калькулятор</string>
     <string name="calendar">Календар</string>
     <string name="calls">Дзвінки</string>
     <string name="camera">Камера</string>
-    <string name="chrome">Chrome</string>
+    <string name="chrome">Хром</string>
     <string name="clock">Годинник</string>
-    <string name="cnn">CNN</string>
+    <string name="cnn">Cnn</string>
     <string name="deezer2">Deezer2</string>
     <string name="deezer">Deezer</string>
-    <string name="dolphin2">Dolphin</string>
+    <string name="dolphin2">Дельфін</string>
     <string name="downloads">Завантаження</string>
     <string name="dropbox">Dropbox</string>
     <string name="ebay">Ebay</string>
     <string name="email">Електронна пошта</string>
-    <string name="evernote">Evernote</string>
+    <string name="evernote">Евернот</string>
     <string name="explorer">Провідник</string>
-    <string name="falcon">Falcon</string>
+    <string name="falcon">Сокіл</string>
     <string name="fb">Facebook</string>
     <string name="flipboard">Буфер обміну</string>
     <string name="foursquare">Foursquare</string>
@@ -238,21 +238,21 @@
     <string name="line">Лінія</string>
     <string name="mic">Мікрофон</string>
     <string name="newyorktimes">NewYork Times</string>
-    <string name="rootexplorer">Root Explorer</string>
-    <string name="sim">SIM-карта</string>
+    <string name="rootexplorer">Рут-провідник</string>
+    <string name="sim">Sim-карта</string>
     <string name="teamviewer">TeamViewer</string>
     <string name="totalcommander">Total Commander</string>
     <string name="weather">Погода</string>
-    <string name="golocker">GO Locker</string>
-    <string name="googlecurrents">Google Currents</string>
+    <string name="golocker">Перейти до блокування</string>
+    <string name="googlecurrents">Google Новини та погода</string>
     <string name="googletalk">Google Talk</string>
-    <string name="gosms">GO sms</string>
+    <string name="gosms">Go sms</string>
     <string name="meebo">Meebo</string>
     <string name="maps2">Карти2</string>
-    <string name="memorycleaner">Memory Cleaner</string>
+    <string name="memorycleaner">Очищувач пам\'яті</string>
     <string name="navigation">Навігація</string>
     <string name="pulse">Пульс</string>
-    <string name="shazam">Shazam</string>
+    <string name="shazam">Шазам</string>
     <string name="swiftkey">SwiftKey</string>
     <string name="tmobile">T-Mobile</string>
     <string name="trash">Кошик</string>
@@ -261,42 +261,42 @@
     <string name="docs">Документи</string>
     <string name="googledrive">Google Диск</string>
     <string name="googleearth">Google Планета Земля</string>
-    <string name="googlehangouts">Google Hangouts</string>
+    <string name="googlehangouts">Google hangouts</string>
     <string name="googlekeep">Google Keep</string>
     <string name="googleplay">Google Play</string>
     <string name="googletranslate">Перекладач Google</string>
     <string name="google">Google</string>
     <string name="googleplus">Google+</string>
-    <string name="imdb">IMDB</string>
-    <string name="instagram">Instagram</string>
-    <string name="lastfm">Last.fm</string>
+    <string name="imdb">imdb</string>
+    <string name="instagram">інстаграм</string>
+    <string name="lastfm">Lastfm</string>
     <string name="maps">Карти</string>
     <string name="messages">Повідомлення</string>
     <string name="music">Музика</string>
-    <string name="mxplayer">MXplayer</string>
+    <string name="mxplayer">Mxplayer</string>
     <string name="notepad">Приватне повідомлення</string>
-    <string name="opera">Opera</string>
-    <string name="paint">Фарба</string>
+    <string name="opera">Опера</string>
+    <string name="paint">Малювати</string>
     <string name="paypal">PayPal</string>
     <string name="phone">Телефон</string>
-    <string name="picasa">Picasa</string>
-    <string name="pictures2">Pictures2</string>
+    <string name="picasa">Пікаса</string>
+    <string name="pictures2">Зображення2</string>
     <string name="player_pro">Player Pro</string>
     <string name="playstation">Play Station</string>
-    <string name="reddit">Reddit</string>
+    <string name="reddit">Реддіт</string>
     <string name="settings">Налаштування</string>
     <string name="skype">Skype</string>
-    <string name="soundscloud">SoundCloud</string>
+    <string name="soundscloud">Звукова хмара</string>
     <string name="spotifiy">Spotify</string>
     <string name="tapatalk">Tapatalk</string>
-    <string name="tunein">TuneIn</string>
-    <string name="twitter">Twitter</string>
+    <string name="tunein">Tunein</string>
+    <string name="twitter">Твіттер</string>
     <string name="viber">Viber</string>
     <string name="videocamera">Відеокамера</string>
-    <string name="whatsapp">WhatsApp</string>
+    <string name="whatsapp">Whatsapp</string>
     <string name="wifi">Wi-Fi</string>
-    <string name="xda">XDA</string>
-    <string name="yahoo">Yahoo!</string>
+    <string name="xda">Xda</string>
+    <string name="yahoo">Yahoo</string>
     <string name="youtube">YouTube</string>
     <string name="zedge">Zedge</string>
     <string name="shortcut_action_none">Немає</string>
@@ -304,9 +304,9 @@
     <string name="shortcut_action_home">Головна</string>
     <string name="shortcut_action_back">Назад</string>
     <string name="shortcut_action_menu">Меню</string>
-    <string name="shortcut_action_ime">Відкрити перемикач розкладок</string>
-    <string name="shortcut_action_power_menu">Меню живлення</string>
-    <string name="shortcut_action_recent">Нещодавні</string>
+    <string name="shortcut_action_ime">Відкрити перемикач IME</string>
+    <string name="shortcut_action_power_menu">Меню кнопки живлення</string>
+    <string name="shortcut_action_recent">Меню \"Нещодавні\"</string>
     <string name="shortcut_action_power">Вимкнення екрану</string>
     <string name="shortcut_action_search">Пошук у додатку</string>
     <string name="shortcut_action_ring_vib">Звук/Вібро</string>
@@ -317,18 +317,18 @@
     <string name="shortcut_action_media_play_pause">Музика - відтворення/пауза</string>
     <string name="shortcut_action_media_previous">Музика - попередній трек</string>
     <string name="shortcut_action_wake_device">Розбудити пристрій</string>
-    <string name="shortcut_picker_choose_longpress_action">Виберіть дію при тривалому натисканні:</string>
+    <string name="shortcut_picker_choose_longpress_action">Виберіть дію для тривалого натискання:</string>
     <string name="shortcut_picker_choose_new_action">Виберіть нову дію:</string>
     <string name="shortcut_picker_reassign_action">Повторно призначити дію:</string>
     <string name="shortcut_picker_choose_action">Виберіть дію:</string>
     <string name="shortcut_picker_applications_title">Додатки</string>
-    <string name="shortcut_picker_activities_title">Активні Додатки</string>
+    <string name="shortcut_picker_activities_title">Події</string>
     <string name="shortcut_picker_select_app_title">Виберіть додаток:</string>
     <string name="shortcut_picker_select_activity_title">Виберіть дію:</string>
-    <string name="shortcut_picker_choose_icon_type_title">Виберіть тип піктограми:</string>
+    <string name="shortcut_picker_choose_icon_type_title">Виберіть тип значка:</string>
     <string name="shortcut_picker_icon_type_default_title">За замовчуванням</string>
     <string name="shortcut_picker_icon_type_system_title">Системні іконки</string>
-    <string name="shortcut_picker_select_system_icon_title">Виберіть піктограму системи:</string>
+    <string name="shortcut_picker_select_system_icon_title">Виберіть системний значок:</string>
     <string name="shortcut_picker_icon_type_custom_title">Галерея</string>
     <!-- Media art -->
     <string name="media_art_title">Обкладинка медіа</string>
@@ -436,18 +436,18 @@
     <string name="status_bar_misc_category_title">Різне</string>
     <!-- Statusbar crDroid logo -->
     <string name="status_bar_crdroid_logo_title">Показувати логотип</string>
-    <string name="status_bar_crdroid_logo_summary">Увімкнути, щоб показати логотип в панелі стану</string>
+    <string name="status_bar_crdroid_logo_summary">Увімкнути задля відображння лого у рядку стану</string>
     <string name="status_bar_crdroid_logo_color">Колір логотипу</string>
     <string name="status_bar_crdroid_logo_position">Позиція логотипу</string>
     <string name="status_bar_crdroid_logo_position_summary">Оберіть позицію логотипу: ліворуч чи праворуч</string>
     <string name="status_bar_crdroid_logo_style">Стиль логотипу</string>
     <string name="status_bar_logo_position_right">Праворуч</string>
-    <string name="status_bar_logo_position_left">Ліворуч</string>
+    <string name="status_bar_logo_position_left">Зліва</string>
     <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Андроїд</string>
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_ios">iOS</string>
-    <string name="status_bar_logo_style_emoticon">Усміхайлики</string>
+    <string name="status_bar_logo_style_emoticon">Смайлики</string>
     <string name="status_bar_logo_style_emoticon_cool">Смайлик круто</string>
     <string name="status_bar_logo_style_emoticon_dead">Смайлик мертвий</string>
     <string name="status_bar_logo_style_emoticon_devil">Смайлик лихий</string>
@@ -456,13 +456,13 @@
     <string name="status_bar_logo_style_emoticon_poop">Смайлик лайно</string>
     <string name="status_bar_logo_style_emoticon_sad">Смайлик сумний</string>
     <string name="status_bar_logo_style_emoticon_tongue">Смайлик язик</string>
-    <string name="status_bar_logo_style_blackberry">Blackberry</string>
+    <string name="status_bar_logo_style_blackberry">Ожина</string>
     <string name="status_bar_logo_style_cake">Торт</string>
-    <string name="status_bar_logo_style_blogger">Blogger</string>
-    <string name="status_bar_logo_style_biohazard">Biohazard</string>
+    <string name="status_bar_logo_style_blogger">Блогер</string>
+    <string name="status_bar_logo_style_biohazard">Біогазард</string>
     <string name="status_bar_logo_style_linux">Linux</string>
     <string name="status_bar_logo_style_yin_yang">Інь і ян</string>
-    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_windows">Вікна</string>
     <string name="status_bar_logo_style_robot">Робот</string>
     <string name="status_bar_logo_style_ninja">Ніндзя</string>
     <string name="status_bar_logo_style_heart">Серце</string>
@@ -471,10 +471,10 @@
     <string name="status_bar_logo_style_google">Google</string>
     <string name="status_bar_logo_style_human_male">Чоловік</string>
     <string name="status_bar_logo_style_human_female">Жінка</string>
-    <string name="status_bar_logo_style_human_male_female">Чоловік і жінка</string>
+    <string name="status_bar_logo_style_human_male_female">Чоловік &amp; жінка</string>
     <string name="status_bar_logo_style_gender_male">Чоловіча</string>
     <string name="status_bar_logo_style_gender_female">Жіноча</string>
-    <string name="status_bar_logo_style_gender_male_female">Чоловічий та жіночий</string>
+    <string name="status_bar_logo_style_gender_male_female">Чоловічий &amp; жіночий</string>
     <string name="status_bar_logo_style_guitar_electric">Електрогітара</string>
     <string name="status_bar_logo_style_batman">Бетмен</string>
     <string name="status_bar_logo_style_deadpool">Дедпул</string>
@@ -531,8 +531,8 @@
     <string name="profile_reset_title">Скинути</string>
     <string name="show_title">Показати</string>
     <string name="stock">За замовчуванням</string>
-    <string name="reset_paranoid">Paranoid</string>
-    <string name="reset_android">Android</string>
+    <string name="reset_paranoid">Параноїд</string>
+    <string name="reset_android">Андроїд</string>
     <!-- Navigation Bar -->
     <string name="navbar_interface_title">Інтерфейс</string>
     <string name="navbar_size">Розмір панелі навігації</string>
@@ -567,16 +567,16 @@
     <string name="fling_settings">Налаштування Fling</string>
     <string name="fling_settings_summary">Налаштувати жести Fling</string>
     <string name="fling_interface">Кидок</string>
-    <string name="fling_enable_title">Увімкнути Fling</string>
+    <string name="fling_enable_title">Увімкнути жести</string>
     <string name="fling_back_home_policy">Назад і Додому повинні бути призначені завжди. Для зміни призначення Назад і Додому, спочатку встановіть потрібні призначення</string>
     <string name="fling_split_bar_policy">Коли призначено дію лише справа чи зліва, дія виконується на всій панелі</string>
     <string name="fling_def_summary">Дія не встановлена</string>
-    <string name="fling_swipe_actions">Свайп-жести</string>
+    <string name="fling_swipe_actions">Жести</string>
     <string name="fling_tap_actions">Жести натискання</string>
-    <string name="fling_short_swipe_right">Короткий свайп праворуч</string>
+    <string name="fling_short_swipe_right">Короткий свайп направо</string>
     <string name="fling_short_swipe_left">Короткий свайп ліворуч</string>
     <string name="fling_long_swipe_right">Довгий свайп праворуч</string>
-    <string name="fling_long_swipe_left">Довгий свап ліворуч</string>
+    <string name="fling_long_swipe_left">Довгий свайп ліворуч</string>
     <string name="fling_right_up_swipe">Свайп вгору праворуч</string>
     <string name="fling_left_up_swipe">Свайп вгору ліворуч</string>
     <string name="fling_single_tap">Одинарне натискання справа</string>
@@ -585,47 +585,47 @@
     <string name="fling_single_left_tap">Одинарне натискання зліва</string>
     <string name="fling_double_left_tap">Подвійне натискання зліва</string>
     <string name="fling_long_left_press">Тривале натискання зліва</string>
-    <string name="long_swipe_portrait_title">Книжкова орієнтація</string>
-    <string name="long_swipe_landscape_title">Горизонтальна орієнтація</string>
-    <string name="portrait_right_swipe_title">Свайп справа в книжковій орієнтації</string>
-    <string name="portrait_left_swipe_title">Свайп зліва в книжковій орієнтації</string>
-    <string name="landscape_right_swipe_title">Свайп справа в горизонтальній орієнтації</string>
-    <string name="landscape_left_swipe_title">Свайп зліва в горизонтальній орієнтації</string>
+    <string name="long_swipe_portrait_title">Вертикальна орієнтація</string>
+    <string name="long_swipe_landscape_title">Альбомна орієнтація</string>
+    <string name="portrait_right_swipe_title">Свайп справа в портретній орієнтації</string>
+    <string name="portrait_left_swipe_title">Свайп зліва в портретній орієнтації</string>
+    <string name="landscape_right_swipe_title">Свайп справа в альбомній орієнтації</string>
+    <string name="landscape_left_swipe_title">Свайп зліва в альбомній орієнтації</string>
     <string name="vertical_up_swipe_title">Вертикальний свайп вгору</string>
     <string name="vertical_down_swipe_title">Вертикальний свайп вниз</string>
-    <string name="up_swipe_title">Свайп вверх</string>
+    <string name="up_swipe_title">Свайп вгору</string>
     <string name="down_swipe_title">Свайп вниз</string>
     <string name="long_swipe_reset">Скинути</string>
-    <string name="fling_advanced">Розширені налаштування</string>
+    <string name="fling_advanced">Розширені</string>
     <string name="fling_long_swipe_title">Тривалість довгого свайпу</string>
-    <string name="fling_long_swipe_summary">Точне регулювання порогу довгого свайпа, заснована на відсотках від ширини і довжини панелі Fling</string>
+    <string name="fling_long_swipe_summary">Точне регулювання порогу довгого свайпа, заснована на відсотках від ширини і довжини панелі жестів</string>
     <string name="fling_trails_enable_title">Увімкнути сліди від жестів</string>
     <string name="fling_trails_enable_summary">Відображати сліди від жестів</string>
     <string name="fling_trails_color_title">Колір сліду</string>
     <string name="fling_trails_width_title">Ширина сліду</string>
-    <string name="fling_appearance">Вигляд</string>
+    <string name="fling_appearance">Зовнішній вигляд</string>
     <string name="fling_show_logo_title">Показати логотип Fling</string>
     <string name="fling_animate_logo_title">Анімація логотипу</string>
-    <string name="fling_animate_logo_summary">Анімація логотипу при дотику</string>
+    <string name="fling_animate_logo_summary">Анімація логотипу під час дотику</string>
     <string name="fling_logo_color">Колір логотипу</string>
-    <string name="fling_logo_custom_logo_pick_title">Користувацький логотип</string>
-    <string name="fling_logo_custom_logo_image_pick_title">Користувацька картинка</string>
-    <string name="fling_logo_custom_logo_reset_title">Відновити значко логотипу</string>
-    <string name="fling_show_ripple_title">Відображати пульсацію</string>
+    <string name="fling_logo_custom_logo_pick_title">Користувацький значок логотипа</string>
+    <string name="fling_logo_custom_logo_image_pick_title">Користувацький логотип</string>
+    <string name="fling_logo_custom_logo_reset_title">Скинути значок логотипу</string>
+    <string name="fling_show_ripple_title">Показати пульсацію</string>
     <string name="fling_show_ripple_summary">Ефект пульсації при дотику</string>
     <string name="fling_ripple_color">Колір пульсації</string>
-    <string name="fling_longpress_timeout_label_left">Зменшити затримку</string>
-    <string name="fling_longpress_timeout_label_right">Збільшити затримку</string>
+    <string name="fling_longpress_timeout_label_left">Менша затримка</string>
+    <string name="fling_longpress_timeout_label_right">Більша затримка</string>
     <string name="fling_longpress_title">Затримка тривалого натискання</string>
     <string name="fling_longpress_summary">Збільшити або зменшити час, необхідний для тривалого натискання</string>
-    <string name="fling_keyboard_cursors_title">Динамічна дія курсорів клавіатури</string>
+    <string name="fling_keyboard_cursors_title">Динамічна дія курсору клавіатури</string>
     <string name="fling_keyboard_cursors_summary">Подвійні натискання зліва і справа стають рухами курсора клавіатури вліво і вправо при відкритій клавіатурі</string>
     <string name="fling_logo_opacity_title">Непрозорість логотипу Fling</string>
-    <string name="fling_factory_reset_title">Скинути налаштування</string>
+    <string name="fling_factory_reset_title">Скинути до налаштувань за замовчуванням</string>
     <string name="fling_factory_reset_confirm">Ви справді хочете скинути налаштування Fling?</string>
     <string name="fling_backup_current_config_title">Зберегти профіль</string>
     <string name="fling_restore_config_title">Відновити профіль</string>
-    <string name="fling_config_name_edit_dialog_title">Ім\'я профілю Fling</string>
+    <string name="fling_config_name_edit_dialog_title">Назва профілю Fling</string>
     <string name="fling_config_name_edit_dialog_message">Введіть назву або залиште пустим</string>
     <string name="fling_config_dialog_title">Профілі Fling</string>
     <string name="fling_config_backup_success_toast">Профіль Fling успішно збережено</string>
@@ -868,11 +868,11 @@
     <string name="ticker_animation_mode_scroll">Прокрутка</string>
     <string name="ticker_tick_duration_title">Тривалість анімації рухомого рядка</string>
     <!-- Pie -->
-    <string name="pie_settings">Швидкі налаштування</string>
+    <string name="pie_settings">Налаштування Pie</string>
     <string name="pie_enable_title">Увімкнути Pie</string>
     <string name="pie_settings_summary">Налаштуйте Pie на свій смак</string>
     <string name="pie_theme_mode_title">Тема</string>
-    <string name="pie_auto">Автоматичний</string>
+    <string name="pie_auto">Автоматично</string>
     <string name="pie_white">Білий</string>
     <string name="pie_dark">Темний</string>
     <string name="pie_battery_title">Індикатор акумулятора</string>
@@ -882,10 +882,10 @@
     <string name="pie_status_indicator">Індикатор мережевої активності</string>
     <string name="pie_status_wifi">Тільки Wi-Fi</string>
     <string name="pie_status_mobile">Тільки мобільна мережа</string>
-    <string name="pie_status_none">Не відображати</string>
+    <string name="pie_status_none">Немає</string>
     <string name="pie_status_both">Обидва</string>
     <string name="pie_gravity_title">Pie-гравітація</string>
-    <string name="pie_gravity_summary">Оберіть позицію активації Pie</string>
+    <string name="pie_gravity_summary">Виберіть розташування в якому розміститься Pie</string>
     <string name="pie_gravity_bottom">Знизу</string>
     <string name="pie_gravity_right">Праворуч</string>
     <string name="pie_gravity_left">Ліворуч</string>
@@ -1044,9 +1044,9 @@
     <string name="crdroid_translate_title">Переклади</string>
     <string name="crdroid_translate_summary">Довідка з локалізацією ROM на вашій мові!</string>
     <!-- Maintainers -->
-    <string name="maintainers_crdroid_title">Пристроїв та операторів</string>
-    <string name="maintainers_crdroid_summary">Список підтримуваних пристроїв і їх офіційними супроводжуючими</string>
-    <string name="maintainers_crdroid_error">Не вдалося завантажити пристроїв та супроводжуючих список</string>
+    <string name="maintainers_crdroid_title">Пристрої та розробники</string>
+    <string name="maintainers_crdroid_summary">Список підтримуваних пристроїв і їх офіційних супроводжуючих</string>
+    <string name="maintainers_crdroid_error">Не вдалося завантажити пристроїв та список супроводжуючих</string>
     <!-- Donate crDroid -->
     <string name="donate_crdroid_title">Підтримати нас</string>
     <string name="donate_crdroid_summary">Пожертви на підтримку розвитку і нашого сервера</string>
@@ -1184,7 +1184,7 @@
     <string name="font_medium_italic">Середній курсив</string>
     <string name="font_black">Чорний</string>
     <string name="font_black_italic">Чорний курсив</string>
-    <string name="font_dancingscript">DancingScript</string>
+    <string name="font_dancingscript">Рукописний</string>
     <string name="font_dancingscript_bold">DancingScript Жирний</string>
     <string name="font_comingsoon">Незабаром</string>
     <string name="font_notoserif">NotoSerif Звичайний</string>
@@ -1598,7 +1598,7 @@
     <string name="recovery_summary">Перейти на сторінку завантаження recovery</string>
     <string name="paypal_title">Пожертвувати</string>
     <string name="paypal_summary">Підтримати розробку</string>
-    <string name="telegram_title">Telegram</string>
+    <string name="telegram_title">Телеграм</string>
     <string name="telegram_summary">Приєднуйтесь до останнього обговорення в Telegram для цього пристрою</string>
     <!-- Check update -->
     <string name="check_update_title">Перевірити оновлення</string>
@@ -1969,10 +1969,10 @@
     <string name="qstile_ninja">Ніндзя</string>
     <string name="qstile_oreo">Oreo</string>
     <string name="qstile_oreo_circle_trim">Oreo (Кругова вирізка)</string>
-    <string name="qstile_squaremedo">Squaremedo</string>
+    <string name="qstile_squaremedo">Квадратний</string>
     <string name="qstile_squircle">Заокруглений квадрат</string>
     <string name="qstile_neon_like">Неон</string>
-    <string name="qstile_oos">OxygenOS</string>
+    <string name="qstile_oos">ОксигенОС</string>
     <string name="qstile_oreo_squircle_trim">Oreo (Кругова вирізка)</string>
     <string name="qstile_pokesign">Стиль Poke</string>
     <string name="qstile_squircle_trim">Заокруглений квадрат (З вирізкою)</string>
@@ -1989,13 +1989,13 @@
     <!-- Switch styles -->
     <string name="switch_style_title">Стиль перемикача налаштувань</string>
     <string name="switch_default">За замовчуванням</string>
-    <string name="switch_md2">Material Design 2</string>
+    <string name="switch_md2">Матеріал Дизайн 2</string>
     <string name="switch_oneplus">OnePlus</string>
     <string name="switch_narrow">Вузький</string>
     <string name="switch_contained">Містить</string>
     <string name="switch_retro">Ретро</string>
     <string name="switch_stockish">Стоковий</string>
-    <string name="switch_telegram">Telegram</string>
+    <string name="switch_telegram">Телеграм</string>
     <!-- Battery stats reset -->
     <string name="battery_stats_reset">Скинути статистику</string>
     <string name="battery_stats_message">Це скине статистику акумулятора. Ви впевнені?</string>
@@ -2198,28 +2198,59 @@
     <string name="fod_icon_picker_footer">Щоб додати свій власний символ, виберіть іконку у лівому верхньому куті, а потім скористайтеся додатком OnePlus 6T FP Customizer для вибору бажаної піктограми.</string>
     <string name="fod_wallpaper_color">Використовувати колір шпалер для піктограми \"Відбиток пальця\"</string>
     <string name="fod_wallpaper_color_summary">Використовувати скоригований основний колір шпалер для піктограми \"Відбиток пальця\"\nПРИМІТКА: можуть виглядати лише з деякими шпалерами</string>
-    <string name="fod_recog_animation">Анімація розпізнавання відбитку</string>
-    <string name="fod_recog_animation_summary">Показує анімацію під час розпізнавання вашого пальця</string>
-    <string name="fod_recog_animation_effect_title">Ефект анімації розпізнавання відбитку</string>
-    <!-- QS background opacity -->
-    <string name="qs_panel_alpha_title">Прозорість фону</string>
+    <!-- QS panel background opacity -->
+    <string name="qs_panel_alpha_title">Непрозорість панелі</string>
+    <!-- QS panel gradient below status bar -->
+    <string name="qs_panel_gradient_title">Градієнт рядка стану</string>
+    <string name="qs_panel_gradient_summary">Показати градієнт під рядком стану в панелі швидких налаштувань</string>
+    <!-- QS status bar background opacity -->
+    <string name="qs_sb_bg_alpha_title">Непрозорість статус-бару</string>
     <!-- Navigation mode settings -->
     <string name="back_height_low_label">Повний</string>
     <string name="back_height_high_label">Знизу</string>
     <string name="back_options_dialog_title">Налаштування</string>
     <string name="back_height_message">Висота екрану, що використовується як сенсорна ділянка для жесту \"Назад\".</string>
     <string name="back_gesture_haptic">Увімкнути тактильний ефект від жесту назад</string>
-    <!-- FOD pressed state behavior -->
-    <string name="fod_pressed_state_title">FOD поведінка в натисненому стані</string>
-    <string name="fod_pressed_state_footer">Піктограми/кольори можуть відрізнятися в залежності від пристрою, який ви використовуєте.</string>
-    <string name="fod_pressed_state_icon">Піктограма (як правило, синій)</string>
-    <string name="fod_pressed_state_icon_white">Піктограма (білий)</string>
-    <string name="fod_pressed_state_solid_color">Суцільний колір (зазвичай зелений)</string>
+    <!-- FOD pressed color -->
+    <string name="fod_pressed_color_title">Ефект натиснення відбитку пальця</string>
+    <string name="fod_pressed_color_footer">Піктограми/кольори можуть відрізнятися в залежності від пристрою, який ви використовуєте.</string>
+    <string name="fod_pressed_color_white">Білий</string>
+    <string name="fod_pressed_color_cyan">Бірюзовий</string>
+    <string name="fod_pressed_color_green">Зелений</string>
+    <string name="fod_pressed_color_yellow">Жовтий колір</string>
+    <!-- FOD animations -->
+    <string name="fod_recog_animation">Анімація відбитку пальця</string>
+    <string name="fod_recog_animation_summary">Показує анімацію під час розпізнавання вашого пальця</string>
+    <string name="fod_recog_animation_effect_title">Виберіть ефект анімації відбитків пальців</string>
+    <string name="fod_recog_animation_miui_normal">MIUI default</string>
+    <string name="fod_recog_animation_miui_aod">MIUI AOD</string>
+    <string name="fod_recog_animation_miui_aurora">Aurora (K30 Pro)</string>
+    <string name="fod_recog_animation_miui_aurora_cas">Aurora (Mi 10 Ultra)</string>
+    <string name="fod_recog_animation_miui_light">Light</string>
+    <string name="fod_recog_animation_miui_pop">Pop</string>
+    <string name="fod_recog_animation_miui_pulse">Pulse</string>
+    <string name="fod_recog_animation_miui_pulse_white">Pulse (White)</string>
+    <string name="fod_recog_animation_miui_rhythm">Rhythm</string>
+    <string name="fod_recog_animation_miui_star_cas">Starlight</string>
+    <string name="fod_recog_animation_op_cosmos">Cosmos</string>
+    <string name="fod_recog_animation_op_energy">Energy</string>
+    <string name="fod_recog_animation_op_mclaren">McLaren</string>
+    <string name="fod_recog_animation_op_ripple">Ripple</string>
+    <string name="fod_recog_animation_op_scanning">Scanning (Cyberpunk 2077)</string>
+    <string name="fod_recog_animation_op_stripe">Stripe</string>
+    <string name="fod_recog_animation_op_wave">Wave</string>
+    <string name="fod_recog_animation_pureview_dna">DNA</string>
+    <string name="fod_recog_animation_pureview_future">Future</string>
+    <string name="fod_recog_animation_pureview_halo_ring">Halo ring</string>
+    <string name="fod_recog_animation_pureview_molecular">Molecular</string>
+    <string name="fod_recog_animation_rog_fusion">Fusion</string>
+    <string name="fod_recog_animation_rog_pulsar">Pulsar</string>
+    <string name="fod_recog_animation_rog_supernova">Supernova</string>
     <!-- NavigationBar Gestural Mode Tweaks -->
     <string name="gesture_pill_message">Приховати панель навігації для безшовних жестів в повноекранному режимі.</string>
     <!-- Back gesture animation -->
     <string name="back_gesture_arrow_message">Показати анімовану стрілку для жесту \"Назад\".</string>
-    <string name="back_gesture_arrow_summary">Show an animated arrow for back gesture.</string>
+    <string name="back_gesture_arrow_summary">Показати анімовану стрілку для жесту \"Назад\".</string>
     <!-- Hardware info -->
     <!-- Label for device's hardware platform value [CHAR LIMIT=40] -->
     <string name="platform_revision">Платформа</string>
@@ -2328,7 +2359,9 @@
         <item quantity="other">%d додатків заблоковано</item>
     </plurals>
     <!-- Navbar length -->
-    <string name="navbar_length">Gesture bar length</string>
-    <string name="hidden_label">Hidden</string>
-    <string name="long_label">Long</string>
+    <string name="navbar_length">Довжина рядку жестів</string>
+    <string name="hidden_label">Не показувати</string>
+    <string name="long_label">Довгий</string>
+    <!-- Additional version details -->
+    <string name="about_device_name">Пристрій</string>
 </resources>
