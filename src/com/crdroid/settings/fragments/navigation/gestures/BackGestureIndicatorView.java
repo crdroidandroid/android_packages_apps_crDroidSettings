@@ -124,13 +124,13 @@ public class BackGestureIndicatorView extends LinearLayout {
             lp.height = displaySize.y;
             lp.y = 0;
         } else if (mHeightScale == 1) {
-            lp.height = displaySize.y / 2;
+            lp.height = (displaySize.y * 3) / 4;
             lp.y = displaySize.y - lp.height;
         } else if (mHeightScale == 2) {
-            lp.height = displaySize.y / 3;
+            lp.height = displaySize.y / 2;
             lp.y = displaySize.y - lp.height;
         } else {
-            lp.height = displaySize.y / 6;
+            lp.height = displaySize.y / 4;
             lp.y = displaySize.y - lp.height;
         }
     }
