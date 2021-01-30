@@ -150,6 +150,13 @@
             android:dependency="heads_up_notifications_enabled" />-->
     </PreferenceCategory>
 
+    <Preference
+         android:key="ambient_stuff"
+         android:icon="@drawable/phone_tint"
+         android:title="@string/pulse_ambient_light_category"
+         android:summary="@string/pulse_ambient_light_summary"
+         android:fragment="com.crdroid.settings.fragments.notifications.notificationlight.AmbientStuffSettings" />
+
     <PreferenceCategory
         android:key="light_brightness"
         android:title="@string/light_brightness_category">

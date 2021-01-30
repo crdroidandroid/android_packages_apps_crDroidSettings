@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2021 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/pulse_ambient_light_category"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:key="pulse_ambient_light_category"
+        android:title="@string/pulse_ambient_light_category" >
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="pulse_ambient_light"
+            android:title="@string/pulse_ambient_light_title"
+            android:summary="@string/pulse_ambient_light_summary"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="ambient_notification_light_enabled"
+            android:title="@string/ambient_notification_light_enabled_title"
+            android:summary="@string/ambient_notification_light_enabled_summary"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="ambient_notification_light_hide_aod"
+            android:title="@string/ambient_notification_light_hide_aod_title"
+            android:summary="@string/ambient_notification_light_hide_aod_summary"
+            android:defaultValue="false"
+            android:dependency="ambient_notification_light_enabled"/>
+
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="ambient_notification_light_timeout"
+            android:dialogTitle="@string/ambient_notification_light_timeout_title"
+            android:title="@string/ambient_notification_light_timeout_title"
+            android:entries="@array/ambient_notification_light_timeout_entries"
+            android:entryValues="@array/ambient_notification_light_timeout_values"
+            android:defaultValue="0"
+            android:dependency="ambient_notification_light_enabled"
+            android:summary="%s" />
+
+        <ListPreference
+            android:key="ambient_notification_light_color_mode"
+            android:title="@string/ambient_notification_light_color_mode_title"
+            android:persistent="false"
+            android:entries="@array/ambient_notification_light_color_mode_entries"
+            android:entryValues="@array/ambient_notification_light_color_mode_values"
+            android:defaultValue="2" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="ambient_notification_light_color"
+            android:summary="@string/ambient_notification_light_color_summary"
+            android:title="@string/ambient_notification_light_color_title"
+            ledPreview="true"
+            settings:defaultColorValue="0xFF3980FF" />
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="ambient_light_duration"
+            android:title="@string/pulse_ambient_light_duration_title"
+            android:summary="@string/pulse_ambient_light_duration_summary"
+            android:persistent="false"
+            android:defaultValue="2"
+            android:max="10"
+            settings:min="1"
+            settings:units="sec"
+            settings:interval="1"
+            android:dependency="pulse_ambient_light" />
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="ambient_light_repeat_count"
+            android:title="@string/pulse_ambient_light_repeat_count_title"
+            android:summary="@string/pulse_ambient_light_repeat_count_summary"
+            android:persistent="false"
+            android:defaultValue="0"
+            android:max="10"
+            settings:min="0"
+            settings:interval="1"
+            android:dependency="pulse_ambient_light" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

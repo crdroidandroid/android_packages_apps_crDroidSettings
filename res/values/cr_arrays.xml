@@ -2369,17 +2369,6 @@
         <item>0</item>
     </string-array>
 
-    <!-- Edge light layout -->
-    <string-array name="pulse_ambient_light_layout_entries">
-        <item>@string/pulse_ambient_light_layout_solid</item>
-        <item>@string/pulse_ambient_light_layout_faded</item>
-    </string-array>
-
-    <string-array name="pulse_ambient_light_layout_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-    </string-array>
-
     <!-- Clipboard toast info -->
     <string-array name="clipboard_toast_info_entries">
         <item>@string/disabled</item>
@@ -2408,5 +2397,35 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
+    </string-array>
+
+    <string-array name="ambient_notification_light_timeout_entries" translatable="false">
+        <item>@string/entry_infinite</item>
+        <item>@string/entry_five_minute</item>
+        <item>@string/entry_ten_minute</item>
+        <item>@string/entry_fifteen_minute</item>
+        <item>@string/entry_thirty_minute</item>
+        <item>@string/entry_sixty_minute</item>
+    </string-array>
+
+    <string-array name="ambient_notification_light_timeout_values" translatable="false">
+        <item>0</item>
+        <item>300</item>
+        <item>600</item>
+        <item>900</item>
+        <item>1800</item>
+        <item>3600</item>
+    </string-array>
+
+    <string-array name="ambient_notification_light_color_mode_entries" translatable="false">
+        <item>@string/ambient_notification_light_color_mode_automatic</item>
+        <item>@string/ambient_notification_light_color_mode_accent</item>
+        <item>@string/ambient_notification_light_color_mode_custom</item>
+    </string-array>
+
+    <string-array name="ambient_notification_light_color_mode_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 </resources>
