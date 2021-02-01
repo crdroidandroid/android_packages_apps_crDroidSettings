@@ -211,10 +211,8 @@ public class Buttons extends SettingsPreferenceFragment implements
             prefScreen.removePreference(mHardwareKeysDisable);
         }
 
-        if (mSwapCapacitiveKeys != null && !isKeySwapperSupported(getActivity())) {
+        if (!isKeySwapperSupported(getActivity())) {
             prefScreen.removePreference(mSwapCapacitiveKeys);
-        } else {
-            mSwapCapacitiveKeys.setOnPreferenceChangeListener(this);
         }
 
         if (!hasHomeKey && !hasBackKey && !hasMenuKey && !hasAssistKey && !hasAppSwitchKey) {
@@ -452,9 +450,6 @@ public class Buttons extends SettingsPreferenceFragment implements
                 backlight.setEnabled(!value);
             }
             return true;
-        } else if (preference == mSwapCapacitiveKeys) {
-            mHardware.set(LineageHardwareManager.FEATURE_KEY_SWAP, (Boolean) newValue);
-            return true;
         } else if (preference == mHomeLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION);
@@ -566,6 +561,8 @@ public class Buttons extends SettingsPreferenceFragment implements
                 Settings.System.ANBI_ENABLED, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.HARDWARE_KEYS_DISABLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SWAP_CAPACITIVE_KEYS, 0, UserHandle.USER_CURRENT);
         ButtonBacklightBrightness.reset(mContext);
     }
 

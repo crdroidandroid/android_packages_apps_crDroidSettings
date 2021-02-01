@@ -26,12 +26,11 @@
         android:title="@string/hwkeys_disabled_title"
         android:summary="@string/hwkeys_disabled_summary" />
 
-    <SwitchPreference
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="swap_capacitive_keys"
         android:icon="@drawable/ic_buttons"
         android:title="@string/swap_capacitive_keys_title"
-        android:summary="@string/swap_capacitive_keys_summary"
-        android:defaultValue="false" />
+        android:summary="@string/swap_capacitive_keys_summary" />
 
     <com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness
         android:key="button_backlight"
