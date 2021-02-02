@@ -248,6 +248,8 @@ public class PulseSettings extends SettingsPreferenceFragment implements
                 Settings.Secure.PULSE_SOLID_UNITS_COUNT, 32, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.PULSE_SOLID_FUDGE_FACTOR, 4, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PULSE_SOLID_UNITS_ROUNDED, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
