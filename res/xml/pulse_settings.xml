@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2020 crDroid Android Project
+     Copyright (C) 2016-2022 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -144,6 +144,13 @@
     <PreferenceCategory
         android:key="pulse_2"
         android:title="@string/pulse_solid_dimen_category">
+
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="pulse_solid_units_rounded"
+            android:title="@string/pulse_solid_units_rounded_title"
+            android:summary="@string/pulse_solid_units_rounded_summary"
+            android:defaultValue="false"
+            android:dependency="pulse_2"/>
 
         <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
             android:key="pulse_solid_units_opacity"
