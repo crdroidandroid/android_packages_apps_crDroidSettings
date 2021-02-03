@@ -57,6 +57,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
     public static final String TAG = "DozeSettings";
 
     private static final String KEY_DOZE_ALWAYS_ON = "doze_always_on";
+    private static final String KEY_DOZE_ON_CHARGE = "doze_on_charge";
 
     private static final String CATEG_DOZE_SENSOR = "doze_sensor";
 
@@ -67,6 +68,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
     private static final String KEY_DOZE_GESTURE_VIBRATE = "doze_gesture_vibrate";
 
     private SwitchPreference mDozeAlwaysOnPreference;
+    private SwitchPreference mDozeOnChargePreference;
     private SwitchPreference mTiltPreference;
     private SwitchPreference mPickUpPreference;
     private SwitchPreference mHandwavePreference;
@@ -85,6 +87,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 (PreferenceCategory) getPreferenceScreen().findPreference(CATEG_DOZE_SENSOR);
 
         mDozeAlwaysOnPreference = (SwitchPreference) findPreference(KEY_DOZE_ALWAYS_ON);
+        mDozeOnChargePreference = (SwitchPreference) findPreference(KEY_DOZE_ON_CHARGE);
 
         mTiltPreference = (SwitchPreference) findPreference(KEY_DOZE_TILT_GESTURE);
         mTiltPreference.setOnPreferenceChangeListener(this);
@@ -116,6 +119,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         boolean mAlwaysOnAvailable = getResources().getBoolean(com.android.internal.R.bool.config_dozeAlwaysOnDisplayAvailable);
         if (!mAlwaysOnAvailable) {
             getPreferenceScreen().removePreference(mDozeAlwaysOnPreference);
+            getPreferenceScreen().removePreference(mDozeOnChargePreference);
         }
     }
 
@@ -195,6 +199,8 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 com.android.internal.R.bool.config_dozeAlwaysOnEnabled) ? 1 : 0,
                 UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.DOZE_ON_CHARGE, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.DOZE_TILT_GESTURE, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.DOZE_PICK_UP_GESTURE, 0, UserHandle.USER_CURRENT);
@@ -220,6 +226,13 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+
+                    boolean mAlwaysOnAvailable = 
+                        context.getResources().getBoolean(com.android.internal.R.bool.config_dozeAlwaysOnDisplayAvailable);
+                    if (!mAlwaysOnAvailable) {
+                        keys.add(KEY_DOZE_ALWAYS_ON);
+                        keys.add(KEY_DOZE_ON_CHARGE);
+                    }
 
                     keys.add(KEY_DOZE_GESTURE_VIBRATE);
                     if (!Utils.getTiltSensor(context)) {
