@@ -84,6 +84,36 @@
             android:summary="@string/qs_footer_warnings_summary"
             android:defaultValue="true"/>
 
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_footer_show_user"
+            android:icon="@drawable/ic_account"
+            android:title="@string/qs_footer_users_icon_title"
+            android:summary="@string/qs_footer_users_icon_summary"
+            android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_footer_show_edit"
+            android:icon="@drawable/ic_pencil"
+            android:title="@string/qs_footer_edit_icon_title"
+            android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_footer_show_power_menu"
+            android:icon="@drawable/ic_power"
+            android:title="@string/qs_footer_show_power_menu_title"
+            android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_footer_show_services"
+            android:icon="@drawable/ic_memory"
+            android:title="@string/qs_footer_services_icon_title" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_footer_show_settings"
+            android:icon="@drawable/ic_settings_main"
+            android:title="@string/qs_footer_settings_icon_title"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
