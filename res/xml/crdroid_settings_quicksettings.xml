@@ -257,41 +257,41 @@
             android:defaultValue="false" /> -->
     </PreferenceCategory>
 
-    <!--<PreferenceCategory 
+    <PreferenceCategory 
          android:title="@string/qs_footer_category">
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="qs_show_security_footer"
             android:icon="@drawable/ic_key"
             android:title="@string/qs_footer_warnings_title"
             android:summary="@string/qs_footer_warnings_summary"
-            android:defaultValue="true"/>
+            android:defaultValue="true"/>-->
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-            android:key="qsfooter_show_user"
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_footer_show_user"
             android:icon="@drawable/ic_account"
             android:title="@string/qs_footer_users_icon_title"
             android:summary="@string/qs_footer_users_icon_summary"
             android:defaultValue="true" />
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-            android:key="qsfooter_show_edit"
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_footer_show_edit"
             android:icon="@drawable/ic_pencil"
             android:title="@string/qs_footer_edit_icon_title"
             android:summary="@string/qs_footer_edit_icon_summary"
             android:defaultValue="true" />
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-            android:key="qsfooter_show_services"
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_footer_show_services"
             android:icon="@drawable/ic_memory"
             android:title="@string/qs_footer_services_icon_title"
             android:summary="@string/qs_footer_services_icon_summary" />
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-            android:key="qsfooter_show_settings"
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_footer_show_settings"
             android:icon="@drawable/ic_settings_main"
             android:title="@string/qs_footer_settings_icon_title"
             android:summary="@string/qs_footer_settings_icon_summary"
             android:defaultValue="true" />
-    </PreferenceCategory>-->
+    </PreferenceCategory>
 </PreferenceScreen>
