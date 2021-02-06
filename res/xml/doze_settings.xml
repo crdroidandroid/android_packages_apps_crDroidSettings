@@ -44,27 +44,27 @@
         android:summary="@string/ambient_battery_percent_summary"
         android:defaultValue="false" />-->
 
-    <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="pulse_ambient_light"
         android:title="@string/pulse_ambient_light_title"
         android:summary="@string/pulse_ambient_light_summary"
-        android:defaultValue="false" />
+        android:dependency="doze_enabled" />
 
-    <com.crdroid.settings.preferences.SystemSettingListPreference
+    <!--<com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="pulse_ambient_light_layout"
             android:title="@string/pulse_ambient_light_layout_title"
             android:entries="@array/pulse_ambient_light_layout_entries"
             android:entryValues="@array/pulse_ambient_light_layout_values"
             android:defaultValue="0"
-            android:dependency="pulse_ambient_light" />
+            android:dependency="pulse_ambient_light" />-->
 
-    <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
+    <com.crdroid.settings.preferences.colorpicker.SecureSettingColorPickerPreference
         android:key="pulse_ambient_light_color"
         android:title="@string/pulse_ambient_light_color_title"
         android:dependency="pulse_ambient_light"
         android:defaultValue="0xFF3980FF" />
 
-    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+    <!--<com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="pulse_ambient_light_duration"
             android:title="@string/pulse_ambient_light_duration_title"
             android:summary="@string/pulse_ambient_light_duration_summary"
