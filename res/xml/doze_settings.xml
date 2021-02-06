@@ -64,16 +64,16 @@
         android:dependency="pulse_ambient_light"
         android:defaultValue="0xFF3980FF" />
 
-    <!--<com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="pulse_ambient_light_duration"
-            android:title="@string/pulse_ambient_light_duration_title"
-            android:summary="@string/pulse_ambient_light_duration_summary"
-            android:defaultValue="2"
-            android:max="10"
-            settings:min="1"
-            settings:units="@string/unit_seconds"
-            settings:interval="1"
-            android:dependency="pulse_ambient_light" />-->
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        android:key="pulse_ambient_light_duration"
+        android:title="@string/pulse_ambient_light_duration_title"
+        android:summary="@string/pulse_ambient_light_duration_summary"
+        android:defaultValue="2"
+        android:max="10"
+        settings:min="1"
+        settings:units="@string/unit_seconds"
+        settings:interval="1"
+        android:dependency="pulse_ambient_light" />
 
     <lineageos.preference.RemotePreference
         android:key="doze_device_settings"
