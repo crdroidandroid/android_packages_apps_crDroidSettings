@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2020 crDroid Android Project
+ * Copyright (C) 2016-2021 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -94,6 +94,8 @@ public class Notifications extends SettingsPreferenceFragment {
                 Settings.System.VIBRATE_ON_CALLWAITING, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.VIBRATE_ON_DISCONNECT, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
