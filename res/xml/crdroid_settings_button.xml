@@ -32,6 +32,15 @@
         android:title="@string/swap_capacitive_keys_title"
         android:summary="@string/swap_capacitive_keys_summary" />
 
+    <lineageos.preference.RemotePreference
+        android:key="additional_buttons"
+        android:icon="@drawable/ic_extra_buttons"
+        android:title="@string/additional_buttons_title"
+        lineage:requiresAction="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS">
+        <intent
+             android:action="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS" />
+    </lineageos.preference.RemotePreference>
+
     <com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness
         android:key="button_backlight"
         android:icon="@drawable/ic_backlight"
@@ -329,20 +338,5 @@
             android:icon="@drawable/ic_rotation"
             android:title="@string/swap_volume_buttons_title"
             android:summary="@string/swap_volume_buttons_summary" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="extras_category"
-        android:title="@string/extras_title" >
-
-        <lineageos.preference.RemotePreference
-            android:key="additional_buttons"
-            android:icon="@drawable/ic_extra_buttons"
-            android:title="@string/additional_buttons_title"
-            lineage:requiresAction="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS">
-            <intent
-                android:action="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS" />
-        </lineageos.preference.RemotePreference>
-
     </PreferenceCategory>
 </PreferenceScreen>
