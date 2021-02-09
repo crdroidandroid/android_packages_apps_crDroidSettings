@@ -44,43 +44,47 @@
         android:summary="@string/ambient_battery_percent_summary"
         android:defaultValue="false" />-->
 
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-        android:key="pulse_ambient_light"
-        android:title="@string/pulse_ambient_light_title"
-        android:summary="@string/pulse_ambient_light_summary"
-        android:dependency="doze_enabled" />
-
-    <com.crdroid.settings.preferences.SecureSettingListPreference
-        android:key="pulse_ambient_light_layout"
-        android:title="@string/pulse_ambient_light_layout_title"
-        android:entries="@array/pulse_ambient_light_layout_entries"
-        android:entryValues="@array/pulse_ambient_light_layout_values"
-        android:defaultValue="0"
-        android:dependency="pulse_ambient_light" />
-
-    <com.crdroid.settings.preferences.colorpicker.SecureSettingColorPickerPreference
-        android:key="pulse_ambient_light_color"
-        android:title="@string/pulse_ambient_light_color_title"
-        android:dependency="pulse_ambient_light"
-        android:defaultValue="0xFF3980FF" />
-
-    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
-        android:key="pulse_ambient_light_duration"
-        android:title="@string/pulse_ambient_light_duration_title"
-        android:summary="@string/pulse_ambient_light_duration_summary"
-        android:defaultValue="2"
-        android:max="10"
-        settings:min="1"
-        settings:units="@string/unit_seconds"
-        settings:interval="1"
-        android:dependency="pulse_ambient_light" />
-
     <lineageos.preference.RemotePreference
         android:key="doze_device_settings"
         android:title="@string/ambient_display_screen_title">
         <intent
             android:action="org.lineageos.settings.device.DOZE_SETTINGS" />
     </lineageos.preference.RemotePreference>
+
+    <PreferenceCategory
+        android:key="edge_lighting"
+        android:title="@string/pulse_ambient_light_title" >
+
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="pulse_ambient_light"
+            android:title="@string/pulse_ambient_light_title"
+            android:summary="@string/pulse_ambient_light_summary" />
+
+        <com.crdroid.settings.preferences.SecureSettingListPreference
+            android:key="pulse_ambient_light_layout"
+            android:title="@string/pulse_ambient_light_layout_title"
+            android:entries="@array/pulse_ambient_light_layout_entries"
+            android:entryValues="@array/pulse_ambient_light_layout_values"
+            android:defaultValue="0"
+            android:dependency="pulse_ambient_light" />
+
+        <com.crdroid.settings.preferences.colorpicker.SecureSettingColorPickerPreference
+            android:key="pulse_ambient_light_color"
+            android:title="@string/pulse_ambient_light_color_title"
+            android:dependency="pulse_ambient_light"
+            android:defaultValue="0xFF3980FF" />
+
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="pulse_ambient_light_duration"
+            android:title="@string/pulse_ambient_light_duration_title"
+            android:summary="@string/pulse_ambient_light_duration_summary"
+            android:defaultValue="2"
+            android:max="10"
+            settings:min="1"
+            settings:units="@string/unit_seconds"
+            settings:interval="1"
+            android:dependency="pulse_ambient_light" />
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="doze_sensor"
