@@ -36,6 +36,11 @@
             android:action="org.lineageos.settings.device.DOZE_SETTINGS" />
     </lineageos.preference.RemotePreference>
 
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="pulse_on_new_tracks"
+        android:title="@string/pulse_on_new_tracks_title"
+        android:summary="@string/pulse_on_new_tracks_summary" />
+
     <PreferenceCategory
         android:key="edge_lighting"
         android:title="@string/pulse_ambient_light_title" >
