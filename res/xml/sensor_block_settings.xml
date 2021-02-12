@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2019 crDroid Android Project
+     Copyright (C) 2016-2021 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -36,4 +36,10 @@
             android:icon="@drawable/ic_menu_add_white"
             android:title="@string/add_sensor_block_package_title" />
     </PreferenceCategory>
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="sensor_block_footer"
+        android:selectable="false"
+        settings:searchable="false"
+        android:dependency="sensor_block" />
 </PreferenceScreen>

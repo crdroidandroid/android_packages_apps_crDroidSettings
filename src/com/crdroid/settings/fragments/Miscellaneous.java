@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2020 crDroid Android Project
+ * Copyright (C) 2016-2021 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.misc.GamingMode;
+import com.crdroid.settings.fragments.misc.SensorBlock;
 import com.crdroid.settings.fragments.misc.SmartCharging;
 
 import java.util.List;
@@ -95,6 +96,7 @@ public class Miscellaneous extends SettingsPreferenceFragment {
         Settings.System.putIntForUser(resolver,
                 Settings.System.TOAST_ICON, 1, UserHandle.USER_CURRENT);
         GamingMode.reset(mContext);
+        SensorBlock.reset(mContext);
         SmartCharging.reset(mContext);
     }
 
