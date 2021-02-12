@@ -248,13 +248,12 @@
             lineage:requiresConfig="@*android:bool/config_automatic_brightness_available"
             android:defaultValue="true" />
 
-        <!-- OOS style material dismiss all button for notifications
+        <!-- OOS style material dismiss all button for notifications -->
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="notification_material_dismiss"
             android:icon="@drawable/ic_notification_clear_all"
             android:title="@string/notification_material_dismiss_button_title"
-            android:summary="@string/notification_material_dismiss_button_summary"
-            android:defaultValue="false" /> -->
+            android:summary="@string/notification_material_dismiss_button_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory 
