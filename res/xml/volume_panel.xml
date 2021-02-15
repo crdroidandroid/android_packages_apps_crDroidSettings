@@ -32,6 +32,13 @@
         settings:min="1"
         settings:units="@string/unit_seconds" />
 
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="systemui_plugin_volume"
+        android:title="@string/volume_panel"
+        android:entries="@array/volume_panel_entries"
+        android:entryValues="@array/volume_panel_values"
+        android:defaultValue="@string/volume_panel_stock_val" />
+
     <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="audio_panel_view_media"
         android:title="@string/audio_panel_view_media_title"
