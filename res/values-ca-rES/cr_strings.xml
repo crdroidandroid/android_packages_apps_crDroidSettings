@@ -753,8 +753,8 @@
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
     <string name="status_bar_notif_count_title">Notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
-    <string name="status_bar_quick_qs_pulldown_title">Quick pulldown</string>
-    <string name="status_bar_quick_qs_pulldown_summary">%1$s edge of the status bar pulls down quick settings</string>
+    <string name="status_bar_quick_qs_pulldown_title">Desplegament ràpid</string>
+    <string name="status_bar_quick_qs_pulldown_summary">%1$s la vora de la barra d\'estat desplega el panell d\'ajustos ràpids</string>
     <string name="status_bar_quick_qs_pulldown_summary_left">Esquerra</string>
     <string name="status_bar_quick_qs_pulldown_summary_right">Dreta</string>
     <string name="status_bar_quick_qs_pulldown_off">Desactivat</string>
@@ -793,7 +793,7 @@
     <string name="status_bar_battery_style_text">Text</string>
     <string name="status_bar_battery_style_hidden">Hidden</string>
     <string name="status_bar_battery_style_tile_title">Override battery tile</string>
-    <string name="status_bar_battery_style_tile_summary">Use same icon style as above in QS battery tile</string>
+    <string name="status_bar_battery_style_tile_summary">Fes servir el mateix estil d\'icona que en l\'accés ràpid de la bateria</string>
     <!-- Status bar - Battery custom charging symbol -->
     <string name="text_charging_symbol_title">Custom charging symbol for text style</string>
     <string name="text_charging_symbol_dialog">Custom charging symbol near battery percentage text</string>
@@ -1308,25 +1308,25 @@
     <!-- Tiles animation style  -->
     <string name="qs_tile_animation_style_title">Animació dels elements d\'accés ràpid</string>
     <string name="qs_tile_animation_duration_title">Durada de l\'animació dels elements d\'accés ràpid</string>
-    <string name="qs_tile_animation_style_off">No animation</string>
-    <string name="qs_tile_animation_style_flip">Flip</string>
+    <string name="qs_tile_animation_style_off">Sense animació</string>
+    <string name="qs_tile_animation_style_flip">Regira</string>
     <string name="qs_tile_animation_style_rotate">Girar</string>
-    <string name="qs_tile_animation_duration_low">Low</string>
-    <string name="qs_tile_animation_duration_default">Default</string>
-    <string name="qs_tile_animation_duration_fast">Fast</string>
+    <string name="qs_tile_animation_duration_low">Curta</string>
+    <string name="qs_tile_animation_duration_default">Per defecte</string>
+    <string name="qs_tile_animation_duration_fast">Ràpida</string>
     <!-- Tiles animation interpolator -->
     <string name="qs_tile_animation_interpolator_title">Interpolador de l\'animació dels elements d\'accés ràpid</string>
-    <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
-    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerate</string>
-    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelerate</string>
-    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelerate decelerate</string>
-    <string name="qs_tile_animation_interpolator_bounceInterpolator">Bounce</string>
-    <string name="qs_tile_animation_interpolator_overshootInterpolator">Overshoot</string>
-    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipate</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
+    <string name="qs_tile_animation_interpolator_linearInterpolator">Lineal</string>
+    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerar</string>
+    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Desaccelerar</string>
+    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelerar/Desaccelerar</string>
+    <string name="qs_tile_animation_interpolator_bounceInterpolator">Rebota</string>
+    <string name="qs_tile_animation_interpolator_overshootInterpolator">Excedir</string>
+    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipar-se</string>
+    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipat/Excedir</string>
     <!-- Fancy tiles animation -->
     <string name="qs_fancy_animation_title">Animació elegant d\'accés ràpid</string>
-    <string name="qs_fancy_animation_summary">Animate when pulling down the statusbar</string>
+    <string name="qs_fancy_animation_summary">Anima quan es desplegue la barra d\'estat</string>
     <!-- Disable animations -->
     <string name="disable_animations">Disable animations</string>
     <string name="disable_animations_summary">Disables transition animations such as when launching an app</string>
@@ -1653,7 +1653,7 @@
     <!-- Recents deep clear -->
     <string name="recents_deep_clear_title">Deep clear</string>
     <string name="recents_deep_clear_summary">Clear background process when using dismiss icon to dismiss task from recents view. This may lead unintentional results. Some apps may stop working until you restart them.</string>
-    <string name="qs_tile_title_visibility_title">Tile title</string>
+    <string name="qs_tile_title_visibility_title">Títol dels ajustos ràpids</string>
     <string name="qs_tile_title_visibility_summary">Display title below each tile</string>
     <!-- Dark SysUI Theme -->
     <string name="dark_theme_title">Theme</string>
@@ -2034,7 +2034,7 @@
     <string name="qs_footer_services_icon_title">Drecera dels serveis en execució</string>
     <string name="qs_footer_services_icon_summary">Mostra la drecera dels serveis en execució</string>
     <string name="qs_footer_settings_icon_title">Drecera a la configuració</string>
-    <string name="qs_footer_settings_icon_summary">Display settings app shortcut</string>
+    <string name="qs_footer_settings_icon_summary">Mostra la drecera de la configuració</string>
     <!-- Old mobiletype icon style -->
     <string name="old_mobiletype_title">Old style signal icon</string>
     <string name="old_mobiletype_summary">Merge signal and signal type icons</string>
@@ -2174,12 +2174,12 @@
     <string name="pulse_ambient_light_layout_solid">Solid</string>
     <string name="pulse_ambient_light_layout_faded">Faded</string>
     <!-- QS battery -->
-    <string name="qs_battery_location_title">Battery location</string>
+    <string name="qs_battery_location_title">Ubicació de la bateria</string>
     <string name="qs_battery_location_qs_panel">Panell d\'accés ràpid</string>
-    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
-    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
+    <string name="qs_battery_location_qs_statusbar">Barra d\'estat ràpida</string>
+    <string name="qs_use_status_bar_battery_style">Segueix l\'estil de la barra d\'estat</string>
     <!-- QS battery -->
-    <string name="lockscreen_lock_icon_title">Lock icon</string>
+    <string name="lockscreen_lock_icon_title">Icona de bloqueig</string>
     <string name="lockscreen_lock_icon_summary">Display lock icon on the lockscreen</string>
     <!-- Notification Vibration -->
     <string name="vibrate_on_notifications_title">Notification vibration</string>
@@ -2201,12 +2201,12 @@
     <string name="fod_wallpaper_color">Use wallpaper color for FOD icon</string>
     <string name="fod_wallpaper_color_summary">Uses adjusted primary wallpaper color for FOD icon\nNOTE: might look good only with some wallpapers</string>
     <!-- QS panel background opacity -->
-    <string name="qs_panel_alpha_title">Panel opacity</string>
+    <string name="qs_panel_alpha_title">Opacitat del panell</string>
     <!-- QS panel gradient below status bar -->
-    <string name="qs_panel_gradient_title">Status bar gradient</string>
+    <string name="qs_panel_gradient_title">Degradat de la barra d\'estat</string>
     <string name="qs_panel_gradient_summary">Mostra el degradat davall la bara d\'estat en el panell d\'accés ràpid</string>
     <!-- QS status bar background opacity -->
-    <string name="qs_sb_bg_alpha_title">Status bar opacity</string>
+    <string name="qs_sb_bg_alpha_title">Opacitat de la barra d\'estat</string>
     <!-- Navigation mode settings -->
     <string name="back_height_low_label">Full</string>
     <string name="back_height_high_label">Bottom</string>
@@ -2275,8 +2275,8 @@
     <string name="alert_slider_notifications_title">Alert slider notifications</string>
     <string name="alert_slider_notifications_summary">Display notification when changing alert slider position</string>
     <!-- QS blur -->
-    <string name="qs_blur_title">Background blur</string>
-    <string name="qs_blur_summary">Blur empty space in notification panel below quick settings</string>
+    <string name="qs_blur_title">Difuminat del fons</string>
+    <string name="qs_blur_summary">Desenfoca l\'espai buit en el panell de notificacions inferior als accessos ràpids</string>
     <!-- In-call feedback -->
     <string name="incall_feeedback_vibrate_title">In-Call vibration</string>
     <string name="incall_feeedback_summary">Vibrate to indicate call status</string>
@@ -2379,7 +2379,7 @@
     <string name="swap_capacitive_keys_summary">Swap the order of recents and back buttons</string>
     <!-- QS themes -->
     <string name="qs_bg_use_new_tint">Coloreja els elements d\'accés ràpid</string>
-    <string name="qs_bg_use_new_tint_summary">Enable the accent color tint on QS tiles</string>
+    <string name="qs_bg_use_new_tint_summary">Activa el color d\'èmfasi en els accessos ràpids</string>
     <!-- Doze-on-Charge -->
     <string name="doze_on_charge_title">Show info when charging</string>
     <string name="doze_on_charge_summary">See time, notifications and charging info when device is charging</string>
