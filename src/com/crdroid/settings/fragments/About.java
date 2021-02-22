@@ -69,7 +69,7 @@ public class About extends SettingsPreferenceFragment {
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mDonate) {
-            launchUrl("https://www.paypal.me/crdroidandroid");
+            launchUrl("https://crdroid.net/donate.php");
         } else if (preference == mSourceUrl) {
             launchUrl("https://github.com/crdroidandroid");
         } else if (preference == mTelegramUrl) {
