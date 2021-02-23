@@ -79,6 +79,8 @@ public class UserInterface extends SettingsPreferenceFragment {
                 Settings.System.NAVBAR_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.BERRY_QS_TILE_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BERRY_SWITCH_STYLE, 0, UserHandle.USER_CURRENT);
         DozeSettings.reset(mContext);
         SmartPixels.reset(mContext);
     }
