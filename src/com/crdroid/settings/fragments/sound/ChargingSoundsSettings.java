@@ -44,6 +44,7 @@ public class ChargingSoundsSettings extends SettingsPreferenceFragment {
     private static final String KEY_POWER_NOTIFICATIONS_VIBRATE = "power_notifications_vibrate";
     private static final String KEY_CHARGING_SOUNDS_RINGTONE = "charging_sounds_ringtone";
     private static final String KEY_BATTERY_FULLY_CHARGED_SOUND_RINGTONE = "battery_fully_charged_sound_ringtone";
+    private static final String KEY_BATTERY_FULLY_CHARGED_VIBRATE = "battery_fully_charged_vibrate";
 
     // Used for power notification uri string if set to silent
     private static final String RINGTONE_SILENT_URI_STRING = "silent";
@@ -71,6 +72,7 @@ public class ChargingSoundsSettings extends SettingsPreferenceFragment {
         Vibrator vibrator = getActivity().getSystemService(Vibrator.class);
         if (vibrator == null || !vibrator.hasVibrator()) {
             removePreference(KEY_POWER_NOTIFICATIONS_VIBRATE);
+            removePreference(KEY_BATTERY_FULLY_CHARGED_VIBRATE);
         }
 
         mChargingSoundsRingtone = findPreference(KEY_CHARGING_SOUNDS_RINGTONE);

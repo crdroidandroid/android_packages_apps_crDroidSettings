@@ -39,7 +39,14 @@
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="battery_fully_charged_sound_enabled"
         android:title="@string/battery_fully_charged_sound_enabled_title"
-        android:summary="@string/battery_fully_charged_sound_enabled_summary" />
+        android:summary="@string/battery_fully_charged_sound_enabled_summary"
+        android:defaultValue="true" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="battery_fully_charged_vibrate"
+        android:title="@string/battery_fully_charged_vibrate_title"
+        android:dependency="battery_fully_charged_sound_enabled"
+        android:defaultValue="false" />
 
     <Preference
         android:key="battery_fully_charged_sound_ringtone"
