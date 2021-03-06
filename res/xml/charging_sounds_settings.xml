@@ -19,12 +19,13 @@
     android:key="charging_sounds_settings"
     android:title="@string/charging_sounds_settings_title">
 
-    <cyanogenmod.preference.GlobalSettingSwitchPreference
+    <lineageos.preference.GlobalSettingSwitchPreference
         android:key="charging_sounds_enabled"
         android:title="@string/charging_sounds_enabled_title"
-        android:summary="@string/charging_sounds_enabled_summary" />
+        android:summary="@string/charging_sounds_enabled_summary"
+        android:defaultValue="true" />
 
-    <cyanogenmod.preference.CMGlobalSettingSwitchPreference
+    <lineageos.preference.LineageGlobalSettingSwitchPreference
         android:key="power_notifications_vibrate"
         android:title="@string/power_notifications_vibrate_title"
         android:dependency="charging_sounds_enabled" />
