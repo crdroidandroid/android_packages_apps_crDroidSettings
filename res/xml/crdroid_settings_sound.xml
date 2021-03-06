@@ -28,9 +28,12 @@
         android:fragment="com.crdroid.settings.fragments.sound.PulseSettings" />
 
     <!-- Custom charging sounds -->
-    <org.lineageos.internal.lineageparts.LineagePartsPreference
-      android:icon="@drawable/ic_charger"
-      android:key="charging_sounds_settings"/>
+    <PreferenceScreen
+        android:key="charging_sounds_settings"
+        android:icon="@drawable/ic_charger"
+        android:title="@string/charging_sounds_settings_title"
+        android:summary="@string/charging_sounds_settings_summary"
+        android:fragment="com.crdroid.settings.fragments.sound.ChargingSoundsSettings" />
 
     <!-- Launch music player when headset is connected
     <com.crdroid.settings.preferences.SystemSettingListPreference
