@@ -115,6 +115,15 @@
         android:entryValues="@array/qs_selector_values"
         android:defaultValue="0" />
 
+    <!-- Settings dashboard icon style -->
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="theming_settings_dashboard_icons"
+        android:icon="@drawable/ic_settings_main"
+        android:title="@string/theming_settings_dashboard_icons_title"
+        android:entries="@array/theming_settings_dashboard_icons_entries"
+        android:entryValues="@array/theming_settings_dashboard_icons_values"
+        android:defaultValue="0" />
+
     <!-- Weather -->
     <PreferenceScreen
         android:key="omnijaws_settings"
