@@ -144,6 +144,15 @@
     <PreferenceCategory 
          android:title="@string/qs_misc_category">
 
+        <!-- QS Header data usage -->
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="qs_datausage"
+            android:icon="@drawable/ic_data_usage_wifi"
+            android:title="@string/qs_datausage_title"
+            android:entries="@array/qs_datausage_entries"
+            android:entryValues="@array/qs_datausage_values"
+            android:defaultValue="0" />
+
         <!-- Battery styles -->
         <com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="qs_battery_style"
