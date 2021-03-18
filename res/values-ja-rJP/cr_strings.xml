@@ -639,8 +639,8 @@
     <string name="pulse_settings_summary">ナビゲーションバーとロック画面に表示されるグラフィックイコライザー</string>
     <string name="show_navbar_pulse_title">ナビゲーションバーの Pulse</string>
     <string name="show_navbar_pulse_summary">ナビゲーションバー上のグラフィックイコライザー</string>
-    <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
-    <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
+    <string name="show_lockscreen_pulse_title">ロック画面で表示</string>
+    <string name="show_lockscreen_pulse_summary">ロック画面のグラフィックイコライザー</string>
     <string name="pulse_render_mode_title">レンダリングモード</string>
     <string name="pulse_render_mode_fading_bars">フェーディングブロック</string>
     <string name="pulse_render_mode_solid_lines">ソリッドライン</string>
@@ -689,13 +689,13 @@
     <string name="navbar_layout_leftleaning">左寄り</string>
     <string name="navbar_layout_rightleaning">右寄り</string>
     <string name="navbar_invert_layout_title">レイアウトを反転</string>
-    <string name="navbar_invert_layout_summary">Inverts the layout of the navigation bar and other items, such as the IME switcher</string>
+    <string name="navbar_invert_layout_summary">ナビゲーションバーや IEM 切替えのようなその他の項目のレイアウトを反転させる</string>
     <string name="navbar_tuner_title">ナビゲーションバーの編集</string>
     <string name="navbar_tuner_summary">ボタンとレイアウトをカスタマイズします</string>
     <string name="navbar_arrow_keys_title">入力中に矢印キーを表示する</string>
     <string name="navbar_arrow_keys_summary">入力中は左右の矢印ボタンを表示します。IMEの切り替えアイコンを上書きします。</string>
     <string name="navbar_left_summary">画面が横向きの時にナビゲーションバーを画面の左側に配置します</string>
-    <string name="navbar_back_long_press_title">Back long press action</string>
+    <string name="navbar_back_long_press_title">戻る長押しの動作</string>
     <string name="navbar_home_long_press_title">ホームボタン長押しの動作</string>
     <string name="navbar_home_double_tap_title">ホームボタンダブルタップの動作</string>
     <string name="navbar_app_switch_long_press_title">アプリ履歴ボタンの長押しの動作</string>
@@ -852,7 +852,7 @@
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">ティッカー</string>
     <string name="ticker_screen_summary">ステータスバーに通知ティッカーを表示する</string>
-    <string name="ticker_screen_footer">Ticker is visible only when notification heads-up is not shown. Devices with center notch should hide cutout under User Interface settings or under Developer options.</string>
+    <string name="ticker_screen_footer">通知のヘッドアップが表示されていないときのみ、ティッカーが表示されます。センターノッチのあるデバイスでは、ユーザーインターフェース設定または開発者向けオプションでカットアウトを隠す必要があります。</string>
     <string name="ticker_title">ステータスバー上のティッカー</string>
     <string name="ticker_summary">ステータスバーのティッカーを有効化します</string>
     <string name="ticker_restore_defaults_title">デフォルトに戻す</string>
@@ -935,7 +935,7 @@
     <string name="screenshot_type_partial">音量ボタンでスクリーンショットを取得する範囲をドラッグする</string>
     <!-- Screenshot delay  -->
     <string name="screenshot_delay_title">スクリーンショットの遅延</string>
-    <string name="screenshot_delay_summary">Amount of time you need to hold power and volume buttons to take screenshot</string>
+    <string name="screenshot_delay_summary">スクリーンショットを撮るために電源ボタンと音量ボタンを保持する必要がある時間</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">スクリーンショットのオプション</string>
     <string name="screenshot_edit_app">スクリーンショットエディター</string>
@@ -1487,7 +1487,7 @@
     <string name="vowifi_icon_title">VoWiFi アイコン</string>
     <string name="vowifi_icon_summary">利用可能な場合VoWiFiアイコンを表示</string>
     <string name="volte_vowifi_override_title">VoWiFi override</string>
-    <string name="volte_vowifi_override_summary">Hide VoLTE when VoWiFi is available. This also overrides old style signal icon for VoWiFi.</string>
+    <string name="volte_vowifi_override_summary">VoWiFi が利用可能な場合は VoLTE を非表示にします。また、VoWiFi の古いスタイルの信号アイコンを上書きします。</string>
     <!-- Ad Away -->
     <string name="adaway_title">AdAway</string>
     <string name="adaway_summary">root 権限を使用して不要な広告をブロックします</string>
@@ -1554,9 +1554,9 @@
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">センサーをブロック</string>
     <string name="sensor_block_summary">一部のアプリでバッテリーを節約するため、モーションセンサーへのアクセスを制限します</string>
-    <string name="sensor_block_app_picker_title">Block sensors for these apps</string>
-    <string name="add_sensor_block_package_title">Add apps for Sensor block</string>
-    <string name="add_sensor_block_package_summary">Significant motion, accelerometer, linear acceleration sensors will be blocked for these apps</string>
+    <string name="sensor_block_app_picker_title">アプリへのセンサーをブロック</string>
+    <string name="add_sensor_block_package_title">センサーをブロックするアプリを追加</string>
+    <string name="add_sensor_block_package_summary">大きな動き、加速度センサー、線形加速度センサーがこれらのアプリでブロックされます。</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">ポケット検出</string>
     <string name="pocket_judge_summary">ポケットに入っている時にタッチやボタン入力を無効化します</string>
@@ -1693,7 +1693,7 @@
     <string name="twilight_mode_location_enable">有効</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">クイックロック解除</string>
-    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+    <string name="unlock_quick_unlock_control_summary">正しいPIN/パスワードが入力されると自動的にロックが解除されます</string>
     <string name="background_processes_settings_title">バックグラウンドプロセス</string>
     <!-- App details: open play store link if app is user installed -->
     <string name="app_play_store">Google Play</string>
@@ -1732,7 +1732,7 @@
     <string name="full_screen_aspect_ratio_summary">アプリに全画面表示のアスペクト比を使用するよう強制します。一部のアプリは全画面表示で正しく動作しない場合があるので注意してください</string>
     <!-- QS Brightness Slider -->
     <string name="qs_brightness_slider_show_never">表示しない</string>
-    <string name="qs_brightness_slider_show_expanded">Show when expanded</string>
+    <string name="qs_brightness_slider_show_expanded">展開時に表示</string>
     <string name="qs_brightness_slider_show_always">常に表示</string>
     <!-- QS Brightness Slider position -->
     <string name="qs_brightness_slider_hide">非表示</string>
@@ -1787,7 +1787,7 @@
     <string name="keywords_lights_brightness_level">暗く led 明るさ</string>
     <string name="notification_light_automagic">色を自動的に選択</string>
     <string name="notification_light_automagic_summary">色を自動的に選択します</string>
-    <string name="notification_light_override">Override all apps</string>
+    <string name="notification_light_override">すべてのアプリを上書き</string>
     <!-- Lights settings, LED notification -->
     <string name="led_notification_title">ライトの設定</string>
     <string name="led_notification_text">設定によって LED ライトが有効になっています</string>
@@ -2168,9 +2168,9 @@
     <string name="pulse_ambient_light_color_title">エッジライトの色</string>
     <string name="pulse_ambient_light_duration_title">エッジライトの長さ</string>
     <string name="pulse_ambient_light_duration_summary">アンビエントライトアニメーションの長さを設定する</string>
-    <string name="pulse_ambient_light_layout_title">Edge light view</string>
-    <string name="pulse_ambient_light_layout_solid">Solid</string>
-    <string name="pulse_ambient_light_layout_faded">Faded</string>
+    <string name="pulse_ambient_light_layout_title">エッジライト</string>
+    <string name="pulse_ambient_light_layout_solid">ソリッド</string>
+    <string name="pulse_ambient_light_layout_faded">フェード</string>
     <!-- QS battery -->
     <string name="qs_battery_location_title">バッテリーの位置</string>
     <string name="qs_battery_location_qs_panel">クイック設定パネル</string>
@@ -2276,13 +2276,13 @@
     <!-- Battery temperature -->
     <string name="battery_temperature">バッテリー温度</string>
     <!-- OOS style material dismiss all button for notifications -->
-    <string name="notification_material_dismiss_button_title">Material dimiss button</string>
-    <string name="notification_material_dismiss_button_summary">Replace clear all notification text with floating button</string>
+    <string name="notification_material_dismiss_button_title">マテリアルディミスボタン</string>
+    <string name="notification_material_dismiss_button_summary">全て終了ボタンをフローティングボタンに置き換え</string>
     <!-- Per-app data restrictions -->
-    <string name="data_usage_app_restrict_all">Allow network</string>
-    <string name="data_usage_app_restrict_all_summary">Enable network usage</string>
+    <string name="data_usage_app_restrict_all">ネットワークを許可</string>
+    <string name="data_usage_app_restrict_all_summary">ネットワークの使用状況を有効化する</string>
     <!-- A2DP codec priority -->
-    <string name="a2dp_source_codec_priority_title">Bluetooth Audio Codec (preferred)</string>
+    <string name="a2dp_source_codec_priority_title">Bluetooth オーディオコーデック (優先)</string>
     <!-- Rotation button -->
     <string name="show_rotation_button_title">回転ボタン</string>
     <string name="show_rotation_button_summary">Display rotation button on navigation bar when available</string>
@@ -2329,21 +2329,21 @@
     <string name="dc_dimming_title">DC Dimming</string>
     <string name="dc_dimming_info">Reduces eye strain in low light conditions but may result in reduced image quality and poor color production.</string>
     <string name="dc_dimming_auto_mode_title">Schedule</string>
-    <string name="dc_dimming_mode_brightness">Turn on when brightness is below the threshold</string>
-    <string name="dc_dimming_mode_full">Dependent on time and brightness</string>
+    <string name="dc_dimming_mode_brightness">輝度がしきい値以下になるとオンになります</string>
+    <string name="dc_dimming_mode_full">時間と明るさに依存する</string>
     <string name="dc_dimming_brightness_title">Brightness threshold</string>
     <string name="dc_dimming_brightness_disabled">Disabled</string>
-    <string name="dc_dimming_restore_auto_mode">Restore auto mode</string>
-    <string name="dc_dimming_brightness_info">Only activate DC Dimming when the average brightness is below the threshold</string>
-    <string name="dc_dimming_off_auto_mode_auto">Will turn on automatically</string>
-    <string name="dc_dimming_on_auto_mode_auto">Will turn off automatically</string>
-    <string name="keywords_display_dc_dimming">dc dimming, flicker, eye, strain</string>
+    <string name="dc_dimming_restore_auto_mode">自動モードに戻す</string>
+    <string name="dc_dimming_brightness_info">平均の明るさがしきい値を下回ったときにのみ DC 調光を有効にします</string>
+    <string name="dc_dimming_off_auto_mode_auto">自動で有効化</string>
+    <string name="dc_dimming_on_auto_mode_auto">自動で無効化</string>
+    <string name="keywords_display_dc_dimming">dc 調光, フリッカー, 目, 疲労</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroidlicense_title">crDroid legal</string>
+    <string name="crdroidlicense_title">crDroid チーム</string>
     <!-- Battery fully charged sound -->
-    <string name="battery_fully_charged_sound_enabled_title">Battery fully charged sound</string>
-    <string name="battery_fully_charged_sound_enabled_summary">Play a sound when battery fully charged</string>
-    <string name="battery_fully_charged_vibrate_title">Vibrate</string>
-    <string name="battery_fully_charged_sound_ringtone_title">Notification sound</string>
-    <string name="battery_fully_charged_sound_ringtone_silent">Silent</string>
+    <string name="battery_fully_charged_sound_enabled_title">充電完了の通知</string>
+    <string name="battery_fully_charged_sound_enabled_summary">バッテリーが完全に充電されたときに音を鳴らす</string>
+    <string name="battery_fully_charged_vibrate_title">バイブレーション</string>
+    <string name="battery_fully_charged_sound_ringtone_title">通知音</string>
+    <string name="battery_fully_charged_sound_ringtone_silent">マナーモード</string>
 </resources>
