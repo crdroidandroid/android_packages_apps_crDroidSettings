@@ -210,6 +210,13 @@
                 android:entryValues="@array/fod_recog_animation_values"
                 android:defaultValue="0"
                 android:dependency="fod_recognizing_animation" />
+                
+            <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+                android:key="fod_night_light"
+                android:icon="@drawable/ic_fp"
+                android:title="@string/fod_night_light_title"
+                android:summary="@string/fod_night_light_summary"
+                android:defaultValue="@*android:bool/disable_fod_night_light"  />
 
             <com.crdroid.settings.preferences.SystemSettingListPreference
                 android:key="fod_color"
