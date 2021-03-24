@@ -71,6 +71,15 @@
         android:summary="@string/notification_sound_vib_screen_on_summary"
         android:defaultValue="true" />
 
+    <!-- QS media player -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="qs_media_player"
+        android:icon="@drawable/ic_settings_sound"
+        android:title="@string/qs_media_player_title"
+        android:summaryOn="@string/qs_media_player_summary_on"
+        android:summaryOff="@string/qs_media_player_summary_off"
+        android:defaultValue="true" />
+
     <!-- Less Notification sounds
     <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="mute_annoying_notifications_threshold"
