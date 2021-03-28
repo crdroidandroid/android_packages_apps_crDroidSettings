@@ -82,6 +82,8 @@ public class UserInterface extends SettingsPreferenceFragment {
         Settings.System.putIntForUser(resolver,
                 Settings.System.BERRY_SWITCH_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.SCREEN_OFF_ANIMATION, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.THEMING_SETTINGS_DASHBOARD_ICONS, 0, UserHandle.USER_CURRENT);
         DozeSettings.reset(mContext);
         SmartPixels.reset(mContext);

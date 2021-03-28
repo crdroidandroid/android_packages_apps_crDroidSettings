@@ -115,6 +115,15 @@
         android:entryValues="@array/qs_selector_values"
         android:defaultValue="0" />
 
+    <!-- Screen off animation -->
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="screen_off_animation"
+        android:icon="@drawable/ic_fullscreen_exit"
+        android:title="@string/screen_off_animation_title"
+        android:entries="@array/screen_off_animation_entries"
+        android:entryValues="@array/screen_off_animation_values"
+        android:defaultValue="0" />
+
     <!-- Settings dashboard icon style -->
     <com.crdroid.settings.preferences.SystemSettingListPreference
         android:key="theming_settings_dashboard_icons"
