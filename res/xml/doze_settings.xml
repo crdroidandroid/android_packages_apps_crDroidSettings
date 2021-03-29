@@ -28,6 +28,11 @@
         android:title="@string/doze_always_on_title"
         android:summary="@string/doze_always_on_summary" />
 
+    <Preference
+        android:key="always_on_display_schedule"
+        android:title="@string/always_on_display_schedule_title"
+        android:fragment="com.crdroid.settings.fragments.lockscreen.AODSchedule" />
+
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="doze_on_charge"
         android:title="@string/doze_on_charge_title"

@@ -52,6 +52,7 @@ public class LockScreen extends SettingsPreferenceFragment
 
     public static final String TAG = "LockScreen";
 
+	private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
     private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String FP_ERROR_VIBRATE = "fp_error_vibrate";
@@ -62,6 +63,8 @@ public class LockScreen extends SettingsPreferenceFragment
 
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
+
+    Preference mAODPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -86,6 +89,33 @@ public class LockScreen extends SettingsPreferenceFragment
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             gestCategory.removePreference(mFingerprintVib);
             gestCategory.removePreference(mFingerprintVibErr);
+        }
+
+        mAODPref = findPreference(AOD_SCHEDULE_KEY);
+        updateAlwaysOnSummary();
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateAlwaysOnSummary();
+    }
+
+    private void updateAlwaysOnSummary() {
+        if (mAODPref == null) return;
+        int mode = Settings.Secure.getIntForUser(getActivity().getContentResolver(),
+                Settings.Secure.DOZE_ALWAYS_ON_AUTO_MODE, 0, UserHandle.USER_CURRENT);
+        switch (mode) {
+            case 0:
+                mAODPref.setSummary(R.string.disabled);
+                break;
+            case 1:
+                mAODPref.setSummary(R.string.night_display_auto_mode_twilight);
+                break;
+            case 2:
+                mAODPref.setSummary(R.string.night_display_auto_mode_custom);
+                break;
         }
     }
 
