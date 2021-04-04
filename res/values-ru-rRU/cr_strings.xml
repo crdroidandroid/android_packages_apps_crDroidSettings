@@ -251,7 +251,7 @@
     <string name="maps2">Карты2</string>
     <string name="memorycleaner">Очистка памяти</string>
     <string name="navigation">Навигация</string>
-    <string name="pulse">Пульс</string>
+    <string name="pulse">Визуализатор</string>
     <string name="shazam">Шазам</string>
     <string name="swiftkey">SwiftKey</string>
     <string name="tmobile">Tmobile</string>
@@ -357,7 +357,7 @@
     <string name="lockscreen_enable_qs_summary">Разрешить доступ к быстрым настройкам на защищённом экране блокировки</string>
     <!-- Screenshot Sound  -->
     <string name="screenshot_sound_title">Звук скриншота</string>
-    <string name="screenshot_sound_summary">Проигрывать звук при скриншоте</string>
+    <string name="screenshot_sound_summary">Воспроизводить звук при создании скриншота</string>
     <!-- Volume Steps -->
     <string name="volume_steps_title">Уровни громкости</string>
     <string name="volume_steps_summary">Настройка количества шагов в панели громкости</string>
@@ -634,14 +634,14 @@
     <string name="fling_config_restore_error_toast">Ошибка при восстановлении профиля Fling</string>
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">О Pulse</string>
-    <string name="pulse_help_policy_notice_summary">Pulse - это блестящий графический аудио-эквалайзер, работающий при воспроизведении музыки на устройстве</string>
+    <string name="pulse_help_policy_notice_summary">Визуализатор - это красивый графический аудио-эквалайзер, работающий при воспроизведении музыки на устройстве</string>
     <string name="pulse_settings">Пульс</string>
     <string name="pulse_settings_summary">Графический эквалайзер для панели навигации и экрана блокировки</string>
-    <string name="show_navbar_pulse_title">Pulse в панели навигации</string>
+    <string name="show_navbar_pulse_title">Визуализатор на панели навигации</string>
     <string name="show_navbar_pulse_summary">Включить графический эквалайзер в панели навигации</string>
-    <string name="show_lockscreen_pulse_title">Pulse на экране блокировки</string>
+    <string name="show_lockscreen_pulse_title">Визуализатор на экране блокировки</string>
     <string name="show_lockscreen_pulse_summary">Включить графический эквалайзер на экране блокировки</string>
-    <string name="show_ambient_pulse_title">Пульсация на Всегда включенном экране</string>
+    <string name="show_ambient_pulse_title">Визуализатор на Всегда включенном экране</string>
     <string name="show_ambient_pulse_summary">Включить графический эквалайзер на всегда включённом экране</string>
     <string name="pulse_render_mode_title">Режим визуализации</string>
     <string name="pulse_render_mode_fading_bars">Затухающие блоки</string>
@@ -901,7 +901,7 @@
     <string name="sms_breath_summary">Придаст вашим уведомлениям о СМС эффект \"дыхания\" в строке состояния</string>
     <!-- CPU Info -->
     <string name="show_cpu_info">Показать информацию о процессоре</string>
-    <string name="show_cpu_info_summary">Экран наложения показывает текущую информацию о процессоре</string>
+    <string name="show_cpu_info_summary">Данное наложение показывает текущую информацию о процессоре</string>
     <!-- Heads up -->
     <string name="notification_heads_up_title">Всплывающие уведомления</string>
     <string name="notification_heads_up_summary">Разрешить всплывающие уведомления</string>
@@ -1011,7 +1011,7 @@
     <string name="sensor_warning_message">Данные настройки зависят от аппаратной совместимости. Включение датчиков для автоматического включения экрана может ускорить разряд батареи.</string>
     <!-- Doze: switches -->
     <string name="doze_display_title">Включение дисплея при уведомлениях</string>
-    <string name="doze_display_summary">Настройка параметров Ambient display</string>
+    <string name="doze_display_summary">Настройка параметров Всегда включенного экрана</string>
     <string name="doze_sensor_title">На основе датчика</string>
     <string name="tilt_title">Наклон</string>
     <string name="tilt_summary">Отображать уведомления при наклоне устройства</string>
@@ -1921,13 +1921,13 @@
     <string name="accent_picker_brand_colors">Фирменные цвета</string>
     <string name="style_dark_overlay_title">Тёмный режим</string>
     <string name="style_dark_overlay_default">Тёмно-серый</string>
-    <string name="style_dark_overlay_charcoal_black">Чёрный уголь</string>
-    <string name="style_dark_overlay_amoled_black">Чёрный amoled</string>
+    <string name="style_dark_overlay_charcoal_black">Угольно чёрный</string>
+    <string name="style_dark_overlay_amoled_black">Полностью чёрный</string>
     <string name="style_notification_title">Стиль уведомлений</string>
     <string name="style_notification_auto">Автоматический (системная тема)</string>
     <string name="style_notification_light">Светлый</string>
     <string name="style_notification_dark">Тёмно-серый</string>
-    <string name="style_notification_black">Чёрный amoled</string>
+    <string name="style_notification_black">Полностью чёрный</string>
     <string name="style_and_wallpaper_title">Стили и обои</string>
     <string name="style_and_wallpaper_summary">Выберите цвет акцента, интерфейс часов и многое другое</string>
     <!-- Audio Panel view  -->
@@ -1956,14 +1956,14 @@
     <!-- QS tile styles -->
     <string name="qs_tile_style_title">Стиль панели быстрых настроек</string>
     <string name="qstile_default">По умолчанию</string>
-    <string name="qstile_circle_gradient">Круглые (градиент)</string>
-    <string name="qstile_circle_trim">Круглые (с вырезкой)</string>
-    <string name="qstile_cookie">Cookie</string>
+    <string name="qstile_circle_gradient">Круг (градиент)</string>
+    <string name="qstile_circle_trim">Круг (с вырезом)</string>
+    <string name="qstile_cookie">Печенье</string>
     <string name="qstile_cosmos">Космос</string>
     <string name="qstile_dottedcircle">Пунктирный круг</string>
     <string name="qstile_circle_dualtone">Двух-тоновый круг</string>
     <string name="qstile_divided_circle">Разделенный круг</string>
-    <string name="qstile_dual_tone_circle">Двух-тоновый круг (с вырезкой)</string>
+    <string name="qstile_dual_tone_circle">Двух-тоновый круг (с вырезом)</string>
     <string name="qstile_ink">Чернила</string>
     <string name="qstile_inkdrop">Падение чернил</string>
     <string name="qstile_just_icons">Только иконки</string>
@@ -1973,11 +1973,11 @@
     <string name="qstile_oreo_circle_trim">Oreo (Круглый порядок)</string>
     <string name="qstile_squaremedo">Квадрат в ромбе</string>
     <string name="qstile_squircle">Округлый квадрат</string>
-    <string name="qstile_neon_like">Неоновый Like</string>
+    <string name="qstile_neon_like">Неоновый лайк</string>
     <string name="qstile_oos">OxygenOS</string>
     <string name="qstile_oreo_squircle_trim">Oreo (Скруглённый порядок)</string>
-    <string name="qstile_pokesign">Стиль Pokeball</string>
-    <string name="qstile_squircle_trim">Округлый квадрат (с вырезкой)</string>
+    <string name="qstile_pokesign">Покебол</string>
+    <string name="qstile_squircle_trim">Округлый квадрат (с вырезом)</string>
     <string name="qstile_teardrop">Капля</string>
     <string name="qstile_triangle">Треугольник</string>
     <string name="qstile_wavey">Волнистая</string>
@@ -1994,7 +1994,7 @@
     <string name="switch_md2">Материальный дизайн 2</string>
     <string name="switch_oneplus">OnePlus</string>
     <string name="switch_narrow">Узкий</string>
-    <string name="switch_contained">Содержит</string>
+    <string name="switch_contained">Заполненный</string>
     <string name="switch_retro">Ретро</string>
     <string name="switch_stockish">Стоковый</string>
     <string name="switch_telegram">Telegram</string>
@@ -2032,9 +2032,9 @@
     <string name="qs_footer_edit_icon_title">Изменить иконку плитки</string>
     <string name="qs_footer_edit_icon_summary">Показывать значок редактирования плиток</string>
     <string name="qs_footer_services_icon_title">Значок работающих приложений</string>
-    <string name="qs_footer_services_icon_summary">Показывать ярлык запущенных служб</string>
-    <string name="qs_footer_settings_icon_title">Настройки ярлыка</string>
-    <string name="qs_footer_settings_icon_summary">Показывать ярлык приложения настроек</string>
+    <string name="qs_footer_services_icon_summary">Показывать значок запущенных служб</string>
+    <string name="qs_footer_settings_icon_title">Значок настроек</string>
+    <string name="qs_footer_settings_icon_summary">Показывать значок приложения настроек</string>
     <!-- Old mobiletype icon style -->
     <string name="old_mobiletype_title">Иконка сети в старом стиле</string>
     <string name="old_mobiletype_summary">Объединить значки уровня сигнала и типа сети</string>
@@ -2116,12 +2116,12 @@
     <string name="add_gaming_mode_package_title">Добавить приложения для игрового режима</string>
     <string name="add_gaming_mode_package_summary">Игровой режим будет включен автоматически, когда эти приложения будут открыты, и выключен, когда они закроются</string>
     <string name="gaming_mode_headsup_title">Блокировать уведомления</string>
-    <string name="gaming_mode_headsup_summary">Звонки и будильники освобождены</string>
+    <string name="gaming_mode_headsup_summary">Кроме звонков и будильников</string>
     <string name="gaming_mode_hardware_keys_title">Заблокировать кнопки</string>
     <string name="gaming_mode_hardware_keys_summary">При включенном игровом режиме кнопки будут заблокированы</string>
     <string name="gaming_mode_brightness_title">Отключить автоматическую яркость</string>
     <string name="gaming_mode_brightness_summary">Яркость экрана блокировки при включенном игровом режиме</string>
-    <string name="gaming_mode_ringer_title">Звонок в игровом режиме</string>
+    <string name="gaming_mode_ringer_title">Звонки в игровом режиме</string>
     <string name="gaming_mode_ringer_off_title">Не изменять</string>
     <string name="gaming_mode_ringer_vibrate_title">Вибрация</string>
     <string name="gaming_mode_ringer_dnd_title">Не беспокоить</string>
