@@ -42,6 +42,7 @@ import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.fragments.ui.CutoutSettings;
 import com.crdroid.settings.fragments.ui.DozeSettings;
 import com.crdroid.settings.fragments.ui.SmartPixels;
 import com.crdroid.settings.utils.DeviceUtils;
@@ -53,8 +54,10 @@ import java.util.List;
 public class UserInterface extends SettingsPreferenceFragment {
 
     private static final String SMART_PIXELS = "smart_pixels";
+    private static final String DISPLAY_CUTOUT = "cutout_settings";
 
     private Preference mSmartPixels;
+    private Preference mDisplayCutout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,6 +74,10 @@ public class UserInterface extends SettingsPreferenceFragment {
                 com.android.internal.R.bool.config_supportSmartPixels);
         if (!mSmartPixelsSupported)
             prefScreen.removePreference(mSmartPixels);
+
+        mDisplayCutout = (Preference) prefScreen.findPreference(DISPLAY_CUTOUT);
+        if (!DeviceUtils.hasNotch(mContext))
+            prefScreen.removePreference(mDisplayCutout);
     }
 
     public static void reset(Context mContext) {
@@ -85,6 +92,7 @@ public class UserInterface extends SettingsPreferenceFragment {
                 Settings.System.SCREEN_OFF_ANIMATION, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.THEMING_SETTINGS_DASHBOARD_ICONS, 0, UserHandle.USER_CURRENT);
+        CutoutSettings.reset(mContext);
         DozeSettings.reset(mContext);
         SmartPixels.reset(mContext);
     }

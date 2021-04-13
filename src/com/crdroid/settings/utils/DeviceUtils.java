@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2020 crDroid Android Project
+ * Copyright (C) 2016-2021 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -254,16 +254,5 @@ public class DeviceUtils {
     public static boolean isEdgeToEdgeEnabled(Context context) {
         return NAV_BAR_MODE_GESTURAL == context.getResources().getInteger(
                 com.android.internal.R.integer.config_navBarInteractionMode);
-    }
-
-    public static boolean hasCustomCutout(Context context) {
-        try {
-            Context con = context.createPackageContext("com.android.systemui", 0);
-            int id = con.getResources().getIdentifier("config_customCutout",
-                    "bool", "com.android.systemui");
-            return con.getResources().getBoolean(id);
-        } catch (PackageManager.NameNotFoundException e) {
-            return false;
-        }
     }
 }
