@@ -193,6 +193,17 @@
         android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
 
+    <!-- Screenshot compression -->
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="screenshot_compression"
+        android:icon="@drawable/ic_screenshot"
+        android:title="@string/screenshot_compression_title"
+        android:summary="@string/screenshot_compression_summary"
+        android:defaultValue="100"
+        android:max="100"
+        settings:min="10"
+        settings:units="%" />
+
     <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="dnd_when_call"
         android:icon="@drawable/ic_dnd"

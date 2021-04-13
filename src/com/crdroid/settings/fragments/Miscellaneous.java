@@ -94,6 +94,8 @@ public class Miscellaneous extends SettingsPreferenceFragment {
         Settings.System.putIntForUser(resolver,
                 Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.SCREENSHOT_COMPRESSION, 100, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.TOAST_ICON, 1, UserHandle.USER_CURRENT);
         GamingMode.reset(mContext);
         SensorBlock.reset(mContext);
