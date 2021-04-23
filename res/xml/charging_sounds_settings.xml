@@ -36,13 +36,13 @@
         android:dependency="charging_sounds_enabled"
         android:persistent="false" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <lineageos.preference.GlobalSettingSwitchPreference
         android:key="battery_fully_charged_sound_enabled"
         android:title="@string/battery_fully_charged_sound_enabled_title"
         android:summary="@string/battery_fully_charged_sound_enabled_summary"
         android:defaultValue="true" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+    <lineageos.preference.LineageGlobalSettingSwitchPreference
         android:key="battery_fully_charged_vibrate"
         android:title="@string/battery_fully_charged_vibrate_title"
         android:dependency="battery_fully_charged_sound_enabled"
