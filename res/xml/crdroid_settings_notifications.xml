@@ -131,6 +131,16 @@
             android:defaultValue="false"
             android:dependency="heads_up_notifications_enabled" />
 
+        <!-- Notification background opacity -->
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="notification_bg_alpha"
+            android:title="@string/notification_alpha_title"
+            android:icon="@drawable/ic_invert_colors"
+            android:defaultValue="100"
+            android:max="100"
+            settings:min="0"
+            settings:units="" />
+
         <!--<com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="heads_up_timeout"
             android:icon="@drawable/ic_headsup_sleep"
