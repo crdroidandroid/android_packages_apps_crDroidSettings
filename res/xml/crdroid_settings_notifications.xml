@@ -89,6 +89,16 @@
         android:summary="@string/notification_guts_kill_app_button_summary"
         android:defaultValue="false" /> -->
 
+    <!-- Notification background opacity -->
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="notification_bg_alpha"
+        android:title="@string/notification_alpha_title"
+        android:icon="@drawable/ic_invert_colors"
+        android:defaultValue="255"
+        android:max="255"
+        settings:min="0"
+        settings:units="" />
+
     <PreferenceCategory
         android:key="incall_vib_options"
         android:title="@string/incall_vibration_category" >
