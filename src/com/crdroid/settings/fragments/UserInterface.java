@@ -87,6 +87,8 @@ public class UserInterface extends SettingsPreferenceFragment {
         Settings.System.putIntForUser(resolver,
                 Settings.System.BERRY_QS_TILE_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.CHARGING_ANIMATION, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.BERRY_SWITCH_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SCREEN_OFF_ANIMATION, 0, UserHandle.USER_CURRENT);

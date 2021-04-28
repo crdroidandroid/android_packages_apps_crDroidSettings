@@ -43,6 +43,14 @@
         android:summary="@string/settings_blur_cat_summary"
         android:fragment="com.crdroid.settings.fragments.ui.BlurPersonalizations" /> -->
 
+    <!-- Charging animation -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="charging_animation"
+        android:icon="@drawable/ic_battery_charging"
+        android:title="@string/charging_animation_title"
+        android:summary="@string/charging_animation_summary"
+        android:defaultValue="true" />
+
     <!-- Display cutout options -->
     <Preference
         android:key="cutout_settings"
