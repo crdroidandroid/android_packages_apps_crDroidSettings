@@ -51,6 +51,8 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     private static final String FULL_COLOR_PREF = "full_color";
     private static final String REALLY_FULL_COLOR_PREF = "really_full_color";
     private static final String LIGHT_ENABLED_PREF = "battery_light_enabled";
+    private static final String LIGHT_FULL_CHARGE_DISABLED_PREF =
+            "battery_light_full_charge_disabled";
     private static final String PULSE_ENABLED_PREF = "battery_light_pulse";
     private static final String BRIGHTNESS_PREFERENCE = "battery_light_brightness_level";
     private static final String BRIGHTNESS_ZEN_PREFERENCE = "battery_light_brightness_level_zen";
@@ -61,6 +63,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     private ApplicationLightPreference mFullColorPref;
     private ApplicationLightPreference mReallyFullColorPref;
     private LineageSystemSettingSwitchPreference mLightEnabledPref;
+    private LineageSystemSettingSwitchPreference mLightFullChargeDisabledPref;
     private LineageSystemSettingSwitchPreference mPulseEnabledPref;
     private BatteryBrightnessPreference mBatteryBrightnessPref;
     private BatteryBrightnessZenPreference mBatteryBrightnessZenPref;
@@ -102,6 +105,8 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
 
         mLightEnabledPref =
                 (LineageSystemSettingSwitchPreference) prefSet.findPreference(LIGHT_ENABLED_PREF);
+        mLightFullChargeDisabledPref =
+                (LineageSystemSettingSwitchPreference) prefSet.findPreference(LIGHT_FULL_CHARGE_DISABLED_PREF);
         mPulseEnabledPref =
                 (LineageSystemSettingSwitchPreference) prefSet.findPreference(PULSE_ENABLED_PREF);
         mBatteryBrightnessPref =
@@ -112,6 +117,10 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         boolean isLightEnabled = LineageSettings.System.getIntForUser(resolver,
                 LineageSettings.System.BATTERY_LIGHT_ENABLED, isBatteryLightEnabled(context) ? 1 : 0, UserHandle.USER_CURRENT) != 0;
         mLightEnabledPref.setChecked(isLightEnabled);
+
+        boolean isLightFullChargeDisabled = LineageSettings.System.getIntForUser(resolver,
+                LineageSettings.System.BATTERY_LIGHT_FULL_CHARGE_DISABLED, isBatteryLightFullChargeDisabled(context) ? 1 : 0, UserHandle.USER_CURRENT) != 0;
+        mLightFullChargeDisabledPref.setChecked(isLightFullChargeDisabled);
 
         mDefaultLowColor = res.getInteger(
                 com.android.internal.R.integer.config_notificationsBatteryLowARGB);
@@ -133,6 +142,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         }
 
         if (mMultiColorLed) {
+            generalPrefs.removePreference(mLightFullChargeDisabledPref);
             setHasOptionsMenu(true);
 
             // Low, Medium and full color preferences
@@ -296,6 +306,17 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         }
     }
 
+    private static boolean isBatteryLightFullChargeDisabled(Context context) {
+        try {
+            Context con = context.createPackageContext("org.lineageos.lineageparts", 0);
+            int id = con.getResources().getIdentifier("def_battery_light_full_charge_disabled",
+                    "bool", "org.lineageos.lineageparts");
+            return con.getResources().getBoolean(id);
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+    }
+
     private static boolean isBatteryLightPulseEnabled(Context context) {
         try {
             Context con = context.createPackageContext("org.lineageos.lineageparts", 0);
@@ -311,6 +332,9 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         final Context context = getContext();
 
         if (mLightEnabledPref != null) mLightEnabledPref.setChecked(isBatteryLightEnabled(context));
+        if (mLightFullChargeDisabledPref != null) {
+            mLightFullChargeDisabledPref.setChecked(isBatteryLightFullChargeDisabled(context));
+        }
         if (mPulseEnabledPref != null) mPulseEnabledPref.setChecked(isBatteryLightPulseEnabled(context));
 
         resetColors();
