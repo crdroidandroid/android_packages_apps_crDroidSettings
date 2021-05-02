@@ -38,6 +38,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.fragments.notifications.Ticker;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -108,6 +110,7 @@ public class Notifications extends SettingsPreferenceFragment {
                 Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_BG_ALPHA, 255, UserHandle.USER_CURRENT);
+        Ticker.reset(mContext);
     }
 
     @Override
