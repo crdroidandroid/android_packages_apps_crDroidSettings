@@ -90,6 +90,8 @@ public class Miscellaneous extends SettingsPreferenceFragment {
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_CPU_OVERLAY, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.CLIPBOARD_TOAST_INFO, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.THREE_FINGER_GESTURE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
