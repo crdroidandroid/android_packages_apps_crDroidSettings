@@ -27,6 +27,10 @@
         android:summary="@string/alert_slider_notifications_summary"
         android:defaultValue="true" />
 
+    <PreferenceCategory
+        android:key="notifications_general_category"
+        android:title="@string/general_title">
+
     <!-- Statusbar Ticker -->
     <Preference
         android:key="ticker_settings"
@@ -81,13 +85,14 @@
         android:entryValues="@array/less_notification_sounds_values"
         android:defaultValue="30000" /> -->
 
-    <!-- Notification guts kill app button
+    <!-- Notification guts kill app button -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="notification_guts_kill_app_button"
         android:icon="@drawable/ic_kill"
         android:title="@string/notification_guts_kill_app_button_title"
         android:summary="@string/notification_guts_kill_app_button_summary"
-        android:defaultValue="false" /> -->
+        android:defaultValue="false" />
+    </PreferenceCategory>
 
     <!-- Notification background opacity -->
     <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
