@@ -120,6 +120,8 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.LOCKSCREEN_POWERMENU_SECURE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_STATUS_BAR, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_BLUR, 1, UserHandle.USER_CURRENT);
 
         LockScreenWeather.reset(mContext);
     }
