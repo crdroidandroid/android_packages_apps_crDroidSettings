@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2020 crDroid Android Project
+     Copyright (C) 2016-2021 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -99,11 +99,16 @@
             android:summary="@string/lockscreen_lock_icon_summary"
             android:defaultValue="true" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="lockscreen_blur"
-            android:icon="@drawable/ic_lock_outline"
+            android:icon="@drawable/ic_blur"
             android:title="@string/lockscreen_blur_title"
-            android:defaultValue="false" />
+            android:summary="@string/lockscreen_blur_summary"
+            android:defaultValue="0"
+            settings:defaultValueText="@string/disabled"
+            android:max="100"
+            settings:min="0"
+            settings:units="%" />
 
         <Preference
             android:key="lock_screen_weather"

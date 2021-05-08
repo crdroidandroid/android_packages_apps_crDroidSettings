@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2020 crDroid Android Project
+ * Copyright (C) 2016-2021 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
-import com.android.internal.util.crdroid.FodUtils;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -35,12 +34,15 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.crdroid.FodUtils;
+
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.lockscreen.LockScreenWeather;
+import com.crdroid.settings.utils.DeviceUtils;
 
 import java.util.List;
 
@@ -58,10 +60,13 @@ public class LockScreen extends SettingsPreferenceFragment
 
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
 
+    private static final String LOCKSCREEN_BLUR = "lockscreen_blur";
+
     private PreferenceCategory mFODIconPickerCategory;
 
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
+    private Preference mLockscreenBlur;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,6 +92,11 @@ public class LockScreen extends SettingsPreferenceFragment
             gestCategory.removePreference(mFingerprintVib);
             gestCategory.removePreference(mFingerprintVibErr);
         }
+
+        mLockscreenBlur = (Preference) findPreference(LOCKSCREEN_BLUR);
+        if (!DeviceUtils.isBlurSupported()) {
+            prefSet.removePreference(mLockscreenBlur);
+        }
     }
 
     @Override
@@ -109,6 +119,8 @@ public class LockScreen extends SettingsPreferenceFragment
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_BLUR, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_CHARGING_ANIMATION_STYLE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_ENABLE_POWER_MENU, 1, UserHandle.USER_CURRENT);
@@ -120,8 +132,6 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.LOCKSCREEN_POWERMENU_SECURE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_STATUS_BAR, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.LOCKSCREEN_BLUR, 1, UserHandle.USER_CURRENT);
 
         LockScreenWeather.reset(mContext);
     }
@@ -145,6 +155,10 @@ public class LockScreen extends SettingsPreferenceFragment
                     if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
                         keys.add(FP_SUCCESS_VIBRATE);
                         keys.add(FP_ERROR_VIBRATE);
+                    }
+
+                    if (!DeviceUtils.isBlurSupported()) {
+                        keys.add(LOCKSCREEN_BLUR);
                     }
 
                     return keys;
