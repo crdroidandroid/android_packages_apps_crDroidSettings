@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2020 crDroid Android Project
+ * Copyright (C) 2018-2021 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -78,6 +78,8 @@ public class VolumePanel extends SettingsPreferenceFragment {
                 UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.AUDIO_PANEL_VIEW_TIMEOUT, 3, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SYSTEMUI_PLUGIN_VOLUME, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.VOLUME_LINK_NOTIFICATION, 1, UserHandle.USER_CURRENT);
     }
