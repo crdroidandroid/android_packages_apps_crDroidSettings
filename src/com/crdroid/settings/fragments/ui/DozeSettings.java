@@ -107,9 +107,11 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         } else {
             if (!Utils.getTiltSensor(context)) {
                 getPreferenceScreen().removePreference(mTiltPreference);
-            } else if (!Utils.getPickupSensor(context)) {
+            }
+            if (!Utils.getPickupSensor(context)) {
                 getPreferenceScreen().removePreference(mPickUpPreference);
-            } else if (!Utils.getProximitySensor(context)) {
+            }
+            if (!Utils.getProximitySensor(context)) {
                 getPreferenceScreen().removePreference(mHandwavePreference);
                 getPreferenceScreen().removePreference(mPocketPreference);
             }
