@@ -111,6 +111,11 @@ public final class Utils {
                 Settings.Secure.DOZE_PICK_UP_GESTURE, 0, UserHandle.USER_CURRENT) == 1;
     }
 
+    public static boolean pickUpSetToWake(Context context) {
+        return Settings.Secure.getIntForUser(context.getContentResolver(),
+                Settings.Secure.WAKE_PICK_UP_GESTURE, 0, UserHandle.USER_CURRENT) == 1;
+    }
+
     public static boolean handwaveGestureEnabled(Context context) {
         return Settings.Secure.getIntForUser(context.getContentResolver(),
                 Settings.Secure.DOZE_HANDWAVE_GESTURE, 0, UserHandle.USER_CURRENT) == 1;
@@ -123,6 +128,6 @@ public final class Utils {
 
     public static boolean sensorsEnabled(Context context) {
         return tiltEnabled(context) || pickUpEnabled(context) || handwaveGestureEnabled(context)
-                || pocketGestureEnabled(context);
+                || pocketGestureEnabled(context) || pickUpSetToWake(context);
     }
 }

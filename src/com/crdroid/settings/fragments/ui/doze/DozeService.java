@@ -101,7 +101,7 @@ public class DozeService extends Service {
         if (mTiltSensorAvailable && Utils.tiltEnabled(this)) {
             mTiltSensor.disable();
         }
-        if (mPickupSensorAvailable && Utils.pickUpEnabled(this)) {
+        if (mPickupSensorAvailable && (Utils.pickUpEnabled(this) || Utils.pickUpSetToWake(this))) {
             mPickupSensor.disable();
         }
         if (mProximitySensorAvailable && (Utils.handwaveGestureEnabled(this) ||
@@ -115,7 +115,7 @@ public class DozeService extends Service {
         if (mTiltSensorAvailable && Utils.tiltEnabled(this)) {
             mTiltSensor.enable();
         }
-        if (mPickupSensorAvailable && Utils.pickUpEnabled(this)) {
+        if (mPickupSensorAvailable && (Utils.pickUpEnabled(this) || Utils.pickUpSetToWake(this))) {
             mPickupSensor.enable();
         }
         if (mProximitySensorAvailable && (Utils.handwaveGestureEnabled(this) ||

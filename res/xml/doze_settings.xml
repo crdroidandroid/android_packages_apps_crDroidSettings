@@ -96,11 +96,13 @@
             android:title="@string/tilt_title"
             android:summary="@string/tilt_summary" />
 
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-            android:key="doze_pick_up_gesture"
-            android:defaultValue="false"
-            android:title="@string/pickup_title"
-            android:summary="@string/pickup_summary" />
+        <ListPreference
+            android:key="pick_up_gesture_type"
+            android:defaultValue="0"
+            android:title="@string/pick_up_gesture_title"
+            android:summary="%s"
+            android:entries="@array/pick_up_gesture_entries"
+            android:entryValues="@array/pick_up_gesture_values" />
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="doze_handwave_gesture"

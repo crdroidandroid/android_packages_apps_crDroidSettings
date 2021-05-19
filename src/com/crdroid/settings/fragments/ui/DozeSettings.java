@@ -62,15 +62,15 @@ public class DozeSettings extends SettingsPreferenceFragment implements
     private static final String CATEG_DOZE_SENSOR = "doze_sensor";
 
     private static final String KEY_DOZE_TILT_GESTURE = "doze_tilt_gesture";
-    private static final String KEY_DOZE_PICK_UP_GESTURE = "doze_pick_up_gesture";
     private static final String KEY_DOZE_HANDWAVE_GESTURE = "doze_handwave_gesture";
     private static final String KEY_DOZE_POCKET_GESTURE = "doze_pocket_gesture";
     private static final String KEY_DOZE_GESTURE_VIBRATE = "doze_gesture_vibrate";
+    private static final String KEY_PICK_UP_GESTURE_TYPE = "pick_up_gesture_type";
 
     private SwitchPreference mDozeAlwaysOnPreference;
     private SwitchPreference mDozeOnChargePreference;
     private SwitchPreference mTiltPreference;
-    private SwitchPreference mPickUpPreference;
+    private ListPreference mPickUpPreference;
     private SwitchPreference mHandwavePreference;
     private SwitchPreference mPocketPreference;
 
@@ -92,7 +92,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         mTiltPreference = (SwitchPreference) findPreference(KEY_DOZE_TILT_GESTURE);
         mTiltPreference.setOnPreferenceChangeListener(this);
 
-        mPickUpPreference = (SwitchPreference) findPreference(KEY_DOZE_PICK_UP_GESTURE);
+        mPickUpPreference = (ListPreference) findPreference(KEY_PICK_UP_GESTURE_TYPE);
         mPickUpPreference.setOnPreferenceChangeListener(this);
 
         mHandwavePreference = (SwitchPreference) findPreference(KEY_DOZE_HANDWAVE_GESTURE);
@@ -107,9 +107,24 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         } else {
             if (!Utils.getTiltSensor(context)) {
                 getPreferenceScreen().removePreference(mTiltPreference);
-            } else if (!Utils.getPickupSensor(context)) {
+            }
+            if (!Utils.getPickupSensor(context)) {
                 getPreferenceScreen().removePreference(mPickUpPreference);
-            } else if (!Utils.getProximitySensor(context)) {
+            } else {
+                int doze_pick_up = Settings.Secure.getIntForUser(context.getContentResolver(), 
+                        Settings.Secure.DOZE_PICK_UP_GESTURE, 0, UserHandle.USER_CURRENT);
+                int wake_pick_up = Settings.Secure.getIntForUser(context.getContentResolver(), 
+                        Settings.Secure.WAKE_PICK_UP_GESTURE, 0, UserHandle.USER_CURRENT);
+                int valueIndex = 0;
+                if (doze_pick_up == 1) {
+                    valueIndex = 1;
+                } else if (wake_pick_up == 1) {
+                    valueIndex = 2;
+                }
+                mPickUpPreference.setValueIndex(valueIndex);
+                mPickUpPreference.setSummary(mPickUpPreference.getEntry());
+            }
+            if (!Utils.getProximitySensor(context)) {
                 getPreferenceScreen().removePreference(mHandwavePreference);
                 getPreferenceScreen().removePreference(mPocketPreference);
             }
@@ -137,9 +152,28 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 sensorWarning(context);
             return true;
         } else if (preference == mPickUpPreference) {
-            boolean value = (Boolean) newValue;
-            Settings.Secure.putIntForUser(resolver, Settings.Secure.DOZE_PICK_UP_GESTURE, 
-                 value ? 1 : 0, UserHandle.USER_CURRENT);
+            int value = Integer.valueOf((String) newValue);
+            switch (value) {
+                case 0:
+                default:
+                    Settings.Secure.putIntForUser(resolver, Settings.Secure.DOZE_PICK_UP_GESTURE, 
+                         0, UserHandle.USER_CURRENT);
+                    Settings.Secure.putIntForUser(resolver, Settings.Secure.WAKE_PICK_UP_GESTURE, 
+                         0, UserHandle.USER_CURRENT);
+                    break;
+                case 1:
+                    Settings.Secure.putIntForUser(resolver, Settings.Secure.WAKE_PICK_UP_GESTURE, 
+                         0, UserHandle.USER_CURRENT);
+                    Settings.Secure.putIntForUser(resolver, Settings.Secure.DOZE_PICK_UP_GESTURE, 
+                         1, UserHandle.USER_CURRENT);
+                    break;
+                case 2:
+                    Settings.Secure.putIntForUser(resolver, Settings.Secure.DOZE_PICK_UP_GESTURE, 
+                         0, UserHandle.USER_CURRENT);
+                    Settings.Secure.putIntForUser(resolver, Settings.Secure.WAKE_PICK_UP_GESTURE, 
+                         1, UserHandle.USER_CURRENT);
+                    break;
+            }
             Utils.enableService(context);
             if (newValue != null)
                 sensorWarning(context);
@@ -220,6 +254,8 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 Settings.Secure.PULSE_AMBIENT_LIGHT_LAYOUT, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.PULSE_ON_NEW_TRACKS, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.WAKE_PICK_UP_GESTURE, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -249,7 +285,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                         keys.add(KEY_DOZE_TILT_GESTURE);
                     }
                     if (!Utils.getPickupSensor(context)) {
-                        keys.add(KEY_DOZE_PICK_UP_GESTURE);
+                        keys.add(KEY_PICK_UP_GESTURE_TYPE);
                     }
                     if (!Utils.getProximitySensor(context)) {
                         keys.add(KEY_DOZE_HANDWAVE_GESTURE);

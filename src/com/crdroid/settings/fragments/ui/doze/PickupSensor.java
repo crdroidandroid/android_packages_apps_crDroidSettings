@@ -22,12 +22,13 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
+import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
 import android.os.UserHandle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
-import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.android.settings.R;
@@ -42,11 +43,14 @@ public class PickupSensor implements SensorEventListener {
 
     private static final int BATCH_LATENCY_IN_MS = 100;
     private static final int MIN_PULSE_INTERVAL_MS = 2500;
+    private static final int MIN_WAKEUP_INTERVAL_MS = 1000;
+    private static final int WAKELOCK_TIMEOUT_MS = 300;
 
+    private PowerManager mPowerManager;
     private SensorManager mSensorManager;
     private Sensor mSensorPickup;
+    private WakeLock mWakeLock;
     private Context mContext;
-    private TelephonyManager telephonyManager;
     private ExecutorService mExecutorService;
 
     private boolean mIsCustomPickupSensor;
@@ -60,6 +64,7 @@ public class PickupSensor implements SensorEventListener {
 
     public PickupSensor(Context context) {
         mContext = context;
+        mPowerManager = mContext.getSystemService(PowerManager.class);
         mSensorManager = mContext.getSystemService(SensorManager.class);
         final String pickup_sensor = context.getResources().getString(R.string.pickup_sensor);
         mIsCustomPickupSensor = pickup_sensor != null && !pickup_sensor.isEmpty();
@@ -74,7 +79,8 @@ public class PickupSensor implements SensorEventListener {
             mSensorPickup = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         }
         if (DEBUG) Log.d(TAG, "Pickup sensor: " + mSensorPickup.getStringType());
-        telephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+        mWakeLock = mPowerManager.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK |
+                    PowerManager.ACQUIRE_CAUSES_WAKEUP, TAG);
         mExecutorService = Executors.newSingleThreadExecutor();
         mAccelLast = SensorManager.GRAVITY_EARTH;
         mAccelCurrent = SensorManager.GRAVITY_EARTH;
@@ -91,9 +97,10 @@ public class PickupSensor implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
+        boolean isRaiseToWake = Utils.pickUpSetToWake(mContext);
 
         long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
-        if (delta < MIN_PULSE_INTERVAL_MS) {
+        if (delta < (isRaiseToWake ? MIN_WAKEUP_INTERVAL_MS : MIN_PULSE_INTERVAL_MS)) {
             return;
         } else {
             mEntryTimestamp = SystemClock.elapsedRealtime();
@@ -112,19 +119,23 @@ public class PickupSensor implements SensorEventListener {
                 mAccelCurrent = (float) Math.sqrt(x * x + y * y + z * z);
                 float accDelta = Math.abs(mAccelCurrent - mAccelLast);
                 if (accDelta >= 0.1 && accDelta <= 1.5) {
-                    Utils.launchDozePulse(mContext);
-                    doHapticFeedback();
+                    pickUpAction(isRaiseToWake);
                 }
-            } else {
-                if (event.values[0] == 1) {
-                    Utils.launchDozePulse(mContext);
-                    doHapticFeedback();
-                }
+            } else if (event.values[0] == 1) {
+                pickUpAction(isRaiseToWake);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
 
+    private void pickUpAction (boolean raiseToWake) {
+        if (raiseToWake) {
+            mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
+        } else {
+            Utils.launchDozePulse(mContext);
+            doHapticFeedback();
+        }
     }
 
     protected boolean isCallActive(Context context) {
