@@ -69,6 +69,21 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="miscellaneous"
+        android:title="@string/misc_title" >
+
+        <!-- Power Menu background opacity -->
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="power_menu_bg_alpha"
+            android:title="@string/power_menu_alpha_title"
+            android:icon="@drawable/ic_invert_colors"
+            android:defaultValue="255"
+            android:max="255"
+            settings:min="0"
+            settings:units="" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="advanced_reboot_key"
         android:title="@string/advanced_reboot_title" >
 

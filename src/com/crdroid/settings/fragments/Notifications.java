@@ -111,7 +111,7 @@ public class Notifications extends SettingsPreferenceFragment {
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.NOTIFICATION_BG_ALPHA, 255, UserHandle.USER_CURRENT);
+                Settings.System.POWER_MENU_BG_ALPHA, 255, UserHandle.USER_CURRENT);
         Ticker.reset(mContext);
     }
 
