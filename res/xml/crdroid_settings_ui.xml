@@ -35,4 +35,16 @@
         android:summary="@string/monet_summary"
         android:fragment="com.crdroid.settings.fragments.ui.MonetSettings" />
 
+    <!-- Font style -->
+    <ListPreference
+        android:key="android.theme.customization.font"
+        android:icon="@drawable/ic_font"
+        android:title="@string/theme_customization_font_title"/>
+
+    <!-- Icon pack -->
+    <ListPreference
+        android:key="android.theme.customization.icon_pack"
+        android:icon="@drawable/ic_drawing"
+        android:title="@string/theme_customization_icon_pack_title"/>
+
 </PreferenceScreen>

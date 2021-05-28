@@ -29,6 +29,7 @@ import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
 
+import androidx.fragment.app.Fragment;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
@@ -36,9 +37,12 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
+import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.development.OverlayCategoryPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settingslib.core.AbstractPreferenceController;
+import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.ui.DozeSettings;
@@ -49,12 +53,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable
-public class UserInterface extends SettingsPreferenceFragment {
+public class UserInterface extends DashboardFragment {
+
+    public static final String TAG = "UserInterface";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.crdroid_settings_ui);
     }
 
     public static void reset(Context mContext) {
@@ -66,6 +71,31 @@ public class UserInterface extends SettingsPreferenceFragment {
     @Override
     public int getMetricsCategory() {
         return MetricsProto.MetricsEvent.CRDROID_SETTINGS;
+    }
+
+    @Override
+    protected String getLogTag() {
+        return TAG;
+    }
+
+    @Override
+    protected int getPreferenceScreenResId() {
+        return R.xml.crdroid_settings_ui;
+    }
+
+    @Override
+    protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
+        return buildPreferenceControllers(context, getSettingsLifecycle(), this);
+    }
+
+    private static List<AbstractPreferenceController> buildPreferenceControllers(
+            Context context, Lifecycle lifecycle, Fragment fragment) {
+        final List<AbstractPreferenceController> controllers = new ArrayList<>();
+        controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.font"));
+        controllers.add(new OverlayCategoryPreferenceController(context,
+                "android.theme.customization.icon_pack"));
+        return controllers;
     }
 
     /**
