@@ -59,6 +59,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String FP_ERROR_VIBRATE = "fp_error_vibrate";
 
     private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
+    private static final String FOD_GESTURE = "fod_gesture";
 
     private static final String LOCKSCREEN_BLUR = "lockscreen_blur";
 
@@ -67,6 +68,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
     private Preference mLockscreenBlur;
+    private Preference mScreenOffFOD;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,13 @@ public class LockScreen extends SettingsPreferenceFragment
         mFODIconPickerCategory = findPreference(FOD_ICON_PICKER_CATEGORY);
         if (mFODIconPickerCategory != null && !FodUtils.hasFodSupport(getContext())) {
             prefSet.removePreference(mFODIconPickerCategory);
+        }
+
+        mScreenOffFOD = (Preference) findPreference(FOD_GESTURE);
+        final boolean isScreenOffFodSupported = mContext.getResources().getBoolean(
+                R.bool.config_supportScreenOffFod);
+        if (mFODIconPickerCategory != null && !isScreenOffFodSupported) {
+            mFODIconPickerCategory.removePreference(mScreenOffFOD);
         }
 
         PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
