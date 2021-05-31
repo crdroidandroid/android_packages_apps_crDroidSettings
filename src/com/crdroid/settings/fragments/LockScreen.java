@@ -16,12 +16,14 @@
 package com.crdroid.settings.fragments;
 
 import android.app.Activity;
+import android.app.WallpaperManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
+import android.os.ParcelFileDescriptor;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
@@ -77,6 +79,7 @@ public class LockScreen extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
         PreferenceScreen prefSet = getPreferenceScreen();
         Context mContext = getContext();
+        WallpaperManager manager = WallpaperManager.getInstance(mContext);
 
         mFODIconPickerCategory = findPreference(FOD_ICON_PICKER_CATEGORY);
         if (mFODIconPickerCategory != null && !FodUtils.hasFodSupport(getContext())) {
@@ -102,8 +105,9 @@ public class LockScreen extends SettingsPreferenceFragment
             gestCategory.removePreference(mFingerprintVibErr);
         }
 
+        ParcelFileDescriptor pfd = manager.getWallpaperFile(WallpaperManager.FLAG_LOCK);
         mLockscreenBlur = (Preference) findPreference(LOCKSCREEN_BLUR);
-        if (!DeviceUtils.isBlurSupported()) {
+        if (!DeviceUtils.isBlurSupported() || pfd != null) {
             prefSet.removePreference(mLockscreenBlur);
         }
     }
