@@ -149,6 +149,27 @@
         android:summary="@string/omnijaws_settings_summary"
         android:fragment="com.crdroid.settings.fragments.ui.OmniJawsSettings" />
 
+    <!-- Gradients -->
+    <PreferenceCategory
+        android:key="system_theming"
+        android:title="@string/color_title">
+
+        <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
+            android:key="accent_color"
+            android:title="@string/accent_color"
+            android:summary="@string/accent_summary"
+            android:defaultValue="0xffffff"
+            android:persistent="false" />
+
+        <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
+            android:key="gradient_color"
+            android:title="@string/gradient_color"
+            android:summary="@string/accent_summary"
+            android:defaultValue="0xffffff"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
     <!-- Styles
     <PreferenceScreen
         android:key="style"
