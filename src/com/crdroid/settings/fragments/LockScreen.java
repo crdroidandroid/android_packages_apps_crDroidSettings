@@ -79,15 +79,15 @@ public class LockScreen extends SettingsPreferenceFragment
         Context mContext = getContext();
 
         mFODIconPickerCategory = findPreference(FOD_ICON_PICKER_CATEGORY);
-        if (mFODIconPickerCategory != null && !FodUtils.hasFodSupport(getContext())) {
+        if (!FodUtils.hasFodSupport(getContext())) {
             prefSet.removePreference(mFODIconPickerCategory);
-        }
-
-        mScreenOffFOD = (Preference) findPreference(FOD_GESTURE);
-        final boolean isScreenOffFodSupported = mContext.getResources().getBoolean(
-                R.bool.config_supportScreenOffFod);
-        if (mFODIconPickerCategory != null && !isScreenOffFodSupported) {
-            mFODIconPickerCategory.removePreference(mScreenOffFOD);
+        } else {
+            mScreenOffFOD = (Preference) findPreference(FOD_GESTURE);
+            final boolean isScreenOffFodSupported = mContext.getResources().getBoolean(
+                    R.bool.config_supportScreenOffFod);
+            if (!isScreenOffFodSupported) {
+                mFODIconPickerCategory.removePreference(mScreenOffFOD);
+            }
         }
 
         PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
