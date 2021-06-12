@@ -58,8 +58,13 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String FP_ERROR_VIBRATE = "fp_error_vibrate";
 
-    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker";
+    private static final String FOD_ICON_PICKER_CATEGORY = "fod_icon_picker_category";
+    private static final String FOD_ICON_PICKER = "fod_icon_picker";
     private static final String FOD_GESTURE = "fod_gesture";
+    private static final String FOD_RECOGNIZING_ANIMATION = "fod_recognizing_animation";
+    private static final String FOD_ANIM = "fod_anim";
+    private static final String FOD_NIGHT_LIGHT = "fod_night_light";
+    private static final String FOD_COLOR = "fod_color";
 
     private static final String LOCKSCREEN_BLUR = "lockscreen_blur";
 
@@ -164,6 +169,22 @@ public class LockScreen extends SettingsPreferenceFragment
                     if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
                         keys.add(FP_SUCCESS_VIBRATE);
                         keys.add(FP_ERROR_VIBRATE);
+                    }
+
+                    if (!FodUtils.hasFodSupport(context)) {
+                        keys.add(FOD_ICON_PICKER_CATEGORY);
+                        keys.add(FOD_ICON_PICKER);
+                        keys.add(FOD_GESTURE);
+                        keys.add(FOD_RECOGNIZING_ANIMATION);
+                        keys.add(FOD_ANIM);
+                        keys.add(FOD_NIGHT_LIGHT);
+                        keys.add(FOD_COLOR);
+                    } else {
+                        final boolean isScreenOffFodSupported = context.getResources().getBoolean(
+                                R.bool.config_supportScreenOffFod);
+                        if (!isScreenOffFodSupported) {
+                            keys.add(FOD_GESTURE);
+                        }
                     }
 
                     if (!DeviceUtils.isBlurSupported()) {
