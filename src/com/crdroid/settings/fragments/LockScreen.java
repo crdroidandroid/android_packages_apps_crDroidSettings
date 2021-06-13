@@ -65,6 +65,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String FOD_ANIM = "fod_anim";
     private static final String FOD_NIGHT_LIGHT = "fod_night_light";
     private static final String FOD_COLOR = "fod_color";
+    private static final String FOD_FOOTER = "fod_footer";
 
     private static final String LOCKSCREEN_BLUR = "lockscreen_blur";
 
@@ -88,6 +89,8 @@ public class LockScreen extends SettingsPreferenceFragment
         if (!FodUtils.hasFodSupport(getContext())) {
             prefSet.removePreference(mFODIconPickerCategory);
         } else {
+            findPreference(FOD_FOOTER).setTitle(R.string.fod_pressed_color_footer);
+
             mScreenOffFOD = (Preference) findPreference(FOD_GESTURE);
             final boolean isScreenOffFodSupported = mContext.getResources().getBoolean(
                     R.bool.config_supportScreenOffFod);

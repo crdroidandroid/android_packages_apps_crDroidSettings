@@ -239,9 +239,11 @@
                 android:entryValues="@array/fod_pressed_color_values"
                 android:defaultValue="@*android:integer/config_fod_pressed_color" />
 
-            <Preference
-                android:summary="@string/fod_pressed_color_footer" />
-
+            <com.android.settingslib.widget.FooterPreference
+                android:key="fod_footer"
+                android:selectable="false"
+                settings:allowDividerAbove="false"
+                settings:searchable="false" />
     </PreferenceCategory>
 
     <PreferenceCategory
