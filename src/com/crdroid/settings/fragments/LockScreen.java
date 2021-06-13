@@ -74,6 +74,7 @@ public class LockScreen extends SettingsPreferenceFragment
     private Preference mFingerprintVibErr;
     private Preference mLockscreenBlur;
     private Preference mScreenOffFOD;
+    private Preference mFODnightlight;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -92,6 +93,12 @@ public class LockScreen extends SettingsPreferenceFragment
                     R.bool.config_supportScreenOffFod);
             if (!isScreenOffFodSupported) {
                 mFODIconPickerCategory.removePreference(mScreenOffFOD);
+            }
+            mFODnightlight = (Preference) findPreference(FOD_NIGHT_LIGHT);
+            final boolean isFodNightLightSupported = mContext.getResources().getBoolean(
+                    com.android.internal.R.bool.disable_fod_night_light);
+            if (!isFodNightLightSupported) {
+                mFODIconPickerCategory.removePreference(mFODnightlight);
             }
         }
 
@@ -184,6 +191,11 @@ public class LockScreen extends SettingsPreferenceFragment
                                 R.bool.config_supportScreenOffFod);
                         if (!isScreenOffFodSupported) {
                             keys.add(FOD_GESTURE);
+                        }
+                        final boolean isFodNightLightSupported = context.getResources().getBoolean(
+                                com.android.internal.R.bool.disable_fod_night_light);
+                        if (!isFodNightLightSupported) {
+                            keys.add(FOD_NIGHT_LIGHT);
                         }
                     }
 
