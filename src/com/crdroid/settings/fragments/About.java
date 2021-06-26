@@ -46,6 +46,7 @@ public class About extends SettingsPreferenceFragment {
     private String KEY_CRDROID_TRANSLATE = "crdroid_translate";
     private String KEY_CRDROID_WEBSITE = "crdroid_website";
     private String KEY_CRDROID_TELEGRAM_CHANNEL = "crdroid_telegram_channel";
+    private String KEY_CRDROID_SPONSOR = "crdroid_sponsor";
 
     private Preference mDonate;
     private Preference mSourceUrl;
@@ -54,6 +55,7 @@ public class About extends SettingsPreferenceFragment {
     private Preference mTranslate;
     private Preference mWebsite;
     private Preference mTelegramChannelUrl;
+    private Preference mSponsor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,7 @@ public class About extends SettingsPreferenceFragment {
         mTranslate = findPreference(KEY_CRDROID_TRANSLATE);
         mWebsite = findPreference(KEY_CRDROID_WEBSITE);
         mTelegramChannelUrl = findPreference(KEY_CRDROID_TELEGRAM_CHANNEL);
+        mSponsor = findPreference(KEY_CRDROID_SPONSOR);
     }
 
     @Override
@@ -90,6 +93,8 @@ public class About extends SettingsPreferenceFragment {
             launchUrl("https://crdroid.net");
         } else if (preference == mTelegramChannelUrl) {
             launchUrl("https://t.me/crDroidUpdates");
+        } else if (preference == mSponsor) {
+            launchUrl("https://www.scopehosts.com");
         }
 
         return super.onPreferenceTreeClick(preference);
