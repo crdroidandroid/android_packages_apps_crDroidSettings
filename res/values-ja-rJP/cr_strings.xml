@@ -143,7 +143,7 @@
     <string name="shortcut_action_help_icon">アイコンを選択するとカスタマイズオプションが表示されます</string>
     <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
     <string name="shortcut_action_help_delete_last_entry">リスト内のすべての%1$sを削除すると、機能が完全に無効化されます。</string>
-    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
+    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">リスト内の全ての%1$sを削除すると、Pie の第二層が完全に無効になります。</string>
     <string name="shortcuts_applications">アプリ</string>
     <string name="shortcuts_select_custom_app_title">カスタムアプリの選択</string>
     <string name="shortcuts_icon_picker_type">アイコンの種類を選択：</string>
@@ -323,13 +323,13 @@
     <string name="shortcut_picker_choose_action">アクションを選択:</string>
     <string name="shortcut_picker_applications_title">アプリ</string>
     <string name="shortcut_picker_activities_title">アクティビティ</string>
-    <string name="shortcut_picker_select_app_title">Select application:</string>
-    <string name="shortcut_picker_select_activity_title">Select activity:</string>
-    <string name="shortcut_picker_choose_icon_type_title">Choose icon type:</string>
-    <string name="shortcut_picker_icon_type_default_title">Default</string>
-    <string name="shortcut_picker_icon_type_system_title">System icons</string>
-    <string name="shortcut_picker_select_system_icon_title">Select system icon:</string>
-    <string name="shortcut_picker_icon_type_custom_title">Gallery</string>
+    <string name="shortcut_picker_select_app_title">アプリを選択:</string>
+    <string name="shortcut_picker_select_activity_title">アクティビティを選択:</string>
+    <string name="shortcut_picker_choose_icon_type_title">アイコンの種類を選択:</string>
+    <string name="shortcut_picker_icon_type_default_title">デフォルト</string>
+    <string name="shortcut_picker_icon_type_system_title">システムアイコン</string>
+    <string name="shortcut_picker_select_system_icon_title">システムアイコンを選択:</string>
+    <string name="shortcut_picker_icon_type_custom_title">ギャラリー</string>
     <!-- Media art -->
     <string name="media_art_title">メディアのカバーアート</string>
     <string name="media_art_summary">使用可能な場合、カバーアートを表示します</string>
@@ -376,8 +376,8 @@
     <string name="volume_steps_7">7</string>
     <string name="volume_steps_5">5</string>
     <!-- SU indicator -->
-    <string name="show_su_indicator_title">Superuser icon</string>
-    <string name="show_su_indicator_summary">Display superuser icon when using native root</string>
+    <string name="show_su_indicator_title">スーパーユーザーのアイコン</string>
+    <string name="show_su_indicator_summary">ネイティブ root 権限が有効な場合、スーパーユーザーのアイコンを表示します</string>
     <!-- Launch music player when headset is connected -->
     <string name="headset_connect_player_title">音楽アプリを起動</string>
     <string name="headset_connect_player_summary">ヘッドフォン接続時にデフォルトの音楽アプリを起動します</string>
@@ -435,47 +435,47 @@
     <string name="status_bar_logo_category_title">ロゴ</string>
     <string name="status_bar_misc_category_title">その他の設定</string>
     <!-- Statusbar crDroid logo -->
-    <string name="status_bar_crdroid_logo_title">Show Logo</string>
-    <string name="status_bar_crdroid_logo_summary">Enable to display logo in the status bar</string>
-    <string name="status_bar_crdroid_logo_color">Logo color</string>
-    <string name="status_bar_crdroid_logo_position">Logo position</string>
-    <string name="status_bar_crdroid_logo_position_summary">Choose which side to display the logo on, left or right</string>
-    <string name="status_bar_crdroid_logo_style">Logo style</string>
-    <string name="status_bar_logo_position_right">Right</string>
-    <string name="status_bar_logo_position_left">Left</string>
+    <string name="status_bar_crdroid_logo_title">ロゴを表示</string>
+    <string name="status_bar_crdroid_logo_summary">ステータスバーにロゴを表示します</string>
+    <string name="status_bar_crdroid_logo_color">ロゴの色</string>
+    <string name="status_bar_crdroid_logo_position">ロゴの位置</string>
+    <string name="status_bar_crdroid_logo_position_summary">ロゴを左または右に表示するかを選択してください</string>
+    <string name="status_bar_crdroid_logo_style">ロゴのスタイル</string>
+    <string name="status_bar_logo_position_right">右</string>
+    <string name="status_bar_logo_position_left">左</string>
     <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_ios">iOS</string>
-    <string name="status_bar_logo_style_emoticon">Emoticon</string>
-    <string name="status_bar_logo_style_emoticon_cool">Emoticon cool</string>
-    <string name="status_bar_logo_style_emoticon_dead">Emoticon dead</string>
-    <string name="status_bar_logo_style_emoticon_devil">Emoticon devil</string>
-    <string name="status_bar_logo_style_emoticon_happy">Emoticon happy</string>
-    <string name="status_bar_logo_style_emoticon_neutral">Emoticon neutral</string>
-    <string name="status_bar_logo_style_emoticon_poop">Emoticon poop</string>
-    <string name="status_bar_logo_style_emoticon_sad">Emoticon sad</string>
-    <string name="status_bar_logo_style_emoticon_tongue">Emoticon tongue</string>
+    <string name="status_bar_logo_style_emoticon">絵文字</string>
+    <string name="status_bar_logo_style_emoticon_cool">Cool 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_dead">Dead 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_devil">Devil 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_happy">Happy 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_neutral">Neutral 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_poop">Poop 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_sad">Sad 絵文字</string>
+    <string name="status_bar_logo_style_emoticon_tongue">Tongue 絵文字</string>
     <string name="status_bar_logo_style_blackberry">Blackberry</string>
-    <string name="status_bar_logo_style_cake">Cake</string>
-    <string name="status_bar_logo_style_blogger">Blogger</string>
-    <string name="status_bar_logo_style_biohazard">Biohazard</string>
+    <string name="status_bar_logo_style_cake">ケーキ</string>
+    <string name="status_bar_logo_style_blogger">ブロガー</string>
+    <string name="status_bar_logo_style_biohazard">バイオハザード</string>
     <string name="status_bar_logo_style_linux">Linux</string>
-    <string name="status_bar_logo_style_yin_yang">Yin-Yang</string>
+    <string name="status_bar_logo_style_yin_yang">陰陽</string>
     <string name="status_bar_logo_style_windows">Windows</string>
-    <string name="status_bar_logo_style_robot">Robot</string>
-    <string name="status_bar_logo_style_ninja">Ninja</string>
-    <string name="status_bar_logo_style_heart">Heart</string>
-    <string name="status_bar_logo_style_flower">Flower</string>
-    <string name="status_bar_logo_style_ghost">Ghost</string>
+    <string name="status_bar_logo_style_robot">ロボット</string>
+    <string name="status_bar_logo_style_ninja">忍者</string>
+    <string name="status_bar_logo_style_heart">ハート</string>
+    <string name="status_bar_logo_style_flower">花</string>
+    <string name="status_bar_logo_style_ghost">ゴースト</string>
     <string name="status_bar_logo_style_google">Google</string>
-    <string name="status_bar_logo_style_human_male">Man</string>
-    <string name="status_bar_logo_style_human_female">Woman</string>
-    <string name="status_bar_logo_style_human_male_female">Man &amp; woman</string>
-    <string name="status_bar_logo_style_gender_male">Male</string>
-    <string name="status_bar_logo_style_gender_female">Female</string>
-    <string name="status_bar_logo_style_gender_male_female">Male &amp; female</string>
-    <string name="status_bar_logo_style_guitar_electric">Electric guitar</string>
+    <string name="status_bar_logo_style_human_male">男性</string>
+    <string name="status_bar_logo_style_human_female">女性</string>
+    <string name="status_bar_logo_style_human_male_female">男性 &amp; 女性</string>
+    <string name="status_bar_logo_style_gender_male">男性</string>
+    <string name="status_bar_logo_style_gender_female">女性</string>
+    <string name="status_bar_logo_style_gender_male_female">男性 &amp; 女性</string>
+    <string name="status_bar_logo_style_guitar_electric">エレキギター</string>
     <string name="status_bar_logo_style_batman">バットマン</string>
     <string name="status_bar_logo_style_deadpool">デッドプール</string>
     <string name="status_bar_logo_style_decepticons">デストロン</string>
@@ -608,8 +608,8 @@
     <string name="fling_show_logo_title">Fling のロゴを表示</string>
     <string name="fling_animate_logo_title">アニメーションロゴ</string>
     <string name="fling_animate_logo_summary">タッチイベント時にロゴをアニメーションする</string>
-    <string name="fling_logo_color">Logo color</string>
-    <string name="fling_logo_custom_logo_pick_title">Custom logo icon</string>
+    <string name="fling_logo_color">ロゴの色</string>
+    <string name="fling_logo_custom_logo_pick_title">カスタムロゴアイコン</string>
     <string name="fling_logo_custom_logo_image_pick_title">カスタムロゴ画像</string>
     <string name="fling_logo_custom_logo_reset_title">ロゴアイコンをリセット</string>
     <string name="fling_show_ripple_title">波紋を表示</string>
@@ -891,7 +891,7 @@
     <string name="pie_gravity_summary">Pie の位置を選択する</string>
     <string name="pie_gravity_bottom">下部</string>
     <string name="pie_gravity_right">右側</string>
-    <string name="pie_gravity_left">Left</string>
+    <string name="pie_gravity_left">左</string>
     <!-- Breathing Notifications -->
     <string name="breathing_notifications_category">ゆっくり点滅する通知</string>
     <string name="missed_call_breath_title">不在着信</string>
@@ -937,11 +937,11 @@
     <string name="screenshot_type_fullscreen">画面全体のスクリーンショットを撮影</string>
     <string name="screenshot_type_partial">音量ボタンでスクリーンショットを取得する範囲をドラッグする</string>
     <!-- Screenshot delay  -->
-    <string name="screenshot_delay_title">Screenshot delay</string>
-    <string name="screenshot_delay_summary">Amount of time you need to hold power and volume buttons to take screenshot</string>
+    <string name="screenshot_delay_title">スクリーンショットの遅延</string>
+    <string name="screenshot_delay_summary">スクリーンショットを撮るために電源ボタンと音量ボタンを保持する必要がある時間</string>
     <!-- Screenshot compression  -->
-    <string name="screenshot_compression_title">Screenshot quality</string>
-    <string name="screenshot_compression_summary">Compress screenshot size with loss in image quality</string>
+    <string name="screenshot_compression_title">スクリーンショットの品質</string>
+    <string name="screenshot_compression_summary">スクリーンショットの品質を落としてファイルサイズを圧縮する</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">スクリーンショットのオプション</string>
     <string name="screenshot_edit_app">スクリーンショットエディター</string>
@@ -1041,22 +1041,22 @@
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">私たちはオープンソースを愛しています。見てみてください</string>
-    <string name="crdroid_telegram_title">crDroid community</string>
+    <string name="crdroid_telegram_title">crDroid コミュニティ</string>
     <string name="crdroid_telegram_summary">Telegram で話しましょう！</string>
-    <string name="crdroid_telegram_channel_title">Updates channel</string>
-    <string name="crdroid_telegram_channel_summary">Get notified of new builds on Telegram</string>
+    <string name="crdroid_telegram_channel_title">アップデートチャンネル</string>
+    <string name="crdroid_telegram_channel_summary">Telegramで新しいビルドを通知する</string>
     <string name="crdroid_website_title">公式サイト</string>
     <string name="crdroid_website_summary">公式ウェブサイトを開く</string>
     <string name="crdroid_translate_title">翻訳</string>
     <string name="crdroid_translate_summary">あなたの言語に翻訳するのを手伝ってください！</string>
-    <string name="crdroid_sponsor_summary">Visit our website host partner</string>
+    <string name="crdroid_sponsor_summary">ウェブサイトのホストパートナーをご覧ください</string>
     <!-- Maintainers -->
-    <string name="maintainers_crdroid_title">Devices and maintainers</string>
-    <string name="maintainers_crdroid_summary">List of supported devices and their official maintainers</string>
-    <string name="maintainers_crdroid_error">Unable to load devices and maintainers list</string>
+    <string name="maintainers_crdroid_title">デバイスとメンテナー</string>
+    <string name="maintainers_crdroid_summary">公式サポートされた端末の一覧と公式メンテナーのリスト</string>
+    <string name="maintainers_crdroid_error">端末とメンテナーのリストを読み込めません</string>
     <!-- Donate crDroid -->
     <string name="donate_crdroid_title">私たちを支援する</string>
-    <string name="donate_crdroid_summary">Donate to support further development</string>
+    <string name="donate_crdroid_summary">さらなる開発を支援するために寄付する</string>
     <string name="donate_team_title">crDroid チーム</string>
     <string name="donate_team_summary">寄付でホスティングサーバーや全体的な管理を助けてください</string>
     <string name="donate_dev_summary">メイン開発者 - ビールやコーヒーのために寄付してください！</string>
@@ -1131,7 +1131,7 @@
     <string name="backlight_summary_enabled">有効</string>
     <!-- Power menu -->
     <string name="power_menu_title">電源メニュー</string>
-    <string name="power_menu_actions_title">Actions</string>
+    <string name="power_menu_actions_title">アクション</string>
     <string name="power_menu_screenshot_title">スクリーンショット</string>
     <string name="power_menu_screenshot_summary">長押しして指定した範囲を撮影します</string>
     <string name="power_menu_screenrecord_title">画面の録画</string>
@@ -1139,7 +1139,7 @@
     <string name="power_menu_airplane_title">機内モード</string>
     <string name="power_menu_users_title">ユーザーの切り替え</string>
     <string name="power_menu_lockdown_title">ロックダウン</string>
-    <string name="power_menu_lockdown_unavailable">Lockdown is disabled as keyguard isn\'t secure</string>
+    <string name="power_menu_lockdown_unavailable">キーガードが安全でないため画面ロックは無効です</string>
     <string name="power_menu_emergency_title">緊急通報</string>
     <string name="volume_keys_control_ring_stream_title">着信音量のコントロール</string>
     <string name="volume_keys_control_ring_stream_summary_on">音量キーで着信音量をコントロールします</string>
@@ -1188,10 +1188,10 @@
     <string name="font_condensed_bold_italic">長体太字斜体</string>
     <string name="font_medium">中体</string>
     <string name="font_medium_italic">中斜体</string>
-    <string name="font_black">Black</string>
+    <string name="font_black">ブラック</string>
     <string name="font_black_italic">Black Italic</string>
     <string name="font_dancingscript">DancingScript</string>
-    <string name="font_dancingscript_bold">DancingScript Bold</string>
+    <string name="font_dancingscript_bold">DancingScript 太字</string>
     <string name="font_comingsoon">ComingSoon</string>
     <string name="font_notoserif">源ノ明朝（標準）</string>
     <string name="font_notoserif_italic">源ノ明朝（斜体）</string>
@@ -1491,9 +1491,9 @@
     <string name="volte_icon_summary">利用可能な場合に VoLTE のアイコンを表示します</string>
     <!-- VoWiFi icon -->
     <string name="vowifi_icon_title">VoWiFi アイコン</string>
-    <string name="vowifi_icon_summary">Display VoWiFi icon when available</string>
-    <string name="volte_vowifi_override_title">VoWiFi override</string>
-    <string name="volte_vowifi_override_summary">Hide VoLTE when VoWiFi is available. This also overrides old style signal icon for VoWiFi.</string>
+    <string name="vowifi_icon_summary">利用可能な場合に VoWiFi アイコンを表示する</string>
+    <string name="volte_vowifi_override_title">VoWiFi の上書き</string>
+    <string name="volte_vowifi_override_summary">VoWiFi が利用可能な場合は VoLTE を非表示にします。また、VoWiFi の古いスタイルの信号アイコンを上書きします。</string>
     <!-- Ad Away -->
     <string name="adaway_title">AdAway</string>
     <string name="adaway_summary">root 権限を使用して不要な広告をブロックします</string>
@@ -1552,17 +1552,17 @@
     <string name="recents_dismiss_icon_title">タスクを終了</string>
     <string name="recents_dismiss_icon_summary">アプリ履歴でのタスク終了アイコンを切り替えます</string>
     <!-- Notification guts kill app button -->
-    <string name="notification_guts_kill_app_button_title">Force stop button</string>
-    <string name="notification_guts_kill_app_button_summary">Show force stop button in the notification\'s longpress menu</string>
+    <string name="notification_guts_kill_app_button_title">強制停止ボタン</string>
+    <string name="notification_guts_kill_app_button_summary">通知の長押しメニューにアプリ終了ボタンを表示します</string>
     <!-- ANBI -->
     <string name="anbi_title">誤タッチ防止</string>
     <string name="anbi_summary">画面がタッチされている間はナビゲーションボタンを無効化して誤操作を防ぎます</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">センサーをブロック</string>
     <string name="sensor_block_summary">一部のアプリでバッテリーを節約するため、モーションセンサーへのアクセスを制限します</string>
-    <string name="sensor_block_app_picker_title">Block sensors for these apps</string>
-    <string name="add_sensor_block_package_title">Add apps for Sensor block</string>
-    <string name="add_sensor_block_package_summary">Significant motion, accelerometer, linear acceleration sensors will be blocked for these apps</string>
+    <string name="sensor_block_app_picker_title">アプリへのセンサーをブロック</string>
+    <string name="add_sensor_block_package_title">センサーをブロックするアプリを追加</string>
+    <string name="add_sensor_block_package_summary">大きな動き、加速度センサー、線形加速度センサーがこれらのアプリでブロックされます。</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">ポケット検出</string>
     <string name="pocket_judge_summary">ポケットに入っている時にタッチやボタン入力を無効化します</string>
@@ -1772,7 +1772,7 @@
     <string name="battery_light_title">バッテリーライト</string>
     <string name="battery_light_summary">バッテリーレベルと状態による LED カラーを設定します</string>
     <string name="battery_low_pulse_title">残量低下時に点滅</string>
-    <string name="battery_light_full_charge_disabled_title">Turn off when fully charged</string>
+    <string name="battery_light_full_charge_disabled_title">満充電で無効</string>
     <string name="battery_light_list_title">色</string>
     <string name="battery_light_low_color_title">残量低下</string>
     <string name="battery_light_medium_color_title">充電中</string>
@@ -2175,9 +2175,9 @@
     <string name="pulse_ambient_light_color_title">エッジライトの色</string>
     <string name="pulse_ambient_light_duration_title">エッジライトの長さ</string>
     <string name="pulse_ambient_light_duration_summary">アンビエントライトアニメーションの長さを設定する</string>
-    <string name="pulse_ambient_light_layout_title">Edge light view</string>
-    <string name="pulse_ambient_light_layout_solid">Solid</string>
-    <string name="pulse_ambient_light_layout_faded">Faded</string>
+    <string name="pulse_ambient_light_layout_title">エッジライト</string>
+    <string name="pulse_ambient_light_layout_solid">ソリッド</string>
+    <string name="pulse_ambient_light_layout_faded">フェード</string>
     <!-- QS battery -->
     <string name="qs_battery_location_title">バッテリーの位置</string>
     <string name="qs_battery_location_qs_panel">クイック設定パネル</string>
@@ -2206,16 +2206,16 @@
     <string name="fod_wallpaper_color">指紋アイコンに壁紙の色を使う</string>
     <string name="fod_wallpaper_color_summary">指紋アイコンを壁紙に合わせて調整します\n注意: 一部の壁紙でのみ見栄えが良くなる場合があります。</string>
     <!-- QS panel background opacity -->
-    <string name="qs_panel_alpha_title">Panel opacity</string>
+    <string name="qs_panel_alpha_title">背景の透明度</string>
     <!-- Notification background opacity -->
-    <string name="notification_alpha_title">Notification background opacity</string>
+    <string name="notification_alpha_title">通知の背景の透明度</string>
     <!-- Power menu background opacity -->
-    <string name="power_menu_alpha_title">Power menu opacity</string>
+    <string name="power_menu_alpha_title">電源メニューの不透明度</string>
     <!-- QS panel gradient below status bar -->
-    <string name="qs_panel_gradient_title">Status bar gradient</string>
-    <string name="qs_panel_gradient_summary">Show gradient below status bar in QS panel</string>
+    <string name="qs_panel_gradient_title">ステータスバーのグラデーション</string>
+    <string name="qs_panel_gradient_summary">クイック設定内のステータスバーの下をグラデーション表示する</string>
     <!-- QS status bar background opacity -->
-    <string name="qs_sb_bg_alpha_title">Status bar opacity</string>
+    <string name="qs_sb_bg_alpha_title">ステータスバーの透明度</string>
     <!-- Navigation mode settings -->
     <string name="back_height_low_label">全体</string>
     <string name="back_height_high_label">下部</string>
@@ -2229,7 +2229,7 @@
     <string name="fod_pressed_color_cyan">シアン</string>
     <string name="fod_pressed_color_green">緑色</string>
     <string name="fod_pressed_color_yellow">黄色</string>
-    <string name="fod_pressed_color_light_yellow">Light Yellow</string>
+    <string name="fod_pressed_color_light_yellow">明るい黄色</string>
     <!-- FOD animations -->
     <string name="fod_recog_animation">指紋アニメーション</string>
     <string name="fod_recog_animation_summary">指紋認証中にアニメーションを表示する</string>
@@ -2405,7 +2405,7 @@
     <string name="click_partial_screenshot_title">クリックして部分スクリーンショット</string>
     <string name="click_partial_screenshot_summary">音量ダウンと電源ボタンを短くクリックして指定した範囲を撮影します</string>
     <!-- Battery fully charged sound -->
-    <string name="battery_fully_charged_sound_enabled_title">Battery fully charged sound</string>
+    <string name="battery_fully_charged_sound_enabled_title">充電完了の通知</string>
     <string name="battery_fully_charged_sound_enabled_summary">Play a sound when battery fully charged</string>
     <string name="battery_fully_charged_vibrate_title">Vibrate</string>
     <string name="battery_fully_charged_sound_ringtone_title">Notification sound</string>
