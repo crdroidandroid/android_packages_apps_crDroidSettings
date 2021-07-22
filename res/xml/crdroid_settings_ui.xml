@@ -51,6 +51,13 @@
         android:summary="@string/charging_animation_summary"
         android:defaultValue="true" />
 
+    <!-- Hide notch fill -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="display_hide_notch"
+        android:icon="@drawable/ic_cutout"
+        android:title="@string/display_hide_notch_title"
+        android:summary="@string/display_hide_notch_summary" />
+
     <!-- Display cutout options -->
     <Preference
         android:key="cutout_settings"

@@ -54,9 +54,11 @@ import java.util.List;
 public class UserInterface extends SettingsPreferenceFragment {
 
     private static final String SMART_PIXELS = "smart_pixels";
+    private static final String HIDE_NOTCH = "display_hide_notch";
     private static final String DISPLAY_CUTOUT = "cutout_settings";
 
     private Preference mSmartPixels;
+    private Preference mHideNotch;
     private Preference mDisplayCutout;
 
     @Override
@@ -75,6 +77,12 @@ public class UserInterface extends SettingsPreferenceFragment {
         if (!mSmartPixelsSupported)
             prefScreen.removePreference(mSmartPixels);
 
+        mHideNotch = (Preference) prefScreen.findPreference(HIDE_NOTCH);
+        boolean mHideNotchSupported = res.getBoolean(
+                com.android.internal.R.bool.config_showHideNotchSettings);
+        if (!mHideNotchSupported)
+            prefScreen.removePreference(mHideNotch);
+
         mDisplayCutout = (Preference) prefScreen.findPreference(DISPLAY_CUTOUT);
         if (!DeviceUtils.hasNotch(mContext))
             prefScreen.removePreference(mDisplayCutout);
@@ -82,6 +90,8 @@ public class UserInterface extends SettingsPreferenceFragment {
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.DISPLAY_CUTOUT_MODE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.NAVBAR_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -119,6 +129,14 @@ public class UserInterface extends SettingsPreferenceFragment {
                             com.android.internal.R.bool.config_supportSmartPixels);
                     if (!mSmartPixelsSupported)
                         keys.add(SMART_PIXELS);
+
+                    boolean mHideNotchSupported = res.getBoolean(
+                            com.android.internal.R.bool.config_showHideNotchSettings);
+                    if (!mHideNotchSupported)
+                        keys.add(HIDE_NOTCH);
+
+                    if (!DeviceUtils.hasNotch(context))
+                        keys.add(DISPLAY_CUTOUT);
 
                     return keys;
                 }
