@@ -44,6 +44,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.ui.CutoutSettings;
 import com.crdroid.settings.fragments.ui.DozeSettings;
+import com.crdroid.settings.fragments.ui.RoundedCorners;
 import com.crdroid.settings.fragments.ui.SmartPixels;
 import com.crdroid.settings.utils.DeviceUtils;
 
@@ -106,6 +107,7 @@ public class UserInterface extends SettingsPreferenceFragment {
                 Settings.System.THEMING_SETTINGS_DASHBOARD_ICONS, 0, UserHandle.USER_CURRENT);
         CutoutSettings.reset(mContext);
         DozeSettings.reset(mContext);
+        RoundedCorners.reset(mContext);
         SmartPixels.reset(mContext);
     }
 
