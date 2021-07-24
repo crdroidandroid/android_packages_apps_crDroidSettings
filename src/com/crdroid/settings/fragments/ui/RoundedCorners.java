@@ -109,6 +109,8 @@ public class RoundedCorners extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.SYSUI_ROUNDED_FWVALS, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.BERRY_ROUNDED_STYLE, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
