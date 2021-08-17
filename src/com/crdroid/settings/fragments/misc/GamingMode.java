@@ -204,6 +204,8 @@ public class GamingMode extends SettingsPreferenceFragment
         Settings.System.putIntForUser(resolver,
                 Settings.System.GAMING_MODE_HW_KEYS_TOGGLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.GAMING_MODE_ADB_TOGGLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.GAMING_MODE_HEADSUP_TOGGLE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.GAMING_MODE_RINGER_MODE, 0, UserHandle.USER_CURRENT);

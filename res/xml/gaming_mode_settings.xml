@@ -42,6 +42,14 @@
         android:dependency="gaming_mode_enabled"
         android:defaultValue="false" />
 
+    <!-- ADB -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="gaming_mode_adb_toggle"
+        android:title="@string/gaming_mode_adb_title"
+        android:summary="@string/gaming_mode_adb_summary"
+        android:dependency="gaming_mode_enabled"
+        android:defaultValue="false" />
+
     <!-- Manual brightness -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="gaming_mode_manual_brightness_toggle"
