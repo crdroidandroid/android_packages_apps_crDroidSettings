@@ -2176,7 +2176,7 @@
     <string name="default_refresh_rate_title">기본 화면 재생률</string>
     <string name="peak_refresh_rate_title">최대 화면 재생률</string>
     <string name="battery_saver_refresh_rate_title">화면 재생률 줄이기</string>
-    <string name="battery_saver_refresh_rate_summary">Use 60Hz as max refresh rate to save power in Battery Saver mode</string>
+    <string name="battery_saver_refresh_rate_summary">절전 모드 사용 중 전원 소모를 줄이기 위해 60Hz 재생률 사용</string>
     <!-- Ambient edge lighting -->
     <string name="pulse_ambient_light_title">가장자리 조명</string>
     <string name="pulse_ambient_light_summary">알림 펄스에서 화면의 측면 가장자리를 밝게합니다.</string>
@@ -2273,7 +2273,7 @@
     <string name="fod_recog_animation_quantum">양자</string>
     <!-- Nightlight Fod -->
     <string name="fod_night_light_title">지문 아이콘 표시 중 야간 조명 비활성화</string>
-    <string name="fod_night_light_summary">Disable night light on lockscreen if FOD is active. </string>
+    <string name="fod_night_light_summary">만약 FOD가 활성화된 경우 잠금 화면에서 나이트 라이트 비활성화 </string>
     <!-- NavigationBar Gestural Mode Tweaks -->
     <string name="gesture_pill_message">원활한 전체 화면 제스처를 위해 탐색 막대를 숨 깁니다.</string>
     <!-- Back gesture animation -->
@@ -2323,8 +2323,8 @@
     <!-- Sound: Title for the option defining the phone ringtone for slot2 on Muilti SIM device. [CHAR LIMIT=50] -->
     <string name="ringtone2_title">벨소리 - SIM 2</string>
     <!-- Display cutout -->
-    <string name="display_hide_notch_title">Hide display cutout</string>
-    <string name="display_hide_notch_summary">Disable black fill-in for display cutout</string>
+    <string name="display_hide_notch_title">디스플레이 컷아웃 숨기기</string>
+    <string name="display_hide_notch_summary">디스플레이 컷아웃을 검게 채우기 비활성화</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">적응형 재생</string>
     <string name="adaptive_playback_summary">음소거되면 미디어를 일시중지하고 제한시간 안에 볼륨을 높이면 다시 재생</string>
@@ -2374,8 +2374,8 @@
     <string name="applock_unlocked">잠금 해제됨</string>
     <string name="applock_locked_apps">잠긴 앱</string>
     <string name="applock_unlocked_apps">잠금 해제된 앱</string>
-    <string name="applock_lock_after_title">Lock app after</string>
-    <string name="applock_lock_after_instantly">Instantly</string>
+    <string name="applock_lock_after_title">다음 시간 이후 앱 잠금</string>
+    <string name="applock_lock_after_instantly">즉시</string>
     <string name="applock_lock_after_15_seconds">15초</string>
     <string name="applock_lock_after_screen_off">화면 끄기</string>
     <string name="applock_lock_after_summary">설정된 시간이 지나면 앱이 자동으로 잠김</string>
@@ -2390,7 +2390,7 @@
     <plurals name="applock_summary">
         <item quantity="other">앱 %d개 잠김</item>
     </plurals>
-    <string name="keywords_applock_settings">applock, applocker, app lock, app locker</string>
+    <string name="keywords_applock_settings">앱 잠금, 앱 잠그기, 앱 락, 앱 락커</string>
     <!-- Navbar length -->
     <string name="navbar_length">제스처 바 길이</string>
     <string name="hidden_label">숨김</string>
@@ -2409,7 +2409,7 @@
     <string name="qs_bg_use_new_tint">QS 타일 틴트</string>
     <string name="qs_bg_use_new_tint_summary">QS 타일에 악센트 색상 적용</string>
     <string name="qs_icons_primary_color">QS 타일 아이콘 색상</string>
-    <string name="qs_icons_primary_color_summary">Use primary system color for QS tiles icons</string>
+    <string name="qs_icons_primary_color_summary">QS 타일 아이콘에 메인 시스템 색 사용</string>
     <!-- Doze-on-Charge -->
     <string name="doze_on_charge_title">충전 중 정보 표시</string>
     <string name="doze_on_charge_summary">충전 중에 시간 및 알림, 충전 정보 표시</string>
@@ -2429,10 +2429,10 @@
     <string name="fod_gesture_summary">화면을 켜지 않고 기기를 잠금 해제</string>
     <!-- Settings dashboard icon style -->
     <string name="theming_settings_dashboard_icons_title">대시 보드 아이콘 설정</string>
-    <string name="theming_settings_dashboard_icons_default">Default background / Transparent foreground</string>
-    <string name="theming_settings_dashboard_icons_white">Default background / White foreground</string>
-    <string name="theming_settings_dashboard_icons_accent">Accent background / Transparent foreground</string>
-    <string name="theming_settings_dashboard_icons_plain">Transparent background / Plain foreground</string>
+    <string name="theming_settings_dashboard_icons_default">기본 배경 / 투명 아이콘</string>
+    <string name="theming_settings_dashboard_icons_white">기본 배경 / 하얀색 아이콘</string>
+    <string name="theming_settings_dashboard_icons_accent">강조색 배경 / 투명 아이콘</string>
+    <string name="theming_settings_dashboard_icons_plain">투명 배경 / 단조로운 아이콘</string>
     <string name="theming_settings_dashboard_icons_plain_accent">투명 배경 / 강조색 아이콘</string>
     <!-- Face Unlock -->
     <string name="security_settings_face_settings_remove_dialog_details_custom">얼굴인식 잠금해제에 의해 기록된 데이터는 영구적으로 안전하게 삭제됩니다. 제거한 후 휴대전화의 잠금을 해제하려면 PIN, 패턴 또는 암호가 필요합니다.</string>
