@@ -90,30 +90,30 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         mDozeOnChargePreference = (SwitchPreference) findPreference(KEY_DOZE_ON_CHARGE);
 
         mTiltPreference = (SwitchPreference) findPreference(KEY_DOZE_TILT_GESTURE);
-        mTiltPreference.setOnPreferenceChangeListener(this);
-
         mPickUpPreference = (SwitchPreference) findPreference(KEY_DOZE_PICK_UP_GESTURE);
-        mPickUpPreference.setOnPreferenceChangeListener(this);
-
         mHandwavePreference = (SwitchPreference) findPreference(KEY_DOZE_HANDWAVE_GESTURE);
-        mHandwavePreference.setOnPreferenceChangeListener(this);
-
         mPocketPreference = (SwitchPreference) findPreference(KEY_DOZE_POCKET_GESTURE);
-        mPocketPreference.setOnPreferenceChangeListener(this);
 
         // Hide sensor related features if the device doesn't support them
         if (!Utils.getTiltSensor(context) && !Utils.getPickupSensor(context) && !Utils.getProximitySensor(context)) {
             getPreferenceScreen().removePreference(dozeSensorCategory);
         } else {
             if (!Utils.getTiltSensor(context)) {
-                getPreferenceScreen().removePreference(mTiltPreference);
+                dozeSensorCategory.removePreference(mTiltPreference);
+            } else {
+                mTiltPreference.setOnPreferenceChangeListener(this);
             }
             if (!Utils.getPickupSensor(context)) {
-                getPreferenceScreen().removePreference(mPickUpPreference);
+                dozeSensorCategory.removePreference(mPickUpPreference);
+            } else {
+                mPickUpPreference.setOnPreferenceChangeListener(this);
             }
             if (!Utils.getProximitySensor(context)) {
-                getPreferenceScreen().removePreference(mHandwavePreference);
-                getPreferenceScreen().removePreference(mPocketPreference);
+                dozeSensorCategory.removePreference(mHandwavePreference);
+                dozeSensorCategory.removePreference(mPocketPreference);
+            } else {
+                mHandwavePreference.setOnPreferenceChangeListener(this);
+                mPocketPreference.setOnPreferenceChangeListener(this);
             }
         }
 
