@@ -44,6 +44,12 @@
         android:summary="@string/ambient_battery_percent_summary"
         android:defaultValue="false" />-->
 
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="ambient_swipe"
+        android:title="@string/ambient_swipe_title"
+        android:summary="@string/ambient_swipe_summary"
+        android:defaultValue="true" />
+
     <lineageos.preference.RemotePreference
         android:key="doze_device_settings"
         android:title="@string/ambient_display_screen_title">
