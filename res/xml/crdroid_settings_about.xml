@@ -23,8 +23,11 @@
         android:key="crdroid_changelog"
         android:icon="@drawable/ic_changelog"
         android:title="@string/changelog_crdroid_title"
-        android:summary="@string/changelog_crdroid_summary"
-        android:fragment="com.crdroid.settings.fragments.about.Changelog" />
+        android:summary="@string/changelog_crdroid_summary">
+        <intent android:action="android.intent.action.MAIN"
+             android:targetPackage="com.android.settings"
+             android:targetClass="com.crdroid.settings.fragments.about.ChangelogActivity"/>
+    </Preference>
 
     <!-- crDroid Website -->
     <Preference
