@@ -90,6 +90,16 @@
             settings:units="@string/unit_seconds"
             settings:interval="1"
             android:dependency="pulse_ambient_light" />
+
+         <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="pulse_ambient_light_repeat"
+            android:title="@string/pulse_ambient_light_repeat_title"
+            android:summary="@string/pulse_ambient_light_repeat_summary"
+            android:defaultValue="3"
+            android:max="10"
+            settings:min="1"
+            settings:interval="1"
+            android:dependency="pulse_ambient_light" />
     </PreferenceCategory>
 
     <PreferenceCategory
