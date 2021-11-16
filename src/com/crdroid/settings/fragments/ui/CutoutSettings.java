@@ -50,9 +50,11 @@ public class CutoutSettings extends SettingsPreferenceFragment implements
 
     private static final String DISPLAY_CUTOUT_MODE = "display_cutout_mode";
     private static final String STOCK_STATUSBAR = "stock_statusbar_in_hide";
+    private static final String DISPLAY_KILL_NOTCH = "display_kill_notch";
 
     private Preference mStockStatusbar;
     private ListPreference mImmersiveMode;
+    private Preference mKillNotch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,7 +66,11 @@ public class CutoutSettings extends SettingsPreferenceFragment implements
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
 
+        int killNotch = Settings.System.getInt(getContentResolver(),
+                Settings.System.DISPLAY_KILL_NOTCH, 0);
+
         mImmersiveMode = (ListPreference) prefScreen.findPreference(DISPLAY_CUTOUT_MODE);
+        mImmersiveMode.setEnabled(killNotch == 0);
         mImmersiveMode.setOnPreferenceChangeListener(this);
 
         int immersiveMode = Settings.System.getInt(getContentResolver(),
@@ -72,6 +78,10 @@ public class CutoutSettings extends SettingsPreferenceFragment implements
 
         mStockStatusbar = (Preference) prefScreen.findPreference(STOCK_STATUSBAR);
         mStockStatusbar.setEnabled(immersiveMode == 2);
+
+        mKillNotch = (Preference) prefScreen.findPreference(DISPLAY_KILL_NOTCH);
+        mKillNotch.setEnabled(immersiveMode == 0);
+        mKillNotch.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -79,6 +89,11 @@ public class CutoutSettings extends SettingsPreferenceFragment implements
         if (preference == mImmersiveMode) {
             int value = Integer.valueOf((String) newValue);
             mStockStatusbar.setEnabled(value == 2);
+            mKillNotch.setEnabled(value == 0);
+            return true;
+        } else if (preference == mKillNotch) {
+            boolean value = ((Boolean)newValue);
+            mImmersiveMode.setEnabled(!value);
             return true;
         }
         return false;
@@ -90,6 +105,8 @@ public class CutoutSettings extends SettingsPreferenceFragment implements
                 Settings.System.DISPLAY_CUTOUT_MODE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STOCK_STATUSBAR_IN_HIDE, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.DISPLAY_KILL_NOTCH, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
