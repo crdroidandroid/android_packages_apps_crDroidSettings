@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2013 Andreas Stuetz <andreas.stuetz@gmail.com>
- *           (C) 2017-2018 crDroid Android Project
+ *           (C) 2017-2021 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

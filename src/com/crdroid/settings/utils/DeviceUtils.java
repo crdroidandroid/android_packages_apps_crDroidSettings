@@ -210,10 +210,12 @@ public class DeviceUtils {
         return !TextUtils.isEmpty(name);
     }
 
+/*
     public static boolean deviceSupportsMobileData(Context ctx) {
         ConnectivityManager cm = ctx.getSystemService(ConnectivityManager.class);
         return cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE);
     }
+*/
 
     public static boolean deviceSupportsBluetooth() {
         return (BluetoothAdapter.getDefaultAdapter() != null);
