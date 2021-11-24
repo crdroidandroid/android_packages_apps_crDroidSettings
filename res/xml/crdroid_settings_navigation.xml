@@ -55,22 +55,6 @@
             android:dependency="navbar_visibility"
             android:defaultValue="0"/>
 
-        <Preference
-            android:key="smartbar_settings"
-            android:icon="@drawable/ic_smartbar"
-            android:title="@string/smartbar_settings_title"
-            android:summary="@string/smartbar_settings_summary"
-            android:dependency="navbar_visibility"
-            android:fragment="com.crdroid.settings.fragments.navigation.smartnav.SmartbarSettings" />
-
-        <Preference
-            android:key="fling_settings"
-            android:icon="@drawable/ic_fling"
-            android:title="@string/fling_settings"
-            android:summary="@string/fling_settings_summary"
-            android:dependency="navbar_visibility"
-            android:fragment="com.crdroid.settings.fragments.navigation.smartnav.FlingSettings" />
-
         <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="navbar_height_portrait"
             android:icon="@drawable/ic_bar"
@@ -112,13 +96,6 @@
             android:defaultValue="false" />
 
         <PreferenceScreen
-            android:key="carbon_gestures"
-            android:icon="@drawable/ic_gesture_swipe_horizontal"
-            android:fragment="com.crdroid.settings.fragments.navigation.CarbonGesturesSettings"
-            android:title="@string/carbon_gesture_preference_title"
-            android:summary="@string/carbon_gestures_summary" />
-
-        <PreferenceScreen
             android:key="swipeup_gestures"
             android:icon="@drawable/ic_gesture_swipe_up"
             android:fragment="com.crdroid.settings.fragments.navigation.SwipeUpGesturesSettings"
@@ -153,14 +130,6 @@
             android:summary="@string/system_gestures_summary"
             android:fragment="com.android.settings.gestures.GestureSettings"
             settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
-
-        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="double_tap_sleep_navbar"
-            android:icon="@drawable/ic_double_tap"
-            android:title="@string/smartbar_doubletap_sleep_title"
-            android:summary="@string/smartbar_doubletap_sleep_summary"
-            android:dependency="navbar_visibility"
-            android:defaultValue="false" />-->
     </PreferenceCategory>
 
     <!--<PreferenceCategory
