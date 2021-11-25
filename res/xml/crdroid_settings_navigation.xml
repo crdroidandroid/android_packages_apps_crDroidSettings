@@ -95,20 +95,7 @@
             android:summary="@string/one_handed_mode_summary"
             android:defaultValue="false" />
 
-        <PreferenceScreen
-            android:key="swipeup_gestures"
-            android:icon="@drawable/ic_gesture_swipe_up"
-            android:fragment="com.crdroid.settings.fragments.navigation.SwipeUpGesturesSettings"
-            android:title="@string/use_bottom_gesture_title"
-            android:summary="@string/use_bottom_gesture_summary" />
-
-        <PreferenceScreen
-            android:key="edge_gestures"
-            android:title="@string/edge_gestures_title"
-            android:summary="@string/edge_gestures_summary"
-            android:fragment="com.crdroid.settings.fragments.navbar.EdgeGestureSettings" />-->
-
-        <!--<org.lineageos.internal.lineageparts.LineagePartsPreference
+        <org.lineageos.internal.lineageparts.LineagePartsPreference
             android:key="touchscreen_gesture_settings"
             android:icon="@drawable/ic_double_tap"
             lineage:requiresFeature="lineagehardware:FEATURE_TOUCHSCREEN_GESTURES" />
@@ -131,16 +118,4 @@
             android:fragment="com.android.settings.gestures.GestureSettings"
             settings:controller="com.android.settings.gestures.GesturesSettingPreferenceController"/>
     </PreferenceCategory>
-
-    <!--<PreferenceCategory
-        android:key="category_navbar_general"
-        android:title="@string/navbar_general_title" >
-
-        <SwitchPreference
-            android:key="navbar_dynamic"
-            android:icon="@drawable/ic_color_bucket"
-            android:title="@string/navbar_dynamic_title"
-            android:summary="@string/navbar_dynamic_summary"
-            android:defaultValue="false"/>
-    </PreferenceCategory>-->
 </PreferenceScreen>
