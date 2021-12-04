@@ -26,11 +26,11 @@
         android:summary="@string/monet_engine_custom_color_summary"
         android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
+    <com.crdroid.settings.preferences.colorpicker.SecureSettingColorPickerPreference
         android:key="monet_engine_color_override"
         android:title="@string/monet_engine_color_override_title"
         android:dependency="monet_engine_custom_color"
-        android:defaultValue="0xffffff" />
+        android:defaultValue="0xffffffff" />
 
     <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
         android:key="monet_engine_white_luminance_user"
@@ -38,7 +38,7 @@
         android:defaultValue="425"
         android:max="1000"
         settings:min="0"
-        settings:interval="100"/>
+        settings:interval="25"/>
 
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="monet_engine_accurate_shades"
@@ -51,7 +51,7 @@
         android:defaultValue="100"
         android:max="400"
         settings:min="50"
-        settings:interval="50"/>
+        settings:interval="25"/>
 
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="monet_engine_linear_lightness"
