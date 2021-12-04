@@ -30,10 +30,11 @@
     android:clipToPadding="false">
 
     <LinearLayout
-        android:id="@+id/icon_container"
+        android:id="@+id/icon_frame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minWidth="56dp"
+        android:layout_marginStart="-4dp"
+        android:minWidth="60dp"
         android:gravity="start|center_vertical"
         android:orientation="horizontal"
         android:paddingEnd="12dp"
@@ -69,12 +70,12 @@
             android:id="@android:id/summary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="24dp"
             android:layout_below="@android:id/title"
             android:layout_alignStart="@android:id/title"
             android:textAppearance="?android:attr/textAppearanceListItemSecondary"
             android:textColor="?android:attr/textColorSecondary"
-            android:maxLines="10"/>
+            android:maxLines="10"
+            android:ellipsize="end" />
 
     </RelativeLayout>
 
