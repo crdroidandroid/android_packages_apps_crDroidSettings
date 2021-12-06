@@ -23,6 +23,14 @@
     <PreferenceCategory
         android:title="@string/status_bar_icons_category_title">
 
+        <Preference
+            android:key="status_bar_icons"
+            android:icon="@drawable/ic_shapes"
+            android:title="@string/status_bar_icons_title"
+            android:summary="@string/status_bar_icons_summary">
+                <intent android:action="com.android.settings.action.STATUS_BAR_TUNER" />
+        </Preference>
+
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="data_disabled_icon"
             android:icon="@drawable/ic_network_strength_4_alert"
