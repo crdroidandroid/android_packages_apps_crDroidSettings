@@ -32,4 +32,17 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="lockscreen_gestures_category"
+        android:title="@string/gestures_title">
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="double_tap_sleep_lockscreen"
+            android:icon="@drawable/ic_double_tap"
+            android:title="@string/lockscreen_doubletap_sleep_title"
+            android:summary="@string/lockscreen_doubletap_sleep_summary"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

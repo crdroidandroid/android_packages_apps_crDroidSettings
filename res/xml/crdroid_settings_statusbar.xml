@@ -72,4 +72,24 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/gestures_title">
+
+        <lineageos.preference.LineageSystemSettingSwitchPreference
+            android:key="double_tap_sleep_gesture"
+            android:icon="@drawable/ic_double_tap"
+            android:title="@string/statusbar_doubletap_sleep_title"
+            android:summary="@string/statusbar_doubletap_sleep_summary"
+            android:defaultValue="true" />
+
+        <lineageos.preference.LineageSystemSettingListPreference
+            android:key="qs_quick_pulldown"
+            android:icon="@drawable/ic_arrow_down"
+            android:title="@string/status_bar_quick_qs_pulldown_title"
+            android:entries="@array/status_bar_quick_qs_pulldown_entries"
+            android:entryValues="@array/status_bar_quick_qs_pulldown_values"
+            android:defaultValue="0" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
