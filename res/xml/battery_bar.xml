@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright (C) 2016-2019 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    android:title="@string/battery_bar_title"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <SwitchPreference
+        android:key="statusbar_battery_bar"
+        android:title="@string/battery_bar_title"
+        android:defaultValue="false" />
+
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="statusbar_battery_bar_thickness"
+        android:title="@string/battery_bar_thickness_title"
+        android:defaultValue="2"
+        android:max="4"
+        settings:min="1"
+        settings:units="@string/unit_pixels"
+        android:dependency="statusbar_battery_bar" />
+
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="statusbar_battery_bar_style"
+        android:title="@string/battery_bar_style_title"
+        android:entries="@array/battery_bar_style_entries"
+        android:entryValues="@array/battery_bar_style_values"
+        android:defaultValue="0"
+        android:dependency="statusbar_battery_bar" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="statusbar_battery_bar_blend_color"
+        android:title="@string/battery_bar_blend_color_title"
+        android:summary="@string/battery_bar_blend_color_summary"
+        android:defaultValue="true"
+        android:dependency="statusbar_battery_bar" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="statusbar_battery_bar_blend_color_reverse"
+        android:title="@string/battery_bar_blend_color_reverse_title"
+        android:summaryOn="@string/battery_bar_blend_color_reverse_summary_on"
+        android:summaryOff="@string/battery_bar_blend_color_reverse_summary_off"
+        android:dependency="statusbar_battery_bar_blend_color"
+        android:defaultValue="false" />
+
+    <com.crdroid.settings.preferences.colorpicker.SystemSettingColorPickerPreference
+        android:key="statusbar_battery_bar_color"
+        android:title="@string/battery_bar_color"
+        android:defaultValue="0xff76c124"
+        android:dependency="statusbar_battery_bar" />
+
+    <com.crdroid.settings.preferences.colorpicker.SystemSettingColorPickerPreference
+        android:key="statusbar_battery_bar_battery_low_color"
+        android:title="@string/battery_bar_battery_low_color"
+        android:defaultValue="0xfff90028"
+        android:dependency="statusbar_battery_bar" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="statusbar_battery_bar_animate"
+        android:title="@string/battery_bar_animate_title"
+        android:defaultValue="true"
+        android:dependency="statusbar_battery_bar" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="statusbar_battery_bar_enable_charging_color"
+        android:title="@string/battery_bar_use_charging_color"
+        android:defaultValue="true"
+        android:dependency="statusbar_battery_bar" />
+
+    <com.crdroid.settings.preferences.colorpicker.SystemSettingColorPickerPreference
+        android:key="statusbar_battery_bar_charging_color"
+        android:title="@string/battery_bar_charging_color"
+        android:defaultValue="0xffffc90f"
+        android:dependency="statusbar_battery_bar_enable_charging_color" />
+</PreferenceScreen>

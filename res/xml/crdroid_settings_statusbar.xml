@@ -116,6 +116,13 @@
             android:summary="@string/status_bar_battery_text_charging_summary"
             android:defaultValue="true" />
 
+        <PreferenceScreen
+            android:key="batterybar"
+            android:icon="@drawable/ic_car_battery"
+            android:title="@string/battery_bar_title"
+            android:summary="@string/battery_bar_summary"
+            android:fragment="com.crdroid.settings.fragments.statusbar.BatteryBar" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

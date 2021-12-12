@@ -39,6 +39,7 @@ import com.crdroid.settings.preferences.SystemSettingListPreference;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.fragments.statusbar.BatteryBar;
 import com.crdroid.settings.fragments.statusbar.Clock;
 import com.crdroid.settings.preferences.SystemSettingSeekBarPreference;
 import com.crdroid.settings.utils.DeviceUtils;
@@ -215,6 +216,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_BATTERY_TEXT_CHARGING, 1, UserHandle.USER_CURRENT);
 
+        BatteryBar.reset(mContext);
         Clock.reset(mContext);
     }
 
