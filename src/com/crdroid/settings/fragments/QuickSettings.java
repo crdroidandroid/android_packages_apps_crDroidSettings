@@ -45,7 +45,6 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.List;
 import java.util.ArrayList;
 
-
 @SearchIndexable
 public class QuickSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -68,6 +67,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_QS_CLOCK, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_QS_DATE, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
