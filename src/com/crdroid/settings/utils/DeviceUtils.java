@@ -30,6 +30,8 @@ import android.content.res.Configuration;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
+import android.hardware.fingerprint.FingerprintManager;
+import android.hardware.fingerprint.FingerprintSensorPropertiesInternal;
 import android.net.ConnectivityManager;
 import android.nfc.NfcAdapter;
 import android.os.Build;
@@ -39,6 +41,8 @@ import android.text.TextUtils;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.Surface;
+
+import java.util.List;
 
 import static org.lineageos.internal.util.DeviceKeysConstants.*;
 
@@ -265,5 +269,18 @@ public class DeviceUtils {
         boolean blurDisabledSysProp = SystemProperties
             .getBoolean("persist.sys.sf.disable_blurs", false);
         return blurSupportedSysProp && !blurDisabledSysProp && ActivityManager.isHighEndGfx();
+    }
+
+     /**
+     * Checks if the device has udfps
+     * @param context context for getting FingerprintManager
+     * @return true is udfps is present
+     */
+    public static boolean hasUDFPS(Context context) {
+        final FingerprintManager fingerprintManager =
+                context.getSystemService(FingerprintManager.class);
+        final List<FingerprintSensorPropertiesInternal> props =
+                fingerprintManager.getSensorPropertiesInternal();
+        return props != null && props.size() == 1 && props.get(0).isAnyUdfpsType();
     }
 }
