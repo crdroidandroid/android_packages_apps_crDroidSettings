@@ -19,12 +19,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!--<ListPreference
-        android:key="statusbar_battery_bar_list"
-        android:title="@string/battery_bar"
-        android:entries="@array/battery_bar_entries"
-        android:entryValues="@array/battery_bar_values" />-->
-
     <SwitchPreference
         android:key="statusbar_battery_bar"
         android:title="@string/battery_bar_title"
@@ -62,13 +56,13 @@
         android:dependency="statusbar_battery_bar_blend_color"
         android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
+    <com.crdroid.settings.preferences.colorpicker.SystemSettingColorPickerPreference
         android:key="statusbar_battery_bar_color"
         android:title="@string/battery_bar_color"
         android:defaultValue="0xff76c124"
         android:dependency="statusbar_battery_bar" />
 
-    <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
+    <com.crdroid.settings.preferences.colorpicker.SystemSettingColorPickerPreference
         android:key="statusbar_battery_bar_battery_low_color"
         android:title="@string/battery_bar_battery_low_color"
         android:defaultValue="0xfff90028"
@@ -86,7 +80,7 @@
         android:defaultValue="true"
         android:dependency="statusbar_battery_bar" />
 
-    <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
+    <com.crdroid.settings.preferences.colorpicker.SystemSettingColorPickerPreference
         android:key="statusbar_battery_bar_charging_color"
         android:title="@string/battery_bar_charging_color"
         android:defaultValue="0xffffc90f"
