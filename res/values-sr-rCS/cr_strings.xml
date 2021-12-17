@@ -558,6 +558,7 @@
     <string name="smartbar_doubletap_sleep_summary">Double-tap on the navbar empty areas to put device asleep</string>
     <string name="one_handed_mode_title">One handed mode</string>
     <string name="one_handed_mode_summary">Allows swiping on the navigation bar to enable one handed mode</string>
+    <string name="system_navigation_summary">Toggle between 3-button, 2-button or gesture navigation</string>
     <!-- Actions dialog and default task values set in ActionPreference xml-->
     <string name="choose_action_title">Choose action</string>
     <string name="action_entry_default_action">Default settings</string>
@@ -641,6 +642,8 @@
     <string name="show_navbar_pulse_summary">Audio graphic equalizer on the navigation bar</string>
     <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
     <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
+    <string name="show_ambient_pulse_title">Ambient Pulse</string>
+    <string name="show_ambient_pulse_summary">Audio graphic equalizer on the ambient screen</string>
     <string name="pulse_render_mode_title">Render mode</string>
     <string name="pulse_render_mode_fading_bars">Fading blocks</string>
     <string name="pulse_render_mode_solid_lines">Solid lines</string>
@@ -936,6 +939,9 @@
     <!-- Screenshot delay  -->
     <string name="screenshot_delay_title">Screenshot delay</string>
     <string name="screenshot_delay_summary">Amount of time you need to hold power and volume buttons to take screenshot</string>
+    <!-- Screenshot compression  -->
+    <string name="screenshot_compression_title">Screenshot quality</string>
+    <string name="screenshot_compression_summary">Compress screenshot size with loss in image quality</string>
     <!-- Screenshot editor -->
     <string name="screenshot_options_category">Screenshot options</string>
     <string name="screenshot_edit_app">Screenshot editor</string>
@@ -1035,21 +1041,22 @@
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
     <string name="crdroid_source_summary">We love open source, check us out</string>
-    <string name="crdroid_google_plus_title">Google+</string>
-    <string name="crdroid_google_plus_summary">Join us on G+ for quick updates and support</string>
-    <string name="crdroid_telegram_title">Telegram</string>
+    <string name="crdroid_telegram_title">crDroid community</string>
     <string name="crdroid_telegram_summary">We are on telegram. Join us!</string>
+    <string name="crdroid_telegram_channel_title">Updates channel</string>
+    <string name="crdroid_telegram_channel_summary">Get notified of new builds on Telegram</string>
     <string name="crdroid_website_title">Official website</string>
     <string name="crdroid_website_summary">Visit our official website</string>
     <string name="crdroid_translate_title">Translations</string>
     <string name="crdroid_translate_summary">Help with localisation of ROM in your language!</string>
+    <string name="crdroid_sponsor_summary">Visit our website host partner</string>
     <!-- Maintainers -->
     <string name="maintainers_crdroid_title">Devices and maintainers</string>
     <string name="maintainers_crdroid_summary">List of supported devices and their official maintainers</string>
     <string name="maintainers_crdroid_error">Unable to load devices and maintainers list</string>
     <!-- Donate crDroid -->
     <string name="donate_crdroid_title">Support us</string>
-    <string name="donate_crdroid_summary">Donate to support development and our server</string>
+    <string name="donate_crdroid_summary">Donate to support further development</string>
     <string name="donate_team_title">crDroid team</string>
     <string name="donate_team_summary">Donate to support server hosting, site uptime and overall management</string>
     <string name="donate_dev_summary">Core developer - Donate for a beer or a coffee!</string>
@@ -1124,16 +1131,15 @@
     <string name="backlight_summary_enabled">Enabled</string>
     <!-- Power menu -->
     <string name="power_menu_title">Power menu</string>
-    <string name="power_menu_reboot_title">Restart menu</string>
+    <string name="power_menu_actions_title">Actions</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_screenshot_summary">Long-press for partial screenshot</string>
     <string name="power_menu_screenrecord_title">Screenrecord</string>
     <string name="power_menu_onthego_title">On-The-Go mode</string>
     <string name="power_menu_airplane_title">Airplane mode</string>
     <string name="power_menu_users_title">User switcher</string>
-    <string name="power_menu_settings_title">Settings shortcut</string>
     <string name="power_menu_lockdown_title">Lockdown</string>
-    <string name="power_menu_sound_title">Sound panel</string>
+    <string name="power_menu_lockdown_unavailable">Lockdown is disabled as keyguard isn\'t secure</string>
     <string name="power_menu_emergency_title">Emergency</string>
     <string name="volume_keys_control_ring_stream_title">Control ringtone volume</string>
     <string name="volume_keys_control_ring_stream_summary_on">Volume keys control ringtone volume</string>
@@ -1546,8 +1552,8 @@
     <string name="recents_dismiss_icon_title">Dismiss task</string>
     <string name="recents_dismiss_icon_summary">Toggle dismiss task icon in recent app view</string>
     <!-- Notification guts kill app button -->
-    <string name="notification_guts_kill_app_button_title">Kill app button</string>
-    <string name="notification_guts_kill_app_button_summary">Show a kill app button in the notification\'s longpress menu</string>
+    <string name="notification_guts_kill_app_button_title">Force stop button</string>
+    <string name="notification_guts_kill_app_button_summary">Show force stop button in the notification\'s longpress menu</string>
     <!-- ANBI -->
     <string name="anbi_title">Accidental touch</string>
     <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
@@ -1766,6 +1772,7 @@
     <string name="battery_light_title">Battery light</string>
     <string name="battery_light_summary">Configure led color based on battery level and status</string>
     <string name="battery_low_pulse_title">Pulse if battery low</string>
+    <string name="battery_light_full_charge_disabled_title">Turn off when fully charged</string>
     <string name="battery_light_list_title">Colors</string>
     <string name="battery_light_low_color_title">Battery low</string>
     <string name="battery_light_medium_color_title">Charging</string>
@@ -1946,8 +1953,8 @@
     <string name="weather_client_not_available">Weather client not available</string>
     <!-- Rounded corners -->
     <string name="corners_title">Rounded corners</string>
-    <string name="corners_summary">Allow customized rounded corners</string>
-    <string name="corner_radius">Rounded corner radius</string>
+    <string name="corners_summary">Customized rounded corners</string>
+    <string name="corner_radius">Rounded corner radius for screen</string>
     <string name="content_padding">Corner content padding</string>
     <string name="status_bar_padding">Statusbar extra padding</string>
     <string name="corner_fwvals">Use default values</string>
@@ -1996,6 +2003,14 @@
     <string name="switch_retro">Retro</string>
     <string name="switch_stockish">Stockish</string>
     <string name="switch_telegram">Telegram</string>
+    <!-- Rounded styles -->
+    <string name="rounded_style_title">Rounded style for system dialogs</string>
+    <string name="rounded_default">Default</string>
+    <string name="rounded_none">None</string>
+    <string name="rounded_slight">Slight</string>
+    <string name="rounded_medium">Medium</string>
+    <string name="rounded_high">High</string>
+    <string name="rounded_extreme">Extreme</string>
     <!-- Battery stats reset -->
     <string name="battery_stats_reset">Reset stats</string>
     <string name="battery_stats_message">This will reset battery history stats. Would you like to continue?</string>
@@ -2077,6 +2092,8 @@
     <string name="display_cutout_style_hide">Hide</string>
     <string name="stock_statusbar_in_hide">Stock statusbar height</string>
     <string name="stock_statusbar_in_hide_summary">Use default statusbar height in Hide</string>
+    <string name="display_kill_notch_title">Kill notch</string>
+    <string name="display_kill_notch_summary">Kill notch completely for full screen apps</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
     <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
@@ -2117,6 +2134,8 @@
     <string name="gaming_mode_headsup_summary">Calls and alarms are exempted</string>
     <string name="gaming_mode_hardware_keys_title">Lock buttons</string>
     <string name="gaming_mode_hardware_keys_summary">When Gaming mode is turned on, buttons will be locked</string>
+    <string name="gaming_mode_adb_title">Disable USB debugging</string>
+    <string name="gaming_mode_adb_summary">Disable USB debugging when Gaming mode is turned on</string>
     <string name="gaming_mode_brightness_title">Disable automatic brightness</string>
     <string name="gaming_mode_brightness_summary">Lock screen brightness when Gaming mode is turned on</string>
     <string name="gaming_mode_ringer_title">Ringer in Gaming mode</string>
@@ -2156,12 +2175,10 @@
     <string name="battery_estimate_title">Battery estimate</string>
     <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
     <!-- Refresh rate -->
-    <string name="refresh_rate_title">Screen refresh rate</string>
-    <string name="refresh_rate_summary_automatic">Auto / Automatically raise refresh rate</string>
-    <string name="refresh_rate_summary_60">60Hz / Refresh rate locked at 60Hz</string>
-    <string name="refresh_rate_summary_90">90Hz / Refresh rate locked at 90Hz</string>
-    <string name="refresh_rate_summary_120">120Hz / Refresh rate locked at 120Hz</string>
-    <string name="auto_refresh_rate">Auto</string>
+    <string name="default_refresh_rate_title">Default refresh rate</string>
+    <string name="peak_refresh_rate_title_custom">Peak refresh rate</string>
+    <string name="battery_saver_refresh_rate_title">Reduce refresh rate</string>
+    <string name="battery_saver_refresh_rate_summary">Use 60Hz as max refresh rate to save power in Battery Saver mode</string>
     <!-- Ambient edge lighting -->
     <string name="pulse_ambient_light_title">Edge lighting</string>
     <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
@@ -2200,6 +2217,10 @@
     <string name="fod_wallpaper_color_summary">Uses adjusted primary wallpaper color for FOD icon\nNOTE: might look good only with some wallpapers</string>
     <!-- QS panel background opacity -->
     <string name="qs_panel_alpha_title">Panel opacity</string>
+    <!-- Notification background opacity -->
+    <string name="notification_alpha_title">Notification background opacity</string>
+    <!-- Power menu background opacity -->
+    <string name="power_menu_alpha_title">Power menu opacity</string>
     <!-- QS panel gradient below status bar -->
     <string name="qs_panel_gradient_title">Status bar gradient</string>
     <string name="qs_panel_gradient_summary">Show gradient below status bar in QS panel</string>
@@ -2218,6 +2239,7 @@
     <string name="fod_pressed_color_cyan">Cyan</string>
     <string name="fod_pressed_color_green">Green</string>
     <string name="fod_pressed_color_yellow">Yellow</string>
+    <string name="fod_pressed_color_light_yellow">Light Yellow</string>
     <!-- FOD animations -->
     <string name="fod_recog_animation">Fingerprint animation</string>
     <string name="fod_recog_animation_summary">Shows an animation while reading your finger</string>
@@ -2246,6 +2268,13 @@
     <string name="fod_recog_animation_rog_fusion">Fusion</string>
     <string name="fod_recog_animation_rog_pulsar">Pulsar</string>
     <string name="fod_recog_animation_rog_supernova">Supernova</string>
+    <string name="fod_recog_animation_shine">Shine</string>
+    <string name="fod_recog_animation_smoke">Smoke</string>
+    <string name="fod_recog_animation_strings">Strings</string>
+    <string name="fod_recog_animation_quantum">Quantum</string>
+    <!-- Nightlight Fod -->
+    <string name="fod_night_light_title">Disable night light when showing FOD</string>
+    <string name="fod_night_light_summary">Disable night light on lockscreen if FOD is active. </string>
     <!-- NavigationBar Gestural Mode Tweaks -->
     <string name="gesture_pill_message">Hide the navigation bar pill for seamless fullscreen gestures.</string>
     <!-- Back gesture animation -->
@@ -2295,8 +2324,8 @@
     <!-- Sound: Title for the option defining the phone ringtone for slot2 on Muilti SIM device. [CHAR LIMIT=50] -->
     <string name="ringtone2_title">Phone ringtone - SIM 2</string>
     <!-- Display cutout -->
-    <string name="sysui_display_cutout_title">Display cutout</string>
-    <string name="sysui_display_cutout_summary">Force the display cutout area to black</string>
+    <string name="display_hide_notch_title">Hide display cutout</string>
+    <string name="display_hide_notch_summary">Disable black fill-in for display cutout</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptive playback</string>
     <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
@@ -2340,16 +2369,23 @@
     <string name="navbar_oneplus">OnePlus</string>
     <string name="navbar_oneui">One UI</string>
     <string name="navbar_tecno">Tecno Camon</string>
-    <!-- App lock -->
+    <!-- App Lock -->
     <string name="applock_title">App locker</string>
     <string name="applock_locked">Locked</string>
     <string name="applock_unlocked">Unlocked</string>
     <string name="applock_locked_apps">Locked apps</string>
     <string name="applock_unlocked_apps">Unlocked apps</string>
-    <string name="applock_show_only_on_wake">Authenticate only once</string>
-    <string name="applock_show_only_on_wake_on_summary">Once authenticated, an app stays unlocked until the screen turns off</string>
-    <string name="applock_show_only_on_wake_off_summary">Once authenticated, an app stays unlocked for 15 seconds after exiting</string>
-    <string name="applock_lock_notifications">Hide notification content while app is locked</string>
+    <string name="applock_lock_after_title">Lock app after</string>
+    <string name="applock_lock_after_instantly">Instantly</string>
+    <string name="applock_lock_after_15_seconds">15 seconds</string>
+    <string name="applock_lock_after_screen_off">Screen off</string>
+    <string name="applock_lock_after_summary">App will be locked after selected timeout</string>
+    <string name="applock_lock_after_instantly_summary">App will be locked instantly when closed</string>
+    <string name="applock_lock_after_15_seconds_summary">App will be locked 15 seconds after closing</string>
+    <string name="applock_lock_after_screen_off_summary">App will be locked when screen is turned off</string>
+    <string name="applock_notification_info">You can show/hide the notification content on a per-app basis by clicking on the notification icon shown on each locked apps\' preference</string>
+    <string name="applock_show_notif">Showing notification content</string>
+    <string name="applock_hide_notif">Hiding notification content</string>
     <string name="applock_setup">Setup app locker</string>
     <string name="applock_overlay_summary">This feature is not available because this app is locked</string>
     <plurals name="applock_summary">
@@ -2357,6 +2393,7 @@
         <item quantity="few">%d apps locked</item>
         <item quantity="other">%d apps locked</item>
     </plurals>
+    <string name="keywords_applock_settings">applock, applocker, app lock, app locker</string>
     <!-- Navbar length -->
     <string name="navbar_length">Gesture bar length</string>
     <string name="hidden_label">Hidden</string>
@@ -2371,4 +2408,68 @@
     <!-- Buttons - Swap capacitive keys -->
     <string name="swap_capacitive_keys_title">Swap capacitive buttons</string>
     <string name="swap_capacitive_keys_summary">Swap the order of recents and back buttons</string>
+    <!-- QS themes -->
+    <string name="qs_bg_use_new_tint">Tint QS tiles</string>
+    <string name="qs_bg_use_new_tint_summary">Enable the accent color tint on QS tiles</string>
+    <string name="qs_icons_primary_color">QS tiles icons color</string>
+    <string name="qs_icons_primary_color_summary">Use primary system color for QS tiles icons</string>
+    <!-- Doze-on-Charge -->
+    <string name="doze_on_charge_title">Show info when charging</string>
+    <string name="doze_on_charge_summary">See time, notifications and charging info when device is charging</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">Deep sleep</string>
+    <!-- Partial screenshot on click -->
+    <string name="click_partial_screenshot_title">Click to partial screenshot</string>
+    <string name="click_partial_screenshot_summary">Short click Volume Down and Power to take partial screenshot</string>
+    <!-- Battery fully charged sound -->
+    <string name="battery_fully_charged_sound_enabled_title">Battery fully charged sound</string>
+    <string name="battery_fully_charged_sound_enabled_summary">Play a sound when battery fully charged</string>
+    <string name="battery_fully_charged_vibrate_title">Vibrate</string>
+    <string name="battery_fully_charged_sound_ringtone_title">Notification sound</string>
+    <string name="battery_fully_charged_sound_ringtone_silent">Silent</string>
+    <!-- Screen off fod -->
+    <string name="fod_gesture_title">Screen off fingerprint</string>
+    <string name="fod_gesture_summary">Allows unlocking the device without having to wake up the screen first</string>
+    <!-- Settings dashboard icon style -->
+    <string name="theming_settings_dashboard_icons_title">Settings dashboard icons</string>
+    <string name="theming_settings_dashboard_icons_default">Default background / Transparent foreground</string>
+    <string name="theming_settings_dashboard_icons_white">Default background / White foreground</string>
+    <string name="theming_settings_dashboard_icons_accent">Accent background / Transparent foreground</string>
+    <string name="theming_settings_dashboard_icons_plain">Transparent background / Plain foreground</string>
+    <string name="theming_settings_dashboard_icons_plain_accent">Transparent background / Accent foreground</string>
+    <!-- Face Unlock -->
+    <string name="security_settings_face_settings_remove_dialog_details_custom">Data recorded by face unlock will be permanently and securely deleted. After removal, you will need your PIN, pattern, or password to unlock your phone.</string>
+    <string name="security_settings_face_unlock_redo_face_scan_summary">Remove existing face scan and create a new scan</string>
+    <string name="security_settings_face_unlock_redo_face_scan_title">Redo face scan</string>
+    <string name="security_dashboard_summary_face_and_fingerprint">Screen lock, fingerprint, face unlock</string>
+    <string name="face_redo_confirm_btn">Redo</string>
+    <string name="face_redo_warning_msg">Do you want to remove the existing face scan and create a new one?</string>
+    <!-- QS Header data usage -->
+    <string name="qs_datausage_title">Data usage</string>
+    <string name="qs_datausage_daily">Daily usage</string>
+    <string name="qs_datausage_monthly">Monthly usage</string>
+    <!-- Charging animation -->
+    <string name="charging_animation_title">Charging animation</string>
+    <string name="charging_animation_summary">Display an animation when the device is plugged in</string>
+    <!-- Lockscreen blur -->
+    <string name="lockscreen_blur_title">Background blur</string>
+    <string name="lockscreen_blur_summary">Blur lock screen background</string>
+    <!-- Checkbox label that restricts network internet access of a specific application. [CHAR LIMIT=40] -->
+    <string name="data_usage_app_restrict_background_all">Background network access</string>
+    <!-- Summary message for checkbox that restricts background network access of a specific application. [CHAR LIMIT=NONE] -->
+    <string name="data_usage_app_restrict_background_all_summary">Enable network usage in the background</string>
+    <!--  Volume Panel Plugin   -->
+    <string name="volume_panel">Volume Panel Style</string>
+    <string name="volume_panel_stock">Stock</string>
+    <string name="volume_panel_aosp">AOSP</string>
+    <string name="volume_panel_compact">Compact</string>
+    <string name="volume_panel_oreo">Oreo</string>
+    <string name="volume_panel_tiled">Tiled</string>
+    <!-- Battery health -->
+    <string name="current_battery_capacity">Current battery capacity</string>
+    <string name="designed_battery_capacity">Designed battery capacity</string>
+    <string name="battery_charge_cycles">Charge cycles completed</string>
+    <!-- Ambient Display Swipe Gesture -->
+    <string name="ambient_swipe_title">Ambient display swipe</string>
+    <string name="ambient_swipe_summary">Allow waking up device by swiping up or down on Ambient Display</string>
 </resources>
