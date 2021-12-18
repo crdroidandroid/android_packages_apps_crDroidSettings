@@ -60,6 +60,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String QUICK_PULLDOWN = "qs_quick_pulldown";
     private static final String SMART_PULLDOWN = "qs_smart_pulldown";
     private static final String KEY_VOLTE_ICON_STYLE = "volte_icon_style";
+    private static final String KEY_VOWIFI_ICON_STYLE = "vowifi_icon_style";
     private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
     private static final String KEY_SHOW_FOURG = "show_fourg_icon";
     private static final String KEY_SHOW_DATA_DISABLED = "data_disabled_icon";
@@ -82,6 +83,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private SystemSettingListPreference mBatteryStyle;
     private SystemSettingListPreference mSmartPulldown;
     private SystemSettingSeekBarPreference mVolteIconStyle;
+    private SystemSettingSeekBarPreference mVowifiIconStyle;
     private SwitchPreference mShowRoaming;
     private SwitchPreference mShowFourg;
     private SwitchPreference mDataDisabled;
@@ -115,12 +117,14 @@ public class StatusBar extends SettingsPreferenceFragment implements
         }
 
         mVolteIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOLTE_ICON_STYLE);
+        mVowifiIconStyle = (SystemSettingSeekBarPreference) findPreference(KEY_VOWIFI_ICON_STYLE);
         mShowRoaming = (SwitchPreference) findPreference(KEY_SHOW_ROAMING);
         mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
         mDataDisabled = (SwitchPreference) findPreference(KEY_SHOW_DATA_DISABLED);
 
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {
             prefScreen.removePreference(mVolteIconStyle);
+            prefScreen.removePreference(mVowifiIconStyle);
             prefScreen.removePreference(mShowRoaming);
             prefScreen.removePreference(mShowFourg);
             prefScreen.removePreference(mDataDisabled);
@@ -200,6 +204,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.VOLTE_ICON_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.VOWIFI_ICON_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.ROAMING_INDICATOR_ICON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
@@ -276,6 +282,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
                     if (!TelephonyUtils.isVoiceCapable(context)) {
                         keys.add(KEY_VOLTE_ICON_STYLE);
+                        keys.add(KEY_VOWIFI_ICON_STYLE);
                         keys.add(KEY_SHOW_ROAMING);
                         keys.add(KEY_SHOW_FOURG);
                         keys.add(KEY_SHOW_DATA_DISABLED);
