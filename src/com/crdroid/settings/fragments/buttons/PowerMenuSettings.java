@@ -68,6 +68,8 @@ public class PowerMenuSettings extends SettingsPreferenceFragment {
         Settings.System.putIntForUser(resolver,
                 Settings.System.POWERMENU_SCREENSHOT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.POWERMENU_ONTHEGO, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.POWERMENU_SETTINGS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.POWERMENU_TORCH, 0, UserHandle.USER_CURRENT);
