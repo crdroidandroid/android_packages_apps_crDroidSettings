@@ -53,6 +53,13 @@
             android:summary="@string/lockscreen_small_clock_summary"
             android:defaultValue="false" />
 
+        <Preference
+            android:key="udfps_settings"
+            android:icon="@drawable/ic_fp_selector"
+            android:title="@string/udfps_settings_title"
+            android:summary="@string/udfps_settings_summary"
+            android:fragment="com.crdroid.settings.fragments.lockscreen.UdfpsSettings" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
