@@ -40,6 +40,8 @@ import com.android.settingslib.search.SearchIndexable;
 
 import java.util.List;
 
+import lineageos.providers.LineageSettings;
+
 @SearchIndexable
 public class LockScreen extends SettingsPreferenceFragment
             implements Preference.OnPreferenceChangeListener  {
@@ -60,6 +62,8 @@ public class LockScreen extends SettingsPreferenceFragment
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
