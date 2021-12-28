@@ -25,4 +25,33 @@
         android:title="@string/navbar_visibility_title"
         android:summary="@string/navbar_visibility_summary" />
 
+    <PreferenceCategory
+        android:key="navbar_layout_category"
+        android:title="@string/navbar_layout_category_title">
+
+        <lineageos.preference.LineageSystemSettingSwitchPreference
+            android:key="navigation_bar_menu_arrow_keys"
+            android:icon="@drawable/ic_arrow_keys"
+            android:title="@string/navbar_arrow_keys_title"
+            android:summary="@string/navbar_arrow_keys_summary"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SecureSettingListPreference
+            android:key="navbar_layout_views"
+            android:icon="@drawable/ic_navbar_layout"
+            android:title="@string/navbar_layout_title"
+            android:summary="%s"
+            android:entries="@array/navbar_layout_entries"
+            android:entryValues="@array/navbar_layout_values"
+            android:defaultValue="default" />
+
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="navbar_inverse_layout"
+            android:icon="@drawable/ic_navbar_layout"
+            android:title="@string/navbar_invert_layout_title"
+            android:summary="@string/navbar_invert_layout_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
