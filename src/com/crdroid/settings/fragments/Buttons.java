@@ -57,6 +57,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String TAG = "Buttons";
 
     private static final String HWKEYS_DISABLED = "hardware_keys_disable";
+    private static final String KEY_SWAP_CAPACITIVE_KEYS = "swap_capacitive_keys";
     private static final String KEY_BACK_LONG_PRESS = "hardware_keys_back_long_press";
     private static final String KEY_BACK_WAKE_SCREEN = "back_wake_screen";
     private static final String KEY_CAMERA_LAUNCH = "camera_launch";
@@ -98,6 +99,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String CATEGORY_VOLUME = "volume_keys";
 
     private SwitchPreference mHardwareKeysDisable;
+    private SwitchPreference mSwapCapacitiveKeys;
     private ListPreference mHomeLongPressAction;
     private ListPreference mHomeDoubleTapAction;
     private ListPreference mBackLongPressAction;
@@ -161,6 +163,7 @@ public class Buttons extends SettingsPreferenceFragment implements
         final PreferenceCategory cameraCategory = prefScreen.findPreference(CATEGORY_CAMERA);
 
         mHardwareKeysDisable = (SwitchPreference) findPreference(HWKEYS_DISABLED);
+        mSwapCapacitiveKeys = findPreference(KEY_SWAP_CAPACITIVE_KEYS);
 
         // Power button ends calls.
         mPowerEndCall = findPreference(KEY_POWER_END_CALL);
@@ -197,6 +200,10 @@ public class Buttons extends SettingsPreferenceFragment implements
             mHardwareKeysDisable.setOnPreferenceChangeListener(this);
         } else {
             prefScreen.removePreference(mHardwareKeysDisable);
+        }
+
+        if (!isKeySwapperSupported(getActivity())) {
+            prefScreen.removePreference(mSwapCapacitiveKeys);
         }
 
         if (hasPowerKey) {
@@ -457,6 +464,11 @@ public class Buttons extends SettingsPreferenceFragment implements
         return hardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE);
     }
 
+    private static boolean isKeySwapperSupported(Context context) {
+        final LineageHardwareManager hardware = LineageHardwareManager.getInstance(context);
+        return hardware.isSupported(LineageHardwareManager.FEATURE_KEY_SWAP);
+    }
+
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mSwapVolumeButtons) {
@@ -510,6 +522,8 @@ public class Buttons extends SettingsPreferenceFragment implements
                 LineageSettings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.HARDWARE_KEYS_DISABLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SWAP_CAPACITIVE_KEYS, 0, UserHandle.USER_CURRENT);
         PowerMenuSettings.reset(mContext);
     }
 
@@ -532,6 +546,9 @@ public class Buttons extends SettingsPreferenceFragment implements
 
                     if (!isKeyDisablerSupported(context))
                         keys.add(HWKEYS_DISABLED);
+
+                    if (!isKeySwapperSupported(context))
+                        keys.add(KEY_SWAP_CAPACITIVE_KEYS);
 
                     if (!DeviceUtils.hasPowerKey()) {
                         keys.add(KEY_POWER_MENU);
