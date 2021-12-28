@@ -27,7 +27,8 @@
 
     <PreferenceCategory
         android:key="navbar_layout_category"
-        android:title="@string/navbar_layout_category_title">
+        android:title="@string/navbar_layout_category_title"
+        android:dependency="navbar_visibility">
 
         <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="navigation_bar_menu_arrow_keys"
@@ -56,7 +57,8 @@
 
     <PreferenceCategory
         android:key="navbar_actions_category"
-        android:title="@string/navbar_actions_category_title">
+        android:title="@string/navbar_actions_category_title"
+        android:dependency="navbar_visibility">
 
          <ListPreference
             android:key="navigation_back_long_press"
