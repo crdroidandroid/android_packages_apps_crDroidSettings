@@ -583,11 +583,21 @@ public class Buttons extends SettingsPreferenceFragment implements
 
                     LineageHardwareManager mLineageHardware = LineageHardwareManager.getInstance(context);
 
+                    final boolean hasHomeKey = DeviceUtils.hasHomeKey(context);
+                    final boolean hasBackKey = DeviceUtils.hasBackKey(context);
+                    final boolean hasMenuKey = DeviceUtils.hasMenuKey(context);
+                    final boolean hasAssistKey = DeviceUtils.hasAssistKey(context);
+                    final boolean hasAppSwitchKey = DeviceUtils.hasAppSwitchKey(context);
+
                     if (!isKeyDisablerSupported(context))
                         keys.add(HWKEYS_DISABLED);
 
                     if (!isKeySwapperSupported(context))
                         keys.add(KEY_SWAP_CAPACITIVE_KEYS);
+
+                    if (!hasHomeKey && !hasBackKey && !hasMenuKey && !hasAssistKey
+                            && !hasAppSwitchKey)
+                        keys.add(KEY_ANBI);
 
                     if (!DeviceUtils.hasPowerKey()) {
                         keys.add(KEY_POWER_MENU);
