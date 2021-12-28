@@ -56,6 +56,7 @@ public class Buttons extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "Buttons";
 
+    private static final String HWKEYS_DISABLED = "hardware_keys_disable";
     private static final String KEY_BACK_LONG_PRESS = "hardware_keys_back_long_press";
     private static final String KEY_BACK_WAKE_SCREEN = "back_wake_screen";
     private static final String KEY_CAMERA_LAUNCH = "camera_launch";
@@ -96,6 +97,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String CATEGORY_CAMERA = "camera_key";
     private static final String CATEGORY_VOLUME = "volume_keys";
 
+    private SwitchPreference mHardwareKeysDisable;
     private ListPreference mHomeLongPressAction;
     private ListPreference mHomeDoubleTapAction;
     private ListPreference mBackLongPressAction;
@@ -158,6 +160,8 @@ public class Buttons extends SettingsPreferenceFragment implements
         final PreferenceCategory volumeCategory = prefScreen.findPreference(CATEGORY_VOLUME);
         final PreferenceCategory cameraCategory = prefScreen.findPreference(CATEGORY_CAMERA);
 
+        mHardwareKeysDisable = (SwitchPreference) findPreference(HWKEYS_DISABLED);
+
         // Power button ends calls.
         mPowerEndCall = findPreference(KEY_POWER_END_CALL);
 
@@ -188,6 +192,12 @@ public class Buttons extends SettingsPreferenceFragment implements
         Action backLongPressAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION,
                 defaultBackLongPressAction);
+
+        if (isKeyDisablerSupported(getActivity())) {
+            mHardwareKeysDisable.setOnPreferenceChangeListener(this);
+        } else {
+            prefScreen.removePreference(mHardwareKeysDisable);
+        }
 
         if (hasPowerKey) {
             if (!TelephonyUtils.isVoiceCapable(getActivity())) {
@@ -395,7 +405,10 @@ public class Buttons extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mHomeLongPressAction) {
+        if (preference == mHardwareKeysDisable) {
+            // do nothing for now
+            return true;
+        } else if (preference == mHomeLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION);
             return true;
@@ -437,6 +450,11 @@ public class Buttons extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    private static boolean isKeyDisablerSupported(Context context) {
+        final LineageHardwareManager hardware = LineageHardwareManager.getInstance(context);
+        return hardware.isSupported(LineageHardwareManager.FEATURE_KEY_DISABLE);
     }
 
     @Override
@@ -490,6 +508,8 @@ public class Buttons extends SettingsPreferenceFragment implements
                 LineageSettings.System.TORCH_LONG_PRESS_POWER_GESTURE, 0, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.HARDWARE_KEYS_DISABLE, 0, UserHandle.USER_CURRENT);
         PowerMenuSettings.reset(mContext);
     }
 
@@ -509,6 +529,9 @@ public class Buttons extends SettingsPreferenceFragment implements
                     List<String> keys = super.getNonIndexableKeys(context);
 
                     LineageHardwareManager mLineageHardware = LineageHardwareManager.getInstance(context);
+
+                    if (!isKeyDisablerSupported(context))
+                        keys.add(HWKEYS_DISABLED);
 
                     if (!DeviceUtils.hasPowerKey()) {
                         keys.add(KEY_POWER_MENU);

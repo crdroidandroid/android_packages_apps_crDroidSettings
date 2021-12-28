@@ -20,6 +20,12 @@
     android:key="button_settings"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="hardware_keys_disable"
+        android:icon="@drawable/ic_buttons"
+        android:title="@string/hwkeys_disabled_title"
+        android:summary="@string/hwkeys_disabled_summary" />
+
     <lineageos.preference.RemotePreference
         android:key="additional_buttons"
         android:icon="@drawable/ic_extra_buttons"
