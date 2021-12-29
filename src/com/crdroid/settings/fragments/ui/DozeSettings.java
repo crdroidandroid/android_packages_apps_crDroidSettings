@@ -44,6 +44,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.ui.doze.Utils;
+import com.crdroid.settings.preferences.SecureSettingSeekBarPreference;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -69,6 +70,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mPickUpPreference;
     private SwitchPreference mHandwavePreference;
     private SwitchPreference mPocketPreference;
+    private SecureSettingSeekBarPreference mDozeVibratePreference;
 
     private SharedPreferences mPreferences;
 
@@ -88,9 +90,11 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         mPickUpPreference = (SwitchPreference) findPreference(KEY_DOZE_PICK_UP_GESTURE);
         mHandwavePreference = (SwitchPreference) findPreference(KEY_DOZE_HANDWAVE_GESTURE);
         mPocketPreference = (SwitchPreference) findPreference(KEY_DOZE_POCKET_GESTURE);
+        mDozeVibratePreference = (SecureSettingSeekBarPreference) findPreference(KEY_DOZE_GESTURE_VIBRATE);
 
         // Hide sensor related features if the device doesn't support them
-        if (!Utils.getTiltSensor(context) && !Utils.getPickupSensor(context) && !Utils.getProximitySensor(context)) {
+        if (!Utils.getTiltSensor(context) && !Utils.getPickupSensor(context)
+                && !Utils.getProximitySensor(context)) {
             getPreferenceScreen().removePreference(dozeSensorCategory);
         } else {
             if (!Utils.getTiltSensor(context)) {
@@ -110,12 +114,14 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 mHandwavePreference.setOnPreferenceChangeListener(this);
                 mPocketPreference.setOnPreferenceChangeListener(this);
             }
+            checkService(context);
         }
 
         // Hides always on toggle if device doesn't support it (based on config_dozeAlwaysOnDisplayAvailable overlay)
-        boolean mAlwaysOnAvailable = getResources().getBoolean(com.android.internal.R.bool.config_dozeAlwaysOnDisplayAvailable);
-        if (!mAlwaysOnAvailable) {
+        if (!Utils.isDozeAlwaysOnAvailable(context)) {
             getPreferenceScreen().removePreference(mDozeAlwaysOnPreference);
+        } else {
+            mDozeAlwaysOnPreference.setOnPreferenceChangeListener(this);
         }
     }
 
@@ -124,45 +130,59 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         Context context = getContext();
         ContentResolver resolver = context.getContentResolver();
 
-        if (preference == mTiltPreference) {
+        if (preference == mDozeAlwaysOnPreference) {
+            boolean value = (Boolean) newValue;
+            Settings.Secure.putIntForUser(resolver, Settings.Secure.DOZE_ALWAYS_ON, 
+                 value ? 1 : 0, UserHandle.USER_CURRENT);
+            checkService(context);
+            return true;
+        } else if (preference == mTiltPreference) {
             boolean value = (Boolean) newValue;
             Settings.Secure.putIntForUser(resolver, Settings.Secure.DOZE_TILT_GESTURE, 
                  value ? 1 : 0, UserHandle.USER_CURRENT);
-            Utils.enableService(context);
-            if (newValue != null)
-                sensorWarning(context);
+            checkService(context);
             return true;
         } else if (preference == mPickUpPreference) {
             boolean value = (Boolean) newValue;
             Settings.Secure.putIntForUser(resolver, Settings.Secure.DOZE_PICK_UP_GESTURE, 
                  value ? 1 : 0, UserHandle.USER_CURRENT);
-            Utils.enableService(context);
-            if (newValue != null)
-                sensorWarning(context);
+            checkService(context);
             return true;
         } else if (preference == mHandwavePreference) {
             boolean value = (Boolean) newValue;
             Settings.Secure.putIntForUser(resolver, Settings.Secure.DOZE_HANDWAVE_GESTURE, 
                  value ? 1 : 0, UserHandle.USER_CURRENT);
-            Utils.enableService(context);
-            if (newValue != null)
-                sensorWarning(context);
+            checkService(context);
             return true;
         } else if (preference == mPocketPreference) {
             boolean value = (Boolean) newValue;
             Settings.Secure.putIntForUser(resolver, Settings.Secure.DOZE_POCKET_GESTURE, 
                  value ? 1 : 0, UserHandle.USER_CURRENT);
-            Utils.enableService(context);
-            if (newValue != null)
-                sensorWarning(context);
+            checkService(context);
             return true;
         }
         return false;
     }
 
-    @Override
-    public boolean onPreferenceTreeClick(Preference preference) {
-        return super.onPreferenceTreeClick(preference);
+    private void checkService(Context context) {
+        boolean serviceEnabled = Utils.enableService(context);
+        boolean alwaysOnEnabled = Utils.isDozeAlwaysOnEnabled(context);
+        mDozeVibratePreference.setEnabled(serviceEnabled);
+        if (mTiltPreference != null) {
+            mTiltPreference.setEnabled(!alwaysOnEnabled);
+        }
+        if (mPickUpPreference != null) {
+            mPickUpPreference.setEnabled(!alwaysOnEnabled);
+        }
+        if (mHandwavePreference != null) {
+            mHandwavePreference.setEnabled(!alwaysOnEnabled);
+        }
+        if (mPocketPreference != null) {
+            mPocketPreference.setEnabled(!alwaysOnEnabled);
+        }
+        if (serviceEnabled) {
+            sensorWarning(context);
+        }
     }
 
     private void sensorWarning(Context context) {
@@ -231,9 +251,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
 
-                    boolean mAlwaysOnAvailable = 
-                        context.getResources().getBoolean(com.android.internal.R.bool.config_dozeAlwaysOnDisplayAvailable);
-                    if (!mAlwaysOnAvailable) {
+                    if (!Utils.isDozeAlwaysOnAvailable(context)) {
                         keys.add(KEY_DOZE_ALWAYS_ON);
                     }
 

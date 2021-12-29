@@ -79,6 +79,11 @@ public final class Utils {
                 UserHandle.USER_CURRENT) != 0;
     }
 
+    public static boolean isDozeAlwaysOnAvailable(Context context) {
+        return context.getResources().getBoolean(
+                com.android.internal.R.bool.config_dozeAlwaysOnDisplayAvailable);
+    }
+
     public static boolean isDozeAlwaysOnEnabled(Context context) {
         return Settings.Secure.getIntForUser(context.getContentResolver(),
                 Settings.Secure.DOZE_ALWAYS_ON, context.getResources().getBoolean(
@@ -86,13 +91,18 @@ public final class Utils {
                 UserHandle.USER_CURRENT) != 0;
     }
 
-    public static void enableService(Context context) {
-        if (!getTiltSensor(context) && !getPickupSensor(context) && !getProximitySensor(context)) return;
-        if (sensorsEnabled(context) && !mServiceEnabled) {
+    public static boolean enableService(Context context) {
+        if (!getTiltSensor(context) && !getPickupSensor(context) && !getProximitySensor(context))
+            return false;
+        boolean alwaysOnEnabled = isDozeAlwaysOnEnabled(context);
+        if (sensorsEnabled(context) && !alwaysOnEnabled && !mServiceEnabled) {
             startService(context);
-        } else if (!sensorsEnabled(context) && mServiceEnabled) {
+            return true;
+        } else if ((!sensorsEnabled(context) || alwaysOnEnabled) && mServiceEnabled) {
             stopService(context);
+            return false;
         }
+        return mServiceEnabled;
     }
 
     public static void launchDozePulse(Context context) {
