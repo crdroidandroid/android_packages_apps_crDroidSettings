@@ -186,6 +186,9 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         mRaiseToWakePreference.setEnabled(serviceEnabled);
         mDozeVibratePreference.setEnabled(serviceEnabled &&
                 !raiseToWakeEnabled);
+        if (mDozeOnChargePreference != null) {
+            mDozeOnChargePreference.setEnabled(!alwaysOnEnabled);
+        }
         if (mTiltPreference != null) {
             mTiltPreference.setEnabled(!alwaysOnEnabled);
         }
