@@ -786,11 +786,9 @@
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Ikona batérie</string>
     <string name="status_bar_battery_style_icon_portrait">Ikona na výšku</string>
-    <string name="status_bar_battery_style_icon_landscape">Ikona na šírku</string>
     <string name="status_bar_battery_style_circle">Kruh</string>
     <string name="status_bar_battery_style_dotted_circle">Bodkovaný kruh</string>
-    <string name="status_bar_battery_style_square">Štvorec</string>
-    <string name="status_bar_battery_style_solid">Plný kruh</string>
+    <string name="status_bar_battery_style_filled_circle">Filled circle</string>
     <string name="status_bar_battery_style_text">Text</string>
     <string name="status_bar_battery_style_hidden">Skrytá</string>
     <string name="status_bar_battery_style_tile_title">Vlastný štýl dlaždice batérie</string>
@@ -1017,6 +1015,8 @@
     <string name="doze_display_title">Ambientne zobrazenie</string>
     <string name="doze_display_summary">Nastavenia pre Ambientne zobrazenie</string>
     <string name="doze_sensor_title">Na základe senzorov</string>
+    <string name="raise_to_wake_title">Wake up</string>
+    <string name="raise_to_wake_summary">Wake up the device instead of pulsing notifications</string>
     <string name="tilt_title">Naklonenie</string>
     <string name="tilt_summary">Zobraziť upozornenie pri naklonení zariadenia</string>
     <string name="pickup_title">Zdvihnutie</string>
@@ -1036,7 +1036,7 @@
     <!-- Share crDroid -->
     <string name="share_crdroid_title">Zdieľať crDroid</string>
     <string name="share_crdroid_summary">Dajte ostatným vedieť o crDroid</string>
-    <string name="share_message">Check out what #crDroid Android is all about @ https://crdroid.net/</string>
+    <string name="share_message">Zistite o #crDroid viac na @ https://crdroid.net/</string>
     <string name="share_chooser_title">Zdieľať crDroid</string>
     <!-- Sites crDroid -->
     <string name="crdroid_source_title">GitHub</string>
@@ -2038,7 +2038,7 @@
     <string name="full_gesture_mode_dt2s_summary">Dotknite sa prázdneho miesta na navigačnom paneli, nie však tlačidla Domov, na vypnutie obrazovky.</string>
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Footer alerts</string>
-    <string name="qs_footer_warnings_summary">Display an alert at bottom of QS panel when network is monitored by external apps or VPN</string>
+    <string name="qs_footer_warnings_summary">Zobraziť upozornenie v spodnej časti panelu rýchleho nastavenia, keď je sieť monitorovaná externými aplikáciami alebo sieťou VPN</string>
     <!-- QS footer icons -->
     <string name="qs_footer_users_icon_title">Ikona používateľského konta</string>
     <string name="qs_footer_users_icon_summary">Zobraziť ikonu viacerých užívateľov, ak je k dispozícii</string>
@@ -2092,8 +2092,8 @@
     <string name="display_cutout_style_hide">Skrytý</string>
     <string name="stock_statusbar_in_hide">Predvolená výška stavového riadku</string>
     <string name="stock_statusbar_in_hide_summary">Použiť predvolenú výšku stavového riadku v skrytom režime</string>
-    <string name="display_kill_notch_title">Zabiť zárez</string>
-    <string name="display_kill_notch_summary">Úplne zabite zárez pre aplikácie na celú obrazovku</string>
+    <string name="display_kill_notch_title">Odstrániť výrez</string>
+    <string name="display_kill_notch_summary">Úplne odstrániť výrez pre aplikácie na celú obrazovku</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Aplikácie na celú obrazovku</string>
     <string name="display_cutout_force_fullscreen_summary">Prinútiť aplikácie ignorovať výrez v displeji</string>
@@ -2166,11 +2166,6 @@
     <string name="aggressive_standby_summary">Obmedzí aplikáciám činnosť na pozadí</string>
     <string name="aggressive_battery_saver_title">Automatické zapnutie pri spustení šetriča batérie</string>
     <string name="aggressive_battery_saver_summary">Pri používaní šetriča batérie automaticky aktivovať funkciu \"Agresívna batéria\"</string>
-    <!-- Battery percent -->
-    <string name="battery_percentage_title">Percentá batérie</string>
-    <string name="battery_percentage_off">Zakázané</string>
-    <string name="battery_percentage_next">Povolené</string>
-    <string name="battery_percentage_inside">Povolené (vnútri ikony)</string>
     <!-- Battery estimate -->
     <string name="battery_estimate_title">Odhad výdrže batérie</string>
     <string name="battery_estimate_summary">Zobrazenie odhadovanej výdrže batérie, ak je k kdispozícii</string>
@@ -2178,7 +2173,7 @@
     <string name="default_refresh_rate_title">Predvolená obnovovacia frekvencia</string>
     <string name="peak_refresh_rate_title_custom">Špičková obnovovacia frekvencia</string>
     <string name="battery_saver_refresh_rate_title">Znížte obnovovaciu frekvenciu</string>
-    <string name="battery_saver_refresh_rate_summary">Use 60Hz as max refresh rate to save power in Battery Saver mode</string>
+    <string name="battery_saver_refresh_rate_summary">Použiť maximálnu obnovovaciu frekvenciu 60Hz, keď je zapnutý šetrič batérie</string>
     <!-- Ambient edge lighting -->
     <string name="pulse_ambient_light_title">Nasvietenie okrajov</string>
     <string name="pulse_ambient_light_summary">Rozsvietiť bočné okraje obrazovky po prijatí oznámenia</string>
@@ -2375,14 +2370,14 @@
     <string name="applock_unlocked">Odomknuté</string>
     <string name="applock_locked_apps">Zamknuté aplikácie</string>
     <string name="applock_unlocked_apps">Odomknuté aplikácie</string>
-    <string name="applock_lock_after_title">Lock app after</string>
-    <string name="applock_lock_after_instantly">Instantly</string>
-    <string name="applock_lock_after_15_seconds">15 seconds</string>
-    <string name="applock_lock_after_screen_off">Screen off</string>
-    <string name="applock_lock_after_summary">App will be locked after selected timeout</string>
-    <string name="applock_lock_after_instantly_summary">App will be locked instantly when closed</string>
-    <string name="applock_lock_after_15_seconds_summary">App will be locked 15 seconds after closing</string>
-    <string name="applock_lock_after_screen_off_summary">App will be locked when screen is turned off</string>
+    <string name="applock_lock_after_title">Uzamknúť aplikáciu po</string>
+    <string name="applock_lock_after_instantly">Okamžite</string>
+    <string name="applock_lock_after_15_seconds">15 sekúnd</string>
+    <string name="applock_lock_after_screen_off">Vypnúť obrazovku</string>
+    <string name="applock_lock_after_summary">Aplikácia sa po zvolenom časovom limite uzamkne</string>
+    <string name="applock_lock_after_instantly_summary">Aplikácia sa po zatvorení okamžite uzamkne</string>
+    <string name="applock_lock_after_15_seconds_summary">Aplikácia bude uzamknutá 15 sekúnd po zatvorení</string>
+    <string name="applock_lock_after_screen_off_summary">Aplikácia bude uzamknutá, keď sa obrazovka vypne</string>
     <string name="applock_notification_info">Obsah upozornenia môžete zobraziť alebo skryť pre jednotlivé aplikácie kliknutím na ikonu upozornenia zobrazenú v predvoľbách jednotlivých uzamknutých aplikácií</string>
     <string name="applock_show_notif">Zobraziť obsah upozornenia</string>
     <string name="applock_hide_notif">Skryť obsah upozornenia</string>
@@ -2467,10 +2462,10 @@
     <string name="volume_panel_oreo">Oreo</string>
     <string name="volume_panel_tiled">Dlaždicový</string>
     <!-- Battery health -->
-    <string name="current_battery_capacity">Current battery capacity</string>
-    <string name="designed_battery_capacity">Designed battery capacity</string>
-    <string name="battery_charge_cycles">Charge cycles completed</string>
+    <string name="current_battery_capacity">Aktuálna kapacita batérie</string>
+    <string name="designed_battery_capacity">Výrobná kapacita batérie</string>
+    <string name="battery_charge_cycles">Dokončených nabíjacích cyklov</string>
     <!-- Ambient Display Swipe Gesture -->
-    <string name="ambient_swipe_title">Ambient display swipe</string>
-    <string name="ambient_swipe_summary">Allow waking up device by swiping up or down on Ambient Display</string>
+    <string name="ambient_swipe_title">Potiahnutie prstom na ambientnom displeji</string>
+    <string name="ambient_swipe_summary">Povoľte prebudenie zariadenia potiahnutím prstom nahor alebo nadol po ambientnom displeji</string>
 </resources>
