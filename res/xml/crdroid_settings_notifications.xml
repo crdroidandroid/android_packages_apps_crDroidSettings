@@ -165,7 +165,7 @@
         android:title="@string/light_brightness_category">
 
         <!-- Battery light -->
-        <PreferenceScreen
+        <Preference
             android:key="battery_lights"
             android:icon="@drawable/ic_led_on"
             android:title="@string/battery_light_title"
@@ -173,7 +173,7 @@
             android:fragment="com.crdroid.settings.fragments.notifications.notificationlight.BatteryLightSettings" />
 
         <!-- Notification lights -->
-        <PreferenceScreen
+        <Preference
             android:key="notification_lights"
             android:icon="@drawable/ic_led_on"
             android:title="@string/notification_light_title"

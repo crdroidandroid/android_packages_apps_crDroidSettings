@@ -66,7 +66,7 @@ public class Notifications extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.crdroid_settings_notifications);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
-        final Resources res = getResources();
+        final Resources res = mContext.getResources();
 
         mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
         boolean mAlertSliderAvailable = res.getBoolean(
