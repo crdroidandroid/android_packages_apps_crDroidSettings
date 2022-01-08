@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2021 crDroid Android Project
+ * Copyright (C) 2016-2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.power_menu_settings);
+        addPreferencesFromResource(R.xml.power_menu);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
