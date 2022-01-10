@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2021 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- App Title -->
+    <string name="crdroid_settings_title">Nastavení crDroid</string>
+    <string name="crdroid_settings_summary">Odhalte jeho možnosti</string>
+    <string name="reset_settings_title">Obnovit nastavení</string>
+    <string name="reset_settings_message">Tímto obnovíte většinu nastavení crDroidu pro aktuálního uživatele na výchozí hodnoty. Přejete si pokračovat?</string>
+    <!-- Personalization Categories -->
+    <string name="button_title">Tlačítka</string>
+    <string name="lockscreen_title">Obrazovka uzamčení</string>
+    <string name="misc_title">Různé</string>
+    <string name="navigation_title">Navigace</string>
+    <string name="notifications_title">Oznámení</string>
+    <string name="quicksettings_title">Rychlá nastavení</string>
+    <string name="sound_title">Zvuk</string>
+    <string name="statusbar_title">Stavový řádek</string>
+    <string name="display_title">Zobrazení</string>
+    <string name="ui_title">Uživatelské rozhraní</string>
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Výběr barvy</string>
+    <string name="press_color_to_apply">Klepněte na barvu, kterou chcete použít</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Nastavit</string>
+    <string name="color_default">Výchozí</string>
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">Resetovat</string>
+    <string name="cancel">Zrušit</string>
+    <string name="save">Uložit</string>
+    <string name="discard_changes">Zrušit změny</string>
+    <string name="never">Nikdy</string>
+    <string name="always">Vždy</string>
+    <string name="caution">Upozornění</string>
+    <!-- Changelog -->
+    <string name="changelog_crdroid_title">Aktuální seznam změn</string>
+    <string name="changelog_crdroid_summary">Zobrazit změny v\u00a0nainstalované ROM</string>
+    <string name="changelog_crdroid_error">Nelze načíst seznam změn</string>
+    <!-- About crDroid -->
+    <string name="about_crdroid">O crDroidu</string>
+    <string name="about_device_name">Zařízení</string>
+    <!-- Share crDroid -->
+    <string name="share_crdroid_title">Sdílet crDroid</string>
+    <string name="share_crdroid_summary">Dejte vědět ostatním o\u00a0crDroidu</string>
+    <string name="share_message">Podívejte se, jestli je k dispozici #crDroidAndroid pro vaše zařízení @ https://crdroid.net/</string>
+    <string name="share_chooser_title">Sdílet crDroid</string>
+    <!-- Sites crDroid -->
+    <string name="crdroid_source_title">GitHub</string>
+    <string name="crdroid_source_summary">Máme rádi open source. Podívejte se, co děláme</string>
+    <string name="crdroid_telegram_title">Komunita crDroidu</string>
+    <string name="crdroid_telegram_summary">Jsme na Telegramu. Přidejte se k\u00a0nám!</string>
+    <string name="crdroid_telegram_channel_title">Kanál aktualizací</string>
+    <string name="crdroid_telegram_channel_summary">Dostávejte na Telegramu oznámení o\u00a0nových sestaveních</string>
+    <string name="crdroid_website_title">Oficiální web</string>
+    <string name="crdroid_website_summary">Navštivte naše oficiální webové stránky</string>
+    <string name="crdroid_translate_title">Překlady</string>
+    <string name="crdroid_translate_summary">Pomozte nám s\u00a0lokalizací ROM do vašeho jazyka!</string>
+    <string name="crdroid_sponsor_summary">Navštivte hostitele našeho webu</string>
+    <!-- Donate crDroid -->
+    <string name="donate_crdroid_title">Podpořte nás</string>
+    <string name="donate_crdroid_summary">Přispějte a\u00a0podpořte tak další vývoj</string>
+    <string name="donate_team_title">Tým crDroidu</string>
+    <string name="donate_team_summary">Přispějte na podporu hostingového serveru, provoz a\u00a0celkovou správu webu</string>
+    <!-- The Drill -->
+    <string name="drill_title">Výcvik</string>
+    <string name="drill_summary">Našli jste chybu? Narazili jste na problém?</string>
+    <!-- OTA -->
+    <string name="crdroid_update_title">Aktualizace</string>
+    <string name="crdroid_update_summary">Zkontrolovat aktualizaci OTA a\u00a0odkazy pro zařízení</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Obchod Play</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Hodnota: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">výchozí hodnota</string>
+    <string name="custom_seekbar_default_value_to_set">Výchozí hodnota: <xliff:g id="v">%s</xliff:g>\nDlouze klepněte na šipku pro její nastavení</string>
+    <string name="custom_seekbar_default_value_is_set">Výchozí hodnota je nastavena</string>
+    <!-- Units -->
+    <string name="unit_seconds">s</string>
+    <string name="unit_milliseconds">ms</string>
+    <string name="unit_pixels">dp</string>
+    <!-- Hardware info -->
+    <string name="platform_revision">Platforma</string>
+    <string name="total_ram">Celkem RAM</string>
+    <!-- Notification log -->
+    <string name="notification_log_summary">Zobrazit protokol historie oznámení</string>
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">Méně než 1 minuta</string>
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">Dnes %1$s</string>
+    <!-- Statusbar categories -->
+    <string name="status_bar_icons_category_title">Ikony</string>
+    <string name="status_bar_battery_category_title">Vlastní nastavení baterie</string>
+    <!-- Gestures -->
+    <string name="gestures_title">Gesta</string>
+    <!-- VoLTE icon -->
+    <string name="volte_icon_title">Ikona VoLTE</string>
+    <string name="volte_icon_summary">Zobrazit ikonu VoLTE, je‑li k\u00a0dispozici</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">Ikona VoWiFi</string>
+    <string name="vowifi_icon_summary">Zobrazit ikonu VoWiFi, je‑li k\u00a0dispozici</string>
+    <string name="volte_vowifi_override_title">Upřednostnit VoWiFi</string>
+    <string name="volte_vowifi_override_summary">Skrýt VoLTE, když je k dispozici VoWiFi</string>
+    <!-- Roaming indicator icon -->
+    <string name="roaming_indicator_icon_title">Indikátor roamingu</string>
+    <string name="roaming_indicator_icon_summary">V režimu roamingu zobrazit v\u00a0ikoně signálu indikátor\u00a0„R“</string>
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">Ikona 4G</string>
+    <string name="show_fourg_icon_summary">Zobrazit v\u00a0ikoně signálu popisek 4G\u00a0namísto LTE</string>
+    <!-- Data disabled indicator -->
+    <string name="data_disabled_icon_title">Indikátor vypnutých mobilních dat</string>
+    <string name="data_disabled_icon_summary">Zobrazit indikátor vedle ikony signálu sítě, když jsou mobilní data vypnuta</string>
+    <!-- Lockscreen categories -->
+    <string name="lockscreen_interface_category">Rozhraní</string>
+    <!-- Lockscreen battery info indicator -->
+    <string name="lockscreen_battery_info_title">Informace o\u00a0baterii</string>
+    <string name="lockscreen_battery_info_summary">V průběhu nabíjení zobrazit na obrazovce uzamčení maximální nabíjecí proud, napětí a\u00a0teplotu baterie</string>
+    <!-- Button settings -->
+    <string name="additional_buttons_title">Další tlačítka</string>
+    <string name="hardware_keys_power_key_title">Tlačítko „Napájení“</string>
+    <string name="hardware_keys_home_key_title">Tlačítko „Domů“</string>
+    <string name="hardware_keys_back_key_title">Tlačítko „Zpět“</string>
+    <string name="hardware_keys_menu_key_title">Tlačítko „Menu“</string>
+    <string name="hardware_keys_assist_key_title">Tlačítko „Vyhledávání“</string>
+    <string name="hardware_keys_appswitch_key_title">Tlačítko „Nedávné aplikace“</string>
+    <string name="hardware_keys_camera_key_title">Tlačítko fotoaparátu</string>
+    <string name="hardware_keys_volume_keys_title">Tlačítka hlasitosti</string>
+    <string name="hardware_keys_short_press_title">Akce po krátkém stisku</string>
+    <string name="hardware_keys_long_press_title">Akce po dlouhém stisku</string>
+    <string name="hardware_keys_double_tap_title">Akce dvojího poklepání</string>
+    <string name="hardware_keys_action_nothing">Žádná akce</string>
+    <string name="hardware_keys_action_menu">Otevřít/zavřít menu</string>
+    <string name="hardware_keys_action_app_switch">Nedávné aplikace</string>
+    <string name="hardware_keys_action_search">Vyhledávací asistent</string>
+    <string name="hardware_keys_action_voice_search">Hlasové vyhledávání</string>
+    <string name="hardware_keys_action_in_app_search">Vyhledávání v\u00a0aplikaci</string>
+    <string name="hardware_keys_action_launch_camera">Spustit fotoaparát</string>
+    <string name="hardware_keys_action_sleep">Vypnout obrazovku</string>
+    <string name="hardware_keys_action_last_app">Poslední aplikace</string>
+    <string name="hardware_keys_action_split_screen">Rozdělená obrazovka</string>
+    <string name="hardware_keys_action_close_app">Ukončit aplikaci</string>
+    <string name="hardware_keys_action_torch">Přepínat svítilnu</string>
+    <string name="hardware_keys_action_screenshot">Pořídit snímek obrazovky</string>
+    <string name="hardware_keys_action_volume_panel">Zobrazit Panel hlasitosti</string>
+    <string name="hardware_keys_action_clear_all_notifications">Vymazat všechna oznámení</string>
+    <string name="hardware_keys_action_notifications_panel">Zobrazit panel oznámení</string>
+    <string name="hardware_keys_action_expand_qs_panel">Rozbalit panel QS</string>
+    <string name="hardware_keys_action_ringer_modes">Změnit režim vyzvánění</string>
+    <string name="home_answer_call_title">Přijmout hovor</string>
+    <string name="home_answer_call_summary">Přijmout příchozí hovory stiskem tlačítka „Domů“</string>
+    <string name="camera_sleep_on_release_title">Náhled obrazovky</string>
+    <string name="camera_sleep_on_release_summary">Obrazovka bude rozsvícena pouze po dobu, po kterou je tlačítko stisknuté</string>
+    <string name="camera_launch_title">Spustit fotoaparát</string>
+    <string name="camera_launch_summary">Dlouhým stiskem a\u00a0uvolněním tlačítka se spustí fotoaparát</string>
+    <string name="torch_long_press_power_gesture_title">Dlouhým stiskem zapnout svítilnu</string>
+    <string name="torch_long_press_power_gesture_desc">Zapnout svítilnu dlouhým stiskem tlačítka „Napájení,“ když je vypnutá obrazovka</string>
+    <string name="torch_long_press_power_timeout_title">Automaticky vypnout svítilnu</string>
+    <string name="volbtn_music_controls_title">Ovládání přehrávání</string>
+    <string name="volbtn_music_controls_summary">Při vypnuté obrazovce přepínat hudební stopy dlouhým stiskem jednoho z\u00a0tlačítek hlasitosti</string>
+    <string name="volbtn_cursor_control_title">Ovládání kurzoru klávesnice</string>
+    <string name="volbtn_cursor_control_off">Vypnuto</string>
+    <string name="volbtn_cursor_control_on">Tlačítko zvýšení/snížení hlasitosti posune kurzor vlevo/vpravo</string>
+    <string name="volbtn_cursor_control_on_reverse">Tlačítko zvýšení/snížení hlasitosti posune kurzor vpravo/vlevo</string>
+    <string name="power_end_call_title">Ukončit hovor</string>
+    <string name="power_end_call_summary">Ukončit aktuální hovor stiskem tlačítka „Napájení“</string>
+    <string name="swap_volume_buttons_title">Přeorientovat</string>
+    <string name="swap_volume_buttons_summary">Po otočení obrazovky také převrátit smysl ovládání tlačítek hlasitosti</string>
+    <string name="button_wake_title">Probudit zařízení</string>
+    <string name="button_wake_summary">Probudit zařízení stiskem tlačítka hlasitosti</string>
+    <string name="volume_answer_call_title">Přijmout hovor</string>
+    <string name="volume_answer_call_summary">Přijmout příchozí hovory stiskem jednoho z\u00a0tlačítek hlasitosti</string>
+    <!-- Power menu -->
+    <string name="power_menu_title">Menu napájení</string>
+    <string name="power_menu_summary">Přizpůsobit možnosti Menu napájení</string>
+    <string name="power_menu_screenshot_title">Snímek obrazovky</string>
+    <string name="power_menu_onthego_title">Režim On‑The‑Go</string>
+    <string name="power_menu_advanced_title">Rozšířené možnosti restartování</string>
+    <string name="power_menu_airplane_title">Letadlo</string>
+    <string name="power_menu_torch_title">Svítilna</string>
+    <string name="power_menu_settings_title">Nastavení</string>
+    <string name="power_menu_lockdown_title">Uzamknout</string>
+    <string name="power_menu_soundpanel_title">Panel hlasitosti</string>
+    <string name="power_menu_users_title">Uživatelé</string>
+    <string name="power_menu_logout_title">Odhlásit</string>
+    <string name="power_menu_emergency_title">Stav nouze</string>
+    <!-- UI settings -->
+    <string name="monet_title">Monet settings</string>
+    <string name="monet_summary">Customize Monet theme engine</string>
+    <!-- Monet Engine -->
+    <string name="monet_engine_custom_color_title">Použít vlastní barvu</string>
+    <string name="monet_engine_custom_color_summary">Use custom color for monet engine instead of wallpaper colors</string>
+    <string name="monet_engine_color_override_title">Vlastní barva</string>
+    <string name="monet_engine_white_luminance_user_title">White luminance</string>
+    <string name="monet_engine_accurate_shades_title">Use accurate shades</string>
+    <string name="monet_engine_chroma_factor_title">Chroma factor</string>
+    <string name="monet_engine_linear_lightness_title">Use linear lightness</string>
+    <!-- Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">Rychlé odemknutí</string>
+    <string name="unlock_quick_unlock_control_summary">Automatické odemknutí, pokud je zadán správný PIN/heslo</string>
+    <!-- Doze settings -->
+    <string name="doze_display_title">Ambientní displej</string>
+    <string name="doze_display_summary">Konfigurovat nastavení Ambientního displeje</string>
+    <string name="doze_additional_settings_title">Další nastavení</string>
+    <string name="doze_additional_settings_summary">Přizpůsobit nastavení Ambientního displeje zařízení</string>
+    <string name="doze_sensor_title">Na základě senzorů</string>
+    <string name="raise_to_wake_title">Probudit</string>
+    <string name="raise_to_wake_summary">Probudit zařízení namísto přijetí oznámení</string>
+    <string name="tilt_title">Naklonění</string>
+    <string name="tilt_summary">Zobrazit oznámení při naklonění zařízení</string>
+    <string name="pickup_title">Zvednutí</string>
+    <string name="pickup_summary">Zobrazit oznámení při zvednutí zařízení</string>
+    <string name="handwave_title">Mávnutí rukou</string>
+    <string name="handwave_summary">Zobrazit oznámení při mávnutí rukou</string>
+    <string name="pocket_title">Kapsa</string>
+    <string name="pocket_summary">Zobrazit oznámení po vyjmutí zařízení z\u00a0kapsy</string>
+    <string name="doze_vibrate">Vibrace</string>
+    <string name="doze_vibrate_summary">Doba trvání vibrací při přijetí oznámení</string>
+    <string name="sensor_warning_message">Nastavení závislá na senzorech podléhají hardwarové kompatibilitě. Povolení senzorů pro Ambientní displej může zvýšit spotřebu baterie.</string>
+    <!-- Ambient edge lighting -->
+    <string name="pulse_ambient_light_title">Nasvícení okrajů</string>
+    <string name="pulse_ambient_light_summary">Rozsvítit boční okraje obrazovky po přijetí oznámení</string>
+    <string name="pulse_ambient_light_color_title">Barva nasvícení okrajů</string>
+    <string name="pulse_ambient_light_duration_title">Doba trvání nasvícení okrajů</string>
+    <string name="pulse_ambient_light_duration_summary">Nastavit dobu trvání animace okolního světla</string>
+    <string name="pulse_ambient_light_layout_title">Vzhled nasvícení okrajů</string>
+    <string name="pulse_ambient_light_layout_solid">Plné</string>
+    <string name="pulse_ambient_light_layout_faded">Tlumené</string>
+    <!-- Ambient Ticker -->
+    <string name="pulse_on_new_tracks_title">Hudební text oznámení</string>
+    <string name="pulse_on_new_tracks_summary">Show music ticker on Ambient Display during track change</string>
+    <!-- Status bar - icon blocklist -->
+    <string name="status_bar_icons_title">Ikony na stavovém řádku</string>
+    <string name="status_bar_icons_summary">Choose which status bar icons can be shown</string>
+    <!-- Bluetooth status -->
+    <string name="bluetooth_battery_title">Stav baterie Bluetooth zařízení</string>
+    <string name="bluetooth_battery_summary">Zobrazit stav baterie připojeného Bluetooth zařízení, je‑li dostupný</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="statusbar_doubletap_sleep_title">Uspat dvojím poklepáním</string>
+    <string name="statusbar_doubletap_sleep_summary">Dvojím poklepáním na stavový řádek uvést zařízení do režimu spánku</string>
+    <!-- Status bar - Brightness control -->
+    <string name="status_bar_toggle_brightness_title">Ovládání jasu</string>
+    <string name="status_bar_toggle_brightness_summary">Regulovat jas displeje tažením prstu po stavovém řádku</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">Rychlé rozbalení Rychlého nastavení</string>
+    <string name="status_bar_quick_qs_pulldown_summary">Stažením stavového řádku dolů z\u00a0%1$s strany se zcela rozbalí Rychlé nastavení</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">levé</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">pravé</string>
+    <string name="status_bar_quick_qs_pulldown_off">Je vypnuto</string>
+    <string name="status_bar_quick_qs_pulldown_left">Stažením zleva</string>
+    <string name="status_bar_quick_qs_pulldown_right">Stažením zprava</string>
+    <string name="status_bar_quick_qs_pulldown_always">Vždy zcela rozbalit Rychlé nastavení při stažení stavového řádku z\u00a0jakékoliv strany</string>
+    <!-- Status bar - Smart pulldown-->
+    <string name="smart_pulldown_title">Chytré rozbalení Rychlého nastavení</string>
+    <string name="smart_pulldown_summary">Rychlé nastavení se zcela rozbalí, je‑li přítomno %1$s</string>
+    <string name="smart_pulldown_none_summary">Rychlé nastavení se zcela rozbalí, nejsou‑li přítomna žádná oznámení</string>
+    <string name="smart_pulldown_off">Je vypnuto</string>
+    <string name="smart_pulldown_none">žádná oznámení</string>
+    <string name="smart_pulldown_dismissable">nezrušitelné oznámení</string>
+    <string name="smart_pulldown_ongoing">neprobíhající oznámení</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="lockscreen_doubletap_sleep_title">Uspat dvojím poklepáním</string>
+    <string name="lockscreen_doubletap_sleep_summary">Dvojí poklepání na zamykací obrazovku uvede zařízení do režimu spánku</string>
+    <!-- Font style / Icon pack -->
+    <string name="theme_customization_font_title">Styl písma</string>
+    <string name="theme_customization_icon_pack_title">Balíček ikon</string>
+    <string name="theme_customization_adaptive_icon_shape_title">Adaptivní tvar ikony</string>
+    <!-- Refresh rate -->
+    <string name="default_refresh_rate_title_custom">Výchozí obnovovací frekvence</string>
+    <string name="peak_refresh_rate_title_custom">Maximální obnovovací frekvence</string>
+    <string name="low_power_refresh_rate_title_custom">Low power refresh rate</string>
+    <!-- Status bar - Clock -->
+    <string name="status_bar_clock_title">Hodiny a\u00a0datum</string>
+    <string name="status_bar_clock_summary">Přizpůsobit hodiny a\u00a0datum</string>
+    <string name="status_bar_clock_seconds_title">Zobrazit sekundy</string>
+    <string name="status_bar_clock_seconds_summary">Zobrazit na stavovém řádku vedle hodin i\u00a0sekundy</string>
+    <string name="status_bar_clock_position_title">Umístění hodin</string>
+    <string name="status_bar_clock_position_right">Vpravo</string>
+    <string name="status_bar_clock_position_left">Vlevo</string>
+    <string name="status_bar_clock_position_center">Uprostřed</string>
+    <string name="status_bar_clock_position_hidden">Skryté</string>
+    <string name="status_bar_clock_auto_hide_title">Automaticky skrývat</string>
+    <string name="status_bar_clock_auto_hide_summary">Skrývat a\u00a0zobrazovat hodiny v\u00a0pravidelném intervalu pro ušetření místa na stavovém řádku</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">Doba trvání skrytí</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Počet sekund, po které budou hodiny skryty</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Doba trvání zobrazení</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Doba trvání zobrazení hodin v\u00a0sekundách před tím, než se automaticky skryjí</string>
+    <string name="status_bar_am_pm_title">Styl zobrazení dop./odp.</string>
+    <string name="status_bar_am_pm_info">Je povolen 24hodinový formát času</string>
+    <string name="status_bar_am_pm_normal">Normální</string>
+    <string name="status_bar_am_pm_small">Malé</string>
+    <string name="status_bar_am_pm_hidden">Skryté</string>
+    <string name="status_bar_date_title">Datum</string>
+    <string name="status_bar_date_none">Skryté</string>
+    <string name="status_bar_date_small">Malé</string>
+    <string name="status_bar_date_normal">Normální</string>
+    <string name="status_bar_date_format_title">Formát data</string>
+    <string name="status_bar_date_style">Styl data</string>
+    <string name="status_bar_date_style_normal">Normální</string>
+    <string name="status_bar_date_style_lowercase">Malá písmena</string>
+    <string name="status_bar_date_style_uppercase">Velká písmena</string>
+    <string name="status_bar_date_format_custom">Vlastní formát Java</string>
+    <string name="status_bar_date_string_edittext_title">Musí být ve formátu data, např.: EEEE, d.\u00a0M.\u00a0yyyy</string>
+    <string name="status_bar_date_string_edittext_summary">Vložte textový řetězec</string>
+    <string name="clock_date_position">Umístění data</string>
+    <string name="clock_date_right">Napravo od hodin</string>
+    <string name="clock_date_left">Nalevo od hodin</string>
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">Styl baterie</string>
+    <string name="status_bar_battery_style_icon_portrait">Ikona na výšku</string>
+    <string name="status_bar_battery_style_circle">Kroužek</string>
+    <string name="status_bar_battery_style_dotted_circle">Přerušovaný kroužek</string>
+    <string name="status_bar_battery_style_filled_circle">Vyplněný kruh</string>
+    <string name="status_bar_battery_style_text">Text</string>
+    <string name="status_bar_battery_style_hidden">Skrytý</string>
+    <string name="status_bar_battery_percent_title">Procenta baterie</string>
+    <string name="status_bar_battery_percent_hidden">Skryté</string>
+    <string name="status_bar_battery_percent_text_inside">Uvnitř ikony</string>
+    <string name="status_bar_battery_percent_text_next">Vedle ikony</string>
+    <string name="status_bar_battery_text_charging_title">Procenta nabití baterie při nabíjení</string>
+    <string name="status_bar_battery_text_charging_summary">Při nabíjení vždy zobrazit procenta nabití baterie</string>
+    <!-- Status bar - Battery Bar -->
+    <string name="battery_bar_title">Pruh baterie</string>
+    <string name="battery_bar_summary">Zobrazit a\u00a0přizpůsobit Pruh baterie nad stavovým řádkem</string>
+    <string name="battery_bar_color">Barva</string>
+    <string name="battery_bar_charging_color">Barva při nabíjení</string>
+    <string name="battery_bar_battery_low_color">Barva nízkého stavu baterie</string>
+    <string name="battery_bar_style_title">Zarovnání</string>
+    <string name="battery_bar_thickness_title">Tloušťka</string>
+    <string name="battery_bar_animate_title">Animace nabíjení</string>
+    <string name="battery_bar_style_regular">Standardní (úbytek zprava)</string>
+    <string name="battery_bar_style_center_mirrored">Souměrně na střed</string>
+    <string name="battery_bar_style_reversed">Obrácené (úbytek zleva)</string>
+    <string name="battery_bar_use_charging_color">Vlastní barva při nabíjení</string>
+    <string name="battery_bar_blend_color_title">Smísit barvy</string>
+    <string name="battery_bar_blend_color_summary">Smísení barev, nabitá/vybitá, odpovídá procentuálnímu stavu baterie</string>
+    <string name="battery_bar_blend_color_reverse_title">Obrátit pořadí barev</string>
+    <string name="battery_bar_blend_color_reverse_summary_off">Nabito &#8594; vybito: červená &#8592; zelená &#8592; modrá &#8592; červená</string>
+    <string name="battery_bar_blend_color_reverse_summary_on">Nabito &#8594; vybito: červená &#8594; zelená &#8594; modrá &#8594; červená</string>
+    <!-- Quick setting categories -->
+    <string name="qs_misc_category">Různé</string>
+    <string name="qs_footer_category">Zápatí</string>
+    <!-- QS clock -->
+    <string name="qs_clock_title">Hodiny</string>
+    <string name="qs_clock_summary">Zobrazit hodiny v\u00a0záhlaví stavového řádku Rychlého nastavení</string>
+    <!-- QS date -->
+    <string name="qs_date_title">Datum</string>
+    <string name="qs_date_summary">Zobrazit datum v\u00a0záhlaví stavového řádku Rychlého nastavení</string>
+    <!-- QS battery -->
+    <string name="qs_battery_location_title">Umístění baterie</string>
+    <string name="qs_battery_location_qs_panel">Panel Rychlého nastavení</string>
+    <string name="qs_battery_location_qs_statusbar">Stavový řádek Rychlého nastavení</string>
+    <string name="qs_use_status_bar_battery_style">Použít styl stavového řádku</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Odhad výdrže baterie</string>
+    <string name="battery_estimate_summary">Zobrazit odhad zbývající výdrže baterie, je‑li k\u00a0dispozici</string>
+    <!-- Network traffic -->
+    <string name="network_traffic_settings_title">Indikátor síťového provozu</string>
+    <string name="network_traffic_settings_summary">Zobrazit a\u00a0přizpůsobit aktuální úroveň vytížení sítě</string>
+    <string name="network_traffic_location_title">Umístění</string>
+    <string name="network_traffic_location_disable">Zakázáno</string>
+    <string name="network_traffic_location_statusbar">Stavový řádek</string>
+    <string name="network_traffic_location_quick_statusbar">Panel Rychlého nastavení</string>
+    <string name="network_traffic_mode_title">Režim zobrazení</string>
+    <string name="network_traffic_mode_up">Pouze odchozí data</string>
+    <string name="network_traffic_mode_down">Pouze příchozí data</string>
+    <string name="network_traffic_mode_all">Příchozí a\u00a0odchozí data</string>
+    <string name="network_traffic_autohide">Automaticky skrývat</string>
+    <string name="network_traffic_autohide_summary">Skrýt indikátor síťového provozu při neaktivitě sítě</string>
+    <string name="network_traffic_autohide_kilobits">Kb/s</string>
+    <string name="network_traffic_autohide_kilobytes">KB/s</string>
+    <string name="network_traffic_autohide_threshold">Práh nečinnosti</string>
+    <string name="network_traffic_refresh_interval_title">Interval obnovení</string>
+    <string name="network_traffic_refresh_interval_summary">Doba, po které je rychlost znovu změřena</string>
+    <string name="network_traffic_units_title">Traffic measurement units</string>
+    <string name="network_traffic_units_bits">Bits per second (b/s)</string>
+    <string name="network_traffic_units_kilobits">Kilobits per second (kb/s)</string>
+    <string name="network_traffic_units_megabits">Megabits per second (Mb/s)</string>
+    <string name="network_traffic_units_bytes">Bytes per second (B/s)</string>
+    <string name="network_traffic_units_kilobytes">Kilobytes per second (kB/s)</string>
+    <string name="network_traffic_units_megabytes">Megabytes per second (MB/s)</string>
+    <string name="network_traffic_hidearrow">Hide arrows</string>
+    <string name="network_traffic_hidearrow_summary">Hide the network traffic indicator arrows</string>
+    <!-- QS footer warnings -->
+    <string name="qs_footer_warnings_title">Footer alerts</string>
+    <string name="qs_footer_warnings_summary">Display an alert at bottom of QS panel when network is monitored by external apps or VPN</string>
+    <!-- Media art -->
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Display media cover art when available</string>
+    <!-- Lockscreen album art filter -->
+    <string name="lockscreen_albumart_filter_title">Media cover art filter</string>
+    <string name="lockscreen_albumart_filter_none">None</string>
+    <string name="lockscreen_albumart_filter_grayscale">Grayscale</string>
+    <string name="lockscreen_albumart_filter_tint">Accent tinted</string>
+    <string name="lockscreen_albumart_filter_blur">Blur</string>
+    <string name="lockscreen_albumart_filter_grayblur">Grayscale and blurred</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_help_policy_notice_title">About Pulse</string>
+    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>
+    <string name="pulse_settings">Pulse</string>
+    <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
+    <string name="show_navbar_pulse_title">Navbar Pulse</string>
+    <string name="show_navbar_pulse_summary">Audio graphic equalizer on the navigation bar</string>
+    <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
+    <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
+    <string name="show_ambient_pulse_title">Ambient Pulse</string>
+    <string name="show_ambient_pulse_summary">Audio graphic equalizer on the ambient screen</string>
+    <string name="pulse_render_mode_title">Render mode</string>
+    <string name="pulse_render_mode_fading_bars">Fading blocks</string>
+    <string name="pulse_render_mode_solid_lines">Solid lines</string>
+    <string name="pulse_legacy_mode_advanced_category">Fading blocks mode settings</string>
+    <string name="pulse_custom_fudge_factor">Sanity level</string>
+    <string name="pulse_lavalamp_speed_title">Lava lamp speed</string>
+    <string name="pulse_solid_units_count">Solid lines count</string>
+    <string name="pulse_solid_units_opacity">Solid lines opacity</string>
+    <string name="pulse_solid_dimen_category">Solid lines mode settings</string>
+    <string name="pulse_color_mode_title">Color</string>
+    <string name="pulse_color_accent">Accent</string>
+    <string name="pulse_color_custom">Custom</string>
+    <string name="pulse_color_lava_lamp">Lava lamp</string>
+    <string name="pulse_color_user_title">Choose color</string>
+    <string name="pulse_smoothing_enabled_title">Turn on smoothing</string>
+    <string name="pulse_smoothing_enabled_summary">Each bar is animated more smoothly</string>
+    <string name="pulse_custom_dimen">Bar width</string>
+    <string name="pulse_custom_div">Bar spacing</string>
+    <string name="pulse_filled_block_size">Block size</string>
+    <string name="pulse_empty_block_size">Block spacing</string>
+    <!-- Navigation Bar -->
+    <string name="navbar_visibility_title">Navigation bar</string>
+    <string name="navbar_visibility_summary">Display navigation bar at bottom of screen</string>
+    <string name="navbar_layout_category_title">Layout</string>
+    <string name="navbar_arrow_keys_title">Show arrow keys while typing</string>
+    <string name="navbar_arrow_keys_summary">Display left and right cursor buttons while typing. Overrides IME switcher.</string>
+    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Compact</string>
+    <string name="navbar_layout_leftleaning">Left-leaning</string>
+    <string name="navbar_layout_rightleaning">Right-leaning</string>
+    <string name="navbar_invert_layout_title">Invert layout</string>
+    <string name="navbar_invert_layout_summary">Inverts the layout of the navigation bar and other items, such as the IME switcher</string>
+    <string name="navbar_actions_category_title">Actions</string>
+    <string name="navbar_back_long_press_title">Back long press</string>
+    <string name="navbar_home_long_press_title">Home long press</string>
+    <string name="navbar_home_double_tap_title">Home double tap</string>
+    <string name="navbar_app_switch_long_press_title">Recents long press</string>
+    <string name="navbar_edge_long_swipe_title">Edge long swipe</string>
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Pocket detection</string>
+    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
+    <!-- Disable HW keys -->
+    <string name="hwkeys_disabled_title">Disable HW keys</string>
+    <string name="hwkeys_disabled_summary">Enabling this will disable hardware keys for navigation</string>
+    <!-- Swap capacitive keys -->
+    <string name="swap_capacitive_keys_title">Swap capacitive buttons</string>
+    <string name="swap_capacitive_keys_summary">Swap the order of recents and back buttons</string>
+    <!-- ANBI -->
+    <string name="anbi_title">Accidental touch</string>
+    <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
+    <!-- Live volume steps -->
+    <string name="volume_steps_title">Volume steps</string>
+    <string name="volume_steps_summary">Customize no. of steps in volume panel</string>
+    <string name="volume_steps_alarm_title">Volume steps: Alarm</string>
+    <string name="volume_steps_dtmf_title">Volume steps: DTMF</string>
+    <string name="volume_steps_music_title">Volume steps: Music</string>
+    <string name="volume_steps_notification_title">Volume steps: Notification</string>
+    <string name="volume_steps_ring_title">Volume steps: Ringer</string>
+    <string name="volume_steps_system_title">Volume steps: System</string>
+    <string name="volume_steps_voice_call_title">Volume steps: Voice Call</string>
+    <string name="volume_steps_reset">Reset</string>
+    <string name="volume_steps_60">60</string>
+    <string name="volume_steps_45">45</string>
+    <string name="volume_steps_30">30</string>
+    <string name="volume_steps_15">15</string>
+    <string name="volume_steps_7">7</string>
+    <string name="volume_steps_5">5</string>
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Swipe to screenshot</string>
+    <string name="three_finger_gesture_summary">Swipe three fingers to take screenshot</string>
+    <!-- Running services - Background processes tab -->
+    <string name="background_processes_settings_title">Background processes</string>
+    <!-- QS footer icons -->
+    <string name="qs_footer_users_icon_title">User account icon</string>
+    <string name="qs_footer_users_icon_summary">Display multiuser accessibility icon when available</string>
+    <string name="qs_footer_edit_icon_title">Edit tiles icon</string>
+    <string name="qs_footer_show_power_menu_title">Power menu shortcut</string>
+    <string name="qs_footer_services_icon_title">Running services shortcut</string>
+    <string name="qs_footer_settings_icon_title">Settings shortcut</string>
+    <!-- Device Info screen. crDroid legal. -->
+    <string name="crdroid_license_title">crDroid legal</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_show_brightness_slider_title">Brightness slider</string>
+    <string name="qs_show_brightness_slider_never">Never show</string>
+    <string name="qs_show_brightness_slider_expanded">Show when expanded</string>
+    <string name="qs_show_brightness_slider_always">Show always</string>
+    <string name="qs_show_brightness_slider_not_expanded">Show when not expanded</string>
+    <string name="qs_brightness_slider_position_title">Position</string>
+    <string name="qs_brightness_slider_position_top">Top</string>
+    <string name="qs_brightness_slider_position_bottom">Bottom</string>
+    <!-- Quick Settings brightness icon -->
+    <string name="qs_show_auto_brightness_title">Auto brightness icon</string>
+    <string name="qs_show_auto_brightness_summary">Show toggle for adaptive brightness near the slider</string>
+</resources>

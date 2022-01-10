@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2021 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- App Title -->
+    <string name="crdroid_settings_title">crDroid-Einstellungen</string>
+    <string name="crdroid_settings_summary">Erweiterte Einstellungen öffnen</string>
+    <string name="reset_settings_title">Einstellungen zurücksetzen</string>
+    <string name="reset_settings_message">Dadurch werden die meisten CrDroid-Einstellungen für den aktuellen Nutzer auf die Werkseinstellungen zurückgesetzt. Fortfahren?</string>
+    <!-- Personalization Categories -->
+    <string name="button_title">Tasten</string>
+    <string name="lockscreen_title">Sperrbildschirm</string>
+    <string name="misc_title">Sonstiges</string>
+    <string name="navigation_title">Navigation</string>
+    <string name="notifications_title">Benachrichtigungen</string>
+    <string name="quicksettings_title">Schnelleinstellungen</string>
+    <string name="sound_title">Audio</string>
+    <string name="statusbar_title">Statusleiste</string>
+    <string name="display_title">Bildschirm</string>
+    <string name="ui_title">Benutzeroberfläche</string>
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Farbauswahl</string>
+    <string name="press_color_to_apply">Gewünschte Farbe antippen, um sie anzuwenden</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Übernehmen</string>
+    <string name="color_default">Standard</string>
+    <!-- General strings -->
+    <string name="ok">Okay</string>
+    <string name="reset">Zurücksetzen</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="save">Speichern</string>
+    <string name="discard_changes">Änderungen verwerfen</string>
+    <string name="never">Niemals</string>
+    <string name="always">Immer</string>
+    <string name="caution">Achtung</string>
+    <!-- Changelog -->
+    <string name="changelog_crdroid_title">Aktueller Changelog</string>
+    <string name="changelog_crdroid_summary">Änderungen in der installierten ROM anzeigen</string>
+    <string name="changelog_crdroid_error">Changelog konnte nicht geladen werden</string>
+    <!-- About crDroid -->
+    <string name="about_crdroid">Über crDroid</string>
+    <string name="about_device_name">Gerät</string>
+    <!-- Share crDroid -->
+    <string name="share_crdroid_title">CrDroid teilen</string>
+    <string name="share_crdroid_summary">CrDroid weiterempfehlen</string>
+    <string name="share_message">Finde heraus, ob es #crDroidAndroid schon für dein Gerät gibt auf: https://crdroid.net/</string>
+    <string name="share_chooser_title">CrDroid teilen</string>
+    <!-- Sites crDroid -->
+    <string name="crdroid_source_title">GitHub</string>
+    <string name="crdroid_source_summary">Wir lieben Open Source, probier uns mal aus</string>
+    <string name="crdroid_telegram_title">crDroid-Community</string>
+    <string name="crdroid_telegram_summary">Wir sind auch bei Telegram. Komm in die Gruppe!</string>
+    <string name="crdroid_telegram_channel_title">Kanal für Updates</string>
+    <string name="crdroid_telegram_channel_summary">Lass dich auf Telegram über neue Builds benachrichtigen</string>
+    <string name="crdroid_website_title">Offizielle Webseite</string>
+    <string name="crdroid_website_summary">Besuche unsere offizielle Webseite</string>
+    <string name="crdroid_translate_title">Übersetzungen</string>
+    <string name="crdroid_translate_summary">Hilf mit bei der Übersetzung der ROM in deine Sprache!</string>
+    <string name="crdroid_sponsor_summary">Besuche den Hostpartner unserer Webseite</string>
+    <!-- Donate crDroid -->
+    <string name="donate_crdroid_title">Unterstütze uns</string>
+    <string name="donate_crdroid_summary">Spende, um die Entwicklung zu unterstützen</string>
+    <string name="donate_team_title">crDroid-Team</string>
+    <string name="donate_team_summary">Spenden für Unterstützung beim Server-Hosting, bei der Webseitenverfügbarkeit und bei der Verwaltung</string>
+    <!-- The Drill -->
+    <string name="drill_title">Du weißt, was zu tun ist</string>
+    <string name="drill_summary">Hast du einen Bug gefunden? Ist ein Problem aufgetreten?</string>
+    <!-- OTA -->
+    <string name="crdroid_update_title">Updates</string>
+    <string name="crdroid_update_summary">Nach Updates suchen und ggf. herunterladen</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Wert: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Standardmäßig</string>
+    <string name="custom_seekbar_default_value_to_set">Standardwert: <xliff:g id="v">%s</xliff:g>\nZum Einstellen gedrückt halten</string>
+    <string name="custom_seekbar_default_value_is_set">Standardwert ist eingestellt</string>
+    <!-- Units -->
+    <string name="unit_seconds">Sekunden</string>
+    <string name="unit_milliseconds">Millisekunden</string>
+    <string name="unit_pixels">Bildschirmdichte in dip</string>
+    <!-- Hardware info -->
+    <string name="platform_revision">Plattform</string>
+    <string name="total_ram">Gesamter RAM</string>
+    <!-- Notification log -->
+    <string name="notification_log_summary">Benachrichtigungsverlauf anzeigen</string>
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">Weniger als 1 Minute</string>
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">%1$s heute</string>
+    <!-- Statusbar categories -->
+    <string name="status_bar_icons_category_title">Symbole</string>
+    <string name="status_bar_battery_category_title">Anpassung der Akkuanzeige</string>
+    <!-- Gestures -->
+    <string name="gestures_title">Gesten</string>
+    <!-- VoLTE icon -->
+    <string name="volte_icon_title">VoLTE-Symbol</string>
+    <string name="volte_icon_summary">VoLTE-Symbol anzeigen, wenn verfügbar</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">VoWiFi-Symbol</string>
+    <string name="vowifi_icon_summary">VoWiFi-Symbol anzeigen, wenn verfügbar</string>
+    <string name="volte_vowifi_override_title">Vorrang für VoWiFi</string>
+    <string name="volte_vowifi_override_summary">VoLTE-Symbol ausblenden, wenn VoWiFi verfügbar ist</string>
+    <!-- Roaming indicator icon -->
+    <string name="roaming_indicator_icon_title">Anzeige bei Roaming</string>
+    <string name="roaming_indicator_icon_summary">Bei Roaming dies im Signalsymbol anzeigen</string>
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">4G-Symbol</string>
+    <string name="show_fourg_icon_summary">4G-Symbol anstelle von LTE anzeigen</string>
+    <!-- Data disabled indicator -->
+    <string name="data_disabled_icon_title">Anzeige bei deaktivierten mobilen Daten</string>
+    <string name="data_disabled_icon_summary">Bei deaktivierten mobilen Daten dies im Signalsymbol anzeigen</string>
+    <!-- Lockscreen categories -->
+    <string name="lockscreen_interface_category">Interface</string>
+    <!-- Lockscreen battery info indicator -->
+    <string name="lockscreen_battery_info_title">Akku-Info</string>
+    <string name="lockscreen_battery_info_summary">Akku-Informationen beim Aufladen anzeigen</string>
+    <!-- Button settings -->
+    <string name="additional_buttons_title">Zusätzliche Tasten</string>
+    <string name="hardware_keys_power_key_title">Ein-/Aus-Taste</string>
+    <string name="hardware_keys_home_key_title">Home-Taste</string>
+    <string name="hardware_keys_back_key_title">Zurück-Taste</string>
+    <string name="hardware_keys_menu_key_title">Menü-Taste</string>
+    <string name="hardware_keys_assist_key_title">Such-Taste</string>
+    <string name="hardware_keys_appswitch_key_title">Anwendungsverlauf-Taste</string>
+    <string name="hardware_keys_camera_key_title">Kamera-Taste</string>
+    <string name="hardware_keys_volume_keys_title">Lautstärke-Tasten</string>
+    <string name="hardware_keys_short_press_title">Aktion bei Drücken</string>
+    <string name="hardware_keys_long_press_title">Aktion bei Gedrückthalten</string>
+    <string name="hardware_keys_double_tap_title">Aktion bei Doppeltippen</string>
+    <string name="hardware_keys_action_nothing">Keine Aktion</string>
+    <string name="hardware_keys_action_menu">Menü öffnen/schließen</string>
+    <string name="hardware_keys_action_app_switch">Anwendungsverlauf</string>
+    <string name="hardware_keys_action_search">Suchassistent</string>
+    <string name="hardware_keys_action_voice_search">Sprachsuche</string>
+    <string name="hardware_keys_action_in_app_search">In-App-Suche</string>
+    <string name="hardware_keys_action_launch_camera">Kamera starten</string>
+    <string name="hardware_keys_action_sleep">Bildschirm ausschalten</string>
+    <string name="hardware_keys_action_last_app">Letzte App</string>
+    <string name="hardware_keys_action_split_screen">Geteilter Bildschirm</string>
+    <string name="hardware_keys_action_close_app">App beenden</string>
+    <string name="hardware_keys_action_torch">Taschenlampe ein-/ausschalten</string>
+    <string name="hardware_keys_action_screenshot">Screenshot aufnehmen</string>
+    <string name="hardware_keys_action_volume_panel">Lautstärkeregler ein-/ausblenden</string>
+    <string name="hardware_keys_action_clear_all_notifications">Alle Benachrichtigungen löschen</string>
+    <string name="hardware_keys_action_notifications_panel">Benachrichtigungsleiste ein-/ausblenden</string>
+    <string name="hardware_keys_action_expand_qs_panel">Schnelleinstellungen aufklappen</string>
+    <string name="hardware_keys_action_ringer_modes">Umschalten des Klingelmodus</string>
+    <string name="home_answer_call_title">Anruf annehmen</string>
+    <string name="home_answer_call_summary">Eingehende Anrufe durch Drücken der Home-Taste annehmen</string>
+    <string name="camera_sleep_on_release_title">Kurzer Blick</string>
+    <string name="camera_sleep_on_release_summary">Der Bildschirm bleibt an, solange die Taste halb gedrückt gehalten wird</string>
+    <string name="camera_launch_title">Kamera starten</string>
+    <string name="camera_launch_summary">Langes Drücken und Loslassen startet die Kamera</string>
+    <string name="torch_long_press_power_gesture_title">Gedrückthalten aktiviert Taschenlampe</string>
+    <string name="torch_long_press_power_gesture_desc">Gedrückthalten der Ein-/Aus-Taste bei ausgeschaltetem Bildschirm schaltet die Taschenlampe ein</string>
+    <string name="torch_long_press_power_timeout_title">Taschenlampe automatisch ausschalten</string>
+    <string name="volbtn_music_controls_title">Musikwiedergabe steuern</string>
+    <string name="volbtn_music_controls_summary">Bei ausgeschaltetem Display durch langes Drücken der Lautstärketasten zum nächsten/vorherigen Titel springen</string>
+    <string name="volbtn_cursor_control_title">Cursorsteuerung mit Lautstärketasten</string>
+    <string name="volbtn_cursor_control_off">Deaktiviert</string>
+    <string name="volbtn_cursor_control_on">Lauter-/Leiser-Taste bewegt den Cursor nach links/rechts</string>
+    <string name="volbtn_cursor_control_on_reverse">Lauter-/Leiser-Taste bewegt den Cursor nach rechts/links</string>
+    <string name="power_end_call_title">Anruf beenden</string>
+    <string name="power_end_call_summary">Anrufe durch Drücken der Ein-/Aus-Taste beenden</string>
+    <string name="swap_volume_buttons_title">Lautstärketasten umkehren</string>
+    <string name="swap_volume_buttons_summary">Belegung der Lautstärketasten umkehren, wenn der Bildschirm gedreht wird</string>
+    <string name="button_wake_title">Bildschirm einschalten</string>
+    <string name="button_wake_summary">Bildschirm einschalten durch Drücken der Taste</string>
+    <string name="volume_answer_call_title">Anruf annehmen</string>
+    <string name="volume_answer_call_summary">Eingehende Anrufe durch Drücken der Lautstärketasten annehmen</string>
+    <!-- Power menu -->
+    <string name="power_menu_title">Ein-/Aus-Menü</string>
+    <string name="power_menu_summary">Optionen des Ein-/Aus-Menüs anpassen</string>
+    <string name="power_menu_screenshot_title">Screenshot</string>
+    <string name="power_menu_onthego_title">On-The-Go-Modus</string>
+    <string name="power_menu_advanced_title">Erweitertes Neustartmenü</string>
+    <string name="power_menu_airplane_title">Flugmodus</string>
+    <string name="power_menu_torch_title">Taschenlampe</string>
+    <string name="power_menu_settings_title">Einstellungen</string>
+    <string name="power_menu_lockdown_title">Sperren</string>
+    <string name="power_menu_soundpanel_title">Lautstärkeregler</string>
+    <string name="power_menu_users_title">Benutzer</string>
+    <string name="power_menu_logout_title">Logout</string>
+    <string name="power_menu_emergency_title">Notfall</string>
+    <!-- UI settings -->
+    <string name="monet_title">Monet-Einstellungen</string>
+    <string name="monet_summary">Anpassen der „Material You“-Theme-Engine</string>
+    <!-- Monet Engine -->
+    <string name="monet_engine_custom_color_title">Benutzerdefinierte Farbe verwenden</string>
+    <string name="monet_engine_custom_color_summary">Benutzerdefinierte Farbe für Monet-Engine anstelle von Hintergrundfarbe verwenden</string>
+    <string name="monet_engine_color_override_title">Benutzerdefinierte Farbe</string>
+    <string name="monet_engine_white_luminance_user_title">Weiß-Luminanz</string>
+    <string name="monet_engine_accurate_shades_title">Präzise Farbtöne verwenden</string>
+    <string name="monet_engine_chroma_factor_title">Sättigungsfaktor</string>
+    <string name="monet_engine_linear_lightness_title">Lineare Helligkeit verwenden</string>
+    <!-- Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">Schnelles Entsperren</string>
+    <string name="unlock_quick_unlock_control_summary">Automatische Entsperrung bei korrekter PIN-/Passworteingabe</string>
+    <!-- Doze settings -->
+    <string name="doze_display_title">Ambient-Modus</string>
+    <string name="doze_display_summary">Einstellungen für den Ambient-Modus anpassen</string>
+    <string name="doze_additional_settings_title">Weitere Einstellungen</string>
+    <string name="doze_additional_settings_summary">Gerätespezifische Einstellungen des Ambient-Modus anpassen</string>
+    <string name="doze_sensor_title">Sensorenbasiert</string>
+    <string name="raise_to_wake_title">Gerät aufwecken</string>
+    <string name="raise_to_wake_summary">Gerät aufwecken statt Benachrichtigungen kurz anzuzeigen</string>
+    <string name="tilt_title">Neigen</string>
+    <string name="tilt_summary">Benachrichtigungen kurz anzeigen bei Neigen des Geräts</string>
+    <string name="pickup_title">Anheben</string>
+    <string name="pickup_summary">Benachrichtigungen kurz anzeigen bei Anheben des Gerätes</string>
+    <string name="handwave_title">Handbewegung</string>
+    <string name="handwave_summary">Benachrichtigungen kurz anzeigen bei Handbewegung am Gerät</string>
+    <string name="pocket_title">Tasche</string>
+    <string name="pocket_summary">Benachrichtigungen kurz anzeigen, wenn das Gerät aus der Tasche geholt wird</string>
+    <string name="doze_vibrate">Vibrieren</string>
+    <string name="doze_vibrate_summary">Vibrationsdauer bei kurz angezeigten Benachrichtigungen</string>
+    <string name="sensor_warning_message">Einstellungen, die auf Sensoren basieren, unterliegen der Hardware-Kompatibilität. Die Aktivierung von Ambient-Modus-Sensoren kann die Stromaufnahme erhöhen.</string>
+    <!-- Ambient edge lighting -->
+    <string name="pulse_ambient_light_title">Seitenlicht</string>
+    <string name="pulse_ambient_light_summary">Die Bildschirmseiten aufleuchten lassen bei kurz angezeigten Benachrichtigungen</string>
+    <string name="pulse_ambient_light_color_title">Farbe des Seitenlichts</string>
+    <string name="pulse_ambient_light_duration_title">Dauer des Seitenlichts</string>
+    <string name="pulse_ambient_light_duration_summary">Legt die Dauer des Seitenlichts fest</string>
+    <string name="pulse_ambient_light_layout_title">Darstellung des Seitenlichts</string>
+    <string name="pulse_ambient_light_layout_solid">Solide</string>
+    <string name="pulse_ambient_light_layout_faded">Verblasst</string>
+    <!-- Ambient Ticker -->
+    <string name="pulse_on_new_tracks_title">Musikticker</string>
+    <string name="pulse_on_new_tracks_summary">Bei Titelwechsel Musikticker im Ambient-Modus anzeigen</string>
+    <!-- Status bar - icon blocklist -->
+    <string name="status_bar_icons_title">Statusleistensymbole</string>
+    <string name="status_bar_icons_summary">Festlegen, welche Statusleistensymbole angezeigt werden</string>
+    <!-- Bluetooth status -->
+    <string name="bluetooth_battery_title">Bluetooth-Akkustand</string>
+    <string name="bluetooth_battery_summary">Akkustand des verbundenen Bluetooth-Geräts anzeigen, falls verfügbar</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="statusbar_doubletap_sleep_title">Doppeltippen zum Bildschirmsperren</string>
+    <string name="statusbar_doubletap_sleep_summary">Statusleiste zweimal antippen, um den Bildschirm zu sperren</string>
+    <!-- Status bar - Brightness control -->
+    <string name="status_bar_toggle_brightness_title">Helligkeitsregelung</string>
+    <string name="status_bar_toggle_brightness_summary">Regelung der Helligkeit durch Wischen über die Statusleiste</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">Schnelles Aufklappen</string>
+    <string name="status_bar_quick_qs_pulldown_summary">%1$s Rand der Statusleiste klappt Schnelleinstellungen auf</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">Links</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">Rechts</string>
+    <string name="status_bar_quick_qs_pulldown_off">Aus</string>
+    <string name="status_bar_quick_qs_pulldown_left">Links</string>
+    <string name="status_bar_quick_qs_pulldown_right">Rechts</string>
+    <string name="status_bar_quick_qs_pulldown_always">Die Schnelleinstellungen beim Herunterziehen der Statusleiste immer anzeigen</string>
+    <!-- Status bar - Smart pulldown-->
+    <string name="smart_pulldown_title">Intelligentes Aufklappen</string>
+    <string name="smart_pulldown_summary">Schnelleinstellungen öffnen, wenn %1$s Benachtichtigungen vorliegen</string>
+    <string name="smart_pulldown_none_summary">Schnelleinstellungen öffnen, wenn keine Benachrichtigungen vorliegen</string>
+    <string name="smart_pulldown_off">Aus</string>
+    <string name="smart_pulldown_none">Keine Benachrichtigungen</string>
+    <string name="smart_pulldown_dismissable">Keine löschbaren Benachrichtigungen</string>
+    <string name="smart_pulldown_ongoing">Keine laufenden Benachrichtigungen</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="lockscreen_doubletap_sleep_title">Doppeltippen zum Bildschirmsperren</string>
+    <string name="lockscreen_doubletap_sleep_summary">Bildschirm durch Doppeltippen auf dem Sperrbildschirm ausschalten</string>
+    <!-- Font style / Icon pack -->
+    <string name="theme_customization_font_title">Schriftart</string>
+    <string name="theme_customization_icon_pack_title">Symbolpaket</string>
+    <string name="theme_customization_adaptive_icon_shape_title">Symbolform</string>
+    <!-- Refresh rate -->
+    <string name="default_refresh_rate_title_custom">Standard-Aktualisierungsrate</string>
+    <string name="peak_refresh_rate_title_custom">Maximale Aktualisierungsrate</string>
+    <string name="low_power_refresh_rate_title_custom">Aktualisierungsrate bei niedrigem Akkustand</string>
+    <!-- Status bar - Clock -->
+    <string name="status_bar_clock_title">Uhr &amp; Datum</string>
+    <string name="status_bar_clock_summary">Uhr &amp; Datum anpassen</string>
+    <string name="status_bar_clock_seconds_title">Sekundenanzeige</string>
+    <string name="status_bar_clock_seconds_summary">Sekunden neben der Uhr in der Statusleiste anzeigen</string>
+    <string name="status_bar_clock_position_title">Darstellung der Uhr</string>
+    <string name="status_bar_clock_position_right">Rechts</string>
+    <string name="status_bar_clock_position_left">Links</string>
+    <string name="status_bar_clock_position_center">Mittig</string>
+    <string name="status_bar_clock_position_hidden">Ausgeblendet</string>
+    <string name="status_bar_clock_auto_hide_title">Automatisch ausblenden</string>
+    <string name="status_bar_clock_auto_hide_summary">Uhr regelmäßig aus- und einblenden, um Platz in der Statusleiste zu sparen</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">Dauer der Ausblendung</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Wie lange die Uhr ausgeblendet bleiben soll</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Dauer der Anzeige</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Wie lange die Uhr eingeblendet bleiben soll</string>
+    <string name="status_bar_am_pm_title">AM-/PM-Format</string>
+    <string name="status_bar_am_pm_info">24-Stunden-Format ist aktiviert</string>
+    <string name="status_bar_am_pm_normal">Normal</string>
+    <string name="status_bar_am_pm_small">Klein</string>
+    <string name="status_bar_am_pm_hidden">Ausgeblendet</string>
+    <string name="status_bar_date_title">Datum</string>
+    <string name="status_bar_date_none">Ausgeblendet</string>
+    <string name="status_bar_date_small">Klein</string>
+    <string name="status_bar_date_normal">Normal</string>
+    <string name="status_bar_date_format_title">Datumsformat</string>
+    <string name="status_bar_date_style">Datumsdarstellung</string>
+    <string name="status_bar_date_style_normal">Normal</string>
+    <string name="status_bar_date_style_lowercase">Kleinbuchstaben</string>
+    <string name="status_bar_date_style_uppercase">Großbuchstaben</string>
+    <string name="status_bar_date_format_custom">Benutzerdefiniertes Java-Format</string>
+    <string name="status_bar_date_string_edittext_title">Muss in DateFormat sein (z. B. MM/tt/jj)</string>
+    <string name="status_bar_date_string_edittext_summary">Format eingeben</string>
+    <string name="clock_date_position">Anzeigeort des Datums</string>
+    <string name="clock_date_right">Rechts neben der Uhr</string>
+    <string name="clock_date_left">Links neben der Uhr</string>
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">Akku-Darstellung</string>
+    <string name="status_bar_battery_style_icon_portrait">Symbol (Hochformat)</string>
+    <string name="status_bar_battery_style_circle">Kreis</string>
+    <string name="status_bar_battery_style_dotted_circle">Kreis (gepunktet)</string>
+    <string name="status_bar_battery_style_filled_circle">Kreis (gefüllt)</string>
+    <string name="status_bar_battery_style_text">Text</string>
+    <string name="status_bar_battery_style_hidden">Ausgeblendet</string>
+    <string name="status_bar_battery_percent_title">Akkuanzeige in Prozent</string>
+    <string name="status_bar_battery_percent_hidden">Ausgeblendet</string>
+    <string name="status_bar_battery_percent_text_inside">Innerhalb des Symbols</string>
+    <string name="status_bar_battery_percent_text_next">Neben dem Symbol</string>
+    <string name="status_bar_battery_text_charging_title">Akkuanzeige in Prozent beim Aufladen</string>
+    <string name="status_bar_battery_text_charging_summary">Beim Aufladen immer den Akkuprozentsatz anzeigen</string>
+    <!-- Status bar - Battery Bar -->
+    <string name="battery_bar_title">Eigene Leiste für Akkustand</string>
+    <string name="battery_bar_summary">Anpassen der Anzeige der Akkuleiste über der Statusleiste</string>
+    <string name="battery_bar_color">Farbe</string>
+    <string name="battery_bar_charging_color">Farbe beim Aufladen</string>
+    <string name="battery_bar_battery_low_color">Farbe bei niedrigem Akkustand</string>
+    <string name="battery_bar_style_title">Ausrichtung</string>
+    <string name="battery_bar_thickness_title">Dicke</string>
+    <string name="battery_bar_animate_title">Ladeanimation</string>
+    <string name="battery_bar_style_regular">Normal</string>
+    <string name="battery_bar_style_center_mirrored">Mittig gespiegelt</string>
+    <string name="battery_bar_style_reversed">Umgekehrt</string>
+    <string name="battery_bar_use_charging_color">Benutzerdefinierte Farbe beim Aufladen</string>
+    <string name="battery_bar_blend_color_title">Farben mischen</string>
+    <string name="battery_bar_blend_color_summary">Mischen von Voll-/Leerfarben entsprechend des Akkustands</string>
+    <string name="battery_bar_blend_color_reverse_title">Farbrichtung umkehren</string>
+    <string name="battery_bar_blend_color_reverse_summary_off">Voll &#8594; Leer: Rot &#8592; Grün &#8592; Blau &#8592; Rot</string>
+    <string name="battery_bar_blend_color_reverse_summary_on">Voll &#8594; Leer: Rot &#8594; Grün &#8594; Blau &#8594; Rot</string>
+    <!-- Quick setting categories -->
+    <string name="qs_misc_category">Sonstiges</string>
+    <string name="qs_footer_category">Fußzeile</string>
+    <!-- QS clock -->
+    <string name="qs_clock_title">Uhr</string>
+    <string name="qs_clock_summary">Uhr im Benachrichtigungsbereich anzeigen</string>
+    <!-- QS date -->
+    <string name="qs_date_title">Datum</string>
+    <string name="qs_date_summary">Datum im Benachrichtigungsbereich anzeigen</string>
+    <!-- QS battery -->
+    <string name="qs_battery_location_title">Akku-Anzeigeort</string>
+    <string name="qs_battery_location_qs_panel">Schnelleinstellungen</string>
+    <string name="qs_battery_location_qs_statusbar">Statusleiste (bei geöffnetem Benachrichtigungsfeld)</string>
+    <string name="qs_use_status_bar_battery_style">Gleich wie in Statusleiste</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">Akkuschätzung</string>
+    <string name="battery_estimate_summary">Geschätzte verbleibende Akkulaufzeit anzeigen, wenn verfügbar</string>
+    <!-- Network traffic -->
+    <string name="network_traffic_settings_title">Netzwerkverkehrsanzeige</string>
+    <string name="network_traffic_settings_summary">Anpassen der Anzeige des Netzwerkverkehrs</string>
+    <string name="network_traffic_location_title">Anzeigeort</string>
+    <string name="network_traffic_location_disable">Deaktiviert</string>
+    <string name="network_traffic_location_statusbar">Statusleiste (immer)</string>
+    <string name="network_traffic_location_quick_statusbar">Statusleiste (nur bei geöffnetem Benachrichtigungsfeld)</string>
+    <string name="network_traffic_mode_title">Anzeigemodus</string>
+    <string name="network_traffic_mode_up">Nur Upload</string>
+    <string name="network_traffic_mode_down">Nur Download</string>
+    <string name="network_traffic_mode_all">Up- und Download</string>
+    <string name="network_traffic_autohide">Automatisch ausblenden</string>
+    <string name="network_traffic_autohide_summary">Netzwerkverkehrsanzeige bei Inaktivität ausblenden</string>
+    <string name="network_traffic_autohide_kilobits">Kb/s</string>
+    <string name="network_traffic_autohide_kilobytes">KB/s</string>
+    <string name="network_traffic_autohide_threshold">Grenzwert für Inaktivität</string>
+    <string name="network_traffic_refresh_interval_title">Aktualisierungsintervall</string>
+    <string name="network_traffic_refresh_interval_summary">Dauer, nach der die Geschwindigkeit neu gemessen wird</string>
+    <string name="network_traffic_units_title">Einheit der Datenrate</string>
+    <string name="network_traffic_units_bits">Bit pro Sekunde (bit/s)</string>
+    <string name="network_traffic_units_kilobits">Kilobit pro Sekunde (kbit/s)</string>
+    <string name="network_traffic_units_megabits">Megabit pro Sekunde (Mbit/s)</string>
+    <string name="network_traffic_units_bytes">Byte pro Sekunde (B/s)</string>
+    <string name="network_traffic_units_kilobytes">Kilobyte pro Sekunde (kB/s)</string>
+    <string name="network_traffic_units_megabytes">Megabyte pro Sekunde (MB/s)</string>
+    <string name="network_traffic_hidearrow">Pfeile ausblenden</string>
+    <string name="network_traffic_hidearrow_summary">Pfeile des Netzwerkverkehrs in der Statusleiste ausblenden</string>
+    <!-- QS footer warnings -->
+    <string name="qs_footer_warnings_title">Warnungen in der Fußzeile</string>
+    <string name="qs_footer_warnings_summary">Warnung unten in den Schnelleinstellungen anzeigen, wenn das Netzwerk durch externe App oder VPN überwacht wird</string>
+    <!-- Media art -->
+    <string name="media_art_title">Albumcover</string>
+    <string name="media_art_summary">Albumcover anzeigen, wenn verfügbar</string>
+    <!-- Lockscreen album art filter -->
+    <string name="lockscreen_albumart_filter_title">Albumcover-Filter</string>
+    <string name="lockscreen_albumart_filter_none">Aus</string>
+    <string name="lockscreen_albumart_filter_grayscale">Schwarzweiß</string>
+    <string name="lockscreen_albumart_filter_tint">Tönung in Akzentfarbe</string>
+    <string name="lockscreen_albumart_filter_blur">Weichzeichnung</string>
+    <string name="lockscreen_albumart_filter_grayblur">Schwarzweiß und Weichzeichnung</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_help_policy_notice_title">Über Pulse</string>
+    <string name="pulse_help_policy_notice_summary">Pulse ist ein Audio-Visualizer und visualisiert gespielte Musik</string>
+    <string name="pulse_settings">Pulse</string>
+    <string name="pulse_settings_summary">Audio-Visualisierung in der Navigationsleiste und auf dem Sperrbildschirm</string>
+    <string name="show_navbar_pulse_title">Pulse in der Navigationsleiste</string>
+    <string name="show_navbar_pulse_summary">Audio-Visualisierung in der Navigationsleiste</string>
+    <string name="show_lockscreen_pulse_title">Pulse auf dem Sperrbildschirm</string>
+    <string name="show_lockscreen_pulse_summary">Audio-Visualisierung auf dem Sperrbildschirm</string>
+    <string name="show_ambient_pulse_title">Pulse im Ambient-Modus</string>
+    <string name="show_ambient_pulse_summary">Audio-Visualisierung im Ambient-Modus</string>
+    <string name="pulse_render_mode_title">Darstellungsmodus</string>
+    <string name="pulse_render_mode_fading_bars">Verblassende Blöcke</string>
+    <string name="pulse_render_mode_solid_lines">Durchgehende Balken</string>
+    <string name="pulse_legacy_mode_advanced_category">Einstellungen für verblassende Blöcke</string>
+    <string name="pulse_custom_fudge_factor">Empfindlichkeit</string>
+    <string name="pulse_lavalamp_speed_title">Geschwindigkeit des Lavalampeneffekts</string>
+    <string name="pulse_solid_units_count">Anzahl durchgezogener Balken</string>
+    <string name="pulse_solid_units_opacity">Deckkraft durchgezogener Balken</string>
+    <string name="pulse_solid_dimen_category">Einstellungen für durchgezogene Balken</string>
+    <string name="pulse_color_mode_title">Farbe</string>
+    <string name="pulse_color_accent">Akzentfarbe</string>
+    <string name="pulse_color_custom">Benutzerdefiniert</string>
+    <string name="pulse_color_lava_lamp">Lavalampe</string>
+    <string name="pulse_color_user_title">Farbe auswählen</string>
+    <string name="pulse_smoothing_enabled_title">Glättung aktivieren</string>
+    <string name="pulse_smoothing_enabled_summary">Alle Balken werden flüssiger animiert</string>
+    <string name="pulse_custom_dimen">Balkenbreite</string>
+    <string name="pulse_custom_div">Balkenabstand</string>
+    <string name="pulse_filled_block_size">Blockgröße</string>
+    <string name="pulse_empty_block_size">Blockabstand</string>
+    <!-- Navigation Bar -->
+    <string name="navbar_visibility_title">Navigationsleiste</string>
+    <string name="navbar_visibility_summary">Navigationsleiste am unteren Bildschirmrand anzeigen</string>
+    <string name="navbar_layout_category_title">Layout</string>
+    <string name="navbar_arrow_keys_title">Pfeiltasten beim Tippen anzeigen</string>
+    <string name="navbar_arrow_keys_summary">Beim Tippen Links-/Rechts-Cursortasten anzeigen (deaktiviert die Eingabemethodenauswahl).</string>
+    <string name="navbar_layout_title">Layout</string>
+    <string name="navbar_layout_normal">Normal</string>
+    <string name="navbar_layout_compact">Kompakt</string>
+    <string name="navbar_layout_leftleaning">Links­bün­dig</string>
+    <string name="navbar_layout_rightleaning">Rechtsbündig</string>
+    <string name="navbar_invert_layout_title">Layout umkehren</string>
+    <string name="navbar_invert_layout_summary">Kehrt die Anordnung der Navigationsleiste und anderer Elemente (wie z. B. der Eingabemethodenauswahl) um</string>
+    <string name="navbar_actions_category_title">Aktionen</string>
+    <string name="navbar_back_long_press_title">Zurück-Taste (Gedrückthalten)</string>
+    <string name="navbar_home_long_press_title">Home-Taste (Gedrückthalten)</string>
+    <string name="navbar_home_double_tap_title">Home-Taste (doppeltes Tippen)</string>
+    <string name="navbar_app_switch_long_press_title">Anwendungsverlaufstaste (Gedrückthalten)</string>
+    <string name="navbar_edge_long_swipe_title">Langes Vom-Rand-Wischen</string>
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">Taschenerkennung</string>
+    <string name="pocket_judge_summary">Bildschirm- und Tasteneingaben blockieren, wenn das Gerät in der Tasche steckt</string>
+    <!-- Disable HW keys -->
+    <string name="hwkeys_disabled_title">Hardware-Tasten deaktivieren</string>
+    <string name="hwkeys_disabled_summary">Bei Aktivierung werden Hardware-Tasten für die Navigation deaktiviert</string>
+    <!-- Swap capacitive keys -->
+    <string name="swap_capacitive_keys_title">Kapazitive Tasten tauschen</string>
+    <string name="swap_capacitive_keys_summary">Anordnung der Tasten für „Anwendungsverlauf“ und „Zurück“ tauschen</string>
+    <!-- ANBI -->
+    <string name="anbi_title">Versehentliches Berühren</string>
+    <string name="anbi_summary">Verhindert die Interaktion mit den Navigationstasten, während der Bildschirm berührt wird</string>
+    <!-- Live volume steps -->
+    <string name="volume_steps_title">Lautstärkestufen</string>
+    <string name="volume_steps_summary">Anzahl der Stufen im Lautstärkeregler anpassen</string>
+    <string name="volume_steps_alarm_title">Lautstärkestufen: Wecker</string>
+    <string name="volume_steps_dtmf_title">Lautstärkestufen: DTMF</string>
+    <string name="volume_steps_music_title">Lautstärkestufen: Musik</string>
+    <string name="volume_steps_notification_title">Lautstärkestufen: Benachrichtigungen</string>
+    <string name="volume_steps_ring_title">Lautstärkestufen: Klingelton</string>
+    <string name="volume_steps_system_title">Lautstärkestufen: System</string>
+    <string name="volume_steps_voice_call_title">Lautstärkestufen: Sprachanruf</string>
+    <string name="volume_steps_reset">Zurücksetzen</string>
+    <string name="volume_steps_60">60</string>
+    <string name="volume_steps_45">45</string>
+    <string name="volume_steps_30">30</string>
+    <string name="volume_steps_15">15</string>
+    <string name="volume_steps_7">7</string>
+    <string name="volume_steps_5">5</string>
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">Screenshot durch Wischen</string>
+    <string name="three_finger_gesture_summary">Mit drei Fingern wischen, um einen Screenshot aufzunehmen</string>
+    <!-- Running services - Background processes tab -->
+    <string name="background_processes_settings_title">Hintergrundprozesse</string>
+    <!-- QS footer icons -->
+    <string name="qs_footer_users_icon_title">Symbol des Nutzerkontos</string>
+    <string name="qs_footer_users_icon_summary">Symbol für Mehrbenutzerzugriff anzeigen, wenn verfügbar</string>
+    <string name="qs_footer_edit_icon_title">Symbol zum Ändern der Kacheln</string>
+    <string name="qs_footer_show_power_menu_title">Verknüpfung zum Ein-/Aus-Menü</string>
+    <string name="qs_footer_services_icon_title">Verknüpfung zu aktiven Diensten</string>
+    <string name="qs_footer_settings_icon_title">Verknüpfung zu Einstellungen</string>
+    <!-- Device Info screen. crDroid legal. -->
+    <string name="crdroid_license_title">Rechtliche Hinweise zu crDroid</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_show_brightness_slider_title">Helligkeitsregler</string>
+    <string name="qs_show_brightness_slider_never">Niemals anzeigen</string>
+    <string name="qs_show_brightness_slider_expanded">Anzeigen, wenn aufgeklappt</string>
+    <string name="qs_show_brightness_slider_always">Immer anzeigen</string>
+    <string name="qs_show_brightness_slider_not_expanded">Anzeigen, wenn nicht aufgeklappt</string>
+    <string name="qs_brightness_slider_position_title">Position</string>
+    <string name="qs_brightness_slider_position_top">Oben</string>
+    <string name="qs_brightness_slider_position_bottom">Unten</string>
+    <!-- Quick Settings brightness icon -->
+    <string name="qs_show_auto_brightness_title">Symbol für autom. Helligkeit</string>
+    <string name="qs_show_auto_brightness_summary">Schalter für autom. Helligkeit neben dem Helligkeitsregler anzeigen</string>
+</resources>

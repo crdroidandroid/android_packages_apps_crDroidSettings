@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2021 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- App Title -->
+    <string name="crdroid_settings_title">crDroid の設定</string>
+    <string name="crdroid_settings_summary">高度な設定</string>
+    <string name="reset_settings_title">設定のリセット</string>
+    <string name="reset_settings_message">現在のユーザーのほとんどの crDroid 設定を初期設定に戻します。続行しますか？</string>
+    <!-- Personalization Categories -->
+    <string name="button_title">ボタン</string>
+    <string name="lockscreen_title">ロック画面</string>
+    <string name="misc_title">その他</string>
+    <string name="navigation_title">ナビゲーション</string>
+    <string name="notifications_title">通知</string>
+    <string name="quicksettings_title">クイック設定</string>
+    <string name="sound_title">サウンド</string>
+    <string name="statusbar_title">ステータスバー</string>
+    <string name="display_title">ディスプレイ</string>
+    <string name="ui_title">UI 設定</string>
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">カラーピッカー</string>
+    <string name="press_color_to_apply">下の色をタップして適用します</string>
+    <string name="hex">16進数:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">設定</string>
+    <string name="color_default">デフォルト</string>
+    <!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">リセット</string>
+    <string name="cancel">キャンセル</string>
+    <string name="save">保存</string>
+    <string name="discard_changes">変更を破棄</string>
+    <string name="never">なし</string>
+    <string name="always">常時</string>
+    <string name="caution">注意</string>
+    <!-- Changelog -->
+    <string name="changelog_crdroid_title">最近の更新履歴</string>
+    <string name="changelog_crdroid_summary">インストールされている ROM の更新内容を確認します</string>
+    <string name="changelog_crdroid_error">更新履歴を読み込めませんでした</string>
+    <!-- About crDroid -->
+    <string name="about_crdroid">crDroid について</string>
+    <string name="about_device_name">デバイス</string>
+    <!-- Share crDroid -->
+    <string name="share_crdroid_title">crDroid についてシェアする</string>
+    <string name="share_crdroid_summary">みんなに crDroid を知ってもらいましょう</string>
+    <string name="share_message">カスタム ROM #crDroidAndroid を使ってみて！ https://crdroid.net/</string>
+    <string name="share_chooser_title">crDroid をシェア</string>
+    <!-- Sites crDroid -->
+    <string name="crdroid_source_title">GitHub</string>
+    <string name="crdroid_source_summary">私たちはオープンソースを愛しています。見てみてください</string>
+    <string name="crdroid_telegram_title">crDroid コミュニティ</string>
+    <string name="crdroid_telegram_summary">Telegram で話しましょう！</string>
+    <string name="crdroid_telegram_channel_title">アップデートチャンネル</string>
+    <string name="crdroid_telegram_channel_summary">Telegram で新しいビルドの通知を受けます</string>
+    <string name="crdroid_website_title">公式サイト</string>
+    <string name="crdroid_website_summary">公式ウェブサイトを開きます</string>
+    <string name="crdroid_translate_title">翻訳</string>
+    <string name="crdroid_translate_summary">あなたの言語に翻訳するのを手伝ってください！</string>
+    <string name="crdroid_sponsor_summary">ウェブサイトのホストパートナーを開きます</string>
+    <!-- Donate crDroid -->
+    <string name="donate_crdroid_title">私たちを支援する</string>
+    <string name="donate_crdroid_summary">さらなる開発を支援するために寄付をお願いします</string>
+    <string name="donate_team_title">crDroid チーム</string>
+    <string name="donate_team_summary">寄付でホスティングサーバーや全体的な管理を助けてください</string>
+    <!-- The Drill -->
+    <string name="drill_title">正しいやり方</string>
+    <string name="drill_summary">バグを見つけましたか？問題に遭遇しましたか？</string>
+    <!-- OTA -->
+    <string name="crdroid_update_title">アップデート</string>
+    <string name="crdroid_update_summary">OTA アップデートの有無とお使いのデバイス向けのリンクをチェックします</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">値: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">デフォルト</string>
+    <string name="custom_seekbar_default_value_to_set">デフォルト値: <xliff:g id="v">%s</xliff:g>\n長押しで設定</string>
+    <string name="custom_seekbar_default_value_is_set">デフォルト値をセット</string>
+    <!-- Units -->
+    <string name="unit_seconds">秒</string>
+    <string name="unit_milliseconds">ミリ秒</string>
+    <string name="unit_pixels">dp</string>
+    <!-- Hardware info -->
+    <string name="platform_revision">プラットフォーム</string>
+    <string name="total_ram">メモリ容量</string>
+    <!-- Notification log -->
+    <string name="notification_log_summary">通知履歴を表示する</string>
+    <!-- Default getTimeSpentInApp string for Wellbeing to display. [CHAR LIMIT=NONE] -->
+    <string name="duration_less_than_one_minute">1分未満</string>
+    <!-- Summary for Wellbeing screen time usage. [CHAR LIMIT=NONE] -->
+    <string name="screen_time_summary_usage_today">本日: %1$s</string>
+    <!-- Statusbar categories -->
+    <string name="status_bar_icons_category_title">アイコン</string>
+    <string name="status_bar_battery_category_title">バッテリー表示</string>
+    <!-- Gestures -->
+    <string name="gestures_title">ジェスチャー</string>
+    <!-- VoLTE icon -->
+    <string name="volte_icon_title">VoLTE アイコン</string>
+    <string name="volte_icon_summary">利用可能な場合に VoLTE のアイコンを表示します</string>
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">VoWiFi アイコン</string>
+    <string name="vowifi_icon_summary">利用可能な場合に VoWiFi アイコンを表示します</string>
+    <string name="volte_vowifi_override_title">VoWiFi で上書き</string>
+    <string name="volte_vowifi_override_summary">VoWiFi が利用可能な場合は VoLTE を非表示にします</string>
+    <!-- Roaming indicator icon -->
+    <string name="roaming_indicator_icon_title">ローミング表示</string>
+    <string name="roaming_indicator_icon_summary">ローミング中に電波アイコンにローミング表示をします</string>
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">4G アイコン</string>
+    <string name="show_fourg_icon_summary">LTE の代わりに 4G アイコンを表示します</string>
+    <!-- Data disabled indicator -->
+    <string name="data_disabled_icon_title">データ通信無効の表示</string>
+    <string name="data_disabled_icon_summary">データ通信が無効な時、電波アイコンの隣にインジケーターを表示します</string>
+    <!-- Lockscreen categories -->
+    <string name="lockscreen_interface_category">インターフェース</string>
+    <!-- Lockscreen battery info indicator -->
+    <string name="lockscreen_battery_info_title">バッテリー情報</string>
+    <string name="lockscreen_battery_info_summary">充電中にバッテリー情報を表示します</string>
+    <!-- Button settings -->
+    <string name="additional_buttons_title">追加のボタン</string>
+    <string name="hardware_keys_power_key_title">電源ボタン</string>
+    <string name="hardware_keys_home_key_title">ホームボタン</string>
+    <string name="hardware_keys_back_key_title">バックボタン</string>
+    <string name="hardware_keys_menu_key_title">メニューボタン</string>
+    <string name="hardware_keys_assist_key_title">検索ボタン</string>
+    <string name="hardware_keys_appswitch_key_title">アプリ履歴ボタン</string>
+    <string name="hardware_keys_camera_key_title">カメラボタン</string>
+    <string name="hardware_keys_volume_keys_title">音量ボタン</string>
+    <string name="hardware_keys_short_press_title">短押し時のアクション</string>
+    <string name="hardware_keys_long_press_title">長押し時のアクション</string>
+    <string name="hardware_keys_double_tap_title">ダブルタップ時のアクション</string>
+    <string name="hardware_keys_action_nothing">なし</string>
+    <string name="hardware_keys_action_menu">メニューを開く/閉じる</string>
+    <string name="hardware_keys_action_app_switch">アプリ履歴</string>
+    <string name="hardware_keys_action_search">検索アシスタント</string>
+    <string name="hardware_keys_action_voice_search">音声検索</string>
+    <string name="hardware_keys_action_in_app_search">アプリ内検索</string>
+    <string name="hardware_keys_action_launch_camera">カメラを起動</string>
+    <string name="hardware_keys_action_sleep">画面を消灯</string>
+    <string name="hardware_keys_action_last_app">直前のアプリ</string>
+    <string name="hardware_keys_action_split_screen">画面の分割</string>
+    <string name="hardware_keys_action_close_app">アプリを終了</string>
+    <string name="hardware_keys_action_torch">ライトを切り替え</string>
+    <string name="hardware_keys_action_screenshot">スクリーンショットを撮る</string>
+    <string name="hardware_keys_action_volume_panel">音量パネルを切り替え</string>
+    <string name="hardware_keys_action_clear_all_notifications">すべての通知を消去</string>
+    <string name="hardware_keys_action_notifications_panel">通知パネルを切り替え</string>
+    <string name="hardware_keys_action_expand_qs_panel">クイック設定パネルを展開</string>
+    <string name="hardware_keys_action_ringer_modes">着信モードを変更</string>
+    <string name="home_answer_call_title">着信に応答</string>
+    <string name="home_answer_call_summary">ホームボタンを押して着信に応答します</string>
+    <string name="camera_sleep_on_release_title">画面の覗き見</string>
+    <string name="camera_sleep_on_release_summary">ボタンを半押しし続けている間だけ画面を点灯し続けます</string>
+    <string name="camera_launch_title">カメラを起動</string>
+    <string name="camera_launch_summary">長押しして離すとカメラが起動します</string>
+    <string name="torch_long_press_power_gesture_title">長押しでライト点灯</string>
+    <string name="torch_long_press_power_gesture_desc">画面消灯時に電源ボタンを長押しするとライトを点灯します</string>
+    <string name="torch_long_press_power_timeout_title">ライトを自動的にオフにする</string>
+    <string name="volbtn_music_controls_title">再生をコントロール</string>
+    <string name="volbtn_music_controls_summary">画面消灯時に音量ボタンを長押しして音楽を操作します</string>
+    <string name="volbtn_cursor_control_title">キーボードのカーソル操作</string>
+    <string name="volbtn_cursor_control_off">無効</string>
+    <string name="volbtn_cursor_control_on">音量の上 / 下ボタンでカーソルを左 / 右に移動</string>
+    <string name="volbtn_cursor_control_on_reverse">音量の上 / 下ボタンでカーソルを右 / 左に移動</string>
+    <string name="power_end_call_title">通話を終了</string>
+    <string name="power_end_call_summary">電源ボタンを押して通話を終了します</string>
+    <string name="swap_volume_buttons_title">再配置</string>
+    <string name="swap_volume_buttons_summary">画面回転時に音量ボタンを入れ替えます</string>
+    <string name="button_wake_title">画面を点灯</string>
+    <string name="button_wake_summary">ボタンを押してロック解除します</string>
+    <string name="volume_answer_call_title">着信に応答</string>
+    <string name="volume_answer_call_summary">音量ボタンを押して着信に応答します</string>
+    <!-- Power menu -->
+    <string name="power_menu_title">電源メニュー</string>
+    <string name="power_menu_summary">電源メニューを編集します</string>
+    <string name="power_menu_screenshot_title">スクリーンショット</string>
+    <string name="power_menu_onthego_title">On-The-Go モード</string>
+    <string name="power_menu_advanced_title">高度な再起動オプション</string>
+    <string name="power_menu_airplane_title">機内モード</string>
+    <string name="power_menu_torch_title">ライト</string>
+    <string name="power_menu_settings_title">設定</string>
+    <string name="power_menu_lockdown_title">ロックダウン</string>
+    <string name="power_menu_soundpanel_title">音量パネル</string>
+    <string name="power_menu_users_title">ユーザー</string>
+    <string name="power_menu_logout_title">ログアウト</string>
+    <string name="power_menu_emergency_title">緊急通報</string>
+    <!-- UI settings -->
+    <string name="monet_title">Monet 設定</string>
+    <string name="monet_summary">Monet テーマエンジンをカスタマイズします</string>
+    <!-- Monet Engine -->
+    <string name="monet_engine_custom_color_title">カスタム色を使用する</string>
+    <string name="monet_engine_custom_color_summary">Monet エンジンで、壁紙の色の代わりにカスタム色を使用します</string>
+    <string name="monet_engine_color_override_title">カスタム色</string>
+    <string name="monet_engine_white_luminance_user_title">白い輝き</string>
+    <string name="monet_engine_accurate_shades_title">正確な色合いを使用</string>
+    <string name="monet_engine_chroma_factor_title">彩度係数</string>
+    <string name="monet_engine_linear_lightness_title">リニア明度を使用</string>
+    <!-- Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">クイックロック解除</string>
+    <string name="unlock_quick_unlock_control_summary">正しい PIN / パスワードを入力すると自動的にロック解除します</string>
+    <!-- Doze settings -->
+    <string name="doze_display_title">アンビエント表示</string>
+    <string name="doze_display_summary">アンビエント表示の設定を編集します</string>
+    <string name="doze_additional_settings_title">その他の設定</string>
+    <string name="doze_additional_settings_summary">デバイス固有のアンビエント表示設定を編集します</string>
+    <string name="doze_sensor_title">センサーベース</string>
+    <string name="raise_to_wake_title">スリープ解除</string>
+    <string name="raise_to_wake_summary">通知のライト点滅の代わりに持ち上げる動作でスリープ解除します</string>
+    <string name="tilt_title">傾き</string>
+    <string name="tilt_summary">傾けたときに通知を表示します</string>
+    <string name="pickup_title">持ち上げ</string>
+    <string name="pickup_summary">端末を持ち上げた時に通知を表示します</string>
+    <string name="handwave_title">手を振る</string>
+    <string name="handwave_summary">手を振った時に通知を表示します</string>
+    <string name="pocket_title">ポケット</string>
+    <string name="pocket_summary">ポケットから出した時に通知を表示します</string>
+    <string name="doze_vibrate">バイブレーション</string>
+    <string name="doze_vibrate_summary">通知を表示するときのバイブの動作時間を指定します</string>
+    <string name="sensor_warning_message">センサーベースの設定はハードウェアの互換性に依存します。センサーを有効化するとバッテリー消費が増える可能性があります</string>
+    <!-- Ambient edge lighting -->
+    <string name="pulse_ambient_light_title">エッジライト</string>
+    <string name="pulse_ambient_light_summary">通知の点滅で画面の両端をライトアップします</string>
+    <string name="pulse_ambient_light_color_title">エッジライトの色</string>
+    <string name="pulse_ambient_light_duration_title">エッジライトの長さ</string>
+    <string name="pulse_ambient_light_duration_summary">アンビエントライトアニメーションの長さを設定します</string>
+    <string name="pulse_ambient_light_layout_title">エッジライト</string>
+    <string name="pulse_ambient_light_layout_solid">ソリッド</string>
+    <string name="pulse_ambient_light_layout_faded">フェード</string>
+    <!-- Ambient Ticker -->
+    <string name="pulse_on_new_tracks_title">音楽ティッカー</string>
+    <string name="pulse_on_new_tracks_summary">再生中の音楽の変更時に、アンビエント表示に音楽ティッカーを表示します</string>
+    <!-- Status bar - icon blocklist -->
+    <string name="status_bar_icons_title">ステータスバーのアイコン</string>
+    <string name="status_bar_icons_summary">ステータスバーに表示するアイコンを選択します</string>
+    <!-- Bluetooth status -->
+    <string name="bluetooth_battery_title">Bluetooth のバッテリー状態</string>
+    <string name="bluetooth_battery_summary">利用可能な場合、接続中の Bluetooth デバイスのバッテリー残量を表示します</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="statusbar_doubletap_sleep_title">ダブルタップでスリープ</string>
+    <string name="statusbar_doubletap_sleep_summary">ステータスバーをダブルタップしてデバイスをスリープさせます</string>
+    <!-- Status bar - Brightness control -->
+    <string name="status_bar_toggle_brightness_title">明るさコントロール</string>
+    <string name="status_bar_toggle_brightness_summary">ステータスバーを左右にスライドして明るさを調整します</string>
+    <!-- Status bar - Quick pulldown -->
+    <string name="status_bar_quick_qs_pulldown_title">クイックプルダウン</string>
+    <string name="status_bar_quick_qs_pulldown_summary">ステータスバーの%1$s端から引き下げるとクイック設定を開きます</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">左</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">右</string>
+    <string name="status_bar_quick_qs_pulldown_off">オフ</string>
+    <string name="status_bar_quick_qs_pulldown_left">左</string>
+    <string name="status_bar_quick_qs_pulldown_right">右</string>
+    <string name="status_bar_quick_qs_pulldown_always">ステータスバーを引き下げたら常にクイック設定を開く</string>
+    <!-- Status bar - Smart pulldown-->
+    <string name="smart_pulldown_title">スマートプルダウン</string>
+    <string name="smart_pulldown_summary">%1$sに直接クイック設定を開きます</string>
+    <string name="smart_pulldown_none_summary">通知がない時に直接クイック設定を開きます</string>
+    <string name="smart_pulldown_off">オフ</string>
+    <string name="smart_pulldown_none">通知が無い時</string>
+    <string name="smart_pulldown_dismissable">消せる通知が無い時</string>
+    <string name="smart_pulldown_ongoing">実行中の通知が無い時</string>
+    <!-- Tap to sleep on status bar -->
+    <string name="lockscreen_doubletap_sleep_title">ダブルタップでスリープ</string>
+    <string name="lockscreen_doubletap_sleep_summary">ロック画面をダブルタップして端末をスリープさせます</string>
+    <!-- Font style / Icon pack -->
+    <string name="theme_customization_font_title">フォントスタイル</string>
+    <string name="theme_customization_icon_pack_title">アイコンパック</string>
+    <string name="theme_customization_adaptive_icon_shape_title">アダプティブアイコン</string>
+    <!-- Refresh rate -->
+    <string name="default_refresh_rate_title_custom">デフォルトのリフレッシュレート</string>
+    <string name="peak_refresh_rate_title_custom">最高リフレッシュレート</string>
+    <string name="low_power_refresh_rate_title_custom">省電力リフレッシュレート</string>
+    <!-- Status bar - Clock -->
+    <string name="status_bar_clock_title">日付と時刻</string>
+    <string name="status_bar_clock_summary">日付と時刻の編集</string>
+    <string name="status_bar_clock_seconds_title">時計の秒</string>
+    <string name="status_bar_clock_seconds_summary">ステータスバーの時刻の隣に秒を表示します</string>
+    <string name="status_bar_clock_position_title">時計のスタイル</string>
+    <string name="status_bar_clock_position_right">右</string>
+    <string name="status_bar_clock_position_left">左</string>
+    <string name="status_bar_clock_position_center">中央</string>
+    <string name="status_bar_clock_position_hidden">非表示</string>
+    <string name="status_bar_clock_auto_hide_title">自動的に隠す</string>
+    <string name="status_bar_clock_auto_hide_summary">ステータスバーのスペース節約のため、一定の間隔で時計を表示 / 非表示にします</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">非表示にするまでの時間</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">時計を非表示にする秒数を指定します</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">表示する時間</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">時計を非表示にするまでの待ち時間を指定します</string>
+    <string name="status_bar_am_pm_title">AM / PM のスタイル</string>
+    <string name="status_bar_am_pm_info">24時間表示が有効です</string>
+    <string name="status_bar_am_pm_normal">標準</string>
+    <string name="status_bar_am_pm_small">小</string>
+    <string name="status_bar_am_pm_hidden">非表示</string>
+    <string name="status_bar_date_title">日付</string>
+    <string name="status_bar_date_none">非表示</string>
+    <string name="status_bar_date_small">小</string>
+    <string name="status_bar_date_normal">標準</string>
+    <string name="status_bar_date_format_title">日付の形式</string>
+    <string name="status_bar_date_style">日付のスタイル</string>
+    <string name="status_bar_date_style_normal">標準</string>
+    <string name="status_bar_date_style_lowercase">小文字</string>
+    <string name="status_bar_date_style_uppercase">大文字</string>
+    <string name="status_bar_date_format_custom">カスタム Java 形式</string>
+    <string name="status_bar_date_string_edittext_title">DateFormat 形式で入力して下さい（例: yy/MM/dd）</string>
+    <string name="status_bar_date_string_edittext_summary">文字列を入力</string>
+    <string name="clock_date_position">日付の位置</string>
+    <string name="clock_date_right">時刻の右</string>
+    <string name="clock_date_left">時刻の左</string>
+    <!-- Status bar - Battery -->
+    <string name="status_bar_battery_style_title">バッテリースタイル</string>
+    <string name="status_bar_battery_style_icon_portrait">縦向きのアイコン</string>
+    <string name="status_bar_battery_style_circle">円</string>
+    <string name="status_bar_battery_style_dotted_circle">点線の円</string>
+    <string name="status_bar_battery_style_filled_circle">塗り潰した円</string>
+    <string name="status_bar_battery_style_text">テキスト</string>
+    <string name="status_bar_battery_style_hidden">非表示</string>
+    <string name="status_bar_battery_percent_title">バッテリーパーセント表示</string>
+    <string name="status_bar_battery_percent_hidden">非表示</string>
+    <string name="status_bar_battery_percent_text_inside">アイコンの内側</string>
+    <string name="status_bar_battery_percent_text_next">アイコンの隣</string>
+    <string name="status_bar_battery_text_charging_title">充電中のバッテリーパーセント</string>
+    <string name="status_bar_battery_text_charging_summary">充電中は常にパーセントを表示します</string>
+    <!-- Status bar - Battery Bar -->
+    <string name="battery_bar_title">バッテリーバー</string>
+    <string name="battery_bar_summary">ステータスバー上のバッテリーバーの表示やカスタマイズをします</string>
+    <string name="battery_bar_color">色</string>
+    <string name="battery_bar_charging_color">充電中の色</string>
+    <string name="battery_bar_battery_low_color">バッテリー残量低下時の色</string>
+    <string name="battery_bar_style_title">配置</string>
+    <string name="battery_bar_thickness_title">太さ</string>
+    <string name="battery_bar_animate_title">充電時のアニメーション</string>
+    <string name="battery_bar_style_regular">通常</string>
+    <string name="battery_bar_style_center_mirrored">中央（反転）</string>
+    <string name="battery_bar_style_reversed">逆方向</string>
+    <string name="battery_bar_use_charging_color">充電時のバーの色を変更</string>
+    <string name="battery_bar_blend_color_title">色のブレンド</string>
+    <string name="battery_bar_blend_color_summary">バッテリー残量に応じて満充電 / 残量低下時の色をブレンドします</string>
+    <string name="battery_bar_blend_color_reverse_title">色の順番を逆転させる</string>
+    <string name="battery_bar_blend_color_reverse_summary_off">満充電 &#8594; 残量低下: 赤 &#8592; 緑 &#8592; 青 &#8592; 赤</string>
+    <string name="battery_bar_blend_color_reverse_summary_on">満充電 &#8594; 残量低下: 赤 &#8594; 緑 &#8594; 青 &#8594; 赤</string>
+    <!-- Quick setting categories -->
+    <string name="qs_misc_category">その他</string>
+    <string name="qs_footer_category">フッター</string>
+    <!-- QS clock -->
+    <string name="qs_clock_title">時計</string>
+    <string name="qs_clock_summary">クイック設定のヘッダーに時計を表示します</string>
+    <!-- QS date -->
+    <string name="qs_date_title">日付</string>
+    <string name="qs_date_summary">クイックステータスバーのヘッダーに日付を表示します</string>
+    <!-- QS battery -->
+    <string name="qs_battery_location_title">バッテリーの位置</string>
+    <string name="qs_battery_location_qs_panel">クイック設定パネル</string>
+    <string name="qs_battery_location_qs_statusbar">クイックステータスバー</string>
+    <string name="qs_use_status_bar_battery_style">ステータスバーのスタイルに従う</string>
+    <!-- Battery estimate -->
+    <string name="battery_estimate_title">バッテリーの推定残り時間</string>
+    <string name="battery_estimate_summary">利用可能な場合、バッテリーの推定残り時間を表示します</string>
+    <!-- Network traffic -->
+    <string name="network_traffic_settings_title">ネットワークトラフィックモニター</string>
+    <string name="network_traffic_settings_summary">現在のネットワークトラフィックの表示とカスタムをします</string>
+    <string name="network_traffic_location_title">表示位置</string>
+    <string name="network_traffic_location_disable">無効</string>
+    <string name="network_traffic_location_statusbar">ステータスバー</string>
+    <string name="network_traffic_location_quick_statusbar">クイックステータスバー</string>
+    <string name="network_traffic_mode_title">表示モード</string>
+    <string name="network_traffic_mode_up">アップロードのみ</string>
+    <string name="network_traffic_mode_down">ダウンロードのみ</string>
+    <string name="network_traffic_mode_all">アップロードとダウンロード</string>
+    <string name="network_traffic_autohide">自動的に隠す</string>
+    <string name="network_traffic_autohide_summary">非アクティブ時にトラフィックモニターを非表示にします</string>
+    <string name="network_traffic_autohide_kilobits">Kb/s</string>
+    <string name="network_traffic_autohide_kilobytes">KB/s</string>
+    <string name="network_traffic_autohide_threshold">非アクティブ判定のしきい値</string>
+    <string name="network_traffic_refresh_interval_title">更新間隔</string>
+    <string name="network_traffic_refresh_interval_summary">速度を再計測する間隔です</string>
+    <string name="network_traffic_units_title">トラフィックの単位</string>
+    <string name="network_traffic_units_bits">ビット/秒 (b/s)</string>
+    <string name="network_traffic_units_kilobits">キロビット/秒 (kb/s)</string>
+    <string name="network_traffic_units_megabits">メガビット/秒 (Mb/s)</string>
+    <string name="network_traffic_units_bytes">バイト/秒 (B/s)</string>
+    <string name="network_traffic_units_kilobytes">キロバイト/秒 (kB/s)</string>
+    <string name="network_traffic_units_megabytes">メガバイト/秒 (MB/s)</string>
+    <string name="network_traffic_hidearrow">矢印を隠す</string>
+    <string name="network_traffic_hidearrow_summary">トラフィックモニターの矢印を隠します</string>
+    <!-- QS footer warnings -->
+    <string name="qs_footer_warnings_title">フッターの警告</string>
+    <string name="qs_footer_warnings_summary">外部アプリや VPN でネットワーク監視されている時に、クイック設定パネルの下部に警告を表示します</string>
+    <!-- Media art -->
+    <string name="media_art_title">メディアのカバーアート</string>
+    <string name="media_art_summary">使用可能な場合、カバーアートを表示します</string>
+    <!-- Lockscreen album art filter -->
+    <string name="lockscreen_albumart_filter_title">メディアカバーアートのフィルター</string>
+    <string name="lockscreen_albumart_filter_none">なし</string>
+    <string name="lockscreen_albumart_filter_grayscale">グレースケール</string>
+    <string name="lockscreen_albumart_filter_tint">アクセント色</string>
+    <string name="lockscreen_albumart_filter_blur">ぼかし</string>
+    <string name="lockscreen_albumart_filter_grayblur">グレースケールとぼかし</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_help_policy_notice_title">Pulse について</string>
+    <string name="pulse_help_policy_notice_summary">Pulse はデバイス上で音楽を再生した時に表示されるグラフィックイコライザーです</string>
+    <string name="pulse_settings">Pulse</string>
+    <string name="pulse_settings_summary">ナビゲーションバーとロック画面にグラフィックイコライザーを表示します</string>
+    <string name="show_navbar_pulse_title">ナビゲーションバーの Pulse</string>
+    <string name="show_navbar_pulse_summary">ナビゲーションバー上にグラフィックイコライザーを表示します</string>
+    <string name="show_lockscreen_pulse_title">ロック画面の Pulse</string>
+    <string name="show_lockscreen_pulse_summary">ロック画面にグラフィックイコライザーを表示します</string>
+    <string name="show_ambient_pulse_title">アンビエント Pulse</string>
+    <string name="show_ambient_pulse_summary">アンビエント表示にグラフィックイコライザーを表示します</string>
+    <string name="pulse_render_mode_title">レンダリングモード</string>
+    <string name="pulse_render_mode_fading_bars">フェーディングブロック</string>
+    <string name="pulse_render_mode_solid_lines">ソリッドライン</string>
+    <string name="pulse_legacy_mode_advanced_category">フェーディングブロックモードの設定</string>
+    <string name="pulse_custom_fudge_factor">感度</string>
+    <string name="pulse_lavalamp_speed_title">ラーヴァランプ速度</string>
+    <string name="pulse_solid_units_count">ソリッドラインの数</string>
+    <string name="pulse_solid_units_opacity">ソリッドラインの不透明度</string>
+    <string name="pulse_solid_dimen_category">ソリッドラインモードの設定</string>
+    <string name="pulse_color_mode_title">色</string>
+    <string name="pulse_color_accent">アクセント</string>
+    <string name="pulse_color_custom">カスタム</string>
+    <string name="pulse_color_lava_lamp">ラーヴァランプ</string>
+    <string name="pulse_color_user_title">色を選択</string>
+    <string name="pulse_smoothing_enabled_title">スムージングを有効化</string>
+    <string name="pulse_smoothing_enabled_summary">バーがよりスムーズに表示されます</string>
+    <string name="pulse_custom_dimen">バーの幅</string>
+    <string name="pulse_custom_div">バーの間隔</string>
+    <string name="pulse_filled_block_size">ブロックの大きさ</string>
+    <string name="pulse_empty_block_size">ブロックの間隔</string>
+    <!-- Navigation Bar -->
+    <string name="navbar_visibility_title">ナビゲーションバー</string>
+    <string name="navbar_visibility_summary">画面下部にナビゲーションバーを表示します</string>
+    <string name="navbar_layout_category_title">表示順序</string>
+    <string name="navbar_arrow_keys_title">入力中に矢印キーを表示</string>
+    <string name="navbar_arrow_keys_summary">入力中は左右の矢印ボタンを表示します。入力方法の切り替えアイコンは無効になります。</string>
+    <string name="navbar_layout_title">表示順序</string>
+    <string name="navbar_layout_normal">標準</string>
+    <string name="navbar_layout_compact">コンパクト</string>
+    <string name="navbar_layout_leftleaning">左寄り</string>
+    <string name="navbar_layout_rightleaning">右寄り</string>
+    <string name="navbar_invert_layout_title">レイアウトを反転</string>
+    <string name="navbar_invert_layout_summary">ナビゲーションバーや入力方法の切替えなどのレイアウトを反転させます</string>
+    <string name="navbar_actions_category_title">アクション</string>
+    <string name="navbar_back_long_press_title">バック長押し</string>
+    <string name="navbar_home_long_press_title">ホーム長押し</string>
+    <string name="navbar_home_double_tap_title">ホームダブルタップ</string>
+    <string name="navbar_app_switch_long_press_title">アプリ履歴長押し</string>
+    <string name="navbar_edge_long_swipe_title">エッジ長スワイプ</string>
+    <!-- Pocket judge -->
+    <string name="pocket_judge_title">ポケット検出</string>
+    <string name="pocket_judge_summary">ポケットに入っている時にタッチやボタン入力を無効化します</string>
+    <!-- Disable HW keys -->
+    <string name="hwkeys_disabled_title">ハードウェアキーを無効化</string>
+    <string name="hwkeys_disabled_summary">ハードウェアキーでのナビゲーションを無効化します</string>
+    <!-- Swap capacitive keys -->
+    <string name="swap_capacitive_keys_title">ハードウェアキーを入れ替え</string>
+    <string name="swap_capacitive_keys_summary">アプリ履歴ボタンとバックボタンの位置を入れ替えます</string>
+    <!-- ANBI -->
+    <string name="anbi_title">誤タッチ防止</string>
+    <string name="anbi_summary">画面がタッチされている間はナビゲーションボタンを無効化して誤操作を防ぎます</string>
+    <!-- Live volume steps -->
+    <string name="volume_steps_title">音量レベル</string>
+    <string name="volume_steps_summary">音量パネルでの音量のステップ数をカスタマイズします</string>
+    <string name="volume_steps_alarm_title">音量レベル: アラーム</string>
+    <string name="volume_steps_dtmf_title">音量レベル: DTMF</string>
+    <string name="volume_steps_music_title">音量レベル: 音楽</string>
+    <string name="volume_steps_notification_title">音量レベル: 通知音</string>
+    <string name="volume_steps_ring_title">音量レベル: 着信音</string>
+    <string name="volume_steps_system_title">音量レベル: システム音</string>
+    <string name="volume_steps_voice_call_title">音量レベル: 音声通話</string>
+    <string name="volume_steps_reset">リセット</string>
+    <string name="volume_steps_60">60</string>
+    <string name="volume_steps_45">45</string>
+    <string name="volume_steps_30">30</string>
+    <string name="volume_steps_15">15</string>
+    <string name="volume_steps_7">7</string>
+    <string name="volume_steps_5">5</string>
+    <!-- Three-fingers-swipe to screenshot -->
+    <string name="three_finger_gesture">スワイプでスクリーンショット</string>
+    <string name="three_finger_gesture_summary">3本指でスワイプしてスクリーンショットを撮影します</string>
+    <!-- Running services - Background processes tab -->
+    <string name="background_processes_settings_title">バックグラウンドプロセス</string>
+    <!-- QS footer icons -->
+    <string name="qs_footer_users_icon_title">ユーザーアカウントのアイコン</string>
+    <string name="qs_footer_users_icon_summary">利用可能な場合にマルチユーザーの切り替えアイコンを表示します</string>
+    <string name="qs_footer_edit_icon_title">タイルの編集アイコン</string>
+    <string name="qs_footer_show_power_menu_title">電源メニューのショートカット</string>
+    <string name="qs_footer_services_icon_title">実行中サービスのショートカット</string>
+    <string name="qs_footer_settings_icon_title">設定のショートカット</string>
+    <!-- Device Info screen. crDroid legal. -->
+    <string name="crdroid_license_title">crDroid ライセンス</string>
+    <!-- Quick Settings brightness slider -->
+    <string name="qs_show_brightness_slider_title">明るさスライダー</string>
+    <string name="qs_show_brightness_slider_never">表示しない</string>
+    <string name="qs_show_brightness_slider_expanded">展開時に表示</string>
+    <string name="qs_show_brightness_slider_always">常に表示</string>
+    <string name="qs_show_brightness_slider_not_expanded">展開されていないときに表示</string>
+    <string name="qs_brightness_slider_position_title">位置</string>
+    <string name="qs_brightness_slider_position_top">上部</string>
+    <string name="qs_brightness_slider_position_bottom">下部</string>
+    <!-- Quick Settings brightness icon -->
+    <string name="qs_show_auto_brightness_title">自動明るさ調整アイコン</string>
+    <string name="qs_show_auto_brightness_summary">スライダーの近くに明るさの自動調節のトグルを表示します</string>
+</resources>
