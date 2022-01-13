@@ -281,23 +281,23 @@
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Privzeta hitrost osveževanja</string>
     <string name="peak_refresh_rate_title_custom">Najvišja hitrost osveževanja</string>
-    <string name="low_power_refresh_rate_title_custom">Low power refresh rate</string>
+    <string name="low_power_refresh_rate_title_custom">Hitrost osveževanja nizke napolnjenosti</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Ura in datum</string>
     <string name="status_bar_clock_summary">Prilagodi uro in datum</string>
     <string name="status_bar_clock_seconds_title">Sekunde ure</string>
     <string name="status_bar_clock_seconds_summary">Prikaži sekunde poleg ure v vrstici stanja</string>
     <string name="status_bar_clock_position_title">Slog ure</string>
-    <string name="status_bar_clock_position_right">Right</string>
-    <string name="status_bar_clock_position_left">Left</string>
-    <string name="status_bar_clock_position_center">Center</string>
-    <string name="status_bar_clock_position_hidden">Hidden</string>
-    <string name="status_bar_clock_auto_hide_title">Auto-hide</string>
-    <string name="status_bar_clock_auto_hide_summary">Hide and display clock for regular interval to save statusbar space</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Hide duration</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Number of seconds to hide clock</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Show duration</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Number of seconds to wait before hiding clock</string>
+    <string name="status_bar_clock_position_right">Desno</string>
+    <string name="status_bar_clock_position_left">Levo</string>
+    <string name="status_bar_clock_position_center">Na sredini</string>
+    <string name="status_bar_clock_position_hidden">Skrita</string>
+    <string name="status_bar_clock_auto_hide_title">Samodejno skrij</string>
+    <string name="status_bar_clock_auto_hide_summary">Skrij in prikaži uro na redni interval za prihranek prostora v vrstici stanja</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">Trajanje skritja</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Število sekund skritja ure</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Prikaži trajanje</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Število sekund čakanja pred skrivanjem ure</string>
     <string name="status_bar_am_pm_title">Slog AM/PM</string>
     <string name="status_bar_am_pm_info">24-urni način je omogočen</string>
     <string name="status_bar_am_pm_normal">Normal</string>
@@ -307,17 +307,17 @@
     <string name="status_bar_date_none">Hidden</string>
     <string name="status_bar_date_small">Small</string>
     <string name="status_bar_date_normal">Normal</string>
-    <string name="status_bar_date_format_title">Date format</string>
-    <string name="status_bar_date_style">Date style</string>
-    <string name="status_bar_date_style_normal">Normal</string>
-    <string name="status_bar_date_style_lowercase">Lowercase</string>
-    <string name="status_bar_date_style_uppercase">Uppercase</string>
-    <string name="status_bar_date_format_custom">Custom java format</string>
-    <string name="status_bar_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
-    <string name="status_bar_date_string_edittext_summary">Enter string</string>
-    <string name="clock_date_position">Date position</string>
-    <string name="clock_date_right">Right of time</string>
-    <string name="clock_date_left">Left of time</string>
+    <string name="status_bar_date_format_title">Oblika datuma</string>
+    <string name="status_bar_date_style">Slog datuma</string>
+    <string name="status_bar_date_style_normal">Običajni</string>
+    <string name="status_bar_date_style_lowercase">Male tiskane črke</string>
+    <string name="status_bar_date_style_uppercase">Velike tiskane črke</string>
+    <string name="status_bar_date_format_custom">Oblika jave po meri</string>
+    <string name="status_bar_date_string_edittext_title">Mora biti v obliki datuma npr. MM/dd/yy</string>
+    <string name="status_bar_date_string_edittext_summary">Vnesite niz</string>
+    <string name="clock_date_position">Položaj datuma</string>
+    <string name="clock_date_right">Desno od ure</string>
+    <string name="clock_date_left">Levo od ure</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Slog baterije</string>
     <string name="status_bar_battery_style_icon_portrait">Pokončna ikona</string>
@@ -353,11 +353,11 @@
     <string name="battery_bar_blend_color_reverse_summary_off">Napolnjena &#8594; prazna: rdeča &#8592; zelena &#8592; modra &#8592; rdeča</string>
     <string name="battery_bar_blend_color_reverse_summary_on">Napolnjena &#8594; prazna: rdeča &#8594; zelena &#8594; modra &#8594; rdeča</string>
     <!-- Quick setting categories -->
-    <string name="qs_misc_category">Miscellaneous</string>
+    <string name="qs_misc_category">Razno</string>
     <string name="qs_footer_category">Footer</string>
     <!-- QS clock -->
-    <string name="qs_clock_title">Clock</string>
-    <string name="qs_clock_summary">Display clock in quick status bar header</string>
+    <string name="qs_clock_title">Ura</string>
+    <string name="qs_clock_summary">Prikaži uro v glavi hitre vrstice stanja</string>
     <!-- QS date -->
     <string name="qs_date_title">Date</string>
     <string name="qs_date_summary">Display date in quick status bar header</string>
@@ -428,6 +428,8 @@
     <string name="pulse_lavalamp_speed_title">Lava lamp speed</string>
     <string name="pulse_solid_units_count">Solid lines count</string>
     <string name="pulse_solid_units_opacity">Solid lines opacity</string>
+    <string name="pulse_solid_units_rounded_title">Rounded corners</string>
+    <string name="pulse_solid_units_rounded_summary">Solid lines with rounded tip</string>
     <string name="pulse_solid_dimen_category">Solid lines mode settings</string>
     <string name="pulse_color_mode_title">Color</string>
     <string name="pulse_color_accent">Poudarek</string>
@@ -481,7 +483,7 @@
     <string name="volume_steps_ring_title">Volume steps: Ringer</string>
     <string name="volume_steps_system_title">Volume steps: System</string>
     <string name="volume_steps_voice_call_title">Volume steps: Voice Call</string>
-    <string name="volume_steps_reset">Reset</string>
+    <string name="volume_steps_reset">Ponastavi</string>
     <string name="volume_steps_60">60</string>
     <string name="volume_steps_45">45</string>
     <string name="volume_steps_30">30</string>
