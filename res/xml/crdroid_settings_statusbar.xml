@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2021 crDroid Android Project
+     Copyright (C) 2016-2022 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -112,6 +112,12 @@
             android:summary="@string/volte_vowifi_override_summary"
             android:defaultValue="true"/>
 
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="statusbar_colored_icons"
+            android:icon="@drawable/ic_shapes"
+            android:title="@string/statusbar_colored_icons_title"
+            android:summary="@string/statusbar_colored_icons_summary"
+            android:defaultValue="false" />
     </PreferenceCategory>
 
     <!-- Status bar battery customizations -->
