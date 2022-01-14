@@ -20,53 +20,39 @@
     android:key="power_menu_settings"
     android:title="@string/power_menu_title">
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="powermenu_advanced"
+    <lineageos.preference.LineageSecureSettingSwitchPreference
+        android:key="advanced_reboot"
+        android:icon="@drawable/ic_restart"
         android:title="@string/power_menu_advanced_title"
         android:defaultValue="true" />
 
-    <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="powermenu_airplane"
-        android:title="@string/power_menu_airplane_title"
-        android:defaultValue="false" />-->
-
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="powermenu_screenshot"
+    <SwitchPreference
+        android:key="screenshot"
+        android:icon="@drawable/ic_screenshot"
         android:title="@string/power_menu_screenshot_title"
         android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="powermenu_onthego"
+    <SwitchPreference
+        android:key="onthego"
+        android:icon="@drawable/ic_onthego"
         android:title="@string/power_menu_onthego_title"
         android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="powermenu_torch"
-        android:title="@string/power_menu_torch_title"
+    <SwitchPreference
+        android:key="airplane"
+        android:icon="@drawable/ic_airplane_mode"
+        android:title="@string/power_menu_airplane_title"
         android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="powermenu_settings"
-        android:title="@string/power_menu_settings_title"
-        android:defaultValue="false" />
-
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="powermenu_lockdown"
-        android:title="@string/power_menu_lockdown_title"
-        android:defaultValue="false" />
-
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="powermenu_emergency"
-        android:title="@string/power_menu_emergency_title"
-        android:defaultValue="false" />
-
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="powermenu_users"
+    <SwitchPreference
+        android:key="users"
+        android:icon="@drawable/ic_user"
         android:title="@string/power_menu_users_title"
         android:defaultValue="false" />
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="powermenu_logout"
-        android:title="@string/power_menu_logout_title"
+    <SwitchPreference
+        android:key="emergency"
+        android:icon="@drawable/ic_emergency"
+        android:title="@string/power_menu_emergency_title"
         android:defaultValue="false" />
 </PreferenceScreen>

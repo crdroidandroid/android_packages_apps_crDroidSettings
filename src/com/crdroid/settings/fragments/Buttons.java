@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2021 crDroid Android Project
+ * Copyright (C) 2016-2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.crdroid.settings.fragments.buttons.PowerMenuSettings;
 import com.crdroid.settings.preferences.LineageSystemSettingSeekBarPreference;
 import com.crdroid.settings.utils.DeviceUtils;
 import com.crdroid.settings.utils.TelephonyUtils;
@@ -541,7 +540,6 @@ public class Buttons extends SettingsPreferenceFragment implements
                 Settings.System.SWAP_CAPACITIVE_KEYS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANBI_ENABLED, 0, UserHandle.USER_CURRENT);
-        PowerMenuSettings.reset(mContext);
     }
 
     @Override
