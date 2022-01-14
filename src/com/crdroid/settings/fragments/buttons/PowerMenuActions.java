@@ -27,8 +27,6 @@ import android.provider.Settings;
 import androidx.preference.SwitchPreference;
 import androidx.preference.Preference;
 
-import com.android.internal.widget.LockPatternUtils;
-
 import org.lineageos.internal.util.PowerMenuConstants;
 
 import java.util.ArrayList;
@@ -118,14 +116,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
             mEmergencyPref.setChecked(mLineageGlobalActions.userConfigContains(
                     GLOBAL_ACTION_KEY_EMERGENCY));
         }
-
-        updatePreferences();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        updatePreferences();
     }
 
     @Override
@@ -148,12 +138,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
             value = mUsersPref.isChecked();
             mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_USERS);
 
-        } else if (preference == mLockDownPref) {
-            value = mLockDownPref.isChecked();
-            mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_LOCKDOWN);
-            Settings.Secure.putIntForUser(getContentResolver(),
-                    Settings.Secure.LOCKDOWN_IN_POWER_MENU, value ? 1 : 0, UserHandle.USER_CURRENT);
-
         } else if (preference == mEmergencyPref) {
             value = mEmergencyPref.isChecked();
             mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_EMERGENCY);
@@ -162,23 +146,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
             return super.onPreferenceTreeClick(preference);
         }
         return true;
-    }
-
-    private void updatePreferences() {
-        boolean isKeyguardSecure = mLockPatternUtils.isSecure(UserHandle.myUserId());
-        boolean lockdown = Settings.Secure.getIntForUser(
-                getContentResolver(), Settings.Secure.LOCKDOWN_IN_POWER_MENU, 0,
-                UserHandle.USER_CURRENT) == 1;
-        if (mLockDownPref != null) {
-            mLockDownPref.setEnabled(isKeyguardSecure);
-            if (isKeyguardSecure) {
-                mLockDownPref.setChecked(lockdown);
-                mLockDownPref.setSummary(null);
-            } else {
-                mLockDownPref.setChecked(false);
-                mLockDownPref.setSummary(R.string.power_menu_lockdown_unavailable);
-            }
-        }
     }
 
     public static void reset(Context mContext) {
