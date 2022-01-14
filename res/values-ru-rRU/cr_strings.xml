@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2021 crDroid Android Project
+     Copyright (C) 2016-2022 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -321,6 +321,8 @@
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Стиль батареи</string>
     <string name="status_bar_battery_style_icon_portrait">Вертикальная иконка</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Расположение иконки (Право)</string>
+    <string name="status_bar_battery_style_icon_landscape">Расположение иконки (Лево)</string>
     <string name="status_bar_battery_style_circle">Круг</string>
     <string name="status_bar_battery_style_dotted_circle">Пунктирный круг</string>
     <string name="status_bar_battery_style_filled_circle">Заполненный круг</string>
@@ -329,7 +331,8 @@
     <string name="status_bar_battery_percent_title">Процент заряда батареи</string>
     <string name="status_bar_battery_percent_hidden">Скрытый</string>
     <string name="status_bar_battery_percent_text_inside">Внутри иконки</string>
-    <string name="status_bar_battery_percent_text_next">Рядом с иконкой</string>
+    <string name="status_bar_battery_percent_text_next_right">Next to the icon (right)</string>
+    <string name="status_bar_battery_percent_text_next_left">Next to the icon (left)</string>
     <string name="status_bar_battery_text_charging_title">Процент заряда батареи при зарядке</string>
     <string name="status_bar_battery_text_charging_summary">Всегда показывать проценты заряда батареи при зарядке</string>
     <!-- Status bar - Battery Bar -->
@@ -395,14 +398,14 @@
     <string name="network_traffic_hidearrow">Скрыть стрелки</string>
     <string name="network_traffic_hidearrow_summary">Скрывать стрелки индикатора сетевого трафика</string>
     <!-- QS footer warnings -->
-    <string name="qs_footer_warnings_title">Предупреждения в панели быстрый настроек</string>
+    <string name="qs_footer_warnings_title">Предупреждения в панели быстрого доступа</string>
     <string name="qs_footer_warnings_summary">Показывать предупреждение в нижней части панели быстрых настроек, когда сеть контролируется сторонними приложениями или VPN</string>
     <!-- Media art -->
     <string name="media_art_title">Обложка трека</string>
     <string name="media_art_summary">Показывать обложку трека когда это возможно</string>
     <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Фильтр обложки медиа</string>
-    <string name="lockscreen_albumart_filter_none">Пусто</string>
+    <string name="lockscreen_albumart_filter_title">Фильтр обложки альбома</string>
+    <string name="lockscreen_albumart_filter_none">Ничего</string>
     <string name="lockscreen_albumart_filter_grayscale">Оттенки серого</string>
     <string name="lockscreen_albumart_filter_tint">Цветовой акцент</string>
     <string name="lockscreen_albumart_filter_blur">Размытие</string>
@@ -426,6 +429,8 @@
     <string name="pulse_lavalamp_speed_title">Скорость эффекта \"Лава-лампа\"</string>
     <string name="pulse_solid_units_count">Количество сплошных линий</string>
     <string name="pulse_solid_units_opacity">Прозрачность сплошных линий</string>
+    <string name="pulse_solid_units_rounded_title">Rounded corners</string>
+    <string name="pulse_solid_units_rounded_summary">Solid lines with rounded tip</string>
     <string name="pulse_solid_dimen_category">Настройки режимов сплошных линий</string>
     <string name="pulse_color_mode_title">Цвет</string>
     <string name="pulse_color_accent">Акцент</string>
@@ -462,7 +467,7 @@
     <string name="pocket_judge_summary">Блокировать экран и кнопки, когда устройство находится в кармане</string>
     <!-- Disable HW keys -->
     <string name="hwkeys_disabled_title">Отключение аппаратных кнопок</string>
-    <string name="hwkeys_disabled_summary">Включение этой функции отключит кнопоки навигации</string>
+    <string name="hwkeys_disabled_summary">Включение этой функции отключит кнопки навигации</string>
     <!-- Swap capacitive keys -->
     <string name="swap_capacitive_keys_title">Поменять местами сенсорные кнопки</string>
     <string name="swap_capacitive_keys_summary">Поменять местами кнопки \"Недавние\" и \"Назад\"</string>
@@ -470,8 +475,8 @@
     <string name="anbi_title">Случайное нажатие</string>
     <string name="anbi_summary">Не реагировать на кнопки навигации при касании экрана</string>
     <!-- Live volume steps -->
-    <string name="volume_steps_title">Кол-во шагов уровней громкости</string>
-    <string name="volume_steps_summary">Настройка кол-ва шагов в панели громкости</string>
+    <string name="volume_steps_title">Уровни громкости</string>
+    <string name="volume_steps_summary">Настройка количества шагов в панели громкости</string>
     <string name="volume_steps_alarm_title">Шаги громкости: Будильник</string>
     <string name="volume_steps_dtmf_title">Шаги громкости: Тоновый набор</string>
     <string name="volume_steps_music_title">Шаги громкости: Музыка</string>
@@ -495,7 +500,7 @@
     <string name="qs_footer_users_icon_title">Значок профиля</string>
     <string name="qs_footer_users_icon_summary">Отображать значок многопользовательского доступа, когда он доступен</string>
     <string name="qs_footer_edit_icon_title">Значок редактирования плиток</string>
-    <string name="qs_footer_show_power_menu_title">Ярлык меню питания</string>
+    <string name="qs_footer_show_power_menu_title">Содержание меню кнопки питания</string>
     <string name="qs_footer_services_icon_title">Значок работающих приложений</string>
     <string name="qs_footer_settings_icon_title">Значок настроек</string>
     <!-- Device Info screen. crDroid legal. -->
@@ -505,9 +510,9 @@
     <string name="qs_show_brightness_slider_never">Не показывать</string>
     <string name="qs_show_brightness_slider_expanded">Показывать, когда развёрнуто</string>
     <string name="qs_show_brightness_slider_always">Всегда показывать</string>
-    <string name="qs_show_brightness_slider_not_expanded">Показывать, когда не развернуто</string>
+    <string name="qs_show_brightness_slider_not_expanded">Показывать в свёрнутом виде</string>
     <string name="qs_brightness_slider_position_title">Расположение регулятора яркости</string>
-    <string name="qs_brightness_slider_position_top">Верх</string>
+    <string name="qs_brightness_slider_position_top">Сверху</string>
     <string name="qs_brightness_slider_position_bottom">Снизу</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Значок автояркости</string>
