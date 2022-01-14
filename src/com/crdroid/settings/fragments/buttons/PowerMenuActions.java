@@ -49,12 +49,14 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
     private SwitchPreference mOnTheGoPref;
     private SwitchPreference mAirplanePref;
     private SwitchPreference mUsersPref;
+    private SwitchPreference mLockDownPref;
     private SwitchPreference mEmergencyPref;
 
     private LineageGlobalActions mLineageGlobalActions;
 
     Context mContext;
     private UserManager mUserManager;
+    private List<String> mLocalUserConfig = new ArrayList<String>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -74,10 +76,14 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
                 mAirplanePref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_AIRPLANE);
             } else if (action.equals(GLOBAL_ACTION_KEY_USERS)) {
                 mUsersPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_USERS);
+            } else if (action.equals(GLOBAL_ACTION_KEY_LOCKDOWN)) {
+                mLockDownPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_LOCKDOWN);
             } else if (action.equals(GLOBAL_ACTION_KEY_EMERGENCY)) {
                 mEmergencyPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_EMERGENCY);
             }
         }
+
+        mLocalUserConfig = mLineageGlobalActions.getLocalUserConfig();
     }
 
     @Override
@@ -138,6 +144,10 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
             value = mUsersPref.isChecked();
             mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_USERS);
 
+        } else if (preference == mLockDownPref) {
+            value = mLockDownPref.isChecked();
+            mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_LOCKDOWN);
+
         } else if (preference == mEmergencyPref) {
             value = mEmergencyPref.isChecked();
             mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_EMERGENCY);
@@ -152,6 +162,8 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         ContentResolver resolver = mContext.getContentResolver();
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.ADVANCED_REBOOT, 1, UserHandle.USER_CURRENT);
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.ADVANCED_REBOOT_SECURED, 1, UserHandle.USER_CURRENT);
     }
 
     @Override

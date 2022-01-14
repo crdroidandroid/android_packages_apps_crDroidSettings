@@ -38,6 +38,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.fragments.buttons.PowerMenuActions;
 import com.crdroid.settings.preferences.LineageSystemSettingSeekBarPreference;
 import com.crdroid.settings.utils.DeviceUtils;
 import com.crdroid.settings.utils.TelephonyUtils;
@@ -540,6 +541,7 @@ public class Buttons extends SettingsPreferenceFragment implements
                 Settings.System.SWAP_CAPACITIVE_KEYS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ANBI_ENABLED, 0, UserHandle.USER_CURRENT);
+        PowerMenuActions.reset(mContext);
     }
 
     @Override
