@@ -38,12 +38,18 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import java.util.List;
-import java.util.ArrayList;
 
 @SearchIndexable
 public class Notifications extends SettingsPreferenceFragment {
 
     public static final String TAG = "Notifications";
+
+    private static final String BATTERY_LIGHTS_PREF = "battery_lights";
+    private static final String NOTIFICATION_LIGHTS_PREF = "notification_lights";
+
+    private Preference mBatLights;
+    private Preference mNotLights;
+    private PreferenceCategory lightsCategory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,6 +58,26 @@ public class Notifications extends SettingsPreferenceFragment {
         Context mContext = getActivity().getApplicationContext();
 
         addPreferencesFromResource(R.xml.crdroid_settings_notifications);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+        final Resources res = mContext.getResources();
+
+        mBatLights = (Preference) prefScreen.findPreference(BATTERY_LIGHTS_PREF);
+        boolean mBatLightsSupported = res.getInteger(
+                org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities) >= 64;
+        if (!mBatLightsSupported)
+            prefScreen.removePreference(mBatLights);
+
+        mNotLights = (Preference) prefScreen.findPreference(NOTIFICATION_LIGHTS_PREF);
+        boolean mNotLightsSupported = res.getBoolean(
+                com.android.internal.R.bool.config_intrusiveNotificationLed);
+        if (!mNotLightsSupported)
+            prefScreen.removePreference(mNotLights);
+
+        if (!mBatLightsSupported && !mNotLightsSupported) {
+            lightsCategory = (PreferenceCategory) prefScreen.findPreference("light_brightness");
+            prefScreen.removePreference(lightsCategory);
+        }
     }
 
     public static void reset(Context mContext) {
@@ -72,6 +98,17 @@ public class Notifications extends SettingsPreferenceFragment {
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+                    final Resources res = context.getResources();
+
+                    boolean mBatLightsSupported = res.getInteger(
+                            org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities) >= 64;
+                    if (!mBatLightsSupported)
+                        keys.add(BATTERY_LIGHTS_PREF);
+
+                    boolean mNotLightsSupported = res.getBoolean(
+                            com.android.internal.R.bool.config_intrusiveNotificationLed);
+                    if (!mNotLightsSupported)
+                        keys.add(NOTIFICATION_LIGHTS_PREF);
 
                     return keys;
                 }

@@ -19,4 +19,25 @@
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:key="light_brightness"
+        android:title="@string/light_brightness_category">
+
+        <!-- Battery light -->
+        <Preference
+            android:key="battery_lights"
+            android:icon="@drawable/ic_led_on"
+            android:title="@string/battery_light_title"
+            android:summary="@string/battery_light_summary"
+            android:fragment="com.crdroid.settings.fragments.notifications.notificationlight.BatteryLightSettings" />
+
+        <!-- Notification lights -->
+        <Preference
+            android:key="notification_lights"
+            android:icon="@drawable/ic_led_on"
+            android:title="@string/notification_light_title"
+            android:summary="@string/notification_light_summary"
+            android:fragment="com.crdroid.settings.fragments.notifications.notificationlight.NotificationLightSettings" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
