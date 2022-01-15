@@ -232,6 +232,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_BATTERY_TEXT_CHARGING, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_COLORED_ICONS, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUSBAR_NOTIF_COUNT, 0, UserHandle.USER_CURRENT);
 
         BatteryBar.reset(mContext);
         Clock.reset(mContext);
