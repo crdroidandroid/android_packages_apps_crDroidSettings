@@ -20,6 +20,26 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
+        android:key="heads_up"
+        android:title="@string/notification_heads_up_title">
+
+        <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
+            android:key="heads_up_notifications_enabled"
+            android:icon="@drawable/ic_headsup"
+            android:title="@string/notification_heads_up_title"
+            android:summary="@string/notification_heads_up_summary"
+            android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="less_boring_heads_up"
+            android:icon="@drawable/ic_headsup_sleep"
+            android:title="@string/less_boring_heads_up_title"
+            android:summary="@string/less_boring_heads_up_summary"
+            android:defaultValue="false"
+            android:dependency="heads_up_notifications_enabled" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="light_brightness"
         android:title="@string/light_brightness_category">
 
