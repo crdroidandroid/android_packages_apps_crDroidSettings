@@ -19,6 +19,13 @@
     xmlns:lineage="http://schemas.android.com/apk/res/lineageos.platform"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="notification_sound_vib_screen_on"
+        android:icon="@drawable/ic_bell_ring"
+        android:title="@string/notification_sound_vib_screen_on_title"
+        android:summary="@string/notification_sound_vib_screen_on_summary"
+        android:defaultValue="true" />
+
     <PreferenceCategory
         android:key="heads_up"
         android:title="@string/notification_heads_up_title">
