@@ -47,6 +47,9 @@
     <string name="never">Never</string>
     <string name="always">Always</string>
     <string name="caution">Caution</string>
+    <string name="delete">Törlés</string>
+    <string name="delete_message">Eltávolítja a kijelölt elemet?</string>
+    <string name="choose_app">Alkalmazásválasztás</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Current changelog</string>
     <string name="changelog_crdroid_summary">View changes in the ROM installed</string>
@@ -186,7 +189,9 @@
     <!-- Power menu -->
     <string name="power_menu_title">Power menu</string>
     <string name="power_menu_summary">Customize power menu options</string>
+    <string name="power_menu_actions_title">Műveletek</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
+    <string name="power_menu_screenshot_summary">Részleges képernyőmentésért nyomja hosszan</string>
     <string name="power_menu_onthego_title">On-The-Go mode</string>
     <string name="power_menu_advanced_title">Advanced reboot options</string>
     <string name="power_menu_airplane_title">Airplane</string>
@@ -197,6 +202,11 @@
     <string name="power_menu_users_title">Users</string>
     <string name="power_menu_logout_title">Logout</string>
     <string name="power_menu_emergency_title">Emergency</string>
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_title">Speciális újraindítás</string>
+    <string name="advanced_reboot_summary">Feloldott kijelzőnél a Recovery és a Bootloader újraindítási mód is jelenjen meg a kikapcsoló-menüben</string>
+    <string name="advanced_reboot_secured_title">Biztonságos záróképernyő</string>
+    <string name="advanced_reboot_secured_summary">A biztonságos záróképernyőn is megjelennek a speciális újraindítási lehetőségek</string>
     <!-- UI settings -->
     <string name="monet_title">Monet settings</string>
     <string name="monet_summary">Customize Monet theme engine</string>
@@ -517,4 +527,71 @@
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Auto brightness icon</string>
     <string name="qs_show_auto_brightness_summary">Show toggle for adaptive brightness near the slider</string>
+    <!-- Statusbar colored icons -->
+    <string name="statusbar_colored_icons_title">Színes ikonok</string>
+    <string name="statusbar_colored_icons_summary">Alkalmazásonként változó ikonok használata az értesítési sávban</string>
+    <!-- Notification count -->
+    <string name="statusbar_notif_count_title">Értesítésszám-kijelzés</string>
+    <string name="statusbar_notif_count_summary">Megjeleníti a függőben lévő értesítések számát</string>
+    <!-- Notification channels -->
+    <string name="channel_light_settings_name">Fénybeállítási előnézet</string>
+    <!-- Notification light dialogs -->
+    <string name="edit_light_settings">LED-beállítások szerkesztése</string>
+    <string name="pulse_speed_title">Pulzálás hossza és gyorsasága</string>
+    <string name="default_time">Normál</string>
+    <string name="custom_time">Egyéni</string>
+    <string name="brightness">Fényerőszintek</string>
+    <!-- Values for the notification light pulse spinners -->
+    <string name="pulse_length_always_on">Folyamatosan be</string>
+    <string name="pulse_length_very_short">Nagyon rövid</string>
+    <string name="pulse_length_short">Rövid</string>
+    <string name="pulse_length_normal">Normál</string>
+    <string name="pulse_length_long">Hosszú</string>
+    <string name="pulse_length_very_long">Nagyon hosszú</string>
+    <string name="pulse_speed_very_fast">Nagyon gyors</string>
+    <string name="pulse_speed_fast">Gyors</string>
+    <string name="pulse_speed_normal">Normál</string>
+    <string name="pulse_speed_slow">Lassú</string>
+    <string name="pulse_speed_very_slow">Nagyon lassú</string>
+    <!-- Common light settings strings -->
+    <string name="light_brightness_title">Fényerőszintek</string>
+    <string name="light_brightness_normal">Normál</string>
+    <string name="light_brightness_zen">Ne zavarjanak (DND)</string>
+    <!-- Battery light settings -->
+    <string name="light_brightness_category">LED-fényerő beállítások</string>
+    <string name="battery_light_title">Akkumulátor jelzőfénye</string>
+    <string name="battery_light_summary">Akkukapacitástól függő LED színek beállítása</string>
+    <string name="battery_low_pulse_title">Pulzálás alacsony akkumulátorszintnél</string>
+    <string name="battery_light_full_charge_disabled_title">Teljes feltöltődéskor kapcsoljon ki</string>
+    <string name="battery_light_list_title">Színek</string>
+    <string name="battery_light_low_color_title">Alacsony akkumulátorszint</string>
+    <string name="battery_light_medium_color_title">Töltés</string>
+    <string name="battery_light_full_color_title">Majdnem feltöltött (&gt;90%)</string>
+    <string name="battery_light_really_full_color_title">Feltöltött (100 %)</string>
+    <!-- Lights settings screen, notification light settings -->
+    <string name="notification_light_title">Értesítési fény</string>
+    <string name="notification_light_summary">Értesítési LED-fények beállítása</string>
+    <string name="notification_light_general_title">Általános</string>
+    <string name="notification_light_advanced_title">Haladó</string>
+    <string name="notification_light_applist_title">Alkalmazások</string>
+    <string name="notification_light_phonelist_title">Telefon</string>
+    <string name="notification_light_use_custom">Egyéni értékek használata</string>
+    <string name="notification_light_default_value">Alapértelmezett</string>
+    <string name="notification_light_missed_call_title">Nem fogadott hívás</string>
+    <string name="notification_light_voicemail_title">Hangüzenet</string>
+    <string name="notification_light_screen_on">Értesítési fények bekapcsolt képernyőnél</string>
+    <string name="notification_light_zen_mode">Értesítési fények a Ne zavarjanak (DND) módban</string>
+    <string name="notification_light_automagic">Automatikus színválasztás</string>
+    <string name="notification_light_automagic_summary">Automatikus színválasztás</string>
+    <string name="notification_light_override">Az összes alkalmazás felülírása</string>
+    <!-- Lights settings, LED notification -->
+    <string name="led_notification_title">LED-beállítások</string>
+    <string name="led_notification_text">LED engedélyezve a beállítások függvényében</string>
+    <string name="notification_light_no_apps_summary">Alkalmazásonkénti vezérléshez aktiválja ezt: \"%1$s\" majd nyomja meg a \"\u002b\" jelet a menüsávon</string>
+    <!-- Heads up timeout -->
+    <string name="notification_heads_up_title">Felugró értesítés</string>
+    <string name="notification_heads_up_summary">A felugró értesítések engedélyezése</string>
+    <!-- Less boring heads up -->
+    <string name="less_boring_heads_up_title">Kevésbé unalmas</string>
+    <string name="less_boring_heads_up_summary">Felugró értesítések megjelenítése csak az ébresztőhöz, a tárcsázóhoz és az üzenetekhez</string>
 </resources>

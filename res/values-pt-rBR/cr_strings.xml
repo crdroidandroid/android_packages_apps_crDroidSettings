@@ -47,6 +47,9 @@
     <string name="never">Nunca</string>
     <string name="always">Sempre</string>
     <string name="caution">Cuidado</string>
+    <string name="delete">Excluído</string>
+    <string name="delete_message">Remover item selecionado?</string>
+    <string name="choose_app">Escolher aplicativo</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Registro das últimas alterações</string>
     <string name="changelog_crdroid_summary">Mostrar alterações da ROM instalada</string>
@@ -186,7 +189,9 @@
     <!-- Power menu -->
     <string name="power_menu_title">Menu do botão liga/desliga</string>
     <string name="power_menu_summary">Personalize o menu de energia</string>
+    <string name="power_menu_actions_title">Ações</string>
     <string name="power_menu_screenshot_title">Captura da tela</string>
+    <string name="power_menu_screenshot_summary">Toque longo para captura de tela parcial</string>
     <string name="power_menu_onthego_title">Modo On-The-Go</string>
     <string name="power_menu_advanced_title">Menu de reinicialização avançada</string>
     <string name="power_menu_airplane_title">Modo Avião</string>
@@ -197,6 +202,11 @@
     <string name="power_menu_users_title">Usuários</string>
     <string name="power_menu_logout_title">Sair</string>
     <string name="power_menu_emergency_title">Emergência</string>
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_title">Reinicialização avançada</string>
+    <string name="advanced_reboot_summary">Incluir opções de reinicio avançado ao menu de energia quando o aparelho estiver desbloqueado</string>
+    <string name="advanced_reboot_secured_title">Reinício avançando na tela de bloqueio</string>
+    <string name="advanced_reboot_secured_summary">Mostrar opções de reinício avançado na tela de bloqueio</string>
     <!-- UI settings -->
     <string name="monet_title">Ajustes no tema Monet</string>
     <string name="monet_summary">Personalize o motor de temas Monet</string>
@@ -430,7 +440,7 @@
     <string name="pulse_solid_units_count">Contador de linhas sólidas</string>
     <string name="pulse_solid_units_opacity">Opacidade das linhas sólidas</string>
     <string name="pulse_solid_units_rounded_title">Cantos arredondados</string>
-    <string name="pulse_solid_units_rounded_summary">Solid lines with rounded tip</string>
+    <string name="pulse_solid_units_rounded_summary">Linhas retas com pontas arredondadas</string>
     <string name="pulse_solid_dimen_category">Configurações do modo de linhas sólidas</string>
     <string name="pulse_color_mode_title">Cor</string>
     <string name="pulse_color_accent">Cor de Destaque</string>
@@ -517,4 +527,71 @@
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Ícone de brilho automático</string>
     <string name="qs_show_auto_brightness_summary">Mostrar botão de brilho automático</string>
+    <!-- Statusbar colored icons -->
+    <string name="statusbar_colored_icons_title">Ícones coloridos</string>
+    <string name="statusbar_colored_icons_summary">Mostrar ícones na cor correspondente a do aplicativo nas notificações da barra de status</string>
+    <!-- Notification count -->
+    <string name="statusbar_notif_count_title">Mostrar contador de notificações</string>
+    <string name="statusbar_notif_count_summary">Exibir o número de notificações pendentes</string>
+    <!-- Notification channels -->
+    <string name="channel_light_settings_name">Pré-visualização das configurações do LED</string>
+    <!-- Notification light dialogs -->
+    <string name="edit_light_settings">Defina as configurações do LED</string>
+    <string name="pulse_speed_title">Velocidade e duração do piscar do LED</string>
+    <string name="default_time">Normal</string>
+    <string name="custom_time">Personalizado</string>
+    <string name="brightness">Nível de brilho</string>
+    <!-- Values for the notification light pulse spinners -->
+    <string name="pulse_length_always_on">Sempre ligado</string>
+    <string name="pulse_length_very_short">Muito curto</string>
+    <string name="pulse_length_short">Curto</string>
+    <string name="pulse_length_normal">Normal</string>
+    <string name="pulse_length_long">Longo</string>
+    <string name="pulse_length_very_long">Muito longo</string>
+    <string name="pulse_speed_very_fast">Muito rápido</string>
+    <string name="pulse_speed_fast">Rápido</string>
+    <string name="pulse_speed_normal">Normal</string>
+    <string name="pulse_speed_slow">Devagar</string>
+    <string name="pulse_speed_very_slow">Muito lento</string>
+    <!-- Common light settings strings -->
+    <string name="light_brightness_title">Níveis de brilho</string>
+    <string name="light_brightness_normal">Normal</string>
+    <string name="light_brightness_zen">Não Perturbe</string>
+    <!-- Battery light settings -->
+    <string name="light_brightness_category">Configurações do LED</string>
+    <string name="battery_light_title">Led da bateria</string>
+    <string name="battery_light_summary">Configurar a cor de acordo com o nível de carga da bateria</string>
+    <string name="battery_low_pulse_title">Piscar quando a bateria estiver fraca</string>
+    <string name="battery_light_full_charge_disabled_title">Desativar quando a carga estiver completa</string>
+    <string name="battery_light_list_title">Cores</string>
+    <string name="battery_light_low_color_title">Bateria fraca</string>
+    <string name="battery_light_medium_color_title">Carregando</string>
+    <string name="battery_light_full_color_title">Quase carregada (&gt;90%)</string>
+    <string name="battery_light_really_full_color_title">Totalmente carregada (100%)</string>
+    <!-- Lights settings screen, notification light settings -->
+    <string name="notification_light_title">Led de notificações</string>
+    <string name="notification_light_summary">Configurar a cor led para notificações</string>
+    <string name="notification_light_general_title">Geral</string>
+    <string name="notification_light_advanced_title">Avançado</string>
+    <string name="notification_light_applist_title">Aplicativos</string>
+    <string name="notification_light_phonelist_title">Telefone</string>
+    <string name="notification_light_use_custom">Usar valores personalizados</string>
+    <string name="notification_light_default_value">Padrão</string>
+    <string name="notification_light_missed_call_title">Chamada perdida</string>
+    <string name="notification_light_voicemail_title">Correio de voz</string>
+    <string name="notification_light_screen_on">Piscar led com a tela ligada</string>
+    <string name="notification_light_zen_mode">Piscar led no modo Não Perturbe</string>
+    <string name="notification_light_automagic">Seleção de cores automática</string>
+    <string name="notification_light_automagic_summary">Escolher as cores automaticamente</string>
+    <string name="notification_light_override">Substituir todos os aplicativos</string>
+    <!-- Lights settings, LED notification -->
+    <string name="led_notification_title">Configurações do LED</string>
+    <string name="led_notification_text">Led ativado nas configurações</string>
+    <string name="notification_light_no_apps_summary">Para adicionar configurações específicas para cada aplicativo, ative o \'%1$s\' e precioone \'\u002b\'</string>
+    <!-- Heads up timeout -->
+    <string name="notification_heads_up_title">Notificações flutuantes</string>
+    <string name="notification_heads_up_summary">Permitir notificações flutuantes</string>
+    <!-- Less boring heads up -->
+    <string name="less_boring_heads_up_title">Menos irritante</string>
+    <string name="less_boring_heads_up_summary">Mostrar notificações flutuantes apenas para alarmes, ligações e aplicativo de mensagem</string>
 </resources>

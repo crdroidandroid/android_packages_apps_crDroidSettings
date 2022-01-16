@@ -47,6 +47,9 @@
     <string name="never">Never</string>
     <string name="always">Always</string>
     <string name="caution">Caution</string>
+    <string name="delete">حذف</string>
+    <string name="delete_message">مورد انتخاب شده حذف شود?</string>
+    <string name="choose_app">برنامه را انتخاب کنید</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Current changelog</string>
     <string name="changelog_crdroid_summary">View changes in the ROM installed</string>
@@ -186,7 +189,9 @@
     <!-- Power menu -->
     <string name="power_menu_title">Power menu</string>
     <string name="power_menu_summary">Customize power menu options</string>
+    <string name="power_menu_actions_title">Actions</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
+    <string name="power_menu_screenshot_summary">برای گرفتن شات از صفحه به صورت دلخواه ، فشار دهید و نگه دارید</string>
     <string name="power_menu_onthego_title">On-The-Go mode</string>
     <string name="power_menu_advanced_title">Advanced reboot options</string>
     <string name="power_menu_airplane_title">Airplane</string>
@@ -197,6 +202,11 @@
     <string name="power_menu_users_title">Users</string>
     <string name="power_menu_logout_title">Logout</string>
     <string name="power_menu_emergency_title">Emergency</string>
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_title">شروع مجدد پیشرفته</string>
+    <string name="advanced_reboot_summary">وقتی قفل صفحه باز است ، گزینه هایی برای ریستارت در ریکاوری و بوت لودر وجود داشته باشد</string>
+    <string name="advanced_reboot_secured_title">قفل صفجه محافظت شده</string>
+    <string name="advanced_reboot_secured_summary">نمایش گزینه های شروع مجدد پیشرفته بر روی صفحه قفل محافظت شده</string>
     <!-- UI settings -->
     <string name="monet_title">Monet settings</string>
     <string name="monet_summary">Customize Monet theme engine</string>
@@ -517,4 +527,71 @@
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Auto brightness icon</string>
     <string name="qs_show_auto_brightness_summary">Show toggle for adaptive brightness near the slider</string>
+    <!-- Statusbar colored icons -->
+    <string name="statusbar_colored_icons_title">Colored icons</string>
+    <string name="statusbar_colored_icons_summary">Use proper app icons for notification icons in statusbar</string>
+    <!-- Notification count -->
+    <string name="statusbar_notif_count_title">Show notification count</string>
+    <string name="statusbar_notif_count_summary">Display the number of pending notifications</string>
+    <!-- Notification channels -->
+    <string name="channel_light_settings_name">پیش‌نمایش تنظیمات نور</string>
+    <!-- Notification light dialogs -->
+    <string name="edit_light_settings">ویرایش تنظیمات نور</string>
+    <string name="pulse_speed_title">طول و سرعت چشمک زدن</string>
+    <string name="default_time">معمولی</string>
+    <string name="custom_time">دلخواه</string>
+    <string name="brightness">سطح روشنایی</string>
+    <!-- Values for the notification light pulse spinners -->
+    <string name="pulse_length_always_on">همیشه روشن</string>
+    <string name="pulse_length_very_short">بسیار کوتاه</string>
+    <string name="pulse_length_short">کوتاه</string>
+    <string name="pulse_length_normal">معمولی</string>
+    <string name="pulse_length_long">طولانی</string>
+    <string name="pulse_length_very_long">بسیار طولانی</string>
+    <string name="pulse_speed_very_fast">خیلی سریع</string>
+    <string name="pulse_speed_fast">سریع</string>
+    <string name="pulse_speed_normal">عادی</string>
+    <string name="pulse_speed_slow">آهسته</string>
+    <string name="pulse_speed_very_slow">بسیار آهسته</string>
+    <!-- Common light settings strings -->
+    <string name="light_brightness_title">سطح روشنایی</string>
+    <string name="light_brightness_normal">معمولی</string>
+    <string name="light_brightness_zen">مزاحم نشوید</string>
+    <!-- Battery light settings -->
+    <string name="light_brightness_category">تنظیمات روشنایی چراغ</string>
+    <string name="battery_light_title">چراغ اعلان باتری</string>
+    <string name="battery_light_summary">رنگ چراغ ال ای دی بر اساس میزان و وضعیت باتری تنظیم شود</string>
+    <string name="battery_low_pulse_title">هنگام کم بودن باتری چشمک بزن</string>
+    <string name="battery_light_full_charge_disabled_title">در صورت شارژ کامل خاموش شود</string>
+    <string name="battery_light_list_title">رنگ ها</string>
+    <string name="battery_light_low_color_title">کم بودن باتری</string>
+    <string name="battery_light_medium_color_title">درحال شارژ</string>
+    <string name="battery_light_full_color_title">Nearly Charged (&gt;90%)</string>
+    <string name="battery_light_really_full_color_title">کاملاً شارژ شده (100%)</string>
+    <!-- Lights settings screen, notification light settings -->
+    <string name="notification_light_title">چراغ اعلان</string>
+    <string name="notification_light_summary">تنظیم رنگ چراغ ال ای دی برای اعلان ها</string>
+    <string name="notification_light_general_title">عمومی</string>
+    <string name="notification_light_advanced_title">پیشرفته</string>
+    <string name="notification_light_applist_title">برنامه‌ها</string>
+    <string name="notification_light_phonelist_title">تلفن</string>
+    <string name="notification_light_use_custom">استفاده از مقدار های دلخواه</string>
+    <string name="notification_light_default_value">پیش‌فرض</string>
+    <string name="notification_light_missed_call_title">تماس بی پاسخ</string>
+    <string name="notification_light_voicemail_title">پیام صوتی</string>
+    <string name="notification_light_screen_on">هنگام روشن بودن صفحه چراغ ال ای دی روشن شود</string>
+    <string name="notification_light_zen_mode">فعال بودن چراغ اعلان در حالت مزاحم نشوید</string>
+    <string name="notification_light_automagic">انتخاب خودکار رنگ ها</string>
+    <string name="notification_light_automagic_summary">Choosing colors automatically</string>
+    <string name="notification_light_override">Override all apps</string>
+    <!-- Lights settings, LED notification -->
+    <string name="led_notification_title">Light settings</string>
+    <string name="led_notification_text">LED light enabled by settings</string>
+    <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
+    <!-- Heads up timeout -->
+    <string name="notification_heads_up_title">Heads up</string>
+    <string name="notification_heads_up_summary">Allow pop up notifications</string>
+    <!-- Less boring heads up -->
+    <string name="less_boring_heads_up_title">Less boring</string>
+    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
 </resources>

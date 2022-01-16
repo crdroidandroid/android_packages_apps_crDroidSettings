@@ -47,6 +47,9 @@
     <string name="never">从不</string>
     <string name="always">始终</string>
     <string name="caution">警告</string>
+    <string name="delete">删除</string>
+    <string name="delete_message">移除所选项目？</string>
+    <string name="choose_app">选择应用</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">最近更新日志</string>
     <string name="changelog_crdroid_summary">查看已安装 ROM 中的更改</string>
@@ -186,7 +189,9 @@
     <!-- Power menu -->
     <string name="power_menu_title">电源菜单</string>
     <string name="power_menu_summary">自定义电源菜单选项</string>
+    <string name="power_menu_actions_title">操作</string>
     <string name="power_menu_screenshot_title">屏幕截图</string>
+    <string name="power_menu_screenshot_summary">长按进行部分截图</string>
     <string name="power_menu_onthego_title">行走模式 (On-The-go)</string>
     <string name="power_menu_advanced_title">高级重启选项</string>
     <string name="power_menu_airplane_title">飞行模式</string>
@@ -197,6 +202,11 @@
     <string name="power_menu_users_title">用户</string>
     <string name="power_menu_logout_title">注销</string>
     <string name="power_menu_emergency_title">紧急情况</string>
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_title">高级重启</string>
+    <string name="advanced_reboot_summary">设备已解锁时，在电源菜单的重启选项下加入重启至恢复模式或引导程序的选项</string>
+    <string name="advanced_reboot_secured_title">安全锁屏</string>
+    <string name="advanced_reboot_secured_summary">在安全锁屏界面显示高级重启选项</string>
     <!-- UI settings -->
     <string name="monet_title">Monet 设置</string>
     <string name="monet_summary">自定义 Monet 主题引擎</string>
@@ -517,4 +527,71 @@
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">自动亮度图标</string>
     <string name="qs_show_auto_brightness_summary">在亮度滑块附近显示自动调节亮度开关</string>
+    <!-- Statusbar colored icons -->
+    <string name="statusbar_colored_icons_title">图标着色</string>
+    <string name="statusbar_colored_icons_summary">使用适当的应用程序图标作为状态栏中的通知图标</string>
+    <!-- Notification count -->
+    <string name="statusbar_notif_count_title">显示通知计数</string>
+    <string name="statusbar_notif_count_summary">显示未读通知的数量</string>
+    <!-- Notification channels -->
+    <string name="channel_light_settings_name">浅色设置预览</string>
+    <!-- Notification light dialogs -->
+    <string name="edit_light_settings">编辑指示灯设置</string>
+    <string name="pulse_speed_title">呼吸长度与速度</string>
+    <string name="default_time">正常</string>
+    <string name="custom_time">自定义</string>
+    <string name="brightness">亮度级别</string>
+    <!-- Values for the notification light pulse spinners -->
+    <string name="pulse_length_always_on">始终开启</string>
+    <string name="pulse_length_very_short">极短</string>
+    <string name="pulse_length_short">短</string>
+    <string name="pulse_length_normal">正常</string>
+    <string name="pulse_length_long">长</string>
+    <string name="pulse_length_very_long">极长</string>
+    <string name="pulse_speed_very_fast">极快</string>
+    <string name="pulse_speed_fast">快</string>
+    <string name="pulse_speed_normal">正常</string>
+    <string name="pulse_speed_slow">慢</string>
+    <string name="pulse_speed_very_slow">极慢</string>
+    <!-- Common light settings strings -->
+    <string name="light_brightness_title">亮度级别</string>
+    <string name="light_brightness_normal">正常</string>
+    <string name="light_brightness_zen">请勿打扰</string>
+    <!-- Battery light settings -->
+    <string name="light_brightness_category">亮度设置</string>
+    <string name="battery_light_title">电池指示灯</string>
+    <string name="battery_light_summary">根据电池级别和状态配置 led 颜色</string>
+    <string name="battery_low_pulse_title">电量低时闪烁</string>
+    <string name="battery_light_full_charge_disabled_title">电量充满后关闭</string>
+    <string name="battery_light_list_title">颜色</string>
+    <string name="battery_light_low_color_title">电量低</string>
+    <string name="battery_light_medium_color_title">正在充电</string>
+    <string name="battery_light_full_color_title">接近充满 (&gt;90%)</string>
+    <string name="battery_light_really_full_color_title">完全充满 (100%)</string>
+    <!-- Lights settings screen, notification light settings -->
+    <string name="notification_light_title">通知指示灯</string>
+    <string name="notification_light_summary">为通知配置 led 颜色</string>
+    <string name="notification_light_general_title">一般</string>
+    <string name="notification_light_advanced_title">高级选项</string>
+    <string name="notification_light_applist_title">应用程序</string>
+    <string name="notification_light_phonelist_title">电话</string>
+    <string name="notification_light_use_custom">使用自定义值</string>
+    <string name="notification_light_default_value">默认</string>
+    <string name="notification_light_missed_call_title">未接来电</string>
+    <string name="notification_light_voicemail_title">语音信箱</string>
+    <string name="notification_light_screen_on">在屏幕开启时启用指示灯</string>
+    <string name="notification_light_zen_mode">在勿扰模式下启用指示灯</string>
+    <string name="notification_light_automagic">自动选择颜色</string>
+    <string name="notification_light_automagic_summary">正在自动选择颜色</string>
+    <string name="notification_light_override">覆盖所有应用</string>
+    <!-- Lights settings, LED notification -->
+    <string name="led_notification_title">指示灯设置</string>
+    <string name="led_notification_text">已通过设置启用 LED 指示灯</string>
+    <string name="notification_light_no_apps_summary">若要添加单个应用控制，请激活“%1$s”并按下菜单栏上的“\u002b”</string>
+    <!-- Heads up timeout -->
+    <string name="notification_heads_up_title">浮动通知</string>
+    <string name="notification_heads_up_summary">允许弹出通知</string>
+    <!-- Less boring heads up -->
+    <string name="less_boring_heads_up_title">不感兴趣</string>
+    <string name="less_boring_heads_up_summary">仅显示弹出通知，用于闹钟、拨号和短信应用</string>
 </resources>

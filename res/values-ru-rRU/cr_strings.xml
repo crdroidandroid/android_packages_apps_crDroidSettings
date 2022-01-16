@@ -47,6 +47,9 @@
     <string name="never">Никогда</string>
     <string name="always">Всегда</string>
     <string name="caution">Внимание</string>
+    <string name="delete">Удалить</string>
+    <string name="delete_message">Удалить выбранный элемент?</string>
+    <string name="choose_app">Выбрать приложение</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Текущий список изменений</string>
     <string name="changelog_crdroid_summary">Просмотр изменений в текущей прошивки</string>
@@ -186,7 +189,9 @@
     <!-- Power menu -->
     <string name="power_menu_title">Меню питания</string>
     <string name="power_menu_summary">Настройка параметров меню питания</string>
+    <string name="power_menu_actions_title">Действия</string>
     <string name="power_menu_screenshot_title">Снимок экрана</string>
+    <string name="power_menu_screenshot_summary">Удерживайте, чтобы выделить область для снимка экрана</string>
     <string name="power_menu_onthego_title">Режим «На ходу»</string>
     <string name="power_menu_advanced_title">Расширенное меню перезагрузки</string>
     <string name="power_menu_airplane_title">Режим полёта</string>
@@ -197,6 +202,11 @@
     <string name="power_menu_users_title">Пользователи</string>
     <string name="power_menu_logout_title">Выйти</string>
     <string name="power_menu_emergency_title">Экстренный вызов</string>
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_title">Расширенная перезагрузка</string>
+    <string name="advanced_reboot_summary">Когда устройство разблокировано, в меню питания доступны опции перезагрузки в режим восстановления и в загрузчик</string>
+    <string name="advanced_reboot_secured_title">Защищённый экран блокировки</string>
+    <string name="advanced_reboot_secured_summary">Отображать дополнительные параметры перезагрузки на экране блокировки</string>
     <!-- UI settings -->
     <string name="monet_title">Настройки Monet</string>
     <string name="monet_summary">Настройки движка Monet темы</string>
@@ -250,7 +260,7 @@
     <string name="bluetooth_battery_summary">Показывать уровень заряда Bluetooth устройства, если доступно</string>
     <!-- Tap to sleep on status bar -->
     <string name="statusbar_doubletap_sleep_title">Двойное нажатие для сна</string>
-    <string name="statusbar_doubletap_sleep_summary">Двойной тап по статус бару переводит устройство в спящий режим</string>
+    <string name="statusbar_doubletap_sleep_summary">Двойное нажатие по статус бару переводит устройство в спящий режим</string>
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">Управление яркостью</string>
     <string name="status_bar_toggle_brightness_summary">Регулировать яркость свайпами пальца по статус бару</string>
@@ -273,7 +283,7 @@
     <string name="smart_pulldown_ongoing">нет текущих</string>
     <!-- Tap to sleep on status bar -->
     <string name="lockscreen_doubletap_sleep_title">Двойное нажатие для сна</string>
-    <string name="lockscreen_doubletap_sleep_summary">Дабл тап на локскрине для перехода в спящий режим</string>
+    <string name="lockscreen_doubletap_sleep_summary">Двойное нажатие по экрану блокировки переводит устройство в спящий режим</string>
     <!-- Font style / Icon pack -->
     <string name="theme_customization_font_title">Стиль шрифта</string>
     <string name="theme_customization_icon_pack_title">Набор иконок</string>
@@ -331,8 +341,8 @@
     <string name="status_bar_battery_percent_title">Процент заряда батареи</string>
     <string name="status_bar_battery_percent_hidden">Скрытый</string>
     <string name="status_bar_battery_percent_text_inside">Внутри иконки</string>
-    <string name="status_bar_battery_percent_text_next_right">Next to the icon (right)</string>
-    <string name="status_bar_battery_percent_text_next_left">Next to the icon (left)</string>
+    <string name="status_bar_battery_percent_text_next_right">Рядом со значком (справа)</string>
+    <string name="status_bar_battery_percent_text_next_left">Рядом со значком (слева)</string>
     <string name="status_bar_battery_text_charging_title">Процент заряда батареи при зарядке</string>
     <string name="status_bar_battery_text_charging_summary">Всегда показывать проценты заряда батареи при зарядке</string>
     <!-- Status bar - Battery Bar -->
@@ -429,8 +439,8 @@
     <string name="pulse_lavalamp_speed_title">Скорость эффекта \"Лава-лампа\"</string>
     <string name="pulse_solid_units_count">Количество сплошных линий</string>
     <string name="pulse_solid_units_opacity">Прозрачность сплошных линий</string>
-    <string name="pulse_solid_units_rounded_title">Rounded corners</string>
-    <string name="pulse_solid_units_rounded_summary">Solid lines with rounded tip</string>
+    <string name="pulse_solid_units_rounded_title">Закругленные углы</string>
+    <string name="pulse_solid_units_rounded_summary">Сплошные линии с закруглённым кончиком</string>
     <string name="pulse_solid_dimen_category">Настройки режимов сплошных линий</string>
     <string name="pulse_color_mode_title">Цвет</string>
     <string name="pulse_color_accent">Акцент</string>
@@ -517,4 +527,71 @@
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Значок автояркости</string>
     <string name="qs_show_auto_brightness_summary">Показывать значок автояркости рядом с ползунком</string>
+    <!-- Statusbar colored icons -->
+    <string name="statusbar_colored_icons_title">Разукрашенные иконки</string>
+    <string name="statusbar_colored_icons_summary">Использовать соответствующие значки приложений для значков уведомлений в строке состояния</string>
+    <!-- Notification count -->
+    <string name="statusbar_notif_count_title">Показать счетчик уведомлений</string>
+    <string name="statusbar_notif_count_summary">Показывать количество новых уведомлений в строке состояния</string>
+    <!-- Notification channels -->
+    <string name="channel_light_settings_name">Предпросмотр настроек освещения</string>
+    <!-- Notification light dialogs -->
+    <string name="edit_light_settings">Изменение настроек индикатора</string>
+    <string name="pulse_speed_title">Длительность и скорость мигания</string>
+    <string name="default_time">Обычный</string>
+    <string name="custom_time">Пользовательские настр.</string>
+    <string name="brightness">Уровень яркости</string>
+    <!-- Values for the notification light pulse spinners -->
+    <string name="pulse_length_always_on">Всегда вкл</string>
+    <string name="pulse_length_very_short">Очень коротко</string>
+    <string name="pulse_length_short">Коротко</string>
+    <string name="pulse_length_normal">Обычный</string>
+    <string name="pulse_length_long">Долго</string>
+    <string name="pulse_length_very_long">Очень долго</string>
+    <string name="pulse_speed_very_fast">Очень быстро</string>
+    <string name="pulse_speed_fast">Быстро</string>
+    <string name="pulse_speed_normal">Обычный</string>
+    <string name="pulse_speed_slow">Медленно</string>
+    <string name="pulse_speed_very_slow">Очень медленно</string>
+    <!-- Common light settings strings -->
+    <string name="light_brightness_title">Уровень яркости</string>
+    <string name="light_brightness_normal">Обычный</string>
+    <string name="light_brightness_zen">Не беспокоить</string>
+    <!-- Battery light settings -->
+    <string name="light_brightness_category">Настройки световой индикации</string>
+    <string name="battery_light_title">Индикация батареи</string>
+    <string name="battery_light_summary">Настроить цвет индикатора на основе уровня заряда батареи и статуса</string>
+    <string name="battery_low_pulse_title">Мигать при низком уровне заряда</string>
+    <string name="battery_light_full_charge_disabled_title">Выключать при полной зарядке батареи</string>
+    <string name="battery_light_list_title">Цвета</string>
+    <string name="battery_light_low_color_title">Батарея разряжена</string>
+    <string name="battery_light_medium_color_title">Зарядка</string>
+    <string name="battery_light_full_color_title">Заряжена (&gt;90%)</string>
+    <string name="battery_light_really_full_color_title">Заряжена (100%)</string>
+    <!-- Lights settings screen, notification light settings -->
+    <string name="notification_light_title">Индикатор уведомлений</string>
+    <string name="notification_light_summary">Настроить цвет индикатора для уведомлений</string>
+    <string name="notification_light_general_title">Общие</string>
+    <string name="notification_light_advanced_title">Расширенные настройки</string>
+    <string name="notification_light_applist_title">Приложения</string>
+    <string name="notification_light_phonelist_title">Телефон</string>
+    <string name="notification_light_use_custom">Использовать пользовательские значения</string>
+    <string name="notification_light_default_value">По умолчанию</string>
+    <string name="notification_light_missed_call_title">Пропущенный звонок</string>
+    <string name="notification_light_voicemail_title">Голосовая почта</string>
+    <string name="notification_light_screen_on">Индикация при вкл. экране</string>
+    <string name="notification_light_zen_mode">Индикация в режиме «Не беспокоить»</string>
+    <string name="notification_light_automagic">Подбирать цвета автоматически</string>
+    <string name="notification_light_automagic_summary">Выбор цвета автоматически</string>
+    <string name="notification_light_override">Переопределить все приложения</string>
+    <!-- Lights settings, LED notification -->
+    <string name="led_notification_title">Индикатор событий</string>
+    <string name="led_notification_text">Светодиод включен в настройках</string>
+    <string name="notification_light_no_apps_summary">Чтобы разрешить управление приложениями, включите «%1$s» и нажмите «\u002b» в строке меню</string>
+    <!-- Heads up timeout -->
+    <string name="notification_heads_up_title">Всплывающие уведомления</string>
+    <string name="notification_heads_up_summary">Allow pop up notifications</string>
+    <!-- Less boring heads up -->
+    <string name="less_boring_heads_up_title">Less boring</string>
+    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
 </resources>

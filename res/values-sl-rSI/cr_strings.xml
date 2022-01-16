@@ -47,6 +47,9 @@
     <string name="never">Nikoli</string>
     <string name="always">Vedno</string>
     <string name="caution">Pozor</string>
+    <string name="delete">Izbriši</string>
+    <string name="delete_message">Odstrani izbrani predmet?</string>
+    <string name="choose_app">Izberite aplikacijo</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Trenutni dnevnik sprememb</string>
     <string name="changelog_crdroid_summary">Pokaži spremembe v nameščenem ROM-u</string>
@@ -186,7 +189,9 @@
     <!-- Power menu -->
     <string name="power_menu_title">Gumb za vklop</string>
     <string name="power_menu_summary">Prilagodi možnosti menija za izklop</string>
+    <string name="power_menu_actions_title">Dejanja</string>
     <string name="power_menu_screenshot_title">Zaslonska slika</string>
+    <string name="power_menu_screenshot_summary">Pridržite za delno zaslonsko sliko</string>
     <string name="power_menu_onthego_title">Način Na poti</string>
     <string name="power_menu_advanced_title">Možnosti naprednega vnovičnega zagona</string>
     <string name="power_menu_airplane_title">Letalo</string>
@@ -197,6 +202,11 @@
     <string name="power_menu_users_title">Uporabniki</string>
     <string name="power_menu_logout_title">Odjava</string>
     <string name="power_menu_emergency_title">V sili</string>
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_title">Napredni vnovičen zagon</string>
+    <string name="advanced_reboot_summary">Ko je odklenjeno, v meni izklopa vključi možnosti za vnovičen zagon v obnovitev ali zagonski nalagalnik</string>
+    <string name="advanced_reboot_secured_title">Varni zaklenjen zaslon</string>
+    <string name="advanced_reboot_secured_summary">Prikaži napredne možnosti vnovičnega zagona na varnem zaklenjenem zaslonu</string>
     <!-- UI settings -->
     <string name="monet_title">Monet nastavitve</string>
     <string name="monet_summary">Prilagodi Monet temski pogon</string>
@@ -517,4 +527,71 @@
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Ikona samodejne svetlosti</string>
     <string name="qs_show_auto_brightness_summary">Prikaži preklopnik za prilagodljivo svetlost blizu drsnika</string>
+    <!-- Statusbar colored icons -->
+    <string name="statusbar_colored_icons_title">Barvne ikone</string>
+    <string name="statusbar_colored_icons_summary">Uporabi pravilne ikone za ikone obvestil v vrstici stanja</string>
+    <!-- Notification count -->
+    <string name="statusbar_notif_count_title">Prikaži število obvestil</string>
+    <string name="statusbar_notif_count_summary">Prikaži število obvestil na čakanju</string>
+    <!-- Notification channels -->
+    <string name="channel_light_settings_name">Predogled nastavitev lučke</string>
+    <!-- Notification light dialogs -->
+    <string name="edit_light_settings">Uredite nastavitve lučke</string>
+    <string name="pulse_speed_title">Dolžina in hitrost utripanja</string>
+    <string name="default_time">Običajna</string>
+    <string name="custom_time">Po meri</string>
+    <string name="brightness">Raven svetlosti</string>
+    <!-- Values for the notification light pulse spinners -->
+    <string name="pulse_length_always_on">Vedno vklopljena</string>
+    <string name="pulse_length_very_short">Zelo kratka</string>
+    <string name="pulse_length_short">Kratka</string>
+    <string name="pulse_length_normal">Običajna</string>
+    <string name="pulse_length_long">Dolga</string>
+    <string name="pulse_length_very_long">Zelo dolga</string>
+    <string name="pulse_speed_very_fast">Zelo hitra</string>
+    <string name="pulse_speed_fast">Hitra</string>
+    <string name="pulse_speed_normal">Običajna</string>
+    <string name="pulse_speed_slow">Počasna</string>
+    <string name="pulse_speed_very_slow">Zelo počasna</string>
+    <!-- Common light settings strings -->
+    <string name="light_brightness_title">Ravni svetlosti</string>
+    <string name="light_brightness_normal">Običajna</string>
+    <string name="light_brightness_zen">Ne moti</string>
+    <!-- Battery light settings -->
+    <string name="light_brightness_category">Nastavitve svetlosti lučke</string>
+    <string name="battery_light_title">Lučka za baterijo</string>
+    <string name="battery_light_summary">Nastavite barvo led lučke glede na napolnjenost baterije in stanja</string>
+    <string name="battery_low_pulse_title">Utripaj, če je baterija skoraj prazna</string>
+    <string name="battery_light_full_charge_disabled_title">Izklopi, ko je napolnjena</string>
+    <string name="battery_light_list_title">Barve</string>
+    <string name="battery_light_low_color_title">Nizko stanje baterije</string>
+    <string name="battery_light_medium_color_title">Polnjenje</string>
+    <string name="battery_light_full_color_title">Skuraj napolnjena (&gt;90%)</string>
+    <string name="battery_light_really_full_color_title">Napolnjena (100%)</string>
+    <!-- Lights settings screen, notification light settings -->
+    <string name="notification_light_title">Lučka obvestila</string>
+    <string name="notification_light_summary">Nastavite barvo led lučke za obvestila</string>
+    <string name="notification_light_general_title">Splošno</string>
+    <string name="notification_light_advanced_title">Napredno</string>
+    <string name="notification_light_applist_title">Aplikacije</string>
+    <string name="notification_light_phonelist_title">Telefon</string>
+    <string name="notification_light_use_custom">Uporabi vrednosti po meri</string>
+    <string name="notification_light_default_value">Privzeta</string>
+    <string name="notification_light_missed_call_title">Zgrešen klic</string>
+    <string name="notification_light_voicemail_title">Glasovna pošta</string>
+    <string name="notification_light_screen_on">Lučke pri vklopljenem zaslonu</string>
+    <string name="notification_light_zen_mode">Lučke v načinu Ne moti</string>
+    <string name="notification_light_automagic">Samodejno izberi barve</string>
+    <string name="notification_light_automagic_summary">Samodejno izbiranje barv</string>
+    <string name="notification_light_override">Preglasi vse aplikacije</string>
+    <!-- Lights settings, LED notification -->
+    <string name="led_notification_title">Nastavitve lučke</string>
+    <string name="led_notification_text">LED lučka omogočena z nastavitvami</string>
+    <string name="notification_light_no_apps_summary">Da dodate nadzor nad posamezno aplikacijo, omogočite »%1$s« in pritisnite »\u002b« v menijski vrstici</string>
+    <!-- Heads up timeout -->
+    <string name="notification_heads_up_title">Obvestila na zaslonu</string>
+    <string name="notification_heads_up_summary">Dovoli pojavna obvestila</string>
+    <!-- Less boring heads up -->
+    <string name="less_boring_heads_up_title">Manj dolgočasno</string>
+    <string name="less_boring_heads_up_summary">Prikaži pojavna obvestila samo za budilko, klicalnik in aplikacijo za sporočanje</string>
 </resources>

@@ -47,6 +47,9 @@
     <string name="never">Niciodată</string>
     <string name="always">Întotdeauna</string>
     <string name="caution">Atenţie</string>
+    <string name="delete">Delete</string>
+    <string name="delete_message">Remove selected item?</string>
+    <string name="choose_app">Choose app</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Jurnal modificări curente</string>
     <string name="changelog_crdroid_summary">Vezi modificările în ROM instalat</string>
@@ -186,7 +189,9 @@
     <!-- Power menu -->
     <string name="power_menu_title">Meniu de alimentare</string>
     <string name="power_menu_summary">Personalizare opțiuni meniu pornire</string>
+    <string name="power_menu_actions_title">Actions</string>
     <string name="power_menu_screenshot_title">Captură ecran</string>
+    <string name="power_menu_screenshot_summary">Long-press for partial screenshot</string>
     <string name="power_menu_onthego_title">Mod On-The-Go</string>
     <string name="power_menu_advanced_title">Opțiuni avansate de repornire</string>
     <string name="power_menu_airplane_title">Mod Avion</string>
@@ -197,6 +202,11 @@
     <string name="power_menu_users_title">Utilizatori</string>
     <string name="power_menu_logout_title">Deconectare</string>
     <string name="power_menu_emergency_title">Urgență</string>
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_title">Advanced restart</string>
+    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for restarting into recovery or bootloader</string>
+    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
+    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
     <!-- UI settings -->
     <string name="monet_title">Setări Monet</string>
     <string name="monet_summary">Personalizează motorul de temă Monet</string>
@@ -321,8 +331,8 @@
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Stil baterie</string>
     <string name="status_bar_battery_style_icon_portrait">Pictograma portret</string>
-    <string name="status_bar_battery_style_icon_rlandscape">Icon landscape (Right)</string>
-    <string name="status_bar_battery_style_icon_landscape">Icon landscape (Left)</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Pictograma peisaj (dreapta)</string>
+    <string name="status_bar_battery_style_icon_landscape">Pictograma peisaj (stânga)</string>
     <string name="status_bar_battery_style_circle">Cerc</string>
     <string name="status_bar_battery_style_dotted_circle">Cerc punctat</string>
     <string name="status_bar_battery_style_filled_circle">Cerc completat</string>
@@ -331,8 +341,8 @@
     <string name="status_bar_battery_percent_title">Procentaj baterie</string>
     <string name="status_bar_battery_percent_hidden">Ascuns</string>
     <string name="status_bar_battery_percent_text_inside">În interiorul pictogramei</string>
-    <string name="status_bar_battery_percent_text_next_right">Next to the icon (right)</string>
-    <string name="status_bar_battery_percent_text_next_left">Next to the icon (left)</string>
+    <string name="status_bar_battery_percent_text_next_right">Lângă pictograma (dreapta)</string>
+    <string name="status_bar_battery_percent_text_next_left">Lângă pictograma (stânga)</string>
     <string name="status_bar_battery_text_charging_title">Procentul bateriei la încărcare</string>
     <string name="status_bar_battery_text_charging_summary">Afișați întotdeauna procentul bateriei la încărcare</string>
     <!-- Status bar - Battery Bar -->
@@ -429,8 +439,8 @@
     <string name="pulse_lavalamp_speed_title">Viteză lampă de lavă</string>
     <string name="pulse_solid_units_count">Numărul de linii solide</string>
     <string name="pulse_solid_units_opacity">Opacitate linii solide</string>
-    <string name="pulse_solid_units_rounded_title">Rounded corners</string>
-    <string name="pulse_solid_units_rounded_summary">Solid lines with rounded tip</string>
+    <string name="pulse_solid_units_rounded_title">Colţuri rotunjite</string>
+    <string name="pulse_solid_units_rounded_summary">Linii solide cu virf rotunjit</string>
     <string name="pulse_solid_dimen_category">Setările modului linii solide</string>
     <string name="pulse_color_mode_title">Culoare</string>
     <string name="pulse_color_accent">Accent</string>
@@ -517,4 +527,71 @@
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Pictogramă luminozitate automată</string>
     <string name="qs_show_auto_brightness_summary">Arată comutator pentru luminozitate adaptivă lângă glisor</string>
+    <!-- Statusbar colored icons -->
+    <string name="statusbar_colored_icons_title">Colored icons</string>
+    <string name="statusbar_colored_icons_summary">Use proper app icons for notification icons in statusbar</string>
+    <!-- Notification count -->
+    <string name="statusbar_notif_count_title">Show notification count</string>
+    <string name="statusbar_notif_count_summary">Display the number of pending notifications</string>
+    <!-- Notification channels -->
+    <string name="channel_light_settings_name">Light settings preview</string>
+    <!-- Notification light dialogs -->
+    <string name="edit_light_settings">Edit light settings</string>
+    <string name="pulse_speed_title">Pulse length and speed</string>
+    <string name="default_time">Normal</string>
+    <string name="custom_time">Custom</string>
+    <string name="brightness">Brightness level</string>
+    <!-- Values for the notification light pulse spinners -->
+    <string name="pulse_length_always_on">Always on</string>
+    <string name="pulse_length_very_short">Very short</string>
+    <string name="pulse_length_short">Short</string>
+    <string name="pulse_length_normal">Normal</string>
+    <string name="pulse_length_long">Long</string>
+    <string name="pulse_length_very_long">Very long</string>
+    <string name="pulse_speed_very_fast">Very fast</string>
+    <string name="pulse_speed_fast">Fast</string>
+    <string name="pulse_speed_normal">Normal</string>
+    <string name="pulse_speed_slow">Slow</string>
+    <string name="pulse_speed_very_slow">Very slow</string>
+    <!-- Common light settings strings -->
+    <string name="light_brightness_title">Brightness levels</string>
+    <string name="light_brightness_normal">Normal</string>
+    <string name="light_brightness_zen">Do Not Disturb</string>
+    <!-- Battery light settings -->
+    <string name="light_brightness_category">Light brightness settings</string>
+    <string name="battery_light_title">Battery light</string>
+    <string name="battery_light_summary">Configure led color based on battery level and status</string>
+    <string name="battery_low_pulse_title">Pulse if battery low</string>
+    <string name="battery_light_full_charge_disabled_title">Turn off when fully charged</string>
+    <string name="battery_light_list_title">Colors</string>
+    <string name="battery_light_low_color_title">Battery low</string>
+    <string name="battery_light_medium_color_title">Charging</string>
+    <string name="battery_light_full_color_title">Nearly Charged (&gt;90%)</string>
+    <string name="battery_light_really_full_color_title">Fully Charged (100%)</string>
+    <!-- Lights settings screen, notification light settings -->
+    <string name="notification_light_title">Notification light</string>
+    <string name="notification_light_summary">Configure led color for notifications</string>
+    <string name="notification_light_general_title">General</string>
+    <string name="notification_light_advanced_title">Advanced</string>
+    <string name="notification_light_applist_title">Apps</string>
+    <string name="notification_light_phonelist_title">Phone</string>
+    <string name="notification_light_use_custom">Use custom values</string>
+    <string name="notification_light_default_value">Default</string>
+    <string name="notification_light_missed_call_title">Missed call</string>
+    <string name="notification_light_voicemail_title">Voicemail</string>
+    <string name="notification_light_screen_on">Lights with screen on</string>
+    <string name="notification_light_zen_mode">Lights in Do Not Disturb mode</string>
+    <string name="notification_light_automagic">Choose colors automatically</string>
+    <string name="notification_light_automagic_summary">Choosing colors automatically</string>
+    <string name="notification_light_override">Override all apps</string>
+    <!-- Lights settings, LED notification -->
+    <string name="led_notification_title">Light settings</string>
+    <string name="led_notification_text">LED light enabled by settings</string>
+    <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
+    <!-- Heads up timeout -->
+    <string name="notification_heads_up_title">Heads up</string>
+    <string name="notification_heads_up_summary">Allow pop up notifications</string>
+    <!-- Less boring heads up -->
+    <string name="less_boring_heads_up_title">Less boring</string>
+    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
 </resources>

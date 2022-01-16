@@ -47,6 +47,9 @@
     <string name="never">Niemals</string>
     <string name="always">Immer</string>
     <string name="caution">Achtung</string>
+    <string name="delete">Löschen</string>
+    <string name="delete_message">Ausgewählte löschen?</string>
+    <string name="choose_app">App auswählen</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Aktueller Changelog</string>
     <string name="changelog_crdroid_summary">Änderungen in der installierten ROM anzeigen</string>
@@ -186,7 +189,9 @@
     <!-- Power menu -->
     <string name="power_menu_title">Ein-/Aus-Menü</string>
     <string name="power_menu_summary">Optionen des Ein-/Aus-Menüs anpassen</string>
+    <string name="power_menu_actions_title">Aktionen</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
+    <string name="power_menu_screenshot_summary">Gedrückt halten für zugeschnittenen Screenshot</string>
     <string name="power_menu_onthego_title">On-The-Go-Modus</string>
     <string name="power_menu_advanced_title">Erweitertes Neustartmenü</string>
     <string name="power_menu_airplane_title">Flugmodus</string>
@@ -197,6 +202,11 @@
     <string name="power_menu_users_title">Benutzer</string>
     <string name="power_menu_logout_title">Logout</string>
     <string name="power_menu_emergency_title">Notfall</string>
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_title">Erweitertes Neustartmenü</string>
+    <string name="advanced_reboot_summary">Bei entsperrtem Bildschirm im Neustartmenü Recovery- und Bootloader-Optionen anzeigen</string>
+    <string name="advanced_reboot_secured_title">Bei nicht entsperrtem Gerät</string>
+    <string name="advanced_reboot_secured_summary">Erweitertes Neustartmenü auch anzeigen, wenn das Gerät nicht entsperrt wurde</string>
     <!-- UI settings -->
     <string name="monet_title">Monet-Einstellungen</string>
     <string name="monet_summary">Anpassen der „Material You“-Theme-Engine</string>
@@ -269,8 +279,8 @@
     <string name="smart_pulldown_none_summary">Schnelleinstellungen öffnen, wenn keine Benachrichtigungen vorliegen</string>
     <string name="smart_pulldown_off">Aus</string>
     <string name="smart_pulldown_none">Keine Benachrichtigungen</string>
-    <string name="smart_pulldown_dismissable">Keine löschbaren Benachrichtigungen</string>
-    <string name="smart_pulldown_ongoing">Keine laufenden Benachrichtigungen</string>
+    <string name="smart_pulldown_dismissable">keine löschbaren Benachrichtigungen</string>
+    <string name="smart_pulldown_ongoing">keine laufenden Benachrichtigungen</string>
     <!-- Tap to sleep on status bar -->
     <string name="lockscreen_doubletap_sleep_title">Doppeltippen zum Bildschirmsperren</string>
     <string name="lockscreen_doubletap_sleep_summary">Bildschirm durch Doppeltippen auf dem Sperrbildschirm ausschalten</string>
@@ -287,7 +297,7 @@
     <string name="status_bar_clock_summary">Uhr &amp; Datum anpassen</string>
     <string name="status_bar_clock_seconds_title">Sekundenanzeige</string>
     <string name="status_bar_clock_seconds_summary">Sekunden neben der Uhr in der Statusleiste anzeigen</string>
-    <string name="status_bar_clock_position_title">Darstellung der Uhr</string>
+    <string name="status_bar_clock_position_title">Anzeigeort der Uhr</string>
     <string name="status_bar_clock_position_right">Rechts</string>
     <string name="status_bar_clock_position_left">Links</string>
     <string name="status_bar_clock_position_center">Mittig</string>
@@ -298,7 +308,7 @@
     <string name="status_bar_clock_auto_hide_hdur_summary">Wie lange die Uhr ausgeblendet bleiben soll</string>
     <string name="status_bar_clock_auto_hide_sdur_title">Dauer der Anzeige</string>
     <string name="status_bar_clock_auto_hide_sdur_summary">Wie lange die Uhr eingeblendet bleiben soll</string>
-    <string name="status_bar_am_pm_title">AM-/PM-Format</string>
+    <string name="status_bar_am_pm_title">AM-/PM-Darstellung</string>
     <string name="status_bar_am_pm_info">24-Stunden-Format ist aktiviert</string>
     <string name="status_bar_am_pm_normal">Normal</string>
     <string name="status_bar_am_pm_small">Klein</string>
@@ -313,7 +323,7 @@
     <string name="status_bar_date_style_lowercase">Kleinbuchstaben</string>
     <string name="status_bar_date_style_uppercase">Großbuchstaben</string>
     <string name="status_bar_date_format_custom">Benutzerdefiniertes Java-Format</string>
-    <string name="status_bar_date_string_edittext_title">Muss in DateFormat sein (z. B. MM/tt/jj)</string>
+    <string name="status_bar_date_string_edittext_title">Muss in Javas „DateFormat“ eingegeben werden (z. B. dd.MM.yy)</string>
     <string name="status_bar_date_string_edittext_summary">Format eingeben</string>
     <string name="clock_date_position">Anzeigeort des Datums</string>
     <string name="clock_date_right">Rechts neben der Uhr</string>
@@ -321,8 +331,8 @@
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Akkudarstellung</string>
     <string name="status_bar_battery_style_icon_portrait">Symbol (Hochformat)</string>
-    <string name="status_bar_battery_style_icon_rlandscape">Querformat-Symbol (Rechts)</string>
-    <string name="status_bar_battery_style_icon_landscape">Querformat-Symbol (Links)</string>
+    <string name="status_bar_battery_style_icon_rlandscape">Querformat-Symbol (rechts)</string>
+    <string name="status_bar_battery_style_icon_landscape">Querformat-Symbol (links)</string>
     <string name="status_bar_battery_style_circle">Kreis</string>
     <string name="status_bar_battery_style_dotted_circle">Kreis (gepunktet)</string>
     <string name="status_bar_battery_style_filled_circle">Kreis (gefüllt)</string>
@@ -331,8 +341,8 @@
     <string name="status_bar_battery_percent_title">Akkuanzeige in Prozent</string>
     <string name="status_bar_battery_percent_hidden">Ausgeblendet</string>
     <string name="status_bar_battery_percent_text_inside">Innerhalb des Symbols</string>
-    <string name="status_bar_battery_percent_text_next_right">Next to the icon (right)</string>
-    <string name="status_bar_battery_percent_text_next_left">Next to the icon (left)</string>
+    <string name="status_bar_battery_percent_text_next_right">Neben dem Symbol (rechts)</string>
+    <string name="status_bar_battery_percent_text_next_left">Neben dem Symbol (links)</string>
     <string name="status_bar_battery_text_charging_title">Akkuanzeige in Prozent beim Aufladen</string>
     <string name="status_bar_battery_text_charging_summary">Beim Aufladen immer den Akkuprozentsatz anzeigen</string>
     <!-- Status bar - Battery Bar -->
@@ -517,4 +527,72 @@
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Symbol für autom. Helligkeit</string>
     <string name="qs_show_auto_brightness_summary">Schalter für autom. Helligkeit neben dem Helligkeitsregler anzeigen</string>
+    <!-- Statusbar colored icons -->
+    <string name="statusbar_colored_icons_title">Bunte Symbole</string>
+    <string name="statusbar_colored_icons_summary">Die tatsächlichen App-Symbole als Benachr.-Symbole in der Statusleiste verwenden</string>
+    <!-- Notification count -->
+    <string name="statusbar_notif_count_title">Benachrichtigungszähler</string>
+    <string name="statusbar_notif_count_summary">Anzahl der ungelesenen Benachr. in der Statusleiste anzeigen</string>
+    <!-- Notification channels -->
+    <string name="channel_light_settings_name">Vorschau der LED-Einstellungen</string>
+    <!-- Notification light dialogs -->
+    <string name="edit_light_settings">LED-Einstellungen bearbeiten</string>
+    <string name="pulse_speed_title">Leuchtdauer und -Geschwindigkeit</string>
+    <string name="default_time">Normal</string>
+    <string name="custom_time">Benutzerdefiniert</string>
+    <string name="brightness">Helligkeitsstufe</string>
+    <!-- Values for the notification light pulse spinners -->
+    <string name="pulse_length_always_on">Immer an</string>
+    <string name="pulse_length_very_short">Sehr kurz</string>
+    <string name="pulse_length_short">Kurz</string>
+    <string name="pulse_length_normal">Normal</string>
+    <string name="pulse_length_long">Lang</string>
+    <string name="pulse_length_very_long">Sehr lang</string>
+    <string name="pulse_speed_very_fast">Sehr schnell</string>
+    <string name="pulse_speed_fast">Schnell</string>
+    <string name="pulse_speed_normal">Normal</string>
+    <string name="pulse_speed_slow">Langsam</string>
+    <string name="pulse_speed_very_slow">Sehr langsam</string>
+    <!-- Common light settings strings -->
+    <string name="light_brightness_title">Helligkeitsstufen</string>
+    <string name="light_brightness_normal">Normal</string>
+    <string name="light_brightness_zen">Bitte nicht stören</string>
+    <!-- Battery light settings -->
+    <string name="light_brightness_category">Helligkeitseinstellungen</string>
+    <string name="battery_light_title">Akku-LED</string>
+    <string name="battery_light_summary">Konfigurieren der LED-Farben auf Basis des Akkustandes</string>
+    <string name="battery_low_pulse_title">Bei schwachem Akku pulsieren</string>
+    <string name="battery_light_full_charge_disabled_title">Bei vollem Akku ausschalten</string>
+    <string name="battery_light_list_title">Farben</string>
+    <string name="battery_light_low_color_title">Niedriger Akku</string>
+    <string name="battery_light_medium_color_title">Beim Aufladen</string>
+    <string name="battery_light_full_color_title">Fast vollständig geladen (&gt;90 %)</string>
+    <string name="battery_light_really_full_color_title">Voll aufgeladen (100 %)</string>
+    <!-- Lights settings screen, notification light settings -->
+    <string name="notification_light_title">Benachrichtigungs-LED</string>
+    <string name="notification_light_summary">LED-Farbe für Benachrichtigungen konfigurieren</string>
+    <string name="notification_light_general_title">Allgemein</string>
+    <string name="notification_light_advanced_title">Erweitert</string>
+    <string name="notification_light_applist_title">Apps</string>
+    <string name="notification_light_phonelist_title">Telefon</string>
+    <string name="notification_light_use_custom">Benutzerdefinierte Werte verwenden</string>
+    <string name="notification_light_default_value">Standard</string>
+    <string name="notification_light_missed_call_title">Entgangener Anruf</string>
+    <string name="notification_light_voicemail_title">Mailbox</string>
+    <string name="notification_light_screen_on">LED-Anzeige bei aktivem Bildschirm</string>
+    <string name="notification_light_zen_mode">LED-Anzeige im „Bitte nicht stören“
+-Modus</string>
+    <string name="notification_light_automagic">Farben automatisch wählen</string>
+    <string name="notification_light_automagic_summary">Wählt die Farben automatisch</string>
+    <string name="notification_light_override">Alle Apps überschreiben</string>
+    <!-- Lights settings, LED notification -->
+    <string name="led_notification_title">LED-Einstellungen</string>
+    <string name="led_notification_text">Benachrichtigungs-LED von Einstellungen aktiviert</string>
+    <string name="notification_light_no_apps_summary">Um die Einstellg. individuell nach App vorzunehmen, „%1$s“ aktivieren und in der Menüleiste auf „\u002b“ tippen</string>
+    <!-- Heads up timeout -->
+    <string name="notification_heads_up_title">Pop-up-Benachrichtigungen</string>
+    <string name="notification_heads_up_summary">Pop-up-Benachrichtigungen zulassen</string>
+    <!-- Less boring heads up -->
+    <string name="less_boring_heads_up_title">Nur wichtige</string>
+    <string name="less_boring_heads_up_summary">Pop-up-Benachrichtigungen nur für Wecker-, Telefon- und Nachrichten-App anzeigen</string>
 </resources>

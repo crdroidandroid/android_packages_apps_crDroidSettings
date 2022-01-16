@@ -47,6 +47,9 @@
     <string name="never">Tidak pernah</string>
     <string name="always">Selalu</string>
     <string name="caution">Peringatan</string>
+    <string name="delete">Hapus</string>
+    <string name="delete_message">Hapus item yang dipilih?</string>
+    <string name="choose_app">Pilih aplikasi</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Perubahan saat ini</string>
     <string name="changelog_crdroid_summary">Lihat perubahan pada ROM terpasang</string>
@@ -186,7 +189,9 @@
     <!-- Power menu -->
     <string name="power_menu_title">Menu daya</string>
     <string name="power_menu_summary">Sesuaikan opsi menu daya</string>
+    <string name="power_menu_actions_title">Tindakan</string>
     <string name="power_menu_screenshot_title">Tangkapan layar</string>
+    <string name="power_menu_screenshot_summary">Tekan lama untuk menangkap layar sebagian</string>
     <string name="power_menu_onthego_title">Mode On-The-Go</string>
     <string name="power_menu_advanced_title">Opsi mulai ulang lanjutan</string>
     <string name="power_menu_airplane_title">Mode pesawat</string>
@@ -197,6 +202,11 @@
     <string name="power_menu_users_title">Pengguna</string>
     <string name="power_menu_logout_title">Keluar</string>
     <string name="power_menu_emergency_title">Darurat</string>
+    <!-- Advanced restart options -->
+    <string name="advanced_reboot_title">Mulai ulang lanjutan</string>
+    <string name="advanced_reboot_summary">Saat tidak terkunci, sertakan opsi di menu daya untuk memulai kembali ke pemulihan atau bootloader</string>
+    <string name="advanced_reboot_secured_title">Pengaman layar kunci</string>
+    <string name="advanced_reboot_secured_summary">Tampilkan opsi tambahan menyalakan ulang di pengaman layar kunci</string>
     <!-- UI settings -->
     <string name="monet_title">Setelan Monet</string>
     <string name="monet_summary">Sesuaikan mesin tema Monet</string>
@@ -331,8 +341,8 @@
     <string name="status_bar_battery_percent_title">Persentase baterai</string>
     <string name="status_bar_battery_percent_hidden">Tersembunyi</string>
     <string name="status_bar_battery_percent_text_inside">Di dalam ikon</string>
-    <string name="status_bar_battery_percent_text_next_right">Next to the icon (right)</string>
-    <string name="status_bar_battery_percent_text_next_left">Next to the icon (left)</string>
+    <string name="status_bar_battery_percent_text_next_right">Di sebelah ikon (kanan)</string>
+    <string name="status_bar_battery_percent_text_next_left">Di sebelah ikon (kiri)</string>
     <string name="status_bar_battery_text_charging_title">Persentase baterai saat pengisian</string>
     <string name="status_bar_battery_text_charging_summary">Selalu tampilkan persentase baterai saat mengisi daya</string>
     <!-- Status bar - Battery Bar -->
@@ -429,8 +439,8 @@
     <string name="pulse_lavalamp_speed_title">Kecepatan lampu lava</string>
     <string name="pulse_solid_units_count">Jumlah garis padat</string>
     <string name="pulse_solid_units_opacity">Opasitas garis padat</string>
-    <string name="pulse_solid_units_rounded_title">Rounded corners</string>
-    <string name="pulse_solid_units_rounded_summary">Solid lines with rounded tip</string>
+    <string name="pulse_solid_units_rounded_title">Sudut melengkung</string>
+    <string name="pulse_solid_units_rounded_summary">Garis padat dengan ujung melengkung</string>
     <string name="pulse_solid_dimen_category">Pengaturan mode garis padat</string>
     <string name="pulse_color_mode_title">Warna</string>
     <string name="pulse_color_accent">Aksen</string>
@@ -517,4 +527,71 @@
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Ikon Kecerahan Otomatis</string>
     <string name="qs_show_auto_brightness_summary">Tampilkan tombol kecerahan otomatis di dekat slider kecerahan</string>
+    <!-- Statusbar colored icons -->
+    <string name="statusbar_colored_icons_title">Ikon berwarna</string>
+    <string name="statusbar_colored_icons_summary">Gunakan ikon aplikasi yang tepat untuk ikon notifikasi di bilah status</string>
+    <!-- Notification count -->
+    <string name="statusbar_notif_count_title">Tampilkan jumlah notifikasi</string>
+    <string name="statusbar_notif_count_summary">Tampilkan jumlah notifikasi yang tertunda</string>
+    <!-- Notification channels -->
+    <string name="channel_light_settings_name">Pratinjau pengaturan cahaya</string>
+    <!-- Notification light dialogs -->
+    <string name="edit_light_settings">Ubah pengaturan cahaya</string>
+    <string name="pulse_speed_title">Panjang dan kecepatan kedipan</string>
+    <string name="default_time">Normal</string>
+    <string name="custom_time">Kustom</string>
+    <string name="brightness">Tingkat kecerahan</string>
+    <!-- Values for the notification light pulse spinners -->
+    <string name="pulse_length_always_on">Selalu menyala</string>
+    <string name="pulse_length_very_short">Sangat singkat</string>
+    <string name="pulse_length_short">Singkat</string>
+    <string name="pulse_length_normal">Normal</string>
+    <string name="pulse_length_long">Lama</string>
+    <string name="pulse_length_very_long">Sangat lama</string>
+    <string name="pulse_speed_very_fast">Sangat cepat</string>
+    <string name="pulse_speed_fast">Cepat</string>
+    <string name="pulse_speed_normal">Normal</string>
+    <string name="pulse_speed_slow">Lambat</string>
+    <string name="pulse_speed_very_slow">Sangat lambat</string>
+    <!-- Common light settings strings -->
+    <string name="light_brightness_title">Tingkatan kecerahan</string>
+    <string name="light_brightness_normal">Normal</string>
+    <string name="light_brightness_zen">Jangan Ganggu</string>
+    <!-- Battery light settings -->
+    <string name="light_brightness_category">Pengaturan kecerahan cahaya</string>
+    <string name="battery_light_title">Lampu baterai</string>
+    <string name="battery_light_summary">Konfigurasikan warna led berdasarkan level dan status baterai</string>
+    <string name="battery_low_pulse_title">Berkedip jika baterai lemah</string>
+    <string name="battery_light_full_charge_disabled_title">Matikan saat terisi penuh</string>
+    <string name="battery_light_list_title">Warna</string>
+    <string name="battery_light_low_color_title">Baterai lemah</string>
+    <string name="battery_light_medium_color_title">Pengisian daya</string>
+    <string name="battery_light_full_color_title">Hampir terisi (&gt;90%)</string>
+    <string name="battery_light_really_full_color_title">Terisi penuh (100%)</string>
+    <!-- Lights settings screen, notification light settings -->
+    <string name="notification_light_title">Lampu notifikasi</string>
+    <string name="notification_light_summary">Konfigurasi warna led untuk notifikasi</string>
+    <string name="notification_light_general_title">Umum</string>
+    <string name="notification_light_advanced_title">Lanjutan</string>
+    <string name="notification_light_applist_title">Aplikasi</string>
+    <string name="notification_light_phonelist_title">Ponsel</string>
+    <string name="notification_light_use_custom">Gunakan nilai kustom</string>
+    <string name="notification_light_default_value">Bawaan</string>
+    <string name="notification_light_missed_call_title">Panggilan tak terjawab</string>
+    <string name="notification_light_voicemail_title">Pesan suara</string>
+    <string name="notification_light_screen_on">Lampu dengan layar menyala</string>
+    <string name="notification_light_zen_mode">Lampu di Mode Jangan Ganggu</string>
+    <string name="notification_light_automagic">Pilih warna otomatis</string>
+    <string name="notification_light_automagic_summary">Memilih warna secara otomatis</string>
+    <string name="notification_light_override">Ganti semua aplikasi</string>
+    <!-- Lights settings, LED notification -->
+    <string name="led_notification_title">Pengaturan cahaya</string>
+    <string name="led_notification_text">Lampu LED diaktifkan oleh pengaturan</string>
+    <string name="notification_light_no_apps_summary">Untuk menambahkan kontrol pada setiap aplikasi, aktifkan \'%1$s\' dan tekan \'\u002b\' pada bilah menu</string>
+    <!-- Heads up timeout -->
+    <string name="notification_heads_up_title">Notifikasi mengambang</string>
+    <string name="notification_heads_up_summary">Izinkan notifikasi mengambang</string>
+    <!-- Less boring heads up -->
+    <string name="less_boring_heads_up_title">Kurang membosankan</string>
+    <string name="less_boring_heads_up_summary">Tampilkan notifikasi mengambang hanya untuk aplikasi alarm, telepon, dan pesan</string>
 </resources>
