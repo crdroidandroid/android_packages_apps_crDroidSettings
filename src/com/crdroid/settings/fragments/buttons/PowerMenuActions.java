@@ -58,7 +58,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
     Context mContext;
     private LockPatternUtils mLockPatternUtils;
     private UserManager mUserManager;
-    private List<String> mLocalUserConfig = new ArrayList<String>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,8 +84,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
                 mEmergencyPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_EMERGENCY);
             }
         }
-
-        mLocalUserConfig = mLineageGlobalActions.getLocalUserConfig();
     }
 
     @Override
@@ -162,8 +159,11 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
             mLockDownPref.setEnabled(isKeyguardSecure);
             mLockDownPref.setChecked(mLineageGlobalActions.userConfigContains(
                     GLOBAL_ACTION_KEY_LOCKDOWN));
-            mLockDownPref.setSummary(isKeyguardSecure ? null :
-                    R.string.power_menu_lockdown_unavailable);
+            if (isKeyguardSecure) {
+                mLockDownPref.setSummary(null);
+            } else {
+                mLockDownPref.setSummary(R.string.power_menu_lockdown_unavailable);
+            }
         }
         if (mUsersPref != null) {
             if (!UserHandle.MU_ENABLED || !UserManager.supportsMultipleUsers()) {
