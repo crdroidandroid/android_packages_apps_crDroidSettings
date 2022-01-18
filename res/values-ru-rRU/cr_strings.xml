@@ -198,6 +198,7 @@
     <string name="power_menu_torch_title">Фонарик</string>
     <string name="power_menu_settings_title">Настройки</string>
     <string name="power_menu_lockdown_title">Блокировка</string>
+    <string name="power_menu_lockdown_unavailable">Блокировка отключена, так как keyguard небезопасен</string>
     <string name="power_menu_soundpanel_title">Звуковая панель</string>
     <string name="power_menu_users_title">Пользователи</string>
     <string name="power_menu_logout_title">Выйти</string>
@@ -286,8 +287,15 @@
     <string name="lockscreen_doubletap_sleep_summary">Двойное нажатие по экрану блокировки переводит устройство в спящий режим</string>
     <!-- Font style / Icon pack -->
     <string name="theme_customization_font_title">Стиль шрифта</string>
+    <string name="theme_customization_font_summary">Установить стиль шрифта системы</string>
     <string name="theme_customization_icon_pack_title">Набор иконок</string>
-    <string name="theme_customization_adaptive_icon_shape_title">Адаптивная форма значка</string>
+    <string name="theme_customization_icon_pack_summary">Установить пользовательский пакет стиля иконок</string>
+    <string name="theme_customization_icon_shape_title">Форма значка</string>
+    <string name="theme_customization_icon_shape_summary">Установить системный стиль формы иконок</string>
+    <string name="theme_customization_signal_icon_title">Стиль значка сигнала</string>
+    <string name="theme_customization_signal_icon_summary">Выбрать стиль значка сигнала</string>
+    <string name="theme_customization_wifi_icon_title">Стиль значка Wi-Fi</string>
+    <string name="theme_customization_wifi_icon_summary">Выбрать стиль значка Wi-Fi</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Частота обновления по умолчанию</string>
     <string name="peak_refresh_rate_title_custom">Максимальная частота обновления</string>
@@ -528,8 +536,8 @@
     <string name="qs_show_auto_brightness_title">Значок автояркости</string>
     <string name="qs_show_auto_brightness_summary">Показывать значок автояркости рядом с ползунком</string>
     <!-- Statusbar colored icons -->
-    <string name="statusbar_colored_icons_title">Разукрашенные иконки</string>
-    <string name="statusbar_colored_icons_summary">Использовать соответствующие значки приложений для значков уведомлений в строке состояния</string>
+    <string name="statusbar_colored_icons_title">Цветные иконки</string>
+    <string name="statusbar_colored_icons_summary">Использовать значки приложений для уведомлений в строке состояния</string>
     <!-- Notification count -->
     <string name="statusbar_notif_count_title">Показать счетчик уведомлений</string>
     <string name="statusbar_notif_count_summary">Показывать количество новых уведомлений в строке состояния</string>
@@ -590,8 +598,16 @@
     <string name="notification_light_no_apps_summary">Чтобы разрешить управление приложениями, включите «%1$s» и нажмите «\u002b» в строке меню</string>
     <!-- Heads up timeout -->
     <string name="notification_heads_up_title">Всплывающие уведомления</string>
-    <string name="notification_heads_up_summary">Allow pop up notifications</string>
+    <string name="notification_heads_up_summary">Разрешить всплывающие уведомления</string>
     <!-- Less boring heads up -->
-    <string name="less_boring_heads_up_title">Less boring</string>
-    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
+    <string name="less_boring_heads_up_title">Не надоедать</string>
+    <string name="less_boring_heads_up_summary">Показывать всплывающие уведомления только для будильника, набора номера и сообщений</string>
+    <!-- Notifications while screen on -->
+    <string name="notification_sound_vib_screen_on_title">Звуковое уведомление</string>
+    <string name="notification_sound_vib_screen_on_summary">Проигрывать звук и вибрацию для уведомлений при включённом экране</string>
+    <!-- Privacy Indicator -->
+    <string name="mic_camera_privacy_indicator_title">Индикатор использования камеры и микрофона</string>
+    <string name="mic_camera_privacy_indicator_summary">Показывать раздельные индикаторы, когда любое приложение использует микрофон или камеру</string>
+    <string name="location_privacy_indicator_title">Индикатор конфиденциальности местоположения</string>
+    <string name="location_privacy_indicator_summary">Показывать раздельные индикаторы, когда любое приложение использует местоположение</string>
 </resources>

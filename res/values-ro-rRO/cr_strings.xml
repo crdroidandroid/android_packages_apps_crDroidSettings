@@ -47,9 +47,9 @@
     <string name="never">Niciodată</string>
     <string name="always">Întotdeauna</string>
     <string name="caution">Atenţie</string>
-    <string name="delete">Delete</string>
-    <string name="delete_message">Remove selected item?</string>
-    <string name="choose_app">Choose app</string>
+    <string name="delete">Șterge</string>
+    <string name="delete_message">Şterge elementul selectat?</string>
+    <string name="choose_app">Alegeți aplicația</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Jurnal modificări curente</string>
     <string name="changelog_crdroid_summary">Vezi modificările în ROM instalat</string>
@@ -189,24 +189,25 @@
     <!-- Power menu -->
     <string name="power_menu_title">Meniu de alimentare</string>
     <string name="power_menu_summary">Personalizare opțiuni meniu pornire</string>
-    <string name="power_menu_actions_title">Actions</string>
+    <string name="power_menu_actions_title">Acțiuni</string>
     <string name="power_menu_screenshot_title">Captură ecran</string>
-    <string name="power_menu_screenshot_summary">Long-press for partial screenshot</string>
+    <string name="power_menu_screenshot_summary">Apăsare lungă pentru captură ecran parțială</string>
     <string name="power_menu_onthego_title">Mod On-The-Go</string>
     <string name="power_menu_advanced_title">Opțiuni avansate de repornire</string>
     <string name="power_menu_airplane_title">Mod Avion</string>
     <string name="power_menu_torch_title">Lanternă</string>
     <string name="power_menu_settings_title">Setări</string>
-    <string name="power_menu_lockdown_title">Blocare</string>
+    <string name="power_menu_lockdown_title">Lockdown</string>
+    <string name="power_menu_lockdown_unavailable">Lockdown is disabled as keyguard isn\'t secure</string>
     <string name="power_menu_soundpanel_title">Panoul de sunet</string>
     <string name="power_menu_users_title">Utilizatori</string>
     <string name="power_menu_logout_title">Deconectare</string>
     <string name="power_menu_emergency_title">Urgență</string>
     <!-- Advanced restart options -->
-    <string name="advanced_reboot_title">Advanced restart</string>
-    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for restarting into recovery or bootloader</string>
-    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
-    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
+    <string name="advanced_reboot_title">Repornire avansată</string>
+    <string name="advanced_reboot_summary">La deblocare, se includ opțiuni în meniul de pornire pentru repornirea în recuperare sau bootloader</string>
+    <string name="advanced_reboot_secured_title">Ecran de blocare securizat</string>
+    <string name="advanced_reboot_secured_summary">Afișează opțiuni avansate de repornire pe ecranul de blocare securizat</string>
     <!-- UI settings -->
     <string name="monet_title">Setări Monet</string>
     <string name="monet_summary">Personalizează motorul de temă Monet</string>
@@ -286,8 +287,15 @@
     <string name="lockscreen_doubletap_sleep_summary">Atingeți de două ori ecranul de blocare pentru a adormi dispozitivul</string>
     <!-- Font style / Icon pack -->
     <string name="theme_customization_font_title">Stil font</string>
+    <string name="theme_customization_font_summary">Set system font style</string>
     <string name="theme_customization_icon_pack_title">Pachet de pictograme</string>
-    <string name="theme_customization_adaptive_icon_shape_title">Formă pictogramă adaptivă</string>
+    <string name="theme_customization_icon_pack_summary">Set custom icon pack style</string>
+    <string name="theme_customization_icon_shape_title">Icon shape</string>
+    <string name="theme_customization_icon_shape_summary">Set system icon shape style</string>
+    <string name="theme_customization_signal_icon_title">Signal icon style</string>
+    <string name="theme_customization_signal_icon_summary">Set custom signal icon style</string>
+    <string name="theme_customization_wifi_icon_title">WiFi icon style</string>
+    <string name="theme_customization_wifi_icon_summary">Set custom wifi icon style</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Rata de reîmprospătare implicită</string>
     <string name="peak_refresh_rate_title_custom">Rata maximă de reîmprospătare</string>
@@ -528,70 +536,78 @@
     <string name="qs_show_auto_brightness_title">Pictogramă luminozitate automată</string>
     <string name="qs_show_auto_brightness_summary">Arată comutator pentru luminozitate adaptivă lângă glisor</string>
     <!-- Statusbar colored icons -->
-    <string name="statusbar_colored_icons_title">Colored icons</string>
-    <string name="statusbar_colored_icons_summary">Use proper app icons for notification icons in statusbar</string>
+    <string name="statusbar_colored_icons_title">Pictograme colorate</string>
+    <string name="statusbar_colored_icons_summary">Utilizați pictogramele aplicației corecte pentru pictogramele de notificare din bara de stare</string>
     <!-- Notification count -->
-    <string name="statusbar_notif_count_title">Show notification count</string>
-    <string name="statusbar_notif_count_summary">Display the number of pending notifications</string>
+    <string name="statusbar_notif_count_title">Arată numărul de notificări</string>
+    <string name="statusbar_notif_count_summary">Afișează numărul de notificări în așteptare</string>
     <!-- Notification channels -->
-    <string name="channel_light_settings_name">Light settings preview</string>
+    <string name="channel_light_settings_name">Previzualizare setări lumină</string>
     <!-- Notification light dialogs -->
-    <string name="edit_light_settings">Edit light settings</string>
-    <string name="pulse_speed_title">Pulse length and speed</string>
-    <string name="default_time">Normal</string>
-    <string name="custom_time">Custom</string>
-    <string name="brightness">Brightness level</string>
+    <string name="edit_light_settings">Editare setări lumină</string>
+    <string name="pulse_speed_title">Durata și viteza pulsării</string>
+    <string name="default_time">Normală</string>
+    <string name="custom_time">Personalizat</string>
+    <string name="brightness">Nivel de luminozitate</string>
     <!-- Values for the notification light pulse spinners -->
-    <string name="pulse_length_always_on">Always on</string>
-    <string name="pulse_length_very_short">Very short</string>
-    <string name="pulse_length_short">Short</string>
+    <string name="pulse_length_always_on">Tot timpul pornit</string>
+    <string name="pulse_length_very_short">Foarte scurt</string>
+    <string name="pulse_length_short">Scurt</string>
     <string name="pulse_length_normal">Normal</string>
-    <string name="pulse_length_long">Long</string>
-    <string name="pulse_length_very_long">Very long</string>
-    <string name="pulse_speed_very_fast">Very fast</string>
-    <string name="pulse_speed_fast">Fast</string>
+    <string name="pulse_length_long">Lung</string>
+    <string name="pulse_length_very_long">Foarte lung</string>
+    <string name="pulse_speed_very_fast">Foarte rapid</string>
+    <string name="pulse_speed_fast">Rapid</string>
     <string name="pulse_speed_normal">Normal</string>
-    <string name="pulse_speed_slow">Slow</string>
-    <string name="pulse_speed_very_slow">Very slow</string>
+    <string name="pulse_speed_slow">Lent</string>
+    <string name="pulse_speed_very_slow">Foarte lent</string>
     <!-- Common light settings strings -->
-    <string name="light_brightness_title">Brightness levels</string>
+    <string name="light_brightness_title">Nivelele luminozității</string>
     <string name="light_brightness_normal">Normal</string>
-    <string name="light_brightness_zen">Do Not Disturb</string>
+    <string name="light_brightness_zen">Nu Deranja</string>
     <!-- Battery light settings -->
-    <string name="light_brightness_category">Light brightness settings</string>
-    <string name="battery_light_title">Battery light</string>
-    <string name="battery_light_summary">Configure led color based on battery level and status</string>
-    <string name="battery_low_pulse_title">Pulse if battery low</string>
-    <string name="battery_light_full_charge_disabled_title">Turn off when fully charged</string>
-    <string name="battery_light_list_title">Colors</string>
-    <string name="battery_light_low_color_title">Battery low</string>
-    <string name="battery_light_medium_color_title">Charging</string>
-    <string name="battery_light_full_color_title">Nearly Charged (&gt;90%)</string>
-    <string name="battery_light_really_full_color_title">Fully Charged (100%)</string>
+    <string name="light_brightness_category">Setări luminozitate lumină</string>
+    <string name="battery_light_title">Lumina baterie</string>
+    <string name="battery_light_summary">Configurați culoarea LED pe baza nivelului bateriei și a stării</string>
+    <string name="battery_low_pulse_title">Pulsează la baterie scăzută</string>
+    <string name="battery_light_full_charge_disabled_title">Opriți când încărcați complet</string>
+    <string name="battery_light_list_title">Culori</string>
+    <string name="battery_light_low_color_title">Baterie slabă</string>
+    <string name="battery_light_medium_color_title">Încărcare</string>
+    <string name="battery_light_full_color_title">Aproape încarcat (&gt;90 %)</string>
+    <string name="battery_light_really_full_color_title">Complet încãrcată (100 %)</string>
     <!-- Lights settings screen, notification light settings -->
-    <string name="notification_light_title">Notification light</string>
-    <string name="notification_light_summary">Configure led color for notifications</string>
+    <string name="notification_light_title">Notificare lumină</string>
+    <string name="notification_light_summary">Configurați culoarea LED pentru notificări</string>
     <string name="notification_light_general_title">General</string>
-    <string name="notification_light_advanced_title">Advanced</string>
-    <string name="notification_light_applist_title">Apps</string>
-    <string name="notification_light_phonelist_title">Phone</string>
-    <string name="notification_light_use_custom">Use custom values</string>
-    <string name="notification_light_default_value">Default</string>
-    <string name="notification_light_missed_call_title">Missed call</string>
-    <string name="notification_light_voicemail_title">Voicemail</string>
-    <string name="notification_light_screen_on">Lights with screen on</string>
-    <string name="notification_light_zen_mode">Lights in Do Not Disturb mode</string>
-    <string name="notification_light_automagic">Choose colors automatically</string>
-    <string name="notification_light_automagic_summary">Choosing colors automatically</string>
-    <string name="notification_light_override">Override all apps</string>
+    <string name="notification_light_advanced_title">Avansat</string>
+    <string name="notification_light_applist_title">Aplicaţii</string>
+    <string name="notification_light_phonelist_title">Telefon</string>
+    <string name="notification_light_use_custom">Utilizează valori personalizate</string>
+    <string name="notification_light_default_value">Prestabilit</string>
+    <string name="notification_light_missed_call_title">Apel pierdut</string>
+    <string name="notification_light_voicemail_title">Mesagerie vocală</string>
+    <string name="notification_light_screen_on">Lumini cu ecranul pornit</string>
+    <string name="notification_light_zen_mode">Lumini în modul Nu Deranjați</string>
+    <string name="notification_light_automagic">Alege culorile automat</string>
+    <string name="notification_light_automagic_summary">Se aleg culorile automat</string>
+    <string name="notification_light_override">Suprascrie toate aplicațiile</string>
     <!-- Lights settings, LED notification -->
-    <string name="led_notification_title">Light settings</string>
-    <string name="led_notification_text">LED light enabled by settings</string>
-    <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
+    <string name="led_notification_title">Setări de lumină</string>
+    <string name="led_notification_text">Lumină LED activată de setări</string>
+    <string name="notification_light_no_apps_summary">Pentru a adăuga control per aplicație, activați \'%1$s\' și apăsați \'\u002b\' pe bara de meniu</string>
     <!-- Heads up timeout -->
-    <string name="notification_heads_up_title">Heads up</string>
-    <string name="notification_heads_up_summary">Allow pop up notifications</string>
+    <string name="notification_heads_up_title">Atentionari</string>
+    <string name="notification_heads_up_summary">Permiteți notificări de tip pop-up</string>
     <!-- Less boring heads up -->
-    <string name="less_boring_heads_up_title">Less boring</string>
-    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
+    <string name="less_boring_heads_up_title">Mai puțin plictisitor</string>
+    <string name="less_boring_heads_up_summary">Afişează notificările pop-up numai pentru aplicaţia de alarmă, telefon şi mesagerie</string>
+    <!-- Notifications while screen on -->
+    <string name="notification_sound_vib_screen_on_title">Notificări zgomotoase</string>
+    <string name="notification_sound_vib_screen_on_summary">Redă sunet şi vibraţii când ecranul este pornit</string>
+    <!-- Privacy Indicator -->
+    <string name="mic_camera_privacy_indicator_title">Indicator de confidențialitate microfon și cameră</string>
+    <string name="mic_camera_privacy_indicator_summary">Arată indicator separat atunci când o aplicație folosește microfonul sau camera foto</string>
+    <string name="location_privacy_indicator_title">Indicator de confidențialitate locație</string>
+    <string name="location_privacy_indicator_summary">Arată indicator separat atunci când o aplicație folosește locația</string>
 </resources>

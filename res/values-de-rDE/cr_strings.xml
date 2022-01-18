@@ -197,7 +197,8 @@
     <string name="power_menu_airplane_title">Flugmodus</string>
     <string name="power_menu_torch_title">Taschenlampe</string>
     <string name="power_menu_settings_title">Einstellungen</string>
-    <string name="power_menu_lockdown_title">Sperren</string>
+    <string name="power_menu_lockdown_title">Lockdown</string>
+    <string name="power_menu_lockdown_unavailable">Lockdown is disabled as keyguard isn\'t secure</string>
     <string name="power_menu_soundpanel_title">Lautstärkeregler</string>
     <string name="power_menu_users_title">Benutzer</string>
     <string name="power_menu_logout_title">Logout</string>
@@ -266,19 +267,19 @@
     <string name="status_bar_toggle_brightness_summary">Regelung der Helligkeit durch Wischen über die Statusleiste</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">Schnelles Aufklappen</string>
-    <string name="status_bar_quick_qs_pulldown_summary">%1$s Rand der Statusleiste klappt Schnelleinstellungen auf</string>
-    <string name="status_bar_quick_qs_pulldown_summary_left">Links</string>
-    <string name="status_bar_quick_qs_pulldown_summary_right">Rechts</string>
+    <string name="status_bar_quick_qs_pulldown_summary">%1$s der Statusleiste klappt Schnelleinstellungen auf</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">Linker Rand</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">Rechter Rand</string>
     <string name="status_bar_quick_qs_pulldown_off">Aus</string>
-    <string name="status_bar_quick_qs_pulldown_left">Links</string>
-    <string name="status_bar_quick_qs_pulldown_right">Rechts</string>
+    <string name="status_bar_quick_qs_pulldown_left">Linker Rand</string>
+    <string name="status_bar_quick_qs_pulldown_right">Rechter Rand</string>
     <string name="status_bar_quick_qs_pulldown_always">Die Schnelleinstellungen beim Herunterziehen der Statusleiste immer anzeigen</string>
     <!-- Status bar - Smart pulldown-->
     <string name="smart_pulldown_title">Intelligentes Aufklappen</string>
     <string name="smart_pulldown_summary">Schnelleinstellungen öffnen, wenn %1$s vorliegen</string>
     <string name="smart_pulldown_none_summary">Schnelleinstellungen öffnen, wenn keine Benachrichtigungen vorliegen</string>
     <string name="smart_pulldown_off">Aus</string>
-    <string name="smart_pulldown_none">Keine Benachrichtigungen</string>
+    <string name="smart_pulldown_none">keine Benachrichtigungen</string>
     <string name="smart_pulldown_dismissable">keine löschbaren Benachrichtigungen</string>
     <string name="smart_pulldown_ongoing">keine laufenden Benachrichtigungen</string>
     <!-- Tap to sleep on status bar -->
@@ -286,8 +287,15 @@
     <string name="lockscreen_doubletap_sleep_summary">Bildschirm durch Doppeltippen auf dem Sperrbildschirm ausschalten</string>
     <!-- Font style / Icon pack -->
     <string name="theme_customization_font_title">Schriftart</string>
+    <string name="theme_customization_font_summary">System-Schriftart festlegen</string>
     <string name="theme_customization_icon_pack_title">Symbolpaket</string>
-    <string name="theme_customization_adaptive_icon_shape_title">Symbolform</string>
+    <string name="theme_customization_icon_pack_summary">Eigenes Symbolpaket festlegen</string>
+    <string name="theme_customization_icon_shape_title">Symbolform</string>
+    <string name="theme_customization_icon_shape_summary">System-Symbolform festlegen</string>
+    <string name="theme_customization_signal_icon_title">Signal icon style</string>
+    <string name="theme_customization_signal_icon_summary">Set custom signal icon style</string>
+    <string name="theme_customization_wifi_icon_title">WiFi icon style</string>
+    <string name="theme_customization_wifi_icon_summary">Set custom wifi icon style</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Standard-Aktualisierungsrate</string>
     <string name="peak_refresh_rate_title_custom">Maximale Aktualisierungsrate</string>
@@ -422,15 +430,15 @@
     <string name="lockscreen_albumart_filter_grayblur">Schwarzweiß und Weichzeichnung</string>
     <!-- Pulse music visualizer -->
     <string name="pulse_help_policy_notice_title">Über Pulse</string>
-    <string name="pulse_help_policy_notice_summary">Pulse ist ein Audio-Visualizer und visualisiert gespielte Musik</string>
+    <string name="pulse_help_policy_notice_summary">Pulse ist ein grafischer Audio-Equalizer, wenn Musik auf dem Gerät abgespielt wird</string>
     <string name="pulse_settings">Pulse</string>
-    <string name="pulse_settings_summary">Audio-Visualisierung in der Navigationsleiste und auf dem Sperrbildschirm</string>
-    <string name="show_navbar_pulse_title">Pulse in der Navigationsleiste</string>
-    <string name="show_navbar_pulse_summary">Audio-Visualisierung in der Navigationsleiste</string>
-    <string name="show_lockscreen_pulse_title">Pulse auf dem Sperrbildschirm</string>
-    <string name="show_lockscreen_pulse_summary">Audio-Visualisierung auf dem Sperrbildschirm</string>
-    <string name="show_ambient_pulse_title">Pulse im Ambient-Modus</string>
-    <string name="show_ambient_pulse_summary">Audio-Visualisierung im Ambient-Modus</string>
+    <string name="pulse_settings_summary">Visualisiert Audio in Navigationsleiste und auf Sperrbildschirm</string>
+    <string name="show_navbar_pulse_title">Pulse in Navigationsleiste</string>
+    <string name="show_navbar_pulse_summary">Visualisiert Audio in Navigationsleiste</string>
+    <string name="show_lockscreen_pulse_title">Pulse auf Sperrbildschirm</string>
+    <string name="show_lockscreen_pulse_summary">Visualisiert Audio auf Sperrbildschirm</string>
+    <string name="show_ambient_pulse_title">Ambient Pulse (Umgebungspuls)</string>
+    <string name="show_ambient_pulse_summary">Visualisiert Audio im Ambient-Modus</string>
     <string name="pulse_render_mode_title">Darstellungsmodus</string>
     <string name="pulse_render_mode_fading_bars">Verblassende Blöcke</string>
     <string name="pulse_render_mode_solid_lines">Durchgehende Balken</string>
@@ -537,7 +545,7 @@
     <string name="channel_light_settings_name">Vorschau der LED-Einstellungen</string>
     <!-- Notification light dialogs -->
     <string name="edit_light_settings">LED-Einstellungen bearbeiten</string>
-    <string name="pulse_speed_title">Leuchtdauer und -Geschwindigkeit</string>
+    <string name="pulse_speed_title">Pulsdauer und Geschwindigkeit</string>
     <string name="default_time">Normal</string>
     <string name="custom_time">Benutzerdefiniert</string>
     <string name="brightness">Helligkeitsstufe</string>
@@ -556,17 +564,17 @@
     <!-- Common light settings strings -->
     <string name="light_brightness_title">Helligkeitsstufen</string>
     <string name="light_brightness_normal">Normal</string>
-    <string name="light_brightness_zen">Bitte nicht stören</string>
+    <string name="light_brightness_zen">DND</string>
     <!-- Battery light settings -->
     <string name="light_brightness_category">Helligkeitseinstellungen</string>
     <string name="battery_light_title">Akku-LED</string>
-    <string name="battery_light_summary">Konfigurieren der LED-Farben auf Basis des Akkustandes</string>
+    <string name="battery_light_summary">LED-Farbe je nach Akkustand und -status konfigurieren</string>
     <string name="battery_low_pulse_title">Bei schwachem Akku pulsieren</string>
     <string name="battery_light_full_charge_disabled_title">Bei vollem Akku ausschalten</string>
     <string name="battery_light_list_title">Farben</string>
-    <string name="battery_light_low_color_title">Niedriger Akku</string>
-    <string name="battery_light_medium_color_title">Beim Aufladen</string>
-    <string name="battery_light_full_color_title">Fast vollständig geladen (&gt;90 %)</string>
+    <string name="battery_light_low_color_title">Schwacher Akku</string>
+    <string name="battery_light_medium_color_title">Aufladen</string>
+    <string name="battery_light_full_color_title">Fast aufgeladen (&gt;90 %)</string>
     <string name="battery_light_really_full_color_title">Voll aufgeladen (100 %)</string>
     <!-- Lights settings screen, notification light settings -->
     <string name="notification_light_title">Benachrichtigungs-LED</string>
@@ -578,21 +586,28 @@
     <string name="notification_light_use_custom">Benutzerdefinierte Werte verwenden</string>
     <string name="notification_light_default_value">Standard</string>
     <string name="notification_light_missed_call_title">Entgangener Anruf</string>
-    <string name="notification_light_voicemail_title">Mailbox</string>
-    <string name="notification_light_screen_on">LED-Anzeige bei aktivem Bildschirm</string>
-    <string name="notification_light_zen_mode">LED-Anzeige im „Bitte nicht stören“
--Modus</string>
+    <string name="notification_light_voicemail_title">Sprachnachricht</string>
+    <string name="notification_light_screen_on">Leuchtet bei Bildschirm an</string>
+    <string name="notification_light_zen_mode">Leuchtet im DND-Modus</string>
     <string name="notification_light_automagic">Farben automatisch wählen</string>
-    <string name="notification_light_automagic_summary">Wählt die Farben automatisch</string>
+    <string name="notification_light_automagic_summary">Farben automatisch wählen</string>
     <string name="notification_light_override">Alle Apps überschreiben</string>
     <!-- Lights settings, LED notification -->
     <string name="led_notification_title">LED-Einstellungen</string>
-    <string name="led_notification_text">Benachrichtigungs-LED von Einstellungen aktiviert</string>
-    <string name="notification_light_no_apps_summary">Um die Einstellg. individuell nach App vorzunehmen, „%1$s“ aktivieren und in der Menüleiste auf „\u002b“ tippen</string>
+    <string name="led_notification_text">Benachrichtigungs-LED durch Einstellungen aktiviert</string>
+    <string name="notification_light_no_apps_summary">Um eine App-Steuerung hinzuzufügen, \'%1$s\' aktivieren und auf \'\u002b\' in der Menüleiste tippen</string>
     <!-- Heads up timeout -->
-    <string name="notification_heads_up_title">Pop-up-Benachrichtigungen</string>
-    <string name="notification_heads_up_summary">Pop-up-Benachrichtigungen zulassen</string>
+    <string name="notification_heads_up_title">Popup-Benachrichtigungen</string>
+    <string name="notification_heads_up_summary">Popup-Benachrichtigungen zulassen</string>
     <!-- Less boring heads up -->
-    <string name="less_boring_heads_up_title">Nur wichtige</string>
-    <string name="less_boring_heads_up_summary">Pop-up-Benachrichtigungen nur für Wecker-, Telefon- und Nachrichten-App anzeigen</string>
+    <string name="less_boring_heads_up_title">Weniger unwichtige</string>
+    <string name="less_boring_heads_up_summary">Popup-Benachrichtigungen nur für Wecker-, Telefon- und Nachrichten-App anzeigen</string>
+    <!-- Notifications while screen on -->
+    <string name="notification_sound_vib_screen_on_title">Laute Benachrichtigungen</string>
+    <string name="notification_sound_vib_screen_on_summary">Ton und Vibration bei Benachrichtigungen abspielen,  wenn Bildschirm an ist</string>
+    <!-- Privacy Indicator -->
+    <string name="mic_camera_privacy_indicator_title">Anzeige bei Mikrofon-/Kamerazugriff</string>
+    <string name="mic_camera_privacy_indicator_summary">Separate Anzeige, wenn eine beliebige App das Mikrofon/die Kamera verwendet</string>
+    <string name="location_privacy_indicator_title">Anzeige bei Standortzugriff</string>
+    <string name="location_privacy_indicator_summary">Separate Anzeige, wenn eine beliebige App den Standort verwendet</string>
 </resources>

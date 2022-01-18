@@ -47,7 +47,7 @@
     <string name="never">Nunca</string>
     <string name="always">Sempre</string>
     <string name="caution">Cuidado</string>
-    <string name="delete">Excluído</string>
+    <string name="delete">Excluir</string>
     <string name="delete_message">Remover item selecionado?</string>
     <string name="choose_app">Escolher aplicativo</string>
     <!-- Changelog -->
@@ -197,7 +197,8 @@
     <string name="power_menu_airplane_title">Modo Avião</string>
     <string name="power_menu_torch_title">Lanterna</string>
     <string name="power_menu_settings_title">Configurações</string>
-    <string name="power_menu_lockdown_title">Bloqueio total</string>
+    <string name="power_menu_lockdown_title">Lockdown</string>
+    <string name="power_menu_lockdown_unavailable">Lockdown is disabled as keyguard isn\'t secure</string>
     <string name="power_menu_soundpanel_title">Painel de volume</string>
     <string name="power_menu_users_title">Usuários</string>
     <string name="power_menu_logout_title">Sair</string>
@@ -286,11 +287,18 @@
     <string name="lockscreen_doubletap_sleep_summary">Toque duas vezes na tela de bloqueio para desligar a tela</string>
     <!-- Font style / Icon pack -->
     <string name="theme_customization_font_title">Estilo da fonte</string>
+    <string name="theme_customization_font_summary">Definir estilo da fonte do sistema</string>
     <string name="theme_customization_icon_pack_title">Pacote de ícones</string>
-    <string name="theme_customization_adaptive_icon_shape_title">Ícones adaptativos</string>
+    <string name="theme_customization_icon_pack_summary">Definir estilo do pacote de ícones personalizado</string>
+    <string name="theme_customization_icon_shape_title">Formato dos Ícones</string>
+    <string name="theme_customization_icon_shape_summary">Set system icon shape style</string>
+    <string name="theme_customization_signal_icon_title">Signal icon style</string>
+    <string name="theme_customization_signal_icon_summary">Set custom signal icon style</string>
+    <string name="theme_customization_wifi_icon_title">Estilo do ícone Wi-Fi</string>
+    <string name="theme_customization_wifi_icon_summary">Set custom wifi icon style</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Taxa de atualização padrão</string>
-    <string name="peak_refresh_rate_title_custom">Impulso da Taxa de atualização</string>
+    <string name="peak_refresh_rate_title_custom">Taxa de atualização máxima</string>
     <string name="low_power_refresh_rate_title_custom">Taxa de atualização para poupar energia</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Relógio e data</string>
@@ -344,7 +352,7 @@
     <string name="status_bar_battery_percent_text_next_right">Ao lado do ícone (direita)</string>
     <string name="status_bar_battery_percent_text_next_left">Ao lado do ícone (esquerda)</string>
     <string name="status_bar_battery_text_charging_title">Porcentagem da bateria ao carregar</string>
-    <string name="status_bar_battery_text_charging_summary">Sempre exibir a porcentagem da bateria ao carregar</string>
+    <string name="status_bar_battery_text_charging_summary">Sempre mostrar a porcentagem da bateria quando estiver carregando</string>
     <!-- Status bar - Battery Bar -->
     <string name="battery_bar_title">Barra de bateria</string>
     <string name="battery_bar_summary">Exibir e personalizar a barra de bateria acima da barra de status</string>
@@ -408,7 +416,7 @@
     <string name="network_traffic_hidearrow">Ocultar setas</string>
     <string name="network_traffic_hidearrow_summary">Esconder as setas dos indicadores de tráfego</string>
     <!-- QS footer warnings -->
-    <string name="qs_footer_warnings_title">Alertas de rodapé</string>
+    <string name="qs_footer_warnings_title">Alertas no rodapé</string>
     <string name="qs_footer_warnings_summary">Exibir um aviso na parte inferior do painel QS (configurações rápidas) quando a rede é monitorada por aplicativos externos ou VPN</string>
     <!-- Media art -->
     <string name="media_art_title">Arte da capa</string>
@@ -425,7 +433,7 @@
     <string name="pulse_help_policy_notice_summary">Pulse é um brilhante equalizador gráfico de áudio quando a música toca no dispositivo</string>
     <string name="pulse_settings">Pulse</string>
     <string name="pulse_settings_summary">Animação estilo equalizador de áudio para barra de navegação e tela de bloqueio</string>
-    <string name="show_navbar_pulse_title">Pulse na Barra de navegação</string>
+    <string name="show_navbar_pulse_title">Pulse na Barra de Navegação</string>
     <string name="show_navbar_pulse_summary">Equalizador gráfico de áudio na barra de navegação</string>
     <string name="show_lockscreen_pulse_title">Pulse na Tela de Bloqueio</string>
     <string name="show_lockscreen_pulse_summary">Equalizador gráfico de áudio na tela de bloqueio</string>
@@ -510,7 +518,7 @@
     <string name="qs_footer_users_icon_title">Ícone da conta de usuário</string>
     <string name="qs_footer_users_icon_summary">Mostrar ícone de vários usuários quando disponível</string>
     <string name="qs_footer_edit_icon_title">Ícone editar (lápis)</string>
-    <string name="qs_footer_show_power_menu_title">Atalhos do menu de energia</string>
+    <string name="qs_footer_show_power_menu_title">Atalho do menu de energia</string>
     <string name="qs_footer_services_icon_title">Atalho de serviços em execução</string>
     <string name="qs_footer_settings_icon_title">Atalho de configurações</string>
     <!-- Device Info screen. crDroid legal. -->
@@ -519,7 +527,7 @@
     <string name="qs_show_brightness_slider_title">Controle deslizante de brilho</string>
     <string name="qs_show_brightness_slider_never">Nunca exibir</string>
     <string name="qs_show_brightness_slider_expanded">Exibir quando expandido</string>
-    <string name="qs_show_brightness_slider_always">Exibir sempre</string>
+    <string name="qs_show_brightness_slider_always">Sempre mostrar</string>
     <string name="qs_show_brightness_slider_not_expanded">Exibir no painel QS não expandido</string>
     <string name="qs_brightness_slider_position_title">Posição</string>
     <string name="qs_brightness_slider_position_top">Topo</string>
@@ -594,4 +602,12 @@
     <!-- Less boring heads up -->
     <string name="less_boring_heads_up_title">Menos irritante</string>
     <string name="less_boring_heads_up_summary">Mostrar notificações flutuantes apenas para alarmes, ligações e aplicativo de mensagem</string>
+    <!-- Notifications while screen on -->
+    <string name="notification_sound_vib_screen_on_title">Notificações barulhentas</string>
+    <string name="notification_sound_vib_screen_on_summary">Reproduzir som e vibração para notificações quando a tela estiver acesa</string>
+    <!-- Privacy Indicator -->
+    <string name="mic_camera_privacy_indicator_title">Indicador de privacidade do microfone e da câmera</string>
+    <string name="mic_camera_privacy_indicator_summary">Mostrar indicador de privacidade quando um aplicativo usar o microfone ou câmera</string>
+    <string name="location_privacy_indicator_title">Indicador de privacidade de localização</string>
+    <string name="location_privacy_indicator_summary">Mostrar indicador de localização separado quando um aplicativo acessar o GPS </string>
 </resources>
