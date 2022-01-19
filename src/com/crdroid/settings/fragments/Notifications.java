@@ -37,6 +37,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.android.internal.util.crdroid.Utils;
+
 import java.util.List;
 
 @SearchIndexable
@@ -44,12 +46,14 @@ public class Notifications extends SettingsPreferenceFragment {
 
     public static final String TAG = "Notifications";
 
+    private static final String LIGHT_BRIGHTNESS_CATEGORY = "light_brightness";
     private static final String BATTERY_LIGHTS_PREF = "battery_lights";
     private static final String NOTIFICATION_LIGHTS_PREF = "notification_lights";
+    private static final String FLASHLIGHT_CATEGORY = "flashlight_category";
+    private static final String FLASHLIGHT_CALL_PREF = "flashlight_on_call";
 
     private Preference mBatLights;
     private Preference mNotLights;
-    private PreferenceCategory lightsCategory;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,8 +79,15 @@ public class Notifications extends SettingsPreferenceFragment {
             prefScreen.removePreference(mNotLights);
 
         if (!mBatLightsSupported && !mNotLightsSupported) {
-            lightsCategory = (PreferenceCategory) prefScreen.findPreference("light_brightness");
+            final PreferenceCategory lightsCategory =
+                    (PreferenceCategory) prefScreen.findPreference(LIGHT_BRIGHTNESS_CATEGORY);
             prefScreen.removePreference(lightsCategory);
+        }
+
+        if (!Utils.deviceHasFlashlight(mContext)) {
+            final PreferenceCategory flashlightCategory =
+                    (PreferenceCategory) prefScreen.findPreference(FLASHLIGHT_CATEGORY);
+            prefScreen.removePreference(flashlightCategory);
         }
     }
 
@@ -88,6 +99,8 @@ public class Notifications extends SettingsPreferenceFragment {
                 Settings.System.LESS_BORING_HEADS_UP, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -115,6 +128,10 @@ public class Notifications extends SettingsPreferenceFragment {
                             com.android.internal.R.bool.config_intrusiveNotificationLed);
                     if (!mNotLightsSupported)
                         keys.add(NOTIFICATION_LIGHTS_PREF);
+
+                    if (!Utils.deviceHasFlashlight(context)) {
+                        keys.add(FLASHLIGHT_CALL_PREF);
+                    }
 
                     return keys;
                 }
