@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2021 crDroid Android Project
+ * Copyright (C) 2016-2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.sound.PulseSettings;
+import com.crdroid.settings.utils.TelephonyUtils;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -47,15 +48,29 @@ public class Sound extends SettingsPreferenceFragment {
 
     public static final String TAG = "Sound";
 
+    private static final String KEY_INCALL_FEEDBACK = "incall_feeedback_vibrate";
+
+    private SwitchPreference mInCallFeedback;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.crdroid_settings_sound);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mInCallFeedback = (SwitchPreference) findPreference(KEY_INCALL_FEEDBACK);
+
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(mInCallFeedback);
+        }
     }
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.INCALL_FEEDBACK_VIBRATE, 0, UserHandle.USER_CURRENT);
         PulseSettings.reset(mContext);
     }
 
@@ -68,5 +83,17 @@ public class Sound extends SettingsPreferenceFragment {
      * For search
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.crdroid_settings_sound);
+            new BaseSearchIndexProvider(R.xml.crdroid_settings_sound) {
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+
+                    if (!TelephonyUtils.isVoiceCapable(context)) {
+                        keys.add(KEY_INCALL_FEEDBACK);
+                    }
+
+                    return keys;
+                }
+            };
 }
