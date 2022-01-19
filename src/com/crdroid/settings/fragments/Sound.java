@@ -27,6 +27,7 @@ import android.provider.Settings;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
@@ -48,9 +49,10 @@ public class Sound extends SettingsPreferenceFragment {
 
     public static final String TAG = "Sound";
 
-    private static final String KEY_INCALL_FEEDBACK = "incall_feeedback_vibrate";
-
-    private SwitchPreference mInCallFeedback;
+    private static final String KEY_VIBRATE_CATEGORY = "incall_vib_options";
+    private static final String KEY_VIBRATE_CONNECT = "vibrate_on_connect";
+    private static final String KEY_VIBRATE_CALLWAITING = "vibrate_on_callwaiting";
+    private static final String KEY_VIBRATE_DISCONNECT = "vibrate_on_disconnect";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,17 +62,21 @@ public class Sound extends SettingsPreferenceFragment {
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
-        mInCallFeedback = (SwitchPreference) findPreference(KEY_INCALL_FEEDBACK);
+        final PreferenceCategory vibCategory = prefScreen.findPreference(KEY_VIBRATE_CATEGORY);
 
         if (!TelephonyUtils.isVoiceCapable(getActivity())) {
-            prefScreen.removePreference(mInCallFeedback);
+            prefScreen.removePreference(vibCategory);
         }
     }
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
-                Settings.System.INCALL_FEEDBACK_VIBRATE, 0, UserHandle.USER_CURRENT);
+                Settings.System.VIBRATE_ON_CONNECT, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VIBRATE_ON_CALLWAITING, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VIBRATE_ON_DISCONNECT, 0, UserHandle.USER_CURRENT);
         PulseSettings.reset(mContext);
     }
 
@@ -90,7 +96,10 @@ public class Sound extends SettingsPreferenceFragment {
                     List<String> keys = super.getNonIndexableKeys(context);
 
                     if (!TelephonyUtils.isVoiceCapable(context)) {
-                        keys.add(KEY_INCALL_FEEDBACK);
+                        keys.add(KEY_VIBRATE_CATEGORY);
+                        keys.add(KEY_VIBRATE_CONNECT);
+                        keys.add(KEY_VIBRATE_CALLWAITING);
+                        keys.add(KEY_VIBRATE_DISCONNECT);
                     }
 
                     return keys;
