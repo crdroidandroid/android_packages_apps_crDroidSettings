@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-     Copyright (C) 2016-2021 crDroid Android Project
+     Copyright (C) 2016-2022 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,6 +17,19 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <!-- Gaming mode -->
+    <Preference
+        android:key="gaming_mode"
+        android:icon="@drawable/ic_gaming"
+        android:title="@string/gaming_mode_title"
+        android:summary="@string/gaming_mode_summary">
+
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="org.exthmui.game"
+            android:targetClass="org.exthmui.game.ui.MainActivity" />
+    </Preference>
 
     <!-- Three-fingers-swipe to screenshot -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
