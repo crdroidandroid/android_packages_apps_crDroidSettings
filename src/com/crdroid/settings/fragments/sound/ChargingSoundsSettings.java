@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
- *               2017,2019-2020 The LineageOS Project
- *               2021 crDroid Android Project
+ *               2017,2019-2021 The LineageOS Project
+ *               2021-2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,27 +41,33 @@ import com.android.settings.SettingsPreferenceFragment;
 
 public class ChargingSoundsSettings extends SettingsPreferenceFragment {
 
-    private static final String KEY_POWER_NOTIFICATIONS_VIBRATE = "power_notifications_vibrate";
-    private static final String KEY_CHARGING_SOUNDS_RINGTONE = "charging_sounds_ringtone";
+    private static final String KEY_CHARGING_VIBRATION_ENABLED = "charging_vibration_enabled";
+    private static final String KEY_WIRED_CHARGING_SOUNDS = "charging_sounds";
+    private static final String KEY_WIRELESS_CHARGING_SOUNDS = "wireless_charging_sounds";
     private static final String KEY_BATTERY_FULLY_CHARGED_SOUND_RINGTONE = "battery_fully_charged_sound_ringtone";
     private static final String KEY_BATTERY_FULLY_CHARGED_VIBRATE = "battery_fully_charged_vibrate";
 
     // Used for power notification uri string if set to silent
     private static final String RINGTONE_SILENT_URI_STRING = "silent";
 
-    private static final String DEFAULT_POWER_SOUND =
-            "/system/product/media/audio/ui/ChargingStarted.ogg";
+    private static final String DEFAULT_WIRED_CHARGING_SOUND =
+            "/product/media/audio/ui/ChargingStarted.ogg";
+    private static final String DEFAULT_WIRELESS_CHARGING_SOUND =
+            "/product/media/audio/ui/WirelessChargingStarted.ogg";
 
     // Request code for charging notification ringtone picker
-    private static final int REQUEST_CODE_CHARGING_NOTIFICATIONS_RINGTONE = 1;
+    private static final int REQUEST_CODE_WIRED_CHARGING_SOUND = 1;
+    private static final int REQUEST_CODE_WIRELESS_CHARGING_SOUND = 2;
 
     // Request code for battery fully charged ringtone picker
-    private static final int REQUEST_CODE_BATTERY_FULLY_CHARGED_RINGTONE = 2;
+    private static final int REQUEST_CODE_BATTERY_FULLY_CHARGED_RINGTONE = 3;
 
-    private Preference mChargingSoundsRingtone;
+    private Preference mWiredChargingSounds;
+    private Preference mWirelessChargingSounds;
     private Preference mBatteryFullyChargedSoundRingtone;
 
-    private Uri mDefaultPowerSoundUri;
+    private Uri mDefaultWiredChargingSoundUri;
+    private Uri mDefaultWirelessChargingSoundUri;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,11 +77,12 @@ public class ChargingSoundsSettings extends SettingsPreferenceFragment {
 
         Vibrator vibrator = getActivity().getSystemService(Vibrator.class);
         if (vibrator == null || !vibrator.hasVibrator()) {
-            removePreference(KEY_POWER_NOTIFICATIONS_VIBRATE);
+            removePreference(KEY_CHARGING_VIBRATION_ENABLED);
             removePreference(KEY_BATTERY_FULLY_CHARGED_VIBRATE);
         }
 
-        mChargingSoundsRingtone = findPreference(KEY_CHARGING_SOUNDS_RINGTONE);
+        mWiredChargingSounds = findPreference(KEY_WIRED_CHARGING_SOUNDS);
+        mWirelessChargingSounds = findPreference(KEY_WIRELESS_CHARGING_SOUNDS);
 
         mBatteryFullyChargedSoundRingtone = findPreference(KEY_BATTERY_FULLY_CHARGED_SOUND_RINGTONE);
         String curBatteryFullyChargedTone = LineageSettings.Global.getString(getContentResolver(),
@@ -91,14 +98,20 @@ public class ChargingSoundsSettings extends SettingsPreferenceFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        String curTone = LineageSettings.Global.getString(getContentResolver(),
-                LineageSettings.Global.POWER_NOTIFICATIONS_RINGTONE);
+        final String currentWiredChargingSound = Settings.Global.getString(getContentResolver(),
+                Settings.Global.CHARGING_STARTED_SOUND);
+        final String currentWirelessChargingSound = Settings.Global.getString(getContentResolver(),
+                Settings.Global.WIRELESS_CHARGING_STARTED_SOUND);
 
         // Convert default sound file path to a media uri so that we can
         // set a proper default for the ringtone picker.
-        mDefaultPowerSoundUri = audioFileToUri(getContext(), DEFAULT_POWER_SOUND);
+        mDefaultWiredChargingSoundUri = audioFileToUri(getContext(),
+                DEFAULT_WIRED_CHARGING_SOUND);
+        mDefaultWirelessChargingSoundUri = audioFileToUri(getContext(),
+                DEFAULT_WIRELESS_CHARGING_SOUND);
 
-        updateChargingRingtone(curTone);
+        updateChargingSounds(currentWiredChargingSound, false /* wireless */);
+        updateChargingSounds(currentWirelessChargingSound, true /* wireless */);
     }
 
     private Uri audioFileToUri(Context context, String audioFile) {
@@ -120,12 +133,19 @@ public class ChargingSoundsSettings extends SettingsPreferenceFragment {
                 Integer.toString(id));
     }
 
-    private void updateChargingRingtone(String toneUriString) {
+    private void updateChargingSounds(String toneUriString, boolean wireless) {
         final String toneTitle;
 
-        if ((toneUriString == null || toneUriString.equals(DEFAULT_POWER_SOUND))
-                && mDefaultPowerSoundUri != null) {
-            toneUriString = mDefaultPowerSoundUri.toString();
+        if (wireless) {
+            if ((toneUriString == null || toneUriString.equals(DEFAULT_WIRELESS_CHARGING_SOUND))
+                    && mDefaultWirelessChargingSoundUri != null) {
+                toneUriString = mDefaultWirelessChargingSoundUri.toString();
+            }
+        } else {
+            if ((toneUriString == null || toneUriString.equals(DEFAULT_WIRED_CHARGING_SOUND))
+                    && mDefaultWiredChargingSoundUri != null) {
+                toneUriString = mDefaultWiredChargingSoundUri.toString();
+            }
         }
 
         if (toneUriString != null && !toneUriString.equals(RINGTONE_SILENT_URI_STRING)) {
@@ -145,9 +165,15 @@ public class ChargingSoundsSettings extends SettingsPreferenceFragment {
             toneUriString = RINGTONE_SILENT_URI_STRING;
         }
 
-        mChargingSoundsRingtone.setSummary(toneTitle);
-        LineageSettings.Global.putString(getContentResolver(),
-                LineageSettings.Global.POWER_NOTIFICATIONS_RINGTONE, toneUriString);
+        if (wireless) {
+            mWirelessChargingSounds.setSummary(toneTitle);
+            Settings.Global.putString(getContentResolver(),
+                    Settings.Global.WIRELESS_CHARGING_STARTED_SOUND, toneUriString);
+        } else {
+            mWiredChargingSounds.setSummary(toneTitle);
+            Settings.Global.putString(getContentResolver(),
+                    Settings.Global.CHARGING_STARTED_SOUND, toneUriString);
+        }
     }
 
     private void updateBatteryFullyChargedRingtone(String toneUriString, boolean persist) {
@@ -180,10 +206,14 @@ public class ChargingSoundsSettings extends SettingsPreferenceFragment {
 
     @Override
     public boolean onPreferenceTreeClick(Preference preference) {
-        if (preference == mChargingSoundsRingtone) {
-            launchNotificationSoundPicker(REQUEST_CODE_CHARGING_NOTIFICATIONS_RINGTONE,
-                    LineageSettings.Global.getString(getContentResolver(),
-                    LineageSettings.Global.POWER_NOTIFICATIONS_RINGTONE));
+        if (preference == mWiredChargingSounds) {
+            launchNotificationSoundPicker(REQUEST_CODE_WIRED_CHARGING_SOUND,
+                    Settings.Global.getString(getContentResolver(),
+                            Settings.Global.CHARGING_STARTED_SOUND));
+        } else if (preference == mWirelessChargingSounds) {
+            launchNotificationSoundPicker(REQUEST_CODE_WIRELESS_CHARGING_SOUND,
+                    Settings.Global.getString(getContentResolver(),
+                            Settings.Global.WIRELESS_CHARGING_STARTED_SOUND));
         } else if (preference == mBatteryFullyChargedSoundRingtone) {
             launchBatteryFullyChargedSoundPicker(REQUEST_CODE_BATTERY_FULLY_CHARGED_RINGTONE,
                     LineageSettings.Global.getString(getContentResolver(),
@@ -195,11 +225,19 @@ public class ChargingSoundsSettings extends SettingsPreferenceFragment {
     private void launchNotificationSoundPicker(int requestCode, String toneUriString) {
         final Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
 
-        intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE,
-                getString(R.string.charging_sounds_ringtone_title));
         intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE,
                 RingtoneManager.TYPE_NOTIFICATION);
-        intent.putExtra(RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI, mDefaultPowerSoundUri);
+        if (requestCode == REQUEST_CODE_WIRED_CHARGING_SOUND) {
+            intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE,
+                    getString(R.string.wired_charging_sounds_title));
+            intent.putExtra(RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI,
+                    mDefaultWiredChargingSoundUri);
+        } else if (requestCode == REQUEST_CODE_WIRELESS_CHARGING_SOUND) {
+            intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TITLE,
+                    getString(R.string.wireless_charging_sounds_title));
+            intent.putExtra(RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI,
+                    mDefaultWirelessChargingSoundUri);
+        }
         if (toneUriString != null && !toneUriString.equals(RINGTONE_SILENT_URI_STRING)) {
             Uri uri = Uri.parse(toneUriString);
             if (uri != null) {
@@ -231,14 +269,18 @@ public class ChargingSoundsSettings extends SettingsPreferenceFragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == REQUEST_CODE_CHARGING_NOTIFICATIONS_RINGTONE
+        if (requestCode == REQUEST_CODE_WIRED_CHARGING_SOUND
                 && resultCode == Activity.RESULT_OK) {
             Uri uri = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
-            updateChargingRingtone(uri != null ? uri.toString() : RINGTONE_SILENT_URI_STRING);
+            updateChargingSounds(uri != null ? uri.toString() : RINGTONE_SILENT_URI_STRING, false /* wireless */);
+        } else if (requestCode == REQUEST_CODE_WIRELESS_CHARGING_SOUND
+                && resultCode == Activity.RESULT_OK) {
+            Uri uri = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
+            updateChargingSounds(uri != null ? uri.toString() : RINGTONE_SILENT_URI_STRING, true /* wireless */);
         } else if (requestCode == REQUEST_CODE_BATTERY_FULLY_CHARGED_RINGTONE
                 && resultCode == Activity.RESULT_OK) {
             Uri uri = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
-            updateBatteryFullyChargedRingtone(uri != null ? uri.toString() : null, true);
+            updateBatteryFullyChargedRingtone(uri != null ? uri.toString() : RINGTONE_SILENT_URI_STRING, true);
         }
     }
 
