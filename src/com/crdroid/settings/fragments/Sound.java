@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2020 crDroid Android Project
+ * Copyright (C) 2016-2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,6 +27,7 @@ import android.provider.Settings;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
@@ -39,6 +40,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.sound.PulseSettings;
 import com.crdroid.settings.fragments.sound.VolumePanel;
+import com.crdroid.settings.utils.TelephonyUtils;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -48,11 +50,24 @@ public class Sound extends SettingsPreferenceFragment {
 
     public static final String TAG = "Sound";
 
+    private static final String KEY_VIBRATE_CATEGORY = "incall_vib_options";
+    private static final String KEY_VIBRATE_CONNECT = "vibrate_on_connect";
+    private static final String KEY_VIBRATE_CALLWAITING = "vibrate_on_callwaiting";
+    private static final String KEY_VIBRATE_DISCONNECT = "vibrate_on_disconnect";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.crdroid_settings_sound);
+
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        final PreferenceCategory vibCategory = prefScreen.findPreference(KEY_VIBRATE_CATEGORY);
+
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(vibCategory);
+        }
     }
 
     public static void reset(Context mContext) {
@@ -63,6 +78,12 @@ public class Sound extends SettingsPreferenceFragment {
                 Settings.System.ADAPTIVE_PLAYBACK_TIMEOUT, 30, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SCREENSHOT_SOUND, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VIBRATE_ON_CONNECT, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VIBRATE_ON_CALLWAITING, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VIBRATE_ON_DISCONNECT, 0, UserHandle.USER_CURRENT);
         PulseSettings.reset(mContext);
         VolumePanel.reset(mContext);
     }
@@ -76,5 +97,20 @@ public class Sound extends SettingsPreferenceFragment {
      * For search
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.crdroid_settings_sound);
+            new BaseSearchIndexProvider(R.xml.crdroid_settings_sound) {
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+
+                    if (!TelephonyUtils.isVoiceCapable(context)) {
+                        keys.add(KEY_VIBRATE_CATEGORY);
+                        keys.add(KEY_VIBRATE_CONNECT);
+                        keys.add(KEY_VIBRATE_CALLWAITING);
+                        keys.add(KEY_VIBRATE_DISCONNECT);
+                    }
+
+                    return keys;
+                }
+            };
 }
