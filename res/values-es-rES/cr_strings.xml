@@ -239,21 +239,21 @@ Mantén presionado para establecer</string>
     <string name="handwave_title">Movimiento de mano</string>
     <string name="handwave_summary">Mostrar notificaciones cuando se pase la mano por el dispositivo</string>
     <string name="pocket_title">Bolsillo</string>
-    <string name="pocket_summary">Mostrar notificaciones cuando el dispositivo se saca del bolsillo</string>
+    <string name="pocket_summary">Notificaciones de pulsación al sacar del bolsillo</string>
     <string name="doze_vibrate">Vibrar</string>
-    <string name="doze_vibrate_summary">Duración de la vibración cuando se muestren las notificaciones en la pantalla ambiental</string>
+    <string name="doze_vibrate_summary">Duración de la vibración con notificaciones de pulso</string>
     <string name="sensor_warning_message">Las configuraciones basadas en los sensores están sujetas a la compatibilidad del hardware. La activación de los sensores para la pantalla ambiental puede aumentar el consumo de la batería.</string>
     <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Iluminación del borde en Pantalla Ambiente</string>
-    <string name="pulse_ambient_light_summary">Ilumina los bordes de la pantalla al recibir una notificación</string>
+    <string name="pulse_ambient_light_title">Iluminación de bordes</string>
+    <string name="pulse_ambient_light_summary">Ilumina los bordes de la pantalla al recibir una notificación de pulso</string>
     <string name="pulse_ambient_light_color_title">Color de la luz del borde</string>
-    <string name="pulse_ambient_light_duration_title">Duración del efecto luz del borde</string>
+    <string name="pulse_ambient_light_duration_title">Duración de la luz de los bordes</string>
     <string name="pulse_ambient_light_duration_summary">Establece la duración de la animación de la luz ambiente</string>
-    <string name="pulse_ambient_light_layout_title">Iluminación del borde en Pantalla Ambiente</string>
+    <string name="pulse_ambient_light_layout_title">Visualizar luz de los bordes</string>
     <string name="pulse_ambient_light_layout_solid">Sólido</string>
-    <string name="pulse_ambient_light_layout_faded">Desvanecido</string>
+    <string name="pulse_ambient_light_layout_faded">Fundido</string>
     <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Icono de Música</string>
+    <string name="pulse_on_new_tracks_title">Icono de música</string>
     <string name="pulse_on_new_tracks_summary">Mostrar icono de música en pantalla ambiente al cambiar la canción</string>
     <!-- Status bar - icon blocklist -->
     <string name="status_bar_icons_title">Iconos de la barra de estado</string>
@@ -278,15 +278,15 @@ Mantén presionado para establecer</string>
     <string name="status_bar_quick_qs_pulldown_always">Mostrar siempre los ajustes rápidos al desplegar la barra de estado</string>
     <!-- Status bar - Smart pulldown-->
     <string name="smart_pulldown_title">Despliegue Inteligente</string>
-    <string name="smart_pulldown_summary">Abre el panel de Ajustes Rápidos cuando hay %1$s notificaciones</string>
+    <string name="smart_pulldown_summary">Abre el panel de ajustes rápidos cuando hay %1$s notificaciones</string>
     <string name="smart_pulldown_none_summary">Mostrar los ajustes rápidos cuando no hay notificaciones</string>
-    <string name="smart_pulldown_off">Apagado</string>
-    <string name="smart_pulldown_none">No hay notificaciones</string>
-    <string name="smart_pulldown_dismissable">No hay notificaciones descartables</string>
-    <string name="smart_pulldown_ongoing">Sin notificaciones en curso</string>
+    <string name="smart_pulldown_off">Desactivado</string>
+    <string name="smart_pulldown_none">Sin notificaciones</string>
+    <string name="smart_pulldown_dismissable">No descartable</string>
+    <string name="smart_pulldown_ongoing">No en curso</string>
     <!-- Tap to sleep on status bar -->
-    <string name="lockscreen_doubletap_sleep_title">Doble toque para apagar la pantalla</string>
-    <string name="lockscreen_doubletap_sleep_summary">Doble toque en pantalla de bloqueo para apagar pantalla</string>
+    <string name="lockscreen_doubletap_sleep_title">Tocar para apagar la pantalla</string>
+    <string name="lockscreen_doubletap_sleep_summary">Doble toque en pantalla de bloqueo para activar el dispositivo</string>
     <!-- Font style / Icon pack -->
     <string name="theme_customization_font_title">Estilo de tipo de letra</string>
     <string name="theme_customization_font_summary">Establecer tipo de letra del sistema</string>
@@ -296,12 +296,12 @@ Mantén presionado para establecer</string>
     <string name="theme_customization_icon_shape_summary">Establecer forma de iconos del sistema</string>
     <string name="theme_customization_signal_icon_title">Estilo de icono de estado de señal</string>
     <string name="theme_customization_signal_icon_summary">Establecer icono de estado de señal personalizado</string>
-    <string name="theme_customization_wifi_icon_title">Estilo de icono de WiFi</string>
+    <string name="theme_customization_wifi_icon_title">Estilo del icono de WiFi</string>
     <string name="theme_customization_wifi_icon_summary">Establecer icono de WiFi personalizado</string>
     <!-- Refresh rate -->
-    <string name="default_refresh_rate_title_custom">Frecuencia de refresco de la pantalla predeterminada</string>
-    <string name="peak_refresh_rate_title_custom">Frecuencia máxima de refresco de la pantalla</string>
-    <string name="low_power_refresh_rate_title_custom">Tasa de actualización de pantalla con batería baja</string>
+    <string name="default_refresh_rate_title_custom">Frecuencia de refresco predeterminada</string>
+    <string name="peak_refresh_rate_title_custom">Frecuencia máxima de refresco</string>
+    <string name="low_power_refresh_rate_title_custom">Tasa de refresco con batería baja</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">Reloj y fecha</string>
     <string name="status_bar_clock_summary">Personalizar reloj y fecha</string>
@@ -315,8 +315,8 @@ Mantén presionado para establecer</string>
     <string name="status_bar_clock_auto_hide_title">Ocultar automáticamente</string>
     <string name="status_bar_clock_auto_hide_summary">Ocultar y mostrar el reloj en intervalos regulares para ahorrar espacio en la barra de estado</string>
     <string name="status_bar_clock_auto_hide_hdur_title">Ocultar duración</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Numero de segundos que el reloj permanece oculto</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Mostrar durante</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Número de segundos que el reloj permanece oculto</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Mostrar duración</string>
     <string name="status_bar_clock_auto_hide_sdur_summary">Número de segundos a esperar antes de ocultar el reloj</string>
     <string name="status_bar_am_pm_title">Formato AM/PM</string>
     <string name="status_bar_am_pm_info">El formato de 24 horas está activado</string>
@@ -324,11 +324,11 @@ Mantén presionado para establecer</string>
     <string name="status_bar_am_pm_small">Pequeño</string>
     <string name="status_bar_am_pm_hidden">Oculto</string>
     <string name="status_bar_date_title">Fecha</string>
-    <string name="status_bar_date_none">Oculto</string>
-    <string name="status_bar_date_small">Pequeño</string>
-    <string name="status_bar_date_normal">Predeterminado</string>
+    <string name="status_bar_date_none">Oculta</string>
+    <string name="status_bar_date_small">Pequeña</string>
+    <string name="status_bar_date_normal">Predeterminada</string>
     <string name="status_bar_date_format_title">Formato de la fecha</string>
-    <string name="status_bar_date_style">Formato de la fecha</string>
+    <string name="status_bar_date_style">Estilo de la fecha</string>
     <string name="status_bar_date_style_normal">Predeterminado</string>
     <string name="status_bar_date_style_lowercase">Minúsculas</string>
     <string name="status_bar_date_style_uppercase">Mayúsculas</string>
@@ -348,7 +348,7 @@ Mantén presionado para establecer</string>
     <string name="status_bar_battery_style_filled_circle">Círculo relleno</string>
     <string name="status_bar_battery_style_text">Texto</string>
     <string name="status_bar_battery_style_hidden">Oculto</string>
-    <string name="status_bar_battery_percent_title">Porcentaje de batería</string>
+    <string name="status_bar_battery_percent_title">Porcentaje de la batería</string>
     <string name="status_bar_battery_percent_hidden">Oculto</string>
     <string name="status_bar_battery_percent_text_inside">Dentro del icono</string>
     <string name="status_bar_battery_percent_text_next_right">Junto al icono (derecha)</string>
@@ -356,7 +356,7 @@ Mantén presionado para establecer</string>
     <string name="status_bar_battery_text_charging_title">Porcentaje de batería durante la carga</string>
     <string name="status_bar_battery_text_charging_summary">Mostrar siempre porcentaje de batería al cargar</string>
     <!-- Status bar - Battery Bar -->
-    <string name="battery_bar_title">Linea de batería</string>
+    <string name="battery_bar_title">Barra de batería</string>
     <string name="battery_bar_summary">Mostrar y personalizar la barra de batería encima de la barra de estado</string>
     <string name="battery_bar_color">Color</string>
     <string name="battery_bar_charging_color">Color durante la carga</string>
