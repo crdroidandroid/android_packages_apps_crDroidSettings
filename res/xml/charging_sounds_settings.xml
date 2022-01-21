@@ -32,24 +32,18 @@
         android:dependency="charging_sounds_enabled"
         android:defaultValue="true" />
 
-    <PreferenceCategory
-        android:key="charging_sounds_category"
-        android:title="@string/charging_sounds_notification_category_title" >
+    <Preference
+        android:key="charging_sounds"
+        android:title="@string/wired_charging_sounds_title"
+        android:dependency="charging_sounds_enabled"
+        android:persistent="false" />
 
-        <Preference
-            android:key="charging_sounds"
-            android:title="@string/wired_charging_sounds_title"
-            android:dependency="charging_sounds_enabled"
-            android:persistent="false" />
-
-        <lineageos.preference.SelfRemovingPreference
-            android:key="wireless_charging_sounds"
-            android:title="@string/wireless_charging_sounds_title"
-            android:dependency="charging_sounds_enabled"
-            android:persistent="false"
-            lineage:requiresConfig="@*lineageos.platform:bool/config_deviceSupportsWirelessCharging" />
-
-    </PreferenceCategory>
+    <lineageos.preference.SelfRemovingPreference
+        android:key="wireless_charging_sounds"
+        android:title="@string/wireless_charging_sounds_title"
+        android:dependency="charging_sounds_enabled"
+        android:persistent="false"
+        lineage:requiresConfig="@*lineageos.platform:bool/config_deviceSupportsWirelessCharging" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="battery_fully_charged_sound_enabled"
