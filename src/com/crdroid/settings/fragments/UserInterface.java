@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2022 crDroid Android Project
+ * Copyright (C) 2016-2021 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -105,10 +105,6 @@ public class UserInterface extends SettingsPreferenceFragment {
                 Settings.System.SCREEN_OFF_ANIMATION, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.THEMING_SETTINGS_DASHBOARD_ICONS, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.BERRY_SIGNAL_STYLE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.BERRY_WIFI_STYLE, 0, UserHandle.USER_CURRENT);
         CutoutSettings.reset(mContext);
         DozeSettings.reset(mContext);
         RoundedCorners.reset(mContext);

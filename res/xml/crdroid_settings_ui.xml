@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2022 crDroid Android Project
+     Copyright (C) 2016-2021 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -128,26 +128,6 @@
         android:dialogTitle="@string/qs_tile_style_title"
         android:entries="@array/qs_selector_entries"
         android:entryValues="@array/qs_selector_values"
-        android:defaultValue="0" />
-
-    <!-- Statusbar Signal Style -->
-    <com.crdroid.settings.preferences.SystemSettingListPreference
-        android:key="berry_signal_style"
-        android:icon="@drawable/ic_signal"
-        android:title="@string/signal_style_title"
-        android:dialogTitle="@string/signal_style_title"
-        android:entries="@array/signal_style_entries"
-        android:entryValues="@array/signal_style_values"
-        android:defaultValue="0" />
-
-    <!-- Wifi Signal Style -->
-    <com.crdroid.settings.preferences.SystemSettingListPreference
-        android:key="berry_wifi_style"
-        android:icon="@drawable/ic_wifi"
-        android:title="@string/wifi_style_title"
-        android:dialogTitle="@string/wifi_style_title"
-        android:entries="@array/signal_style_entries"
-        android:entryValues="@array/signal_style_values"
         android:defaultValue="0" />
 
     <!-- Screen off animation -->
