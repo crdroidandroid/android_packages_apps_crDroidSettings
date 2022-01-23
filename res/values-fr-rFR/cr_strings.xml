@@ -96,6 +96,7 @@
     <string name="unit_seconds">secondes</string>
     <string name="unit_milliseconds">millisecondes</string>
     <string name="unit_pixels">dp</string>
+    <string name="unit_hz">Hz</string>
     <!-- Hardware info -->
     <string name="platform_revision">Plateforme</string>
     <string name="total_ram">Mémoire RAM totale</string>
@@ -197,7 +198,7 @@
     <string name="power_menu_airplane_title">Mode Avion</string>
     <string name="power_menu_torch_title">Lampe torche</string>
     <string name="power_menu_settings_title">Paramètres</string>
-    <string name="power_menu_lockdown_title">Lockdown</string>
+    <string name="power_menu_lockdown_title">Verrouillage</string>
     <string name="power_menu_lockdown_unavailable">Lockdown is disabled as keyguard isn\'t secure</string>
     <string name="power_menu_soundpanel_title">Panneau de volume</string>
     <string name="power_menu_users_title">Utilisateurs</string>
@@ -287,15 +288,15 @@
     <string name="lockscreen_doubletap_sleep_summary">Mettre en veille par double appui sur l\'écran de verrouillage</string>
     <!-- Font style / Icon pack -->
     <string name="theme_customization_font_title">Style de police</string>
-    <string name="theme_customization_font_summary">Set system font style</string>
+    <string name="theme_customization_font_summary">Définir le style de la police système</string>
     <string name="theme_customization_icon_pack_title">Pack d\'icônes</string>
-    <string name="theme_customization_icon_pack_summary">Set custom icon pack style</string>
+    <string name="theme_customization_icon_pack_summary">Définir le style du pack d\'icônes</string>
     <string name="theme_customization_icon_shape_title">Forme des icônes</string>
-    <string name="theme_customization_icon_shape_summary">Set system icon shape style</string>
-    <string name="theme_customization_signal_icon_title">Signal icon style</string>
-    <string name="theme_customization_signal_icon_summary">Set custom signal icon style</string>
-    <string name="theme_customization_wifi_icon_title">WiFi icon style</string>
-    <string name="theme_customization_wifi_icon_summary">Set custom wifi icon style</string>
+    <string name="theme_customization_icon_shape_summary">Définir le style des icônes système</string>
+    <string name="theme_customization_signal_icon_title">Style de l\'icône réseau</string>
+    <string name="theme_customization_signal_icon_summary">Définir le style de l\'icône du signal réseau</string>
+    <string name="theme_customization_wifi_icon_title">Style de l\'icône Wifi</string>
+    <string name="theme_customization_wifi_icon_summary">Définir le style de l\'icône du signal Wifi</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Taux de rafraîchissement par défaut</string>
     <string name="peak_refresh_rate_title_custom">Taux de rafraîchissement maximal</string>
@@ -481,8 +482,8 @@
     <string name="navbar_app_switch_long_press_title">Appui long sur bouton Applications récentes</string>
     <string name="navbar_edge_long_swipe_title">Balayage long sur le bord</string>
     <!-- Pocket judge -->
-    <string name="pocket_judge_title">Pocket detection</string>
-    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
+    <string name="pocket_judge_title">Détection de mise en poche</string>
+    <string name="pocket_judge_summary">Bloquer l\'utilisation des boutons ou de l\'écran lorsque l\'appareil est dans la poche</string>
     <!-- Disable HW keys -->
     <string name="hwkeys_disabled_title">Touches matérielles</string>
     <string name="hwkeys_disabled_summary">Désactiver les touches matérielles pour la navigation</string>
@@ -490,8 +491,8 @@
     <string name="swap_capacitive_keys_title">Touches tactiles</string>
     <string name="swap_capacitive_keys_summary">Inverser les touches Retour et Applications récentes</string>
     <!-- ANBI -->
-    <string name="anbi_title">Accidental touch</string>
-    <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
+    <string name="anbi_title">Toucher accidentel</string>
+    <string name="anbi_summary">Empêcher l\'interaction avec les boutons de navigation lorsque l\'écran est utilisé</string>
     <!-- Live volume steps -->
     <string name="volume_steps_title">Incrémentation du volume</string>
     <string name="volume_steps_summary">Personnaliser le nombre d\'incréments par type de sons</string>
@@ -510,19 +511,19 @@
     <string name="volume_steps_7">7</string>
     <string name="volume_steps_5">5</string>
     <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture">Swipe to screenshot</string>
-    <string name="three_finger_gesture_summary">Swipe three fingers to take screenshot</string>
+    <string name="three_finger_gesture">Capture d\'écran gestuelle</string>
+    <string name="three_finger_gesture_summary">Balayer l\'écran avec trois doigts pour faire une capture d\'écran</string>
     <!-- Running services - Background processes tab -->
-    <string name="background_processes_settings_title">Background processes</string>
+    <string name="background_processes_settings_title">Processus d’arrière-plan</string>
     <!-- QS footer icons -->
     <string name="qs_footer_users_icon_title">Comptes utilisateurs</string>
     <string name="qs_footer_users_icon_summary">Afficher l\'icône d\'accessibilité des comptes utilisateurs lorsque disponible</string>
     <string name="qs_footer_edit_icon_title">Édition des tuiles</string>
-    <string name="qs_footer_show_power_menu_title">Power menu shortcut</string>
+    <string name="qs_footer_show_power_menu_title">Raccourci du menu marche/arrêt</string>
     <string name="qs_footer_services_icon_title">Services en cours d\'exécution</string>
     <string name="qs_footer_settings_icon_title">Paramètres Android</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">crDroid legal</string>
+    <string name="crdroid_license_title">Licence crDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_slider_title">Curseur de luminosité</string>
     <string name="qs_show_brightness_slider_never">Ne jamais afficher</string>
@@ -536,21 +537,21 @@
     <string name="qs_show_auto_brightness_title">Luminosité automatique</string>
     <string name="qs_show_auto_brightness_summary">Afficher le bouton de luminosité adaptative près du curseur</string>
     <!-- Statusbar colored icons -->
-    <string name="statusbar_colored_icons_title">Colored icons</string>
-    <string name="statusbar_colored_icons_summary">Use proper app icons for notification icons in statusbar</string>
+    <string name="statusbar_colored_icons_title">Icônes colorés</string>
+    <string name="statusbar_colored_icons_summary">Utiliser les icônes des applications comme icônes de notification dans la barre d\'état</string>
     <!-- Notification count -->
-    <string name="statusbar_notif_count_title">Show notification count</string>
-    <string name="statusbar_notif_count_summary">Display the number of pending notifications</string>
+    <string name="statusbar_notif_count_title">Nombre de notifications</string>
+    <string name="statusbar_notif_count_summary">Afficher le nombre de notifications en attente</string>
     <!-- Notification channels -->
-    <string name="channel_light_settings_name">Light settings preview</string>
+    <string name="channel_light_settings_name">Aperçu des paramètres de voyant</string>
     <!-- Notification light dialogs -->
-    <string name="edit_light_settings">Edit light settings</string>
-    <string name="pulse_speed_title">Pulse length and speed</string>
+    <string name="edit_light_settings">Éditer les paramètres de la LED</string>
+    <string name="pulse_speed_title">Durée et fréquence du clignotement</string>
     <string name="default_time">Normal</string>
-    <string name="custom_time">Custom</string>
-    <string name="brightness">Brightness level</string>
+    <string name="custom_time">Personnalisé</string>
+    <string name="brightness">Luminosité</string>
     <!-- Values for the notification light pulse spinners -->
-    <string name="pulse_length_always_on">Always on</string>
+    <string name="pulse_length_always_on">Toujours allumé</string>
     <string name="pulse_length_very_short">Très court</string>
     <string name="pulse_length_short">Court</string>
     <string name="pulse_length_normal">Normal</string>
@@ -562,52 +563,72 @@
     <string name="pulse_speed_slow">Lent</string>
     <string name="pulse_speed_very_slow">Très lent</string>
     <!-- Common light settings strings -->
-    <string name="light_brightness_title">Brightness levels</string>
+    <string name="light_brightness_title">Réglages du voyant</string>
     <string name="light_brightness_normal">Normal</string>
-    <string name="light_brightness_zen">Do Not Disturb</string>
+    <string name="light_brightness_zen">Ne Pas Déranger</string>
     <!-- Battery light settings -->
-    <string name="light_brightness_category">Light brightness settings</string>
-    <string name="battery_light_title">Battery light</string>
-    <string name="battery_light_summary">Configure led color based on battery level and status</string>
-    <string name="battery_low_pulse_title">Pulse if battery low</string>
-    <string name="battery_light_full_charge_disabled_title">Turn off when fully charged</string>
-    <string name="battery_light_list_title">Colors</string>
-    <string name="battery_light_low_color_title">Battery low</string>
-    <string name="battery_light_medium_color_title">Charging</string>
-    <string name="battery_light_full_color_title">Nearly Charged (&gt;90%)</string>
-    <string name="battery_light_really_full_color_title">Fully Charged (100%)</string>
+    <string name="light_brightness_category">Luminosité</string>
+    <string name="battery_light_title">Voyant batterie</string>
+    <string name="battery_light_summary">Configurer le voyant suivant l\'état de la batterie</string>
+    <string name="battery_low_pulse_title">Clignoter si batterie faible</string>
+    <string name="battery_light_full_charge_disabled_title">Éteindre une fois la charge terminée</string>
+    <string name="battery_light_list_title">Couleurs</string>
+    <string name="battery_light_low_color_title">Batterie faible</string>
+    <string name="battery_light_medium_color_title">En charge</string>
+    <string name="battery_light_full_color_title">Charge (&gt;90 %)</string>
+    <string name="battery_light_really_full_color_title">Chargée (100 %)</string>
     <!-- Lights settings screen, notification light settings -->
-    <string name="notification_light_title">Notification light</string>
-    <string name="notification_light_summary">Configure led color for notifications</string>
-    <string name="notification_light_general_title">General</string>
-    <string name="notification_light_advanced_title">Advanced</string>
-    <string name="notification_light_applist_title">Apps</string>
-    <string name="notification_light_phonelist_title">Phone</string>
-    <string name="notification_light_use_custom">Use custom values</string>
-    <string name="notification_light_default_value">Default</string>
-    <string name="notification_light_missed_call_title">Missed call</string>
-    <string name="notification_light_voicemail_title">Voicemail</string>
-    <string name="notification_light_screen_on">Lights with screen on</string>
-    <string name="notification_light_zen_mode">Lights in Do Not Disturb mode</string>
-    <string name="notification_light_automagic">Choose colors automatically</string>
-    <string name="notification_light_automagic_summary">Choosing colors automatically</string>
-    <string name="notification_light_override">Override all apps</string>
+    <string name="notification_light_title">Voyant notification</string>
+    <string name="notification_light_summary">Configurer le voyant des notifications</string>
+    <string name="notification_light_general_title">Général</string>
+    <string name="notification_light_advanced_title">Paramètres avancés</string>
+    <string name="notification_light_applist_title">Applications</string>
+    <string name="notification_light_phonelist_title">Téléphone</string>
+    <string name="notification_light_use_custom">Valeurs personnalisées</string>
+    <string name="notification_light_default_value">Par défaut</string>
+    <string name="notification_light_missed_call_title">Appel manqué</string>
+    <string name="notification_light_voicemail_title">Messagerie vocale</string>
+    <string name="notification_light_screen_on">Voyant actif écran allumé</string>
+    <string name="notification_light_zen_mode">Ne Pas Déranger</string>
+    <string name="notification_light_automagic">Choix automatique des couleurs</string>
+    <string name="notification_light_automagic_summary">Choisir les couleurs automatiquement</string>
+    <string name="notification_light_override">Pour toutes les applications</string>
     <!-- Lights settings, LED notification -->
-    <string name="led_notification_title">Light settings</string>
-    <string name="led_notification_text">LED light enabled by settings</string>
-    <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
+    <string name="led_notification_title">Paramètres du voyant</string>
+    <string name="led_notification_text">Voyant activé par les paramètres</string>
+    <string name="notification_light_no_apps_summary">Pour ajouter un voyant personnalisé par application, activer \'%1$s\' et appuyer sur \'\u002b\' dans la barre de menu</string>
     <!-- Heads up timeout -->
-    <string name="notification_heads_up_title">Heads up</string>
-    <string name="notification_heads_up_summary">Allow pop up notifications</string>
+    <string name="notification_heads_up_title">Notifications flottantes</string>
+    <string name="notification_heads_up_summary">Autoriser les notifications pop-up</string>
     <!-- Less boring heads up -->
-    <string name="less_boring_heads_up_title">Less boring</string>
-    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
+    <string name="less_boring_heads_up_title">Restriction des notifications flottantes</string>
+    <string name="less_boring_heads_up_summary">Afficher uniquement les notifications popup pour l\'alarme, le téléphone et la messagerie</string>
     <!-- Notifications while screen on -->
-    <string name="notification_sound_vib_screen_on_title">Noisy notifications</string>
-    <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
+    <string name="notification_sound_vib_screen_on_title">Notifications sonores</string>
+    <string name="notification_sound_vib_screen_on_summary">Forcer les sons et vibrations des notifications lorsque l\'écran est allumé</string>
     <!-- Privacy Indicator -->
-    <string name="mic_camera_privacy_indicator_title">Mic and camera privacy indicator</string>
-    <string name="mic_camera_privacy_indicator_summary">Show separate indicator when an any app uses mic or camera</string>
-    <string name="location_privacy_indicator_title">Location privacy indicator</string>
-    <string name="location_privacy_indicator_summary">Show separate indicator when an any app uses location</string>
+    <string name="mic_camera_privacy_indicator_title">Indicateur de micro et caméra</string>
+    <string name="mic_camera_privacy_indicator_summary">Afficher l\'indicateur de micro ou caméra lorsqu\'une application utilise ces services</string>
+    <string name="location_privacy_indicator_title">Indicateur de localisation</string>
+    <string name="location_privacy_indicator_summary">Afficher l\'indicateur de localisation lorsqu\'une application utilise ce service</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">Veille profonde</string>
+    <!-- In-call feedback -->
+    <string name="incall_vibration_category">Vibration pour les appels</string>
+    <string name="incall_vibrate_connect_title">Vibrer à la prise d\'appel</string>
+    <string name="incall_vibrate_call_wait_title">Vibrer lors d\'un appel en attente</string>
+    <string name="incall_vibrate_disconnect_title">Vibrer à la fin d\'appel</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">Flash pour les appels</string>
+    <string name="flashlight_on_call_disabled">Désactivé</string>
+    <string name="flashlight_on_call_ringer">En mode sonnerie</string>
+    <string name="flashlight_on_call_no_ringer">En mode vibreur</string>
+    <string name="flashlight_on_call_silent">En mode silencieux</string>
+    <string name="flashlight_on_call_always">Toujours</string>
+    <string name="flashlight_on_call_ignore_dnd_title">Flash en mode Ne Pas Déranger</string>
+    <string name="flashlight_on_call_ignore_dnd_summary">Forcer le flash en mode Ne Pas Déranger</string>
+    <string name="flashlight_on_call_rate_title">Fréquence de clignotement</string>
+    <!-- Gaming mode -->
+    <string name="gaming_mode_title">Mode immersif</string>
+    <string name="gaming_mode_summary">Fonctionnalités supplémentaires pour une expérience de jeu immersive</string>
 </resources>

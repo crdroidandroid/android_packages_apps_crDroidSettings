@@ -97,6 +97,7 @@ Mantén presionado para establecer</string>
     <string name="unit_seconds">segundos</string>
     <string name="unit_milliseconds">milisegundos</string>
     <string name="unit_pixels">dp</string>
+    <string name="unit_hz">hercios</string>
     <!-- Hardware info -->
     <string name="platform_revision">Plataforma</string>
     <string name="total_ram">RAM Total</string>
@@ -198,8 +199,8 @@ Mantén presionado para establecer</string>
     <string name="power_menu_airplane_title">Modo Avion</string>
     <string name="power_menu_torch_title">Linterna</string>
     <string name="power_menu_settings_title">Ajustes</string>
-    <string name="power_menu_lockdown_title">Lockdown</string>
-    <string name="power_menu_lockdown_unavailable">Lockdown is disabled as keyguard isn\'t secure</string>
+    <string name="power_menu_lockdown_title">Bloqueo de seguridad</string>
+    <string name="power_menu_lockdown_unavailable">El bloqueo está deshabilitado ya que Keyguard no es seguro</string>
     <string name="power_menu_soundpanel_title">Panel de sonido</string>
     <string name="power_menu_users_title">Usuarios</string>
     <string name="power_menu_logout_title">Cerrar sesión</string>
@@ -235,27 +236,27 @@ Mantén presionado para establecer</string>
     <string name="tilt_summary">Mostrar notificaciones al inclinar el dispositivo</string>
     <string name="pickup_title">Levantar</string>
     <string name="pickup_summary">Mostrar notificaciones al levantar el dispositivo</string>
-    <string name="handwave_title">Hand wave</string>
-    <string name="handwave_summary">Pulse notifications on hand wave</string>
-    <string name="pocket_title">Pocket</string>
-    <string name="pocket_summary">Pulse notifications on removal from pocket</string>
-    <string name="doze_vibrate">Vibrate</string>
-    <string name="doze_vibrate_summary">Duration to vibrate when pulsing notifications</string>
-    <string name="sensor_warning_message">Settings based on sensors are subject to hardware compatibility. Enabling sensors for ambient display may increase power drain.</string>
+    <string name="handwave_title">Pasar la mano sobre o cerca del dispositivo</string>
+    <string name="handwave_summary">Mostrar notificaciones al pasar la mano por cerca o sobre el sensor de proximidad del dispositivo</string>
+    <string name="pocket_title">Bolsillo</string>
+    <string name="pocket_summary">Mostrar notificaciones cuando el dispositivo se saca del bolsillo</string>
+    <string name="doze_vibrate">Vibrar</string>
+    <string name="doze_vibrate_summary">Duración de la vibración cuando se muestren las notificaciones en la pantalla ambiental</string>
+    <string name="sensor_warning_message">Las configuraciones basadas en los sensores están sujetas a la compatibilidad del hardware. La activación de los sensores para la pantalla ambiental puede aumentar el consumo de la batería.</string>
     <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Edge lighting</string>
-    <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
-    <string name="pulse_ambient_light_color_title">Edge light color</string>
-    <string name="pulse_ambient_light_duration_title">Edge light duration</string>
-    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
-    <string name="pulse_ambient_light_layout_title">Edge light view</string>
-    <string name="pulse_ambient_light_layout_solid">Solid</string>
-    <string name="pulse_ambient_light_layout_faded">Faded</string>
+    <string name="pulse_ambient_light_title">Iluminación del borde en Pantalla Ambiente</string>
+    <string name="pulse_ambient_light_summary">Ilumina los bordes de la pantalla al recibir una notificación</string>
+    <string name="pulse_ambient_light_color_title">Color de la luz del borde</string>
+    <string name="pulse_ambient_light_duration_title">Duración del efecto luz del borde</string>
+    <string name="pulse_ambient_light_duration_summary">Establece la duración de la animación de la luz ambiente</string>
+    <string name="pulse_ambient_light_layout_title">Iluminación del borde en Pantalla Ambiente</string>
+    <string name="pulse_ambient_light_layout_solid">Sólido</string>
+    <string name="pulse_ambient_light_layout_faded">Desvanecido</string>
     <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Music ticker</string>
-    <string name="pulse_on_new_tracks_summary">Show music ticker on Ambient Display during track change</string>
+    <string name="pulse_on_new_tracks_title">Icono de Música</string>
+    <string name="pulse_on_new_tracks_summary">Mostrar icono de música en pantalla ambiente al cambiar la canción</string>
     <!-- Status bar - icon blocklist -->
-    <string name="status_bar_icons_title">Status bar icons</string>
+    <string name="status_bar_icons_title">Iconos de la barra de estado</string>
     <string name="status_bar_icons_summary">Elija que iconos de la barra de estado se mostrarán</string>
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Mostrar estado de la batería del dispositivo Bluetooth</string>
@@ -293,10 +294,10 @@ Mantén presionado para establecer</string>
     <string name="theme_customization_icon_pack_summary">Seleccionar paquete de iconos personalizado</string>
     <string name="theme_customization_icon_shape_title">Aspecto de los iconos</string>
     <string name="theme_customization_icon_shape_summary">Establecer forma de iconos del sistema</string>
-    <string name="theme_customization_signal_icon_title">Signal icon style</string>
-    <string name="theme_customization_signal_icon_summary">Set custom signal icon style</string>
-    <string name="theme_customization_wifi_icon_title">WiFi icon style</string>
-    <string name="theme_customization_wifi_icon_summary">Set custom wifi icon style</string>
+    <string name="theme_customization_signal_icon_title">Estilo de icono de estado de señal</string>
+    <string name="theme_customization_signal_icon_summary">Establecer icono de estado de señal personalizado</string>
+    <string name="theme_customization_wifi_icon_title">Estilo de icono de WiFi</string>
+    <string name="theme_customization_wifi_icon_summary">Establecer icono de WiFi personalizado</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Frecuencia de refresco de la pantalla predeterminada</string>
     <string name="peak_refresh_rate_title_custom">Frecuencia máxima de refresco de la pantalla</string>
@@ -306,40 +307,40 @@ Mantén presionado para establecer</string>
     <string name="status_bar_clock_summary">Personalizar reloj y fecha</string>
     <string name="status_bar_clock_seconds_title">Mostrar segundos</string>
     <string name="status_bar_clock_seconds_summary">Mostrar segundos al lado del reloj en la barra de estado</string>
-    <string name="status_bar_clock_position_title">Clock style</string>
-    <string name="status_bar_clock_position_right">Right</string>
-    <string name="status_bar_clock_position_left">Left</string>
-    <string name="status_bar_clock_position_center">Center</string>
-    <string name="status_bar_clock_position_hidden">Hidden</string>
-    <string name="status_bar_clock_auto_hide_title">Auto-hide</string>
-    <string name="status_bar_clock_auto_hide_summary">Hide and display clock for regular interval to save statusbar space</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Hide duration</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Number of seconds to hide clock</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Show duration</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Number of seconds to wait before hiding clock</string>
-    <string name="status_bar_am_pm_title">AM/PM style</string>
-    <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
-    <string name="status_bar_am_pm_normal">Normal</string>
-    <string name="status_bar_am_pm_small">Small</string>
-    <string name="status_bar_am_pm_hidden">Hidden</string>
-    <string name="status_bar_date_title">Date</string>
-    <string name="status_bar_date_none">Hidden</string>
-    <string name="status_bar_date_small">Small</string>
-    <string name="status_bar_date_normal">Normal</string>
-    <string name="status_bar_date_format_title">Date format</string>
-    <string name="status_bar_date_style">Date style</string>
-    <string name="status_bar_date_style_normal">Normal</string>
-    <string name="status_bar_date_style_lowercase">Lowercase</string>
-    <string name="status_bar_date_style_uppercase">Uppercase</string>
-    <string name="status_bar_date_format_custom">Custom java format</string>
-    <string name="status_bar_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
-    <string name="status_bar_date_string_edittext_summary">Enter string</string>
-    <string name="clock_date_position">Date position</string>
-    <string name="clock_date_right">Right of time</string>
-    <string name="clock_date_left">Left of time</string>
+    <string name="status_bar_clock_position_title">Estilo del reloj</string>
+    <string name="status_bar_clock_position_right">Derecha</string>
+    <string name="status_bar_clock_position_left">Izquierda</string>
+    <string name="status_bar_clock_position_center">Centro</string>
+    <string name="status_bar_clock_position_hidden">Oculto</string>
+    <string name="status_bar_clock_auto_hide_title">Ocultar automáticamente</string>
+    <string name="status_bar_clock_auto_hide_summary">Ocultar y mostrar el reloj en intervalos regulares para ahorrar espacio en la barra de estado</string>
+    <string name="status_bar_clock_auto_hide_hdur_title">Tiempo oculto</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">Numero de segundos que el reloj permanece oculto</string>
+    <string name="status_bar_clock_auto_hide_sdur_title">Mostrar durante</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Número de segundos a esperar antes de ocultar el reloj</string>
+    <string name="status_bar_am_pm_title">Formato AM/PM</string>
+    <string name="status_bar_am_pm_info">El formato de 24 horas está activado</string>
+    <string name="status_bar_am_pm_normal">Predeterminado</string>
+    <string name="status_bar_am_pm_small">Pequeño</string>
+    <string name="status_bar_am_pm_hidden">Oculto</string>
+    <string name="status_bar_date_title">Fecha</string>
+    <string name="status_bar_date_none">Oculto</string>
+    <string name="status_bar_date_small">Pequeño</string>
+    <string name="status_bar_date_normal">Predeterminado</string>
+    <string name="status_bar_date_format_title">Formato de la fecha</string>
+    <string name="status_bar_date_style">Formato de la fecha</string>
+    <string name="status_bar_date_style_normal">Predeterminado</string>
+    <string name="status_bar_date_style_lowercase">Minúsculas</string>
+    <string name="status_bar_date_style_uppercase">Mayúsculas</string>
+    <string name="status_bar_date_format_custom">Formato java personalizado</string>
+    <string name="status_bar_date_string_edittext_title">Debe estar en un formato de fecha, por ejemplo: MM/DD/AA</string>
+    <string name="status_bar_date_string_edittext_summary">Introduce texto</string>
+    <string name="clock_date_position">Posición de la fecha</string>
+    <string name="clock_date_right">A la derecha de la hora</string>
+    <string name="clock_date_left">A la izquierda de la hora</string>
     <!-- Status bar - Battery -->
-    <string name="status_bar_battery_style_title">Battery style</string>
-    <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
+    <string name="status_bar_battery_style_title">Estilo del icono de la batería</string>
+    <string name="status_bar_battery_style_icon_portrait">Icono vertical</string>
     <string name="status_bar_battery_style_icon_rlandscape">Icono horizontal (Derecha)</string>
     <string name="status_bar_battery_style_icon_landscape">Icono horizontal (Izquierda)</string>
     <string name="status_bar_battery_style_circle">Circle</string>
@@ -611,4 +612,24 @@ Mantén presionado para establecer</string>
     <string name="mic_camera_privacy_indicator_summary">Show separate indicator when an any app uses mic or camera</string>
     <string name="location_privacy_indicator_title">Location privacy indicator</string>
     <string name="location_privacy_indicator_summary">Show separate indicator when an any app uses location</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">Sueño profundo</string>
+    <!-- In-call feedback -->
+    <string name="incall_vibration_category">Opciones de vibración durante llamada</string>
+    <string name="incall_vibrate_connect_title">Vibrar al conectar</string>
+    <string name="incall_vibrate_call_wait_title">Vibrar con llamada en espera</string>
+    <string name="incall_vibrate_disconnect_title">Vibrar al desconectar</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">Parpadear la linterna en llamada entrante</string>
+    <string name="flashlight_on_call_disabled">Desactivado</string>
+    <string name="flashlight_on_call_ringer">Mientras está sonando</string>
+    <string name="flashlight_on_call_no_ringer">Cuando el timbre está silenciado</string>
+    <string name="flashlight_on_call_silent">Cuando está completamente silenciado (sin timbre ni vibración)</string>
+    <string name="flashlight_on_call_always">Siempre</string>
+    <string name="flashlight_on_call_ignore_dnd_title">Ignorar No molestar</string>
+    <string name="flashlight_on_call_ignore_dnd_summary">Cuando el modo no molestar está activado, parpadear el flash</string>
+    <string name="flashlight_on_call_rate_title">Intervalo de parpadeo</string>
+    <!-- Gaming mode -->
+    <string name="gaming_mode_title">Game space</string>
+    <string name="gaming_mode_summary">Extra features for immersive gaming experience</string>
 </resources>

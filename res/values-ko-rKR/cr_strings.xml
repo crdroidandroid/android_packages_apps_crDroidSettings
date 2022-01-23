@@ -47,9 +47,9 @@
     <string name="never">안함</string>
     <string name="always">항상</string>
     <string name="caution">주의</string>
-    <string name="delete">Delete</string>
-    <string name="delete_message">Remove selected item?</string>
-    <string name="choose_app">Choose app</string>
+    <string name="delete">삭제</string>
+    <string name="delete_message">선택한 항목을 제거하시겠습니까?</string>
+    <string name="choose_app">어플을 선택합니다.</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">현재 변경 내역</string>
     <string name="changelog_crdroid_summary">설치된 ROM의 변경 사항을 봅니다.</string>
@@ -96,6 +96,7 @@
     <string name="unit_seconds">초</string>
     <string name="unit_milliseconds">밀리초</string>
     <string name="unit_pixels">dp</string>
+    <string name="unit_hz">hz</string>
     <!-- Hardware info -->
     <string name="platform_revision">플랫폼</string>
     <string name="total_ram">총 RAM</string>
@@ -162,7 +163,7 @@
     <string name="hardware_keys_action_clear_all_notifications">모든 알림 지우기</string>
     <string name="hardware_keys_action_notifications_panel">알림 패널 전환</string>
     <string name="hardware_keys_action_expand_qs_panel">QS 패널 확장</string>
-    <string name="hardware_keys_action_ringer_modes">Change ringer mode</string>
+    <string name="hardware_keys_action_ringer_modes">무음 모드 변경</string>
     <string name="home_answer_call_title">전화 받기</string>
     <string name="home_answer_call_summary">홈 버튼을 눌러 전화를 받습니다</string>
     <string name="camera_sleep_on_release_title">화면 엿보기</string>
@@ -189,28 +190,28 @@
     <!-- Power menu -->
     <string name="power_menu_title">전원 메뉴</string>
     <string name="power_menu_summary">전원 메뉴 옵션을 사용자 지정</string>
-    <string name="power_menu_actions_title">Actions</string>
+    <string name="power_menu_actions_title">동작</string>
     <string name="power_menu_screenshot_title">스크린샷</string>
-    <string name="power_menu_screenshot_summary">Long-press for partial screenshot</string>
+    <string name="power_menu_screenshot_summary">길게 눌러 부분 스크린샷 촬영</string>
     <string name="power_menu_onthego_title">On-The-Go 모드</string>
     <string name="power_menu_advanced_title">고급 다시 시작 옵션</string>
     <string name="power_menu_airplane_title">비행기 모드</string>
     <string name="power_menu_torch_title">손전등</string>
     <string name="power_menu_settings_title">환경설정</string>
-    <string name="power_menu_lockdown_title">Lockdown</string>
-    <string name="power_menu_lockdown_unavailable">Lockdown is disabled as keyguard isn\'t secure</string>
+    <string name="power_menu_lockdown_title">잠금</string>
+    <string name="power_menu_lockdown_unavailable">보안성이 낮은 잠금 화면이 설정되어 있어 잠금을 사용할 수 없습니다.</string>
     <string name="power_menu_soundpanel_title">사운드 패널</string>
     <string name="power_menu_users_title">사용자</string>
     <string name="power_menu_logout_title">로그아웃</string>
     <string name="power_menu_emergency_title">긴급 전화</string>
     <!-- Advanced restart options -->
-    <string name="advanced_reboot_title">Advanced restart</string>
-    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for restarting into recovery or bootloader</string>
-    <string name="advanced_reboot_secured_title">Secured lockscreen</string>
-    <string name="advanced_reboot_secured_summary">Display advanced restart options on secured lockscreen</string>
+    <string name="advanced_reboot_title">고급 다시 시작 기능</string>
+    <string name="advanced_reboot_summary">잠금 해제했을 때 전원 메뉴에 다운로드 모드, 복구 모드 진입 옵션 생성</string>
+    <string name="advanced_reboot_secured_title">보안이 설정된 잠금 화면</string>
+    <string name="advanced_reboot_secured_summary">보안이 설정된 잠금 화면에서 고급 다시 시작 메뉴 표시</string>
     <!-- UI settings -->
     <string name="monet_title">Monet 설정</string>
-    <string name="monet_summary">Customize Monet theme engine</string>
+    <string name="monet_summary">Monet 테마 엔진 설정</string>
     <!-- Monet Engine -->
     <string name="monet_engine_custom_color_title">사용자 지정 색상 사용</string>
     <string name="monet_engine_custom_color_summary">바탕 화면 색상 대신 monet 엔진에 사용자 정의 색상 사용</string>
@@ -252,10 +253,10 @@
     <string name="pulse_ambient_light_layout_faded">사라짐</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">음악 티커</string>
-    <string name="pulse_on_new_tracks_summary">Show music ticker on Ambient Display during track change</string>
+    <string name="pulse_on_new_tracks_summary">재생 중인 음악을 변경할 때 Ambient Display에 음악 티커 표시</string>
     <!-- Status bar - icon blocklist -->
     <string name="status_bar_icons_title">상태 표시줄 아이콘</string>
-    <string name="status_bar_icons_summary">Choose which status bar icons can be shown</string>
+    <string name="status_bar_icons_summary">상태 표시줄에 표시할 아이콘을 선택</string>
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">블루투스 배터리 상태 표시</string>
     <string name="bluetooth_battery_summary">현재 연결된 블루투스 장치에 대한 배터리 상태를 표시합니다</string>
@@ -267,7 +268,7 @@
     <string name="status_bar_toggle_brightness_summary">상태 표시줄을 슬라이드하여 화면 밝기 조절</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">빠르게 설정 패널 내리기</string>
-    <string name="status_bar_quick_qs_pulldown_summary">%1$s edge of the status bar pulls down quick settings</string>
+    <string name="status_bar_quick_qs_pulldown_summary">상태 표시줄의 %1$s 모서리를 끌어내려 설정 패널을 봅니다.</string>
     <string name="status_bar_quick_qs_pulldown_summary_left">왼쪽</string>
     <string name="status_bar_quick_qs_pulldown_summary_right">오른쪽</string>
     <string name="status_bar_quick_qs_pulldown_off">끄기</string>
@@ -284,22 +285,22 @@
     <string name="smart_pulldown_ongoing">진행 중 알림 없음</string>
     <!-- Tap to sleep on status bar -->
     <string name="lockscreen_doubletap_sleep_title">잠금 화면을 탭하여 절전 모드로 들어갑니다.</string>
-    <string name="lockscreen_doubletap_sleep_summary">Double-tap on the lock screen to put device asleep</string>
+    <string name="lockscreen_doubletap_sleep_summary">잠금 화면을 두 번 탭하여 기기를 절전 모드로 전환</string>
     <!-- Font style / Icon pack -->
     <string name="theme_customization_font_title">폰트 스타일</string>
-    <string name="theme_customization_font_summary">Set system font style</string>
+    <string name="theme_customization_font_summary">시스템 폰트 스타일 설정</string>
     <string name="theme_customization_icon_pack_title">아이콘 팩</string>
-    <string name="theme_customization_icon_pack_summary">Set custom icon pack style</string>
-    <string name="theme_customization_icon_shape_title">Icon shape</string>
-    <string name="theme_customization_icon_shape_summary">Set system icon shape style</string>
-    <string name="theme_customization_signal_icon_title">Signal icon style</string>
-    <string name="theme_customization_signal_icon_summary">Set custom signal icon style</string>
-    <string name="theme_customization_wifi_icon_title">WiFi icon style</string>
-    <string name="theme_customization_wifi_icon_summary">Set custom wifi icon style</string>
+    <string name="theme_customization_icon_pack_summary">커스텀 아이콘 팩 스타일 설정</string>
+    <string name="theme_customization_icon_shape_title">아이콘 모양</string>
+    <string name="theme_customization_icon_shape_summary">시스템 아이콘 모양 스타일 설정</string>
+    <string name="theme_customization_signal_icon_title">신호 아이콘 스타일</string>
+    <string name="theme_customization_signal_icon_summary">커스텀 신호 아이콘 스타일 설정</string>
+    <string name="theme_customization_wifi_icon_title">WiFi 아이콘 모양</string>
+    <string name="theme_customization_wifi_icon_summary">커스텀 WiFi 아이콘 스타일 설정</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">기본 화면 재생률</string>
     <string name="peak_refresh_rate_title_custom">최대 화면 재생률</string>
-    <string name="low_power_refresh_rate_title_custom">Low power refresh rate</string>
+    <string name="low_power_refresh_rate_title_custom">저전력 재생률</string>
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">날짜와 시간</string>
     <string name="status_bar_clock_summary">시간 및 날짜 사용자 지정</string>
@@ -343,61 +344,61 @@
     <string name="status_bar_battery_style_icon_landscape">가로 아이콘 (왼쪽)</string>
     <string name="status_bar_battery_style_circle">원 아이콘</string>
     <string name="status_bar_battery_style_dotted_circle">점선 원</string>
-    <string name="status_bar_battery_style_filled_circle">Filled circle</string>
-    <string name="status_bar_battery_style_text">Text</string>
-    <string name="status_bar_battery_style_hidden">Hidden</string>
-    <string name="status_bar_battery_percent_title">Battery percent</string>
-    <string name="status_bar_battery_percent_hidden">Hidden</string>
-    <string name="status_bar_battery_percent_text_inside">Inside the icon</string>
-    <string name="status_bar_battery_percent_text_next_right">Next to the icon (right)</string>
-    <string name="status_bar_battery_percent_text_next_left">Next to the icon (left)</string>
-    <string name="status_bar_battery_text_charging_title">Battery percentage when charging</string>
-    <string name="status_bar_battery_text_charging_summary">Always display battery percentage when charging</string>
+    <string name="status_bar_battery_style_filled_circle">꽉찬 원</string>
+    <string name="status_bar_battery_style_text">텍스트</string>
+    <string name="status_bar_battery_style_hidden">숨김</string>
+    <string name="status_bar_battery_percent_title">배터리 잔량 표시</string>
+    <string name="status_bar_battery_percent_hidden">숨김</string>
+    <string name="status_bar_battery_percent_text_inside">아이콘 안에 표시</string>
+    <string name="status_bar_battery_percent_text_next_right">아이콘 옆(오른쪽)</string>
+    <string name="status_bar_battery_percent_text_next_left">아이콘 옆(왼쪽)</string>
+    <string name="status_bar_battery_text_charging_title">충전 중 배터리 잔량 표시</string>
+    <string name="status_bar_battery_text_charging_summary">충전 중 항상 배터리 잔량 표시</string>
     <!-- Status bar - Battery Bar -->
-    <string name="battery_bar_title">Battery bar</string>
-    <string name="battery_bar_summary">Display and customize battery bar above status bar</string>
-    <string name="battery_bar_color">Color</string>
-    <string name="battery_bar_charging_color">Charging color</string>
-    <string name="battery_bar_battery_low_color">Low battery color</string>
-    <string name="battery_bar_style_title">Alignment</string>
-    <string name="battery_bar_thickness_title">Thickness</string>
-    <string name="battery_bar_animate_title">Charging animation</string>
-    <string name="battery_bar_style_regular">Regular</string>
-    <string name="battery_bar_style_center_mirrored">Center-mirrored</string>
-    <string name="battery_bar_style_reversed">Reversed</string>
-    <string name="battery_bar_use_charging_color">Custom charging color</string>
-    <string name="battery_bar_blend_color_title">Blend colors</string>
-    <string name="battery_bar_blend_color_summary">Blend full/empty colors corresponding to battery percentage</string>
-    <string name="battery_bar_blend_color_reverse_title">Reverse color direction</string>
-    <string name="battery_bar_blend_color_reverse_summary_off">Full &#8594; empty: red &#8592; green &#8592; blue &#8592; red</string>
-    <string name="battery_bar_blend_color_reverse_summary_on">Full &#8594; empty: red &#8594; green &#8594; blue &#8594; red</string>
+    <string name="battery_bar_title">배터리 바</string>
+    <string name="battery_bar_summary">상태 표시줄 위에 배터리 바 표시를 지정</string>
+    <string name="battery_bar_color">색상</string>
+    <string name="battery_bar_charging_color">충전중 색상</string>
+    <string name="battery_bar_battery_low_color">낮은 배터리 색상</string>
+    <string name="battery_bar_style_title">정렬</string>
+    <string name="battery_bar_thickness_title">두께</string>
+    <string name="battery_bar_animate_title">충전 중 애니메이션</string>
+    <string name="battery_bar_style_regular">보통</string>
+    <string name="battery_bar_style_center_mirrored">중앙 정렬</string>
+    <string name="battery_bar_style_reversed">반전</string>
+    <string name="battery_bar_use_charging_color">충전 중 색상 지정</string>
+    <string name="battery_bar_blend_color_title">색상 혼합</string>
+    <string name="battery_bar_blend_color_summary">배터리 퍼센트를 구성하는 최대/최소 색상 혼합</string>
+    <string name="battery_bar_blend_color_reverse_title">색상 방향 반전</string>
+    <string name="battery_bar_blend_color_reverse_summary_off">완충 &#8594; 방전: 빨강 &#8592; 초록 &#8592; 파랑 &#8592; 빨강</string>
+    <string name="battery_bar_blend_color_reverse_summary_on">완충 &#8594; 방전: 빨강 &#8594; 초록 &#8594; 파랑 &#8594; 빨강</string>
     <!-- Quick setting categories -->
-    <string name="qs_misc_category">Miscellaneous</string>
-    <string name="qs_footer_category">Footer</string>
+    <string name="qs_misc_category">기타</string>
+    <string name="qs_footer_category">하단</string>
     <!-- QS clock -->
-    <string name="qs_clock_title">Clock</string>
-    <string name="qs_clock_summary">Display clock in quick status bar header</string>
+    <string name="qs_clock_title">시계</string>
+    <string name="qs_clock_summary">빠른 상태 표시줄의 헤더 부분에 시계 보이기</string>
     <!-- QS date -->
-    <string name="qs_date_title">Date</string>
-    <string name="qs_date_summary">Display date in quick status bar header</string>
+    <string name="qs_date_title">날짜</string>
+    <string name="qs_date_summary">빠른 상태 표시줄의 헤더 부분에 날짜 보이기</string>
     <!-- QS battery -->
-    <string name="qs_battery_location_title">Battery location</string>
-    <string name="qs_battery_location_qs_panel">QS Panel</string>
-    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
-    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
+    <string name="qs_battery_location_title">배터리 위치</string>
+    <string name="qs_battery_location_qs_panel">빠른 설정 패널</string>
+    <string name="qs_battery_location_qs_statusbar">빠른 상태 표시 줄</string>
+    <string name="qs_use_status_bar_battery_style">상태 표시줄 스타일에 따름</string>
     <!-- Battery estimate -->
-    <string name="battery_estimate_title">Battery estimate</string>
-    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
+    <string name="battery_estimate_title">배터리 예상</string>
+    <string name="battery_estimate_summary">남은 배터리 사용 시간 예상 (사용 가능할 경우)</string>
     <!-- Network traffic -->
-    <string name="network_traffic_settings_title">Network traffic monitor</string>
+    <string name="network_traffic_settings_title">네트워크 트래픽 모니터</string>
     <string name="network_traffic_settings_summary">현제 네트워크 트래픽 수준 표시 및 커스텀 설정</string>
     <string name="network_traffic_location_title">위치</string>
     <string name="network_traffic_location_disable">비활성화</string>
-    <string name="network_traffic_location_statusbar">Statusbar</string>
-    <string name="network_traffic_location_quick_statusbar">Quick Statusbar</string>
-    <string name="network_traffic_mode_title">Display mode</string>
-    <string name="network_traffic_mode_up">Upload only</string>
-    <string name="network_traffic_mode_down">Download only</string>
+    <string name="network_traffic_location_statusbar">상태 표시줄</string>
+    <string name="network_traffic_location_quick_statusbar">빠른 상태 표시 줄</string>
+    <string name="network_traffic_mode_title">표시 모드</string>
+    <string name="network_traffic_mode_up">업로드만</string>
+    <string name="network_traffic_mode_down">다운로드만</string>
     <string name="network_traffic_mode_all">업로드와 다운로드</string>
     <string name="network_traffic_autohide">자동 숨기기</string>
     <string name="network_traffic_autohide_summary">비활성 상태 일 때 트래픽 모니터 숨기기</string>
@@ -408,101 +409,101 @@
     <string name="network_traffic_refresh_interval_summary">속도가 재 측정 된 후의 시간</string>
     <string name="network_traffic_units_title">트래픽 측정 단위</string>
     <string name="network_traffic_units_bits">비트 / 초 (b/s)</string>
-    <string name="network_traffic_units_kilobits">Kilobits per second (kb/s)</string>
-    <string name="network_traffic_units_megabits">Megabits per second (Mb/s)</string>
-    <string name="network_traffic_units_bytes">Bytes per second (B/s)</string>
-    <string name="network_traffic_units_kilobytes">Kilobytes per second (kB/s)</string>
-    <string name="network_traffic_units_megabytes">Megabytes per second (MB/s)</string>
-    <string name="network_traffic_hidearrow">Hide arrows</string>
-    <string name="network_traffic_hidearrow_summary">Hide the network traffic indicator arrows</string>
+    <string name="network_traffic_units_kilobits">초당 킬로비트 (kb/s)</string>
+    <string name="network_traffic_units_megabits">초당 메가비트 (Mb/s)</string>
+    <string name="network_traffic_units_bytes">초당 바이트 (B/s)</string>
+    <string name="network_traffic_units_kilobytes">초당 킬로바이트 (kB/s)</string>
+    <string name="network_traffic_units_megabytes">초당 메가바이트 (MB/s)</string>
+    <string name="network_traffic_hidearrow">화살표 숨기기</string>
+    <string name="network_traffic_hidearrow_summary">네트워크 트래픽 표시기 화살표 숨기기</string>
     <!-- QS footer warnings -->
-    <string name="qs_footer_warnings_title">Footer alerts</string>
-    <string name="qs_footer_warnings_summary">Display an alert at bottom of QS panel when network is monitored by external apps or VPN</string>
+    <string name="qs_footer_warnings_title">바닥글 알림</string>
+    <string name="qs_footer_warnings_summary">네트워크가 외부 앱이나 VPN에 의해 모니터링 될 때 빠른 설정 패널 하단에 알림을 표시합니다</string>
     <!-- Media art -->
-    <string name="media_art_title">Media cover art</string>
-    <string name="media_art_summary">Display media cover art when available</string>
+    <string name="media_art_title">미디어 커버 아트</string>
+    <string name="media_art_summary">미디어 커버 아트 표시 (사용가능한 경우)</string>
     <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Media cover art filter</string>
-    <string name="lockscreen_albumart_filter_none">None</string>
-    <string name="lockscreen_albumart_filter_grayscale">Grayscale</string>
-    <string name="lockscreen_albumart_filter_tint">Accent tinted</string>
-    <string name="lockscreen_albumart_filter_blur">Blur</string>
-    <string name="lockscreen_albumart_filter_grayblur">Grayscale and blurred</string>
+    <string name="lockscreen_albumart_filter_title">미디어 커버 아트 필터</string>
+    <string name="lockscreen_albumart_filter_none">없음</string>
+    <string name="lockscreen_albumart_filter_grayscale">회색조</string>
+    <string name="lockscreen_albumart_filter_tint">엑센트 엷게</string>
+    <string name="lockscreen_albumart_filter_blur">흐림 효과</string>
+    <string name="lockscreen_albumart_filter_grayblur">회색조 &amp; 흐리게</string>
     <!-- Pulse music visualizer -->
-    <string name="pulse_help_policy_notice_title">About Pulse</string>
-    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>
-    <string name="pulse_settings">Pulse</string>
-    <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
-    <string name="show_navbar_pulse_title">Navbar Pulse</string>
-    <string name="show_navbar_pulse_summary">Audio graphic equalizer on the navigation bar</string>
-    <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
-    <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
+    <string name="pulse_help_policy_notice_title">펄스에 대하여</string>
+    <string name="pulse_help_policy_notice_summary">Pulse는 장치에서 음악 재생 시 보이는 뛰어난 오디오 그래픽 이퀄라이저입니다</string>
+    <string name="pulse_settings">펄스</string>
+    <string name="pulse_settings_summary">내비게이션 바 및 잠금 화면용 오디오 그래픽 이퀄라이저</string>
+    <string name="show_navbar_pulse_title">내비게이션 바 펄스</string>
+    <string name="show_navbar_pulse_summary">내비게이션 바에 오디오 그래픽 이퀄라이저를 표시합니다</string>
+    <string name="show_lockscreen_pulse_title">잠금 화면 펄스</string>
+    <string name="show_lockscreen_pulse_summary">잠금 화면에 오디오 그래픽 이퀄라이저를 표시합니다</string>
     <string name="show_ambient_pulse_title">Ambient Pulse</string>
-    <string name="show_ambient_pulse_summary">Audio graphic equalizer on the ambient screen</string>
-    <string name="pulse_render_mode_title">Render mode</string>
-    <string name="pulse_render_mode_fading_bars">Fading blocks</string>
-    <string name="pulse_render_mode_solid_lines">Solid lines</string>
-    <string name="pulse_legacy_mode_advanced_category">Fading blocks mode settings</string>
-    <string name="pulse_custom_fudge_factor">Sanity level</string>
-    <string name="pulse_lavalamp_speed_title">Lava lamp speed</string>
-    <string name="pulse_solid_units_count">Solid lines count</string>
-    <string name="pulse_solid_units_opacity">Solid lines opacity</string>
-    <string name="pulse_solid_units_rounded_title">Rounded corners</string>
-    <string name="pulse_solid_units_rounded_summary">Solid lines with rounded tip</string>
-    <string name="pulse_solid_dimen_category">Solid lines mode settings</string>
-    <string name="pulse_color_mode_title">Color</string>
-    <string name="pulse_color_accent">Accent</string>
-    <string name="pulse_color_custom">Custom</string>
-    <string name="pulse_color_lava_lamp">Lava lamp</string>
-    <string name="pulse_color_user_title">Choose color</string>
-    <string name="pulse_smoothing_enabled_title">Turn on smoothing</string>
-    <string name="pulse_smoothing_enabled_summary">Each bar is animated more smoothly</string>
-    <string name="pulse_custom_dimen">Bar width</string>
-    <string name="pulse_custom_div">Bar spacing</string>
-    <string name="pulse_filled_block_size">Block size</string>
-    <string name="pulse_empty_block_size">Block spacing</string>
+    <string name="show_ambient_pulse_summary">Ambient 스크린에 오디오 그래픽 이퀄라이저를 표시합니다</string>
+    <string name="pulse_render_mode_title">렌더 모드</string>
+    <string name="pulse_render_mode_fading_bars">페이딩 블록</string>
+    <string name="pulse_render_mode_solid_lines">실선</string>
+    <string name="pulse_legacy_mode_advanced_category">페이딩 블록 모드 설정</string>
+    <string name="pulse_custom_fudge_factor">바 구분 정도</string>
+    <string name="pulse_lavalamp_speed_title">라바 램프 변화 속도</string>
+    <string name="pulse_solid_units_count">실선 수</string>
+    <string name="pulse_solid_units_opacity">실선 불투명도</string>
+    <string name="pulse_solid_units_rounded_title">둥근 모서리</string>
+    <string name="pulse_solid_units_rounded_summary">끝이 둥근 굵은 선</string>
+    <string name="pulse_solid_dimen_category">실선 모드 설정</string>
+    <string name="pulse_color_mode_title">색상</string>
+    <string name="pulse_color_accent">강조 색</string>
+    <string name="pulse_color_custom">맞춤 설정</string>
+    <string name="pulse_color_lava_lamp">라바 램프</string>
+    <string name="pulse_color_user_title">색상 선택</string>
+    <string name="pulse_smoothing_enabled_title">펄스 스무딩 켜기</string>
+    <string name="pulse_smoothing_enabled_summary">각각의 막대가 더 부드럽게 움직입니다</string>
+    <string name="pulse_custom_dimen">바 너비</string>
+    <string name="pulse_custom_div">바 간격</string>
+    <string name="pulse_filled_block_size">블럭 사이즈</string>
+    <string name="pulse_empty_block_size">블록 간격</string>
     <!-- Navigation Bar -->
-    <string name="navbar_visibility_title">Navigation bar</string>
-    <string name="navbar_visibility_summary">Display navigation bar at bottom of screen</string>
-    <string name="navbar_layout_category_title">Layout</string>
-    <string name="navbar_arrow_keys_title">Show arrow keys while typing</string>
-    <string name="navbar_arrow_keys_summary">Display left and right cursor buttons while typing. Overrides IME switcher.</string>
-    <string name="navbar_layout_title">Layout</string>
-    <string name="navbar_layout_normal">Normal</string>
-    <string name="navbar_layout_compact">Compact</string>
-    <string name="navbar_layout_leftleaning">Left-leaning</string>
-    <string name="navbar_layout_rightleaning">Right-leaning</string>
-    <string name="navbar_invert_layout_title">Invert layout</string>
-    <string name="navbar_invert_layout_summary">Inverts the layout of the navigation bar and other items, such as the IME switcher</string>
-    <string name="navbar_actions_category_title">Actions</string>
-    <string name="navbar_back_long_press_title">Back long press</string>
-    <string name="navbar_home_long_press_title">Home long press</string>
-    <string name="navbar_home_double_tap_title">Home double tap</string>
-    <string name="navbar_app_switch_long_press_title">Recents long press</string>
-    <string name="navbar_edge_long_swipe_title">Edge long swipe</string>
+    <string name="navbar_visibility_title">네비게이션 바</string>
+    <string name="navbar_visibility_summary">화면 하단에 탐색 표시줄 표시</string>
+    <string name="navbar_layout_category_title">레이아웃</string>
+    <string name="navbar_arrow_keys_title">입력시 커서 방향키 표시</string>
+    <string name="navbar_arrow_keys_summary">입력시 좌우 커서 방향키를 표시합니다. 입력기 전환키는 표시되지 않습니다.</string>
+    <string name="navbar_layout_title">레이아웃</string>
+    <string name="navbar_layout_normal">기본</string>
+    <string name="navbar_layout_compact">간단히</string>
+    <string name="navbar_layout_leftleaning">왼쪽으로 기울기</string>
+    <string name="navbar_layout_rightleaning">오른쪽으로 기울기</string>
+    <string name="navbar_invert_layout_title">레이아웃 반전</string>
+    <string name="navbar_invert_layout_summary">네비게이션 바 및 IME 스위처와 같은 기타 항목의 레이아웃을 반전시킵니다.</string>
+    <string name="navbar_actions_category_title">동작</string>
+    <string name="navbar_back_long_press_title">뒤로 - 길게 누르기</string>
+    <string name="navbar_home_long_press_title">홈 - 길게 누르기</string>
+    <string name="navbar_home_double_tap_title">홈 - 두 번 탭</string>
+    <string name="navbar_app_switch_long_press_title">최근 실행한 앱 - 길게 누르기</string>
+    <string name="navbar_edge_long_swipe_title">가장자리로 길게 스와이프</string>
     <!-- Pocket judge -->
-    <string name="pocket_judge_title">Pocket detection</string>
-    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
+    <string name="pocket_judge_title">주머니 감지</string>
+    <string name="pocket_judge_summary">기기가 주머니에 있을 때 화면과 버튼 입력을 방지합니다.</string>
     <!-- Disable HW keys -->
-    <string name="hwkeys_disabled_title">Disable HW keys</string>
-    <string name="hwkeys_disabled_summary">Enabling this will disable hardware keys for navigation</string>
+    <string name="hwkeys_disabled_title">하드웨어 버튼 비활성화</string>
+    <string name="hwkeys_disabled_summary">이 기능을 사용하면 탐색 용도로 하드웨어 버튼을 사용할 수 없습니다.</string>
     <!-- Swap capacitive keys -->
-    <string name="swap_capacitive_keys_title">Swap capacitive buttons</string>
-    <string name="swap_capacitive_keys_summary">Swap the order of recents and back buttons</string>
+    <string name="swap_capacitive_keys_title">터치 버튼 스왑</string>
+    <string name="swap_capacitive_keys_summary">최근 앱 버튼과 뒤로가기 버튼의 순서 바꾸기</string>
     <!-- ANBI -->
-    <string name="anbi_title">Accidental touch</string>
-    <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
+    <string name="anbi_title">실수 눌림 방지</string>
+    <string name="anbi_summary">화면을 조작할 때 내비게이션 버튼이 눌리는 것을 방지합니다.</string>
     <!-- Live volume steps -->
-    <string name="volume_steps_title">Volume steps</string>
-    <string name="volume_steps_summary">Customize no. of steps in volume panel</string>
-    <string name="volume_steps_alarm_title">Volume steps: Alarm</string>
-    <string name="volume_steps_dtmf_title">Volume steps: DTMF</string>
-    <string name="volume_steps_music_title">Volume steps: Music</string>
-    <string name="volume_steps_notification_title">Volume steps: Notification</string>
-    <string name="volume_steps_ring_title">Volume steps: Ringer</string>
-    <string name="volume_steps_system_title">Volume steps: System</string>
-    <string name="volume_steps_voice_call_title">Volume steps: Voice Call</string>
-    <string name="volume_steps_reset">Reset</string>
+    <string name="volume_steps_title">볼륨 단계</string>
+    <string name="volume_steps_summary">볼륨 패널에 단계를 조정합니다</string>
+    <string name="volume_steps_alarm_title">볼륨 단계: 알람</string>
+    <string name="volume_steps_dtmf_title">볼륨 단계: DTMF</string>
+    <string name="volume_steps_music_title">음량 단계: 음악</string>
+    <string name="volume_steps_notification_title">볼륨 단계: 알림</string>
+    <string name="volume_steps_ring_title">볼륨 단계: 벨소리</string>
+    <string name="volume_steps_system_title">볼륨 단계: 시스템</string>
+    <string name="volume_steps_voice_call_title">볼륨 단계: 음성 통화</string>
+    <string name="volume_steps_reset">초기화</string>
     <string name="volume_steps_60">60</string>
     <string name="volume_steps_45">45</string>
     <string name="volume_steps_30">30</string>
@@ -510,104 +511,124 @@
     <string name="volume_steps_7">7</string>
     <string name="volume_steps_5">5</string>
     <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture">Swipe to screenshot</string>
-    <string name="three_finger_gesture_summary">Swipe three fingers to take screenshot</string>
+    <string name="three_finger_gesture">세 손가락 제스처</string>
+    <string name="three_finger_gesture_summary">세 손가락을 스와이프해서 스크린샷을 찍습니다</string>
     <!-- Running services - Background processes tab -->
-    <string name="background_processes_settings_title">Background processes</string>
+    <string name="background_processes_settings_title">백그라운드 프로세스</string>
     <!-- QS footer icons -->
-    <string name="qs_footer_users_icon_title">User account icon</string>
-    <string name="qs_footer_users_icon_summary">Display multiuser accessibility icon when available</string>
-    <string name="qs_footer_edit_icon_title">Edit tiles icon</string>
-    <string name="qs_footer_show_power_menu_title">Power menu shortcut</string>
-    <string name="qs_footer_services_icon_title">Running services shortcut</string>
-    <string name="qs_footer_settings_icon_title">Settings shortcut</string>
+    <string name="qs_footer_users_icon_title">사용자 계정 아이콘</string>
+    <string name="qs_footer_users_icon_summary">사용 가능한 경우 다중 사용자 액세스 아이콘 표시</string>
+    <string name="qs_footer_edit_icon_title">타일 아이콘 편집</string>
+    <string name="qs_footer_show_power_menu_title">전원 메뉴 바로 가기</string>
+    <string name="qs_footer_services_icon_title">실행 중인 서비스 바로 가기</string>
+    <string name="qs_footer_settings_icon_title">설정 바로 가기</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">crDroid legal</string>
+    <string name="crdroid_license_title">crDroid 약관</string>
     <!-- Quick Settings brightness slider -->
-    <string name="qs_show_brightness_slider_title">Brightness slider</string>
-    <string name="qs_show_brightness_slider_never">Never show</string>
-    <string name="qs_show_brightness_slider_expanded">Show when expanded</string>
-    <string name="qs_show_brightness_slider_always">Show always</string>
-    <string name="qs_show_brightness_slider_not_expanded">Show when not expanded</string>
-    <string name="qs_brightness_slider_position_title">Position</string>
-    <string name="qs_brightness_slider_position_top">Top</string>
-    <string name="qs_brightness_slider_position_bottom">Bottom</string>
+    <string name="qs_show_brightness_slider_title">밝기 조절 슬라이더</string>
+    <string name="qs_show_brightness_slider_never">절대 보여주지 않기</string>
+    <string name="qs_show_brightness_slider_expanded">펼치면 표시</string>
+    <string name="qs_show_brightness_slider_always">항상 표시</string>
+    <string name="qs_show_brightness_slider_not_expanded">확장되지 않은 경우 표시</string>
+    <string name="qs_brightness_slider_position_title">위치</string>
+    <string name="qs_brightness_slider_position_top">상단</string>
+    <string name="qs_brightness_slider_position_bottom">화면 하단</string>
     <!-- Quick Settings brightness icon -->
-    <string name="qs_show_auto_brightness_title">Auto brightness icon</string>
-    <string name="qs_show_auto_brightness_summary">Show toggle for adaptive brightness near the slider</string>
+    <string name="qs_show_auto_brightness_title">자동 밝기 아이콘</string>
+    <string name="qs_show_auto_brightness_summary">슬라이더 옆쪽에 밝기 자동 조절 토글 표시</string>
     <!-- Statusbar colored icons -->
-    <string name="statusbar_colored_icons_title">Colored icons</string>
-    <string name="statusbar_colored_icons_summary">Use proper app icons for notification icons in statusbar</string>
+    <string name="statusbar_colored_icons_title">컬러 아이콘</string>
+    <string name="statusbar_colored_icons_summary">상태 표시줄의 알림 아이콘에 적절한 앱 아이콘 사용</string>
     <!-- Notification count -->
-    <string name="statusbar_notif_count_title">Show notification count</string>
-    <string name="statusbar_notif_count_summary">Display the number of pending notifications</string>
+    <string name="statusbar_notif_count_title">알림 개수 표시</string>
+    <string name="statusbar_notif_count_summary">읽지 않은 알림 숫자 표시</string>
     <!-- Notification channels -->
-    <string name="channel_light_settings_name">Light settings preview</string>
+    <string name="channel_light_settings_name">조명 설정 미리보기</string>
     <!-- Notification light dialogs -->
-    <string name="edit_light_settings">Edit light settings</string>
-    <string name="pulse_speed_title">Pulse length and speed</string>
-    <string name="default_time">Normal</string>
-    <string name="custom_time">Custom</string>
-    <string name="brightness">Brightness level</string>
+    <string name="edit_light_settings">표시등 설정 변경</string>
+    <string name="pulse_speed_title">깜빡임 시간과 속도</string>
+    <string name="default_time">기본</string>
+    <string name="custom_time">맞춤설정</string>
+    <string name="brightness">밝기 수준</string>
     <!-- Values for the notification light pulse spinners -->
-    <string name="pulse_length_always_on">Always on</string>
-    <string name="pulse_length_very_short">Very short</string>
-    <string name="pulse_length_short">Short</string>
-    <string name="pulse_length_normal">Normal</string>
-    <string name="pulse_length_long">Long</string>
-    <string name="pulse_length_very_long">Very long</string>
-    <string name="pulse_speed_very_fast">Very fast</string>
-    <string name="pulse_speed_fast">Fast</string>
-    <string name="pulse_speed_normal">Normal</string>
-    <string name="pulse_speed_slow">Slow</string>
-    <string name="pulse_speed_very_slow">Very slow</string>
+    <string name="pulse_length_always_on">항상 켜짐</string>
+    <string name="pulse_length_very_short">매우 짧게</string>
+    <string name="pulse_length_short">짧은</string>
+    <string name="pulse_length_normal">기본</string>
+    <string name="pulse_length_long">길게</string>
+    <string name="pulse_length_very_long">매우 길게</string>
+    <string name="pulse_speed_very_fast">매우 빠르게</string>
+    <string name="pulse_speed_fast">빠르게</string>
+    <string name="pulse_speed_normal">기본</string>
+    <string name="pulse_speed_slow">느리게</string>
+    <string name="pulse_speed_very_slow">매우 느리게</string>
     <!-- Common light settings strings -->
-    <string name="light_brightness_title">Brightness levels</string>
-    <string name="light_brightness_normal">Normal</string>
-    <string name="light_brightness_zen">Do Not Disturb</string>
+    <string name="light_brightness_title">밝기 수준</string>
+    <string name="light_brightness_normal">기본</string>
+    <string name="light_brightness_zen">방해 금지</string>
     <!-- Battery light settings -->
-    <string name="light_brightness_category">Light brightness settings</string>
-    <string name="battery_light_title">Battery light</string>
-    <string name="battery_light_summary">Configure led color based on battery level and status</string>
-    <string name="battery_low_pulse_title">Pulse if battery low</string>
-    <string name="battery_light_full_charge_disabled_title">Turn off when fully charged</string>
-    <string name="battery_light_list_title">Colors</string>
-    <string name="battery_light_low_color_title">Battery low</string>
-    <string name="battery_light_medium_color_title">Charging</string>
-    <string name="battery_light_full_color_title">Nearly Charged (&gt;90%)</string>
-    <string name="battery_light_really_full_color_title">Fully Charged (100%)</string>
+    <string name="light_brightness_category">밝기 설정</string>
+    <string name="battery_light_title">배터리 표시등</string>
+    <string name="battery_light_summary">배터리 수준 및 상태에 따라 LED 색상 구성</string>
+    <string name="battery_low_pulse_title">배터리 부족 시 깜빡임</string>
+    <string name="battery_light_full_charge_disabled_title">충전 완료 시 끄기</string>
+    <string name="battery_light_list_title">색상</string>
+    <string name="battery_light_low_color_title">배터리 부족</string>
+    <string name="battery_light_medium_color_title">충전 중</string>
+    <string name="battery_light_full_color_title">거의 충전 됨 (&gt;90%)</string>
+    <string name="battery_light_really_full_color_title">충전 완료 (100%)</string>
     <!-- Lights settings screen, notification light settings -->
-    <string name="notification_light_title">Notification light</string>
-    <string name="notification_light_summary">Configure led color for notifications</string>
-    <string name="notification_light_general_title">General</string>
-    <string name="notification_light_advanced_title">Advanced</string>
-    <string name="notification_light_applist_title">Apps</string>
-    <string name="notification_light_phonelist_title">Phone</string>
-    <string name="notification_light_use_custom">Use custom values</string>
-    <string name="notification_light_default_value">Default</string>
-    <string name="notification_light_missed_call_title">Missed call</string>
-    <string name="notification_light_voicemail_title">Voicemail</string>
-    <string name="notification_light_screen_on">Lights with screen on</string>
-    <string name="notification_light_zen_mode">Lights in Do Not Disturb mode</string>
-    <string name="notification_light_automagic">Choose colors automatically</string>
-    <string name="notification_light_automagic_summary">Choosing colors automatically</string>
-    <string name="notification_light_override">Override all apps</string>
+    <string name="notification_light_title">알림 표시등</string>
+    <string name="notification_light_summary">알림 LED 색상 구성</string>
+    <string name="notification_light_general_title">일반</string>
+    <string name="notification_light_advanced_title">고급 설정</string>
+    <string name="notification_light_applist_title">애플리케이션</string>
+    <string name="notification_light_phonelist_title">휴대전화</string>
+    <string name="notification_light_use_custom">사용자 지정 값 사용</string>
+    <string name="notification_light_default_value">기본값</string>
+    <string name="notification_light_missed_call_title">부재중 전화</string>
+    <string name="notification_light_voicemail_title">음성 메시지</string>
+    <string name="notification_light_screen_on">화면 켜진 상태에서 표시등 사용</string>
+    <string name="notification_light_zen_mode">방해 금지 모드에서 표시등 사용</string>
+    <string name="notification_light_automagic">색상 자동 선택</string>
+    <string name="notification_light_automagic_summary">자동으로 색상 선택</string>
+    <string name="notification_light_override">모든 앱 재정의</string>
     <!-- Lights settings, LED notification -->
-    <string name="led_notification_title">Light settings</string>
-    <string name="led_notification_text">LED light enabled by settings</string>
-    <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
+    <string name="led_notification_title">표시등 설정</string>
+    <string name="led_notification_text">설정 앱을 통해 LED 표시등을 활성화함</string>
+    <string name="notification_light_no_apps_summary">앱 별 컨트롤을 추가하려면 \'%1$s\'을(를) 활성화하고 메뉴 바에서 \'\u002b\'을(를) 누르세요</string>
     <!-- Heads up timeout -->
-    <string name="notification_heads_up_title">Heads up</string>
-    <string name="notification_heads_up_summary">Allow pop up notifications</string>
+    <string name="notification_heads_up_title">헤드업 알림</string>
+    <string name="notification_heads_up_summary">팝업 알림 허용</string>
     <!-- Less boring heads up -->
-    <string name="less_boring_heads_up_title">Less boring</string>
-    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
+    <string name="less_boring_heads_up_title">덜 지루한</string>
+    <string name="less_boring_heads_up_summary">알람, 전화 및 문자 앱만 팝업 알람을 표시합니다.</string>
     <!-- Notifications while screen on -->
     <string name="notification_sound_vib_screen_on_title">시끄러운 알림</string>
     <string name="notification_sound_vib_screen_on_summary">화면이 켜져있을 때 소리 및 진동 알림을 재생합니다.</string>
     <!-- Privacy Indicator -->
     <string name="mic_camera_privacy_indicator_title">마이크 및 카메라 개인 정보 표시</string>
     <string name="mic_camera_privacy_indicator_summary">모든 앱에서 마이크 또는 카메라를 사용하는 경우 별도의 표시기 표시</string>
-    <string name="location_privacy_indicator_title">Location privacy indicator</string>
-    <string name="location_privacy_indicator_summary">Show separate indicator when an any app uses location</string>
+    <string name="location_privacy_indicator_title">위치 개인 정보 표시기</string>
+    <string name="location_privacy_indicator_summary">앱에서 위치를 사용하는 경우 별도의 표시기 표시</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">딥 슬립</string>
+    <!-- In-call feedback -->
+    <string name="incall_vibration_category">통화 중 진동 옵션</string>
+    <string name="incall_vibrate_connect_title">통화 연결 시 진동</string>
+    <string name="incall_vibrate_call_wait_title">통화 대기 중 진동</string>
+    <string name="incall_vibrate_disconnect_title">통화 종료 시 진동</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">전화수신시 플레시 깜박임</string>
+    <string name="flashlight_on_call_disabled">비활성화됨</string>
+    <string name="flashlight_on_call_ringer">벨이 울릴 때</string>
+    <string name="flashlight_on_call_no_ringer">벨소리가 무음일 때</string>
+    <string name="flashlight_on_call_silent">완전히 무음일 때(벨소리나 진동기가 없을 때)</string>
+    <string name="flashlight_on_call_always">항상</string>
+    <string name="flashlight_on_call_ignore_dnd_title">Ignore DND</string>
+    <string name="flashlight_on_call_ignore_dnd_summary">방해 금지 모드가 활성화되어 있을 때 깜박일지 여부</string>
+    <string name="flashlight_on_call_rate_title">깜박임 속도</string>
+    <!-- Gaming mode -->
+    <string name="gaming_mode_title">게임 공간</string>
+    <string name="gaming_mode_summary">몰입형 게임 경험을 위한 추가 기능</string>
 </resources>

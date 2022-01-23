@@ -48,8 +48,8 @@
     <string name="always">常時</string>
     <string name="caution">注意</string>
     <string name="delete">削除</string>
-    <string name="delete_message">Remove selected item?</string>
-    <string name="choose_app">Choose app</string>
+    <string name="delete_message">選択した項目を削除しますか？</string>
+    <string name="choose_app">アプリを選択</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">最近の更新履歴</string>
     <string name="changelog_crdroid_summary">インストールされている ROM の更新内容を確認します</string>
@@ -96,6 +96,7 @@
     <string name="unit_seconds">秒</string>
     <string name="unit_milliseconds">ミリ秒</string>
     <string name="unit_pixels">dp</string>
+    <string name="unit_hz">hz</string>
     <!-- Hardware info -->
     <string name="platform_revision">プラットフォーム</string>
     <string name="total_ram">メモリ容量</string>
@@ -287,15 +288,15 @@
     <string name="lockscreen_doubletap_sleep_summary">ロック画面をダブルタップして端末をスリープさせます</string>
     <!-- Font style / Icon pack -->
     <string name="theme_customization_font_title">フォントスタイル</string>
-    <string name="theme_customization_font_summary">Set system font style</string>
+    <string name="theme_customization_font_summary">システムのフォントスタイルを設定</string>
     <string name="theme_customization_icon_pack_title">アイコンパック</string>
-    <string name="theme_customization_icon_pack_summary">Set custom icon pack style</string>
-    <string name="theme_customization_icon_shape_title">Icon shape</string>
-    <string name="theme_customization_icon_shape_summary">Set system icon shape style</string>
+    <string name="theme_customization_icon_pack_summary">カスタムアイコンパックのスタイルを設定</string>
+    <string name="theme_customization_icon_shape_title">アイコンの形状</string>
+    <string name="theme_customization_icon_shape_summary">システムアイコンの形状スタイルを設定</string>
     <string name="theme_customization_signal_icon_title">電波アイコンのスタイル</string>
     <string name="theme_customization_signal_icon_summary">電波アイコンのカスタムスタイルを設定します</string>
     <string name="theme_customization_wifi_icon_title">Wi-Fi アイコンスタイル</string>
-    <string name="theme_customization_wifi_icon_summary">Wi-Fiアイコンのカスタムスタイルを設定します</string>
+    <string name="theme_customization_wifi_icon_summary">Wi-Fi アイコンのカスタムスタイルを設定します</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">デフォルトのリフレッシュレート</string>
     <string name="peak_refresh_rate_title_custom">最高リフレッシュレート</string>
@@ -447,8 +448,8 @@
     <string name="pulse_lavalamp_speed_title">ラーヴァランプ速度</string>
     <string name="pulse_solid_units_count">ソリッドラインの数</string>
     <string name="pulse_solid_units_opacity">ソリッドラインの不透明度</string>
-    <string name="pulse_solid_units_rounded_title">Rounded corners</string>
-    <string name="pulse_solid_units_rounded_summary">Solid lines with rounded tip</string>
+    <string name="pulse_solid_units_rounded_title">画面の角を丸める</string>
+    <string name="pulse_solid_units_rounded_summary">丸みを帯びた実線</string>
     <string name="pulse_solid_dimen_category">ソリッドラインモードの設定</string>
     <string name="pulse_color_mode_title">色</string>
     <string name="pulse_color_accent">アクセント</string>
@@ -542,66 +543,66 @@
     <string name="statusbar_notif_count_title">通知の数を表示</string>
     <string name="statusbar_notif_count_summary">保留中の通知の数を表示します</string>
     <!-- Notification channels -->
-    <string name="channel_light_settings_name">Light settings preview</string>
+    <string name="channel_light_settings_name">ライト設定のプレビュー</string>
     <!-- Notification light dialogs -->
-    <string name="edit_light_settings">Edit light settings</string>
-    <string name="pulse_speed_title">Pulse length and speed</string>
-    <string name="default_time">Normal</string>
-    <string name="custom_time">Custom</string>
-    <string name="brightness">Brightness level</string>
+    <string name="edit_light_settings">ライト設定を編集</string>
+    <string name="pulse_speed_title">点滅時間と点滅速度</string>
+    <string name="default_time">標準</string>
+    <string name="custom_time">カスタム</string>
+    <string name="brightness">明るさのレベル</string>
     <!-- Values for the notification light pulse spinners -->
-    <string name="pulse_length_always_on">Always on</string>
-    <string name="pulse_length_very_short">Very short</string>
-    <string name="pulse_length_short">Short</string>
-    <string name="pulse_length_normal">Normal</string>
-    <string name="pulse_length_long">Long</string>
-    <string name="pulse_length_very_long">Very long</string>
-    <string name="pulse_speed_very_fast">Very fast</string>
-    <string name="pulse_speed_fast">Fast</string>
-    <string name="pulse_speed_normal">Normal</string>
-    <string name="pulse_speed_slow">Slow</string>
-    <string name="pulse_speed_very_slow">Very slow</string>
+    <string name="pulse_length_always_on">常に ON</string>
+    <string name="pulse_length_very_short">とても短い</string>
+    <string name="pulse_length_short">短い</string>
+    <string name="pulse_length_normal">標準</string>
+    <string name="pulse_length_long">長い</string>
+    <string name="pulse_length_very_long">とても長い</string>
+    <string name="pulse_speed_very_fast">とても速い</string>
+    <string name="pulse_speed_fast">速い</string>
+    <string name="pulse_speed_normal">標準</string>
+    <string name="pulse_speed_slow">遅い</string>
+    <string name="pulse_speed_very_slow">とても遅い</string>
     <!-- Common light settings strings -->
-    <string name="light_brightness_title">Brightness levels</string>
-    <string name="light_brightness_normal">Normal</string>
-    <string name="light_brightness_zen">Do Not Disturb</string>
+    <string name="light_brightness_title">明るさのレベル</string>
+    <string name="light_brightness_normal">標準</string>
+    <string name="light_brightness_zen">サイレントモード</string>
     <!-- Battery light settings -->
-    <string name="light_brightness_category">Light brightness settings</string>
-    <string name="battery_light_title">Battery light</string>
-    <string name="battery_light_summary">Configure led color based on battery level and status</string>
-    <string name="battery_low_pulse_title">Pulse if battery low</string>
-    <string name="battery_light_full_charge_disabled_title">Turn off when fully charged</string>
-    <string name="battery_light_list_title">Colors</string>
-    <string name="battery_light_low_color_title">Battery low</string>
-    <string name="battery_light_medium_color_title">Charging</string>
-    <string name="battery_light_full_color_title">Nearly Charged (&gt;90%)</string>
-    <string name="battery_light_really_full_color_title">Fully Charged (100%)</string>
+    <string name="light_brightness_category">ライトの明るさ設定</string>
+    <string name="battery_light_title">バッテリーライト</string>
+    <string name="battery_light_summary">バッテリーレベルと状態による LED カラーを設定する</string>
+    <string name="battery_low_pulse_title">残量低下時に点滅</string>
+    <string name="battery_light_full_charge_disabled_title">満充電で無効</string>
+    <string name="battery_light_list_title">色</string>
+    <string name="battery_light_low_color_title">残量低下</string>
+    <string name="battery_light_medium_color_title">充電中</string>
+    <string name="battery_light_full_color_title">ほぼ充電完了 (&gt;90%)</string>
+    <string name="battery_light_really_full_color_title">充電完了 (100%)</string>
     <!-- Lights settings screen, notification light settings -->
-    <string name="notification_light_title">Notification light</string>
-    <string name="notification_light_summary">Configure led color for notifications</string>
-    <string name="notification_light_general_title">General</string>
-    <string name="notification_light_advanced_title">Advanced</string>
-    <string name="notification_light_applist_title">Apps</string>
-    <string name="notification_light_phonelist_title">Phone</string>
-    <string name="notification_light_use_custom">Use custom values</string>
-    <string name="notification_light_default_value">Default</string>
-    <string name="notification_light_missed_call_title">Missed call</string>
-    <string name="notification_light_voicemail_title">Voicemail</string>
-    <string name="notification_light_screen_on">Lights with screen on</string>
-    <string name="notification_light_zen_mode">Lights in Do Not Disturb mode</string>
-    <string name="notification_light_automagic">Choose colors automatically</string>
-    <string name="notification_light_automagic_summary">Choosing colors automatically</string>
-    <string name="notification_light_override">Override all apps</string>
+    <string name="notification_light_title">通知のライト</string>
+    <string name="notification_light_summary">通知の LED の色を設定する</string>
+    <string name="notification_light_general_title">一般</string>
+    <string name="notification_light_advanced_title">詳細設定</string>
+    <string name="notification_light_applist_title">アプリ</string>
+    <string name="notification_light_phonelist_title">電話</string>
+    <string name="notification_light_use_custom">カスタム値を使用</string>
+    <string name="notification_light_default_value">デフォルト</string>
+    <string name="notification_light_missed_call_title">不在着信</string>
+    <string name="notification_light_voicemail_title">ボイスメール</string>
+    <string name="notification_light_screen_on">画面点灯時でも点灯</string>
+    <string name="notification_light_zen_mode">サイレントモードでも点灯</string>
+    <string name="notification_light_automagic">色を自動的に選択</string>
+    <string name="notification_light_automagic_summary">色を自動的に選択します</string>
+    <string name="notification_light_override">すべてのアプリに対して上書き</string>
     <!-- Lights settings, LED notification -->
-    <string name="led_notification_title">Light settings</string>
-    <string name="led_notification_text">LED light enabled by settings</string>
-    <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
+    <string name="led_notification_title">ライトの設定</string>
+    <string name="led_notification_text">設定によって LED ライトが有効になっています</string>
+    <string name="notification_light_no_apps_summary">アプリごとに操作するには、メニューバーの「%1$s」をアクティブにして「\u002b」を押してください</string>
     <!-- Heads up timeout -->
-    <string name="notification_heads_up_title">Heads up</string>
-    <string name="notification_heads_up_summary">Allow pop up notifications</string>
+    <string name="notification_heads_up_title">ポップアップ通知</string>
+    <string name="notification_heads_up_summary">ポップアップ通知を有効化する</string>
     <!-- Less boring heads up -->
-    <string name="less_boring_heads_up_title">Less boring</string>
-    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
+    <string name="less_boring_heads_up_title">通知制限</string>
+    <string name="less_boring_heads_up_summary">アラーム、電話、メッセージアプリからの通知だけをポップアップ表示します</string>
     <!-- Notifications while screen on -->
     <string name="notification_sound_vib_screen_on_title">画面点灯中の通知</string>
     <string name="notification_sound_vib_screen_on_summary">画面点灯中に通知を受信したとき、通知音とバイブを鳴らします</string>
@@ -610,4 +611,24 @@
     <string name="mic_camera_privacy_indicator_summary">アプリがマイクまたはカメラを使用しているときにインジケーターを表示します</string>
     <string name="location_privacy_indicator_title">位置情報のプライバシー表示</string>
     <string name="location_privacy_indicator_summary">アプリが位置情報を使用したときにインジケーターを表示します</string>
+    <!-- Deep Sleep percentage in device info -->
+    <string name="status_sleep_time">ディープスリープ</string>
+    <!-- In-call feedback -->
+    <string name="incall_vibration_category">通話中の振動オプション</string>
+    <string name="incall_vibrate_connect_title">接続時に振動</string>
+    <string name="incall_vibrate_call_wait_title">割込通話時に振動</string>
+    <string name="incall_vibrate_disconnect_title">切断時に振動</string>
+    <!-- Blink flashlight for incoming calls -->
+    <string name="flashlight_on_call_title">着信時にライト点滅</string>
+    <string name="flashlight_on_call_disabled">無効</string>
+    <string name="flashlight_on_call_ringer">着信時</string>
+    <string name="flashlight_on_call_no_ringer">着信音がサイレントの時</string>
+    <string name="flashlight_on_call_silent">完全にサイレントの時 (着信音やバイブなし)</string>
+    <string name="flashlight_on_call_always">常時</string>
+    <string name="flashlight_on_call_ignore_dnd_title">マナーモードを無視</string>
+    <string name="flashlight_on_call_ignore_dnd_summary">マナーモード有効時に点滅させるか選択します</string>
+    <string name="flashlight_on_call_rate_title">点滅率</string>
+    <!-- Gaming mode -->
+    <string name="gaming_mode_title">ゲームスペース</string>
+    <string name="gaming_mode_summary">ゲーム体験強化のための追加機能を設定します</string>
 </resources>
