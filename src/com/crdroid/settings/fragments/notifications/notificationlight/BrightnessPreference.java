@@ -189,8 +189,6 @@ public class BrightnessPreference extends CustomDialogPref<AlertDialog>
         mBrightnessBar.setMin(LIGHT_BRIGHTNESS_MINIMUM);
         mBrightnessBar.setOnSeekBarChangeListener(this);
         mBrightnessBar.setProgress(mSeekBarBrightness);
-        mBrightnessBar.setThumb(mContext.getResources().getDrawable(
-                R.drawable.ic_brightness_thumb, mContext.getTheme()));
     }
 
     @Override
