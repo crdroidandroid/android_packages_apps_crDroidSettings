@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2021 crDroid Android Project
+     Copyright (C) 2016-2022 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -45,6 +45,13 @@
             android:title="@string/lockscreen_battery_info_title"
             android:summary="@string/lockscreen_battery_info_summary"
             android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_small_clock"
+            android:icon="@drawable/ic_digital_clock"
+            android:title="@string/lockscreen_small_clock_title"
+            android:summary="@string/lockscreen_small_clock_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
