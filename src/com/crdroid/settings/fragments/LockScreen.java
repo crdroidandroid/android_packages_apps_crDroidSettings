@@ -19,6 +19,7 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
@@ -48,11 +49,26 @@ public class LockScreen extends SettingsPreferenceFragment
 
     public static final String TAG = "LockScreen";
 
+    private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
+    private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
+
+    private Preference mRippleEffect;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
+
+        PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
+
+        FingerprintManager mFingerprintManager = (FingerprintManager)
+                getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
+        mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
+
+        if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
+            gestCategory.removePreference(mRippleEffect);
+        }
     }
 
     @Override
@@ -72,6 +88,8 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.LOCKSCREEN_ALBUMART_FILTER, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_SMALL_CLOCK, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.ENABLE_RIPPLE_EFFECT, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
@@ -88,6 +106,12 @@ public class LockScreen extends SettingsPreferenceFragment
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+
+                    FingerprintManager mFingerprintManager = (FingerprintManager)
+                            context.getSystemService(Context.FINGERPRINT_SERVICE);
+                    if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
+                        keys.add(KEY_RIPPLE_EFFECT);
+                    }
 
                     return keys;
                 }
