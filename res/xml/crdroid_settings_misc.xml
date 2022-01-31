@@ -31,6 +31,14 @@
             android:targetClass="org.exthmui.game.ui.MainActivity" />
     </Preference>
 
+    <!-- Unlimited google photos storage -->
+    <SwitchPreference
+        android:key="use_photos_spoof"
+        android:icon="@drawable/ic_backup"
+        android:title="@string/use_photos_spoof_title"
+        android:summary="@string/use_photos_spoof_summary"
+        android:defaultValue="true" />
+
     <!-- Three-fingers-swipe to screenshot -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="three_finger_gesture"
