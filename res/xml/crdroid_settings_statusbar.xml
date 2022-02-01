@@ -56,6 +56,12 @@
             android:fragment="com.crdroid.settings.fragments.statusbar.NetworkTrafficSettings" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="use_old_mobiletype"
+            android:icon="@drawable/ic_signal"
+            android:title="@string/old_mobiletype_title"
+            android:summary="@string/old_mobiletype_summary" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="data_disabled_icon"
             android:icon="@drawable/ic_network_strength_4_alert"
             android:title="@string/data_disabled_icon_title"
