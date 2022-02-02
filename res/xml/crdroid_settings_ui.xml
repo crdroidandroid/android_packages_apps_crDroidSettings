@@ -20,7 +20,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <!-- Ambient Display -->
-    <PreferenceScreen
+    <Preference
         android:key="doze_fragment"
         android:icon="@drawable/ic_ambient"
         android:title="@string/doze_display_title"
@@ -28,7 +28,7 @@
         android:fragment="com.crdroid.settings.fragments.ui.DozeSettings" />
 
     <!-- Monet Theme Engine -->
-    <PreferenceScreen
+    <Preference
         android:key="monet_engine"
         android:icon="@drawable/ic_themes"
         android:title="@string/monet_title"
