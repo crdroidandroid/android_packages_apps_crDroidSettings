@@ -27,6 +27,16 @@
         android:summary="@string/doze_display_summary"
         android:fragment="com.crdroid.settings.fragments.ui.DozeSettings" />
 
+    <!-- Screen Off animation -->
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="screen_off_animation"
+        android:icon="@drawable/ic_television_classic"
+        android:title="@string/screen_off_animation_title"
+        android:dialogTitle="@string/screen_off_animation_title"
+        android:entries="@array/screen_off_animation_entries"
+        android:entryValues="@array/screen_off_animation_values"
+        android:defaultValue="0" />
+
     <!-- Monet Theme Engine -->
     <Preference
         android:key="monet_engine"
