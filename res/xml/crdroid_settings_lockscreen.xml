@@ -67,6 +67,20 @@
             android:defaultValue="true" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="fp_success_vibrate"
+            android:icon="@drawable/ic_fp"
+            android:title="@string/fp_success_vibrate_title"
+            android:summary="@string/fp_success_vibrate_summary"
+            android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="fp_error_vibrate"
+            android:icon="@drawable/ic_fp"
+            android:title="@string/fp_error_vibrate_title"
+            android:summary="@string/fp_error_vibrate_summary"
+            android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="enable_ripple_effect"
             android:icon="@drawable/ic_unlock_outline"
             android:title="@string/enable_fingerprint_ripple_effect_title"
