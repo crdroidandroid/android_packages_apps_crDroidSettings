@@ -57,6 +57,9 @@ public class UserInterface extends SettingsPreferenceFragment {
     }
 
     public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.CHARGING_ANIMATION, 1, UserHandle.USER_CURRENT);
         DozeSettings.reset(mContext);
         MonetSettings.reset(mContext);
     }
