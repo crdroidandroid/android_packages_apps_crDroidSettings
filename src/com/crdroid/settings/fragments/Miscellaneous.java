@@ -74,6 +74,8 @@ public class Miscellaneous extends SettingsPreferenceFragment {
                 Settings.System.GAMING_MODE_DISABLE_NOTIFICATION_ALERT, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.GAMING_MODE_DISABLE_ADB, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.AUTO_BRIGHTNESS_ONE_SHOT, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
