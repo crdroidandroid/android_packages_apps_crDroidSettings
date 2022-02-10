@@ -1,6 +1,5 @@
 /**
- * Copyright (C) 2018 The LineageOS Project
- * Copyright (C) 2019 PixelExperience
+ * Copyright (C) 2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,11 +37,11 @@ import android.widget.SectionIndexer;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import androidx.preference.PreferenceFragment;
+
 import com.android.settingslib.applications.ApplicationsState;
 
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
-import com.android.settings.SettingsPreferenceFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -52,7 +51,7 @@ import java.util.Map;
 
 import com.android.internal.util.crdroid.cutout.CutoutFullscreenController;
 
-public class DisplayCutoutForceFullscreenSettings extends SettingsPreferenceFragment
+public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
         implements ApplicationsState.Callbacks {
 
     private ActivityManager mActivityManager;
@@ -87,6 +86,11 @@ public class DisplayCutoutForceFullscreenSettings extends SettingsPreferenceFrag
                              Bundle savedInstanceState) {
         getActivity().getActionBar().setTitle(R.string.display_cutout_force_fullscreen_title);
         return inflater.inflate(R.layout.cutout_force_fullscreen_layout, container, false);
+    }
+
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+
     }
 
     @Override
@@ -154,7 +158,7 @@ public class DisplayCutoutForceFullscreenSettings extends SettingsPreferenceFrag
     private void handleAppEntries(List<ApplicationsState.AppEntry> entries) {
         final ArrayList<String> sections = new ArrayList<String>();
         final ArrayList<Integer> positions = new ArrayList<Integer>();
-        final PackageManager pm = getPackageManager();
+        final PackageManager pm = getActivity().getPackageManager();
         String lastSectionIndex = null;
         int offset = 0;
 
@@ -351,28 +355,15 @@ public class DisplayCutoutForceFullscreenSettings extends SettingsPreferenceFrag
         @Override
         public void init() {}
 
-        private final String[] hideApps = {"com.android.settings", "com.android.documentsui",
-            "com.android.fmradio", "com.caf.fmradio", "com.android.stk",
-            "com.google.android.calculator", "com.google.android.calendar",
-            "com.google.android.deskclock", "com.google.android.contacts",
-            "com.google.android.apps.messaging", "com.google.android.googlequicksearchbox",
-            "com.android.vending", "com.google.android.dialer",
-            "com.google.android.apps.wallpaper", "com.google.android.as"};
-
         @Override
         public boolean filterApp(ApplicationsState.AppEntry entry) {
             boolean show = !mAllPackagesAdapter.mEntries.contains(entry.info.packageName);
             if (show) {
                 synchronized (mLauncherResolveInfoList) {
-                    show = mLauncherResolveInfoList.contains(entry.info.packageName) && !Arrays.asList(hideApps).contains(entry.info.packageName);
+                    show = mLauncherResolveInfoList.contains(entry.info.packageName) && !entry.info.isSystemApp();
                 }
             }
             return show;
         }
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.CRDROID_SETTINGS;
     }
 }

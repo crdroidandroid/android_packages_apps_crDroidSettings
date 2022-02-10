@@ -23,6 +23,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
+import android.text.TextUtils;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -47,13 +48,26 @@ public class UserInterface extends SettingsPreferenceFragment {
 
     public static final String TAG = "UserInterface";
 
+    private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
+
+    private SwitchPreference mShowCutoutForce;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Context mContext = getActivity().getApplicationContext();
-
         addPreferencesFromResource(R.xml.crdroid_settings_ui);
+
+        Context mContext = getActivity().getApplicationContext();
+        final PreferenceScreen prefScreen = getPreferenceScreen();
+
+	    final String displayCutout =
+            mContext.getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
+
+        if (TextUtils.isEmpty(displayCutout)) {
+            mShowCutoutForce = (SwitchPreference) findPreference(KEY_FORCE_FULL_SCREEN);
+            prefScreen.removePreference(mShowCutoutForce);
+        }
     }
 
     public static void reset(Context mContext) {
@@ -78,6 +92,13 @@ public class UserInterface extends SettingsPreferenceFragment {
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
+
+	                final String displayCutout =
+                        context.getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
+
+                    if (TextUtils.isEmpty(displayCutout)) {
+                        keys.add(KEY_FORCE_FULL_SCREEN);
+                    }
 
                     return keys;
                 }
