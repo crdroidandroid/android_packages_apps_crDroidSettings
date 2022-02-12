@@ -31,6 +31,13 @@
             android:targetClass="org.exthmui.game.ui.MainActivity" />
     </Preference>
 
+    <!-- Unlock FPS for specific games -->
+    <SwitchPreference
+        android:key="use_games_spoof"
+        android:icon="@drawable/ic_backup"
+        android:title="@string/use_games_spoof_title"
+        android:summary="@string/use_games_spoof_summary" />
+
     <!-- Unlimited google photos storage -->
     <SwitchPreference
         android:key="use_photos_spoof"
