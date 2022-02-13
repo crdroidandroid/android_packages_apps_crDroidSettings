@@ -50,7 +50,7 @@ public class UserInterface extends SettingsPreferenceFragment {
 
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
 
-    private SwitchPreference mShowCutoutForce;
+    private Preference mShowCutoutForce;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,7 +65,7 @@ public class UserInterface extends SettingsPreferenceFragment {
             mContext.getResources().getString(com.android.internal.R.string.config_mainBuiltInDisplayCutout);
 
         if (TextUtils.isEmpty(displayCutout)) {
-            mShowCutoutForce = (SwitchPreference) findPreference(KEY_FORCE_FULL_SCREEN);
+            mShowCutoutForce = (Preference) findPreference(KEY_FORCE_FULL_SCREEN);
             prefScreen.removePreference(mShowCutoutForce);
         }
     }
