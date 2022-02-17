@@ -19,6 +19,7 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemProperties;
@@ -44,6 +45,8 @@ import com.crdroid.settings.utils.TelephonyUtils;
 import java.util.List;
 import java.util.ArrayList;
 
+import lineageos.providers.LineageSettings;
+
 @SearchIndexable
 public class Sound extends SettingsPreferenceFragment {
 
@@ -53,6 +56,9 @@ public class Sound extends SettingsPreferenceFragment {
     private static final String KEY_VIBRATE_CONNECT = "vibrate_on_connect";
     private static final String KEY_VIBRATE_CALLWAITING = "vibrate_on_callwaiting";
     private static final String KEY_VIBRATE_DISCONNECT = "vibrate_on_disconnect";
+    private static final String KEY_VOLUME_PANEL_LEFT = "volume_panel_on_left";
+
+    private SwitchPreference mVolumePanelLeft;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,6 +67,15 @@ public class Sound extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.crdroid_settings_sound);
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        boolean isAudioPanelOnLeft = LineageSettings.Secure.getIntForUser(resolver,
+                LineageSettings.Secure.VOLUME_PANEL_ON_LEFT, isAudioPanelOnLeftSide(getActivity()) ? 1 : 0,
+                UserHandle.USER_CURRENT) != 0;
+
+        mVolumePanelLeft = (SwitchPreference) prefScreen.findPreference(KEY_VOLUME_PANEL_LEFT);
+        mVolumePanelLeft.setChecked(isAudioPanelOnLeft);
 
         final PreferenceCategory vibCategory = prefScreen.findPreference(KEY_VIBRATE_CATEGORY);
 
@@ -71,6 +86,9 @@ public class Sound extends SettingsPreferenceFragment {
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
+        LineageSettings.Secure.putIntForUser(resolver,
+                LineageSettings.Secure.VOLUME_PANEL_ON_LEFT, isAudioPanelOnLeftSide(mContext) ? 1 : 0,
+                UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.VIBRATE_ON_CONNECT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -80,6 +98,17 @@ public class Sound extends SettingsPreferenceFragment {
         Settings.System.putIntForUser(resolver,
                 Settings.System.VOLUME_DIALOG_TIMEOUT, 3, UserHandle.USER_CURRENT);
         PulseSettings.reset(mContext);
+    }
+
+    private static boolean isAudioPanelOnLeftSide(Context context) {
+        try {
+            Context con = context.createPackageContext("org.lineageos.lineagesettings", 0);
+            int id = con.getResources().getIdentifier("def_volume_panel_on_left",
+                    "bool", "org.lineageos.lineagesettings");
+            return con.getResources().getBoolean(id);
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
 
     @Override

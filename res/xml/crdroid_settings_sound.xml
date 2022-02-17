@@ -40,6 +40,11 @@
         android:key="volume_panel"
         android:title="@string/volume_panel_category" >
 
+        <lineageos.preference.LineageSecureSettingSwitchPreference
+            android:key="volume_panel_on_left"
+            android:icon="@drawable/ic_settings_sound"
+            android:title="@string/volume_panel_on_left_title" />
+
         <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="volume_dialog_timeout"
             android:icon="@drawable/ic_music_note"
