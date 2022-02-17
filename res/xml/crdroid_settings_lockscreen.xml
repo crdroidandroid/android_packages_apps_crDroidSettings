@@ -23,6 +23,12 @@
         android:key="lockscreen_interface_category"
         android:title="@string/lockscreen_interface_category">
 
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_weather_enabled"
+            android:icon="@drawable/ic_weather"
+            android:title="@string/lock_screen_weather_title"
+            android:summary="@string/lock_screen_weather_summary" />
+
         <lineageos.preference.LineageSecureSettingSwitchPreference
             android:key="lockscreen_media_metadata"
             android:icon="@drawable/ic_movie"
