@@ -33,7 +33,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.text.TextUtils;
 import androidx.preference.PreferenceViewHolder;
 import android.view.ViewGroup.LayoutParams;
@@ -43,8 +42,6 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import androidx.recyclerview.widget.RecyclerView;
-import android.net.Uri;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceScreen;
@@ -60,7 +57,6 @@ import com.bumptech.glide.Glide;
 import com.android.internal.util.crdroid.ThemeUtils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -84,7 +80,6 @@ public class SignalIcons extends SettingsPreferenceFragment {
 
         mThemeUtils = new ThemeUtils(getActivity());
         mPkgs = mThemeUtils.getOverlayPackagesForCategory(mCategory, "android");
-        Collections.sort(mPkgs);
     }
 
     @Override
@@ -203,10 +198,6 @@ public class SignalIcons extends SettingsPreferenceFragment {
             Resources res = pkg.equals("android") ? Resources.getSystem()
                     : pm.getResourcesForApplication(pkg);
             int resId = res.getIdentifier(drawableName, "drawable", pkg);
-            if (resId == 0) {
-                return Resources.getSystem().getDrawable(
-                        Resources.getSystem().getIdentifier(drawableName, "drawable", "android"));
-            }
             return res.getDrawable(resId);
         }
         catch (PackageManager.NameNotFoundException e) {
@@ -227,18 +218,6 @@ public class SignalIcons extends SettingsPreferenceFragment {
     }
 
     public void enableOverlays(int position) {
-        mThemeUtils.setOverlayEnabled(mCategory, mPkgs.get(position));
-    }
-
-    public void enableOverlay(String category, String target, String pattern) {
-        if (pattern.isEmpty()) {
-            mThemeUtils.setOverlayEnabled(category, "android");
-            return;
-        }
-        for (String pkg: mThemeUtils.getOverlayPackagesForCategory(category, target)) {
-            if (pkg.contains(pattern)) {
-                mThemeUtils.setOverlayEnabled(category, pkg);
-            }
-        }
+        mThemeUtils.setOverlayEnabled(mCategory, mPkgs.get(position), "android");
     }
 }
