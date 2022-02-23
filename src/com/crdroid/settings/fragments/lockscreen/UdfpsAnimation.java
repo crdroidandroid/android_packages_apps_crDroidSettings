@@ -84,6 +84,7 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
     private String[] mTitles;
 
     private boolean mEnabled;
+    private UdfpsAnimAdapter mUdfpsAnimAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -118,8 +119,7 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 3);
         mRecyclerView.setLayoutManager(gridLayoutManager);
-        UdfpsAnimAdapter mUdfpsAnimAdapter = new UdfpsAnimAdapter(getActivity());
-        mRecyclerView.setAdapter(mUdfpsAnimAdapter);
+        mUdfpsAnimAdapter = new UdfpsAnimAdapter(getActivity());
 
         return view;
     }
@@ -143,15 +143,15 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
     public void onSwitchChanged(Switch switchView, boolean isChecked) {
         Settings.System.putInt(getActivity().getContentResolver(),
                 Settings.System.UDFPS_ANIM, isChecked ? 1 : 0);
+        mSwitch.setChecked(isChecked);
         setEnabled(isChecked);
     }
 
     public void setEnabled(boolean enabled) {
-        for (int i = 0; i < mRecyclerView.getChildCount(); ++i) {
-            RecyclerView.ViewHolder holder = mRecyclerView.getChildViewHolder(mRecyclerView.getChildAt(i));
-            holder.itemView.setEnabled(enabled);
-            holder.itemView.findViewById(R.id.option_thumbnail).setAlpha(enabled ? 1f : 0.5f);
-            holder.itemView.findViewById(R.id.option_label).setAlpha(enabled ? 1f : 0.5f);
+        if (enabled) {
+            mRecyclerView.setAdapter(mUdfpsAnimAdapter);
+        } else {
+            mRecyclerView.setAdapter(null);
         }
     }
 
@@ -215,10 +215,6 @@ public class UdfpsAnimation extends SettingsPreferenceFragment implements
                             Settings.System.UDFPS_ANIM_STYLE, position);
                 }
             });
-
-            holder.itemView.setEnabled(mEnabled);
-            holder.itemView.findViewById(R.id.option_thumbnail).setAlpha(mEnabled ? 1f : 0.5f);
-            holder.itemView.findViewById(R.id.option_label).setAlpha(mEnabled ? 1f : 0.5f);
         }
 
         @Override
