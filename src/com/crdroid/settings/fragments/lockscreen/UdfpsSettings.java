@@ -45,28 +45,34 @@ import com.android.settings.SettingsPreferenceFragment;
 
 public class UdfpsSettings extends SettingsPreferenceFragment {
 
-    private static final String UDFPS_ICON_PICKER = "udfps_icon_picker";
     private static final String UDFPS_ANIM_PREVIEW = "udfps_recognizing_animation_preview";
 
-    private Preference mUdfpsIconPicker;
     private Preference mUdfpsAnimPreview;
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.udfps_settings);
 
         final PreferenceScreen prefSet = getPreferenceScreen();
         Resources resources = getResources();
 
         final boolean udfpsResPkgInstalled = Utils.isPackageInstalled(getContext(),
-                "com.crdroid.udfps.resources");
-        mUdfpsIconPicker = findPreference(UDFPS_ICON_PICKER);
+                "com.crdroid.udfps.animations");
         mUdfpsAnimPreview = findPreference(UDFPS_ANIM_PREVIEW);
         if (!udfpsResPkgInstalled) {
-            prefSet.removePreference(mUdfpsIconPicker);
             prefSet.removePreference(mUdfpsAnimPreview);
         }
+    }
+
+    public static void reset(Context mContext) {
+        ContentResolver resolver = mContext.getContentResolver();
+        Settings.System.putIntForUser(resolver,
+                Settings.System.UDFPS_ANIM, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.UDFPS_ANIM_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.UDFPS_ICON, 0, UserHandle.USER_CURRENT);
     }
 
     @Override

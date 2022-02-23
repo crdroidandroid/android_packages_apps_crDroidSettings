@@ -33,11 +33,14 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.crdroid.Utils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
+
+import com.crdroid.settings.fragments.lockscreen.UdfpsSettings;
 
 import java.util.List;
 
@@ -49,14 +52,17 @@ public class LockScreen extends SettingsPreferenceFragment
 
     public static final String TAG = "LockScreen";
 
+    private static final String LOCKSCREEN_INTERFACE_CATEGORY = "lockscreen_interface_category";
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
-    private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
+    private static final String KEY_UDFPS_SETTINGS = "udfps_settings";
     private static final String KEY_FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String KEY_FP_ERROR_VIBRATE = "fp_error_vibrate";
+    private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
 
-    private Preference mRippleEffect;
+    private Preference mUdfpsSettings;
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
+    private Preference mRippleEffect;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,18 +70,28 @@ public class LockScreen extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
 
+        PreferenceCategory interfaceCategory = (PreferenceCategory) findPreference(LOCKSCREEN_INTERFACE_CATEGORY);
         PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
 
         FingerprintManager mFingerprintManager = (FingerprintManager)
                 getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-        mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
+        mUdfpsSettings = (Preference) findPreference(KEY_UDFPS_SETTINGS);
         mFingerprintVib = (Preference) findPreference(KEY_FP_SUCCESS_VIBRATE);
         mFingerprintVibErr = (Preference) findPreference(KEY_FP_ERROR_VIBRATE);
+        mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
-            gestCategory.removePreference(mRippleEffect);
+            interfaceCategory.removePreference(mUdfpsSettings);
             gestCategory.removePreference(mFingerprintVib);
             gestCategory.removePreference(mFingerprintVibErr);
+            gestCategory.removePreference(mRippleEffect);
+        } else {
+            if (!Utils.isPackageInstalled(getContext(), "com.crdroid.udfps.icons")) {
+                interfaceCategory.removePreference(mUdfpsSettings);
+            } else {
+                gestCategory.removePreference(mFingerprintVib);
+                gestCategory.removePreference(mFingerprintVibErr);
+            }
         }
     }
 
@@ -102,6 +118,7 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.FP_ERROR_VIBRATE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT);
+        UdfpsSettings.reset(mContext);
     }
 
     @Override
@@ -122,9 +139,17 @@ public class LockScreen extends SettingsPreferenceFragment
                     FingerprintManager mFingerprintManager = (FingerprintManager)
                             context.getSystemService(Context.FINGERPRINT_SERVICE);
                     if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
-                        keys.add(KEY_RIPPLE_EFFECT);
+                        keys.add(KEY_UDFPS_SETTINGS);
                         keys.add(KEY_FP_SUCCESS_VIBRATE);
                         keys.add(KEY_FP_ERROR_VIBRATE);
+                        keys.add(KEY_RIPPLE_EFFECT);
+                    } else {
+                        if (!Utils.isPackageInstalled(context, "com.crdroid.udfps.icons")) {
+                            keys.add(KEY_UDFPS_SETTINGS);
+                        } else {
+                            keys.add(KEY_FP_SUCCESS_VIBRATE);
+                            keys.add(KEY_FP_ERROR_VIBRATE);
+                        }
                     }
 
                     return keys;
