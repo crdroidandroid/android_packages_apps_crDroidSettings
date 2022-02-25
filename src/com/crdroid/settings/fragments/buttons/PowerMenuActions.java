@@ -16,6 +16,7 @@
 
 package com.crdroid.settings.fragments.buttons;
 
+import android.Manifest;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.pm.UserInfo;
@@ -23,6 +24,7 @@ import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.provider.Settings;
+import android.service.controls.ControlsProviderService;
 
 import androidx.preference.SwitchPreference;
 import androidx.preference.Preference;
@@ -36,6 +38,7 @@ import java.util.List;
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settingslib.applications.ServiceListing;
 
 import com.android.settings.R;
 
@@ -59,6 +62,7 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
     private SwitchPreference mUsersPref;
     private SwitchPreference mLockDownPref;
     private SwitchPreference mEmergencyPref;
+    private SwitchPreference mDeviceControlsPref;
 
     private LineageGlobalActions mLineageGlobalActions;
 
@@ -91,6 +95,8 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
                 mLockDownPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_LOCKDOWN);
             } else if (action.equals(GLOBAL_ACTION_KEY_EMERGENCY)) {
                 mEmergencyPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_EMERGENCY);
+            } else if (action.equals(GLOBAL_ACTION_KEY_DEVICECONTROLS)) {
+                mDeviceControlsPref = findPreference(GLOBAL_ACTION_KEY_DEVICECONTROLS);
             }
         }
 
@@ -122,6 +128,23 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         if (mEmergencyPref != null) {
             mEmergencyPref.setChecked(mLineageGlobalActions.userConfigContains(
                     GLOBAL_ACTION_KEY_EMERGENCY));
+        }
+
+        if (mDeviceControlsPref != null) {
+            mDeviceControlsPref.setChecked(mLineageGlobalActions.userConfigContains(
+                    GLOBAL_ACTION_KEY_DEVICECONTROLS));
+
+            // Enable preference if any device control app is installed
+            ServiceListing serviceListing = new ServiceListing.Builder(mContext)
+                    .setIntentAction(ControlsProviderService.SERVICE_CONTROLS)
+                    .setPermission(Manifest.permission.BIND_CONTROLS)
+                    .setNoun("Controls Provider")
+                    .setSetting("controls_providers")
+                    .setTag("controls_providers")
+                    .build();
+            serviceListing.addCallback(
+                    services -> mDeviceControlsPref.setEnabled(!services.isEmpty()));
+            serviceListing.reload();
         }
 
         updatePreferences();
@@ -160,6 +183,10 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         } else if (preference == mEmergencyPref) {
             value = mEmergencyPref.isChecked();
             mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_EMERGENCY);
+
+        } else if (preference == mDeviceControlsPref) {
+            value = mDeviceControlsPref.isChecked();
+            mLineageGlobalActions.updateUserConfig(value, GLOBAL_ACTION_KEY_DEVICECONTROLS);
 
         } else {
             return super.onPreferenceTreeClick(preference);

@@ -60,6 +60,13 @@
             android:icon="@drawable/ic_emergency"
             android:title="@string/power_menu_emergency_title"
             android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="devicecontrols"
+            android:icon="@drawable/ic_controls_icon"
+            android:title="@string/power_menu_devicecontrols_title"
+            android:defaultValue="false"
+            android:enabled="false" />
     </PreferenceCategory>
 
     <PreferenceCategory
