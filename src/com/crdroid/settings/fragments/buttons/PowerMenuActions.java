@@ -26,6 +26,7 @@ import android.provider.Settings;
 
 import androidx.preference.SwitchPreference;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
 
 import org.lineageos.internal.util.PowerMenuConstants;
 
@@ -38,6 +39,8 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.settings.R;
 
+import com.crdroid.settings.utils.TelephonyUtils;
+
 import lineageos.app.LineageGlobalActions;
 import lineageos.providers.LineageSettings;
 
@@ -45,6 +48,10 @@ import static org.lineageos.internal.util.PowerMenuConstants.*;
 
 public class PowerMenuActions extends SettingsPreferenceFragment {
     final static String TAG = "PowerMenuActions";
+
+    private static final String CATEGORY_POWER_MENU_ITEMS = "power_menu_items";
+
+    private PreferenceCategory mPowerMenuItemsCategory;
 
     private SwitchPreference mScreenshotPref;
     private SwitchPreference mOnTheGoPref;
@@ -69,6 +76,8 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         mUserManager = UserManager.get(mContext);
         mLineageGlobalActions = LineageGlobalActions.getInstance(mContext);
 
+        mPowerMenuItemsCategory = findPreference(CATEGORY_POWER_MENU_ITEMS);
+
         for (String action : PowerMenuConstants.getAllActions()) {
             if (action.equals(GLOBAL_ACTION_KEY_SCREENSHOT)) {
                 mScreenshotPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SCREENSHOT);
@@ -83,6 +92,11 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
             } else if (action.equals(GLOBAL_ACTION_KEY_EMERGENCY)) {
                 mEmergencyPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_EMERGENCY);
             }
+        }
+
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            mPowerMenuItemsCategory.removePreference(mEmergencyPref);
+            mEmergencyPref = null;
         }
     }
 
@@ -167,7 +181,7 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
         }
         if (mUsersPref != null) {
             if (!UserHandle.MU_ENABLED || !UserManager.supportsMultipleUsers()) {
-                getPreferenceScreen().removePreference(findPreference(GLOBAL_ACTION_KEY_USERS));
+                mPowerMenuItemsCategory.removePreference(mUsersPref);
                 mUsersPref = null;
             } else {
                 List<UserInfo> users = mUserManager.getUsers();
