@@ -95,6 +95,13 @@
             android:title="@string/qs_show_auto_brightness_title"
             android:summary="@string/qs_show_auto_brightness_summary"
             android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="secure_lockscreen_qs_disabled"
+            android:icon="@drawable/ic_lock_alert"
+            android:title="@string/disable_qs_title"
+            android:summary="@string/disable_qs_summary"/>
+
     </PreferenceCategory>
 
     <PreferenceCategory 
