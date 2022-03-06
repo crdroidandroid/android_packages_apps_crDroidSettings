@@ -33,6 +33,13 @@
         android:summary="@string/notification_sound_vib_screen_on_summary"
         android:defaultValue="true" />
 
+    <!-- Notification guts kill app button -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="notification_guts_kill_app_button"
+        android:icon="@drawable/ic_kill"
+        android:title="@string/notification_guts_kill_app_button_title"
+        android:summary="@string/notification_guts_kill_app_button_summary" />
+
     <PreferenceCategory
         android:key="heads_up"
         android:title="@string/notification_heads_up_title">
