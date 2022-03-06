@@ -190,18 +190,18 @@
     <string name="volume_answer_call_title">Přijmout hovor</string>
     <string name="volume_answer_call_summary">Přijmout příchozí hovory stiskem jednoho z\u00a0tlačítek hlasitosti</string>
     <!-- Key backlight -->
-    <string name="button_backlight_title">Backlight</string>
-    <string name="button_backlight_summary">Customize button backlight settings</string>
-    <string name="button_backlight_enabled">Illuminate buttons</string>
-    <string name="button_backlight_only_when_pressed_title">Illuminate buttons only when pressed</string>
-    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
-    <string name="button_backlight_seekbar_title">Button brightness</string>
-    <string name="keyboard_backlight_seekbar_title">Keyboard brightness</string>
-    <string name="backlight_timeout_title">Illumination timeout</string>
-    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
-    <string name="backlight_summary_disabled">Disabled</string>
-    <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
-    <string name="backlight_summary_enabled">Enabled</string>
+    <string name="button_backlight_title">Podsvícení</string>
+    <string name="button_backlight_summary">Přizpůsobit nastavení podsvícení tlačítek</string>
+    <string name="button_backlight_enabled">Podsvítit tlačítka</string>
+    <string name="button_backlight_only_when_pressed_title">Podsvítit tlačítka pouze při jejich stisknutí</string>
+    <string name="keyboard_backlight_enabled">Podsvítit klávesnici</string>
+    <string name="button_backlight_seekbar_title">Intenzita podsvícení tlačítek</string>
+    <string name="keyboard_backlight_seekbar_title">Intenzita podsvícení klávesnice</string>
+    <string name="backlight_timeout_title">Doba trvání podsvícení</string>
+    <string name="backlight_timeout_unlimited">Nevypínat podsvícení</string>
+    <string name="backlight_summary_disabled">Nepodsvěcovat</string>
+    <string name="backlight_summary_enabled_with_timeout">Podsvícení zapnuto na <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Podsvícení zapnuto</string>
     <!-- Power menu -->
     <string name="power_menu_title">Menu napájení</string>
     <string name="power_menu_summary">Přizpůsobit možnosti Menu napájení</string>
@@ -219,6 +219,7 @@
     <string name="power_menu_users_title">Uživatelé</string>
     <string name="power_menu_logout_title">Odhlásit</string>
     <string name="power_menu_emergency_title">Stav nouze</string>
+    <string name="power_menu_devicecontrols_title">Ovládání zařízení</string>
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Rozšířený restart</string>
     <string name="advanced_reboot_summary">Pokud je povolen, v\u00a0Menu napájení jsou také zahrnuty možnosti restartovat zařízení do recovery nebo bootloaderu</string>
@@ -329,7 +330,8 @@
     <string name="status_bar_clock_position_center">Uprostřed</string>
     <string name="status_bar_clock_position_hidden">Skryté</string>
     <string name="status_bar_clock_auto_hide_title">Automaticky skrývat</string>
-    <string name="status_bar_clock_auto_hide_summary">Skrývat a\u00a0zobrazovat hodiny v\u00a0pravidelném intervalu pro ušetření místa na stavovém řádku</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">Skrýt hodiny, pokud je spouštěč viditelný</string>
+    <string name="status_bar_clock_auto_hide_summary">Skrývat hodiny v\u00a0pravidelném intervalu</string>
     <string name="status_bar_clock_auto_hide_hdur_title">Doba trvání skrytí</string>
     <string name="status_bar_clock_auto_hide_hdur_summary">Počet sekund, po které budou hodiny skryty</string>
     <string name="status_bar_clock_auto_hide_sdur_title">Doba trvání zobrazení</string>
@@ -701,8 +703,8 @@
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
-    <string name="alert_slider_notifications_title">Alert slider notifications</string>
-    <string name="alert_slider_notifications_summary">Display notification when changing alert slider position</string>
+    <string name="alert_slider_notifications_title">Oznámení posuvníku upozornění</string>
+    <string name="alert_slider_notifications_summary">Zobrazit oznámení při změně polohy posuvníku upozornění</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Aplikace přes celou obrazovku</string>
     <string name="display_cutout_force_fullscreen_summary">Vynutit, aby aplikace ignorovaly výřez v\u00a0displeji</string>
@@ -746,7 +748,7 @@
     <string name="wifi_timeout_summary_auto">Wi‑Fi bude vypnuta po <xliff:g id="timeout_description">%1$s</xliff:g>, pokud není připojena žádná síť</string>
     <string name="bluetooth_timeout">Časový limit Bluetooth</string>
     <string name="bluetooth_timeout_summary">Nevypínat Bluetooth automaticky</string>
-    <string name="bluetooth_timeout_summary_auto">Bluetooth will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no devices connected</string>
+    <string name="bluetooth_timeout_summary_auto">Pokud nejsou připojena žádná zařízení, Bluetooth se vypne za <xliff:g id="timeout_description">%1$s</xliff:g></string>
     <string name="custom_timeout_summary_never">Nikdy</string>
     <string name="custom_timeout_summary_15secs">Po 15\u00a0sekundách</string>
     <string name="custom_timeout_summary_30secs">Po 30\u00a0sekundách</string>
@@ -762,4 +764,11 @@
     <!-- Disable QS -->
     <string name="disable_qs_title">Skrýt QS na zabezpečené obrazovce uzamčení</string>
     <string name="disable_qs_summary">Zabránit přístupu k\u00a0dlaždicím Rychlého nastavení na zabezpečené obrazovce uzamčení</string>
+    <!-- Power menu on secure lockscreen -->
+    <string name="lockscreen_enable_power_menu_title">Power menu</string>
+    <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lockscreen</string>
+    <!-- Gesture navbar length -->
+    <string name="gesture_navbar_length_title">Pill length</string>
+    <string name="short_label">Short</string>
+    <string name="long_label">Long</string>
 </resources>

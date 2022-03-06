@@ -191,17 +191,17 @@
     <string name="volume_answer_call_summary">Ответ на входящий вызов кнопками громкости</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">Подсветка</string>
-    <string name="button_backlight_summary">Настройка параметров подсветки кнопок</string>
-    <string name="button_backlight_enabled">Illuminate buttons</string>
-    <string name="button_backlight_only_when_pressed_title">Illuminate buttons only when pressed</string>
-    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
-    <string name="button_backlight_seekbar_title">Button brightness</string>
-    <string name="keyboard_backlight_seekbar_title">Keyboard brightness</string>
-    <string name="backlight_timeout_title">Illumination timeout</string>
-    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
-    <string name="backlight_summary_disabled">Disabled</string>
-    <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
-    <string name="backlight_summary_enabled">Enabled</string>
+    <string name="button_backlight_summary">Настройка подсветки кнопок</string>
+    <string name="button_backlight_enabled">Подсветка кнопок</string>
+    <string name="button_backlight_only_when_pressed_title">Подсветка кнопок только при нажатии</string>
+    <string name="keyboard_backlight_enabled">Подсветка клавиатуры</string>
+    <string name="button_backlight_seekbar_title">Яркость кнопок</string>
+    <string name="keyboard_backlight_seekbar_title">Яркость клавиатуры</string>
+    <string name="backlight_timeout_title">Длительность подсветки</string>
+    <string name="backlight_timeout_unlimited">Не выключать</string>
+    <string name="backlight_summary_disabled">Выключена</string>
+    <string name="backlight_summary_enabled_with_timeout">Включена на <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Включена</string>
     <!-- Power menu -->
     <string name="power_menu_title">Меню питания</string>
     <string name="power_menu_summary">Настройка параметров меню питания</string>
@@ -219,6 +219,7 @@
     <string name="power_menu_users_title">Пользователи</string>
     <string name="power_menu_logout_title">Выйти</string>
     <string name="power_menu_emergency_title">Экстренный вызов</string>
+    <string name="power_menu_devicecontrols_title">Управление устройством</string>
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Расширенная перезагрузка</string>
     <string name="advanced_reboot_summary">Когда устройство разблокировано, в меню питания доступны опции перезагрузки в режим восстановления и в загрузчик</string>
@@ -328,8 +329,9 @@
     <string name="status_bar_clock_position_left">Слева</string>
     <string name="status_bar_clock_position_center">По центру</string>
     <string name="status_bar_clock_position_hidden">Не показывать</string>
-    <string name="status_bar_clock_auto_hide_title">Автоскрытие</string>
-    <string name="status_bar_clock_auto_hide_summary">Скрывать и показывать часы с регулярным интервалом для экономии места в строке состояния</string>
+    <string name="status_bar_clock_auto_hide_title">Скрыть автоматически</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">Скрыть часы, если открыт рабочий стол</string>
+    <string name="status_bar_clock_auto_hide_summary">Скрывать и показывать часы с регулярным интервалом</string>
     <string name="status_bar_clock_auto_hide_hdur_title">Длительность скрытия</string>
     <string name="status_bar_clock_auto_hide_hdur_summary">Количество секунд до скрытия часов</string>
     <string name="status_bar_clock_auto_hide_sdur_title">Длительность отображения</string>
@@ -762,4 +764,11 @@
     <!-- Disable QS -->
     <string name="disable_qs_title">Скрыть быстрые настройки на экране блокировки</string>
     <string name="disable_qs_summary">Запретить доступ к быстрым настройкам на экране блокировки</string>
+    <!-- Power menu on secure lockscreen -->
+    <string name="lockscreen_enable_power_menu_title">Меню питанияu</string>
+    <string name="lockscreen_enable_power_menu_summary">Разрешить доступ к меню кнопки питания на защищённом экране блокировки</string>
+    <!-- Gesture navbar length -->
+    <string name="gesture_navbar_length_title">Расстояние смахивания</string>
+    <string name="short_label">Короткое</string>
+    <string name="long_label">Длинное</string>
 </resources>

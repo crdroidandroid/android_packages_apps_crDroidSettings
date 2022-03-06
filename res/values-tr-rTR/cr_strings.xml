@@ -190,18 +190,18 @@
     <string name="volume_answer_call_title">Aramayı cevapla</string>
     <string name="volume_answer_call_summary">Ses tuşlarına basarak gelen aramaları cevapla</string>
     <!-- Key backlight -->
-    <string name="button_backlight_title">Backlight</string>
-    <string name="button_backlight_summary">Customize button backlight settings</string>
-    <string name="button_backlight_enabled">Illuminate buttons</string>
-    <string name="button_backlight_only_when_pressed_title">Illuminate buttons only when pressed</string>
-    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
-    <string name="button_backlight_seekbar_title">Button brightness</string>
-    <string name="keyboard_backlight_seekbar_title">Keyboard brightness</string>
-    <string name="backlight_timeout_title">Illumination timeout</string>
-    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
-    <string name="backlight_summary_disabled">Disabled</string>
-    <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
-    <string name="backlight_summary_enabled">Enabled</string>
+    <string name="button_backlight_title">Arka ışık</string>
+    <string name="button_backlight_summary">Tuş arka ışık ayarlarını özelleştir</string>
+    <string name="button_backlight_enabled">Tuşları aydınlat</string>
+    <string name="button_backlight_only_when_pressed_title">Tuşları yalnızca basıldığında aydınlat</string>
+    <string name="keyboard_backlight_enabled">Klavyeyi aydınlat</string>
+    <string name="button_backlight_seekbar_title">Tuş parlaklığı</string>
+    <string name="keyboard_backlight_seekbar_title">Klavye parlaklığı</string>
+    <string name="backlight_timeout_title">Aydınlatma zaman aşımı</string>
+    <string name="backlight_timeout_unlimited">Kapatma</string>
+    <string name="backlight_summary_disabled">Devre dışı</string>
+    <string name="backlight_summary_enabled_with_timeout"><xliff:g id="timeout"> %s </xliff:g> için etkin</string>
+    <string name="backlight_summary_enabled">Etkin</string>
     <!-- Power menu -->
     <string name="power_menu_title">Güç menüsü</string>
     <string name="power_menu_summary">Güç menüsü seçeneklerini özelleştirin</string>
@@ -219,6 +219,7 @@
     <string name="power_menu_users_title">Kullanıcılar</string>
     <string name="power_menu_logout_title">Çıkış</string>
     <string name="power_menu_emergency_title">Acil durum</string>
+    <string name="power_menu_devicecontrols_title">Cihaz kontrolü</string>
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Gelişmiş yeniden başlatma</string>
     <string name="advanced_reboot_summary">Kilit açıldığında kurtarma veya önyükleme modunda yeniden başlatmak için güç menüsüne seçenekler ekler</string>
@@ -329,7 +330,8 @@
     <string name="status_bar_clock_position_center">Orta</string>
     <string name="status_bar_clock_position_hidden">Gizli</string>
     <string name="status_bar_clock_auto_hide_title">Otomatik gizle</string>
-    <string name="status_bar_clock_auto_hide_summary">Durum çubuğu alanından tasarruf etmek için saati düzenli aralıklarla gizleyin ve görüntüleyin</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">Başlatıcı görünürse saati gizle</string>
+    <string name="status_bar_clock_auto_hide_summary">Saati düzenli aralıklarla gizle</string>
     <string name="status_bar_clock_auto_hide_hdur_title">Gizleme süresi</string>
     <string name="status_bar_clock_auto_hide_hdur_summary">Saati gizlemek için saniye sayısı</string>
     <string name="status_bar_clock_auto_hide_sdur_title">Süreyi göster</string>
@@ -762,4 +764,11 @@
     <!-- Disable QS -->
     <string name="disable_qs_title">Güvenli kilit ekranında hızlı ayarları gizle</string>
     <string name="disable_qs_summary">Güvenli kilit ekranında Hızlı ayarlar karelerine erişimi engelle</string>
+    <!-- Power menu on secure lockscreen -->
+    <string name="lockscreen_enable_power_menu_title">Güç menüsü</string>
+    <string name="lockscreen_enable_power_menu_summary">Güvenli kilit ekranında güç menüsüne erişime izin ver</string>
+    <!-- Gesture navbar length -->
+    <string name="gesture_navbar_length_title">Pill length</string>
+    <string name="short_label">Short</string>
+    <string name="long_label">Long</string>
 </resources>
