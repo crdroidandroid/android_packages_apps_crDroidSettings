@@ -23,6 +23,7 @@ import android.content.pm.PackageManager;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.view.LayoutInflater;
@@ -154,6 +155,8 @@ public class NavbarStyles extends SettingsPreferenceFragment {
                     updateActivatedStatus(navPkg, true);
                     mSelectedPkg = navPkg;
                     enableOverlays(position);
+                    Settings.System.putStringForUser(getContext().getContentResolver(),
+                            Settings.System.NAVBAR_STYLE, navPkg, UserHandle.USER_CURRENT);
                 }
             });
         }
