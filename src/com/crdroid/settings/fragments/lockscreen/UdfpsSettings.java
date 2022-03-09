@@ -46,8 +46,10 @@ import com.android.settings.SettingsPreferenceFragment;
 public class UdfpsSettings extends SettingsPreferenceFragment {
 
     private static final String UDFPS_ANIM_PREVIEW = "udfps_recognizing_animation_preview";
+    private static final String SCREEN_OFF_UDFPS = "screen_off_udfps";
 
     private Preference mUdfpsAnimPreview;
+    private Preference mScreenOffUdfps;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,12 @@ public class UdfpsSettings extends SettingsPreferenceFragment {
         if (!udfpsResPkgInstalled) {
             prefSet.removePreference(mUdfpsAnimPreview);
         }
+
+        mScreenOffUdfps = (Preference) prefSet.findPreference(SCREEN_OFF_UDFPS);
+        boolean mScreenOffUdfpsAvailable = resources.getBoolean(
+                com.android.internal.R.bool.config_supportScreenOffUdfps);
+        if (!mScreenOffUdfpsAvailable)
+            prefSet.removePreference(mScreenOffUdfps);
     }
 
     public static void reset(Context mContext) {
