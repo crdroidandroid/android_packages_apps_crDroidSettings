@@ -51,7 +51,7 @@
     <string name="delete_message">حذف العنصر المحدد؟</string>
     <string name="choose_app">اختيار تطبيق</string>
     <string name="enable">تمكين</string>
-    <string name="disable">Disable</string>
+    <string name="disable">تعطيل</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">سجل التغييرات الحالي</string>
     <string name="changelog_crdroid_summary">عرض التغييرات في الروم المثبت</string>
@@ -190,18 +190,18 @@
     <string name="volume_answer_call_title">الرد على المكالمة</string>
     <string name="volume_answer_call_summary">الرد على المكالمات الواردة بالضغط على أزرار الصوت</string>
     <!-- Key backlight -->
-    <string name="button_backlight_title">Backlight</string>
-    <string name="button_backlight_summary">Customize button backlight settings</string>
-    <string name="button_backlight_enabled">Illuminate buttons</string>
-    <string name="button_backlight_only_when_pressed_title">Illuminate buttons only when pressed</string>
-    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
-    <string name="button_backlight_seekbar_title">Button brightness</string>
-    <string name="keyboard_backlight_seekbar_title">Keyboard brightness</string>
-    <string name="backlight_timeout_title">Illumination timeout</string>
-    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
-    <string name="backlight_summary_disabled">Disabled</string>
-    <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
-    <string name="backlight_summary_enabled">Enabled</string>
+    <string name="button_backlight_title">الضوء الخلفي</string>
+    <string name="button_backlight_summary">تخصيص إعدادات الإضاءة الخلفية</string>
+    <string name="button_backlight_enabled">إضاءة الأزرار</string>
+    <string name="button_backlight_only_when_pressed_title">إضاءة الأزرار فقط عند الضغط عليها</string>
+    <string name="keyboard_backlight_enabled">إضاءة لوحة المفاتيح</string>
+    <string name="button_backlight_seekbar_title">سطوع إضاءة الزر</string>
+    <string name="keyboard_backlight_seekbar_title">سطوع لوحة المفاتيح</string>
+    <string name="backlight_timeout_title">مُهلة الإضاءة</string>
+    <string name="backlight_timeout_unlimited">عدم إيقاف التشغيل</string>
+    <string name="backlight_summary_disabled">معطّل</string>
+    <string name="backlight_summary_enabled_with_timeout">مُفعّل لـ <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">مفعّل</string>
     <!-- Power menu -->
     <string name="power_menu_title">قائمة زر التشغيل</string>
     <string name="power_menu_summary">تخصيص خيارات قائمة زر التشغيل</string>
@@ -219,7 +219,7 @@
     <string name="power_menu_users_title">المستخدمون</string>
     <string name="power_menu_logout_title">تسجيل الخروج</string>
     <string name="power_menu_emergency_title">الطوارئ</string>
-    <string name="power_menu_devicecontrols_title">Device controls</string>
+    <string name="power_menu_devicecontrols_title">التحكم في الأجهزة</string>
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">إعادة تشغيل متقدمة</string>
     <string name="advanced_reboot_summary">عند إلغاء القفل، ستتضمن خيارات قائمة إعادة التشغيل الذهاب الى وضع ال Recovery او وضع ال Bootloader</string>
@@ -329,9 +329,9 @@
     <string name="status_bar_clock_position_left">يسار</string>
     <string name="status_bar_clock_position_center">وسط</string>
     <string name="status_bar_clock_position_hidden">إخفاء</string>
-    <string name="status_bar_clock_auto_hide_title">Auto hide</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">Hide clock if launcher is visible</string>
-    <string name="status_bar_clock_auto_hide_summary">Hide clock at regular interval</string>
+    <string name="status_bar_clock_auto_hide_title">إخفاء تلقائي</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">إخفاء الساعة تلقائي إذا كانت اللانشر مرئيًا</string>
+    <string name="status_bar_clock_auto_hide_summary">إخفاء الساعة في شاشة الإشعارات الرئيسية</string>
     <string name="status_bar_clock_auto_hide_hdur_title">مدة الإخفاء</string>
     <string name="status_bar_clock_auto_hide_hdur_summary">عدد الثواني لإخفاء الساعة</string>
     <string name="status_bar_clock_auto_hide_sdur_title">مدة الإظهار</string>
@@ -409,60 +409,60 @@
     <string name="battery_estimate_title">تقدير البطارية</string>
     <string name="battery_estimate_summary">عرض العمر التقديري المتبقي للبطارية عند توفرها</string>
     <!-- Network traffic -->
-    <string name="network_traffic_settings_title">Network traffic monitor</string>
-    <string name="network_traffic_settings_summary">Display and customize current network traffic levels</string>
-    <string name="network_traffic_location_title">Location</string>
-    <string name="network_traffic_location_disable">Disabled</string>
-    <string name="network_traffic_location_statusbar">Statusbar</string>
-    <string name="network_traffic_location_quick_statusbar">Quick Statusbar</string>
-    <string name="network_traffic_mode_title">Display mode</string>
-    <string name="network_traffic_mode_up">Upload only</string>
-    <string name="network_traffic_mode_down">Download only</string>
-    <string name="network_traffic_mode_all">Upload and download</string>
-    <string name="network_traffic_autohide">Auto hide</string>
-    <string name="network_traffic_autohide_summary">Hide the traffic monitor when inactive</string>
-    <string name="network_traffic_autohide_kilobits">Kb/s</string>
-    <string name="network_traffic_autohide_kilobytes">KB/s</string>
-    <string name="network_traffic_autohide_threshold">Inactivity threshold</string>
-    <string name="network_traffic_refresh_interval_title">Refresh interval</string>
-    <string name="network_traffic_refresh_interval_summary">Duration after which speed is remeasured</string>
-    <string name="network_traffic_units_title">Traffic measurement units</string>
-    <string name="network_traffic_units_bits">Bits per second (b/s)</string>
-    <string name="network_traffic_units_kilobits">Kilobits per second (kb/s)</string>
-    <string name="network_traffic_units_megabits">Megabits per second (Mb/s)</string>
-    <string name="network_traffic_units_bytes">Bytes per second (B/s)</string>
-    <string name="network_traffic_units_kilobytes">Kilobytes per second (kB/s)</string>
-    <string name="network_traffic_units_megabytes">Megabytes per second (MB/s)</string>
-    <string name="network_traffic_hidearrow">Hide arrows</string>
-    <string name="network_traffic_hidearrow_summary">Hide the network traffic indicator arrows</string>
+    <string name="network_traffic_settings_title">حركة شبكة الاتصال</string>
+    <string name="network_traffic_settings_summary">عرض وتخصيص المستويات الحالية لمرور الشبكة</string>
+    <string name="network_traffic_location_title">الموقع</string>
+    <string name="network_traffic_location_disable">معطّل</string>
+    <string name="network_traffic_location_statusbar">شريط الإشعارات</string>
+    <string name="network_traffic_location_quick_statusbar">شريط الحالة السريع</string>
+    <string name="network_traffic_mode_title">طريقة العرض</string>
+    <string name="network_traffic_mode_up">الرفع فقط</string>
+    <string name="network_traffic_mode_down">التنزيل فقط</string>
+    <string name="network_traffic_mode_all">التحميل و الرفع</string>
+    <string name="network_traffic_autohide">إخفاء تلقائي</string>
+    <string name="network_traffic_autohide_summary">اخفاء رصد حركة تنقل البيانات عند عدم وجود نشاط</string>
+    <string name="network_traffic_autohide_kilobits">ك.ب/ث</string>
+    <string name="network_traffic_autohide_kilobytes">ك. ب/ث</string>
+    <string name="network_traffic_autohide_threshold">حد عدم النشاط</string>
+    <string name="network_traffic_refresh_interval_title">الفاصل الزمني للتحديث</string>
+    <string name="network_traffic_refresh_interval_summary">المدة التي يتم بعدها إعادة قياس السرعة</string>
+    <string name="network_traffic_units_title">وحدات قياس حركة البيانات</string>
+    <string name="network_traffic_units_bits">بايت في الثانية(ب\ث)</string>
+    <string name="network_traffic_units_kilobits">كيلوبايت في الثانية (kB/s)</string>
+    <string name="network_traffic_units_megabits">ميغابايت في الثانية (Mb/s)</string>
+    <string name="network_traffic_units_bytes">بايت في الثانية(ب\ث)</string>
+    <string name="network_traffic_units_kilobytes">كيلوبايت في الثانية (kB/s)</string>
+    <string name="network_traffic_units_megabytes">ميغابايت في الثانية (MB/s)</string>
+    <string name="network_traffic_hidearrow">إخفاء الأسهم</string>
+    <string name="network_traffic_hidearrow_summary">إخفاء اسهم مؤشر حركة البيانات</string>
     <!-- QS footer warnings -->
-    <string name="qs_footer_warnings_title">Footer alerts</string>
-    <string name="qs_footer_warnings_summary">Display an alert at bottom of QS panel when network is monitored by external apps or VPN</string>
+    <string name="qs_footer_warnings_title">تنبيهات سفلية</string>
+    <string name="qs_footer_warnings_summary">عرض تحذير أسفل لوحة الإعدادات السريعة عندما تكون الشبكة مراقبة عن طريق تطبيقات خارجية أو شبكة افتراضية</string>
     <!-- Media art -->
-    <string name="media_art_title">Media cover art</string>
-    <string name="media_art_summary">Display media cover art when available</string>
+    <string name="media_art_title">بوستر الاغنية</string>
+    <string name="media_art_summary">عرض صورة غلاف الألبوم عند تشغيل الموسيقى</string>
     <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Media cover art filter</string>
-    <string name="lockscreen_albumart_filter_none">None</string>
-    <string name="lockscreen_albumart_filter_grayscale">Grayscale</string>
-    <string name="lockscreen_albumart_filter_tint">Accent tinted</string>
-    <string name="lockscreen_albumart_filter_blur">Blur</string>
-    <string name="lockscreen_albumart_filter_grayblur">Grayscale and blurred</string>
+    <string name="lockscreen_albumart_filter_title">عرض غلاف الألبوم على الشاشة</string>
+    <string name="lockscreen_albumart_filter_none">لا شيء</string>
+    <string name="lockscreen_albumart_filter_grayscale">تدرج رمادي</string>
+    <string name="lockscreen_albumart_filter_tint">لون المظهر</string>
+    <string name="lockscreen_albumart_filter_blur">ضبابي</string>
+    <string name="lockscreen_albumart_filter_grayblur">تدرج رمادي وضبابي</string>
     <!-- Pulse music visualizer -->
-    <string name="pulse_help_policy_notice_title">About Pulse</string>
-    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>
+    <string name="pulse_help_policy_notice_title">حول النبض المرئي</string>
+    <string name="pulse_help_policy_notice_summary">Pulse هي معادل صوتي ممتاز عند تشغيل الموسيقى على الجهاز</string>
     <string name="pulse_settings">Pulse</string>
-    <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
-    <string name="show_navbar_pulse_title">Navbar Pulse</string>
-    <string name="show_navbar_pulse_summary">Audio graphic equalizer on the navigation bar</string>
-    <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
-    <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
-    <string name="show_ambient_pulse_title">Ambient Pulse</string>
-    <string name="show_ambient_pulse_summary">Audio graphic equalizer on the ambient screen</string>
-    <string name="pulse_render_mode_title">Render mode</string>
-    <string name="pulse_render_mode_fading_bars">Fading blocks</string>
-    <string name="pulse_render_mode_solid_lines">Solid lines</string>
-    <string name="pulse_legacy_mode_advanced_category">Fading blocks mode settings</string>
+    <string name="pulse_settings_summary">معادل صوت رسومي لشريط التنقل وشاشة القفل</string>
+    <string name="show_navbar_pulse_title">نبض شريط التنقل</string>
+    <string name="show_navbar_pulse_summary">معادل صوت رسومي على شريط التنقل</string>
+    <string name="show_lockscreen_pulse_title">نبض شاشة القفل</string>
+    <string name="show_lockscreen_pulse_summary">معادل صوت رسومي على شاشة القفل</string>
+    <string name="show_ambient_pulse_title">شريط الـPulse</string>
+    <string name="show_ambient_pulse_summary">معادل الصوت الرسومي على شريط التنقل</string>
+    <string name="pulse_render_mode_title">وضع المعالجة</string>
+    <string name="pulse_render_mode_fading_bars">كتل متلاشية</string>
+    <string name="pulse_render_mode_solid_lines">خطوط صلبة</string>
+    <string name="pulse_legacy_mode_advanced_category">إعدادات وضع الكتل المتلاشية</string>
     <string name="pulse_custom_fudge_factor">مستوى الانتظام</string>
     <string name="pulse_lavalamp_speed_title">سرعة الإضاءة السلسة</string>
     <string name="pulse_solid_units_count">عدد الخطوط المتصلة</string>
@@ -475,54 +475,54 @@
     <string name="pulse_color_custom">مخصص</string>
     <string name="pulse_color_lava_lamp">الإضاءة السلسة</string>
     <string name="pulse_color_user_title">اختر لوناً</string>
-    <string name="pulse_smoothing_enabled_title">Turn on smoothing</string>
-    <string name="pulse_smoothing_enabled_summary">Each bar is animated more smoothly</string>
-    <string name="pulse_custom_dimen">Bar width</string>
-    <string name="pulse_custom_div">Bar spacing</string>
-    <string name="pulse_filled_block_size">Block size</string>
-    <string name="pulse_empty_block_size">Block spacing</string>
+    <string name="pulse_smoothing_enabled_title">تشغيل وضع السلاسة</string>
+    <string name="pulse_smoothing_enabled_summary">كل شريط سيتم عرضه بسلاسة اكثر</string>
+    <string name="pulse_custom_dimen">عرض الشريط</string>
+    <string name="pulse_custom_div">تباعد الأسطر</string>
+    <string name="pulse_filled_block_size">حجم الكتلة</string>
+    <string name="pulse_empty_block_size">تباعد الكتل</string>
     <!-- Navigation Bar -->
-    <string name="navbar_visibility_title">Navigation bar</string>
-    <string name="navbar_visibility_summary">Display navigation bar at bottom of screen</string>
-    <string name="navbar_layout_category_title">Layout</string>
-    <string name="navbar_arrow_keys_title">Show arrow keys while typing</string>
-    <string name="navbar_arrow_keys_summary">Display left and right cursor buttons while typing. Overrides IME switcher.</string>
-    <string name="navbar_layout_title">Layout</string>
-    <string name="navbar_layout_normal">Normal</string>
-    <string name="navbar_layout_compact">Compact</string>
-    <string name="navbar_layout_leftleaning">Left-leaning</string>
-    <string name="navbar_layout_rightleaning">Right-leaning</string>
-    <string name="navbar_invert_layout_title">Invert layout</string>
-    <string name="navbar_invert_layout_summary">Inverts the layout of the navigation bar and other items, such as the IME switcher</string>
-    <string name="navbar_actions_category_title">Actions</string>
-    <string name="navbar_back_long_press_title">Back long press</string>
-    <string name="navbar_home_long_press_title">Home long press</string>
-    <string name="navbar_home_double_tap_title">Home double tap</string>
-    <string name="navbar_app_switch_long_press_title">Recents long press</string>
-    <string name="navbar_edge_long_swipe_title">Edge long swipe</string>
+    <string name="navbar_visibility_title">شريط التنقل</string>
+    <string name="navbar_visibility_summary">عرض شريط التنقل في أسفل الشاشة</string>
+    <string name="navbar_layout_category_title">التصميم</string>
+    <string name="navbar_arrow_keys_title">إظهار مفاتيح الأسهم أثناء الكتابة</string>
+    <string name="navbar_arrow_keys_summary">عرض أزرار المؤشر الأيمن والأيسر أثناء الكتابة. سيتم تجاوز مبدل IME.</string>
+    <string name="navbar_layout_title">التصميم</string>
+    <string name="navbar_layout_normal">عادي</string>
+    <string name="navbar_layout_compact">مدمج</string>
+    <string name="navbar_layout_leftleaning">مائل لليسار</string>
+    <string name="navbar_layout_rightleaning">مائل لليمين</string>
+    <string name="navbar_invert_layout_title">عكس التخطيط</string>
+    <string name="navbar_invert_layout_summary">عكس تصميم شريط التنقل وغيره من العناصر، مثل مبدل IME</string>
+    <string name="navbar_actions_category_title">الإجراءات</string>
+    <string name="navbar_back_long_press_title">زر الرجوع (الضغط لفترة طويلة)</string>
+    <string name="navbar_home_long_press_title">مفتاح المنزل (الضغط لمدة طويلة)</string>
+    <string name="navbar_home_double_tap_title">الزر الرئيسي (النقر المزدوج)</string>
+    <string name="navbar_app_switch_long_press_title">التطبيقات الحديثة (ضغط مطوّل)</string>
+    <string name="navbar_edge_long_swipe_title">تمريرة طويلة من الزاوية</string>
     <!-- Pocket judge -->
-    <string name="pocket_judge_title">Pocket detection</string>
-    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
+    <string name="pocket_judge_title">إستشعار الجيب</string>
+    <string name="pocket_judge_summary">الغاء تفعيل الشاشة و أزرار الإدخال عندما يكون الجهاز في الجيب</string>
     <!-- Disable HW keys -->
-    <string name="hwkeys_disabled_title">Disable HW keys</string>
-    <string name="hwkeys_disabled_summary">Enabling this will disable hardware keys for navigation</string>
+    <string name="hwkeys_disabled_title">تعطيل ازرار تنقل الجهاز</string>
+    <string name="hwkeys_disabled_summary">سيؤدي تمكين هذا إلى تعطيل مفاتيح تنقل الجهاز</string>
     <!-- Swap capacitive keys -->
-    <string name="swap_capacitive_keys_title">Swap capacitive buttons</string>
-    <string name="swap_capacitive_keys_summary">Swap the order of recents and back buttons</string>
+    <string name="swap_capacitive_keys_title">عكس ازرار اللمس</string>
+    <string name="swap_capacitive_keys_summary">تبديل ترتيب أزرار الحديثة و الرجوع</string>
     <!-- ANBI -->
-    <string name="anbi_title">Accidental touch</string>
-    <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
+    <string name="anbi_title">اللمس الغير مقصود</string>
+    <string name="anbi_summary">منع التفاعل مع أزرار شريط التنقل أثناء لمس الشاشة</string>
     <!-- Live volume steps -->
-    <string name="volume_steps_title">Volume steps</string>
-    <string name="volume_steps_summary">Customize no. of steps in volume panel</string>
-    <string name="volume_steps_alarm_title">Volume steps: Alarm</string>
-    <string name="volume_steps_dtmf_title">Volume steps: DTMF</string>
-    <string name="volume_steps_music_title">Volume steps: Music</string>
-    <string name="volume_steps_notification_title">Volume steps: Notification</string>
-    <string name="volume_steps_ring_title">Volume steps: Ringer</string>
-    <string name="volume_steps_system_title">Volume steps: System</string>
-    <string name="volume_steps_voice_call_title">Volume steps: Voice Call</string>
-    <string name="volume_steps_reset">Reset</string>
+    <string name="volume_steps_title">درجات الصوت</string>
+    <string name="volume_steps_summary">تخصيص رقم للخطوات في لوحة الصوت</string>
+    <string name="volume_steps_alarm_title">درجات الصوت: المنبـه</string>
+    <string name="volume_steps_dtmf_title">درجات صوت: DTMF</string>
+    <string name="volume_steps_music_title">درجات صوت: الموسيقى</string>
+    <string name="volume_steps_notification_title">درجات صوت: الاشعارات</string>
+    <string name="volume_steps_ring_title">درجات صوت: الرنين</string>
+    <string name="volume_steps_system_title">درجات صوت: النظام</string>
+    <string name="volume_steps_voice_call_title">درجات صوت: المكالمة</string>
+    <string name="volume_steps_reset">إعادة تعيين</string>
     <string name="volume_steps_60">60</string>
     <string name="volume_steps_45">45</string>
     <string name="volume_steps_30">30</string>
@@ -530,106 +530,106 @@
     <string name="volume_steps_7">7</string>
     <string name="volume_steps_5">5</string>
     <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture">Swipe to screenshot</string>
-    <string name="three_finger_gesture_summary">Swipe three fingers to take screenshot</string>
+    <string name="three_finger_gesture">السحب، لتصوير الشاشة</string>
+    <string name="three_finger_gesture_summary">تمرير ثلاثة أصابع على الشاشة لتصوير الشاشة</string>
     <!-- Running services - Background processes tab -->
-    <string name="background_processes_settings_title">Background processes</string>
+    <string name="background_processes_settings_title">عمليات الخلفية</string>
     <!-- QS footer icons -->
-    <string name="qs_footer_users_icon_title">User account icon</string>
-    <string name="qs_footer_users_icon_summary">Display multiuser accessibility icon when available</string>
-    <string name="qs_footer_edit_icon_title">Edit tiles icon</string>
-    <string name="qs_footer_show_power_menu_title">Power menu shortcut</string>
-    <string name="qs_footer_services_icon_title">Running services shortcut</string>
-    <string name="qs_footer_settings_icon_title">Settings shortcut</string>
+    <string name="qs_footer_users_icon_title">صورة حساب المستخدم </string>
+    <string name="qs_footer_users_icon_summary">عرض أيقونة إمكانية الوصول متعددة المستخدمين عندما تكون متاحة</string>
+    <string name="qs_footer_edit_icon_title">رمز التعديل</string>
+    <string name="qs_footer_show_power_menu_title">اختصار قائمة التشغيل</string>
+    <string name="qs_footer_services_icon_title">عرض رمز اختصار للخدمات قيد التشغيل</string>
+    <string name="qs_footer_settings_icon_title">إختصار الإعدادات</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">crDroid legal</string>
+    <string name="crdroid_license_title">فريق crDroid</string>
     <!-- Quick Settings brightness slider -->
-    <string name="qs_show_brightness_slider_title">Brightness slider</string>
-    <string name="qs_show_brightness_slider_never">Never show</string>
-    <string name="qs_show_brightness_slider_expanded">Show when expanded</string>
-    <string name="qs_show_brightness_slider_always">Show always</string>
-    <string name="qs_show_brightness_slider_not_expanded">Show when not expanded</string>
-    <string name="qs_brightness_slider_position_title">Position</string>
-    <string name="qs_brightness_slider_position_top">Top</string>
-    <string name="qs_brightness_slider_position_bottom">Bottom</string>
+    <string name="qs_show_brightness_slider_title">شريط السطوع</string>
+    <string name="qs_show_brightness_slider_never">لا تُظهر أبداً</string>
+    <string name="qs_show_brightness_slider_expanded">إظهار عند التوسيع</string>
+    <string name="qs_show_brightness_slider_always">إظهار دائمًا</string>
+    <string name="qs_show_brightness_slider_not_expanded">إظهار عند عدم التوسيع</string>
+    <string name="qs_brightness_slider_position_title">الموضع</string>
+    <string name="qs_brightness_slider_position_top">في الأعلى</string>
+    <string name="qs_brightness_slider_position_bottom">في الأسفل</string>
     <!-- Quick Settings brightness icon -->
-    <string name="qs_show_auto_brightness_title">Auto brightness icon</string>
-    <string name="qs_show_auto_brightness_summary">Show toggle for adaptive brightness near the slider</string>
+    <string name="qs_show_auto_brightness_title">أيقونة السطوع التلقائي</string>
+    <string name="qs_show_auto_brightness_summary">إظهار مؤشر تبديل للسطوع التكيفي بالقرب من شريط التمرير</string>
     <!-- Statusbar colored icons -->
-    <string name="statusbar_colored_icons_title">Colored icons</string>
-    <string name="statusbar_colored_icons_summary">Use proper app icons for notification icons in statusbar</string>
+    <string name="statusbar_colored_icons_title">أيقونات ملونة</string>
+    <string name="statusbar_colored_icons_summary">استخدام أيقونات التطبيق المناسبة لأيقونات الإشعارات في شريط الحالة</string>
     <!-- Notification count -->
-    <string name="statusbar_notif_count_title">Show notification count</string>
-    <string name="statusbar_notif_count_summary">Display the number of pending notifications</string>
+    <string name="statusbar_notif_count_title">إظهار عدد الإشعارات</string>
+    <string name="statusbar_notif_count_summary">عرض عدد الإشعارات المعلقة</string>
     <!-- Notification channels -->
-    <string name="channel_light_settings_name">Light settings preview</string>
+    <string name="channel_light_settings_name">معاينة إعدادات الإضاءة</string>
     <!-- Notification light dialogs -->
-    <string name="edit_light_settings">Edit light settings</string>
-    <string name="pulse_speed_title">Pulse length and speed</string>
-    <string name="default_time">Normal</string>
-    <string name="custom_time">Custom</string>
-    <string name="brightness">Brightness level</string>
+    <string name="edit_light_settings">تعديل إعدادات الضوء</string>
+    <string name="pulse_speed_title">طول الوميض وسرعته</string>
+    <string name="default_time">طبيعي</string>
+    <string name="custom_time">تخصيص</string>
+    <string name="brightness">مستوى السطوع</string>
     <!-- Values for the notification light pulse spinners -->
-    <string name="pulse_length_always_on">Always on</string>
-    <string name="pulse_length_very_short">Very short</string>
-    <string name="pulse_length_short">Short</string>
-    <string name="pulse_length_normal">Normal</string>
-    <string name="pulse_length_long">Long</string>
-    <string name="pulse_length_very_long">Very long</string>
-    <string name="pulse_speed_very_fast">Very fast</string>
-    <string name="pulse_speed_fast">Fast</string>
-    <string name="pulse_speed_normal">Normal</string>
-    <string name="pulse_speed_slow">Slow</string>
-    <string name="pulse_speed_very_slow">Very slow</string>
+    <string name="pulse_length_always_on">التشغيل دائما</string>
+    <string name="pulse_length_very_short">قصير جداً</string>
+    <string name="pulse_length_short">قصير</string>
+    <string name="pulse_length_normal">طبيعي</string>
+    <string name="pulse_length_long">طويل</string>
+    <string name="pulse_length_very_long">طويل جدا</string>
+    <string name="pulse_speed_very_fast">سريع جدا</string>
+    <string name="pulse_speed_fast">سريع</string>
+    <string name="pulse_speed_normal">طبيعي</string>
+    <string name="pulse_speed_slow">بطيء</string>
+    <string name="pulse_speed_very_slow">بطيء جدا</string>
     <!-- Common light settings strings -->
-    <string name="light_brightness_title">Brightness levels</string>
-    <string name="light_brightness_normal">Normal</string>
-    <string name="light_brightness_zen">Do Not Disturb</string>
+    <string name="light_brightness_title">مستويات السطوع</string>
+    <string name="light_brightness_normal">طبيعي</string>
+    <string name="light_brightness_zen">وضع عدم الإزعاج</string>
     <!-- Battery light settings -->
-    <string name="light_brightness_category">Light brightness settings</string>
-    <string name="battery_light_title">Battery light</string>
-    <string name="battery_light_summary">Configure led color based on battery level and status</string>
-    <string name="battery_low_pulse_title">Pulse if battery low</string>
-    <string name="battery_light_full_charge_disabled_title">Turn off when fully charged</string>
-    <string name="battery_light_list_title">Colors</string>
-    <string name="battery_light_low_color_title">Battery low</string>
-    <string name="battery_light_medium_color_title">Charging</string>
-    <string name="battery_light_full_color_title">Nearly Charged (&gt;90%)</string>
-    <string name="battery_light_really_full_color_title">Fully Charged (100%)</string>
+    <string name="light_brightness_category">إعدادات سطوع الضوء</string>
+    <string name="battery_light_title">ضوء شحن البطارية</string>
+    <string name="battery_light_summary">تكوين لون LED استنادًا إلى مستوى البطارية وحالتها</string>
+    <string name="battery_low_pulse_title">وميض عند انخفاض نسبة البطارية</string>
+    <string name="battery_light_full_charge_disabled_title">الإيقاف عند اكتمال الشحن</string>
+    <string name="battery_light_list_title">الألوان</string>
+    <string name="battery_light_low_color_title">البطارية منخفضة</string>
+    <string name="battery_light_medium_color_title">جارِ الشحن</string>
+    <string name="battery_light_full_color_title">مشحونة تقريبا (&gt;90%)</string>
+    <string name="battery_light_really_full_color_title">مشحونة بالكامل (100%)</string>
     <!-- Lights settings screen, notification light settings -->
-    <string name="notification_light_title">Notification light</string>
-    <string name="notification_light_summary">Configure led color for notifications</string>
-    <string name="notification_light_general_title">General</string>
-    <string name="notification_light_advanced_title">Advanced</string>
-    <string name="notification_light_applist_title">Apps</string>
-    <string name="notification_light_phonelist_title">Phone</string>
-    <string name="notification_light_use_custom">Use custom values</string>
-    <string name="notification_light_default_value">Default</string>
-    <string name="notification_light_missed_call_title">Missed call</string>
-    <string name="notification_light_voicemail_title">Voicemail</string>
-    <string name="notification_light_screen_on">Lights with screen on</string>
-    <string name="notification_light_zen_mode">Lights in Do Not Disturb mode</string>
-    <string name="notification_light_automagic">Choose colors automatically</string>
-    <string name="notification_light_automagic_summary">Choosing colors automatically</string>
-    <string name="notification_light_override">Override all apps</string>
+    <string name="notification_light_title">ضوء الإشعارات</string>
+    <string name="notification_light_summary">تكوين لون LED للإشعارات</string>
+    <string name="notification_light_general_title">العامة</string>
+    <string name="notification_light_advanced_title">الوضع المتقدم</string>
+    <string name="notification_light_applist_title">التطبيقات</string>
+    <string name="notification_light_phonelist_title">الهاتف</string>
+    <string name="notification_light_use_custom">استخدام قيم المخصصة</string>
+    <string name="notification_light_default_value">إفتراضي</string>
+    <string name="notification_light_missed_call_title">مكالمة فائتة</string>
+    <string name="notification_light_voicemail_title">البريد الصوتي</string>
+    <string name="notification_light_screen_on">أضواء عندما تكون الشاشة قيد التشغيل</string>
+    <string name="notification_light_zen_mode">أضواء في وضع عدم الإزعاج</string>
+    <string name="notification_light_automagic">اختيار الألوان تلقائيًا</string>
+    <string name="notification_light_automagic_summary">سيتم اختيار الألوان تلقائيًا</string>
+    <string name="notification_light_override">تجاوز جميع التطبيقات</string>
     <!-- Lights settings, LED notification -->
-    <string name="led_notification_title">Light settings</string>
-    <string name="led_notification_text">LED light enabled by settings</string>
-    <string name="notification_light_no_apps_summary">To add per app control, activate \'%1$s\' and press \'\u002b\' on the menu bar</string>
+    <string name="led_notification_title">إعدادات الإضاءة</string>
+    <string name="led_notification_text">تم تمكين ضوء LED بواسطة الإعدادت</string>
+    <string name="notification_light_no_apps_summary">لإضافة عنصر تحكم في التطبيق، قم بتنشيط \'%1$s\' واضغط على \u002b في شريط القوائم</string>
     <!-- Heads up timeout -->
-    <string name="notification_heads_up_title">Heads up</string>
-    <string name="notification_heads_up_summary">Allow pop up notifications</string>
+    <string name="notification_heads_up_title">التنبيهات العلوية</string>
+    <string name="notification_heads_up_summary">السماح بالإشعارات المنبثقة</string>
     <!-- Less boring heads up -->
-    <string name="less_boring_heads_up_title">Less boring</string>
-    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
+    <string name="less_boring_heads_up_title">أقل مللا</string>
+    <string name="less_boring_heads_up_summary">عرض التنبيهات المنبثقة فقط لتطبيقات المنبه والاتصال والرسائل</string>
     <!-- Notifications while screen on -->
-    <string name="notification_sound_vib_screen_on_title">Noisy notifications</string>
-    <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
+    <string name="notification_sound_vib_screen_on_title">اشعارات مزعجة</string>
+    <string name="notification_sound_vib_screen_on_summary">تشغيل الصوت والاهتزاز للإشعارات  بينما تكون الشاشة قيد التشغيل</string>
     <!-- Privacy Indicator -->
     <string name="mic_camera_privacy_indicator_title">مؤشر خصوصية الميكروفون والكاميرا</string>
-    <string name="mic_camera_privacy_indicator_summary">Show separate indicator when any app uses mic or camera</string>
-    <string name="location_privacy_indicator_title">Location privacy indicator</string>
-    <string name="location_privacy_indicator_summary">Show separate indicator when any app uses location</string>
+    <string name="mic_camera_privacy_indicator_summary">إظهار مؤشر منفصل عند استخدام أي تطبيق لميكروفون أو الكاميرا</string>
+    <string name="location_privacy_indicator_title">مؤشر خصوصية الموقع</string>
+    <string name="location_privacy_indicator_summary">إظهار مؤشر منفصل عند استخدام أي تطبيق لميكروفون أو الكاميرا</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">نوم عميق</string>
     <!-- In-call feedback -->
@@ -648,135 +648,138 @@
     <string name="flashlight_on_call_ignore_dnd_summary">تنبيه ضوء الفلاش اثناء تفعيل وضع عدم الإزعاج</string>
     <string name="flashlight_on_call_rate_title">معدل الوميض</string>
     <!-- Gaming mode -->
-    <string name="gaming_mode_title">Game space</string>
-    <string name="gaming_mode_summary">Extra features for immersive gaming experience</string>
+    <string name="gaming_mode_title">مساحة الألعاب</string>
+    <string name="gaming_mode_summary">ميزات إضافية لتجربة الألعاب الغامرة</string>
     <!-- Lockscreen Clock -->
-    <string name="lockscreen_small_clock_title">Small clock</string>
-    <string name="lockscreen_small_clock_summary">Force small clock on lockscreen even if notifications are absent</string>
+    <string name="lockscreen_small_clock_title">ساعة صغيرة</string>
+    <string name="lockscreen_small_clock_summary">فرض ساعة صغيرة على شاشة القفل حتى إذا كانت الإشعارات غير موجودة</string>
     <!-- Navbar Animation -->
-    <string name="pixel_navbar_anim_title">Pixel animation</string>
-    <string name="pixel_navbar_anim_summary">Enable pixel style animation for 2-button / 3-button navigation bar</string>
+    <string name="pixel_navbar_anim_title">حركة Pixel</string>
+    <string name="pixel_navbar_anim_summary">تمكين حركة نمط بكسل لشريط التنقل من زرين / 3 أزرار</string>
     <!-- Fingerprint Ripple Effect -->
-    <string name="enable_fingerprint_ripple_effect_title">Ripple effect</string>
-    <string name="enable_fingerprint_ripple_effect_summary">Show ripple effect on unlock with fingerprint</string>
+    <string name="enable_fingerprint_ripple_effect_title">تأثير التموج</string>
+    <string name="enable_fingerprint_ripple_effect_summary">إظهار تأثير تموّج عند إلغاء القُفل باستخدام بصمة الإصبع</string>
     <!-- Old mobiletype icon style -->
-    <string name="old_mobiletype_title">Old style signal icon</string>
-    <string name="old_mobiletype_summary">Merge signal and signal type icons</string>
+    <string name="old_mobiletype_title">رمز الإشارة القديم</string>
+    <string name="old_mobiletype_summary">دمج رموز الإشارات و النوع</string>
     <!-- Screen Off animation -->
-    <string name="screen_off_animation_title">Screen off animation</string>
-    <string name="screen_off_animation_default">Default</string>
-    <string name="screen_off_animation_crt">CRT</string>
-    <string name="screen_off_animation_scale">Scale</string>
+    <string name="screen_off_animation_title">حركة إغلاق الشاشة</string>
+    <string name="screen_off_animation_default">افتراضي</string>
+    <string name="screen_off_animation_crt">تأثير CRT</string>
+    <string name="screen_off_animation_scale">تدرج</string>
     <!-- Custom Vibration fragment -->
-    <string name="vibration_preferences">Vibration &amp; haptics</string>
-    <string name="summary_vibration_preferences">Change vibration intensities, pattern and more</string>
-    <string name="keywords_vibration_preferences">vibration pattern, vibration intensity, incall, intensity, haptics, tap, vibration strength</string>
-    <string name="ringtone_vibration_pattern">Ringtone vibration pattern</string>
-    <string name="vibration_intensity_ringer">Ringtone vibration intensity</string>
-    <string name="vibration_intensity_notification">Notification vibration intensity</string>
-    <string name="haptic_feedback_intensity">Haptic feedback intensity</string>
-    <string name="vibration_intensity_disabled">Disabled</string>
-    <string name="vibration_intensity_light">Light</string>
-    <string name="vibration_intensity_medium">Medium</string>
-    <string name="vibration_intensity_strong">Strong</string>
-    <string name="vibration_intensity_custom">Custom</string>
-    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
-    <string name="pattern_dzzz_da">dzzz-da</string>
-    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
-    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
-    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+    <string name="vibration_preferences">الاهتزاز ورد فعل اللمس</string>
+    <string name="summary_vibration_preferences">تغيير كثافة الاهتزاز والنمط والمزيد</string>
+    <string name="keywords_vibration_preferences">نمط الاهتزاز، كثافة الاهتزاز، أثناء المكالمة، ردود فعل اللمس، قوة الاهتزاز</string>
+    <string name="ringtone_vibration_pattern">نمط اهتزاز النغمة</string>
+    <string name="vibration_intensity_ringer">نمط اهتزاز نغمة الرنين</string>
+    <string name="vibration_intensity_notification">نمط اهتزاز الإشعارات</string>
+    <string name="haptic_feedback_intensity">نمط اهتزاز اللمس</string>
+    <string name="vibration_intensity_disabled">معطّل</string>
+    <string name="vibration_intensity_light">خفيف</string>
+    <string name="vibration_intensity_medium">متوسط</string>
+    <string name="vibration_intensity_strong">قوي</string>
+    <string name="vibration_intensity_custom">تخصيص</string>
+    <string name="pattern_dzzz_dzzz">دززز-دززز</string>
+    <string name="pattern_dzzz_da">دززز-دا</string>
+    <string name="pattern_mm_mm_mm">مم-مم-مم</string>
+    <string name="pattern_da_da_dzzz">دا-دا-دززز</string>
+    <string name="pattern_da_dzzz_da">دا-دززز-دا</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fp_success_vibrate_title">Fingerprint authentication vibration</string>
-    <string name="fp_success_vibrate_summary">Vibrate when fingerprint authentication is successful</string>
-    <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
-    <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
+    <string name="fp_success_vibrate_title">اهتزاز بعد نجاح بصمة الأصبع</string>
+    <string name="fp_success_vibrate_summary">اهتزاز عند نجاح مصادقة بصمة الأصبع</string>
+    <string name="fp_error_vibrate_title">إهتزاز عند بصمة الإصبع الخاطئة</string>
+    <string name="fp_error_vibrate_summary">الاهتزاز عند فشل مصادقة البصمة</string>
     <!-- Charging animation -->
-    <string name="charging_animation_title">Charging animation</string>
-    <string name="charging_animation_summary">Display an animation when the device is plugged in</string>
+    <string name="charging_animation_title">الرسوم المتحركة للشحن</string>
+    <string name="charging_animation_summary">عرض مؤثر حركي عند توصيل الجهاز بالشاحن</string>
     <!-- One shot automatic brightness -->
-    <string name="auto_brightness_one_shot_title">One shot auto-brightness</string>
-    <string name="auto_brightness_one_shot_summary">Brightness adjustment will only occur at the moment the screen is turned on</string>
+    <string name="auto_brightness_one_shot_title">السطوع التلقائي لقطة واحدة</string>
+    <string name="auto_brightness_one_shot_summary">سيتم تعديل السطوع فقط في اللحظة التي يتم فيها تشغيل الشاشة</string>
     <!-- Per-app volume -->
-    <string name="app_volume">App volume</string>
-    <string name="app_volume_title">Per-app volume control</string>
-    <string name="app_volume_summary">Show per-app volume button into volume dialog</string>
+    <string name="app_volume">صوت التطبيقات</string>
+    <string name="app_volume_title">التحكم في الصوت لكل تطبيق</string>
+    <string name="app_volume_summary">إظهار زر الصوت لكل تطبيق في خانة الصوت</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
-    <string name="alert_slider_notifications_title">Alert slider notifications</string>
-    <string name="alert_slider_notifications_summary">Display notification when changing alert slider position</string>
+    <string name="alert_slider_notifications_title">تنبيهات شريط التمرير</string>
+    <string name="alert_slider_notifications_summary">عرض الإشعار عند تغيير موضع شريط التمرير</string>
     <!-- Notch: Full screen apps -->
-    <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
-    <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
+    <string name="display_cutout_force_fullscreen_title">تطبيقات ملء الشاشة</string>
+    <string name="display_cutout_force_fullscreen_summary">فرض التطبيقات على تجاهل مساحة النوتش</string>
     <!-- Unlimited google photos storage -->
-    <string name="use_photos_spoof_title">Unlimited Photos storage</string>
-    <string name="use_photos_spoof_summary">Spoof your device as Pixel XL for Google Photos app only to provide unlimited storage for backup</string>
+    <string name="use_photos_spoof_title">تخزين الصور غير محدود</string>
+    <string name="use_photos_spoof_summary">إظهار جهازك كـ جهاز Pixel لتطبيق صور جوجل فقط لتوفير تخزين غير محدود للنسخ الاحتياطي</string>
     <!-- Unlock FPS for specific games -->
-    <string name="use_games_spoof_title">Unlock higher FPS in games</string>
-    <string name="use_games_spoof_summary">Spoof your device as different model for specific games to unlock higher FPS</string>
+    <string name="use_games_spoof_title">فتح أعلى FPS في الألعاب</string>
+    <string name="use_games_spoof_summary">جعل جهازك كنموذج مختلف لألعاب محددة لفتح أعلى FPS</string>
     <!-- Volume panel -->
-    <string name="volume_panel_category">Volume panel</string>
-    <string name="volume_dialog_timeout_title">Volume panel timeout</string>
+    <string name="volume_panel_category">لوحة الصوت</string>
+    <string name="volume_dialog_timeout_title">مهلة عرض لوحة الصوت</string>
     <string name="volume_panel_on_left_title">لوحة الصوت على اليسار</string>
     <!-- Legacy WFD settings -->
-    <string name="legacy_wfd_video_mode_title">Video mode</string>
-    <string name="legacy_wfd_video_mode_720p_30fps">720p 30fps</string>
-    <string name="legacy_wfd_video_mode_720p_60fps">720p 60fps</string>
-    <string name="legacy_wfd_video_mode_1080p_30fps">1080p 30fps</string>
-    <string name="legacy_wfd_video_mode_1080p_60fps">1080p 60fps</string>
+    <string name="legacy_wfd_video_mode_title">وضع الفيديو</string>
+    <string name="legacy_wfd_video_mode_720p_30fps">720p 30إطار</string>
+    <string name="legacy_wfd_video_mode_720p_60fps">720p 60إطار</string>
+    <string name="legacy_wfd_video_mode_1080p_30fps">1080p 30إطار</string>
+    <string name="legacy_wfd_video_mode_1080p_60fps">1080p 60إطار</string>
     <!-- UDFPS settings -->
-    <string name="udfps_settings_title">UDFPS customization</string>
-    <string name="udfps_settings_summary">Customize under-display fingerprint scanner</string>
-    <string name="udfps_icon_picker_title">UDFPS icon picker</string>
-    <string name="udfps_icon_picker_summary">Choose your favorite fingerprint icon</string>
-    <string name="udfps_recog_animation_effect_title">UDFPS custom animation</string>
-    <string name="udfps_recog_animation_effect_summary">Choose animation effect</string>
+    <string name="udfps_settings_title">تخصيص UDFPS</string>
+    <string name="udfps_settings_summary">تخصيص الماسح الضوئي لبصمة الإصبع تحت الشاشة</string>
+    <string name="udfps_icon_picker_title">منتقي أيقونة UDFPS</string>
+    <string name="udfps_icon_picker_summary">اختر أيقونة بصمة الإصبع المفضلة لديك</string>
+    <string name="udfps_recog_animation_effect_title">الرسوم المتحركة المخصصة UDFPS</string>
+    <string name="udfps_recog_animation_effect_summary">اختيار تأثير الرسوم المتحركة</string>
     <!-- Face Unlock -->
-    <string name="security_settings_face_unlock_redo_face_scan_summary">Remove existing face scan and create a new scan</string>
-    <string name="security_settings_face_unlock_redo_face_scan_title">Redo face scan</string>
-    <string name="face_redo_confirm_btn">Redo</string>
-    <string name="face_redo_warning_msg">Do you want to remove the existing face scan and create a new one?</string>
-    <string name="face_unlock_method_title">Allow face unlock on lock screen</string>
-    <string name="face_unlock_method_default">When the screen is turned on</string>
-    <string name="face_unlock_method_swipe">When swiping on lock screen</string>
+    <string name="security_settings_face_unlock_redo_face_scan_summary">إزالة مسحة الوجه الموجودة و إنشاء مسحة جديدة</string>
+    <string name="security_settings_face_unlock_redo_face_scan_title">فحص الوجه ضوئيًا</string>
+    <string name="face_redo_confirm_btn">موافق</string>
+    <string name="face_redo_warning_msg">هل تريد إزالة فحص الوجه الممسوح ضوئيًا الحالية وإنشاء نسخة جديدة؟</string>
+    <string name="face_unlock_method_title">فتح القفل باستخدام الوجه</string>
+    <string name="face_unlock_method_default">عندما تكون الشاشة مُشغَّلة</string>
+    <string name="face_unlock_method_swipe">عند السحب على شاشة القفل</string>
     <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Combined signal icons</string>
-    <string name="combined_status_bar_signal_icons_summary">Show single combined icon for WiFi and mobile signal</string>
+    <string name="combined_status_bar_signal_icons_title">دمج أيقونات الإشارات</string>
+    <string name="combined_status_bar_signal_icons_summary">إظهار رمز مزدوج واحد للواي فاي وإشارة الجوال</string>
     <!-- Wifi/Bluetooth auto timeout -->
-    <string name="wifi_timeout">WiFi timeout</string>
-    <string name="wifi_timeout_summary">Do not automatically turn off WiFi</string>
-    <string name="wifi_timeout_summary_auto">WiFi will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no network connected</string>
-    <string name="bluetooth_timeout">Bluetooth timeout</string>
-    <string name="bluetooth_timeout_summary">Do not automatically turn off Bluetooth</string>
-    <string name="bluetooth_timeout_summary_auto">Bluetooth will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no devices connected</string>
-    <string name="custom_timeout_summary_never">Never</string>
-    <string name="custom_timeout_summary_15secs">15 seconds</string>
-    <string name="custom_timeout_summary_30secs">30 seconds</string>
-    <string name="custom_timeout_summary_1min">1 minute</string>
-    <string name="custom_timeout_summary_2mins">2 minutes</string>
-    <string name="custom_timeout_summary_5mins">5 minutes</string>
-    <string name="custom_timeout_summary_10mins">10 minutes</string>
-    <string name="custom_timeout_summary_30mins">30 minutes</string>
-    <string name="custom_timeout_summary_1hour">1 hour</string>
-    <string name="custom_timeout_summary_2hours">2 hours</string>
-    <string name="custom_timeout_summary_4hours">4 hours</string>
-    <string name="custom_timeout_summary_8hours">8 hours</string>
+    <string name="wifi_timeout">مهلة الواي فاي</string>
+    <string name="wifi_timeout_summary">عدم إطفاء الواي فاي تلقائياً</string>
+    <string name="wifi_timeout_summary_auto">سيتم إيقاف تشغيل WiFi بعد <xliff:g id="timeout_description">%1$s</xliff:g> إذا لم يتم توصيل أي شبكة</string>
+    <string name="bluetooth_timeout">مهلة البلوتوث</string>
+    <string name="bluetooth_timeout_summary">عدم إطفاء البلوتوث تلقائياً</string>
+    <string name="bluetooth_timeout_summary_auto">سيتم إيقاف تشغيل البلوتوث بعد <xliff:g id="timeout_description">%1$s</xliff:g> إذا لم يكن هناك جهاز متصل</string>
+    <string name="custom_timeout_summary_never">أبدًا</string>
+    <string name="custom_timeout_summary_15secs">15 ثانية</string>
+    <string name="custom_timeout_summary_30secs">30 ثانية</string>
+    <string name="custom_timeout_summary_1min">دقيقة واحدة</string>
+    <string name="custom_timeout_summary_2mins">دقيقتان</string>
+    <string name="custom_timeout_summary_5mins">5 دقائق</string>
+    <string name="custom_timeout_summary_10mins">10 دقائق</string>
+    <string name="custom_timeout_summary_30mins">30 دقيقة</string>
+    <string name="custom_timeout_summary_1hour">ساعة واحدة</string>
+    <string name="custom_timeout_summary_2hours">ساعتان</string>
+    <string name="custom_timeout_summary_4hours">4 ساعات</string>
+    <string name="custom_timeout_summary_8hours">8 ساعات</string>
     <!-- Disable QS -->
-    <string name="disable_qs_title">Hide QS on secure lock screen</string>
-    <string name="disable_qs_summary">Prevent access to QS tiles on secure lock screen</string>
+    <string name="disable_qs_title">إخفاء الإعدادات السريعة على شاشة القفل</string>
+    <string name="disable_qs_summary">منع الوصول إلى مربعات الإعدادات السريعة على شاشة القفل</string>
     <!-- Power menu on secure lockscreen -->
-    <string name="lockscreen_enable_power_menu_title">Power menu</string>
-    <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lockscreen</string>
+    <string name="lockscreen_enable_power_menu_title">قائمة زر التشغيل</string>
+    <string name="lockscreen_enable_power_menu_summary">السماح بالوصول إلى قائمة التشغيل اثناء قفل الشاشة</string>
     <!-- Gesture navbar length -->
-    <string name="gesture_navbar_length_title">Pill length</string>
-    <string name="short_label">Short</string>
-    <string name="long_label">Long</string>
+    <string name="gesture_navbar_length_title">طول التعبئة</string>
+    <string name="short_label">قصير</string>
+    <string name="long_label">طويل</string>
     <!-- Back gesture height -->
-    <string name="back_height_low_label">Full</string>
-    <string name="back_height_high_label">Bottom</string>
-    <string name="back_height_title">Back gesture height</string>
-    <string name="back_height_summary">Screen height valid for back gesture</string>
+    <string name="back_height_low_label">كامل</string>
+    <string name="back_height_high_label">الأسفل</string>
+    <string name="back_height_title">ارتفاع إيماءة الرجوع</string>
+    <string name="back_height_summary">ارتفاع الشاشة لإيماءة الرجوع</string>
     <!-- Notification guts kill app button -->
-    <string name="notification_guts_kill_app_button_title">Force stop button</string>
-    <string name="notification_guts_kill_app_button_summary">Show force stop button in the notification\'s longpress menu</string>
+    <string name="notification_guts_kill_app_button_title">زر الإيقاف الإجباري</string>
+    <string name="notification_guts_kill_app_button_summary">إظهار زر الإيقاف الإجباري عند الضغط المطول على التطبيق</string>
+    <!-- Screen off UDFPS -->
+    <string name="screen_off_udfps_title">Screen off UDFPS</string>
+    <string name="screen_off_udfps_summary">Keep UDFPS enabled when the screen is off</string>
 </resources>
