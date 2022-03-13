@@ -223,8 +223,8 @@
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">고급 다시 시작 기능</string>
     <string name="advanced_reboot_summary">잠금 해제했을 때 전원 메뉴에 다운로드 모드, 복구 모드 진입 옵션 생성</string>
-    <string name="advanced_reboot_secured_title">보안이 설정된 잠금 화면</string>
-    <string name="advanced_reboot_secured_summary">보안이 설정된 잠금 화면에서 고급 다시 시작 메뉴 표시</string>
+    <string name="advanced_reboot_secured_title">잠금 화면</string>
+    <string name="advanced_reboot_secured_summary">잠금 화면에서 고급 다시 시작 메뉴 표시</string>
     <!-- UI settings -->
     <string name="monet_title">Monet 설정</string>
     <string name="monet_summary">Monet 테마 엔진 설정</string>
@@ -330,7 +330,7 @@
     <string name="status_bar_clock_position_center">가운데</string>
     <string name="status_bar_clock_position_hidden">숨김</string>
     <string name="status_bar_clock_auto_hide_title">자동 숨기기</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">Hide clock if launcher is visible</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">런처 화면일 때 시계를 숨깁니다</string>
     <string name="status_bar_clock_auto_hide_summary">Hide clock at regular interval</string>
     <string name="status_bar_clock_auto_hide_hdur_title">숨김 기간</string>
     <string name="status_bar_clock_auto_hide_hdur_summary">시계를 숨길 시간 (초)</string>
@@ -740,30 +740,30 @@
     <string name="face_unlock_method_default">화면이 켜져 있을 때</string>
     <string name="face_unlock_method_swipe">잠금 화면에서 스와이프할 때</string>
     <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Combined signal icons</string>
-    <string name="combined_status_bar_signal_icons_summary">Show single combined icon for WiFi and mobile signal</string>
+    <string name="combined_status_bar_signal_icons_title">결합된 신호 아이콘</string>
+    <string name="combined_status_bar_signal_icons_summary">와이파이와 모바일 신호 아이콘을 하나의 결합된 아이콘으로 표시합니다</string>
     <!-- Wifi/Bluetooth auto timeout -->
-    <string name="wifi_timeout">WiFi timeout</string>
-    <string name="wifi_timeout_summary">Do not automatically turn off WiFi</string>
-    <string name="wifi_timeout_summary_auto">WiFi will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no network connected</string>
-    <string name="bluetooth_timeout">Bluetooth timeout</string>
-    <string name="bluetooth_timeout_summary">Do not automatically turn off Bluetooth</string>
-    <string name="bluetooth_timeout_summary_auto">Bluetooth will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no devices connected</string>
-    <string name="custom_timeout_summary_never">Never</string>
-    <string name="custom_timeout_summary_15secs">15 seconds</string>
-    <string name="custom_timeout_summary_30secs">30 seconds</string>
-    <string name="custom_timeout_summary_1min">1 minute</string>
-    <string name="custom_timeout_summary_2mins">2 minutes</string>
-    <string name="custom_timeout_summary_5mins">5 minutes</string>
-    <string name="custom_timeout_summary_10mins">10 minutes</string>
-    <string name="custom_timeout_summary_30mins">30 minutes</string>
-    <string name="custom_timeout_summary_1hour">1 hour</string>
-    <string name="custom_timeout_summary_2hours">2 hours</string>
-    <string name="custom_timeout_summary_4hours">4 hours</string>
-    <string name="custom_timeout_summary_8hours">8 hours</string>
+    <string name="wifi_timeout">와이파이 타임아웃</string>
+    <string name="wifi_timeout_summary">와이파이를 자동으로 끄지 않습니다</string>
+    <string name="wifi_timeout_summary_auto"><xliff:g id="timeout_description">%1$s</xliff:g> 동안 네트워크 연결이 없다면 Wi-Fi를 끕니다</string>
+    <string name="bluetooth_timeout">블루투스 타임아웃</string>
+    <string name="bluetooth_timeout_summary">블루투스를 자동으로 끄지 않습니다</string>
+    <string name="bluetooth_timeout_summary_auto"><xliff:g id="timeout_description">%1$s</xliff:g> 동안 기기 연결이 없다면 블루투스를 끕니다</string>
+    <string name="custom_timeout_summary_never">사용 안함</string>
+    <string name="custom_timeout_summary_15secs">15초</string>
+    <string name="custom_timeout_summary_30secs">30초</string>
+    <string name="custom_timeout_summary_1min">1분</string>
+    <string name="custom_timeout_summary_2mins">2분</string>
+    <string name="custom_timeout_summary_5mins">5분</string>
+    <string name="custom_timeout_summary_10mins">10분</string>
+    <string name="custom_timeout_summary_30mins">30분</string>
+    <string name="custom_timeout_summary_1hour">1시간</string>
+    <string name="custom_timeout_summary_2hours">2시간</string>
+    <string name="custom_timeout_summary_4hours">4시간</string>
+    <string name="custom_timeout_summary_8hours">8시간</string>
     <!-- Disable QS -->
-    <string name="disable_qs_title">Hide QS on secure lock screen</string>
-    <string name="disable_qs_summary">Prevent access to QS tiles on secure lock screen</string>
+    <string name="disable_qs_title">잠금화면에서 빠른 설정 숨기기</string>
+    <string name="disable_qs_summary">잠금화면에서 빠른 설정 타일에 접근하는 것을 막습니다</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Power menu</string>
     <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lockscreen</string>
@@ -782,4 +782,48 @@
     <!-- Screen off UDFPS -->
     <string name="screen_off_udfps_title">Screen off UDFPS</string>
     <string name="screen_off_udfps_summary">Keep UDFPS enabled when the screen is off</string>
+    <!-- Columbus -->
+    <string name="columbus_gesture_detected">Quick Tap detected!</string>
+    <string name="columbus_gesture_enrollment_complete">Done</string>
+    <string name="columbus_gesture_enrollment_do_it_later">Not now</string>
+    <string name="columbus_gesture_enrollment_settings">설정으로 가기</string>
+    <string name="columbus_gesture_enrollment_try_it">Try it</string>
+    <string name="columbus_gesture_training_action_no_selection_error">Please select an action to perform</string>
+    <string name="columbus_gesture_training_action_text">Select what happens when you use Quick Tap. You can change this later in settings.</string>
+    <string name="columbus_gesture_training_action_title">Choose Quick Tap option</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture">… Double-tap 1 out of 2 detected</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture_text">Let’s try that once more. Quickly tap the back of your phone twice.</string>
+    <string name="columbus_gesture_training_enrolling_first_gesture_title">Nice!</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture">… Double-tap 2 out of 2 detected</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_text">You’re ready to start using Quick Tap</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_title">You got it!</string>
+    <string name="columbus_gesture_training_enrolling_text">Quickly tap the back of your phone twice.</string>
+    <string name="columbus_gesture_training_enrolling_title">Try Quick Tap</string>
+    <string name="columbus_gesture_training_finished_text">To change the tap strength needed to use Quick Tap, go to Settings.</string>
+    <string name="columbus_gesture_training_finished_title">You’ve set up Quick Tap</string>
+    <string name="columbus_gesture_training_intro_text_accidental">You‘ve just tapped twice on the back of your device, which allows you to use your Assistant on the go. You can customize this gesture in settings.</string>
+    <string name="columbus_gesture_training_intro_text_suw">Take a screenshot, show notifications, or start another action in two taps.</string>
+    <string name="columbus_gesture_training_intro_title">Quick Tap for quick actions</string>
+    <string name="columbus_gesture_training_launch_no_selection_error">Please select an app to open</string>
+    <string name="columbus_gesture_training_launch_text">Select the app you’d like to open when you use Quick Tap.</string>
+    <string name="columbus_gesture_training_launch_title">Choose app to open</string>
+    <string name="columbus_launch_app_extra_widget_a11y_label">%1$s shortcut settings</string>
+    <string name="columbus_launch_settings_activity_title">Quick Tap settings</string>
+    <string name="columbus_name">Quick Tap</string>
+    <string name="columbus_radio_button_extra_widget_a11y_label">%1$s settings</string>
+    <string name="columbus_setting_action_assistant_title">Access your digital assistant</string>
+    <string name="columbus_setting_action_launch_summary_no_selection">선택된 앱이 없습니다</string>
+    <string name="columbus_setting_action_launch_summary_not_installed">앱이 설치되지 않음</string>
+    <string name="columbus_setting_action_launch_title">앱 열기</string>
+    <string name="columbus_setting_action_notification_title">Show notifications</string>
+    <string name="columbus_setting_action_open_app_title">Open app</string>
+    <string name="columbus_setting_action_overview_title">See recent apps</string>
+    <string name="columbus_setting_action_play_pause_title">Play or pause media</string>
+    <string name="columbus_setting_action_screenshot_title">Take screenshot</string>
+    <string name="columbus_setting_actions_title">Tap back of phone twice to</string>
+    <string name="columbus_setting_additional_settings_title">Quick Tap strength</string>
+    <string name="columbus_setting_app_selection_help_text">Select an app to open when you tap the back of your phone twice. If you uninstall the app, Quick Tap turns off until you select a different app.</string>
+    <string name="columbus_setting_app_shortcut_selection_help_text">Select what happens when you open this app using Quick Tap.</string>
+    <string name="columbus_setting_enable_switch_title">Use Quick Tap</string>
+    <string name="columbus_setting_sensitivity_title">Require stronger taps</string>
 </resources>
