@@ -82,7 +82,7 @@ public class UdfpsSettings extends SettingsPreferenceFragment {
         Settings.System.putIntForUser(resolver,
                 Settings.System.UDFPS_ICON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.SCREEN_OFF_UDFPS, 1, UserHandle.USER_CURRENT);
+                Settings.System.SCREEN_OFF_UDFPS, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
