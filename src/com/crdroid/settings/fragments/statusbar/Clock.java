@@ -60,10 +60,13 @@ public class Clock extends SettingsPreferenceFragment
     private static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
 
+    private static final String STATUS_BAR_CLOCK_SIZE  = "status_bar_clock_size";
+
     private LineageSystemSettingListPreference mStatusBarAmPm;
     private SystemSettingListPreference mClockDateDisplay;
     private SystemSettingListPreference mClockDatePosition;
     private SystemSettingListPreference mClockDateStyle;
+    private CustomSeekBarPreference mClockSize;
     private ListPreference mClockDateFormat;
 
     @Override
@@ -103,6 +106,12 @@ public class Clock extends SettingsPreferenceFragment
         parseClockDateFormats();
         mClockDateFormat.setEnabled(dateDisplay > 0);
         mClockDateFormat.setOnPreferenceChangeListener(this);
+
+        mClockSize = (CustomSeekBarPreference) findPreference(STATUS_BAR_CLOCK_SIZE);
+        int clockSize = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_CLOCK_SIZE, 14);
+        mClockSize.setValue(clockSize / 1);
+        mClockSize.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -171,6 +180,11 @@ public class Clock extends SettingsPreferenceFragment
                       Settings.System.STATUS_BAR_CLOCK_DATE_FORMAT, (String) newValue);
               }
           }
+          return true;
+      } else if (preference == mClockSize) {
+          int width = ((Integer)newValue).intValue();
+          Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_CLOCK_SIZE, width);
           return true;
       }
       return false;

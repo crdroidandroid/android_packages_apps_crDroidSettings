@@ -100,4 +100,14 @@
         android:title="@string/status_bar_date_format_title"
         android:entries="@array/status_bar_date_format_entries_values"
         android:entryValues="@array/status_bar_date_format_entries_values" />
+
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="status_bar_clock_size"
+        android:title="@string/clock_font_size_title"
+        android:summary="@string/systemui_restart_title"
+        android:max="20"
+        settings:min="4"
+        settings:interval="1"
+        android:defaultValue="14"
+        settings:units="@string/unit_pixels" />
 </PreferenceScreen>

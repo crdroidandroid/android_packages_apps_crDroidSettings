@@ -30,6 +30,18 @@
             android:summary="@string/qs_clock_summary"
             android:defaultValue="true" />
 
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_header_clock_size"
+            android:icon="@drawable/ic_font"
+            android:title="@string/clock_font_size_title"
+            android:summary="@string/systemui_restart_title"
+            android:max="27"
+            settings:min="10"
+            settings:interval="1"
+            android:defaultValue="14"
+            android:dependency="show_qs_clock"
+            settings:units="@string/unit_pixels" />
+
         <!-- QS date -->
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="show_qs_date"
