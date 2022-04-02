@@ -39,4 +39,10 @@
         android:summary="@string/screen_off_udfps_summary"
         android:defaultValue="false" />
 
+    <!-- UDFPS Night light -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="udfps_night_light"
+        android:title="@string/udfps_night_light_title"
+        android:summary="@string/udfps_night_light_summary"
+        android:defaultValue="@*android:bool/disable_udfps_night_light" />
 </PreferenceScreen>

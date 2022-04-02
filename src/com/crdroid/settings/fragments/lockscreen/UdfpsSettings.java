@@ -47,9 +47,11 @@ public class UdfpsSettings extends SettingsPreferenceFragment {
 
     private static final String UDFPS_ANIM_PREVIEW = "udfps_recognizing_animation_preview";
     private static final String SCREEN_OFF_UDFPS = "screen_off_udfps";
+    private static final String UDFPS_NIGHT_LIGHT = "udfps_night_light";
 
     private Preference mUdfpsAnimPreview;
     private Preference mScreenOffUdfps;
+    private Preference mUdfpsNightLight;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,6 +73,12 @@ public class UdfpsSettings extends SettingsPreferenceFragment {
                 com.android.internal.R.bool.config_supportScreenOffUdfps);
         if (!mScreenOffUdfpsAvailable)
             prefSet.removePreference(mScreenOffUdfps);
+
+        mUdfpsNightLight = (Preference) prefSet.findPreference(UDFPS_NIGHT_LIGHT);
+        boolean mUdfpsNightLightAvailable = resources.getBoolean(
+                com.android.internal.R.bool.disable_udfps_night_light);
+        if (!mUdfpsNightLightAvailable)
+            prefSet.removePreference(mUdfpsNightLight);
     }
 
     public static void reset(Context mContext) {
@@ -83,6 +91,8 @@ public class UdfpsSettings extends SettingsPreferenceFragment {
                 Settings.System.UDFPS_ICON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SCREEN_OFF_UDFPS, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.UDFPS_NIGHT_LIGHT, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
