@@ -17,6 +17,7 @@
 package com.crdroid.settings.fragments.ui.doze;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -42,9 +43,6 @@ public class PickupSensor implements SensorEventListener {
     private static final boolean DEBUG = false;
     private static final String TAG = "PickupSensor";
 
-    private static final int MIN_PULSE_INTERVAL_MS = 2500;
-    private static final int WAKELOCK_TIMEOUT_MS = 300;
-
     private SensorManager mSensorManager;
     private Sensor mSensorPickup;
     private Context mContext;
@@ -54,6 +52,8 @@ public class PickupSensor implements SensorEventListener {
     private WakeLock mWakeLock;
 
     private boolean mIsCustomPickupSensor;
+    private int mMinPulseIntervalMs;
+    private int mWakelockTimeoutMs;
 
     private float[] mGravity;
     private float mAccelLast;
@@ -64,8 +64,9 @@ public class PickupSensor implements SensorEventListener {
 
     public PickupSensor(Context context) {
         mContext = context;
+        final Resources res = context.getResources();
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        final String pickup_sensor = context.getResources().getString(R.string.pickup_sensor);
+        final String pickup_sensor = res.getString(R.string.pickup_sensor);
         mIsCustomPickupSensor = pickup_sensor != null && !pickup_sensor.isEmpty();
         if (mIsCustomPickupSensor) {
             for (Sensor sensor : mSensorManager.getSensorList(Sensor.TYPE_ALL)) {
@@ -77,7 +78,15 @@ public class PickupSensor implements SensorEventListener {
         } else {
             mSensorPickup = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         }
-        if (DEBUG) Log.d(TAG, "Pickup sensor: " + mSensorPickup.getStringType());
+        mMinPulseIntervalMs =
+            res.getInteger(com.android.internal.R.integer.config_dozePulsePickup_MinPulseIntervalMs);
+        mWakelockTimeoutMs =
+            res.getInteger(com.android.internal.R.integer.config_dozePulsePickup_WakelockTimeoutMs);
+        if (DEBUG) {
+            Log.d(TAG, "Pickup sensor: " + mSensorPickup.getStringType());
+            Log.d(TAG, "MinPulseIntervalMs: " + String.valueOf(mMinPulseIntervalMs));
+            Log.d(TAG, "WakelockTimeoutMs: " + String.valueOf(mWakelockTimeoutMs));
+        }
         telephonyManager = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
         mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
         mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
@@ -99,7 +108,7 @@ public class PickupSensor implements SensorEventListener {
         if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
 
         long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
-        if (delta < MIN_PULSE_INTERVAL_MS) {
+        if (delta < mMinPulseIntervalMs) {
             return;
         } else {
             mEntryTimestamp = SystemClock.elapsedRealtime();
@@ -133,7 +142,7 @@ public class PickupSensor implements SensorEventListener {
     private void launchWakeOrPulse() {
         boolean isRaiseToWake = Utils.isRaiseToWakeEnabled(mContext);
         if (isRaiseToWake) {
-            mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
+            mWakeLock.acquire(mWakelockTimeoutMs);
             mPowerManager.wakeUp(SystemClock.uptimeMillis(),
                 PowerManager.WAKE_REASON_GESTURE, TAG);
         } else {

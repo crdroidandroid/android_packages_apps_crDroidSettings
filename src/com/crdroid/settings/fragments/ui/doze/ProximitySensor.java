@@ -17,6 +17,7 @@
 package com.crdroid.settings.fragments.ui.doze;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -39,14 +40,6 @@ public class ProximitySensor implements SensorEventListener {
     private static final boolean DEBUG = false;
     private static final String TAG = "ProximitySensor";
 
-    private static final int WAKELOCK_TIMEOUT_MS = 300;
-
-    // Maximum time for the hand to cover the sensor: 1s
-    private static final int HANDWAVE_MAX_DELTA_NS = 1000 * 1000 * 1000;
-
-    // Minimum time until the device is considered to have been in the pocket: 2s
-    private static final int POCKET_MIN_DELTA_NS = 2000 * 1000 * 1000;
-
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
@@ -56,14 +49,30 @@ public class ProximitySensor implements SensorEventListener {
 
     private boolean mSawNear = false;
     private long mInPocketTime = 0;
+    private int mWakelockTimeoutMs;
+    private int mHandWaveMaxDeltaNs;
+    private int mPocketMinDeltaNs;
 
     private Vibrator mVibrator;
 
     public ProximitySensor(Context context) {
         mContext = context;
+        final Resources res = context.getResources();
         mSensorManager = mContext.getSystemService(SensorManager.class);
-        final boolean wakeup = context.getResources().getBoolean(com.android.internal.R.bool.config_deviceHaveWakeUpProximity);
+        final boolean wakeup =
+            res.getBoolean(com.android.internal.R.bool.config_deviceHaveWakeUpProximity);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY, wakeup);
+        mWakelockTimeoutMs =
+            res.getInteger(com.android.internal.R.integer.config_dozePulseProximity_WakelockTimeoutMs);
+        mHandWaveMaxDeltaNs =
+            res.getInteger(com.android.internal.R.integer.config_dozePulseProximity_HandwaveMaxDeltaNs);
+        mPocketMinDeltaNs =
+            res.getInteger(com.android.internal.R.integer.config_dozePulseProximity_PocketMinDeltaNs);
+        if (DEBUG) {
+            Log.d(TAG, "WakelockTimeoutMs: " + String.valueOf(mWakelockTimeoutMs));
+            Log.d(TAG, "HandwaveMaxDeltaNs: " + String.valueOf(mHandWaveMaxDeltaNs));
+            Log.d(TAG, "PocketMinDeltaNs: " + String.valueOf(mPocketMinDeltaNs));
+        }
         mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
         mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
         mExecutorService = Executors.newSingleThreadExecutor();
@@ -84,7 +93,7 @@ public class ProximitySensor implements SensorEventListener {
         if (mSawNear && !isNear) {
             if (shouldPulse(event.timestamp)) {
                 if (isRaiseToWake) {
-                    mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
+                    mWakeLock.acquire(mWakelockTimeoutMs);
                     mPowerManager.wakeUp(SystemClock.uptimeMillis(),
                         PowerManager.WAKE_REASON_GESTURE, TAG);
                 } else {
@@ -102,9 +111,9 @@ public class ProximitySensor implements SensorEventListener {
         long delta = timestamp - mInPocketTime;
 
         if (Utils.handwaveGestureEnabled(mContext)) {
-            return delta < HANDWAVE_MAX_DELTA_NS;
+            return delta < mHandWaveMaxDeltaNs;
         } else if (Utils.pocketGestureEnabled(mContext)) {
-            return delta >= POCKET_MIN_DELTA_NS;
+            return delta >= mPocketMinDeltaNs;
         }
         return false;
     }
