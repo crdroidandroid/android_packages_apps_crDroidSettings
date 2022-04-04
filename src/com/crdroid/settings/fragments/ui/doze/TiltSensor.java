@@ -17,6 +17,7 @@
 package com.crdroid.settings.fragments.ui.doze;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -30,6 +31,8 @@ import android.os.Vibrator;
 import android.provider.Settings;
 import android.util.Log;
 
+import com.android.settings.R;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -39,10 +42,6 @@ public class TiltSensor implements SensorEventListener {
     private static final boolean DEBUG = false;
     private static final String TAG = "TiltSensor";
 
-    private static final int BATCH_LATENCY_IN_MS = 100;
-    private static final int MIN_PULSE_INTERVAL_MS = 2500;
-    private static final int WAKELOCK_TIMEOUT_MS = 300;
-
     private SensorManager mSensorManager;
     private Sensor mSensor;
     private Context mContext;
@@ -51,11 +50,26 @@ public class TiltSensor implements SensorEventListener {
     private WakeLock mWakeLock;
 
     private long mEntryTimestamp;
+    private int mBatchLatencyInMs;
+    private int mMinPulseIntervalMs;
+    private int mWakelockTimeoutMs;
 
     private Vibrator mVibrator;
 
     public TiltSensor(Context context) {
         mContext = context;
+        final Resources res = context.getResources();
+        mBatchLatencyInMs =
+            res.getInteger(R.integer.config_dozePulseTilt_BatchLatencyInMs);
+        mMinPulseIntervalMs =
+            res.getInteger(R.integer.config_dozePulseTilt_MinPulseIntervalMs);
+        mWakelockTimeoutMs =
+            res.getInteger(R.integer.config_dozePulseTilt_WakelockTimeoutMs);
+        if (DEBUG) {
+            Log.d(TAG, "BatchLatencyInMs: " + String.valueOf(mBatchLatencyInMs));
+            Log.d(TAG, "MinPulseIntervalMs: " + String.valueOf(mMinPulseIntervalMs));
+            Log.d(TAG, "WakelockTimeoutMs: " + String.valueOf(mWakelockTimeoutMs));
+        }
         mSensorManager = mContext.getSystemService(SensorManager.class);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_TILT_DETECTOR);
         mPowerManager = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
@@ -78,7 +92,7 @@ public class TiltSensor implements SensorEventListener {
         if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
 
         long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
-        if (delta < MIN_PULSE_INTERVAL_MS) {
+        if (delta < mMinPulseIntervalMs) {
             return;
         } else {
             mEntryTimestamp = SystemClock.elapsedRealtime();
@@ -86,7 +100,7 @@ public class TiltSensor implements SensorEventListener {
 
         if (event.values[0] == 1) {
             if (isRaiseToWake) {
-                mWakeLock.acquire(WAKELOCK_TIMEOUT_MS);
+                mWakeLock.acquire(mWakelockTimeoutMs);
                 mPowerManager.wakeUp(SystemClock.uptimeMillis(),
                     PowerManager.WAKE_REASON_GESTURE, TAG);
             } else {
@@ -106,7 +120,8 @@ public class TiltSensor implements SensorEventListener {
         submit(() -> {
             mEntryTimestamp = SystemClock.elapsedRealtime();
             mSensorManager.registerListener(this, mSensor,
-                    SensorManager.SENSOR_DELAY_NORMAL, BATCH_LATENCY_IN_MS * 1000);
+                    SensorManager.SENSOR_DELAY_NORMAL,
+                    mBatchLatencyInMs * 1000);
         });
     }
 
