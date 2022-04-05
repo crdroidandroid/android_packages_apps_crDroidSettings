@@ -27,6 +27,19 @@
         android:defaultValue="true" />
 
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="reticker_status"
+        android:icon="@drawable/ic_message_fast"
+        android:title="@string/reticker_title"
+        android:summary="@string/reticker_summary" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="reticker_colored"
+        android:icon="@drawable/ic_message_fast"
+        android:title="@string/reticker_colored_title"
+        android:summary="@string/reticker_colored_summary"
+        android:dependency="reticker_status" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="notification_sound_vib_screen_on"
         android:icon="@drawable/ic_bell_ring"
         android:title="@string/notification_sound_vib_screen_on_title"
