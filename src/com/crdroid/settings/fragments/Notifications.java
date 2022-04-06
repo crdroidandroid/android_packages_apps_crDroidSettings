@@ -57,6 +57,7 @@ public class Notifications extends SettingsPreferenceFragment implements
     private static final String FLASHLIGHT_CALL_PREF = "flashlight_on_call";
     private static final String FLASHLIGHT_DND_PREF = "flashlight_on_call_ignore_dnd";
     private static final String FLASHLIGHT_RATE_PREF = "flashlight_on_call_rate";
+    private static final String HEADS_UP_TIME_OUT_PREF = "heads_up_time_out";
 
     private Preference mAlertSlider;
     private Preference mBatLights;
@@ -65,6 +66,8 @@ public class Notifications extends SettingsPreferenceFragment implements
     private ListPreference mFlashOnCall;
     private SwitchPreference mFlashOnCallIgnoreDND;
     private CustomSeekBarPreference mFlashOnCallRate;
+    private CustomSeekBarPreference mHeadsUpTimeOut;
+    private static int defaultHeadsUpTimeOut;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -121,7 +124,21 @@ public class Notifications extends SettingsPreferenceFragment implements
 
             mFlashOnCallIgnoreDND.setEnabled(value > 1);
             mFlashOnCallRate.setEnabled(value > 0);
+
         }
+
+        Resources systemUiResources;
+        try {
+            systemUiResources = getPackageManager().getResourcesForApplication("com.android.systemui");
+        } catch (Exception e) {
+            return;
+        }
+        int defaultHeadsUpTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
+                    "com.android.systemui:integer/heads_up_notification_decay", null, null));
+        mHeadsUpTimeOut = (CustomSeekBarPreference) prefScreen.findPreference(HEADS_UP_TIME_OUT_PREF);
+        mHeadsUpTimeOut.setOnPreferenceChangeListener(this);
+        mHeadsUpTimeOut.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.HEADS_UP_TIMEOUT, defaultHeadsUpTimeOut));
     }
 
     @Override
@@ -130,6 +147,11 @@ public class Notifications extends SettingsPreferenceFragment implements
             int value = Integer.parseInt((String) newValue);
             mFlashOnCallIgnoreDND.setEnabled(value > 1);
             mFlashOnCallRate.setEnabled(value > 0);
+            return true;
+        } else if (preference == mHeadsUpTimeOut) {
+            int value = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.HEADS_UP_TIMEOUT, value);
             return true;
         }
         return false;
@@ -157,6 +179,8 @@ public class Notifications extends SettingsPreferenceFragment implements
                 Settings.System.RETICKER_STATUS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.RETICKER_COLORED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.HEADS_UP_TIMEOUT, defaultHeadsUpTimeOut, UserHandle.USER_CURRENT);
     }
 
     @Override

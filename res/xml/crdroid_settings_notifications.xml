@@ -71,6 +71,19 @@
             android:summary="@string/less_boring_heads_up_summary"
             android:defaultValue="false"
             android:dependency="heads_up_notifications_enabled" />
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="heads_up_time_out"
+            android:icon="@drawable/ic_clock"
+            android:title="@string/notification_heads_up_time_out_title"
+            android:summary="@string/notification_heads_up_time_out_summary"
+            settings:units="@string/unit_milliseconds"
+            settings:defaultValueText="@string/disabled"
+            android:defaultValue="5000"
+            settings:min="1000"
+            android:max="10000"
+            settings:interval="500"
+            android:dependency="heads_up_notifications_enabled" />
     </PreferenceCategory>
 
     <PreferenceCategory
