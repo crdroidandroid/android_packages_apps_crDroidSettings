@@ -137,4 +137,31 @@
             android:fragment="com.crdroid.settings.fragments.notifications.notificationlight.NotificationLightSettings" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/notification_material_dismiss_button_title">
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="notification_material_dismiss"
+            android:title="@string/notification_material_dismiss_button_title"
+            android:summary="@string/notification_material_dismiss_button_summary"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="notification_material_dismiss_style"
+            android:title="@string/clearall_style_title"
+            android:dependency="notification_material_dismiss"
+            android:defaultValue="0"
+            android:max="9"
+            android:min="0" />
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="notification_material_dismiss_bgstyle"
+            android:title="@string/clearall_bgstyle_title"
+            android:dependency="notification_material_dismiss"
+            android:defaultValue="0"
+            android:max="2"
+            android:min="0" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
