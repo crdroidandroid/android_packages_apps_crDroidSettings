@@ -88,6 +88,12 @@
             android:defaultValue="true" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="fp_wake_unlock"
+            android:icon="@drawable/ic_fp"
+            android:title="@string/fp_wake_unlock_title"
+            android:summary="@string/fp_wake_unlock_summary" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="enable_ripple_effect"
             android:icon="@drawable/ic_unlock_outline"
             android:title="@string/enable_fingerprint_ripple_effect_title"
