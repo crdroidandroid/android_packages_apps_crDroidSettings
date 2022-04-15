@@ -57,6 +57,7 @@ public class Notifications extends SettingsPreferenceFragment implements
     private static final String FLASHLIGHT_CALL_PREF = "flashlight_on_call";
     private static final String FLASHLIGHT_DND_PREF = "flashlight_on_call_ignore_dnd";
     private static final String FLASHLIGHT_RATE_PREF = "flashlight_on_call_rate";
+    private static final String HEADS_UP_TIMEOUT_PREF = "heads_up_timeout";
 
     private Preference mAlertSlider;
     private Preference mBatLights;
@@ -65,6 +66,7 @@ public class Notifications extends SettingsPreferenceFragment implements
     private ListPreference mFlashOnCall;
     private SwitchPreference mFlashOnCallIgnoreDND;
     private CustomSeekBarPreference mFlashOnCallRate;
+    private CustomSeekBarPreference mHeadsUpTimeOut;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -83,6 +85,9 @@ public class Notifications extends SettingsPreferenceFragment implements
         if (!mAlertSliderAvailable)
             prefScreen.removePreference(mAlertSlider);
 
+        mHeadsUpTimeOut = (CustomSeekBarPreference)
+                            prefScreen.findPreference(HEADS_UP_TIMEOUT_PREF);
+        mHeadsUpTimeOut.setDefaultValue(getDefaultDecay(mContext));
 
         mBatLights = (Preference) prefScreen.findPreference(BATTERY_LIGHTS_PREF);
         boolean mBatLightsSupported = res.getInteger(
@@ -135,6 +140,18 @@ public class Notifications extends SettingsPreferenceFragment implements
         return false;
     }
 
+    private static int getDefaultDecay(Context context) {
+        int defaultHeadsUpTimeOut = 5;
+        Resources systemUiResources;
+        try {
+            systemUiResources = context.getPackageManager().getResourcesForApplication("com.android.systemui");
+            defaultHeadsUpTimeOut = systemUiResources.getInteger(systemUiResources.getIdentifier(
+                    "com.android.systemui:integer/heads_up_notification_decay", null, null)) / 1000;
+        } catch (Exception e) {
+        }
+        return defaultHeadsUpTimeOut;
+    }
+
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.Global.putInt(resolver,
@@ -157,6 +174,8 @@ public class Notifications extends SettingsPreferenceFragment implements
                 Settings.System.RETICKER_STATUS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.RETICKER_COLORED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.HEADS_UP_TIMEOUT, getDefaultDecay(mContext), UserHandle.USER_CURRENT);
     }
 
     @Override
