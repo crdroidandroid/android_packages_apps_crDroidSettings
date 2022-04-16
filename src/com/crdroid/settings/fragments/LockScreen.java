@@ -93,9 +93,6 @@ public class LockScreen extends SettingsPreferenceFragment
         } else {
             if (!Utils.isPackageInstalled(getContext(), "com.crdroid.udfps.icons")) {
                 interfaceCategory.removePreference(mUdfpsSettings);
-            } else {
-                gestCategory.removePreference(mFingerprintVib);
-                gestCategory.removePreference(mFingerprintVibErr);
             }
             if (!mFingerprintManager.isPowerbuttonFps()) {
                 gestCategory.removePreference(mFingerprintWakeUnlock);
