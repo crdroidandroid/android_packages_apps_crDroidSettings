@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 crDroid Android Project
+ * Copyright (C) 2021-2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,6 +67,8 @@ public class MonetSettings extends SettingsPreferenceFragment {
                 PREF_LINEAR_LIGHTNESS, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 PREF_WHITE_LUMINANCE, 425, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.SYSTEM_BLACK_THEME, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
