@@ -56,6 +56,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String KEY_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
     private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
+    private static final String KEY_NOTIFICATION_CLEAR_STYLE = "notification_material_dismiss_style";
+    private static final String KEY_NOTIFICATION_CLEAR_BGSTYLE = "notification_material_dismiss_bgstyle";
 
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
@@ -127,6 +129,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_FOOTER_SHOW_POWER_MENU, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SECURE_LOCKSCREEN_QS_DISABLED, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.NOTIFICATION_MATERIAL_DISMISS, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.NOTIFICATION_MATERIAL_DISMISS_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.NOTIFICATION_MATERIAL_DISMISS_BGSTYLE, 0, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
@@ -144,5 +152,16 @@ public class QuickSettings extends SettingsPreferenceFragment implements
      * For search
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.crdroid_settings_quicksettings);
+            new BaseSearchIndexProvider(R.xml.crdroid_settings_quicksettings) {
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+
+                    keys.add(KEY_NOTIFICATION_CLEAR_STYLE);
+                    keys.add(KEY_NOTIFICATION_CLEAR_BGSTYLE);
+
+                    return keys;
+                }
+            };
 }

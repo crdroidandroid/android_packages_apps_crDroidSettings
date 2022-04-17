@@ -137,4 +137,33 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/notification_material_dismiss_title">
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="notification_material_dismiss"
+            android:icon="@drawable/ic_notification_clear_all"
+            android:title="@string/notification_material_dismiss_title"
+            android:summary="@string/notification_material_dismiss_summary"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="notification_material_dismiss_style"
+            android:icon="@drawable/ic_notification_clear_all"
+            android:title="@string/notification_material_dismiss_style_title"
+            android:dependency="notification_material_dismiss"
+            android:defaultValue="0"
+            android:max="9"
+            android:min="0" />
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="notification_material_dismiss_bgstyle"
+            android:icon="@drawable/ic_notification_clear_all"
+            android:title="@string/notification_material_dismiss_bgstyle_title"
+            android:dependency="notification_material_dismiss"
+            android:defaultValue="0"
+            android:max="4"
+            android:min="0" />
+
+    </PreferenceCategory>
 </PreferenceScreen>
