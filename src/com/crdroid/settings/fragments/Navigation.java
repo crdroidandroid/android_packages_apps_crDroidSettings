@@ -217,6 +217,8 @@ public class Navigation extends SettingsPreferenceFragment implements
                 Settings.Secure.NAVBAR_LAYOUT_VIEWS, "default", UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.BACK_GESTURE_ARROW, 1, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.BACK_GESTURE_HAPTIC, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.PIXEL_NAV_ANIMATION, 1, UserHandle.USER_CURRENT);
     }
