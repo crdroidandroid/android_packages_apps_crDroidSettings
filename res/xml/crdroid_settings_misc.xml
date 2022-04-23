@@ -116,4 +116,11 @@
             android:targetClass="org.omnirom.omnijaws.SettingsActivity" />
     </Preference>
 
+    <!-- Ignore Window Secure Flag -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="window_ignore_secure"
+        android:title="@string/ignore_window_secure_title"
+        android:summary="@string/ignore_window_secure_summary"
+        android:defaultValue="false"/>
+
 </PreferenceScreen>
