@@ -37,6 +37,8 @@ import com.android.settingslib.search.SearchIndexable;
 import java.util.List;
 import java.util.ArrayList;
 
+import lineageos.providers.LineageSettings;
+
 @SearchIndexable
 public class Miscellaneous extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -106,8 +108,8 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 Settings.System.GAMING_MODE_DISABLE_NOTIFICATION_ALERT, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.GAMING_MODE_DISABLE_ADB, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.AUTO_BRIGHTNESS_ONE_SHOT, 0, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.AUTO_BRIGHTNESS_ONE_SHOT, 0, UserHandle.USER_CURRENT);
         SystemProperties.set(SYS_GAMES_SPOOF, "false");
         SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
     }
