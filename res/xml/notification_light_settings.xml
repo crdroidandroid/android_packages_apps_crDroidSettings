@@ -18,13 +18,13 @@
         android:key="notification_lights"
         android:title="@string/notification_light_title">
 
+    <lineageos.preference.SystemSettingMainSwitchPreference
+        android:key="notification_light_pulse"
+        android:title="@string/notification_light_enable_title" />
+
     <PreferenceCategory
         android:key="general_section"
         android:title="@string/notification_light_general_title">
-
-        <lineageos.preference.SystemSettingSwitchPreference
-            android:key="notification_light_pulse"
-            android:title="@string/notification_light_title" />
 
         <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="notification_light_color_auto"
@@ -100,6 +100,12 @@
         android:key="applications_list"
         android:title="@string/notification_light_applist_title"
         android:dependency="notification_light_pulse_custom_enable" >
+
+        <Preference
+            android:key="custom_apps_add"
+            android:title="@string/add"
+            android:icon="@drawable/ic_add_24dp" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

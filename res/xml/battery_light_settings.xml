@@ -18,13 +18,13 @@
         android:key="battery_lights"
         android:title="@string/battery_light_title">
 
+    <lineageos.preference.LineageSystemSettingMainSwitchPreference
+        android:key="battery_light_enabled"
+        android:title="@string/battery_light_enable_title" />
+
     <PreferenceCategory
         android:key="general_section"
         android:title="@string/notification_light_general_title">
-
-        <lineageos.preference.LineageSystemSettingSwitchPreference
-            android:key="battery_light_enabled"
-            android:title="@string/battery_light_title" />
 
         <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="battery_light_pulse"

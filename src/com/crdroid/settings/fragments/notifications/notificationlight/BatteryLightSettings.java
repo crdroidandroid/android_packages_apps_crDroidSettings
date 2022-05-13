@@ -35,6 +35,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.nano.MetricsProto;
 
+import lineageos.preference.LineageSystemSettingMainSwitchPreference;
 import lineageos.preference.LineageSystemSettingSwitchPreference;
 import lineageos.providers.LineageSettings;
 
@@ -62,7 +63,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     private ApplicationLightPreference mMediumColorPref;
     private ApplicationLightPreference mFullColorPref;
     private ApplicationLightPreference mReallyFullColorPref;
-    private LineageSystemSettingSwitchPreference mLightEnabledPref;
+    private LineageSystemSettingMainSwitchPreference mLightEnabledPref;
     private LineageSystemSettingSwitchPreference mLightFullChargeDisabledPref;
     private LineageSystemSettingSwitchPreference mPulseEnabledPref;
     private BatteryBrightnessPreference mBatteryBrightnessPref;
@@ -103,16 +104,11 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
 
         PreferenceGroup generalPrefs = (PreferenceGroup) prefSet.findPreference(GENERAL_SECTION);
 
-        mLightEnabledPref =
-                (LineageSystemSettingSwitchPreference) prefSet.findPreference(LIGHT_ENABLED_PREF);
-        mLightFullChargeDisabledPref =
-                (LineageSystemSettingSwitchPreference) prefSet.findPreference(LIGHT_FULL_CHARGE_DISABLED_PREF);
-        mPulseEnabledPref =
-                (LineageSystemSettingSwitchPreference) prefSet.findPreference(PULSE_ENABLED_PREF);
-        mBatteryBrightnessPref =
-                (BatteryBrightnessPreference) prefSet.findPreference(BRIGHTNESS_PREFERENCE);
-        mBatteryBrightnessZenPref =
-                (BatteryBrightnessZenPreference) prefSet.findPreference(BRIGHTNESS_ZEN_PREFERENCE);
+        mLightEnabledPref = prefSet.findPreference(LIGHT_ENABLED_PREF);
+        mLightFullChargeDisabledPref = prefSet.findPreference(LIGHT_FULL_CHARGE_DISABLED_PREF);
+        mPulseEnabledPref = prefSet.findPreference(PULSE_ENABLED_PREF);
+        mBatteryBrightnessPref = prefSet.findPreference(BRIGHTNESS_PREFERENCE);
+        mBatteryBrightnessZenPref = prefSet.findPreference(BRIGHTNESS_ZEN_PREFERENCE);
 
         boolean isLightEnabled = LineageSettings.System.getIntForUser(resolver,
                 LineageSettings.System.BATTERY_LIGHT_ENABLED, isBatteryLightEnabled(context) ? 1 : 0, UserHandle.USER_CURRENT) != 0;
@@ -146,22 +142,22 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             setHasOptionsMenu(true);
 
             // Low, Medium and full color preferences
-            mLowColorPref = (ApplicationLightPreference) prefSet.findPreference(LOW_COLOR_PREF);
+            mLowColorPref = prefSet.findPreference(LOW_COLOR_PREF);
             mLowColorPref.setOnPreferenceChangeListener(this);
             mLowColorPref.setDefaultValues(mDefaultLowColor, 0, 0);
             mLowColorPref.setBrightness(mBatteryBrightness);
 
-            mMediumColorPref = (ApplicationLightPreference) prefSet.findPreference(MEDIUM_COLOR_PREF);
+            mMediumColorPref = prefSet.findPreference(MEDIUM_COLOR_PREF);
             mMediumColorPref.setOnPreferenceChangeListener(this);
             mMediumColorPref.setDefaultValues(mDefaultMediumColor, 0, 0);
             mMediumColorPref.setBrightness(mBatteryBrightness);
 
-            mFullColorPref = (ApplicationLightPreference) prefSet.findPreference(FULL_COLOR_PREF);
+            mFullColorPref = prefSet.findPreference(FULL_COLOR_PREF);
             mFullColorPref.setOnPreferenceChangeListener(this);
             mFullColorPref.setDefaultValues(mDefaultFullColor, 0, 0);
             mFullColorPref.setBrightness(mBatteryBrightness);
 
-            mReallyFullColorPref = (ApplicationLightPreference) prefSet.findPreference(REALLY_FULL_COLOR_PREF);
+            mReallyFullColorPref = prefSet.findPreference(REALLY_FULL_COLOR_PREF);
             mReallyFullColorPref.setOnPreferenceChangeListener(this);
             mReallyFullColorPref.setDefaultValues(mDefaultReallyFullColor, 0, 0);
             mReallyFullColorPref.setBrightness(mBatteryBrightness);
@@ -183,7 +179,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         }
 
         // Remove battery LED brightness controls if we can't support them.
-        if (segmentedBatteryLed || (!mMultiColorLed && !mHALAdjustableBrightness)) {
+        if (!mMultiColorLed && !mHALAdjustableBrightness) {
             prefSet.removePreference(prefSet.findPreference(BRIGHTNESS_SECTION));
         }
 
