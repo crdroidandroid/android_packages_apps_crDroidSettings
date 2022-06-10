@@ -54,6 +54,7 @@ public class LockScreen extends SettingsPreferenceFragment
 
     public static final String TAG = "LockScreen";
 
+    private static final String LOCKSCREEN_INTERFACE_CATEGORY = "lockscreen_interface_category";
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
     private static final String FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String FP_ERROR_VIBRATE = "fp_error_vibrate";
@@ -117,9 +118,11 @@ public class LockScreen extends SettingsPreferenceFragment
             gestCategory.removePreference(mFingerprintVibErr);
         }
 
+        PreferenceCategory interfaceCategory = (PreferenceCategory) findPreference(LOCKSCREEN_INTERFACE_CATEGORY);
+
         mLockscreenBlur = (Preference) findPreference(LOCKSCREEN_BLUR);
         if (!DeviceUtils.isBlurSupported()) {
-            prefSet.removePreference(mLockscreenBlur);
+            interfaceCategory.removePreference(mLockscreenBlur);
         }
     }
 
