@@ -59,6 +59,7 @@ public class PickupSensor implements SensorEventListener {
     private float mAccelLast;
     private float mAccelCurrent;
     private long mEntryTimestamp;
+    private float mSensorValue;
 
     private Vibrator mVibrator;
 
@@ -66,6 +67,7 @@ public class PickupSensor implements SensorEventListener {
         mContext = context;
         final Resources res = context.getResources();
         mSensorManager = mContext.getSystemService(SensorManager.class);
+        mSensorValue = res.getFloat(R.dimen.pickup_sensor_value);
         final String pickup_sensor = res.getString(R.string.pickup_sensor);
         mIsCustomPickupSensor = pickup_sensor != null && !pickup_sensor.isEmpty();
         if (mIsCustomPickupSensor) {
@@ -130,7 +132,7 @@ public class PickupSensor implements SensorEventListener {
                     launchWakeOrPulse();
                 }
             } else {
-                if (event.values[0] == 1) {
+                if (event.values[0] == mSensorValue) {
                     launchWakeOrPulse();
                 }
             }
