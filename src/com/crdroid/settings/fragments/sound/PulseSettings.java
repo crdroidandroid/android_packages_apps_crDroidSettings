@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2021 crDroid Android Project
+ * Copyright (C) 2016-2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -159,14 +159,13 @@ public class PulseSettings extends SettingsPreferenceFragment implements
                 Settings.Secure.NAVBAR_PULSE_ENABLED, 0, UserHandle.USER_CURRENT) != 0;
         boolean lockscreenPulse = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.LOCKSCREEN_PULSE_ENABLED, 1, UserHandle.USER_CURRENT) != 0;
-
         boolean ambientPulse = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.AMBIENT_PULSE_ENABLED, 0, UserHandle.USER_CURRENT) != 0;
 
         mPulseSmoothing.setEnabled(navbarPulse || lockscreenPulse || ambientPulse);
 
         mColorModePref.setEnabled(navbarPulse || lockscreenPulse || ambientPulse);
-        if (navbarPulse || lockscreenPulse) {
+        if (navbarPulse || lockscreenPulse || ambientPulse) {
             int colorMode = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.PULSE_COLOR_MODE, COLOR_TYPE_LAVALAMP, UserHandle.USER_CURRENT);
             updateColorPrefs(colorMode);
@@ -185,7 +184,7 @@ public class PulseSettings extends SettingsPreferenceFragment implements
             mSolidBarsCat.setEnabled(false);
         }
 
-        mFooterPref.setEnabled(navbarPulse || lockscreenPulse);
+        mFooterPref.setEnabled(navbarPulse || lockscreenPulse || ambientPulse);
     }
 
     private void updateColorPrefs(int val) {
