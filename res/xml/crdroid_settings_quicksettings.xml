@@ -93,6 +93,16 @@
             android:title="@string/disable_qs_title"
             android:summary="@string/disable_qs_summary"/>
 
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_transparency"
+            android:icon="@drawable/ic_settings_main"
+            android:title="@string/qs_transparency_title"
+            android:summary="@string/qs_transparency_summary"
+            android:defaultValue="10"
+            settings:interval="1"
+            android:max="10"
+            android:min="1" />
+
     </PreferenceCategory>
 
     <PreferenceCategory 
