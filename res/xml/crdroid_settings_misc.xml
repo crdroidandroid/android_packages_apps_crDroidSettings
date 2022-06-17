@@ -62,4 +62,11 @@
         android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
 
+    <!-- Application downgrade -->
+    <com.crdroid.settings.preferences.GlobalSettingSwitchPreference
+        android:key="pm_downgrade_allowed"
+        android:icon="@drawable/ic_application_downgrade"
+        android:title="@string/app_downgrade_title"
+        android:summary="@string/app_downgrade_summary"
+        android:defaultValue="false"/>
 </PreferenceScreen>
