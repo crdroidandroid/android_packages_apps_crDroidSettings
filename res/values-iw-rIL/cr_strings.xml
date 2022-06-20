@@ -191,17 +191,17 @@
     <string name="volume_answer_call_summary">קבלת שיחות נכנסות על ידי לחיצה על מקשי עוצמת השמע</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">תאורה אחורית</string>
-    <string name="button_backlight_summary">Customize button backlight settings</string>
-    <string name="button_backlight_enabled">Illuminate buttons</string>
-    <string name="button_backlight_only_when_pressed_title">Illuminate buttons only when pressed</string>
-    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
-    <string name="button_backlight_seekbar_title">Button brightness</string>
-    <string name="keyboard_backlight_seekbar_title">Keyboard brightness</string>
-    <string name="backlight_timeout_title">Illumination timeout</string>
-    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
-    <string name="backlight_summary_disabled">Disabled</string>
-    <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
-    <string name="backlight_summary_enabled">Enabled</string>
+    <string name="button_backlight_summary">התאמת הגדרות פקד תאורת הרקע</string>
+    <string name="button_backlight_enabled">תאורת פקדים</string>
+    <string name="button_backlight_only_when_pressed_title">תאורת הפקדים בעת הלחיצה בלבד</string>
+    <string name="keyboard_backlight_enabled">תאורת המקלדת</string>
+    <string name="button_backlight_seekbar_title">בהירות הפקדים</string>
+    <string name="keyboard_backlight_seekbar_title">בהירות לוח המקשים</string>
+    <string name="backlight_timeout_title">משך התאורה</string>
+    <string name="backlight_timeout_unlimited">ללא כיבוי תאורת הרקע</string>
+    <string name="backlight_summary_disabled">מושבת</string>
+    <string name="backlight_summary_enabled_with_timeout">תאורת הרקע מופעלת למשך  <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">מופעל</string>
     <!-- Power menu -->
     <string name="power_menu_title">תפריט הפעלה</string>
     <string name="power_menu_summary">התאם אישית את קיצורי הדרך בתפריט ההפעלה</string>
@@ -219,7 +219,7 @@
     <string name="power_menu_users_title">משתמשים</string>
     <string name="power_menu_logout_title">התנתק/י</string>
     <string name="power_menu_emergency_title">חירום</string>
-    <string name="power_menu_devicecontrols_title">Device controls</string>
+    <string name="power_menu_devicecontrols_title">פקדי המכשיר</string>
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">אתחול מתקדם</string>
     <string name="advanced_reboot_summary">כאשר המכשיר פתוח, הוסף אפשרויות של הפעלה מחדש ל־מצב שחזור (Recovery) או Bootloader</string>
@@ -313,8 +313,8 @@
     <string name="theme_customization_signal_icon_summary">הגדר סגנון סמל אות מותאם אישית</string>
     <string name="theme_customization_wifi_icon_title">סגנון סמל WiFi</string>
     <string name="theme_customization_wifi_icon_summary">הגדר סגנון סמל WiFi מותאם אישית</string>
-    <string name="theme_customization_navbar_title">Navbar style</string>
-    <string name="theme_customization_navbar_summary">Set custom navigation bar style</string>
+    <string name="theme_customization_navbar_title">סגנון שורת הניווט</string>
+    <string name="theme_customization_navbar_summary">בחירת סגנון סרגל ניווט מותאם</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">קצב רענון ברירת מחדל</string>
     <string name="peak_refresh_rate_title_custom">קצב רענון מקסימלי</string>
@@ -329,9 +329,9 @@
     <string name="status_bar_clock_position_left">שמאלה</string>
     <string name="status_bar_clock_position_center">מרכז</string>
     <string name="status_bar_clock_position_hidden">מוסתר</string>
-    <string name="status_bar_clock_auto_hide_title">Auto hide</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">Hide clock if launcher is visible</string>
-    <string name="status_bar_clock_auto_hide_summary">Hide clock at regular interval</string>
+    <string name="status_bar_clock_auto_hide_title">הסתרה אוטומטית</string>
+    <string name="status_bar_clock_auto_hide_launcher_summary">הסתרת שעון במסך דף הבית</string>
+    <string name="status_bar_clock_auto_hide_summary">הסתרת השעון במרווחים קצובים</string>
     <string name="status_bar_clock_auto_hide_hdur_title">משך הסתרה</string>
     <string name="status_bar_clock_auto_hide_hdur_summary">מספר השניות להחבאת השעון</string>
     <string name="status_bar_clock_auto_hide_sdur_title">משך הצגה</string>
@@ -421,8 +421,8 @@
     <string name="network_traffic_mode_all">הורדה והעלאה</string>
     <string name="network_traffic_autohide">הסתר אוטומטית</string>
     <string name="network_traffic_autohide_summary">הסתר את מנטר תעבורת הרשת כאשר אין פעילות</string>
-    <string name="network_traffic_autohide_kilobits">Kb/s</string>
-    <string name="network_traffic_autohide_kilobytes">KB/s</string>
+    <string name="network_traffic_autohide_kilobits">קילוביט Kb/שניה</string>
+    <string name="network_traffic_autohide_kilobytes">קילובתים KB/שניה</string>
     <string name="network_traffic_autohide_threshold">סף חוסר פעילות</string>
     <string name="network_traffic_refresh_interval_title">מרווח זמן לרענון</string>
     <string name="network_traffic_refresh_interval_summary">משך זמן שאחריו נמדדת מחדש מהירות</string>
@@ -619,8 +619,8 @@
     <!-- Heads up timeout -->
     <string name="notification_heads_up_title">התראות קופצות</string>
     <string name="notification_heads_up_summary">אפשר התראות קופצות</string>
-    <string name="notification_heads_up_timeout_title">Time out</string>
-    <string name="notification_heads_up_timeout_summary">Time to display heads up notifications</string>
+    <string name="notification_heads_up_timeout_title">קוצב זמן</string>
+    <string name="notification_heads_up_timeout_summary">משך הזמן להצגת התראות צפות</string>
     <!-- Less boring heads up -->
     <string name="less_boring_heads_up_title">פחות משעמם</string>
     <string name="less_boring_heads_up_summary">הצג התראות קופצות רק עבור אפליקציית שעון מעורר, חייגן והודעות</string>
@@ -670,12 +670,12 @@
     <string name="screen_off_animation_crt">טלוויזיה ישנה</string>
     <string name="screen_off_animation_scale">שינוי קנה-מידה</string>
     <!-- Custom Vibration fragment -->
-    <string name="vibration_intensity_preferences">Vibration intensity</string>
-    <string name="summary_vibration_intensity_preferences">Change vibration intensities</string>
+    <string name="vibration_intensity_preferences">עוצמת הרטט</string>
+    <string name="summary_vibration_intensity_preferences">שינוי עוצמות הרטט</string>
     <string name="keywords_vibration_preferences">דפוס רטט, עוצמת רטט, שיחה נכנסת, עוצמה, הפטיקה, נגיעה, עוצמת רטט</string>
-    <string name="ringtone_vibration_pattern">Ringtone vibration pattern</string>
-    <string name="vibration_intensity_ringer">Ringtone vibration intensity</string>
-    <string name="vibration_intensity_notification">Notification vibration intensity</string>
+    <string name="ringtone_vibration_pattern">תבנית הרטט בצלצול</string>
+    <string name="vibration_intensity_ringer">עוצמת הרטט בצלצול</string>
+    <string name="vibration_intensity_notification">עוצמת הרטט בהתראות</string>
     <string name="haptic_feedback_intensity">עוצמת משוב רטט</string>
     <string name="vibration_intensity_disabled">מושבת</string>
     <string name="vibration_intensity_light">בהיר</string>
@@ -689,8 +689,8 @@
     <string name="pattern_da_dzzz_da">דה-דזזז-דה</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">רטט באימות טביעת אצבע</string>
-    <string name="fp_success_vibrate_summary">Vibrate when fingerprint authentication is successful</string>
-    <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
+    <string name="fp_success_vibrate_summary">רטט כאשר אימות טביעת האצבע הצליח</string>
+    <string name="fp_error_vibrate_title">רטט שגיאת טביעת אצבע</string>
     <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
     <!-- Charging animation -->
     <string name="charging_animation_title">Charging animation</string>
@@ -874,4 +874,10 @@
     <string name="battery_charge_cycles">Charge cycles completed</string>
     <!-- Battery temperature -->
     <string name="battery_temperature">Battery temperature</string>
+    <!-- QS Transparency -->
+    <string name="qs_transparency_title">שקיפות הרקע</string>
+    <string name="qs_transparency_summary">הגדרת מידת השקיפות של רקע האריחים המהירים</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">שימוש בנתונים</string>
+    <string name="qs_footer_datausage_summary">הצגת סיכום השימוש בנתונים בכותרת התחתונה של ההגדרות המהירות</string>
 </resources>

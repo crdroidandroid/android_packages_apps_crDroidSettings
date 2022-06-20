@@ -619,8 +619,8 @@
     <!-- Heads up timeout -->
     <string name="notification_heads_up_title">التنبيهات العلوية</string>
     <string name="notification_heads_up_summary">السماح بالإشعارات المنبثقة</string>
-    <string name="notification_heads_up_timeout_title">Time out</string>
-    <string name="notification_heads_up_timeout_summary">Time to display heads up notifications</string>
+    <string name="notification_heads_up_timeout_title">إنتهاء المهلة</string>
+    <string name="notification_heads_up_timeout_summary">الوقت لعرض الإشعارات العلوية</string>
     <!-- Less boring heads up -->
     <string name="less_boring_heads_up_title">أقل مللا</string>
     <string name="less_boring_heads_up_summary">عرض التنبيهات المنبثقة فقط لتطبيقات المنبه والاتصال والرسائل</string>
@@ -670,8 +670,8 @@
     <string name="screen_off_animation_crt">تأثير CRT</string>
     <string name="screen_off_animation_scale">تدرج</string>
     <!-- Custom Vibration fragment -->
-    <string name="vibration_intensity_preferences">Vibration intensity</string>
-    <string name="summary_vibration_intensity_preferences">Change vibration intensities</string>
+    <string name="vibration_intensity_preferences">شدة الاهتزاز</string>
+    <string name="summary_vibration_intensity_preferences">تغيير قوة الاهتزاز</string>
     <string name="keywords_vibration_preferences">نمط الاهتزاز، كثافة الاهتزاز، أثناء المكالمة، ردود فعل اللمس، قوة الاهتزاز</string>
     <string name="ringtone_vibration_pattern">نمط اهتزاز النغمة</string>
     <string name="vibration_intensity_ringer">نمط اهتزاز نغمة الرنين</string>
@@ -758,7 +758,7 @@
     <string name="custom_timeout_summary_2mins">دقيقتان</string>
     <string name="custom_timeout_summary_5mins">5 دقائق</string>
     <string name="custom_timeout_summary_10mins">10 دقائق</string>
-    <string name="custom_timeout_summary_20mins">20 minutes</string>
+    <string name="custom_timeout_summary_20mins">20 دقيقة</string>
     <string name="custom_timeout_summary_30mins">30 دقيقة</string>
     <string name="custom_timeout_summary_1hour">ساعة واحدة</string>
     <string name="custom_timeout_summary_2hours">ساعتان</string>
@@ -837,41 +837,47 @@
     <string name="game_dashboard_dnd_title">وضع عدم الإزعاج للألعاب</string>
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">Replace heads-up notification with slim and less invasive version of redesigned ticker</string>
-    <string name="reticker_colored_title">Use app colored background</string>
-    <string name="reticker_colored_summary">Replace reTicker background color using notification app main color</string>
+    <string name="reticker_summary">استبدل اشعاراتك العلوية بنسخه خفيفة واقل تدخلا من النسخة القياسية</string>
+    <string name="reticker_colored_title">استخدام خلفية ملونة للتطبيق</string>
+    <string name="reticker_colored_summary">استبدل لون خلفية reTicker باستخدام اللون الرئيسي لتطبيق الإشعارات</string>
     <!-- Smart Pixels -->
-    <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see improvement in battery life. Note that in some cases it can result in unresponsive areas on touch screen</string>
-    <string name="smart_pixels_title">Smart Pixels</string>
-    <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
-    <string name="smart_pixels_enable_title">Enable Smart Pixels</string>
-    <string name="smart_pixels_enable_summary">Shut off pixels to reduce power consumption</string>
-    <string name="smart_pixels_on_power_save_title">Auto-enable on battery saver</string>
-    <string name="smart_pixels_on_power_save_summary">Enable Smart Pixels when battery saver is enabled</string>
-    <string name="smart_pixels_percent">Percent of pixels to disable</string>
-    <string name="smart_pixels_shift_title">Burn-in protection</string>
-    <string name="smart_pixels_shift_summary">Prevents burn-in on OLED devices by shifting pixels every so often</string>
+    <string name="smart_pixels_warning_text">الدقة الذكية هي ميزة توفير الطاقة. استنادًا إلى عدد وحدات البكسل التي تقرر إيقاف تشغيلها.</string>
+    <string name="smart_pixels_title">الدقة الذكية</string>
+    <string name="smart_pixels_summary">حفظ البطارية عن طريق إيقاف تشغيل بكسلات إضافية</string>
+    <string name="smart_pixels_enable_title">تفعيل الدقة الذكية</string>
+    <string name="smart_pixels_enable_summary">إيقاف تشغيل البيكسلات لتقليل استهلاك الطاقة</string>
+    <string name="smart_pixels_on_power_save_title">تمكين تلقائي في وضع توفير الطاقة</string>
+    <string name="smart_pixels_on_power_save_summary">تمكين الدقة الذكية في وضع توفير الطاقة</string>
+    <string name="smart_pixels_percent">النسبة المئوية للبيكسلات لتعطيلها</string>
+    <string name="smart_pixels_shift_title">الحماية من الاحتراق</string>
+    <string name="smart_pixels_shift_summary">تمنع الحماية من الإحتراق Burn-in  على أجهزة OLED عن طريق تحويل وحدات البكسل بين الحين و الآخر.</string>
     <!-- Fingerprint wake and unlock -->
-    <string name="fp_wake_unlock_title">Fingerprint wake and unlock</string>
-    <string name="fp_wake_unlock_summary">Listen for fingerprint when screen is off</string>
+    <string name="fp_wake_unlock_title">ايقاظ وفتح الجهاز ببصمة الأصبع</string>
+    <string name="fp_wake_unlock_summary">تفعيل بصمة الإصبع عندما تكون الشاشة مغلقة</string>
     <!-- Black theme -->
-    <string name="system_black_theme_title">Use black theme</string>
-    <string name="system_black_theme_summary">Force black background colors</string>
+    <string name="system_black_theme_title">استخدام \"المظهر الداكن\"</string>
+    <string name="system_black_theme_summary">فرض ألوان الخلفية السوداء</string>
     <!-- Material dismiss all button for notifications -->
-    <string name="notification_material_dismiss_title">Clear all notification button</string>
-    <string name="notification_material_dismiss_summary">Replace clear all notification text with material style floating button</string>
-    <string name="notification_material_dismiss_style_title">Button style</string>
-    <string name="notification_material_dismiss_bgstyle_title">Button background</string>
+    <string name="notification_material_dismiss_title">مسح كافة الإشعارات</string>
+    <string name="notification_material_dismiss_summary">استبدال زر إزالة الإشعارات النصيه بالزر العائم</string>
+    <string name="notification_material_dismiss_style_title">نمط الأزرار</string>
+    <string name="notification_material_dismiss_bgstyle_title">خلفية الأزرار</string>
     <!-- Back gesture animation -->
-    <string name="back_gesture_arrow_title">Back gesture animation</string>
-    <string name="back_gesture_arrow_summary">Show an animated arrow for back gesture</string>
+    <string name="back_gesture_arrow_title">تأثير إيماء الرجوع</string>
+    <string name="back_gesture_arrow_summary">إظهار سهم متحرك لإيماء الرجوع</string>
     <!-- Back gesture haptic -->
-    <string name="back_gesture_haptic_title">Back gesture haptic</string>
-    <string name="back_gesture_haptic_summary">Vibrate when performing a back gesture</string>
+    <string name="back_gesture_haptic_title">رد فعل اللمس</string>
+    <string name="back_gesture_haptic_summary">تفعيل الإهتزاز عند إيماء الرجوع</string>
     <!-- Battery health -->
-    <string name="current_battery_capacity">Current battery capacity</string>
-    <string name="designed_battery_capacity">Designed battery capacity</string>
-    <string name="battery_charge_cycles">Charge cycles completed</string>
+    <string name="current_battery_capacity">السعة الحالية للبطارية</string>
+    <string name="designed_battery_capacity">السعة الإجمالية للبطارية</string>
+    <string name="battery_charge_cycles">تم إكتمال دورات الشحن</string>
     <!-- Battery temperature -->
-    <string name="battery_temperature">Battery temperature</string>
+    <string name="battery_temperature">درجة حرارة البطارية</string>
+    <!-- QS Transparency -->
+    <string name="qs_transparency_title">شفافية الخلفية</string>
+    <string name="qs_transparency_summary">تعيين مستوى الشفافية لخلفية الإعدادات السريعة</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">Data usage</string>
+    <string name="qs_footer_datausage_summary">Display data usage summary in quick settings footer</string>
 </resources>
