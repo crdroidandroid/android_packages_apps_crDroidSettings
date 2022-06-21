@@ -42,6 +42,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.preferences.CustomSeekBarPreference;
+
 import lineageos.providers.LineageSettings;
 
 import java.util.List;
@@ -58,10 +60,16 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
     private static final String KEY_NOTIFICATION_CLEAR_STYLE = "notification_material_dismiss_style";
     private static final String KEY_NOTIFICATION_CLEAR_BGSTYLE = "notification_material_dismiss_bgstyle";
+    private static final String KEY_PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
+    private static final String KEY_PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
+    private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
 
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
     private SwitchPreference mShowAutoBrightness;
+    private ListPreference mTileAnimationStyle;
+    private CustomSeekBarPreference mTileAnimationDuration;
+    private ListPreference mTileAnimationInterpolator;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -89,6 +97,16 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         } else {
             prefScreen.removePreference(mShowAutoBrightness);
         }
+
+        mTileAnimationStyle = (ListPreference) findPreference(KEY_PREF_TILE_ANIM_STYLE);
+        mTileAnimationDuration = (CustomSeekBarPreference) findPreference(KEY_PREF_TILE_ANIM_DURATION);
+        mTileAnimationInterpolator = (ListPreference) findPreference(KEY_PREF_TILE_ANIM_INTERPOLATOR);
+
+        mTileAnimationStyle.setOnPreferenceChangeListener(this);
+
+        int tileAnimationStyle = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
+        updateAnimTileStyle(tileAnimationStyle);
     }
 
     @Override
@@ -98,6 +116,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             mBrightnessSliderPosition.setEnabled(value > 0);
             if (mShowAutoBrightness != null)
                 mShowAutoBrightness.setEnabled(value > 0);
+            return true;
+        } else if (preference == mTileAnimationStyle) {
+            int value = Integer.parseInt((String) newValue);
+            updateAnimTileStyle(value);
             return true;
         }
         return false;
@@ -139,12 +161,23 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_TRANSPARENCY, 100, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_FOOTER_DATA_USAGE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TILE_ANIMATION_DURATION, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TILE_ANIMATION_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.QS_BRIGHTNESS_SLIDER_POSITION, 0, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.QS_SHOW_AUTO_BRIGHTNESS, 1, UserHandle.USER_CURRENT);
+    }
+
+    private void updateAnimTileStyle(int tileAnimationStyle) {
+        mTileAnimationDuration.setEnabled(tileAnimationStyle != 0);
+        mTileAnimationInterpolator.setEnabled(tileAnimationStyle != 0);
     }
 
     @Override
