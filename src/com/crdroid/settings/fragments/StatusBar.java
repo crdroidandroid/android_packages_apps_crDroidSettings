@@ -112,14 +112,14 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         // Adjust status bar preferences for RTL
         if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
-            if (DeviceUtils.hasNotch(mContext)) {
+            if (DeviceUtils.hasCenteredCutout(mContext)) {
                 mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch_rtl);
                 mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch_rtl);
             } else {
                 mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
                 mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_rtl);
             }
-        } else if (DeviceUtils.hasNotch(mContext)) {
+        } else if (DeviceUtils.hasCenteredCutout(mContext)) {
             mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
             mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
         }
