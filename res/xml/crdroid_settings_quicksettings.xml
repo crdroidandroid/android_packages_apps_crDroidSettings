@@ -47,6 +47,15 @@
             android:entryValues="@array/qs_battery_style_values"
             android:defaultValue="-1" />
 
+        <!-- Battery location -->
+        <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="qs_battery_location"
+            android:icon="@drawable/ic_battery"
+            android:title="@string/qs_battery_location_title"
+            android:entries="@array/qs_battery_location_entries"
+            android:entryValues="@array/qs_battery_location_values"
+            android:defaultValue="0" />
+
         <!-- Battery percent -->
         <com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="qs_show_battery_percent"
