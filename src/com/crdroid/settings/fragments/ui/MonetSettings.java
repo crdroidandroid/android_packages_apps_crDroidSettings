@@ -27,13 +27,14 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreference;
 
+import com.android.internal.logging.nano.MetricsProto;
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import com.android.internal.logging.nano.MetricsProto;
-import com.android.settings.SettingsPreferenceFragment;
-
-import com.android.settings.R;
+import lineageos.providers.LineageSettings;
 
 public class MonetSettings extends SettingsPreferenceFragment {
 
@@ -67,8 +68,8 @@ public class MonetSettings extends SettingsPreferenceFragment {
                 PREF_LINEAR_LIGHTNESS, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 PREF_WHITE_LUMINANCE, 425, UserHandle.USER_CURRENT);
-        Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.SYSTEM_BLACK_THEME, 0, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.BERRY_BLACK_THEME, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
