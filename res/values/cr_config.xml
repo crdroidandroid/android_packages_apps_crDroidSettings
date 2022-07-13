@@ -72,4 +72,10 @@
 
     <!-- Sensor trigger values -->
     <item name="pickup_sensor_value" format="float" type="dimen">1.0</item>
+
+    <!-- Battery Health -->
+    <string name="config_batteryCalculatedCapacity">/sys/class/power_supply/bms/charge_full</string>
+    <string name="config_batteryDesignCapacity">/sys/class/power_supply/bms/charge_full_design</string>
+    <string name="config_batteryChargeCycles">/sys/class/power_supply/bms/cycle_count</string>
+    <bool name="config_supportBatteryHealth">false</bool>
 </resources>
