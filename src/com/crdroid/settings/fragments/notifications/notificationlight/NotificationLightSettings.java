@@ -178,13 +178,19 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
         } else {
             mApplicationPrefList = findPreference(APPLICATION_SECTION);
             mApplicationPrefList.setOrderingAsAdded(false);
+
+            // Get launch-able applications
+            mPackageManager = getActivity().getPackageManager();
+            mPackageAdapter = new PackageListAdapter(getActivity());
+
+            mPackages = new HashMap<String, Package>();
+
+            Preference addPreference = prefSet.findPreference(ADD_APPS);
+            addPreference.setOnPreferenceClickListener(preference -> {
+                showDialog(DIALOG_APPS);
+                return true;
+            });
         }
-
-        // Get launch-able applications
-        mPackageManager = getActivity().getPackageManager();
-        mPackageAdapter = new PackageListAdapter(getActivity());
-
-        mPackages = new HashMap<String, Package>();
 
         if (!mMultiColorLed) {
             resetColors();
@@ -195,12 +201,6 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
         }
 
         //watch(Settings.System.getUriFor(Settings.System.NOTIFICATION_LIGHT_PULSE));
-
-        Preference addPreference = prefSet.findPreference(ADD_APPS);
-        addPreference.setOnPreferenceClickListener(preference -> {
-            showDialog(DIALOG_APPS);
-            return true;
-        });
     }
 
     @Override
