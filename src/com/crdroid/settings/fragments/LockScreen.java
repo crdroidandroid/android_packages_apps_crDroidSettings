@@ -57,15 +57,12 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String KEY_UDFPS_SETTINGS = "udfps_settings";
     private static final String KEY_FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String KEY_FP_ERROR_VIBRATE = "fp_error_vibrate";
-    private static final String KEY_FP_WAKE_UNLOCK = "fp_wake_unlock";
     private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
 
     private Preference mUdfpsSettings;
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
     private Preference mRippleEffect;
-
-    private SwitchPreference mFingerprintWakeUnlock;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,28 +78,16 @@ public class LockScreen extends SettingsPreferenceFragment
         mUdfpsSettings = (Preference) findPreference(KEY_UDFPS_SETTINGS);
         mFingerprintVib = (Preference) findPreference(KEY_FP_SUCCESS_VIBRATE);
         mFingerprintVibErr = (Preference) findPreference(KEY_FP_ERROR_VIBRATE);
-        mFingerprintWakeUnlock = (SwitchPreference) findPreference(KEY_FP_WAKE_UNLOCK);
         mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             interfaceCategory.removePreference(mUdfpsSettings);
             gestCategory.removePreference(mFingerprintVib);
             gestCategory.removePreference(mFingerprintVibErr);
-            gestCategory.removePreference(mFingerprintWakeUnlock);
             gestCategory.removePreference(mRippleEffect);
         } else {
             if (!Utils.isPackageInstalled(getContext(), "com.crdroid.udfps.icons")) {
                 interfaceCategory.removePreference(mUdfpsSettings);
-            }
-            if (!mFingerprintManager.isPowerbuttonFps()) {
-                gestCategory.removePreference(mFingerprintWakeUnlock);
-            } else {
-                boolean fpWakeUnlockEnabledDef = getContext().getResources().getBoolean(
-                        com.android.internal.R.bool.config_fingerprintWakeAndUnlock);
-                boolean fpWakeUnlockEnabled = Settings.System.getIntForUser(
-                        getContext().getContentResolver(), Settings.System.FP_WAKE_UNLOCK,
-                        fpWakeUnlockEnabledDef ? 1 : 0, UserHandle.USER_CURRENT) != 0;
-                mFingerprintWakeUnlock.setChecked(fpWakeUnlockEnabled);
             }
         }
     }
@@ -114,9 +99,6 @@ public class LockScreen extends SettingsPreferenceFragment
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        boolean fpWakeUnlockEnabledDef = mContext.getResources().getBoolean(
-                com.android.internal.R.bool.config_fingerprintWakeAndUnlock);
-
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -131,8 +113,6 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.FP_ERROR_VIBRATE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.FP_WAKE_UNLOCK, fpWakeUnlockEnabledDef ? 1 : 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_ENABLE_POWER_MENU, 1, UserHandle.USER_CURRENT);
         UdfpsSettings.reset(mContext);
@@ -159,7 +139,6 @@ public class LockScreen extends SettingsPreferenceFragment
                         keys.add(KEY_UDFPS_SETTINGS);
                         keys.add(KEY_FP_SUCCESS_VIBRATE);
                         keys.add(KEY_FP_ERROR_VIBRATE);
-                        keys.add(KEY_FP_WAKE_UNLOCK);
                         keys.add(KEY_RIPPLE_EFFECT);
                     } else {
                         if (!Utils.isPackageInstalled(context, "com.crdroid.udfps.icons")) {
@@ -167,9 +146,6 @@ public class LockScreen extends SettingsPreferenceFragment
                         } else {
                             keys.add(KEY_FP_SUCCESS_VIBRATE);
                             keys.add(KEY_FP_ERROR_VIBRATE);
-                        }
-                        if (!mFingerprintManager.isPowerbuttonFps()) {
-                            keys.add(KEY_FP_WAKE_UNLOCK);
                         }
                     }
 
