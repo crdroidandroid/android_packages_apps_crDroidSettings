@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2021 crDroid Android Project
+ * Copyright (C) 2017-2022 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -100,13 +100,15 @@ public class ProximitySensor implements SensorEventListener {
 
     private boolean shouldPulse(long timestamp) {
         long delta = timestamp - mInPocketTime;
+        boolean shouldPulse = false;
 
-        if (Utils.handwaveGestureEnabled(mContext)) {
-            return delta < HANDWAVE_MAX_DELTA_NS;
-        } else if (Utils.pocketGestureEnabled(mContext)) {
-            return delta >= POCKET_MIN_DELTA_NS;
-        }
-        return false;
+        if (delta < HANDWAVE_MAX_DELTA_NS)
+            shouldPulse = Utils.handwaveGestureEnabled(mContext);
+
+        if (!shouldPulse && delta >= POCKET_MIN_DELTA_NS)
+            shouldPulse = Utils.pocketGestureEnabled(mContext);
+
+        return shouldPulse;
     }
 
     @Override
