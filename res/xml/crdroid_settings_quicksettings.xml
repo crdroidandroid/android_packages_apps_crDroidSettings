@@ -116,6 +116,44 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="qs_layout_category"
+        android:title="@string/qs_layout_category_title">
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_label_hide"
+            android:icon="@drawable/ic_text"
+            android:title="@string/qs_tile_label_hide_title"
+            android:summary="@string/qs_tile_label_hide_summary"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="qs_tile_vertical_layout"
+            android:icon="@drawable/ic_qs_tile"
+            android:title="@string/qs_tile_layout_title"
+            android:summary="@string/qs_tile_layout_summary"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_layout_columns"
+            android:icon="@drawable/ic_qs_tile"
+            android:title="@string/qs_columns_portrait_title"
+            android:max="5"
+            settings:min="2"
+            settings:interval="1"
+            android:defaultValue="2" />
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_layout_columns_landscape"
+            android:icon="@drawable/ic_qs_tile"
+            android:title="@string/qs_columns_landscape_title"
+            android:max="6"
+            settings:min="2"
+            settings:interval="1"
+            android:defaultValue="4" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/qs_tile_animation_title">
 
         <com.crdroid.settings.preferences.SystemSettingListPreference
