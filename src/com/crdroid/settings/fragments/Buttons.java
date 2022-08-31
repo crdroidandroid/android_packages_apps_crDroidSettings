@@ -116,7 +116,6 @@ public class Buttons extends SettingsPreferenceFragment implements
     private ListPreference mAppSwitchLongPressAction;
     private SwitchPreference mCameraWakeScreen;
     private SwitchPreference mCameraSleepOnRelease;
-    private SwitchPreference mCameraLaunch;
     private ListPreference mVolumeKeyCursorControl;
     private SwitchPreference mVolumeWakeScreen;
     private SwitchPreference mVolumeMusicControls;
@@ -318,7 +317,6 @@ public class Buttons extends SettingsPreferenceFragment implements
         if (hasCameraKey) {
             mCameraWakeScreen = findPreference(KEY_CAMERA_WAKE_SCREEN);
             mCameraSleepOnRelease = findPreference(KEY_CAMERA_SLEEP_ON_RELEASE);
-            mCameraLaunch = findPreference(KEY_CAMERA_LAUNCH);
 
             if (!showCameraWake) {
                 prefScreen.removePreference(mCameraWakeScreen);
