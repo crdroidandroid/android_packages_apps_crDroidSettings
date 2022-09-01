@@ -34,6 +34,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.fragments.misc.SmartCharging;
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -45,6 +47,7 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
 
     public static final String TAG = "Miscellaneous";
 
+    private static final String SMART_CHARGING = "smart_charging";
     private static final String POCKET_JUDGE = "pocket_judge";
     private static final String KEY_GAMES_SPOOF = "use_games_spoof";
     private static final String KEY_PHOTOS_SPOOF = "use_photos_spoof";
@@ -52,6 +55,7 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
     private static final String SYS_GAMES_SPOOF = "persist.sys.pixelprops.games";
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
 
+    private Preference mSmartCharging;
     private Preference mPocketJudge;
     private SwitchPreference mGamesSpoof;
     private SwitchPreference mPhotosSpoof;
@@ -64,6 +68,12 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
+
+        mSmartCharging = (Preference) prefScreen.findPreference(SMART_CHARGING);
+        boolean mSmartChargingSupported = res.getBoolean(
+                com.android.internal.R.bool.config_smartChargingAvailable);
+        if (!mSmartChargingSupported)
+            prefScreen.removePreference(mSmartCharging);
 
         mPocketJudge = (Preference) prefScreen.findPreference(POCKET_JUDGE);
         boolean mPocketJudgeSupported = res.getBoolean(
@@ -104,6 +114,7 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 LineageSettings.System.AUTO_BRIGHTNESS_ONE_SHOT, 0, UserHandle.USER_CURRENT);
         SystemProperties.set(SYS_GAMES_SPOOF, "false");
         SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
+        SmartCharging.reset(mContext);
     }
 
     @Override
@@ -121,6 +132,11 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
                     final Resources res = context.getResources();
+
+                    boolean mSmartChargingSupported = res.getBoolean(
+                            com.android.internal.R.bool.config_smartChargingAvailable);
+                    if (!mSmartChargingSupported)
+                        keys.add(SMART_CHARGING);
 
                     boolean mPocketJudgeSupported = res.getBoolean(
                             com.android.internal.R.bool.config_pocketModeSupported);

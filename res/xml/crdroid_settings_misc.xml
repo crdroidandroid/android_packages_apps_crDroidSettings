@@ -46,6 +46,14 @@
         android:summary="@string/use_photos_spoof_summary"
         android:defaultValue="true" />
 
+    <!-- Smart Charging -->
+    <Preference
+        android:key="smart_charging"
+        android:icon="@drawable/ic_battery_charging_80"
+        android:title="@string/smart_charging_title"
+        android:summary="@string/smart_charging_summary"
+        android:fragment="com.crdroid.settings.fragments.misc.SmartCharging"/>
+
     <!-- Three-fingers-swipe to screenshot -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="three_finger_gesture"
