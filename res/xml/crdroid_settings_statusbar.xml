@@ -83,45 +83,10 @@
             android:defaultValue="true"/>
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="combined_status_bar_signal_icons"
-            android:icon="@drawable/ic_wifi"
-            android:title="@string/combined_status_bar_signal_icons_title"
-            android:summary="@string/combined_status_bar_signal_icons_summary" />
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="bluetooth_show_battery"
             android:icon="@drawable/ic_battery_bluetooth"
             android:title="@string/bluetooth_battery_title"
             android:summary="@string/bluetooth_battery_summary"
-            android:defaultValue="true"/>
-
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="volte_icon_style"
-            android:icon="@drawable/ic_volte"
-            android:title="@string/volte_icon_title"
-            android:summary="@string/volte_icon_summary"
-            android:defaultValue="0"
-            settings:defaultValueText="@string/disabled"
-            android:max="9"
-            settings:min="0"
-            settings:units="" />
-
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="vowifi_icon_style"
-            android:icon="@drawable/ic_vowifi"
-            android:title="@string/vowifi_icon_title"
-            android:summary="@string/vowifi_icon_summary"
-            android:defaultValue="0"
-            settings:defaultValueText="@string/disabled"
-            android:max="8"
-            settings:min="0"
-            settings:units="" />
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="volte_vowifi_override"
-            android:icon="@drawable/ic_vowifi"
-            android:title="@string/volte_vowifi_override_title"
-            android:summary="@string/volte_vowifi_override_summary"
             android:defaultValue="true"/>
 
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
