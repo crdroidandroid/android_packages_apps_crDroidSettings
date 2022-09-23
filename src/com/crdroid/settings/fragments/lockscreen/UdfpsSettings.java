@@ -46,7 +46,7 @@ import com.android.settings.SettingsPreferenceFragment;
 public class UdfpsSettings extends SettingsPreferenceFragment {
 
     private static final String UDFPS_ANIM_PREVIEW = "udfps_recognizing_animation_preview";
-    private static final String SCREEN_OFF_UDFPS = "screen_off_udfps";
+    private static final String SCREEN_OFF_UDFPS_ENABLED = "screen_off_udfps_enabled";
 
     private Preference mUdfpsAnimPreview;
     private Preference mScreenOffUdfps;
@@ -66,7 +66,7 @@ public class UdfpsSettings extends SettingsPreferenceFragment {
             prefSet.removePreference(mUdfpsAnimPreview);
         }
 
-        mScreenOffUdfps = (Preference) prefSet.findPreference(SCREEN_OFF_UDFPS);
+        mScreenOffUdfps = (Preference) prefSet.findPreference(SCREEN_OFF_UDFPS_ENABLED);
         boolean mScreenOffUdfpsAvailable = resources.getBoolean(
                 com.android.internal.R.bool.config_supportScreenOffUdfps);
         if (!mScreenOffUdfpsAvailable)
@@ -81,8 +81,8 @@ public class UdfpsSettings extends SettingsPreferenceFragment {
                 Settings.System.UDFPS_ANIM_STYLE, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.UDFPS_ICON, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SCREEN_OFF_UDFPS, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.SCREEN_OFF_UDFPS_ENABLED, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
