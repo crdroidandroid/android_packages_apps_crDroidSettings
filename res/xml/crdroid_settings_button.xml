@@ -20,41 +20,54 @@
     android:key="button_settings"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="hardware_keys_disable"
-        android:icon="@drawable/ic_buttons"
-        android:title="@string/hwkeys_disabled_title"
-        android:summary="@string/hwkeys_disabled_summary" />
+    <PreferenceCategory
+        android:key="extras_category"
+        android:title="@string/extras_title" >
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="swap_capacitive_keys"
-        android:icon="@drawable/ic_buttons"
-        android:title="@string/swap_capacitive_keys_title"
-        android:summary="@string/swap_capacitive_keys_summary" />
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="hardware_keys_disable"
+            android:icon="@drawable/ic_buttons"
+            android:title="@string/hwkeys_disabled_title"
+            android:summary="@string/hwkeys_disabled_summary" />
 
-    <lineageos.preference.RemotePreference
-        android:key="additional_buttons"
-        android:icon="@drawable/ic_extra_buttons"
-        android:title="@string/additional_buttons_title"
-        lineage:requiresAction="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS">
-        <intent
-             android:action="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS" />
-    </lineageos.preference.RemotePreference>
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="swap_capacitive_keys"
+            android:icon="@drawable/ic_buttons"
+            android:title="@string/swap_capacitive_keys_title"
+            android:summary="@string/swap_capacitive_keys_summary" />
 
-    <com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness
-        android:key="button_backlight"
-        android:icon="@drawable/ic_backlight"
-        android:title="@string/button_backlight_title"
-        android:summary="@string/button_backlight_summary"
-        android:dialogTitle="@string/button_backlight_title"
-        android:persistent="false" />
+        <lineageos.preference.RemotePreference
+            android:key="additional_buttons"
+            android:icon="@drawable/ic_extra_buttons"
+            android:title="@string/additional_buttons_title"
+            lineage:requiresAction="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS">
+            <intent
+                 android:action="org.lineageos.settings.device.ADDITIONAL_BUTTONS_SETTINGS" />
+        </lineageos.preference.RemotePreference>
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="anbi_enabled"
-        android:icon="@drawable/ic_anbi"
-        android:title="@string/anbi_title"
-        android:summary="@string/anbi_summary"
-        android:defaultValue="false" />
+        <lineageos.preference.LineageSystemSettingSwitchPreference
+            android:key="click_partial_screenshot"
+            android:icon="@drawable/ic_screenshot"
+            android:title="@string/click_partial_screenshot_title"
+            android:summary="@string/click_partial_screenshot_summary"
+            android:defaultValue="false" />
+
+        <com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness
+            android:key="button_backlight"
+            android:icon="@drawable/ic_backlight"
+            android:title="@string/button_backlight_title"
+            android:summary="@string/button_backlight_summary"
+            android:dialogTitle="@string/button_backlight_title"
+            android:persistent="false" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="anbi_enabled"
+            android:icon="@drawable/ic_anbi"
+            android:title="@string/anbi_title"
+            android:summary="@string/anbi_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="power_key"
