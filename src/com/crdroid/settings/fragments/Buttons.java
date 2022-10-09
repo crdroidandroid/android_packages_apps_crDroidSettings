@@ -89,6 +89,8 @@ public class Buttons extends SettingsPreferenceFragment implements
             "torch_long_press_power_gesture";
     private static final String KEY_TORCH_LONG_PRESS_POWER_TIMEOUT =
             "torch_long_press_power_timeout";
+    private static final String KEY_CLICK_PARTIAL_SCREENSHOT =
+            "click_partial_screenshot";
     private static final String KEY_ADDITIONAL_BUTTONS = "additional_buttons";
     private static final String KEY_POWER_MENU = "power_menu";
 
@@ -100,6 +102,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String CATEGORY_APPSWITCH = "app_switch_key";
     private static final String CATEGORY_CAMERA = "camera_key";
     private static final String CATEGORY_VOLUME = "volume_keys";
+    private static final String CATEGORY_EXTRAS = "extras_category";
 
     private SwitchPreference mHardwareKeysDisable;
     private SwitchPreference mSwapCapacitiveKeys;
@@ -117,8 +120,6 @@ public class Buttons extends SettingsPreferenceFragment implements
     private SwitchPreference mCameraWakeScreen;
     private SwitchPreference mCameraSleepOnRelease;
     private ListPreference mVolumeKeyCursorControl;
-    private SwitchPreference mVolumeWakeScreen;
-    private SwitchPreference mVolumeMusicControls;
     private SwitchPreference mSwapVolumeButtons;
     private SwitchPreference mPowerEndCall;
     private SwitchPreference mHomeAnswerCall;
@@ -156,7 +157,6 @@ public class Buttons extends SettingsPreferenceFragment implements
         final boolean showCameraWake = DeviceUtils.canWakeUsingCameraKey(getActivity());
         final boolean showVolumeWake = DeviceUtils.canWakeUsingVolumeKeys(getActivity());
 
-        boolean hasAnyBindableKey = false;
         final PreferenceCategory powerCategory = prefScreen.findPreference(CATEGORY_POWER);
         final PreferenceCategory homeCategory = prefScreen.findPreference(CATEGORY_HOME);
         final PreferenceCategory backCategory = prefScreen.findPreference(CATEGORY_BACK);
@@ -165,10 +165,11 @@ public class Buttons extends SettingsPreferenceFragment implements
         final PreferenceCategory appSwitchCategory = prefScreen.findPreference(CATEGORY_APPSWITCH);
         final PreferenceCategory volumeCategory = prefScreen.findPreference(CATEGORY_VOLUME);
         final PreferenceCategory cameraCategory = prefScreen.findPreference(CATEGORY_CAMERA);
+        final PreferenceCategory extrasCategory = prefScreen.findPreference(CATEGORY_EXTRAS);
 
-        mHardwareKeysDisable = (SwitchPreference) findPreference(HWKEYS_DISABLED);
-        mSwapCapacitiveKeys = findPreference(KEY_SWAP_CAPACITIVE_KEYS);
-        mAnbi = (SwitchPreference) findPreference(KEY_ANBI);
+        mHardwareKeysDisable = (SwitchPreference) extrasCategory.findPreference(HWKEYS_DISABLED);
+        mSwapCapacitiveKeys = extrasCategory.findPreference(KEY_SWAP_CAPACITIVE_KEYS);
+        mAnbi = (SwitchPreference) extrasCategory.findPreference(KEY_ANBI);
 
         // Power button ends calls.
         mPowerEndCall = findPreference(KEY_POWER_END_CALL);
@@ -204,15 +205,15 @@ public class Buttons extends SettingsPreferenceFragment implements
         if (isKeyDisablerSupported(getActivity())) {
             mHardwareKeysDisable.setOnPreferenceChangeListener(this);
         } else {
-            prefScreen.removePreference(mHardwareKeysDisable);
+            extrasCategory.removePreference(mHardwareKeysDisable);
         }
 
         if (!isKeySwapperSupported(getActivity())) {
-            prefScreen.removePreference(mSwapCapacitiveKeys);
+            extrasCategory.removePreference(mSwapCapacitiveKeys);
         }
 
         if (!hasHomeKey && !hasBackKey && !hasMenuKey && !hasAssistKey && !hasAppSwitchKey) {
-            prefScreen.removePreference(mAnbi);
+            extrasCategory.removePreference(mAnbi);
             mAnbi = null;
         } else if (isKeyDisablerSupported(getActivity())) {
             mAnbi.setEnabled(!(Settings.System.getIntForUser(resolver,
@@ -229,7 +230,8 @@ public class Buttons extends SettingsPreferenceFragment implements
                 powerCategory.removePreference(mTorchLongPressPowerGesture);
                 powerCategory.removePreference(mTorchLongPressPowerTimeout);
             }
-        } else {
+        }
+        if (!hasPowerKey || powerCategory.getPreferenceCount() == 0) {
             prefScreen.removePreference(powerCategory);
         }
 
@@ -245,9 +247,8 @@ public class Buttons extends SettingsPreferenceFragment implements
 
             mHomeLongPressAction = initList(KEY_HOME_LONG_PRESS, homeLongPressAction);
             mHomeDoubleTapAction = initList(KEY_HOME_DOUBLE_TAP, homeDoubleTapAction);
-
-            hasAnyBindableKey = true;
-        } else {
+        }
+        if (!hasHomeKey || homeCategory.getPreferenceCount() == 0) {
             prefScreen.removePreference(homeCategory);
         }
 
@@ -257,7 +258,8 @@ public class Buttons extends SettingsPreferenceFragment implements
             }
 
             mBackLongPressAction = initList(KEY_BACK_LONG_PRESS, backLongPressAction);
-        } else {
+        }
+        if (!hasBackKey || backCategory.getPreferenceCount() == 0) {
             prefScreen.removePreference(backCategory);
         }
 
@@ -274,9 +276,8 @@ public class Buttons extends SettingsPreferenceFragment implements
                         LineageSettings.System.KEY_MENU_LONG_PRESS_ACTION,
                         hasAssistKey ? Action.NOTHING : Action.APP_SWITCH);
             mMenuLongPressAction = initList(KEY_MENU_LONG_PRESS, longPressAction);
-
-            hasAnyBindableKey = true;
-        } else {
+        }
+        if (!hasMenuKey || menuCategory.getPreferenceCount() == 0) {
             prefScreen.removePreference(menuCategory);
         }
 
@@ -292,9 +293,8 @@ public class Buttons extends SettingsPreferenceFragment implements
             Action longPressAction = Action.fromSettings(resolver,
                     LineageSettings.System.KEY_ASSIST_LONG_PRESS_ACTION, Action.VOICE_SEARCH);
             mAssistLongPressAction = initList(KEY_ASSIST_LONG_PRESS, longPressAction);
-
-            hasAnyBindableKey = true;
-        } else {
+        }
+        if (!hasAssistKey || assistCategory.getPreferenceCount() == 0) {
             prefScreen.removePreference(assistCategory);
         }
 
@@ -308,9 +308,8 @@ public class Buttons extends SettingsPreferenceFragment implements
             mAppSwitchPressAction = initList(KEY_APP_SWITCH_PRESS, pressAction);
 
             mAppSwitchLongPressAction = initList(KEY_APP_SWITCH_LONG_PRESS, appSwitchLongPressAction);
-
-            hasAnyBindableKey = true;
-        } else {
+        }
+        if (!hasAppSwitchKey || appSwitchCategory.getPreferenceCount() == 0) {
             prefScreen.removePreference(appSwitchCategory);
         }
 
@@ -325,7 +324,8 @@ public class Buttons extends SettingsPreferenceFragment implements
             if (res.getBoolean(org.lineageos.platform.internal.R.bool.config_singleStageCameraKey)) {
                 prefScreen.removePreference(mCameraSleepOnRelease);
             }
-        } else {
+        }
+        if (!hasCameraKey || cameraCategory.getPreferenceCount() == 0) {
             prefScreen.removePreference(cameraCategory);
         }
 
@@ -350,13 +350,16 @@ public class Buttons extends SettingsPreferenceFragment implements
                 mSwapVolumeButtons.setChecked(swapVolumeKeys > 0);
             }
         } else {
+            extrasCategory.removePreference(findPreference(KEY_CLICK_PARTIAL_SCREENSHOT));
+        }
+        if (!hasVolumeKeys || volumeCategory.getPreferenceCount() == 0) {
             prefScreen.removePreference(volumeCategory);
         }
 
-        backlight = findPreference(KEY_BUTTON_BACKLIGHT);
+        backlight = extrasCategory.findPreference(KEY_BUTTON_BACKLIGHT);
         if (!DeviceUtils.hasButtonBacklightSupport(getActivity())
                 && !DeviceUtils.hasKeyboardBacklightSupport(getActivity())) {
-            prefScreen.removePreference(backlight);
+            extrasCategory.removePreference(backlight);
             backlight = null;
         } else if (isKeyDisablerSupported(getActivity())) {
             backlight.setEnabled(!(Settings.System.getIntForUser(resolver,
@@ -371,14 +374,18 @@ public class Buttons extends SettingsPreferenceFragment implements
             }
         }
 
-        mVolumeWakeScreen = findPreference(KEY_VOLUME_WAKE_SCREEN);
-        mVolumeMusicControls = findPreference(KEY_VOLUME_MUSIC_CONTROLS);
+        SwitchPreference volumeWakeScreen = findPreference(KEY_VOLUME_WAKE_SCREEN);
+        SwitchPreference volumeMusicControls = findPreference(KEY_VOLUME_MUSIC_CONTROLS);
 
-        if (mVolumeWakeScreen != null) {
-            if (mVolumeMusicControls != null) {
-                mVolumeMusicControls.setDependency(KEY_VOLUME_WAKE_SCREEN);
-                mVolumeWakeScreen.setDisableDependentsState(true);
+        if (volumeWakeScreen != null) {
+            if (volumeMusicControls != null) {
+                volumeMusicControls.setDependency(KEY_VOLUME_WAKE_SCREEN);
+                volumeWakeScreen.setDisableDependentsState(true);
             }
+        }
+
+        if (extrasCategory.getPreferenceCount() == 0) {
+            prefScreen.removePreference(extrasCategory);
         }
     }
 
@@ -547,6 +554,8 @@ public class Buttons extends SettingsPreferenceFragment implements
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
         LineageSettings.System.putIntForUser(resolver,
+                LineageSettings.System.CLICK_PARTIAL_SCREENSHOT, 0, UserHandle.USER_CURRENT);
+        LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.TORCH_LONG_PRESS_POWER_GESTURE, 0, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.TORCH_LONG_PRESS_POWER_TIMEOUT, 0, UserHandle.USER_CURRENT);
@@ -641,6 +650,7 @@ public class Buttons extends SettingsPreferenceFragment implements
                         keys.add(KEY_VOLUME_MUSIC_CONTROLS);
                         keys.add(KEY_VOLUME_KEY_CURSOR_CONTROL);
                         keys.add(KEY_SWAP_VOLUME_BUTTONS);
+                        keys.add(KEY_CLICK_PARTIAL_SCREENSHOT);
                     } else {
                         if (!TelephonyUtils.isVoiceCapable(context)) {
                             keys.add(KEY_VOLUME_ANSWER_CALL);
