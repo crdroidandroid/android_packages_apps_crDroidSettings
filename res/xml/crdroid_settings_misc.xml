@@ -70,4 +70,14 @@
         android:summary="@string/pocket_judge_summary"
         android:defaultValue="false" />
 
+    <!-- Weather -->
+    <Preference
+        android:icon="@drawable/ic_omnijaws"
+        android:title="@string/weather_settings_title"
+        android:summary="@string/weather_settings_summary">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="org.omnirom.omnijaws"
+            android:targetClass="org.omnirom.omnijaws.SettingsActivity" />
+    </Preference>
 </PreferenceScreen>
