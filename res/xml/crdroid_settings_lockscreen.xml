@@ -46,6 +46,13 @@
             android:summary="@string/lockscreen_weather_summary" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_weather_location"
+            android:icon="@drawable/ic_map_marker"
+            android:title="@string/lockscreen_weather_location_title"
+            android:summary="@string/lockscreen_weather_location_summary"
+            android:dependency="lockscreen_weather_enabled" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
             android:icon="@drawable/ic_battery_charging"
             android:title="@string/lockscreen_battery_info_title"
