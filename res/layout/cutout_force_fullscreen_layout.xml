@@ -31,4 +31,13 @@
         android:layout_height="match_parent"
         android:divider="@null" />
 
+    <TextView
+        android:id="@+id/user_list_empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="@string/display_cutout_force_fullscreen_no_apps"
+        android:textSize="18dp"
+        android:visibility="gone" />
+
 </RelativeLayout>

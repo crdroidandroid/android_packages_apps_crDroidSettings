@@ -45,9 +45,7 @@ import com.android.settings.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import com.android.internal.util.crdroid.cutout.CutoutFullscreenController;
 
@@ -59,10 +57,7 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
     private ApplicationsState mApplicationsState;
     private ApplicationsState.Session mSession;
     private ActivityFilter mActivityFilter;
-    private Map<String, ApplicationsState.AppEntry> mEntryMap =
-            new HashMap<String, ApplicationsState.AppEntry>();
 
-    private ListView mUserListView;
     private CutoutFullscreenController mCutoutForceFullscreenSettings;
 
     @Override
@@ -102,8 +97,9 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mUserListView = (ListView) view.findViewById(R.id.user_list_view);
-        mUserListView.setAdapter(mAllPackagesAdapter);
+        ListView userListView = view.findViewById(R.id.user_list_view);
+        userListView.setAdapter(mAllPackagesAdapter);
+        userListView.setEmptyView(view.findViewById(R.id.user_list_empty_view));
     }
 
     @Override
@@ -186,10 +182,6 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
         }
 
         mAllPackagesAdapter.setEntries(entries, sections, positions);
-        mEntryMap.clear();
-        for (ApplicationsState.AppEntry e : entries) {
-            mEntryMap.put(e.info.packageName, e);
-        }
     }
 
     private void rebuild() {
@@ -270,7 +262,7 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
         private void setEntries(List<ApplicationsState.AppEntry> entries,
                 List<String> sections, List<Integer> positions) {
             mEntries = entries;
-            mSections = sections.toArray(new String[sections.size()]);
+            mSections = sections.toArray(new String[0]);
             mPositions = new int[positions.size()];
             for (int i = 0; i < positions.size(); i++) {
                 mPositions[i] = positions.get(i);
@@ -313,15 +305,15 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
     }
 
     private static class ViewHolder {
-        private TextView title;
-        private ImageView icon;
-        private Switch state;
-        private View rootView;
+        private final TextView title;
+        private final ImageView icon;
+        private final Switch state;
+        private final View rootView;
 
         private ViewHolder(View view) {
-            this.title = (TextView) view.findViewById(R.id.app_name);
-            this.icon = (ImageView) view.findViewById(R.id.app_icon);
-            this.state = (Switch) view.findViewById(R.id.state);
+            this.title = view.findViewById(R.id.app_name);
+            this.icon = view.findViewById(R.id.app_icon);
+            this.state = view.findViewById(R.id.state);
             this.rootView = view;
 
             view.setTag(this);
@@ -331,7 +323,7 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
     private class ActivityFilter implements ApplicationsState.AppFilter {
 
         private final PackageManager mPackageManager;
-        private final List<String> mLauncherResolveInfoList = new ArrayList<String>();
+        private final List<String> mLauncherResolveInfoList = new ArrayList<>();
 
         private ActivityFilter(PackageManager packageManager) {
             this.mPackageManager = packageManager;
