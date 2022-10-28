@@ -74,7 +74,7 @@
     <string name="crdroid_website_title">Oficjalna strona</string>
     <string name="crdroid_website_summary">Odwiedź naszą oficjalną stronę</string>
     <string name="crdroid_translate_title">Tłumaczenia</string>
-    <string name="crdroid_translate_summary">Pomóż w tłumaczeniu systemu na Swój język!</string>
+    <string name="crdroid_translate_summary">Pomóż w tłumaczeniu systemu na swój język!</string>
     <string name="crdroid_sponsor_summary">Odwiedź naszego hosta strony internetowej</string>
     <!-- Donate crDroid -->
     <string name="donate_crdroid_title">Wesprzyj nas</string>
@@ -136,6 +136,7 @@
     <string name="lockscreen_battery_info_title">Informacje o baterii</string>
     <string name="lockscreen_battery_info_summary">Wyświetl informacje o baterii podczas ładowania</string>
     <!-- Button settings -->
+    <string name="extras_title">Dodatki</string>
     <string name="additional_buttons_title">Dodatkowe przyciski</string>
     <string name="hardware_keys_power_key_title">Przycisk zasilania</string>
     <string name="hardware_keys_home_key_title">Przycisk Home</string>
@@ -159,9 +160,9 @@
     <string name="hardware_keys_action_last_app">Ostatnia aplikacja</string>
     <string name="hardware_keys_action_split_screen">Podzielony ekran</string>
     <string name="hardware_keys_action_close_app">Zamknięcie aplikacji</string>
-    <string name="hardware_keys_action_torch">Włącznik latarki</string>
+    <string name="hardware_keys_action_torch">Włącz latarkę</string>
     <string name="hardware_keys_action_screenshot">Zrób zrzut ekranu</string>
-    <string name="hardware_keys_action_volume_panel">Przełącznik panelu głośności</string>
+    <string name="hardware_keys_action_volume_panel">Włącz panel głośności</string>
     <string name="hardware_keys_action_clear_all_notifications">Wyczyść wszystkie powiadomienia</string>
     <string name="hardware_keys_action_notifications_panel">Przełącznik panelu powiadomień</string>
     <string name="hardware_keys_action_expand_qs_panel">Rozwiń panel szybkich ustawień</string>
@@ -189,6 +190,8 @@
     <string name="button_wake_summary">Wybudź urządzenie poprzez naciśnięcie przycisku</string>
     <string name="volume_answer_call_title">Odbieranie połączeń</string>
     <string name="volume_answer_call_summary">Odbieranie połączenia przychodzącego za pomocą przycisków głośności</string>
+    <string name="click_partial_screenshot_title">Naciśnij, aby wykonać częściowy zrzut ekranu</string>
+    <string name="click_partial_screenshot_summary">Naciśnij krótko przycisk ściszania i zasilania, aby wykonać częściowy zrzut ekranu</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">Podświetlenie</string>
     <string name="button_backlight_summary">Dostosuj ustawienia podświetlenia przycisków</string>
@@ -764,6 +767,22 @@
     <string name="custom_timeout_summary_2hours">2 godziny</string>
     <string name="custom_timeout_summary_4hours">4 godziny</string>
     <string name="custom_timeout_summary_8hours">8 godzin</string>
+    <!-- Hotspot client manager -->
+    <string name="wifi_hotspot_client_manager_title">Połączone urządzenia</string>
+    <string name="wifi_hotspot_client_manager_summary">Pokaż i zarządzaj urządzeniami podłączonymi do punktu dostępu. Ustaw limit liczby klientów</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Pokaż urządzenia połączone do punktu dostępu</string>
+    <string name="wifi_hotspot_client_limit_title">Maksymalna liczba połączonych urządzeń</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Zablokowane urządzenia</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Połączone urządzenia</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Zablokuj urządzenie</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Ta czynność rozłączy \"<xliff:g id="device_name">%1$s</xliff:g>\" z tego urządzenia i doda go do listy zablokowanych</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Odblokuj urządzenie</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Urządzenie \"<xliff:g id="device_name">%1$s</xliff:g>\" będzie mogło połączyć się z tym punktem dostępu</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Aktualnie brak dostępnych urządzeń. Połączone i zablokowane urządzenia zostaną wyświetlone tutaj, jeśli będą dostępne.</string>
+    <!-- Hotspot hidden SSID -->
+    <string name="wifi_hotspot_hidden_ssid_title">Sieć ukryta</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Nazwa twojego punktu dostępu nie pojawi się na liście dostępnych sieci WiFi.</string>
+    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Ukryj szybkie ustawienia z poziomu blokady ekranu</string>
     <string name="disable_qs_summary">Blokuj dostęp do kafelków szybkich ustawień z poziomu blokady ekranu</string>
@@ -918,4 +937,9 @@
     <string name="smart_charging_reset_stats_title">Resetuj statystyki baterii</string>
     <string name="smart_charging_reset_stats_summary">Zresetuj statystyki baterii, po osiągnięciu określonego przez użytkownika poziomu naładowania</string>
     <string name="smart_charging_footer">Inteligentne ładowanie pozwala ustawić maksymalny poziom naładowania, aby wydłużyć żywotność baterii. Po włączeniu, ładowanie zostaje przerwane przy poziomie zatrzymania i wznawiane na poziomie startowym. Poziom zatrzymania powinien być zawsze większy niż poziom startowy.</string>
+    <!-- Adaptive Playback -->
+    <string name="adaptive_playback_title">Odtwarzanie adaptacyjne</string>
+    <string name="adaptive_playback_summary">Wstrzymaj odtwarzanie, gdy głośność jest wyciszona i wznawiaj je przez zwiększenie głośności w ciągu limitu czasu</string>
+    <string name="adaptive_playback_intro_text">Automatycznie zatrzymuje odtwarzanie multimediów, gdy dźwięk jest wyciszony i wznawia ich odtwarzanie, gdy dźwięk zostanie przywrócony w określonym czasie</string>
+    <string name="adaptive_playback_timeout_title">Limit czasu odtwarzania</string>
 </resources>

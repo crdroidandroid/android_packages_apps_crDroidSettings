@@ -136,6 +136,7 @@
     <string name="lockscreen_battery_info_title">電池資訊</string>
     <string name="lockscreen_battery_info_summary">充電時顯示電池資訊</string>
     <!-- Button settings -->
+    <string name="extras_title">其他</string>
     <string name="additional_buttons_title">附加按鍵</string>
     <string name="hardware_keys_power_key_title">電源鍵</string>
     <string name="hardware_keys_home_key_title">Home 鍵</string>
@@ -189,6 +190,8 @@
     <string name="button_wake_summary">按下按鍵時喚醒裝置</string>
     <string name="volume_answer_call_title">接聽來電</string>
     <string name="volume_answer_call_summary">按音量鍵接聽來電</string>
+    <string name="click_partial_screenshot_title">短按截圖</string>
+    <string name="click_partial_screenshot_summary">短按音量下鍵和電源鍵以擷取部分螢幕畫面</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">背光</string>
     <string name="button_backlight_summary">自訂按鈕背光設定</string>
@@ -764,6 +767,22 @@
     <string name="custom_timeout_summary_2hours">2 小時</string>
     <string name="custom_timeout_summary_4hours">4 小時</string>
     <string name="custom_timeout_summary_8hours">8 小時</string>
+    <!-- Hotspot client manager -->
+    <string name="wifi_hotspot_client_manager_title">已連線的裝置</string>
+    <string name="wifi_hotspot_client_manager_summary">顯示並管理已連線到無線基地台的裝置。可限制同時連線的裝置數量</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">列出已連線到無線基地台的裝置</string>
+    <string name="wifi_hotspot_client_limit_title">連接數量限制</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">已封鎖的裝置</string>
+    <string name="wifi_hotspot_connected_clients_list_title">已連線的裝置</string>
+    <string name="wifi_hotspot_block_client_dialog_title">封鎖裝置</string>
+    <string name="wifi_hotspot_block_client_dialog_text">此操作將斷開「<xliff:g id="device_name">%1$s</xliff:g>」與此裝置的連線並將其新增至封鎖清單</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">取消封鎖裝置</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">此設備 “<xliff:g id="device_name">%1$s</xliff:g>” 將能夠連接到此無線基地台</string>
+    <string name="wifi_hotspot_client_manager_footer_text">目前沒有可顯示的裝置。有已連線或已封鎖的裝置時將在此顯示。</string>
+    <!-- Hotspot hidden SSID -->
+    <string name="wifi_hotspot_hidden_ssid_title">隱藏網路</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">您的無線基地台將不會公開顯示。</string>
+    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">在安全鎖定畫面上停用快速設定</string>
     <string name="disable_qs_summary">設有密碼等鎖定機制時，在鎖定畫面上停用快速設定</string>
@@ -918,4 +937,9 @@
     <string name="smart_charging_reset_stats_title">重設電池統計數據</string>
     <string name="smart_charging_reset_stats_summary">在達到使用者設定的電量後，重設電池統計數據</string>
     <string name="smart_charging_footer">智慧充電可以透過限制最大充電量來達到延長電池壽命的效果。啟用時，會在達到「停止充電電量」後暫停充電；在降至「開始充電電量」後繼續。「停止充電電量」應始終大於「開始充電電量」。</string>
+    <!-- Adaptive Playback -->
+    <string name="adaptive_playback_title">自動暫停</string>
+    <string name="adaptive_playback_summary">在靜音時暫停媒體播放，並在一定時間內逐漸恢復音量</string>
+    <string name="adaptive_playback_intro_text">靜音後，媒體將會自動暫停播放，當音量在設定時間內恢復時會自動恢復播放。</string>
+    <string name="adaptive_playback_timeout_title">逾時長度</string>
 </resources>

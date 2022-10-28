@@ -136,6 +136,7 @@
     <string name="lockscreen_battery_info_title">Akku-Info</string>
     <string name="lockscreen_battery_info_summary">Akku-Informationen beim Aufladen anzeigen</string>
     <!-- Button settings -->
+    <string name="extras_title">Extras</string>
     <string name="additional_buttons_title">Zusätzliche Tasten</string>
     <string name="hardware_keys_power_key_title">Ein-/Aus-Taste</string>
     <string name="hardware_keys_home_key_title">Home-Taste</string>
@@ -189,6 +190,8 @@
     <string name="button_wake_summary">Bildschirm einschalten durch Drücken der Taste</string>
     <string name="volume_answer_call_title">Anruf annehmen</string>
     <string name="volume_answer_call_summary">Eingehende Anrufe durch Drücken der Lautstärketasten annehmen</string>
+    <string name="click_partial_screenshot_title">Zum Erstellen eines Teil-Screenshots klicken</string>
+    <string name="click_partial_screenshot_summary">Kurz auf Leiser- und Ein-/Aus-Taste drücken, um einen Teil-Screenshot aufzunehmen</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">Hintergrundbeleuchtung</string>
     <string name="button_backlight_summary">Einstellungen für die Tastenhintergrundbeleuchtung anpassen</string>
@@ -764,6 +767,22 @@
     <string name="custom_timeout_summary_2hours">2 Stunden</string>
     <string name="custom_timeout_summary_4hours">4 Stunde</string>
     <string name="custom_timeout_summary_8hours">8 Stunden</string>
+    <!-- Hotspot client manager -->
+    <string name="wifi_hotspot_client_manager_title">Verbundene Geräte</string>
+    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot. Setting a limit on the number of clients</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Mit dem Hotspot verbundene Geräte auflisten</string>
+    <string name="wifi_hotspot_client_limit_title">Max. Anzahl verbundener Geräte</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blockierte Geräte</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Verbundene Geräte</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Gerät blockieren</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Dadurch wird die Verbindung mit „<xliff:g id="device_name">%1$s</xliff:g>“ getrennt und das Gerät der Blockierliste hinzugefügt</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Gerät nicht mehr blockieren</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Das Gerät „<xliff:g id="device_name">%1$s</xliff:g>“ kann sich dann mit diesem Hotspot verbinden</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Derzeit keine Clients verfügbar. Verbundene und blockierte Geräte werden hier aufgelistet, sobald sie verfügbar sind.</string>
+    <!-- Hotspot hidden SSID -->
+    <string name="wifi_hotspot_hidden_ssid_title">Verstecktes Netzwerk</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Der Name Ihres mobilen Hotspots wird nicht in der Liste der verfügbaren WLAN-Netzwerke angezeigt.</string>
+    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Zugriff auf Schnelleinstellungen nur bei entsperrtem Gerät</string>
     <string name="disable_qs_summary">Zugriff auf Schnelleinstellungen nicht erlauben, wenn das Gerät nicht entsperrt ist</string>
@@ -911,11 +930,16 @@
     <string name="statusbar_clock_chip_summary">Akzentuierter Chip hinter der Uhr anzeigen</string>
     <!-- Smart charging -->
     <string name="smart_charging_title">Intelligentes Laden</string>
-    <string name="smart_charging_summary">Maximales Ladelevel festlegen</string>
+    <string name="smart_charging_summary">Maximalen Akkustand beim Aufladen festlegen</string>
     <string name="smart_charging_switch_title">Intelligentes Laden aktivieren</string>
-    <string name="smart_charging_level_title">Intelligentes Laden stoppt bei</string>
-    <string name="smart_charging_resume_level_title">Intelligentes Laden startet bei</string>
+    <string name="smart_charging_level_title">Akkustand, ab dem das Aufladen stoppt</string>
+    <string name="smart_charging_resume_level_title">Akkustand, ab dem das Aufladen beginnt</string>
     <string name="smart_charging_reset_stats_title">Akkustatistiken zurücksetzen</string>
-    <string name="smart_charging_reset_stats_summary">Akkustatistiken nach Erreichen des benutzerdefinierten Ladestands zurücksetzen</string>
-    <string name="smart_charging_footer">Intelligentes Laden erlaubt das Festlegen eines maximalen Ladezustands, um die Lebensdauer des Akku zu erhöhen. Wenn es aktiviert ist, hört der Akku beim festgelegten Stopp-Level auf zu laden und fährt beim Start-Level fort. Das Stopp-Level muss höher sein als das Start-Level.</string>
+    <string name="smart_charging_reset_stats_summary">Akkustatistiken nach Erreichen des benutzerdefinierten Akkustands zurücksetzen</string>
+    <string name="smart_charging_footer">Intelligentes Laden erlaubt das Festlegen eines maximalen Akkustands beim Aufladen, um die Lebensdauer des Akkus zu erhöhen. Dabei können zwei Akkustände festgelegt werden, ab denen das Aufladen jeweils stoppt und beginnt, wobei ersterer der größere sein muss.</string>
+    <!-- Adaptive Playback -->
+    <string name="adaptive_playback_title">Adaptive Medienwiedergabe</string>
+    <string name="adaptive_playback_summary">Medien bei Stummschaltung pausieren, Wiedergabe durch Lautstärkeerhöhung innerhalb des Zeitlimits wiederaufnehmen</string>
+    <string name="adaptive_playback_intro_text">Medien werden bei Stummschaltung automatisch pausiert und bei Aufhebung der Stummschaltung innerhalb des Zeitlimits wieder fortgesetzt</string>
+    <string name="adaptive_playback_timeout_title">Wiedergabe-Zeitlimit</string>
 </resources>

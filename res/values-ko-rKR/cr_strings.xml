@@ -136,6 +136,7 @@
     <string name="lockscreen_battery_info_title">배터리 정보</string>
     <string name="lockscreen_battery_info_summary">충전 시 배터리 정보를 표시합니다</string>
     <!-- Button settings -->
+    <string name="extras_title">기타</string>
     <string name="additional_buttons_title">기타 버튼</string>
     <string name="hardware_keys_power_key_title">전원 버튼</string>
     <string name="hardware_keys_home_key_title">홈 버튼</string>
@@ -189,6 +190,8 @@
     <string name="button_wake_summary">버튼을 눌러 장치 화면 켜기</string>
     <string name="volume_answer_call_title">전화 받기</string>
     <string name="volume_answer_call_summary">음량 버튼을 눌러 전화를 받습니다.</string>
+    <string name="click_partial_screenshot_title">눌러서 부분 스크린샷 캡처</string>
+    <string name="click_partial_screenshot_summary">볼륨 아래와 전원 버튼을 짧게 눌러 부분 스크린샷을 캡처합니다.</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">백라이트</string>
     <string name="button_backlight_summary">버튼 백라이트 커스텀 설정</string>
@@ -764,6 +767,22 @@
     <string name="custom_timeout_summary_2hours">2시간</string>
     <string name="custom_timeout_summary_4hours">4시간</string>
     <string name="custom_timeout_summary_8hours">8시간</string>
+    <!-- Hotspot client manager -->
+    <string name="wifi_hotspot_client_manager_title">연결된 기기</string>
+    <string name="wifi_hotspot_client_manager_summary">핫스팟에 연결된 기기 목록과 관리. 클라이언트 숫자 제한 설정</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">핫스팟에 연결된 기기 목록</string>
+    <string name="wifi_hotspot_client_limit_title">기기 연결 제한</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">차단된 기기</string>
+    <string name="wifi_hotspot_connected_clients_list_title">연결된 기기</string>
+    <string name="wifi_hotspot_block_client_dialog_title">기기 차단</string>
+    <string name="wifi_hotspot_block_client_dialog_text">이 기기와 \"<xliff:g id="device_name">%1$s</xliff:g>\"의 연결을 끊고 기기를 차단 목록에 추가합니다</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">기기 차단 해제</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">\"<xliff:g id="device_name">%1$s</xliff:g>\" 기기가 이 핫스팟에 연결할 수 있게 됩니다</string>
+    <string name="wifi_hotspot_client_manager_footer_text">표시할 클라이언트가 없습니다. 연결된 기기와 차단한 기기가 여기에 표시됩니다</string>
+    <!-- Hotspot hidden SSID -->
+    <string name="wifi_hotspot_hidden_ssid_title">숨겨진 네트워크</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">내 모바일 핫스팟의 이름을 사용 가능한 무선랜 목록에 표시하지 않게 합니다</string>
+    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">잠금화면에서 빠른 설정 숨기기</string>
     <string name="disable_qs_summary">잠금화면에서 빠른 설정 타일에 접근하는 것을 막습니다</string>
@@ -918,4 +937,9 @@
     <string name="smart_charging_reset_stats_title">배터리 통계 재설정</string>
     <string name="smart_charging_reset_stats_summary">지정된 충전 레벨에 도달하면 배터리 통계를 재설정합니다</string>
     <string name="smart_charging_footer">스마트 충전은 최대 충전 레벨을 설정하여 배터리 수명을 연장할 수 있게 합니다. 이 기능이 활성화되면, 정지 트리거 레벨에서 충전이 멈추고 시작 트리거 레벨에서 충전이 다시 시작됩니다. 정지 트리거 레벨은 항상 시작 트리거 레벨보다 높은 값이어야 합니다.</string>
+    <!-- Adaptive Playback -->
+    <string name="adaptive_playback_title">적응형 재생</string>
+    <string name="adaptive_playback_summary">음소거되면 미디어를 일시중지하고 제한시간 안에 볼륨을 높이면 다시 재생</string>
+    <string name="adaptive_playback_intro_text">적응형 재생은 볼륨이 음소거되면 자동으로 미디어 재생을 중지하고 설정한 시간 내에 음소거 해제 시 자동으로 다시 미디어를 재생합니다</string>
+    <string name="adaptive_playback_timeout_title">재생 시간 초과</string>
 </resources>

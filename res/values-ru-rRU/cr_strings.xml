@@ -136,6 +136,7 @@
     <string name="lockscreen_battery_info_title">Информация о батарее</string>
     <string name="lockscreen_battery_info_summary">Отображать информацию о батарее при зарядке</string>
     <!-- Button settings -->
+    <string name="extras_title">Дополнительно</string>
     <string name="additional_buttons_title">Дополнительные кнопки</string>
     <string name="hardware_keys_power_key_title">Кнопка питания</string>
     <string name="hardware_keys_home_key_title">Кнопка «Домой»</string>
@@ -189,6 +190,8 @@
     <string name="button_wake_summary">Пробуждать устройство нажатием на кнопку</string>
     <string name="volume_answer_call_title">Ответ на вызов</string>
     <string name="volume_answer_call_summary">Ответ на входящий вызов кнопками громкости</string>
+    <string name="click_partial_screenshot_title">Нажмите, чтобы сделать скриншот части экрана</string>
+    <string name="click_partial_screenshot_summary">Кратковременно зажмите кнопки уменьшения громкости и питания, чтобы сделать скриншот части экрана</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">Подсветка</string>
     <string name="button_backlight_summary">Настройка подсветки кнопок</string>
@@ -764,6 +767,22 @@
     <string name="custom_timeout_summary_2hours">2 часа</string>
     <string name="custom_timeout_summary_4hours">4 часа</string>
     <string name="custom_timeout_summary_8hours">8 часов</string>
+    <!-- Hotspot client manager -->
+    <string name="wifi_hotspot_client_manager_title">Подключенные устройства</string>
+    <string name="wifi_hotspot_client_manager_summary">Список и управление устройствами, подключенными к точке доступа. Установка ограничения на количество клиентов</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Список подключенных устройств</string>
+    <string name="wifi_hotspot_client_limit_title">Лимит подключенных устройств</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Заблокированные устройства</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Подключенные устройства</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Заблокировать устройство</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Это действие отключит \"<xliff:g id="device_name">%1$s</xliff:g>\" от этого устройства и добавит его в чёрный список</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Разблокировать устройство</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Устройство \"<xliff:g id="device_name">%1$s</xliff:g>\" сможет подключаться к этой точке доступа</string>
+    <string name="wifi_hotspot_client_manager_footer_text">На данный момент нет доступных клиентов. Подключенные и заблокированные устройства будут перечислены здесь, если таковы имеются.</string>
+    <!-- Hotspot hidden SSID -->
+    <string name="wifi_hotspot_hidden_ssid_title">Скрытая сеть</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Ваша точка доступа не будет отображаться в списке Wi-Fi сетей.</string>
+    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Скрыть быстрые настройки на экране блокировки</string>
     <string name="disable_qs_summary">Запретить доступ к быстрым настройкам на экране блокировки</string>
@@ -913,9 +932,14 @@
     <string name="smart_charging_title">Умная зарядка</string>
     <string name="smart_charging_summary">Установить максимальный уровень заряда</string>
     <string name="smart_charging_switch_title">Включить умную зарядку</string>
-    <string name="smart_charging_level_title">Уровень остановки зарядки</string>
-    <string name="smart_charging_resume_level_title">Уровень начала зарядки</string>
+    <string name="smart_charging_level_title">Уровень остановки зарядки устройства</string>
+    <string name="smart_charging_resume_level_title">Уровень возобновления зарядки</string>
     <string name="smart_charging_reset_stats_title">Сбросить статистику батареи</string>
-    <string name="smart_charging_reset_stats_summary">Сбросить статистику батареи по достижению заданного уровня заряда</string>
+    <string name="smart_charging_reset_stats_summary">Сбрасывать статистику батареи после достижения заданного уровня заряда</string>
     <string name="smart_charging_footer">Умная зарядка позволяет вам установить максимальный уровень заряда для увеличения срока жизни аккумулятора. При включенной функции аккумулятор прекратит зарядку по достижении уровня максимального заряда и возобновит зарядку по достижении уровня минимального заряда. Уровень начала зарядки всегда должен быть выше уровня остановки зарядки.</string>
+    <!-- Adaptive Playback -->
+    <string name="adaptive_playback_title">Адаптивное воспроизведение</string>
+    <string name="adaptive_playback_summary">Приостанавливать воспроизведение при выключенном звуке и возобновлять его, увеличивая громкость в пределах таймаута</string>
+    <string name="adaptive_playback_intro_text">Автоматически приостанавливает воспроизведение медиа при отключении громкости и автоматически возобновляет его при увеличении громкости в течение заданного времени.</string>
+    <string name="adaptive_playback_timeout_title">Таймаут воспроизведения</string>
 </resources>
