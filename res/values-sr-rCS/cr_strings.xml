@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Personalizacija baterije</string>
     <!-- Gestures -->
     <string name="gestures_title">Gestovi</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">VoLTE ikona</string>
-    <string name="volte_icon_summary">Prikaži VoLTE ikonu kada je dostupna</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWiFi ikona</string>
-    <string name="vowifi_icon_summary">Prikaži VoWiFi ikonu kada je dostupna</string>
-    <string name="volte_vowifi_override_title">VoWiFi preskakanje</string>
-    <string name="volte_vowifi_override_summary">Sakro VoLTE kada je dostupan VoWiFi</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Indikator rominga</string>
     <string name="roaming_indicator_icon_summary">Prikaži indikator rominga u ikoni signala kada si u roming režimu</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Naglašena boja</string>
     <string name="pulse_color_custom">Prilagođeno</string>
     <string name="pulse_color_lava_lamp">Lava lampa</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Izabеri boju</string>
     <string name="pulse_smoothing_enabled_title">Uključi izglađivanje</string>
     <string name="pulse_smoothing_enabled_summary">Svaki stub je izglađenije animiran</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Prikaži zasebne indikatore kada aplikacije koriste mikrofon ili kameru</string>
     <string name="location_privacy_indicator_title">Indikator korišćenja lokacije</string>
     <string name="location_privacy_indicator_summary">Prikaži zasebne indikatore kada aplikacije koriste lokaciju</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Duboko spavanje</string>
     <!-- In-call feedback -->
@@ -669,7 +664,7 @@
     <string name="old_mobiletype_summary">Merge signal and signal type icons</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Screen off animation</string>
-    <string name="screen_off_animation_default">Default</string>
+    <string name="screen_off_animation_default">Podrazumevano</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Scale</string>
     <!-- Custom Vibration fragment -->
@@ -680,7 +675,7 @@
     <string name="vibration_intensity_ringer">Ringtone vibration intensity</string>
     <string name="vibration_intensity_notification">Notification vibration intensity</string>
     <string name="haptic_feedback_intensity">Haptic feedback intensity</string>
-    <string name="vibration_intensity_disabled">Disabled</string>
+    <string name="vibration_intensity_disabled">Onemogućeno</string>
     <string name="vibration_intensity_light">Light</string>
     <string name="vibration_intensity_medium">Medium</string>
     <string name="vibration_intensity_strong">Strong</string>
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Full screen apps</string>
     <string name="display_cutout_force_fullscreen_summary">Force apps to ignore notch space</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Unlimited Photos storage</string>
     <string name="use_photos_spoof_summary">Spoof your device as Pixel XL for Google Photos app only to provide unlimited storage for backup</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Dozvoli otključavanje ekrana snimkom lica</string>
     <string name="face_unlock_method_default">Kada je ekran uključen</string>
     <string name="face_unlock_method_swipe">Povlačenjem prsta po zaključanom ekranu</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Kombinovane ikone signala</string>
-    <string name="combined_status_bar_signal_icons_summary">Prikaži pojedinačno ikone za WiFi i mobilni signal</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Istek vremena WiFi</string>
     <string name="wifi_timeout_summary">Ne isključuj WiFi automatski</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 sata</string>
     <string name="custom_timeout_summary_4hours">4 sata</string>
     <string name="custom_timeout_summary_8hours">8 sati</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Povezani uredjaji</string>
-    <string name="wifi_hotspot_client_manager_summary">Prikaži i upravljaj uredjajima povezanim na hotspot. Odredjivanje najvećeg broja klijenata</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Lista uredjaja povezanih na hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Najveći broj povezanih uredjaja</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blokirani uredjaji</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Povezani uredjaji</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Blokiraj uredjaj</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Ova akcija će skinuti \"<xliff:g id="device_name">%1$s</xliff:g>\" sa ovog uredjaja i ddodati ga na listu blokiranih</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Deblokiraj uredjaj</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">Uredjaj \"<xliff:g id="device_name">%1$s</xliff:g>\" će moći da se poveže na ovaj hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">Nijedan klijent nije trenutno dostupan. Pobezani i blokirani uredjaji će biti prikazani ovde kada budu dostupni.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Sakri Brza podešavanja pri zaključanom ekranu</string>
     <string name="disable_qs_summary">Spreči korišćenje Brzih podešavanja na zaključanom ekranu</string>
@@ -841,7 +818,7 @@
     <string name="columbus_setting_action_open_app_title">Open app</string>
     <string name="columbus_setting_action_overview_title">See recent apps</string>
     <string name="columbus_setting_action_play_pause_title">Play or pause media</string>
-    <string name="columbus_setting_action_screenshot_title">Take screenshot</string>
+    <string name="columbus_setting_action_screenshot_title">Slikaj ekran</string>
     <string name="columbus_setting_actions_title">Tap back of phone twice to</string>
     <string name="columbus_setting_additional_settings_title">Quick Tap strength</string>
     <string name="columbus_setting_app_selection_help_text">Select an app to open when you tap the back of your phone twice. If you uninstall the app, Quick Tap turns off until you select a different app.</string>
@@ -914,8 +891,8 @@
     <string name="qs_tile_animation_interpolator_anticipateInterpolator">Očekivano</string>
     <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Očekivano zamućenje</string>
     <!-- Screenshot shutter sound  -->
-    <string name="screenshot_shutter_sound_title">Screenshot sound</string>
-    <string name="screenshot_shutter_sound_summary">Play sound when screenshot is taken</string>
+    <string name="screenshot_shutter_sound_title">Zvuk slikanja ekrana</string>
+    <string name="screenshot_shutter_sound_summary">Pusti zvuk nakon slikanja ekrana</string>
     <!-- QS tiles layout  -->
     <string name="qs_layout_category_title">Tiles layout</string>
     <string name="qs_tile_label_hide_title">Hide label</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">Reset battery statistics</string>
     <string name="smart_charging_reset_stats_summary">Reset battery statistics after reaching user defined charging level</string>
     <string name="smart_charging_footer">Smart Charging allows you to set maximum charging level to extend the lifespan of your battery. When enabled, battery stops charging at Stop trigger level and resumes charging at Start trigger level. Stop trigger level should be always greater than Start trigger level.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptivna reprodukcija</string>
     <string name="adaptive_playback_summary">Pauzirajte medij kada je zvuk isključen i nastavite ga povećavanjem jačine zvuka unutar vremenskog ograničenja</string>
     <string name="adaptive_playback_intro_text">Automatski pauzira medijski sadržaj kada je zvuk isključen i automatski nastavlja kada je zvuk ponovo uključen, u okviru unapred postavljenog vremena</string>
     <string name="adaptive_playback_timeout_title">Vremensko ograničenje reprodukcije</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">Logo position</string>
+    <string name="status_bar_logo_style_title">Logo style</string>
 </resources>
