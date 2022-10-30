@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Персонализиране на батерията</string>
     <!-- Gestures -->
     <string name="gestures_title">Жестове</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">VoLTE икона</string>
-    <string name="volte_icon_summary">Покажи VoLTE икона, когато са налични</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWiFi икона</string>
-    <string name="vowifi_icon_summary">Показвайте иконата VoWiFi, когато е налична</string>
-    <string name="volte_vowifi_override_title">Отмяна на VoWiFi</string>
-    <string name="volte_vowifi_override_summary">Скриване на VoLTE, когато VoWiFi е наличен</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Индикатор за роуминг</string>
     <string name="roaming_indicator_icon_summary">Показва индикатор за роуминг в сигнал икона когато в роуминг режим</string>
@@ -136,7 +128,7 @@
     <string name="lockscreen_battery_info_title">Информация за батерията</string>
     <string name="lockscreen_battery_info_summary">Показване на информация за батерията при зареждане</string>
     <!-- Button settings -->
-    <string name="extras_title">Extras</string>
+    <string name="extras_title">Екстри</string>
     <string name="additional_buttons_title">Допълнителни бутони</string>
     <string name="hardware_keys_power_key_title">Бутон \"Захранване\"</string>
     <string name="hardware_keys_home_key_title">Бутон \"Начало\"</string>
@@ -190,8 +182,8 @@
     <string name="button_wake_summary">Събуждане устройството чрез натискане на бутона</string>
     <string name="volume_answer_call_title">Отговори на повикването</string>
     <string name="volume_answer_call_summary">Отговаряне на входящите повиквания чрез натискане на бутоните за звук</string>
-    <string name="click_partial_screenshot_title">Click to partial screenshot</string>
-    <string name="click_partial_screenshot_summary">Short click Volume Down and Power to take partial screenshot</string>
+    <string name="click_partial_screenshot_title">Скриншот на част от екрана</string>
+    <string name="click_partial_screenshot_summary">Кратко натискане на бутоните за намаляване на звука и включване, за да направите частична екранна снимка</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">Подсветка</string>
     <string name="button_backlight_summary">Настройки на персонализиран бутон подсветка</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Акцент</string>
     <string name="pulse_color_custom">По избор</string>
     <string name="pulse_color_lava_lamp">Светлина лава</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Изберете цвят</string>
     <string name="pulse_smoothing_enabled_title">Включване за изглаждане</string>
     <string name="pulse_smoothing_enabled_summary">Всяка лента се анимира по-плавно</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Показване на отделен индикатор, когато някое приложение използва микрофон или камера</string>
     <string name="location_privacy_indicator_title">Индикатор за поверителност на местоположението</string>
     <string name="location_privacy_indicator_summary">Показва отделен индикатор, когато някое приложение използва местоположение</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Дълбок сън</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Приложения на цял екран</string>
     <string name="display_cutout_force_fullscreen_summary">Принуждаване на приложенията да игнорират пространството около прореза</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Неограничено съхранение на снимки</string>
     <string name="use_photos_spoof_summary">Престори устройството си като Pixel XL за приложението Google Снимки само за да предостави неограничен обем за архивиране</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Разрешете лицево отключване на заключен екран</string>
     <string name="face_unlock_method_default">Когато екранът е включен</string>
     <string name="face_unlock_method_swipe">При плъзгане на заключен екран</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Комбинирани сигнални икони</string>
-    <string name="combined_status_bar_signal_icons_summary">Показване на единична комбинирана икона за WiFi и мобилен сигнал</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">WiFi изчакване</string>
     <string name="wifi_timeout_summary">Не изключвайте автоматично WiFi</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 часа</string>
     <string name="custom_timeout_summary_4hours">4 часа</string>
     <string name="custom_timeout_summary_8hours">8 часа</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot. Setting a limit on the number of clients</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">This device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Скриване на QS за сигурно заключване на екрана</string>
     <string name="disable_qs_summary">Предотвратете достъпа до QS на защитен заключен екран</string>
@@ -923,23 +900,36 @@
     <string name="qs_tile_label_hide_summary">Only show icon in tile</string>
     <string name="qs_tile_layout_title">Vertical layout</string>
     <string name="qs_tile_layout_summary">Show label below icon instead next to icon</string>
-    <string name="qs_columns_portrait_title">Columns (portrait)</string>
-    <string name="qs_columns_landscape_title">Columns (landscape)</string>
+    <string name="qs_columns_portrait_title">Колони хоризонтално</string>
+    <string name="qs_columns_landscape_title">Колони вертикално</string>
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">Background chip</string>
     <string name="statusbar_clock_chip_summary">Display accented chip behind clock</string>
     <!-- Smart charging -->
-    <string name="smart_charging_title">Smart Charging</string>
-    <string name="smart_charging_summary">Set maximum charging level</string>
-    <string name="smart_charging_switch_title">Enable Smart Charging</string>
-    <string name="smart_charging_level_title">Stop trigger level</string>
-    <string name="smart_charging_resume_level_title">Start trigger level</string>
-    <string name="smart_charging_reset_stats_title">Reset battery statistics</string>
-    <string name="smart_charging_reset_stats_summary">Reset battery statistics after reaching user defined charging level</string>
-    <string name="smart_charging_footer">Smart Charging allows you to set maximum charging level to extend the lifespan of your battery. When enabled, battery stops charging at Stop trigger level and resumes charging at Start trigger level. Stop trigger level should be always greater than Start trigger level.</string>
+    <string name="smart_charging_title">Умно зареждане</string>
+    <string name="smart_charging_summary">Задай максимално ниво на зареждане</string>
+    <string name="smart_charging_switch_title">Активирай Умно зареждане</string>
+    <string name="smart_charging_level_title">Ниво за изключване на зареждането</string>
+    <string name="smart_charging_resume_level_title">Ниво за възстановяване на зареждането</string>
+    <string name="smart_charging_reset_stats_title">Нулиране на статистиката на батерията</string>
+    <string name="smart_charging_reset_stats_summary">Нулирай статистиката за батерията след достигане на нивото на зареждане, посочено от потребителя</string>
+    <string name="smart_charging_footer">Интелигентното зареждане ви позволява да зададете максимално ниво на зареждане, за да удължите живота на батерията. Когато е активирана, батерията спира да се зарежда на ниво за изключване на зареждането и възобновява зареждането при ниво за възстановяване на зареждането. Ниво за изключване на зареждането трябва да бъде винаги по-голямо от ниво за възстановяване на зареждането.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
-    <string name="adaptive_playback_title">Adaptive playback</string>
+    <string name="adaptive_playback_title">Адаптивно възпроизвеждане</string>
     <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
     <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
     <string name="adaptive_playback_timeout_title">Playback timeout</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Лого</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">Позиция на лого</string>
+    <string name="status_bar_logo_style_title">Стил на логото</string>
 </resources>
