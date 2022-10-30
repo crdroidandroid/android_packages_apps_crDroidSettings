@@ -65,7 +65,7 @@
     <string name="share_message">crDroid আপনার ডিভাইসে আছে কিনা দেখুন</string>
     <string name="share_chooser_title">CrDroid শেয়ার করুন</string>
     <!-- Sites crDroid -->
-    <string name="crdroid_source_title">GitHub</string>
+    <string name="crdroid_source_title">গিটহাব</string>
     <string name="crdroid_source_summary">আমরা ওপেন সোর্স ভালবাসি, আমাদেরকে দেখুন</string>
     <string name="crdroid_telegram_title">crDroid সম্প্রদায়</string>
     <string name="crdroid_telegram_summary">আমরা টেলিগ্রামে আছি। আমাদের সাথে যোগদান করুন!</string>
@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">ব্যাটারি কাস্টমাইজেশন</string>
     <!-- Gestures -->
     <string name="gestures_title">জেসচারগুলি</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">VoLTE আইকন</string>
-    <string name="volte_icon_summary">উপলব্ধ হলে VoLTE আইকন প্রদর্শন করুন</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWiFi আইকন</string>
-    <string name="vowifi_icon_summary">উপলব্ধ হলে VoWiFi আইকন প্রদর্শন করুন</string>
-    <string name="volte_vowifi_override_title">VoWiFi ওভাররাইড</string>
-    <string name="volte_vowifi_override_summary">VoWiFi উপলব্ধ থাকলে VoLTE লুকান</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">রোমিং সূচক</string>
     <string name="roaming_indicator_icon_summary">রোমিং মোডে থাকাকালীন সিগন্যাল আইকনে রোমিং সূচক প্রদর্শন করুন</string>
@@ -136,7 +128,7 @@
     <string name="lockscreen_battery_info_title">ব্যাটারীর তথ্য</string>
     <string name="lockscreen_battery_info_summary">চার্জ করার সময় ব্যাটারির তথ্য প্রদর্শন করুন</string>
     <!-- Button settings -->
-    <string name="extras_title">Extras</string>
+    <string name="extras_title">অতিরিক্ত</string>
     <string name="additional_buttons_title">অতিরিক্ত বোতামসমূহ</string>
     <string name="hardware_keys_power_key_title">পাওয়ার বাটন</string>
     <string name="hardware_keys_home_key_title">হোম বাটন</string>
@@ -225,7 +217,7 @@
     <string name="power_menu_devicecontrols_title">ডিভাইস নিয়ন্ত্রণ</string>
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">অ্যাডভান্সড রিস্টার্ট</string>
-    <string name="advanced_reboot_summary">When unlocked, include options in the power menu for restarting into recovery or bootloader</string>
+    <string name="advanced_reboot_summary">আনলক করা হলে, পাওয়ার মেনুতে রিকভারি বা বুটলোডার মোডে রিস্টার্ট করার অপশনগুলি অন্তর্ভুক্ত করুন</string>
     <string name="advanced_reboot_secured_title">সুরক্ষিত লকস্ক্রিন</string>
     <string name="advanced_reboot_secured_summary">সুরক্ষিত লকস্ক্রিনে উন্নত রিস্টার্ট অপশন প্রদর্শন করুন</string>
     <!-- UI settings -->
@@ -249,71 +241,71 @@
     <string name="doze_additional_settings_summary">পছন্দসই ডিভাইস সুনির্দিষ্ট অ্যামবিয়েন্ট ডিসপ্লে সেটিংস ঠিক করুন</string>
     <string name="doze_sensor_title">সেন্সর ভিত্তিক</string>
     <string name="raise_to_wake_title">ফোন হাতে নিয়েই স্ক্রিন জাগ্রত করুন</string>
-    <string name="raise_to_wake_summary">Wake up the device instead of pulsing notifications</string>
+    <string name="raise_to_wake_summary">পালস নোটিফিকেশনের বদলে ফোন জগ্রত করুন</string>
     <string name="tilt_title">কাত করুন</string>
-    <string name="tilt_summary">Pulse notifications on tilt</string>
+    <string name="tilt_summary">টিল্টে পালস বিজ্ঞপ্তি</string>
     <string name="pickup_title">উপরে তুলুন</string>
-    <string name="pickup_summary">Pulse notifications on pick up</string>
-    <string name="handwave_title">Hand wave</string>
-    <string name="handwave_summary">Pulse notifications on hand wave</string>
+    <string name="pickup_summary">ফোন উঠালে বিজ্ঞপ্তি প্রদর্শিত হবে</string>
+    <string name="handwave_title">হাত নাড়ানো</string>
+    <string name="handwave_summary">হাত নাড়ালে বিজ্ঞপ্তি প্রদর্শিত হবে</string>
     <string name="pocket_title">পকেট</string>
-    <string name="pocket_summary">Pulse notifications on removal from pocket</string>
+    <string name="pocket_summary">পকেট থেকে বের করলে বিজ্ঞপ্তি প্রদর্শিত হবে</string>
     <string name="doze_vibrate">কম্পন</string>
-    <string name="doze_vibrate_summary">Duration to vibrate when pulsing notifications</string>
-    <string name="sensor_warning_message">Settings based on sensors are subject to hardware compatibility. Enabling sensors for ambient display may increase power drain.</string>
+    <string name="doze_vibrate_summary">বিজ্ঞপ্তি নাড়ার সময় কম্পনের সময়কাল</string>
+    <string name="sensor_warning_message">সেন্সর ভিত্তিক সেটিংস হার্ডওয়্যার সামঞ্জস্য সাপেক্ষে। পরিবেষ্টিত প্রদর্শনের জন্য সেন্সর সক্ষম করলে বিদ্যুৎ নিষ্কাশন বৃদ্ধি পেতে পারে।.</string>
     <!-- Ambient edge lighting -->
     <string name="pulse_ambient_light_title">প্রান্তদ্বয়ের লাইট</string>
-    <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="pulse_ambient_light_summary">নোটিফিকেশন পালসে স্ক্রিনের পাশের প্রান্তগুলি আলোকিত করুন</string>
     <string name="pulse_ambient_light_color_title">প্রান্তদ্বয়ের লাইটের রং</string>
     <string name="pulse_ambient_light_duration_title">প্রান্তদ্বয়ের লাইটের সময়কাল</string>
-    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
+    <string name="pulse_ambient_light_duration_summary">অ্যাম্বিয়েন্ট লাইট অ্যানিমেশনের সময়কাল সেট করে</string>
     <string name="pulse_ambient_light_layout_title">প্রান্তদ্বয়ের লাইটের ভিউ</string>
-    <string name="pulse_ambient_light_layout_solid">Solid</string>
-    <string name="pulse_ambient_light_layout_faded">Faded</string>
+    <string name="pulse_ambient_light_layout_solid">সলিড</string>
+    <string name="pulse_ambient_light_layout_faded">অনুজ্জ্বল</string>
     <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Music ticker</string>
+    <string name="pulse_on_new_tracks_title">মিউজিক টিকার</string>
     <string name="pulse_on_new_tracks_summary">Show music ticker on Ambient Display during track change</string>
     <!-- Status bar - icon blocklist -->
-    <string name="status_bar_icons_title">Status bar icons</string>
+    <string name="status_bar_icons_title">স্ট্যাটাস বার আইকন</string>
     <string name="status_bar_icons_summary">Choose which status bar icons can be shown</string>
     <!-- Bluetooth status -->
-    <string name="bluetooth_battery_title">Bluetooth battery status</string>
-    <string name="bluetooth_battery_summary">Display battery status for the connected bluetooth device, if available</string>
+    <string name="bluetooth_battery_title">ব্লুটুথ ব্যাটারির অবস্থা</string>
+    <string name="bluetooth_battery_summary">সংযুক্ত ব্লুটুথ ডিভাইসের জন্য ব্যাটারির অবস্থা প্রদর্শন করুন, যদি পাওয়া যায়</string>
     <!-- Tap to sleep on status bar -->
-    <string name="statusbar_doubletap_sleep_title">Tap to sleep</string>
-    <string name="statusbar_doubletap_sleep_summary">Double-tap on the status bar to put device asleep</string>
+    <string name="statusbar_doubletap_sleep_title">স্লিপ মোডে পাঠাতে ট্যাপ করুন</string>
+    <string name="statusbar_doubletap_sleep_summary">ডিভাইসটিকে ঘুমিয়ে রাখতে স্ট্যাটাস বারে দুবার আলতো চাপুন</string>
     <!-- Status bar - Brightness control -->
-    <string name="status_bar_toggle_brightness_title">Brightness control</string>
-    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
+    <string name="status_bar_toggle_brightness_title">উজ্জ্বলতা নিয়ন্ত্রণ</string>
+    <string name="status_bar_toggle_brightness_summary">স্ট্যাটাস বার বরাবর স্লাইড করে উজ্জ্বলতা অ্যাডজাস্ট করুন</string>
     <!-- Status bar - Quick pulldown -->
-    <string name="status_bar_quick_qs_pulldown_title">Quick pulldown</string>
-    <string name="status_bar_quick_qs_pulldown_summary">%1$s edge of the status bar pulls down quick settings</string>
-    <string name="status_bar_quick_qs_pulldown_summary_left">Left</string>
-    <string name="status_bar_quick_qs_pulldown_summary_right">Right</string>
-    <string name="status_bar_quick_qs_pulldown_off">Off</string>
-    <string name="status_bar_quick_qs_pulldown_left">Left</string>
-    <string name="status_bar_quick_qs_pulldown_right">Right</string>
-    <string name="status_bar_quick_qs_pulldown_always">Always show quick settings on status bar pull down</string>
+    <string name="status_bar_quick_qs_pulldown_title">দ্রুত পুলডাউন</string>
+    <string name="status_bar_quick_qs_pulldown_summary">স্ট্যাটাস বারের %1$s প্রান্তে কুইক সেটিংস নিচে টানুন</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">বামে</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">ডানে</string>
+    <string name="status_bar_quick_qs_pulldown_off">বন্ধ</string>
+    <string name="status_bar_quick_qs_pulldown_left">বামে</string>
+    <string name="status_bar_quick_qs_pulldown_right">ডানে</string>
+    <string name="status_bar_quick_qs_pulldown_always">সর্বদা স্ট্যাটাস বারে টেনে নিচে দ্রুত সেটিংস দেখান</string>
     <!-- Status bar - Smart pulldown-->
-    <string name="smart_pulldown_title">Smart pulldown</string>
-    <string name="smart_pulldown_summary">Open quick settings when there are %1$s notifications</string>
-    <string name="smart_pulldown_none_summary">Open quick settings when there are no notifications</string>
-    <string name="smart_pulldown_off">Off</string>
-    <string name="smart_pulldown_none">no notifications</string>
-    <string name="smart_pulldown_dismissable">no dismissible</string>
-    <string name="smart_pulldown_ongoing">no ongoing</string>
+    <string name="smart_pulldown_title">স্মার্ট পুলডাউন</string>
+    <string name="smart_pulldown_summary">কুইক সেটিংস চালু করুন যখন সেখানে %1$s টি বিজ্ঞপ্তি রয়েছে</string>
+    <string name="smart_pulldown_none_summary">কুইক সেটিংস চালু করুন যখন কোন নোটিফিকেশন নেই</string>
+    <string name="smart_pulldown_off">বন্ধ</string>
+    <string name="smart_pulldown_none">কোন নোটিফিকেশন নেই</string>
+    <string name="smart_pulldown_dismissable">খারিজযোগ্য নয়</string>
+    <string name="smart_pulldown_ongoing">চলমান নেই</string>
     <!-- Tap to sleep on status bar -->
-    <string name="lockscreen_doubletap_sleep_title">Tap to sleep</string>
+    <string name="lockscreen_doubletap_sleep_title">স্লিপ মোডে পাঠাতে ট্যাপ করুন</string>
     <string name="lockscreen_doubletap_sleep_summary">Double-tap on the lock screen to put device asleep</string>
     <!-- Font style / Icon pack -->
-    <string name="theme_customization_font_title">Font style</string>
+    <string name="theme_customization_font_title">ফন্ট স্টাইল</string>
     <string name="theme_customization_font_summary">Set system font style</string>
-    <string name="theme_customization_icon_pack_title">Icon pack</string>
+    <string name="theme_customization_icon_pack_title">আইকন প্যাক</string>
     <string name="theme_customization_icon_pack_summary">Set custom icon pack style</string>
     <string name="theme_customization_icon_shape_title">Icon shape</string>
     <string name="theme_customization_icon_shape_summary">Set system icon shape style</string>
     <string name="theme_customization_signal_icon_title">Signal icon style</string>
-    <string name="theme_customization_signal_icon_summary">Set custom signal icon style</string>
+    <string name="theme_customization_signal_icon_summary">বিভিন্ন ধরনের সিগনাল আইকন</string>
     <string name="theme_customization_wifi_icon_title">WiFi icon style</string>
     <string name="theme_customization_wifi_icon_summary">পছন্দসই ওয়াইফাই আইকন সেট করুন</string>
     <string name="theme_customization_navbar_title">নেভবার স্টাইল</string>
@@ -323,8 +315,8 @@
     <string name="peak_refresh_rate_title_custom">সর্বোচ্চ রিফ্রেশ রেট</string>
     <string name="low_power_refresh_rate_title_custom">কম শক্তি ব্যাবহারকারী রিফ্রেশ রেট</string>
     <!-- Status bar - Clock -->
-    <string name="status_bar_clock_title">Clock &amp; date</string>
-    <string name="status_bar_clock_summary">Customize clock &amp; date</string>
+    <string name="status_bar_clock_title">ঘড়ি \'এবং এমপি\' তারিখ</string>
+    <string name="status_bar_clock_summary">ঘড়ি এবং তারিখ কাস্টমাইজ করুন</string>
     <string name="status_bar_clock_seconds_title">ঘড়ির সেকেন্ড</string>
     <string name="status_bar_clock_seconds_summary">স্ট্যাটাস বারে ঘড়ির পরে সেকেন্ড প্রদর্শন করুন</string>
     <string name="status_bar_clock_position_title">ঘড়ির স্টাইল</string>
@@ -336,9 +328,9 @@
     <string name="status_bar_clock_auto_hide_launcher_summary">লঞ্চার দৃশ্যমান হলে ঘড়ি লুকাবে</string>
     <string name="status_bar_clock_auto_hide_summary">Hide clock at regular interval</string>
     <string name="status_bar_clock_auto_hide_hdur_title">সময়কাল লুকিয়ে রাখুন</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Number of seconds to hide clock</string>
+    <string name="status_bar_clock_auto_hide_hdur_summary">ঘড়ি লুকানোর জন্য সেকেন্ডের সংখ্যা</string>
     <string name="status_bar_clock_auto_hide_sdur_title">সময়কাল প্রদর্শন করুন</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Number of seconds to wait before hiding clock</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">ঘড়ি লুকানোর আগে অপেক্ষা করার জন্য সেকেন্ডের সংখ্যা</string>
     <string name="status_bar_am_pm_title">পূর্বাহ্ণ/অপরাহ্ণের স্টাইল</string>
     <string name="status_bar_am_pm_info">২৪ ঘন্টার ঘড়ি সক্রিয় করা হয়েছে</string>
     <string name="status_bar_am_pm_normal">সাধারণ</string>
@@ -368,58 +360,58 @@
     <string name="status_bar_battery_style_circle">বৃত্তাকার</string>
     <string name="status_bar_battery_style_dotted_circle">বিন্দুবিন্দু বৃত্ত</string>
     <string name="status_bar_battery_style_filled_circle">ভরাট বৃত্ত</string>
-    <string name="status_bar_battery_style_text">Text</string>
-    <string name="status_bar_battery_style_hidden">Hidden</string>
-    <string name="status_bar_battery_percent_title">Battery percent</string>
-    <string name="status_bar_battery_percent_hidden">Hidden</string>
-    <string name="status_bar_battery_percent_text_inside">Inside the icon</string>
-    <string name="status_bar_battery_percent_text_next_right">Next to the icon (right)</string>
-    <string name="status_bar_battery_percent_text_next_left">Next to the icon (left)</string>
-    <string name="status_bar_battery_text_charging_title">Battery percentage when charging</string>
-    <string name="status_bar_battery_text_charging_summary">Always display battery percentage when charging</string>
+    <string name="status_bar_battery_style_text">টেক্সট</string>
+    <string name="status_bar_battery_style_hidden">লুকানো</string>
+    <string name="status_bar_battery_percent_title">ব্যাটারি পার্সেন্টেজ</string>
+    <string name="status_bar_battery_percent_hidden">লুকানো</string>
+    <string name="status_bar_battery_percent_text_inside">আইকনের ভিতরে</string>
+    <string name="status_bar_battery_percent_text_next_right">আইকনের পাশে (ডান দিকে)</string>
+    <string name="status_bar_battery_percent_text_next_left">আইকনের পাশে (বাম দিকে)</string>
+    <string name="status_bar_battery_text_charging_title">চার্জ করার সময় ব্যাটারির শতাংশ</string>
+    <string name="status_bar_battery_text_charging_summary">চার্জ করার সময় সর্বদা ব্যাটারির পার্সেন্টেজ প্রদর্শন করুন</string>
     <!-- Status bar - Battery Bar -->
-    <string name="battery_bar_title">Battery bar</string>
-    <string name="battery_bar_summary">Display and customize battery bar above status bar</string>
-    <string name="battery_bar_color">Color</string>
-    <string name="battery_bar_charging_color">Charging color</string>
-    <string name="battery_bar_battery_low_color">Low battery color</string>
-    <string name="battery_bar_style_title">Alignment</string>
-    <string name="battery_bar_thickness_title">Thickness</string>
-    <string name="battery_bar_animate_title">Charging animation</string>
-    <string name="battery_bar_style_regular">Regular</string>
-    <string name="battery_bar_style_center_mirrored">Center-mirrored</string>
-    <string name="battery_bar_style_reversed">Reversed</string>
-    <string name="battery_bar_use_charging_color">Custom charging color</string>
-    <string name="battery_bar_blend_color_title">Blend colors</string>
-    <string name="battery_bar_blend_color_summary">Blend full/empty colors corresponding to battery percentage</string>
-    <string name="battery_bar_blend_color_reverse_title">Reverse color direction</string>
-    <string name="battery_bar_blend_color_reverse_summary_off">Full &#8594; empty: red &#8592; green &#8592; blue &#8592; red</string>
+    <string name="battery_bar_title">ব্যাটারি বার</string>
+    <string name="battery_bar_summary">স্ট্যাটাস বারের উপরে ব্যাটারি বার প্রদর্শন করুন এবং কাস্টমাইজ করুন</string>
+    <string name="battery_bar_color">রঙ</string>
+    <string name="battery_bar_charging_color">চার্জিং কালার</string>
+    <string name="battery_bar_battery_low_color">লো ব্যাটারি রঙ</string>
+    <string name="battery_bar_style_title">সারিবদ্ধতা</string>
+    <string name="battery_bar_thickness_title">পুরুত্ব</string>
+    <string name="battery_bar_animate_title">চার্জিং অ্যানিমেশন</string>
+    <string name="battery_bar_style_regular">রেগুলার</string>
+    <string name="battery_bar_style_center_mirrored">কেন্দ্রে-প্রতিফলিত</string>
+    <string name="battery_bar_style_reversed">বিপরীত</string>
+    <string name="battery_bar_use_charging_color">কাস্টম চার্জিং কালার</string>
+    <string name="battery_bar_blend_color_title">মিশ্রিত রং</string>
+    <string name="battery_bar_blend_color_summary">ব্যাটারির শতাংশের সাথে সামঞ্জস্যপূর্ণ পূর্ণ/খালি রং</string>
+    <string name="battery_bar_blend_color_reverse_title">বিপরীত রঙ দিক</string>
+    <string name="battery_bar_blend_color_reverse_summary_off">পূর্ন এবং #8594; খালি: লাল এবং #8592; সবুজ এবং#8592; নীল এবং #8592; লাল</string>
     <string name="battery_bar_blend_color_reverse_summary_on">Full &#8594; empty: red &#8594; green &#8594; blue &#8594; red</string>
     <!-- Quick setting categories -->
-    <string name="qs_misc_category">Miscellaneous</string>
-    <string name="qs_footer_category">Footer</string>
+    <string name="qs_misc_category">বিবিধ</string>
+    <string name="qs_footer_category">ফুটার</string>
     <!-- QS clock -->
-    <string name="qs_clock_title">Clock</string>
-    <string name="qs_clock_summary">Display clock in quick status bar header</string>
+    <string name="qs_clock_title">ঘড়ি</string>
+    <string name="qs_clock_summary">দ্রুত স্ট্যাটাস বার হেডারে ঘড়ি প্রদর্শন করুন</string>
     <!-- QS date -->
-    <string name="qs_date_title">Date</string>
+    <string name="qs_date_title">তারিখ</string>
     <string name="qs_date_summary">Display date in quick status bar header</string>
     <!-- QS battery -->
-    <string name="qs_battery_location_title">Battery location</string>
-    <string name="qs_battery_location_qs_panel">QS Panel</string>
-    <string name="qs_battery_location_qs_statusbar">Quick Statusbar</string>
-    <string name="qs_use_status_bar_battery_style">Follow status bar style</string>
+    <string name="qs_battery_location_title">ব্যাটারির অবস্থান</string>
+    <string name="qs_battery_location_qs_panel">কিউএস প্যানেল</string>
+    <string name="qs_battery_location_qs_statusbar">কুইক স্ট্যাটাস বার</string>
+    <string name="qs_use_status_bar_battery_style">স্ট্যাটাস বার স্টাইল অনুসরণ করুন</string>
     <!-- Battery estimate -->
-    <string name="battery_estimate_title">Battery estimate</string>
-    <string name="battery_estimate_summary">Display estimated remaining battery life when available</string>
+    <string name="battery_estimate_title">ব্যাটারি অনুমান</string>
+    <string name="battery_estimate_summary">উপলভ্য হলে আনুমানিক অবশিষ্ট ব্যাটারি লাইফ প্রদর্শন করুন</string>
     <!-- Network traffic -->
-    <string name="network_traffic_settings_title">Network traffic monitor</string>
-    <string name="network_traffic_settings_summary">Display and customize current network traffic levels</string>
-    <string name="network_traffic_location_title">Location</string>
-    <string name="network_traffic_location_disable">Disabled</string>
-    <string name="network_traffic_location_statusbar">Statusbar</string>
-    <string name="network_traffic_location_quick_statusbar">Quick Statusbar</string>
-    <string name="network_traffic_mode_title">Display mode</string>
+    <string name="network_traffic_settings_title">ইন্টারনেট ট্রাফিক মনিটর</string>
+    <string name="network_traffic_settings_summary">বর্তমান নেটওয়ার্ক ট্রাফিক দেখুন এবং কাস্টোমাইজ করুন</string>
+    <string name="network_traffic_location_title">অবস্থান</string>
+    <string name="network_traffic_location_disable">নিষ্ক্রিয়</string>
+    <string name="network_traffic_location_statusbar">স্ট্যাটাস বার</string>
+    <string name="network_traffic_location_quick_statusbar">কুইক স্ট্যাটাস বার</string>
+    <string name="network_traffic_mode_title">ডিসপ্লে মোড</string>
     <string name="network_traffic_mode_up">শুধু আপলোড দেখাবে</string>
     <string name="network_traffic_mode_down">শুধু ডাউনলোড দেখাবে</string>
     <string name="network_traffic_mode_all">আপলোড এবং ডাউনলোড উভয়ই দেখাবে</string>
@@ -429,7 +421,7 @@
     <string name="network_traffic_autohide_kilobytes">কিলোবাইট/সেকেন্ড</string>
     <string name="network_traffic_autohide_threshold">নিষ্ক্রিয়তার সীমা</string>
     <string name="network_traffic_refresh_interval_title">রিফ্রেশ বিরতি</string>
-    <string name="network_traffic_refresh_interval_summary">Duration after which speed is remeasured</string>
+    <string name="network_traffic_refresh_interval_summary">কত সময়কাল পরে গতি পুনরায় পরিমাপ করা হয়</string>
     <string name="network_traffic_units_title">ট্র্যাফিক পরিমাপক ইউনিট</string>
     <string name="network_traffic_units_bits">প্রতি সেকেন্ডে বিটস (বি./সে.)</string>
     <string name="network_traffic_units_kilobits">সেকেন্ড প্রতি কিলোবিট (কি. বি./সে.)</string>
@@ -440,65 +432,66 @@
     <string name="network_traffic_hidearrow">এ্যারোগুলি আড়াল করুন</string>
     <string name="network_traffic_hidearrow_summary">নেটওয়ার্ক ট্র্যাফিক সূচক তীরচিহ্ন আড়াল করুন</string>
     <!-- QS footer warnings -->
-    <string name="qs_footer_warnings_title">Footer alerts</string>
-    <string name="qs_footer_warnings_summary">Display an alert at bottom of QS panel when network is monitored by external apps or VPN</string>
+    <string name="qs_footer_warnings_title">নটিফিকেশনের নিচে সতর্কতা বানী</string>
+    <string name="qs_footer_warnings_summary">কুইক সেটিং প্যানেলের নিচে একটি সতর্কবার্তা দেখান যখন নেটওয়ার্ক বহিরাগত অ্যাপ বা ভিপিএন দ্বারা নিয়ন্ত্রিত হয়</string>
     <!-- Media art -->
-    <string name="media_art_title">Media cover art</string>
-    <string name="media_art_summary">Display media cover art when available</string>
+    <string name="media_art_title">মিডিয়া কভার আর্ট</string>
+    <string name="media_art_summary">উপলব্ধ হলে মিডিয়া কভার আর্ট প্রদর্শন করুন</string>
     <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Media cover art filter</string>
+    <string name="lockscreen_albumart_filter_title">মিডিয়া কভার আর্ট ফিল্টার</string>
     <string name="lockscreen_albumart_filter_none">কোনোটি নয়</string>
     <string name="lockscreen_albumart_filter_grayscale">ধূসর</string>
-    <string name="lockscreen_albumart_filter_tint">Accent tinted</string>
+    <string name="lockscreen_albumart_filter_tint">অ্যাকসেন্ট টিন্টেড</string>
     <string name="lockscreen_albumart_filter_blur">ঝাপসা</string>
     <string name="lockscreen_albumart_filter_grayblur">ধূসর এবং ঝাপসা</string>
     <!-- Pulse music visualizer -->
     <string name="pulse_help_policy_notice_title">পালস সম্পর্কে</string>
-    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>
+    <string name="pulse_help_policy_notice_summary">পালস একটি উজ্জ্বল অডিও গ্রাফিক ইকুয়ালাইজার যখন ডিভাইসে সঙ্গীত বাজায়</string>
     <string name="pulse_settings">পালস</string>
-    <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
+    <string name="pulse_settings_summary">নেভিগেশন বার এবং লকস্ক্রিনের জন্য অডিও গ্রাফিক ইকুয়ালাইজার</string>
     <string name="show_navbar_pulse_title">নেভিগেশনবার পালস্</string>
-    <string name="show_navbar_pulse_summary">Audio graphic equalizer on the navigation bar</string>
+    <string name="show_navbar_pulse_summary">নেভিগেশন বারে অডিও গ্রাফিক ইকুলাইজার</string>
     <string name="show_lockscreen_pulse_title">লকস্ক্রিনে পালস্</string>
-    <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
-    <string name="show_ambient_pulse_title">Ambient Pulse</string>
-    <string name="show_ambient_pulse_summary">Audio graphic equalizer on the ambient screen</string>
-    <string name="pulse_render_mode_title">Render mode</string>
-    <string name="pulse_render_mode_fading_bars">Fading blocks</string>
+    <string name="show_lockscreen_pulse_summary">লকস্ক্রিনে অডিও গ্রাফিক ইকুলাইজার</string>
+    <string name="show_ambient_pulse_title">অ্যাম্বিয়েন্ট পালস্</string>
+    <string name="show_ambient_pulse_summary">অ্যাম্বিয়েন্ট স্ক্রিনে অডিও গ্রাফিক ইকুলাইজার</string>
+    <string name="pulse_render_mode_title">রেন্ডার মোড</string>
+    <string name="pulse_render_mode_fading_bars">ফেইডিং ব্লক</string>
     <string name="pulse_render_mode_solid_lines">সলিড রেখা</string>
-    <string name="pulse_legacy_mode_advanced_category">Fading blocks mode settings</string>
+    <string name="pulse_legacy_mode_advanced_category">ফেইডিং ব্লক মোডের সেটিংস</string>
     <string name="pulse_custom_fudge_factor">স্যানিটি লেভেল</string>
-    <string name="pulse_lavalamp_speed_title">Lava lamp speed</string>
-    <string name="pulse_solid_units_count">Solid lines count</string>
-    <string name="pulse_solid_units_opacity">Solid lines opacity</string>
+    <string name="pulse_lavalamp_speed_title">লাভা ল্যাম্পের গতি</string>
+    <string name="pulse_solid_units_count">সলিড লাইন গননা</string>
+    <string name="pulse_solid_units_opacity">সলিড লাইনের স্বচ্ছতা</string>
     <string name="pulse_solid_units_rounded_title">গোলাকার কর্নার</string>
-    <string name="pulse_solid_units_rounded_summary">Solid lines with rounded tip</string>
-    <string name="pulse_solid_dimen_category">Solid lines mode settings</string>
-    <string name="pulse_color_mode_title">Color</string>
-    <string name="pulse_color_accent">Accent</string>
-    <string name="pulse_color_custom">Custom</string>
-    <string name="pulse_color_lava_lamp">Lava lamp</string>
-    <string name="pulse_color_user_title">Choose color</string>
-    <string name="pulse_smoothing_enabled_title">Turn on smoothing</string>
-    <string name="pulse_smoothing_enabled_summary">Each bar is animated more smoothly</string>
-    <string name="pulse_custom_dimen">Bar width</string>
-    <string name="pulse_custom_div">Bar spacing</string>
-    <string name="pulse_filled_block_size">Block size</string>
-    <string name="pulse_empty_block_size">Block spacing</string>
+    <string name="pulse_solid_units_rounded_summary">গোলাকার মুখ বিশিষ্ট সোজা দাগ</string>
+    <string name="pulse_solid_dimen_category">সলিড লাইনের মোড সেটিংস</string>
+    <string name="pulse_color_mode_title">রঙ</string>
+    <string name="pulse_color_accent">এক্সেন্ট</string>
+    <string name="pulse_color_custom">কাস্টম</string>
+    <string name="pulse_color_lava_lamp">লাভা বাতি</string>
+    <string name="pulse_color_auto">Album</string>
+    <string name="pulse_color_user_title">রঙ বাছাই করুন</string>
+    <string name="pulse_smoothing_enabled_title">স্মুথিং চালু করুন</string>
+    <string name="pulse_smoothing_enabled_summary">প্রতিটি বার আরও মসৃণভাবে অ্যানিমেটেড হয়</string>
+    <string name="pulse_custom_dimen">বারের প্রস্থ</string>
+    <string name="pulse_custom_div">বার স্পেস</string>
+    <string name="pulse_filled_block_size">ব্লক সাইজ</string>
+    <string name="pulse_empty_block_size">ব্লক স্পেস</string>
     <!-- Navigation Bar -->
-    <string name="navbar_visibility_title">Navigation bar</string>
+    <string name="navbar_visibility_title">নেভিগেশন বার</string>
     <string name="navbar_visibility_summary">Display navigation bar at bottom of screen</string>
-    <string name="navbar_layout_category_title">Layout</string>
-    <string name="navbar_arrow_keys_title">Show arrow keys while typing</string>
-    <string name="navbar_arrow_keys_summary">Display left and right cursor buttons while typing. Overrides IME switcher.</string>
-    <string name="navbar_layout_title">Layout</string>
-    <string name="navbar_layout_normal">Normal</string>
-    <string name="navbar_layout_compact">Compact</string>
-    <string name="navbar_layout_leftleaning">Left-leaning</string>
-    <string name="navbar_layout_rightleaning">Right-leaning</string>
-    <string name="navbar_invert_layout_title">Invert layout</string>
-    <string name="navbar_invert_layout_summary">Inverts the layout of the navigation bar and other items, such as the IME switcher</string>
-    <string name="navbar_actions_category_title">Actions</string>
+    <string name="navbar_layout_category_title">লেআউট</string>
+    <string name="navbar_arrow_keys_title">লিখার সময় এরো-কী প্রদর্শন করুন</string>
+    <string name="navbar_arrow_keys_summary">টাইপ করার সময় বাম এবং ডান কার্সর বোতাম প্রদর্শন করুন। আইএমই স্যুইচারকে ওভাররাইড করে।.</string>
+    <string name="navbar_layout_title">লেআউট</string>
+    <string name="navbar_layout_normal">সাধারণ</string>
+    <string name="navbar_layout_compact">কমপ্যাক্ট</string>
+    <string name="navbar_layout_leftleaning">বাঁ-দিকে হেলা</string>
+    <string name="navbar_layout_rightleaning">ডান-দিকে হেলা</string>
+    <string name="navbar_invert_layout_title">লেআউট উল্টান</string>
+    <string name="navbar_invert_layout_summary">নেভিগেশন বার এবং অন্যান্য আইটেম যেমন IME সুইচারের লেআউট উল্টান</string>
+    <string name="navbar_actions_category_title">অ্যাকশন</string>
     <string name="navbar_back_long_press_title">Back long press</string>
     <string name="navbar_home_long_press_title">Home long press</string>
     <string name="navbar_home_double_tap_title">Home double tap</string>
@@ -506,19 +499,19 @@
     <string name="navbar_edge_long_swipe_title">Edge long swipe</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">পকেট সনাক্তকরণ</string>
-    <string name="pocket_judge_summary">Block screen and button inputs when device is in pocket</string>
+    <string name="pocket_judge_summary">ডিভাইস পকেটে থাকা অবস্থায় স্ক্রিন এবং বাটনের ইনপুটগুলি ব্লক করুন</string>
     <!-- Disable HW keys -->
     <string name="hwkeys_disabled_title">HW কী নিষ্ক্রিয় করুন</string>
-    <string name="hwkeys_disabled_summary">Enabling this will disable hardware keys for navigation</string>
+    <string name="hwkeys_disabled_summary">এটি সক্ষম করলে নেভিগেশনের জন্য হার্ডওয়্যার কীগুলি অক্ষম হয়ে যাবে</string>
     <!-- Swap capacitive keys -->
     <string name="swap_capacitive_keys_title">Swap capacitive buttons</string>
     <string name="swap_capacitive_keys_summary">Swap the order of recents and back buttons</string>
     <!-- ANBI -->
     <string name="anbi_title">দুর্ঘটনাজনিত টাচ</string>
-    <string name="anbi_summary">Prevent interaction with navigation buttons while the screen is being touched</string>
+    <string name="anbi_summary">স্ক্রিনটি স্পর্শ করলে নেভিগেশন বোতামগুলির সাথে মিথস্ক্রিয়া আটকাতে হবে</string>
     <!-- Live volume steps -->
     <string name="volume_steps_title">ভলিউম স্টেপ</string>
-    <string name="volume_steps_summary">Customize no. of steps in volume panel</string>
+    <string name="volume_steps_summary">কাস্টমাইজ না। ভলিউম প্যানেলে ধাপগুলি</string>
     <string name="volume_steps_alarm_title">ভলিউম স্টেপ: অ্যালার্ম</string>
     <string name="volume_steps_dtmf_title">ভলিউম স্টেপ: DTMF</string>
     <string name="volume_steps_music_title">ভলিউম স্টেপ: মিউজিক</string>
@@ -540,15 +533,15 @@
     <string name="background_processes_settings_title">ব্যাকগ্রাউন্ড প্রসেস সমূহ</string>
     <!-- QS footer icons -->
     <string name="qs_footer_users_icon_title">ব্যবহারকারীর অ্যাকাউন্ট আইকন</string>
-    <string name="qs_footer_users_icon_summary">Display multiuser accessibility icon when available</string>
+    <string name="qs_footer_users_icon_summary">উপলব্ধ হলে মাল্টি -ইউজার অ্যাক্সেসিবিলিটি আইকন প্রদর্শন করুন</string>
     <string name="qs_footer_edit_icon_title">টাইলস আইকন এডিট করুন</string>
     <string name="qs_footer_show_power_menu_title">Power menu shortcut</string>
-    <string name="qs_footer_services_icon_title">Running services shortcut</string>
-    <string name="qs_footer_settings_icon_title">Settings shortcut</string>
+    <string name="qs_footer_services_icon_title">চলমান পরিষেবার শর্টকাট</string>
+    <string name="qs_footer_settings_icon_title">সেটিংস শর্টকাট</string>
     <!-- Device Info screen. crDroid legal. -->
     <string name="crdroid_license_title">crDroid legal</string>
     <!-- Quick Settings brightness slider -->
-    <string name="qs_show_brightness_slider_title">Brightness slider</string>
+    <string name="qs_show_brightness_slider_title">ব্রাইটনেস স্লাইডার/উজ্জ্বলতা বার</string>
     <string name="qs_show_brightness_slider_never">কখনো দেখাবে না</string>
     <string name="qs_show_brightness_slider_expanded">বিস্তৃত করলে দেখাবে</string>
     <string name="qs_show_brightness_slider_always">সবসময় দেখাবে</string>
@@ -558,7 +551,7 @@
     <string name="qs_brightness_slider_position_bottom">নীচে</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">স্বয়ংক্রিয় উজ্জ্বলতা আইকন</string>
-    <string name="qs_show_auto_brightness_summary">Show toggle for adaptive brightness near the slider</string>
+    <string name="qs_show_auto_brightness_summary">স্লাইডারের কাছে অভিযোজিত উজ্জ্বলতার জন্য টগল দেখান</string>
     <!-- Statusbar colored icons -->
     <string name="statusbar_colored_icons_title">রঙিন আইকন দেখাবে</string>
     <string name="statusbar_colored_icons_summary">Use proper app icons for notification icons in statusbar</string>
@@ -566,47 +559,47 @@
     <string name="statusbar_notif_count_title">কতোগুলো নোটিফিকেশন নাম্বার দেখাবে</string>
     <string name="statusbar_notif_count_summary">অপেক্ষমান নোটিফিকেশনের সংখ্যা দেখাবে</string>
     <!-- Notification channels -->
-    <string name="channel_light_settings_name">Light settings preview</string>
+    <string name="channel_light_settings_name">হালকা সেটিংস প্রিভিউ</string>
     <!-- Notification light dialogs -->
-    <string name="edit_light_settings">Edit light settings</string>
-    <string name="pulse_speed_title">Pulse length and speed</string>
-    <string name="default_time">Normal</string>
-    <string name="custom_time">Custom</string>
-    <string name="brightness">Brightness level</string>
+    <string name="edit_light_settings">হালকা সেটিংস সম্পাদনা করুন</string>
+    <string name="pulse_speed_title">স্পন্দনের দৈর্ঘ্য এবং গতি</string>
+    <string name="default_time">সাধারণ</string>
+    <string name="custom_time">কাস্টম</string>
+    <string name="brightness">ব্রাইটনেস লেভেল</string>
     <!-- Values for the notification light pulse spinners -->
-    <string name="pulse_length_always_on">Always on</string>
-    <string name="pulse_length_very_short">Very short</string>
-    <string name="pulse_length_short">Short</string>
-    <string name="pulse_length_normal">Normal</string>
-    <string name="pulse_length_long">Long</string>
-    <string name="pulse_length_very_long">Very long</string>
-    <string name="pulse_speed_very_fast">Very fast</string>
-    <string name="pulse_speed_fast">Fast</string>
-    <string name="pulse_speed_normal">Normal</string>
-    <string name="pulse_speed_slow">Slow</string>
-    <string name="pulse_speed_very_slow">Very slow</string>
+    <string name="pulse_length_always_on">সবসময় সচল</string>
+    <string name="pulse_length_very_short">খুবই সংক্ষিপ্ত</string>
+    <string name="pulse_length_short">খাটো</string>
+    <string name="pulse_length_normal">সাধারণ</string>
+    <string name="pulse_length_long">লম্বা</string>
+    <string name="pulse_length_very_long">খুব বড়</string>
+    <string name="pulse_speed_very_fast">অতি দ্রুত</string>
+    <string name="pulse_speed_fast">দ্রুত</string>
+    <string name="pulse_speed_normal">সাধারণ</string>
+    <string name="pulse_speed_slow">ধীরে</string>
+    <string name="pulse_speed_very_slow">অত্যন্ত মন্থর</string>
     <!-- Common light settings strings -->
-    <string name="light_brightness_title">Brightness levels</string>
-    <string name="light_brightness_normal">Normal</string>
-    <string name="light_brightness_zen">Do Not Disturb</string>
+    <string name="light_brightness_title">ব্রাইটনেস লেভেল</string>
+    <string name="light_brightness_normal">সাধারণ</string>
+    <string name="light_brightness_zen">বিরক্ত করবেন না</string>
     <!-- Battery light settings -->
-    <string name="light_brightness_category">Light brightness settings</string>
-    <string name="battery_light_title">Battery light</string>
+    <string name="light_brightness_category">হালকা উজ্জ্বলতা সেটিংস</string>
+    <string name="battery_light_title">ব্যাটারির আলো</string>
     <string name="battery_light_enable_title">Enable battery light</string>
-    <string name="battery_light_summary">Configure led color based on battery level and status</string>
-    <string name="battery_low_pulse_title">Pulse if battery low</string>
-    <string name="battery_light_full_charge_disabled_title">Turn off when fully charged</string>
-    <string name="battery_light_list_title">Colors</string>
-    <string name="battery_light_low_color_title">Battery low</string>
-    <string name="battery_light_medium_color_title">Charging</string>
-    <string name="battery_light_full_color_title">Nearly Charged (&gt;90%)</string>
-    <string name="battery_light_really_full_color_title">Fully Charged (100%)</string>
+    <string name="battery_light_summary">ব্যাটারি স্তর এবং স্থিতির উপর ভিত্তি করে নেতৃত্বাধীন রঙ কনফিগার করুন</string>
+    <string name="battery_low_pulse_title">নাড়াচাড়া করুন যদি ব্যাটারি কমে যায়</string>
+    <string name="battery_light_full_charge_disabled_title">সম্পূর্ণ চার্জ হলে বন্ধ করুন</string>
+    <string name="battery_light_list_title">রঙ</string>
+    <string name="battery_light_low_color_title">ব্যাটারি কম</string>
+    <string name="battery_light_medium_color_title">চার্জ হচ্ছ</string>
+    <string name="battery_light_full_color_title">প্রায় চার্জ (> 90%)</string>
+    <string name="battery_light_really_full_color_title">সম্পূর্ণ চার্জ (100%)</string>
     <!-- Lights settings screen, notification light settings -->
-    <string name="notification_light_title">Notification light</string>
+    <string name="notification_light_title">নোটিফিকেশন আলো</string>
     <string name="notification_light_enable_title">Enable notification light</string>
-    <string name="notification_light_summary">Configure led color for notifications</string>
-    <string name="notification_light_general_title">General</string>
-    <string name="notification_light_advanced_title">Advanced</string>
+    <string name="notification_light_summary">বিজ্ঞপ্তির জন্য নেতৃত্বাধীন রঙ কনফিগার করুন</string>
+    <string name="notification_light_general_title">সাধারণ</string>
+    <string name="notification_light_advanced_title">অ্যাডভান্সড</string>
     <string name="notification_light_applist_title">অ্যাপসমূহ</string>
     <string name="notification_light_phonelist_title">ফোন</string>
     <string name="notification_light_use_custom">পছন্দসই মান ব্যবহার</string>
@@ -617,27 +610,29 @@
     <string name="notification_light_zen_mode">ডু নট ডিস্টার্ব মোডে লাইট</string>
     <string name="notification_light_automagic">স্বয়ংক্রিয়ভাবে রং বেছে নিন</string>
     <string name="notification_light_automagic_summary">স্বয়ংক্রিয়ভাবে রং বেছে নিন</string>
-    <string name="notification_light_override">Override all apps</string>
+    <string name="notification_light_override">সব অ্যাপ ওভাররাইড করুন</string>
     <!-- Lights settings, LED notification -->
-    <string name="led_notification_title">Light settings</string>
-    <string name="led_notification_text">LED light enabled by settings</string>
+    <string name="led_notification_title">আলো সেটিংস</string>
+    <string name="led_notification_text">LED লাইট সেটিংস দ্বারা সক্রিয়</string>
     <string name="notification_light_add_apps_empty_summary">To add per app control, activate \'%1$s\' and press \'Add\'</string>
     <!-- Heads up timeout -->
-    <string name="notification_heads_up_title">Heads up</string>
-    <string name="notification_heads_up_summary">Allow pop up notifications</string>
-    <string name="notification_heads_up_timeout_title">Time out</string>
+    <string name="notification_heads_up_title">হেডস আপ</string>
+    <string name="notification_heads_up_summary">পপ আপ বিজ্ঞপ্তি অনুমতি দিন</string>
+    <string name="notification_heads_up_timeout_title">সময় শেষ</string>
     <string name="notification_heads_up_timeout_summary">Time to display heads up notifications</string>
     <!-- Less boring heads up -->
-    <string name="less_boring_heads_up_title">Less boring</string>
-    <string name="less_boring_heads_up_summary">Display popup notifications only for alarm, dialer and messaging app</string>
+    <string name="less_boring_heads_up_title">কম বিরক্তিকর</string>
+    <string name="less_boring_heads_up_summary">শুধুমাত্র অ্যালার্ম, ডায়ালার এবং মেসেজিং অ্যাপের জন্য পপআপ বিজ্ঞপ্তি প্রদর্শন করুন</string>
     <!-- Notifications while screen on -->
-    <string name="notification_sound_vib_screen_on_title">Noisy notifications</string>
-    <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
+    <string name="notification_sound_vib_screen_on_title">গোলমাল বিজ্ঞপ্তি</string>
+    <string name="notification_sound_vib_screen_on_summary">স্ক্রিন চালু থাকা অবস্থায় বিজ্ঞপ্তির জন্য শব্দ এবং কম্পন চালান</string>
     <!-- Privacy Indicator -->
     <string name="mic_camera_privacy_indicator_title">Mic and camera privacy indicator</string>
     <string name="mic_camera_privacy_indicator_summary">Show separate indicator when any app uses mic or camera</string>
     <string name="location_privacy_indicator_title">Location privacy indicator</string>
     <string name="location_privacy_indicator_summary">Show separate indicator when any app uses location</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Deep sleep</string>
     <!-- In-call feedback -->
@@ -647,11 +642,11 @@
     <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
     <!-- Blink flashlight for incoming calls -->
     <string name="flashlight_on_call_title">Blink flashlight for incoming call</string>
-    <string name="flashlight_on_call_disabled">Disabled</string>
+    <string name="flashlight_on_call_disabled">নিষ্ক্রিয়</string>
     <string name="flashlight_on_call_ringer">When ringing</string>
     <string name="flashlight_on_call_no_ringer">When ringer is silent</string>
     <string name="flashlight_on_call_silent">When entirely silent (no ringer or vibrator)</string>
-    <string name="flashlight_on_call_always">Always</string>
+    <string name="flashlight_on_call_always">সর্বদা</string>
     <string name="flashlight_on_call_ignore_dnd_title">Ignore DND</string>
     <string name="flashlight_on_call_ignore_dnd_summary">Whether to flash when Do Not Disturb mode is active</string>
     <string name="flashlight_on_call_rate_title">Blink rate</string>
@@ -659,44 +654,44 @@
     <string name="gaming_mode_title">Game space</string>
     <string name="gaming_mode_summary">Extra features for immersive gaming experience</string>
     <!-- Navbar Animation -->
-    <string name="pixel_navbar_anim_title">Pixel animation</string>
+    <string name="pixel_navbar_anim_title">পিক্সেল অ্যানিমেশন</string>
     <string name="pixel_navbar_anim_summary">Enable pixel style animation for 2-button / 3-button navigation bar</string>
     <!-- Fingerprint Ripple Effect -->
     <string name="enable_fingerprint_ripple_effect_title">Ripple effect</string>
     <string name="enable_fingerprint_ripple_effect_summary">Show ripple effect on unlock with fingerprint</string>
     <!-- Old mobiletype icon style -->
-    <string name="old_mobiletype_title">Old style signal icon</string>
-    <string name="old_mobiletype_summary">Merge signal and signal type icons</string>
+    <string name="old_mobiletype_title">পুরানো স্টাইলের সিগন্যাল আইকন</string>
+    <string name="old_mobiletype_summary">সংকেত এবং সংকেত টাইপ আইকন মার্জ করুন</string>
     <!-- Screen Off animation -->
-    <string name="screen_off_animation_title">Screen off animation</string>
-    <string name="screen_off_animation_default">Default</string>
-    <string name="screen_off_animation_crt">CRT</string>
-    <string name="screen_off_animation_scale">Scale</string>
+    <string name="screen_off_animation_title">স্ক্রিন অফ অ্যানিমেশন</string>
+    <string name="screen_off_animation_default">ডিফল্ট</string>
+    <string name="screen_off_animation_crt">সি আর টি</string>
+    <string name="screen_off_animation_scale">স্কেল</string>
     <!-- Custom Vibration fragment -->
     <string name="vibration_intensity_preferences">Vibration intensity</string>
     <string name="summary_vibration_intensity_preferences">Change vibration intensities</string>
     <string name="keywords_vibration_preferences">vibration pattern, vibration intensity, incall, intensity, haptics, tap, vibration strength</string>
-    <string name="ringtone_vibration_pattern">Ringtone vibration pattern</string>
-    <string name="vibration_intensity_ringer">Ringtone vibration intensity</string>
-    <string name="vibration_intensity_notification">Notification vibration intensity</string>
+    <string name="ringtone_vibration_pattern">রিংটোন কম্পনের ধরন</string>
+    <string name="vibration_intensity_ringer">রিংটোন কম্পন তীব্রতা</string>
+    <string name="vibration_intensity_notification">নোটিফিকেশন কম্পন তীব্রতা</string>
     <string name="haptic_feedback_intensity">Haptic feedback intensity</string>
-    <string name="vibration_intensity_disabled">Disabled</string>
-    <string name="vibration_intensity_light">Light</string>
-    <string name="vibration_intensity_medium">Medium</string>
+    <string name="vibration_intensity_disabled">নিষ্ক্রিয়</string>
+    <string name="vibration_intensity_light">আলো</string>
+    <string name="vibration_intensity_medium">মাঝারি</string>
     <string name="vibration_intensity_strong">Strong</string>
-    <string name="vibration_intensity_custom">Custom</string>
+    <string name="vibration_intensity_custom">কাস্টম</string>
     <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
     <string name="pattern_dzzz_da">dzzz-da</string>
     <string name="pattern_mm_mm_mm">mm-mm-mm</string>
     <string name="pattern_da_da_dzzz">da-da-dzzz</string>
     <string name="pattern_da_dzzz_da">da-dzzz-da</string>
     <!-- Fingerprint authentication vibration -->
-    <string name="fp_success_vibrate_title">Fingerprint authentication vibration</string>
-    <string name="fp_success_vibrate_summary">Vibrate when fingerprint authentication is successful</string>
-    <string name="fp_error_vibrate_title">Fingerprint error vibration</string>
-    <string name="fp_error_vibrate_summary">Vibrate when fingerprint authentication fails</string>
+    <string name="fp_success_vibrate_title">আঙ্গুলছাপ অথেন্টিকেশন কম্পন</string>
+    <string name="fp_success_vibrate_summary">আঙুলের ছাপ প্রমাণীকরণ সফল হলে কম্পন করুন</string>
+    <string name="fp_error_vibrate_title">আঙুলের ছাপ ত্রুটির কম্পন</string>
+    <string name="fp_error_vibrate_summary">আঙুলের ছাপ প্রমাণীকরণ ব্যর্থ হলে কম্পন করুন</string>
     <!-- Charging animation -->
-    <string name="charging_animation_title">Charging animation</string>
+    <string name="charging_animation_title">চার্জিং অ্যানিমেশন</string>
     <string name="charging_animation_summary">Display an animation when the device is plugged in</string>
     <!-- One shot automatic brightness -->
     <string name="auto_brightness_one_shot_title">One shot auto-brightness</string>
@@ -708,11 +703,12 @@
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
-    <string name="alert_slider_notifications_title">Alert slider notifications</string>
-    <string name="alert_slider_notifications_summary">Display notification when changing alert slider position</string>
+    <string name="alert_slider_notifications_title">এলার্ট স্লাইডার নোটিফিকেশন</string>
+    <string name="alert_slider_notifications_summary">এলার্ট স্লাইডারের অবস্থান পরিবর্তন করার সময় নোটিফিকেশন প্রদর্শন করুন</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">পূর্ণ স্ক্রিন অ্যাপস</string>
     <string name="display_cutout_force_fullscreen_summary">অ্যাপ্লিকেশনগুলিকে নচ উপেক্ষা করতে বাধ্য করুন</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Unlimited Photos storage</string>
     <string name="use_photos_spoof_summary">Spoof your device as Pixel XL for Google Photos app only to provide unlimited storage for backup</string>
@@ -720,9 +716,9 @@
     <string name="use_games_spoof_title">Unlock higher FPS in games</string>
     <string name="use_games_spoof_summary">Spoof your device as different model for specific games to unlock higher FPS</string>
     <!-- Volume panel -->
-    <string name="volume_panel_category">Volume panel</string>
-    <string name="volume_dialog_timeout_title">Volume panel timeout</string>
-    <string name="volume_panel_on_left_title">Volume panel on left</string>
+    <string name="volume_panel_category">ভলিউম প্যানেল</string>
+    <string name="volume_dialog_timeout_title">ভলিউম প্যানেলের সময়সীমা</string>
+    <string name="volume_panel_on_left_title">বাম দিকে ভলিউম প্যানেল</string>
     <!-- Legacy WFD settings -->
     <string name="legacy_wfd_video_mode_title">Video mode</string>
     <string name="legacy_wfd_video_mode_720p_30fps">720p 30fps</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Allow face unlock on lock screen</string>
     <string name="face_unlock_method_default">When the screen is turned on</string>
     <string name="face_unlock_method_swipe">When swiping on lock screen</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Combined signal icons</string>
-    <string name="combined_status_bar_signal_icons_summary">Show single combined icon for WiFi and mobile signal</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">WiFi timeout</string>
     <string name="wifi_timeout_summary">Do not automatically turn off WiFi</string>
@@ -754,59 +747,43 @@
     <string name="bluetooth_timeout">Bluetooth timeout</string>
     <string name="bluetooth_timeout_summary">Do not automatically turn off Bluetooth</string>
     <string name="bluetooth_timeout_summary_auto">Bluetooth will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no devices connected</string>
-    <string name="custom_timeout_summary_never">Never</string>
-    <string name="custom_timeout_summary_15secs">15 seconds</string>
-    <string name="custom_timeout_summary_30secs">30 seconds</string>
-    <string name="custom_timeout_summary_1min">1 minute</string>
-    <string name="custom_timeout_summary_2mins">2 minutes</string>
-    <string name="custom_timeout_summary_5mins">5 minutes</string>
-    <string name="custom_timeout_summary_10mins">10 minutes</string>
-    <string name="custom_timeout_summary_20mins">20 minutes</string>
+    <string name="custom_timeout_summary_never">কখনও না</string>
+    <string name="custom_timeout_summary_15secs">১৫ সেকেন্ড</string>
+    <string name="custom_timeout_summary_30secs">৩০ সেকেন্ড</string>
+    <string name="custom_timeout_summary_1min">১ মিনিট</string>
+    <string name="custom_timeout_summary_2mins">২ মিনিট</string>
+    <string name="custom_timeout_summary_5mins">৫ মিনিট</string>
+    <string name="custom_timeout_summary_10mins">10 মিনিট</string>
+    <string name="custom_timeout_summary_20mins">20 মিনিট</string>
     <string name="custom_timeout_summary_30mins">30 minutes</string>
     <string name="custom_timeout_summary_1hour">1 hour</string>
     <string name="custom_timeout_summary_2hours">2 hours</string>
     <string name="custom_timeout_summary_4hours">4 hours</string>
     <string name="custom_timeout_summary_8hours">8 hours</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot. Setting a limit on the number of clients</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">This device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Hide QS on secure lock screen</string>
     <string name="disable_qs_summary">Prevent access to QS tiles on secure lock screen</string>
     <!-- Power menu on secure lockscreen -->
-    <string name="lockscreen_enable_power_menu_title">Power menu</string>
-    <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lockscreen</string>
+    <string name="lockscreen_enable_power_menu_title">পাওয়ার তালিকা</string>
+    <string name="lockscreen_enable_power_menu_summary">নিরাপদ লকস্ক্রিনে ফোন বন্ধ করার মেনু চালু বা বন্ধ করুন</string>
     <!-- Gesture navbar length -->
     <string name="gesture_navbar_length_title">Pill length</string>
-    <string name="short_label">Short</string>
-    <string name="long_label">Long</string>
+    <string name="short_label">খাটো</string>
+    <string name="long_label">লম্বা</string>
     <!-- Back gesture height -->
-    <string name="back_height_low_label">Full</string>
-    <string name="back_height_high_label">Bottom</string>
+    <string name="back_height_low_label">পূর্ণ</string>
+    <string name="back_height_high_label">নীচে</string>
     <string name="back_height_title">Back gesture height</string>
     <string name="back_height_summary">Screen height valid for back gesture</string>
     <!-- Notification guts kill app button -->
-    <string name="notification_guts_kill_app_button_title">Force stop button</string>
-    <string name="notification_guts_kill_app_button_summary">Show force stop button in the notification\'s longpress menu</string>
+    <string name="notification_guts_kill_app_button_title">জোর করে স্টপ বাটন</string>
+    <string name="notification_guts_kill_app_button_summary">নোটিফিকেশন লং প্রেস মেনুতে ফোর্স স্টপ বাটন দেখান</string>
     <!-- Screen off UDFPS -->
     <string name="screen_off_udfps_title">Screen off UDFPS</string>
     <string name="screen_off_udfps_summary">Keep UDFPS enabled when the screen is off</string>
     <!-- Columbus -->
     <string name="columbus_gesture_detected">Quick Tap detected!</string>
-    <string name="columbus_gesture_enrollment_complete">Done</string>
+    <string name="columbus_gesture_enrollment_complete">সম্পন্ন হয়েছে</string>
     <string name="columbus_gesture_enrollment_do_it_later">Not now</string>
     <string name="columbus_gesture_enrollment_settings">Go to Settings</string>
     <string name="columbus_gesture_enrollment_try_it">Try it</string>
@@ -841,7 +818,7 @@
     <string name="columbus_setting_action_open_app_title">Open app</string>
     <string name="columbus_setting_action_overview_title">See recent apps</string>
     <string name="columbus_setting_action_play_pause_title">Play or pause media</string>
-    <string name="columbus_setting_action_screenshot_title">Take screenshot</string>
+    <string name="columbus_setting_action_screenshot_title">স্ক্রীনশট নিন</string>
     <string name="columbus_setting_actions_title">Tap back of phone twice to</string>
     <string name="columbus_setting_additional_settings_title">Quick Tap strength</string>
     <string name="columbus_setting_app_selection_help_text">Select an app to open when you tap the back of your phone twice. If you uninstall the app, Quick Tap turns off until you select a different app.</string>
@@ -860,16 +837,16 @@
     <string name="reticker_colored_title">Use app colored background</string>
     <string name="reticker_colored_summary">Replace reTicker background color using notification app main color</string>
     <!-- Smart Pixels -->
-    <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see improvement in battery life. Note that in some cases it can result in unresponsive areas on touch screen</string>
-    <string name="smart_pixels_title">Smart Pixels</string>
-    <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
-    <string name="smart_pixels_enable_title">Enable Smart Pixels</string>
-    <string name="smart_pixels_enable_summary">Shut off pixels to reduce power consumption</string>
-    <string name="smart_pixels_on_power_save_title">Auto-enable on battery saver</string>
-    <string name="smart_pixels_on_power_save_summary">Enable Smart Pixels when battery saver is enabled</string>
-    <string name="smart_pixels_percent">Percent of pixels to disable</string>
-    <string name="smart_pixels_shift_title">Burn-in protection</string>
-    <string name="smart_pixels_shift_summary">Prevents burn-in on OLED devices by shifting pixels every so often</string>
+    <string name="smart_pixels_warning_text">স্মার্ট পিক্সেল একটি বিদ্যুৎ সাশ্রয়ী বৈশিষ্ট্য। আপনি কতগুলি পিক্সেল বন্ধ করার সিদ্ধান্ত নেন তার উপর নির্ভর করে, আপনি ব্যাটারি জীবনে উন্নতি দেখতে পারেন। মনে রাখবেন যে কিছু ক্ষেত্রে এটি স্পর্শ পর্দায় প্রতিক্রিয়াশীল এলাকা হতে পারে</string>
+    <string name="smart_pixels_title">স্মার্ট পিক্সেল</string>
+    <string name="smart_pixels_summary">অতিরিক্ত পিক্সেল বন্ধ করে ব্যাটারি বাঁচান</string>
+    <string name="smart_pixels_enable_title">স্মার্ট পিক্সেল সক্ষম করুন</string>
+    <string name="smart_pixels_enable_summary">বিদ্যুতের ব্যবহার হ্রাস করতে পিক্সেল বন্ধ করুন</string>
+    <string name="smart_pixels_on_power_save_title">স্বয়ংক্রিয়ভাবে ব্যাটারি সেভার চালু করুন</string>
+    <string name="smart_pixels_on_power_save_summary">ব্যাটারি সেভার সক্ষম হলে স্মার্ট পিক্সেল ব্যবহার করুন</string>
+    <string name="smart_pixels_percent">অক্ষম করার জন্য পিক্সেলের শতকরা হার</string>
+    <string name="smart_pixels_shift_title">বার্ন ইন সুরক্ষা</string>
+    <string name="smart_pixels_shift_summary">OLED ডিভাইসে বার বার পিক্সেল স্থানান্তর করে বার্ন-ইন প্রতিরোধ করে</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">Use black theme</string>
     <string name="system_black_theme_summary">Force black background colors</string>
@@ -879,7 +856,7 @@
     <string name="notification_material_dismiss_style_title">Button style</string>
     <string name="notification_material_dismiss_bgstyle_title">Button background</string>
     <!-- Back gesture animation -->
-    <string name="back_gesture_arrow_title">Back gesture animation</string>
+    <string name="back_gesture_arrow_title">ব্যাক জেসচার অ্যানিমেশন</string>
     <string name="back_gesture_arrow_summary">Show an animated arrow for back gesture</string>
     <!-- Back gesture haptic -->
     <string name="back_gesture_haptic_title">Back gesture haptic</string>
@@ -889,7 +866,7 @@
     <string name="designed_battery_capacity">Designed battery capacity</string>
     <string name="battery_charge_cycles">Charge cycles completed</string>
     <!-- Battery temperature -->
-    <string name="battery_temperature">Battery temperature</string>
+    <string name="battery_temperature">ব্যাটারি তাপমাত্রা</string>
     <!-- QS Transparency -->
     <string name="qs_transparency_title">Background transparency</string>
     <string name="qs_transparency_summary">Set transparency level for QS background</string>
@@ -899,23 +876,23 @@
     <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Tiles animation</string>
     <string name="qs_tile_animation_style_title">Animation style</string>
-    <string name="qs_tile_animation_duration_title">Animation duration</string>
+    <string name="qs_tile_animation_duration_title">অ্যানিমেশনের সময়কাল</string>
     <string name="qs_tile_animation_interpolator_title">Animation interpolator</string>
-    <string name="qs_tile_animation_style_off">No animation</string>
-    <string name="qs_tile_animation_style_rotate">Rotate</string>
+    <string name="qs_tile_animation_style_off">নো অ্যানিমেশন</string>
+    <string name="qs_tile_animation_style_rotate">আবর্তিত</string>
     <string name="qs_tile_animation_style_flipx">Flip X</string>
     <string name="qs_tile_animation_style_flipy">Flip Y</string>
-    <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
-    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerate</string>
-    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelerate</string>
-    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelerate decelerate</string>
-    <string name="qs_tile_animation_interpolator_bounceInterpolator">Bounce</string>
-    <string name="qs_tile_animation_interpolator_overshootInterpolator">Overshoot</string>
-    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipate</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
+    <string name="qs_tile_animation_interpolator_linearInterpolator">লিনিয়ার</string>
+    <string name="qs_tile_animation_interpolator_accelerateInterpolator">এক্সেলারেট (দ্রুততর করা)</string>
+    <string name="qs_tile_animation_interpolator_decelerateInterpolator">ডিসিলারেট (গতি হ্রাস করা)</string>
+    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">এক্সেলারেট ডিসিলারেট</string>
+    <string name="qs_tile_animation_interpolator_bounceInterpolator">বাউন্স</string>
+    <string name="qs_tile_animation_interpolator_overshootInterpolator">ওভারশুট</string>
+    <string name="qs_tile_animation_interpolator_anticipateInterpolator">অ্যান্টিসিপেট</string>
+    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">অ্যান্টিসিপেট ওভারশুট</string>
     <!-- Screenshot shutter sound  -->
-    <string name="screenshot_shutter_sound_title">Screenshot sound</string>
-    <string name="screenshot_shutter_sound_summary">Play sound when screenshot is taken</string>
+    <string name="screenshot_shutter_sound_title">স্ক্রিনশটের আওয়াজ</string>
+    <string name="screenshot_shutter_sound_summary">স্ক্রিনশট নেওয়ার সময় সাউন্ড বাজানো</string>
     <!-- QS tiles layout  -->
     <string name="qs_layout_category_title">Tiles layout</string>
     <string name="qs_tile_label_hide_title">Hide label</string>
@@ -923,23 +900,36 @@
     <string name="qs_tile_label_hide_summary">Only show icon in tile</string>
     <string name="qs_tile_layout_title">Vertical layout</string>
     <string name="qs_tile_layout_summary">Show label below icon instead next to icon</string>
-    <string name="qs_columns_portrait_title">Columns (portrait)</string>
-    <string name="qs_columns_landscape_title">Columns (landscape)</string>
+    <string name="qs_columns_portrait_title">কলাম (পোর্ট্রেট)</string>
+    <string name="qs_columns_landscape_title">কলাম (ল্যান্ডস্কেপ)</string>
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">Background chip</string>
     <string name="statusbar_clock_chip_summary">Display accented chip behind clock</string>
     <!-- Smart charging -->
-    <string name="smart_charging_title">Smart Charging</string>
-    <string name="smart_charging_summary">Set maximum charging level</string>
-    <string name="smart_charging_switch_title">Enable Smart Charging</string>
-    <string name="smart_charging_level_title">Stop trigger level</string>
-    <string name="smart_charging_resume_level_title">Start trigger level</string>
-    <string name="smart_charging_reset_stats_title">Reset battery statistics</string>
-    <string name="smart_charging_reset_stats_summary">Reset battery statistics after reaching user defined charging level</string>
-    <string name="smart_charging_footer">Smart Charging allows you to set maximum charging level to extend the lifespan of your battery. When enabled, battery stops charging at Stop trigger level and resumes charging at Start trigger level. Stop trigger level should be always greater than Start trigger level.</string>
+    <string name="smart_charging_title">স্মার্ট চার্জিং</string>
+    <string name="smart_charging_summary">সর্বোচ্চ চার্জিং সীমা নির্ধারণ করুন</string>
+    <string name="smart_charging_switch_title">স্মার্ট চার্জিং সক্রিয় করুন</string>
+    <string name="smart_charging_level_title">ট্রিগার লেভেল বন্ধ করুন</string>
+    <string name="smart_charging_resume_level_title">ট্রিগার লেভেল চালু করুন</string>
+    <string name="smart_charging_reset_stats_title">ব্যাটারির পরিসংখ্যান রিসেট করুন</string>
+    <string name="smart_charging_reset_stats_summary">ব্যবহারকারীর নির্ধারিত চার্জিং সীমা পৌঁছানোর পরে ব্যাটারি পরিসংখ্যান পুনরায় চালু</string>
+    <string name="smart_charging_footer">স্মার্ট চার্জিং আপনাকে ব্যাটারির আয়ু বাড়ানোর জন্য সর্বোচ্চ চার্জিং লেভেল সেট করতে দেয়। সক্রিয় করা হলে, ব্যাটারি স্টপ ট্রিগার লেভেলে চার্জ করা বন্ধ করে এবং স্টার্ট ট্রিগার লেভেলে চার্জিং আবার শুরু করে। স্টপ ট্রিগার লেভেল সবসময় স্টার্ট ট্রিগার লেভেলের চেয়ে বড় হওয়া উচিত।.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
-    <string name="adaptive_playback_title">Adaptive playback</string>
+    <string name="adaptive_playback_title">এডাপ্টিব প্লে-ব্যাক</string>
     <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
     <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
-    <string name="adaptive_playback_timeout_title">Playback timeout</string>
+    <string name="adaptive_playback_timeout_title">প্লে-ব্যাকের সময় শেষ</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">লোগো</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">লোগোর অবস্থান</string>
+    <string name="status_bar_logo_style_title">লোগো স্টাইল</string>
 </resources>
