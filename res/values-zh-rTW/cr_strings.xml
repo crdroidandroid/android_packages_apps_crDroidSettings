@@ -34,7 +34,7 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">颜色选取器</string>
     <string name="press_color_to_apply">輕觸下方顏色以套用</string>
-    <string name="hex">Hex:</string>
+    <string name="hex">16進制色碼：</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">設定</string>
     <string name="color_default">預設</string>
@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">自訂電池</string>
     <!-- Gestures -->
     <string name="gestures_title">手勢</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">VoLTE 圖示</string>
-    <string name="volte_icon_summary">可用時顯示 VoLTE 圖示</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWiFi 圖示</string>
-    <string name="vowifi_icon_summary">可用時顯示 VoWiFi 圖示</string>
-    <string name="volte_vowifi_override_title">覆寫 VoWiFi</string>
-    <string name="volte_vowifi_override_summary">不可用時隱藏 VoWiFi 圖示</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">漫遊圖示</string>
     <string name="roaming_indicator_icon_summary">漫遊時在訊號圖示處顯示漫遊標誌</string>
@@ -455,7 +447,7 @@
     <!-- Pulse music visualizer -->
     <string name="pulse_help_policy_notice_title">關於 Pulse</string>
     <string name="pulse_help_policy_notice_summary">Pulse 是一款優秀的音訊圖形等化器，在裝置播放音樂時運作。</string>
-    <string name="pulse_settings">Pulse</string>
+    <string name="pulse_settings">脈衝</string>
     <string name="pulse_settings_summary">導覽列與鎖定畫面的音訊圖形等化器</string>
     <string name="show_navbar_pulse_title">導覽列 Pulse</string>
     <string name="show_navbar_pulse_summary">在導覽列上的音樂視覺特效</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">強調色</string>
     <string name="pulse_color_custom">自訂</string>
     <string name="pulse_color_lava_lamp">熔岩燈</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">選擇顏色</string>
     <string name="pulse_smoothing_enabled_title">開啟平滑模式</string>
     <string name="pulse_smoothing_enabled_summary">每條頻譜線的動畫將更平滑</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">當應用程式在存取麥克風或相機時顯示圖示</string>
     <string name="location_privacy_indicator_title">位置隱私指示器</string>
     <string name="location_privacy_indicator_summary">當應用程式在存取位置時顯示圖示</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">深度睡眠</string>
     <!-- In-call feedback -->
@@ -670,7 +665,7 @@
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">螢幕關閉動畫</string>
     <string name="screen_off_animation_default">預設</string>
-    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_crt">陰極射線管</string>
     <string name="screen_off_animation_scale">縮放</string>
     <!-- Custom Vibration fragment -->
     <string name="vibration_intensity_preferences">震動強度</string>
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">全螢幕應用程式</string>
     <string name="display_cutout_force_fullscreen_summary">強制應用程式忽略螢幕瀏海</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">無限相簿儲存空間</string>
     <string name="use_photos_spoof_summary">針對Google相簿將您的裝置偽裝成 Pixel XL 來取得無限相簿儲存空間</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">允許使用臉部辨識解鎖手機</string>
     <string name="face_unlock_method_default">當螢幕開啟時</string>
     <string name="face_unlock_method_swipe">滑動鎖定畫面後</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">合併訊號圖示</string>
-    <string name="combined_status_bar_signal_icons_summary">將WiFi和行動數據的訊號合併顯示</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">自動關閉 WiFi</string>
     <string name="wifi_timeout_summary">不要自動關閉 WiFi</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 小時</string>
     <string name="custom_timeout_summary_4hours">4 小時</string>
     <string name="custom_timeout_summary_8hours">8 小時</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">已連線的裝置</string>
-    <string name="wifi_hotspot_client_manager_summary">顯示並管理已連線到無線基地台的裝置。可限制同時連線的裝置數量</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">列出已連線到無線基地台的裝置</string>
-    <string name="wifi_hotspot_client_limit_title">連接數量限制</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">已封鎖的裝置</string>
-    <string name="wifi_hotspot_connected_clients_list_title">已連線的裝置</string>
-    <string name="wifi_hotspot_block_client_dialog_title">封鎖裝置</string>
-    <string name="wifi_hotspot_block_client_dialog_text">此操作將斷開「<xliff:g id="device_name">%1$s</xliff:g>」與此裝置的連線並將其新增至封鎖清單</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">取消封鎖裝置</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">此設備 “<xliff:g id="device_name">%1$s</xliff:g>” 將能夠連接到此無線基地台</string>
-    <string name="wifi_hotspot_client_manager_footer_text">目前沒有可顯示的裝置。有已連線或已封鎖的裝置時將在此顯示。</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">隱藏網路</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">您的無線基地台將不會公開顯示。</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">在安全鎖定畫面上停用快速設定</string>
     <string name="disable_qs_summary">設有密碼等鎖定機制時，在鎖定畫面上停用快速設定</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">重設電池統計數據</string>
     <string name="smart_charging_reset_stats_summary">在達到使用者設定的電量後，重設電池統計數據</string>
     <string name="smart_charging_footer">智慧充電可以透過限制最大充電量來達到延長電池壽命的效果。啟用時，會在達到「停止充電電量」後暫停充電；在降至「開始充電電量」後繼續。「停止充電電量」應始終大於「開始充電電量」。</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">自動暫停</string>
     <string name="adaptive_playback_summary">在靜音時暫停媒體播放，並在一定時間內逐漸恢復音量</string>
     <string name="adaptive_playback_intro_text">靜音後，媒體將會自動暫停播放，當音量在設定時間內恢復時會自動恢復播放。</string>
     <string name="adaptive_playback_timeout_title">逾時長度</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">圖示</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">圖示位置</string>
+    <string name="status_bar_logo_style_title">圖示樣式</string>
 </resources>
