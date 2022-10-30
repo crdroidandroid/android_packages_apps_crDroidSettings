@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Pil</string>
     <!-- Gestures -->
     <string name="gestures_title">Hareketler</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">VoLTE simgesi</string>
-    <string name="volte_icon_summary">VoLTE kullanılabilir olduğunda simgesini göster</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWiFi simgesi</string>
-    <string name="vowifi_icon_summary">VoWiFi kullanılabilir olduğunda simgesini göster</string>
-    <string name="volte_vowifi_override_title">VoWiFi geçersiz kılma</string>
-    <string name="volte_vowifi_override_summary">VoWiFi kullanılabilir olduğunda VoLTE\'yi gizle</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Dolaşım göstergesi</string>
     <string name="roaming_indicator_icon_summary">Dolaşım modundayken sinyal simgesinde dolaşım göstergesini görüntüle</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Vurgu rengi</string>
     <string name="pulse_color_custom">Özel</string>
     <string name="pulse_color_lava_lamp">Lava lambası</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Renk seçimi</string>
     <string name="pulse_smoothing_enabled_title">Pürüzsüzlüğü aç</string>
     <string name="pulse_smoothing_enabled_summary">Her çubuk daha pürüzsüz animasyonlu</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Herhangi bir uygulama mikrofon veya kamera kullandığında ayrı gösterge göster</string>
     <string name="location_privacy_indicator_title">Konum gizlilik göstergesi</string>
     <string name="location_privacy_indicator_summary">Herhangi bir uygulama konumu kullandığında ayrı gösterge göster</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Derin uyku</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Tam ekran uygulamaları</string>
     <string name="display_cutout_force_fullscreen_summary">Uygulamaları çentik alanını yok saymaya zorla</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Sınırsız fotoğraf depolama</string>
     <string name="use_photos_spoof_summary">Yalnızca yedekleme için sınırsız depolama sağlamak amacıyla cihazınızı Google Fotoğraflar uygulaması için Pixel XL olarak taklit edin</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Kilit ekranında yüz kilidi açmaya izin ver</string>
     <string name="face_unlock_method_default">Ekran açıldığında</string>
     <string name="face_unlock_method_swipe">Kilit ekranında kaydırırken</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Birleşik sinyal simgeleri</string>
-    <string name="combined_status_bar_signal_icons_summary">WiFi ve mobil veri için birleşik tek bir simge göster</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">WiFi zaman aşımı</string>
     <string name="wifi_timeout_summary">WiFi\'yi otomatik olarak kapatma</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 saat</string>
     <string name="custom_timeout_summary_4hours">4 saat</string>
     <string name="custom_timeout_summary_8hours">8 saat</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Bağlı cihazlar</string>
-    <string name="wifi_hotspot_client_manager_summary">Hotspot\'a bağlı cihazları listeleyin ve yönetin ve bağlı cihaz sayısı sınırını ayarlayın</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Hotspot\'a bağlı cihazları listeleyin</string>
-    <string name="wifi_hotspot_client_limit_title">Bağlı cihaz sınırı</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Engellenen cihazlar</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Bağlı cihazlar</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Cihazı engelle</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Bu eylem \"<xliff:g id="device_name">%1$s</xliff:g>\" bu cihazla olan bağlantısını kesecek ve onu engellenenler listesine ekleyecektir</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Cihaz engelini kaldır</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">Bu cihaz \"<xliff:g id="device_name">%1$s</xliff:g>\" bu hotspot\'a bağlanabilecek</string>
-    <string name="wifi_hotspot_client_manager_footer_text">Şu anda hiçbir istemci mevcut değil. Bağlı ve engellenen cihazlar mevcut olduğunda burada listelenecek.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Gizli ağ</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Hotspot isminiz uygun WLAN ağları listesinde görünmeyecek.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Güvenli kilit ekranında hızlı ayarları gizle</string>
     <string name="disable_qs_summary">Güvenli kilit ekranında Hızlı ayarlar karelerine erişimi engelle</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">Pil istatistiklerini sıfırla</string>
     <string name="smart_charging_reset_stats_summary">Kullanıcının tanımladığı şarj değerine ulaşınca pil istatistiklerini sıfırlayın</string>
     <string name="smart_charging_footer">Akıllı şarj etme size maksimum şarj etme düzeyini belirlemenizi ve pilinizin ömrünü uzatmanızı sağlar. Aktif edildiği zaman, pil durma noktasına ulaştığında şarj olmayı durdurur ve başlama noktasına gelince şarj olmaya devam eder. Durma noktası her zaman başlama noktasından büyük olmalıdır.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Uyarlanabilir oynatma</string>
     <string name="adaptive_playback_summary">Ses kapalıyken medyayı duraklatın ve zaman aşımı süresinde ses seviyesini artırarak devam ettirin</string>
     <string name="adaptive_playback_intro_text">Ses kapatıldığında medyayı otomatik olarak duraklatır ve ayarlanan süre içinde ses geri yüklendiğinde otomatik olarak devam eder</string>
     <string name="adaptive_playback_timeout_title">Oynatma zaman aşımı</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">Logo konumu</string>
+    <string name="status_bar_logo_style_title">Logo stili</string>
 </resources>
