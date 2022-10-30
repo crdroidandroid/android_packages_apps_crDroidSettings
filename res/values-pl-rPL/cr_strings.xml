@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Dostosowanie baterii</string>
     <!-- Gestures -->
     <string name="gestures_title">Gesty</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">Ikona VoLTE</string>
-    <string name="volte_icon_summary">Wyświetl ikonę VoLTE, gdy jest dostępna</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Ikona VoWiFi</string>
-    <string name="vowifi_icon_summary">Wyświetl ikonę VoLTE, gdy jest dostępna</string>
-    <string name="volte_vowifi_override_title">Zastąp VoWiFi</string>
-    <string name="volte_vowifi_override_summary">Ukryj VoLTE, gdy VoWiFi jest dostępny</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Wskaźnik roamingu</string>
     <string name="roaming_indicator_icon_summary">Wyświetl wskaźnik sygnału roamingu w trybie roamingu</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Akcent</string>
     <string name="pulse_color_custom">Niestandardowy</string>
     <string name="pulse_color_lava_lamp">Lampa lawowa</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Wybierz kolor</string>
     <string name="pulse_smoothing_enabled_title">Włącz wygładzanie</string>
     <string name="pulse_smoothing_enabled_summary">Każdy pasek jest animowany płynniej</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Pokaż oddzielny wskaźnik, gdy jakakolwiek aplikacja używa mikrofonu lub kamery</string>
     <string name="location_privacy_indicator_title">Wskaźnik prywatności lokalizacji</string>
     <string name="location_privacy_indicator_summary">Pokaż oddzielny wskaźnik, gdy jakakolwiek aplikacja używa lokalizacji</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Głęboki sen</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Aplikacje na pełnym ekranie</string>
     <string name="display_cutout_force_fullscreen_summary">Wymuś na aplikacjach ignorowanie przestrzeni wcięcia</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Nielimitowane miejsce w aplikacji Google Zdjęcia</string>
     <string name="use_photos_spoof_summary">Sprawia, że Twoje urządzenie jest postrzegane jako Pixel XL, aby odblokować nielimitowane miejsce na kopię zdjęć</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Zezwól na odblokowywanie twarzą na ekranie blokady</string>
     <string name="face_unlock_method_default">Gdy ekran jest włączony</string>
     <string name="face_unlock_method_swipe">Po przesunięciu palcem na ekranie blokady</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Połączona ikona sygnału</string>
-    <string name="combined_status_bar_signal_icons_summary">Pokaż pojedynczą ikonę dla WiFi i sygnału mobilnego</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Limit czasu WiFi</string>
     <string name="wifi_timeout_summary">Nie wyłączaj automatycznie WiFi</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 godziny</string>
     <string name="custom_timeout_summary_4hours">4 godziny</string>
     <string name="custom_timeout_summary_8hours">8 godzin</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Połączone urządzenia</string>
-    <string name="wifi_hotspot_client_manager_summary">Pokaż i zarządzaj urządzeniami podłączonymi do punktu dostępu. Ustaw limit liczby klientów</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Pokaż urządzenia połączone do punktu dostępu</string>
-    <string name="wifi_hotspot_client_limit_title">Maksymalna liczba połączonych urządzeń</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Zablokowane urządzenia</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Połączone urządzenia</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Zablokuj urządzenie</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Ta czynność rozłączy \"<xliff:g id="device_name">%1$s</xliff:g>\" z tego urządzenia i doda go do listy zablokowanych</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Odblokuj urządzenie</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">Urządzenie \"<xliff:g id="device_name">%1$s</xliff:g>\" będzie mogło połączyć się z tym punktem dostępu</string>
-    <string name="wifi_hotspot_client_manager_footer_text">Aktualnie brak dostępnych urządzeń. Połączone i zablokowane urządzenia zostaną wyświetlone tutaj, jeśli będą dostępne.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Sieć ukryta</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Nazwa twojego punktu dostępu nie pojawi się na liście dostępnych sieci WiFi.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Ukryj szybkie ustawienia z poziomu blokady ekranu</string>
     <string name="disable_qs_summary">Blokuj dostęp do kafelków szybkich ustawień z poziomu blokady ekranu</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">Resetuj statystyki baterii</string>
     <string name="smart_charging_reset_stats_summary">Zresetuj statystyki baterii, po osiągnięciu określonego przez użytkownika poziomu naładowania</string>
     <string name="smart_charging_footer">Inteligentne ładowanie pozwala ustawić maksymalny poziom naładowania, aby wydłużyć żywotność baterii. Po włączeniu, ładowanie zostaje przerwane przy poziomie zatrzymania i wznawiane na poziomie startowym. Poziom zatrzymania powinien być zawsze większy niż poziom startowy.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Odtwarzanie adaptacyjne</string>
     <string name="adaptive_playback_summary">Wstrzymaj odtwarzanie, gdy głośność jest wyciszona i wznawiaj je przez zwiększenie głośności w ciągu limitu czasu</string>
     <string name="adaptive_playback_intro_text">Automatycznie zatrzymuje odtwarzanie multimediów, gdy dźwięk jest wyciszony i wznawia ich odtwarzanie, gdy dźwięk zostanie przywrócony w określonym czasie</string>
     <string name="adaptive_playback_timeout_title">Limit czasu odtwarzania</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">Położenie logo</string>
+    <string name="status_bar_logo_style_title">Styl logo</string>
 </resources>
