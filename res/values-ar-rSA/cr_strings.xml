@@ -35,7 +35,7 @@
     <string name="dialog_color_picker">اختيار الألوان</string>
     <string name="press_color_to_apply">اضغط على اللون أدناه للتطبيق</string>
     <string name="hex">كود Hex:</string>
-    <string name="hex_hint">#ff000000</string>
+    <string name="hex_hint">اللون الاسود</string>
     <string name="set">تعيين</string>
     <string name="color_default">الإفتراضي</string>
     <!-- General strings -->
@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">تخصيصات البطارية</string>
     <!-- Gestures -->
     <string name="gestures_title">الإيماءات</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">أيقونة VoLTE</string>
-    <string name="volte_icon_summary">عرض أيقونة VoLTE عندما تكون متاحة</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">أيقونة VoWiFi</string>
-    <string name="vowifi_icon_summary">عرض أيقونة VoWiFi عندما تكون متاحة</string>
-    <string name="volte_vowifi_override_title">تجاهل VoWiFi</string>
-    <string name="volte_vowifi_override_summary">إخفاء VoLTE عندما يتوفر VoWiFi</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">مؤشر التجوال</string>
     <string name="roaming_indicator_icon_summary">عرض مؤشر التجوال في رمز إشارة الشبكة عندما يكون في وضع التجوال</string>
@@ -136,7 +128,7 @@
     <string name="lockscreen_battery_info_title">معلومات البطارية</string>
     <string name="lockscreen_battery_info_summary">عرض معلومات البطارية عند الشحن</string>
     <!-- Button settings -->
-    <string name="extras_title">Extras</string>
+    <string name="extras_title">اضافات</string>
     <string name="additional_buttons_title">أزرار إضافية</string>
     <string name="hardware_keys_power_key_title">زر التشغيل</string>
     <string name="hardware_keys_home_key_title">زر الصفحة الرئيسية</string>
@@ -190,8 +182,8 @@
     <string name="button_wake_summary">إيقاظ الجهاز عن طريق الضغط على الأزرار</string>
     <string name="volume_answer_call_title">الرد على المكالمة</string>
     <string name="volume_answer_call_summary">الرد على المكالمات الواردة بالضغط على أزرار الصوت</string>
-    <string name="click_partial_screenshot_title">Click to partial screenshot</string>
-    <string name="click_partial_screenshot_summary">Short click Volume Down and Power to take partial screenshot</string>
+    <string name="click_partial_screenshot_title">التقاط لقطة جزئية للشاشة</string>
+    <string name="click_partial_screenshot_summary">اضغط لفترة وجيزة زري خفض الصوت والطاقة لأخذ لقطة شاشة جزئية</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">الضوء الخلفي</string>
     <string name="button_backlight_summary">تخصيص إعدادات الإضاءة الخلفية</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">اللون الأساسي</string>
     <string name="pulse_color_custom">مخصص</string>
     <string name="pulse_color_lava_lamp">الإضاءة السلسة</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">اختر لوناً</string>
     <string name="pulse_smoothing_enabled_title">تشغيل وضع السلاسة</string>
     <string name="pulse_smoothing_enabled_summary">كل شريط سيتم عرضه بسلاسة اكثر</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">إظهار مؤشر منفصل عند استخدام أي تطبيق لميكروفون أو الكاميرا</string>
     <string name="location_privacy_indicator_title">مؤشر خصوصية الموقع</string>
     <string name="location_privacy_indicator_summary">إظهار مؤشر منفصل عند استخدام أي تطبيق لميكروفون أو الكاميرا</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">نوم عميق</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">تطبيقات ملء الشاشة</string>
     <string name="display_cutout_force_fullscreen_summary">فرض التطبيقات على تجاهل مساحة النوتش</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">تخزين الصور غير محدود</string>
     <string name="use_photos_spoof_summary">إظهار جهازك كـ جهاز Pixel لتطبيق صور جوجل فقط لتوفير تخزين غير محدود للنسخ الاحتياطي</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">فتح القفل باستخدام الوجه</string>
     <string name="face_unlock_method_default">عندما تكون الشاشة مُشغَّلة</string>
     <string name="face_unlock_method_swipe">عند السحب على شاشة القفل</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">دمج أيقونات الإشارات</string>
-    <string name="combined_status_bar_signal_icons_summary">إظهار رمز مزدوج واحد للواي فاي وإشارة الجوال</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">مهلة الواي فاي</string>
     <string name="wifi_timeout_summary">عدم إطفاء الواي فاي تلقائياً</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">ساعتان</string>
     <string name="custom_timeout_summary_4hours">4 ساعات</string>
     <string name="custom_timeout_summary_8hours">8 ساعات</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot. Setting a limit on the number of clients</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">This device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">إخفاء الإعدادات السريعة على شاشة القفل</string>
     <string name="disable_qs_summary">منع الوصول إلى مربعات الإعدادات السريعة على شاشة القفل</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">إعادة تعيين إحصائيات البطارية</string>
     <string name="smart_charging_reset_stats_summary">إعادة تعيين إحصائيات البطارية بعد الوصول إلى مستوى الشحن المحدد من قبل المستخدم</string>
     <string name="smart_charging_footer">يتيح لك الشحن الذكي ضبط الحد الأقصى لمستوى الشحن لتمديد عمر البطارية. عند التمكين ، تتوقف البطارية عن الشحن عند مستوى إيقاف المشغل وتستأنف الشحن عند مستوى بدء المشغل. يجب أن يكون مستوى إيقاف التشغيل دائمًا أكبر من مستوى بدء التشغيل.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
-    <string name="adaptive_playback_title">Adaptive playback</string>
-    <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
+    <string name="adaptive_playback_title">التشغيل التكيفي</string>
+    <string name="adaptive_playback_summary">إيقاف الوسائط عند كتم الصوت واستعادته عن طريق زيادة مستوى الصوت خلال المهلة</string>
     <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
-    <string name="adaptive_playback_timeout_title">Playback timeout</string>
+    <string name="adaptive_playback_timeout_title">مهلة التشغيل</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">شعار</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">موقع الشعار</string>
+    <string name="status_bar_logo_style_title">نمط الشعار</string>
 </resources>
