@@ -85,7 +85,7 @@
     <string name="drill_title">Zoals het hoort</string>
     <string name="drill_summary">Bug gevonden? Zijn er problemen?</string>
     <!-- OTA -->
-    <string name="crdroid_update_title">Updates</string>
+    <string name="crdroid_update_title">Bijwerken</string>
     <string name="crdroid_update_summary">Controleer en download de nieuwste updates</string>
     <!-- App details: open play store link if app is user installed -->
     <string name="app_play_store">Google Play</string>
@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Batterij aanpassingen</string>
     <!-- Gestures -->
     <string name="gestures_title">Gebaren</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">VoLTE pictogram</string>
-    <string name="volte_icon_summary">VoLTE pictogram weergeven indien beschikbaar</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWiFi pictogram</string>
-    <string name="vowifi_icon_summary">VoWiFi pictogram weergeven indien beschikbaar</string>
-    <string name="volte_vowifi_override_title">VoWiFi prioriteit</string>
-    <string name="volte_vowifi_override_summary">VoLTE verbergen wanneer VoWiFi beschikbaar is</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Roaming Indicator</string>
     <string name="roaming_indicator_icon_summary">Toon roaming indicator in het signaal pictogram wanneer het toestel aan het roamen is</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Accent</string>
     <string name="pulse_color_custom">Aangepast</string>
     <string name="pulse_color_lava_lamp">Lava lamp</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Kies een kleur</string>
     <string name="pulse_smoothing_enabled_title">Zet smoothing aan</string>
     <string name="pulse_smoothing_enabled_summary">Elke balk wordt vloeiender geanimeerd</string>
@@ -623,7 +616,7 @@
     <string name="led_notification_text">LED-verlichting ingeschakeld door instellingen</string>
     <string name="notification_light_add_apps_empty_summary">Om per-app beheer toe te voegen, activeer \'%1$s\' en klik op \'Toevoegen\'</string>
     <!-- Heads up timeout -->
-    <string name="notification_heads_up_title">Heads up</string>
+    <string name="notification_heads_up_title">Heads-up</string>
     <string name="notification_heads_up_summary">Pop-up meldingen toestaan</string>
     <string name="notification_heads_up_timeout_title">Timeout</string>
     <string name="notification_heads_up_timeout_summary">Tijd om heads-up meldingen weer te geven</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Toon aparte indicator wanneer een app de microfoon of camera gebruikt</string>
     <string name="location_privacy_indicator_title">Locatie privacy indicator</string>
     <string name="location_privacy_indicator_summary">Toon aparte indicator wanneer een app locatie gebruikt</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Diepe slaap</string>
     <!-- In-call feedback -->
@@ -682,7 +677,7 @@
     <string name="haptic_feedback_intensity">Haptic feedback intensiteit</string>
     <string name="vibration_intensity_disabled">Uitgeschakeld</string>
     <string name="vibration_intensity_light">Licht</string>
-    <string name="vibration_intensity_medium">Medium</string>
+    <string name="vibration_intensity_medium">Gemiddeld</string>
     <string name="vibration_intensity_strong">Sterk</string>
     <string name="vibration_intensity_custom">Aangepast</string>
     <string name="pattern_dzzz_dzzz">dzzz-dzz</string>
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Volledige scherm apps</string>
     <string name="display_cutout_force_fullscreen_summary">Dwing apps om notch ruimte te negeren</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Onbeperkte opslag foto\'s</string>
     <string name="use_photos_spoof_summary">Je apparaat spoofen als Pixel XL voor Google Photos app enkel voor onbeperkte opslag voor back-up</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Gezichtsherkenning toestaan op vergrendelscherm</string>
     <string name="face_unlock_method_default">Wanneer het scherm is ingeschakeld</string>
     <string name="face_unlock_method_swipe">Bij vegen over het vergrendelscherm</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Gecombineerde signaalpictogrammen</string>
-    <string name="combined_status_bar_signal_icons_summary">Toon enkel gecombineerde pictogram voor Wi-Fi en mobiel signaal</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">WiFi time-out</string>
     <string name="wifi_timeout_summary">Schakel WiFi niet automatisch uit</string>
@@ -767,27 +760,11 @@
     <string name="custom_timeout_summary_2hours">2 uur</string>
     <string name="custom_timeout_summary_4hours">4 uur</string>
     <string name="custom_timeout_summary_8hours">8 uur</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Verbonden apparaten</string>
-    <string name="wifi_hotspot_client_manager_summary">Toon en beheer apparaten die zijn verbonden met de hotspot en stel een limiet voor hoeveelheid verbonden apparaten in</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Toon apparaten verbonden met hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Maximaal aantal verbonden apparaten</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Geblokkeerde apparaten</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Verbonden apparaten</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Blokkeer apparaat</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Deze actie zal \"<xliff:g id="device_name">%1$s</xliff:g>\" van dit apparaat ontkoppelen en toevoegen aan de blokkeerlijst</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Apparaat deblokkeren</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">Dit apparaat \"<xliff:g id="device_name">%1$s</xliff:g>\" zal verbinding kunnen maken met deze hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">Er zijn momenteel geen clients beschikbaar. Verbonden en geblokkeerde apparaten zullen hier worden weergegeven wanneer beschikbaar.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Verborgen netwerk</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">De naam van uw mobiele hotspot zal niet worden weergegeven in de lijst met beschikbare WLAN-netwerken.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Verberg QS op beveiligd lockscreen</string>
     <string name="disable_qs_summary">Voorkom toegang tot QS tegels op beveiligd vergrendelscherm</string>
     <!-- Power menu on secure lockscreen -->
-    <string name="lockscreen_enable_power_menu_title">Power menu</string>
+    <string name="lockscreen_enable_power_menu_title">Power Menu</string>
     <string name="lockscreen_enable_power_menu_summary">Sta toegang tot power menu op beveiligd vergrendelscherm toe</string>
     <!-- Gesture navbar length -->
     <string name="gesture_navbar_length_title">Pill lengte</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">Accustatistieken resetten</string>
     <string name="smart_charging_reset_stats_summary">Accustatistieken resetten na bereiken door gebruiker ingesteld laadniveau</string>
     <string name="smart_charging_footer">Met Slim opladen kun je het maximale oplaadniveau instellen om de levensduur van je batterij te verlengen. Wanneer ingeschakeld, stopt de accu het opladen op Stop triggerniveau en hervat het opladen op Start triggerniveau. Start triggerniveau moet altijd groter zijn dan stop triggerniveau.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptief afspelen</string>
     <string name="adaptive_playback_summary">Pauzeer media wanneer volume uit staat en herneem het door volume te verhogen binnen de time-out</string>
     <string name="adaptive_playback_intro_text">Pauzeert automatisch media wanneer het volume is gedempt en hervat automatisch wanneer het volume is hersteld binnen de ingestelde tijd</string>
     <string name="adaptive_playback_timeout_title">Afspelen time-out</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">Logo positie</string>
+    <string name="status_bar_logo_style_title">Logo stijl</string>
 </resources>
