@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Akukohandused</string>
     <!-- Gestures -->
     <string name="gestures_title">Viiped</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">VoLTE ikoon</string>
-    <string name="volte_icon_summary">Kuva võimalusel VoLTE ikoon</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWiFi ikoon</string>
-    <string name="vowifi_icon_summary">Kuva võimalusel VoWiFi ikoon</string>
-    <string name="volte_vowifi_override_title">VoWiFi ülekirjutus</string>
-    <string name="volte_vowifi_override_summary">Peida VoLTE, kui VoWiFi on saadaval</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Rändlusindikaator</string>
     <string name="roaming_indicator_icon_summary">Rändlusrežiimis kuvatakse signaaliikooni kõrval rändlusikoon</string>
@@ -136,7 +128,7 @@
     <string name="lockscreen_battery_info_title">Aku teave</string>
     <string name="lockscreen_battery_info_summary">Kuva laadimise ajal aku teavet</string>
     <!-- Button settings -->
-    <string name="extras_title">Extras</string>
+    <string name="extras_title">Lisad</string>
     <string name="additional_buttons_title">Täiendavad nupud</string>
     <string name="hardware_keys_power_key_title">Toitenupp</string>
     <string name="hardware_keys_home_key_title">Kodunupp</string>
@@ -190,8 +182,8 @@
     <string name="button_wake_summary">Ärata seade nuppu vajutades</string>
     <string name="volume_answer_call_title">Vasta kõnele</string>
     <string name="volume_answer_call_summary">Vasta sissetulevatele kõnedele helitugevuse nuppude vajutusega</string>
-    <string name="click_partial_screenshot_title">Click to partial screenshot</string>
-    <string name="click_partial_screenshot_summary">Short click Volume Down and Power to take partial screenshot</string>
+    <string name="click_partial_screenshot_title">Klõpsa osalise ekraanipildi tegemiseks</string>
+    <string name="click_partial_screenshot_summary">Osalise ekraanipildi tegemiseks klõpsa lühidalt helitugevus alla- ja toitenuppu</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">Taustavalgustus</string>
     <string name="button_backlight_summary">Kohanda nupu taustavalgustuse seadeid</string>
@@ -455,7 +447,7 @@
     <!-- Pulse music visualizer -->
     <string name="pulse_help_policy_notice_title">Pulse kohta</string>
     <string name="pulse_help_policy_notice_summary">Pulse on hiilgav heli graafiline ekvalaiser, kui seadmes mängib muusika</string>
-    <string name="pulse_settings">Pulse</string>
+    <string name="pulse_settings">Pulseerimine</string>
     <string name="pulse_settings_summary">Heli graafiline ekvalaiser navigeerimisribal ja lukustuskuval</string>
     <string name="show_navbar_pulse_title">Navigeerimisriba Pulse</string>
     <string name="show_navbar_pulse_summary">Heli graafiline ekvalaiser navigeerimisribal</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Rõhuvärv</string>
     <string name="pulse_color_custom">Kohandatud</string>
     <string name="pulse_color_lava_lamp">Laavalamp</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Vali värv</string>
     <string name="pulse_smoothing_enabled_title">Lülita silumine sisse</string>
     <string name="pulse_smoothing_enabled_summary">Iga riba animeeritakse sujuvamalt</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Kuva eraldi indikaator, kui mõni rakendus kasutab mikrofoni või kaamerat</string>
     <string name="location_privacy_indicator_title">Asukoha privaatsuse indikaator</string>
     <string name="location_privacy_indicator_summary">Kuva eraldi indikaator, kui mõni rakendus kasutab asukohta</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Sügav uni</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Täisekraanis rakendused</string>
     <string name="display_cutout_force_fullscreen_summary">Sunni rakendused kulmuala ignoreerima</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Piiramatu Photos kettaruum</string>
     <string name="use_photos_spoof_summary">Peta oma seade vaid Google Photos rakenduses Pixel XL\'iks, et saada varunduste jaoks piiramatu kettaruum</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Luba näoga avamine lukustuskuval</string>
     <string name="face_unlock_method_default">Kui ekraan on sisse lülitatud</string>
     <string name="face_unlock_method_swipe">Lukustuskuval libistades</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Kombineeritud signaaliikoonid</string>
-    <string name="combined_status_bar_signal_icons_summary">Kuva ühte kombineeritud ikooni WiFi ja mobiilisignaali jaoks</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">WiFi ajalõpp</string>
     <string name="wifi_timeout_summary">Ära lülita WiFit automaatselt välja</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 tundi</string>
     <string name="custom_timeout_summary_4hours">4 tundi</string>
     <string name="custom_timeout_summary_8hours">8 tundi</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot. Setting a limit on the number of clients</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">This device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Peida kiirseaded turvalisel lukustuskuval</string>
     <string name="disable_qs_summary">Väldi kiirseadete paanidele ligipääsu turvalisel lukustuskuval</string>
@@ -894,28 +871,28 @@
     <string name="qs_transparency_title">Background transparency</string>
     <string name="qs_transparency_summary">Set transparency level for QS background</string>
     <!-- Data usage info in QS footer -->
-    <string name="qs_footer_datausage_title">Data usage</string>
+    <string name="qs_footer_datausage_title">Andmekasutus</string>
     <string name="qs_footer_datausage_summary">Display data usage summary in quick settings footer</string>
     <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_title">Tiles animation</string>
     <string name="qs_tile_animation_style_title">Animation style</string>
-    <string name="qs_tile_animation_duration_title">Animation duration</string>
+    <string name="qs_tile_animation_duration_title">Animatsiooni kestus</string>
     <string name="qs_tile_animation_interpolator_title">Animation interpolator</string>
-    <string name="qs_tile_animation_style_off">No animation</string>
-    <string name="qs_tile_animation_style_rotate">Rotate</string>
+    <string name="qs_tile_animation_style_off">Animatsioonita</string>
+    <string name="qs_tile_animation_style_rotate">Pööra</string>
     <string name="qs_tile_animation_style_flipx">Flip X</string>
     <string name="qs_tile_animation_style_flipy">Flip Y</string>
-    <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
-    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerate</string>
-    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelerate</string>
-    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelerate decelerate</string>
-    <string name="qs_tile_animation_interpolator_bounceInterpolator">Bounce</string>
-    <string name="qs_tile_animation_interpolator_overshootInterpolator">Overshoot</string>
-    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipate</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
+    <string name="qs_tile_animation_interpolator_linearInterpolator">Lineaarne</string>
+    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Kiirenda</string>
+    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Aeglusta</string>
+    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Kiirenda aeglustamist</string>
+    <string name="qs_tile_animation_interpolator_bounceInterpolator">Hüpita</string>
+    <string name="qs_tile_animation_interpolator_overshootInterpolator">Ületage</string>
+    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Prognoosige</string>
+    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Enneta ületamist</string>
     <!-- Screenshot shutter sound  -->
-    <string name="screenshot_shutter_sound_title">Screenshot sound</string>
-    <string name="screenshot_shutter_sound_summary">Play sound when screenshot is taken</string>
+    <string name="screenshot_shutter_sound_title">Ekraanipildi heli</string>
+    <string name="screenshot_shutter_sound_summary">Esita ekraanipildi tegemise ajal heli</string>
     <!-- QS tiles layout  -->
     <string name="qs_layout_category_title">Tiles layout</string>
     <string name="qs_tile_label_hide_title">Hide label</string>
@@ -923,23 +900,36 @@
     <string name="qs_tile_label_hide_summary">Only show icon in tile</string>
     <string name="qs_tile_layout_title">Vertical layout</string>
     <string name="qs_tile_layout_summary">Show label below icon instead next to icon</string>
-    <string name="qs_columns_portrait_title">Columns (portrait)</string>
-    <string name="qs_columns_landscape_title">Columns (landscape)</string>
+    <string name="qs_columns_portrait_title">Veerud (püstasendis)</string>
+    <string name="qs_columns_landscape_title">Veerud (rõhtasendis)</string>
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">Background chip</string>
     <string name="statusbar_clock_chip_summary">Display accented chip behind clock</string>
     <!-- Smart charging -->
-    <string name="smart_charging_title">Smart Charging</string>
-    <string name="smart_charging_summary">Set maximum charging level</string>
-    <string name="smart_charging_switch_title">Enable Smart Charging</string>
-    <string name="smart_charging_level_title">Stop trigger level</string>
-    <string name="smart_charging_resume_level_title">Start trigger level</string>
-    <string name="smart_charging_reset_stats_title">Reset battery statistics</string>
-    <string name="smart_charging_reset_stats_summary">Reset battery statistics after reaching user defined charging level</string>
-    <string name="smart_charging_footer">Smart Charging allows you to set maximum charging level to extend the lifespan of your battery. When enabled, battery stops charging at Stop trigger level and resumes charging at Start trigger level. Stop trigger level should be always greater than Start trigger level.</string>
+    <string name="smart_charging_title">Nutikas laadimine</string>
+    <string name="smart_charging_summary">Määra maksimaalne laadimistase</string>
+    <string name="smart_charging_switch_title">Luba nutikas laadimine</string>
+    <string name="smart_charging_level_title">Nutika laadimise peatumise tase</string>
+    <string name="smart_charging_resume_level_title">Nutika laadimise algtase</string>
+    <string name="smart_charging_reset_stats_title">Lähtesta aku statistika</string>
+    <string name="smart_charging_reset_stats_summary">Lähtesta aku statistika pärast kasutaja määratletud laadimistaseme saavutamist</string>
+    <string name="smart_charging_footer">Nutikas laadimine võimaldab teil määrata maksimaalne laadimistase, parandamaks aku eluiga. Lubamisel lõpetab aku laadimise nutika laadimise peatumise tasemel ning jätkab laadimist nutika laadimise algtasemel. Peatumise tase peaks alati olema suurem, kui algtase.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
-    <string name="adaptive_playback_title">Adaptive playback</string>
-    <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
+    <string name="adaptive_playback_title">Adaptiivne taasesitus</string>
+    <string name="adaptive_playback_summary">Meedia paus, kui helitugevus on vaigistatud ja jätkake selle suurendamist, suurendades aja jooksul helitugevust</string>
     <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
-    <string name="adaptive_playback_timeout_title">Playback timeout</string>
+    <string name="adaptive_playback_timeout_title">Taasesituse aegumine</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">Logo asukoht</string>
+    <string name="status_bar_logo_style_title">Logo stiil</string>
 </resources>

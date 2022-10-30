@@ -17,7 +17,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
     <string name="crdroid_settings_title">A crDroid beállításai</string>
-    <string name="crdroid_settings_summary">A jó minőség lelőhelye</string>
+    <string name="crdroid_settings_summary">Klassz dolgok lelőhelye</string>
     <string name="reset_settings_title">Beállítások visszaállítása</string>
     <string name="reset_settings_message">Ez a legtöbb crDroid-beállításértéket visszaállítja alapértelmezettre a jelenlegi felhasználónál. Szeretné folytatni?</string>
     <!-- Personalization Categories -->
@@ -28,7 +28,7 @@
     <string name="notifications_title">Értesítések</string>
     <string name="quicksettings_title">Gyorsbeállítások</string>
     <string name="sound_title">Hang</string>
-    <string name="statusbar_title">Értesítési sáv</string>
+    <string name="statusbar_title">Állapotsor</string>
     <string name="display_title">Kijelző</string>
     <string name="ui_title">Felhasználói felület</string>
     <!-- Color Picker -->
@@ -53,7 +53,7 @@
     <string name="enable">Engedélyezés</string>
     <string name="disable">Letiltás</string>
     <!-- Changelog -->
-    <string name="changelog_crdroid_title">A változások aktuális listája</string>
+    <string name="changelog_crdroid_title">Aktuális változáslista</string>
     <string name="changelog_crdroid_summary">Nézze meg a telepített ROM-ban végrehajtott változtatásokat</string>
     <string name="changelog_crdroid_error">Nem lehet betölteni a változáslistát</string>
     <!-- About crDroid -->
@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Akkumulátor testreszabása</string>
     <!-- Gestures -->
     <string name="gestures_title">Gesztusok</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">VoLTE-ikon</string>
-    <string name="volte_icon_summary">VoLTE-ikon megjelenítése, ha elérhető</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWIFI-ikon</string>
-    <string name="vowifi_icon_summary">VoWIFI-ikon megjelenítése, ha elérhető</string>
-    <string name="volte_vowifi_override_title">VoWIFI-felülírás</string>
-    <string name="volte_vowifi_override_summary">VoLTE rejtése, ha VoWiFi is elérhető</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Barangoláskijelző</string>
     <string name="roaming_indicator_icon_summary">Barangolás kijelzőjének megjelenítése a térerő ikonban, ha barangolásmódban van</string>
@@ -141,10 +133,10 @@
     <string name="hardware_keys_power_key_title">Bekapcsológomb</string>
     <string name="hardware_keys_home_key_title">Kezdőgomb</string>
     <string name="hardware_keys_back_key_title">Vissza gomb</string>
-    <string name="hardware_keys_menu_key_title">Menü gomb</string>
-    <string name="hardware_keys_assist_key_title">Keresés gomb</string>
-    <string name="hardware_keys_appswitch_key_title">Előzmények gomb</string>
-    <string name="hardware_keys_camera_key_title">Kamera gomb</string>
+    <string name="hardware_keys_menu_key_title">Menü-gomb</string>
+    <string name="hardware_keys_assist_key_title">Keresés-gomb</string>
+    <string name="hardware_keys_appswitch_key_title">Előzmények-gomb</string>
+    <string name="hardware_keys_camera_key_title">Kameragomb</string>
     <string name="hardware_keys_volume_keys_title">Hangerőgombok</string>
     <string name="hardware_keys_short_press_title">Rövid érintési művelet</string>
     <string name="hardware_keys_long_press_title">Hosszú érintési művelet</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Kiemelőszín</string>
     <string name="pulse_color_custom">Egyéni</string>
     <string name="pulse_color_lava_lamp">Lávalámpa</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Színválasztás</string>
     <string name="pulse_smoothing_enabled_title">Az egyenletesség bekapcsolása</string>
     <string name="pulse_smoothing_enabled_summary">Az összes sávanimáció sokkal egyenletesebb</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Egy külön jelzés figyelmeztet, ha bármely alkalmazás használja a mikrofont és a kamerát</string>
     <string name="location_privacy_indicator_title">Helymeghatározási figyelmeztetés</string>
     <string name="location_privacy_indicator_summary">Egy külön jelzés figyelmeztet, ha bármely alkalmazás Helymeghatározást használ</string>
+    <string name="projection_privacy_indicator_title">A Médiavetítés adatvédelmi jelzője</string>
+    <string name="projection_privacy_indicator_summary">Egy külön jelzés, ha a képernyő kivetítésre kerül</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Mélyalvás</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Teljesképernyős alkalmazások</string>
     <string name="display_cutout_force_fullscreen_summary">Alkalmazások rákényszerítése, hogy a képernyőkivágást mellőzzék</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Nincsenek alkalmazások</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Korlátlan fénykép-tárhely</string>
     <string name="use_photos_spoof_summary">Eszközinformáció-hamisitás hogy a Google Fényképek Pixel XL készüléknek lássa és így korlátlan tárhelyhez juthasson</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Arcalapú feloldás engedélyezése a záróképernyőn</string>
     <string name="face_unlock_method_default">Ha a képernyő be van kapcsolva</string>
     <string name="face_unlock_method_swipe">Ha csúsztatja a záróképernyőt</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Kombinált térerőikon</string>
-    <string name="combined_status_bar_signal_icons_summary">A két ikon helyett egy kombinált ikon jelenik meg</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Wi-Fi-időkorlát</string>
     <string name="wifi_timeout_summary">Ne kapcsolódjon ki automatikusan a Wi-Fi</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 óra</string>
     <string name="custom_timeout_summary_4hours">4 óra</string>
     <string name="custom_timeout_summary_8hours">8 óra</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Csatlakoztatott készülékek</string>
-    <string name="wifi_hotspot_client_manager_summary">A hotspothoz csatlakoztatott készülékek listázása és kezelése. A kliensek számának beállítása</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">A hotspothoz csatlakoztatott készülékek listája</string>
-    <string name="wifi_hotspot_client_limit_title">Csatlakoztathatók számának megadása</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blokkolt készülékek</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Csatlakoztatott készülékek</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Készüléktiltás</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Ez a művelet lecsatlakoztatja \"<xliff:g id="device_name">%1$s</xliff:g>\" készüléket erről az eszközről és tiltólistához adja</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Készülékfeloldás</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">\"<xliff:g id="device_name">%1$s</xliff:g>\"-készülék kapcsolódhat ehhez a hotspothoz</string>
-    <string name="wifi_hotspot_client_manager_footer_text">Jelenleg nincs listázható kliens. Amint lesz akár csatlakoztatott, akár letiltott, az itt fog megjelenni.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Rejtett hálózat</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Az Ön mobil hotspotja nem fog megjelenni az elérhető WLAN hálózatok listájában.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">A gyorsbeállítások elrejtése</string>
     <string name="disable_qs_summary">A biztonságos képernyőzáron nem férhet hozzá a gyorsbeállításokhoz</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">Akkustatisztikák alaphelyzetbe állítása</string>
     <string name="smart_charging_reset_stats_summary">Amikor elérte a felhasználó által beállított töltési szintet, alaphelyzetbe állítja az akkusatisztikákat</string>
     <string name="smart_charging_footer">Az Okos töltés lehetővé teszi a maximális töltési szint beállítását az akkumulátor élettartamának meghosszabbítása érdekében. Ha engedélyezve van, az akkumulátor leállítja a töltést a Leállítási szintnél és folytatja a töltést az Indítási szintnél. A Leállítási szintnek mindig nagyobbnak kell lennie az Indítási szintnél.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Időjárás-beállítások</string>
+    <string name="weather_settings_summary">Testre szabható ikoncsomag és időjárás-szolgáltatás</string>
+    <string name="lockscreen_weather_title">Időjárási helyzet</string>
+    <string name="lockscreen_weather_summary">Megjeleníti az épp aktuális hőfokot és adatokat</string>
+    <string name="lockscreen_weather_enabled_info">Az időjárás-szolgáltatás engedélyezése szükséges</string>
+    <string name="lockscreen_weather_location_title">Időjárási helymeghatározás</string>
+    <string name="lockscreen_weather_location_summary">A jelenlegi tartózkodási hely adatait jeleníti meg</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptív lejátszás</string>
     <string name="adaptive_playback_summary">A hangerő elnémítása esetén szünetelteti a médiát, ám az időkorláton belül a hangerő fel gombra folytatja</string>
     <string name="adaptive_playback_intro_text">A hangerő elnémítása esetén automatikusan szünetelteti a médiát, ám az időkorláton belül a hangerő visszaállitására automatikusan folytatja</string>
     <string name="adaptive_playback_timeout_title">Lejátszási időkorlát</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Logó</string>
+    <string name="status_bar_logo_summary">Egyéni logo megjelenítése az állapotsor jobb vagy bal oldalán</string>
+    <string name="status_bar_logo_position_title">A logó pozíciója</string>
+    <string name="status_bar_logo_style_title">Logóstílus</string>
 </resources>

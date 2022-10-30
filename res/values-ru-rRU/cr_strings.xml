@@ -65,7 +65,7 @@
     <string name="share_message">Узнайте, доступен ли #crDroidAndroid для вашего устройства на @ https://crdroid.net/</string>
     <string name="share_chooser_title">Рассказать о crDroid</string>
     <!-- Sites crDroid -->
-    <string name="crdroid_source_title">GitHub</string>
+    <string name="crdroid_source_title">Github</string>
     <string name="crdroid_source_summary">Мы любим открытый исходный код, посмотрите его</string>
     <string name="crdroid_telegram_title">Cообщество crDroid</string>
     <string name="crdroid_telegram_summary">Мы в Telegram. Присоединяйтесь!</string>
@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Настройки батареи</string>
     <!-- Gestures -->
     <string name="gestures_title">Жесты</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">Иконка VoLTE</string>
-    <string name="volte_icon_summary">Отображать иконку VoLTE, когда он доступен</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Иконка VoWiFi</string>
-    <string name="vowifi_icon_summary">Показывать иконку VoWiFi, когда она доступна</string>
-    <string name="volte_vowifi_override_title">Переопределять VoWIFi</string>
-    <string name="volte_vowifi_override_summary">Скрывать VoLTE при наличии VoWiFi</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Индикатор роуминга</string>
     <string name="roaming_indicator_icon_summary">Отображение индикатора роуминга в значке сигнала в режиме роуминга</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Акцент</string>
     <string name="pulse_color_custom">Пользовательский</string>
     <string name="pulse_color_lava_lamp">Лава-лампа</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Выберите цвет</string>
     <string name="pulse_smoothing_enabled_title">Включить сглаживание</string>
     <string name="pulse_smoothing_enabled_summary">Каждая панель анимирована более плавно</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Показывать раздельные индикаторы, когда любое приложение использует микрофон или камеру</string>
     <string name="location_privacy_indicator_title">Индикатор конфиденциальности местоположения</string>
     <string name="location_privacy_indicator_summary">Показывать раздельные индикаторы, когда любое приложение использует местоположение</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Глубокий сон</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Полноэкранные приложения</string>
     <string name="display_cutout_force_fullscreen_summary">Заставить приложения игнорировать вырез</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Неограниченное хранилище фотографий</string>
     <string name="use_photos_spoof_summary">Маскировка устройства под Pixel XL для «Google Фото», чтобы предоставить неограниченное хранилище для резервного копирования фотографий</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Разрешить разблокировку лицом на экране блокировки</string>
     <string name="face_unlock_method_default">Когда экран включён</string>
     <string name="face_unlock_method_swipe">При свайпе на экране блокировки</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Комбинированные значки сигнала</string>
-    <string name="combined_status_bar_signal_icons_summary">Показывать комбинированный значок для WiFi и мобильного сигнала</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Тайм-аут WiFi</string>
     <string name="wifi_timeout_summary">Не выключать WiFi автоматически</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 часа</string>
     <string name="custom_timeout_summary_4hours">4 часа</string>
     <string name="custom_timeout_summary_8hours">8 часов</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Подключенные устройства</string>
-    <string name="wifi_hotspot_client_manager_summary">Список и управление устройствами, подключенными к точке доступа. Установка ограничения на количество клиентов</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Список подключенных устройств</string>
-    <string name="wifi_hotspot_client_limit_title">Лимит подключенных устройств</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Заблокированные устройства</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Подключенные устройства</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Заблокировать устройство</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Это действие отключит \"<xliff:g id="device_name">%1$s</xliff:g>\" от этого устройства и добавит его в чёрный список</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Разблокировать устройство</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">Устройство \"<xliff:g id="device_name">%1$s</xliff:g>\" сможет подключаться к этой точке доступа</string>
-    <string name="wifi_hotspot_client_manager_footer_text">На данный момент нет доступных клиентов. Подключенные и заблокированные устройства будут перечислены здесь, если таковы имеются.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Скрытая сеть</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Ваша точка доступа не будет отображаться в списке Wi-Fi сетей.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Скрыть быстрые настройки на экране блокировки</string>
     <string name="disable_qs_summary">Запретить доступ к быстрым настройкам на экране блокировки</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">Сбросить статистику батареи</string>
     <string name="smart_charging_reset_stats_summary">Сбрасывать статистику батареи после достижения заданного уровня заряда</string>
     <string name="smart_charging_footer">Умная зарядка позволяет вам установить максимальный уровень заряда для увеличения срока жизни аккумулятора. При включенной функции аккумулятор прекратит зарядку по достижении уровня максимального заряда и возобновит зарядку по достижении уровня минимального заряда. Уровень начала зарядки всегда должен быть выше уровня остановки зарядки.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Адаптивное воспроизведение</string>
     <string name="adaptive_playback_summary">Приостанавливать воспроизведение при выключенном звуке и возобновлять его, увеличивая громкость в пределах таймаута</string>
     <string name="adaptive_playback_intro_text">Автоматически приостанавливает воспроизведение медиа при отключении громкости и автоматически возобновляет его при увеличении громкости в течение заданного времени.</string>
     <string name="adaptive_playback_timeout_title">Таймаут воспроизведения</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Логотип</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">Расположение логотипа</string>
+    <string name="status_bar_logo_style_title">Стиль логотипа</string>
 </resources>

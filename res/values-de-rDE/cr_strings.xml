@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Anpassung der Akkuanzeige</string>
     <!-- Gestures -->
     <string name="gestures_title">Gesten</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">VoLTE-Symbol</string>
-    <string name="volte_icon_summary">VoLTE-Symbol anzeigen, wenn verfügbar</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWiFi-Symbol</string>
-    <string name="vowifi_icon_summary">VoWiFi-Symbol anzeigen, wenn verfügbar</string>
-    <string name="volte_vowifi_override_title">Vorrang für VoWiFi</string>
-    <string name="volte_vowifi_override_summary">VoLTE-Symbol ausblenden, wenn VoWiFi verfügbar ist</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Anzeige bei Roaming</string>
     <string name="roaming_indicator_icon_summary">Bei Roaming dies im Signalsymbol anzeigen</string>
@@ -131,7 +123,7 @@
     <string name="data_disabled_icon_title">Anzeige bei deaktivierten mobilen Daten</string>
     <string name="data_disabled_icon_summary">Bei deaktivierten mobilen Daten dies im Signalsymbol anzeigen</string>
     <!-- Lockscreen categories -->
-    <string name="lockscreen_interface_category">Interface</string>
+    <string name="lockscreen_interface_category">Benutzeroberfläche</string>
     <!-- Lockscreen battery info indicator -->
     <string name="lockscreen_battery_info_title">Akku-Info</string>
     <string name="lockscreen_battery_info_summary">Akku-Informationen beim Aufladen anzeigen</string>
@@ -209,7 +201,7 @@
     <string name="power_menu_title">Ein-/Aus-Menü</string>
     <string name="power_menu_summary">Optionen des Ein-/Aus-Menüs anpassen</string>
     <string name="power_menu_actions_title">Aktionen</string>
-    <string name="power_menu_screenshot_title">Screenshot</string>
+    <string name="power_menu_screenshot_title">Bildschirmfoto</string>
     <string name="power_menu_screenshot_summary">Gedrückt halten für zugeschnittenen Screenshot</string>
     <string name="power_menu_onthego_title">On-The-Go-Modus</string>
     <string name="power_menu_advanced_title">Erweitertes Neustartmenü</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Akzentfarbe</string>
     <string name="pulse_color_custom">Benutzerdefiniert</string>
     <string name="pulse_color_lava_lamp">Lavalampe</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Farbe auswählen</string>
     <string name="pulse_smoothing_enabled_title">Glättung aktivieren</string>
     <string name="pulse_smoothing_enabled_summary">Alle Balken werden flüssiger animiert</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">In der Statusleiste anzeigen, wenn eine App auf Mikrofon oder Kamera zugreift</string>
     <string name="location_privacy_indicator_title">Anzeige bei Standortzugriff</string>
     <string name="location_privacy_indicator_summary">In der Statusleiste anzeigen, wenn eine App auf den Standort zugreift</string>
+    <string name="projection_privacy_indicator_title">Anzeige bei Streamen des Bildschirms</string>
+    <string name="projection_privacy_indicator_summary">Separate Anzeige bei aktivem Streamen des Bildschirms</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Ruhezustand („Deep Sleep“)</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Vollbild-Apps</string>
     <string name="display_cutout_force_fullscreen_summary">Apps dazu zwingen, die Display-Aussparung zu ignorieren</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Keine Apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Unbegrenzter Fotospeicher</string>
     <string name="use_photos_spoof_summary">Das Gerät als Pixel XL ausgeben (nur für die Google-Fotos-App), um unbegrenzt Fotos sichern zu können</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Gesichtsentsperrung auf Sperrbildschirm zulassen</string>
     <string name="face_unlock_method_default">Wenn der Bildschirm aktiviert ist</string>
     <string name="face_unlock_method_swipe">Beim Wischen auf dem Sperrbildschirm</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Kombinierte Empfangssymbole</string>
-    <string name="combined_status_bar_signal_icons_summary">WLAN- und Mobilfunkempfangssymbol zusammenfassen</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">WLAN-Timeout</string>
     <string name="wifi_timeout_summary">WLAN nie automatisch ausschalten</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 Stunden</string>
     <string name="custom_timeout_summary_4hours">4 Stunde</string>
     <string name="custom_timeout_summary_8hours">8 Stunden</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Verbundene Geräte</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot. Setting a limit on the number of clients</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Mit dem Hotspot verbundene Geräte auflisten</string>
-    <string name="wifi_hotspot_client_limit_title">Max. Anzahl verbundener Geräte</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blockierte Geräte</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Verbundene Geräte</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Gerät blockieren</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Dadurch wird die Verbindung mit „<xliff:g id="device_name">%1$s</xliff:g>“ getrennt und das Gerät der Blockierliste hinzugefügt</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Gerät nicht mehr blockieren</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">Das Gerät „<xliff:g id="device_name">%1$s</xliff:g>“ kann sich dann mit diesem Hotspot verbinden</string>
-    <string name="wifi_hotspot_client_manager_footer_text">Derzeit keine Clients verfügbar. Verbundene und blockierte Geräte werden hier aufgelistet, sobald sie verfügbar sind.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Verstecktes Netzwerk</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Der Name Ihres mobilen Hotspots wird nicht in der Liste der verfügbaren WLAN-Netzwerke angezeigt.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Zugriff auf Schnelleinstellungen nur bei entsperrtem Gerät</string>
     <string name="disable_qs_summary">Zugriff auf Schnelleinstellungen nicht erlauben, wenn das Gerät nicht entsperrt ist</string>
@@ -861,7 +838,7 @@
     <string name="reticker_colored_summary">Ersetzt die „reTicker“-Hintergrundfarbe durch die primäre Farbe der benachrichtigenden App</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">„Smart Pixels“ ist eine Energiesparfunktion. Je nachdem, wie viele Pixel abgeschaltet werden, wird die Akkulaufzeit verlängert. Achtung: Dies kann dazu führen, dass der Touchscreen teilweise schlecht auf Berührungen reagiert</string>
-    <string name="smart_pixels_title">Smart Pixels</string>
+    <string name="smart_pixels_title">Smarte Pixel</string>
     <string name="smart_pixels_summary">Durch Abschalten von Pixeln Akku sparen</string>
     <string name="smart_pixels_enable_title">„Smart Pixels” einschalten</string>
     <string name="smart_pixels_enable_summary">Pixel abschalten, um Akku zu sparen</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">Akkustatistiken zurücksetzen</string>
     <string name="smart_charging_reset_stats_summary">Akkustatistiken nach Erreichen des benutzerdefinierten Akkustands zurücksetzen</string>
     <string name="smart_charging_footer">Intelligentes Laden erlaubt das Festlegen eines maximalen Akkustands beim Aufladen, um die Lebensdauer des Akkus zu erhöhen. Dabei können zwei Akkustände festgelegt werden, ab denen das Aufladen jeweils stoppt und beginnt, wobei ersterer der größere sein muss.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Wetter-Einstellungen</string>
+    <string name="weather_settings_summary">Symbolpaket und Wetterdienst einrichten</string>
+    <string name="lockscreen_weather_title">Wetterlage</string>
+    <string name="lockscreen_weather_summary">Aktuelles Wetter sowie Temperatur anzeigen</string>
+    <string name="lockscreen_weather_enabled_info">Dafür muss der Wetterdienst aktiviert sein</string>
+    <string name="lockscreen_weather_location_title">Wetterstandort</string>
+    <string name="lockscreen_weather_location_summary">Aktuellen Standort des Wetters anzeigen</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptive Medienwiedergabe</string>
     <string name="adaptive_playback_summary">Medien bei Stummschaltung pausieren, Wiedergabe durch Lautstärkeerhöhung innerhalb des Zeitlimits wiederaufnehmen</string>
     <string name="adaptive_playback_intro_text">Medien werden bei Stummschaltung automatisch pausiert und bei Aufhebung der Stummschaltung innerhalb des Zeitlimits wieder fortgesetzt</string>
     <string name="adaptive_playback_timeout_title">Wiedergabe-Zeitlimit</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Benutzerdefiniertes Logo rechts oder links in der Statusleiste anzeigen</string>
+    <string name="status_bar_logo_position_title">Logoposition</string>
+    <string name="status_bar_logo_style_title">Logostil</string>
 </resources>

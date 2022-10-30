@@ -39,7 +39,7 @@
     <string name="set">Definir</string>
     <string name="color_default">Predefinido</string>
     <!-- General strings -->
-    <string name="ok">OK</string>
+    <string name="ok">Está bem</string>
     <string name="reset">Repor</string>
     <string name="cancel">Cancelar</string>
     <string name="save">Guardar</string>
@@ -88,7 +88,7 @@
     <string name="crdroid_update_title">Atualizações</string>
     <string name="crdroid_update_summary">Verifique as atualizações e os links para o seu dispositivo</string>
     <!-- App details: open play store link if app is user installed -->
-    <string name="app_play_store">Google Play</string>
+    <string name="app_play_store">Google Play Store</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Valor: <xliff:g id="value">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">padrão</string>
@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Personalizações da bateria</string>
     <!-- Gestures -->
     <string name="gestures_title">Gestos</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">Ícone do VoLTE</string>
-    <string name="volte_icon_summary">Exibir o ícone do VoLTE quando disponível</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Ícone VoWiFi</string>
-    <string name="vowifi_icon_summary">Exibir o ícone do VoWiFi quando disponível</string>
-    <string name="volte_vowifi_override_title">Sobreposição VoWifi</string>
-    <string name="volte_vowifi_override_summary">Ocultar VoLTE quando o VoWiFi estiver disponível</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Indicador de roaming</string>
     <string name="roaming_indicator_icon_summary">Exibir o indicador de roaming no ícone de sinal quando em modo de roaming</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Cor de destaque</string>
     <string name="pulse_color_custom">Personalizada</string>
     <string name="pulse_color_lava_lamp">Lâmpada de lava</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Escolher cor</string>
     <string name="pulse_smoothing_enabled_title">Ativar suavização</string>
     <string name="pulse_smoothing_enabled_summary">Cada barra é animada mais suavemente</string>
@@ -607,7 +600,7 @@
     <string name="notification_light_summary">Configurar a cor do LED para notificações</string>
     <string name="notification_light_general_title">Geral</string>
     <string name="notification_light_advanced_title">Avançado</string>
-    <string name="notification_light_applist_title">Apps</string>
+    <string name="notification_light_applist_title">Aplicações</string>
     <string name="notification_light_phonelist_title">Telefone</string>
     <string name="notification_light_use_custom">Usar valores personalizados</string>
     <string name="notification_light_default_value">Padrão</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Mostrar um indicador quando qualquer app usar o microfone ou a câmara</string>
     <string name="location_privacy_indicator_title">Indicador de privacidade de localização</string>
     <string name="location_privacy_indicator_summary">Mostrar um indicador quando qualquer app aceder à localização</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Sono profundo</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Aplicações em ecrã inteiro</string>
     <string name="display_cutout_force_fullscreen_summary">Forçar apps a ignorar o espaço do entalhe</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Armazenamento ilimitado de fotos</string>
     <string name="use_photos_spoof_summary">Mascarar o seu dispositivo como Pixel XL para ter acesso a armazenamento ilimitado de backup no Google Fotos</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Permitir desbloqueio facial no ecrã de bloqueio</string>
     <string name="face_unlock_method_default">Quando o ecrã estiver ligado</string>
     <string name="face_unlock_method_swipe">Ao deslizar no ecrã de bloqueio</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Ícones de sinal combinados</string>
-    <string name="combined_status_bar_signal_icons_summary">Mostrar um ícone único combinando o sinal de Wi-Fi e rede móvel</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Tempo limite do Wi-Fi</string>
     <string name="wifi_timeout_summary">Não desativar o Wi-Fi automaticamente</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 horas</string>
     <string name="custom_timeout_summary_4hours">4 horas</string>
     <string name="custom_timeout_summary_8hours">8 horas</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Dispositivos conectados</string>
-    <string name="wifi_hotspot_client_manager_summary">Listar e gerir dispositivos conectados ao ponto de acesso.</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Listar dispositivos conectados ao ponto de acesso</string>
-    <string name="wifi_hotspot_client_limit_title">Limite de dispositivos conectados</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Dispositivos bloqueados</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Dispositivos conectados</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Bloquear dispositivo</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Esta ação desconectará \"<xliff:g id="device_name">%1$s</xliff:g>\" deste dispositivo e adicioná-lo-á à lista de bloqueio</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Desbloquear dispositivo</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">Este dispositivo \"<xliff:g id="device_name">%1$s</xliff:g>\" será capaz de se conectar a este ponto de acesso</string>
-    <string name="wifi_hotspot_client_manager_footer_text">Nenhum cliente disponível atualmente. Dispositivos conectados e bloqueados serão listados aqui quando disponíveis.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Rede oculta</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">O nome do seu ponto de acesso não aparecerá na lista de redes Wi-Fi disponíveis.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Ocultar painel no ecrã de bloqueio seguro</string>
     <string name="disable_qs_summary">Impedir o acesso ao painel de configurações rápidas no ecrã de bloqueio seguro</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">Repor estatísticas da bateria</string>
     <string name="smart_charging_reset_stats_summary">Repor estatísticas da bateria após atingir o nível de carregamento definido pelo utilizador</string>
     <string name="smart_charging_footer">O carregamento inteligente permite definir o nível máximo de carregamento para estender a longevidade da bateria. Quando ativado, a bateria para de carregar no nível de acionamento da paragem e recomeça a carregar no nível de acionamento do começo. O nível de acionamento da paragem deve sempre ser maior que o nível de acionamento do começo.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Reprodução adaptativa</string>
     <string name="adaptive_playback_summary">Pausar multimédia quando o volume é silenciado e retomá-la ao aumentar o volume dentro do tempo limite</string>
     <string name="adaptive_playback_intro_text">Pausa automaticamente a multimédia quando o volume é silenciado e retoma automaticamente quando o volume é restaurado dentro do tempo definido</string>
     <string name="adaptive_playback_timeout_title">Tempo limite de reprodução</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Logótipo</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">Posição do logótipo</string>
+    <string name="status_bar_logo_style_title">Estilo do logótipo</string>
 </resources>

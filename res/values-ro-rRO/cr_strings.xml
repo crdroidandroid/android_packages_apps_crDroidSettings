@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Customizare baterie</string>
     <!-- Gestures -->
     <string name="gestures_title">Gesturi</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">Pictograma VoLTE</string>
-    <string name="volte_icon_summary">Afisare pictograma VoLTE atunci cand este disponibila</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Pictograma VoWiFi</string>
-    <string name="vowifi_icon_summary">Afişare pictogramă VoWiFi atunci când este disponibilă</string>
-    <string name="volte_vowifi_override_title">Suprascriere VoWiFi</string>
-    <string name="volte_vowifi_override_summary">Ascunde VoLTE când este disponibil VoWiFi</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Indicator roaming</string>
     <string name="roaming_indicator_icon_summary">Afișați indicatorul de roaming în modul roaming</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Accent</string>
     <string name="pulse_color_custom">Personalizat</string>
     <string name="pulse_color_lava_lamp">Lampa cu lava</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Alege culoarea</string>
     <string name="pulse_smoothing_enabled_title">Porniți uniformizarea</string>
     <string name="pulse_smoothing_enabled_summary">Fiecare bară este animată mai ușor</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Arată indicator separat atunci când orice aplicație folosește microfonul sau camera foto</string>
     <string name="location_privacy_indicator_title">Indicator de confidențialitate locație</string>
     <string name="location_privacy_indicator_summary">Arată indicator separat atunci când orice aplicație folosește locația</string>
+    <string name="projection_privacy_indicator_title">Indicatorul proiecției media referitor la confidențialitate</string>
+    <string name="projection_privacy_indicator_summary">Arată indicator când ecranul dispozitivului este proiectat</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Somn adânc</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Aplicații ecran complet</string>
     <string name="display_cutout_force_fullscreen_summary">Forţaţi aplicațiile să ignore spațiul pentru notch</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Nicio aplicație</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Stocare nelimitată de fotografii</string>
     <string name="use_photos_spoof_summary">Setare a dispozitivului ca Pixel XL pentru aplicația Google Photos doar pentru a oferi stocare nelimitată pentru backup</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Permiteți deblocarea feței pe ecranul de blocare</string>
     <string name="face_unlock_method_default">Când ecranul este pornit</string>
     <string name="face_unlock_method_swipe">Când glisați pe ecranul de blocare</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Combinare pictograme de semnal</string>
-    <string name="combined_status_bar_signal_icons_summary">Afișează o singură pictogramă combinată pentru WiFi și semnal mobil</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Timp expirat WiFi</string>
     <string name="wifi_timeout_summary">Nu dezactivați automat WiFi</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 ore</string>
     <string name="custom_timeout_summary_4hours">4 ore</string>
     <string name="custom_timeout_summary_8hours">8 ore</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Dispozitive conectate</string>
-    <string name="wifi_hotspot_client_manager_summary">Listați și gestionați dispozitivele conectate la hotspot. Setarea unei limite pentru numărul de clienți</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Listați dispozitivele conectate la hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Limită dispozitive conectate</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Dispozitive blocate</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Dispozitive conectate</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Blocare dispozitiv</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Această acțiune se va deconecta \"<xliff:g id="device_name">%1$s</xliff:g>\" de la acest dispozitiv și-l va adăuga în lista blocărilor</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Deblocare dispozitiv</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">Dispozitivul \"<xliff:g id="device_name">%1$s</xliff:g>\" se va putea conecta la acest hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">Nu sunt clienți disponibili momentan. Dispozitivele conectate și blocate vor fi listate aici atunci când sunt disponibile.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Ascunde setări rapide pe ecranul de blocare securizat</string>
     <string name="disable_qs_summary">Împiedică accesul la setări rapide pe ecranul de blocare securizat</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">Resetare statistici baterie</string>
     <string name="smart_charging_reset_stats_summary">Resetați statisticile bateriei după atingerea nivelului de încărcare definit de utilizator</string>
     <string name="smart_charging_footer">Încărcarea inteligentă vă permite să setați nivelul maxim de încărcare pentru a prelungi durata de viață a bateriei. Când este activat, bateria nu mai este încărcată la nivelul de declanșare Stop și reia încărcarea la nivelul de declanșare Start. Nivelul de declanșare trebuie să fie întotdeauna mai mare decât nivelul de declanșare Start.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Setări vreme</string>
+    <string name="weather_settings_summary">Configurarea pachetului de pictograme și a serviciului meteo</string>
+    <string name="lockscreen_weather_title">Condiție meteo</string>
+    <string name="lockscreen_weather_summary">Afişează starea meteo curentă şi temperatura</string>
+    <string name="lockscreen_weather_enabled_info">Necesită activarea serviciului meteo</string>
+    <string name="lockscreen_weather_location_title">Locație meteo</string>
+    <string name="lockscreen_weather_location_summary">Afişare locaţie meteo curentă</string>
     <!-- Adaptive Playback -->
-    <string name="adaptive_playback_title">Adaptive playback</string>
-    <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
-    <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
-    <string name="adaptive_playback_timeout_title">Playback timeout</string>
+    <string name="adaptive_playback_title">Redare adaptivă</string>
+    <string name="adaptive_playback_summary">Întrerupeți media atunci când volumul este dezactivat și reluați-l prin creșterea volumului în termenul de expirare</string>
+    <string name="adaptive_playback_intro_text">Pauzează automat media atunci când volumul este dezactivat și se va relua automat atunci când volumul este restaurat în timpul setat</string>
+    <string name="adaptive_playback_timeout_title">Timp expirare redare</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Afișează o siglă personalizată pe partea stângă sau dreaptă a barei de stare</string>
+    <string name="status_bar_logo_position_title">Pozitie logo</string>
+    <string name="status_bar_logo_style_title">Stil logo</string>
 </resources>

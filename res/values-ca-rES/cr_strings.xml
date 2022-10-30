@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Personalització de la bateria</string>
     <!-- Gestures -->
     <string name="gestures_title">Gestos</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">Icona de VoLTE</string>
-    <string name="volte_icon_summary">Mostra icona de VoLTE quan estigui disponible</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Icona de VoWiFi</string>
-    <string name="vowifi_icon_summary">Mostra icona de VoWiFi quan estigui disponible</string>
-    <string name="volte_vowifi_override_title">Prioritat VoWiFi</string>
-    <string name="volte_vowifi_override_summary">Amagar VoLTE quan VoWiFi estigui disponible</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Indicador d\'itinerància</string>
     <string name="roaming_indicator_icon_summary">Mostra l\'indicador d\'itinerància a la icona del senyal quan estigui en mode d\'itinerància</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Èmfasi</string>
     <string name="pulse_color_custom">Personalitzat</string>
     <string name="pulse_color_lava_lamp">Llum de lava</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Tria el color</string>
     <string name="pulse_smoothing_enabled_title">Activa el suavitzat</string>
     <string name="pulse_smoothing_enabled_summary">L\'animació de les barres és més suau</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Mostrar un indicador a part quan qualsevol aplicació usa el micròfon o la càmera</string>
     <string name="location_privacy_indicator_title">Indicador de privacitat d\'ubicació</string>
     <string name="location_privacy_indicator_summary">Mostrar un indicador a part quan qualsevol aplicació usa la ubicació</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Son profund</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Aplicacions a pantalla completa</string>
     <string name="display_cutout_force_fullscreen_summary">Força les aplicacions a ignorar l\'espai de notch</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Emmagatzematge il·limitat de Google Fotos</string>
     <string name="use_photos_spoof_summary">Falseja el teu dispositiu com a Pixel XL per a l\'aplicació Google Fotos només per oferir emmagatzematge il·limitat per a còpies de seguretat</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Permetre desbloqueig facial a la pantalla de bloqueig</string>
     <string name="face_unlock_method_default">Quan la pantalla estigui activada</string>
     <string name="face_unlock_method_swipe">Quan llisquis a la pantalla de bloqueig</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Icones de cobertura combinades</string>
-    <string name="combined_status_bar_signal_icons_summary">Mostra icona combinada per WiFi i senyal mòbil</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Aturar WiFi després de</string>
     <string name="wifi_timeout_summary">No apaguis automàticament el WiFi</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 hores</string>
     <string name="custom_timeout_summary_4hours">4 hores</string>
     <string name="custom_timeout_summary_8hours">8 hores</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot. Setting a limit on the number of clients</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">This device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Amaga els accessos ràpids en la pantalla de bloqueig segura</string>
     <string name="disable_qs_summary">Prevent access to QS tiles on secure lock screen</string>
@@ -841,7 +818,7 @@
     <string name="columbus_setting_action_open_app_title">Open app</string>
     <string name="columbus_setting_action_overview_title">See recent apps</string>
     <string name="columbus_setting_action_play_pause_title">Play or pause media</string>
-    <string name="columbus_setting_action_screenshot_title">Take screenshot</string>
+    <string name="columbus_setting_action_screenshot_title">Fes una captura de pantalla</string>
     <string name="columbus_setting_actions_title">Tap back of phone twice to</string>
     <string name="columbus_setting_additional_settings_title">Quick Tap strength</string>
     <string name="columbus_setting_app_selection_help_text">Select an app to open when you tap the back of your phone twice. If you uninstall the app, Quick Tap turns off until you select a different app.</string>
@@ -860,7 +837,7 @@
     <string name="reticker_colored_title">Use app colored background</string>
     <string name="reticker_colored_summary">Replace reTicker background color using notification app main color</string>
     <!-- Smart Pixels -->
-    <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see improvement in battery life. Note that in some cases it can result in unresponsive areas on touch screen</string>
+    <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see improvement in battery life.</string>
     <string name="smart_pixels_title">Smart Pixels</string>
     <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
     <string name="smart_pixels_enable_title">Enable Smart Pixels</string>
@@ -889,7 +866,7 @@
     <string name="designed_battery_capacity">Designed battery capacity</string>
     <string name="battery_charge_cycles">Charge cycles completed</string>
     <!-- Battery temperature -->
-    <string name="battery_temperature">Battery temperature</string>
+    <string name="battery_temperature">Temperatura de la bateria</string>
     <!-- QS Transparency -->
     <string name="qs_transparency_title">Background transparency</string>
     <string name="qs_transparency_summary">Set transparency level for QS background</string>
@@ -901,21 +878,21 @@
     <string name="qs_tile_animation_style_title">Animation style</string>
     <string name="qs_tile_animation_duration_title">Animation duration</string>
     <string name="qs_tile_animation_interpolator_title">Animation interpolator</string>
-    <string name="qs_tile_animation_style_off">No animation</string>
-    <string name="qs_tile_animation_style_rotate">Rotate</string>
+    <string name="qs_tile_animation_style_off">Sense animació</string>
+    <string name="qs_tile_animation_style_rotate">Girar</string>
     <string name="qs_tile_animation_style_flipx">Flip X</string>
     <string name="qs_tile_animation_style_flipy">Flip Y</string>
-    <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
+    <string name="qs_tile_animation_interpolator_linearInterpolator">Lineal</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerate</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelerate</string>
-    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelerate decelerate</string>
+    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelerar/Desaccelerar</string>
     <string name="qs_tile_animation_interpolator_bounceInterpolator">Bounce</string>
     <string name="qs_tile_animation_interpolator_overshootInterpolator">Overshoot</string>
     <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipate</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
+    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipat/Excedir</string>
     <!-- Screenshot shutter sound  -->
-    <string name="screenshot_shutter_sound_title">Screenshot sound</string>
-    <string name="screenshot_shutter_sound_summary">Play sound when screenshot is taken</string>
+    <string name="screenshot_shutter_sound_title">So de captura de pantalla</string>
+    <string name="screenshot_shutter_sound_summary">Emet un so en fer una captura de pantalla</string>
     <!-- QS tiles layout  -->
     <string name="qs_layout_category_title">Tiles layout</string>
     <string name="qs_tile_label_hide_title">Hide label</string>
@@ -923,8 +900,8 @@
     <string name="qs_tile_label_hide_summary">Only show icon in tile</string>
     <string name="qs_tile_layout_title">Vertical layout</string>
     <string name="qs_tile_layout_summary">Show label below icon instead next to icon</string>
-    <string name="qs_columns_portrait_title">Columns (portrait)</string>
-    <string name="qs_columns_landscape_title">Columns (landscape)</string>
+    <string name="qs_columns_portrait_title">Columnes (vertical)</string>
+    <string name="qs_columns_landscape_title">Columnes (apaïsat)</string>
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">Background chip</string>
     <string name="statusbar_clock_chip_summary">Display accented chip behind clock</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">Reset battery statistics</string>
     <string name="smart_charging_reset_stats_summary">Reset battery statistics after reaching user defined charging level</string>
     <string name="smart_charging_footer">Smart Charging allows you to set maximum charging level to extend the lifespan of your battery. When enabled, battery stops charging at Stop trigger level and resumes charging at Start trigger level. Stop trigger level should be always greater than Start trigger level.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptive playback</string>
     <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
     <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
     <string name="adaptive_playback_timeout_title">Playback timeout</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Logotip</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">Posició del logotip</string>
+    <string name="status_bar_logo_style_title">Estil del logotip</string>
 </resources>

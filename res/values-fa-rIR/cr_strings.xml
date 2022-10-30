@@ -35,7 +35,7 @@
     <string name="dialog_color_picker">انتخابگر رنگ</string>
     <string name="press_color_to_apply">رنگ زیر را جهت اعمال لمس کنید</string>
     <string name="hex">کد هگزادسیمال:</string>
-    <string name="hex_hint">#ff000000</string>
+    <string name="hex_hint">ff000000#</string>
     <string name="set">اعمال</string>
     <string name="color_default">پیش‌فرض</string>
     <!-- General strings -->
@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">سفارشی کردن باتری</string>
     <!-- Gestures -->
     <string name="gestures_title">حرکات انگشتی</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">آیکون VoLTE</string>
-    <string name="volte_icon_summary">نمایش آیکون VoLTE هنگامی که در دسترس است</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">آیکون VoWIFI</string>
-    <string name="vowifi_icon_summary">نمایش آیکون VoWiFi هنگامی که در دسترس است</string>
-    <string name="volte_vowifi_override_title">لغو VoWiFi</string>
-    <string name="volte_vowifi_override_summary">مخفی کردن VoLTE وقتی VoWiFi در دسترس است</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">نمایشگر رومینگ</string>
     <string name="roaming_indicator_icon_summary">نمایش نشانگر رومینگ در داخل آیکون سیگنال زمانی که در حالت رومینگ باشد</string>
@@ -136,7 +128,7 @@
     <string name="lockscreen_battery_info_title">اطلاعات باتری</string>
     <string name="lockscreen_battery_info_summary">نمایش اطلاعات باتری هنگام شارژ شدن</string>
     <!-- Button settings -->
-    <string name="extras_title">Extras</string>
+    <string name="extras_title">سایر</string>
     <string name="additional_buttons_title">دکمه های اضافی</string>
     <string name="hardware_keys_power_key_title">دکمه Power</string>
     <string name="hardware_keys_home_key_title">دکمه خانه</string>
@@ -190,8 +182,8 @@
     <string name="button_wake_summary">با فشار دادن دکمه دستگاه را بیدار کنید</string>
     <string name="volume_answer_call_title">پاسخ دادن به تماس</string>
     <string name="volume_answer_call_summary">پاسخ دادن به تماس‌های ورودی با فشردن دکمه‌های صدا</string>
-    <string name="click_partial_screenshot_title">Click to partial screenshot</string>
-    <string name="click_partial_screenshot_summary">Short click Volume Down and Power to take partial screenshot</string>
+    <string name="click_partial_screenshot_title">برای ثبت تصویر قسمتی از صفحه، ضربه بزنید</string>
+    <string name="click_partial_screenshot_summary">برای ثبت تصویر قسمتی از صفحه، کلید های پاور و کاهش صدا را فشار دهید</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">نور پس‌زمینه</string>
     <string name="button_backlight_summary">تنظیمات نور پس‌زمینه را سفارشی کنید</string>
@@ -425,8 +417,8 @@
     <string name="network_traffic_mode_all">بارگیری و بارگذاری</string>
     <string name="network_traffic_autohide">پنهان‌کردن خودکار</string>
     <string name="network_traffic_autohide_summary">مخفی‌کردن سرعت تبادل شبکه در زمان عدم فعالیت</string>
-    <string name="network_traffic_autohide_kilobits">Kb/s</string>
-    <string name="network_traffic_autohide_kilobytes">KB/s</string>
+    <string name="network_traffic_autohide_kilobits">kb/s</string>
+    <string name="network_traffic_autohide_kilobytes">کیلو بایت بر ثانیه</string>
     <string name="network_traffic_autohide_threshold">آستانه عدم‌فعالیت</string>
     <string name="network_traffic_refresh_interval_title">فاصله نوسازی</string>
     <string name="network_traffic_refresh_interval_summary">مدت زمانی که پس از آن سرعت دوباره اندازه گیری می شود</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">قوت</string>
     <string name="pulse_color_custom">سفارشی</string>
     <string name="pulse_color_lava_lamp">لامپ گدازه ای</string>
+    <string name="pulse_color_auto">آلبوم</string>
     <string name="pulse_color_user_title">انتخاب رنگ</string>
     <string name="pulse_smoothing_enabled_title">هموارسازی را روشن کنید</string>
     <string name="pulse_smoothing_enabled_summary">هر نوار هموارتر متحرک می شود</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">نمایش نشانگر متمایز وقتی هر برنامه ای از میکروفون و دوربین استفاده کرد</string>
     <string name="location_privacy_indicator_title">نشانگر حریم خصوصی مکان</string>
     <string name="location_privacy_indicator_summary">نمایش نشانگر متمایز وقتی هر برنامه ای از مکان استفاده کرد</string>
+    <string name="projection_privacy_indicator_title">نشانگر حریم خصوصی رسانه</string>
+    <string name="projection_privacy_indicator_summary">نشانگر را وقتی که تصویر بازتاب می شود، نمایش بده</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">خواب عمیق</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">برنامه های تمام صفحه</string>
     <string name="display_cutout_force_fullscreen_summary">اجبار برنامه ها به نادیده گرفتن فضای ناچ</string>
+    <string name="display_cutout_force_fullscreen_no_apps">هیچ برنامه ای</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">فضای نامحدود برای عکس ها</string>
     <string name="use_photos_spoof_summary">دستگاه خود را فقط به عنوان Pixel XL برای برنامه Google Photos جعل کنید تا فضای ذخیره‌سازی نامحدودی برای پشتیبان‌گیری فراهم کنید</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">اجازه باز کردن قفل با چهره روی قفل صفحه</string>
     <string name="face_unlock_method_default">وقتی صفحه نمایش روشن است</string>
     <string name="face_unlock_method_swipe">هنگام کشیدن روی قفل صفحه</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">آیکون های ترکیب شده سیگنال</string>
-    <string name="combined_status_bar_signal_icons_summary">نمایش آیکون ترکیب شده واحد برای سیگنال WiFi و تلفن همراه</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">مدت زمان WiFi</string>
     <string name="wifi_timeout_summary">WiFi را به‌طور خودکار خاموش نکن</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 ساعت</string>
     <string name="custom_timeout_summary_4hours">4 ساعت</string>
     <string name="custom_timeout_summary_8hours">8 ساعت</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot. Setting a limit on the number of clients</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">This device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">QS را در قفل صفحه پنهان کنید</string>
     <string name="disable_qs_summary">از دسترسی به کاشی های QS در قفل صفحه ایمن جلوگیری کنید</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">تنظیم مجدد آمار کارکرد باتری</string>
     <string name="smart_charging_reset_stats_summary">تنظیم مجدد آمار کارکرد باتری بعد از رسیدن به مقدار شارژ تعیین شده</string>
     <string name="smart_charging_footer">شارژ هوشمند به شما امکان می دهد حداکثر میزان شارژ را برای افزایش طول عمر باتری خود تنظیم کنید. وقتی فعال باشد، شارژ شدن باتری در درصد انتخاب شده متوقف می‌ شود و در درصد انتخاب شده شروع شارژ شدن را از سر می‌گیرد. درصد توقف شارژ شدن همیشه باید بیشتر از درصد شروع شارژ باشد.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">تنظیمات آب و هوا</string>
+    <string name="weather_settings_summary">ترتیب پک آیکون و سرویس آب و هوا</string>
+    <string name="lockscreen_weather_title">شرایط آب و هوایی</string>
+    <string name="lockscreen_weather_summary">نمایش دما و شرایط آب و هوایی جاری</string>
+    <string name="lockscreen_weather_enabled_info">نیازمند روشن بودن سرویس آب و هوا می باشد</string>
+    <string name="lockscreen_weather_location_title">مکان آب و هوا</string>
+    <string name="lockscreen_weather_location_summary">نمایش مکان آب و هوای جاری</string>
     <!-- Adaptive Playback -->
-    <string name="adaptive_playback_title">Adaptive playback</string>
+    <string name="adaptive_playback_title">پخش تطبیقی</string>
     <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
     <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
     <string name="adaptive_playback_timeout_title">Playback timeout</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">آرم</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">موقعیت آرم</string>
+    <string name="status_bar_logo_style_title">سبک آرم</string>
 </resources>

@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Кастомізація батареї</string>
     <!-- Gestures -->
     <string name="gestures_title">Жести</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">Значок VoLTE</string>
-    <string name="volte_icon_summary">Відображати значок VoLTE, якщо доступно</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Значок VoWiFi</string>
-    <string name="vowifi_icon_summary">Відображати значок VoWiFi при наявності</string>
-    <string name="volte_vowifi_override_title">Перевизначення VoWiFi</string>
-    <string name="volte_vowifi_override_summary">Приховати VoLTE при наявності VoWiFi</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Індикатор роумінгу</string>
     <string name="roaming_indicator_icon_summary">Відображати індикатор роумінгу на іконці сигналу коли у роумінгу</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Акцент</string>
     <string name="pulse_color_custom">Користувацький</string>
     <string name="pulse_color_lava_lamp">Лава лампа</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Вибір кольору</string>
     <string name="pulse_smoothing_enabled_title">Увімкнути згладжування</string>
     <string name="pulse_smoothing_enabled_summary">Кожний блок анімовується більш плавно</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Відображати окремий індикатор при використанні додатків з мікрофону чи камери</string>
     <string name="location_privacy_indicator_title">Індикатор місцезнаходження</string>
     <string name="location_privacy_indicator_summary">Відображати окремий індикатор коли програма використовує місцезнаходження</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Глибокий сон</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Повноекранні додатки</string>
     <string name="display_cutout_force_fullscreen_summary">Змусити додатки ігнорувати виріз</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Необмежена пам\'ять фотографій</string>
     <string name="use_photos_spoof_summary">Імітація вашого пристрою в форматі Pixel XL для додатка Google Photos забезпечить необмежену кількість пам\'яті для резервного копіювання</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Дозволити розблокування обличчям на екрані блокування</string>
     <string name="face_unlock_method_default">Коли екран увімкнено</string>
     <string name="face_unlock_method_swipe">При проведенні пальцем на екрані блокування</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Комбіновані значки сигналу</string>
-    <string name="combined_status_bar_signal_icons_summary">Показувати одну комбіновану піктограму для сигналу WiFi і мобільних даних</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Час очікування Wi-Fi</string>
     <string name="wifi_timeout_summary">Не вимикати WiFi автоматично</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 години</string>
     <string name="custom_timeout_summary_4hours">4 години</string>
     <string name="custom_timeout_summary_8hours">8 годин</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Підключені пристрої</string>
-    <string name="wifi_hotspot_client_manager_summary">Список і керування пристроями, підключені до точки доступу. Встановлення обмеження на кількість клієнтів</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Список пристроїв підключених до точки доступу</string>
-    <string name="wifi_hotspot_client_limit_title">Ліміт підключених пристроїв</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Заблоковані пристрої</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Підключені пристрої</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Заблокувати пристрій</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Ця дія відключиться \"<xliff:g id="device_name">%1$s</xliff:g>\" від цього пристрою і додасть його до блокувань</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Розблокувати пристрій</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">Цей пристрій \"<xliff:g id="device_name">%1$s</xliff:g>\" зможе під\'єднатися до цієї точки доступу</string>
-    <string name="wifi_hotspot_client_manager_footer_text">Наразі немає доступних клієнтів. Підключені та заблоковані пристрої з’являться тут, коли вони стануть доступними.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Прихована мережа</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Назва вашої точки доступу не буде показуватися в списку доступних мереж WLAN.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Приховати швидкі налаштування на захищеному екрані блокування</string>
     <string name="disable_qs_summary">Заборонити доступ до QS плиток на захищеному екрані блокування</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">Скинути статистику акумулятора</string>
     <string name="smart_charging_reset_stats_summary">Скинути статистику акумулятора після досягнення визначеного користувачем рівня зарядки</string>
     <string name="smart_charging_footer">«Розумне» заряджання дозволяє встановити максимальний рівень зарядки для продовження терміну служби батарейки. Коли ввімкнено, батарея перестає заряджатись при досягненні рівня зупинки і відновлює заряджання на рівні початку. Рівень зупинки повинен завжди бути більшим, ніж рівень повзунка початку роботи.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Адаптивне відтворення</string>
     <string name="adaptive_playback_summary">Призупиняти медіа, коли гучність вимкнено та відновіть його шляхом збільшення гучності в межах тайм-ауту</string>
     <string name="adaptive_playback_intro_text">Автоматично зупиняється медіа при відключенні гучності і відновиться автоматично при відновленні звуку протягом встановленого часу</string>
     <string name="adaptive_playback_timeout_title">Тайм-аут відтворення</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Логотип</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">Позиція логотипу</string>
+    <string name="status_bar_logo_style_title">Стиль логотипу</string>
 </resources>

@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Kustomisasi baterai</string>
     <!-- Gestures -->
     <string name="gestures_title">Gestur</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">Ikon VoLTE</string>
-    <string name="volte_icon_summary">Tampilkan ikon VoLTE bila tersedia</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Ikon VoWiFi</string>
-    <string name="vowifi_icon_summary">Tampilkan ikon VoWiFi bila tersedia</string>
-    <string name="volte_vowifi_override_title">Penggantian VoWiFi</string>
-    <string name="volte_vowifi_override_summary">Sembunyikan VoLTE saat VoWiFi tersedia</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Indikator Roaming</string>
     <string name="roaming_indicator_icon_summary">Tampilkan indikator Roaming di ikon sinyal saat dalam mode Roaming</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Aksen</string>
     <string name="pulse_color_custom">Kustom</string>
     <string name="pulse_color_lava_lamp">Lampu lava</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Pilih warna</string>
     <string name="pulse_smoothing_enabled_title">Aktifkan smoothing</string>
     <string name="pulse_smoothing_enabled_summary">Setiap bar dianimasikan lebih halus</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Tampilkan indikator terpisah saat aplikasi apa pun menggunakan mikrofon atau kamera</string>
     <string name="location_privacy_indicator_title">Indikator privasi lokasi</string>
     <string name="location_privacy_indicator_summary">Tampilkan indikator terpisah saat aplikasi apa pun menggunakan lokasi</string>
+    <string name="projection_privacy_indicator_title">Indikator privasi proyeksi media</string>
+    <string name="projection_privacy_indicator_summary">Tampilkan indikator saat layar perangkat diproyeksikan</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Tidur nyenyak</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Aplikasi layar penuh</string>
     <string name="display_cutout_force_fullscreen_summary">Paksa aplikasi untuk mengabaikan jarak notch</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Tidak ada aplikasi</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Penyimpanan Google Foto tanpa batas</string>
     <string name="use_photos_spoof_summary">Palsukan perangkat Anda sebagai Pixel XL untuk aplikasi Google Foto hanya untuk menyediakan penyimpanan tidak terbatas untuk cadangan</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Izinkan face unlock di layar kunci</string>
     <string name="face_unlock_method_default">Saat layar dihidupkan</string>
     <string name="face_unlock_method_swipe">Saat mengusap layar kunci</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Ikon sinyal gabungan</string>
-    <string name="combined_status_bar_signal_icons_summary">Tampilkan ikon gabungan tunggal untuk WiFi dan sinyal seluler</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Batas waktu WiFi</string>
     <string name="wifi_timeout_summary">Jangan matikan WiFi secara otomatis</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 jam</string>
     <string name="custom_timeout_summary_4hours">4 jam</string>
     <string name="custom_timeout_summary_8hours">8 jam</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Perangkat yang terhubung</string>
-    <string name="wifi_hotspot_client_manager_summary">Daftar dan kelola perangkat yang terhubung ke hotspot. Menetapkan batas jumlah klien</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Daftar perangkat yang terhubung ke hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Batas perangkat yang terhubung</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Perangkat yang Diblokir</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Perangkat yang Terhubung</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Blokir perangkat</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Tindakan ini akan memutuskan \"<xliff:g id="device_name">%1$s</xliff:g>\" dari perangkat ini dan menambahkannya ke daftar blokir</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Buka blokir perangkat</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">Perangkat ini \"<xliff:g id="device_name">%1$s</xliff:g>\" akan dapat terhubung ke hotspot ini</string>
-    <string name="wifi_hotspot_client_manager_footer_text">Tidak ada klien yang tersedia saat ini. Perangkat yang terhubung dan diblokir akan dicantumkan di sini jika tersedia.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Jaringan tersembunyi</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Nama hotspot seluler Anda tidak akan muncul dalam daftar jaringan WLAN yang tersedia.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Sembunyikan Setelan Cepat pada layar kunci aman</string>
     <string name="disable_qs_summary">Cegah akses ke ubin Setelan Cepat pada layar kunci aman</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">Setel ulang statistik baterai</string>
     <string name="smart_charging_reset_stats_summary">Setel ulang statistik baterai setelah mencapai tingkat pengisian yang ditentukan pengguna</string>
     <string name="smart_charging_footer">Pengisian Pintar memungkinkan Anda untuk mengatur tingkat pengisian maksimum untuk memperpanjang umur baterai Anda. Saat diaktifkan, baterai berhenti mengisi daya pada tingkat pemicu Berhenti dan melanjutkan pengisian daya pada tingkat pemicu Mulai. Level pemicu berhenti harus selalu lebih besar dari level pemicu mulai.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Pengaturan cuaca</string>
+    <string name="weather_settings_summary">Atur paket ikon dan servis cuaca</string>
+    <string name="lockscreen_weather_title">Kondisi cuaca</string>
+    <string name="lockscreen_weather_summary">Tampilkan kondisi cuaca dan suhu saat ini</string>
+    <string name="lockscreen_weather_enabled_info">Membutuhkan layanan cuaca untuk diaktifkan</string>
+    <string name="lockscreen_weather_location_title">Lokasi cuaca</string>
+    <string name="lockscreen_weather_location_summary">Tampilkan cuaca saat ini menurut lokasi</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Pemutaran adaptif</string>
     <string name="adaptive_playback_summary">Jeda media saat volume dimatikan dan lanjutkan dengan meningkatkan volume dalam batas waktu</string>
     <string name="adaptive_playback_intro_text">Secara otomatis menjeda media saat volume dimatikan dan akan dilanjutkan secara otomatis saat volume dipulihkan dalam waktu yang ditentukan</string>
     <string name="adaptive_playback_timeout_title">Batas waktu pemutaran</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Tampilkan logo khusus di kiri atau kanan bilah status</string>
+    <string name="status_bar_logo_position_title">Posisi Logo</string>
+    <string name="status_bar_logo_style_title">Gaya logo</string>
 </resources>
