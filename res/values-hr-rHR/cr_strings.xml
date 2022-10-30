@@ -50,7 +50,7 @@
     <string name="delete">Izbriši</string>
     <string name="delete_message">Ukloniti odabranu stavku?</string>
     <string name="choose_app">Odaberite aplikaciju</string>
-    <string name="enable">Enable</string>
+    <string name="enable">Omogući</string>
     <string name="disable">Disable</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Trenutni dnevnik promjena</string>
@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Prilagodbe baterije</string>
     <!-- Gestures -->
     <string name="gestures_title">Geste</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">VoLTE ikona</string>
-    <string name="volte_icon_summary">Prikaži VoLTE ikonu kad je dostupna</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">VoWiFi ikona</string>
-    <string name="vowifi_icon_summary">Prikaži VoWiFi ikonu kad je dostupna</string>
-    <string name="volte_vowifi_override_title">VoWiFi nadjačavanje</string>
-    <string name="volte_vowifi_override_summary">Sakrij VoLTE kada je VoWiFi dostupan</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Indikator roaminga</string>
     <string name="roaming_indicator_icon_summary">Prikaži indikatora roaminga u ikoni signala kada ste u roamingu</string>
@@ -190,8 +182,8 @@
     <string name="button_wake_summary">Probudite uređaj pritiskom na tipku</string>
     <string name="volume_answer_call_title">Odgovori na poziv</string>
     <string name="volume_answer_call_summary">Odgovori na dolazne pozive pritiskom na tipke za podešavanje glasnoće</string>
-    <string name="click_partial_screenshot_title">Click to partial screenshot</string>
-    <string name="click_partial_screenshot_summary">Short click Volume Down and Power to take partial screenshot</string>
+    <string name="click_partial_screenshot_title">Snimite djelomičnu snimku zaslona</string>
+    <string name="click_partial_screenshot_summary">Kratko pritisnite Volume Down i Power da biste snimili djelomičnu snimku zaslona</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">Backlight</string>
     <string name="button_backlight_summary">Customize button backlight settings</string>
@@ -202,9 +194,9 @@
     <string name="keyboard_backlight_seekbar_title">Keyboard brightness</string>
     <string name="backlight_timeout_title">Illumination timeout</string>
     <string name="backlight_timeout_unlimited">Don\'t turn off</string>
-    <string name="backlight_summary_disabled">Disabled</string>
+    <string name="backlight_summary_disabled">Kontekst</string>
     <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
-    <string name="backlight_summary_enabled">Enabled</string>
+    <string name="backlight_summary_enabled">Omogućeno</string>
     <!-- Power menu -->
     <string name="power_menu_title">Izbornik Power</string>
     <string name="power_menu_summary">Opcije izbornika isključivanja</string>
@@ -332,7 +324,7 @@
     <string name="status_bar_clock_position_left">Lijevo</string>
     <string name="status_bar_clock_position_center">Centar</string>
     <string name="status_bar_clock_position_hidden">Skriveno</string>
-    <string name="status_bar_clock_auto_hide_title">Auto hide</string>
+    <string name="status_bar_clock_auto_hide_title">Automatsko sakrivanje</string>
     <string name="status_bar_clock_auto_hide_launcher_summary">Hide clock if launcher is visible</string>
     <string name="status_bar_clock_auto_hide_summary">Hide clock at regular interval</string>
     <string name="status_bar_clock_auto_hide_hdur_title">Sakrij trajanje</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Naglašeno</string>
     <string name="pulse_color_custom">Prilagođeno</string>
     <string name="pulse_color_lava_lamp">Lava svjetiljka</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Odaberite boju</string>
     <string name="pulse_smoothing_enabled_title">Uključi efekt glatkoće</string>
     <string name="pulse_smoothing_enabled_summary">Svaka traka je animiranija glatkije</string>
@@ -625,7 +618,7 @@
     <!-- Heads up timeout -->
     <string name="notification_heads_up_title">Plutajuće obavijesti</string>
     <string name="notification_heads_up_summary">Dopusti skočne obavijesti</string>
-    <string name="notification_heads_up_timeout_title">Time out</string>
+    <string name="notification_heads_up_timeout_title">Vrijeme isteklo</string>
     <string name="notification_heads_up_timeout_summary">Time to display heads up notifications</string>
     <!-- Less boring heads up -->
     <string name="less_boring_heads_up_title">Manje dosadne</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Prikaži zasebni indikator kada bilo koja aplikacija koristi mikrofon ili kameru</string>
     <string name="location_privacy_indicator_title">Indikator privatnosti lokacije</string>
     <string name="location_privacy_indicator_summary">Prikaži zasebni indikator kada bilo koja aplikacija koristi lokaciju</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Stanje mirovanja</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Aplikacije za cijeli zaslon</string>
     <string name="display_cutout_force_fullscreen_summary">Prisili aplikacije da ignoriraju urez</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Unlimited Photos storage</string>
     <string name="use_photos_spoof_summary">Spoof your device as Pixel XL for Google Photos app only to provide unlimited storage for backup</string>
@@ -720,7 +716,7 @@
     <string name="use_games_spoof_title">Unlock higher FPS in games</string>
     <string name="use_games_spoof_summary">Spoof your device as different model for specific games to unlock higher FPS</string>
     <!-- Volume panel -->
-    <string name="volume_panel_category">Volume panel</string>
+    <string name="volume_panel_category">Ploča glasnoće</string>
     <string name="volume_dialog_timeout_title">Volume panel timeout</string>
     <string name="volume_panel_on_left_title">Volume panel on left</string>
     <!-- Legacy WFD settings -->
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Allow face unlock on lock screen</string>
     <string name="face_unlock_method_default">When the screen is turned on</string>
     <string name="face_unlock_method_swipe">When swiping on lock screen</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Combined signal icons</string>
-    <string name="combined_status_bar_signal_icons_summary">Show single combined icon for WiFi and mobile signal</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">WiFi timeout</string>
     <string name="wifi_timeout_summary">Do not automatically turn off WiFi</string>
@@ -754,40 +747,24 @@
     <string name="bluetooth_timeout">Bluetooth timeout</string>
     <string name="bluetooth_timeout_summary">Do not automatically turn off Bluetooth</string>
     <string name="bluetooth_timeout_summary_auto">Bluetooth will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no devices connected</string>
-    <string name="custom_timeout_summary_never">Never</string>
-    <string name="custom_timeout_summary_15secs">15 seconds</string>
-    <string name="custom_timeout_summary_30secs">30 seconds</string>
-    <string name="custom_timeout_summary_1min">1 minute</string>
-    <string name="custom_timeout_summary_2mins">2 minutes</string>
-    <string name="custom_timeout_summary_5mins">5 minutes</string>
-    <string name="custom_timeout_summary_10mins">10 minutes</string>
-    <string name="custom_timeout_summary_20mins">20 minutes</string>
+    <string name="custom_timeout_summary_never">Nikad</string>
+    <string name="custom_timeout_summary_15secs">15 sekundi</string>
+    <string name="custom_timeout_summary_30secs">30 sekundi</string>
+    <string name="custom_timeout_summary_1min">1 minuta</string>
+    <string name="custom_timeout_summary_2mins">2 minute</string>
+    <string name="custom_timeout_summary_5mins">5 minuta</string>
+    <string name="custom_timeout_summary_10mins">10 minuta</string>
+    <string name="custom_timeout_summary_20mins">20 minuta</string>
     <string name="custom_timeout_summary_30mins">30 minutes</string>
     <string name="custom_timeout_summary_1hour">1 hour</string>
     <string name="custom_timeout_summary_2hours">2 hours</string>
     <string name="custom_timeout_summary_4hours">4 hours</string>
     <string name="custom_timeout_summary_8hours">8 hours</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot. Setting a limit on the number of clients</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">This device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Hide QS on secure lock screen</string>
     <string name="disable_qs_summary">Prevent access to QS tiles on secure lock screen</string>
     <!-- Power menu on secure lockscreen -->
-    <string name="lockscreen_enable_power_menu_title">Power menu</string>
+    <string name="lockscreen_enable_power_menu_title">Izbornik Power</string>
     <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lockscreen</string>
     <!-- Gesture navbar length -->
     <string name="gesture_navbar_length_title">Pill length</string>
@@ -795,7 +772,7 @@
     <string name="long_label">Long</string>
     <!-- Back gesture height -->
     <string name="back_height_low_label">Full</string>
-    <string name="back_height_high_label">Bottom</string>
+    <string name="back_height_high_label">Dolje</string>
     <string name="back_height_title">Back gesture height</string>
     <string name="back_height_summary">Screen height valid for back gesture</string>
     <!-- Notification guts kill app button -->
@@ -806,7 +783,7 @@
     <string name="screen_off_udfps_summary">Keep UDFPS enabled when the screen is off</string>
     <!-- Columbus -->
     <string name="columbus_gesture_detected">Quick Tap detected!</string>
-    <string name="columbus_gesture_enrollment_complete">Done</string>
+    <string name="columbus_gesture_enrollment_complete">Gotovo</string>
     <string name="columbus_gesture_enrollment_do_it_later">Not now</string>
     <string name="columbus_gesture_enrollment_settings">Go to Settings</string>
     <string name="columbus_gesture_enrollment_try_it">Try it</string>
@@ -841,7 +818,7 @@
     <string name="columbus_setting_action_open_app_title">Open app</string>
     <string name="columbus_setting_action_overview_title">See recent apps</string>
     <string name="columbus_setting_action_play_pause_title">Play or pause media</string>
-    <string name="columbus_setting_action_screenshot_title">Take screenshot</string>
+    <string name="columbus_setting_action_screenshot_title">Napravi snimku zaslona</string>
     <string name="columbus_setting_actions_title">Tap back of phone twice to</string>
     <string name="columbus_setting_additional_settings_title">Quick Tap strength</string>
     <string name="columbus_setting_app_selection_help_text">Select an app to open when you tap the back of your phone twice. If you uninstall the app, Quick Tap turns off until you select a different app.</string>
@@ -860,7 +837,7 @@
     <string name="reticker_colored_title">Use app colored background</string>
     <string name="reticker_colored_summary">Replace reTicker background color using notification app main color</string>
     <!-- Smart Pixels -->
-    <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see improvement in battery life. Note that in some cases it can result in unresponsive areas on touch screen</string>
+    <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see improvement in battery life.</string>
     <string name="smart_pixels_title">Smart Pixels</string>
     <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
     <string name="smart_pixels_enable_title">Enable Smart Pixels</string>
@@ -906,16 +883,16 @@
     <string name="qs_tile_animation_style_flipx">Flip X</string>
     <string name="qs_tile_animation_style_flipy">Flip Y</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Linear</string>
-    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerate</string>
-    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Decelerate</string>
+    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Ubrzavanje</string>
+    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Usporavanje</string>
     <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelerate decelerate</string>
-    <string name="qs_tile_animation_interpolator_bounceInterpolator">Bounce</string>
-    <string name="qs_tile_animation_interpolator_overshootInterpolator">Overshoot</string>
-    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipate</string>
+    <string name="qs_tile_animation_interpolator_bounceInterpolator">Poskakivanje</string>
+    <string name="qs_tile_animation_interpolator_overshootInterpolator">Prelijetanje</string>
+    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Pretpostavi</string>
     <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipate overshoot</string>
     <!-- Screenshot shutter sound  -->
-    <string name="screenshot_shutter_sound_title">Screenshot sound</string>
-    <string name="screenshot_shutter_sound_summary">Play sound when screenshot is taken</string>
+    <string name="screenshot_shutter_sound_title">Zvuk snimanja zaslona</string>
+    <string name="screenshot_shutter_sound_summary">Uključi/isključi zvuk uzimanja snimke ekrana</string>
     <!-- QS tiles layout  -->
     <string name="qs_layout_category_title">Tiles layout</string>
     <string name="qs_tile_label_hide_title">Hide label</string>
@@ -923,8 +900,8 @@
     <string name="qs_tile_label_hide_summary">Only show icon in tile</string>
     <string name="qs_tile_layout_title">Vertical layout</string>
     <string name="qs_tile_layout_summary">Show label below icon instead next to icon</string>
-    <string name="qs_columns_portrait_title">Columns (portrait)</string>
-    <string name="qs_columns_landscape_title">Columns (landscape)</string>
+    <string name="qs_columns_portrait_title">Stupci (portret)</string>
+    <string name="qs_columns_landscape_title">Stupci (pejzaž)</string>
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">Background chip</string>
     <string name="statusbar_clock_chip_summary">Display accented chip behind clock</string>
@@ -937,9 +914,22 @@
     <string name="smart_charging_reset_stats_title">Reset battery statistics</string>
     <string name="smart_charging_reset_stats_summary">Reset battery statistics after reaching user defined charging level</string>
     <string name="smart_charging_footer">Smart Charging allows you to set maximum charging level to extend the lifespan of your battery. When enabled, battery stops charging at Stop trigger level and resumes charging at Start trigger level. Stop trigger level should be always greater than Start trigger level.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptive playback</string>
     <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
     <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
     <string name="adaptive_playback_timeout_title">Playback timeout</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">Položaj logotipa</string>
+    <string name="status_bar_logo_style_title">Stil logotipa</string>
 </resources>
