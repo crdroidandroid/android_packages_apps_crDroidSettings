@@ -113,14 +113,6 @@
     <string name="status_bar_battery_category_title">Chỉnh sửa pin</string>
     <!-- Gestures -->
     <string name="gestures_title">Cử chỉ</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">Biểu tượng VoLTE</string>
-    <string name="volte_icon_summary">Hiện VoLTE icon khi có thể</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Biểu tượng VoWifi</string>
-    <string name="vowifi_icon_summary">Hiện VoWifi icon khi có thể</string>
-    <string name="volte_vowifi_override_title">Ghi đè VoWiFi</string>
-    <string name="volte_vowifi_override_summary">Ẩn VoLTE đi khi có VoWifi</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Thông báo chuyển vùng</string>
     <string name="roaming_indicator_icon_summary">Hiện biểu tượng thông báo chuyển vùng khi máy đang bật chế độ chuyển vùng</string>
@@ -478,6 +470,7 @@
     <string name="pulse_color_accent">Màu nhấn</string>
     <string name="pulse_color_custom">Tùy chỉnh</string>
     <string name="pulse_color_lava_lamp">Đèn dung nham</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Chọn màu sắc</string>
     <string name="pulse_smoothing_enabled_title">Bật làm mượt</string>
     <string name="pulse_smoothing_enabled_summary">Thanh hoạt cảnh mượt hơn</string>
@@ -638,6 +631,8 @@
     <string name="mic_camera_privacy_indicator_summary">Hiển thị chỉ báo riêng biệt khi bất kỳ ứng dụng nào sử dụng micrô hoặc máy ảnh</string>
     <string name="location_privacy_indicator_title">Biểu tượng sử dụng vị trí</string>
     <string name="location_privacy_indicator_summary">Hiển thị chỉ báo riêng khi bất kỳ ứng dụng nào sử dụng vị trí</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Ngủ sâu</string>
     <!-- In-call feedback -->
@@ -713,6 +708,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Ứng dụng toàn màn hình</string>
     <string name="display_cutout_force_fullscreen_summary">Buộc các ứng dụng bỏ qua không gian tai thỏ</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Lưu trữ hình ảnh không giới hạn</string>
     <string name="use_photos_spoof_summary">Giả mạo thiết bị của bạn dưới dạng Pixel XL chỉ dành cho ứng dụng Google Photos để cung cấp bộ nhớ không giới hạn để sao lưu</string>
@@ -744,9 +740,6 @@
     <string name="face_unlock_method_title">Cho phép mở khoá bằng khuôn mặt trên màn hình khoá</string>
     <string name="face_unlock_method_default">Khi màn hình được bật lên</string>
     <string name="face_unlock_method_swipe">Khi vuốt trên màn hình khóa</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Biểu tượng tín hiệu kép</string>
-    <string name="combined_status_bar_signal_icons_summary">Hiển thị biểu tượng kết hợp duy nhất cho WiFi và tín hiệu di động</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Thời gian chờ Wifi</string>
     <string name="wifi_timeout_summary">Không tự động tắt WiFi</string>
@@ -767,22 +760,6 @@
     <string name="custom_timeout_summary_2hours">2 giờ</string>
     <string name="custom_timeout_summary_4hours">4 giờ</string>
     <string name="custom_timeout_summary_8hours">8 giờ</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Các thiết bị đã kết nối</string>
-    <string name="wifi_hotspot_client_manager_summary">Liệt kê, quản lý các thiết bị được kết nối với điểm phát sóng và đặt giới hạn thiết bị truy cập</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Liệt kê các thiết bị được kết nối với điểm phát sóng</string>
-    <string name="wifi_hotspot_client_limit_title">Giới hạn thiết bị được kết nối</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Các thiết bị đã chặn</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Các thiết bị đã kết nối</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Chặn thiết bị</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Hành động này sẽ ngắt kết nối \"<xliff:g id="device_name">%1$s</xliff:g>\" khỏi thiết bị này và thêm thiết bị vào danh sách chặn</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Bỏ chặn thiết bị</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">Thiết bị \"<xliff:g id="device_name">%1$s</xliff:g>\" sẽ có thể kết nối với điểm phát sóng này</string>
-    <string name="wifi_hotspot_client_manager_footer_text">Không có thiết bị truy cập hiện có sẵn. Các thiết bị đã kết nối và bị chặn sẽ được liệt kê ở đây.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Ẩn mạng</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Tên điểm phát sóng thiết bị này sẽ không xuất hiện trong danh sách các mạng WLAN khả dụng.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Ẩn cài đặt nhanh trên màn hình khóa an toàn</string>
     <string name="disable_qs_summary">Ngăn chặn quyền truy cập vào các ô cài đặt nhanh trên màn hình khóa an toàn</string>
@@ -939,9 +916,22 @@
     <string name="smart_charging_footer">Sạc thông minh cho phép đặt mức sạc tối đa giúp kéo dài tuổi thọ của pin.
 Khi được bật pin sẽ ngừng sạc ở mức dừng và tiếp tục sạc ở mức bắt đầu.
 Mức dừng phải luôn luôn lớn hơn mức bắt đầu.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Phát lại thích ứng</string>
     <string name="adaptive_playback_summary">Tạm dừng phát khi âm lượng bị tắt và tiếp tục phát khi tăng âm lượng trong thời gian chờ</string>
     <string name="adaptive_playback_intro_text">Tạm dừng phát khi âm lượng bị tắt và tự động tiếp tục phát khi âm lượng được khôi phục trong thời gian đã đặt</string>
     <string name="adaptive_playback_timeout_title">Thời gian chờ phát lại</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Biểu tượng</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">Vị trí của logo</string>
+    <string name="status_bar_logo_style_title">Kiểu logo</string>
 </resources>
