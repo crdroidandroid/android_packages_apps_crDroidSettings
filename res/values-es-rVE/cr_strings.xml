@@ -114,14 +114,6 @@ Mantén presionado para establecer</string>
     <string name="status_bar_battery_category_title">Personalizar batería</string>
     <!-- Gestures -->
     <string name="gestures_title">Gestos</string>
-    <!-- VoLTE icon -->
-    <string name="volte_icon_title">Icono VoLTE</string>
-    <string name="volte_icon_summary">Mostrar icono VoLTE cuando esté disponible</string>
-    <!-- VoWiFi icon -->
-    <string name="vowifi_icon_title">Icono VoWiFi</string>
-    <string name="vowifi_icon_summary">Mostrar icono VoWIFI cuando esté disponible</string>
-    <string name="volte_vowifi_override_title">Prioridad VoWiFi</string>
-    <string name="volte_vowifi_override_summary">Ocultar VoLTE cuando VoWiFi está disponible</string>
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Indicador de itinerancia</string>
     <string name="roaming_indicator_icon_summary">Mostrar el icono de itinerancia cuando se esté conectado mediante este modo</string>
@@ -479,6 +471,7 @@ Mantén presionado para establecer</string>
     <string name="pulse_color_accent">Realce</string>
     <string name="pulse_color_custom">Personalizado</string>
     <string name="pulse_color_lava_lamp">Lámpara de lava</string>
+    <string name="pulse_color_auto">Album</string>
     <string name="pulse_color_user_title">Selecciona el color</string>
     <string name="pulse_smoothing_enabled_title">Activar modo fluido</string>
     <string name="pulse_smoothing_enabled_summary">Animación de las barras más suave</string>
@@ -639,6 +632,8 @@ Mantén presionado para establecer</string>
     <string name="mic_camera_privacy_indicator_summary">Mostrar indicador separado cuando una aplicación utiliza el micrófono o la cámara</string>
     <string name="location_privacy_indicator_title">Indicador de privacidad de la ubicación</string>
     <string name="location_privacy_indicator_summary">Mostrar indicador por separado cuando una aplicación use la localización</string>
+    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Sueño profundo</string>
     <!-- In-call feedback -->
@@ -714,6 +709,7 @@ Mantén presionado para establecer</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Aplicaciones en pantalla completa</string>
     <string name="display_cutout_force_fullscreen_summary">Forzar que las apps ignoren el espacio del notch</string>
+    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Almacenamiento ilimitado de Google Fotos</string>
     <string name="use_photos_spoof_summary">Simule el dispositivo como Pixel para tener almacenamiento ilimitado en las copias de seguridad de Google Fotos</string>
@@ -745,9 +741,6 @@ Mantén presionado para establecer</string>
     <string name="face_unlock_method_title">Permitir desbloqueo facial en la pantalla de bloqueo</string>
     <string name="face_unlock_method_default">Cuando la pantalla está encendida</string>
     <string name="face_unlock_method_swipe">Cuando deslizas en la pantalla de bloqueo</string>
-    <!-- Combined signal icons in status bar -->
-    <string name="combined_status_bar_signal_icons_title">Iconos de señal combinados</string>
-    <string name="combined_status_bar_signal_icons_summary">Mostrar un único icono para Wi-Fi y señal móvil</string>
     <!-- Wifi/Bluetooth auto timeout -->
     <string name="wifi_timeout">Tiempo de espera WiFi</string>
     <string name="wifi_timeout_summary">No apagar automáticamente el WI-FI</string>
@@ -768,22 +761,6 @@ Mantén presionado para establecer</string>
     <string name="custom_timeout_summary_2hours">2 horas</string>
     <string name="custom_timeout_summary_4hours">4 horas</string>
     <string name="custom_timeout_summary_8hours">8 horas</string>
-    <!-- Hotspot client manager -->
-    <string name="wifi_hotspot_client_manager_title">Dispositivos conectados</string>
-    <string name="wifi_hotspot_client_manager_summary">Listar y administrar dispositivos conectados al punto de acceso. Establecer un límite en el número de clientes</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">Lista de conectados al punto de acceso</string>
-    <string name="wifi_hotspot_client_limit_title">Límite de dispositivos conectados</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Dispositivos bloqueados</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Dispositivos conectados</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Bloquear dispositivo</string>
-    <string name="wifi_hotspot_block_client_dialog_text">Esta acción desconectará \"<xliff:g id="device_name">%1$s</xliff:g>\" de este dispositivo y lo añadirá a la lista de bloqueados</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Desbloquear dispositivo</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">Este dispositivo \"<xliff:g id="device_name">%1$s</xliff:g>\" podrá conectarse a este punto de acceso</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No hay clientes disponibles. Los dispositivos conectados y bloqueados aparecerán aquí cuando estén disponibles.</string>
-    <!-- Hotspot hidden SSID -->
-    <string name="wifi_hotspot_hidden_ssid_title">Red oculta</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Tu punto de acceso móvil no aparecerá en la lista de redes disponibles.</string>
-    <!-- Hotspot. More bands -->
     <!-- Disable QS -->
     <string name="disable_qs_title">Ocultar ajustes rápidos en la pantalla de bloqueo</string>
     <string name="disable_qs_summary">Evitar el acceso a los ajustes rápidos en la pantalla de bloqueo</string>
@@ -938,9 +915,22 @@ Mantén presionado para establecer</string>
     <string name="smart_charging_reset_stats_title">Reiniciar las estadísticas de batería</string>
     <string name="smart_charging_reset_stats_summary">Reiniciar las estadísticas de batería después de alcanzar un porcentaje de batería definido por el usuario</string>
     <string name="smart_charging_footer">La carga inteligente te permite establecer un nivel máximo de carga de la batería para extender su vida útil. Cuando está activada, la batería deja de cargarse cuando se llega al nivel de porcentaje máximo establecido, y vuelve a cargarse cuando llega al porcentaje mínimo. El nivel de carga máximo debe ser mayor al nivel de carga mínimo.</string>
+    <!-- Weather -->
+    <string name="weather_settings_title">Weather settings</string>
+    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="lockscreen_weather_title">Weather condition</string>
+    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_summary">Display current weather location</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Reproducción adaptativa</string>
     <string name="adaptive_playback_summary">Pausar multimedia cuando el volumen se mutea, y reanudar cuando se vuelva a subir el volumen dentro del tiempo de espera</string>
     <string name="adaptive_playback_intro_text">Pausa la multimedia automáticamente cuando el volumen se mutea, y se reaunda cuando subes el volumen dentro del tiempo de espera</string>
     <string name="adaptive_playback_timeout_title">Tiempo de espera de la reproducción adaptativa</string>
+    <!-- Custom logo -->
+    <string name="status_bar_logo_title">Logo</string>
+    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_position_title">Posición del logo</string>
+    <string name="status_bar_logo_style_title">Estilo del logo</string>
 </resources>
