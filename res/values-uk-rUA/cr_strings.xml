@@ -100,8 +100,8 @@
     <string name="unit_pixels">пікс.</string>
     <string name="unit_hz">гц</string>
     <!-- Clipboard -->
-    <string name="copied_to_clipboard">Copied to clipboard</string>
-    <string name="longpress_to_clipboard">Long-press to copy</string>
+    <string name="copied_to_clipboard">Скопійовано до буферу обміну</string>
+    <string name="longpress_to_clipboard">Довге натискання для копіювання</string>
     <!-- Hardware info -->
     <string name="platform_revision">Платформа</string>
     <string name="total_ram">Загалом ОЗП</string>
@@ -201,9 +201,9 @@
     <string name="backlight_summary_enabled_with_timeout">Увімкнено для <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Увімкнено</string>
     <plurals name="backlight_timeout_time">
-        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
-        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> seconds</item>
-        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> секунда</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> секунди</item>
+        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> секунди</item>
         <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
     </plurals>
     <!-- Power menu -->
@@ -776,7 +776,7 @@
     <string name="wifi_hotspot_hidden_ssid_title">Прихована мережа</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Назва вашої точки доступу не буде показуватися в списку доступних мереж WLAN.</string>
     <string name="wifi_hotspot_client_manager_title">Підключені пристрої</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
+    <string name="wifi_hotspot_client_manager_summary">Список і керування пристроями підключених до точки доступу</string>
     <string name="wifi_hotspot_client_manager_list_only_summary">Список пристроїв підключених до точки доступу</string>
     <string name="wifi_hotspot_client_limit_title">Ліміт підключених пристроїв</string>
     <string name="wifi_hotspot_blocked_clients_list_title">Заблоковані пристрої</string>
@@ -784,15 +784,15 @@
     <string name="wifi_hotspot_block_client_dialog_title">Заблокувати пристрій</string>
     <string name="wifi_hotspot_block_client_dialog_text">Ця дія відключиться \"<xliff:g id="device_name">%1$s</xliff:g>\" від цього пристрою і додасть його до блокувань</string>
     <string name="wifi_hotspot_unblock_client_dialog_title">Розблокувати пристрій</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Пристрій \"<xliff:g id="device_name">%1$s</xliff:g>\" зможе під\'єднатися до цієї точки доступу</string>
     <string name="wifi_hotspot_client_manager_footer_text">Наразі немає доступних клієнтів. Підключені та заблоковані пристрої з’являться тут, коли вони стануть доступними.</string>
-    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
-    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
-    <string name="wifi_band_60ghz">60 GHz</string>
+    <string name="wifi_band_24ghz_and_5ghz">2,4 ГГц &amp; 5 ГГц</string>
+    <string name="wifi_band_24ghz_and_6ghz">2,4 ГГц &amp; 6 ГГц</string>
+    <string name="wifi_band_60ghz">60 ГГц</string>
     <plurals name="wifi_hotspot_client_limit_summary">
         <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
-        <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
-        <item quantity="few">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="one">До цієї точки доступу можна під\'єднати <xliff:g id="device_num">%1$d</xliff:g> пристрій</item>
+        <item quantity="few">До цієї точки доступу можна під\'єднати <xliff:g id="device_num">%1$d</xliff:g> пристроїв</item>
         <item quantity="many">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
     </plurals>
     <!-- Disable QS -->
@@ -968,6 +968,6 @@
     <string name="status_bar_logo_position_title">Позиція логотипу</string>
     <string name="status_bar_logo_style_title">Стиль логотипу</string>
     <!-- APK details on App info screen -->
-    <string name="app_info_install_time">Installed: %1$s</string>
-    <string name="app_info_update_time">Updated: %1$s</string>
+    <string name="app_info_install_time">Встановлено: %1$s</string>
+    <string name="app_info_update_time">Оновлено: %1$s</string>
 </resources>
