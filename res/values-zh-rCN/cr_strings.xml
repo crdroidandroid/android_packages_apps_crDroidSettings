@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">毫秒</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">赫兹</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="longpress_to_clipboard">Long-press to copy</string>
     <!-- Hardware info -->
     <string name="platform_revision">平台</string>
     <string name="total_ram">总内存</string>
@@ -763,6 +766,26 @@
     <string name="custom_timeout_summary_2hours">2 小时</string>
     <string name="custom_timeout_summary_4hours">4 小时</string>
     <string name="custom_timeout_summary_8hours">8 小时</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">隐藏网络</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">您的移动热点名称将不会出现在可用的 WLAN 网络列表中</string>
+    <string name="wifi_hotspot_client_manager_title">已连接的设备</string>
+    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">列出连接到热点的设备</string>
+    <string name="wifi_hotspot_client_limit_title">已连接设备限制</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">已阻止的设备</string>
+    <string name="wifi_hotspot_connected_clients_list_title">已连接的设备</string>
+    <string name="wifi_hotspot_block_client_dialog_title">阻止设备</string>
+    <string name="wifi_hotspot_block_client_dialog_text">此操作将断开 \"<xliff:g id="device_name">%1$s</xliff:g>\" 与该设备的连接，并将其添加到阻止列表中</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">不阻止设备</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
+    <string name="wifi_hotspot_client_manager_footer_text">当前没有可用的客户端。如果可用，将在此处列出已连接和已阻止的设备。</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">在安全锁定屏幕中隐藏快速设置</string>
     <string name="disable_qs_summary">防止在安全锁屏上访问快速设置磁贴</string>
@@ -935,4 +958,7 @@
     <string name="status_bar_logo_summary">在状态栏左侧或右侧显示自定义标志</string>
     <string name="status_bar_logo_position_title">Logo 位置</string>
     <string name="status_bar_logo_style_title">Logo 样式</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Installed: %1$s</string>
+    <string name="app_info_update_time">Updated: %1$s</string>
 </resources>
