@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">мілісекунды</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">Гц</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="longpress_to_clipboard">Long-press to copy</string>
     <!-- Hardware info -->
     <string name="platform_revision">Платформа</string>
     <string name="total_ram">Усяго АЗП</string>
@@ -764,6 +767,29 @@
     <string name="custom_timeout_summary_2hours">2 гадзіны</string>
     <string name="custom_timeout_summary_4hours">4 гадзіны</string>
     <string name="custom_timeout_summary_8hours">8 гадзіны</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Схаваная сетка</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Імя вашага хот-споту не з\'явіцца ў спісе даступных сетак WLAN.</string>
+    <string name="wifi_hotspot_client_manager_title">Падлучаныя прылады</string>
+    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Спіс прылад, падлучаных да пункту доступу</string>
+    <string name="wifi_hotspot_client_limit_title">Ліміт падлучаных прылад</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Заблакаваныя прылады</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Падлучаныя прылады</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Заблакаваныя прылады</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Гэта дзеянне адключыць \"<xliff:g id="device_name">%1$s</xliff:g>\" ад гэтай прылады і дадасць яго ў спіс блакавання</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Разблакаваць прыладу</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
+    <string name="wifi_hotspot_client_manager_footer_text">У гэты час няма даступных кліентаў. Падлучаныя і заблакаваныя прылады будуць пералічаны тут, калі яны стануць даступныя.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
+        <item quantity="few">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="many">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Не раскрываць меню хуткіх налад на экране блакавання</string>
     <string name="disable_qs_summary">Забараніць доступ да хуткіх налад на экране блакавання</string>
@@ -936,4 +962,7 @@
     <string name="status_bar_logo_summary">Адлюстраванне ўласнага лагатыпа злева або справа ад радка стану</string>
     <string name="status_bar_logo_position_title">Пазіцыя лагатыпа</string>
     <string name="status_bar_logo_style_title">Стыль лагатыпу</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Installed: %1$s</string>
+    <string name="app_info_update_time">Updated: %1$s</string>
 </resources>
