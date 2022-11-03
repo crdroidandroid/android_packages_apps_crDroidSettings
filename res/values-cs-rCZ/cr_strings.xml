@@ -100,8 +100,8 @@
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">Hz</string>
     <!-- Clipboard -->
-    <string name="copied_to_clipboard">Copied to clipboard</string>
-    <string name="longpress_to_clipboard">Long-press to copy</string>
+    <string name="copied_to_clipboard">Zkopírováno do schránky</string>
+    <string name="longpress_to_clipboard">Přidržením zkopírovat</string>
     <!-- Hardware info -->
     <string name="platform_revision">Platforma</string>
     <string name="total_ram">Celkem RAM</string>
@@ -200,6 +200,12 @@
     <string name="backlight_summary_disabled">Nepodsvěcovat</string>
     <string name="backlight_summary_enabled_with_timeout">Podsvícení zapnuto na <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Podsvícení zapnuto</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> sekunda</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> sekundy</item>
+        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> sekund</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> sekund</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Menu napájení</string>
     <string name="power_menu_summary">Přizpůsobit možnosti Menu napájení</string>
@@ -770,7 +776,7 @@
     <string name="wifi_hotspot_hidden_ssid_title">Skrytá síť</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Název vašeho mobilního hotspotu se nezobrazí v seznamu dostupných WLAN sítí.</string>
     <string name="wifi_hotspot_client_manager_title">Připojená zařízení</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
+    <string name="wifi_hotspot_client_manager_summary">Vypsat a\u00a0spravovat zařízení připojené k\u00a0hotspotu</string>
     <string name="wifi_hotspot_client_manager_list_only_summary">Seznam zařízení připojených k hotspotu</string>
     <string name="wifi_hotspot_client_limit_title">Omezení počtu připojených zařízení</string>
     <string name="wifi_hotspot_blocked_clients_list_title">Blokovaná zařízení</string>
@@ -778,16 +784,16 @@
     <string name="wifi_hotspot_block_client_dialog_title">Blokovat zařízení</string>
     <string name="wifi_hotspot_block_client_dialog_text">Tato akce odpojí \"<xliff:g id="device_name">%1$s</xliff:g>\" od tohoto zařízení a přidá jej do seznamu blokovaných</string>
     <string name="wifi_hotspot_unblock_client_dialog_title">Odblokovat zařízení</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Zařízení \"<xliff:g id="device_name">%1$s</xliff:g>\" se bude moci připojit k\u00a0tomuto hotspotu</string>
     <string name="wifi_hotspot_client_manager_footer_text">Aktuálně nejsou k dispozici žádní klienti. Připojená a blokovaná zařízení budou zobrazena v případě, že budou dostupná.</string>
-    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
-    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_24ghz_and_5ghz">2,4 GHz a 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2,4 GHz a 6 GHz</string>
     <string name="wifi_band_60ghz">60 GHz</string>
     <plurals name="wifi_hotspot_client_limit_summary">
-        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
-        <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
-        <item quantity="few">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
-        <item quantity="many">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="other">K tomuto hotspotu se může připojit až <xliff:g id="device_num">%1$d</xliff:g> zařízení</item>
+        <item quantity="one">K tomuto hotspotu se může připojit <xliff:g id="device_num">%1$d</xliff:g> zařízení</item>
+        <item quantity="few">K tomuto hotspotu se mohou připojit až <xliff:g id="device_num">%1$d</xliff:g> zařízení</item>
+        <item quantity="many">K tomuto hotspotu se může připojit až <xliff:g id="device_num">%1$d</xliff:g> zařízení</item>
     </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Skrýt QS na zabezpečené obrazovce uzamčení</string>
@@ -962,6 +968,6 @@
     <string name="status_bar_logo_position_title">Umístění loga</string>
     <string name="status_bar_logo_style_title">Styl loga</string>
     <!-- APK details on App info screen -->
-    <string name="app_info_install_time">Installed: %1$s</string>
-    <string name="app_info_update_time">Updated: %1$s</string>
+    <string name="app_info_install_time">Nainstalováno: %1$s</string>
+    <string name="app_info_update_time">Aktualizováno: %1$s</string>
 </resources>
