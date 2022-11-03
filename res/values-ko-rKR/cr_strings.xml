@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">밀리초</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">hz</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="longpress_to_clipboard">Long-press to copy</string>
     <!-- Hardware info -->
     <string name="platform_revision">플랫폼</string>
     <string name="total_ram">총 RAM</string>
@@ -763,6 +766,26 @@
     <string name="custom_timeout_summary_2hours">2시간</string>
     <string name="custom_timeout_summary_4hours">4시간</string>
     <string name="custom_timeout_summary_8hours">8시간</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">숨겨진 네트워크</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">내 모바일 핫스팟의 이름을 사용 가능한 무선랜 목록에 표시하지 않게 합니다</string>
+    <string name="wifi_hotspot_client_manager_title">연결된 기기</string>
+    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">핫스팟에 연결된 기기 목록</string>
+    <string name="wifi_hotspot_client_limit_title">기기 연결 제한</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">차단된 기기</string>
+    <string name="wifi_hotspot_connected_clients_list_title">연결된 기기</string>
+    <string name="wifi_hotspot_block_client_dialog_title">기기 차단</string>
+    <string name="wifi_hotspot_block_client_dialog_text">이 기기와 \"<xliff:g id="device_name">%1$s</xliff:g>\"의 연결을 끊고 기기를 차단 목록에 추가합니다</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">기기 차단 해제</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
+    <string name="wifi_hotspot_client_manager_footer_text">표시할 클라이언트가 없습니다. 연결된 기기와 차단한 기기가 여기에 표시됩니다</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">잠금화면에서 빠른 설정 숨기기</string>
     <string name="disable_qs_summary">잠금화면에서 빠른 설정 타일에 접근하는 것을 막습니다</string>
@@ -935,4 +958,7 @@
     <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
     <string name="status_bar_logo_position_title">로고 위치</string>
     <string name="status_bar_logo_style_title">로고 스타일</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Installed: %1$s</string>
+    <string name="app_info_update_time">Updated: %1$s</string>
 </resources>
