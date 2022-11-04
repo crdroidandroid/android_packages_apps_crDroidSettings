@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">миллисекунд</string>
     <string name="unit_pixels">пикс</string>
     <string name="unit_hz">Гц</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Скопировано в буфер</string>
+    <string name="longpress_to_clipboard">Долгое нажатие скопирует</string>
     <!-- Hardware info -->
     <string name="platform_revision">Платформа</string>
     <string name="total_ram">Всего ОЗУ</string>
@@ -197,6 +200,12 @@
     <string name="backlight_summary_disabled">Выключена</string>
     <string name="backlight_summary_enabled_with_timeout">Включена на <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Включена</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> сек.</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> сек.</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Меню питания</string>
     <string name="power_menu_summary">Настройка параметров меню питания</string>
@@ -470,7 +479,7 @@
     <string name="pulse_color_accent">Акцент</string>
     <string name="pulse_color_custom">Пользовательский</string>
     <string name="pulse_color_lava_lamp">Лава-лампа</string>
-    <string name="pulse_color_auto">Album</string>
+    <string name="pulse_color_auto">Альбом</string>
     <string name="pulse_color_user_title">Выберите цвет</string>
     <string name="pulse_smoothing_enabled_title">Включить сглаживание</string>
     <string name="pulse_smoothing_enabled_summary">Каждая панель анимирована более плавно</string>
@@ -631,8 +640,8 @@
     <string name="mic_camera_privacy_indicator_summary">Показывать раздельные индикаторы, когда любое приложение использует микрофон или камеру</string>
     <string name="location_privacy_indicator_title">Индикатор конфиденциальности местоположения</string>
     <string name="location_privacy_indicator_summary">Показывать раздельные индикаторы, когда любое приложение использует местоположение</string>
-    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
-    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
+    <string name="projection_privacy_indicator_title">Индикатор конфиденциальности трансляции медиа</string>
+    <string name="projection_privacy_indicator_summary">Показывать индикатор при проецировании экрана устройства</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Глубокий сон</string>
     <!-- In-call feedback -->
@@ -702,13 +711,16 @@
     <string name="app_volume_summary">Показывать кнопку громкости каждого приложения в диалоговом окне громкости</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- Open DNS Option -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Quad9 DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Ползунок уведомлений</string>
     <string name="alert_slider_notifications_summary">Отображать уведомление при изменении положения ползунка уведомлений</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Полноэкранные приложения</string>
     <string name="display_cutout_force_fullscreen_summary">Заставить приложения игнорировать вырез</string>
-    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Нет приложений</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Неограниченное хранилище фотографий</string>
     <string name="use_photos_spoof_summary">Маскировка устройства под Pixel XL для «Google Фото», чтобы предоставить неограниченное хранилище для резервного копирования фотографий</string>
@@ -760,6 +772,29 @@
     <string name="custom_timeout_summary_2hours">2 часа</string>
     <string name="custom_timeout_summary_4hours">4 часа</string>
     <string name="custom_timeout_summary_8hours">8 часов</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Скрытая сеть</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Ваша точка доступа не будет отображаться в списке Wi-Fi сетей.</string>
+    <string name="wifi_hotspot_client_manager_title">Подключенные устройства</string>
+    <string name="wifi_hotspot_client_manager_summary">Список и управление устройствами, подключенными к точке доступа. Установка ограничения на количество клиентов</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Список подключенных устройств</string>
+    <string name="wifi_hotspot_client_limit_title">Лимит подключенных устройств</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Заблокированные устройства</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Подключенные устройства</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Заблокировать устройство</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Это действие отключит \"<xliff:g id="device_name">%1$s</xliff:g>\" от этого устройства и добавит его в чёрный список</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Разблокировать устройство</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Устройство \"<xliff:g id="device_name">%1$s</xliff:g>\" сможет подключаться к этой точке доступа</string>
+    <string name="wifi_hotspot_client_manager_footer_text">На данный момент нет доступных клиентов. Подключенные и заблокированные устройства будут перечислены здесь, если таковы имеются.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 ГГц &amp; 5 ГГц</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 ГГц &amp; 6 ГГц</string>
+    <string name="wifi_band_60ghz">60 ГГц</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">К этой точке доступа могут подключиться до <xliff:g id="device_num">%1$d</xliff:g> устройств</item>
+        <item quantity="one">К этой точке доступа может подключиться до <xliff:g id="device_num">%1$d</xliff:g> устройства</item>
+        <item quantity="few">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="many">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Скрыть быстрые настройки на экране блокировки</string>
     <string name="disable_qs_summary">Запретить доступ к быстрым настройкам на экране блокировки</string>
@@ -915,13 +950,13 @@
     <string name="smart_charging_reset_stats_summary">Сбрасывать статистику батареи после достижения заданного уровня заряда</string>
     <string name="smart_charging_footer">Умная зарядка позволяет вам установить максимальный уровень заряда для увеличения срока жизни аккумулятора. При включенной функции аккумулятор прекратит зарядку по достижении уровня максимального заряда и возобновит зарядку по достижении уровня минимального заряда. Уровень начала зарядки всегда должен быть выше уровня остановки зарядки.</string>
     <!-- Weather -->
-    <string name="weather_settings_title">Weather settings</string>
-    <string name="weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="lockscreen_weather_title">Weather condition</string>
-    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
-    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
-    <string name="lockscreen_weather_location_title">Weather location</string>
-    <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="weather_settings_title">Настройки погоды</string>
+    <string name="weather_settings_summary">Настроить набор значков и службу погоды</string>
+    <string name="lockscreen_weather_title">Погодные условия</string>
+    <string name="lockscreen_weather_summary">Показывать текущие погодные условия и температуру</string>
+    <string name="lockscreen_weather_enabled_info">Требуется включенная служба погоды</string>
+    <string name="lockscreen_weather_location_title">Местоположение</string>
+    <string name="lockscreen_weather_location_summary">Отображать текущее местоположение</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Адаптивное воспроизведение</string>
     <string name="adaptive_playback_summary">Приостанавливать воспроизведение при выключенном звуке и возобновлять его, увеличивая громкость в пределах таймаута</string>
@@ -929,7 +964,10 @@
     <string name="adaptive_playback_timeout_title">Таймаут воспроизведения</string>
     <!-- Custom logo -->
     <string name="status_bar_logo_title">Логотип</string>
-    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_summary">Отображать пользовательский логотип слева или справа в строки состояния</string>
     <string name="status_bar_logo_position_title">Расположение логотипа</string>
     <string name="status_bar_logo_style_title">Стиль логотипа</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Установлено: %1$s</string>
+    <string name="app_info_update_time">Обновлено: %1$s</string>
 </resources>

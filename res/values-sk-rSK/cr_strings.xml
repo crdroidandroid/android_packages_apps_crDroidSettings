@@ -100,6 +100,9 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="unit_milliseconds">milisekundy</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">hz</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="longpress_to_clipboard">Long-press to copy</string>
     <!-- Hardware info -->
     <string name="platform_revision">Platforma</string>
     <string name="total_ram">Celková RAM</string>
@@ -198,6 +201,12 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="backlight_summary_disabled">Vypnuté</string>
     <string name="backlight_summary_enabled_with_timeout">Zapnuté na <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Zapnuté</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Ponuka tlačidla Napájanie</string>
     <string name="power_menu_summary">Prispôsobiť možnosti menu tlačidla Napájanie</string>
@@ -703,6 +712,9 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="app_volume_summary">Zobraziť tlačidlo hlasitosti pre jednotlivé aplikácie v dialógovom okne hlasitosti</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- Open DNS Option -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Quad9 DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Výstraha pomocou Upozornení</string>
     <string name="alert_slider_notifications_summary">Zobraziť upozornenie, keď sa zmení poloha posuvníka upozornení</string>
@@ -761,6 +773,29 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="custom_timeout_summary_2hours">Po 2\u00a0hodinách</string>
     <string name="custom_timeout_summary_4hours">Po 4\u00a0hodinách</string>
     <string name="custom_timeout_summary_8hours">Po 8\u00a0hodinách</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
+    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
+    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
+    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
+    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
+    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
+        <item quantity="few">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="many">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Skryť QS na zabezpečenej obrazovke uzamknutia</string>
     <string name="disable_qs_summary">Zabrániť prístupu k\u00a0dlaždiciam Rýchleho nastavenia na zabezpečenej obrazovke uzamknutia</string>
@@ -933,4 +968,7 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
     <string name="status_bar_logo_position_title">Umiestnenie loga</string>
     <string name="status_bar_logo_style_title">Štýl loga</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Installed: %1$s</string>
+    <string name="app_info_update_time">Updated: %1$s</string>
 </resources>

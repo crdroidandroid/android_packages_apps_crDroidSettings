@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">Millisekunden</string>
     <string name="unit_pixels">Bildschirmdichte in dip</string>
     <string name="unit_hz">Hz</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">In die Zwischenablage kopiert</string>
+    <string name="longpress_to_clipboard">Gedrückt halten zum Kopieren</string>
     <!-- Hardware info -->
     <string name="platform_revision">Plattform</string>
     <string name="total_ram">Gesamter RAM</string>
@@ -197,6 +200,10 @@
     <string name="backlight_summary_disabled">Deaktiviert</string>
     <string name="backlight_summary_enabled_with_timeout">Aktiviert für <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Aktiviert</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> Sekunde</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> Sekunden</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Ein-/Aus-Menü</string>
     <string name="power_menu_summary">Optionen des Ein-/Aus-Menüs anpassen</string>
@@ -702,6 +709,9 @@
     <string name="app_volume_summary">Lautstärkeregler für Apps im Lautstärkepanel anzeigen</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- Open DNS Option -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Quad9 DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Alert-Slider-Benachrichtigungen</string>
     <string name="alert_slider_notifications_summary">Benachrichtigung beim Ändern der Alert-Slider-Position anzeigen</string>
@@ -760,6 +770,27 @@
     <string name="custom_timeout_summary_2hours">2 Stunden</string>
     <string name="custom_timeout_summary_4hours">4 Stunde</string>
     <string name="custom_timeout_summary_8hours">8 Stunden</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Verstecktes Netzwerk</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Der Name Ihres mobilen Hotspots wird nicht in der Liste der verfügbaren WLAN-Netzwerke angezeigt.</string>
+    <string name="wifi_hotspot_client_manager_title">Verbundene Geräte</string>
+    <string name="wifi_hotspot_client_manager_summary">Mit dem Hotspot verbundene Geräte anzeigen und verwalten</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Mit dem Hotspot verbundene Geräte auflisten</string>
+    <string name="wifi_hotspot_client_limit_title">Max. Anzahl verbundener Geräte</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blockierte Geräte</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Verbundene Geräte</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Gerät blockieren</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Dadurch wird die Verbindung mit „<xliff:g id="device_name">%1$s</xliff:g>“ getrennt und das Gerät der Blockierliste hinzugefügt</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Gerät nicht mehr blockieren</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Das Gerät „<xliff:g id="device_name">%1$s</xliff:g>“ kann sich dann mit diesem Hotspot verbinden</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Derzeit keine Clients verfügbar. Verbundene und blockierte Geräte werden hier aufgelistet, sobald sie verfügbar sind.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2,4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2,4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Bis zu <xliff:g id="device_num">%1$d</xliff:g> Geräte können sich mit diesem Hotspot verbinden</item>
+        <item quantity="one">Nur <xliff:g id="device_num">%1$d</xliff:g> Gerät kann sich mit diesem Hotspot verbinden</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Zugriff auf Schnelleinstellungen nur bei entsperrtem Gerät</string>
     <string name="disable_qs_summary">Zugriff auf Schnelleinstellungen nicht erlauben, wenn das Gerät nicht entsperrt ist</string>
@@ -932,4 +963,7 @@
     <string name="status_bar_logo_summary">Benutzerdefiniertes Logo rechts oder links in der Statusleiste anzeigen</string>
     <string name="status_bar_logo_position_title">Logoposition</string>
     <string name="status_bar_logo_style_title">Logostil</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Installiert: %1$s</string>
+    <string name="app_info_update_time">Aktualisiert: %1$s</string>
 </resources>

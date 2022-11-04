@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">毫秒</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">赫兹</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">已复制到剪贴板</string>
+    <string name="longpress_to_clipboard">长按复制</string>
     <!-- Hardware info -->
     <string name="platform_revision">平台</string>
     <string name="total_ram">总内存</string>
@@ -197,6 +200,9 @@
     <string name="backlight_summary_disabled">禁用</string>
     <string name="backlight_summary_enabled_with_timeout">保持背光灯 <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">启用</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> 秒</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">电源菜单</string>
     <string name="power_menu_summary">自定义电源菜单选项</string>
@@ -470,7 +476,7 @@
     <string name="pulse_color_accent">强调色</string>
     <string name="pulse_color_custom">自定义</string>
     <string name="pulse_color_lava_lamp">熔岩灯</string>
-    <string name="pulse_color_auto">Album</string>
+    <string name="pulse_color_auto">专辑</string>
     <string name="pulse_color_user_title">选择颜色</string>
     <string name="pulse_smoothing_enabled_title">开启平滑模式</string>
     <string name="pulse_smoothing_enabled_summary">每条频谱线动画更平滑</string>
@@ -631,8 +637,8 @@
     <string name="mic_camera_privacy_indicator_summary">当任何应用程序使用麦克风或摄像头时显示单独的指示器</string>
     <string name="location_privacy_indicator_title">位置隐私指示器</string>
     <string name="location_privacy_indicator_summary">当任何应用程序使用位置时显示单独的指示器</string>
-    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
-    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
+    <string name="projection_privacy_indicator_title">媒体投影隐私指示器</string>
+    <string name="projection_privacy_indicator_summary">当设备屏幕投影时显示指示器</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">深度睡眠</string>
     <!-- In-call feedback -->
@@ -702,13 +708,16 @@
     <string name="app_volume_summary">在音量对话框中显示每个应用的音量按钮</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- Open DNS Option -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Quad9 DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">警报滑块通知</string>
     <string name="alert_slider_notifications_summary">更改警报滑块位置时显示通知</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">全屏应用</string>
     <string name="display_cutout_force_fullscreen_summary">强制应用忽略刘海区域</string>
-    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
+    <string name="display_cutout_force_fullscreen_no_apps">无应用</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">无限照片存储</string>
     <string name="use_photos_spoof_summary">将您的设备伪装成 Pixel XL for Google Photos 应用，仅提供无限存储空间进行备份</string>
@@ -760,6 +769,26 @@
     <string name="custom_timeout_summary_2hours">2 小时</string>
     <string name="custom_timeout_summary_4hours">4 小时</string>
     <string name="custom_timeout_summary_8hours">8 小时</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">隐藏网络</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">您的移动热点名称将不会出现在可用的 WLAN 网络列表中</string>
+    <string name="wifi_hotspot_client_manager_title">已连接的设备</string>
+    <string name="wifi_hotspot_client_manager_summary">列出并管理连接到热点的设备</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">列出连接到热点的设备</string>
+    <string name="wifi_hotspot_client_limit_title">已连接设备限制</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">已阻止的设备</string>
+    <string name="wifi_hotspot_connected_clients_list_title">已连接的设备</string>
+    <string name="wifi_hotspot_block_client_dialog_title">阻止设备</string>
+    <string name="wifi_hotspot_block_client_dialog_text">此操作将断开 \"<xliff:g id="device_name">%1$s</xliff:g>\" 与该设备的连接，并将其添加到阻止列表中</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">不阻止设备</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">设备 \"<xliff:g id="device_name">%1$s</xliff:g>\" 将能够连接到这个热点</string>
+    <string name="wifi_hotspot_client_manager_footer_text">当前没有可用的客户端。如果可用，将在此处列出已连接和已阻止的设备。</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">最多可以有 <xliff:g id="device_num">%1$d</xliff:g> 个设备连接到这个热点上</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">在安全锁定屏幕中隐藏快速设置</string>
     <string name="disable_qs_summary">防止在安全锁屏上访问快速设置磁贴</string>
@@ -915,13 +944,13 @@
     <string name="smart_charging_reset_stats_summary">达到用户定义的充电级别后重置电池统计</string>
     <string name="smart_charging_footer">智能充电允许您设置最大充电级别来延长电池寿命。 如果启用，电池将停止在停止触发级别充电并恢复在开始触发级别充电。 停止触发级别应该总是大于起始触发级别</string>
     <!-- Weather -->
-    <string name="weather_settings_title">Weather settings</string>
-    <string name="weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="lockscreen_weather_title">Weather condition</string>
-    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
-    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
-    <string name="lockscreen_weather_location_title">Weather location</string>
-    <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="weather_settings_title">天气设置</string>
+    <string name="weather_settings_summary">设置图标包与天气服务</string>
+    <string name="lockscreen_weather_title">天气状况</string>
+    <string name="lockscreen_weather_summary">显示当前天气状况和温度</string>
+    <string name="lockscreen_weather_enabled_info">需要启用天气服务</string>
+    <string name="lockscreen_weather_location_title">天气位置</string>
+    <string name="lockscreen_weather_location_summary">显示当前天气位置</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">自适应播放</string>
     <string name="adaptive_playback_summary">静音时暂停媒体，并在超时范围内增加音量以恢复媒体</string>
@@ -929,7 +958,10 @@
     <string name="adaptive_playback_timeout_title">播放超时</string>
     <!-- Custom logo -->
     <string name="status_bar_logo_title">标识</string>
-    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_summary">在状态栏左侧或右侧显示自定义标志</string>
     <string name="status_bar_logo_position_title">Logo 位置</string>
     <string name="status_bar_logo_style_title">Logo 样式</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">已安装: %1$s</string>
+    <string name="app_info_update_time">已更新: %1$s</string>
 </resources>

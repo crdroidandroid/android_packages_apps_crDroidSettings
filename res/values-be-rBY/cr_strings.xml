@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">мілісекунды</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">Гц</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Скапіявана ў буфер абмену</string>
+    <string name="longpress_to_clipboard">Працяглы націск для капіявання</string>
     <!-- Hardware info -->
     <string name="platform_revision">Платформа</string>
     <string name="total_ram">Усяго АЗП</string>
@@ -197,6 +200,12 @@
     <string name="backlight_summary_disabled">Адключана</string>
     <string name="backlight_summary_enabled_with_timeout">Адключана на <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Уключана</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> секунда</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> секунды</item>
+        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> секунд</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> секунд</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Меню кнопкі сілкавання</string>
     <string name="power_menu_summary">Налада параметраў меню кнопкі сілкавання</string>
@@ -471,7 +480,7 @@
     <string name="pulse_color_accent">Акцэнт</string>
     <string name="pulse_color_custom">Карыстацкі</string>
     <string name="pulse_color_lava_lamp">Lava лямпа</string>
-    <string name="pulse_color_auto">Album</string>
+    <string name="pulse_color_auto">Альбом</string>
     <string name="pulse_color_user_title">Выбраць колер</string>
     <string name="pulse_smoothing_enabled_title">Уключыць згладжванне</string>
     <string name="pulse_smoothing_enabled_summary">Больш гладкая анімацыя слупкоў</string>
@@ -632,8 +641,8 @@
     <string name="mic_camera_privacy_indicator_summary">Паказваць асобны індыкатар, калі якая-небудзь праграма выкарыстоўвае мікрафон або камеру</string>
     <string name="location_privacy_indicator_title">Індыкатар прыватнасці месцазнаходжання</string>
     <string name="location_privacy_indicator_summary">Паказваць асобны індыкатар, калі любая праграма выкарыстоўвае месцазнаходжанне</string>
-    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
-    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
+    <string name="projection_privacy_indicator_title">Індыкатар прыватнасці медыя праекцыі</string>
+    <string name="projection_privacy_indicator_summary">Паказваць індыкатар пры праецыраванні экрана прылады</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Глыбокі сон</string>
     <!-- In-call feedback -->
@@ -703,13 +712,16 @@
     <string name="app_volume_summary">Кнопка гучнасці для кожнай праграмы ў дыялогавым акне гучнасці</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- Open DNS Option -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Quad9 DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Паўзунок апавяшчэнняў</string>
     <string name="alert_slider_notifications_summary">Паказаць апавяшчэнне пры змене становішча паўзунка апавяшчэнняў</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Поўнаэкранныя праграмы</string>
     <string name="display_cutout_force_fullscreen_summary">Ігнараванне выразу выбранымі праграмамі</string>
-    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Няма праграм</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Безлімітнае \"Google Фота\"</string>
     <string name="use_photos_spoof_summary">Падрабляем свая прылада пад Pixel XL для \"Google Фота\", каб падаць неабмежаваную сховішча для рэзервовага капіявання фатаграфій</string>
@@ -761,6 +773,29 @@
     <string name="custom_timeout_summary_2hours">2 гадзіны</string>
     <string name="custom_timeout_summary_4hours">4 гадзіны</string>
     <string name="custom_timeout_summary_8hours">8 гадзіны</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Схаваная сетка</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Імя вашага хот-споту не з\'явіцца ў спісе даступных сетак WLAN.</string>
+    <string name="wifi_hotspot_client_manager_title">Падлучаныя прылады</string>
+    <string name="wifi_hotspot_client_manager_summary">Спіс і кіраванне прылад, падлучаных да пункту доступу</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Спіс прылад, падлучаных да пункту доступу</string>
+    <string name="wifi_hotspot_client_limit_title">Ліміт падлучаных прылад</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Заблакаваныя прылады</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Падлучаныя прылады</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Заблакаваныя прылады</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Гэта дзеянне адключыць \"<xliff:g id="device_name">%1$s</xliff:g>\" ад гэтай прылады і дадасць яго ў спіс блакавання</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Разблакаваць прыладу</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Гэтая прылада \"<xliff:g id="device_name">%1$s</xliff:g>\" зможа падлучыцца да гэтага пункту доступу</string>
+    <string name="wifi_hotspot_client_manager_footer_text">У гэты час няма даступных кліентаў. Падлучаныя і заблакаваныя прылады будуць пералічаны тут, калі яны стануць даступныя.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz і 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz і 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Да гэтага пункту доступу можа падключацца да <xliff:g id="device_num">%1$d</xliff:g> прылад</item>
+        <item quantity="one">Да гэтага пункту доступу можа падключацца <xliff:g id="device_num">%1$d</xliff:g> прылада</item>
+        <item quantity="few">Да гэтага пункту доступу можа падключацца да <xliff:g id="device_num">%1$d</xliff:g> прылад</item>
+        <item quantity="many">Да гэтага пункту доступу можа падключацца да <xliff:g id="device_num">%1$d</xliff:g> прылад</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Не раскрываць меню хуткіх налад на экране блакавання</string>
     <string name="disable_qs_summary">Забараніць доступ да хуткіх налад на экране блакавання</string>
@@ -916,13 +951,13 @@
     <string name="smart_charging_reset_stats_summary">Скідаць статыстыку батарэі пасля дасягнення зададзенага ўзроўню зараду</string>
     <string name="smart_charging_footer">Разумная зарадка дазваляе вам зрабіць максімальны ўзровень зарада для павелічэння тэрміна жыцця акумулятара. Пры уключанай функцыі акумулятар спыніць зарадку па дасягненню ўзроўню максімальнага зарада і адновіць зарадку па дасягненню ўзроўню мінімальнага зарада.</string>
     <!-- Weather -->
-    <string name="weather_settings_title">Weather settings</string>
-    <string name="weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="lockscreen_weather_title">Weather condition</string>
-    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
-    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
-    <string name="lockscreen_weather_location_title">Weather location</string>
-    <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="weather_settings_title">Налады надвор\'я</string>
+    <string name="weather_settings_summary">Налада пакета значкоў і службы надвор\'я</string>
+    <string name="lockscreen_weather_title">Умовы надвор\'я</string>
+    <string name="lockscreen_weather_summary">Адлюстраванне бягучых умоў надвор\'я і тэмпературы</string>
+    <string name="lockscreen_weather_enabled_info">Патрабуецца ўключэнне службы надвор\'я</string>
+    <string name="lockscreen_weather_location_title">Месцазнаходжанне надвор\'я</string>
+    <string name="lockscreen_weather_location_summary">Адлюстраванне бягучага месцазнаходжання надвор\'я</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Адаптыўнае прайграванне</string>
     <string name="adaptive_playback_summary">Прыпыніце прайграванне, калі гучнасць адключана, і аднавіце яго, павялічыўшы гучнасць пасля перапынку</string>
@@ -930,7 +965,10 @@
     <string name="adaptive_playback_timeout_title">Час чакання прайгравання</string>
     <!-- Custom logo -->
     <string name="status_bar_logo_title">Лагатып</string>
-    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_summary">Адлюстраванне ўласнага лагатыпа злева або справа ад радка стану</string>
     <string name="status_bar_logo_position_title">Пазіцыя лагатыпа</string>
     <string name="status_bar_logo_style_title">Стыль лагатыпу</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Усталяваны: %1$s</string>
+    <string name="app_info_update_time">Абноўлены: %1$s</string>
 </resources>

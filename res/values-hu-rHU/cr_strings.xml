@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">ezredmásodperc</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">hz</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Vágólapra másolva</string>
+    <string name="longpress_to_clipboard">Másoláshoz nyomja hosszan</string>
     <!-- Hardware info -->
     <string name="platform_revision">Hardver-felület</string>
     <string name="total_ram">Az összes RAM</string>
@@ -197,6 +200,10 @@
     <string name="backlight_summary_disabled">Letiltva</string>
     <string name="backlight_summary_enabled_with_timeout"><xliff:g id="timeout">%s</xliff:g> másodpercig engedélyezve</string>
     <string name="backlight_summary_enabled">Engedélyezve</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> másodperc</item>
+        <item quantity="other"><xliff:g id="másodperc">%d</xliff:g> másodperc</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Kikapcsolómenü</string>
     <string name="power_menu_summary">A kikapcsolómenü lehetőségeinek testreszabása</string>
@@ -702,6 +709,9 @@
     <string name="app_volume_summary">Különálló hangerőgomb megjelenítése a panelen</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- Open DNS Option -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Quad9 DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Csúszkafigyelmeztetés</string>
     <string name="alert_slider_notifications_summary">Értesítés megjelenítése amikor a riasztási csúszka helyzete megváltozott</string>
@@ -760,6 +770,27 @@
     <string name="custom_timeout_summary_2hours">2 óra</string>
     <string name="custom_timeout_summary_4hours">4 óra</string>
     <string name="custom_timeout_summary_8hours">8 óra</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Rejtett hálózat</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Az Ön mobil hotspotja nem fog megjelenni az elérhető WLAN hálózatok listájában.</string>
+    <string name="wifi_hotspot_client_manager_title">Csatlakoztatott készülékek</string>
+    <string name="wifi_hotspot_client_manager_summary">A csatlakoztatott készülékek listája és kezelése</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">A hotspothoz csatlakoztatott készülékek listája</string>
+    <string name="wifi_hotspot_client_limit_title">Csatlakoztathatók számának megadása</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blokkolt készülékek</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Csatlakoztatott készülékek</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Készüléktiltás</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Ez a művelet lecsatlakoztatja \"<xliff:g id="device_name">%1$s</xliff:g>\" készüléket erről az eszközről és tiltólistához adja</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Készülékfeloldás</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">\"<xliff:g id="device_name">%1$s</xliff:g>\"-készülék kapcsolódhat ehhez a hotspothoz</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Jelenleg nincs listázható kliens. Amint lesz akár csatlakoztatott, akár letiltott, az itt fog megjelenni.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz és 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz és 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Maximum <xliff:g id="device_num">%1$d</xliff:g> készülék csatlakozhat erre a hostpothoz</item>
+        <item quantity="one">Maximum <xliff:g id="device_num">%1$d</xliff:g> készülék csatlakozhat erre a hostpothoz</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">A gyorsbeállítások elrejtése</string>
     <string name="disable_qs_summary">A biztonságos képernyőzáron nem férhet hozzá a gyorsbeállításokhoz</string>
@@ -932,4 +963,7 @@
     <string name="status_bar_logo_summary">Egyéni logo megjelenítése az állapotsor jobb vagy bal oldalán</string>
     <string name="status_bar_logo_position_title">A logó pozíciója</string>
     <string name="status_bar_logo_style_title">Logóstílus</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">%1$s -kor telepítve</string>
+    <string name="app_info_update_time">%1$s -kor frissítve</string>
 </resources>

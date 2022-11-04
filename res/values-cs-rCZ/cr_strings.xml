@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">ms</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">Hz</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Zkopírováno do schránky</string>
+    <string name="longpress_to_clipboard">Přidržením zkopírovat</string>
     <!-- Hardware info -->
     <string name="platform_revision">Platforma</string>
     <string name="total_ram">Celkem RAM</string>
@@ -197,6 +200,12 @@
     <string name="backlight_summary_disabled">Nepodsvěcovat</string>
     <string name="backlight_summary_enabled_with_timeout">Podsvícení zapnuto na <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Podsvícení zapnuto</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> sekunda</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> sekundy</item>
+        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> sekund</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> sekund</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Menu napájení</string>
     <string name="power_menu_summary">Přizpůsobit možnosti Menu napájení</string>
@@ -631,8 +640,8 @@
     <string name="mic_camera_privacy_indicator_summary">Zobrazit samostatný ukazatel, pokud jakákoliv aplikace používá mikrofon nebo fotoaparát</string>
     <string name="location_privacy_indicator_title">Ukazatel ochrany soukromí polohy</string>
     <string name="location_privacy_indicator_summary">Zobrazit samostatný ukazatel, když jakákoliv aplikace používá polohu</string>
-    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
-    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
+    <string name="projection_privacy_indicator_title">Indikátor soukromí při projekci médií</string>
+    <string name="projection_privacy_indicator_summary">Zobrazit indikátor při promítnutí obrazovky zařízení</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Hluboký spánek</string>
     <!-- In-call feedback -->
@@ -702,13 +711,16 @@
     <string name="app_volume_summary">Zobrazit tlačítko hlasitosti pro jednotlivé aplikace v\u00a0dialogovém okně hlasitosti</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- Open DNS Option -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Quad9 DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Oznámení posuvníku upozornění</string>
     <string name="alert_slider_notifications_summary">Zobrazit oznámení při změně polohy posuvníku upozornění</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Aplikace přes celou obrazovku</string>
     <string name="display_cutout_force_fullscreen_summary">Vynutit, aby aplikace ignorovaly výřez v\u00a0displeji</string>
-    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Žádné aplikace</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Neomezené úložiště fotografií</string>
     <string name="use_photos_spoof_summary">Spouštět vaše zařízení jako Pixel XL pro aplikaci Google Fotky pouze k poskytnutí neomezeného úložiště pro zálohu</string>
@@ -760,6 +772,29 @@
     <string name="custom_timeout_summary_2hours">Po 2\u00a0hodinách</string>
     <string name="custom_timeout_summary_4hours">Po 4\u00a0hodinách</string>
     <string name="custom_timeout_summary_8hours">Po 8\u00a0hodinách</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Skrytá síť</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Název vašeho mobilního hotspotu se nezobrazí v seznamu dostupných WLAN sítí.</string>
+    <string name="wifi_hotspot_client_manager_title">Připojená zařízení</string>
+    <string name="wifi_hotspot_client_manager_summary">Vypsat a\u00a0spravovat zařízení připojené k\u00a0hotspotu</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Seznam zařízení připojených k hotspotu</string>
+    <string name="wifi_hotspot_client_limit_title">Omezení počtu připojených zařízení</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blokovaná zařízení</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Připojená zařízení</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Blokovat zařízení</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Tato akce odpojí \"<xliff:g id="device_name">%1$s</xliff:g>\" od tohoto zařízení a přidá jej do seznamu blokovaných</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Odblokovat zařízení</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Zařízení \"<xliff:g id="device_name">%1$s</xliff:g>\" se bude moci připojit k\u00a0tomuto hotspotu</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Aktuálně nejsou k dispozici žádní klienti. Připojená a blokovaná zařízení budou zobrazena v případě, že budou dostupná.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2,4 GHz a 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2,4 GHz a 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">K tomuto hotspotu se může připojit až <xliff:g id="device_num">%1$d</xliff:g> zařízení</item>
+        <item quantity="one">K tomuto hotspotu se může připojit <xliff:g id="device_num">%1$d</xliff:g> zařízení</item>
+        <item quantity="few">K tomuto hotspotu se mohou připojit až <xliff:g id="device_num">%1$d</xliff:g> zařízení</item>
+        <item quantity="many">K tomuto hotspotu se může připojit až <xliff:g id="device_num">%1$d</xliff:g> zařízení</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Skrýt QS na zabezpečené obrazovce uzamčení</string>
     <string name="disable_qs_summary">Zabránit přístupu k\u00a0dlaždicím Rychlého nastavení na zabezpečené obrazovce uzamčení</string>
@@ -915,21 +950,24 @@
     <string name="smart_charging_reset_stats_summary">Obnoví statistiky baterie po dosažení úrovně nabití definované uživatelem</string>
     <string name="smart_charging_footer">Chytré nabíjení vám umožňuje nastavit maximální úroveň nabíjení pro prodloužení životnosti baterie. Pokud je povoleno, baterie se přestane nabíjet po dosažení Úrovně ukončení, a\u00a0zase bude v\u00a0nabíjení pokračovat při dosažení Úrovně spuštění. Úroveň ukončení by měla být vždy vyšší než Úroveň spuštění.</string>
     <!-- Weather -->
-    <string name="weather_settings_title">Weather settings</string>
-    <string name="weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="lockscreen_weather_title">Weather condition</string>
-    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
-    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
-    <string name="lockscreen_weather_location_title">Weather location</string>
-    <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="weather_settings_title">Nastavení počasí</string>
+    <string name="weather_settings_summary">Nastavení balíčků ikon a služby počasí</string>
+    <string name="lockscreen_weather_title">Počasí</string>
+    <string name="lockscreen_weather_summary">Zobrazit aktuální počasí a teplotu</string>
+    <string name="lockscreen_weather_enabled_info">Vyžaduje povolení služby počasí</string>
+    <string name="lockscreen_weather_location_title">Lokalita pro počasí</string>
+    <string name="lockscreen_weather_location_summary">Zobrazit aktuální polohu počasí</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptivní přehrávání</string>
     <string name="adaptive_playback_summary">Pozastavit média, je‑li ztlumena hlasitost a\u00a0pokračovat v\u00a0přehrávání zvyšováním hlasitosti v\u00a0rozmezí časového limitu</string>
-    <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
+    <string name="adaptive_playback_intro_text">Automaticky pozastaví média, když je hlasitost ztlumena a po obnovení hlasitosti v časovém limitu se automaticky obnoví</string>
     <string name="adaptive_playback_timeout_title">Časový limit přehrávání</string>
     <!-- Custom logo -->
     <string name="status_bar_logo_title">Logo</string>
-    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_summary">Zobrazit vlastní logo vlevo nebo vpravo na stavové liště</string>
     <string name="status_bar_logo_position_title">Umístění loga</string>
     <string name="status_bar_logo_style_title">Styl loga</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Nainstalováno: %1$s</string>
+    <string name="app_info_update_time">Aktualizováno: %1$s</string>
 </resources>

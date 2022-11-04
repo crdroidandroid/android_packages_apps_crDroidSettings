@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">milisekundy</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">hz</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Skopiowano do schowka</string>
+    <string name="longpress_to_clipboard">Przytrzymaj, aby skopiować</string>
     <!-- Hardware info -->
     <string name="platform_revision">Platforma</string>
     <string name="total_ram">Całkowita pamięć RAM</string>
@@ -197,6 +200,12 @@
     <string name="backlight_summary_disabled">Wyłączony</string>
     <string name="backlight_summary_enabled_with_timeout">Włączony na <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Włączony</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> sekunda</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> sekundy</item>
+        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> sekund</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> sekund</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Menu zasilania</string>
     <string name="power_menu_summary">Dostosuj opcje menu zasilania</string>
@@ -631,8 +640,8 @@
     <string name="mic_camera_privacy_indicator_summary">Pokaż oddzielny wskaźnik, gdy jakakolwiek aplikacja używa mikrofonu lub kamery</string>
     <string name="location_privacy_indicator_title">Wskaźnik prywatności lokalizacji</string>
     <string name="location_privacy_indicator_summary">Pokaż oddzielny wskaźnik, gdy jakakolwiek aplikacja używa lokalizacji</string>
-    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
-    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
+    <string name="projection_privacy_indicator_title">Wskaźnik prywatności projekcji multimedialnej</string>
+    <string name="projection_privacy_indicator_summary">Pokaż wskaźnik, gdy ekran urządzenia jest włączony</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Głęboki sen</string>
     <!-- In-call feedback -->
@@ -702,13 +711,16 @@
     <string name="app_volume_summary">Pokaż przycisk głośności dla każdej aplikacji osobno</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- Open DNS Option -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Quad9 DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Powiadomienia suwaka alertów</string>
     <string name="alert_slider_notifications_summary">Wyświetlaj powiadomienie podczas zmiany pozycji suwaka alertów</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Aplikacje na pełnym ekranie</string>
     <string name="display_cutout_force_fullscreen_summary">Wymuś na aplikacjach ignorowanie przestrzeni wcięcia</string>
-    <string name="display_cutout_force_fullscreen_no_apps">Brak aplikacji</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Nie ma aplikacji</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Nielimitowane miejsce w aplikacji Google Zdjęcia</string>
     <string name="use_photos_spoof_summary">Sprawia, że Twoje urządzenie jest postrzegane jako Pixel XL, aby odblokować nielimitowane miejsce na kopię zdjęć</string>
@@ -760,6 +772,29 @@
     <string name="custom_timeout_summary_2hours">2 godziny</string>
     <string name="custom_timeout_summary_4hours">4 godziny</string>
     <string name="custom_timeout_summary_8hours">8 godzin</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Sieć ukryta</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Nazwa twojego punktu dostępu nie pojawi się na liście dostępnych sieci WiFi.</string>
+    <string name="wifi_hotspot_client_manager_title">Połączone urządzenia</string>
+    <string name="wifi_hotspot_client_manager_summary">Pokaż i zarządzaj urządzeniami połączonymi z punktem dostępu</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Pokaż urządzenia połączone do punktu dostępu</string>
+    <string name="wifi_hotspot_client_limit_title">Maksymalna liczba połączonych urządzeń</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Zablokowane urządzenia</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Połączone urządzenia</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Zablokuj urządzenie</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Ta czynność rozłączy \"<xliff:g id="device_name">%1$s</xliff:g>\" z tego urządzenia i doda go do listy zablokowanych</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Odblokuj urządzenie</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Urządzenie \"<xliff:g id="device_name">%1$s</xliff:g>\" będzie mogło połączyć się z tym punktem dostępu</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Aktualnie brak dostępnych urządzeń. Połączone i zablokowane urządzenia zostaną wyświetlone tutaj, jeśli będą dostępne.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz i 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz i 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Maksymalnie <xliff:g id="device_num">%1$d</xliff:g> urządzeń może się połączyć z tym punktem dostępu</item>
+        <item quantity="one">Maksymalnie <xliff:g id="device_num">%1$d</xliff:g> urządzenie może się połączyć z tym punktem dostępu</item>
+        <item quantity="few">Maksymalnie <xliff:g id="device_num">%1$d</xliff:g> urządzenia mogą się połączyć z tym punktem dostępu</item>
+        <item quantity="many">Maksymalnie <xliff:g id="device_num">%1$d</xliff:g> urządzeń może się połączyć z tym punktem dostępu</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Ukryj szybkie ustawienia z poziomu blokady ekranu</string>
     <string name="disable_qs_summary">Blokuj dostęp do kafelków szybkich ustawień z poziomu blokady ekranu</string>
@@ -932,4 +967,7 @@
     <string name="status_bar_logo_summary">Wyświetl niestandardowe logo po lewej lub prawej stronie paska stanu</string>
     <string name="status_bar_logo_position_title">Położenie logo</string>
     <string name="status_bar_logo_style_title">Styl logo</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Zainstalowano: %1$s</string>
+    <string name="app_info_update_time">Zaktualizowano: %1$s</string>
 </resources>

@@ -22,7 +22,7 @@
     <string name="reset_settings_message">Ini akan mengatur ulang sebagian besar pengaturan crdroid ke nilai default untuk pengguna saat ini. Apakah Anda ingin melanjutkan?</string>
     <!-- Personalization Categories -->
     <string name="button_title">Tombol</string>
-    <string name="lockscreen_title">Kunci Layar</string>
+    <string name="lockscreen_title">Layar Kunci</string>
     <string name="misc_title">Lain-lain</string>
     <string name="navigation_title">Navigasi</string>
     <string name="notifications_title">Notifikasi</string>
@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">milidetik</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">hz</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Disalin ke papan klip</string>
+    <string name="longpress_to_clipboard">Tekan lama untuk menyalin</string>
     <!-- Hardware info -->
     <string name="platform_revision">Platform</string>
     <string name="total_ram">Total RAM</string>
@@ -197,6 +200,9 @@
     <string name="backlight_summary_disabled">Dinonaktifkan</string>
     <string name="backlight_summary_enabled_with_timeout">Diaktifkan untuk <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Diaktifkan</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> detik</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Menu daya</string>
     <string name="power_menu_summary">Sesuaikan opsi menu daya</string>
@@ -621,7 +627,7 @@
     <string name="notification_heads_up_timeout_title">Waktu habis</string>
     <string name="notification_heads_up_timeout_summary">Waktu untuk menampilkan notifikasi mengambang</string>
     <!-- Less boring heads up -->
-    <string name="less_boring_heads_up_title">Kurang membosankan</string>
+    <string name="less_boring_heads_up_title">Kurangi frekuensi</string>
     <string name="less_boring_heads_up_summary">Tampilkan notifikasi mengambang hanya untuk aplikasi alarm, telepon, dan pesan</string>
     <!-- Notifications while screen on -->
     <string name="notification_sound_vib_screen_on_title">Notifikasi berisik</string>
@@ -651,8 +657,8 @@
     <string name="flashlight_on_call_ignore_dnd_summary">Apakah akan berkedip saat mode Jangan Ganggu aktif</string>
     <string name="flashlight_on_call_rate_title">Tingkat kedipan</string>
     <!-- Gaming mode -->
-    <string name="gaming_mode_title">Ruang Permainan</string>
-    <string name="gaming_mode_summary">Fitur ekstra untuk pengalaman bermain game yang imersif</string>
+    <string name="gaming_mode_title">Ruang Game</string>
+    <string name="gaming_mode_summary">Fitur ekstra untuk pengalaman bermain game yang impresif</string>
     <!-- Navbar Animation -->
     <string name="pixel_navbar_anim_title">Animasi Pixel</string>
     <string name="pixel_navbar_anim_summary">Aktifkan animasi gaya pixel untuk bilah navigasi 2/3 tombol</string>
@@ -661,7 +667,7 @@
     <string name="enable_fingerprint_ripple_effect_summary">Tampilkan efek riak saat membuka kunci dengan sidik jari</string>
     <!-- Old mobiletype icon style -->
     <string name="old_mobiletype_title">Ikon sinyal gaya lama</string>
-    <string name="old_mobiletype_summary">Menggabungkan sinyal dan ikon jenis sinyal</string>
+    <string name="old_mobiletype_summary">Gabungkan ikon sinyal dan tipe sinyal</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Animasi layar mati</string>
     <string name="screen_off_animation_default">Bawaan</string>
@@ -698,10 +704,13 @@
     <string name="auto_brightness_one_shot_summary">Penyesuaian kecerahan hanya akan terjadi pada saat layar dihidupkan</string>
     <!-- Per-app volume -->
     <string name="app_volume">Volume aplikasi</string>
-    <string name="app_volume_title">Kontrol volume per-aplikasi</string>
+    <string name="app_volume_title">Kontrol volume per aplikasi</string>
     <string name="app_volume_summary">Tampilkan tombol volume per aplikasi ke dalam dialog volume</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- Open DNS Option -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Quad9 DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Notifikasi slider peringatan</string>
     <string name="alert_slider_notifications_summary">Tampilan notifikasi ketika mengubah posisi slider peringatan</string>
@@ -760,6 +769,26 @@
     <string name="custom_timeout_summary_2hours">2 jam</string>
     <string name="custom_timeout_summary_4hours">4 jam</string>
     <string name="custom_timeout_summary_8hours">8 jam</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Jaringan tersembunyi</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Nama hotspot seluler Anda tidak akan muncul dalam daftar jaringan WiFi yang tersedia.</string>
+    <string name="wifi_hotspot_client_manager_title">Perangkat yang terhubung</string>
+    <string name="wifi_hotspot_client_manager_summary">Daftar dan kelola perangkat yang terhubung ke hotspot</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Daftar perangkat yang terhubung ke hotspot</string>
+    <string name="wifi_hotspot_client_limit_title">Batas perangkat yang terhubung</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Perangkat Diblokir</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Perangkat Terhubung</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Blokir perangkat</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Tindakan ini akan memutuskan \"<xliff:g id="device_name">%1$s</xliff:g>\" dari perangkat ini dan menambahkannya ke daftar blokir</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Buka blokir perangkat</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Perangkat \"<xliff:g id="device_name">%1$s</xliff:g>\" akan dapat terhubung ke hotspot ini</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Tidak ada klien yang tersedia saat ini. Perangkat yang terhubung dan diblokir akan dicantumkan di sini jika tersedia.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Hingga <xliff:g id="device_num">%1$d</xliff:g> perangkat dapat terhubung ke hotspot ini</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Sembunyikan Setelan Cepat pada layar kunci aman</string>
     <string name="disable_qs_summary">Cegah akses ke ubin Setelan Cepat pada layar kunci aman</string>
@@ -932,4 +961,7 @@
     <string name="status_bar_logo_summary">Tampilkan logo khusus di kiri atau kanan bilah status</string>
     <string name="status_bar_logo_position_title">Posisi Logo</string>
     <string name="status_bar_logo_style_title">Gaya logo</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Terpasang: %1$s</string>
+    <string name="app_info_update_time">Diperbarui: %1$s</string>
 </resources>

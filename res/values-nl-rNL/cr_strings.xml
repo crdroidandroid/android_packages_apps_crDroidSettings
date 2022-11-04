@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">milliseconden</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">hz</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Naar klembord gekopieerd</string>
+    <string name="longpress_to_clipboard">Lang ingedrukt houden om te kopiëren</string>
     <!-- Hardware info -->
     <string name="platform_revision">Platform</string>
     <string name="total_ram">Totale RAM</string>
@@ -197,6 +200,10 @@
     <string name="backlight_summary_disabled">Uitgeschakeld</string>
     <string name="backlight_summary_enabled_with_timeout">Ingeschakeld voor <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Ingeschakeld</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="one"><xliff:g id="seconden">%d</xliff:g> seconde</item>
+        <item quantity="other"><xliff:g id="seconds">%d </xliff:g> seconden</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Opties in afsluitmenu</string>
     <string name="power_menu_summary">Power Menu Opties</string>
@@ -631,8 +638,8 @@
     <string name="mic_camera_privacy_indicator_summary">Toon aparte indicator wanneer een app de microfoon of camera gebruikt</string>
     <string name="location_privacy_indicator_title">Locatie privacy indicator</string>
     <string name="location_privacy_indicator_summary">Toon aparte indicator wanneer een app locatie gebruikt</string>
-    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
-    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
+    <string name="projection_privacy_indicator_title">Media projectie privacy indicator</string>
+    <string name="projection_privacy_indicator_summary">Indicator weergeven wanneer apparaat wordt geprojecteerd</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Diepe slaap</string>
     <!-- In-call feedback -->
@@ -702,13 +709,16 @@
     <string name="app_volume_summary">Volumeknop per app in volumevenster weergeven</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- Open DNS Option -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Quad9 DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Alert slider meldingen</string>
     <string name="alert_slider_notifications_summary">Melding weergeven bij wijzigen van alert slider positie</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Volledige scherm apps</string>
     <string name="display_cutout_force_fullscreen_summary">Dwing apps om notch ruimte te negeren</string>
-    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Geen apps</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Onbeperkte opslag foto\'s</string>
     <string name="use_photos_spoof_summary">Je apparaat spoofen als Pixel XL voor Google Photos app enkel voor onbeperkte opslag voor back-up</string>
@@ -760,6 +770,27 @@
     <string name="custom_timeout_summary_2hours">2 uur</string>
     <string name="custom_timeout_summary_4hours">4 uur</string>
     <string name="custom_timeout_summary_8hours">8 uur</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Verborgen netwerk</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">De naam van uw mobiele hotspot zal niet worden weergegeven in de lijst met beschikbare WLAN-netwerken.</string>
+    <string name="wifi_hotspot_client_manager_title">Verbonden apparaten</string>
+    <string name="wifi_hotspot_client_manager_summary">Toon en beheer apparaten verbonden met hotspot</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Toon apparaten verbonden met hotspot</string>
+    <string name="wifi_hotspot_client_limit_title">Maximaal aantal verbonden apparaten</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Geblokkeerde apparaten</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Verbonden apparaten</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Blokkeer apparaat</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Deze actie zal \"<xliff:g id="device_name">%1$s</xliff:g>\" van dit apparaat ontkoppelen en toevoegen aan de blokkeerlijst</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Apparaat deblokkeren</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Het apparaat \"<xliff:g id="device_name">%1$s</xliff:g>\" zal kunnen verbinden met deze hotspot</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Er zijn momenteel geen clients beschikbaar. Verbonden en geblokkeerde apparaten zullen hier worden weergegeven wanneer beschikbaar.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Er kunnen maximaal <xliff:g id="device_num">%1$d</xliff:g> apparaten verbonden zijn met deze hotspot</item>
+        <item quantity="one">Er kan maximaal <xliff:g id="device_num">%1$d</xliff:g> apparaat verbonden zijn met deze hotspot</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Verberg QS op beveiligd lockscreen</string>
     <string name="disable_qs_summary">Voorkom toegang tot QS tegels op beveiligd vergrendelscherm</string>
@@ -915,13 +946,13 @@
     <string name="smart_charging_reset_stats_summary">Accustatistieken resetten na bereiken door gebruiker ingesteld laadniveau</string>
     <string name="smart_charging_footer">Met Slim opladen kun je het maximale oplaadniveau instellen om de levensduur van je batterij te verlengen. Wanneer ingeschakeld, stopt de accu het opladen op Stop triggerniveau en hervat het opladen op Start triggerniveau. Start triggerniveau moet altijd groter zijn dan stop triggerniveau.</string>
     <!-- Weather -->
-    <string name="weather_settings_title">Weather settings</string>
-    <string name="weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="lockscreen_weather_title">Weather condition</string>
-    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
-    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
-    <string name="lockscreen_weather_location_title">Weather location</string>
-    <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="weather_settings_title">Weer instellingen</string>
+    <string name="weather_settings_summary">Stel pictogrammenpakket en weerservice in</string>
+    <string name="lockscreen_weather_title">Weersomstandigheden</string>
+    <string name="lockscreen_weather_summary">Huidige weersomstandigheden en temperatuur weergeven</string>
+    <string name="lockscreen_weather_enabled_info">Vereist weerservice om aan te zetten</string>
+    <string name="lockscreen_weather_location_title">Weer locatie</string>
+    <string name="lockscreen_weather_location_summary">Toon huidige weerlocatie</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptief afspelen</string>
     <string name="adaptive_playback_summary">Pauzeer media wanneer volume uit staat en herneem het door volume te verhogen binnen de time-out</string>
@@ -929,7 +960,10 @@
     <string name="adaptive_playback_timeout_title">Afspelen time-out</string>
     <!-- Custom logo -->
     <string name="status_bar_logo_title">Logo</string>
-    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_summary">Toon een aangepast logo links of rechts van de statusbalk</string>
     <string name="status_bar_logo_position_title">Logo positie</string>
     <string name="status_bar_logo_style_title">Logo stijl</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Geïnstalleerd: %1$s</string>
+    <string name="app_info_update_time">Geüpdatet: %1$s</string>
 </resources>

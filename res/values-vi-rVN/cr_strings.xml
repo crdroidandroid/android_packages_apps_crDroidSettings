@@ -23,7 +23,7 @@
     <!-- Personalization Categories -->
     <string name="button_title">Phím</string>
     <string name="lockscreen_title">Màn hình khóa</string>
-    <string name="misc_title">Khác</string>
+    <string name="misc_title">Các tùy chọn khác</string>
     <string name="navigation_title">Điều hướng</string>
     <string name="notifications_title">Thông báo</string>
     <string name="quicksettings_title">Cài đặt nhanh</string>
@@ -88,7 +88,7 @@
     <string name="crdroid_update_title">Cập nhật</string>
     <string name="crdroid_update_summary">Kiểm tra cập nhật</string>
     <!-- App details: open play store link if app is user installed -->
-    <string name="app_play_store">Cửa hàng Play</string>
+    <string name="app_play_store">CH Play</string>
     <!-- Custom seekbar -->
     <string name="custom_seekbar_value">Giá trị: <xliff:g id="v">%s</xliff:g></string>
     <string name="custom_seekbar_default_value">mặc định</string>
@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">tích tắc</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">Hz</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Đã ghi vào bộ nhớ tạm</string>
+    <string name="longpress_to_clipboard">Nhấn giữ để sao chép</string>
     <!-- Hardware info -->
     <string name="platform_revision">Nền tảng</string>
     <string name="total_ram">Bộ nhớ Ram</string>
@@ -197,6 +200,9 @@
     <string name="backlight_summary_disabled">Tắt</string>
     <string name="backlight_summary_enabled_with_timeout">Đã bật trong <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Bật</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> giây</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Menu nguồn</string>
     <string name="power_menu_summary">Tùy chỉnh menu nguồn</string>
@@ -470,7 +476,7 @@
     <string name="pulse_color_accent">Màu nhấn</string>
     <string name="pulse_color_custom">Tùy chỉnh</string>
     <string name="pulse_color_lava_lamp">Đèn dung nham</string>
-    <string name="pulse_color_auto">Album</string>
+    <string name="pulse_color_auto">Bộ sưu tập</string>
     <string name="pulse_color_user_title">Chọn màu sắc</string>
     <string name="pulse_smoothing_enabled_title">Bật làm mượt</string>
     <string name="pulse_smoothing_enabled_summary">Thanh hoạt cảnh mượt hơn</string>
@@ -631,8 +637,8 @@
     <string name="mic_camera_privacy_indicator_summary">Hiển thị chỉ báo riêng biệt khi bất kỳ ứng dụng nào sử dụng micrô hoặc máy ảnh</string>
     <string name="location_privacy_indicator_title">Biểu tượng sử dụng vị trí</string>
     <string name="location_privacy_indicator_summary">Hiển thị chỉ báo riêng khi bất kỳ ứng dụng nào sử dụng vị trí</string>
-    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
-    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
+    <string name="projection_privacy_indicator_title">Chỉ báo quyền riêng tư của trình chiếu phương tiện</string>
+    <string name="projection_privacy_indicator_summary">Hiển thị thông báo khi truyền màn hình </string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Ngủ sâu</string>
     <!-- In-call feedback -->
@@ -702,13 +708,16 @@
     <string name="app_volume_summary">Hiển thị nút âm lượng cho mỗi ứng dụng vào hộp thoại âm lượng</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- Open DNS Option -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Quad9 DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">Các thông báo cho thanh trượt cảnh báo</string>
     <string name="alert_slider_notifications_summary">Hiển thị thông báo khi thay đổi vị trí thanh trượt cảnh báo</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Ứng dụng toàn màn hình</string>
     <string name="display_cutout_force_fullscreen_summary">Buộc các ứng dụng bỏ qua không gian tai thỏ</string>
-    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Không có ứng dụng</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Lưu trữ hình ảnh không giới hạn</string>
     <string name="use_photos_spoof_summary">Giả mạo thiết bị của bạn dưới dạng Pixel XL chỉ dành cho ứng dụng Google Photos để cung cấp bộ nhớ không giới hạn để sao lưu</string>
@@ -760,6 +769,26 @@
     <string name="custom_timeout_summary_2hours">2 giờ</string>
     <string name="custom_timeout_summary_4hours">4 giờ</string>
     <string name="custom_timeout_summary_8hours">8 giờ</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Ẩn mạng</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Tên điểm phát sóng thiết bị này sẽ không xuất hiện trong danh sách các mạng WLAN khả dụng.</string>
+    <string name="wifi_hotspot_client_manager_title">Các thiết bị đã kết nối</string>
+    <string name="wifi_hotspot_client_manager_summary">Liệt kê và quản lý các thiết bị được kết nối với điểm phát sóng</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Liệt kê các thiết bị được kết nối với điểm phát sóng</string>
+    <string name="wifi_hotspot_client_limit_title">Giới hạn thiết bị được kết nối</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Các thiết bị đã chặn</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Các thiết bị đã kết nối</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Chặn thiết bị</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Hành động này sẽ ngắt kết nối \"<xliff:g id="device_name">%1$s</xliff:g>\" khỏi thiết bị này và thêm thiết bị vào danh sách chặn</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Bỏ chặn thiết bị</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Thiết bị \"<xliff:g id="device_name">%1$s</xliff:g>\" sẽ có thể kết nối với điểm phát sóng này</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Không có thiết bị truy cập hiện có sẵn. Các thiết bị đã kết nối và bị chặn sẽ được liệt kê ở đây.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Tối đa <xliff:g id="device_num">%1$d</xliff:g> thiết bị có thể kết nối với điểm phát sóng này</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Ẩn cài đặt nhanh trên màn hình khóa an toàn</string>
     <string name="disable_qs_summary">Ngăn chặn quyền truy cập vào các ô cài đặt nhanh trên màn hình khóa an toàn</string>
@@ -917,13 +946,13 @@
 Khi được bật pin sẽ ngừng sạc ở mức dừng và tiếp tục sạc ở mức bắt đầu.
 Mức dừng phải luôn luôn lớn hơn mức bắt đầu.</string>
     <!-- Weather -->
-    <string name="weather_settings_title">Weather settings</string>
-    <string name="weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="lockscreen_weather_title">Weather condition</string>
-    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
-    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
-    <string name="lockscreen_weather_location_title">Weather location</string>
-    <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="weather_settings_title">Cài đặt thời tiết</string>
+    <string name="weather_settings_summary">Thiết lập gói biểu tượng và dịch vụ thời tiết</string>
+    <string name="lockscreen_weather_title">Điều kiện thời tiết</string>
+    <string name="lockscreen_weather_summary">Hiển thị điều kiện thời tiết và nhiệt độ hiện tại</string>
+    <string name="lockscreen_weather_enabled_info">Yêu cầu bật dịch vụ thời tiết</string>
+    <string name="lockscreen_weather_location_title">Vị trí thời tiết</string>
+    <string name="lockscreen_weather_location_summary">Hiển thị thời tiết tại vị trí của bạn</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Phát lại thích ứng</string>
     <string name="adaptive_playback_summary">Tạm dừng phát khi âm lượng bị tắt và tiếp tục phát khi tăng âm lượng trong thời gian chờ</string>
@@ -931,7 +960,10 @@ Mức dừng phải luôn luôn lớn hơn mức bắt đầu.</string>
     <string name="adaptive_playback_timeout_title">Thời gian chờ phát lại</string>
     <!-- Custom logo -->
     <string name="status_bar_logo_title">Biểu tượng</string>
-    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_summary">Hiển thị biểu tượng tùy chỉnh ở bên trái hoặc bên phải của thanh trạng thái</string>
     <string name="status_bar_logo_position_title">Vị trí của logo</string>
     <string name="status_bar_logo_style_title">Kiểu logo</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Đã cài đặt: %1$s</string>
+    <string name="app_info_update_time">Đã cập nhật: %1$s</string>
 </resources>

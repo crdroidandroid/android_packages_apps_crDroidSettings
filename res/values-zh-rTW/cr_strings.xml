@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">毫秒</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">hz</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="longpress_to_clipboard">Long-press to copy</string>
     <!-- Hardware info -->
     <string name="platform_revision">平台</string>
     <string name="total_ram">總記憶體</string>
@@ -197,6 +200,9 @@
     <string name="backlight_summary_disabled">停用</string>
     <string name="backlight_summary_enabled_with_timeout">保持背光燈開啟 <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">啟用</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">電源選單</string>
     <string name="power_menu_summary">自訂電源選單</string>
@@ -470,7 +476,7 @@
     <string name="pulse_color_accent">強調色</string>
     <string name="pulse_color_custom">自訂</string>
     <string name="pulse_color_lava_lamp">熔岩燈</string>
-    <string name="pulse_color_auto">Album</string>
+    <string name="pulse_color_auto">專輯封面</string>
     <string name="pulse_color_user_title">選擇顏色</string>
     <string name="pulse_smoothing_enabled_title">開啟平滑模式</string>
     <string name="pulse_smoothing_enabled_summary">每條頻譜線的動畫將更平滑</string>
@@ -631,8 +637,8 @@
     <string name="mic_camera_privacy_indicator_summary">當應用程式在存取麥克風或相機時顯示圖示</string>
     <string name="location_privacy_indicator_title">位置隱私指示器</string>
     <string name="location_privacy_indicator_summary">當應用程式在存取位置時顯示圖示</string>
-    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
-    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
+    <string name="projection_privacy_indicator_title">螢幕投放狀態指示器</string>
+    <string name="projection_privacy_indicator_summary">在投放螢幕時顯示</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">深度睡眠</string>
     <!-- In-call feedback -->
@@ -702,13 +708,16 @@
     <string name="app_volume_summary">在音量面板將應用程式的音量分別顯示</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- Open DNS Option -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Quad9 DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">警示滑塊通知</string>
     <string name="alert_slider_notifications_summary">更改警示滑塊位置時顯示通知</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">全螢幕應用程式</string>
     <string name="display_cutout_force_fullscreen_summary">強制應用程式忽略螢幕瀏海</string>
-    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
+    <string name="display_cutout_force_fullscreen_no_apps">沒有應用程式</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">無限相簿儲存空間</string>
     <string name="use_photos_spoof_summary">針對Google相簿將您的裝置偽裝成 Pixel XL 來取得無限相簿儲存空間</string>
@@ -760,6 +769,26 @@
     <string name="custom_timeout_summary_2hours">2 小時</string>
     <string name="custom_timeout_summary_4hours">4 小時</string>
     <string name="custom_timeout_summary_8hours">8 小時</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">隱藏網路</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">您的無線基地台將不會公開顯示。</string>
+    <string name="wifi_hotspot_client_manager_title">已連線的裝置</string>
+    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">列出已連線到無線基地台的裝置</string>
+    <string name="wifi_hotspot_client_limit_title">連接數量限制</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">已封鎖的裝置</string>
+    <string name="wifi_hotspot_connected_clients_list_title">已連線的裝置</string>
+    <string name="wifi_hotspot_block_client_dialog_title">封鎖裝置</string>
+    <string name="wifi_hotspot_block_client_dialog_text">此操作將斷開「<xliff:g id="device_name">%1$s</xliff:g>」與此裝置的連線並將其新增至封鎖清單</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">取消封鎖裝置</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
+    <string name="wifi_hotspot_client_manager_footer_text">目前沒有可顯示的裝置。有已連線或已封鎖的裝置時將在此顯示。</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">在安全鎖定畫面上停用快速設定</string>
     <string name="disable_qs_summary">設有密碼等鎖定機制時，在鎖定畫面上停用快速設定</string>
@@ -915,13 +944,13 @@
     <string name="smart_charging_reset_stats_summary">在達到使用者設定的電量後，重設電池統計數據</string>
     <string name="smart_charging_footer">智慧充電可以透過限制最大充電量來達到延長電池壽命的效果。啟用時，會在達到「停止充電電量」後暫停充電；在降至「開始充電電量」後繼續。「停止充電電量」應始終大於「開始充電電量」。</string>
     <!-- Weather -->
-    <string name="weather_settings_title">Weather settings</string>
-    <string name="weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="lockscreen_weather_title">Weather condition</string>
-    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
-    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
-    <string name="lockscreen_weather_location_title">Weather location</string>
-    <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="weather_settings_title">天氣服務設定</string>
+    <string name="weather_settings_summary">設定圖示包和天氣服務</string>
+    <string name="lockscreen_weather_title">天氣狀況</string>
+    <string name="lockscreen_weather_summary">在鎖定畫面上顯示目前天氣狀況</string>
+    <string name="lockscreen_weather_enabled_info">需要啟用天氣服務</string>
+    <string name="lockscreen_weather_location_title">位置</string>
+    <string name="lockscreen_weather_location_summary">顯示目前所在位置</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">自動暫停</string>
     <string name="adaptive_playback_summary">在靜音時暫停媒體播放，並在一定時間內逐漸恢復音量</string>
@@ -929,7 +958,10 @@
     <string name="adaptive_playback_timeout_title">逾時長度</string>
     <!-- Custom logo -->
     <string name="status_bar_logo_title">圖示</string>
-    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_summary">在狀態列左側顯示自訂圖示</string>
     <string name="status_bar_logo_position_title">圖示位置</string>
     <string name="status_bar_logo_style_title">圖示樣式</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Installed: %1$s</string>
+    <string name="app_info_update_time">Updated: %1$s</string>
 </resources>

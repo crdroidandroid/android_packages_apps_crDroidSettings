@@ -99,6 +99,9 @@
     <string name="unit_milliseconds">ميلي ثانية</string>
     <string name="unit_pixels">البكسلات</string>
     <string name="unit_hz">هرتز</string>
+    <!-- Clipboard -->
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="longpress_to_clipboard">Long-press to copy</string>
     <!-- Hardware info -->
     <string name="platform_revision">النظام الأساسي</string>
     <string name="total_ram">إجمالي ذاكرة الوصول العشوائي</string>
@@ -197,6 +200,14 @@
     <string name="backlight_summary_disabled">معطّل</string>
     <string name="backlight_summary_enabled_with_timeout">مُفعّل لـ <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">مفعّل</string>
+    <plurals name="backlight_timeout_time">
+        <item quantity="zero"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
+        <item quantity="two"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+    </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">قائمة زر التشغيل</string>
     <string name="power_menu_summary">تخصيص خيارات قائمة زر التشغيل</string>
@@ -702,6 +713,9 @@
     <string name="app_volume_summary">إظهار زر الصوت لكل تطبيق في خانة الصوت</string>
     <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- Open DNS Option -->
+    <!-- Cleanbrowsing DNS Option -->
+    <!-- Quad9 DNS Option -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">تنبيهات شريط التمرير</string>
     <string name="alert_slider_notifications_summary">عرض الإشعار عند تغيير موضع شريط التمرير</string>
@@ -760,6 +774,31 @@
     <string name="custom_timeout_summary_2hours">ساعتان</string>
     <string name="custom_timeout_summary_4hours">4 ساعات</string>
     <string name="custom_timeout_summary_8hours">8 ساعات</string>
+    <!-- WiFi Hotspot -->
+    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
+    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
+    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
+    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
+    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
+    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_60ghz">60 GHz</string>
+    <plurals name="wifi_hotspot_client_limit_summary">
+        <item quantity="zero">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
+        <item quantity="two">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="few">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="many">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+    </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">إخفاء الإعدادات السريعة على شاشة القفل</string>
     <string name="disable_qs_summary">منع الوصول إلى مربعات الإعدادات السريعة على شاشة القفل</string>
@@ -932,4 +971,7 @@
     <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
     <string name="status_bar_logo_position_title">موقع الشعار</string>
     <string name="status_bar_logo_style_title">نمط الشعار</string>
+    <!-- APK details on App info screen -->
+    <string name="app_info_install_time">Installed: %1$s</string>
+    <string name="app_info_update_time">Updated: %1$s</string>
 </resources>
