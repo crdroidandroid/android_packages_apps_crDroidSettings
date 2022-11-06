@@ -60,8 +60,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String KEY_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
     private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
-    private static final String KEY_NOTIFICATION_CLEAR_STYLE = "notification_material_dismiss_style";
-    private static final String KEY_NOTIFICATION_CLEAR_BGSTYLE = "notification_material_dismiss_bgstyle";
     private static final String KEY_PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String KEY_PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
@@ -165,10 +163,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_MATERIAL_DISMISS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.NOTIFICATION_MATERIAL_DISMISS_STYLE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.NOTIFICATION_MATERIAL_DISMISS_BGSTYLE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TRANSPARENCY, 100, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_FOOTER_DATA_USAGE, 0, UserHandle.USER_CURRENT);
@@ -217,9 +211,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
-
-                    keys.add(KEY_NOTIFICATION_CLEAR_STYLE);
-                    keys.add(KEY_NOTIFICATION_CLEAR_BGSTYLE);
 
                     boolean turboInstalled = Utils.isPackageInstalled(context,
                             "com.google.android.apps.turbo");
