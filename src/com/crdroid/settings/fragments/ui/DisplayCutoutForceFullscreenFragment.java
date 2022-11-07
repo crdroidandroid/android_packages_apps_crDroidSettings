@@ -24,7 +24,6 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -72,8 +71,7 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
         mActivityFilter = new ActivityFilter(getActivity().getPackageManager());
         mAllPackagesAdapter = new AllPackagesAdapter(getActivity());
 
-        mCutoutForceFullscreenSettings = new CutoutFullscreenController(new Handler(), getContext());
-        mCutoutForceFullscreenSettings.registerObserver();
+        mCutoutForceFullscreenSettings = new CutoutFullscreenController(getContext());
     }
 
     @Override
@@ -229,20 +227,6 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
             if (convertView == null) {
                 holder = new ViewHolder(mInflater.inflate(
                         R.layout.cutout_force_fullscreen_list_item, parent, false));
-                holder.state.setOnCheckedChangeListener((buttonView, isChecked) -> {
-                    final ApplicationsState.AppEntry appEntry =
-                            (ApplicationsState.AppEntry) buttonView.getTag();
-
-                    if (isChecked) {
-                        mCutoutForceFullscreenSettings.addApp(appEntry.info.packageName);
-                    } else {
-                        mCutoutForceFullscreenSettings.removeApp(appEntry.info.packageName);
-                    }
-                    try{
-                        mActivityManager.forceStopPackage(appEntry.info.packageName);
-                    }catch(Exception ignored){
-                    }
-                });
             } else {
                 holder = (ViewHolder) convertView.getTag();
             }
@@ -256,6 +240,20 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
             holder.icon.setImageDrawable(entry.icon);
             holder.state.setTag(entry);
             holder.state.setChecked(mCutoutForceFullscreenSettings.shouldForceCutoutFullscreen(entry.info.packageName));
+            holder.state.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                final ApplicationsState.AppEntry appEntry =
+                        (ApplicationsState.AppEntry) buttonView.getTag();
+
+                if (isChecked) {
+                    mCutoutForceFullscreenSettings.addApp(appEntry.info.packageName);
+                } else {
+                    mCutoutForceFullscreenSettings.removeApp(appEntry.info.packageName);
+                }
+                try{
+                    mActivityManager.forceStopPackage(appEntry.info.packageName);
+                } catch (Exception ignored) {
+                }
+            });
             return holder.rootView;
         }
 
