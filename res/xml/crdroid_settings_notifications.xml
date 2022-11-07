@@ -82,6 +82,14 @@
             settings:min="1"
             android:max="10"
             android:dependency="heads_up_notifications_enabled" />
+
+        <!-- Show clipboard overlay -->
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="show_clipboard_overlay"
+            android:icon="@drawable/ic_clipboard_alert"
+            android:title="@string/show_clipboard_overlay_title"
+            android:summary="@string/show_clipboard_overlay_summary"
+            android:defaultValue="true"/>
     </PreferenceCategory>
 
     <PreferenceCategory
