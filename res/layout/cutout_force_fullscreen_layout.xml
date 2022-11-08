@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018 The LineageOS Project
-     Copyright (C) 2019 The PixelExperience Project
+     Copyright (C) 2022 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,29 +14,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <FrameLayout
-        android:id="@+id/cutout_force_fullscreen_prefs"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <ListView
-        android:id="@+id/user_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:divider="@null" />
-
-    <TextView
-        android:id="@+id/user_list_empty_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/display_cutout_force_fullscreen_no_apps"
-        android:textSize="18dp"
-        android:visibility="gone" />
-
-</RelativeLayout>
+<androidx.recyclerview.widget.RecyclerView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:id="@+id/user_list_view"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content" />

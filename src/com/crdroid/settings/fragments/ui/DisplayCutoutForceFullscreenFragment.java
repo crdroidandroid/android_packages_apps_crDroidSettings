@@ -36,7 +36,10 @@ import android.widget.SectionIndexer;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.preference.PreferenceFragment;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.settingslib.applications.ApplicationsState;
 
@@ -56,6 +59,7 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
     private ApplicationsState mApplicationsState;
     private ApplicationsState.Session mSession;
     private ActivityFilter mActivityFilter;
+    private RecyclerView mAppsRecyclerView;
 
     private CutoutFullscreenController mCutoutForceFullscreenSettings;
 
@@ -95,9 +99,9 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ListView userListView = view.findViewById(R.id.user_list_view);
-        userListView.setAdapter(mAllPackagesAdapter);
-        userListView.setEmptyView(view.findViewById(R.id.user_list_empty_view));
+        mAppsRecyclerView = view.findViewById(R.id.user_list_view);
+        mAppsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mAppsRecyclerView.setAdapter(mAllPackagesAdapter);
     }
 
     @Override
@@ -186,32 +190,20 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
         mSession.rebuild(mActivityFilter, ApplicationsState.ALPHA_COMPARATOR);
     }
 
-    private class AllPackagesAdapter extends BaseAdapter
+    private class AllPackagesAdapter extends RecyclerView.Adapter<ViewHolder>
             implements SectionIndexer {
 
-        private final LayoutInflater mInflater;
         private List<ApplicationsState.AppEntry> mEntries = new ArrayList<>();
         private String[] mSections;
         private int[] mPositions;
 
         public AllPackagesAdapter(Context context) {
-            mInflater = LayoutInflater.from(context);
             mActivityFilter = new ActivityFilter(context.getPackageManager());
         }
 
         @Override
-        public int getCount() {
+        public int getItemCount() {
             return mEntries.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return mEntries.get(position);
-        }
-
-        @Override
-        public boolean hasStableIds() {
-            return true;
         }
 
         @Override
@@ -219,23 +211,23 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
             return mEntries.get(position).id;
         }
 
+        @NonNull
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            ApplicationsState.AppEntry entry = mEntries.get(position);
-            ViewHolder holder;
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new ViewHolder(LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.cutout_force_fullscreen_list_item, parent, false));
+        }
 
-            if (convertView == null) {
-                holder = new ViewHolder(mInflater.inflate(
-                        R.layout.cutout_force_fullscreen_list_item, parent, false));
-            } else {
-                holder = (ViewHolder) convertView.getTag();
-            }
+        @Override
+        public void onBindViewHolder(ViewHolder holder, int position) {
+            ApplicationsState.AppEntry entry = mEntries.get(position);
 
             if (entry == null) {
-                return holder.rootView;
+                return;
             }
 
             holder.title.setText(entry.label);
+            holder.title.setOnClickListener(v -> holder.state.performClick());
             mApplicationsState.ensureIcon(entry);
             holder.icon.setImageDrawable(entry.icon);
             holder.state.setTag(entry);
@@ -254,13 +246,12 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
                 } catch (Exception ignored) {
                 }
             });
-            return holder.rootView;
         }
 
         private void setEntries(List<ApplicationsState.AppEntry> entries,
                 List<String> sections, List<Integer> positions) {
             mEntries = entries;
-            mSections = sections.toArray(new String[0]);
+            mSections = sections.toArray(new String[sections.size()]);
             mPositions = new int[positions.size()];
             for (int i = 0; i < positions.size(); i++) {
                 mPositions[i] = positions.get(i);
@@ -279,7 +270,7 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
 
         @Override
         public int getSectionForPosition(int position) {
-            if (position < 0 || position >= getCount()) {
+            if (position < 0 || position >= getItemCount()) {
                 return -1;
             }
 
@@ -302,13 +293,14 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
         }
     }
 
-    private static class ViewHolder {
+    private static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView title;
         private final ImageView icon;
         private final Switch state;
         private final View rootView;
 
         private ViewHolder(View view) {
+            super(view);
             this.title = view.findViewById(R.id.app_name);
             this.icon = view.findViewById(R.id.app_icon);
             this.state = view.findViewById(R.id.state);
@@ -321,7 +313,7 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
     private class ActivityFilter implements ApplicationsState.AppFilter {
 
         private final PackageManager mPackageManager;
-        private final List<String> mLauncherResolveInfoList = new ArrayList<>();
+        private final List<String> mLauncherResolveInfoList = new ArrayList<String>();
 
         private ActivityFilter(PackageManager packageManager) {
             this.mPackageManager = packageManager;
