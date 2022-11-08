@@ -51,7 +51,7 @@
     <string name="delete_message">Ukloniti odabranu stavku?</string>
     <string name="choose_app">Odaberite aplikaciju</string>
     <string name="enable">Omogući</string>
-    <string name="disable">Disable</string>
+    <string name="disable">Onemogući</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Trenutni dnevnik promjena</string>
     <string name="changelog_crdroid_summary">Pogledajte promjene u instaliranom ROM-u</string>
@@ -100,8 +100,8 @@
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">hz</string>
     <!-- Clipboard -->
-    <string name="copied_to_clipboard">Copied to clipboard</string>
-    <string name="longpress_to_clipboard">Long-press to copy</string>
+    <string name="copied_to_clipboard">Kopirano u međuspremnik</string>
+    <string name="longpress_to_clipboard">Dugo pritisnite za kopiranje</string>
     <!-- Hardware info -->
     <string name="platform_revision">Platforma</string>
     <string name="total_ram">Ukupni RAM</string>
@@ -131,7 +131,7 @@
     <string name="lockscreen_battery_info_title">Informacije o bateriji</string>
     <string name="lockscreen_battery_info_summary">Prikaži informacije o bateriji tijekom punjenja</string>
     <!-- Button settings -->
-    <string name="extras_title">Extras</string>
+    <string name="extras_title">Dodaci</string>
     <string name="additional_buttons_title">Dodatne tipke</string>
     <string name="hardware_keys_power_key_title">Tipka Power</string>
     <string name="hardware_keys_home_key_title">Tipka Početna</string>
@@ -188,22 +188,22 @@
     <string name="click_partial_screenshot_title">Snimite djelomičnu snimku zaslona</string>
     <string name="click_partial_screenshot_summary">Kratko pritisnite Volume Down i Power da biste snimili djelomičnu snimku zaslona</string>
     <!-- Key backlight -->
-    <string name="button_backlight_title">Backlight</string>
-    <string name="button_backlight_summary">Customize button backlight settings</string>
-    <string name="button_backlight_enabled">Illuminate buttons</string>
-    <string name="button_backlight_only_when_pressed_title">Illuminate buttons only when pressed</string>
-    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
-    <string name="button_backlight_seekbar_title">Button brightness</string>
-    <string name="keyboard_backlight_seekbar_title">Keyboard brightness</string>
-    <string name="backlight_timeout_title">Illumination timeout</string>
-    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
+    <string name="button_backlight_title">Pozadinsko osvjetljenje</string>
+    <string name="button_backlight_summary">Prilagodite gumb postavki pozadinskog osvjetljenja</string>
+    <string name="button_backlight_enabled">Osvijetljeni gumbi</string>
+    <string name="button_backlight_only_when_pressed_title">Osvijetli tipke samo kada su pritisnute</string>
+    <string name="keyboard_backlight_enabled">Osvjetljenje tipkovnice</string>
+    <string name="button_backlight_seekbar_title">Svjetlina gumba</string>
+    <string name="keyboard_backlight_seekbar_title">Svjetlina tipkovnice</string>
+    <string name="backlight_timeout_title">Vrijeme osvjetljenja</string>
+    <string name="backlight_timeout_unlimited">Ne isključuj</string>
     <string name="backlight_summary_disabled">Kontekst</string>
-    <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled_with_timeout">Omogućeno za <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Omogućeno</string>
     <plurals name="backlight_timeout_time">
-        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
-        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> seconds</item>
-        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> sekunda</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> sekundi</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> sekundi</item>
     </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Izbornik Power</string>
@@ -222,7 +222,7 @@
     <string name="power_menu_users_title">Korisnici</string>
     <string name="power_menu_logout_title">Odjava</string>
     <string name="power_menu_emergency_title">Hitno</string>
-    <string name="power_menu_devicecontrols_title">Device controls</string>
+    <string name="power_menu_devicecontrols_title">Kontrole uređaja</string>
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Napredno ponovno pokretanje</string>
     <string name="advanced_reboot_summary">Kad je uređaj otključan, u izborniku ponovnog pokretanja prikazat će se opcije za recovery ili bootloader</string>
@@ -307,7 +307,7 @@
     <string name="lockscreen_doubletap_sleep_summary">Dvaput dodirnite zaključani zaslon da biste stavili uređaj u stanje mirovanja</string>
     <!-- Font style / Icon pack -->
     <string name="theme_customization_font_title">Izgled fonta</string>
-    <string name="theme_customization_font_summary">Set system font style</string>
+    <string name="theme_customization_font_summary">Postavite stil fonta sustava</string>
     <string name="theme_customization_icon_pack_title">Paket ikona</string>
     <string name="theme_customization_icon_pack_summary">Set custom icon pack style</string>
     <string name="theme_customization_icon_shape_title">Icon shape</string>
@@ -772,26 +772,26 @@
     <string name="custom_timeout_summary_4hours">4 hours</string>
     <string name="custom_timeout_summary_8hours">8 hours</string>
     <!-- WiFi Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
+    <string name="wifi_hotspot_hidden_ssid_title">Skrivena mreža</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Naziv vaše mobilne pristupne točke neće se pojaviti na popisu dostupnih Wi-Fi mreža.</string>
+    <string name="wifi_hotspot_client_manager_title">Povezani uređaji</string>
+    <string name="wifi_hotspot_client_manager_summary">Popis i upravljanje uređajima povezanih na pristupnu točku</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Popis uređaja povezanih na pristupnu točku</string>
+    <string name="wifi_hotspot_client_limit_title">Ograničenje povezanih uređaja</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blokirani uređaji</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Povezani uređaji</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Blokiraj uređaj</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Ova radnja će prekinuti vezu \"<xliff:g id="device_name">%1$s</xliff:g>\" s ovim uređajem i dodati ga na popis blokiranih</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Odblokiraj uređaj</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Uređaj \"<xliff:g id="device_name">%1$s</xliff:g>\" moći će se povezati s ovom pristupnom točkom</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Trenutno nema dostupnih klijenata. Povezani i blokirani uređaji bit će navedeni ovdje kada budu dostupni.</string>
     <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
     <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
     <string name="wifi_band_60ghz">60 GHz</string>
     <plurals name="wifi_hotspot_client_limit_summary">
-        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
-        <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
-        <item quantity="few">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="other">Na ovu pristupnu točku može se povezati najviše <xliff:g id="device_num">%1$d</xliff:g> uređaja</item>
+        <item quantity="one">Na ovu pristupnu točku može se povezati najviše <xliff:g id="device_num">%1$d</xliff:g> uređaj</item>
+        <item quantity="few">Na ovu pristupnu točku može se povezati najviše <xliff:g id="device_num">%1$d</xliff:g> uređaja</item>
     </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Hide QS on secure lock screen</string>
@@ -964,9 +964,9 @@
     <string name="status_bar_logo_position_title">Položaj logotipa</string>
     <string name="status_bar_logo_style_title">Stil logotipa</string>
     <!-- APK details on App info screen -->
-    <string name="app_info_install_time">Installed: %1$s</string>
-    <string name="app_info_update_time">Updated: %1$s</string>
+    <string name="app_info_install_time">Instalirano: %1$s</string>
+    <string name="app_info_update_time">Ažurirano: %1$s</string>
     <!-- Show clipboard overlay -->
-    <string name="show_clipboard_overlay_title">Show clipboard overlay</string>
-    <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
+    <string name="show_clipboard_overlay_title">Prikaži sloj međuspremnika</string>
+    <string name="show_clipboard_overlay_summary">Prikaži sloj u donjem lijevom kutu zaslona kada se nešto kopira u međuspremnik</string>
 </resources>
