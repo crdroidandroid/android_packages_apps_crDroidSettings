@@ -100,8 +100,8 @@
     <string name="unit_pixels">пикс</string>
     <string name="unit_hz">Гц</string>
     <!-- Clipboard -->
-    <string name="copied_to_clipboard">Скопировано в буфер</string>
-    <string name="longpress_to_clipboard">Долгое нажатие скопирует</string>
+    <string name="copied_to_clipboard">Скопировано в буфер обмена</string>
+    <string name="longpress_to_clipboard">Удерживайте для копирования</string>
     <!-- Hardware info -->
     <string name="platform_revision">Платформа</string>
     <string name="total_ram">Всего ОЗУ</string>
@@ -202,8 +202,8 @@
     <string name="backlight_summary_enabled">Включена</string>
     <plurals name="backlight_timeout_time">
         <item quantity="one"><xliff:g id="seconds">%d</xliff:g> сек.</item>
-        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> seconds</item>
-        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> сек.</item>
+        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> сек.</item>
         <item quantity="other"><xliff:g id="seconds">%d</xliff:g> сек.</item>
     </plurals>
     <!-- Power menu -->
@@ -776,7 +776,7 @@
     <string name="wifi_hotspot_hidden_ssid_title">Скрытая сеть</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Ваша точка доступа не будет отображаться в списке Wi-Fi сетей.</string>
     <string name="wifi_hotspot_client_manager_title">Подключенные устройства</string>
-    <string name="wifi_hotspot_client_manager_summary">Список и управление устройствами, подключенными к точке доступа. Установка ограничения на количество клиентов</string>
+    <string name="wifi_hotspot_client_manager_summary">Список и управление устройствами, подключенными к точке доступа</string>
     <string name="wifi_hotspot_client_manager_list_only_summary">Список подключенных устройств</string>
     <string name="wifi_hotspot_client_limit_title">Лимит подключенных устройств</string>
     <string name="wifi_hotspot_blocked_clients_list_title">Заблокированные устройства</string>
@@ -792,8 +792,8 @@
     <plurals name="wifi_hotspot_client_limit_summary">
         <item quantity="other">К этой точке доступа могут подключиться до <xliff:g id="device_num">%1$d</xliff:g> устройств</item>
         <item quantity="one">К этой точке доступа может подключиться до <xliff:g id="device_num">%1$d</xliff:g> устройства</item>
-        <item quantity="few">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
-        <item quantity="many">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="few">К этой точке доступа может подключиться до <xliff:g id="device_num">%1$d</xliff:g> устройств</item>
+        <item quantity="many">К этой точке доступа может подключиться до <xliff:g id="device_num">%1$d</xliff:g> устройств</item>
     </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Скрыть быстрые настройки на экране блокировки</string>
@@ -888,8 +888,6 @@
     <!-- Material dismiss all button for notifications -->
     <string name="notification_material_dismiss_title">Кнопка очистки всех уведомлений</string>
     <string name="notification_material_dismiss_summary">Заменяет текст \"Очистить все\" на плавающую кнопку</string>
-    <string name="notification_material_dismiss_style_title">Стиль кнопки</string>
-    <string name="notification_material_dismiss_bgstyle_title">Фон кнопки</string>
     <!-- Back gesture animation -->
     <string name="back_gesture_arrow_title">Анимация жеста назад</string>
     <string name="back_gesture_arrow_summary">Показать анимированную стрелку для жеста назад</string>
@@ -970,4 +968,7 @@
     <!-- APK details on App info screen -->
     <string name="app_info_install_time">Установлено: %1$s</string>
     <string name="app_info_update_time">Обновлено: %1$s</string>
+    <!-- Show clipboard overlay -->
+    <string name="show_clipboard_overlay_title">Показывать буфер обмена</string>
+    <string name="show_clipboard_overlay_summary">Показывать содержимое буфера обмена в левом нижнем углу экрана, когда что-то копируется в буфер</string>
 </resources>
