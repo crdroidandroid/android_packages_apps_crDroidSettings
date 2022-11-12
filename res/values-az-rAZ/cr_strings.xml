@@ -201,7 +201,7 @@
     <string name="backlight_summary_enabled_with_timeout"><xliff:g id="timeout">%s</xliff:g> üçün aktivdir</string>
     <string name="backlight_summary_enabled">Aktiv</string>
     <plurals name="backlight_timeout_time">
-        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g>saniyə</item>
         <item quantity="other"><xliff:g id="seconds">%d</xliff:g> saniyələr</item>
     </plurals>
     <!-- Power menu -->
@@ -789,7 +789,7 @@
     <string name="wifi_band_60ghz">60 GHz</string>
     <plurals name="wifi_hotspot_client_limit_summary">
         <item quantity="other">Bu hotspota ən çox <xliff:g id="device_num">%1$d</xliff:g> cihazlar bağlana bilər</item>
-        <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
+        <item quantity="one">Bu hotspota ən çox <xliff:g id="device_num">%1$d</xliff:g> cihaz qoşula bilər</item>
     </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Güvənli kilid ekranında sürətli ayarları gizlət</string>
@@ -927,44 +927,44 @@
     <string name="qs_tile_label_hide_title">Etiketləri gizlət</string>
     <string name="qs_tile_label_size_title">Etiket mətn ölçüsü</string>
     <string name="qs_tile_label_hide_summary">Only show icon in tile</string>
-    <string name="qs_tile_layout_title">Vertical layout</string>
-    <string name="qs_tile_layout_summary">Show label below icon instead next to icon</string>
+    <string name="qs_tile_layout_title">Şaquli düzüm</string>
+    <string name="qs_tile_layout_summary">Simgənin yanında etiketini simgənin altında göstər</string>
     <string name="qs_columns_portrait_title">Sütunlar (şaquli)</string>
     <string name="qs_columns_landscape_title">Sütunlar (üfüqi)</string>
     <!-- Statusbar Clock background chip -->
-    <string name="statusbar_clock_chip_title">Background chip</string>
-    <string name="statusbar_clock_chip_summary">Display accented chip behind clock</string>
+    <string name="statusbar_clock_chip_title">Arxa plan çipi</string>
+    <string name="statusbar_clock_chip_summary">Saatın arxasında vurğulanmış çipi göstərin</string>
     <!-- Smart charging -->
-    <string name="smart_charging_title">Smart Charging</string>
-    <string name="smart_charging_summary">Set maximum charging level</string>
-    <string name="smart_charging_switch_title">Enable Smart Charging</string>
-    <string name="smart_charging_level_title">Stop trigger level</string>
-    <string name="smart_charging_resume_level_title">Start trigger level</string>
-    <string name="smart_charging_reset_stats_title">Reset battery statistics</string>
-    <string name="smart_charging_reset_stats_summary">Reset battery statistics after reaching user defined charging level</string>
-    <string name="smart_charging_footer">Smart Charging allows you to set maximum charging level to extend the lifespan of your battery. When enabled, battery stops charging at Stop trigger level and resumes charging at Start trigger level. Stop trigger level should be always greater than Start trigger level.</string>
+    <string name="smart_charging_title">Ağıllı Enerji</string>
+    <string name="smart_charging_summary">Maksimum enerji səviyyəsini tənzimləyin</string>
+    <string name="smart_charging_switch_title">Ağıllı enerjini aktivləştirin</string>
+    <string name="smart_charging_level_title">Dayandırma tətikləyici səviyyəsi</string>
+    <string name="smart_charging_resume_level_title">Başlatma tətikləyici səviyyəsi</string>
+    <string name="smart_charging_reset_stats_title">Batereya statistikalarını sıfırla</string>
+    <string name="smart_charging_reset_stats_summary">İstifadəçinin təyin etdiyi enerji səviyyəsinə çatanda batereya statistikalarını sıfırla</string>
+    <string name="smart_charging_footer">Ağıllı Enerji, batereyanızın ömrünü uzatmaq üçün maksimum enerji səviyyəsini tənzimləmənizə icazə verər. Fəal olanda, batereya Dayandırma tətikləyici səviyyəsində enerji yığımını dayandırar və Başlama tətikləyici səviyyəsində enerji yığımına davam edər. Dayanma səviyyəsi həmişə Başlama səviyyəsindən böyük olmalıdır.</string>
     <!-- Weather -->
-    <string name="weather_settings_title">Weather settings</string>
-    <string name="weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="lockscreen_weather_title">Weather condition</string>
-    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
-    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
-    <string name="lockscreen_weather_location_title">Weather location</string>
-    <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="weather_settings_title">Hava parametrləri</string>
+    <string name="weather_settings_summary">Simge paketi və hava xidmətini quraşdırın</string>
+    <string name="lockscreen_weather_title">Hava vəziyyəti</string>
+    <string name="lockscreen_weather_summary">Cari hava vəziyyətini və temperaturu göstərin</string>
+    <string name="lockscreen_weather_enabled_info">Hava xidmətinin aktivləşdirilməsini tələb edir</string>
+    <string name="lockscreen_weather_location_title">Hava yeri</string>
+    <string name="lockscreen_weather_location_summary">Cari hava yerini göstərin</string>
     <!-- Adaptive Playback -->
-    <string name="adaptive_playback_title">Adaptive playback</string>
-    <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
-    <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
-    <string name="adaptive_playback_timeout_title">Playback timeout</string>
+    <string name="adaptive_playback_title">Adaptiv oxutma</string>
+    <string name="adaptive_playback_summary">Səs söndürüldükdə mediaya fasilə verin və vaxt aşımı ərzində səsi artıraraq davam etdirin</string>
+    <string name="adaptive_playback_intro_text">Səsi tam kəsəndə mediaya avtomatik fasilə verin və təyin edilən vaxt ərzində səs açılanda avtomatik davam etdirin</string>
+    <string name="adaptive_playback_timeout_title">Oynatma zaman aşımı</string>
     <!-- Custom logo -->
     <string name="status_bar_logo_title">Loqo</string>
-    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_summary">Vəziyyət panelinin solunda və ya sağında fərdi loqo göstərin</string>
     <string name="status_bar_logo_position_title">Loqo məkanı</string>
     <string name="status_bar_logo_style_title">Loqo görünüşü</string>
     <!-- APK details on App info screen -->
-    <string name="app_info_install_time">Installed: %1$s</string>
-    <string name="app_info_update_time">Updated: %1$s</string>
+    <string name="app_info_install_time">Yükləndi: %1$s</string>
+    <string name="app_info_update_time">Güncəlləndi: %1$s</string>
     <!-- Show clipboard overlay -->
-    <string name="show_clipboard_overlay_title">Show clipboard overlay</string>
-    <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
+    <string name="show_clipboard_overlay_title">Mübadilə buferini göstər</string>
+    <string name="show_clipboard_overlay_summary">Mübadilə buferinə bir şey kopyalandıqda ekranın sol alt küncündə üst-üstə düşməsini göstərin</string>
 </resources>
