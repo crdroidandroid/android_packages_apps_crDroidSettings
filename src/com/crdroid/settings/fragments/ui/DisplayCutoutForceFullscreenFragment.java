@@ -59,6 +59,7 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
     private ApplicationsState mApplicationsState;
     private ApplicationsState.Session mSession;
     private ActivityFilter mActivityFilter;
+    private PackageManager mPackageManager;
     private RecyclerView mAppsRecyclerView;
 
     private CutoutFullscreenController mCutoutForceFullscreenSettings;
@@ -67,15 +68,16 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Context context = getContext();
         mApplicationsState = ApplicationsState.getInstance(getActivity().getApplication());
         mSession = mApplicationsState.newSession(this);
         mSession.onResume();
-        mActivityManager = (ActivityManager) getActivity().getSystemService(
+        mPackageManager = context.getPackageManager();
+        mActivityManager = (ActivityManager) context.getSystemService(
                 Context.ACTIVITY_SERVICE);
-        mActivityFilter = new ActivityFilter(getActivity().getPackageManager());
-        mAllPackagesAdapter = new AllPackagesAdapter(getActivity());
-
-        mCutoutForceFullscreenSettings = new CutoutFullscreenController(getContext());
+        mActivityFilter = new ActivityFilter(mPackageManager);
+        mAllPackagesAdapter = new AllPackagesAdapter(context);
+        mCutoutForceFullscreenSettings = new CutoutFullscreenController(context);
     }
 
     @Override
@@ -156,13 +158,12 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
     private void handleAppEntries(List<ApplicationsState.AppEntry> entries) {
         final ArrayList<String> sections = new ArrayList<String>();
         final ArrayList<Integer> positions = new ArrayList<Integer>();
-        final PackageManager pm = getActivity().getPackageManager();
         String lastSectionIndex = null;
         int offset = 0;
 
         for (int i = 0; i < entries.size(); i++) {
             final ApplicationInfo info = entries.get(i).info;
-            final String label = (String) info.loadLabel(pm);
+            final String label = (String) info.loadLabel(mPackageManager);
             final String sectionIndex;
 
             if (!info.enabled) {
@@ -198,7 +199,9 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
         private int[] mPositions;
 
         public AllPackagesAdapter(Context context) {
-            mActivityFilter = new ActivityFilter(context.getPackageManager());
+            if (mActivityFilter == null) {
+                mActivityFilter = new ActivityFilter(mPackageManager);
+            }
         }
 
         @Override
@@ -229,7 +232,7 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
             holder.title.setText(entry.label);
             holder.title.setOnClickListener(v -> holder.state.performClick());
             mApplicationsState.ensureIcon(entry);
-            holder.icon.setImageDrawable(entry.icon);
+            holder.icon.setImageDrawable(entry.info.loadIcon(mPackageManager));
             holder.state.setTag(entry);
             holder.state.setChecked(mCutoutForceFullscreenSettings.shouldForceCutoutFullscreen(entry.info.packageName));
             holder.state.setOnCheckedChangeListener((buttonView, isChecked) -> {
