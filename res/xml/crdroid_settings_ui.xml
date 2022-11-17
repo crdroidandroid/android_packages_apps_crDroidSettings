@@ -120,4 +120,12 @@
         android:summary="@string/theme_customization_icon_shape_summary"
         android:fragment="com.crdroid.settings.fragments.ui.IconShapes"/>
 
+    <!-- Floating rotation button -->
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="enable_floating_rotation_button"
+        android:icon="@drawable/ic_rotation"
+        android:title="@string/floating_rotation_button_title"
+        android:summary="@string/floating_rotation_button_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
