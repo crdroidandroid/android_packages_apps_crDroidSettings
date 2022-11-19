@@ -46,6 +46,14 @@
         android:summary="@string/use_photos_spoof_summary"
         android:defaultValue="true" />
 
+    <!-- Netflix -->
+    <SwitchPreference
+        android:key="use_netflix_spoof"
+        android:icon="@drawable/ic_netflix"
+        android:title="@string/netflix_spoof_title"
+        android:summary="@string/netflix_spoof_summary"
+        android:defaultValue="false" />
+
     <!-- Smart Charging -->
     <Preference
         android:key="smart_charging"
@@ -88,4 +96,5 @@
             android:targetPackage="org.omnirom.omnijaws"
             android:targetClass="org.omnirom.omnijaws.SettingsActivity" />
     </Preference>
+
 </PreferenceScreen>
