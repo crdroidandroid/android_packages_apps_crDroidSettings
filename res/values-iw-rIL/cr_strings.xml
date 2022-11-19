@@ -204,7 +204,7 @@
         <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
         <item quantity="two"><xliff:g id="seconds">%d</xliff:g> seconds</item>
         <item quantity="many"><xliff:g id="seconds">%d</xliff:g> seconds</item>
-        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> שניות</item>
     </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">תפריט הפעלה</string>
@@ -676,24 +676,6 @@
     <string name="screen_off_animation_default">ברירת מחדל</string>
     <string name="screen_off_animation_crt">טלוויזיה ישנה</string>
     <string name="screen_off_animation_scale">שינוי קנה-מידה</string>
-    <!-- Custom Vibration fragment -->
-    <string name="vibration_intensity_preferences">עוצמת הרטט</string>
-    <string name="summary_vibration_intensity_preferences">שינוי עוצמות הרטט</string>
-    <string name="keywords_vibration_preferences">דפוס רטט, עוצמת רטט, שיחה נכנסת, עוצמה, הפטיקה, נגיעה, עוצמת רטט</string>
-    <string name="ringtone_vibration_pattern">תבנית הרטט בצלצול</string>
-    <string name="vibration_intensity_ringer">עוצמת הרטט בצלצול</string>
-    <string name="vibration_intensity_notification">עוצמת הרטט בהתראות</string>
-    <string name="haptic_feedback_intensity">עוצמת משוב רטט</string>
-    <string name="vibration_intensity_disabled">מושבת</string>
-    <string name="vibration_intensity_light">בהיר</string>
-    <string name="vibration_intensity_medium">בינוני</string>
-    <string name="vibration_intensity_strong">חזק</string>
-    <string name="vibration_intensity_custom">מותאם אישית</string>
-    <string name="pattern_dzzz_dzzz">דזזז-דזזז</string>
-    <string name="pattern_dzzz_da">דזזז-דה</string>
-    <string name="pattern_mm_mm_mm">ממ-ממ-ממ</string>
-    <string name="pattern_da_da_dzzz">דה-דה-דזזז</string>
-    <string name="pattern_da_dzzz_da">דה-דזזז-דה</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">רטט באימות טביעת אצבע</string>
     <string name="fp_success_vibrate_summary">רטט כאשר אימות טביעת האצבע הצליח</string>
@@ -791,7 +773,7 @@
     <string name="wifi_band_60ghz">60 GHz</string>
     <plurals name="wifi_hotspot_client_limit_summary">
         <item quantity="other">לכל היותר <xliff:g id="device_num">%1$d</xliff:g> מכשירים יוכלו להתחבר לנקודת גלישה זו</item>
-        <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
+        <item quantity="one">רק מכשיר אחד יכול להתחבר לנקודת הגישה הזו</item>
         <item quantity="two">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
         <item quantity="many">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
     </plurals>
@@ -971,4 +953,28 @@
     <!-- Show clipboard overlay -->
     <string name="show_clipboard_overlay_title">הצגת תצוגת-על של הלוח</string>
     <string name="show_clipboard_overlay_summary">הצגת תצוגת-על בפינה השמאלית התחתונה של המסך כאשר מבוצעת העתקה ללוח</string>
+    <!-- Sensor block per-package -->
+    <string name="sensor_block_title">חסימת חיישנים לפי חבילות</string>
+    <string name="sensor_block_summary">חסימת גישת יישומים מסוימים לחיישנים מוגדרים לשם חיסכון בסוללה</string>
+    <string name="sensor_block_app_picker_title">חסימת החיישנים ליישומים אלה</string>
+    <string name="add_sensor_block_package_title">הוספת יישומים לחסימת גישה שלהם לחיישנים</string>
+    <string name="add_sensor_block_package_summary">הגישה לחיישנים משמעותיים של תנועה, תאוצה ותאוצה לינארית תיחסם עבור יישומים אלה</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">תבנית הרטט בצלצול</string>
+    <string name="pattern_dzzz_dzzz">דזזז-דזזז</string>
+    <string name="pattern_dzzz_da">דזזז-דה</string>
+    <string name="pattern_mm_mm_mm">ממ-ממ-ממ</string>
+    <string name="pattern_da_da_dzzz">דה-דה-דזזז</string>
+    <string name="pattern_da_dzzz_da">דה-דזזז-דה</string>
+    <string name="pattern_custom">מותאם אישית</string>
+    <string name="custom_vibration_pattern_title">תבנית מותאמת אישית</string>
+    <string name="custom_vibration_pattern_summary">קביעת תבנית רטט מותאמת אישית</string>
+    <!-- Per-channel vibration pattern -->
+    <string name="notification_custom_vibrate_title">תבנית מותאמת של רטט בצלצול</string>
+    <string name="notification_custom_vibrate_summary">החלפת תבנית ברירת-המחדל בלבד\nתבניות שהוגדרו ברמת היישום יהיו בתוקף </string>
+    <string name="notification_custom_vibrate_slider1">רטט למשך</string>
+    <string name="notification_custom_vibrate_slider2">השהייה למשך</string>
+    <!-- Floating rotation button -->
+    <string name="floating_rotation_button_title">פקד סיבוב צף</string>
+    <string name="floating_rotation_button_summary">הצגת פקד סיבוב צף כאשר מסובבים את המכשיר </string>
 </resources>

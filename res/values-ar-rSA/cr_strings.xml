@@ -678,24 +678,6 @@
     <string name="screen_off_animation_default">افتراضي</string>
     <string name="screen_off_animation_crt">تأثير CRT</string>
     <string name="screen_off_animation_scale">تدرج</string>
-    <!-- Custom Vibration fragment -->
-    <string name="vibration_intensity_preferences">شدة الاهتزاز</string>
-    <string name="summary_vibration_intensity_preferences">تغيير قوة الاهتزاز</string>
-    <string name="keywords_vibration_preferences">نمط الاهتزاز، كثافة الاهتزاز، أثناء المكالمة، ردود فعل اللمس، قوة الاهتزاز</string>
-    <string name="ringtone_vibration_pattern">نمط اهتزاز النغمة</string>
-    <string name="vibration_intensity_ringer">نمط اهتزاز نغمة الرنين</string>
-    <string name="vibration_intensity_notification">نمط اهتزاز الإشعارات</string>
-    <string name="haptic_feedback_intensity">نمط اهتزاز اللمس</string>
-    <string name="vibration_intensity_disabled">معطّل</string>
-    <string name="vibration_intensity_light">خفيف</string>
-    <string name="vibration_intensity_medium">متوسط</string>
-    <string name="vibration_intensity_strong">قوي</string>
-    <string name="vibration_intensity_custom">تخصيص</string>
-    <string name="pattern_dzzz_dzzz">دززز-دززز</string>
-    <string name="pattern_dzzz_da">دززز-دا</string>
-    <string name="pattern_mm_mm_mm">مم-مم-مم</string>
-    <string name="pattern_da_da_dzzz">دا-دا-دززز</string>
-    <string name="pattern_da_dzzz_da">دا-دززز-دا</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">اهتزاز بعد نجاح بصمة الأصبع</string>
     <string name="fp_success_vibrate_summary">اهتزاز عند نجاح مصادقة بصمة الأصبع</string>
@@ -775,19 +757,19 @@
     <string name="custom_timeout_summary_4hours">4 ساعات</string>
     <string name="custom_timeout_summary_8hours">8 ساعات</string>
     <!-- WiFi Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
+    <string name="wifi_hotspot_hidden_ssid_title">شبكة مخفية</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">لن يظهر اسم نقطة اتصال هاتفك المحمول في قائمة شبكات WLAN المتاحة.</string>
+    <string name="wifi_hotspot_client_manager_title">الأجهزة المتصلة</string>
     <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">عرض الأجهزة المتصلة بنقطة الاتصال.</string>
+    <string name="wifi_hotspot_client_limit_title">حد الأجهزة المتصلة</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">الأجهزة المحظورة</string>
+    <string name="wifi_hotspot_connected_clients_list_title">الأجهزة المتّصلة</string>
+    <string name="wifi_hotspot_block_client_dialog_title">حظر جهاز</string>
+    <string name="wifi_hotspot_block_client_dialog_text">سيؤدي هذا الإجراء إلى قطع الاتصال\"<xliff:g id="device_name">%1$s</xliff:g>\" من هذا الجهاز وإضافته إلى قائمة الحظر</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">إلغاء حظر الجهاز</string>
     <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
+    <string name="wifi_hotspot_client_manager_footer_text">لا يوجد عملاء متوفرين حاليا. سيتم إدراج الأجهزة الموصولة والمحظورة هنا عندما تكون متاحة.</string>
     <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
     <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
     <string name="wifi_band_60ghz">60 GHz</string>
@@ -962,7 +944,7 @@
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">التشغيل التكيفي</string>
     <string name="adaptive_playback_summary">إيقاف الوسائط عند كتم الصوت واستعادته عن طريق زيادة مستوى الصوت خلال المهلة</string>
-    <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
+    <string name="adaptive_playback_intro_text">إيقاف الوسائط تلقائياً عند كتم الصوت وسيتم استئنافها تلقائيًا عند استعادة الصوت خلال الوقت المحدد</string>
     <string name="adaptive_playback_timeout_title">مهلة التشغيل</string>
     <!-- Custom logo -->
     <string name="status_bar_logo_title">شعار</string>
@@ -975,4 +957,28 @@
     <!-- Show clipboard overlay -->
     <string name="show_clipboard_overlay_title">Show clipboard overlay</string>
     <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
+    <!-- Sensor block per-package -->
+    <string name="sensor_block_title">تأمين المستشعر</string>
+    <string name="sensor_block_summary">منع الوصول إلى أجهزة استشعار الحركة الهامة لعدد قليل من التطبيقات لستهلاكها البطارية</string>
+    <string name="sensor_block_app_picker_title">حظر المستشعرات لهذه التطبيقات</string>
+    <string name="add_sensor_block_package_title">إضافة تطبيقات لحظر المستشعرات</string>
+    <string name="add_sensor_block_package_summary">سيتم حظر أجهزة الحركة، التسارع، وأجهزة استشعار التسارع الخطي لهذه التطبيقات</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">نمط اهتزاز النغمة</string>
+    <string name="pattern_dzzz_dzzz">دززز-دززز</string>
+    <string name="pattern_dzzz_da">دززز-دا</string>
+    <string name="pattern_mm_mm_mm">مم-مم-مم</string>
+    <string name="pattern_da_da_dzzz">دا-دا-دززز</string>
+    <string name="pattern_da_dzzz_da">دا-دززز-دا</string>
+    <string name="pattern_custom">تخصيص</string>
+    <string name="custom_vibration_pattern_title">استخدم النمط المخصص</string>
+    <string name="custom_vibration_pattern_summary">تحديد نمط إهتزاز مخصص</string>
+    <!-- Per-channel vibration pattern -->
+    <string name="notification_custom_vibrate_title">Custom vibration pattern</string>
+    <string name="notification_custom_vibrate_summary">Replaces the default pattern only\nApp set pattern takes precedence</string>
+    <string name="notification_custom_vibrate_slider1">Vibrate for</string>
+    <string name="notification_custom_vibrate_slider2">Pause for</string>
+    <!-- Floating rotation button -->
+    <string name="floating_rotation_button_title">Floating rotate button</string>
+    <string name="floating_rotation_button_summary">Show a floating rotate button when device is rotated</string>
 </resources>

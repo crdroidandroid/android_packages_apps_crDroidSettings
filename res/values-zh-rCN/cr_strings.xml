@@ -673,24 +673,6 @@
     <string name="screen_off_animation_default">默认</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">缩放</string>
-    <!-- Custom Vibration fragment -->
-    <string name="vibration_intensity_preferences">振动强度</string>
-    <string name="summary_vibration_intensity_preferences">更改振动强度</string>
-    <string name="keywords_vibration_preferences">振动模式、振动强度、通话、强度、触觉、点按、振动强度</string>
-    <string name="ringtone_vibration_pattern">来电振动样式</string>
-    <string name="vibration_intensity_ringer">铃声振动强度</string>
-    <string name="vibration_intensity_notification">通知振动强度</string>
-    <string name="haptic_feedback_intensity">触觉反馈强度</string>
-    <string name="vibration_intensity_disabled">已禁用</string>
-    <string name="vibration_intensity_light">轻度</string>
-    <string name="vibration_intensity_medium">中度</string>
-    <string name="vibration_intensity_strong">强度</string>
-    <string name="vibration_intensity_custom">自定义</string>
-    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
-    <string name="pattern_dzzz_da">dzzz-da</string>
-    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
-    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
-    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">验证指纹时振动</string>
     <string name="fp_success_vibrate_summary">指纹识别成功时振动</string>
@@ -717,7 +699,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">全屏应用</string>
     <string name="display_cutout_force_fullscreen_summary">强制应用忽略刘海区域</string>
-    <string name="display_cutout_force_fullscreen_no_apps">无应用</string>
+    <string name="display_cutout_force_fullscreen_no_apps">无应用程序</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">无限照片存储</string>
     <string name="use_photos_spoof_summary">将您的设备伪装成 Pixel XL for Google Photos 应用，仅提供无限存储空间进行备份</string>
@@ -787,7 +769,7 @@
     <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
     <string name="wifi_band_60ghz">60 GHz</string>
     <plurals name="wifi_hotspot_client_limit_summary">
-        <item quantity="other">最多可以有 <xliff:g id="device_num">%1$d</xliff:g> 个设备连接到这个热点上</item>
+        <item quantity="other">最多 <xliff:g id="device_num">%1$d</xliff:g> 个设备可以连接到这个热点上</item>
     </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">在安全锁定屏幕中隐藏快速设置</string>
@@ -963,6 +945,30 @@
     <string name="app_info_install_time">已安装: %1$s</string>
     <string name="app_info_update_time">已更新: %1$s</string>
     <!-- Show clipboard overlay -->
-    <string name="show_clipboard_overlay_title">Show clipboard overlay</string>
-    <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
+    <string name="show_clipboard_overlay_title">显示悬浮剪贴板</string>
+    <string name="show_clipboard_overlay_summary">当复制某些内容时，在屏幕的左下角显示悬浮剪贴板</string>
+    <!-- Sensor block per-package -->
+    <string name="sensor_block_title">阻止个别应用使用传感器</string>
+    <string name="sensor_block_summary">阻止某些应用访问某些传感器以节省电池</string>
+    <string name="sensor_block_app_picker_title">屏蔽这些应用的传感器</string>
+    <string name="add_sensor_block_package_title">为传感器块添加应用</string>
+    <string name="add_sensor_block_package_summary">这些应用程序将阻止重大运动，加速计，线性加速度传感器</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">来电振动样式</string>
+    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
+    <string name="pattern_dzzz_da">dzzz-da</string>
+    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
+    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
+    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+    <string name="pattern_custom">自定义</string>
+    <string name="custom_vibration_pattern_title">自定义模式</string>
+    <string name="custom_vibration_pattern_summary">设置自定义振动模式</string>
+    <!-- Per-channel vibration pattern -->
+    <string name="notification_custom_vibrate_title">Custom vibration pattern</string>
+    <string name="notification_custom_vibrate_summary">Replaces the default pattern only\nApp set pattern takes precedence</string>
+    <string name="notification_custom_vibrate_slider1">Vibrate for</string>
+    <string name="notification_custom_vibrate_slider2">Pause for</string>
+    <!-- Floating rotation button -->
+    <string name="floating_rotation_button_title">Floating rotate button</string>
+    <string name="floating_rotation_button_summary">Show a floating rotate button when device is rotated</string>
 </resources>
