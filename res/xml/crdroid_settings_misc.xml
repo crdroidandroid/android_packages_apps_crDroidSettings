@@ -32,23 +32,23 @@
     </Preference>
 
     <!-- Unlock FPS for specific games -->
-    <SwitchPreference
-        android:key="use_games_spoof"
+    <com.crdroid.settings.preferences.SystemPropertySwitchPreference
+        android:key="persist.sys.pixelprops.games"
         android:icon="@drawable/ic_backup"
         android:title="@string/use_games_spoof_title"
         android:summary="@string/use_games_spoof_summary" />
 
     <!-- Unlimited google photos storage -->
-    <SwitchPreference
-        android:key="use_photos_spoof"
+    <com.crdroid.settings.preferences.SystemPropertySwitchPreference
+        android:key="persist.sys.pixelprops.gphotos"
         android:icon="@drawable/ic_backup"
         android:title="@string/use_photos_spoof_title"
         android:summary="@string/use_photos_spoof_summary"
         android:defaultValue="true" />
 
     <!-- Netflix -->
-    <SwitchPreference
-        android:key="use_netflix_spoof"
+    <com.crdroid.settings.preferences.SystemPropertySwitchPreference
+        android:key="persist.sys.pixelprops.netflix"
         android:icon="@drawable/ic_netflix"
         android:title="@string/netflix_spoof_title"
         android:summary="@string/netflix_spoof_summary"
