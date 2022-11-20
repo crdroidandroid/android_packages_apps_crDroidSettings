@@ -57,7 +57,7 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
 
     private static final String SYS_GAMES_SPOOF = "persist.sys.pixelprops.games";
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
-    private static final String SYS_NETFLIX_SPOOF = "persist.sys.spoof_netflix";
+    private static final String SYS_NETFLIX_SPOOF = "persist.sys.pixelprops.netflix";
 
     private Preference mSmartCharging;
     private Preference mPocketJudge;
