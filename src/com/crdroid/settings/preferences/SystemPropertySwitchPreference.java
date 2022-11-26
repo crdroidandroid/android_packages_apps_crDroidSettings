@@ -40,7 +40,7 @@ public class SystemPropertySwitchPreference extends SelfRemovingSwitchPreference
 
     @Override
     protected boolean isPersisted() {
-        return SystemProperties.get(getKey(), null) != null;
+        return !SystemProperties.get(getKey(), "").isEmpty();
     }
 
     @Override
