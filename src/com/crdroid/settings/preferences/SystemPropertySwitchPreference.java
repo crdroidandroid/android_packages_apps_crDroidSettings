@@ -53,10 +53,4 @@ public class SystemPropertySwitchPreference extends SelfRemovingSwitchPreference
     protected boolean getBoolean(String key, boolean defaultValue) {
         return SystemProperties.getBoolean(key, defaultValue);
     }
-
-    @Override
-    protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
-        boolean defValue = defaultValue == null ? false : (Boolean) defaultValue;
-        setChecked(restoreValue ? getBoolean(getKey(), defValue) : defValue);
-    }
 }
