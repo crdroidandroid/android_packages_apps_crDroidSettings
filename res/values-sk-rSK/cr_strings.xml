@@ -101,8 +101,8 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">hz</string>
     <!-- Clipboard -->
-    <string name="copied_to_clipboard">Copied to clipboard</string>
-    <string name="longpress_to_clipboard">Long-press to copy</string>
+    <string name="copied_to_clipboard">Skopírované do schránky</string>
+    <string name="longpress_to_clipboard">Dlhým stlačením skopírujete</string>
     <!-- Hardware info -->
     <string name="platform_revision">Platforma</string>
     <string name="total_ram">Celková RAM</string>
@@ -202,10 +202,10 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="backlight_summary_enabled_with_timeout">Zapnuté na <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Zapnuté</string>
     <plurals name="backlight_timeout_time">
-        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
-        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> seconds</item>
-        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> seconds</item>
-        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> sekunda</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> sekúnd</item>
+        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> sekundy</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> sekúnd</item>
     </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Ponuka tlačidla Napájanie</string>
@@ -225,6 +225,12 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="power_menu_logout_title">Odhlásiť</string>
     <string name="power_menu_emergency_title">Stav núdze</string>
     <string name="power_menu_devicecontrols_title">Ovládanie zariadenia</string>
+    <string name="power_menu_type_title">Štýl ponuky napájania</string>
+    <string name="power_menu_type_lite">Lite (A12)</string>
+    <string name="power_menu_type_full">Full (A11)</string>
+    <string name="power_menu_type_classic">Classic (A8)</string>
+    <string name="power_menu_type_grid">Mriežka</string>
+    <string name="power_menu_type_legacy">Legacy (A7)</string>
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Rozšířený reštart</string>
     <string name="advanced_reboot_summary">Ak je povolené, do ponuky tlačidla Napájanie budú pridané ďalšie voľby pre reštart do Recovery alebo Bootloadera</string>
@@ -641,8 +647,8 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="mic_camera_privacy_indicator_summary">Zobraziť samostatný indikátor, keď niektorá aplikácia používa mikrofón alebo fotoaparát</string>
     <string name="location_privacy_indicator_title">Indikátor polohy súkromia</string>
     <string name="location_privacy_indicator_summary">Zobraziť samostatný indikátor, keď niektorá aplikácia používa polohu</string>
-    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
-    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
+    <string name="projection_privacy_indicator_title">Indikátor súkromia mediálnej projekcie</string>
+    <string name="projection_privacy_indicator_summary">Zobraziť indikátor, keď obrazovka zariadenia je chránená</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Hlboký spánok</string>
     <!-- In-call feedback -->
@@ -703,7 +709,7 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Aplikácie na celú obrazovku</string>
     <string name="display_cutout_force_fullscreen_summary">Prinútiť aplikácie ignorovať výrez v displeji</string>
-    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Žiadne aplikácie</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Neobmedzené úložisko fotografií</string>
     <string name="use_photos_spoof_summary">Spúšťať vaše zariadenie ako Pixel XL pre aplikáciu Google Fotky iba na poskytnutie neobmedzeného úložiska pre zálohu</string>
@@ -756,19 +762,19 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="custom_timeout_summary_4hours">Po 4\u00a0hodinách</string>
     <string name="custom_timeout_summary_8hours">Po 8\u00a0hodinách</string>
     <!-- WiFi Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
+    <string name="wifi_hotspot_hidden_ssid_title">Skrytá sieť</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Názov vášho mobilného hotspotu sa nezobrazí v zozname dostupných WLAN sietí.</string>
+    <string name="wifi_hotspot_client_manager_title">Pripojené zariadenia</string>
+    <string name="wifi_hotspot_client_manager_summary">Zoznam a správa zariadení pripojených k hotspotu</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Zoznam zariadení pripojených k hotspotu</string>
+    <string name="wifi_hotspot_client_limit_title">Limit počtu pripojených zariadení</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blokované zariadenia</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Pripojené zariadenia</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Zablokovať zariadenie</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Táto akcia odpojí zariadenie <xliff:g id="device_name">%1$s</xliff:g> od tohto zariadenia a pridá ho do zoznamu blokovaných</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Odblokovať zariadenie</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Toto zariadenie \"<xliff:g id="device_name">%1$s</xliff:g>\" sa bude môcť pripojiť k tomuto hotspotu</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Momentálne nie sú žiadne zariadenia dostupné. Pripojené a zablokované zariadenia budú zobrazené v tomto zozname, keď budú dostupné.</string>
     <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
     <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
     <string name="wifi_band_60ghz">60 GHz</string>
@@ -931,26 +937,26 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="smart_charging_reset_stats_summary">Resetovať štatistiky batérie po dosiahnutí definovanej úrovne nabíjania</string>
     <string name="smart_charging_footer">Inteligentné nabíjanie umožňuje nastaviť maximálnu úroveň nabitia na predĺženie životnosti batérie. Po zapnutí sa nabíjanie preruší na úrovni zastavenia a obnoví sa na úrovni spustenia. Úroveň zastavenia by mala byť vždy vyššia ako úroveň spustenia.</string>
     <!-- Weather -->
-    <string name="weather_settings_title">Weather settings</string>
-    <string name="weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="lockscreen_weather_title">Weather condition</string>
-    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
-    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
-    <string name="lockscreen_weather_location_title">Weather location</string>
-    <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="weather_settings_title">Nastavenie počasia</string>
+    <string name="weather_settings_summary">Nastavte balík ikon a meteorologickú službu</string>
+    <string name="lockscreen_weather_title">Počasie</string>
+    <string name="lockscreen_weather_summary">Zobrazenie aktuálneho počasia a teploty</string>
+    <string name="lockscreen_weather_enabled_info">Vyžaduje aktiváciu meteorologickej služby</string>
+    <string name="lockscreen_weather_location_title">Lokalita pre počasie</string>
+    <string name="lockscreen_weather_location_summary">Zobrazenie počasia podľa aktuálnej polohy</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptívne prehrávanie</string>
     <string name="adaptive_playback_summary">Pozastaviť médiá, ak je stlmená hlasitosť a pokračovať v prehrávaní zvyšovaním hlasitosti v rozmedzí časového limitu</string>
-    <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
+    <string name="adaptive_playback_intro_text">Automaticky pozastaví médiá, keď je hlasitosť stlmená, a automaticky sa obnoví, keď sa hlasitosť obnoví v nastavenom čase</string>
     <string name="adaptive_playback_timeout_title">Časový limit prehrávania</string>
     <!-- Custom logo -->
     <string name="status_bar_logo_title">Logo</string>
-    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_summary">Zobraziť vlastné logo na ľavej alebo pravej strane stavového riadka</string>
     <string name="status_bar_logo_position_title">Umiestnenie loga</string>
     <string name="status_bar_logo_style_title">Štýl loga</string>
     <!-- APK details on App info screen -->
-    <string name="app_info_install_time">Installed: %1$s</string>
-    <string name="app_info_update_time">Updated: %1$s</string>
+    <string name="app_info_install_time">Nainštalované: %1$s</string>
+    <string name="app_info_update_time">Aktualizované: %1$s</string>
     <!-- Show clipboard overlay -->
     <string name="show_clipboard_overlay_title">Show clipboard overlay</string>
     <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
@@ -968,17 +974,20 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="pattern_da_da_dzzz">da-da-dzzz</string>
     <string name="pattern_da_dzzz_da">da-dzzz-da</string>
     <string name="pattern_custom">Vlastné</string>
-    <string name="custom_vibration_pattern_title">Custom pattern</string>
-    <string name="custom_vibration_pattern_summary">Set a custom vibration pattern</string>
+    <string name="custom_vibration_pattern_title">Vlastný vzor</string>
+    <string name="custom_vibration_pattern_summary">Nastavte si vlastný vzor vibrácií</string>
     <!-- Per-channel vibration pattern -->
-    <string name="notification_custom_vibrate_title">Custom vibration pattern</string>
+    <string name="notification_custom_vibrate_title">Vlastný vzor vibrácie</string>
     <string name="notification_custom_vibrate_summary">Replaces the default pattern only\nApp set pattern takes precedence</string>
-    <string name="notification_custom_vibrate_slider1">Vibrate for</string>
-    <string name="notification_custom_vibrate_slider2">Pause for</string>
+    <string name="notification_custom_vibrate_slider1">Vibrovať</string>
+    <string name="notification_custom_vibrate_slider2">Pozastaviť</string>
     <!-- Floating rotation button -->
-    <string name="floating_rotation_button_title">Floating rotate button</string>
-    <string name="floating_rotation_button_summary">Show a floating rotate button when device is rotated</string>
-    <!-- Netflix Spooft -->
+    <string name="floating_rotation_button_title">Použiť plávajúce tlačidlo otáčania</string>
+    <string name="floating_rotation_button_summary">Pri otáčaní zariadenia zobraziť plávajúce tlačidlo otáčania</string>
+    <!-- Netflix Spoof -->
     <string name="netflix_spoof_title">Netflix spoof</string>
     <string name="netflix_spoof_summary">Spoof your device as different model for Netflix</string>
+    <!-- Captive portal -->
+    <string name="captive_portal_title">Kontrola pripojenia</string>
+    <string name="captive_portal_summary">Ak chcete zistiť, či sa zariadenie môže pripojiť k internetu, kontaktujte spoločnosť Google. Používa sa aj na detekciu portálov na prihlásenie.</string>
 </resources>
