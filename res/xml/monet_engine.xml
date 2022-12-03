@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2021-2023 crDroid Android Project
+     Copyright (C) 2021-2024 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,6 +19,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:key="monet_settings"
     android:title="@string/monet_title">
+
+    <ListPreference
+        android:key="theme_style"
+        android:title="@string/monet_engine_style_title"
+        android:entries="@array/monet_engine_style_entries"
+        android:entryValues="@array/monet_engine_style_values"
+        android:defaultValue="0" />
 
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
         android:key="monet_engine_custom_color"
