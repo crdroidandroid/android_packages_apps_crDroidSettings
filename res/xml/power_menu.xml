@@ -87,16 +87,6 @@
             android:summary="@string/advanced_reboot_secured_summary"
             android:dependency="advanced_reboot"
             android:defaultValue="true" />
-
-        <com.crdroid.settings.preferences.SecureSettingListPreference
-            android:key="power_menu_type"
-            android:icon="@drawable/ic_power_menu"
-            android:title="@string/power_menu_type_title"
-            android:summary="%s"
-            android:dialogTitle="@string/power_menu_type_title"
-            android:entries="@array/power_menu_type_entries"
-            android:entryValues="@array/power_menu_type_values"
-            android:defaultValue="0" />
     </PreferenceCategory>
 
 </PreferenceScreen>

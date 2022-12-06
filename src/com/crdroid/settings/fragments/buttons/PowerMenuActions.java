@@ -226,8 +226,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
                 LineageSettings.Secure.ADVANCED_REBOOT, 1, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.ADVANCED_REBOOT_SECURED, 1, UserHandle.USER_CURRENT);
-        Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.POWER_MENU_TYPE, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
