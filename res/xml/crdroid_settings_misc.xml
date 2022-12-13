@@ -54,6 +54,17 @@
         android:summary="@string/netflix_spoof_summary"
         android:defaultValue="false" />
 
+    <!-- Parallel space -->
+    <Preference
+        android:key="parallel_space"
+        android:icon="@drawable/ic_parallel_space"
+        android:title="@string/laboratory_parallel_space_title"
+        android:summary="@string/laboratory_parallel_space_summary">
+        <intent
+            android:targetPackage="ink.kscope.parallelspace"
+            android:targetClass="ink.kscope.parallelspace.MainActivity" />
+    </Preference>
+
     <!-- Smart Charging -->
     <Preference
         android:key="smart_charging"
