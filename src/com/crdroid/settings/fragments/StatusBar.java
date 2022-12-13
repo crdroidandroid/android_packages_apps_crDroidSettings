@@ -59,7 +59,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String QUICK_PULLDOWN = "qs_quick_pulldown";
-    private static final String SMART_PULLDOWN = "qs_smart_pulldown";
     private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
     private static final String KEY_SHOW_FOURG = "show_fourg_icon";
     private static final String KEY_SHOW_DATA_DISABLED = "data_disabled_icon";
@@ -81,7 +80,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private LineageSystemSettingListPreference mQuickPulldown;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
-    private SystemSettingListPreference mSmartPulldown;
     private SwitchPreference mShowRoaming;
     private SwitchPreference mShowFourg;
     private SwitchPreference mDataDisabled;
@@ -157,10 +155,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
         mQuickPulldown.setOnPreferenceChangeListener(this);
         updateQuickPulldownSummary(mQuickPulldown.getIntValue(0));
 
-        mSmartPulldown = (SystemSettingListPreference) findPreference(SMART_PULLDOWN);
-        mSmartPulldown.setOnPreferenceChangeListener(this);
-        updateSmartPulldownSummary(mSmartPulldown.getIntValue(0));
-
         // Adjust status bar preferences for RTL
         if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
             mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries_rtl);
@@ -189,10 +183,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
         } else if (preference == mQuickPulldown) {
             int value = Integer.parseInt((String) newValue);
             updateQuickPulldownSummary(value);
-            return true;
-        } else if (preference == mSmartPulldown) {
-            int value = Integer.parseInt((String) newValue);
-            updateSmartPulldownSummary(value);
             return true;
         }
         return false;
@@ -225,8 +215,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.DATA_DISABLED_ICON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.BLUETOOTH_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -272,22 +260,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 break;
         }
         mQuickPulldown.setSummary(summary);
-    }
-
-    private void updateSmartPulldownSummary(int value) {
-        Resources res = getResources();
-
-        if (value == 0) {
-            // Smart pulldown deactivated
-            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_off));
-        } else if (value == 3) {
-            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_none_summary));
-        } else {
-            String type = res.getString(value == 1
-                    ? R.string.smart_pulldown_dismissable
-                    : R.string.smart_pulldown_ongoing);
-            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type));
-        }
     }
 
     @Override
