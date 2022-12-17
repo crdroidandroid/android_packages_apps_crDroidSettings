@@ -34,7 +34,7 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Selector de colors</string>
     <string name="press_color_to_apply">Premeu al color per aplicar</string>
-    <string name="hex">Hex:</string>
+    <string name="hex">Hexadecimal:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Estableix</string>
     <string name="color_default">Per defecte</string>
@@ -98,7 +98,7 @@
     <string name="unit_seconds">segons</string>
     <string name="unit_milliseconds">mil·lisegons</string>
     <string name="unit_pixels">dp</string>
-    <string name="unit_hz">hz</string>
+    <string name="unit_hz">Hz</string>
     <!-- Clipboard -->
     <string name="copied_to_clipboard">S\'ha copiat al porta-retalls</string>
     <string name="longpress_to_clipboard">Premeu prolongadament per a copiar</string>
@@ -185,8 +185,8 @@
     <string name="button_wake_summary">Desperta el dispositiu prement el botó</string>
     <string name="volume_answer_call_title">Respondre la trucada</string>
     <string name="volume_answer_call_summary">Contesta les trucades entrants prement els botons de volum</string>
-    <string name="click_partial_screenshot_title">Cancel·la la captura de pantalla parcial</string>
-    <string name="click_partial_screenshot_summary">Feu un clic curt a abaixar el volum i encendre per fer una captura de pantalla parcial</string>
+    <string name="click_partial_screenshot_title">Prem per a fer una captura de pantalla parcial</string>
+    <string name="click_partial_screenshot_summary">Prem breument abaixa el volum i el botó d\'encesa per a fer una captura de pantalla parcial</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">Llum de fons</string>
     <string name="button_backlight_summary">Personalitza la configuració de la retroil·luminació dels botons</string>
@@ -201,8 +201,8 @@
     <string name="backlight_summary_enabled_with_timeout">Activada durant <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Activat</string>
     <plurals name="backlight_timeout_time">
-        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> segon/s</item>
-        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> segon/s</item>
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> segon</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> segons</item>
     </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Menú d\'apagat</string>
@@ -358,7 +358,7 @@
     <string name="clock_date_position">Posició de la data</string>
     <string name="clock_date_right">A la dreta de l\'hora</string>
     <string name="clock_date_left">A la esquerra de l\'hora</string>
-    <string name="clock_font_size_title">Grandària de la lletra del rellotge</string>
+    <string name="clock_font_size_title">Mida de la lletra del rellotge</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Estil de la bateria</string>
     <string name="status_bar_battery_style_icon_portrait">Icona vertical</string>
@@ -546,7 +546,7 @@
     <string name="qs_footer_services_icon_title">Drecera dels serveis en execució</string>
     <string name="qs_footer_settings_icon_title">Drecera a la configuració</string>
     <!-- Device Info screen. crDroid legal. -->
-    <string name="crdroid_license_title">crDroid legal</string>
+    <string name="crdroid_license_title">Informació legal de crDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_slider_title">Barra de brillantor</string>
     <string name="qs_show_brightness_slider_never">No mostrar mai</string>
@@ -592,7 +592,7 @@
     <!-- Battery light settings -->
     <string name="light_brightness_category">Configuració de la brillantor de la llum</string>
     <string name="battery_light_title">Llum de la bateria</string>
-    <string name="battery_light_enable_title">Activa la llum de la bateria</string>
+    <string name="battery_light_enable_title">Activa l\'indicador de la bateria</string>
     <string name="battery_light_summary">Configurar color led basat en el nivell i estat de la bateria</string>
     <string name="battery_low_pulse_title">Parpelleja si la bateria és baixa</string>
     <string name="battery_light_full_charge_disabled_title">Desactiva quan la càrrega estigui completa</string>
@@ -621,12 +621,12 @@
     <!-- Lights settings, LED notification -->
     <string name="led_notification_title">Configuració del llum</string>
     <string name="led_notification_text">LED habilitat per la configuració</string>
-    <string name="notification_light_add_apps_empty_summary">Per afegir un control per aplicació, activeu «%1$s» i premeu «Afegeix»</string>
+    <string name="notification_light_add_apps_empty_summary">Per permetre el control individual per aplicació, activeu «%1$s» i premeu «Afegeix»</string>
     <!-- Heads up timeout -->
     <string name="notification_heads_up_title">Flotants</string>
     <string name="notification_heads_up_summary">Permet notificacions emergents</string>
-    <string name="notification_heads_up_timeout_title">Temps d\'espera</string>
-    <string name="notification_heads_up_timeout_summary">Time to display heads up notifications</string>
+    <string name="notification_heads_up_timeout_title">Temps de visualització</string>
+    <string name="notification_heads_up_timeout_summary">Temps de visualització de les notificacions emergents</string>
     <!-- Less boring heads up -->
     <string name="less_boring_heads_up_title">Menys avorrit</string>
     <string name="less_boring_heads_up_summary">Mostrar notificacions emergents només per l\'alarma, el marcador i l\'aplicació de missatgeria</string>
@@ -638,8 +638,8 @@
     <string name="mic_camera_privacy_indicator_summary">Mostrar un indicador a part quan qualsevol aplicació usa el micròfon o la càmera</string>
     <string name="location_privacy_indicator_title">Indicador de privacitat d\'ubicació</string>
     <string name="location_privacy_indicator_summary">Mostrar un indicador a part quan qualsevol aplicació usa la ubicació</string>
-    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
-    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
+    <string name="projection_privacy_indicator_title">Indicador de privacitat de la projecció de multimèdia</string>
+    <string name="projection_privacy_indicator_summary">Mostra un indicador quan la pantalla del dispositiu s\'està projectant</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Son profund</string>
     <!-- In-call feedback -->
@@ -672,7 +672,7 @@
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Animació d\'apagat de la pantalla</string>
     <string name="screen_off_animation_default">Per defecte</string>
-    <string name="screen_off_animation_crt">CRT</string>
+    <string name="screen_off_animation_crt">Tub de raigs catòdics</string>
     <string name="screen_off_animation_scale">Escalat</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Vibració de l\'autenticació d’empremtes digitals</string>
@@ -718,17 +718,17 @@
     <string name="legacy_wfd_video_mode_1080p_30fps">1080p 30fps</string>
     <string name="legacy_wfd_video_mode_1080p_60fps">1080p 60fps</string>
     <!-- UDFPS settings -->
-    <string name="udfps_settings_title">Personalització d\'empremta en pantalla</string>
-    <string name="udfps_settings_summary">Customize under-display fingerprint scanner</string>
-    <string name="udfps_icon_picker_title">Selector d\'icona d\'empremta en pantalla</string>
+    <string name="udfps_settings_title">Personalització de l\'empremta en pantalla</string>
+    <string name="udfps_settings_summary">Personalitza el lector d\'empremta dactilar en pantalla</string>
+    <string name="udfps_icon_picker_title">Icona de l\'empremta en pantalla</string>
     <string name="udfps_icon_picker_summary">Escull la teva icona preferida per l\'empremta dactilar</string>
-    <string name="udfps_recog_animation_effect_title">Personalització d\'empremta en pantalla</string>
+    <string name="udfps_recog_animation_effect_title">Personalització de l\'animació de l\'empremta en pantalla</string>
     <string name="udfps_recog_animation_effect_summary">Escull l\'efecte de l\'animació</string>
     <!-- Face Unlock -->
     <string name="security_settings_face_unlock_redo_face_scan_summary">Suprimeix l\'escaneig facial actual i crea\'n un altre</string>
     <string name="security_settings_face_unlock_redo_face_scan_title">Refés l\'escaneig facial</string>
     <string name="face_redo_confirm_btn">Refés</string>
-    <string name="face_redo_warning_msg">Do you want to remove the existing face scan and create a new one?</string>
+    <string name="face_redo_warning_msg">Voleu suprimir l\'escaneig facial existent i crear-ne un de nou?</string>
     <string name="face_unlock_method_title">Permetre desbloqueig facial a la pantalla de bloqueig</string>
     <string name="face_unlock_method_default">Quan la pantalla estigui activada</string>
     <string name="face_unlock_method_swipe">Quan llisquis a la pantalla de bloqueig</string>
@@ -754,33 +754,33 @@
     <string name="custom_timeout_summary_8hours">8 hores</string>
     <!-- WiFi Hotspot -->
     <string name="wifi_hotspot_hidden_ssid_title">Xarxa oculta</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">El nom del punt d\'accés mòbil no apareixerà en la llista de xarxes WLAN disponibles.</string>
-    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
-    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
-    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">El nom del punt d\'accés mòbil no apareixerà a la llista de xarxes WLAN disponibles.</string>
+    <string name="wifi_hotspot_client_manager_title">Dispositius connectats</string>
+    <string name="wifi_hotspot_client_manager_summary">Mostra i gestiona els dispositius connectats al punt d\'accés</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Mostra els dispositius connectats al punt d\'accés</string>
+    <string name="wifi_hotspot_client_limit_title">Límit de dispositius connectats</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Dispositius bloquejats</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Dispositius connectats</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Bloqueja el dispositiu</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Aquesta acció desconnectarà \"<xliff:g id="device_name">%1$s</xliff:g>\" d\'aquest dispositiu i l\'afegirà a la llista de bloqueig</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Desbloqueja el dispositiu</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">El dispositiu «<xliff:g id="device_name">%1$s</xliff:g>» podrà connectar-se al punt d\'accés</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Actualment no hi ha clients disponibles. Els dispositius connectats i bloquejats es mostraran aquí quan estiguin disponibles.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2,4 GHz &amp; 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2,4 GHz &amp; 6 GHz</string>
     <string name="wifi_band_60ghz">60 GHz</string>
     <plurals name="wifi_hotspot_client_limit_summary">
-        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
-        <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
+        <item quantity="other">Es poden connectar fins a <xliff:g id="device_num">%1$d</xliff:g> dispositius a aquest punt d\'accés</item>
+        <item quantity="one">Es pot connectar fins a <xliff:g id="device_num">%1$d</xliff:g> dispositiu a aquest punt d\'accés</item>
     </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Amaga els accessos ràpids en la pantalla de bloqueig segura</string>
-    <string name="disable_qs_summary">Prevent access to QS tiles on secure lock screen</string>
+    <string name="disable_qs_summary">Impedeix l\'accés a la configuració ràpida des de la pantalla de bloqueig</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Menú d\'apagat</string>
     <string name="lockscreen_enable_power_menu_summary">Permet accedir al menú d\'apagat en la pantalla de bloqueig segura</string>
     <!-- Gesture navbar length -->
-    <string name="gesture_navbar_length_title">Pill length</string>
+    <string name="gesture_navbar_length_title">Longitud de la barra de navegació</string>
     <string name="short_label">Breu</string>
     <string name="long_label">Llarga</string>
     <!-- Back gesture height -->
@@ -792,8 +792,8 @@
     <string name="notification_guts_kill_app_button_title">Botó de forçar l\'aturada</string>
     <string name="notification_guts_kill_app_button_summary">Mostra un botó per forçar l\'aturada en una pulsació llarga al menú</string>
     <!-- Screen off UDFPS -->
-    <string name="screen_off_udfps_title">Screen off UDFPS</string>
-    <string name="screen_off_udfps_summary">Keep UDFPS enabled when the screen is off</string>
+    <string name="screen_off_udfps_title">Reconeixement de l\'empremta amb la pantalla apagada</string>
+    <string name="screen_off_udfps_summary">Mantén activat el lector d\'empremta en pantalla quan aquesta està apagada</string>
     <!-- Columbus -->
     <string name="columbus_gesture_detected">Toc ràpid detectat!</string>
     <string name="columbus_gesture_enrollment_complete">Fet</string>
@@ -806,54 +806,54 @@
     <string name="columbus_gesture_training_enrolling_first_gesture">... Detectat doble toc 1 de 2</string>
     <string name="columbus_gesture_training_enrolling_first_gesture_text">Provem-ho una altra vegada. Toca ràpidament el darrera del teu telèfon dues vegades.</string>
     <string name="columbus_gesture_training_enrolling_first_gesture_title">Molt bé!</string>
-    <string name="columbus_gesture_training_enrolling_second_gesture">… Double-tap 2 out of 2 detected</string>
-    <string name="columbus_gesture_training_enrolling_second_gesture_text">You’re ready to start using Quick Tap</string>
-    <string name="columbus_gesture_training_enrolling_second_gesture_title">You got it!</string>
-    <string name="columbus_gesture_training_enrolling_text">Quickly tap the back of your phone twice.</string>
-    <string name="columbus_gesture_training_enrolling_title">Try Quick Tap</string>
-    <string name="columbus_gesture_training_finished_text">To change the tap strength needed to use Quick Tap, go to Settings.</string>
-    <string name="columbus_gesture_training_finished_title">You’ve set up Quick Tap</string>
-    <string name="columbus_gesture_training_intro_text_accidental">You‘ve just tapped twice on the back of your device, which allows you to use your Assistant on the go. You can customize this gesture in settings.</string>
-    <string name="columbus_gesture_training_intro_text_suw">Take a screenshot, show notifications, or start another action in two taps.</string>
-    <string name="columbus_gesture_training_intro_title">Quick Tap for quick actions</string>
-    <string name="columbus_gesture_training_launch_no_selection_error">Please select an app to open</string>
-    <string name="columbus_gesture_training_launch_text">Select the app you’d like to open when you use Quick Tap.</string>
-    <string name="columbus_gesture_training_launch_title">Choose app to open</string>
-    <string name="columbus_launch_app_extra_widget_a11y_label">%1$s shortcut settings</string>
-    <string name="columbus_launch_settings_activity_title">Quick Tap settings</string>
-    <string name="columbus_name">Quick Tap</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture">... Tocs dobles detectats: 2 de 2</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_text">El Toc Ràpid ja es pot començar a utilitzar</string>
+    <string name="columbus_gesture_training_enrolling_second_gesture_title">Ja ho tens!</string>
+    <string name="columbus_gesture_training_enrolling_text">Toqueu ràpidament la part posterior del telèfon dues vegades.</string>
+    <string name="columbus_gesture_training_enrolling_title">Proveu el Toc Ràpid</string>
+    <string name="columbus_gesture_training_finished_text">Per canviar la força necessària per a utilitzar el Toc Ràpid, dirigiu-vos a la configuració.</string>
+    <string name="columbus_gesture_training_finished_title">S\'ha configurat el Toc Ràpid</string>
+    <string name="columbus_gesture_training_intro_text_accidental">L\'Assistent des de qualsevol lloc s\'ha activat perquè s\'han realitzat dos tocs a la part posterior del telèfon. Aquest comportament pot ser modificat a la configuració.</string>
+    <string name="columbus_gesture_training_intro_text_suw">Feu dos tocs per prendre una captura de pantalla, mostrar les notificacions o realitzar una altra acció.</string>
+    <string name="columbus_gesture_training_intro_title">Utilitzeu el Toc Ràpid per a les accions ràpides</string>
+    <string name="columbus_gesture_training_launch_no_selection_error">Trieu quina aplicació obrir</string>
+    <string name="columbus_gesture_training_launch_text">Trieu l\'aplicació que s\'obrirà en utilitzar el Toc Ràpid.</string>
+    <string name="columbus_gesture_training_launch_title">Tria una aplicació per obrir</string>
+    <string name="columbus_launch_app_extra_widget_a11y_label">Configuració de la drecera de %1$s</string>
+    <string name="columbus_launch_settings_activity_title">Configuració del Toc Ràpid</string>
+    <string name="columbus_name">Toc Ràpid</string>
     <string name="columbus_radio_button_extra_widget_a11y_label">Configuració de %1$s</string>
-    <string name="columbus_setting_action_assistant_title">Access your digital assistant</string>
+    <string name="columbus_setting_action_assistant_title">Accedeix a l\'assistent digital</string>
     <string name="columbus_setting_action_launch_summary_no_selection">No s\'ha seleccionat cap aplicació</string>
     <string name="columbus_setting_action_launch_summary_not_installed">L\'aplicació no està instal·lada</string>
     <string name="columbus_setting_action_launch_title">Obre l\'aplicació</string>
     <string name="columbus_setting_action_notification_title">Mostra les notificacions</string>
     <string name="columbus_setting_action_open_app_title">Obre l\'aplicació</string>
-    <string name="columbus_setting_action_overview_title">Cap aplicació recent</string>
-    <string name="columbus_setting_action_play_pause_title">Reprodueix o pausa el vídeo</string>
+    <string name="columbus_setting_action_overview_title">Vegeu les aplicacions recents</string>
+    <string name="columbus_setting_action_play_pause_title">Reprodueix o pausa contingut multimèdia</string>
     <string name="columbus_setting_action_screenshot_title">Fes una captura de pantalla</string>
-    <string name="columbus_setting_actions_title">Tap back of phone twice to</string>
-    <string name="columbus_setting_additional_settings_title">Quick Tap strength</string>
-    <string name="columbus_setting_app_selection_help_text">Select an app to open when you tap the back of your phone twice. If you uninstall the app, Quick Tap turns off until you select a different app.</string>
-    <string name="columbus_setting_app_shortcut_selection_help_text">Select what happens when you open this app using Quick Tap.</string>
-    <string name="columbus_setting_enable_switch_title">Utilitza Quick Sync</string>
-    <string name="columbus_setting_sensitivity_title">Require stronger taps</string>
+    <string name="columbus_setting_actions_title">Toqueu dues vegades la part posterior del telèfon per a</string>
+    <string name="columbus_setting_additional_settings_title">Força necessària per al Toc Ràpid</string>
+    <string name="columbus_setting_app_selection_help_text">Trieu l\'aplicació que s\'obrirà en tocar dos cops la part posterior del telèfon. Si l\'aplicació es desinstal·la, el Toc Ràpid es desactivarà fins que se\'n triï una altra.</string>
+    <string name="columbus_setting_app_shortcut_selection_help_text">Trieu que passa quan s\'obre aquesta aplicació utilitzant el Toc Ràpid.</string>
+    <string name="columbus_setting_enable_switch_title">Utilitza el Toc Ràpid</string>
+    <string name="columbus_setting_sensitivity_title">És necessari fer els tocs amb més força</string>
     <!-- Game -->
-    <string name="game_dashboard_always_on_summary">Show Game Dashboard shortcut in games</string>
-    <string name="game_dashboard_always_on_title">Game Dashboard</string>
+    <string name="game_dashboard_always_on_summary">Mostra la drecera del Tauler de Jocs quan s\'estigui dins d\'un joc</string>
+    <string name="game_dashboard_always_on_title">Tauler de Jocs</string>
     <string name="game_dashboard_dnd_rule_name">Jocs</string>
-    <string name="game_dashboard_dnd_summary">Only get notified by important people and apps when playing a game</string>
-    <string name="game_dashboard_dnd_title">Do Not Disturb for games</string>
+    <string name="game_dashboard_dnd_summary">Només es mostraran les notificacions de persones i aplicacions importants quan s\'estigui jugant</string>
+    <string name="game_dashboard_dnd_title">Mode No molesteu per als jocs</string>
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">Replace heads-up notification with slim and less invasive version of redesigned ticker</string>
-    <string name="reticker_colored_title">Utilitza fons del color de l\'aplicació</string>
-    <string name="reticker_colored_summary">Substitueix el color de fons del reTicker utilitzant el color principal de la notificació de l\'aplicació</string>
+    <string name="reticker_summary">Substitueix l\'aparença de les notificacions emergents amb una versió més estreta i menys invasiva</string>
+    <string name="reticker_colored_title">Utilitza el color de l\'aplicació per al fons</string>
+    <string name="reticker_colored_summary">Substitueix el color del fons del reTicker pel de l\'aplicació de la notificació</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see improvement in battery life.</string>
     <string name="smart_pixels_title">Píxels intel·ligents</string>
-    <string name="smart_pixels_summary">Estalvia bateria apagant píxels addicionals</string>
-    <string name="smart_pixels_enable_title">Habilita els píxels intel·ligents</string>
+    <string name="smart_pixels_summary">Estalvia bateria apagant píxels innecessaris</string>
+    <string name="smart_pixels_enable_title">Activa els píxels intel·ligents</string>
     <string name="smart_pixels_enable_summary">Apaga píxels per a reduir el consum d\'energia</string>
     <string name="smart_pixels_on_power_save_title">Activa automàticament en l\'estalvi de bateria</string>
     <string name="smart_pixels_on_power_save_summary">Activeu els píxels intel·ligents quan estigui habilitat l\'estalvi de bateria</string>
@@ -880,83 +880,83 @@
     <string name="battery_temperature">Temperatura de la bateria</string>
     <!-- QS Transparency -->
     <string name="qs_transparency_title">Transparència de fons</string>
-    <string name="qs_transparency_summary">Defineix el nivell de transparència per al fons de la configuració ràpida</string>
+    <string name="qs_transparency_summary">Estableix el nivell de transparència del fons de la configuració ràpida</string>
     <!-- Data usage info in QS footer -->
     <string name="qs_footer_datausage_title">Ús de dades</string>
-    <string name="qs_footer_datausage_summary">Icona de configuració de la pantalla en el peu de pàgina de configuració ràpida</string>
+    <string name="qs_footer_datausage_summary">Mostra un resum de l\'ús de dades a la part de sota de la configuració ràpida</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_title">Animació dels ajustos ràpids</string>
+    <string name="qs_tile_animation_title">Animació del mosaic</string>
     <string name="qs_tile_animation_style_title">Estil de l\'animació</string>
     <string name="qs_tile_animation_duration_title">Durada de l\'animació</string>
-    <string name="qs_tile_animation_interpolator_title">Interpolador d\'animació</string>
+    <string name="qs_tile_animation_interpolator_title">Efecte de l\'animació</string>
     <string name="qs_tile_animation_style_off">Sense animació</string>
     <string name="qs_tile_animation_style_rotate">Girar</string>
-    <string name="qs_tile_animation_style_flipx">Inverteix X</string>
-    <string name="qs_tile_animation_style_flipy">Inverteix Y</string>
+    <string name="qs_tile_animation_style_flipx">Tomba horitzontalment</string>
+    <string name="qs_tile_animation_style_flipy">Tomba verticalment</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Lineal</string>
-    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelerar</string>
-    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Desaccelerar</string>
-    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelerar/Desaccelerar</string>
+    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Accelera</string>
+    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Desaccelera</string>
+    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Accelera i desaccelera</string>
     <string name="qs_tile_animation_interpolator_bounceInterpolator">Rebota</string>
-    <string name="qs_tile_animation_interpolator_overshootInterpolator">Sobrepassar</string>
-    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipar-se</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipat/Excedir</string>
+    <string name="qs_tile_animation_interpolator_overshootInterpolator">Sobrepassa</string>
+    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipa</string>
+    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipa i sobrepassa</string>
     <!-- Screenshot shutter sound  -->
     <string name="screenshot_shutter_sound_title">So de captura de pantalla</string>
     <string name="screenshot_shutter_sound_summary">Emet un so en fer una captura de pantalla</string>
     <!-- QS tiles layout  -->
-    <string name="qs_layout_category_title">Tiles layout</string>
-    <string name="qs_tile_label_hide_title">Hide label</string>
-    <string name="qs_tile_label_size_title">Label text size</string>
-    <string name="qs_tile_label_hide_summary">Only show icon in tile</string>
-    <string name="qs_tile_layout_title">Vertical layout</string>
-    <string name="qs_tile_layout_summary">Show label below icon instead next to icon</string>
+    <string name="qs_layout_category_title">Disposició del mosaic</string>
+    <string name="qs_tile_label_hide_title">Amaga les etiquetes</string>
+    <string name="qs_tile_label_size_title">Mida del text de les etiquetes</string>
+    <string name="qs_tile_label_hide_summary">Mostra només les icones al mosaic</string>
+    <string name="qs_tile_layout_title">Disposició vertical</string>
+    <string name="qs_tile_layout_summary">Mostra les etiquetes a sota de les icones en comptes del costat</string>
     <string name="qs_columns_portrait_title">Columnes (vertical)</string>
     <string name="qs_columns_landscape_title">Columnes (apaïsat)</string>
     <!-- Statusbar Clock background chip -->
-    <string name="statusbar_clock_chip_title">Background chip</string>
-    <string name="statusbar_clock_chip_summary">Display accented chip behind clock</string>
+    <string name="statusbar_clock_chip_title">Fons del rellotge</string>
+    <string name="statusbar_clock_chip_summary">Accentua el fons del rellotge amb un color</string>
     <!-- Smart charging -->
-    <string name="smart_charging_title">Smart Charging</string>
-    <string name="smart_charging_summary">Set maximum charging level</string>
-    <string name="smart_charging_switch_title">Enable Smart Charging</string>
-    <string name="smart_charging_level_title">Stop trigger level</string>
-    <string name="smart_charging_resume_level_title">Start trigger level</string>
-    <string name="smart_charging_reset_stats_title">Reset battery statistics</string>
-    <string name="smart_charging_reset_stats_summary">Reset battery statistics after reaching user defined charging level</string>
-    <string name="smart_charging_footer">Smart Charging allows you to set maximum charging level to extend the lifespan of your battery. When enabled, battery stops charging at Stop trigger level and resumes charging at Start trigger level. Stop trigger level should be always greater than Start trigger level.</string>
+    <string name="smart_charging_title">Càrrega Intel·ligent</string>
+    <string name="smart_charging_summary">Estableix un nivell de càrrega màxim</string>
+    <string name="smart_charging_switch_title">Activa la Càrrega Intel·ligent</string>
+    <string name="smart_charging_level_title">Nivell màxim de càrrega</string>
+    <string name="smart_charging_resume_level_title">Nivell d\'activació</string>
+    <string name="smart_charging_reset_stats_title">Reinicialitza les estadístiques de la bateria</string>
+    <string name="smart_charging_reset_stats_summary">Reinicialitza les estadístiques de la bateria quan el nivell de càrrega arribi a un nivell predefinit per l\'usuari</string>
+    <string name="smart_charging_footer">La Càrrega Intel·ligent permet establir un nivell de càrrega màxim amb l\'objectiu de prolongar la vida útil de la bateria. Quan aquest mode s\'activa, la bateria deixa de carregar-se en arribar al Nivell màxim de càrrega i no es torna a iniciar fins a assolir el Nivell d\'activació. El Nivell màxim de càrrega ha de ser sempre major al Nivell d\'activació.</string>
     <!-- Weather -->
-    <string name="weather_settings_title">Weather settings</string>
-    <string name="weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="lockscreen_weather_title">Weather condition</string>
-    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
-    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
-    <string name="lockscreen_weather_location_title">Weather location</string>
-    <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="weather_settings_title">Configuració del temps</string>
+    <string name="weather_settings_summary">Configureu el paquet d\'icones i el servei del temps</string>
+    <string name="lockscreen_weather_title">Condicions meteorològiques</string>
+    <string name="lockscreen_weather_summary">Mostra la temperatura i condicions meteorològiques actuals</string>
+    <string name="lockscreen_weather_enabled_info">És necessari que el servei meteorològic estigui activat</string>
+    <string name="lockscreen_weather_location_title">Ubicació del temps meteorològic</string>
+    <string name="lockscreen_weather_location_summary">Mostra la ubicació del temps meteorològic actual</string>
     <!-- Adaptive Playback -->
-    <string name="adaptive_playback_title">Adaptive playback</string>
-    <string name="adaptive_playback_summary">Pause media when volume is muted and resume it by increasing volume within the timeout</string>
-    <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
-    <string name="adaptive_playback_timeout_title">Playback timeout</string>
+    <string name="adaptive_playback_title">Reproducció adaptativa</string>
+    <string name="adaptive_playback_summary">Pausa el contingut multimèdia quan el volum estigui en silenci i reprèn la reproducció quan aquest sigui incrementat dins d\'un temps d\'espera determinat</string>
+    <string name="adaptive_playback_intro_text">Pausa automàticament el contingut multimèdia quan el volum sigui silenciat i reprèn la reproducció quan el volum es restableixi dins d\'un temps d\'espera determinat</string>
+    <string name="adaptive_playback_timeout_title">Temps d\'espera per a la reproducció</string>
     <!-- Custom logo -->
     <string name="status_bar_logo_title">Logotip</string>
-    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_summary">Mostra un logotip personalitzat a la part dreta o esquerra de la barra d\'estat</string>
     <string name="status_bar_logo_position_title">Posició del logotip</string>
     <string name="status_bar_logo_style_title">Estil del logotip</string>
     <!-- APK details on App info screen -->
-    <string name="app_info_install_time">Installed: %1$s</string>
-    <string name="app_info_update_time">Updated: %1$s</string>
+    <string name="app_info_install_time">Instal·lat: %1$s</string>
+    <string name="app_info_update_time">Actualitzat: %1$s</string>
     <!-- Show clipboard overlay -->
-    <string name="show_clipboard_overlay_title">Show clipboard overlay</string>
-    <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
+    <string name="show_clipboard_overlay_title">Mostra el porta-retalls superposat</string>
+    <string name="show_clipboard_overlay_summary">Mostra el contingut del porta-retalls a la part inferior esquerra de la pantalla quan es copia algun element</string>
     <!-- Sensor block per-package -->
-    <string name="sensor_block_title">Sensor block per-package</string>
-    <string name="sensor_block_summary">Block access to certain sensors for some apps to save battery</string>
-    <string name="sensor_block_app_picker_title">Block sensors for these apps</string>
-    <string name="add_sensor_block_package_title">Add apps for Sensor block</string>
-    <string name="add_sensor_block_package_summary">Significant motion, accelerometer, linear acceleration sensors will be blocked for these apps</string>
+    <string name="sensor_block_title">Bloqueig de sensors per aplicació</string>
+    <string name="sensor_block_summary">Impedeix a aplicacions l\'accés a determinats sensors per tal d\'estalviar bateria</string>
+    <string name="sensor_block_app_picker_title">Bloqueja els sensors per a aquestes aplicacions</string>
+    <string name="add_sensor_block_package_title">Afegeix aplicacions al bloqueig de sensors</string>
+    <string name="add_sensor_block_package_summary">El sensor de moviment, d\'acceleració lineal i l\'acceleròmetre seran bloquejats per a aquestes aplicacions</string>
     <!-- Vibration patterns -->
-    <string name="vibration_pattern_title">Ringtone vibration pattern</string>
+    <string name="vibration_pattern_title">Patró de vibració del to de trucada</string>
     <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
     <string name="pattern_dzzz_da">dzzz-da</string>
     <string name="pattern_mm_mm_mm">mm-mm-mm</string>
@@ -967,19 +967,22 @@
     <string name="custom_vibration_pattern_summary">Estableix un patró de vibració personalitzat</string>
     <!-- Per-channel vibration pattern -->
     <string name="notification_custom_vibrate_title">Patró de vibració personalitzat</string>
-    <string name="notification_custom_vibrate_summary">Replaces the default pattern only\nApp set pattern takes precedence</string>
-    <string name="notification_custom_vibrate_slider1">Vibrate for</string>
-    <string name="notification_custom_vibrate_slider2">Pause for</string>
+    <string name="notification_custom_vibrate_summary">Només substitueix el patró per defecte\nUn patró establert per una aplicació tindrà preferència</string>
+    <string name="notification_custom_vibrate_slider1">Vibra per</string>
+    <string name="notification_custom_vibrate_slider2">Pausa per</string>
     <!-- Floating rotation button -->
-    <string name="floating_rotation_button_title">Barra d\'acció flotant</string>
-    <string name="floating_rotation_button_summary">Show a floating rotate button when device is rotated</string>
+    <string name="floating_rotation_button_title">Botó flotant de gir</string>
+    <string name="floating_rotation_button_summary">Mostra un botó flotant per a girar la pantalla quan es giri el dispositiu</string>
     <!-- Netflix Spoof -->
-    <string name="netflix_spoof_title">Netflix spoof</string>
-    <string name="netflix_spoof_summary">Spoof your device as different model for Netflix</string>
+    <string name="netflix_spoof_title">Suplanta la identitat a Netflix</string>
+    <string name="netflix_spoof_summary">Falsifica el model del dispositiu que Netflix detecta per a obtenir una millor qualitat</string>
     <!-- Captive portal -->
-    <string name="captive_portal_title">Connectivity check</string>
-    <string name="captive_portal_summary">Determine if the device can connect to the internet, by contacting Google. Also used to detect captive portals.</string>
+    <string name="captive_portal_title">Comprovació de la connexió</string>
+    <string name="captive_portal_summary">Determina si hi ha connexió a internet contactant amb Google. També es pot utilitzar per detectar portals captius.</string>
     <!-- Battery stats reset -->
-    <string name="battery_stats_reset">Reset stats?</string>
-    <string name="battery_stats_message">Battery usage data will be lost</string>
+    <string name="battery_stats_reset">Voleu reinicialitzar les estadístiques?</string>
+    <string name="battery_stats_message">Es perdran les dades d\'ús de la bateria</string>
+    <!-- Parallel space -->
+    <string name="laboratory_parallel_space_title">Aplicacions paral·leles</string>
+    <string name="laboratory_parallel_space_summary">Permet executar simultàniament diferents versions d\'una mateixa aplicació</string>
 </resources>
