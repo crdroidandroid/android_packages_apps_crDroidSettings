@@ -177,6 +177,14 @@
             android:entryValues="@array/qs_tile_ui_style_values"
             android:defaultValue="0" />
 
+        <ListPreference
+            android:key="qs_panel_style"
+            android:icon="@drawable/ic_color_bucket"
+            android:title="@string/qs_panel_style_title"
+            android:entries="@array/qs_panel_style_entries"
+            android:entryValues="@array/qs_panel_style_values"
+            android:defaultValue="0" />
+
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_label_hide"
             android:icon="@drawable/ic_text"
