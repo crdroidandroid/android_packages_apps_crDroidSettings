@@ -208,14 +208,14 @@
     <string name="power_menu_summary">自定义电源菜单选项</string>
     <string name="power_menu_actions_title">操作</string>
     <string name="power_menu_screenshot_title">屏幕截图</string>
-    <string name="power_menu_screenshot_summary">长按进行部分截图</string>
+    <string name="power_menu_screenshot_summary">长按进行局部截图</string>
     <string name="power_menu_onthego_title">行走模式</string>
     <string name="power_menu_advanced_title">高级重启选项</string>
     <string name="power_menu_airplane_title">飞行模式</string>
     <string name="power_menu_torch_title">手电筒</string>
     <string name="power_menu_settings_title">设置</string>
     <string name="power_menu_lockdown_title">锁定</string>
-    <string name="power_menu_lockdown_unavailable">键盘锁不安全，锁屏已禁用</string>
+    <string name="power_menu_lockdown_unavailable">当前锁定方式不安全，锁定已被禁用</string>
     <string name="power_menu_soundpanel_title">声音面板</string>
     <string name="power_menu_users_title">用户</string>
     <string name="power_menu_logout_title">注销</string>
@@ -234,7 +234,7 @@
     <string name="monet_engine_custom_color_summary">使用自定义颜色而非根据壁纸颜色变换</string>
     <string name="monet_engine_color_override_title">自定义颜色</string>
     <string name="monet_engine_white_luminance_user_title">白色亮度</string>
-    <string name="monet_engine_accurate_shades_title">使用精确的色调</string>
+    <string name="monet_engine_accurate_shades_title">调整界面色调</string>
     <string name="monet_engine_chroma_factor_title">色度系数</string>
     <string name="monet_engine_linear_lightness_title">使用线性亮度</string>
     <!-- Quick unlock -->
@@ -242,44 +242,44 @@
     <string name="unlock_quick_unlock_control_summary">当输入正确的 PIN 码/密码后自动解锁</string>
     <!-- Doze settings -->
     <string name="doze_display_title">息屏显示</string>
-    <string name="doze_display_summary">息屏显示配置设置</string>
-    <string name="doze_additional_settings_title">其他设置</string>
-    <string name="doze_additional_settings_summary">自定义设备息屏显示具体设置</string>
+    <string name="doze_display_summary">配置息屏显示设置</string>
+    <string name="doze_additional_settings_title">更多设置</string>
+    <string name="doze_additional_settings_summary">调整设备特有的息屏显示设置</string>
     <string name="doze_sensor_title">基于传感器</string>
-    <string name="raise_to_wake_title">亮屏唤醒</string>
+    <string name="raise_to_wake_title">唤醒屏幕</string>
     <string name="raise_to_wake_summary">有通知时直接唤醒屏幕</string>
     <string name="tilt_title">倾斜</string>
     <string name="tilt_summary">倾斜时显示通知</string>
     <string name="pickup_title">拿起</string>
-    <string name="pickup_summary">拿起时显示脉冲通知</string>
+    <string name="pickup_summary">拿起时显示通知光效</string>
     <string name="handwave_title">挥手</string>
-    <string name="handwave_summary">在手机上方挥手时显示通知</string>
+    <string name="handwave_summary">在手机上方挥手时显示通知光效</string>
     <string name="pocket_title">口袋</string>
-    <string name="pocket_summary">从口袋中拿出时显示通知</string>
+    <string name="pocket_summary">从口袋中拿出时显示通知光效</string>
     <string name="doze_vibrate">振动</string>
-    <string name="doze_vibrate_summary">通知时震动持续时间</string>
-    <string name="sensor_warning_message">基于传感器的设置需要相关硬件支持。使用传感器可能会增加耗电量。</string>
+    <string name="doze_vibrate_summary">光效显示时振动的持续时间</string>
+    <string name="sensor_warning_message">基于传感器的设置需要相关硬件支持。为息屏显示启用传感器可能会增加耗电量。</string>
     <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">全景光效</string>
-    <string name="pulse_ambient_light_summary">收到通知时屏幕侧边亮起</string>
-    <string name="pulse_ambient_light_color_title">全景光效颜色</string>
-    <string name="pulse_ambient_light_duration_title">全景光效时间</string>
-    <string name="pulse_ambient_light_duration_summary">设置全景光效动画持续时长</string>
-    <string name="pulse_ambient_light_layout_title">全景光效展示方式</string>
+    <string name="pulse_ambient_light_title">通知光效</string>
+    <string name="pulse_ambient_light_summary">收到通知时在屏幕边缘显示光效</string>
+    <string name="pulse_ambient_light_color_title">通知光效颜色</string>
+    <string name="pulse_ambient_light_duration_title">通知光效时间</string>
+    <string name="pulse_ambient_light_duration_summary">设置通知光效动画持续时长</string>
+    <string name="pulse_ambient_light_layout_title">通知光效展示方式</string>
     <string name="pulse_ambient_light_layout_solid">实线</string>
     <string name="pulse_ambient_light_layout_faded">渐变</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">音乐磁贴</string>
-    <string name="pulse_on_new_tracks_summary">当乐曲更换时在息屏显示上展示音乐磁贴</string>
+    <string name="pulse_on_new_tracks_summary">当音乐更换时在息屏显示上显示音乐磁贴</string>
     <!-- Status bar - icon blocklist -->
     <string name="status_bar_icons_title">状态栏图标</string>
     <string name="status_bar_icons_summary">选择在状态栏显示的图标</string>
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">蓝牙电池状态</string>
-    <string name="bluetooth_battery_summary">显示当前连接的蓝牙设备电量，如果设备支持</string>
+    <string name="bluetooth_battery_summary">若设备支持，显示当前连接的蓝牙设备电量</string>
     <!-- Tap to sleep on status bar -->
-    <string name="statusbar_doubletap_sleep_title">点按以睡眠</string>
-    <string name="statusbar_doubletap_sleep_summary">双击状态栏使设备休眠</string>
+    <string name="statusbar_doubletap_sleep_title">双击睡眠</string>
+    <string name="statusbar_doubletap_sleep_summary">双击状态栏使设备睡眠</string>
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">亮度调节</string>
     <string name="status_bar_toggle_brightness_summary">通过在状态栏上滑动来调整亮度</string>
@@ -297,25 +297,25 @@
     <string name="smart_pulldown_summary">当 %1$s 通知时打开快速设置</string>
     <string name="smart_pulldown_none_summary">没有通知时打开快速设置面板</string>
     <string name="smart_pulldown_off">关闭</string>
-    <string name="smart_pulldown_none">没有通知</string>
-    <string name="smart_pulldown_dismissable">没有清除</string>
-    <string name="smart_pulldown_ongoing">没有持续</string>
+    <string name="smart_pulldown_none">无通知</string>
+    <string name="smart_pulldown_dismissable">无可清除通知</string>
+    <string name="smart_pulldown_ongoing">没有正在进行的通知</string>
     <!-- Tap to sleep on status bar -->
-    <string name="lockscreen_doubletap_sleep_title">点按以睡眠</string>
+    <string name="lockscreen_doubletap_sleep_title">双击睡眠</string>
     <string name="lockscreen_doubletap_sleep_summary">锁屏时双击熄屏</string>
     <!-- Font style / Icon pack -->
     <string name="theme_customization_font_title">字体</string>
     <string name="theme_customization_font_summary">设置系统字体样式</string>
     <string name="theme_customization_icon_pack_title">图标包</string>
-    <string name="theme_customization_icon_pack_summary">设置自定义图标包样式</string>
+    <string name="theme_customization_icon_pack_summary">自定义图标包样式</string>
     <string name="theme_customization_icon_shape_title">图标形状</string>
     <string name="theme_customization_icon_shape_summary">设置系统图标形状样式</string>
     <string name="theme_customization_signal_icon_title">信号图标样式</string>
-    <string name="theme_customization_signal_icon_summary">设置自定义信号图标样式</string>
+    <string name="theme_customization_signal_icon_summary">自定义信号图标样式</string>
     <string name="theme_customization_wifi_icon_title">WiFi 图标样式</string>
-    <string name="theme_customization_wifi_icon_summary">设置自定义 WiFi 图标样式</string>
+    <string name="theme_customization_wifi_icon_summary">自定义 WiFi 图标样式</string>
     <string name="theme_customization_navbar_title">导航栏样式</string>
-    <string name="theme_customization_navbar_summary">设置自定义导航栏样式</string>
+    <string name="theme_customization_navbar_summary">自定义导航栏样式</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">默认刷新率</string>
     <string name="peak_refresh_rate_title_custom">最高刷新率</string>
@@ -323,7 +323,7 @@
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_title">时钟和日期</string>
     <string name="status_bar_clock_summary">自定义时钟和日期</string>
-    <string name="status_bar_clock_seconds_title">时钟秒数</string>
+    <string name="status_bar_clock_seconds_title">显示秒数</string>
     <string name="status_bar_clock_seconds_summary">在状态栏中显示时钟旁边的秒数</string>
     <string name="status_bar_clock_position_title">时钟样式</string>
     <string name="status_bar_clock_position_right">右侧</string>
@@ -340,20 +340,20 @@
     <string name="status_bar_am_pm_title">上午/下午样式</string>
     <string name="status_bar_am_pm_info">启用 24 小时制</string>
     <string name="status_bar_am_pm_normal">正常</string>
-    <string name="status_bar_am_pm_small">小号</string>
+    <string name="status_bar_am_pm_small">较小</string>
     <string name="status_bar_am_pm_hidden">隐藏</string>
     <string name="status_bar_date_title">日期</string>
     <string name="status_bar_date_none">隐藏</string>
-    <string name="status_bar_date_small">小号</string>
+    <string name="status_bar_date_small">较小</string>
     <string name="status_bar_date_normal">正常</string>
     <string name="status_bar_date_format_title">日期格式</string>
     <string name="status_bar_date_style">日期样式</string>
     <string name="status_bar_date_style_normal">正常</string>
     <string name="status_bar_date_style_lowercase">小写字母</string>
     <string name="status_bar_date_style_uppercase">大写字母</string>
-    <string name="status_bar_date_format_custom">自定义 java 格式</string>
+    <string name="status_bar_date_format_custom">自定义 Java 格式</string>
     <string name="status_bar_date_string_edittext_title">日期格式必须如：MM/dd/yy</string>
-    <string name="status_bar_date_string_edittext_summary">输入字符串</string>
+    <string name="status_bar_date_string_edittext_summary">输入字符</string>
     <string name="clock_date_position">日期位置</string>
     <string name="clock_date_right">位于时间右侧</string>
     <string name="clock_date_left">位于时间左侧</string>
@@ -418,8 +418,8 @@
     <string name="network_traffic_location_statusbar">状态栏</string>
     <string name="network_traffic_location_quick_statusbar">快速状态栏</string>
     <string name="network_traffic_mode_title">显示模式</string>
-    <string name="network_traffic_mode_up">仅限上传</string>
-    <string name="network_traffic_mode_down">仅限下载</string>
+    <string name="network_traffic_mode_up">仅上传</string>
+    <string name="network_traffic_mode_down">仅下载</string>
     <string name="network_traffic_mode_all">上传和下载</string>
     <string name="network_traffic_autohide">自动隐藏</string>
     <string name="network_traffic_autohide_summary">网络不活跃时隐藏状态栏网速图标</string>
@@ -640,7 +640,7 @@
     <string name="projection_privacy_indicator_title">媒体投影隐私指示器</string>
     <string name="projection_privacy_indicator_summary">当设备屏幕投影时显示指示器</string>
     <!-- Deep Sleep percentage in device info -->
-    <string name="status_sleep_time">深度睡眠</string>
+    <string name="status_sleep_time">深度休眠</string>
     <!-- In-call feedback -->
     <string name="incall_vibration_category">通话振动选项</string>
     <string name="incall_vibrate_connect_title">接通时振动</string>
