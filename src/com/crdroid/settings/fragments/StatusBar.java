@@ -233,6 +233,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.STATUS_BAR_LOGO_POSITION, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_LOGO_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.SHOW_WIFI_STANDARD_ICON, 0, UserHandle.USER_CURRENT);
 
         BatteryBar.reset(mContext);
         Clock.reset(mContext);

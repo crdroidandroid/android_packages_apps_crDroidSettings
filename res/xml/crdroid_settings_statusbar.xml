@@ -89,6 +89,13 @@
             android:summary="@string/bluetooth_battery_summary"
             android:defaultValue="true"/>
 
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="show_wifi_standard_icon"
+            android:icon="@drawable/ic_wifi"
+            android:title="@string/wifi_standard_icon_title"
+            android:summary="@string/wifi_standard_icon_summary"
+            android:defaultValue="false"/>
+
         <com.crdroid.settings.preferences.SecureSettingSwitchPreference
             android:key="enable_camera_privacy_indicator"
             android:icon="@drawable/ic_camera"
