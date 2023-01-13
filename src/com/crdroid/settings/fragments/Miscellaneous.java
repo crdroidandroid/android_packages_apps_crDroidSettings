@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2022 crDroid Android Project
+ * Copyright (C) 2016-2023 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,6 +32,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.fragments.misc.GmsSwitch;
 import com.crdroid.settings.fragments.misc.SensorBlock;
 import com.crdroid.settings.fragments.misc.SmartCharging;
 
@@ -92,6 +93,7 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         SystemProperties.set(SYS_GAMES_SPOOF, "false");
         SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
         SystemProperties.set(SYS_NETFLIX_SPOOF, "false");
+        GmsSwitch.reset(mContext);
         SensorBlock.reset(mContext);
         SmartCharging.reset(mContext);
     }
