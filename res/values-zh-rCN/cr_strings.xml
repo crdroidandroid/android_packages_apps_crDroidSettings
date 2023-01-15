@@ -51,8 +51,8 @@
     <string name="lockclock_title">时钟小部件</string>
     <string name="lockclock_summary">查看或更改时钟小部件的显示样式</string>
     <!-- Network traffic -->
-    <string name="network_traffic_settings_title">移动流量监视器l</string>
-    <string name="network_traffic_settings_summary">自定义并显示当前流量级别</string>
+    <string name="network_traffic_settings_title">移动流量监视器</string>
+    <string name="network_traffic_settings_summary">自定义并显示实时网络速率</string>
     <string name="network_traffic_location_title">位置</string>
     <string name="network_traffic_location_disable">已禁用</string>
     <string name="network_traffic_location_statusbar">状态栏</string>
@@ -698,7 +698,7 @@
     <string name="navbar_tuner_title">导航栏调谐器</string>
     <string name="navbar_tuner_summary">自定义按钮和布局</string>
     <string name="navbar_arrow_keys_title">键入时显示箭头键</string>
-    <string name="navbar_arrow_keys_summary">键入时显示左右光标按钮。覆盖 IME 切换器</string>
+    <string name="navbar_arrow_keys_summary">输入时显示左右光标按钮。覆盖输入法切换器</string>
     <string name="navbar_left_summary">横屏时在屏幕左侧显示导航栏</string>
     <string name="navbar_back_long_press_title">返回键长按行为</string>
     <string name="navbar_home_long_press_title">主页键长按行为</string>
@@ -858,7 +858,7 @@
     <!-- Status Bar Ticker -->
     <string name="ticker_screen_title">通知提示</string>
     <string name="ticker_screen_summary">在状态栏中显示通知样式</string>
-    <string name="ticker_screen_footer">仅当未显示通知提示时，股票代码才可见。 具有中心凹口的设备应在用户界面设置或开发人员选项下隐藏切口。</string>
+    <string name="ticker_screen_footer">通知提示仅在未显示浮动通知时可见。具有刘海的设备应在用户界面设置或开发人员选项下隐藏刘海。</string>
     <string name="ticker_title">状态栏图标</string>
     <string name="ticker_summary">使用旧的时钟样式</string>
     <string name="ticker_restore_defaults_title">恢复默认值</string>
@@ -866,7 +866,7 @@
     <string name="icon_title">图标</string>
     <string name="colors_title">颜色</string>
     <string name="values_restored_title">已恢复的值</string>
-    <string name="ticker_disabled">没有</string>
+    <string name="ticker_disabled">无通知</string>
     <string name="ticker_enabled">通知提示</string>
     <string name="ticker_media_enabled">通知和音乐提示</string>
     <string name="ticker_animation_mode_title">通知提示动画样式</string>
@@ -1714,7 +1714,7 @@
     <string name="screen_off_animation_fade">简单淡入</string>
     <string name="screen_off_animation_color">颜色褪色</string>
     <string name="screen_off_animation_crt">CRT</string>
-    <string name="screen_off_animation_scale">比例</string>
+    <string name="screen_off_animation_scale">比例缩放</string>
     <!-- System default animation -->
     <string name="system_default_animation_title">Android P 动画风格</string>
     <string name="system_default_animation_summary">启用 Android P \"默认\" 动画</string>
@@ -1913,7 +1913,7 @@
     <string name="flashlight_on_call_title">来电话时闪烁闪光灯</string>
     <string name="flashlight_on_call_disabled">禁用</string>
     <string name="flashlight_on_call_not_dnd">仅在铃声模式下</string>
-    <string name="flashlight_on_call_dnd">仅在 dnd 模式下</string>
+    <string name="flashlight_on_call_dnd">仅在请勿打扰模式下</string>
     <string name="flashlight_on_call_always">始终</string>
     <!-- Themes -->
     <string name="style_title">样式</string>
@@ -1981,7 +1981,7 @@
     <string name="qstile_mountain">山峰</string>
     <string name="qstile_ninja">忍者</string>
     <string name="qstile_oreo">奥利奥</string>
-    <string name="qstile_oreo_circle_trim">奥雷奥 (圆形裁剪)</string>
+    <string name="qstile_oreo_circle_trim">奥利奥 (圆形裁剪)</string>
     <string name="qstile_squaremedo">Squaremedo 风格</string>
     <string name="qstile_squircle">圆角矩形</string>
     <string name="qstile_neon_like">点赞</string>
@@ -2146,7 +2146,7 @@
     <string name="gaming_mode_hardware_keys_title">锁定按钮</string>
     <string name="gaming_mode_hardware_keys_summary">当游戏模式打开时，按钮将被锁定</string>
     <string name="gaming_mode_adb_title">禁用 USB 调试</string>
-    <string name="gaming_mode_adb_summary">游戏模式启用时禁用实体按键</string>
+    <string name="gaming_mode_adb_summary">游戏模式启用时禁用 USB 调试</string>
     <string name="gaming_mode_brightness_title">禁用自动亮度</string>
     <string name="gaming_mode_brightness_summary">开启游戏模式时锁定屏幕亮度</string>
     <string name="gaming_mode_ringer_title">游戏模式中的铃声</string>
@@ -2426,7 +2426,7 @@
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">深度睡眠</string>
     <!-- Partial screenshot on click -->
-    <string name="click_partial_screenshot_title">点击查看部分截图</string>
+    <string name="click_partial_screenshot_title">局部截图</string>
     <string name="click_partial_screenshot_summary">短按“音量减键”和“电源键”以截取部分屏幕截图</string>
     <!-- Battery fully charged sound -->
     <string name="battery_fully_charged_sound_enabled_title">电池充满的声音</string>
