@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2022 crDroid Android Project
+ * Copyright (C) 2016-2023 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String KEY_ANBI = "anbi_enabled";
     private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEY_BACK_LONG_PRESS = "hardware_keys_back_long_press";
+    private static final String KEY_BACK_DOUBLE_TAP = "hardware_keys_back_double_tap";
     private static final String KEY_BACK_WAKE_SCREEN = "back_wake_screen";
     private static final String KEY_CAMERA_LAUNCH = "camera_launch";
     private static final String KEY_CAMERA_SLEEP_ON_RELEASE = "camera_sleep_on_release";
@@ -74,9 +75,11 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String KEY_MENU_WAKE_SCREEN = "menu_wake_screen";
     private static final String KEY_ASSIST_PRESS = "hardware_keys_assist_press";
     private static final String KEY_ASSIST_LONG_PRESS = "hardware_keys_assist_long_press";
+    private static final String KEY_ASSIST_DOUBLE_TAP = "hardware_keys_assist_double_tap";
     private static final String KEY_ASSIST_WAKE_SCREEN = "assist_wake_screen";
     private static final String KEY_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
     private static final String KEY_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
+    private static final String KEY_APP_SWITCH_DOUBLE_TAP = "hardware_keys_app_switch_double_tap";
     private static final String KEY_APP_SWITCH_WAKE_SCREEN = "app_switch_wake_screen";
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String KEY_SWAP_VOLUME_BUTTONS = "swap_volume_buttons";
@@ -111,12 +114,15 @@ public class Buttons extends SettingsPreferenceFragment implements
     private ListPreference mHomeLongPressAction;
     private ListPreference mHomeDoubleTapAction;
     private ListPreference mBackLongPressAction;
+    private ListPreference mBackDoubleTapAction;
     private ListPreference mMenuPressAction;
     private ListPreference mMenuLongPressAction;
     private ListPreference mAssistPressAction;
     private ListPreference mAssistLongPressAction;
+    private ListPreference mAssistDoubleTapAction;
     private ListPreference mAppSwitchPressAction;
     private ListPreference mAppSwitchLongPressAction;
+    private ListPreference mAppSwitchDoubleTapAction;
     private SwitchPreference mCameraWakeScreen;
     private SwitchPreference mCameraSleepOnRelease;
     private ListPreference mVolumeKeyCursorControl;
@@ -187,20 +193,40 @@ public class Buttons extends SettingsPreferenceFragment implements
                 org.lineageos.platform.internal.R.integer.config_doubleTapOnHomeBehavior));
         Action defaultAppSwitchLongPressAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_longPressOnAppSwitchBehavior));
+        Action defaultAppSwitchDoubleTapAction = Action.fromIntSafe(res.getInteger(
+                org.lineageos.platform.internal.R.integer.config_doubleTapOnAppSwitchBehavior));
+        Action defaultAssistLongPressAction = Action.fromIntSafe(res.getInteger(
+                org.lineageos.platform.internal.R.integer.config_longPressOnAssistBehavior));
+        Action defaultAssistDoubleTapAction = Action.fromIntSafe(res.getInteger(
+                org.lineageos.platform.internal.R.integer.config_doubleTapOnAssistBehavior));
         Action homeLongPressAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION,
                 defaultHomeLongPressAction);
         Action defaultBackLongPressAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_longPressOnBackBehavior));
+        Action defaultBackDoubleTapAction = Action.fromIntSafe(res.getInteger(
+                org.lineageos.platform.internal.R.integer.config_doubleTapOnBackBehavior));
         Action homeDoubleTapAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
                 defaultHomeDoubleTapAction);
         Action appSwitchLongPressAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION,
                 defaultAppSwitchLongPressAction);
+        Action appSwitchDoubleTapAction = Action.fromSettings(resolver,
+                LineageSettings.System.KEY_APP_SWITCH_DOUBLE_TAP_ACTION,
+                defaultAppSwitchDoubleTapAction);
+        Action assistLongPressAction = Action.fromSettings(resolver,
+                LineageSettings.System.KEY_ASSIST_LONG_PRESS_ACTION,
+                defaultAssistLongPressAction);
+        Action assistDoubleTapAction = Action.fromSettings(resolver,
+                LineageSettings.System.KEY_ASSIST_DOUBLE_TAP_ACTION,
+                defaultAssistDoubleTapAction);
         Action backLongPressAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION,
                 defaultBackLongPressAction);
+        Action backDoubleTapAction = Action.fromSettings(resolver,
+                LineageSettings.System.KEY_BACK_DOUBLE_TAP_ACTION,
+                defaultBackDoubleTapAction);
 
         if (isKeyDisablerSupported(getActivity())) {
             mHardwareKeysDisable.setOnPreferenceChangeListener(this);
@@ -258,6 +284,7 @@ public class Buttons extends SettingsPreferenceFragment implements
             }
 
             mBackLongPressAction = initList(KEY_BACK_LONG_PRESS, backLongPressAction);
+            mBackDoubleTapAction = initList(KEY_BACK_DOUBLE_TAP, backDoubleTapAction);
         }
         if (!hasBackKey || backCategory.getPreferenceCount() == 0) {
             prefScreen.removePreference(backCategory);
@@ -290,9 +317,8 @@ public class Buttons extends SettingsPreferenceFragment implements
                     LineageSettings.System.KEY_ASSIST_ACTION, Action.SEARCH);
             mAssistPressAction = initList(KEY_ASSIST_PRESS, pressAction);
 
-            Action longPressAction = Action.fromSettings(resolver,
-                    LineageSettings.System.KEY_ASSIST_LONG_PRESS_ACTION, Action.VOICE_SEARCH);
-            mAssistLongPressAction = initList(KEY_ASSIST_LONG_PRESS, longPressAction);
+            mAssistLongPressAction = initList(KEY_ASSIST_LONG_PRESS, assistLongPressAction);
+            mAssistDoubleTapAction = initList(KEY_ASSIST_DOUBLE_TAP, assistDoubleTapAction);
         }
         if (!hasAssistKey || assistCategory.getPreferenceCount() == 0) {
             prefScreen.removePreference(assistCategory);
@@ -308,6 +334,7 @@ public class Buttons extends SettingsPreferenceFragment implements
             mAppSwitchPressAction = initList(KEY_APP_SWITCH_PRESS, pressAction);
 
             mAppSwitchLongPressAction = initList(KEY_APP_SWITCH_LONG_PRESS, appSwitchLongPressAction);
+            mAppSwitchDoubleTapAction = initList(KEY_APP_SWITCH_DOUBLE_TAP, appSwitchDoubleTapAction);
         }
         if (!hasAppSwitchKey || appSwitchCategory.getPreferenceCount() == 0) {
             prefScreen.removePreference(appSwitchCategory);
@@ -464,32 +491,44 @@ public class Buttons extends SettingsPreferenceFragment implements
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION);
             return true;
+        } else if (preference == mBackDoubleTapAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    LineageSettings.System.KEY_BACK_DOUBLE_TAP_ACTION);
+            return true;
         } else if (preference == mMenuPressAction) {
-            handleListChange(mMenuPressAction, newValue,
+            handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_MENU_ACTION);
             return true;
         } else if (preference == mMenuLongPressAction) {
-            handleListChange(mMenuLongPressAction, newValue,
+            handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_MENU_LONG_PRESS_ACTION);
             return true;
         } else if (preference == mAssistPressAction) {
-            handleListChange(mAssistPressAction, newValue,
+            handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_ASSIST_ACTION);
             return true;
         } else if (preference == mAssistLongPressAction) {
-            handleListChange(mAssistLongPressAction, newValue,
+            handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_ASSIST_LONG_PRESS_ACTION);
             return true;
+        } else if (preference == mAssistDoubleTapAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    LineageSettings.System.KEY_ASSIST_DOUBLE_TAP_ACTION);
+            return true;
         } else if (preference == mAppSwitchPressAction) {
-            handleListChange(mAppSwitchPressAction, newValue,
+            handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_APP_SWITCH_ACTION);
             return true;
         } else if (preference == mAppSwitchLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
             return true;
+        } else if (preference == mAppSwitchDoubleTapAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    LineageSettings.System.KEY_APP_SWITCH_DOUBLE_TAP_ACTION);
+            return true;
         } else if (preference == mVolumeKeyCursorControl) {
-            handleSystemListChange(mVolumeKeyCursorControl, newValue,
+            handleSystemListChange((ListPreference) preference, newValue,
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL);
             return true;
         }
@@ -627,15 +666,18 @@ public class Buttons extends SettingsPreferenceFragment implements
 
                     keys.add(KEY_BACK_WAKE_SCREEN);
                     keys.add(KEY_BACK_LONG_PRESS);
+                    keys.add(KEY_BACK_DOUBLE_TAP);
                     keys.add(KEY_MENU_WAKE_SCREEN);
                     keys.add(KEY_MENU_PRESS);
                     keys.add(KEY_MENU_LONG_PRESS);
                     keys.add(KEY_ASSIST_WAKE_SCREEN);
                     keys.add(KEY_ASSIST_PRESS);
                     keys.add(KEY_ASSIST_LONG_PRESS);
+                    keys.add(KEY_ASSIST_DOUBLE_TAP);
                     keys.add(KEY_APP_SWITCH_WAKE_SCREEN);
                     keys.add(KEY_APP_SWITCH_PRESS);
                     keys.add(KEY_APP_SWITCH_LONG_PRESS);
+                    keys.add(KEY_APP_SWITCH_DOUBLE_TAP);
                     keys.add(KEY_CAMERA_WAKE_SCREEN);
 
                     if (!DeviceUtils.hasCameraKey(context)) {
