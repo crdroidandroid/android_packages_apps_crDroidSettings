@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2022 crDroid Android Project
+     Copyright (C) 2016-2023 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -319,6 +319,8 @@
     <string name="theme_customization_wifi_icon_summary">Встановити користувацький стиль іконок wifi</string>
     <string name="theme_customization_navbar_title">Стиль панелі навігації</string>
     <string name="theme_customization_navbar_summary">Встановити користувацький стиль панелі навігації</string>
+    <string name="theme_customization_lock_clock_title">Стиль шрифту годинника</string>
+    <string name="theme_customization_lock_clock_summary">Встановити стиль шрифту годинника на екрані блокування</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Частота оновлення за замовчуванням</string>
     <string name="peak_refresh_rate_title_custom">Швидкість оновлення</string>
@@ -502,9 +504,11 @@
     <string name="navbar_invert_layout_summary">Інвертує схему панелі навігації та інших елементів, наприклад, перемикач IME</string>
     <string name="navbar_actions_category_title">Дії</string>
     <string name="navbar_back_long_press_title">Довге натискання кнопки назад</string>
+    <string name="navbar_back_double_tap_title">Назад подвійний дотик</string>
     <string name="navbar_home_long_press_title">Тривале натискання на головний екран</string>
     <string name="navbar_home_double_tap_title">Подвійний дотик</string>
     <string name="navbar_app_switch_long_press_title">Тривале натискання недавніх програм</string>
+    <string name="navbar_app_switch_double_tap_title">Подвійний дотик нещодавніх</string>
     <string name="navbar_edge_long_swipe_title">Довгий свайп до краю</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Виявлення телефону в кишені</string>
@@ -772,10 +776,10 @@
     <string name="wifi_band_24ghz_and_6ghz">2,4 ГГц &amp; 6 ГГц</string>
     <string name="wifi_band_60ghz">60 ГГц</string>
     <plurals name="wifi_hotspot_client_limit_summary">
-        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="other">До цієї точки доступу можна під\'єднати <xliff:g id="device_num">%1$d</xliff:g> пристроїв</item>
         <item quantity="one">До цієї точки доступу можна під\'єднати <xliff:g id="device_num">%1$d</xliff:g> пристрій</item>
         <item quantity="few">До цієї точки доступу можна під\'єднати <xliff:g id="device_num">%1$d</xliff:g> пристроїв</item>
-        <item quantity="many">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="many">До цієї точки доступу можна під\'єднати <xliff:g id="device_num">%1$d</xliff:g> пристроїв</item>
     </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Приховати швидкі налаштування на захищеному екрані блокування</string>
@@ -989,4 +993,21 @@
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Паралельний простір</string>
     <string name="laboratory_parallel_space_summary">Дозволити запуск кількох екземплярів однакової програми паралельно</string>
+    <!-- WiFi Standard icon -->
+    <string name="wifi_standard_icon_title">WiFi стандарти</string>
+    <string name="wifi_standard_icon_summary">Показувати WiFi стандарт поруч із сигналом WiFi</string>
+    <!-- Google services -->
+    <string name="gms_enabled_title">Сервіси Google</string>
+    <string name="gms_enabled_summary">Управління сервісами Google та основними додатками</string>
+    <string name="gms_enabled_footer">Перед відключенням служб Google та основних додатків, вам потрібно вимкнути \"знайти мій пристрій\" і двоетапну перевірку для вашого облікового запису Google. Настійно рекомендується підтримувати цей параметр увімкненим іншим програмам, залежним від компонентів Google. Якщо у вас виникнуть питання після зміни цього налаштування, виконайте скидання до заводських налаштувань.</string>
+    <!-- Lockscreen bottom shortcuts -->
+    <string name="lockscreen_shortcut_category">Ярлики в нижніх кутах</string>
+    <string name="lockscreen_shortcut_start_title">Лівий ярлик</string>
+    <string name="lockscreen_shortcut_end_title">Правий ярлик</string>
+    <string name="lockscreen_shortcut_home">Керування домашнім екраном</string>
+    <string name="lockscreen_shortcut_wallet">Гаманець</string>
+    <string name="lockscreen_shortcut_flashlight">Ліхтарик</string>
+    <string name="lockscreen_shortcut_qr">QR сканер</string>
+    <string name="lockscreen_shortcut_camera">Камера</string>
+    <string name="lockscreen_shortcut_none">Жодної</string>
 </resources>

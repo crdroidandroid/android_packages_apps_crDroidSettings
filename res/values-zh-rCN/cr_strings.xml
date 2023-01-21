@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2022 crDroid Android Project
+     Copyright (C) 2016-2023 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -316,6 +316,8 @@
     <string name="theme_customization_wifi_icon_summary">自定义 WiFi 图标样式</string>
     <string name="theme_customization_navbar_title">导航栏样式</string>
     <string name="theme_customization_navbar_summary">自定义导航栏样式</string>
+    <string name="theme_customization_lock_clock_title">时钟字体样式</string>
+    <string name="theme_customization_lock_clock_summary">设置锁屏界面时钟字体样式</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">默认刷新率</string>
     <string name="peak_refresh_rate_title_custom">最高刷新率</string>
@@ -499,9 +501,11 @@
     <string name="navbar_invert_layout_summary">反转导航栏和其他项目的布局，如输入法切换器</string>
     <string name="navbar_actions_category_title">操作</string>
     <string name="navbar_back_long_press_title">返回长按</string>
+    <string name="navbar_back_double_tap_title">返回双击</string>
     <string name="navbar_home_long_press_title">主页长按</string>
     <string name="navbar_home_double_tap_title">主页双击</string>
     <string name="navbar_app_switch_long_press_title">最近长按</string>
+    <string name="navbar_app_switch_double_tap_title">双击最近任务</string>
     <string name="navbar_edge_long_swipe_title">边缘长划</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">口袋检测</string>
@@ -942,8 +946,8 @@
     <string name="status_bar_logo_position_title">Logo 位置</string>
     <string name="status_bar_logo_style_title">Logo 样式</string>
     <!-- APK details on App info screen -->
-    <string name="app_info_install_time">已安装: %1$s</string>
-    <string name="app_info_update_time">已更新: %1$s</string>
+    <string name="app_info_install_time">安装时间: %1$s</string>
+    <string name="app_info_update_time">更新时间: %1$s</string>
     <!-- Show clipboard overlay -->
     <string name="show_clipboard_overlay_title">显示悬浮剪贴板</string>
     <string name="show_clipboard_overlay_summary">当复制某些内容时，在屏幕的左下角显示悬浮剪贴板</string>
@@ -983,4 +987,21 @@
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">平行空间</string>
     <string name="laboratory_parallel_space_summary">允许同时运行同一应用程序的多个实例</string>
+    <!-- WiFi Standard icon -->
+    <string name="wifi_standard_icon_title">WiFi 频段</string>
+    <string name="wifi_standard_icon_summary">在 WiFi 图标旁边显示 WiFi 频段</string>
+    <!-- Google services -->
+    <string name="gms_enabled_title">Google 服务</string>
+    <string name="gms_enabled_summary">控制 Google 服务和核心应用</string>
+    <string name="gms_enabled_footer">在禁用 Google 服务和核心应用前，你应该禁用查找我的设备和 Google 账户的两步验证。强烈建议开启该功能，否则依赖 Google 组件的应用将受到影响。如果你在改变这一设置后遇到问题，请恢复出厂设置</string>
+    <!-- Lockscreen bottom shortcuts -->
+    <string name="lockscreen_shortcut_category">底部快捷方式</string>
+    <string name="lockscreen_shortcut_start_title">左侧快捷方式</string>
+    <string name="lockscreen_shortcut_end_title">右侧快捷方式</string>
+    <string name="lockscreen_shortcut_home">主页控制</string>
+    <string name="lockscreen_shortcut_wallet">钱包</string>
+    <string name="lockscreen_shortcut_flashlight">手电筒</string>
+    <string name="lockscreen_shortcut_qr">二维码扫描器</string>
+    <string name="lockscreen_shortcut_camera">相机</string>
+    <string name="lockscreen_shortcut_none">无</string>
 </resources>
