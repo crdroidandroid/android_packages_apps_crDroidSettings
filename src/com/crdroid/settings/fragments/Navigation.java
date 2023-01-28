@@ -255,6 +255,8 @@ public class Navigation extends SettingsPreferenceFragment implements
                 Settings.System.BACK_GESTURE_HEIGHT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.GESTURE_NAVBAR_LENGTH_MODE, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.GESTURE_NAVBAR_RADIUS, 3, UserHandle.USER_CURRENT);
     }
 
     @Override
