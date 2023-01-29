@@ -100,8 +100,8 @@
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">Hz</string>
     <!-- Clipboard -->
-    <string name="copied_to_clipboard">Copied to clipboard</string>
-    <string name="longpress_to_clipboard">Long-press to copy</string>
+    <string name="copied_to_clipboard">Kopeeritud lõikelauale</string>
+    <string name="longpress_to_clipboard">Kopeerimiseks hoia all</string>
     <!-- Hardware info -->
     <string name="platform_revision">Platvorm</string>
     <string name="total_ram">Kogu RAM</string>
@@ -201,8 +201,8 @@
     <string name="backlight_summary_enabled_with_timeout">Lubatud <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Lubatud</string>
     <plurals name="backlight_timeout_time">
-        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
-        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> sekund</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> sekundit</item>
     </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Toitemenüü</string>
@@ -318,7 +318,7 @@
     <string name="theme_customization_navbar_title">Navigeerimisriba stiil</string>
     <string name="theme_customization_navbar_summary">Määra kohandatud navigeerimisriba stiil</string>
     <string name="theme_customization_lock_clock_title">Kella teksti suurus</string>
-    <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
+    <string name="theme_customization_lock_clock_summary">Määra lukustuskuva kella fondi stiil</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Vaikimisi värskendussagedus</string>
     <string name="peak_refresh_rate_title_custom">Maksimaalne värskendussagedus</string>
@@ -360,7 +360,7 @@
     <string name="clock_date_position">Kuupäeva asukoht</string>
     <string name="clock_date_right">Kellast paremal</string>
     <string name="clock_date_left">Kellast vasakul</string>
-    <string name="clock_font_size_title">Clock font size</string>
+    <string name="clock_font_size_title">Kella fondi suurus</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Aku ikooni stiil</string>
     <string name="status_bar_battery_style_icon_portrait">Ikoon püstasendis</string>
@@ -502,11 +502,11 @@
     <string name="navbar_invert_layout_summary">Pöörab navigeerimisriba ja muude üksuste, näiteks IME-lüliti, paigutuse</string>
     <string name="navbar_actions_category_title">Tegevused</string>
     <string name="navbar_back_long_press_title">Tagasinupu pikk vajutus</string>
-    <string name="navbar_back_double_tap_title">Back double tap</string>
+    <string name="navbar_back_double_tap_title">Tagasinupu topeltkoputus</string>
     <string name="navbar_home_long_press_title">Kodunupu pikk vajutus</string>
     <string name="navbar_home_double_tap_title">Kodunupu topeltkoputus</string>
     <string name="navbar_app_switch_long_press_title">Viimatiste nupu pikk vajutus</string>
-    <string name="navbar_app_switch_double_tap_title">Recents double tap</string>
+    <string name="navbar_app_switch_double_tap_title">Hiljutiste nupu topeltkoputus</string>
     <string name="navbar_edge_long_swipe_title">Serva pikk libistamine</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Taskutuvastus</string>
@@ -596,7 +596,7 @@
     <!-- Battery light settings -->
     <string name="light_brightness_category">Valguse heleduse seaded</string>
     <string name="battery_light_title">Aku märgutuli</string>
-    <string name="battery_light_enable_title">Enable battery light</string>
+    <string name="battery_light_enable_title">Luba aku märgutuli</string>
     <string name="battery_light_summary">Seadista LED-värvi vastavalt aku tasemele ja olekule</string>
     <string name="battery_low_pulse_title">Vilguta aku tühjenemisel</string>
     <string name="battery_light_full_charge_disabled_title">Lülita välja, kui täielikult laetud</string>
@@ -607,7 +607,7 @@
     <string name="battery_light_really_full_color_title">Täielikult laetud (100%)</string>
     <!-- Lights settings screen, notification light settings -->
     <string name="notification_light_title">Teadete märgutuli</string>
-    <string name="notification_light_enable_title">Enable notification light</string>
+    <string name="notification_light_enable_title">Luba märguandetuli</string>
     <string name="notification_light_summary">Seadista teavituste LED-värvi</string>
     <string name="notification_light_general_title">Üldine</string>
     <string name="notification_light_advanced_title">Täpsemad</string>
@@ -625,7 +625,7 @@
     <!-- Lights settings, LED notification -->
     <string name="led_notification_title">Märgutule seaded</string>
     <string name="led_notification_text">LED-tuli on seadetes lubatud</string>
-    <string name="notification_light_add_apps_empty_summary">To add per app control, activate \'%1$s\' and press \'Add\'</string>
+    <string name="notification_light_add_apps_empty_summary">Rakendusepõhise juhtimise lisamiseks aktiveeri \"%1$s\" ning vajuta \"Lisa\"</string>
     <!-- Heads up timeout -->
     <string name="notification_heads_up_title">Piiluvad teated</string>
     <string name="notification_heads_up_summary">Luba hüpikteated</string>
@@ -642,8 +642,8 @@
     <string name="mic_camera_privacy_indicator_summary">Kuva eraldi indikaator, kui mõni rakendus kasutab mikrofoni või kaamerat</string>
     <string name="location_privacy_indicator_title">Asukoha privaatsuse indikaator</string>
     <string name="location_privacy_indicator_summary">Kuva eraldi indikaator, kui mõni rakendus kasutab asukohta</string>
-    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
-    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
+    <string name="projection_privacy_indicator_title">Meedia projitseerimise privaatsusindikaator</string>
+    <string name="projection_privacy_indicator_summary">Kuva indikaator seadme ekraani projitseerimisel</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">Sügav uni</string>
     <!-- In-call feedback -->
@@ -704,7 +704,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">Täisekraanis rakendused</string>
     <string name="display_cutout_force_fullscreen_summary">Sunni rakendused kulmuala ignoreerima</string>
-    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
+    <string name="display_cutout_force_fullscreen_no_apps">Rakendusi pole</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">Piiramatu Photos kettaruum</string>
     <string name="use_photos_spoof_summary">Peta oma seade vaid Google Photos rakenduses Pixel XL\'iks, et saada varunduste jaoks piiramatu kettaruum</string>
@@ -757,25 +757,25 @@
     <string name="custom_timeout_summary_4hours">4 tundi</string>
     <string name="custom_timeout_summary_8hours">8 tundi</string>
     <!-- WiFi Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
-    <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
-    <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
-    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
-    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_hotspot_hidden_ssid_title">Peidetud võrk</string>
+    <string name="wifi_hotspot_hidden_ssid_summary">Teie mobiilse kuumkoha nime ei kuvata saadaolevate WLAN-võrkude loendis.</string>
+    <string name="wifi_hotspot_client_manager_title">Ühendatud seadmed</string>
+    <string name="wifi_hotspot_client_manager_summary">Kuva ja halda kuumkohaga ühendatud seadmeid</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">Kuva kuumkohaga ühendatud seadmed</string>
+    <string name="wifi_hotspot_client_limit_title">Ühendatud seadmete limiit</string>
+    <string name="wifi_hotspot_blocked_clients_list_title">Blokeeritud seadmed</string>
+    <string name="wifi_hotspot_connected_clients_list_title">Ühendatud seadmed</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Blokeeri seade</string>
+    <string name="wifi_hotspot_block_client_dialog_text">See toiming katkestab \"<xliff:g id="device_name">%1$s</xliff:g>\" ühenduse selle seadmega ja lisab selle blokeerimisloendisse</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Eemalda seadme blokeering</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Seade \"<xliff:g id="device_name">%1$s</xliff:g>\" saab selle kuumkohaga ühenduse luua</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Hetkel pole ühtegi klienti saadaval. Ühendatud ja blokeeritud seadmed kuvatakse siin, kui need on saadaval.</string>
+    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz ja 5 GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz ja 6 GHz</string>
     <string name="wifi_band_60ghz">60 GHz</string>
     <plurals name="wifi_hotspot_client_limit_summary">
-        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
-        <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
+        <item quantity="other">Selle kuumkohaga saab ühenduse luua kuni <xliff:g id="device_num">%1$d</xliff:g> seadet</item>
+        <item quantity="one">Selle kuumkohaga saab ühenduse luua kuni <xliff:g id="device_num">%1$d</xliff:g> seade</item>
     </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">Peida kiirseaded turvalisel lukustuskuval</string>
@@ -787,6 +787,10 @@
     <string name="gesture_navbar_length_title">Riba pikkus</string>
     <string name="short_label">Lühike</string>
     <string name="long_label">Pikk</string>
+    <!-- Gesture navbar radius -->
+    <string name="gesture_navbar_radius_title">Pill radius</string>
+    <string name="thin_label">Õhuke</string>
+    <string name="thick_label">Thick</string>
     <!-- Back gesture height -->
     <string name="back_height_low_label">Täielik</string>
     <string name="back_height_high_label">Alumine</string>
@@ -883,20 +887,20 @@
     <!-- Battery temperature -->
     <string name="battery_temperature">Aku temperatuur</string>
     <!-- QS Transparency -->
-    <string name="qs_transparency_title">Background transparency</string>
-    <string name="qs_transparency_summary">Set transparency level for QS background</string>
+    <string name="qs_transparency_title">Tausta läbipaistvus</string>
+    <string name="qs_transparency_summary">Määra kiirseadete taustale läbipaistvustase</string>
     <!-- Data usage info in QS footer -->
     <string name="qs_footer_datausage_title">Andmekasutus</string>
-    <string name="qs_footer_datausage_summary">Display data usage summary in quick settings footer</string>
+    <string name="qs_footer_datausage_summary">Kuva kiirsätete jaluses andmekasutuse kokkuvõte</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_title">Tiles animation</string>
-    <string name="qs_tile_animation_style_title">Animation style</string>
+    <string name="qs_tile_animation_title">Paanide animatsioon</string>
+    <string name="qs_tile_animation_style_title">Animatsiooni stiil</string>
     <string name="qs_tile_animation_duration_title">Animatsiooni kestus</string>
-    <string name="qs_tile_animation_interpolator_title">Animation interpolator</string>
+    <string name="qs_tile_animation_interpolator_title">Animatsiooni interpolaator</string>
     <string name="qs_tile_animation_style_off">Animatsioonita</string>
     <string name="qs_tile_animation_style_rotate">Pööra</string>
-    <string name="qs_tile_animation_style_flipx">Flip X</string>
-    <string name="qs_tile_animation_style_flipy">Flip Y</string>
+    <string name="qs_tile_animation_style_flipx">Pööra X-telg</string>
+    <string name="qs_tile_animation_style_flipy">Pööra Y-telg</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Lineaarne</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Kiirenda</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Aeglusta</string>
@@ -909,17 +913,17 @@
     <string name="screenshot_shutter_sound_title">Ekraanipildi heli</string>
     <string name="screenshot_shutter_sound_summary">Esita ekraanipildi tegemise ajal heli</string>
     <!-- QS tiles layout  -->
-    <string name="qs_layout_category_title">Tiles layout</string>
-    <string name="qs_tile_label_hide_title">Hide label</string>
-    <string name="qs_tile_label_size_title">Label text size</string>
-    <string name="qs_tile_label_hide_summary">Only show icon in tile</string>
-    <string name="qs_tile_layout_title">Vertical layout</string>
-    <string name="qs_tile_layout_summary">Show label below icon instead next to icon</string>
+    <string name="qs_layout_category_title">Paanide paigutus</string>
+    <string name="qs_tile_label_hide_title">Peida sildid</string>
+    <string name="qs_tile_label_size_title">Sildi tekstisuurus</string>
+    <string name="qs_tile_label_hide_summary">Kuva paanil vaid ikooni</string>
+    <string name="qs_tile_layout_title">Vertikaalne paigutus</string>
+    <string name="qs_tile_layout_summary">Kuva silt ikooni all, selle asemel et kuvada ikooni kõrval</string>
     <string name="qs_columns_portrait_title">Veerud (püstasendis)</string>
     <string name="qs_columns_landscape_title">Veerud (rõhtasendis)</string>
     <!-- Statusbar Clock background chip -->
-    <string name="statusbar_clock_chip_title">Background chip</string>
-    <string name="statusbar_clock_chip_summary">Display accented chip behind clock</string>
+    <string name="statusbar_clock_chip_title">Taustakiip</string>
+    <string name="statusbar_clock_chip_summary">Kuva kella taga rõhuvärviga kiipi</string>
     <!-- Smart charging -->
     <string name="smart_charging_title">Nutikas laadimine</string>
     <string name="smart_charging_summary">Määra maksimaalne laadimistase</string>
@@ -930,29 +934,29 @@
     <string name="smart_charging_reset_stats_summary">Lähtesta aku statistika pärast kasutaja määratletud laadimistaseme saavutamist</string>
     <string name="smart_charging_footer">Nutikas laadimine võimaldab teil määrata maksimaalne laadimistase, parandamaks aku eluiga. Lubamisel lõpetab aku laadimise nutika laadimise peatumise tasemel ning jätkab laadimist nutika laadimise algtasemel. Peatumise tase peaks alati olema suurem, kui algtase.</string>
     <!-- Weather -->
-    <string name="weather_settings_title">Weather settings</string>
-    <string name="weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="lockscreen_weather_title">Weather condition</string>
-    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
-    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
-    <string name="lockscreen_weather_location_title">Weather location</string>
-    <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="weather_settings_title">Ilmaseaded</string>
+    <string name="weather_settings_summary">Määra ikoonipakk ja ilmateenus</string>
+    <string name="lockscreen_weather_title">Ilmaolud</string>
+    <string name="lockscreen_weather_summary">Kuva praeguseid ilmastikutingimusi ja temperatuuri</string>
+    <string name="lockscreen_weather_enabled_info">Nõuab ilmateenuse lubamist</string>
+    <string name="lockscreen_weather_location_title">Ilma asukoht</string>
+    <string name="lockscreen_weather_location_summary">Kuva praeguse ilmateate asukoht</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptiivne taasesitus</string>
     <string name="adaptive_playback_summary">Meedia paus, kui helitugevus on vaigistatud ja jätkake selle suurendamist, suurendades aja jooksul helitugevust</string>
-    <string name="adaptive_playback_intro_text">Automatically pauses media when the volume is muted and will resume automatically when volume is restored within the set time</string>
+    <string name="adaptive_playback_intro_text">Peatab meedia automaatselt, kui heli vaigistad ja jätkab, kui helitugevus määratud aja jooksul taastub</string>
     <string name="adaptive_playback_timeout_title">Taasesituse aegumine</string>
     <!-- Custom logo -->
     <string name="status_bar_logo_title">Logo</string>
-    <string name="status_bar_logo_summary">Display a custom logo on left or right of the status bar</string>
+    <string name="status_bar_logo_summary">Kuva kohandatud logo olekuribast vasakul või paremal</string>
     <string name="status_bar_logo_position_title">Logo asukoht</string>
     <string name="status_bar_logo_style_title">Logo stiil</string>
     <!-- APK details on App info screen -->
-    <string name="app_info_install_time">Installed: %1$s</string>
-    <string name="app_info_update_time">Updated: %1$s</string>
+    <string name="app_info_install_time">Installitud: %1$s</string>
+    <string name="app_info_update_time">Uuendatud: %1$s</string>
     <!-- Show clipboard overlay -->
-    <string name="show_clipboard_overlay_title">Show clipboard overlay</string>
-    <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
+    <string name="show_clipboard_overlay_title">Kuva lõikelaua ülekatet</string>
+    <string name="show_clipboard_overlay_summary">Kuva ülekatet ekraani vasakul all nurgas, kui midagi lõikelauale kopeeritakse</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Andurilukk</string>
     <string name="sensor_block_summary">Blokeeri oluliste andurite ligipääs teatud akut nõudvate rakenduste jaoks</string>
@@ -967,44 +971,44 @@
     <string name="pattern_da_da_dzzz">da-da-dzzz</string>
     <string name="pattern_da_dzzz_da">da-dzzz-da</string>
     <string name="pattern_custom">Kohandatud</string>
-    <string name="custom_vibration_pattern_title">Custom pattern</string>
-    <string name="custom_vibration_pattern_summary">Set a custom vibration pattern</string>
+    <string name="custom_vibration_pattern_title">Kohandatud muster</string>
+    <string name="custom_vibration_pattern_summary">Määra kohandatud vibratsioonimuster</string>
     <!-- Per-channel vibration pattern -->
-    <string name="notification_custom_vibrate_title">Custom vibration pattern</string>
-    <string name="notification_custom_vibrate_summary">Replaces the default pattern only\nApp set pattern takes precedence</string>
-    <string name="notification_custom_vibrate_slider1">Vibrate for</string>
-    <string name="notification_custom_vibrate_slider2">Pause for</string>
+    <string name="notification_custom_vibrate_title">Kohandatud vibratsioonimuster</string>
+    <string name="notification_custom_vibrate_summary">Muudab vaid vaikimisi mustrit\nRakenduse määratud muster saab eelisõiguse</string>
+    <string name="notification_custom_vibrate_slider1">Vibreeri...</string>
+    <string name="notification_custom_vibrate_slider2">Pausi...</string>
     <!-- Floating rotation button -->
-    <string name="floating_rotation_button_title">Floating rotate button</string>
-    <string name="floating_rotation_button_summary">Show a floating rotate button when device is rotated</string>
+    <string name="floating_rotation_button_title">Hõljuv põõramisnupp</string>
+    <string name="floating_rotation_button_summary">Kuva hõljuvat pööramisnuppu, kui seadet pööratakse</string>
     <!-- Netflix Spoof -->
-    <string name="netflix_spoof_title">Netflix spoof</string>
-    <string name="netflix_spoof_summary">Spoof your device as different model for Netflix</string>
+    <string name="netflix_spoof_title">Netflixi petmine</string>
+    <string name="netflix_spoof_summary">Peta oma seade Netflixi jaoks teiseks mudeliks</string>
     <!-- Captive portal -->
-    <string name="captive_portal_title">Connectivity check</string>
-    <string name="captive_portal_summary">Determine if the device can connect to the internet, by contacting Google. Also used to detect captive portals.</string>
+    <string name="captive_portal_title">Ühenduvuse kontroll</string>
+    <string name="captive_portal_summary">Kontrollib Google\'iga ühendust võttes, kas seade saab internetiga ühenduda. Kasutatakse ka kinnitusportaalide tuvastamiseks.</string>
     <!-- Battery stats reset -->
-    <string name="battery_stats_reset">Reset stats?</string>
-    <string name="battery_stats_message">Battery usage data will be lost</string>
+    <string name="battery_stats_reset">Lähtesta statistika?</string>
+    <string name="battery_stats_message">Akukasutuse andmed kaovad</string>
     <!-- Parallel space -->
-    <string name="laboratory_parallel_space_title">Parallel space</string>
-    <string name="laboratory_parallel_space_summary">Allow running multiple instances of the same application in parallel</string>
+    <string name="laboratory_parallel_space_title">Paralleelruum</string>
+    <string name="laboratory_parallel_space_summary">Luba käitada sama rakenduse mitu eksemplari samal ajal</string>
     <!-- WiFi Standard icon -->
     <string name="wifi_standard_icon_title">WiFi standard</string>
-    <string name="wifi_standard_icon_summary">Display WiFi standard next to WiFi signal</string>
+    <string name="wifi_standard_icon_summary">Luba WiFi signaali kõrval WiFi standardit</string>
     <!-- Google services -->
-    <string name="gms_enabled_title">Google services</string>
-    <string name="gms_enabled_summary">Control Google services and core apps</string>
-    <string name="gms_enabled_footer">Before disabling Google services and core apps, you should disable \"Find My Device\" and 2-step verification on your Google account. It is strongly recommended to keep this setting enabled else apps dependent on Google components will be affected. If you run into any issues after changing this setting, perform a factory reset.</string>
+    <string name="gms_enabled_title">Google\'i teenused</string>
+    <string name="gms_enabled_summary">Juhi Google\'i teenuseid ja tuumrakendusi</string>
+    <string name="gms_enabled_footer">Enne Google\'i teenuste ja tuumrakenduste keelamist peaksite keelama Google\'i kontol \"Leia mu seade\" ning kaheastmeline autentimine. Tungivalt on soovitatav see valik lubatuks jätta, vastasel korral mõjutab see Google\'i komponentidest sõltuvaid rakendusi. Kui selle valiku lubamisel esineb mistahes probleeme, lähtesta seade tehaseseadetele.</string>
     <!-- Lockscreen bottom shortcuts -->
-    <string name="lockscreen_shortcut_category">Bottom shortcuts</string>
-    <string name="lockscreen_shortcut_start_title">Left shortcut</string>
-    <string name="lockscreen_shortcut_end_title">Right shortcut</string>
-    <string name="lockscreen_shortcut_home">Home controls</string>
-    <string name="lockscreen_shortcut_wallet">Wallet</string>
+    <string name="lockscreen_shortcut_category">Alumised otseteed</string>
+    <string name="lockscreen_shortcut_start_title">Vasakpoolne otsetee</string>
+    <string name="lockscreen_shortcut_end_title">Parempoolne otsetee</string>
+    <string name="lockscreen_shortcut_home">Kodu juhtnupud</string>
+    <string name="lockscreen_shortcut_wallet">Rahakott</string>
     <string name="lockscreen_shortcut_flashlight">Taskulamp</string>
-    <string name="lockscreen_shortcut_qr">QR code scanner</string>
+    <string name="lockscreen_shortcut_qr">QR-koodi skanner</string>
     <string name="lockscreen_shortcut_camera">Kaamera</string>
-    <string name="lockscreen_shortcut_remote">Google TV Remote</string>
+    <string name="lockscreen_shortcut_remote">Google TV pult</string>
     <string name="lockscreen_shortcut_none">Puudub</string>
 </resources>
