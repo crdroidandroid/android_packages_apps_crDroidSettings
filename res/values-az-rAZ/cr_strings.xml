@@ -318,7 +318,7 @@
     <string name="theme_customization_navbar_title">Navigasiya paneli stili</string>
     <string name="theme_customization_navbar_summary">Xüsusi Navigasiya Paneli stili ayarlayın</string>
     <string name="theme_customization_lock_clock_title">Saatın şriftinin ölçüsü</string>
-    <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
+    <string name="theme_customization_lock_clock_summary">Kilid ekranı saat şrift stili</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Varsayılan Yeniləmə Tezliyi</string>
     <string name="peak_refresh_rate_title_custom">Ən yüksək Yeniləmə Tezliyi</string>
@@ -502,11 +502,11 @@
     <string name="navbar_invert_layout_summary">Hərəkət sətrinin və IME dəyişdirici kimi digər elementlərin düzümünü tərsinə çevirər</string>
     <string name="navbar_actions_category_title">Hərəkətlər</string>
     <string name="navbar_back_long_press_title">Geri Uzun Basın</string>
-    <string name="navbar_back_double_tap_title">Back double tap</string>
+    <string name="navbar_back_double_tap_title">Geriyə cüt toxunuş</string>
     <string name="navbar_home_long_press_title">Home Long Press</string>
     <string name="navbar_home_double_tap_title">Ana Ekrana iki dəfə toxunun</string>
     <string name="navbar_app_switch_long_press_title">Son Tədbiqlərə uzun basma</string>
-    <string name="navbar_app_switch_double_tap_title">Recents double tap</string>
+    <string name="navbar_app_switch_double_tap_title">Sonuncu üçün cüt toxunuş </string>
     <string name="navbar_edge_long_swipe_title">Kənarla uzun sürüşdürün</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Cib aşkarlanması</string>
@@ -788,9 +788,9 @@
     <string name="short_label">Qısa</string>
     <string name="long_label">Uzun</string>
     <!-- Gesture navbar radius -->
-    <string name="gesture_navbar_radius_title">Pill radius</string>
+    <string name="gesture_navbar_radius_title">Həb radiusu</string>
     <string name="thin_label">İncə</string>
-    <string name="thick_label">Thick</string>
+    <string name="thick_label">Qalın</string>
     <!-- Back gesture height -->
     <string name="back_height_low_label">Tam</string>
     <string name="back_height_high_label">Alt</string>
@@ -958,57 +958,58 @@
     <string name="show_clipboard_overlay_title">Mübadilə buferini göstər</string>
     <string name="show_clipboard_overlay_summary">Mübadilə buferinə bir şey kopyalandıqda ekranın sol alt küncündə üst-üstə düşməsini göstərin</string>
     <!-- Sensor block per-package -->
-    <string name="sensor_block_title">Sensor block per-package</string>
-    <string name="sensor_block_summary">Block access to certain sensors for some apps to save battery</string>
-    <string name="sensor_block_app_picker_title">Block sensors for these apps</string>
-    <string name="add_sensor_block_package_title">Add apps for Sensor block</string>
-    <string name="add_sensor_block_package_summary">Significant motion, accelerometer, linear acceleration sensors will be blocked for these apps</string>
+    <string name="sensor_block_title">Paket başına sensor bloku</string>
+    <string name="sensor_block_summary">Batareyaya qənaət etmək üçün bəzi tətbiqlər üçün müəyyən sensorlara girişi bloklayın</string>
+    <string name="sensor_block_app_picker_title">Bu proqramlar üçün sensorları bloklayın</string>
+    <string name="add_sensor_block_package_title">Sensor bloku üçün proqramlar əlavə edin</string>
+    <string name="add_sensor_block_package_summary">Əhəmiyyətli hərəkət, akselerometr, xətti sürətlənmə sensorları bu tətbiqlər üçün bloklanacaq</string>
     <!-- Vibration patterns -->
-    <string name="vibration_pattern_title">Ringtone vibration pattern</string>
+    <string name="vibration_pattern_title">Zəng səsi üçün vibrasiya nümunəsi</string>
     <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
     <string name="pattern_dzzz_da">dzzz-da</string>
     <string name="pattern_mm_mm_mm">mm-mm-mm</string>
     <string name="pattern_da_da_dzzz">da-da-dzzz</string>
     <string name="pattern_da_dzzz_da">da-dzzz-da</string>
     <string name="pattern_custom">Özəl</string>
-    <string name="custom_vibration_pattern_title">Custom pattern</string>
-    <string name="custom_vibration_pattern_summary">Set a custom vibration pattern</string>
+    <string name="custom_vibration_pattern_title">Özəl model </string>
+    <string name="custom_vibration_pattern_summary">Özəl vibrasiya nümunəsi təyin edin</string>
     <!-- Per-channel vibration pattern -->
-    <string name="notification_custom_vibrate_title">Custom vibration pattern</string>
-    <string name="notification_custom_vibrate_summary">Replaces the default pattern only\nApp set pattern takes precedence</string>
-    <string name="notification_custom_vibrate_slider1">Vibrate for</string>
-    <string name="notification_custom_vibrate_slider2">Pause for</string>
+    <string name="notification_custom_vibrate_title">Özəl vibrasiya nümunəsi</string>
+    <string name="notification_custom_vibrate_summary">Yalnız defolt nümunəni əvəz edir\nTətbiq dəsti nümunəsi üstünlük təşkil edir</string>
+    <string name="notification_custom_vibrate_slider1">üçün vibrasiya </string>
+    <string name="notification_custom_vibrate_slider2">üçün fasilə </string>
     <!-- Floating rotation button -->
-    <string name="floating_rotation_button_title">Floating rotate button</string>
-    <string name="floating_rotation_button_summary">Show a floating rotate button when device is rotated</string>
+    <string name="floating_rotation_button_title">Üzən fırlanma düyməsi</string>
+    <string name="floating_rotation_button_summary">Cihaz fırlananda üzən fırlanma düyməsini göstərin
+ </string>
     <!-- Netflix Spoof -->
-    <string name="netflix_spoof_title">Netflix spoof</string>
-    <string name="netflix_spoof_summary">Spoof your device as different model for Netflix</string>
+    <string name="netflix_spoof_title">Netflix saxtakarlığı</string>
+    <string name="netflix_spoof_summary">Cihazınızı Netflix üçün fərqli model kimi saxtalaşdırın</string>
     <!-- Captive portal -->
-    <string name="captive_portal_title">Connectivity check</string>
-    <string name="captive_portal_summary">Determine if the device can connect to the internet, by contacting Google. Also used to detect captive portals.</string>
+    <string name="captive_portal_title">Bağlantı yoxlanışı</string>
+    <string name="captive_portal_summary">Google ilə əlaqə saxlayaraq cihazın internetə qoşula biləcəyini müəyyənləşdirin. Əsir portalları aşkar etmək üçün də istifadə olunur.</string>
     <!-- Battery stats reset -->
-    <string name="battery_stats_reset">Reset stats?</string>
-    <string name="battery_stats_message">Battery usage data will be lost</string>
+    <string name="battery_stats_reset">Statistikalar sıfırlansın?</string>
+    <string name="battery_stats_message">Batareyadan istifadə məlumatları silinəcək</string>
     <!-- Parallel space -->
-    <string name="laboratory_parallel_space_title">Parallel space</string>
-    <string name="laboratory_parallel_space_summary">Allow running multiple instances of the same application in parallel</string>
+    <string name="laboratory_parallel_space_title">Paralel boşluq</string>
+    <string name="laboratory_parallel_space_summary">Eyni tətbiqin bir neçə nümunəsini paralel olaraq işə salmağa icazə verin</string>
     <!-- WiFi Standard icon -->
-    <string name="wifi_standard_icon_title">WiFi standard</string>
-    <string name="wifi_standard_icon_summary">Display WiFi standard next to WiFi signal</string>
+    <string name="wifi_standard_icon_title">WiFi standartı</string>
+    <string name="wifi_standard_icon_summary">Ekranda WiFi siqnalının yanında WiFi standartını göstərin</string>
     <!-- Google services -->
-    <string name="gms_enabled_title">Google services</string>
-    <string name="gms_enabled_summary">Control Google services and core apps</string>
-    <string name="gms_enabled_footer">Before disabling Google services and core apps, you should disable \"Find My Device\" and 2-step verification on your Google account. It is strongly recommended to keep this setting enabled else apps dependent on Google components will be affected. If you run into any issues after changing this setting, perform a factory reset.</string>
+    <string name="gms_enabled_title">Google servisi </string>
+    <string name="gms_enabled_summary">Google xidmətləri və əsas tətbiqləri idarə edin</string>
+    <string name="gms_enabled_footer">Google xidmətlərini və əsas tətbiqləri deaktiv etməzdən əvvəl, Google hesabınızda \"Cihazımı tap\" və 2 addımlı doğrulamanı deaktiv etməlisiniz.  Bu ayarı aktiv saxlamaq tövsiyə olunur, əks halda Google komponentlərindən asılı olan tətbiqlər təsirlənəcək.  Bu ayarı dəyişdikdən sonra hər hansı problemlə üzləşsəniz, zavod parametrlərinə sıfırlayın.</string>
     <!-- Lockscreen bottom shortcuts -->
-    <string name="lockscreen_shortcut_category">Bottom shortcuts</string>
-    <string name="lockscreen_shortcut_start_title">Left shortcut</string>
-    <string name="lockscreen_shortcut_end_title">Right shortcut</string>
-    <string name="lockscreen_shortcut_home">Home controls</string>
-    <string name="lockscreen_shortcut_wallet">Wallet</string>
+    <string name="lockscreen_shortcut_category">Alt qısayollar</string>
+    <string name="lockscreen_shortcut_start_title">Sol qısayol</string>
+    <string name="lockscreen_shortcut_end_title">Sağ qısayol</string>
+    <string name="lockscreen_shortcut_home">Ev nəzarəti</string>
+    <string name="lockscreen_shortcut_wallet">Pulqabı</string>
     <string name="lockscreen_shortcut_flashlight">Fənər</string>
-    <string name="lockscreen_shortcut_qr">QR code scanner</string>
-    <string name="lockscreen_shortcut_camera">Camera</string>
-    <string name="lockscreen_shortcut_remote">Google TV Remote</string>
+    <string name="lockscreen_shortcut_qr">QR kod skaneri</string>
+    <string name="lockscreen_shortcut_camera">Kamera</string>
+    <string name="lockscreen_shortcut_remote">Google TV Pultu</string>
     <string name="lockscreen_shortcut_none">Heç biri</string>
 </resources>
