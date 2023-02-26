@@ -319,7 +319,7 @@ Mantén presionado para establecer</string>
     <string name="theme_customization_navbar_title">Estilo de la Barra de navegación</string>
     <string name="theme_customization_navbar_summary">Establecer estilo personalizado de barra de navegación</string>
     <string name="theme_customization_lock_clock_title">Estilo de fuente del reloj</string>
-    <string name="theme_customization_lock_clock_summary">Selecciona la fuente del reloj de la pantalla de bloqueo</string>
+    <string name="theme_customization_lock_clock_summary">Establecer el estilo de fuente del reloj de la pantalla de bloqueo</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Frecuencia de refresco predeterminada</string>
     <string name="peak_refresh_rate_title_custom">Frecuencia máxima de refresco</string>
@@ -503,7 +503,7 @@ Mantén presionado para establecer</string>
     <string name="navbar_invert_layout_summary">Invertir diseño de la barra de navegación y del resto de objetos, como el conmutador IME</string>
     <string name="navbar_actions_category_title">Acciones</string>
     <string name="navbar_back_long_press_title">Mantén pulsado para volver</string>
-    <string name="navbar_back_double_tap_title">Doble toque en el botón de retroceso</string>
+    <string name="navbar_back_double_tap_title">Doble toque en el botón de volver</string>
     <string name="navbar_home_long_press_title">Mantén pulsado el botón home</string>
     <string name="navbar_home_double_tap_title">Pulsa dos veces el botón home</string>
     <string name="navbar_app_switch_long_press_title">Últimas pulsaciones largas</string>
@@ -745,6 +745,8 @@ Mantén presionado para establecer</string>
     <string name="bluetooth_timeout_summary">No apagar automáticamente el Bluetooth</string>
     <string name="bluetooth_timeout_summary_auto">El Bluetooth se apagará después de <xliff:g id="timeout_description">%1$s</xliff:g> si no hay dispositivos conectados</string>
     <string name="custom_timeout_summary_never">Nunca</string>
+    <string name="custom_timeout_summary_5secs">5 segundos</string>
+    <string name="custom_timeout_summary_10secs">10 segundos</string>
     <string name="custom_timeout_summary_15secs">15 segundos</string>
     <string name="custom_timeout_summary_30secs">30 segundos</string>
     <string name="custom_timeout_summary_1min">1 minuto</string>
@@ -791,7 +793,7 @@ Mantén presionado para establecer</string>
     <!-- Gesture navbar radius -->
     <string name="gesture_navbar_radius_title">Grosor de la barra de navegación</string>
     <string name="thin_label">Delgada</string>
-    <string name="thick_label">Grueso</string>
+    <string name="thick_label">Grosor</string>
     <!-- Back gesture height -->
     <string name="back_height_low_label">Completo</string>
     <string name="back_height_high_label">Abajo</string>
@@ -999,17 +1001,38 @@ Mantén presionado para establecer</string>
     <string name="wifi_standard_icon_summary">Mostrar el estándar WiFi junto a la señal WiFi</string>
     <!-- Google services -->
     <string name="gms_enabled_title">Servicios de Google</string>
-    <string name="gms_enabled_summary">Controla los servicios de Google y las aplicaciones críticas</string>
+    <string name="gms_enabled_summary">Controla los Servicios de Google y las aplicaciones del núcleo</string>
     <string name="gms_enabled_footer">Antes de desactivar los servicios de Google y las aplicaciones del núcleo, debe desactivar la opción \"Encontrar mi dispositivo\" y la verificación en dos pasos en su cuenta de Google. Se recomienda encarecidamente mantener esta configuración activada, de lo contrario las aplicaciones dependientes de los servicios de Google se verán afectadas. Si tiene algún problema después de cambiar esta configuración, realice un restablecimiento de fábrica.</string>
     <!-- Lockscreen bottom shortcuts -->
     <string name="lockscreen_shortcut_category">Accesos directos inferiores</string>
     <string name="lockscreen_shortcut_start_title">Acceso directo izquierdo</string>
-    <string name="lockscreen_shortcut_end_title">Acceso directo a la derecha</string>
+    <string name="lockscreen_shortcut_end_title">Acceso directo derecho</string>
     <string name="lockscreen_shortcut_home">Control del Hogar</string>
     <string name="lockscreen_shortcut_wallet">Billetera</string>
     <string name="lockscreen_shortcut_flashlight">Linterna</string>
     <string name="lockscreen_shortcut_qr">Escáner de códigos QR</string>
     <string name="lockscreen_shortcut_camera">Cámara</string>
-    <string name="lockscreen_shortcut_remote">Google TV remoto</string>
+    <string name="lockscreen_shortcut_remote">Control de Google TV</string>
     <string name="lockscreen_shortcut_none">Ninguno</string>
+    <!-- App lock -->
+    <string name="app_lock_title">App lock</string>
+    <plurals name="app_lock_summary">
+        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> application is protected</item>
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">Desbloquear</string>
+    <string name="enable_debugging">Enable debugging</string>
+    <string name="disable_debugging">Disable debugging</string>
+    <string name="app_lock_packages_title">Protected apps</string>
+    <string name="app_lock_packages_summary">Select the apps to protect with biometrics or device credentials</string>
+    <string name="app_lock_timeout_title">Auto lock timeout</string>
+    <string name="app_lock_timeout_summary">Duration of time after which an unlocked app in background should be locked</string>
+    <string name="app_lock_notifications_title">Redact notifications</string>
+    <string name="app_lock_notifications_summary">Notification content will be hidden and collapsed for selected apps when they are locked. Heads up notifications will be automatically disabled.</string>
+    <string name="app_lock_notifications_disabled_summary">Protect an application first</string>
+    <string name="app_lock_biometrics_allowed_title">Enable biometrics for unlocking</string>
+    <string name="app_lock_footer_text">Bubbles will be automatically dismissed after timeout</string>
+    <string name="enable_protection">Enable protection</string>
+    <string name="hide_from_launcher_title">Hide from launcher</string>
+    <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
 </resources>
