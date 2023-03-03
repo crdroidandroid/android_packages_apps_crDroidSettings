@@ -743,6 +743,8 @@
     <string name="bluetooth_timeout_summary">Bluetooth を自動的にオフにしません</string>
     <string name="bluetooth_timeout_summary_auto">端末が接続されていない場合は<xliff:g id="timeout_description">%1$s</xliff:g>後に Bluetooth をオフにします</string>
     <string name="custom_timeout_summary_never">なし</string>
+    <string name="custom_timeout_summary_5secs">5 秒</string>
+    <string name="custom_timeout_summary_10secs">10 秒</string>
     <string name="custom_timeout_summary_15secs">15 秒</string>
     <string name="custom_timeout_summary_30secs">30 秒</string>
     <string name="custom_timeout_summary_1min">1 分</string>
@@ -1009,4 +1011,24 @@
     <string name="lockscreen_shortcut_camera">カメラ</string>
     <string name="lockscreen_shortcut_remote">Google TV Remote</string>
     <string name="lockscreen_shortcut_none">なし</string>
+    <!-- App lock -->
+    <string name="app_lock_title">アプリのロック</string>
+    <plurals name="app_lock_summary">
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g>個のアプリを保護しています</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">ロック解除</string>
+    <string name="enable_debugging">デバッグを有効化</string>
+    <string name="disable_debugging">デバッグを無効化</string>
+    <string name="app_lock_packages_title">保護中のアプリ</string>
+    <string name="app_lock_packages_summary">生体認証またはデバイス認証情報で保護するアプリを選択してください</string>
+    <string name="app_lock_timeout_title">アプリを自動ロックするまでの時間</string>
+    <string name="app_lock_timeout_summary">バックグラウンドでロック解除されているアプリを、いつロックするか時間を指定します</string>
+    <string name="app_lock_notifications_title">通知の消去</string>
+    <string name="app_lock_notifications_summary">選択したアプリがロックされると通知の内容は非表示にされ折りたたまれます。ヘッドアップ通知は自動的に無効になります。</string>
+    <string name="app_lock_notifications_disabled_summary">まずアプリを保護してください</string>
+    <string name="app_lock_biometrics_allowed_title">生体認証でのロック解除を有効化</string>
+    <string name="app_lock_footer_text">制限時間後にバブルは自動的に解除されます</string>
+    <string name="enable_protection">保護を有効化</string>
+    <string name="hide_from_launcher_title">ホームアプリから隠す</string>
+    <string name="hide_from_launcher_summary">このアプリがどのホームアプリにも表示されないようにします。変更を有効にするには、ホームアプリの再起動が必要です。</string>
 </resources>

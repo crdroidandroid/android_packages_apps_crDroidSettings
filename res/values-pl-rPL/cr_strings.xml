@@ -746,6 +746,8 @@
     <string name="bluetooth_timeout_summary">Nie wyłączaj automatycznie Bluetooth</string>
     <string name="bluetooth_timeout_summary_auto">Bluetooth zostanie wyłączone po czasie <xliff:g id="timeout_description">%1$s</xliff:g>, jeśli żadne urządzenie nie będzie połączone</string>
     <string name="custom_timeout_summary_never">Nigdy</string>
+    <string name="custom_timeout_summary_5secs">5 sekund</string>
+    <string name="custom_timeout_summary_10secs">10 sekund</string>
     <string name="custom_timeout_summary_15secs">15 sekund</string>
     <string name="custom_timeout_summary_30secs">30 sekund</string>
     <string name="custom_timeout_summary_1min">1 minuta</string>
@@ -1015,4 +1017,27 @@
     <string name="lockscreen_shortcut_camera">Aparat</string>
     <string name="lockscreen_shortcut_remote">Pilot Google TV</string>
     <string name="lockscreen_shortcut_none">Brak</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Blokada aplikacji</string>
+    <plurals name="app_lock_summary">
+        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikacja jest zabezpieczona</item>
+        <item quantity="few"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikacje są zabezpieczone</item>
+        <item quantity="many"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikacji jest zabezpieczonych</item>
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikacji jest zabezpieczonych</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">Odblokuj</string>
+    <string name="enable_debugging">Włącz debugowanie</string>
+    <string name="disable_debugging">Wyłącz debugowanie</string>
+    <string name="app_lock_packages_title">Zabezpieczone aplikacje</string>
+    <string name="app_lock_packages_summary">Wybierz aplikacje do ochrony za pomocą danych biometrycznych lub danych logowania urządzenia</string>
+    <string name="app_lock_timeout_title">Czas automatycznego blokowania</string>
+    <string name="app_lock_timeout_summary">Czas, po którym odblokowana aplikacja w tle powinna zostać zablokowana</string>
+    <string name="app_lock_notifications_title">Zwiń powiadomienia</string>
+    <string name="app_lock_notifications_summary">Zawartość powiadomień zostanie ukryta i zwinięta dla wybranych aplikacji, gdy są zablokowane. Wyskakujące powiadomienia będą automatycznie wyłączone.</string>
+    <string name="app_lock_notifications_disabled_summary">Najpierw zabezpiecz aplikację</string>
+    <string name="app_lock_biometrics_allowed_title">Włącz dane biometryczne do odblokowywania</string>
+    <string name="app_lock_footer_text">Dymki zostaną automatycznie odrzucone po przekroczeniu limitu czasowego</string>
+    <string name="enable_protection">Włącz ochronę</string>
+    <string name="hide_from_launcher_title">Ukryj w launcherze</string>
+    <string name="hide_from_launcher_summary">Zapobiegaj pojawieniu się tej aplikacji w dowolnym launcherze. Wymaga ponownego uruchomienia launchera, aby zmiany zaczęły obowiązywać.</string>
 </resources>

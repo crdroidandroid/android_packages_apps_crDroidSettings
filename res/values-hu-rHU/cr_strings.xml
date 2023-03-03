@@ -744,6 +744,8 @@
     <string name="bluetooth_timeout_summary">Ne kapcsolódjon ki automatikusan a Bluetooth</string>
     <string name="bluetooth_timeout_summary_auto">Ha nincs csatlakoztatott eszköz, a Bluetooth <xliff:g id="timeout_description">%1$s</xliff:g> elteltével kapcsol ki</string>
     <string name="custom_timeout_summary_never">Soha</string>
+    <string name="custom_timeout_summary_5secs">5 másodperc</string>
+    <string name="custom_timeout_summary_10secs">10 másodperc</string>
     <string name="custom_timeout_summary_15secs">15 másodperc</string>
     <string name="custom_timeout_summary_30secs">30 másodperc</string>
     <string name="custom_timeout_summary_1min">1 perc</string>
@@ -1011,4 +1013,27 @@
     <string name="lockscreen_shortcut_camera">Kamera</string>
     <string name="lockscreen_shortcut_remote">Googl TV távirányító</string>
     <string name="lockscreen_shortcut_none">Nincs</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Alkalmazás-zár</string>
+    <plurals name="app_lock_summary">
+        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> alkalmazás zárolt</item>
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> alkalmazás zárolt</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">Feloldás</string>
+    <string name="enable_debugging">Hibakeresés engedélyezése</string>
+    <string name="disable_debugging">Hibakeresés letiltása</string>
+    <string name="app_lock_packages_title">Zárolt alkalmazások</string>
+    <string name="app_lock_packages_summary">Kijelölheti a biometrikus- vagy készülékhitelesítő-adatokkal védeni kívánt alkalmazásokat</string>
+    <string name="app_lock_timeout_title">Az automatikus lezárás időkorlátja</string>
+    <string name="app_lock_timeout_summary">Az az időtartam, amely után a feloldott alkalmazás a háttérben visszazár</string>
+    <string name="app_lock_notifications_title">Összezárt értesítések</string>
+    <string name="app_lock_notifications_summary">A kiválasztott zárolt alkalmazások értesítései elrejtődnek és összecsukódnak. A lebegő értesítések automatikusan letiltódnak.
+    </string>
+    <string name="app_lock_notifications_disabled_summary">Előbb állítson be legalább egy zárolt alkalmazást</string>
+    <string name="app_lock_biometrics_allowed_title">Biometria-bekapcsolás a feloldáshoz</string>
+    <string name="app_lock_footer_text">A buborékok az időhatár letelte után automatikusan eltűnnek</string>
+    <string name="enable_protection">Védelem-engedélyezés</string>
+    <string name="hide_from_launcher_title">Elrejtés a Launcherből</string>
+    <string name="hide_from_launcher_summary">Megakadályozza hogy egy alkalmazás látszódjon a launcheren. A funkcióhoz újra kell indítani a launchert.
+    </string>
 </resources>

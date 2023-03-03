@@ -746,6 +746,8 @@
     <string name="bluetooth_timeout_summary">ללא כיבוי אוטומטי של Bluetooth</string>
     <string name="bluetooth_timeout_summary_auto">כיבוי Bluetooth אם אין מכשירים מחוברים כעבור <xliff:g id="timeout_description">%1$s</xliff:g></string>
     <string name="custom_timeout_summary_never">לעולם לא</string>
+    <string name="custom_timeout_summary_5secs">5 שניות</string>
+    <string name="custom_timeout_summary_10secs">10 שניות</string>
     <string name="custom_timeout_summary_15secs">15 שניות</string>
     <string name="custom_timeout_summary_30secs">30 שניות</string>
     <string name="custom_timeout_summary_1min">דקה אחת</string>
@@ -1017,4 +1019,27 @@
     <string name="lockscreen_shortcut_camera">מצלמה</string>
     <string name="lockscreen_shortcut_remote">שלט-רחוק של Google TV</string>
     <string name="lockscreen_shortcut_none">לא כלום</string>
+    <!-- App lock -->
+    <string name="app_lock_title">נעילת יישומים</string>
+    <plurals name="app_lock_summary">
+        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> application is protected</item>
+        <item quantity="two"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> יישומים מוגנים</item>
+        <item quantity="many"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> יישומים מוגנים</item>
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">ביטול נעילה</string>
+    <string name="enable_debugging">לאפשר איתור באגים</string>
+    <string name="disable_debugging">למנוע איתור באגים</string>
+    <string name="app_lock_packages_title">יישומים מוגנים</string>
+    <string name="app_lock_packages_summary">בחירת היישומים שיוגנו בעזרת נעילת המכשיר או זיהוי ביומטרי</string>
+    <string name="app_lock_timeout_title">קוצב הזמן לנעילה אוטומטית</string>
+    <string name="app_lock_timeout_summary">משך הזמן שלאחריו יישום מוגן שהופעל יינעל בשנית</string>
+    <string name="app_lock_notifications_title">עריכת התראות</string>
+    <string name="app_lock_notifications_summary">תוכן ההתראות יהיה מוסתר ופרוס ליישומים נבחרים כאשר יינעלו. התראות קופצות יימנעו אוטומטית.</string>
+    <string name="app_lock_notifications_disabled_summary">תחילה יש להגן על יישום</string>
+    <string name="app_lock_biometrics_allowed_title">לאפשר שימוש בזיהוי ביומטרי לפתיחת הנעילה</string>
+    <string name="app_lock_footer_text">בועות יבוטלו אוטומטית לאחר פרק זמן</string>
+    <string name="enable_protection">לאפשר הגנה</string>
+    <string name="hide_from_launcher_title">הסתרה מפני משגר היישומים (לאונצ\'ר)</string>
+    <string name="hide_from_launcher_summary">מניעת הצגת יישום זה בכל משגר יישומים (לאונצ\'ר). למימוש ההגדרה יש להפעיל מחדש את משגר היישומים (לאונצ\'ר).</string>
 </resources>

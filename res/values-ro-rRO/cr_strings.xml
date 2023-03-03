@@ -745,6 +745,8 @@
     <string name="bluetooth_timeout_summary">Nu dezactivați automat Bluetooth</string>
     <string name="bluetooth_timeout_summary_auto">Bluetooth se va dezactiva după <xliff:g id="timeout_description">%1$s</xliff:g> dacă nu există dispozitive conectate</string>
     <string name="custom_timeout_summary_never">Niciodată</string>
+    <string name="custom_timeout_summary_5secs">5 secunde</string>
+    <string name="custom_timeout_summary_10secs">10 secunde</string>
     <string name="custom_timeout_summary_15secs">15 secunde</string>
     <string name="custom_timeout_summary_30secs">30 secunde</string>
     <string name="custom_timeout_summary_1min">1 minut</string>
@@ -790,9 +792,9 @@
     <string name="short_label">Scurt</string>
     <string name="long_label">Lung</string>
     <!-- Gesture navbar radius -->
-    <string name="gesture_navbar_radius_title">Raza pilulei</string>
+    <string name="gesture_navbar_radius_title">Grosimea pilulei</string>
     <string name="thin_label">Subţire</string>
-    <string name="thick_label">Gros</string>
+    <string name="thick_label">Groasă</string>
     <!-- Back gesture height -->
     <string name="back_height_low_label">Complet</string>
     <string name="back_height_high_label">Jos</string>
@@ -1013,4 +1015,26 @@
     <string name="lockscreen_shortcut_camera">Camera</string>
     <string name="lockscreen_shortcut_remote">Telecomanda Google TV</string>
     <string name="lockscreen_shortcut_none">Nici unul</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Blocare aplicații</string>
+    <plurals name="app_lock_summary">
+        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplicație este protejată</item>
+        <item quantity="few"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplicații sunt protejate</item>
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplicații sunt protejate</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">Deblocheaza</string>
+    <string name="enable_debugging">Activare depanare</string>
+    <string name="disable_debugging">Dezactivare depanare</string>
+    <string name="app_lock_packages_title">Aplicații protejate</string>
+    <string name="app_lock_packages_summary">Selectează aplicațiile pentru a le proteja cu datele biometrice sau datele de autentificare ale dispozitivului</string>
+    <string name="app_lock_timeout_title">Timp de expirare pentru blocare automată</string>
+    <string name="app_lock_timeout_summary">Durata de timp după care o aplicație deblocată în fundal ar trebui să fie blocată</string>
+    <string name="app_lock_notifications_title">Notificări</string>
+    <string name="app_lock_notifications_summary">Conținutul notificărilor va fi ascuns și restrâns pentru aplicațiile selectate atunci când acestea sunt blocate. Notificările plutitoare vor fi dezactivate automat.</string>
+    <string name="app_lock_notifications_disabled_summary">Protejează mai întâi o aplicație</string>
+    <string name="app_lock_biometrics_allowed_title">Activează datele biometrice pentru deblocare</string>
+    <string name="app_lock_footer_text">Bulele vor fi eliminate automat după expirarea timpului</string>
+    <string name="enable_protection">Activare protecție</string>
+    <string name="hide_from_launcher_title">Ascunde din lansator</string>
+    <string name="hide_from_launcher_summary">Previne afișarea acestei aplicații în orice lansator. Necesită o repornire a lansatorului pentru ca modificările să aibă efect.</string>
 </resources>

@@ -746,6 +746,8 @@
     <string name="bluetooth_timeout_summary">Не выключать Bluetooth автоматически</string>
     <string name="bluetooth_timeout_summary_auto">Bluetooth будет выключен через <xliff:g id="timeout_description">%1$s</xliff:g>, если нет подключённых устройств</string>
     <string name="custom_timeout_summary_never">Никогда</string>
+    <string name="custom_timeout_summary_5secs">5 секунд</string>
+    <string name="custom_timeout_summary_10secs">10 секунд</string>
     <string name="custom_timeout_summary_15secs">15 секунд</string>
     <string name="custom_timeout_summary_30secs">30 секунд</string>
     <string name="custom_timeout_summary_1min">1 минута</string>
@@ -1015,4 +1017,27 @@
     <string name="lockscreen_shortcut_camera">Камера</string>
     <string name="lockscreen_shortcut_remote">Пульт Google TV</string>
     <string name="lockscreen_shortcut_none">Ничего</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Блокировка приложений</string>
+    <plurals name="app_lock_summary">
+        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> приложение защищено</item>
+        <item quantity="few"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> приложения защищено</item>
+        <item quantity="many"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> приложений защищено</item>
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> приложений защищено</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">Разблокировка</string>
+    <string name="enable_debugging">Включить отладку</string>
+    <string name="disable_debugging">Отключить отладку</string>
+    <string name="app_lock_packages_title">Защищённые приложения</string>
+    <string name="app_lock_packages_summary">Выберите приложения для защиты с помощью биометрических данных или пароля</string>
+    <string name="app_lock_timeout_title">Время автоблокировки</string>
+    <string name="app_lock_timeout_summary">Длительность времени, после которого разблокированное приложение в фоне должно быть заблокировано</string>
+    <string name="app_lock_notifications_title">Скрывать уведомления</string>
+    <string name="app_lock_notifications_summary">Содержимое уведомлений будет скрыто и свёрнуто для выбранных приложений, когда они заблокированы. Всплывающие уведомления будут автоматически отключены.</string>
+    <string name="app_lock_notifications_disabled_summary">Сначала выберите приложение для защиты</string>
+    <string name="app_lock_biometrics_allowed_title">Включить биометрию для разблокировки</string>
+    <string name="app_lock_footer_text">Всплывающие уведомления будут автоматически удалены по истечении времени</string>
+    <string name="enable_protection">Включить защиту</string>
+    <string name="hide_from_launcher_title">Скрыть из меню приложений</string>
+    <string name="hide_from_launcher_summary">Запретить отображение этого приложения в любом лаунчере. Для вступления изменений в силу требуется перезапуск лаунчера.</string>
 </resources>

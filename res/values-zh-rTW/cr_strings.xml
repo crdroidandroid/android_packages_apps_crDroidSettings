@@ -743,6 +743,8 @@
     <string name="bluetooth_timeout_summary">不要自動關閉藍牙</string>
     <string name="bluetooth_timeout_summary_auto">如果沒有連接任何裝置，則在 <xliff:g id="timeout_description">%1$s</xliff:g> 後關閉藍牙</string>
     <string name="custom_timeout_summary_never">永不</string>
+    <string name="custom_timeout_summary_5secs">5 秒</string>
+    <string name="custom_timeout_summary_10secs">10 秒</string>
     <string name="custom_timeout_summary_15secs">15 秒</string>
     <string name="custom_timeout_summary_30secs">30 秒</string>
     <string name="custom_timeout_summary_1min">1 分鐘</string>
@@ -1009,4 +1011,24 @@
     <string name="lockscreen_shortcut_camera">相機</string>
     <string name="lockscreen_shortcut_remote">遙控 Google TV</string>
     <string name="lockscreen_shortcut_none">無</string>
+    <!-- App lock -->
+    <string name="app_lock_title">應用鎖</string>
+    <plurals name="app_lock_summary">
+        <item quantity="other"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> 個應用程式已受到保護</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">解鎖</string>
+    <string name="enable_debugging">啟用偵錯功能</string>
+    <string name="disable_debugging">停用偵錯功能</string>
+    <string name="app_lock_packages_title">受保護的應用程式</string>
+    <string name="app_lock_packages_summary">選擇要上鎖的應用程式</string>
+    <string name="app_lock_timeout_title">逾時自動鎖定</string>
+    <string name="app_lock_timeout_summary">設定自動鎖定的時長</string>
+    <string name="app_lock_notifications_title">隱藏通知</string>
+    <string name="app_lock_notifications_summary">受保護的應用程式通知將會被隱藏，且不會在畫面上彈出通知</string>
+    <string name="app_lock_notifications_disabled_summary">請先選擇一個應用程式</string>
+    <string name="app_lock_biometrics_allowed_title">使用生物特徵辨識解鎖</string>
+    <string name="app_lock_footer_text">通知氣泡在鎖定後會自動消失</string>
+    <string name="enable_protection">啟用保護</string>
+    <string name="hide_from_launcher_title">從主畫面上隱藏所選應用程式</string>
+    <string name="hide_from_launcher_summary">防止受保護的應用程式在任何主畫面應用程式上出現，需要重新啟動主畫面來套用設定</string>
 </resources>

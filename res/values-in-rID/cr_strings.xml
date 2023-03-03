@@ -317,7 +317,7 @@
     <string name="theme_customization_navbar_title">Gaya Bilah Navigasi</string>
     <string name="theme_customization_navbar_summary">Setel gaya bilah navigasi kustom</string>
     <string name="theme_customization_lock_clock_title">Gaya huruf jam</string>
-    <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
+    <string name="theme_customization_lock_clock_summary">Setel gaya font jam layar kunci</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Kecepatan refresh default</string>
     <string name="peak_refresh_rate_title_custom">Kecepatan refresh maksimum</string>
@@ -743,6 +743,8 @@
     <string name="bluetooth_timeout_summary">Jangan matikan Bluetooth secara otomatis</string>
     <string name="bluetooth_timeout_summary_auto">Bluetooth akan dimatikan setelah <xliff:g id="timeout_description">%1$s</xliff:g> jika tidak ada perangkat terhubung</string>
     <string name="custom_timeout_summary_never">Jangan pernah</string>
+    <string name="custom_timeout_summary_5secs">5 detik</string>
+    <string name="custom_timeout_summary_10secs">10 detik</string>
     <string name="custom_timeout_summary_15secs">15 detik</string>
     <string name="custom_timeout_summary_30secs">30 detik</string>
     <string name="custom_timeout_summary_1min">1 menit</string>
@@ -1007,6 +1009,26 @@
     <string name="lockscreen_shortcut_flashlight">Senter</string>
     <string name="lockscreen_shortcut_qr">Pemindai kode QR</string>
     <string name="lockscreen_shortcut_camera">Kamera</string>
-    <string name="lockscreen_shortcut_remote">Google TV Remote</string>
+    <string name="lockscreen_shortcut_remote">Remote Google TV</string>
     <string name="lockscreen_shortcut_none">Tidak ada</string>
+    <!-- App lock -->
+    <string name="app_lock_title">Kunci Aplikasi</string>
+    <plurals name="app_lock_summary">
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikasi dilindungi</item>
+    </plurals>
+    <string name="app_lock_authentication_dialog_title">Buka kunci</string>
+    <string name="enable_debugging">Aktifkan debugging</string>
+    <string name="disable_debugging">Nonaktifkan debugging</string>
+    <string name="app_lock_packages_title">Aplikasi dilindungi</string>
+    <string name="app_lock_packages_summary">Pilih aplikasi yang akan dilindungi oleh biometrik atau kredensial perangkat</string>
+    <string name="app_lock_timeout_title">Batas waktu penguncian otomatis</string>
+    <string name="app_lock_timeout_summary">Durasi waktu setelah aplikasi yang tidak terkunci di latar belakang harus dikunci</string>
+    <string name="app_lock_notifications_title">Nonaktifkan notifikasi</string>
+    <string name="app_lock_notifications_summary">Konten notifikasi akan disembunyikan dan diciutkan untuk aplikasi yang dipilih saat dikunci. Notifikasi mengambang akan dinonaktifkan secara otomatis.</string>
+    <string name="app_lock_notifications_disabled_summary">Lindungi aplikasi terlebih dahulu</string>
+    <string name="app_lock_biometrics_allowed_title">Aktifkan biometrik untuk membuka kunci</string>
+    <string name="app_lock_footer_text">Gelembung akan ditutup secara otomatis setelah waktu habis</string>
+    <string name="enable_protection">Aktifkan perlindungan</string>
+    <string name="hide_from_launcher_title">Sembunyikan dari peluncur</string>
+    <string name="hide_from_launcher_summary">Cegah aplikasi ini muncul di peluncur apa pun. Membutuhkan mulai ulang peluncur agar perubahan diterapkan.</string>
 </resources>
