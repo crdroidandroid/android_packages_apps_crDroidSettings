@@ -30,7 +30,7 @@
     <string name="sound_title">So</string>
     <string name="statusbar_title">Barra d\'estat</string>
     <string name="display_title">Pantalla</string>
-    <string name="ui_title">Interifície d\'usuari</string>
+    <string name="ui_title">Interfície d\'usuari</string>
     <!-- Color Picker -->
     <string name="dialog_color_picker">Selector de colors</string>
     <string name="press_color_to_apply">Premeu al color per aplicar</string>
@@ -790,9 +790,9 @@
     <string name="short_label">Breu</string>
     <string name="long_label">Llarga</string>
     <!-- Gesture navbar radius -->
-    <string name="gesture_navbar_radius_title">Pill radius</string>
-    <string name="thin_label">Thin</string>
-    <string name="thick_label">Thick</string>
+    <string name="gesture_navbar_radius_title">Gruix de la barra de navegació</string>
+    <string name="thin_label">Prim</string>
+    <string name="thick_label">Gruixut</string>
     <!-- Back gesture height -->
     <string name="back_height_low_label">Complet</string>
     <string name="back_height_high_label">Part inferior</string>
@@ -953,6 +953,39 @@
     <string name="status_bar_logo_summary">Mostra un logotip personalitzat a la part dreta o esquerra de la barra d\'estat</string>
     <string name="status_bar_logo_position_title">Posició del logotip</string>
     <string name="status_bar_logo_style_title">Estil del logotip</string>
+    <string name="status_bar_logo_style_crdroid">CrDroid</string>
+    <string name="status_bar_logo_style_android">Android</string>
+    <string name="status_bar_logo_style_adidas">Adidas</string>
+    <string name="status_bar_logo_style_alien">Alienígena</string>
+    <string name="status_bar_logo_style_apple">Apple</string>
+    <string name="status_bar_logo_style_avengers">Venjadors</string>
+    <string name="status_bar_logo_style_batman">Batman</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman: El cavaller fosc</string>
+    <string name="status_bar_logo_style_beats">Beats</string>
+    <string name="status_bar_logo_style_biohazard">Biohazard</string>
+    <string name="status_bar_logo_style_blackberry">BlackBerry</string>
+    <string name="status_bar_logo_style_cannabis">Cànnabis</string>
+    <string name="status_bar_logo_style_emoticon_cool">Emoticona guai</string>
+    <string name="status_bar_logo_style_emoticon_devil">Emoticona dimoni</string>
+    <string name="status_bar_logo_style_fire">Foc</string>
+    <string name="status_bar_logo_style_heart">Cor</string>
+    <string name="status_bar_logo_style_nike">Nike</string>
+    <string name="status_bar_logo_style_pacman">Pac-Man</string>
+    <string name="status_bar_logo_style_puma">Puma</string>
+    <string name="status_bar_logo_style_rog">ROG</string>
+    <string name="status_bar_logo_style_spiderman">Spider-Man</string>
+    <string name="status_bar_logo_style_superman">Superman</string>
+    <string name="status_bar_logo_style_windows">Windows</string>
+    <string name="status_bar_logo_style_xbox">Xbox</string>
+    <string name="status_bar_logo_style_ghost">Fantasma</string>
+    <string name="status_bar_logo_style_ninja">Ninja</string>
+    <string name="status_bar_logo_style_robot">Robot</string>
+    <string name="status_bar_logo_style_ironman">Iron Man</string>
+    <string name="status_bar_logo_style_captain_america">Capità Amèrica</string>
+    <string name="status_bar_logo_style_flash">Flaix</string>
+    <string name="status_bar_logo_style_tux">Tux</string>
+    <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
+    <string name="status_bar_logo_style_mint">Linux Mint</string>
     <!-- APK details on App info screen -->
     <string name="app_info_install_time">Instal·lat: %1$s</string>
     <string name="app_info_update_time">Actualitzat: %1$s</string>
@@ -1011,27 +1044,27 @@
     <string name="lockscreen_shortcut_flashlight">Llanterna</string>
     <string name="lockscreen_shortcut_qr">Escàner de codis QR</string>
     <string name="lockscreen_shortcut_camera">Càmera</string>
-    <string name="lockscreen_shortcut_remote">Google TV Remote</string>
+    <string name="lockscreen_shortcut_remote">Comandament de Google TV</string>
     <string name="lockscreen_shortcut_none">Cap</string>
     <!-- App lock -->
-    <string name="app_lock_title">App lock</string>
+    <string name="app_lock_title">Bloqueig d\'aplicacions</string>
     <plurals name="app_lock_summary">
-        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> application is protected</item>
-        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
+        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplicació protegida</item>
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplicacions protegides</item>
     </plurals>
     <string name="app_lock_authentication_dialog_title">Desbloqueja</string>
-    <string name="enable_debugging">Enable debugging</string>
-    <string name="disable_debugging">Disable debugging</string>
-    <string name="app_lock_packages_title">Protected apps</string>
-    <string name="app_lock_packages_summary">Select the apps to protect with biometrics or device credentials</string>
-    <string name="app_lock_timeout_title">Auto lock timeout</string>
-    <string name="app_lock_timeout_summary">Duration of time after which an unlocked app in background should be locked</string>
-    <string name="app_lock_notifications_title">Redact notifications</string>
-    <string name="app_lock_notifications_summary">Notification content will be hidden and collapsed for selected apps when they are locked. Heads up notifications will be automatically disabled.</string>
-    <string name="app_lock_notifications_disabled_summary">Protect an application first</string>
-    <string name="app_lock_biometrics_allowed_title">Enable biometrics for unlocking</string>
-    <string name="app_lock_footer_text">Bubbles will be automatically dismissed after timeout</string>
-    <string name="enable_protection">Enable protection</string>
-    <string name="hide_from_launcher_title">Hide from launcher</string>
-    <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
+    <string name="enable_debugging">Activa la depuració</string>
+    <string name="disable_debugging">Desactiva la depuració</string>
+    <string name="app_lock_packages_title">Aplicacions protegides</string>
+    <string name="app_lock_packages_summary">Seleccioneu les aplicacions que es protegiran amb dades biomètriques o credencials del dispositiu</string>
+    <string name="app_lock_timeout_title">Temps d\'espera del bloqueig automàtic</string>
+    <string name="app_lock_timeout_summary">Durada del temps després del qual una aplicació desbloquejada en segon pla és bloquejada</string>
+    <string name="app_lock_notifications_title">Contraure notificacions</string>
+    <string name="app_lock_notifications_summary">El contingut de les notificacions s\'amagarà i es replegarà per a les aplicacions seleccionades si estan bloquejades. Les notificacions emergents es desactivaran automàticament.</string>
+    <string name="app_lock_notifications_disabled_summary">Protegiu primer una aplicació</string>
+    <string name="app_lock_biometrics_allowed_title">Activa la biometria per al desbloqueig</string>
+    <string name="app_lock_footer_text">Les bombolles es descartaran automàticament després del temps d\'espera</string>
+    <string name="enable_protection">Activa la protecció</string>
+    <string name="hide_from_launcher_title">Amaga al llançador</string>
+    <string name="hide_from_launcher_summary">Evita que aquesta aplicació es mostri al llançador. Requereix reiniciar el llançador perquè els canvis tinguin efecte.</string>
 </resources>
