@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2021 crDroid Android Project
+ * Copyright (C) 2018-2023 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -231,7 +231,9 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.DOZE_TILT_GESTURE, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.DOZE_PICK_UP_GESTURE, 0, UserHandle.USER_CURRENT);
+                Settings.Secure.DOZE_PICK_UP_GESTURE, mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_dozePickupGestureEnabled) ? 1 : 0,
+                UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.DOZE_HANDWAVE_GESTURE, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
