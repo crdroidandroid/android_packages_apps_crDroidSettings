@@ -65,25 +65,6 @@
             android:title="@string/udfps_settings_title"
             android:summary="@string/udfps_settings_summary"
             android:fragment="com.crdroid.settings.fragments.lockscreen.UdfpsSettings" />
-
-        <ListPreference
-            android:key="lockscreen_shortcut_start"
-            android:icon="@drawable/ic_bottom_left"
-            android:title="@string/lockscreen_shortcut_start_title"
-            android:summary="%s"
-            android:entries="@array/lockscreen_shortcut_entries"
-            android:entryValues="@array/lockscreen_shortcut_values"
-            android:defaultValue="home" />
-
-        <ListPreference
-            android:key="lockscreen_shortcut_end"
-            android:icon="@drawable/ic_bottom_right"
-            android:title="@string/lockscreen_shortcut_end_title"
-            android:summary="%s"
-            android:entries="@array/lockscreen_shortcut_entries"
-            android:entryValues="@array/lockscreen_shortcut_values"
-            android:defaultValue="wallet" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
