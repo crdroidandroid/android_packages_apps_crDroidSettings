@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2021 crDroid Android Project
+     Copyright (C) 2016-2023 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -41,41 +41,12 @@
         android:title="@string/pulse_on_new_tracks_title"
         android:summary="@string/pulse_on_new_tracks_summary" />
 
-    <PreferenceCategory
-        android:key="edge_lighting"
-        android:title="@string/pulse_ambient_light_title" >
-
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-            android:key="pulse_ambient_light"
-            android:title="@string/pulse_ambient_light_title"
-            android:summary="@string/pulse_ambient_light_summary"
-            android:dependency="doze_enabled" />
-
-        <com.crdroid.settings.preferences.SecureSettingListPreference
-            android:key="pulse_ambient_light_layout"
-            android:title="@string/pulse_ambient_light_layout_title"
-            android:entries="@array/pulse_ambient_light_layout_entries"
-            android:entryValues="@array/pulse_ambient_light_layout_values"
-            android:defaultValue="0"
-            android:dependency="pulse_ambient_light" />
-
-        <com.crdroid.settings.preferences.colorpicker.SecureSettingColorPickerPreference
-            android:key="pulse_ambient_light_color"
-            android:title="@string/pulse_ambient_light_color_title"
-            android:dependency="pulse_ambient_light"
-            android:defaultValue="0xFF3980FF" />
-
-        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
-            android:key="pulse_ambient_light_duration"
-            android:title="@string/pulse_ambient_light_duration_title"
-            android:summary="@string/pulse_ambient_light_duration_summary"
-            android:defaultValue="2"
-            android:max="10"
-            settings:min="1"
-            settings:units="@string/unit_seconds"
-            settings:interval="1"
-            android:dependency="pulse_ambient_light" />
-    </PreferenceCategory>
+    <Preference
+        android:key="edge_light_settings"
+        android:title="@string/edge_light_title"
+        android:summary="@string/edge_light_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.doze.EdgeLightSettings"
+        android:dependency="doze_enabled" />
 
     <PreferenceCategory
         android:key="doze_sensor"
