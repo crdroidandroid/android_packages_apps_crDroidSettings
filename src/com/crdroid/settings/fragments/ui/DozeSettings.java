@@ -266,6 +266,8 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 Settings.Secure.RAISE_TO_WAKE_GESTURE, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.DOZE_GESTURE_VIBRATE, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.DOZE_ON_CHARGE, 0, UserHandle.USER_CURRENT);
         EdgeLightSettings.reset(mContext);
     }
 
