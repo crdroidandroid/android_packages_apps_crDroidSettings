@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2021 crDroid Android Project
+     Copyright (C) 2021-2023 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -30,32 +30,42 @@
         android:key="monet_engine_color_override"
         android:title="@string/monet_engine_color_override_title"
         android:dependency="monet_engine_custom_color"
-        android:defaultValue="0xffffffff" />
-
-    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
-        android:key="monet_engine_white_luminance_user"
-        android:title="@string/monet_engine_white_luminance_user_title"
-        android:defaultValue="425"
-        android:max="1000"
-        settings:min="0"
-        settings:interval="25"/>
+        android:defaultValue="0xFF1b6ef3" />
 
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-        android:key="monet_engine_accurate_shades"
-        android:title="@string/monet_engine_accurate_shades_title"
-        android:defaultValue="true" />
+        android:key="monet_engine_custom_bgcolor"
+        android:title="@string/monet_engine_custom_bgcolor_title"
+        android:summary="@string/monet_engine_custom_bgcolor_summary"
+        android:defaultValue="false" />
+
+    <com.crdroid.settings.preferences.colorpicker.SecureSettingColorPickerPreference
+        android:key="monet_engine_bgcolor_override"
+        android:title="@string/monet_engine_color_override_title"
+        android:dependency="monet_engine_custom_bgcolor"
+        android:defaultValue="0xFF1b6ef3" />
+
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        android:key="monet_engine_luminance_factor"
+        android:title="@string/monet_engine_luminance_factor_title"
+        android:summary="@string/monet_engine_luminance_factor_summary"
+        android:defaultValue="100"
+        android:max="225"
+        settings:min="25"
+        settings:interval="5"/>
 
     <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
         android:key="monet_engine_chroma_factor"
         android:title="@string/monet_engine_chroma_factor_title"
+        android:summary="@string/monet_engine_chroma_factor_summary"
         android:defaultValue="100"
-        android:max="400"
-        settings:min="50"
-        settings:interval="25"/>
+        android:max="225"
+        settings:min="25"
+        settings:interval="5"/>
 
     <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-        android:key="monet_engine_linear_lightness"
-        android:title="@string/monet_engine_linear_lightness_title"
+        android:key="monet_engine_tint_background"
+        android:title="@string/monet_engine_tint_background_title"
+        android:summary="@string/monet_engine_tint_background_summary"
         android:defaultValue="false" />
 
 </PreferenceScreen>
