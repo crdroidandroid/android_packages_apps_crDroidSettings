@@ -52,6 +52,10 @@
     <string name="choose_app">Alegeți aplicația</string>
     <string name="enable">Activare</string>
     <string name="disable">Dezactivare</string>
+    <string name="accent_color">Culoare accent (implicit)</string>
+    <string name="notification_color">Culoare notificare</string>
+    <string name="wallpaper_color">Culoarea imaginii de fundal</string>
+    <string name="custom_color">Culoare personalizată</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Jurnal modificări curente</string>
     <string name="changelog_crdroid_summary">Vezi modificările în ROM-ul instalat</string>
@@ -232,13 +236,17 @@
     <string name="monet_title">Setări Monet</string>
     <string name="monet_summary">Personalizează motorul de temă Monet</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Utilizare culoare personalizată</string>
-    <string name="monet_engine_custom_color_summary">Utilizați culoarea personalizată pentru motorul monet în locul culorilor imaginii de fundal</string>
+    <string name="monet_engine_custom_color_title">Nuanță culoare</string>
+    <string name="monet_engine_custom_color_summary">Alege culoarea personalizată pentru accent</string>
+    <string name="monet_engine_custom_bgcolor_title">Culoare de fundal</string>
+    <string name="monet_engine_custom_bgcolor_summary">Alege culoarea personalizată pentru fundal</string>
     <string name="monet_engine_color_override_title">Culoare personalizată</string>
-    <string name="monet_engine_white_luminance_user_title">Luminanță albă</string>
-    <string name="monet_engine_accurate_shades_title">Folosește umbrele exacte</string>
+    <string name="monet_engine_luminance_factor_title">Luminozitate</string>
+    <string name="monet_engine_luminance_factor_summary">Valorile mai mari produc culori mai bune</string>
     <string name="monet_engine_chroma_factor_title">Factor de cromă</string>
-    <string name="monet_engine_linear_lightness_title">Folosește luminozitate liniară</string>
+    <string name="monet_engine_chroma_factor_summary">Valorile mai mari produc culori mai puternice</string>
+    <string name="monet_engine_tint_background_title">Nuanță de fundal</string>
+    <string name="monet_engine_tint_background_summary">Face ca Luminanța și Chroma să afecteze și culorile de fundal</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Deblocare rapidă</string>
     <string name="unlock_quick_unlock_control_summary">Deblochează automat când se introduce corect codul PIN/parola</string>
@@ -261,15 +269,15 @@
     <string name="doze_vibrate">Vibrează</string>
     <string name="doze_vibrate_summary">Durata vibrării la pulsarea notificărilor</string>
     <string name="sensor_warning_message">Setările bazate pe senzori sunt supuse compatibilității hardware. Activarea senzorilor pentru afișarea ambientală poate crește consumul de energie.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Iluminarea marginii</string>
-    <string name="pulse_ambient_light_summary">Aprinde marginile laterale ale ecranului la pulsul de notificare</string>
-    <string name="pulse_ambient_light_color_title">Culoare lumină margine</string>
-    <string name="pulse_ambient_light_duration_title">Durata luminii marginii</string>
-    <string name="pulse_ambient_light_duration_summary">Setează durata animaţiei luminii ambientale</string>
-    <string name="pulse_ambient_light_layout_title">Vedere luminoasă margine</string>
-    <string name="pulse_ambient_light_layout_solid">Solid</string>
-    <string name="pulse_ambient_light_layout_faded">Diminuează</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Iluminare margini</string>
+    <string name="edge_light_summary">Se aprind marginile laterale ale ecranului la pulsul de notificare</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Declanșează mereu la pulsare</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Se pornește iluminarea marginilor ori de câte ori este afișat afișajul ambiental și nu doar pentru notificări</string>
+    <string name="edge_light_repeat_animation_title">Animație repetată</string>
+    <string name="edge_light_repeat_animation_summary_on">Repetare până la expirare</string>
+    <string name="edge_light_repeat_animation_summary_off">Arată o singură dată</string>
+    <string name="edge_light_color_mode_title">Mod culoare iluminare margini</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Ticker de muzică</string>
     <string name="pulse_on_new_tracks_summary">Arată tickerul de muzică pe ecranul ambiental în timpul schimbării piesei</string>
@@ -1070,4 +1078,7 @@
     <string name="enable_protection">Activare protecție</string>
     <string name="hide_from_launcher_title">Ascunde din lansator</string>
     <string name="hide_from_launcher_summary">Previne afișarea acestei aplicații în orice lansator. Necesită o repornire a lansatorului pentru ca modificările să aibă efect.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Se afișează mereu la încărcare</string>
+    <string name="doze_on_charge_summary">Afișare la încărcarea dispozitivului</string>
 </resources>

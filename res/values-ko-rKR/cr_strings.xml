@@ -52,6 +52,10 @@
     <string name="choose_app">어플을 선택합니다.</string>
     <string name="enable">활성화</string>
     <string name="disable">비활성화</string>
+    <string name="accent_color">Accent color (Default)</string>
+    <string name="notification_color">Notification color</string>
+    <string name="wallpaper_color">Wallpaper color</string>
+    <string name="custom_color">사용자 지정 색상</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">현재 변경 내역</string>
     <string name="changelog_crdroid_summary">설치된 ROM의 변경 사항을 봅니다.</string>
@@ -100,8 +104,8 @@
     <string name="unit_pixels">dp</string>
     <string name="unit_hz">hz</string>
     <!-- Clipboard -->
-    <string name="copied_to_clipboard">Copied to clipboard</string>
-    <string name="longpress_to_clipboard">Long-press to copy</string>
+    <string name="copied_to_clipboard">클립보드에 복사됨</string>
+    <string name="longpress_to_clipboard">길게 눌러 복사</string>
     <!-- Hardware info -->
     <string name="platform_revision">플랫폼</string>
     <string name="total_ram">총 RAM</string>
@@ -201,7 +205,7 @@
     <string name="backlight_summary_enabled_with_timeout"><xliff:g id="timeout">%s</xliff:g>동안 켬</string>
     <string name="backlight_summary_enabled">활성화됨</string>
     <plurals name="backlight_timeout_time">
-        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> 초</item>
     </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">전원 메뉴</string>
@@ -230,13 +234,17 @@
     <string name="monet_title">Monet 설정</string>
     <string name="monet_summary">Monet 테마 엔진 설정</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">사용자 지정 색상 사용</string>
-    <string name="monet_engine_custom_color_summary">바탕 화면 색상 대신 monet 엔진에 사용자 정의 색상 사용</string>
+    <string name="monet_engine_custom_color_title">강조 색상</string>
+    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
+    <string name="monet_engine_custom_bgcolor_title">Background color</string>
+    <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
     <string name="monet_engine_color_override_title">사용자 지정 색상</string>
-    <string name="monet_engine_white_luminance_user_title">백색 휘도</string>
-    <string name="monet_engine_accurate_shades_title">정확한 음영 사용</string>
+    <string name="monet_engine_luminance_factor_title">Luminance</string>
+    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
     <string name="monet_engine_chroma_factor_title">크로마 팩터</string>
-    <string name="monet_engine_linear_lightness_title">선형 밝기 사용</string>
+    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
+    <string name="monet_engine_tint_background_title">Tint background</string>
+    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">빠른 잠금해제</string>
     <string name="unlock_quick_unlock_control_summary">PIN/비밀번호를 올바르게 입력하면 자동으로 잠금을 해제합니다</string>
@@ -259,15 +267,15 @@
     <string name="doze_vibrate">진동</string>
     <string name="doze_vibrate_summary">알림시 진동하는 시간</string>
     <string name="sensor_warning_message">센서를 기반으로 한 설정은 하드웨어 호환성에 영향을 받습니다. Ambient Display 센서를 활성화하면 전력이 소모 될 수 있습니다.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">가장자리 조명</string>
-    <string name="pulse_ambient_light_summary">알림 펄스에서 화면의 측면 가장자리를 밝게합니다.</string>
-    <string name="pulse_ambient_light_color_title">가장자리 밝은 색</string>
-    <string name="pulse_ambient_light_duration_title">가장자리 조명 지속 시간</string>
-    <string name="pulse_ambient_light_duration_summary">주변 조명 애니메이션 지속 시간을 설정합니다</string>
-    <string name="pulse_ambient_light_layout_title">엣지 라이트 뷰</string>
-    <string name="pulse_ambient_light_layout_solid">두껍게</string>
-    <string name="pulse_ambient_light_layout_faded">사라짐</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Edge light</string>
+    <string name="edge_light_summary">알림 펄스에서 화면의 측면 가장자리를 밝게합니다.</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
+    <string name="edge_light_repeat_animation_title">Repeat animation</string>
+    <string name="edge_light_repeat_animation_summary_on">Repeat until timeout</string>
+    <string name="edge_light_repeat_animation_summary_off">Show only once</string>
+    <string name="edge_light_color_mode_title">Edge light color mode</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">음악 티커</string>
     <string name="pulse_on_new_tracks_summary">재생 중인 음악을 변경할 때 Ambient Display에 음악 티커 표시</string>
@@ -317,7 +325,7 @@
     <string name="theme_customization_navbar_title">내비게이션 바 스타일</string>
     <string name="theme_customization_navbar_summary">커스텀 내비게이션 바 스타일 설정</string>
     <string name="theme_customization_lock_clock_title">시계 글꼴 스타일</string>
-    <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
+    <string name="theme_customization_lock_clock_summary">잠금 화면 시계 글꼴 스타일 설정</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">기본 화면 재생률</string>
     <string name="peak_refresh_rate_title_custom">최대 화면 재생률</string>
@@ -478,7 +486,7 @@
     <string name="pulse_color_accent">강조 색</string>
     <string name="pulse_color_custom">맞춤 설정</string>
     <string name="pulse_color_lava_lamp">라바 램프</string>
-    <string name="pulse_color_auto">Album</string>
+    <string name="pulse_color_auto">앨범</string>
     <string name="pulse_color_user_title">색상 선택</string>
     <string name="pulse_smoothing_enabled_title">펄스 스무딩 켜기</string>
     <string name="pulse_smoothing_enabled_summary">각각의 막대가 더 부드럽게 움직입니다</string>
@@ -641,7 +649,7 @@
     <string name="mic_camera_privacy_indicator_summary">앱에서 마이크 또는 카메라를 사용하는 경우 별도의 표시기 표시</string>
     <string name="location_privacy_indicator_title">위치 개인 정보 표시기</string>
     <string name="location_privacy_indicator_summary">앱에서 위치를 사용하는 경우 별도의 표시기 표시</string>
-    <string name="projection_privacy_indicator_title">Media projection privacy indicator</string>
+    <string name="projection_privacy_indicator_title">미디어 프로젝션 프라이버시 표시기</string>
     <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">딥 슬립</string>
@@ -1005,7 +1013,7 @@
     <string name="pattern_da_dzzz_da">윙-위이이잉-윙</string>
     <string name="pattern_custom">맞춤 설정</string>
     <string name="custom_vibration_pattern_title">Koreans can recognize text even in English. I don\'t think there is any meaning in translating because Koreans tend to mix English together.</string>
-    <string name="custom_vibration_pattern_summary">Set a custom vibration pattern</string>
+    <string name="custom_vibration_pattern_summary">진동 패턴 사용자 정의</string>
     <!-- Per-channel vibration pattern -->
     <string name="notification_custom_vibrate_title">Custom vibration pattern</string>
     <string name="notification_custom_vibrate_summary">Replaces the default pattern only\nApp set pattern takes precedence</string>
@@ -1064,4 +1072,7 @@
     <string name="enable_protection">Enable protection</string>
     <string name="hide_from_launcher_title">Hide from launcher</string>
     <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Always show when charging</string>
+    <string name="doze_on_charge_summary">Display device is charging</string>
 </resources>

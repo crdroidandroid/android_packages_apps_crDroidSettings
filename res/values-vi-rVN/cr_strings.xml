@@ -52,6 +52,10 @@
     <string name="choose_app">Chọn ứng dụng</string>
     <string name="enable">Bật</string>
     <string name="disable">Tắt</string>
+    <string name="accent_color">Màu nhấn (mặc định)</string>
+    <string name="notification_color">Màu của thông báo</string>
+    <string name="wallpaper_color">Màu hình nền</string>
+    <string name="custom_color">Tùy chỉnh màu sắc</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Thay đổi hiện tại</string>
     <string name="changelog_crdroid_summary">Xem những thay đổi của bản ROM được cài đặt</string>
@@ -65,7 +69,7 @@
     <string name="share_message">Kiểm tra nếu #crDroidAndroid khả dụng cho thiết bị của bạn @ https://crdroid.net/</string>
     <string name="share_chooser_title">Chia sẻ crDroid</string>
     <!-- Sites crDroid -->
-    <string name="crdroid_source_title">GitHub</string>
+    <string name="crdroid_source_title">Mã nguồn</string>
     <string name="crdroid_source_summary">Chúng tôi yêu nguồn mở, kiểm tra với chúng tôi</string>
     <string name="crdroid_telegram_title">Cộng đồng crDroid</string>
     <string name="crdroid_telegram_summary">Chúng tôi xài telegram. Tham gia với chúng tôi!</string>
@@ -230,13 +234,17 @@
     <string name="monet_title">Cài đặt Monet</string>
     <string name="monet_summary">Chỉnh sửa engine Monet</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Dùng màu tùy chỉnh</string>
-    <string name="monet_engine_custom_color_summary">Sử dụng màu tùy chỉnh thay vì màu nền</string>
+    <string name="monet_engine_custom_color_title">Màu nhấn</string>
+    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
+    <string name="monet_engine_custom_bgcolor_title">Background color</string>
+    <string name="monet_engine_custom_bgcolor_summary">Chọn màu tùy chỉnh cho nền</string>
     <string name="monet_engine_color_override_title">Tùy chỉnh màu sắc</string>
-    <string name="monet_engine_white_luminance_user_title">Độ sáng</string>
-    <string name="monet_engine_accurate_shades_title">Sử dụng các sắc thái chính xác</string>
+    <string name="monet_engine_luminance_factor_title">Luminance</string>
+    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
     <string name="monet_engine_chroma_factor_title">Yếu tố sắc tố</string>
-    <string name="monet_engine_linear_lightness_title">Sử dụng độ đậm nhạt tuyến tính</string>
+    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
+    <string name="monet_engine_tint_background_title">Tint background</string>
+    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Mở khóa nhanh</string>
     <string name="unlock_quick_unlock_control_summary">Tự động mở khóa khi nhập đúng mật khẩu</string>
@@ -259,15 +267,15 @@
     <string name="doze_vibrate">Rung</string>
     <string name="doze_vibrate_summary">Thời gian rung khi có thông báo</string>
     <string name="sensor_warning_message">Cài đặt dựa trên cảm biến có thể phụ thuộc vào tương thích phần cứng. Cho phép thiết bị cảm biến cho màn hình xung quanh có thể gây tốn pin.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Bật sáng màn hình cạnh</string>
-    <string name="pulse_ambient_light_summary">Làm sáng cạnh bên của màn hình khi có thông báo</string>
-    <string name="pulse_ambient_light_color_title">Màu màn hình cạnh</string>
-    <string name="pulse_ambient_light_duration_title">Thời gian sáng</string>
-    <string name="pulse_ambient_light_duration_summary">Đặt thời lượng cho hiệu ứng màn hình cạnh</string>
-    <string name="pulse_ambient_light_layout_title">Bật sáng màn hình cạnh</string>
-    <string name="pulse_ambient_light_layout_solid">Màu đơn</string>
-    <string name="pulse_ambient_light_layout_faded">Mờ dần</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">always on display</string>
+    <string name="edge_light_summary">Làm sáng các cạnh bên của màn hình khi có thông báo</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Luôn kích hoạt theo nhịp</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Bật ánh sáng cạnh bất cứ khi nào màn hình xung quanh được hiển thị và không chỉ dành cho thông báo</string>
+    <string name="edge_light_repeat_animation_title">Lặp lại hoạt ảnh</string>
+    <string name="edge_light_repeat_animation_summary_on">Lặp lại đến khi hết thời gian</string>
+    <string name="edge_light_repeat_animation_summary_off">Chỉ hiển thị một lần</string>
+    <string name="edge_light_color_mode_title">Màu sắc chữ của always on display</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Thông báo cho nhạc</string>
     <string name="pulse_on_new_tracks_summary">Hiển thị nhạc trên màn hình xung quanh trong khi thay đổi bản nhạc</string>
@@ -1068,4 +1076,7 @@ Dùng để phát hiện các cổng kết nối cố định.</string>
     <string name="enable_protection">Bật bảo vệ</string>
     <string name="hide_from_launcher_title">Ẩn khỏi trình khởi chạy</string>
     <string name="hide_from_launcher_summary">Không cho ứng dụng này hiện trong bất kỳ trình khởi chạy nào. Yêu cầu khởi động lại trình khởi chạy để thay đổi có hiệu lực.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Luôn hiển thị khi sạc</string>
+    <string name="doze_on_charge_summary">Hiển thị thiết bị đang sạc</string>
 </resources>

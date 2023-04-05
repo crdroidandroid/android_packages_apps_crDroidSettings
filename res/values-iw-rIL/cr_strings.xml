@@ -52,6 +52,10 @@
     <string name="choose_app">בחר יישום</string>
     <string name="enable">הפעל</string>
     <string name="disable">מושבת</string>
+    <string name="accent_color">צבע ההדגשה (ברירת המחדל)</string>
+    <string name="notification_color">צבע ההתראה</string>
+    <string name="wallpaper_color">שימוש בצבעי הטפט</string>
+    <string name="custom_color">צבע מותאם אישית</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">יומן השינויים הנוכחי</string>
     <string name="changelog_crdroid_summary">ראה שינויים ברום שהותקן</string>
@@ -233,13 +237,17 @@
     <string name="monet_title">הגדרות monet</string>
     <string name="monet_summary">התאם אישית את מנגנון ה־Monet</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">שימוש בצבע מותאם אישית</string>
-    <string name="monet_engine_custom_color_summary">השתמש בצבעים מותאמים עבוד מערכת ה־Monet במקום בצבעי רקע המכשיר</string>
+    <string name="monet_engine_custom_color_title">צבע ההדגשה</string>
+    <string name="monet_engine_custom_color_summary">בחירת צבע מותאם להדגשה</string>
+    <string name="monet_engine_custom_bgcolor_title">צבע הרקע</string>
+    <string name="monet_engine_custom_bgcolor_summary">בחירת צבע מותאם לרקע</string>
     <string name="monet_engine_color_override_title">צבע מותאם אישית</string>
-    <string name="monet_engine_white_luminance_user_title">בהיקות לבנה</string>
-    <string name="monet_engine_accurate_shades_title">השתמש בהצללות מדויקות</string>
+    <string name="monet_engine_luminance_factor_title">הארה</string>
+    <string name="monet_engine_luminance_factor_summary">ערכים גבוהים יפיקו צבעים בוהקים יותר</string>
     <string name="monet_engine_chroma_factor_title">גורם כרומטיות</string>
-    <string name="monet_engine_linear_lightness_title">השתמש בבהיקות חדה</string>
+    <string name="monet_engine_chroma_factor_summary">ערכים גבוהים יפיקו צבעים עמוקים יותר</string>
+    <string name="monet_engine_tint_background_title">גון הרקע</string>
+    <string name="monet_engine_tint_background_summary">בחירות ההארה ועומק הצבע יחולו גם על צבעי הרקע</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">פתיחה מהירה</string>
     <string name="unlock_quick_unlock_control_summary">פתח אוטומטית כאשר הקוד/הסיסמא הנכונה הוכנסה</string>
@@ -262,15 +270,15 @@
     <string name="doze_vibrate">רטט</string>
     <string name="doze_vibrate_summary">אורך זמן הרטט בהתראה פועמת</string>
     <string name="sensor_warning_message">הגדרות המבוססות על חיישנים כפופות לתאימות החומרה. הפעלת חיישנים לתצוגת סביבה עשויה להגביר את צריכת החשמל.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">שוליים זוהרות</string>
-    <string name="pulse_ambient_light_summary">האר את שוליי המכשיר בעת כניסת התראה</string>
-    <string name="pulse_ambient_light_color_title">צבע שוליים מוארים</string>
-    <string name="pulse_ambient_light_duration_title">משך זמן הארת השוליים</string>
-    <string name="pulse_ambient_light_duration_summary">מגדיר את זמן אנימציית תאורת הסביבה</string>
-    <string name="pulse_ambient_light_layout_title">הראה שוליים זוהרות</string>
-    <string name="pulse_ambient_light_layout_solid">אחיד</string>
-    <string name="pulse_ambient_light_layout_faded">מעומעם</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">שוליים זוהרים</string>
+    <string name="edge_light_summary">הארת שולי המסך הצדדיים בפעימת התראה</string>
+    <string name="edge_light_always_trigger_on_pulse_title">הפעלה תמיד בפעימה</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">האם להציג תאורת שוליים בכל פעם שמוצגת תצוגת סביבה ולא רק עבור התראות</string>
+    <string name="edge_light_repeat_animation_title">חזרה על ההנפשה</string>
+    <string name="edge_light_repeat_animation_summary_on">חזרה עד סיום הזמן הקצוב</string>
+    <string name="edge_light_repeat_animation_summary_off">הצגה פעם אחת בלבד</string>
+    <string name="edge_light_color_mode_title">מצב צבע השוליים הזוהרים</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">מצב נגן מוזיקה</string>
     <string name="pulse_on_new_tracks_summary">הצג מידע על המוזיקה הנשמעת בתצוגת הסביבה בעת העברת רצועת שמע</string>
@@ -1075,4 +1083,7 @@
     <string name="enable_protection">לאפשר הגנה</string>
     <string name="hide_from_launcher_title">הסתרה מפני משגר היישומים (לאונצ\'ר)</string>
     <string name="hide_from_launcher_summary">מניעת הצגת יישום זה בכל משגר יישומים (לאונצ\'ר). למימוש ההגדרה יש להפעיל מחדש את משגר היישומים (לאונצ\'ר).</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">מוצג תמיד בזמן טעינה</string>
+    <string name="doze_on_charge_summary">התקן התצוגה בטעינה</string>
 </resources>

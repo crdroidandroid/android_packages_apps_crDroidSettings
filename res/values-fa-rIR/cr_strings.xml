@@ -52,6 +52,10 @@
     <string name="choose_app">برنامه را انتخاب کنید</string>
     <string name="enable">فعال</string>
     <string name="disable">غیرفعال</string>
+    <string name="accent_color">رنگ تاکیدی (پیش‌فرض)</string>
+    <string name="notification_color">رنگ اعلان ها</string>
+    <string name="wallpaper_color">رنگ کاغذ دیواری</string>
+    <string name="custom_color">رنگ سفارشی</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">تغییرات فعلی</string>
     <string name="changelog_crdroid_summary">دیدن تغییرات ایجاد شده در این ورژن</string>
@@ -231,13 +235,17 @@
     <string name="monet_title">تنظیمات مونت</string>
     <string name="monet_summary">سفارشی کردن تم موتور مونت</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">استفاده از رنگ های سفارشی</string>
-    <string name="monet_engine_custom_color_summary">استفاده از رنگ های سفارشی برای موتور مونت به جای رنگ های کاغد دیواری</string>
+    <string name="monet_engine_custom_color_title">رنگ تاکیدی</string>
+    <string name="monet_engine_custom_color_summary">رنگ دلخواه را برای  خود انتخاب کنیدید</string>
+    <string name="monet_engine_custom_bgcolor_title">رنگ پس زمینه</string>
+    <string name="monet_engine_custom_bgcolor_summary">رنگ دلخواه را برای پس زمینه انتخاب کنید</string>
     <string name="monet_engine_color_override_title">رنگ سفارشی</string>
-    <string name="monet_engine_white_luminance_user_title">درخشندگی سفید</string>
-    <string name="monet_engine_accurate_shades_title">استفاده از سایه های دقیق</string>
+    <string name="monet_engine_luminance_factor_title">درخشندگی</string>
+    <string name="monet_engine_luminance_factor_summary">مقادیر بالاتر رنگ های روشن تری تولید می کنند</string>
     <string name="monet_engine_chroma_factor_title">عامل کروما</string>
-    <string name="monet_engine_linear_lightness_title">استفاده از روشنی خطی</string>
+    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
+    <string name="monet_engine_tint_background_title">Tint background</string>
+    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">بازگشایی سریع قفل</string>
     <string name="unlock_quick_unlock_control_summary">با وارد کردن پین/گذرواژه صحیح، قفل را به‌ صورت خودکار باز کنید</string>
@@ -260,15 +268,15 @@
     <string name="doze_vibrate">لرزش</string>
     <string name="doze_vibrate_summary">مدت زمان لرزش هنگام چشمک زدن اعلان ها</string>
     <string name="sensor_warning_message">تنظیمات بر اساس سنسورها مطیع به سازگاری سخت افزاری است. فعال کردن سنسورها برای نمایشگر حساس به محیط ممکن است خالی شدن شارژ را افزایش دهد.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">نور لبه صفحه نمایش</string>
-    <string name="pulse_ambient_light_summary">روشن کردن لبه های صفحه نمایش در هنگام چشمک زدن اعلان ها</string>
-    <string name="pulse_ambient_light_color_title">رنگ نور لبه صفحه نمایش</string>
-    <string name="pulse_ambient_light_duration_title">مدت زمان نور لبه صفحه نمایش</string>
-    <string name="pulse_ambient_light_duration_summary">زمان انیمیشن چراغ تپشی را در صفحه نیمه روشن تنظیم میکند</string>
-    <string name="pulse_ambient_light_layout_title">نمای نور لبه صفحه نمایش</string>
-    <string name="pulse_ambient_light_layout_solid">یکدست</string>
-    <string name="pulse_ambient_light_layout_faded">محو شده</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">نور لبه</string>
+    <string name="edge_light_summary">لبه های کناری صفحه نمایش را با پالس اعلان روشن کنید</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">هر زمان که صفحه نمایش محیط نشان داده می شود و نه فقط برای اعلان، نور لبه را نشان می دهد یا خیر</string>
+    <string name="edge_light_repeat_animation_title">تکرار انیمیشن</string>
+    <string name="edge_light_repeat_animation_summary_on">تا پایان زمان تکرار شود</string>
+    <string name="edge_light_repeat_animation_summary_off">Show only once</string>
+    <string name="edge_light_color_mode_title">Edge light color mode</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">کنترل موسیقی</string>
     <string name="pulse_on_new_tracks_summary">نمایش کنترل موسیقی در حالت نمایشگر حساس به محیط در زمان عوض شدن موسیقی</string>
@@ -317,8 +325,8 @@
     <string name="theme_customization_wifi_icon_summary">تنظیم بسته آیکون وایفای سفارشی</string>
     <string name="theme_customization_navbar_title">سبک ناوبری</string>
     <string name="theme_customization_navbar_summary">تنظیم بسته نوار ناوبری سفارشی</string>
-    <string name="theme_customization_lock_clock_title">Clock font style</string>
-    <string name="theme_customization_lock_clock_summary">Set lockscreen clock font style</string>
+    <string name="theme_customization_lock_clock_title">سبک فونت ساعت</string>
+    <string name="theme_customization_lock_clock_summary">سبک فونت ساعت صفحه قفل را تنظیم کنید</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">نرخ نوسازی پیش فرض</string>
     <string name="peak_refresh_rate_title_custom">اوج نرخ نوسازی</string>
@@ -762,8 +770,8 @@
     <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
     <string name="wifi_hotspot_client_manager_title">دستگاه‌های متصل</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
-    <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
+    <string name="wifi_hotspot_client_manager_summary">دستگاه های متصل به هات اسپات را فهرست و مدیریت کنید</string>
+    <string name="wifi_hotspot_client_manager_list_only_summary">دستگاه های متصل به هات اسپات را فهرست کنید</string>
     <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
     <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
     <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
@@ -967,7 +975,7 @@
     <string name="status_bar_logo_style_cannabis">Cannabis</string>
     <string name="status_bar_logo_style_emoticon_cool">شکلک باحال</string>
     <string name="status_bar_logo_style_emoticon_devil">شکلک شیطان</string>
-    <string name="status_bar_logo_style_fire">Fire</string>
+    <string name="status_bar_logo_style_fire">آتش</string>
     <string name="status_bar_logo_style_heart">قلب</string>
     <string name="status_bar_logo_style_nike">Nike</string>
     <string name="status_bar_logo_style_pacman">Pac-man</string>
@@ -978,19 +986,19 @@
     <string name="status_bar_logo_style_windows">ویندوز</string>
     <string name="status_bar_logo_style_xbox">Xbox</string>
     <string name="status_bar_logo_style_ghost">روح</string>
-    <string name="status_bar_logo_style_ninja">Ninja</string>
+    <string name="status_bar_logo_style_ninja">نینجا</string>
     <string name="status_bar_logo_style_robot">ربات</string>
-    <string name="status_bar_logo_style_ironman">Iron Man</string>
-    <string name="status_bar_logo_style_captain_america">Captain America</string>
+    <string name="status_bar_logo_style_ironman">مرد آهنی</string>
+    <string name="status_bar_logo_style_captain_america">کاپیتان آمریکایی</string>
     <string name="status_bar_logo_style_flash">فلاش</string>
     <string name="status_bar_logo_style_tux">Tux</string>
     <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
     <string name="status_bar_logo_style_mint">Linux Mint</string>
     <!-- APK details on App info screen -->
-    <string name="app_info_install_time">Installed: %1$s</string>
-    <string name="app_info_update_time">Updated: %1$s</string>
+    <string name="app_info_install_time">نصب شده: %1$s</string>
+    <string name="app_info_update_time">بروز رسانی شده: %1$s</string>
     <!-- Show clipboard overlay -->
-    <string name="show_clipboard_overlay_title">Show clipboard overlay</string>
+    <string name="show_clipboard_overlay_title">نمایش همپوشانی صفحه کلید</string>
     <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Sensor block</string>
@@ -1067,4 +1075,7 @@
     <string name="enable_protection">Enable protection</string>
     <string name="hide_from_launcher_title">Hide from launcher</string>
     <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Always show when charging</string>
+    <string name="doze_on_charge_summary">Display device is charging</string>
 </resources>

@@ -52,6 +52,10 @@
     <string name="choose_app">Pilih aplikasi</string>
     <string name="enable">Aktifkan</string>
     <string name="disable">Nonaktifkan</string>
+    <string name="accent_color">Warna aksen (Bawaan)</string>
+    <string name="notification_color">Warna notifikasi</string>
+    <string name="wallpaper_color">Warna wallpaper</string>
+    <string name="custom_color">Warna kustom</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Perubahan saat ini</string>
     <string name="changelog_crdroid_summary">Lihat perubahan pada ROM terpasang</string>
@@ -230,13 +234,17 @@
     <string name="monet_title">Setelan Monet</string>
     <string name="monet_summary">Sesuaikan mesin tema Monet</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Gunakan warna kustom</string>
-    <string name="monet_engine_custom_color_summary">Gunakan warna kustom untuk mesin monet alih-alih warna wallpaper</string>
+    <string name="monet_engine_custom_color_title">Warna aksen</string>
+    <string name="monet_engine_custom_color_summary">Pilih warna kustom untuk aksen</string>
+    <string name="monet_engine_custom_bgcolor_title">Warna latar belakang</string>
+    <string name="monet_engine_custom_bgcolor_summary">Pilih warna kustom untuk latar belakang</string>
     <string name="monet_engine_color_override_title">Warna kustom</string>
-    <string name="monet_engine_white_luminance_user_title">Pencahayaan putih</string>
-    <string name="monet_engine_accurate_shades_title">Gunakan nuansa yang akurat</string>
+    <string name="monet_engine_luminance_factor_title">Pencahayaan</string>
+    <string name="monet_engine_luminance_factor_summary">Nilai yang lebih tinggi menghasilkan warna yang lebih cerah</string>
     <string name="monet_engine_chroma_factor_title">Faktor kroma</string>
-    <string name="monet_engine_linear_lightness_title">Gunakan cahaya linier</string>
+    <string name="monet_engine_chroma_factor_summary">Nilai yang lebih tinggi menghasilkan warna yang lebih kuat</string>
+    <string name="monet_engine_tint_background_title">Warna latar belakang</string>
+    <string name="monet_engine_tint_background_summary">Jadikan pemilihan Pencahayaan dan Kroma juga memengaruhi warna latar belakang</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Buka cepat</string>
     <string name="unlock_quick_unlock_control_summary">Buka kunci secara otomatis ketika PIN/kata sandi yang benar dimasukkan</string>
@@ -259,15 +267,15 @@
     <string name="doze_vibrate">Getar</string>
     <string name="doze_vibrate_summary">Durasi bergetar ketika pemberitahuan berbunyi</string>
     <string name="sensor_warning_message">Pengaturan berdasarkan sensor pada kompatibilitas perangkat keras. Mengaktifkan sensor untuk tampilan ambien dapat meningkatkan pengurasan daya.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Pencahayaan sisi layar</string>
-    <string name="pulse_ambient_light_summary">Menambahkan pencahayaan sisi samping pada layar saat ada notifikasi baru</string>
-    <string name="pulse_ambient_light_color_title">Warna sisi pencahayaan</string>
-    <string name="pulse_ambient_light_duration_title">Durasi sisi pencahayaan</string>
-    <string name="pulse_ambient_light_duration_summary">Atur durasi animasi pencahayaan sekeliling</string>
-    <string name="pulse_ambient_light_layout_title">Tampilan cahaya sisi</string>
-    <string name="pulse_ambient_light_layout_solid">Padat</string>
-    <string name="pulse_ambient_light_layout_faded">Memudar</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Cahaya Tepi</string>
+    <string name="edge_light_summary">Menambahkan pencahayaan sisi samping dari layar di denyut pemberitahuan</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Selalu terpicu saat bergetar</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Apakah akan menampilkan cahaya tepi setiap kali tampilan ambien ditampilkan dan bukan hanya untuk notifikasi</string>
+    <string name="edge_light_repeat_animation_title">Ulangi animasi</string>
+    <string name="edge_light_repeat_animation_summary_on">Ulangi sampai waktu habis</string>
+    <string name="edge_light_repeat_animation_summary_off">Tampilkan hanya sekali</string>
+    <string name="edge_light_color_mode_title">Mode warna Cahaya Tepi</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Penampil musik</string>
     <string name="pulse_on_new_tracks_summary">Tampilkan penampil musik di Tampilan Ambien selama perubahan trek</string>
@@ -1064,4 +1072,7 @@
     <string name="enable_protection">Aktifkan perlindungan</string>
     <string name="hide_from_launcher_title">Sembunyikan dari peluncur</string>
     <string name="hide_from_launcher_summary">Cegah aplikasi ini muncul di peluncur apa pun. Membutuhkan mulai ulang peluncur agar perubahan diterapkan.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Selalu tampilkan saat mengisi daya</string>
+    <string name="doze_on_charge_summary">Tampilkan perangkat sedang mengisi daya</string>
 </resources>

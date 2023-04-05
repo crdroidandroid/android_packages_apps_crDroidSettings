@@ -52,6 +52,10 @@
     <string name="choose_app">選擇應用程式</string>
     <string name="enable">啟用</string>
     <string name="disable">停用</string>
+    <string name="accent_color">強調色（預設）</string>
+    <string name="notification_color">通知顏色</string>
+    <string name="wallpaper_color">桌布顏色</string>
+    <string name="custom_color">自訂顏色</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">更新紀錄</string>
     <string name="changelog_crdroid_summary">查看此 ROM 的更新紀錄</string>
@@ -230,13 +234,17 @@
     <string name="monet_title">Monet 設定</string>
     <string name="monet_summary">自定義 Monet 主題引擎</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">使用自訂顏色</string>
-    <string name="monet_engine_custom_color_summary">使用自訂色彩而非桌布取色</string>
+    <string name="monet_engine_custom_color_title">主題顏色</string>
+    <string name="monet_engine_custom_color_summary">自訂強調色</string>
+    <string name="monet_engine_custom_bgcolor_title">背景顏色</string>
+    <string name="monet_engine_custom_bgcolor_summary">自訂背景顏色</string>
     <string name="monet_engine_color_override_title">自訂顏色</string>
-    <string name="monet_engine_white_luminance_user_title">白亮度</string>
-    <string name="monet_engine_accurate_shades_title">精準色彩</string>
+    <string name="monet_engine_luminance_factor_title">亮度</string>
+    <string name="monet_engine_luminance_factor_summary">較高的亮度會使色彩看起來較亮</string>
     <string name="monet_engine_chroma_factor_title">色彩濃度</string>
-    <string name="monet_engine_linear_lightness_title">使用線性亮度</string>
+    <string name="monet_engine_chroma_factor_summary">較高的彩度會使色彩看起來更鮮明</string>
+    <string name="monet_engine_tint_background_title">背景著色</string>
+    <string name="monet_engine_tint_background_summary">使背景色彩也套用自訂的亮度及彩度</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">快速解除鎖定</string>
     <string name="unlock_quick_unlock_control_summary">當正確輸入 PIN 碼／密碼時自動解鎖</string>
@@ -259,15 +267,15 @@
     <string name="doze_vibrate">振動</string>
     <string name="doze_vibrate_summary">通知時震動的持續時間</string>
     <string name="sensor_warning_message">有關感測器的設定可能會受到硬體相容性的限制。為「環境顯示」啟用感測器可能會增加功耗。</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">側光</string>
-    <string name="pulse_ambient_light_summary">顯示通知時使螢幕側邊閃爍</string>
-    <string name="pulse_ambient_light_color_title">邊光顏色</string>
-    <string name="pulse_ambient_light_duration_title">側光持續時間</string>
-    <string name="pulse_ambient_light_duration_summary">設定環境光動畫的持續時間</string>
-    <string name="pulse_ambient_light_layout_title">側邊閃爍畫面</string>
-    <string name="pulse_ambient_light_layout_solid">純色</string>
-    <string name="pulse_ambient_light_layout_faded">漸淡</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">側光</string>
+    <string name="edge_light_summary">通知閃爍時也使螢幕側邊閃爍</string>
+    <string name="edge_light_always_trigger_on_pulse_title">一律觸發</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">在使用環境顯示時一律顯示側光</string>
+    <string name="edge_light_repeat_animation_title">閃爍動畫</string>
+    <string name="edge_light_repeat_animation_summary_on">重複閃爍直到逾時</string>
+    <string name="edge_light_repeat_animation_summary_off">緩慢的閃爍一次</string>
+    <string name="edge_light_color_mode_title">側光顏色</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">音樂提示訊息</string>
     <string name="pulse_on_new_tracks_summary">切換曲目時在AOD上顯示</string>
@@ -1064,4 +1072,7 @@
     <string name="enable_protection">啟用保護</string>
     <string name="hide_from_launcher_title">從主畫面上隱藏所選應用程式</string>
     <string name="hide_from_launcher_summary">防止受保護的應用程式在任何主畫面應用程式上出現，需要重新啟動主畫面來套用設定</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">充電時一律顯示</string>
+    <string name="doze_on_charge_summary">在裝置充電時顯示</string>
 </resources>

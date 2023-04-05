@@ -52,6 +52,10 @@
     <string name="choose_app">Escolher aplicação</string>
     <string name="enable">Ativar</string>
     <string name="disable">Desativar</string>
+    <string name="accent_color">Cor de destaque (Padrão)</string>
+    <string name="notification_color">Cor da notificação</string>
+    <string name="wallpaper_color">Cor do papel de parede</string>
+    <string name="custom_color">Cor personalizada</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Changelog atual</string>
     <string name="changelog_crdroid_summary">Ver as alterações na ROM instalada</string>
@@ -231,13 +235,17 @@
     <string name="monet_title">Configurações Monet</string>
     <string name="monet_summary">Personalizar o motor de temas Monet</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Usar cor personalizada</string>
-    <string name="monet_engine_custom_color_summary">Usar cor personalizada para o motor monet em vez das cores do papel de parede</string>
+    <string name="monet_engine_custom_color_title">Cor do acento</string>
+    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
+    <string name="monet_engine_custom_bgcolor_title">Background color</string>
+    <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
     <string name="monet_engine_color_override_title">Cor personalizada</string>
-    <string name="monet_engine_white_luminance_user_title">Luminância branca</string>
-    <string name="monet_engine_accurate_shades_title">Usar tons precisos</string>
+    <string name="monet_engine_luminance_factor_title">Luminance</string>
+    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
     <string name="monet_engine_chroma_factor_title">Fator cromático</string>
-    <string name="monet_engine_linear_lightness_title">Usar brilho linear</string>
+    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
+    <string name="monet_engine_tint_background_title">Tint background</string>
+    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Desbloqueio rápido</string>
     <string name="unlock_quick_unlock_control_summary">Desbloquear automaticamente quando o PIN ou palavra-passe correta for inserida</string>
@@ -260,15 +268,15 @@
     <string name="doze_vibrate">Vibrar</string>
     <string name="doze_vibrate_summary">Duração da vibração quando pulsar notificações</string>
     <string name="sensor_warning_message">Configurações baseadas nos sensores estão sujeitas à compatibilidade de hardware. Ativar os sensores para a exibição do ecrã ambiente pode aumentar o consumo de energia.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Iluminação das bordas</string>
-    <string name="pulse_ambient_light_summary">Iluminar as bordas laterais do ecrã ao receber notificações</string>
-    <string name="pulse_ambient_light_color_title">Cor da luz das bordas</string>
-    <string name="pulse_ambient_light_duration_title">Duração da luz das bordas</string>
-    <string name="pulse_ambient_light_duration_summary">Define a duração da animação da luz ambiente</string>
-    <string name="pulse_ambient_light_layout_title">Estilo da iluminação das bordas</string>
-    <string name="pulse_ambient_light_layout_solid">Contínua</string>
-    <string name="pulse_ambient_light_layout_faded">Desvanecida</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Iluminação das bordas</string>
+    <string name="edge_light_summary">Acenda as bordas laterais da tela no pulso de notificação</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Ativar sempre no pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Mostrar a iluminação das bordas sempre que o ecrã ambiente é exibido e não apenas para notificações</string>
+    <string name="edge_light_repeat_animation_title">Repetir animação</string>
+    <string name="edge_light_repeat_animation_summary_on">Repetir até ao tempo limite</string>
+    <string name="edge_light_repeat_animation_summary_off">Exibir apenas uma vez</string>
+    <string name="edge_light_color_mode_title">Cor da iluminação das bordas</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Ticker de música</string>
     <string name="pulse_on_new_tracks_summary">Mostrar ticker de música no ecrã ambiente durante a mudança de faixa</string>
@@ -790,9 +798,9 @@
     <string name="short_label">Curta</string>
     <string name="long_label">Longa</string>
     <!-- Gesture navbar radius -->
-    <string name="gesture_navbar_radius_title">Pill radius</string>
+    <string name="gesture_navbar_radius_title">Espessura da barra de gestos</string>
     <string name="thin_label">Fino</string>
-    <string name="thick_label">Thick</string>
+    <string name="thick_label">Espessa</string>
     <!-- Back gesture height -->
     <string name="back_height_low_label">Total</string>
     <string name="back_height_high_label">Inferior</string>
@@ -958,30 +966,30 @@
     <string name="status_bar_logo_style_adidas">Adidas</string>
     <string name="status_bar_logo_style_alien">Alien</string>
     <string name="status_bar_logo_style_apple">Apple</string>
-    <string name="status_bar_logo_style_avengers">Avengers</string>
+    <string name="status_bar_logo_style_avengers">Os Vingadores</string>
     <string name="status_bar_logo_style_batman">Batman</string>
-    <string name="status_bar_logo_style_batman_tdk">Batman The Dark Knight</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman: O Cavaleiro das Trevas</string>
     <string name="status_bar_logo_style_beats">Beats</string>
     <string name="status_bar_logo_style_biohazard">Risco biológico</string>
     <string name="status_bar_logo_style_blackberry">BlackBerry</string>
     <string name="status_bar_logo_style_cannabis">Cannabis</string>
     <string name="status_bar_logo_style_emoticon_cool">Emoticon fixe</string>
     <string name="status_bar_logo_style_emoticon_devil">Emoticon diabo</string>
-    <string name="status_bar_logo_style_fire">Fire</string>
+    <string name="status_bar_logo_style_fire">Fogo</string>
     <string name="status_bar_logo_style_heart">Coração</string>
     <string name="status_bar_logo_style_nike">Nike</string>
     <string name="status_bar_logo_style_pacman">Pac-man</string>
     <string name="status_bar_logo_style_puma">Puma</string>
     <string name="status_bar_logo_style_rog">ROG</string>
-    <string name="status_bar_logo_style_spiderman">Spider-Man</string>
+    <string name="status_bar_logo_style_spiderman">Homem-Aranha</string>
     <string name="status_bar_logo_style_superman">Super-Homem</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_xbox">Xbox</string>
     <string name="status_bar_logo_style_ghost">Fantasma</string>
     <string name="status_bar_logo_style_ninja">Ninja</string>
     <string name="status_bar_logo_style_robot">Robô</string>
-    <string name="status_bar_logo_style_ironman">Iron Man</string>
-    <string name="status_bar_logo_style_captain_america">Captain America</string>
+    <string name="status_bar_logo_style_ironman">Homem de Ferro</string>
+    <string name="status_bar_logo_style_captain_america">Capitão América</string>
     <string name="status_bar_logo_style_flash">Flash</string>
     <string name="status_bar_logo_style_tux">Tux</string>
     <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
@@ -1044,27 +1052,30 @@
     <string name="lockscreen_shortcut_flashlight">Lanterna</string>
     <string name="lockscreen_shortcut_qr">Leitor de códigos QR</string>
     <string name="lockscreen_shortcut_camera">Câmara</string>
-    <string name="lockscreen_shortcut_remote">Google TV Remote</string>
+    <string name="lockscreen_shortcut_remote">Comando do Google TV</string>
     <string name="lockscreen_shortcut_none">Nenhum</string>
     <!-- App lock -->
-    <string name="app_lock_title">App lock</string>
+    <string name="app_lock_title">Bloqueio de aplicações</string>
     <plurals name="app_lock_summary">
-        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> application is protected</item>
-        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
+        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> a aplicação está protegida</item>
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> as aplicações estão protegidas</item>
     </plurals>
     <string name="app_lock_authentication_dialog_title">Desbloquear</string>
-    <string name="enable_debugging">Enable debugging</string>
-    <string name="disable_debugging">Disable debugging</string>
-    <string name="app_lock_packages_title">Protected apps</string>
-    <string name="app_lock_packages_summary">Select the apps to protect with biometrics or device credentials</string>
-    <string name="app_lock_timeout_title">Auto lock timeout</string>
-    <string name="app_lock_timeout_summary">Duration of time after which an unlocked app in background should be locked</string>
-    <string name="app_lock_notifications_title">Redact notifications</string>
-    <string name="app_lock_notifications_summary">Notification content will be hidden and collapsed for selected apps when they are locked. Heads up notifications will be automatically disabled.</string>
-    <string name="app_lock_notifications_disabled_summary">Protect an application first</string>
-    <string name="app_lock_biometrics_allowed_title">Enable biometrics for unlocking</string>
-    <string name="app_lock_footer_text">Bubbles will be automatically dismissed after timeout</string>
-    <string name="enable_protection">Enable protection</string>
-    <string name="hide_from_launcher_title">Hide from launcher</string>
-    <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
+    <string name="enable_debugging">Ativar depuração</string>
+    <string name="disable_debugging">Desativar depuração</string>
+    <string name="app_lock_packages_title">Aplicações protegidas</string>
+    <string name="app_lock_packages_summary">Selecione as aplicações a proteger com biometria ou credenciais do dispositivo</string>
+    <string name="app_lock_timeout_title">Tempo de bloqueio automático</string>
+    <string name="app_lock_timeout_summary">Quantidade de tempo após o qual uma app em segundo plano deve ser bloqueada</string>
+    <string name="app_lock_notifications_title">Ocultar notificações</string>
+    <string name="app_lock_notifications_summary">O conteúdo das notificações será ocultado e recolhido quando as apps selecionadas estiverem bloqueadas. As notificações flutuantes serão desativadas automaticamente.</string>
+    <string name="app_lock_notifications_disabled_summary">Proteja uma app primeiro</string>
+    <string name="app_lock_biometrics_allowed_title">Ativar biometria para desbloquear</string>
+    <string name="app_lock_footer_text">Os balões de notificações serão automaticamente dispensados após o tempo limite</string>
+    <string name="enable_protection">Ativar proteção</string>
+    <string name="hide_from_launcher_title">Esconder do launcher</string>
+    <string name="hide_from_launcher_summary">Impedir que esta aplicação apareça em qualquer launcher. É necessário reiniciar o launcher para aplicar as alterações.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Mostrar sempre ao carregar</string>
+    <string name="doze_on_charge_summary">Exibir o ecrã ambiente quando o dispositivo está a carregar</string>
 </resources>

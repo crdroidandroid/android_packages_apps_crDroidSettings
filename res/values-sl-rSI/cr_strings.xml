@@ -52,6 +52,10 @@
     <string name="choose_app">Izberite aplikacijo</string>
     <string name="enable">Omogoči</string>
     <string name="disable">Onemogoči</string>
+    <string name="accent_color">Accent color (Default)</string>
+    <string name="notification_color">Notification color</string>
+    <string name="wallpaper_color">Wallpaper color</string>
+    <string name="custom_color">Custom color</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Trenutni dnevnik sprememb</string>
     <string name="changelog_crdroid_summary">Pokaži spremembe v nameščenem ROM-u</string>
@@ -233,13 +237,17 @@
     <string name="monet_title">Monet nastavitve</string>
     <string name="monet_summary">Prilagodi Monet temski pogon</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Uporabi barvo po meri</string>
-    <string name="monet_engine_custom_color_summary">Uporabi barvo po meri za monet pogon namesto barv slike ozadja</string>
+    <string name="monet_engine_custom_color_title">Accent color</string>
+    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
+    <string name="monet_engine_custom_bgcolor_title">Background color</string>
+    <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
     <string name="monet_engine_color_override_title">Barva po meri</string>
-    <string name="monet_engine_white_luminance_user_title">Bela svetilnost</string>
-    <string name="monet_engine_accurate_shades_title">Uporabi natančne sence</string>
+    <string name="monet_engine_luminance_factor_title">Luminance</string>
+    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
     <string name="monet_engine_chroma_factor_title">Dejavnik krome</string>
-    <string name="monet_engine_linear_lightness_title">Uporabi linearno svetlost</string>
+    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
+    <string name="monet_engine_tint_background_title">Tint background</string>
+    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Hiter odklep</string>
     <string name="unlock_quick_unlock_control_summary">Samodejno odkleni, ko je vnešen pravilen PIN/geslo</string>
@@ -262,15 +270,15 @@
     <string name="doze_vibrate">Vibriranje</string>
     <string name="doze_vibrate_summary">Trajanje vibriranja ob utripajočih obvestilih</string>
     <string name="sensor_warning_message">Nastavitve, ki temeljijo na tipalih so odvisne od združljivosti strojne opreme. Omogočenje tipal za okoliški zaslon lahko poveča porabo energije.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Razsvetljava roba</string>
-    <string name="pulse_ambient_light_summary">Osvetli robove zaslona ob utripajočih obvestilih</string>
-    <string name="pulse_ambient_light_color_title">Barva luči roba</string>
-    <string name="pulse_ambient_light_duration_title">Trajanje luči roba</string>
-    <string name="pulse_ambient_light_duration_summary">Nastavi trajanje animacije okoliške luči</string>
-    <string name="pulse_ambient_light_layout_title">Slog luči</string>
-    <string name="pulse_ambient_light_layout_solid">Polna</string>
-    <string name="pulse_ambient_light_layout_faded">Pojenjajoča</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Edge light</string>
+    <string name="edge_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
+    <string name="edge_light_repeat_animation_title">Repeat animation</string>
+    <string name="edge_light_repeat_animation_summary_on">Repeat until timeout</string>
+    <string name="edge_light_repeat_animation_summary_off">Show only once</string>
+    <string name="edge_light_color_mode_title">Edge light color mode</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Pokazatelj glasbe</string>
     <string name="pulse_on_new_tracks_summary">Prikaži pokazatelja glasbe na okoliškem zaslonu ob spremembi pesmi</string>
@@ -1073,4 +1081,7 @@
     <string name="enable_protection">Enable protection</string>
     <string name="hide_from_launcher_title">Hide from launcher</string>
     <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Always show when charging</string>
+    <string name="doze_on_charge_summary">Display device is charging</string>
 </resources>

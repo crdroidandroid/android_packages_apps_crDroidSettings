@@ -52,6 +52,10 @@
     <string name="choose_app">Изберете приложение</string>
     <string name="enable">Включване</string>
     <string name="disable">Изключване</string>
+    <string name="accent_color">Accent color (Default)</string>
+    <string name="notification_color">Notification color</string>
+    <string name="wallpaper_color">Wallpaper color</string>
+    <string name="custom_color">Потребителски цвят</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Актуален списък с промени</string>
     <string name="changelog_crdroid_summary">Прегледай промените в инсталирания РОМ</string>
@@ -231,13 +235,17 @@
     <string name="monet_title">Настройки на Моне</string>
     <string name="monet_summary">Персонализирайте темата за моне</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Използвайте персонализиран цвят</string>
-    <string name="monet_engine_custom_color_summary">Използвайте персонализиран цвят за Monet вместо цветовете на тапета</string>
+    <string name="monet_engine_custom_color_title">Цвят на акцента</string>
+    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
+    <string name="monet_engine_custom_bgcolor_title">Background color</string>
+    <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
     <string name="monet_engine_color_override_title">Потребителски цвят</string>
-    <string name="monet_engine_white_luminance_user_title">Бяла осветеност</string>
-    <string name="monet_engine_accurate_shades_title">Използвайте точни нюанси</string>
+    <string name="monet_engine_luminance_factor_title">Luminance</string>
+    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
     <string name="monet_engine_chroma_factor_title">Цветност фактор</string>
-    <string name="monet_engine_linear_lightness_title">Използвайте линейна лекота</string>
+    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
+    <string name="monet_engine_tint_background_title">Tint background</string>
+    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Бързо отключване</string>
     <string name="unlock_quick_unlock_control_summary">Отключете автоматично, когато бъде въведен правилният ПИН/парола</string>
@@ -260,15 +268,15 @@
     <string name="doze_vibrate">Вибрация</string>
     <string name="doze_vibrate_summary">Продължителност за вибриране при пулсиращи известия</string>
     <string name="sensor_warning_message">Настройките, базирани на сензори, са предмет на хардуерната съвместимост. Активирането на сензори за околен дисплей може да увеличи изразходването на енергия.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Подсветка на краищата на екрана</string>
-    <string name="pulse_ambient_light_summary">Осветяване на страничните ръбове на екрана при уведомяване</string>
-    <string name="pulse_ambient_light_color_title">Цвят на краищата на екрана</string>
-    <string name="pulse_ambient_light_duration_title">Продължителност на подсветката</string>
-    <string name="pulse_ambient_light_duration_summary">Задаване на продължителността на анимацията на околната светлина</string>
-    <string name="pulse_ambient_light_layout_title">Подсветка на краищата на екрана</string>
-    <string name="pulse_ambient_light_layout_solid">Солидна</string>
-    <string name="pulse_ambient_light_layout_faded">Избледняла</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Edge light</string>
+    <string name="edge_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
+    <string name="edge_light_repeat_animation_title">Repeat animation</string>
+    <string name="edge_light_repeat_animation_summary_on">Repeat until timeout</string>
+    <string name="edge_light_repeat_animation_summary_off">Show only once</string>
+    <string name="edge_light_color_mode_title">Edge light color mode</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Музикално обозначаване</string>
     <string name="pulse_on_new_tracks_summary">Показване на музикално обозначение на дисплея по време на смяна на песента</string>
@@ -1067,4 +1075,7 @@
     <string name="enable_protection">Enable protection</string>
     <string name="hide_from_launcher_title">Hide from launcher</string>
     <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Always show when charging</string>
+    <string name="doze_on_charge_summary">Display device is charging</string>
 </resources>

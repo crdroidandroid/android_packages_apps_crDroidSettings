@@ -52,6 +52,10 @@
     <string name="choose_app">Tətbiqi seçin</string>
     <string name="enable">Aktiv</string>
     <string name="disable">Deaktiv</string>
+    <string name="accent_color">Accent color (Default)</string>
+    <string name="notification_color">Notification color</string>
+    <string name="wallpaper_color">Wallpaper color</string>
+    <string name="custom_color">Xüsusi rəng</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">İndiki dəyişikliklər</string>
     <string name="changelog_crdroid_summary">ROM qurulduqdakı dəyişiklikləri göstər</string>
@@ -231,13 +235,17 @@
     <string name="monet_title">Monet tənzimləmələri</string>
     <string name="monet_summary">Monet tema motorunu fərdiləşdirin</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Xüsusi rəng seç</string>
-    <string name="monet_engine_custom_color_summary">Divar kağızı rəngləri əvəzinə monet motoru üçün fərdi rənglərdən istifadə edin</string>
+    <string name="monet_engine_custom_color_title">Vurğu rəngi</string>
+    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
+    <string name="monet_engine_custom_bgcolor_title">Background color</string>
+    <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
     <string name="monet_engine_color_override_title">Xüsusi rəng</string>
-    <string name="monet_engine_white_luminance_user_title">Ağ laminasiya</string>
-    <string name="monet_engine_accurate_shades_title">Dəqiq kölgələrdən istifadə edin</string>
+    <string name="monet_engine_luminance_factor_title">Luminance</string>
+    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
     <string name="monet_engine_chroma_factor_title">Xroma faktoru</string>
-    <string name="monet_engine_linear_lightness_title">Xətti işıqlıqdan istifadə edin</string>
+    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
+    <string name="monet_engine_tint_background_title">Tint background</string>
+    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Cəld kilid açma</string>
     <string name="unlock_quick_unlock_control_summary">Düzgün PIN/şifrə daxil edilərsə kilidi avtomatik aç</string>
@@ -260,15 +268,15 @@
     <string name="doze_vibrate">Vibrasiya</string>
     <string name="doze_vibrate_summary">Titrəşimli bildirişlər zamanı titrəmənin vaxt aralığı</string>
     <string name="sensor_warning_message">Sensorlara bağlı tənzimləmələr donanım uyumluluğuna bağlıdır. Ortam ekranı üçün sensorların aktivləşdirilməsi əlavə sərfiyyata səbəb ola bilər.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Kənar aydınlatma</string>
-    <string name="pulse_ambient_light_summary">Bildiriş ekranında ekranın yan kənarlarını aydınladın</string>
-    <string name="pulse_ambient_light_color_title">Kənar aydınlatma rəngi</string>
-    <string name="pulse_ambient_light_duration_title">Kənar aydınlatma müddəti</string>
-    <string name="pulse_ambient_light_duration_summary">Ortam ekranının animasiya müddətini təyin edin</string>
-    <string name="pulse_ambient_light_layout_title">Kənar aydınlatma görünüşü</string>
-    <string name="pulse_ambient_light_layout_solid">Bərk</string>
-    <string name="pulse_ambient_light_layout_faded">Solma</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Edge light</string>
+    <string name="edge_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
+    <string name="edge_light_repeat_animation_title">Repeat animation</string>
+    <string name="edge_light_repeat_animation_summary_on">Repeat until timeout</string>
+    <string name="edge_light_repeat_animation_summary_off">Show only once</string>
+    <string name="edge_light_color_mode_title">Edge light color mode</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Musiqi qeydi</string>
     <string name="pulse_on_new_tracks_summary">Musiqi dəyişərkən Ortam ekranında musiqi adını göstər</string>
@@ -1068,4 +1076,7 @@
     <string name="enable_protection">Enable protection</string>
     <string name="hide_from_launcher_title">Hide from launcher</string>
     <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Always show when charging</string>
+    <string name="doze_on_charge_summary">Display device is charging</string>
 </resources>

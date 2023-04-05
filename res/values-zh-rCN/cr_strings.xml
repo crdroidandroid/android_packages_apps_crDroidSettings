@@ -52,6 +52,10 @@
     <string name="choose_app">选择应用</string>
     <string name="enable">启用</string>
     <string name="disable">禁用</string>
+    <string name="accent_color">首选颜色 (默认)</string>
+    <string name="notification_color">通知颜色</string>
+    <string name="wallpaper_color">壁纸颜色</string>
+    <string name="custom_color">自定义颜色</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">更新日志</string>
     <string name="changelog_crdroid_summary">查看已安装 ROM 中的变化</string>
@@ -230,13 +234,17 @@
     <string name="monet_title">Monet 设置</string>
     <string name="monet_summary">自定义 Monet 主题引擎</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">使用自定义颜色</string>
-    <string name="monet_engine_custom_color_summary">使用自定义颜色而非根据壁纸颜色变换</string>
+    <string name="monet_engine_custom_color_title">配色方案</string>
+    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
+    <string name="monet_engine_custom_bgcolor_title">Background color</string>
+    <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
     <string name="monet_engine_color_override_title">自定义颜色</string>
-    <string name="monet_engine_white_luminance_user_title">白色亮度</string>
-    <string name="monet_engine_accurate_shades_title">调整界面色调</string>
+    <string name="monet_engine_luminance_factor_title">Luminance</string>
+    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
     <string name="monet_engine_chroma_factor_title">色度系数</string>
-    <string name="monet_engine_linear_lightness_title">使用线性亮度</string>
+    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
+    <string name="monet_engine_tint_background_title">Tint background</string>
+    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">快速解锁</string>
     <string name="unlock_quick_unlock_control_summary">当输入正确的 PIN 码/密码后自动解锁</string>
@@ -259,15 +267,15 @@
     <string name="doze_vibrate">振动</string>
     <string name="doze_vibrate_summary">光效显示时振动的持续时间</string>
     <string name="sensor_warning_message">基于传感器的设置需要相关硬件支持。为息屏显示启用传感器可能会增加耗电量。</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">通知光效</string>
-    <string name="pulse_ambient_light_summary">收到通知时在屏幕边缘显示光效</string>
-    <string name="pulse_ambient_light_color_title">通知光效颜色</string>
-    <string name="pulse_ambient_light_duration_title">通知光效时间</string>
-    <string name="pulse_ambient_light_duration_summary">设置通知光效动画持续时长</string>
-    <string name="pulse_ambient_light_layout_title">通知光效展示方式</string>
-    <string name="pulse_ambient_light_layout_solid">实线</string>
-    <string name="pulse_ambient_light_layout_faded">渐变</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">边缘闪光</string>
+    <string name="edge_light_summary">在通知脉冲上照亮屏幕的侧面边缘</string>
+    <string name="edge_light_always_trigger_on_pulse_title">一律触发</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">是否在显示环境显示时显示边缘光线，而不仅仅是为了通知</string>
+    <string name="edge_light_repeat_animation_title">重复动画</string>
+    <string name="edge_light_repeat_animation_summary_on">重复直到超时</string>
+    <string name="edge_light_repeat_animation_summary_off">只显示一次</string>
+    <string name="edge_light_color_mode_title">边缘闪光颜色</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">音乐磁贴</string>
     <string name="pulse_on_new_tracks_summary">当音乐更换时在息屏显示上显示音乐磁贴</string>
@@ -953,33 +961,33 @@
     <string name="status_bar_logo_style_title">Logo 样式</string>
     <string name="status_bar_logo_style_crdroid">CrDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
-    <string name="status_bar_logo_style_adidas">Adidas</string>
-    <string name="status_bar_logo_style_alien">Alien</string>
+    <string name="status_bar_logo_style_adidas">阿迪达斯</string>
+    <string name="status_bar_logo_style_alien">外星人</string>
     <string name="status_bar_logo_style_apple">苹果</string>
-    <string name="status_bar_logo_style_avengers">Avengers</string>
+    <string name="status_bar_logo_style_avengers">复仇者联盟</string>
     <string name="status_bar_logo_style_batman">蝙蝠侠</string>
-    <string name="status_bar_logo_style_batman_tdk">Batman The Dark Knight</string>
+    <string name="status_bar_logo_style_batman_tdk">蝙蝠侠 黑暗骑士</string>
     <string name="status_bar_logo_style_beats">Beats</string>
     <string name="status_bar_logo_style_biohazard">生化</string>
-    <string name="status_bar_logo_style_blackberry">BlackBerry</string>
-    <string name="status_bar_logo_style_cannabis">Cannabis</string>
+    <string name="status_bar_logo_style_blackberry">黑莓</string>
+    <string name="status_bar_logo_style_cannabis">大麻</string>
     <string name="status_bar_logo_style_emoticon_cool">表情扮酷</string>
     <string name="status_bar_logo_style_emoticon_devil">表情魔鬼</string>
-    <string name="status_bar_logo_style_fire">Fire</string>
+    <string name="status_bar_logo_style_fire">火焰</string>
     <string name="status_bar_logo_style_heart">心形</string>
-    <string name="status_bar_logo_style_nike">Nike</string>
-    <string name="status_bar_logo_style_pacman">Pac-man</string>
-    <string name="status_bar_logo_style_puma">Puma</string>
+    <string name="status_bar_logo_style_nike">耐克</string>
+    <string name="status_bar_logo_style_pacman">吃豆人</string>
+    <string name="status_bar_logo_style_puma">彪马</string>
     <string name="status_bar_logo_style_rog">ROG</string>
-    <string name="status_bar_logo_style_spiderman">Spider-Man</string>
+    <string name="status_bar_logo_style_spiderman">蜘蛛侠</string>
     <string name="status_bar_logo_style_superman">超人</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_xbox">Xbox</string>
     <string name="status_bar_logo_style_ghost">幽灵</string>
     <string name="status_bar_logo_style_ninja">忍者</string>
     <string name="status_bar_logo_style_robot">机器人</string>
-    <string name="status_bar_logo_style_ironman">Iron Man</string>
-    <string name="status_bar_logo_style_captain_america">Captain America</string>
+    <string name="status_bar_logo_style_ironman">钢铁侠</string>
+    <string name="status_bar_logo_style_captain_america">美国队长</string>
     <string name="status_bar_logo_style_flash">闪电</string>
     <string name="status_bar_logo_style_tux">Tux</string>
     <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
@@ -1045,23 +1053,28 @@
     <string name="lockscreen_shortcut_remote">Google TV 遥控器</string>
     <string name="lockscreen_shortcut_none">无</string>
     <!-- App lock -->
-    <string name="app_lock_title">App lock</string>
+    <string name="app_lock_title">应用锁</string>
     <plurals name="app_lock_summary">
-        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
+        <item quantity="other"><xliff:g example="1" id="Number of applications">%1$d</xliff:g>应用程序已受到保护
+<xliff:g example="10" id="Number of applications">%1$d</xliff:g>应用程序已受到保护</item>
     </plurals>
     <string name="app_lock_authentication_dialog_title">解锁​​​​</string>
-    <string name="enable_debugging">Enable debugging</string>
-    <string name="disable_debugging">Disable debugging</string>
-    <string name="app_lock_packages_title">Protected apps</string>
-    <string name="app_lock_packages_summary">Select the apps to protect with biometrics or device credentials</string>
-    <string name="app_lock_timeout_title">Auto lock timeout</string>
-    <string name="app_lock_timeout_summary">Duration of time after which an unlocked app in background should be locked</string>
-    <string name="app_lock_notifications_title">Redact notifications</string>
-    <string name="app_lock_notifications_summary">Notification content will be hidden and collapsed for selected apps when they are locked. Heads up notifications will be automatically disabled.</string>
-    <string name="app_lock_notifications_disabled_summary">Protect an application first</string>
-    <string name="app_lock_biometrics_allowed_title">Enable biometrics for unlocking</string>
-    <string name="app_lock_footer_text">Bubbles will be automatically dismissed after timeout</string>
-    <string name="enable_protection">Enable protection</string>
-    <string name="hide_from_launcher_title">Hide from launcher</string>
-    <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
+    <string name="enable_debugging">启用调试</string>
+    <string name="disable_debugging">禁用调试</string>
+    <string name="app_lock_packages_title">受保护的应用</string>
+    <string name="app_lock_packages_summary">选择要使用生物识别或设备凭据保护的应用</string>
+    <string name="app_lock_timeout_title">超时自动锁定</string>
+    <string name="app_lock_timeout_summary">已解锁的应用在后台自动上锁的时间</string>
+    <string name="app_lock_notifications_title">折叠通知</string>
+    <string name="app_lock_notifications_summary">锁定选定应用时，通知内容将被隐藏和折叠。
+浮动通知将自动禁用。</string>
+    <string name="app_lock_notifications_disabled_summary">请先保护一个应用</string>
+    <string name="app_lock_biometrics_allowed_title">启用生物识别解锁</string>
+    <string name="app_lock_footer_text">通知气泡将在超时后自动消失</string>
+    <string name="enable_protection">启用保护</string>
+    <string name="hide_from_launcher_title">从启动器隐藏</string>
+    <string name="hide_from_launcher_summary">阻止此应用程序在启动器中显示，需要重启启动器使更改生效</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">充电时始终显示</string>
+    <string name="doze_on_charge_summary">在装置充电时显示</string>
 </resources>

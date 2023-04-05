@@ -52,6 +52,10 @@
     <string name="choose_app">Alkalmazásválasztás</string>
     <string name="enable">Engedélyezés</string>
     <string name="disable">Letiltás</string>
+    <string name="accent_color">Kiemelőszín (alapértelmezett)</string>
+    <string name="notification_color">Értesítési szín</string>
+    <string name="wallpaper_color">Háttérkép-szín</string>
+    <string name="custom_color">Egyéni szín</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Aktuális változáslista</string>
     <string name="changelog_crdroid_summary">Nézze meg a telepített ROM-ban végrehajtott változtatásokat</string>
@@ -231,13 +235,17 @@
     <string name="monet_title">Monet-beállítások</string>
     <string name="monet_summary">A Monet-témamotor testreszabása</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Egyéni szín használata</string>
-    <string name="monet_engine_custom_color_summary">Ne a háttérkép alapján legyen a szín kiválasztva, használjon egyéni színeket</string>
+    <string name="monet_engine_custom_color_title">Kiemelőszín</string>
+    <string name="monet_engine_custom_color_summary">Válassza ki a kiemelés egyéni színét</string>
+    <string name="monet_engine_custom_bgcolor_title">Háttérszín</string>
+    <string name="monet_engine_custom_bgcolor_summary">Válassza ki a háttér egyéni színét</string>
     <string name="monet_engine_color_override_title">Egyéni szín</string>
-    <string name="monet_engine_white_luminance_user_title">Fehéregyensúly</string>
-    <string name="monet_engine_accurate_shades_title">Pontos árnyékolás használata</string>
+    <string name="monet_engine_luminance_factor_title">Fényerősség</string>
+    <string name="monet_engine_luminance_factor_summary">A magasabb értékek élénkebb színeket eredményeznek</string>
     <string name="monet_engine_chroma_factor_title">Chorma-faktor</string>
-    <string name="monet_engine_linear_lightness_title">Lineáris fényhasználat</string>
+    <string name="monet_engine_chroma_factor_summary">A magasabb értékek erősebb színeket eredményeznek</string>
+    <string name="monet_engine_tint_background_title">Háttérkitöltés</string>
+    <string name="monet_engine_tint_background_summary">A \'Fényerősség\' és a \'Színesség\' kiválasztása a háttérszíneket is befolyásolja</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Gyorsfeloldás</string>
     <string name="unlock_quick_unlock_control_summary">Automatikus feloldás a helyes jelszó/PIN kód megadásakor</string>
@@ -260,15 +268,15 @@
     <string name="doze_vibrate">Rezgés</string>
     <string name="doze_vibrate_summary">Felvillanó értesítések közbeni rezgés időtartama</string>
     <string name="sensor_warning_message">Az érzékelőkön alapuló beállítások hardverkompatibilitás függők. A környezeti kijelző érzékelőinek engedélyezése növelheti a fogyasztást.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Szélek megvilágítása</string>
-    <string name="pulse_ambient_light_summary">A képernyő oldalsó széleit világítsa meg az értesítés villogó jelzése</string>
-    <string name="pulse_ambient_light_color_title">A szélek megvilágításának színe</string>
-    <string name="pulse_ambient_light_duration_title">Az oldalfények időtartama</string>
-    <string name="pulse_ambient_light_duration_summary">Az oldalsó fényanimáció hosszának beállítása</string>
-    <string name="pulse_ambient_light_layout_title">Megvilágított szélek</string>
-    <string name="pulse_ambient_light_layout_solid">Kitöltött</string>
-    <string name="pulse_ambient_light_layout_faded">Halványuló</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Oldalfény</string>
+    <string name="edge_light_summary">A képernyő oldalsó széleit világítsa meg az értesítés villogó jelzése</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Oldalfény-kapcsoló</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Itt dönthető el, hogy a környezeti kijelző megjelenésekor is megjelenjen az oldalfény, vagy csak az értesítéskor</string>
+    <string name="edge_light_repeat_animation_title">Animációismétlés</string>
+    <string name="edge_light_repeat_animation_summary_on">Ismétlődés egy időhatárig</string>
+    <string name="edge_light_repeat_animation_summary_off">Csak egyszer jelenjen meg</string>
+    <string name="edge_light_color_mode_title">Az oldalszín jellege</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Zene-jelzőszalag</string>
     <string name="pulse_on_new_tracks_summary">Zene-jelzőszalag megjelenítése a Környezeti kijelzőn számváltás közben</string>
@@ -1069,4 +1077,7 @@
     <string name="hide_from_launcher_title">Elrejtés a Launcherből</string>
     <string name="hide_from_launcher_summary">Megakadályozza hogy egy alkalmazás látszódjon a launcheren. A funkcióhoz újra kell indítani a launchert.
     </string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Állandóan látszódik töltés közben</string>
+    <string name="doze_on_charge_summary">Megjelenítés készüléktöltéskor</string>
 </resources>

@@ -52,6 +52,10 @@
     <string name="choose_app">Vybrať aplikáciu</string>
     <string name="enable">Povoliť</string>
     <string name="disable">Zakázať</string>
+    <string name="accent_color">Doplnková farba (prednastavená)</string>
+    <string name="notification_color">Farba upozornení</string>
+    <string name="wallpaper_color">Farba tapety</string>
+    <string name="custom_color">Vlastná farba</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Aktuálny zoznam zmien</string>
     <string name="changelog_crdroid_summary">Zobraziť zmeny v nainštalovanej ROM</string>
@@ -234,13 +238,17 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="monet_title">Obnoviť nastavenia</string>
     <string name="monet_summary">Prisposobit theme engine Monetu</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Vybrať vlastnú farbu</string>
-    <string name="monet_engine_custom_color_summary">Použít vlastnú farbu pre engine Monetu namiesto farby tapety</string>
+    <string name="monet_engine_custom_color_title">Farba zvýraznenia</string>
+    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
+    <string name="monet_engine_custom_bgcolor_title">Background color</string>
+    <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
     <string name="monet_engine_color_override_title">Vlastná farba</string>
-    <string name="monet_engine_white_luminance_user_title">Biela svietivosť</string>
-    <string name="monet_engine_accurate_shades_title">Použiť presné odtiene</string>
+    <string name="monet_engine_luminance_factor_title">Luminance</string>
+    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
     <string name="monet_engine_chroma_factor_title">Faktor chromu</string>
-    <string name="monet_engine_linear_lightness_title">Použite lineárne osvetlenie</string>
+    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
+    <string name="monet_engine_tint_background_title">Tint background</string>
+    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Rýchle odomknutie</string>
     <string name="unlock_quick_unlock_control_summary">Odomknúť automaticky po zadaní správneho PIN kódu alebo hesla</string>
@@ -263,15 +271,15 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="doze_vibrate">Vibrácie</string>
     <string name="doze_vibrate_summary">Trvanie vibrácie pri blikajúcich upozorneniach</string>
     <string name="sensor_warning_message">Nastavenia založené na senzoroch podliehajú hardvérovej kompatibilite. Povolenie senzorov pre Ambientne zobrazenie môže zvýšiť spotrebu batérie.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Nasvietenie okrajov</string>
-    <string name="pulse_ambient_light_summary">Rozsvietiť bočné okraje obrazovky po prijatí oznámenia</string>
-    <string name="pulse_ambient_light_color_title">Farba svetla okrajov</string>
-    <string name="pulse_ambient_light_duration_title">Trvanie svetla okrajov</string>
-    <string name="pulse_ambient_light_duration_summary">Nastaviť dobu trvania animácie okolitého svetla</string>
-    <string name="pulse_ambient_light_layout_title">Vzhľad nasvietenia okrajov</string>
-    <string name="pulse_ambient_light_layout_solid">Plné</string>
-    <string name="pulse_ambient_light_layout_faded">Tlmený</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Nasvietenie okrajov</string>
+    <string name="edge_light_summary">Rozsvietiť bočné okraje obrazovky po prijatí oznámenia</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Vždy spúšťať pri pulzovaní</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
+    <string name="edge_light_repeat_animation_title">Opakovanie animácie</string>
+    <string name="edge_light_repeat_animation_summary_on">Opakovať do časového limitu</string>
+    <string name="edge_light_repeat_animation_summary_off">Zobraziť iba raz</string>
+    <string name="edge_light_color_mode_title">Režim farieb nasvietenia okrajov</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Hudobný text oznámenia</string>
     <string name="pulse_on_new_tracks_summary">Zobraziť Ambientní displej po spustení novej hudobnej skladby</string>
@@ -779,7 +787,7 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
     <string name="wifi_band_60ghz">60 GHz</string>
     <plurals name="wifi_hotspot_client_limit_summary">
-        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="other">Až <xliff:g id="device_num">%1$d</xliff:g> zariadení sa môže pripojiť k tomuto hotspotu</item>
         <item quantity="one">Až <xliff:g id="device_num">%1$d</xliff:g> zariadenie sa môže pripojiť k tomuto hotspotu</item>
         <item quantity="few">Až <xliff:g id="device_num">%1$d</xliff:g> zariadenia sa môžu pripojiť k tomuto hotspotu</item>
         <item quantity="many">Až <xliff:g id="device_num">%1$d</xliff:g> zariadení sa môže pripojiť k tomuto hotspotu</item>
@@ -795,9 +803,9 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="short_label">Krátka</string>
     <string name="long_label">Dlhá</string>
     <!-- Gesture navbar radius -->
-    <string name="gesture_navbar_radius_title">Pill radius</string>
+    <string name="gesture_navbar_radius_title">Polomer pilulky</string>
     <string name="thin_label">Tenké</string>
-    <string name="thick_label">Thick</string>
+    <string name="thick_label">Hrubé</string>
     <!-- Back gesture height -->
     <string name="back_height_low_label">Celá obrazovka</string>
     <string name="back_height_high_label">Naspodku</string>
@@ -961,24 +969,24 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="status_bar_logo_style_crdroid">CrDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
-    <string name="status_bar_logo_style_alien">Alien</string>
+    <string name="status_bar_logo_style_alien">Mimozemšťan</string>
     <string name="status_bar_logo_style_apple">Apple</string>
-    <string name="status_bar_logo_style_avengers">Avengers</string>
+    <string name="status_bar_logo_style_avengers">Avenger</string>
     <string name="status_bar_logo_style_batman">Batman</string>
-    <string name="status_bar_logo_style_batman_tdk">Batman The Dark Knight</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman Temný rytier</string>
     <string name="status_bar_logo_style_beats">Beats</string>
     <string name="status_bar_logo_style_biohazard">Biohazard</string>
     <string name="status_bar_logo_style_blackberry">BlackBerry</string>
     <string name="status_bar_logo_style_cannabis">Cannabis</string>
     <string name="status_bar_logo_style_emoticon_cool">Smajlík kúl (cool)</string>
     <string name="status_bar_logo_style_emoticon_devil">Smajlík diabol</string>
-    <string name="status_bar_logo_style_fire">Fire</string>
+    <string name="status_bar_logo_style_fire">Oheň</string>
     <string name="status_bar_logo_style_heart">Srdce</string>
     <string name="status_bar_logo_style_nike">Nike</string>
-    <string name="status_bar_logo_style_pacman">Pac-man</string>
+    <string name="status_bar_logo_style_pacman">Pac-Man</string>
     <string name="status_bar_logo_style_puma">Puma</string>
     <string name="status_bar_logo_style_rog">ROG</string>
-    <string name="status_bar_logo_style_spiderman">Spider-Man</string>
+    <string name="status_bar_logo_style_spiderman">Spider‑Man</string>
     <string name="status_bar_logo_style_superman">Superman</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_xbox">Xbox</string>
@@ -986,7 +994,7 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="status_bar_logo_style_ninja">Ninja</string>
     <string name="status_bar_logo_style_robot">Robot</string>
     <string name="status_bar_logo_style_ironman">Iron Man</string>
-    <string name="status_bar_logo_style_captain_america">Captain America</string>
+    <string name="status_bar_logo_style_captain_america">Kapitán Amerika</string>
     <string name="status_bar_logo_style_flash">Blesk</string>
     <string name="status_bar_logo_style_tux">Tux</string>
     <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
@@ -1052,26 +1060,29 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="lockscreen_shortcut_remote">Diaľkové ovládanie Google TV</string>
     <string name="lockscreen_shortcut_none">Žiadna</string>
     <!-- App lock -->
-    <string name="app_lock_title">App lock</string>
+    <string name="app_lock_title">Zámok aplikácií</string>
     <plurals name="app_lock_summary">
-        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> application is protected</item>
-        <item quantity="few"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
-        <item quantity="many"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
-        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
+        <item quantity="one">Chránená <xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácia</item>
+        <item quantity="few">Chránené <xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácie</item>
+        <item quantity="many">Chránených <xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikácií</item>
+        <item quantity="other">Chránených <xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikácií</item>
     </plurals>
     <string name="app_lock_authentication_dialog_title">Odomknúť</string>
-    <string name="enable_debugging">Enable debugging</string>
-    <string name="disable_debugging">Disable debugging</string>
-    <string name="app_lock_packages_title">Protected apps</string>
-    <string name="app_lock_packages_summary">Select the apps to protect with biometrics or device credentials</string>
-    <string name="app_lock_timeout_title">Auto lock timeout</string>
-    <string name="app_lock_timeout_summary">Duration of time after which an unlocked app in background should be locked</string>
+    <string name="enable_debugging">Povoliť ladenie</string>
+    <string name="disable_debugging">Zakázať ladenie</string>
+    <string name="app_lock_packages_title">Chránené aplikácie</string>
+    <string name="app_lock_packages_summary">Vyberte aplikácie, ktoré chcete chrániť pomocou biometrických údajov alebo poverení zariadenia</string>
+    <string name="app_lock_timeout_title">Časovač aut. zámku</string>
+    <string name="app_lock_timeout_summary">Čas, po ktorom sa zamkne odomknutá aplikácia spustená na pozadí</string>
     <string name="app_lock_notifications_title">Redact notifications</string>
     <string name="app_lock_notifications_summary">Notification content will be hidden and collapsed for selected apps when they are locked. Heads up notifications will be automatically disabled.</string>
     <string name="app_lock_notifications_disabled_summary">Protect an application first</string>
-    <string name="app_lock_biometrics_allowed_title">Enable biometrics for unlocking</string>
+    <string name="app_lock_biometrics_allowed_title">Povoliť biometrické odomykanie</string>
     <string name="app_lock_footer_text">Bubbles will be automatically dismissed after timeout</string>
-    <string name="enable_protection">Enable protection</string>
-    <string name="hide_from_launcher_title">Hide from launcher</string>
+    <string name="enable_protection">Zapnúť ochranu</string>
+    <string name="hide_from_launcher_title">Skryť z launcheru</string>
     <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Počas nabíjania vždy zapnuté</string>
+    <string name="doze_on_charge_summary">Display device is charging</string>
 </resources>

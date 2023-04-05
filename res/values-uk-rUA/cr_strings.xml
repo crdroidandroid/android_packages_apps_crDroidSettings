@@ -52,6 +52,10 @@
     <string name="choose_app">Вибрати програму</string>
     <string name="enable">Увімкнено</string>
     <string name="disable">Вимкнено</string>
+    <string name="accent_color">Колір акценту (за замовчуванням)</string>
+    <string name="notification_color">Колір сповіщення</string>
+    <string name="wallpaper_color">Колір шпалер</string>
+    <string name="custom_color">Власний колір</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Поточний список змін</string>
     <string name="changelog_crdroid_summary">Переглянути список змін в поточній прошивці</string>
@@ -233,13 +237,17 @@
     <string name="monet_title">Налаштування Monet</string>
     <string name="monet_summary">Налаштування рушія теми Monet</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Використовувати свій колір</string>
-    <string name="monet_engine_custom_color_summary">Використовувати користувацький колір для Monet замість кольору зі шпалер</string>
+    <string name="monet_engine_custom_color_title">Контрастний колір</string>
+    <string name="monet_engine_custom_color_summary">Вибрати спеціальний колір для відтінку</string>
+    <string name="monet_engine_custom_bgcolor_title">Колір фону</string>
+    <string name="monet_engine_custom_bgcolor_summary">Вибрати спеціальний колір для тла</string>
     <string name="monet_engine_color_override_title">Власний колір</string>
-    <string name="monet_engine_white_luminance_user_title">Світіння білого світла</string>
-    <string name="monet_engine_accurate_shades_title">Використовувати точно відтінки</string>
+    <string name="monet_engine_luminance_factor_title">Освітленість</string>
+    <string name="monet_engine_luminance_factor_summary">Високі значення дають яскравіші кольори</string>
     <string name="monet_engine_chroma_factor_title">Інтенсивність кольору</string>
-    <string name="monet_engine_linear_lightness_title">Використовувати лінійну яскравість</string>
+    <string name="monet_engine_chroma_factor_summary">Високі значення дають сильніші кольори</string>
+    <string name="monet_engine_tint_background_title">Відтінок фону</string>
+    <string name="monet_engine_tint_background_summary">Зробити освітленість і хромний вибір, що впливають на кольори фону</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Швидке розблокування</string>
     <string name="unlock_quick_unlock_control_summary">Автоматичне розблокування при введенні правильного пароля чи PIN-коду</string>
@@ -262,15 +270,15 @@
     <string name="doze_vibrate">Вібрація</string>
     <string name="doze_vibrate_summary">Тривалість вібрації при показі сповіщень</string>
     <string name="sensor_warning_message">Налаштування на основі сенсорів залежать від апаратної сумісності. Увімкнення сенсорів для активації екрана може збільшити споживання заряду батареї.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Підсвічування контуру</string>
-    <string name="pulse_ambient_light_summary">Підсвічувати краї екрана при імпульсі сповіщень</string>
-    <string name="pulse_ambient_light_color_title">Колір підсвічування контуру</string>
-    <string name="pulse_ambient_light_duration_title">Тривалість підсвітки краю екрану</string>
-    <string name="pulse_ambient_light_duration_summary">Встановлює тривалість підсвітки анімації</string>
-    <string name="pulse_ambient_light_layout_title">Підсвічування контуру</string>
-    <string name="pulse_ambient_light_layout_solid">Суцільний</string>
-    <string name="pulse_ambient_light_layout_faded">Затухання</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Яскравість підсвітки екрана</string>
+    <string name="edge_light_summary">Підсвічувати краї екрана при імпульсі сповіщень</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Завжди використовувати пульсацію</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Показувати перемикач світла, коли Активний дисплей, і не тільки для сповіщень</string>
+    <string name="edge_light_repeat_animation_title">Повторити анімацію</string>
+    <string name="edge_light_repeat_animation_summary_on">Час очікування повтору</string>
+    <string name="edge_light_repeat_animation_summary_off">Відтворити одноразово</string>
+    <string name="edge_light_color_mode_title">Колір підсвічування контуру</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Світломузика</string>
     <string name="pulse_on_new_tracks_summary">Показувати музичну візуалізацію на AOD під час зміни треку</string>
@@ -1073,4 +1081,7 @@
     <string name="enable_protection">Увімкнути захист</string>
     <string name="hide_from_launcher_title">Приховати від лаунчера</string>
     <string name="hide_from_launcher_summary">Запобігає появі цього застосунку в будь-якому лаунчері. Для застосування змін потрібне перезавантаження.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Завжди показувати під час зарядки</string>
+    <string name="doze_on_charge_summary">Показати пристрій заряджається</string>
 </resources>

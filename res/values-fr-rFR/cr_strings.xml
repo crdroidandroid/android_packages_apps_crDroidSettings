@@ -52,6 +52,10 @@
     <string name="choose_app">Choisir une application</string>
     <string name="enable">Activer</string>
     <string name="disable">Désactiver</string>
+    <string name="accent_color">Couleur d\'accentuation (par défaut)</string>
+    <string name="notification_color">Couleurs des notifications</string>
+    <string name="wallpaper_color">Couleurs du fond d\'écran</string>
+    <string name="custom_color">Couleur personnalisée</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Liste des changements</string>
     <string name="changelog_crdroid_summary">Afficher les modifications de cette version</string>
@@ -231,13 +235,17 @@
     <string name="monet_title">Paramètres de Monet</string>
     <string name="monet_summary">Personnaliser le thème Monet</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Utiliser une couleur personnalisée</string>
-    <string name="monet_engine_custom_color_summary">Utiliser une couleur personnalisée pour le moteur monet au lieu des couleurs de fond d\'écran</string>
+    <string name="monet_engine_custom_color_title">Couleur d\'accentuation</string>
+    <string name="monet_engine_custom_color_summary">Choisir une couleur personnalisée pour l\'accentuation</string>
+    <string name="monet_engine_custom_bgcolor_title">Couleur d\'arrière-plan</string>
+    <string name="monet_engine_custom_bgcolor_summary">Choisir une couleur personnalisée pour l\'arrière-plan</string>
     <string name="monet_engine_color_override_title">Couleur personalisée</string>
-    <string name="monet_engine_white_luminance_user_title">Éclairage blanc</string>
-    <string name="monet_engine_accurate_shades_title">Utiliser des nuances précises</string>
+    <string name="monet_engine_luminance_factor_title">Luminosité</string>
+    <string name="monet_engine_luminance_factor_summary">Des valeurs plus élevées produisent des couleurs plus brillantes</string>
     <string name="monet_engine_chroma_factor_title">Facteur Chroma</string>
-    <string name="monet_engine_linear_lightness_title">Utiliser la clarté linéaire</string>
+    <string name="monet_engine_chroma_factor_summary">Des valeurs plus élevées produisent des couleurs plus fortes</string>
+    <string name="monet_engine_tint_background_title">Teinte de l\'arrière-plan</string>
+    <string name="monet_engine_tint_background_summary">Faire en sorte que la Luminance et la sélection Chroma affectent aussi les couleurs d\'arrière-plan</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Déverrouillage rapide</string>
     <string name="unlock_quick_unlock_control_summary">Déverrouiller automatiquement lorsque le bon code PIN/mot de passe est saisi</string>
@@ -260,15 +268,15 @@
     <string name="doze_vibrate">Vibration</string>
     <string name="doze_vibrate_summary">Définir la durée de vibration lors du clignotement du voyant de notifications</string>
     <string name="sensor_warning_message">Les paramètres basés sur les capteurs sont soumis à la compatibilité matérielle. L\'activation des capteurs pour l\'affichage ambiant peut augmenter la consommation d\'énergie.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Éclairage des bords d\'écran</string>
-    <string name="pulse_ambient_light_summary">Éclairer les bords de l\'écran lors d\'une notification</string>
-    <string name="pulse_ambient_light_color_title">Couleur</string>
-    <string name="pulse_ambient_light_duration_title">Durée</string>
-    <string name="pulse_ambient_light_duration_summary">Définir la durée de l\'animation</string>
-    <string name="pulse_ambient_light_layout_title">Style</string>
-    <string name="pulse_ambient_light_layout_solid">Plein</string>
-    <string name="pulse_ambient_light_layout_faded">Dégradé</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Éclairage des bords d\'écran</string>
+    <string name="edge_light_summary">Éclairer les bords de l\'écran si notification</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Toujours déclencher lors de l\'impulsion</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Afficher/Masquer la lumière des bords chaque fois que l\'affichage ambiant est affiché et pas seulement pour les notifications</string>
+    <string name="edge_light_repeat_animation_title">Répéter l\'animation</string>
+    <string name="edge_light_repeat_animation_summary_on">Répéter jusqu\'à expiration</string>
+    <string name="edge_light_repeat_animation_summary_off">Afficher une seule fois</string>
+    <string name="edge_light_color_mode_title">Mode de couleur de la lumière des bords</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Informations musicales</string>
     <string name="pulse_on_new_tracks_summary">Afficher les informations musicales sur l\'affichage ambiant lors d\'un changement de piste</string>
@@ -960,17 +968,17 @@
     <string name="status_bar_logo_style_apple">Apple</string>
     <string name="status_bar_logo_style_avengers">Avengers</string>
     <string name="status_bar_logo_style_batman">Batman</string>
-    <string name="status_bar_logo_style_batman_tdk">Batman The Dark Knight</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman le Chevalier Noir</string>
     <string name="status_bar_logo_style_beats">Beats</string>
     <string name="status_bar_logo_style_biohazard">Biohazard</string>
     <string name="status_bar_logo_style_blackberry">BlackBerry</string>
     <string name="status_bar_logo_style_cannabis">Cannabis</string>
     <string name="status_bar_logo_style_emoticon_cool">Emoticône cool</string>
     <string name="status_bar_logo_style_emoticon_devil">Émoticône diable</string>
-    <string name="status_bar_logo_style_fire">Fire</string>
+    <string name="status_bar_logo_style_fire">Feu</string>
     <string name="status_bar_logo_style_heart">Coeur</string>
     <string name="status_bar_logo_style_nike">Nike</string>
-    <string name="status_bar_logo_style_pacman">Pac-man</string>
+    <string name="status_bar_logo_style_pacman">Pac-Man</string>
     <string name="status_bar_logo_style_puma">Puma</string>
     <string name="status_bar_logo_style_rog">ROG</string>
     <string name="status_bar_logo_style_spiderman">Spider-Man</string>
@@ -1068,4 +1076,7 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <string name="enable_protection">Activer la protection</string>
     <string name="hide_from_launcher_title">Masquer l’icône dans le lanceur d\'applications</string>
     <string name="hide_from_launcher_summary">Empêcher cette application d\'apparaître dans tous les lanceurs d\'applications. Nécessite un redémarrage du lanceur pour que les changements prennent effet.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Toujours allumé pendant la charge</string>
+    <string name="doze_on_charge_summary">L\'affichage de l\'appareil est en cours de chargement</string>
 </resources>

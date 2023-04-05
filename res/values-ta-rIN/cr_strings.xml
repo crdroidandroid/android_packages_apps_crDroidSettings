@@ -52,6 +52,10 @@
     <string name="choose_app">பயன்பாட்டைத் தேர்ந்தெடுக்கவும்</string>
     <string name="enable">இயக்கு</string>
     <string name="disable">முடக்கப்பட்டது</string>
+    <string name="accent_color">Accent color (Default)</string>
+    <string name="notification_color">Notification color</string>
+    <string name="wallpaper_color">Wallpaper color</string>
+    <string name="custom_color">தனிப்பயன் நிறம்</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">தற்போதைய மாற்றங்கள்</string>
     <string name="changelog_crdroid_summary">நிறுவப்பட்ட ROM இல் மாற்றங்களைக் காண்க</string>
@@ -231,13 +235,17 @@
     <string name="monet_title">Monet அமைப்புகள்</string>
     <string name="monet_summary">Customize Monet theme engine</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">தனிப்பயன் நிறம் பயன்படுத்து</string>
-    <string name="monet_engine_custom_color_summary">Use custom color for monet engine instead of wallpaper colors</string>
+    <string name="monet_engine_custom_color_title">உச்சரிப்பு நிறம்</string>
+    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
+    <string name="monet_engine_custom_bgcolor_title">Background color</string>
+    <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
     <string name="monet_engine_color_override_title">தனிப்பயன் நிறம்</string>
-    <string name="monet_engine_white_luminance_user_title">வெள்ளை ஒளிர்வு</string>
-    <string name="monet_engine_accurate_shades_title">துல்லிய நிழல்கள் பயன்படுத்து</string>
+    <string name="monet_engine_luminance_factor_title">Luminance</string>
+    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
     <string name="monet_engine_chroma_factor_title">Chroma அளவு</string>
-    <string name="monet_engine_linear_lightness_title">நேரியல் ஒளிர்வை பயன்படுத்து</string>
+    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
+    <string name="monet_engine_tint_background_title">Tint background</string>
+    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">விரைவாகத் திற</string>
     <string name="unlock_quick_unlock_control_summary">சரியான PIN/கடவுச்சொல்லை இட்டவுடனே தானாகத் திற</string>
@@ -260,15 +268,15 @@
     <string name="doze_vibrate">அதிர்வு</string>
     <string name="doze_vibrate_summary">Duration to vibrate when pulsing notifications</string>
     <string name="sensor_warning_message">Settings based on sensors are subject to hardware compatibility. Enabling sensors for ambient display may increase power drain.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Edge lighting</string>
-    <string name="pulse_ambient_light_summary">Light up the side edges of the screen on notification pulse</string>
-    <string name="pulse_ambient_light_color_title">விளிம்பு ஒளி நிறம்</string>
-    <string name="pulse_ambient_light_duration_title">விளிம்பு ஒளி காலநேரம்</string>
-    <string name="pulse_ambient_light_duration_summary">Sets the ambient light animation duration</string>
-    <string name="pulse_ambient_light_layout_title">Edge light view</string>
-    <string name="pulse_ambient_light_layout_solid">திடமான</string>
-    <string name="pulse_ambient_light_layout_faded">மங்கிய</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Edge light</string>
+    <string name="edge_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
+    <string name="edge_light_repeat_animation_title">Repeat animation</string>
+    <string name="edge_light_repeat_animation_summary_on">Repeat until timeout</string>
+    <string name="edge_light_repeat_animation_summary_off">Show only once</string>
+    <string name="edge_light_color_mode_title">Edge light color mode</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Music ticker</string>
     <string name="pulse_on_new_tracks_summary">Show music ticker on Ambient Display during track change</string>
@@ -1067,4 +1075,7 @@
     <string name="enable_protection">Enable protection</string>
     <string name="hide_from_launcher_title">Hide from launcher</string>
     <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Always show when charging</string>
+    <string name="doze_on_charge_summary">Display device is charging</string>
 </resources>

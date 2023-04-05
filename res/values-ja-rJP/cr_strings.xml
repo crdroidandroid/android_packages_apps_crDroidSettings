@@ -52,6 +52,10 @@
     <string name="choose_app">アプリを選択</string>
     <string name="enable">有効</string>
     <string name="disable">無効</string>
+    <string name="accent_color">アクセントカラー（デフォルト）</string>
+    <string name="notification_color">通知の色</string>
+    <string name="wallpaper_color">壁紙の色</string>
+    <string name="custom_color">カスタムカラー</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">最近の更新履歴</string>
     <string name="changelog_crdroid_summary">インストールされている ROM の更新内容を確認します</string>
@@ -230,13 +234,17 @@
     <string name="monet_title">Monet 設定</string>
     <string name="monet_summary">Monet テーマエンジンをカスタマイズします</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">カスタム色を使用する</string>
-    <string name="monet_engine_custom_color_summary">Monet エンジンで、壁紙の色の代わりにカスタム色を使用します</string>
+    <string name="monet_engine_custom_color_title">アクセントカラー</string>
+    <string name="monet_engine_custom_color_summary">アクセントのカスタムカラーを選択</string>
+    <string name="monet_engine_custom_bgcolor_title">背景色</string>
+    <string name="monet_engine_custom_bgcolor_summary">カスタム背景色を選択</string>
     <string name="monet_engine_color_override_title">カスタム色</string>
-    <string name="monet_engine_white_luminance_user_title">白い輝き</string>
-    <string name="monet_engine_accurate_shades_title">正確な色合いを使用</string>
+    <string name="monet_engine_luminance_factor_title">輝度</string>
+    <string name="monet_engine_luminance_factor_summary">値が高いほど明るい色になります</string>
     <string name="monet_engine_chroma_factor_title">彩度係数</string>
-    <string name="monet_engine_linear_lightness_title">リニア明度を使用</string>
+    <string name="monet_engine_chroma_factor_summary">値が高いほど色が濃くなります</string>
+    <string name="monet_engine_tint_background_title">背景を明るくする</string>
+    <string name="monet_engine_tint_background_summary">選択した輝度と彩度が背景色にも影響するようにします</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">クイックロック解除</string>
     <string name="unlock_quick_unlock_control_summary">正しい PIN / パスワードを入力すると自動的にロック解除します</string>
@@ -259,15 +267,15 @@
     <string name="doze_vibrate">バイブレーション</string>
     <string name="doze_vibrate_summary">通知を表示するときのバイブの動作時間を指定します</string>
     <string name="sensor_warning_message">センサーベースの設定はハードウェアの互換性に依存します。センサーを有効化するとバッテリー消費が増える可能性があります</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">エッジライト</string>
-    <string name="pulse_ambient_light_summary">通知の点滅で画面の両端をライトアップします</string>
-    <string name="pulse_ambient_light_color_title">エッジライトの色</string>
-    <string name="pulse_ambient_light_duration_title">エッジライトの長さ</string>
-    <string name="pulse_ambient_light_duration_summary">アンビエントライトアニメーションの長さを設定します</string>
-    <string name="pulse_ambient_light_layout_title">エッジライト</string>
-    <string name="pulse_ambient_light_layout_solid">ソリッド</string>
-    <string name="pulse_ambient_light_layout_faded">フェード</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">エッジライト</string>
+    <string name="edge_light_summary">通知パルスで画面の両端をライトアップします</string>
+    <string name="edge_light_always_trigger_on_pulse_title">パルスで常に起動</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">通知だけではなく、アンビエント画面が表示されればいつでもエッジライトを表示します</string>
+    <string name="edge_light_repeat_animation_title">アニメーションの繰り返し</string>
+    <string name="edge_light_repeat_animation_summary_on">指定時間まで繰り返します</string>
+    <string name="edge_light_repeat_animation_summary_off">1度だけ表示します</string>
+    <string name="edge_light_color_mode_title">エッジライトのカラーモード</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">音楽ティッカー</string>
     <string name="pulse_on_new_tracks_summary">再生中の音楽の変更時に、アンビエント表示に音楽ティッカーを表示します</string>
@@ -1064,4 +1072,7 @@
     <string name="enable_protection">保護を有効化</string>
     <string name="hide_from_launcher_title">ホームアプリから隠す</string>
     <string name="hide_from_launcher_summary">このアプリがどのホームアプリにも表示されないようにします。変更を有効にするには、ホームアプリの再起動が必要です。</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">充電時に常に表示する</string>
+    <string name="doze_on_charge_summary">充電中であることを表示します</string>
 </resources>

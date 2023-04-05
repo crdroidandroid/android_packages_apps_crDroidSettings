@@ -52,6 +52,10 @@
     <string name="choose_app">Escull l\'aplicació</string>
     <string name="enable">Activa</string>
     <string name="disable">Desactiva</string>
+    <string name="accent_color">Accent color (Default)</string>
+    <string name="notification_color">Notification color</string>
+    <string name="wallpaper_color">Wallpaper color</string>
+    <string name="custom_color">Color personalitzat</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Registre de canvis actual</string>
     <string name="changelog_crdroid_summary">Mostra els canvis de la ROM instal·lada</string>
@@ -82,7 +86,7 @@
     <string name="donate_team_title">Equip crDroid</string>
     <string name="donate_team_summary">Fes una donació per a sostenir el hosting del servidor, el lloc web i la gestió general</string>
     <!-- The Drill -->
-    <string name="drill_title">The drill</string>
+    <string name="drill_title">Ja saps el que has de fer</string>
     <string name="drill_summary">Algun bug? Tens algun problema?</string>
     <!-- OTA -->
     <string name="crdroid_update_title">Actualitzacions</string>
@@ -231,13 +235,17 @@
     <string name="monet_title">Configuració de Monet</string>
     <string name="monet_summary">Configurar motor de temes Monet</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Usa un color personalitzat</string>
-    <string name="monet_engine_custom_color_summary">Usar un color personalitzat per al motor Monet en comptes de colors de fons de pantalla</string>
+    <string name="monet_engine_custom_color_title">Color d\'èmfasi</string>
+    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
+    <string name="monet_engine_custom_bgcolor_title">Background color</string>
+    <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
     <string name="monet_engine_color_override_title">Color personalitzat</string>
-    <string name="monet_engine_white_luminance_user_title">Lluminositat blanca</string>
-    <string name="monet_engine_accurate_shades_title">Usar ombres precises</string>
+    <string name="monet_engine_luminance_factor_title">Luminance</string>
+    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
     <string name="monet_engine_chroma_factor_title">Factor cromátic</string>
-    <string name="monet_engine_linear_lightness_title">Usar lluminositat lineal</string>
+    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
+    <string name="monet_engine_tint_background_title">Tint background</string>
+    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Desbloqueig ràpid</string>
     <string name="unlock_quick_unlock_control_summary">Desbloqueja automàticament quan s\'introdueixi el PIN/contrasenya correcta</string>
@@ -260,15 +268,15 @@
     <string name="doze_vibrate">Vibrar</string>
     <string name="doze_vibrate_summary">Duració de la vibració amb notificacions polsants</string>
     <string name="sensor_warning_message">La configuració basada en sensors està subjecta a la compatibilitat del dispositiu. L\'activació dels sensors per a la visualització ambiental pot augmentar el consum d\'energia.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Il·luminació de vores</string>
-    <string name="pulse_ambient_light_summary">Il·lumina les vores laterals de la pantalla a la notificació pulsant</string>
-    <string name="pulse_ambient_light_color_title">Color de la llum de vores</string>
-    <string name="pulse_ambient_light_duration_title">Duració de la llum de vores</string>
-    <string name="pulse_ambient_light_duration_summary">Estableix la durada de l\'animació de la llum ambiental</string>
-    <string name="pulse_ambient_light_layout_title">Vista de il·luminació de vores</string>
-    <string name="pulse_ambient_light_layout_solid">Sòlid</string>
-    <string name="pulse_ambient_light_layout_faded">Esvair</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Edge light</string>
+    <string name="edge_light_summary">Light up the side edges of the screen on notification pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
+    <string name="edge_light_repeat_animation_title">Repeat animation</string>
+    <string name="edge_light_repeat_animation_summary_on">Repeat until timeout</string>
+    <string name="edge_light_repeat_animation_summary_off">Show only once</string>
+    <string name="edge_light_color_mode_title">Edge light color mode</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Ticker de música</string>
     <string name="pulse_on_new_tracks_summary">Mostra el ticker de música a la pantalla ambient durant el canvi de pista</string>
@@ -1067,4 +1075,7 @@
     <string name="enable_protection">Activa la protecció</string>
     <string name="hide_from_launcher_title">Amaga al llançador</string>
     <string name="hide_from_launcher_summary">Evita que aquesta aplicació es mostri al llançador. Requereix reiniciar el llançador perquè els canvis tinguin efecte.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Always show when charging</string>
+    <string name="doze_on_charge_summary">Display device is charging</string>
 </resources>

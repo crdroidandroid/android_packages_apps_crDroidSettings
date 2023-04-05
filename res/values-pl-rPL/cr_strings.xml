@@ -52,6 +52,10 @@
     <string name="choose_app">Wybierz aplikację</string>
     <string name="enable">Włącz</string>
     <string name="disable">Wyłącz</string>
+    <string name="accent_color">Kolor akcentu (domyślny)</string>
+    <string name="notification_color">Kolor powiadomień</string>
+    <string name="wallpaper_color">Kolor tapety</string>
+    <string name="custom_color">Kolor niestandardowy</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Bieżąca lista zmian</string>
     <string name="changelog_crdroid_summary">Pokaż zmiany w systemie</string>
@@ -233,13 +237,17 @@
     <string name="monet_title">Ustawienia Monet</string>
     <string name="monet_summary">Dostosuj silnik motywu Monet</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Użyj niestandardowego koloru</string>
-    <string name="monet_engine_custom_color_summary">Użyj niestandardowego koloru silnika monet zamiast kolorów tapety</string>
+    <string name="monet_engine_custom_color_title">Odcień koloru</string>
+    <string name="monet_engine_custom_color_summary">Wybierz niestandardowy kolor akcentu</string>
+    <string name="monet_engine_custom_bgcolor_title">Kolor tła</string>
+    <string name="monet_engine_custom_bgcolor_summary">Wybierz niestandardowy kolor tła</string>
     <string name="monet_engine_color_override_title">Kolor niestandardowy</string>
-    <string name="monet_engine_white_luminance_user_title">Biała Iluminacja</string>
-    <string name="monet_engine_accurate_shades_title">Używaj dokładnych odcieni</string>
+    <string name="monet_engine_luminance_factor_title">Jaskrawość</string>
+    <string name="monet_engine_luminance_factor_summary">Wyższe wartości tworzą jaśniejsze kolory</string>
     <string name="monet_engine_chroma_factor_title">Współczynnik chroma</string>
-    <string name="monet_engine_linear_lightness_title">Użyj światła liniowego</string>
+    <string name="monet_engine_chroma_factor_summary">Wyższe wartości tworzą mocniejsze kolory</string>
+    <string name="monet_engine_tint_background_title">Odcień tła</string>
+    <string name="monet_engine_tint_background_summary">Spraw, aby jaskrawość i wybór barwy również wpływały na kolory tła</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Szybkie odblokowanie</string>
     <string name="unlock_quick_unlock_control_summary">Odblokuj automatycznie po wprowadzeniu poprawnego kodu PIN/hasła</string>
@@ -262,15 +270,15 @@
     <string name="doze_vibrate">Wibracje</string>
     <string name="doze_vibrate_summary">Długość wibracji podczas pulsu powiadomienia</string>
     <string name="sensor_warning_message">Ustawienia bazowane o czujniki podlegające zgodności sprzętu. Włączenie czujników dla otoczenia wyświetlacza może zwiększyć zużycie energii.</string>
-    <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Oświetlenie krawędzi</string>
-    <string name="pulse_ambient_light_summary">Podświetl boczne krawędzie ekranu po pulsowaniu powiadomień</string>
-    <string name="pulse_ambient_light_color_title">Kolor światła krawędzi</string>
-    <string name="pulse_ambient_light_duration_title">Długość światła krawędzi</string>
-    <string name="pulse_ambient_light_duration_summary">Ustawia czas trwania animacji światła otoczenia</string>
-    <string name="pulse_ambient_light_layout_title">Podświetlenie krawędzi</string>
-    <string name="pulse_ambient_light_layout_solid">Stały</string>
-    <string name="pulse_ambient_light_layout_faded">Zanikanie</string>
+    <!-- Edge light -->
+    <string name="edge_light_title">Światło krawędzi</string>
+    <string name="edge_light_summary">Podświetl boczne krawędzie ekranu po pulsowaniu powiadomień</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Zawsze wyzwalaj przy pulsowaniu</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Pokaż oświetlenie krawędzi za każdym razem, gdy ekran zgodny z otoczeniem jest wyświetlany, nie tylko dla powiadomień</string>
+    <string name="edge_light_repeat_animation_title">Powtarzaj animację</string>
+    <string name="edge_light_repeat_animation_summary_on">Powtarzaj do limitu czasu</string>
+    <string name="edge_light_repeat_animation_summary_off">Pokaż tylko raz</string>
+    <string name="edge_light_color_mode_title">Tryb koloru światła krawędzi</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Wizualizacje muzyki</string>
     <string name="pulse_on_new_tracks_summary">Pokaż pasek muzyczny na ekranie Ambient podczas zmiany utworu</string>
@@ -1073,4 +1081,7 @@
     <string name="enable_protection">Włącz ochronę</string>
     <string name="hide_from_launcher_title">Ukryj w launcherze</string>
     <string name="hide_from_launcher_summary">Zapobiegaj pojawieniu się tej aplikacji w dowolnym launcherze. Wymaga ponownego uruchomienia launchera, aby zmiany zaczęły obowiązywać.</string>
+    <!-- Doze on charge -->
+    <string name="doze_on_charge_title">Pokazuj podczas ładowania</string>
+    <string name="doze_on_charge_summary">Ładowanie urządzenia wyświetlającego</string>
 </resources>
