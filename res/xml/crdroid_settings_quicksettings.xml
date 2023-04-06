@@ -124,6 +124,15 @@
             android:max="100"
             android:min="1" />
 
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_header_image"
+            android:icon="@drawable/ic_header"
+            android:title="@string/qs_header_image_title"
+            android:defaultValue="0"
+            settings:interval="1"
+            android:max="11"
+            android:min="0" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
