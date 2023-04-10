@@ -52,7 +52,7 @@
     <string name="choose_app">Выбраць праграму</string>
     <string name="enable">Укл.</string>
     <string name="disable">Адкл.</string>
-    <string name="accent_color">Accent color (Default)</string>
+    <string name="accent_color">Колер акцэнту (па змаўчанні)</string>
     <string name="notification_color">Колер апавяшчэння</string>
     <string name="wallpaper_color">Колер шпалер</string>
     <string name="custom_color">Свой колер</string>
@@ -239,16 +239,16 @@
     <string name="monet_summary">Налады рухавіка тэм Monet</string>
     <!-- Monet Engine -->
     <string name="monet_engine_custom_color_title">Асноўны колер</string>
-    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
-    <string name="monet_engine_custom_bgcolor_title">Background color</string>
-    <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
+    <string name="monet_engine_custom_color_summary">Выберыце ўласны колер акцэнту</string>
+    <string name="monet_engine_custom_bgcolor_title">Колер фону</string>
+    <string name="monet_engine_custom_bgcolor_summary">Выберыце ўласны колер фону</string>
     <string name="monet_engine_color_override_title">Свой колер</string>
-    <string name="monet_engine_luminance_factor_title">Luminance</string>
-    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
+    <string name="monet_engine_luminance_factor_title">Яркасць</string>
+    <string name="monet_engine_luminance_factor_summary">Больш высокія значэнні ствараюць больш яркія колеры</string>
     <string name="monet_engine_chroma_factor_title">Каэфіцыент каляровасці</string>
-    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
-    <string name="monet_engine_tint_background_title">Tint background</string>
-    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
+    <string name="monet_engine_chroma_factor_summary">Больш высокія значэнні ствараюць насычаныя колеры</string>
+    <string name="monet_engine_tint_background_title">Адценне фону</string>
+    <string name="monet_engine_tint_background_summary">Выбар яркасці і каляровасці, дазваляе таксама ўплываць на колеры фону</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Хуткая разблакоўка</string>
     <string name="unlock_quick_unlock_control_summary">Аўтаматычная разблакоўка пры ўводзе правільнага пароля або PIN-кода</string>
@@ -272,14 +272,14 @@
     <string name="doze_vibrate_summary">Працягласць вібрацыі пры пульсуючых апавяшчэннях</string>
     <string name="sensor_warning_message">Дадзеныя налады залежаць ад апаратнай сумяшчальнасці. Уключэнне датчыкаў для аўтаматычнага ўключэння экрана можа паскорыць разрад батарэі.</string>
     <!-- Edge light -->
-    <string name="edge_light_title">Edge light</string>
+    <string name="edge_light_title">Падсвечванне контуру</string>
     <string name="edge_light_summary">Падсветка краёў экрана падчас пульсавання апавяшчэнняў</string>
-    <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
-    <string name="edge_light_repeat_animation_title">Repeat animation</string>
-    <string name="edge_light_repeat_animation_summary_on">Repeat until timeout</string>
-    <string name="edge_light_repeat_animation_summary_off">Show only once</string>
-    <string name="edge_light_color_mode_title">Edge light color mode</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Заўсёды запускаць пры апавяшчэннях</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Прайграваць анімацыю нават калі ўключаны актыўны дысплэй і не толькі для апавяшчэнняў</string>
+    <string name="edge_light_repeat_animation_title">Паўтор анімацыі</string>
+    <string name="edge_light_repeat_animation_summary_on">Паўтараць праз некаторы час</string>
+    <string name="edge_light_repeat_animation_summary_off">Паказаць толькі адзін раз</string>
+    <string name="edge_light_color_mode_title">Колер падсвятлення контуру</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Музычны цікер</string>
     <string name="pulse_on_new_tracks_summary">Адлюстроўваць назву трэка на Ambient Display пры змене трэка</string>
@@ -1052,13 +1052,16 @@
     <string name="lockscreen_shortcut_category">Значкі ў ніжніх кутах</string>
     <string name="lockscreen_shortcut_start_title">Левы значок</string>
     <string name="lockscreen_shortcut_end_title">Правы значок</string>
-    <string name="lockscreen_shortcut_home">Кіраванне галоўным экранам</string>
     <string name="lockscreen_shortcut_wallet">Кашалёк</string>
+    <string name="lockscreen_shortcut_home">Кіраванне галоўным экранам</string>
     <string name="lockscreen_shortcut_flashlight">Ліхтарык</string>
     <string name="lockscreen_shortcut_qr">QR сканер</string>
     <string name="lockscreen_shortcut_camera">Камера</string>
     <string name="lockscreen_shortcut_remote">Пульт Google TV</string>
+    <string name="lockscreen_shortcut_dnd">Не турбаваць</string>
     <string name="lockscreen_shortcut_none">Нічога</string>
+    <string name="lockscreen_shortcut_enforce_title">Enforce shortcuts</string>
+    <string name="lockscreen_shortcut_enforce_summary">Do not display next available shortcut if chosen shortcut is not available</string>
     <!-- App lock -->
     <string name="app_lock_title">Блакіроўка праграм</string>
     <plurals name="app_lock_summary">

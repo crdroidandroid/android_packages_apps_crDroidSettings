@@ -53,8 +53,8 @@
     <string name="enable">Aktivieren</string>
     <string name="disable">Deaktivieren</string>
     <string name="accent_color">Akzentfarbe (Standard)</string>
-    <string name="notification_color">Farben aus Benachrichtigungen</string>
-    <string name="wallpaper_color">Farben aus Hintergrundbild</string>
+    <string name="notification_color">Benachrichtigungsfarbe</string>
+    <string name="wallpaper_color">Hintergrundfarbe</string>
     <string name="custom_color">Benutzerdefinierte Farbe</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Aktueller Changelog</string>
@@ -241,10 +241,10 @@
     <string name="monet_engine_custom_bgcolor_summary">Benutzerdefinierte Hintergrundfarbe auswählen</string>
     <string name="monet_engine_color_override_title">Benutzerdefinierte Farbe</string>
     <string name="monet_engine_luminance_factor_title">Leuchtkraft</string>
-    <string name="monet_engine_luminance_factor_summary">Je höher der Wert, desto heller die Farben</string>
+    <string name="monet_engine_luminance_factor_summary">Höhere Werte erzeugen hellere Farben</string>
     <string name="monet_engine_chroma_factor_title">Sättigungsfaktor</string>
-    <string name="monet_engine_chroma_factor_summary">Je höher der Wert, desto kräftiger die Farben</string>
-    <string name="monet_engine_tint_background_title">Farbton auf Hintergrund anwenden</string>
+    <string name="monet_engine_chroma_factor_summary">Höhere Werte erzeugen kräftigere Farben</string>
+    <string name="monet_engine_tint_background_title">Hintergrund einfärben</string>
     <string name="monet_engine_tint_background_summary">Leuchtkraft- und Sättigungseinstellung Einfluss auf die Farben des Hintergrundbilds nehmen lassen</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Schnelles Entsperren</string>
@@ -272,11 +272,11 @@
     <string name="edge_light_title">Seitenlicht</string>
     <string name="edge_light_summary">Bei Benachrichtigung-Puls leuchten die Seitenkanten des Bildschirms auf</string>
     <string name="edge_light_always_trigger_on_pulse_title">Durch Pulse immer auslösen</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Seitenlicht auch bei Ambient-Display anzeigen, und nicht nur bei Benachrichtigungen</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Seitenlicht auch bei Ambient-Display anzeigen und nicht nur bei Benachrichtigungen</string>
     <string name="edge_light_repeat_animation_title">Animation wiederholen</string>
     <string name="edge_light_repeat_animation_summary_on">Wiederholen bis zum Timeout</string>
     <string name="edge_light_repeat_animation_summary_off">Nur einmal anzeigen</string>
-    <string name="edge_light_color_mode_title">Farbe des Seitenlichts</string>
+    <string name="edge_light_color_mode_title">Seitenlicht Farbmodus</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Musikticker</string>
     <string name="pulse_on_new_tracks_summary">Bei Titelwechsel Musikticker im Ambient-Modus anzeigen</string>
@@ -1048,13 +1048,16 @@ Die in Apps festgelegten Muster haben Vorrang</string>
     <string name="lockscreen_shortcut_category">Verknüpfungen unten</string>
     <string name="lockscreen_shortcut_start_title">Verknüpfung links</string>
     <string name="lockscreen_shortcut_end_title">Verknüpfung rechts</string>
-    <string name="lockscreen_shortcut_home">Home-Steuerung</string>
     <string name="lockscreen_shortcut_wallet">Wallet</string>
+    <string name="lockscreen_shortcut_home">Home-Steuerung</string>
     <string name="lockscreen_shortcut_flashlight">Taschenlampe</string>
     <string name="lockscreen_shortcut_qr">QR-Code-Scanner</string>
     <string name="lockscreen_shortcut_camera">Kamera</string>
     <string name="lockscreen_shortcut_remote">Fernbedienung für Google TV</string>
+    <string name="lockscreen_shortcut_dnd">DND</string>
     <string name="lockscreen_shortcut_none">Keine</string>
+    <string name="lockscreen_shortcut_enforce_title">Verknüpfungen erzwingen</string>
+    <string name="lockscreen_shortcut_enforce_summary">Nächste verfügbare Verknüpfung nicht anzeigen, wenn die gewählte Verknüpfung nicht verfügbar ist</string>
     <!-- App lock -->
     <string name="app_lock_title">App-Sperre</string>
     <plurals name="app_lock_summary">
@@ -1078,5 +1081,5 @@ Die in Apps festgelegten Muster haben Vorrang</string>
     <string name="hide_from_launcher_summary">Verhindert, dass diese Anwendung im Launcher erscheint. Erfordert einen Neustart des Launchers, ehe die Änderungen wirksam werden.</string>
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">Beim Laden immer anzeigen</string>
-    <string name="doze_on_charge_summary">Anzeigen, dass das Gerät gerade lädt</string>
+    <string name="doze_on_charge_summary">Anzeigen, dass das Gerät geladen wird</string>
 </resources>

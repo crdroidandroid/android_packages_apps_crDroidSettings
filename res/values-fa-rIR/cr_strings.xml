@@ -205,7 +205,7 @@
     <string name="backlight_summary_enabled_with_timeout">فعال شده برای <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">فعال شد</string>
     <plurals name="backlight_timeout_time">
-        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> ثانیه</item>
         <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
     </plurals>
     <!-- Power menu -->
@@ -243,9 +243,9 @@
     <string name="monet_engine_luminance_factor_title">درخشندگی</string>
     <string name="monet_engine_luminance_factor_summary">مقادیر بالاتر رنگ های روشن تری تولید می کنند</string>
     <string name="monet_engine_chroma_factor_title">عامل کروما</string>
-    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
-    <string name="monet_engine_tint_background_title">Tint background</string>
-    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
+    <string name="monet_engine_chroma_factor_summary">مقادیر بالاتر رنگ های قوی تری تولید می کنند</string>
+    <string name="monet_engine_tint_background_title">رنگ پس زمینه</string>
+    <string name="monet_engine_tint_background_summary">درخشندگی و انتخاب رنگ روی رنگ‌های پس‌زمینه نیز تأثیر بگذارند</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">بازگشایی سریع قفل</string>
     <string name="unlock_quick_unlock_control_summary">با وارد کردن پین/گذرواژه صحیح، قفل را به‌ صورت خودکار باز کنید</string>
@@ -275,8 +275,8 @@
     <string name="edge_light_always_trigger_on_pulse_summary">هر زمان که صفحه نمایش محیط نشان داده می شود و نه فقط برای اعلان، نور لبه را نشان می دهد یا خیر</string>
     <string name="edge_light_repeat_animation_title">تکرار انیمیشن</string>
     <string name="edge_light_repeat_animation_summary_on">تا پایان زمان تکرار شود</string>
-    <string name="edge_light_repeat_animation_summary_off">Show only once</string>
-    <string name="edge_light_color_mode_title">Edge light color mode</string>
+    <string name="edge_light_repeat_animation_summary_off">فقط یک بار نمایش داده شود</string>
+    <string name="edge_light_color_mode_title">حالت رنگ نور لبه</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">کنترل موسیقی</string>
     <string name="pulse_on_new_tracks_summary">نمایش کنترل موسیقی در حالت نمایشگر حساس به محیط در زمان عوض شدن موسیقی</string>
@@ -514,7 +514,7 @@
     <string name="navbar_home_long_press_title">کلید خانه (نگه داشتن)</string>
     <string name="navbar_home_double_tap_title">کلید خانه (دو ضربه)</string>
     <string name="navbar_app_switch_long_press_title">دکمه موارد اخیر (نگه داشتن)</string>
-    <string name="navbar_app_switch_double_tap_title">Recents double tap</string>
+    <string name="navbar_app_switch_double_tap_title">موارد اخیر دوبار ضربه بزنید</string>
     <string name="navbar_edge_long_swipe_title">کشیدن طولانی گوشه</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">تشخیص قرارگیری گوشی در جیب</string>
@@ -767,14 +767,14 @@
     <string name="custom_timeout_summary_4hours">4 ساعت</string>
     <string name="custom_timeout_summary_8hours">8 ساعت</string>
     <!-- WiFi Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
+    <string name="wifi_hotspot_hidden_ssid_title">مخفی کردن شبکه</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
     <string name="wifi_hotspot_client_manager_title">دستگاه‌های متصل</string>
     <string name="wifi_hotspot_client_manager_summary">دستگاه های متصل به هات اسپات را فهرست و مدیریت کنید</string>
     <string name="wifi_hotspot_client_manager_list_only_summary">دستگاه های متصل به هات اسپات را فهرست کنید</string>
     <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
     <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
-    <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
+    <string name="wifi_hotspot_connected_clients_list_title">دستگاه های متصل</string>
     <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
     <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
     <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
@@ -1047,13 +1047,16 @@
     <string name="lockscreen_shortcut_category">Bottom shortcuts</string>
     <string name="lockscreen_shortcut_start_title">Left shortcut</string>
     <string name="lockscreen_shortcut_end_title">Right shortcut</string>
-    <string name="lockscreen_shortcut_home">Home controls</string>
     <string name="lockscreen_shortcut_wallet">Wallet</string>
+    <string name="lockscreen_shortcut_home">Home controls</string>
     <string name="lockscreen_shortcut_flashlight">چراغ‌ قوه</string>
     <string name="lockscreen_shortcut_qr">QR code scanner</string>
     <string name="lockscreen_shortcut_camera">Camera</string>
     <string name="lockscreen_shortcut_remote">Google TV Remote</string>
+    <string name="lockscreen_shortcut_dnd">DND</string>
     <string name="lockscreen_shortcut_none">هیچ کدام</string>
+    <string name="lockscreen_shortcut_enforce_title">Enforce shortcuts</string>
+    <string name="lockscreen_shortcut_enforce_summary">Do not display next available shortcut if chosen shortcut is not available</string>
     <!-- App lock -->
     <string name="app_lock_title">App lock</string>
     <plurals name="app_lock_summary">
