@@ -18,17 +18,10 @@ package com.crdroid.settings.fragments;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.pm.ResolveInfo;
-import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
-import android.text.TextUtils;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -37,7 +30,7 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.crdroid.Utils;
+import com.android.internal.util.crdroid.ThemeUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -64,6 +57,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String KEY_PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
     private static final String KEY_PREF_TILE_ANIM_INTERPOLATOR = "qs_tile_animation_interpolator";
+    private static final String KEY_QS_UI_STYLE  = "qs_tile_ui_style";
 
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
@@ -72,12 +66,17 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private ListPreference mTileAnimationStyle;
     private CustomSeekBarPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
+    private ListPreference mQsUI;
+
+    private static ThemeUtils mThemeUtils;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.crdroid_settings_quicksettings);
+
+        mThemeUtils = new ThemeUtils(getActivity());
 
         final Context mContext = getActivity().getApplicationContext();
         final ContentResolver resolver = mContext.getContentResolver();
@@ -111,10 +110,21 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         int tileAnimationStyle = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
         updateAnimTileStyle(tileAnimationStyle);
+
+        String isA11Style = Integer.toString(Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_UI_STYLE , 0, UserHandle.USER_CURRENT));
+
+        mQsUI = (ListPreference) findPreference(KEY_QS_UI_STYLE);
+        int index = mQsUI.findIndexOfValue(isA11Style);
+        mQsUI.setValue(isA11Style);
+        mQsUI.setSummary(mQsUI.getEntries()[index]);
+        mQsUI.setOnPreferenceChangeListener(this);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+
         if (preference == mShowBrightnessSlider) {
             int value = Integer.parseInt((String) newValue);
             mBrightnessSliderPosition.setEnabled(value > 0);
@@ -125,6 +135,15 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         } else if (preference == mTileAnimationStyle) {
             int value = Integer.parseInt((String) newValue);
             updateAnimTileStyle(value);
+            return true;
+        } else if (preference == mQsUI) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mQsUI.findIndexOfValue((String) newValue);
+            mQsUI.setValue((String) newValue);
+            mQsUI.setSummary(mQsUI.getEntries()[index]);
+            Settings.System.putIntForUser(resolver,
+                    Settings.System.QS_TILE_UI_STYLE, value, UserHandle.USER_CURRENT);
+            updateQsStyle(getActivity());
             return true;
         }
         return false;
@@ -149,6 +168,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TILE_ANIMATION_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TILE_UI_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QQS_LAYOUT_ROWS, 2, UserHandle.USER_CURRENT);
@@ -172,11 +193,34 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 LineageSettings.Secure.QS_BRIGHTNESS_SLIDER_POSITION, 0, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.QS_SHOW_AUTO_BRIGHTNESS, 1, UserHandle.USER_CURRENT);
+        updateQsStyle(mContext);
     }
 
     private void updateAnimTileStyle(int tileAnimationStyle) {
         mTileAnimationDuration.setEnabled(tileAnimationStyle != 0);
         mTileAnimationInterpolator.setEnabled(tileAnimationStyle != 0);
+    }
+
+    private static void updateQsStyle(Context context) {
+        ContentResolver resolver = context.getContentResolver();
+
+        boolean isA11Style = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_UI_STYLE , 0, UserHandle.USER_CURRENT) != 0;
+
+	    String qsUIStyleCategory = "android.theme.customization.qs_ui";
+        String overlayThemeTarget  = "com.android.systemui";
+        String overlayThemePackage  = "com.android.system.qs.ui.A11";
+
+        if (mThemeUtils == null) {
+            mThemeUtils = new ThemeUtils(context);
+        }
+
+	    // reset all overlays before applying
+        mThemeUtils.setOverlayEnabled(qsUIStyleCategory, overlayThemeTarget, overlayThemeTarget);
+
+	    if (isA11Style) {
+            mThemeUtils.setOverlayEnabled(qsUIStyleCategory, overlayThemePackage, overlayThemeTarget);
+	    }
     }
 
     @Override
