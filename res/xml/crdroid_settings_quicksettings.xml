@@ -169,6 +169,14 @@
         android:key="qs_layout_category"
         android:title="@string/qs_layout_category_title">
 
+        <ListPreference
+            android:key="qs_tile_ui_style"
+            android:icon="@drawable/ic_shapes"
+            android:title="@string/qs_tile_ui_style_title"
+            android:entries="@array/qs_tile_ui_style_entries"
+            android:entryValues="@array/qs_tile_ui_style_values"
+            android:defaultValue="0" />
+
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_label_hide"
             android:icon="@drawable/ic_text"
