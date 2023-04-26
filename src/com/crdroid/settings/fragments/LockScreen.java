@@ -76,6 +76,8 @@ public class LockScreen extends SettingsPreferenceFragment
     private ListPreference mEndShortcut;
     private SwitchPreference mEnforceShortcut;
 
+    private OmniJawsClient mWeatherClient;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,12 +106,8 @@ public class LockScreen extends SettingsPreferenceFragment
         }
 
         mWeather = (Preference) findPreference(KEY_WEATHER);
-        OmniJawsClient weatherClient = new OmniJawsClient(getContext());
-        boolean weatherEnabled = weatherClient.isOmniJawsEnabled();
-        if (!weatherEnabled) {
-            mWeather.setEnabled(false);
-            mWeather.setSummary(R.string.lockscreen_weather_enabled_info);
-        }
+        mWeatherClient = new OmniJawsClient(getContext());
+        updateWeatherSettings();
 
         mStartShortcut = findPreference(KEY_SHORTCUT_START_KEY);
         mEndShortcut = findPreference(KEY_SHORTCUT_END_KEY);
@@ -220,6 +218,21 @@ public class LockScreen extends SettingsPreferenceFragment
             mEndShortcut.setValue(value);
             mEndShortcut.setSummary(mEndShortcut.getEntry());
         }
+    }
+
+    private void updateWeatherSettings() {
+        if (mWeatherClient == null || mWeather == null) return;
+
+        boolean weatherEnabled = mWeatherClient.isOmniJawsEnabled();
+        mWeather.setEnabled(weatherEnabled);
+        mWeather.setSummary(weatherEnabled ? R.string.lockscreen_weather_summary :
+            R.string.lockscreen_weather_enabled_info);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateWeatherSettings();
     }
 
     @Override
