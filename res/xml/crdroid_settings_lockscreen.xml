@@ -53,6 +53,13 @@
             android:dependency="lockscreen_weather_enabled" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_weather_style"
+            android:icon="@drawable/ic_weather"
+            android:title="@string/lockscreen_weather_style_title"
+            android:summary="@string/lockscreen_weather_style_summary"
+            android:dependency="lockscreen_weather_enabled" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
             android:icon="@drawable/ic_battery_charging"
             android:title="@string/lockscreen_battery_info_title"
