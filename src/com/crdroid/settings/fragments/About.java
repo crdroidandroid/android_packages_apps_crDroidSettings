@@ -47,6 +47,7 @@ public class About extends SettingsPreferenceFragment {
     private String KEY_CRDROID_WEBSITE = "crdroid_website";
     private String KEY_CRDROID_TELEGRAM_CHANNEL = "crdroid_telegram_channel";
     private String KEY_CRDROID_SPONSOR = "crdroid_sponsor";
+    private String KEY_CRDROID_BUILDSERVERSPONSOR = "crdroid_buildserversponsor";
 
     private Preference mDonate;
     private Preference mSourceUrl;
@@ -56,6 +57,7 @@ public class About extends SettingsPreferenceFragment {
     private Preference mWebsite;
     private Preference mTelegramChannelUrl;
     private Preference mSponsor;
+    private Preference mBuildServerSponsor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +72,7 @@ public class About extends SettingsPreferenceFragment {
         mWebsite = findPreference(KEY_CRDROID_WEBSITE);
         mTelegramChannelUrl = findPreference(KEY_CRDROID_TELEGRAM_CHANNEL);
         mSponsor = findPreference(KEY_CRDROID_SPONSOR);
+        mBuildServerSponsor = findPreference(KEY_CRDROID_BUILDSERVERSPONSOR);
     }
 
     @Override
@@ -95,6 +98,8 @@ public class About extends SettingsPreferenceFragment {
             launchUrl("https://t.me/crDroidUpdates");
         } else if (preference == mSponsor) {
             launchUrl("https://www.scopehosts.com");
+        } else if (preference == mBuildServerSponsor){
+            launchUrl("https://www.interserver.net/r/836686");
         }
 
         return super.onPreferenceTreeClick(preference);
