@@ -81,6 +81,7 @@
     <string name="crdroid_translate_summary">Pomoc s lokalizáciou ROM vo vašom jazyku! 
 Ashle-XDA [SLOVAK Preklad]</string>
     <string name="crdroid_sponsor_summary">Navštívte hostiteľa nášho webu</string>
+    <string name="crdroid_buildserversponsor_summary">Doporučujeme ich servery, ak máte záujem</string>
     <!-- Donate crDroid -->
     <string name="donate_crdroid_title">Podporte nás</string>
     <string name="donate_crdroid_summary">Prispejte na podporu rozvoja a na náš server</string>
@@ -239,16 +240,16 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="monet_summary">Prisposobit theme engine Monetu</string>
     <!-- Monet Engine -->
     <string name="monet_engine_custom_color_title">Farba zvýraznenia</string>
-    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
+    <string name="monet_engine_custom_color_summary">Vybrať vlastnú doplnkovú farbu</string>
     <string name="monet_engine_custom_bgcolor_title">Farba pozadia</string>
     <string name="monet_engine_custom_bgcolor_summary">Vybrať vlastnú farbu pozadia</string>
     <string name="monet_engine_color_override_title">Vlastná farba</string>
     <string name="monet_engine_luminance_factor_title">Svietivosť</string>
     <string name="monet_engine_luminance_factor_summary">Vyššie hodnoty predstavujú jasnejšie farby</string>
-    <string name="monet_engine_chroma_factor_title">Faktor chromu</string>
+    <string name="monet_engine_chroma_factor_title">Chroma faktor</string>
     <string name="monet_engine_chroma_factor_summary">Vyššie hodnoty predstavujú výraznejšie farby</string>
     <string name="monet_engine_tint_background_title">Odtieň pozadia</string>
-    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
+    <string name="monet_engine_tint_background_summary">Výber svietivosti a chroma faktoru ovplyvní aj farby pozadia</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Rýchle odomknutie</string>
     <string name="unlock_quick_unlock_control_summary">Odomknúť automaticky po zadaní správneho PIN kódu alebo hesla</string>
@@ -275,7 +276,7 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="edge_light_title">Nasvietenie okrajov</string>
     <string name="edge_light_summary">Rozsvietiť bočné okraje obrazovky po prijatí oznámenia</string>
     <string name="edge_light_always_trigger_on_pulse_title">Vždy spúšťať pri pulzovaní</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Zobrazovať farbu okrajov vždy pri je zobrazení ambientného displeja a nie len pre upozornenia</string>
     <string name="edge_light_repeat_animation_title">Opakovanie animácie</string>
     <string name="edge_light_repeat_animation_summary_on">Opakovať do časového limitu</string>
     <string name="edge_light_repeat_animation_summary_off">Zobraziť iba raz</string>
@@ -956,6 +957,8 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="lockscreen_weather_enabled_info">Vyžaduje aktiváciu meteorologickej služby</string>
     <string name="lockscreen_weather_location_title">Lokalita pre počasie</string>
     <string name="lockscreen_weather_location_summary">Zobrazenie počasia podľa aktuálnej polohy</string>
+    <string name="lockscreen_weather_style_title">Pixel štýl</string>
+    <string name="lockscreen_weather_style_summary">Zobraziť počasie v samostatnom riadku</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptívne prehrávanie</string>
     <string name="adaptive_playback_summary">Pozastaviť médiá, ak je stlmená hlasitosť a pokračovať v prehrávaní zvyšovaním hlasitosti v rozmedzí časového limitu</string>
@@ -1023,7 +1026,7 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="custom_vibration_pattern_summary">Nastavte si vlastný vzor vibrácií</string>
     <!-- Per-channel vibration pattern -->
     <string name="notification_custom_vibrate_title">Vlastný vzor vibrácie</string>
-    <string name="notification_custom_vibrate_summary">Replaces the default pattern only\nApp set pattern takes precedence</string>
+    <string name="notification_custom_vibrate_summary">Nahradí iba predvolený vzor\nNastavenia aplikácií majú prioritu</string>
     <string name="notification_custom_vibrate_slider1">Vibrovať</string>
     <string name="notification_custom_vibrate_slider2">Pozastaviť</string>
     <!-- Floating rotation button -->
@@ -1077,19 +1080,21 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="app_lock_packages_summary">Vyberte aplikácie, ktoré chcete chrániť pomocou biometrických údajov alebo poverení zariadenia</string>
     <string name="app_lock_timeout_title">Časovač aut. zámku</string>
     <string name="app_lock_timeout_summary">Čas, po ktorom sa zamkne odomknutá aplikácia spustená na pozadí</string>
-    <string name="app_lock_notifications_title">Redact notifications</string>
-    <string name="app_lock_notifications_summary">Notification content will be hidden and collapsed for selected apps when they are locked. Heads up notifications will be automatically disabled.</string>
-    <string name="app_lock_notifications_disabled_summary">Protect an application first</string>
+    <string name="app_lock_notifications_title">Zbaliť upozornenia</string>
+    <string name="app_lock_notifications_summary">Obsah vybraných uzamknutých aplikácii bude skrytý. Plávajúce upozornenia budú automaticky zakázané.</string>
+    <string name="app_lock_notifications_disabled_summary">Najskôr vyberte chránenú aplikáciu</string>
     <string name="app_lock_biometrics_allowed_title">Povoliť biometrické odomykanie</string>
     <string name="app_lock_footer_text">Bubliny budú po uplynutí časového limitu automaticky zrušené</string>
     <string name="enable_protection">Zapnúť ochranu</string>
     <string name="hide_from_launcher_title">Skryť z launcheru</string>
-    <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
+    <string name="hide_from_launcher_summary">Zakázať zobrazenie tejto aplikácie vo všetkých launcheroch. Vyžaduje reštart launchera.</string>
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">Počas nabíjania vždy zapnuté</string>
-    <string name="doze_on_charge_summary">Display device is charging</string>
+    <string name="doze_on_charge_summary">Zobraziť, že zariadenie sa nabíja</string>
     <!-- Volume link notification -->
-    <string name="volume_link_notification_title">Link ring &amp; notification volumes</string>
+    <string name="volume_link_notification_title">Spojiť hlasitosť zvonenia a upozornení</string>
     <!-- Radio Info -->
-    <string name="radio_info_title">Radio info</string>
+    <string name="radio_info_title">Informácie o rádiu</string>
+    <!-- QS Header -->
+    <string name="qs_header_image_title">Obrázok záhlavia</string>
 </resources>
