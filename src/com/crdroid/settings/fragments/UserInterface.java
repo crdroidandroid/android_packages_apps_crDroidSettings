@@ -85,6 +85,8 @@ public class UserInterface extends SettingsPreferenceFragment {
                 Settings.System.CHARGING_ANIMATION, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ENABLE_FLOATING_ROTATION_BUTTON, 1, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.KG_CUSTOM_CLOCK_TOP_MARGIN, 280, UserHandle.USER_CURRENT);
         DozeSettings.reset(mContext);
         MonetSettings.reset(mContext);
         SmartPixels.reset(mContext);

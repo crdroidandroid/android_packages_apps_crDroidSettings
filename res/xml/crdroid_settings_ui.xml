@@ -96,6 +96,17 @@
         android:summary="@string/theme_customization_lock_clock_summary"
         android:fragment="com.crdroid.settings.fragments.ui.LockClockFontsPicker"/>
 
+    <!-- Lock screen clock top margin settings -->
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        android:key="kg_custom_clock_top_margin"
+        android:icon="@drawable/ic_lock_clock"
+        android:title="@string/kg_custom_clock_top_margin_title"
+        android:max="500"
+        settings:min="80"
+        settings:interval="1"
+        android:defaultValue="280"
+        settings:units="dp" />
+
     <!-- Icon pack -->
     <Preference
         android:key="android.theme.customization.icon_pack"
