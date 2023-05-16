@@ -20,6 +20,52 @@
     xmlns:lineage="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
+        android:key="lockscreen_clock_category"
+        android:title="@string/qs_clock_title">
+
+        <!-- Lockscreen Clock Font style -->
+        <Preference
+            android:key="android.theme.customization.lockscreen_clock_font"
+            android:icon="@drawable/ic_font"
+            android:title="@string/theme_customization_lock_clock_title"
+            android:summary="@string/theme_customization_lock_clock_summary"
+            android:fragment="com.crdroid.settings.fragments.lockscreen.LockClockFontsPicker"/>
+
+        <!-- Clock top margin settings -->
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="kg_custom_clock_top_margin"
+            android:icon="@drawable/ic_lock_clock"
+            android:title="@string/kg_custom_clock_top_margin_title"
+            android:max="500"
+            settings:min="80"
+            settings:interval="1"
+            android:defaultValue="280"
+            settings:units="@string/unit_pixels" />
+
+        <!-- Clock size settings -->
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="kg_small_clock_text_size"
+            android:icon="@drawable/ic_font"
+            android:title="@string/kg_small_clock_text_size_title"
+            android:max="100"
+            settings:min="25"
+            settings:interval="1"
+            android:defaultValue="86"
+            settings:units="@string/unit_pixels" />
+
+        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+            android:key="kg_large_clock_text_size"
+            android:icon="@drawable/ic_font"
+            android:title="@string/kg_large_clock_text_size_title"
+            android:max="250"
+            settings:min="25"
+            settings:interval="1"
+            android:defaultValue="180"
+            settings:units="@string/unit_pixels" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="lockscreen_interface_category"
         android:title="@string/lockscreen_interface_category">
 

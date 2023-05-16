@@ -139,6 +139,12 @@ public class LockScreen extends SettingsPreferenceFragment
         ContentResolver resolver = mContext.getContentResolver();
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.KG_CUSTOM_CLOCK_TOP_MARGIN, 280, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.KG_SMALL_CLOCK_TEXT_SIZE, 86, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.KG_LARGE_CLOCK_TEXT_SIZE, 180, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.crdroid.settings.fragments.ui;
+package com.crdroid.settings.fragments.lockscreen;
 
 import static android.os.UserHandle.USER_SYSTEM;
 
