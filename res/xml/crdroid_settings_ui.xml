@@ -107,6 +107,27 @@
         android:defaultValue="280"
         settings:units="dp" />
 
+    <!-- Lockscreen clock size settings -->
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        android:key="kg_small_clock_text_size"
+        android:icon="@drawable/ic_font"
+        android:title="@string/kg_small_clock_text_size_title"
+        android:max="100"
+        settings:min="25"
+        settings:interval="1"
+        android:defaultValue="86"
+        settings:units="dp" />
+
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        android:key="kg_large_clock_text_size"
+        android:icon="@drawable/ic_font"
+        android:title="@string/kg_big_clock_text_size_title"
+        android:max="250"
+        settings:min="25"
+        settings:interval="1"
+        android:defaultValue="180"
+        settings:units="dp" />
+
     <!-- Icon pack -->
     <Preference
         android:key="android.theme.customization.icon_pack"
