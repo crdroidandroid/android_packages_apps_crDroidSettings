@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2022 crDroid Android Project
+ * Copyright (C) 2016-2023 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -88,9 +88,9 @@ public class UserInterface extends SettingsPreferenceFragment {
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.KG_CUSTOM_CLOCK_TOP_MARGIN, 280, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.KG_LARGE_CLOCK_TEXT_SIZE, 86, UserHandle.USER_CURRENT);
+                Settings.Secure.KG_SMALL_CLOCK_TEXT_SIZE, 86, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.KG_SMALL_CLOCK_TEXT_SIZE, 180, UserHandle.USER_CURRENT);
+                Settings.Secure.KG_LARGE_CLOCK_TEXT_SIZE, 180, UserHandle.USER_CURRENT);
 
         DozeSettings.reset(mContext);
         MonetSettings.reset(mContext);
