@@ -94,6 +94,13 @@
             android:summary="@string/battery_estimate_summary" /> -->
 
         <!-- Brightness slider -->
+        <Preference
+            android:key="android.theme.customization.brightness_slider"
+            android:icon="@drawable/ic_brightness"
+            android:title="@string/theme_customization_brightness_slider_title"
+            android:summary="@string/theme_customization_brightness_slider_summary"
+            android:fragment="com.crdroid.settings.fragments.ui.BrightnessSlider"/>
+
         <lineageos.preference.LineageSecureSettingListPreference
             android:key="qs_show_brightness_slider"
             android:icon="@drawable/ic_brightness"
