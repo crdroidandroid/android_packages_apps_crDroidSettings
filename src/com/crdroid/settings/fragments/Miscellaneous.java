@@ -34,7 +34,6 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.misc.GmsSwitch;
 import com.crdroid.settings.fragments.misc.SensorBlock;
-import com.crdroid.settings.fragments.misc.SmartCharging;
 
 import java.util.List;
 
@@ -46,13 +45,11 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
 
     public static final String TAG = "Miscellaneous";
 
-    private static final String SMART_CHARGING = "smart_charging";
     private static final String POCKET_JUDGE = "pocket_judge";
     private static final String SYS_GAMES_SPOOF = "persist.sys.pixelprops.games";
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
     private static final String SYS_NETFLIX_SPOOF = "persist.sys.pixelprops.netflix";
 
-    private Preference mSmartCharging;
     private Preference mPocketJudge;
 
     @Override
@@ -63,12 +60,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
 
         final PreferenceScreen prefScreen = getPreferenceScreen();
         final Resources res = getResources();
-
-        mSmartCharging = (Preference) prefScreen.findPreference(SMART_CHARGING);
-        boolean mSmartChargingSupported = res.getBoolean(
-                com.android.internal.R.bool.config_smartChargingAvailable);
-        if (!mSmartChargingSupported)
-            prefScreen.removePreference(mSmartCharging);
 
         mPocketJudge = (Preference) prefScreen.findPreference(POCKET_JUDGE);
         boolean mPocketJudgeSupported = res.getBoolean(
@@ -95,7 +86,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         SystemProperties.set(SYS_NETFLIX_SPOOF, "false");
         GmsSwitch.reset(mContext);
         SensorBlock.reset(mContext);
-        SmartCharging.reset(mContext);
     }
 
     @Override
@@ -113,11 +103,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
                     final Resources res = context.getResources();
-
-                    boolean mSmartChargingSupported = res.getBoolean(
-                            com.android.internal.R.bool.config_smartChargingAvailable);
-                    if (!mSmartChargingSupported)
-                        keys.add(SMART_CHARGING);
 
                     boolean mPocketJudgeSupported = res.getBoolean(
                             com.android.internal.R.bool.config_pocketModeSupported);
