@@ -118,32 +118,6 @@
             android:title="@string/udfps_settings_title"
             android:summary="@string/udfps_settings_summary"
             android:fragment="com.crdroid.settings.fragments.lockscreen.UdfpsSettings" />
-
-        <com.crdroid.settings.preferences.SystemSettingListPreference
-            android:key="lockscreen_shortcut_start"
-            android:icon="@drawable/ic_bottom_left"
-            android:title="@string/lockscreen_shortcut_start_title"
-            android:summary="%s"
-            android:entries="@array/lockscreen_shortcut_entries"
-            android:entryValues="@array/lockscreen_shortcut_values"
-            android:defaultValue="1" />
-
-        <com.crdroid.settings.preferences.SystemSettingListPreference
-            android:key="lockscreen_shortcut_end"
-            android:icon="@drawable/ic_bottom_right"
-            android:title="@string/lockscreen_shortcut_end_title"
-            android:summary="%s"
-            android:entries="@array/lockscreen_shortcut_entries"
-            android:entryValues="@array/lockscreen_shortcut_values"
-            android:defaultValue="0" />
-
-        <SwitchPreference
-            android:key="lockscreen_shortcut_enforce"
-            android:icon="@drawable/ic_format_bottom"
-            android:title="@string/lockscreen_shortcut_enforce_title"
-            android:summary="@string/lockscreen_shortcut_enforce_summary"
-            android:defaultValue="false" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
