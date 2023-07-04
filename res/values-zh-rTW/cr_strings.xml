@@ -506,6 +506,7 @@
     <string name="navbar_layout_title">版面</string>
     <string name="navbar_layout_normal">正常</string>
     <string name="navbar_layout_compact">精簡模式</string>
+    <string name="navbar_layout_expanded">延伸</string>
     <string name="navbar_layout_leftleaning">靠左</string>
     <string name="navbar_layout_rightleaning">靠右</string>
     <string name="navbar_invert_layout_title">反轉配置</string>
@@ -570,6 +571,9 @@
     <string name="qs_brightness_slider_position_title">位置</string>
     <string name="qs_brightness_slider_position_top">頂部</string>
     <string name="qs_brightness_slider_position_bottom">底部</string>
+    <!-- Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_title">震動回饋</string>
+    <string name="qs_brightness_slider_haptic_summary">調整亮度條時，提供震動回饋</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">自動亮度圖示</string>
     <string name="qs_show_auto_brightness_summary">在亮度控制條旁顯示自動調節亮度開關</string>
@@ -703,11 +707,14 @@
     <string name="app_volume">應用程式音量</string>
     <string name="app_volume_title">個別應用程式音量</string>
     <string name="app_volume_summary">在音量面板將應用程式的音量分別顯示</string>
-    <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- AdGuard DNS hostname -->
     <!-- Open DNS Option -->
+    <!-- Open DNS hostname -->
     <!-- Cleanbrowsing DNS Option -->
+    <!-- Cleanbrowsing DNS hostname -->
     <!-- Quad9 DNS Option -->
+    <!-- Quad9 DNS hostname -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">警示滑塊通知</string>
     <string name="alert_slider_notifications_summary">更改警示滑塊位置時顯示通知</string>
@@ -935,15 +942,6 @@
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">時鐘背景</string>
     <string name="statusbar_clock_chip_summary">在時鐘後方顯示背景</string>
-    <!-- Smart charging -->
-    <string name="smart_charging_title">智慧充電</string>
-    <string name="smart_charging_summary">設定最大充電電量</string>
-    <string name="smart_charging_switch_title">啟用智慧充電</string>
-    <string name="smart_charging_level_title">停止充電電量</string>
-    <string name="smart_charging_resume_level_title">開始充電電量</string>
-    <string name="smart_charging_reset_stats_title">重設電池統計數據</string>
-    <string name="smart_charging_reset_stats_summary">在達到使用者設定的電量後，重設電池統計數據</string>
-    <string name="smart_charging_footer">智慧充電可以透過限制最大充電量來達到延長電池壽命的效果。啟用時，會在達到「停止充電電量」後暫停充電；在降至「開始充電電量」後繼續。「停止充電電量」應始終大於「開始充電電量」。</string>
     <!-- Weather -->
     <string name="weather_settings_title">天氣服務設定</string>
     <string name="weather_settings_summary">設定圖示包和天氣服務</string>
@@ -1093,6 +1091,4 @@
     <string name="kg_custom_clock_top_margin_title">時鐘位置</string>
     <string name="kg_small_clock_text_size_title">小型時鐘字體大小</string>
     <string name="kg_large_clock_text_size_title">雙行時鐘字體大小</string>
-    <!-- Location settings screen, setting summary for Assisted GPS switch -->
-    <string name="assisted_gps_summary">下載衛星輔助定位資料可以取得更好的定位效能。使用緊急通話時，將一律允許使用衛星輔助定位功能。</string>
 </resources>

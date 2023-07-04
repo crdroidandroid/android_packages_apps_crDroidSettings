@@ -80,7 +80,7 @@
     <string name="crdroid_translate_title">ترجمه‌ها</string>
     <string name="crdroid_translate_summary">به ترجمه crDroid به زبان خودتان کمک کنید!</string>
     <string name="crdroid_sponsor_summary">از سایت همکار میزبان ما دیدن کنید</string>
-    <string name="crdroid_buildserversponsor_summary">We recommend their servers if interested in one</string>
+    <string name="crdroid_buildserversponsor_summary">ما سرورهای آنها را در صورت علاقه به یکی توصیه می کنیم</string>
     <!-- Donate crDroid -->
     <string name="donate_crdroid_title">از ما حمایت کنید</string>
     <string name="donate_crdroid_summary">برای حمایت کردن از توسعه بیشتر کمک مالی کنید</string>
@@ -328,8 +328,8 @@
     <string name="theme_customization_navbar_summary">تنظیم بسته نوار ناوبری سفارشی</string>
     <string name="theme_customization_lock_clock_title">سبک فونت ساعت</string>
     <string name="theme_customization_lock_clock_summary">سبک فونت ساعت صفحه قفل را تنظیم کنید</string>
-    <string name="theme_customization_brightness_slider_title">Brightness slider style</string>
-    <string name="theme_customization_brightness_slider_summary">Set custom brightness slider style</string>
+    <string name="theme_customization_brightness_slider_title">سبک لغزنده روشنایی</string>
+    <string name="theme_customization_brightness_slider_summary">سبک لغزنده روشنایی را تنظیم نمایید</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">نرخ نوسازی پیش فرض</string>
     <string name="peak_refresh_rate_title_custom">اوج نرخ نوسازی</string>
@@ -507,6 +507,7 @@
     <string name="navbar_layout_title">چیدمان</string>
     <string name="navbar_layout_normal">معمولی</string>
     <string name="navbar_layout_compact">فشرده</string>
+    <string name="navbar_layout_expanded">باز شده</string>
     <string name="navbar_layout_leftleaning">متمایل به چپ</string>
     <string name="navbar_layout_rightleaning">متمایل به راست</string>
     <string name="navbar_invert_layout_title">چیدمان معکوس</string>
@@ -571,6 +572,9 @@
     <string name="qs_brightness_slider_position_title">جایگاه</string>
     <string name="qs_brightness_slider_position_top">بالا</string>
     <string name="qs_brightness_slider_position_bottom">پایین</string>
+    <!-- Brightness slider haptic feedback -->
+    <string name="qs_brightness_slider_haptic_title">Haptic feedback</string>
+    <string name="qs_brightness_slider_haptic_summary">Provide haptic feedback on changing brightness using slider</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">آیکون روشنایی خودکار</string>
     <string name="qs_show_auto_brightness_summary">نمایش کلید فعال سازی روشنایی تطبیقی نزدیک نوار کنترل</string>
@@ -704,11 +708,14 @@
     <string name="app_volume">میزان صدای برنامه</string>
     <string name="app_volume_title">کنترل صدا هر برنامه</string>
     <string name="app_volume_summary">نمایش دکمه میزان صدا برای هر برنامه در گفتگوی صدا</string>
-    <!-- Cloudflare DNS Option -->
     <!-- AdGuard DNS Option -->
+    <!-- AdGuard DNS hostname -->
     <!-- Open DNS Option -->
+    <!-- Open DNS hostname -->
     <!-- Cleanbrowsing DNS Option -->
+    <!-- Cleanbrowsing DNS hostname -->
     <!-- Quad9 DNS Option -->
+    <!-- Quad9 DNS hostname -->
     <!-- Alert Slider Notifications (OnePlus devices) -->
     <string name="alert_slider_notifications_title">هشدار نوار کنترل اعلان ها</string>
     <string name="alert_slider_notifications_summary">نمایش اعلان هنگام تغییر موقعیت نوار کنترل هشدار</string>
@@ -937,15 +944,6 @@
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">پس زمینه</string>
     <string name="statusbar_clock_chip_summary">نمایش پس زمینه برجسته پشت ساعت</string>
-    <!-- Smart charging -->
-    <string name="smart_charging_title">شارژ هوشمند</string>
-    <string name="smart_charging_summary">تنظیم حداکثر مقدار شارژ</string>
-    <string name="smart_charging_switch_title">فعال کردن شارژ هوشمند</string>
-    <string name="smart_charging_level_title">درصد توقف شارژ</string>
-    <string name="smart_charging_resume_level_title">درصد شروع شارژ</string>
-    <string name="smart_charging_reset_stats_title">تنظیم مجدد آمار کارکرد باتری</string>
-    <string name="smart_charging_reset_stats_summary">تنظیم مجدد آمار کارکرد باتری بعد از رسیدن به مقدار شارژ تعیین شده</string>
-    <string name="smart_charging_footer">شارژ هوشمند به شما امکان می دهد حداکثر میزان شارژ را برای افزایش طول عمر باتری خود تنظیم کنید. وقتی فعال باشد، شارژ شدن باتری در درصد انتخاب شده متوقف می‌ شود و در درصد انتخاب شده شروع شارژ شدن را از سر می‌گیرد. درصد توقف شارژ شدن همیشه باید بیشتر از درصد شروع شارژ باشد.</string>
     <!-- Weather -->
     <string name="weather_settings_title">تنظیمات آب و هوا</string>
     <string name="weather_settings_summary">ترتیب پک آیکون و سرویس آب و هوا</string>
@@ -1096,6 +1094,4 @@
     <string name="kg_custom_clock_top_margin_title">Double-line clock position</string>
     <string name="kg_small_clock_text_size_title">اندازه ساعت کوچک</string>
     <string name="kg_large_clock_text_size_title">Double-line clock size</string>
-    <!-- Location settings screen, setting summary for Assisted GPS switch -->
-    <string name="assisted_gps_summary">Download satellite assistance data from the internet which can greatly improve the GPS startup performance. For emergency calls, assisted GPS is always allowed.</string>
 </resources>
