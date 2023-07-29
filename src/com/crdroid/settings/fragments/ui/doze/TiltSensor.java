@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2021 crDroid Android Project
+ * Copyright (C) 2017-2023 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,7 +49,7 @@ public class TiltSensor implements SensorEventListener {
     private PowerManager mPowerManager;
     private WakeLock mWakeLock;
 
-    private long mEntryTimestamp;
+    private long mEntryTimestamp = 0;
     private int mBatchLatencyInMs;
     private int mMinPulseIntervalMs;
     private int mWakelockTimeoutMs;
@@ -76,7 +76,7 @@ public class TiltSensor implements SensorEventListener {
         mWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
         mExecutorService = Executors.newSingleThreadExecutor();
         mVibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
-        if (mVibrator == null || !mVibrator.hasVibrator()) {
+        if (mVibrator != null && !mVibrator.hasVibrator()) {
             mVibrator = null;
         }
     }
@@ -91,11 +91,11 @@ public class TiltSensor implements SensorEventListener {
 
         if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
 
-        long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
+        long delta = event.timestamp - mEntryTimestamp;
         if (delta < mMinPulseIntervalMs) {
             return;
         } else {
-            mEntryTimestamp = SystemClock.elapsedRealtime();
+            mEntryTimestamp = event.timestamp;
         }
 
         if (event.values[0] == 1) {
@@ -118,7 +118,6 @@ public class TiltSensor implements SensorEventListener {
     protected void enable() {
         if (DEBUG) Log.d(TAG, "Enabling");
         submit(() -> {
-            mEntryTimestamp = SystemClock.elapsedRealtime();
             mSensorManager.registerListener(this, mSensor,
                     SensorManager.SENSOR_DELAY_NORMAL,
                     mBatchLatencyInMs * 1000);

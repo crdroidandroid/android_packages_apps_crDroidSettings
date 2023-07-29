@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2021 crDroid Android Project
+ * Copyright (C) 2017-2023 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -131,7 +131,7 @@ public final class Utils {
                 Settings.Secure.DOZE_POCKET_GESTURE, 0, UserHandle.USER_CURRENT) == 1;
     }
 
-    protected static boolean isRaiseToWakeEnabled(Context context) {
+    public static boolean isRaiseToWakeEnabled(Context context) {
         return Settings.Secure.getIntForUser(context.getContentResolver(),
                 Settings.Secure.RAISE_TO_WAKE_GESTURE, 0, UserHandle.USER_CURRENT) == 1;
     }

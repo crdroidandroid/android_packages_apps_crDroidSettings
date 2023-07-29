@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2021 crDroid Android Project
+ * Copyright (C) 2017-2023 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.media.AudioManager;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
@@ -58,7 +57,7 @@ public class PickupSensor implements SensorEventListener {
     private float[] mGravity;
     private float mAccelLast;
     private float mAccelCurrent;
-    private long mEntryTimestamp;
+    private long mEntryTimestamp = 0;
     private float mSensorValue;
 
     private Vibrator mVibrator;
@@ -69,17 +68,20 @@ public class PickupSensor implements SensorEventListener {
         mSensorManager = mContext.getSystemService(SensorManager.class);
         mSensorValue = res.getFloat(R.dimen.pickup_sensor_value);
         final String pickup_sensor = res.getString(R.string.pickup_sensor);
-        mIsCustomPickupSensor = pickup_sensor != null && !pickup_sensor.isEmpty();
-        if (mIsCustomPickupSensor) {
+        boolean checkCustomPickupSensor = pickup_sensor != null && !pickup_sensor.isEmpty();
+        if (checkCustomPickupSensor) {
             for (Sensor sensor : mSensorManager.getSensorList(Sensor.TYPE_ALL)) {
                 if (pickup_sensor.equals(sensor.getStringType())) {
                     mSensorPickup = sensor;
+                    mIsCustomPickupSensor = true;
                     break;
                 }
             }
-        } else {
-            mSensorPickup = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         }
+        if (mSensorPickup == null)
+            mSensorPickup = mSensorManager.getDefaultSensor(Sensor.TYPE_PICK_UP_GESTURE);
+        if (mSensorPickup == null)
+            mSensorPickup = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mMinPulseIntervalMs =
             res.getInteger(R.integer.config_dozePulsePickup_MinPulseIntervalMs);
         mWakelockTimeoutMs =
@@ -96,7 +98,7 @@ public class PickupSensor implements SensorEventListener {
         mAccelLast = SensorManager.GRAVITY_EARTH;
         mAccelCurrent = SensorManager.GRAVITY_EARTH;
         mVibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
-        if (mVibrator == null || !mVibrator.hasVibrator()) {
+        if (mVibrator != null && !mVibrator.hasVibrator()) {
             mVibrator = null;
         }
     }
@@ -109,15 +111,16 @@ public class PickupSensor implements SensorEventListener {
     public void onSensorChanged(SensorEvent event) {
         if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
 
-        long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
+        long delta = event.timestamp - mEntryTimestamp;
         if (delta < mMinPulseIntervalMs) {
             return;
         } else {
-            mEntryTimestamp = SystemClock.elapsedRealtime();
+            mEntryTimestamp = event.timestamp;
         }
 
         try {
-            if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER ||
+                    event.sensor.getType() == Sensor.TYPE_PICK_UP_GESTURE) {
                 mGravity = event.values.clone();
 
                 // Movement detection
@@ -153,15 +156,6 @@ public class PickupSensor implements SensorEventListener {
         }
     }
 
-    protected boolean isCallActive(Context context) {
-        AudioManager manager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-        if (manager.getMode() == AudioManager.MODE_IN_CALL) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
 
@@ -170,7 +164,6 @@ public class PickupSensor implements SensorEventListener {
     protected void enable() {
         if (DEBUG) Log.d(TAG, "Enabling");
         submit(() -> {
-            mEntryTimestamp = SystemClock.elapsedRealtime();
             mSensorManager.registerListener(this, mSensorPickup,
                     mIsCustomPickupSensor ? SensorManager.SENSOR_DELAY_NORMAL
                     : SensorManager.SENSOR_STATUS_ACCURACY_HIGH);

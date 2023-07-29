@@ -201,8 +201,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
     private void checkService(Context context) {
         boolean serviceEnabled = Utils.enableService(context);
         boolean alwaysOnEnabled = Utils.isDozeAlwaysOnEnabled(context);
-        boolean raiseToWakeEnabled = Settings.Secure.getIntForUser(context.getContentResolver(), 
-                 Settings.Secure.RAISE_TO_WAKE_GESTURE, 0, UserHandle.USER_CURRENT) != 0;
+        boolean raiseToWakeEnabled = Utils.isRaiseToWakeEnabled(context);
         mRaiseToWakePreference.setEnabled(serviceEnabled);
         mDozeVibratePreference.setEnabled(serviceEnabled &&
                 !raiseToWakeEnabled);
