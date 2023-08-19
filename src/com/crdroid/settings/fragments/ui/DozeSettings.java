@@ -94,7 +94,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         mDozeAlwaysOnPreference = (SwitchPreference) findPreference(KEY_DOZE_ALWAYS_ON);
 
         boolean dozeEnabledDefault = context.getResources().getBoolean(
-                com.android.internal.R.bool.config_dozeAlwaysOnEnabled);
+                com.android.internal.R.bool.config_doze_enabled_by_default);
         boolean dozeEnabled = Settings.Secure.getIntForUser(resolver,
                 Settings.Secure.DOZE_ENABLED,
                 dozeEnabledDefault ? 1 : 0, UserHandle.USER_CURRENT) != 0;
@@ -144,7 +144,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
             getPreferenceScreen().removePreference(mDozeAlwaysOnPreference);
         } else {
             boolean dozeAlwaysOnDefault = context.getResources().getBoolean(
-                    com.android.internal.R.bool.config_doze_enabled_by_default);
+                    com.android.internal.R.bool.config_dozeAlwaysOnEnabled);
             boolean dozeAlwaysOn = Settings.Secure.getIntForUser(resolver,
                     Settings.Secure.DOZE_ALWAYS_ON,
                     dozeAlwaysOnDefault ? 1 : 0, UserHandle.USER_CURRENT) != 0;
