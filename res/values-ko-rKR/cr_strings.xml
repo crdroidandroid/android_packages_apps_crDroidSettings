@@ -241,11 +241,11 @@
     <string name="monet_engine_custom_bgcolor_summary">배경 사용자 색 선택</string>
     <string name="monet_engine_color_override_title">사용자 지정 색상</string>
     <string name="monet_engine_luminance_factor_title">휘도</string>
-    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
+    <string name="monet_engine_luminance_factor_summary">높은 값은 더 밝은 색을 만듬</string>
     <string name="monet_engine_chroma_factor_title">크로마 팩터</string>
-    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
-    <string name="monet_engine_tint_background_title">Tint background</string>
-    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
+    <string name="monet_engine_chroma_factor_summary">높은 값은 더 강한 색을 만듬</string>
+    <string name="monet_engine_tint_background_title">배경 틴트</string>
+    <string name="monet_engine_tint_background_summary">밝기와 채도가 배경색에 영향을 미치도록 함</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">빠른 잠금해제</string>
     <string name="unlock_quick_unlock_control_summary">PIN/비밀번호를 올바르게 입력하면 자동으로 잠금을 해제합니다</string>
@@ -271,10 +271,10 @@
     <!-- Edge light -->
     <string name="edge_light_title">엣지 라이트</string>
     <string name="edge_light_summary">알림 펄스에서 화면의 측면 가장자리를 밝게합니다.</string>
-    <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
-    <string name="edge_light_repeat_animation_title">Repeat animation</string>
-    <string name="edge_light_repeat_animation_summary_on">Repeat until timeout</string>
+    <string name="edge_light_always_trigger_on_pulse_title">펄스에 항상 트리거</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">알림용이 아닌 엠비언트 화면이 표시될 때마다 에지 라이트를 표시할지 여부</string>
+    <string name="edge_light_repeat_animation_title">애니메이션 반복</string>
+    <string name="edge_light_repeat_animation_summary_on">타임아웃 될 때까지 반복</string>
     <string name="edge_light_repeat_animation_summary_off">한번만 보이기</string>
     <string name="edge_light_color_mode_title">엣지 라이트 색상 모드</string>
     <!-- Ambient Ticker -->
@@ -573,7 +573,7 @@
     <string name="qs_brightness_slider_position_bottom">화면 하단</string>
     <!-- Brightness slider haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">햅틱 피드백</string>
-    <string name="qs_brightness_slider_haptic_summary">Provide haptic feedback on changing brightness using slider</string>
+    <string name="qs_brightness_slider_haptic_summary">슬라이더를 이용해 밝기를 바꿀 때 햅틱 피드백을 제공</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">자동 밝기 아이콘</string>
     <string name="qs_show_auto_brightness_summary">슬라이더 옆쪽에 밝기 자동 조절 토글 표시</string>
@@ -657,7 +657,7 @@
     <string name="location_privacy_indicator_title">위치 개인 정보 표시기</string>
     <string name="location_privacy_indicator_summary">앱에서 위치를 사용하는 경우 별도의 표시기 표시</string>
     <string name="projection_privacy_indicator_title">미디어 프로젝션 프라이버시 표시기</string>
-    <string name="projection_privacy_indicator_summary">Show indicator when device screen is projected</string>
+    <string name="projection_privacy_indicator_summary">장치 화면이 프로젝트되고 있을 때 표시기 보임</string>
     <!-- Deep Sleep percentage in device info -->
     <string name="status_sleep_time">딥 슬립</string>
     <!-- In-call feedback -->
@@ -721,7 +721,7 @@
     <!-- Notch: Full screen apps -->
     <string name="display_cutout_force_fullscreen_title">전체 화면 앱</string>
     <string name="display_cutout_force_fullscreen_summary">앱이 노치 공간을 무시하도록 합니다</string>
-    <string name="display_cutout_force_fullscreen_no_apps">No apps</string>
+    <string name="display_cutout_force_fullscreen_no_apps">앱 없음</string>
     <!-- Unlimited google photos storage -->
     <string name="use_photos_spoof_title">무제한 사진 공간</string>
     <string name="use_photos_spoof_summary">기기를 Google 포토용 Pixel XL 앱으로 위장하여 백업을 위한 무제한 저장용량을 제공</string>
@@ -779,7 +779,7 @@
     <string name="wifi_hotspot_hidden_ssid_title">숨겨진 네트워크</string>
     <string name="wifi_hotspot_hidden_ssid_summary">내 모바일 핫스팟의 이름을 사용 가능한 무선랜 목록에 표시하지 않게 합니다</string>
     <string name="wifi_hotspot_client_manager_title">연결된 기기</string>
-    <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
+    <string name="wifi_hotspot_client_manager_summary">핫스팟에 연결된 장치 목록 및 관리</string>
     <string name="wifi_hotspot_client_manager_list_only_summary">핫스팟에 연결된 기기 목록</string>
     <string name="wifi_hotspot_client_limit_title">기기 연결 제한</string>
     <string name="wifi_hotspot_blocked_clients_list_title">차단된 기기</string>
@@ -787,7 +787,7 @@
     <string name="wifi_hotspot_block_client_dialog_title">기기 차단</string>
     <string name="wifi_hotspot_block_client_dialog_text">이 기기와 \"<xliff:g id="device_name">%1$s</xliff:g>\"의 연결을 끊고 기기를 차단 목록에 추가합니다</string>
     <string name="wifi_hotspot_unblock_client_dialog_title">기기 차단 해제</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">\"<xliff:g id="device_name">%1$s</xliff:g>\" 기기가 이 핫스팟에 연결할 수 있게 됩니다</string>
     <string name="wifi_hotspot_client_manager_footer_text">표시할 클라이언트가 없습니다. 연결된 기기와 차단한 기기가 여기에 표시됩니다</string>
     <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
     <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
@@ -806,7 +806,7 @@
     <string name="short_label">짧게</string>
     <string name="long_label">길게</string>
     <!-- Gesture navbar radius -->
-    <string name="gesture_navbar_radius_title">Pill radius</string>
+    <string name="gesture_navbar_radius_title">Pill 반경</string>
     <string name="thin_label">가늘게</string>
     <string name="thick_label">두껍게</string>
     <!-- Back gesture height -->
@@ -944,7 +944,7 @@
     <string name="statusbar_clock_chip_summary">시계 뒤 강조된 chip 보이기</string>
     <!-- Weather -->
     <string name="weather_settings_title">날씨 설정</string>
-    <string name="weather_settings_summary">Setup icon pack and weather service</string>
+    <string name="weather_settings_summary">아이콘 및 날씨 서비스 설정</string>
     <string name="lockscreen_weather_title">날씨 상태</string>
     <string name="lockscreen_weather_summary">현재 날씨와 온도 보이기</string>
     <string name="lockscreen_weather_enabled_info">날씨 정보 제공 서비스 활성화가 필요함</string>
@@ -1000,7 +1000,7 @@
     <string name="app_info_update_time">업데이트됨: %1$s</string>
     <!-- Show clipboard overlay -->
     <string name="show_clipboard_overlay_title">클립보드 오버레이표시</string>
-    <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
+    <string name="show_clipboard_overlay_summary">뭔가 클립보드에 복사됐을 때 화면의 왼쪽아래 코너에 오버레이 보이기</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">센서 블록</string>
     <string name="sensor_block_summary">배터리 사용량이 적은 앱을 위해 중요한 모션 센서에 대한 액세스 차단</string>
@@ -1018,12 +1018,12 @@
     <string name="custom_vibration_pattern_title">Koreans can recognize text even in English. I don\'t think there is any meaning in translating because Koreans tend to mix English together.</string>
     <string name="custom_vibration_pattern_summary">진동 패턴 사용자 정의</string>
     <!-- Per-channel vibration pattern -->
-    <string name="notification_custom_vibrate_title">Custom vibration pattern</string>
+    <string name="notification_custom_vibrate_title">커스텀 진동 패턴</string>
     <string name="notification_custom_vibrate_summary">Replaces the default pattern only\nApp set pattern takes precedence</string>
     <string name="notification_custom_vibrate_slider1">Vibrate for</string>
     <string name="notification_custom_vibrate_slider2">Pause for</string>
     <!-- Floating rotation button -->
-    <string name="floating_rotation_button_title">Floating rotate button</string>
+    <string name="floating_rotation_button_title">플로팅 회전 버튼</string>
     <string name="floating_rotation_button_summary">Show a floating rotate button when device is rotated</string>
     <!-- Netflix Spoof -->
     <string name="netflix_spoof_title">Netflix spoof</string>
