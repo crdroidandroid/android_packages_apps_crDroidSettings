@@ -642,8 +642,8 @@
     <string name="show_navbar_pulse_summary">Включить графический эквалайзер в панели навигации</string>
     <string name="show_lockscreen_pulse_title">Визуализатор на экране блокировки</string>
     <string name="show_lockscreen_pulse_summary">Включить графический эквалайзер на экране блокировки</string>
-    <string name="show_ambient_pulse_title">Визуализатор на Всегда включенном экране</string>
-    <string name="show_ambient_pulse_summary">Включить графический эквалайзер на всегда включённом экране</string>
+    <string name="show_ambient_pulse_title">Ambient визуализатор</string>
+    <string name="show_ambient_pulse_summary">Графический эквалайзер на Ambient экране</string>
     <string name="pulse_render_mode_title">Режим визуализации</string>
     <string name="pulse_render_mode_fading_bars">Затухающие блоки</string>
     <string name="pulse_render_mode_solid_lines">Сплошные линии</string>
@@ -1015,10 +1015,10 @@
     <string name="doze_vibrate_on_pickup_title">Вибрировать при поднятии</string>
     <string name="doze_check_proximity_before_pulse_title">Проверять датчик приближения перед пульсацией</string>
     <string name="sensor_warning_title">Предупреждение</string>
-    <string name="sensor_warning_message">Данные настройки зависят от аппаратной совместимости. Включение датчиков для автоматического включения экрана может ускорить разряд батареи.</string>
+    <string name="sensor_warning_message">Данные настройки зависят от аппаратной совместимости. Включение датчиков для Ambient экрана может ускорить разряд батареи</string>
     <!-- Doze: switches -->
-    <string name="doze_display_title">Активация экрана при уведомлениях</string>
-    <string name="doze_display_summary">Настройка параметров Всегда включенного экрана</string>
+    <string name="doze_display_title">Ambient экран</string>
+    <string name="doze_display_summary">Настройка параметров Ambient экрана</string>
     <string name="doze_sensor_title">На основе датчика</string>
     <string name="raise_to_wake_title">Пробуждение</string>
     <string name="raise_to_wake_summary">Разбудить устройство вместо отображения уведомления</string>
@@ -1530,8 +1530,8 @@
     <string name="lock_screen_location_summary">Показывать на экране блокировки</string>
     <string name="lock_screen_weather_condition_icon_title">Иконка погоды</string>
     <string name="lock_screen_weather_condition_icon_summary">Показывать на экране блокировки</string>
-    <string name="lock_screen_ambient_weather_title">Погода при автоматическом включении экрана</string>
-    <string name="lock_screen_ambient_weather_summary">Показывать погоду при автоматическом включении экрана</string>
+    <string name="lock_screen_ambient_weather_title">Ambient погода</string>
+    <string name="lock_screen_ambient_weather_summary">Погода на Ambient экране</string>
     <string name="lock_screen_weather_style_title">Стиль Pixel</string>
     <string name="lock_screen_weather_style_summary">Отображать погоду рядом с датой вместо большого виджета</string>
     <!-- Fingerprint authentication vibration -->
@@ -1687,7 +1687,7 @@
     <string name="light_brightness_category">Настройки световой индикации</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Текущий трек</string>
-    <string name="pulse_on_new_tracks_summary">Включать Всегда включенный экран при воспроизведении нового трека</string>
+    <string name="pulse_on_new_tracks_summary">Отображать Ambient экран при воспроизведении нового трека</string>
     <!-- Face Auto Unlock -->
     <string name="face_auto_unlock_title">Автоматическая разблокировка</string>
     <string name="face_auto_unlock_summary">Скрыть экран блокировки при разблокировке лицом</string>
@@ -1729,7 +1729,7 @@
     <string name="font_picker_progress">Применяем новый шрифт\u2026</string>
     <!-- Ambient display battery percentage -->
     <string name="ambient_battery_percent_title">Информация о батарее</string>
-    <string name="ambient_battery_percent_summary">Отображать текущую информацию о батарее в режиме «Ambient Display»</string>
+    <string name="ambient_battery_percent_summary">Отображать текущую информацию о батарее на Ambient экране</string>
     <!-- Wake And Unlock -->
     <string name="fp_wake_and_unlock_title">Пробуждение и разблокировка по отпечатку</string>
     <string name="fp_wake_and_unlock_summary">Позволяет разблокировать устройство отпечатком, когда экран выключен или находится в режиме «Ambient Display»</string>
@@ -2186,12 +2186,12 @@
     <string name="battery_saver_refresh_rate_title">Уменьшить частоту обновления</string>
     <string name="battery_saver_refresh_rate_summary">Использовать частоту обновления экрана 60 Гц для экономии заряда при включенном режиме энергосбережения</string>
     <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Подсветка краёв экрана</string>
-    <string name="pulse_ambient_light_summary">Подсвечивать края экрана при получении уведомления в режиме Всегда включенного экрана</string>
-    <string name="pulse_ambient_light_color_title">Цвет подсветки</string>
-    <string name="pulse_ambient_light_duration_title">Длительность подсветки</string>
-    <string name="pulse_ambient_light_duration_summary">Установить длительность подсветки краёв экрана</string>
-    <string name="pulse_ambient_light_layout_title">Подсветка краёв экрана</string>
+    <string name="pulse_ambient_light_title">Подсветка краев экрана</string>
+    <string name="pulse_ambient_light_summary">Подсвечивать края экрана при получении уведомлений</string>
+    <string name="pulse_ambient_light_color_title">Цвет подсветки краев экрана</string>
+    <string name="pulse_ambient_light_duration_title">Длительность подсветки краев экрана</string>
+    <string name="pulse_ambient_light_duration_summary">Задает длительность анимации Ambient подсветки</string>
+    <string name="pulse_ambient_light_layout_title">Тип подсветки краев экрана</string>
     <string name="pulse_ambient_light_layout_solid">Сплошной</string>
     <string name="pulse_ambient_light_layout_faded">Затухание</string>
     <!-- QS battery -->
@@ -2480,8 +2480,8 @@
     <string name="designed_battery_capacity">Заявленная ёмкость батареи</string>
     <string name="battery_charge_cycles">Завершенные циклы зарядки</string>
     <!-- Ambient Display Swipe Gesture -->
-    <string name="ambient_swipe_title">Активация экрана при уведомлениях свайпом</string>
-    <string name="ambient_swipe_summary">Разрешить выводить устройство из спящего режима, проводя вверх или вниз по экрану для показа уведомлений</string>
+    <string name="ambient_swipe_title">Жест Ambient экрана</string>
+    <string name="ambient_swipe_summary">Разрешить выводить устройство из спящего режима, проводя вверх или вниз по Ambient экрану</string>
     <!-- Radio Info -->
     <string name="radio_info_title">Информация о сети</string>
 </resources>
