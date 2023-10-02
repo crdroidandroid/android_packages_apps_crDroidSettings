@@ -357,7 +357,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider() {
+            new BaseSearchIndexProvider(R.xml.battery_light_settings) {
 
         @Override
         public List<String> getNonIndexableKeys(Context context) {
@@ -372,6 +372,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
                 result.add(LOW_COLOR_PREF);
                 result.add(MEDIUM_COLOR_PREF);
                 result.add(FULL_COLOR_PREF);
+                result.add(REALLY_FULL_COLOR_PREF);
             } else if (LightsCapabilities.supports(context,
                     LightsCapabilities.LIGHTS_RGB_BATTERY_LED)) {
                 result.add(LIGHT_FULL_CHARGE_DISABLED_PREF);
@@ -380,6 +381,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
                 result.add(LOW_COLOR_PREF);
                 result.add(MEDIUM_COLOR_PREF);
                 result.add(FULL_COLOR_PREF);
+                result.add(REALLY_FULL_COLOR_PREF);
             }
             if (!LightsCapabilities.supports(context,
                     LightsCapabilities.LIGHTS_ADJUSTABLE_BATTERY_LED_BRIGHTNESS)) {

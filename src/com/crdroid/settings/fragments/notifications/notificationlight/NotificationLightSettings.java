@@ -618,7 +618,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider() {
+            new BaseSearchIndexProvider(R.xml.notification_light_settings) {
 
         @Override
         public List<String> getNonIndexableKeys(Context context) {
