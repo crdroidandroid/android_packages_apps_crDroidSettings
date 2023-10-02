@@ -21,34 +21,31 @@
     android:id="@android:id/widget_frame"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="?android:attr/listPreferredItemHeightSmall"
+    android:minHeight="56dp"
     android:gravity="center_vertical"
     android:paddingStart="?android:attr/listPreferredItemPaddingStart"
-    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
-    android:background="?android:attr/selectableItemBackground">
+    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd">
 
     <ImageView
-        android:id="@+id/icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dip"
-        android:padding="2dp"
-        android:maxWidth="36dip"
-        android:maxHeight="36dip"
-        android:adjustViewBounds="true"
-        android:layout_gravity="center" />
+        android:id="@android:id/icon"
+        android:layout_width="36dip"
+        android:layout_height="36dip"
+        android:layout_marginStart="6dip"
+        android:layout_marginEnd="6dip"
+        android:layout_gravity="center"
+        android:contentDescription="@null" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dip"
         android:layout_marginEnd="6dip"
-        android:layout_marginTop="6dip"
-        android:layout_marginBottom="6dip"
+        android:layout_marginTop="2dip"
+        android:layout_marginBottom="2dip"
         android:layout_weight="1">
 
         <TextView android:id="@android:id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:textAppearance="?android:attr/textAppearanceListItem"
@@ -57,7 +54,7 @@
             android:fadingEdge="horizontal" />
 
         <TextView android:id="@android:id/summary"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@android:id/title"
             android:layout_alignStart="@android:id/title"
