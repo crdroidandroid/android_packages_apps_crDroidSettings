@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2022 crDroid Android Project
+ * Copyright (C) 2016-2023 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,7 +44,6 @@ import com.crdroid.settings.fragments.statusbar.Clock;
 import com.crdroid.settings.fragments.statusbar.NetworkTrafficSettings;
 import com.crdroid.settings.preferences.SystemSettingSeekBarPreference;
 import com.crdroid.settings.utils.DeviceUtils;
-import com.crdroid.settings.utils.TelephonyUtils;
 
 import lineageos.preference.LineageSystemSettingListPreference;
 import lineageos.providers.LineageSettings;
@@ -59,10 +58,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String QUICK_PULLDOWN = "qs_quick_pulldown";
-    private static final String KEY_SHOW_ROAMING = "roaming_indicator_icon";
-    private static final String KEY_SHOW_FOURG = "show_fourg_icon";
-    private static final String KEY_SHOW_DATA_DISABLED = "data_disabled_icon";
-    private static final String KEY_USE_OLD_MOBILETYPE = "use_old_mobiletype";
     private static final String KEY_STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
     private static final String KEY_STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String KEY_STATUS_BAR_BATTERY_TEXT_CHARGING = "status_bar_battery_text_charging";
@@ -80,10 +75,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private LineageSystemSettingListPreference mQuickPulldown;
     private SystemSettingListPreference mBatteryPercent;
     private SystemSettingListPreference mBatteryStyle;
-    private SwitchPreference mShowRoaming;
-    private SwitchPreference mShowFourg;
-    private SwitchPreference mDataDisabled;
-    private SwitchPreference mOldMobileType;
     private SwitchPreference mBatteryTextCharging;
 
     @Override
@@ -112,25 +103,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
         } else if (DeviceUtils.hasCenteredCutout(mContext)) {
             mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
             mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
-        }
-
-        mShowRoaming = (SwitchPreference) findPreference(KEY_SHOW_ROAMING);
-        mShowFourg = (SwitchPreference) findPreference(KEY_SHOW_FOURG);
-        mDataDisabled = (SwitchPreference) findPreference(KEY_SHOW_DATA_DISABLED);
-        mOldMobileType = (SwitchPreference) findPreference(KEY_USE_OLD_MOBILETYPE);
-
-        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
-            prefScreen.removePreference(mShowRoaming);
-            prefScreen.removePreference(mShowFourg);
-            prefScreen.removePreference(mDataDisabled);
-            prefScreen.removePreference(mOldMobileType);
-        } else {
-            boolean mConfigUseOldMobileType = mContext.getResources().getBoolean(
-                    com.android.internal.R.bool.config_useOldMobileIcons);
-            boolean showing = Settings.System.getIntForUser(resolver,
-                    Settings.System.USE_OLD_MOBILETYPE,
-                    mConfigUseOldMobileType ? 1 : 0, UserHandle.USER_CURRENT) != 0;
-            mOldMobileType.setChecked(showing);
         }
 
         int batterystyle = Settings.System.getIntForUser(getContentResolver(),
@@ -190,8 +162,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        boolean mConfigUseOldMobileType = mContext.getResources().getBoolean(
-                com.android.internal.R.bool.config_useOldMobileIcons);
 
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.DOUBLE_TAP_SLEEP_GESTURE, 1, UserHandle.USER_CURRENT);
@@ -208,12 +178,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.ENABLE_PROJECTION_PRIVACY_INDICATOR, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.ROAMING_INDICATOR_ICON, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SHOW_FOURG_ICON, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.DATA_DISABLED_ICON, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
                 Settings.System.BLUETOOTH_SHOW_BATTERY, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_BATTERY_STYLE, BATTERY_STYLE_PORTRAIT, UserHandle.USER_CURRENT);
@@ -226,15 +190,11 @@ public class StatusBar extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_NOTIF_COUNT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.USE_OLD_MOBILETYPE, mConfigUseOldMobileType ? 1 : 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_LOGO, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_LOGO_POSITION, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_LOGO_STYLE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.SHOW_WIFI_STANDARD_ICON, 0, UserHandle.USER_CURRENT);
 
         BatteryBar.reset(mContext);
         Clock.reset(mContext);
@@ -273,20 +233,5 @@ public class StatusBar extends SettingsPreferenceFragment implements
      * For search
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.crdroid_settings_statusbar) {
-
-                @Override
-                public List<String> getNonIndexableKeys(Context context) {
-                    List<String> keys = super.getNonIndexableKeys(context);
-
-                    if (!TelephonyUtils.isVoiceCapable(context)) {
-                        keys.add(KEY_SHOW_ROAMING);
-                        keys.add(KEY_SHOW_FOURG);
-                        keys.add(KEY_SHOW_DATA_DISABLED);
-                        keys.add(KEY_USE_OLD_MOBILETYPE);
-                    }
-
-                    return keys;
-                }
-            };
+            new BaseSearchIndexProvider(R.xml.crdroid_settings_statusbar);
 }

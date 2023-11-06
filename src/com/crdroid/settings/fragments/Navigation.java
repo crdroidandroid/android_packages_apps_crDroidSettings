@@ -52,23 +52,17 @@ public class Navigation extends SettingsPreferenceFragment implements
     private static final String NAVBAR_VISIBILITY = "navbar_visibility";
     private static final String KEY_NAVIGATION_BACK_LONG_PRESS =
             "navigation_back_long_press";
-    private static final String KEY_NAVIGATION_BACK_DOUBLE_TAP =
-            "navigation_back_double_tap";
     private static final String KEY_NAVIGATION_HOME_LONG_PRESS = "navigation_home_long_press";
     private static final String KEY_NAVIGATION_HOME_DOUBLE_TAP = "navigation_home_double_tap";
     private static final String KEY_NAVIGATION_APP_SWITCH_LONG_PRESS =
             "navigation_app_switch_long_press";
-    private static final String KEY_NAVIGATION_APP_SWITCH_DOUBLE_TAP =
-            "navigation_app_switch_double_tap";
     private static final String KEY_EDGE_LONG_SWIPE = "navigation_bar_edge_long_swipe";
 
     private SwitchPreference mNavbarVisibility;
     private ListPreference mNavigationBackLongPressAction;
-    private ListPreference mNavigationBackDoubleTapAction;
     private ListPreference mNavigationHomeLongPressAction;
     private ListPreference mNavigationHomeDoubleTapAction;
     private ListPreference mNavigationAppSwitchLongPressAction;
-    private ListPreference mNavigationAppSwitchDoubleTapAction;
     private ListPreference mEdgeLongSwipeAction;
 
     private boolean mIsNavSwitchingMode = false;
@@ -95,22 +89,15 @@ public class Navigation extends SettingsPreferenceFragment implements
 
         Action defaultBackLongPressAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_longPressOnBackBehavior));
-        Action defaultBackDoubleTapAction = Action.fromIntSafe(res.getInteger(
-                org.lineageos.platform.internal.R.integer.config_doubleTapOnBackBehavior));
         Action defaultHomeLongPressAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_longPressOnHomeBehavior));
         Action defaultHomeDoubleTapAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_doubleTapOnHomeBehavior));
         Action defaultAppSwitchLongPressAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_longPressOnAppSwitchBehavior));
-        Action defaultAppSwitchDoubleTapAction = Action.fromIntSafe(res.getInteger(
-                org.lineageos.platform.internal.R.integer.config_doubleTapOnAppSwitchBehavior));
         Action backLongPressAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION,
                 defaultBackLongPressAction);
-        Action backDoubleTapAction = Action.fromSettings(resolver,
-                LineageSettings.System.KEY_BACK_DOUBLE_TAP_ACTION,
-                defaultBackDoubleTapAction);
         Action homeLongPressAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION,
                 defaultHomeLongPressAction);
@@ -120,9 +107,6 @@ public class Navigation extends SettingsPreferenceFragment implements
         Action appSwitchLongPressAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION,
                 defaultAppSwitchLongPressAction);
-        Action appSwitchDoubleTapAction = Action.fromSettings(resolver,
-                LineageSettings.System.KEY_APP_SWITCH_DOUBLE_TAP_ACTION,
-                defaultAppSwitchDoubleTapAction);
         Action edgeLongSwipeAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_EDGE_LONG_SWIPE_ACTION,
                 Action.NOTHING);
@@ -130,10 +114,6 @@ public class Navigation extends SettingsPreferenceFragment implements
         // Navigation bar back long press
         mNavigationBackLongPressAction = initList(KEY_NAVIGATION_BACK_LONG_PRESS,
                 backLongPressAction);
-
-        // Navigation bar back double tap
-        mNavigationBackDoubleTapAction = initList(KEY_NAVIGATION_BACK_DOUBLE_TAP,
-                backDoubleTapAction);
 
         // Navigation bar home long press
         mNavigationHomeLongPressAction = initList(KEY_NAVIGATION_HOME_LONG_PRESS,
@@ -146,10 +126,6 @@ public class Navigation extends SettingsPreferenceFragment implements
         // Navigation bar app switch long press
         mNavigationAppSwitchLongPressAction = initList(KEY_NAVIGATION_APP_SWITCH_LONG_PRESS,
                 appSwitchLongPressAction);
-
-        // Navigation bar app switch double tap
-        mNavigationAppSwitchDoubleTapAction = initList(KEY_NAVIGATION_APP_SWITCH_DOUBLE_TAP,
-                appSwitchDoubleTapAction);
 
         // Edge long swipe gesture
         mEdgeLongSwipeAction = initList(KEY_EDGE_LONG_SWIPE, edgeLongSwipeAction);
@@ -207,10 +183,6 @@ public class Navigation extends SettingsPreferenceFragment implements
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION);
             return true;
-        } else if (preference == mNavigationBackDoubleTapAction) {
-            handleListChange((ListPreference) preference, newValue,
-                    LineageSettings.System.KEY_BACK_DOUBLE_TAP_ACTION);
-            return true;
         } else if (preference == mNavigationHomeLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION);
@@ -222,10 +194,6 @@ public class Navigation extends SettingsPreferenceFragment implements
         } else if (preference == mNavigationAppSwitchLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
-            return true;
-        } else if (preference == mNavigationAppSwitchDoubleTapAction) {
-            handleListChange((ListPreference) preference, newValue,
-                    LineageSettings.System.KEY_APP_SWITCH_DOUBLE_TAP_ACTION);
             return true;
         } else if (preference == mEdgeLongSwipeAction) {
             handleListChange((ListPreference) preference, newValue,

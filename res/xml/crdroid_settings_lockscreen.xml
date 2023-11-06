@@ -31,8 +31,7 @@
             android:summary="@string/theme_customization_lock_clock_summary"
             android:fragment="com.crdroid.settings.fragments.lockscreen.LockClockFontsPicker"/>
 
-        <!-- Clock top margin settings -->
-        <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        <!--<com.crdroid.settings.preferences.SecureSettingSeekBarPreference
             android:key="kg_custom_clock_top_margin"
             android:icon="@drawable/ic_lock_clock"
             android:title="@string/kg_custom_clock_top_margin_title"
@@ -42,7 +41,6 @@
             android:defaultValue="280"
             settings:units="@string/unit_pixels" />
 
-        <!-- Clock size settings -->
         <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
             android:key="kg_small_clock_text_size"
             android:icon="@drawable/ic_font"
@@ -61,7 +59,7 @@
             settings:min="25"
             settings:interval="1"
             android:defaultValue="180"
-            settings:units="@string/unit_pixels" />
+            settings:units="@string/unit_pixels" />-->
 
     </PreferenceCategory>
 
@@ -98,12 +96,12 @@
             android:summary="@string/lockscreen_weather_location_summary"
             android:dependency="lockscreen_weather_enabled" />
 
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_weather_style"
             android:icon="@drawable/ic_weather"
             android:title="@string/lockscreen_weather_style_title"
             android:summary="@string/lockscreen_weather_style_summary"
-            android:dependency="lockscreen_weather_enabled" />
+            android:dependency="lockscreen_weather_enabled" />-->
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
