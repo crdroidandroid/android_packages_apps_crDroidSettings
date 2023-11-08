@@ -19,7 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     xmlns:lineage="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory 
+    <PreferenceCategory
          android:title="@string/qs_misc_category">
 
         <!-- QS Header Image -->
@@ -93,6 +93,28 @@
             android:title="@string/battery_estimate_title"
             android:summary="@string/battery_estimate_summary" /> -->
 
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="secure_lockscreen_qs_disabled"
+            android:icon="@drawable/ic_lock_alert"
+            android:title="@string/disable_qs_title"
+            android:summary="@string/disable_qs_summary"/>
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="qs_transparency"
+            android:icon="@drawable/ic_color_bucket"
+            android:title="@string/qs_transparency_title"
+            android:summary="@string/qs_transparency_summary"
+            android:defaultValue="100"
+            settings:interval="1"
+            settings:units="%"
+            android:max="100"
+            android:min="1" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+         android:title="@string/qs_brightness_slider_category">
+
         <!-- Brightness slider -->
         <lineageos.preference.LineageSecureSettingListPreference
             android:key="qs_show_brightness_slider"
@@ -122,23 +144,6 @@
             android:title="@string/qs_show_auto_brightness_title"
             android:summary="@string/qs_show_auto_brightness_summary"
             android:defaultValue="true" />
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="secure_lockscreen_qs_disabled"
-            android:icon="@drawable/ic_lock_alert"
-            android:title="@string/disable_qs_title"
-            android:summary="@string/disable_qs_summary"/>
-
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qs_transparency"
-            android:icon="@drawable/ic_color_bucket"
-            android:title="@string/qs_transparency_title"
-            android:summary="@string/qs_transparency_summary"
-            android:defaultValue="100"
-            settings:interval="1"
-            settings:units="%"
-            android:max="100"
-            android:min="1" />
 
     </PreferenceCategory>
 
@@ -187,7 +192,6 @@
             settings:min="2"
             settings:interval="1"
             android:defaultValue="4" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
