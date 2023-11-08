@@ -385,7 +385,7 @@
     <string name="status_bar_battery_percent_title">Akun prosentti</string>
     <string name="status_bar_battery_percent_hidden">Piilotettu</string>
     <string name="status_bar_battery_percent_text_inside">Kuvakkeen sisällä</string>
-    <string name="status_bar_battery_percent_text_next_right">Kuvakkeen vieressä (vasemmalla)</string>
+    <string name="status_bar_battery_percent_text_next_right">Kuvakkeen vieressä (oikealla)</string>
     <string name="status_bar_battery_percent_text_next_left">Kuvakkeen vieressä (vasemmalla)</string>
     <string name="status_bar_battery_text_charging_title">Akun prosentti latauksen aikana</string>
     <string name="status_bar_battery_text_charging_summary">Näytä akun prosentti aina latauksen aikana</string>
@@ -560,21 +560,21 @@
     <string name="qs_footer_edit_icon_title">Edit tiles icon</string>
     <string name="qs_footer_show_power_menu_title">Virtavalikon pikakuvake</string>
     <string name="qs_footer_services_icon_title">Running services shortcut</string>
-    <string name="qs_footer_settings_icon_title">Settings shortcut</string>
+    <string name="qs_footer_settings_icon_title">Asetusten pikakuvake</string>
     <!-- Device Info screen. crDroid legal. -->
     <string name="crdroid_license_title">crDroid legal</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_show_brightness_slider_title">Kirkkauden säädin</string>
-    <string name="qs_show_brightness_slider_never">Never show</string>
-    <string name="qs_show_brightness_slider_expanded">Show when expanded</string>
-    <string name="qs_show_brightness_slider_always">Show always</string>
-    <string name="qs_show_brightness_slider_not_expanded">Show when not expanded</string>
+    <string name="qs_show_brightness_slider_never">Älä näytä koskaan</string>
+    <string name="qs_show_brightness_slider_expanded">Näytä laajennettaessa</string>
+    <string name="qs_show_brightness_slider_always">Näytä aina</string>
+    <string name="qs_show_brightness_slider_not_expanded">Näytä kun sitä ei ole laajennettu</string>
     <string name="qs_brightness_slider_position_title">Sijainti</string>
     <string name="qs_brightness_slider_position_top">Ylhäällä</string>
     <string name="qs_brightness_slider_position_bottom">Alhaalla</string>
     <!-- Brightness slider haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">Haptinen palaute</string>
-    <string name="qs_brightness_slider_haptic_summary">Provide haptic feedback on changing brightness using slider</string>
+    <string name="qs_brightness_slider_haptic_summary">Anna haptista palautetta kirkkauden muuttamisesta liukusäädintä käyttäen</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Automaattisen kirkkauden kuvake</string>
     <string name="qs_show_auto_brightness_summary">Näytä automaattisen kirkkauden valinta liukusäätimen vieressä</string>
@@ -609,7 +609,7 @@
     <string name="light_brightness_normal">Normaali</string>
     <string name="light_brightness_zen">Älä häiritse</string>
     <!-- Battery light settings -->
-    <string name="light_brightness_category">Light brightness settings</string>
+    <string name="light_brightness_category">Valon kirkkauden asetukset</string>
     <string name="battery_light_title">Akun valo</string>
     <string name="battery_light_enable_title">Ota akun valo käyttöön</string>
     <string name="battery_light_summary">Määritä led-väri akun tason ja tilan perusteella</string>
@@ -743,63 +743,63 @@
     <string name="udfps_settings_title">UDFPS customization</string>
     <string name="udfps_settings_summary">Customize under-display fingerprint scanner</string>
     <string name="udfps_icon_picker_title">UDFPS icon picker</string>
-    <string name="udfps_icon_picker_summary">Choose your favorite fingerprint icon</string>
-    <string name="udfps_recog_animation_effect_title">UDFPS custom animation</string>
-    <string name="udfps_recog_animation_effect_summary">Choose animation effect</string>
+    <string name="udfps_icon_picker_summary">Valitse sormenjäljen suosikkikuvake</string>
+    <string name="udfps_recog_animation_effect_title">UDFPS mukautettu animaatio</string>
+    <string name="udfps_recog_animation_effect_summary">Valitse animaation tehoste</string>
     <!-- Face Unlock -->
-    <string name="security_settings_face_unlock_redo_face_scan_summary">Remove existing face scan and create a new scan</string>
-    <string name="security_settings_face_unlock_redo_face_scan_title">Redo face scan</string>
-    <string name="face_redo_confirm_btn">Redo</string>
-    <string name="face_redo_warning_msg">Do you want to remove the existing face scan and create a new one?</string>
-    <string name="face_unlock_method_title">Allow face unlock on lock screen</string>
-    <string name="face_unlock_method_default">When the screen is turned on</string>
-    <string name="face_unlock_method_swipe">When swiping on lock screen</string>
+    <string name="security_settings_face_unlock_redo_face_scan_summary">Poista olemassaoleva kasvojen skannaus ja luo uusi skannaus</string>
+    <string name="security_settings_face_unlock_redo_face_scan_title">Skannaa kasvot uudelleen</string>
+    <string name="face_redo_confirm_btn">Skannaa</string>
+    <string name="face_redo_warning_msg">Haluatko poistaa olemassa olevan kasvojen skannauksen ja luoda uuden?</string>
+    <string name="face_unlock_method_title">Salli kasvojentunnistus lukitusnäytöllä</string>
+    <string name="face_unlock_method_default">Kun näyttö on päällä</string>
+    <string name="face_unlock_method_swipe">Kun pyyhitään lukitusnäyttöä</string>
     <!-- Wifi/Bluetooth auto timeout -->
-    <string name="wifi_timeout">WiFi timeout</string>
-    <string name="wifi_timeout_summary">Do not automatically turn off WiFi</string>
-    <string name="wifi_timeout_summary_auto">WiFi will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no network connected</string>
-    <string name="bluetooth_timeout">Bluetooth timeout</string>
-    <string name="bluetooth_timeout_summary">Do not automatically turn off Bluetooth</string>
-    <string name="bluetooth_timeout_summary_auto">Bluetooth will turn off after <xliff:g id="timeout_description">%1$s</xliff:g> if no devices connected</string>
-    <string name="custom_timeout_summary_never">Never</string>
-    <string name="custom_timeout_summary_5secs">5 seconds</string>
-    <string name="custom_timeout_summary_10secs">10 seconds</string>
-    <string name="custom_timeout_summary_15secs">15 seconds</string>
-    <string name="custom_timeout_summary_30secs">30 seconds</string>
-    <string name="custom_timeout_summary_1min">1 minute</string>
-    <string name="custom_timeout_summary_2mins">2 minutes</string>
-    <string name="custom_timeout_summary_5mins">5 minutes</string>
-    <string name="custom_timeout_summary_10mins">10 minutes</string>
-    <string name="custom_timeout_summary_20mins">20 minutes</string>
-    <string name="custom_timeout_summary_30mins">30 minutes</string>
-    <string name="custom_timeout_summary_1hour">1 hour</string>
-    <string name="custom_timeout_summary_2hours">2 hours</string>
-    <string name="custom_timeout_summary_4hours">4 hours</string>
-    <string name="custom_timeout_summary_8hours">8 hours</string>
+    <string name="wifi_timeout">WiFi aikakatkaisu</string>
+    <string name="wifi_timeout_summary">Älä poista WiFi-yhteyttä automaattisesti käytöstä</string>
+    <string name="wifi_timeout_summary_auto">WiFi kytkeytyy pois päältä <xliff:g id="timeout_description">%1$s</xliff:g> ajan kuluttua, jos verkkoa ei ole yhdistetty</string>
+    <string name="bluetooth_timeout">Bluetoothin aikakatkaisu</string>
+    <string name="bluetooth_timeout_summary">Älä poista Bluetoothia automaattisesti käytöstä</string>
+    <string name="bluetooth_timeout_summary_auto">Bluetooth kytkeytyy pois päältä <xliff:g id="timeout_description">%1$s</xliff:g> ajan kuluttua jos laitteita ei ole yhdistetty</string>
+    <string name="custom_timeout_summary_never">Ei koskaan</string>
+    <string name="custom_timeout_summary_5secs">5 sekuntia</string>
+    <string name="custom_timeout_summary_10secs">10 sekuntia</string>
+    <string name="custom_timeout_summary_15secs">15 sekuntia</string>
+    <string name="custom_timeout_summary_30secs">30 sekuntia</string>
+    <string name="custom_timeout_summary_1min">1 minuutti</string>
+    <string name="custom_timeout_summary_2mins">2 minuuttia</string>
+    <string name="custom_timeout_summary_5mins">5 minuuttia</string>
+    <string name="custom_timeout_summary_10mins">10 minuuttia</string>
+    <string name="custom_timeout_summary_20mins">20 minuuttia</string>
+    <string name="custom_timeout_summary_30mins">30 minuuttia</string>
+    <string name="custom_timeout_summary_1hour">1 tunti</string>
+    <string name="custom_timeout_summary_2hours">2 tuntia</string>
+    <string name="custom_timeout_summary_4hours">4 tuntia</string>
+    <string name="custom_timeout_summary_8hours">8 tuntia</string>
     <!-- WiFi Hotspot -->
-    <string name="wifi_hotspot_hidden_ssid_title">Hidden network</string>
+    <string name="wifi_hotspot_hidden_ssid_title">Piilotettu verkko</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Your mobile hotspot\'s name won\'t appear in the list of available WLAN networks.</string>
-    <string name="wifi_hotspot_client_manager_title">Connected devices</string>
+    <string name="wifi_hotspot_client_manager_title">Yhdistetyt laitteet</string>
     <string name="wifi_hotspot_client_manager_summary">List and manage devices connected to the hotspot</string>
     <string name="wifi_hotspot_client_manager_list_only_summary">List devices connected to the hotspot</string>
     <string name="wifi_hotspot_client_limit_title">Limit of connected devices</string>
     <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
     <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
-    <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
-    <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
-    <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
+    <string name="wifi_hotspot_block_client_dialog_title">Estä laite</string>
+    <string name="wifi_hotspot_block_client_dialog_text">Tämä toiminto katkaisee laitteen \"<xliff:g id="device_name">%1$s</xliff:g>\" yhteyden tästä laitteesta ja lisää sen estolistalle</string>
+    <string name="wifi_hotspot_unblock_client_dialog_title">Kumoa laitteen esto</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Laite \"<xliff:g id="device_name">%1$s</xliff:g>\" voi muodostaa yhteyden tähän hotspottiin</string>
+    <string name="wifi_hotspot_client_manager_footer_text">Yhteyksiä ei ole tällä hetkellä saatavilla. Yhdistetyt ja estetyt laitteet näkyvät täällä kun ne ovat saatavilla.</string>
     <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
     <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
     <string name="wifi_band_60ghz">60 GHz</string>
     <plurals name="wifi_hotspot_client_limit_summary">
-        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
-        <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
+        <item quantity="other">Enintään <xliff:g id="device_num">%1$d</xliff:g> laitetta voi muodostaa yhteyden tähän hotspottiin</item>
+        <item quantity="one">Enintään <xliff:g id="device_num">%1$d</xliff:g> laite voi muodostaa yhteyden tähän hotspottiin</item>
     </plurals>
     <!-- Disable QS -->
-    <string name="disable_qs_title">Hide QS on secure lock screen</string>
-    <string name="disable_qs_summary">Prevent access to QS tiles on secure lock screen</string>
+    <string name="disable_qs_title">Piilota pika-asetukset turvallisessa lukitusnäytössä</string>
+    <string name="disable_qs_summary">Estä pika-asetuksien käyttäminen turvallisessa lukitusnäytössä</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Virtavalikko</string>
     <string name="lockscreen_enable_power_menu_summary">Salli virtavalikon käyttäminen turvallisella lukitusnäytöllä</string>
