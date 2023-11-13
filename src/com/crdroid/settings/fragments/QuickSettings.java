@@ -59,6 +59,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     private static final String KEY_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String KEY_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
+    private static final String KEY_BRIGHTNESS_SLIDER_HAPTIC = "qs_brightness_slider_haptic";
     private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
     private static final String KEY_PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String KEY_PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
@@ -66,6 +67,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
+    private SwitchPreference mBrightnessSliderHaptic;
     private SwitchPreference mShowAutoBrightness;
     private ListPreference mTileAnimationStyle;
     private CustomSeekBarPreference mTileAnimationDuration;
@@ -86,10 +88,13 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         boolean showSlider = LineageSettings.Secure.getIntForUser(resolver,
                 LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT) > 0;
 
-        mBrightnessSliderPosition = findPreference(KEY_BRIGHTNESS_SLIDER_POSITION); 
+        mBrightnessSliderPosition = findPreference(KEY_BRIGHTNESS_SLIDER_POSITION);
         mBrightnessSliderPosition.setEnabled(showSlider);
 
-        mShowAutoBrightness = findPreference(KEY_SHOW_AUTO_BRIGHTNESS); 
+        mBrightnessSliderHaptic = findPreference(KEY_BRIGHTNESS_SLIDER_HAPTIC);
+        mBrightnessSliderHaptic.setEnabled(showSlider);
+
+        mShowAutoBrightness = findPreference(KEY_SHOW_AUTO_BRIGHTNESS);
         boolean automaticAvailable = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_automatic_brightness_available);
         if (automaticAvailable) {
@@ -113,6 +118,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         if (preference == mShowBrightnessSlider) {
             int value = Integer.parseInt((String) newValue);
             mBrightnessSliderPosition.setEnabled(value > 0);
+            mBrightnessSliderHaptic.setEnabled(value > 0);
             if (mShowAutoBrightness != null)
                 mShowAutoBrightness.setEnabled(value > 0);
             return true;
