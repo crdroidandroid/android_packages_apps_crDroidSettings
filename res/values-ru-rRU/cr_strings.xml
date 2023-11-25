@@ -34,8 +34,6 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Цветовая палитра</string>
     <string name="press_color_to_apply">Нажмите на цвет ниже для применения</string>
-    <string name="hex">Код:</string>
-    <string name="hex_hint">#ff000000</string>
     <string name="set">Применить</string>
     <string name="color_default">По умолчанию</string>
     <!-- General strings -->
@@ -69,7 +67,7 @@
     <string name="share_message">Узнайте, доступен ли #crDroidAndroid для Вашего устройства на @ https://crdroid.net/</string>
     <string name="share_chooser_title">Рассказать о crDroid</string>
     <!-- Sites crDroid -->
-    <string name="crdroid_source_title">GitHub</string>
+    <string name="crdroid_source_title">Github</string>
     <string name="crdroid_source_summary">Мы любим открытый исходный код, посмотрите его</string>
     <string name="crdroid_telegram_title">Cообщество crDroid</string>
     <string name="crdroid_telegram_summary">Мы в Telegram. Присоединяйтесь!</string>
@@ -545,12 +543,6 @@
     <string name="volume_steps_system_title">Шаги громкости: Система</string>
     <string name="volume_steps_voice_call_title">Шаги громкости: Голосовой вызов</string>
     <string name="volume_steps_reset">Сброс</string>
-    <string name="volume_steps_60">60</string>
-    <string name="volume_steps_45">45</string>
-    <string name="volume_steps_30">30</string>
-    <string name="volume_steps_15">15</string>
-    <string name="volume_steps_7">7</string>
-    <string name="volume_steps_5">5</string>
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Свайп для скриншота</string>
     <string name="three_finger_gesture_summary">Проведите тремя пальцами для создания скриншота</string>
@@ -566,6 +558,7 @@
     <!-- Device Info screen. crDroid legal. -->
     <string name="crdroid_license_title">О crDroid</string>
     <!-- Quick Settings brightness slider -->
+    <string name="qs_brightness_slider_category">Регулятор яркости</string>
     <string name="qs_show_brightness_slider_title">Регулятор яркости</string>
     <string name="qs_show_brightness_slider_never">Никогда не показывать</string>
     <string name="qs_show_brightness_slider_expanded">Показывать в развернутом виде</string>
@@ -794,7 +787,6 @@
     <string name="wifi_hotspot_client_manager_footer_text">На данный момент нет доступных клиентов. Подключенные и заблокированные устройства будут перечислены здесь, когда они станут доступны</string>
     <string name="wifi_band_24ghz_and_5ghz">2.4 ГГц &amp; 5 ГГц</string>
     <string name="wifi_band_24ghz_and_6ghz">2.4 ГГц и 6 ГГц</string>
-    <string name="wifi_band_60ghz">60 ГГц</string>
     <plurals name="wifi_hotspot_client_limit_summary">
         <item quantity="other">К этой точке доступа могут подключиться до <xliff:g id="device_num">%1$d</xliff:g> устройств</item>
         <item quantity="one">К этой точке доступа может подключиться до <xliff:g id="device_num">%1$d</xliff:g> устройства</item>
@@ -1015,11 +1007,6 @@
     <string name="add_sensor_block_package_summary">Акселерометр, датчики движения и линейного ускорения будут заблокированы для выбранных приложений</string>
     <!-- Vibration patterns -->
     <string name="vibration_pattern_title">Тип вибрации при звонке</string>
-    <string name="pattern_dzzz_dzzz">дззз-дззз</string>
-    <string name="pattern_dzzz_da">дззз-да</string>
-    <string name="pattern_mm_mm_mm">мм-мм-мм</string>
-    <string name="pattern_da_da_dzzz">да-да-дззз</string>
-    <string name="pattern_da_dzzz_da">да-дззз-да</string>
     <string name="pattern_custom">Пользовательский</string>
     <string name="custom_vibration_pattern_title">Пользовательский шаблон</string>
     <string name="custom_vibration_pattern_summary">Установить свой шаблон вибрации</string>
@@ -1068,8 +1055,8 @@
     <string name="app_lock_title">Блокировка приложений</string>
     <plurals name="app_lock_summary">
         <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> приложение защищено</item>
-        <item quantity="few"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> приложения защищено</item>
-        <item quantity="many"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> приложений защищено</item>
+        <item quantity="few"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
+        <item quantity="many"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
         <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> приложений защищено</item>
     </plurals>
     <string name="app_lock_authentication_dialog_title">Разблокировка</string>

@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- App Title -->
-    <string name="crdroid_settings_title">crDroid Ρυθμίσεις</string>
+    <string name="crdroid_settings_title">Ρυθμίσεις cDroid</string>
     <string name="crdroid_settings_summary">Ανοίξτε τα \"καλούδια\"</string>
     <string name="reset_settings_title">Επαναφορά ρυθμίσεων</string>
     <string name="reset_settings_message">Αυτό θα επαναφέρει τις περισσότερες ρυθμίσεις crdroid στις προεπιλεγμένες τιμές τους για τον τρέχοντα χρήστη. Θέλετε να συνεχίσετε;</string>
@@ -34,8 +34,6 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Επιλογέας Χρώματος</string>
     <string name="press_color_to_apply">Πατήστε στο χρώμα από κάτω για να εφαρμοστεί</string>
-    <string name="hex">Hex:</string>
-    <string name="hex_hint">#ff000000</string>
     <string name="set">Ορισμός</string>
     <string name="color_default">Προεπιλογή</string>
     <!-- General strings -->
@@ -543,12 +541,6 @@
     <string name="volume_steps_system_title">Επίπεδα έντασης: Σύστημα</string>
     <string name="volume_steps_voice_call_title">Επίπεδα έντασης: Κλήση</string>
     <string name="volume_steps_reset">Επαναφορά</string>
-    <string name="volume_steps_60">60</string>
-    <string name="volume_steps_45">45</string>
-    <string name="volume_steps_30">30</string>
-    <string name="volume_steps_15">15</string>
-    <string name="volume_steps_7">7</string>
-    <string name="volume_steps_5">5</string>
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Σύρετε για στιγμιότυπο οθόνης</string>
     <string name="three_finger_gesture_summary">Σύρετε με τρία δάχτυλα για στιγμιότυπο οθόνης</string>
@@ -564,6 +556,7 @@
     <!-- Device Info screen. crDroid legal. -->
     <string name="crdroid_license_title">Νομικές σημειώσεις του crDroid</string>
     <!-- Quick Settings brightness slider -->
+    <string name="qs_brightness_slider_category">Ρυθμιστής φωτεινότητας</string>
     <string name="qs_show_brightness_slider_title">Ρυθμιστικό φωτεινότητας</string>
     <string name="qs_show_brightness_slider_never">Να μην εμφανίζεται ποτέ</string>
     <string name="qs_show_brightness_slider_expanded">Εμφάνιση κατά την επέκταση</string>
@@ -792,7 +785,6 @@
     <string name="wifi_hotspot_client_manager_footer_text">Δεν υπάρχουν διαθέσιμοι πελάτες αυτήν τη στιγμή. Οι συνδεδεμένες και αποκλεισμένες συσκευές θα εμφανίζονται εδώ όταν είναι διαθέσιμες.</string>
     <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
     <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
-    <string name="wifi_band_60ghz">60 GHz</string>
     <plurals name="wifi_hotspot_client_limit_summary">
         <item quantity="other">Έως και <xliff:g id="device_num">%1$d</xliff:g> συσκευές μπορούν να συνδεθούν σε αυτό το hotspot</item>
         <item quantity="one">Έως και <xliff:g id="device_num">%1$d</xliff:g> συσκευή μπορεί να συνδεθεί σε αυτό το hotspot</item>
@@ -973,11 +965,11 @@
     <string name="status_bar_logo_style_batman">Batman</string>
     <string name="status_bar_logo_style_batman_tdk">Batman The Dark Knight</string>
     <string name="status_bar_logo_style_beats">Beats</string>
-    <string name="status_bar_logo_style_biohazard">Biohazard</string>
+    <string name="status_bar_logo_style_biohazard">Βιολογικός Κίνδυνος</string>
     <string name="status_bar_logo_style_blackberry">BlackBerry</string>
     <string name="status_bar_logo_style_cannabis">Cannabis</string>
-    <string name="status_bar_logo_style_emoticon_cool">Emoticon cool</string>
-    <string name="status_bar_logo_style_emoticon_devil">Emoticon devil</string>
+    <string name="status_bar_logo_style_emoticon_cool">Φατσούλα άνετη</string>
+    <string name="status_bar_logo_style_emoticon_devil">Φατσούλα διάβολος</string>
     <string name="status_bar_logo_style_fire">Fire</string>
     <string name="status_bar_logo_style_heart">Καρδιά</string>
     <string name="status_bar_logo_style_nike">Nike</string>
@@ -993,7 +985,7 @@
     <string name="status_bar_logo_style_robot">Ρομπότ</string>
     <string name="status_bar_logo_style_ironman">Iron Man</string>
     <string name="status_bar_logo_style_captain_america">Captain America</string>
-    <string name="status_bar_logo_style_flash">Flash</string>
+    <string name="status_bar_logo_style_flash">Φλας</string>
     <string name="status_bar_logo_style_tux">Tux</string>
     <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
     <string name="status_bar_logo_style_mint">Linux Mint</string>
@@ -1011,11 +1003,6 @@
     <string name="add_sensor_block_package_summary">Σημαντικοί αισθητήρες κίνησης, επιταχυνσιόμετρο, γραμμικής επιτάχυνσης θα αποκλειστούν για αυτές τις εφαρμογές</string>
     <!-- Vibration patterns -->
     <string name="vibration_pattern_title">Μοτίβο δόνησης ήχου κλήσης</string>
-    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
-    <string name="pattern_dzzz_da">dzzz-da</string>
-    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
-    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
-    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
     <string name="pattern_custom">Προσαρμογή</string>
     <string name="custom_vibration_pattern_title">Προσαρμοσμένο μοτίβο</string>
     <string name="custom_vibration_pattern_summary">Ορισμός προσαρμοσμένου μοτίβου δόνησης</string>

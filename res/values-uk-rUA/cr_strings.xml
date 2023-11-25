@@ -34,8 +34,6 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Палітра кольорів</string>
     <string name="press_color_to_apply">Натисніть на колір щоб застосувати його</string>
-    <string name="hex">Шістнадцятковий:</string>
-    <string name="hex_hint">#ff000000</string>
     <string name="set">Застосувати</string>
     <string name="color_default">За замовчуванням</string>
     <!-- General strings -->
@@ -545,12 +543,6 @@
     <string name="volume_steps_system_title">Рівні гучності: Система</string>
     <string name="volume_steps_voice_call_title">Рівні гучності: Голосовий виклик</string>
     <string name="volume_steps_reset">Скинути</string>
-    <string name="volume_steps_60">60</string>
-    <string name="volume_steps_45">45</string>
-    <string name="volume_steps_30">30</string>
-    <string name="volume_steps_15">15</string>
-    <string name="volume_steps_7">7</string>
-    <string name="volume_steps_5">5</string>
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">Жест трьома пальцями</string>
     <string name="three_finger_gesture_summary">Проведіть трьома пальцями для скріншоту</string>
@@ -566,6 +558,7 @@
     <!-- Device Info screen. crDroid legal. -->
     <string name="crdroid_license_title">Політика конфіденційності crDroid</string>
     <!-- Quick Settings brightness slider -->
+    <string name="qs_brightness_slider_category">Повзунок яскравості</string>
     <string name="qs_show_brightness_slider_title">Повзунок яскравості</string>
     <string name="qs_show_brightness_slider_never">Завжди приховувати</string>
     <string name="qs_show_brightness_slider_expanded">Показати, коли розгорнуто</string>
@@ -794,7 +787,6 @@
     <string name="wifi_hotspot_client_manager_footer_text">Наразі немає доступних клієнтів. Підключені та заблоковані пристрої з’являться тут, коли вони стануть доступними.</string>
     <string name="wifi_band_24ghz_and_5ghz">2,4 ГГц &amp; 5 ГГц</string>
     <string name="wifi_band_24ghz_and_6ghz">2,4 ГГц &amp; 6 ГГц</string>
-    <string name="wifi_band_60ghz">60 ГГц</string>
     <plurals name="wifi_hotspot_client_limit_summary">
         <item quantity="other">До цієї точки доступу можна під\'єднати <xliff:g id="device_num">%1$d</xliff:g> пристроїв</item>
         <item quantity="one">До цієї точки доступу можна під\'єднати <xliff:g id="device_num">%1$d</xliff:g> пристрій</item>
@@ -1015,11 +1007,6 @@
     <string name="add_sensor_block_package_summary">Для цих додатків буде заблоковано датчики руху, прискорення, лінійного прискорення</string>
     <!-- Vibration patterns -->
     <string name="vibration_pattern_title">Шаблон вібрації під час викликів</string>
-    <string name="pattern_dzzz_dzzz">дззз-дззз</string>
-    <string name="pattern_dzzz_da">дззз-да</string>
-    <string name="pattern_mm_mm_mm">мм-мм-мм</string>
-    <string name="pattern_da_da_dzzz">да-да-дззз</string>
-    <string name="pattern_da_dzzz_da">да-дззз-да</string>
     <string name="pattern_custom">Користувацький</string>
     <string name="custom_vibration_pattern_title">Користувацький шаблон</string>
     <string name="custom_vibration_pattern_summary">Встановіть власний шаблон вібрації</string>
@@ -1068,8 +1055,8 @@
     <string name="app_lock_title">Блокування програм</string>
     <plurals name="app_lock_summary">
         <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> Додаток захищено</item>
-        <item quantity="few"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> Додатки захищені</item>
-        <item quantity="many"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> Додатки захищено</item>
+        <item quantity="few"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
+        <item quantity="many"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
         <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> Програма захищена</item>
     </plurals>
     <string name="app_lock_authentication_dialog_title">Розблокувати</string>
