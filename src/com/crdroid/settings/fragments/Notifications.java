@@ -39,6 +39,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.android.internal.util.crdroid.Utils;
 
+import com.crdroid.settings.fragments.notifications.IslandSettings;
 import com.crdroid.settings.preferences.CustomSeekBarPreference;
 
 import java.util.List;
@@ -132,6 +133,7 @@ public class Notifications extends SettingsPreferenceFragment implements
                 Settings.System.NOTIFICATION_GUTS_KILL_APP_BUTTON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.HEADS_UP_TIMEOUT, getDefaultDecay(mContext), UserHandle.USER_CURRENT);
+        IslandSettings.reset(mContext);
     }
 
     @Override
