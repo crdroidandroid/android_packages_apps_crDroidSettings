@@ -131,10 +131,6 @@ public class Notifications extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_GUTS_KILL_APP_BUTTON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.RETICKER_STATUS, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.RETICKER_COLORED, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
                 Settings.System.HEADS_UP_TIMEOUT, getDefaultDecay(mContext), UserHandle.USER_CURRENT);
     }
 
