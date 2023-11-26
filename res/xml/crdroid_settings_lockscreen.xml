@@ -84,26 +84,6 @@
             android:defaultValue="0" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_weather_enabled"
-            android:icon="@drawable/ic_weather"
-            android:title="@string/lockscreen_weather_title"
-            android:summary="@string/lockscreen_weather_summary" />
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_weather_location"
-            android:icon="@drawable/ic_map_marker"
-            android:title="@string/lockscreen_weather_location_title"
-            android:summary="@string/lockscreen_weather_location_summary"
-            android:dependency="lockscreen_weather_enabled" />
-
-        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="lockscreen_weather_style"
-            android:icon="@drawable/ic_weather"
-            android:title="@string/lockscreen_weather_style_title"
-            android:summary="@string/lockscreen_weather_style_summary"
-            android:dependency="lockscreen_weather_enabled" />-->
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
             android:icon="@drawable/ic_battery_charging"
             android:title="@string/lockscreen_battery_info_title"
@@ -116,6 +96,51 @@
             android:title="@string/udfps_settings_title"
             android:summary="@string/udfps_settings_summary"
             android:fragment="com.crdroid.settings.fragments.lockscreen.UdfpsSettings" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="lockscreen_weather_category"
+        android:title="@string/lockscreen_weather_category">
+
+        <Preference
+            android:icon="@drawable/ic_weather_settings"
+            android:title="@string/weather_settings_title"
+            android:summary="@string/weather_settings_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="org.omnirom.omnijaws"
+                android:targetClass="org.omnirom.omnijaws.SettingsActivity" />
+        </Preference>
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_weather_enabled"
+            android:icon="@drawable/ic_weather"
+            android:title="@string/lockscreen_weather_title"
+            android:summary="@string/lockscreen_weather_summary" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_weather_location"
+            android:icon="@drawable/ic_map_marker"
+            android:title="@string/lockscreen_weather_location_title"
+            android:summary="@string/lockscreen_weather_location_summary"
+            android:dependency="lockscreen_weather_enabled" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_weather_text"
+            android:icon="@drawable/ic_weather_condition"
+            android:title="@string/lockscreen_weather_text_title"
+            android:summary="@string/lockscreen_weather_text_summary"
+            android:defaultValue="true"
+            android:dependency="lockscreen_weather_enabled" />
+
+        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="lockscreen_weather_style"
+            android:icon="@drawable/ic_weather"
+            android:title="@string/lockscreen_weather_style_title"
+            android:summary="@string/lockscreen_weather_style_summary"
+            android:dependency="lockscreen_weather_enabled" />-->
+
     </PreferenceCategory>
 
     <PreferenceCategory
