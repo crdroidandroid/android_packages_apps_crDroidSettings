@@ -40,6 +40,14 @@
         android:title="@string/notification_guts_kill_app_button_title"
         android:summary="@string/notification_guts_kill_app_button_summary" />
 
+    <!-- Show clipboard overlay -->
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="show_clipboard_overlay"
+        android:icon="@drawable/ic_clipboard_alert"
+        android:title="@string/show_clipboard_overlay_title"
+        android:summary="@string/show_clipboard_overlay_summary"
+        android:defaultValue="true"/>
+
     <PreferenceCategory
         android:key="heads_up"
         android:title="@string/notification_heads_up_title">
@@ -77,14 +85,6 @@
             settings:min="1"
             android:max="10"
             android:dependency="heads_up_notifications_enabled" />
-
-        <!-- Show clipboard overlay -->
-        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-            android:key="show_clipboard_overlay"
-            android:icon="@drawable/ic_clipboard_alert"
-            android:title="@string/show_clipboard_overlay_title"
-            android:summary="@string/show_clipboard_overlay_summary"
-            android:defaultValue="true"/>
     </PreferenceCategory>
 
     <!--<PreferenceCategory
