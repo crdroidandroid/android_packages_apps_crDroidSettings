@@ -854,11 +854,6 @@
     <string name="game_dashboard_dnd_rule_name">게이밍</string>
     <string name="game_dashboard_dnd_summary">게임을 하는 동안 중요한 사람이나 앱의 알림만 받기</string>
     <string name="game_dashboard_dnd_title">게임 방해금지모드</string>
-    <!-- reTicker -->
-    <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">헤드업 알림을 슬림하고 덜 침범하는 버전으로 다시 디자인된 ticker로 교체합니다</string>
-    <string name="reticker_colored_title">앱 색으로 배경 사용</string>
-    <string name="reticker_colored_summary">reTicker의 배경색을 알림앱의 주 색깔을 사용하여 교체합니다</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">스마트 픽셀은 절전 기능입니다. 끄기로 결정한 픽셀 수에 따라 배터리 수명이 향상 될 수 있습니다. 몇몇 경우에는 터치스크린에 응답하지 않는 영역이 생길 수 있습니다.</string>
     <string name="smart_pixels_title">스마트 픽셀</string>
@@ -889,8 +884,10 @@
     <!-- Battery temperature -->
     <string name="battery_temperature">배터리 온도</string>
     <!-- QS Transparency -->
-    <string name="qs_transparency_title">배경 투명도</string>
-    <string name="qs_transparency_summary">빠른 설정 배경 투명도 설정</string>
+    <string name="qs_opacity_title">Background opacity</string>
+    <string name="qs_opacity_summary">Set opacity level for QS background</string>
+    <string name="qs_footer_opacity_title">Footer opacity</string>
+    <string name="qs_footer_opacity_summary">Set opacity level for QS footer</string>
     <!-- Data usage info in QS footer -->
     <string name="qs_footer_datausage_title">데이터 사용량</string>
     <string name="qs_footer_datausage_summary">빠른 설정 아래에 데이터 사용량 요약 표시</string>
@@ -929,11 +926,14 @@
     <!-- Weather -->
     <string name="weather_settings_title">날씨 설정</string>
     <string name="weather_settings_summary">아이콘 및 날씨 서비스 설정</string>
-    <string name="lockscreen_weather_title">날씨 상태</string>
-    <string name="lockscreen_weather_summary">현재 날씨와 온도 보이기</string>
+    <string name="lockscreen_weather_category">날씨</string>
+    <string name="lockscreen_weather_title">Weather update</string>
+    <string name="lockscreen_weather_summary">Display current weather update</string>
     <string name="lockscreen_weather_enabled_info">날씨 정보 제공 서비스 활성화가 필요함</string>
-    <string name="lockscreen_weather_location_title">지역 날씨</string>
+    <string name="lockscreen_weather_location_title">Current location</string>
     <string name="lockscreen_weather_location_summary">현재 날씨 위치 표시</string>
+    <string name="lockscreen_weather_text_title">Current condition</string>
+    <string name="lockscreen_weather_text_summary">Display current weather condition summary</string>
     <string name="lockscreen_weather_style_title">Pixel 스타일</string>
     <string name="lockscreen_weather_style_summary">날씨를 다른 줄에 표시</string>
     <!-- Adaptive Playback -->
@@ -1070,4 +1070,12 @@
     <string name="kg_custom_clock_top_margin_title">두 줄 시계 위치</string>
     <string name="kg_small_clock_text_size_title">작은 시계 위치</string>
     <string name="kg_large_clock_text_size_title">두 줄 시계 크기</string>
+    <!-- Island Notification -->
+    <string name="island_notification_title">Island notification</string>
+    <string name="island_notification_summary">Display heads-up notification in Dynamic Island style</string>
+    <string name="island_notification_footer_text">        The Island notification feature, inspired by iOS\'s Dynamic Island, transforms Android\'s heads-up notifications into quick-access and compact notification utility.\n\nIsland Quick Access Controls includes the following features:\n1. Tap island notification to quick answer phone calls.\n2. Long press island notification to reject phone calls.\n3. Long press island notification to expand the island notification preview.
+    </string>
+    <!-- QS Dual Tone Colors -->
+    <string name="qs_dual_tone_title">Dual tone themed</string>
+    <string name="qs_dual_tone_summary">Use dual tone background colors instead of AOSP single tone</string>
 </resources>

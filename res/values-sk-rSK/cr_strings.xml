@@ -861,11 +861,6 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="game_dashboard_dnd_rule_name">Hranie</string>
     <string name="game_dashboard_dnd_summary">Byť upozorňovaný iba dôležitými ľuďmi a\u00a0aplikáciami počas hrania hry</string>
     <string name="game_dashboard_dnd_title">Režim Nerušiť pre hry</string>
-    <!-- reTicker -->
-    <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">Nahradí plávajúce oznámenie užším a\u00a0menej invazívnou verziou prepracovaného oznámenia</string>
-    <string name="reticker_colored_title">Použiť farbu pozadia aplikácie</string>
-    <string name="reticker_colored_summary">Nahradí farbu pozadia reTickeru hlavnou farbou aplikácie, ktorá vyvolala oznámenie</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Inteligentné pixely sú funkcia na úsporu energie. V závislosti od toho, koľko pixelov sa rozhodnete vypnúť, môžete vidieť zlepšenie výdrže batérie. Upozorňujeme, že v niektorých prípadoch to môže spôsobiť, že oblasti na dotykovej obrazovke nebudú reagovať</string>
     <string name="smart_pixels_title">Smart Pixels</string>
@@ -896,8 +891,10 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <!-- Battery temperature -->
     <string name="battery_temperature">Teplota batérie</string>
     <!-- QS Transparency -->
-    <string name="qs_transparency_title">Priehľadnosť pozadie</string>
-    <string name="qs_transparency_summary">Nastaviť úroveň priehľadnosti panela rýchl. nadtavení</string>
+    <string name="qs_opacity_title">Priehľadnosť pozadia</string>
+    <string name="qs_opacity_summary">Nastaviť úroveň priehľadnosti panela rýchlych nastavení</string>
+    <string name="qs_footer_opacity_title">Priehľadnosť zápätia</string>
+    <string name="qs_footer_opacity_summary">Nastaviť úroveň priehľadnosti zápätia rýchlych nastavení</string>
     <!-- Data usage info in QS footer -->
     <string name="qs_footer_datausage_title">Využitie dát</string>
     <string name="qs_footer_datausage_summary">Zobraziť ikonu Nastavenia v päte Rýchlych nastavení</string>
@@ -936,11 +933,14 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <!-- Weather -->
     <string name="weather_settings_title">Nastavenie počasia</string>
     <string name="weather_settings_summary">Nastavte balík ikon a meteorologickú službu</string>
-    <string name="lockscreen_weather_title">Počasie</string>
-    <string name="lockscreen_weather_summary">Zobrazenie aktuálneho počasia a teploty</string>
+    <string name="lockscreen_weather_category">Počasie</string>
+    <string name="lockscreen_weather_title">Aktualizácia počasia</string>
+    <string name="lockscreen_weather_summary">Zobrazenie aktuálne počasie</string>
     <string name="lockscreen_weather_enabled_info">Vyžaduje aktiváciu meteorologickej služby</string>
-    <string name="lockscreen_weather_location_title">Lokalita pre počasie</string>
+    <string name="lockscreen_weather_location_title">Aktuálna poloha</string>
     <string name="lockscreen_weather_location_summary">Zobrazenie počasia podľa aktuálnej polohy</string>
+    <string name="lockscreen_weather_text_title">Aktuálne podmienky</string>
+    <string name="lockscreen_weather_text_summary">Zobraziť súhrn aktuálneho počasia</string>
     <string name="lockscreen_weather_style_title">Pixel štýl</string>
     <string name="lockscreen_weather_style_summary">Zobraziť počasie v samostatnom riadku</string>
     <!-- Adaptive Playback -->
@@ -1048,7 +1048,7 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="app_lock_title">Zámok aplikácií</string>
     <plurals name="app_lock_summary">
         <item quantity="one">Chránená <xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácia</item>
-        <item quantity="few"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
+        <item quantity="few">Chránené <xliff:g example="1" id="Number of applications">%1$d</xliff:g> aplikácie</item>
         <item quantity="many">Chránených <xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikácií</item>
         <item quantity="other">Chránených <xliff:g example="10" id="Number of applications">%1$d</xliff:g> aplikácií</item>
     </plurals>
@@ -1080,4 +1080,11 @@ Ashle-XDA [SLOVAK Preklad]</string>
     <string name="kg_custom_clock_top_margin_title">Pozícia dvojriadkových hodín</string>
     <string name="kg_small_clock_text_size_title">Malá veľkosť hodín</string>
     <string name="kg_large_clock_text_size_title">Veľkosť dvojriadkových hodín</string>
+    <!-- Island Notification -->
+    <string name="island_notification_title">Upozornenia Island</string>
+    <string name="island_notification_summary">Zobraziť plávajúce upozornenia v štýle Dynamic Island</string>
+    <string name="island_notification_footer_text">Island oznámenia, inšpirované funkciou Dynamic Island z iOS, premení plávajúce oznámenia Androidu na rýchlo prístupnú a kompaktnú pomôcku pre oznámenia.\n\nOvládanie rýchleho prístupu k Islandu zhŕňa nasledujúce funkcie:\n1. Klepnutím na Island upozornenie jednoducho zdvihnete prichádzajúci hovor.\n2. Dlhým podržaním Island upozornenia odmietne hovor.\n3. Dlhým podržaním Island upozornenia rozbalíte náhľad upozornenia.    </string>
+    <!-- QS Dual Tone Colors -->
+    <string name="qs_dual_tone_title">Téma s dvoma odtieňmi</string>
+    <string name="qs_dual_tone_summary">Používajte dva odtiene pozadia namiesto namiesto jedného z AOSP</string>
 </resources>

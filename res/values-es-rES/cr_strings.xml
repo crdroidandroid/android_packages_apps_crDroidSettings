@@ -776,8 +776,8 @@ Mantén presionado para establecer</string>
     <string name="wifi_hotspot_unblock_client_dialog_title">Desbloquear dispositivo</string>
     <string name="wifi_hotspot_unblock_client_dialog_text">El dispositivo \"<xliff:g id="device_name">%1$s</xliff:g>\" podrá conectarse a este punto de acceso</string>
     <string name="wifi_hotspot_client_manager_footer_text">No hay clientes disponibles. Los dispositivos conectados y bloqueados aparecerán aquí cuando estén disponibles.</string>
-    <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
-    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
+    <string name="wifi_band_24ghz_and_5ghz">2,4 GHz y amperio 5GHz</string>
+    <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; amperio; 6 GHz</string>
     <plurals name="wifi_hotspot_client_limit_summary">
         <item quantity="other">Pueden conectarse hasta <xliff:g id="device_num">%1$d</xliff:g> dispositivos a este punto de acceso</item>
         <item quantity="one">Pueden conectarse hasta <xliff:g id="device_num">%1$d</xliff:g> dispositivos a este punto de acceso</item>
@@ -857,11 +857,6 @@ Mantén presionado para establecer</string>
     <string name="game_dashboard_dnd_rule_name">Juego</string>
     <string name="game_dashboard_dnd_summary">Solo recibir notificaciones de personas y aplicaciones importantes al jugar</string>
     <string name="game_dashboard_dnd_title">No molestar para juegos</string>
-    <!-- reTicker -->
-    <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">Reemplazar la notificación emergente con una versión delgada y menos invasiva</string>
-    <string name="reticker_colored_title">Usar fondo de app coloreado</string>
-    <string name="reticker_colored_summary">Reemplazar el color de fondo del reTicker usando el color principal de la aplicación que notifica</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Los píxeles inteligentes son una opción de ahorro de batería para pantallas AMOLED. Dependiendo de cuantos pixeles apagues, tal vez veas mejoras en la duración de la batería. Ten en cuenta que en algunos casos puede no detectar bien los toques en la pantalla</string>
     <string name="smart_pixels_title">Píxeles inteligentes</string>
@@ -892,8 +887,10 @@ Mantén presionado para establecer</string>
     <!-- Battery temperature -->
     <string name="battery_temperature">Temperatura de la batería</string>
     <!-- QS Transparency -->
-    <string name="qs_transparency_title">Fondo transparente</string>
-    <string name="qs_transparency_summary">Establecer el nivel de transparencia para el fondo de los ajustes rápidos</string>
+    <string name="qs_opacity_title">Opacidad del fondo</string>
+    <string name="qs_opacity_summary">Establecer nivel de opacidad para el fondo QS</string>
+    <string name="qs_footer_opacity_title">Opacidad del pie de página</string>
+    <string name="qs_footer_opacity_summary">Establecer el nivel de opacidad para el fondo del pie de ajustes rápidos</string>
     <!-- Data usage info in QS footer -->
     <string name="qs_footer_datausage_title">Consumo de datos</string>
     <string name="qs_footer_datausage_summary">Resumen de uso de datos al pie del panel de los ajustes rápidos</string>
@@ -932,11 +929,14 @@ Mantén presionado para establecer</string>
     <!-- Weather -->
     <string name="weather_settings_title">Ajustes del tiempo</string>
     <string name="weather_settings_summary">Configurar paquete de iconos y servicio meteorológico</string>
-    <string name="lockscreen_weather_title">Condición meteorológica</string>
-    <string name="lockscreen_weather_summary">Muestra la temperatura y las condiciones meteorológicas actuales</string>
+    <string name="lockscreen_weather_category">Información meteorológica</string>
+    <string name="lockscreen_weather_title">Actualización del clima</string>
+    <string name="lockscreen_weather_summary">Mostrar actualización del clima actual</string>
     <string name="lockscreen_weather_enabled_info">Requiere que el servicio meteorológico esté habilitado</string>
-    <string name="lockscreen_weather_location_title">Localidad del tiempo meteorológico</string>
+    <string name="lockscreen_weather_location_title">Ubicación actual</string>
     <string name="lockscreen_weather_location_summary">Mostrar la localización del tiempo meteorológico</string>
+    <string name="lockscreen_weather_text_title">Condición actual</string>
+    <string name="lockscreen_weather_text_summary">Mostrar resumen de la condición meteorológica actual</string>
     <string name="lockscreen_weather_style_title">Estilo de pixel</string>
     <string name="lockscreen_weather_style_summary">Mostrar el clima como una fila separada</string>
     <!-- Adaptive Playback -->
@@ -1074,4 +1074,11 @@ Mantén presionado para establecer</string>
     <string name="kg_custom_clock_top_margin_title">Reloj en dos líneas</string>
     <string name="kg_small_clock_text_size_title">Reloj de la pantalla de bloqueo pequeño</string>
     <string name="kg_large_clock_text_size_title">Reloj de la pantalla de bloqueo en dos líneas</string>
+    <!-- Island Notification -->
+    <string name="island_notification_title">Notificación de Isla Dinámica</string>
+    <string name="island_notification_summary">Mostrar notificación emergente en estilo de Isla Dinámica</string>
+    <string name="island_notification_footer_text">        La función de notificación de la Isla Dinámica, inspirada en la Dynamic Island de iOS, transforma las notificaciones emergentes de Android en una utilidad de notificación rápida y compacta.\n\nLos Controles de Acceso Rápido de la Isla Dinámica incluyen las siguientes características:\n1. Toca la notificación de la isla para responder rápidamente a las llamadas telefónicas.\n2. Mantén pulsada la notificación de la isla para rechazar llamadas telefónicas.\n3. Mantén pulsada la notificación de la isla para expandir la vista previa de la notificación de la isla.    </string>
+    <!-- QS Dual Tone Colors -->
+    <string name="qs_dual_tone_title">Temática de doble tono</string>
+    <string name="qs_dual_tone_summary">Utilice colores de fondo de dos tonos en lugar de un solo tono AOSP</string>
 </resources>

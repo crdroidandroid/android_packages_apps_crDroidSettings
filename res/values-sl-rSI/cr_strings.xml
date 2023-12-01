@@ -50,10 +50,10 @@
     <string name="choose_app">Izberite aplikacijo</string>
     <string name="enable">Omogoči</string>
     <string name="disable">Onemogoči</string>
-    <string name="accent_color">Accent color (Default)</string>
-    <string name="notification_color">Notification color</string>
-    <string name="wallpaper_color">Wallpaper color</string>
-    <string name="custom_color">Custom color</string>
+    <string name="accent_color">Barva poudarka (privzeto)</string>
+    <string name="notification_color">Barva obvestil</string>
+    <string name="wallpaper_color">Barva ozadja</string>
+    <string name="custom_color">Barva po meri</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Trenutni dnevnik sprememb</string>
     <string name="changelog_crdroid_summary">Pokaži spremembe v nameščenem ROM-u</string>
@@ -78,7 +78,7 @@
     <string name="crdroid_translate_title">Prevodi</string>
     <string name="crdroid_translate_summary">Pomagajte s prevajanjem ROM-a v vaš jezik!</string>
     <string name="crdroid_sponsor_summary">Obiščite gostitelja naše spletne strani</string>
-    <string name="crdroid_buildserversponsor_summary">We recommend their servers if interested in one</string>
+    <string name="crdroid_buildserversponsor_summary">Priporočamo njihove strežnike, v kolikor se zanimate zanje</string>
     <!-- Donate crDroid -->
     <string name="donate_crdroid_title">Podprite nas</string>
     <string name="donate_crdroid_summary">Prispevajte, da podprete nadaljnji razvoj</string>
@@ -234,13 +234,13 @@
     <string name="monet_title">Monet nastavitve</string>
     <string name="monet_summary">Prilagodi Monet temski pogon</string>
     <!-- Monet Engine -->
-    <string name="monet_engine_custom_color_title">Accent color</string>
-    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
-    <string name="monet_engine_custom_bgcolor_title">Background color</string>
-    <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
+    <string name="monet_engine_custom_color_title">Barva poudarka</string>
+    <string name="monet_engine_custom_color_summary">Izberi poljubno barvo za poudarke</string>
+    <string name="monet_engine_custom_bgcolor_title">Barva ozadja</string>
+    <string name="monet_engine_custom_bgcolor_summary">Izberi poljubno barvo za poudarke</string>
     <string name="monet_engine_color_override_title">Barva po meri</string>
-    <string name="monet_engine_luminance_factor_title">Luminance</string>
-    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
+    <string name="monet_engine_luminance_factor_title">Svetlost</string>
+    <string name="monet_engine_luminance_factor_summary">Višje vrednosti ustvarijo svetlejše barve</string>
     <string name="monet_engine_chroma_factor_title">Dejavnik krome</string>
     <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
     <string name="monet_engine_tint_background_title">Tint background</string>
@@ -860,11 +860,6 @@
     <string name="game_dashboard_dnd_rule_name">Igričarstvo</string>
     <string name="game_dashboard_dnd_summary">Bodite obveščeni samo od pomembnih oseb in aplikacij med igranjem igre</string>
     <string name="game_dashboard_dnd_title">Ne moti za igre</string>
-    <!-- reTicker -->
-    <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">Zamenjaj pojavna obvestila z ozko in manj invazivno različico</string>
-    <string name="reticker_colored_title">Uporabi ozadje barv aplikacije</string>
-    <string name="reticker_colored_summary">Zamenjaj barvo ozadja reTicker-ja z uporabo glavne barve aplikacije</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Smart pixels je značilnost varčevanja z energijo. Odvisno od koliko pik se odločite izklopiti, lahko vidite izboljšavo življenjske dobe baterije. Upoštevajte, da bo v nekaterih primerih del zaslona na dotik neodziven</string>
     <string name="smart_pixels_title">Smart Pixels</string>
@@ -895,8 +890,10 @@
     <!-- Battery temperature -->
     <string name="battery_temperature">Battery temperature</string>
     <!-- QS Transparency -->
-    <string name="qs_transparency_title">Background transparency</string>
-    <string name="qs_transparency_summary">Set transparency level for QS background</string>
+    <string name="qs_opacity_title">Background opacity</string>
+    <string name="qs_opacity_summary">Set opacity level for QS background</string>
+    <string name="qs_footer_opacity_title">Footer opacity</string>
+    <string name="qs_footer_opacity_summary">Set opacity level for QS footer</string>
     <!-- Data usage info in QS footer -->
     <string name="qs_footer_datausage_title">Data usage</string>
     <string name="qs_footer_datausage_summary">Display data usage summary in quick settings footer</string>
@@ -935,11 +932,14 @@
     <!-- Weather -->
     <string name="weather_settings_title">Weather settings</string>
     <string name="weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="lockscreen_weather_title">Weather condition</string>
-    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
+    <string name="lockscreen_weather_category">Weather</string>
+    <string name="lockscreen_weather_title">Weather update</string>
+    <string name="lockscreen_weather_summary">Display current weather update</string>
     <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
-    <string name="lockscreen_weather_location_title">Weather location</string>
+    <string name="lockscreen_weather_location_title">Current location</string>
     <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="lockscreen_weather_text_title">Current condition</string>
+    <string name="lockscreen_weather_text_summary">Display current weather condition summary</string>
     <string name="lockscreen_weather_style_title">Pixel style</string>
     <string name="lockscreen_weather_style_summary">Display weather as separate row</string>
     <!-- Adaptive Playback -->
@@ -1079,4 +1079,12 @@
     <string name="kg_custom_clock_top_margin_title">Double-line clock position</string>
     <string name="kg_small_clock_text_size_title">Small clock size</string>
     <string name="kg_large_clock_text_size_title">Double-line clock size</string>
+    <!-- Island Notification -->
+    <string name="island_notification_title">Island notification</string>
+    <string name="island_notification_summary">Display heads-up notification in Dynamic Island style</string>
+    <string name="island_notification_footer_text">        The Island notification feature, inspired by iOS\'s Dynamic Island, transforms Android\'s heads-up notifications into quick-access and compact notification utility.\n\nIsland Quick Access Controls includes the following features:\n1. Tap island notification to quick answer phone calls.\n2. Long press island notification to reject phone calls.\n3. Long press island notification to expand the island notification preview.
+    </string>
+    <!-- QS Dual Tone Colors -->
+    <string name="qs_dual_tone_title">Dual tone themed</string>
+    <string name="qs_dual_tone_summary">Use dual tone background colors instead of AOSP single tone</string>
 </resources>

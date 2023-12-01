@@ -854,11 +854,6 @@
     <string name="game_dashboard_dnd_rule_name">ゲーム</string>
     <string name="game_dashboard_dnd_summary">ゲームをプレイしているとき、重要な人やアプリからのみ通知を受け取るようにします</string>
     <string name="game_dashboard_dnd_title">ゲーム用マナーモード</string>
-    <!-- reTicker -->
-    <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">ヘッドアップ通知を、スリムで邪魔になりにくいティッカーに置き換えます</string>
-    <string name="reticker_colored_title">アプリに色付きの背景を使用</string>
-    <string name="reticker_colored_summary">reTicker の背景の色を通知アプリのメインの色で置き換えます</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">スマートピクセルはバッテリー節約機能です。ピクセルを無効化する数によってはバッテリー持続時間を改善できることがあります。場合によってはタッチスクリーンに反応しないエリアができることがあります。</string>
     <string name="smart_pixels_title">スマートピクセル</string>
@@ -889,8 +884,10 @@
     <!-- Battery temperature -->
     <string name="battery_temperature">バッテリー温度</string>
     <!-- QS Transparency -->
-    <string name="qs_transparency_title">背景の透明度</string>
-    <string name="qs_transparency_summary">クイック設定の背景の透明度を設定します</string>
+    <string name="qs_opacity_title">背景の不透明度</string>
+    <string name="qs_opacity_summary">クイック設定背景の不透明度レベルを設定します</string>
+    <string name="qs_footer_opacity_title">フッターの不透明度</string>
+    <string name="qs_footer_opacity_summary">クイック設定フッターの不透明度レベルを設定します</string>
     <!-- Data usage info in QS footer -->
     <string name="qs_footer_datausage_title">データ使用量</string>
     <string name="qs_footer_datausage_summary">クイック設定のフッターにデータ使用量を表示します</string>
@@ -929,11 +926,14 @@
     <!-- Weather -->
     <string name="weather_settings_title">天気の設定</string>
     <string name="weather_settings_summary">アイコンパックと天気サービスを設定します</string>
-    <string name="lockscreen_weather_title">天気予報</string>
-    <string name="lockscreen_weather_summary">現在の天気と気温を表示します</string>
+    <string name="lockscreen_weather_category">天気</string>
+    <string name="lockscreen_weather_title">天気の最新情報</string>
+    <string name="lockscreen_weather_summary">現在の天気の最新情報を表示します</string>
     <string name="lockscreen_weather_enabled_info">天気サービスを有効にしてください</string>
-    <string name="lockscreen_weather_location_title">天気の場所</string>
+    <string name="lockscreen_weather_location_title">現在地</string>
     <string name="lockscreen_weather_location_summary">現在の天気予報に使っている場所を表示します</string>
+    <string name="lockscreen_weather_text_title">現在の天気</string>
+    <string name="lockscreen_weather_text_summary">現在の天候の概要を表示します</string>
     <string name="lockscreen_weather_style_title">Pixel スタイル</string>
     <string name="lockscreen_weather_style_summary">天気を別の行として表示</string>
     <!-- Adaptive Playback -->
@@ -1070,4 +1070,12 @@
     <string name="kg_custom_clock_top_margin_title">ダブルライン時計の位置</string>
     <string name="kg_small_clock_text_size_title">小さい時計のサイズ</string>
     <string name="kg_large_clock_text_size_title">ダブルライン時計のサイズ</string>
+    <!-- Island Notification -->
+    <string name="island_notification_title">アイランド通知</string>
+    <string name="island_notification_summary">ヘッドアップ通知をダイナミックアイランドスタイルで表示します</string>
+    <string name="island_notification_footer_text">        iOS のダイナミックアイランドにインスパイアされたアイランド通知機能は、Android のヘッドアップ通知を素早く開けてコンパクトな通知へと変更します。\n\nアイランドクイックアクセスコントロールには以下の機能があります:\n1. アイランド通知をタップして電話に素早く応答する\n2. アイランド通知を長押しして着信を拒否する\n3. アイランド通知を長押しして通知プレビューを展開する
+    </string>
+    <!-- QS Dual Tone Colors -->
+    <string name="qs_dual_tone_title">デュアルトーンテーマ</string>
+    <string name="qs_dual_tone_summary">AOSP シングルトーンの代わりにデュアルトーンの背景色を使用します</string>
 </resources>

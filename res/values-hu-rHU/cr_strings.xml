@@ -203,7 +203,7 @@
     <string name="backlight_summary_enabled">Engedélyezve</string>
     <plurals name="backlight_timeout_time">
         <item quantity="one"><xliff:g id="seconds">%d</xliff:g> másodperc</item>
-        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> másodperc</item>
     </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">Kikapcsolómenü</string>
@@ -856,11 +856,6 @@
     <string name="game_dashboard_dnd_rule_name">Játék</string>
     <string name="game_dashboard_dnd_summary">Játék közbeni értesitések csak a fontosnak jelölt személyektől és alkalmazásokból</string>
     <string name="game_dashboard_dnd_title">Ne zavarjanak (DND) a játékokhoz</string>
-    <!-- reTicker -->
-    <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">Kicseréli a régi felugró értesitéseket egy vékonyabb, szolidabb újratervezett dizájnúra</string>
-    <string name="reticker_colored_title">Alkalmazás által színezett háttér használata</string>
-    <string name="reticker_colored_summary">Lecseréli a reTicker háttérszínét az értesitések fő színére</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Az Intelligens Pixelek egy akkumulátorkímélő funkció. Attól függően, hogy hány képpontot kapcsol ki, láthatja az akkumulátor élettartamának javulását.</string>
     <string name="smart_pixels_title">Intelligens pixelek</string>
@@ -891,8 +886,10 @@
     <!-- Battery temperature -->
     <string name="battery_temperature">Akkuhőmérséklet</string>
     <!-- QS Transparency -->
-    <string name="qs_transparency_title">Háttér-átlátszóság</string>
-    <string name="qs_transparency_summary">A Gyorsbeállítások-háttér átlátszóságának beállítása</string>
+    <string name="qs_opacity_title">Háttérátlátszóság</string>
+    <string name="qs_opacity_summary">A Gyorsbeállítások-háttér átlátszóságának beállítása</string>
+    <string name="qs_footer_opacity_title">Lábléc-átlátszóság</string>
+    <string name="qs_footer_opacity_summary">A Gyorsbeállítások-lábléc átlátszóságának beállítása</string>
     <!-- Data usage info in QS footer -->
     <string name="qs_footer_datausage_title">Adathasználat</string>
     <string name="qs_footer_datausage_summary">Megjeleníti az Adathasználat összesítését a gyorsbeállítások láblécében</string>
@@ -931,11 +928,14 @@
     <!-- Weather -->
     <string name="weather_settings_title">Időjárás-beállítások</string>
     <string name="weather_settings_summary">Testre szabható ikoncsomag és időjárás-szolgáltatás</string>
-    <string name="lockscreen_weather_title">Időjárási helyzet</string>
-    <string name="lockscreen_weather_summary">Megjeleníti az épp aktuális hőfokot és adatokat</string>
+    <string name="lockscreen_weather_category">Időjárás</string>
+    <string name="lockscreen_weather_title">Az \'Időjárás\" frissítése</string>
+    <string name="lockscreen_weather_summary">A jelenlegi tartózkodási hely adatait frissíti</string>
     <string name="lockscreen_weather_enabled_info">Az időjárás-szolgáltatás engedélyezése szükséges</string>
-    <string name="lockscreen_weather_location_title">Időjárási helymeghatározás</string>
+    <string name="lockscreen_weather_location_title">Jelenlegi tartózkodási hely</string>
     <string name="lockscreen_weather_location_summary">A jelenlegi tartózkodási hely adatait jeleníti meg</string>
+    <string name="lockscreen_weather_text_title">Jelenlegi időjárás</string>
+    <string name="lockscreen_weather_text_summary">Megjeleníti az épp aktuális hőfokot és adatokat</string>
     <string name="lockscreen_weather_style_title">Pixel-stílus</string>
     <string name="lockscreen_weather_style_summary">Az időjárás külön sorban jelenik meg</string>
     <!-- Adaptive Playback -->
@@ -1075,4 +1075,12 @@
     <string name="kg_custom_clock_top_margin_title">A kétsoros óra pozíciója</string>
     <string name="kg_small_clock_text_size_title">A kis óra mérete</string>
     <string name="kg_large_clock_text_size_title">A kétsoros óra mérete</string>
+    <!-- Island Notification -->
+    <string name="island_notification_title">Dinamikus Sziget</string>
+    <string name="island_notification_summary">Felugró értesítések \'Dinamikus Sziget\' stílusban</string>
+    <string name="island_notification_footer_text">A \'Dinamikus Sziget\' stílust az iOS Dinamikus Szigete inspirálta, majd átalakították az Android felugró értesítéseihez, egy gyors hozzáférésű kompakt értesítési módot kaptunk.\n\nEz a Sziget stílus a következőket tartalmazza:\n1. A Sziget érintésével gyors hívásfogadás.\n2. A Sziget hosszan nyomásával a bejövő hívás elutasítása.\n3. A Sziget hosszan nyomásával az előnézet kibontását.
+    </string>
+    <!-- QS Dual Tone Colors -->
+    <string name="qs_dual_tone_title">Kéttónusúan témázott</string>
+    <string name="qs_dual_tone_summary">Használjon kéttónusú háttérszíneket az AOSP egytónusú helyett</string>
 </resources>

@@ -856,11 +856,6 @@
     <string name="game_dashboard_dnd_rule_name">Jeux</string>
     <string name="game_dashboard_dnd_summary">Être notifié uniquement par des personnes et des applications importantes lorsque vous jouez à une partie</string>
     <string name="game_dashboard_dnd_title">Ne pas déranger pour les parties</string>
-    <!-- reTicker -->
-    <string name="reticker_title">reTicker</string>
-    <string name="reticker_summary">Remplacer la notification flottante par une version moins invasive</string>
-    <string name="reticker_colored_title">Utiliser l\'arrière-plan coloré de l\'application</string>
-    <string name="reticker_colored_summary">Remplacer la couleur d\'arrière-plan de reTicker par la couleur principale de l\'application de notification</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Smart Pixels est une fonction d\'économie d\'énergie. Selon le nombre de pixels que vous décidez de désactiver, vous pourriez voir une amélioration de la durée de vie de la batterie. Notez que dans certains cas, cela peut entraîner des zones non réactives sur l\'écran tactile</string>
     <string name="smart_pixels_title">Pixels intelligents</string>
@@ -891,8 +886,10 @@
     <!-- Battery temperature -->
     <string name="battery_temperature">Température de la batterie</string>
     <!-- QS Transparency -->
-    <string name="qs_transparency_title">Transparence de l\'arrière-plan</string>
-    <string name="qs_transparency_summary">Définir le niveau de transparence pour l\'arrière-plan des QS</string>
+    <string name="qs_opacity_title">Background opacity</string>
+    <string name="qs_opacity_summary">Set opacity level for QS background</string>
+    <string name="qs_footer_opacity_title">Footer opacity</string>
+    <string name="qs_footer_opacity_summary">Set opacity level for QS footer</string>
     <!-- Data usage info in QS footer -->
     <string name="qs_footer_datausage_title">Utilisation des données</string>
     <string name="qs_footer_datausage_summary">Afficher la somme d\'utilisation des données au bas des réglages rapides</string>
@@ -931,11 +928,14 @@
     <!-- Weather -->
     <string name="weather_settings_title">Paramètres météo</string>
     <string name="weather_settings_summary">Configurer le pack d\'icônes et le service météo</string>
-    <string name="lockscreen_weather_title">Conditions météo</string>
-    <string name="lockscreen_weather_summary">Afficher les conditions météo actuelles et la température</string>
+    <string name="lockscreen_weather_category">Météo</string>
+    <string name="lockscreen_weather_title">Weather update</string>
+    <string name="lockscreen_weather_summary">Display current weather update</string>
     <string name="lockscreen_weather_enabled_info">Nécessite que le service météo soit activé</string>
-    <string name="lockscreen_weather_location_title">Lieu des prévisions météo</string>
+    <string name="lockscreen_weather_location_title">Current location</string>
     <string name="lockscreen_weather_location_summary">Afficher la position actuelle de la météo</string>
+    <string name="lockscreen_weather_text_title">Current condition</string>
+    <string name="lockscreen_weather_text_summary">Display current weather condition summary</string>
     <string name="lockscreen_weather_style_title">Style Pixel</string>
     <string name="lockscreen_weather_style_summary">Afficher la météo dans une ligne séparée</string>
     <!-- Adaptive Playback -->
@@ -1074,4 +1074,12 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <string name="kg_custom_clock_top_margin_title">Position de l\'horloge en ligne double</string>
     <string name="kg_small_clock_text_size_title">Taille de la petite horloge</string>
     <string name="kg_large_clock_text_size_title">Taille de l\'horloge sur ligne double</string>
+    <!-- Island Notification -->
+    <string name="island_notification_title">Island notification</string>
+    <string name="island_notification_summary">Display heads-up notification in Dynamic Island style</string>
+    <string name="island_notification_footer_text">        The Island notification feature, inspired by iOS\'s Dynamic Island, transforms Android\'s heads-up notifications into quick-access and compact notification utility.\n\nIsland Quick Access Controls includes the following features:\n1. Tap island notification to quick answer phone calls.\n2. Long press island notification to reject phone calls.\n3. Long press island notification to expand the island notification preview.
+    </string>
+    <!-- QS Dual Tone Colors -->
+    <string name="qs_dual_tone_title">Dual tone themed</string>
+    <string name="qs_dual_tone_summary">Use dual tone background colors instead of AOSP single tone</string>
 </resources>
