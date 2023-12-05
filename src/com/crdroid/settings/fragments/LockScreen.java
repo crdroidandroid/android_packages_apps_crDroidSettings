@@ -19,11 +19,13 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.text.TextUtils;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -58,12 +60,14 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String KEY_FP_ERROR_VIBRATE = "fp_error_vibrate";
     private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
     private static final String KEY_WEATHER = "lockscreen_weather_enabled";
+    private static final String SCREEN_OFF_UDFPS_ENABLED = "screen_off_udfps_enabled";
 
     private Preference mUdfpsSettings;
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
     private Preference mRippleEffect;
     private Preference mWeather;
+    private Preference mScreenOffUdfps;
 
     private OmniJawsClient mWeatherClient;
 
@@ -82,16 +86,25 @@ public class LockScreen extends SettingsPreferenceFragment
         mFingerprintVib = (Preference) findPreference(KEY_FP_SUCCESS_VIBRATE);
         mFingerprintVibErr = (Preference) findPreference(KEY_FP_ERROR_VIBRATE);
         mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
+        mScreenOffUdfps = (Preference) findPreference(SCREEN_OFF_UDFPS_ENABLED);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             interfaceCategory.removePreference(mUdfpsSettings);
             gestCategory.removePreference(mFingerprintVib);
             gestCategory.removePreference(mFingerprintVibErr);
             gestCategory.removePreference(mRippleEffect);
+            gestCategory.removePreference(mScreenOffUdfps);
         } else {
             if (!Utils.isPackageInstalled(getContext(), "com.crdroid.udfps.icons")) {
                 interfaceCategory.removePreference(mUdfpsSettings);
             }
+            Resources resources = getResources();
+            boolean screenOffUdfpsAvailable = resources.getBoolean(
+                    com.android.internal.R.bool.config_supportScreenOffUdfps) ||
+                    !TextUtils.isEmpty(resources.getString(
+                        com.android.internal.R.string.config_dozeUdfpsLongPressSensorType));
+            if (!screenOffUdfpsAvailable)
+                gestCategory.removePreference(mScreenOffUdfps);
         }
 
         mWeather = (Preference) findPreference(KEY_WEATHER);
@@ -108,6 +121,8 @@ public class LockScreen extends SettingsPreferenceFragment
         ContentResolver resolver = mContext.getContentResolver();
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.SCREEN_OFF_UDFPS_ENABLED, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_BATTERY_INFO, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -167,15 +182,19 @@ public class LockScreen extends SettingsPreferenceFragment
                         keys.add(KEY_FP_SUCCESS_VIBRATE);
                         keys.add(KEY_FP_ERROR_VIBRATE);
                         keys.add(KEY_RIPPLE_EFFECT);
+                        keys.add(SCREEN_OFF_UDFPS_ENABLED);
                     } else {
                         if (!Utils.isPackageInstalled(context, "com.crdroid.udfps.icons")) {
                             keys.add(KEY_UDFPS_SETTINGS);
-                        } else {
-                            keys.add(KEY_FP_SUCCESS_VIBRATE);
-                            keys.add(KEY_FP_ERROR_VIBRATE);
                         }
-                    }
-
+                        Resources resources = context.getResources();
+                        boolean screenOffUdfpsAvailable = resources.getBoolean(
+                            com.android.internal.R.bool.config_supportScreenOffUdfps) ||
+                            !TextUtils.isEmpty(resources.getString(
+                                com.android.internal.R.string.config_dozeUdfpsLongPressSensorType));
+                        if (!screenOffUdfpsAvailable)
+                            keys.add(SCREEN_OFF_UDFPS_ENABLED);
+                        }
                     return keys;
                 }
             };
