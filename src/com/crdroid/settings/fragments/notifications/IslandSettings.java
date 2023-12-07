@@ -44,6 +44,8 @@ public class IslandSettings extends SettingsPreferenceFragment {
         ContentResolver resolver = mContext.getContentResolver();
         Settings.System.putIntForUser(resolver,
                 Settings.System.ISLAND_NOTIFICATION, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.ISLAND_NOTIFICATION_NOW_PLAYING, 1, UserHandle.USER_CURRENT);
     }
 
     @Override
