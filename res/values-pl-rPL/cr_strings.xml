@@ -753,7 +753,7 @@
     <string name="allow_signature_fake_summary">Pozwól aplikacjom ominąć systemy zabezpieczeń, udając inną aplikację.</string>
     <!-- Status bar -->
     <string name="status_bar_toggle_brightness">Kontrola jasności</string>
-    <string name="status_bar_toggle_brightness_summary">Kontroluj jasność przesuwając palcem po pasku statusu</string>
+    <string name="status_bar_toggle_brightness_summary">Kontroluj jasność przesuwając palcem po pasku stanu</string>
     <string name="status_bar_notif_count_title">Liczba powiadomień</string>
     <string name="status_bar_notif_count_summary">Wyświetlaj liczbę oczekujących powiadomień</string>
     <string name="status_bar_quick_qs_pulldown_title">Szybkie rozwijanie</string>
@@ -1258,13 +1258,13 @@
     <string name="wallpaper_intra_open_title">Animacja wewnętrznego otwarcia tapety</string>
     <string name="wallpaper_intra_close_title">Animacja wewnętrznego zamknięcia tapety</string>
     <string name="animation_duration_title">Czas trwania animacji</string>
-    <string name="animation_duration_default">Domyślny</string>
+    <string name="animation_duration_default">Domyślnie</string>
     <string name="animation_duration_custom">Własne</string>
     <!-- Toast Animations -->
     <string name="toast_animation_title">Animacja dymka z powiadomieniami</string>
-    <string name="toast_animation_test">To jest test dla animacji dymka z powiadomieniami</string>
+    <string name="toast_animation_test">To jest test animacji dymka z powiadomieniami</string>
     <string name="toast_none_animation">Brak</string>
-    <string name="toast_default_animation">Domyślny</string>
+    <string name="toast_default_animation">Domyślnie</string>
     <string name="toast_fade_animation">Zanikanie</string>
     <string name="toast_SlideRight_animation">Przesuń w prawo</string>
     <string name="toast_SlideLeft_animation">Przesuń w lewo</string>
@@ -1281,19 +1281,19 @@
     <string name="toast_SlideRightLeft_animation">Przesunięcie z prawej do lewej</string>
     <!-- ListView animation -->
     <string name="listview_animation_title">Animacja widoku listy</string>
-    <string name="listview_off">Domyślny</string>
-    <string name="listview_wave_left">Fala( z lewej strony)</string>
-    <string name="listview_wave_right">Fala ( z prawej strony)</string>
+    <string name="listview_off">Domyślnie</string>
+    <string name="listview_wave_left">Fala (z lewej strony)</string>
+    <string name="listview_wave_right">Fala (z prawej strony)</string>
     <string name="listview_alpha">Alfa</string>
     <string name="listview_scale">Skala</string>
     <string name="listview_stack_top">Stos (z góry)</string>
-    <string name="listview_stack_bottom">Stos ( z dołu)</string>
+    <string name="listview_stack_bottom">Stos (z dołu)</string>
     <string name="listview_unfold">Rozwijanie</string>
     <string name="listview_fold">Zwijanie</string>
     <string name="listview_translate_left">Tłumaczenie (z lewej)</string>
     <string name="listview_translate_right">Przełóż (z prawej)</string>
     <!-- ListView interpolator -->
-    <string name="listview_interpolator_title">Przyśpieszenie listy</string>
+    <string name="listview_interpolator_title">Przyśpieszenie widoku listy</string>
     <string name="listview_accelerate_interpolator">Przyspiesz</string>
     <string name="listview_decelerate_interpolator">Zwolnij</string>
     <string name="listview_accelerate_decelerate_interpolator">Przyspiesz i zwolnij</string>
@@ -1303,7 +1303,7 @@
     <string name="listview_bounce_interpolator">Odbicie</string>
     <!-- Power menu animation -->
     <string name="power_menu_animation_title">Animacja menu zasilania</string>
-    <string name="power_menu_animation_default">Domyślny</string>
+    <string name="power_menu_animation_default">Domyślnie</string>
     <string name="power_menu_animation_bottom">Dół</string>
     <string name="power_menu_animation_top">Góra</string>
     <string name="power_menu_animation_rotate">Obrót</string>
@@ -1315,16 +1315,16 @@
     <string name="power_menu_animation_translucent_top">Półprzezroczyste (u góry)</string>
     <string name="power_menu_animation_translucent_bottom">Półprzezroczyste (na dole)</string>
     <!-- Tiles animation style  -->
-    <string name="qs_tile_animation_style_title">Kafelek animacji QS</string>
-    <string name="qs_tile_animation_duration_title">Długość animacji kafelków QS</string>
+    <string name="qs_tile_animation_style_title">Animacja kafelków Szybkich ustawień</string>
+    <string name="qs_tile_animation_duration_title">Długość animacji kafelków Szybkich ustawień</string>
     <string name="qs_tile_animation_style_off">Brak animacji</string>
     <string name="qs_tile_animation_style_flip">Obróć</string>
     <string name="qs_tile_animation_style_rotate">Obróć</string>
     <string name="qs_tile_animation_duration_low">Niski</string>
-    <string name="qs_tile_animation_duration_default">Domyślny</string>
+    <string name="qs_tile_animation_duration_default">Domyślnie</string>
     <string name="qs_tile_animation_duration_fast">Szybko</string>
     <!-- Tiles animation interpolator -->
-    <string name="qs_tile_animation_interpolator_title">Szybkość animacji kafelków QS</string>
+    <string name="qs_tile_animation_interpolator_title">Szybkość animacji kafelków Szybkich ustawień</string>
     <string name="qs_tile_animation_interpolator_linearInterpolator">Liniowo</string>
     <string name="qs_tile_animation_interpolator_accelerateInterpolator">Przyspiesz</string>
     <string name="qs_tile_animation_interpolator_decelerateInterpolator">Zwolnij</string>
@@ -1334,13 +1334,13 @@
     <string name="qs_tile_animation_interpolator_anticipateInterpolator">Przewiduj</string>
     <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Przewiduj przekroczenie</string>
     <!-- Fancy tiles animation -->
-    <string name="qs_fancy_animation_title">Fantazyjna animacja QS</string>
+    <string name="qs_fancy_animation_title">Fantazyjna animacja Szybkich ustawień</string>
     <string name="qs_fancy_animation_summary">Animacja, gdy ciągnie się w dół pasek statusu</string>
     <!-- Disable animations -->
-    <string name="disable_animations">Wyłączenie animacji</string>
+    <string name="disable_animations">Wyłącz animacje</string>
     <string name="disable_animations_summary">Wyłącza animacje przejścia, takie jak podczas uruchamiania aplikacji</string>
     <!-- Sounds: Charging sounds -->
-    <string name="charging_sounds_settings_title">Dźwięki łądowania</string>
+    <string name="charging_sounds_settings_title">Dźwięki ładowania</string>
     <string name="charging_sounds_settings_summary">Dostosowanie odtwarzanego dźwięku podczas podłączania lub odłączania źródła zasilania</string>
     <string name="charging_sounds_enabled_title">Dźwięk ładowania baterii</string>
     <string name="charging_sounds_enabled_summary">Odtwarzaj dźwięk podczas podłączania lub odłączania źródła zasilania</string>
@@ -1362,14 +1362,14 @@
     <string name="alarm_blocker_save">Zapisz</string>
     <string name="alarm_list_header">Dostępne alarmy</string>
     <string name="alarm_blocker_reload">Załaduj ponownie</string>
-    <string name="alarm_blocker_warning_title">Ostrożnie</string>
-    <string name="alarm_blocker_warning">Blokowanie alarmów może powodować utratę stabilności działania urządzenia.</string>
+    <string name="alarm_blocker_warning_title">Postępuj ostrożnie</string>
+    <string name="alarm_blocker_warning">Blokowanie alarmów może prowadzić w znacznym stopniu do niestabilności, awarii lub utraty danych.</string>
     <!-- Custom header -->
     <string name="custom_header_title">Własny nagłówek</string>
     <string name="custom_header_summary">Wyświetlaj obraz u góry panelu powiadomień</string>
     <string name="daylight_header_pack_title">Kolekcja obrazów nagłówka</string>
     <string name="status_bar_custom_header_shadow_title">Cień obrazu nagłówka</string>
-    <string name="status_bar_custom_header_shadow_summary">Dla lepszej widoczności w jasnych obrazach</string>
+    <string name="status_bar_custom_header_shadow_summary">Dla lepszej widoczności na jasnych obrazach</string>
     <string name="unit_percent">\u0025</string>
     <string name="static_header_provider_title">Obraz statyczny</string>
     <string name="daylight_header_provider_title">Kolekcja obrazów</string>
@@ -1382,7 +1382,7 @@
     <string name="header_provider_disabled">Wyłączono</string>
     <string name="file_header_select_title">Wybierz obraz</string>
     <string name="file_header_select_summary">Wybierz własny obraz</string>
-    <string name="file_header_provider_title">Własna grafika</string>
+    <string name="file_header_provider_title">Własny obraz</string>
     <!-- Screen state service -->
     <string name="screen_state_toggles_title">Zawieś działania</string>
     <string name="screen_state_toggles_summary">Akcje wykonywane na wyłączonym ekranie</string>
@@ -1404,10 +1404,10 @@
     <string name="data_activity_arrows_title">Aktywność danych</string>
     <string name="data_activity_arrows_summary">Pokaż strzałki aktywności danych</string>
     <string name="wifi_activity_arrows_title">Aktywność Wifi</string>
-    <string name="wifi_activity_arrows_summary">Pokaż strzałki aktywności połączenia Wi-Fi</string>
+    <string name="wifi_activity_arrows_summary">Pokaż strzałki aktywności połączenia WiFi</string>
     <!-- The Drill -->
     <string name="drill_title">Wiadomość od deweloperów</string>
-    <string name="drill_summary">Znalazłeś błąd? Wpadłeś na problem?</string>
+    <string name="drill_summary">Ukazał się błąd? Wystąpił jakiś problem?</string>
     <!-- Show Statusbar on Lockscreen -->
     <string name="lockscreen_status_bar_title">Pasek stanu</string>
     <string name="lockscreen_status_bar_summary">Pokaż pasek stanu na ekranie blokady</string>
@@ -1428,10 +1428,10 @@
     <string name="recent_panel_expanded_mode_never">Nigdy</string>
     <string name="recent_panel_show_topmost_title">Pokaz aktualne</string>
     <string name="recent_panel_show_topmost_summary">Nie wykluczaj najwyższego zadania w panelu ostatnich aplikacji</string>
-    <string name="recent_panel_bg_color_title">Kolor tła</string>
+    <string name="recent_panel_bg_color_title">Kolor tła panelu</string>
     <string name="recent_card_bg_color_title">Kolor tła karty</string>
-    <string name="recent_card_text_color_title">Kolor tekstu kart</string>
-    <string name="recent_reset_title">Resetowanie ustawień</string>
+    <string name="recent_card_text_color_title">Kolor tekstu karty</string>
+    <string name="recent_reset_title">Zresetuj ustawienia</string>
     <string name="recent_reset_confirm">Czy na pewno chcesz przywrócić Slim Recents do ustawień domyślnych?</string>
     <string name="default_auto_string">Domyślne (według aplikacji)</string>
     <string name="recents_icon_pack_title">Pakiet ikon</string>
@@ -1446,9 +1446,9 @@
     <string name="slim_blacklist_apps_title">Dodaj czarną listę</string>
     <string name="slim_blacklist_apps_summary">Wykluczanie aplikacji jest wyświetlane w panelu</string>
     <string name="slim_blacklist_add_apps_title">Dodaj aplikacje</string>
-    <string name="slim_blacklist_add_apps_summary">Naciśnij tutaj by dodać aplikację do czarnej listy</string>
-    <string name="slim_blacklist_apps_info">Naciśnij na dodaną aplikację, by ją usunąć</string>
-    <string name="slim_recents_hints_footer">Aby wyczyścić wszystkie aplikacje, uszczypnij dwoma palcami na ekranie. Aby zablokować aplikację w pamięci naciśnij i przytrzymaj jej ikonę.\n\nAby ustawić więcej funkcji, naciśnij i przytrzymaj lub przeciągnij kartę aplikacji.</string>
+    <string name="slim_blacklist_add_apps_summary">Dotknij tutaj, aby dodać aplikację do czarnej listy</string>
+    <string name="slim_blacklist_apps_info">Dotknij dodaną aplikację, aby ją usunąć</string>
+    <string name="slim_recents_hints_footer">Aby wyczyścić wszystkie aplikacje, uszczypnij dwoma palcami na ekranie. Aby zablokować aplikację w pamięci przytrzymaj jej ikonę.\n\nAby ustawić więcej funkcji, przytrzymaj lub przeciągnij kartę aplikacji.</string>
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Pokaż na lewej krawędzi ekranu</string>
     <string name="recent_panel_lefty_mode_summary">Wyświetlaj panel ostatnich aplikacji po lewej stronie</string>
@@ -1459,7 +1459,7 @@
     <string name="omnijaws_settings_title">Serwis pogodowy</string>
     <string name="omnijaws_settings_summary">Dostosuj ustawienia usługi i pakiet ikon</string>
     <string name="weather_config_title">Ustawienia usług</string>
-    <string name="weather_config_summary">Usługa konfiguracji umożliwiająca szczegóły pogody</string>
+    <string name="weather_config_summary">Skonfiguruj usługę, aby włączyć szczegóły pogody</string>
     <string name="weather_icon_pack_title">Zestaw ikon Pogody</string>
     <string name="find_icon_pack_title">Znajdź zestawy ikon</string>
     <string name="find_icon_pack_summary">Znajdź i zainstaluj nowe paczki ikon ze Sklepu Play</string>
@@ -1483,7 +1483,7 @@
     <string name="status_bar_temperature_hidden">Ukryty</string>
     <string name="status_bar_temperature_location_title">Położenie</string>
     <string name="status_bar_temperature_location_right">Pokaż po prawej</string>
-    <string name="status_bar_temperature_location_left">Pokaż na lewo</string>
+    <string name="status_bar_temperature_location_left">Pokaż po lewej</string>
     <string name="status_bar_weather_color_title">Kolor temperatury</string>
     <string name="status_bar_weather_hidden">Ukryj pogodę</string>
     <string name="status_bar_temperature_image_show_scale">Wyświetlaj obraz i temperaturę z podziałką</string>
@@ -1499,41 +1499,41 @@
     <string name="vowifi_icon_title">Ikona VoWiFi</string>
     <string name="vowifi_icon_summary">Wyświetlaj ikonę VoWiFi, gdy jest dostępna</string>
     <string name="volte_vowifi_override_title">Zastąp VoWiFi</string>
-    <string name="volte_vowifi_override_summary">Ukryj VoLTE, gdy VoWiFi jest dostępny. To również nadpisuje ikonę sygnału starego stylu dla VoWiFi.</string>
+    <string name="volte_vowifi_override_summary">Ukryj VoLTE, gdy VoWiFi jest dostępne. To również nadpisuje ikonę sygnału starego stylu dla VoWiFi.</string>
     <!-- Ad Away -->
-    <string name="adaway_title">Reklamy od</string>
+    <string name="adaway_title">AdAway</string>
     <string name="adaway_summary">Blokuj niechciane reklamy za pomocą roota</string>
     <!-- Carrier Label -->
     <string name="custom_carrier_title">Etykieta sieci</string>
     <string name="custom_carrier_summary">Wyświetl i dostosuj nazwę swojego operatora</string>
-    <string name="custom_carrier_label_title">Własna etykieta sieci</string>
+    <string name="custom_carrier_label_title">Własna etykieta operatora</string>
     <string name="custom_carrier_label_explain">Wprowadź nowy tekst. Zostaw niewypełnione, aby wrócić do aktualnego.</string>
     <string name="custom_carrier_label_notset">Własny tekst nie został ustawiony</string>
-    <string name="show_carrier_title">Etykieta sieci</string>
+    <string name="show_carrier_title">Etykieta operatora</string>
     <string name="show_carrier_disabled">Wyłączono</string>
     <string name="show_carrier_keyguard">Tylko na ekranie blokady</string>
-    <string name="show_carrier_statusbar">Tylko pasek statusu</string>
+    <string name="show_carrier_statusbar">Tylko pasek stanu</string>
     <string name="show_carrier_enabled">Ekran blokady oraz pasek stanu</string>
     <string name="status_bar_carrier_color">Kolor etykiety operatora</string>
     <string name="status_bar_carrier_size">Rozmiar tekstu etykiety operatora</string>
     <string name="status_bar_carrier_title">Pasek stanu</string>
     <string name="status_bar_carrier_summary">Pokaż nazwę operatora na pasku stanu</string>
-    <string name="lock_screen_carrier_title">Zablokuj nosnik ekranu</string>
+    <string name="lock_screen_carrier_title">Operator na ekranie blokady</string>
     <string name="lock_screen_carrier_summary">Pokaż nazwę operatora na ekranie blokady</string>
-    <string name="quick_settings_carrier_title">Szybkie przenoszenie ustawień</string>
-    <string name="quick_settings_carrier_summary">Pokaż nazwę operatora na pasku stanu po rozwinięciu</string>
+    <string name="quick_settings_carrier_title">Operator na panelu Szybkich ustawień</string>
+    <string name="quick_settings_carrier_summary">Pokaż nazwę operatora na pasku stanu, po rozwinięciu</string>
     <!-- Lockscreen Weather -->
     <string name="lock_screen_weather_title">Pogoda</string>
     <string name="lock_screen_weather_summary">Wyświetl informacje o pogodzie zaraz obok daty</string>
     <string name="lock_screen_weather_summaryOn">Pokaż pogodę na ekranie blokady</string>
     <string name="lock_screen_location_title">Lokalizacja</string>
     <string name="lock_screen_location_summary">Pokaż lokalizację na ekranie blokady</string>
-    <string name="lock_screen_weather_condition_icon_title">Stan obrazu</string>
+    <string name="lock_screen_weather_condition_icon_title">Obrazek warunków pogodowych</string>
     <string name="lock_screen_weather_condition_icon_summary">Pokaż obrazek z warunkami pogodowymi na ekranie blokady</string>
-    <string name="lock_screen_ambient_weather_title">Otoczenie pogody</string>
+    <string name="lock_screen_ambient_weather_title">Pogoda Ambient</string>
     <string name="lock_screen_ambient_weather_summary">Pokaż pogodę na ekranie Ambient</string>
     <string name="lock_screen_weather_style_title">Styl Pixel</string>
-    <string name="lock_screen_weather_style_summary">Wyświetlaj pogodę obok daty zamiast na osobnym widżecie</string>
+    <string name="lock_screen_weather_style_summary">Wyświetlaj pogodę obok daty, zamiast na osobnym widżecie</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Wibracja uwierzytelniania odcisku palca</string>
     <string name="fp_success_vibrate_summary">Wibracje po udanym uwierzytelnieniu odcisku palca</string>
@@ -1544,19 +1544,19 @@
     <string name="fp_unlock_keystore_summary">Odblokuj urządzenie za pomocą linii papilarnych po ponownym uruchomieniu bez pinu/hasła/wzoru</string>
     <!-- Toast icon -->
     <string name="toast_icon_title">Ikona dymku powiadomień</string>
-    <string name="toast_icon_summary">Wyświetl ikonę aktywności, która generuje wiadomość w dymku</string>
+    <string name="toast_icon_summary">Wyświetlaj ikonę aktywności, która generuje wiadomość w dymku</string>
     <!-- Lockscreen battery info indicator -->
     <string name="lockscreen_battery_info_title">Informacje o baterii</string>
     <string name="lockscreen_battery_info_summary">Wyświetlaj informacje o baterii podczas ładowania</string>
     <!-- Recents lock icon -->
     <string name="recents_lock_icon_title">Ikona blokady</string>
-    <string name="recents_lock_icon_summary">Ikona zadania przełącznika blokady w ostatnim widoku aplikacji</string>
+    <string name="recents_lock_icon_summary">Pokaż ikonę blokady w widoku ostatnich aplikacji</string>
     <!-- AOSP Recents Grid -->
-    <string name="recents_use_grid_title">Ostatni styl siatki</string>
-    <string name="recents_use_grid_summary">Przełącz ostatni styl siatki</string>
+    <string name="recents_use_grid_title">Styl siatki ostatnich aplikacji</string>
+    <string name="recents_use_grid_summary">Wyświetlaj ostatnie aplikacje w stylu siatki</string>
     <!-- Recents dismiss icon -->
-    <string name="recents_dismiss_icon_title">Ikona usuń</string>
-    <string name="recents_dismiss_icon_summary">Przełączka odrzuca ikonę zadania w ostatnim widoku aplikacji</string>
+    <string name="recents_dismiss_icon_title">Odrzuć zadanie</string>
+    <string name="recents_dismiss_icon_summary">Przełączka odrzuca ikonę zadania w widoku ostatnich aplikacji</string>
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Przycisk \"Wymuś zatrzymanie\"</string>
     <string name="notification_guts_kill_app_button_summary">Pokaż przycisk wyłączania aplikacji po przytrzymaniu w menu powiadomień</string>
@@ -1565,7 +1565,7 @@
     <string name="anbi_summary">Zapobiegaj przypadkowemu użyciu przycisków nawigacyjnych, gdy dotykasz ekranu</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Blokada czujnika dla wybranych aplikacji</string>
-    <string name="sensor_block_summary">Blokowanie dostępu do czujnika ruchu znaczącego dla kilku aplikacji intensywnie pobierających baterię</string>
+    <string name="sensor_block_summary">Blokuj dostęp do określonych czujników dla niektórych aplikacji w celu oszczędzania baterii</string>
     <string name="sensor_block_app_picker_title">Blokuj czujniki dla tych aplikacji</string>
     <string name="add_sensor_block_package_title">Dodaj aplikacje do blokady czujników</string>
     <string name="add_sensor_block_package_summary">Znaczący ruch, akcelerometr, czujniki przyspieszenia liniowego zostaną zablokowane dla tych aplikacji</string>
@@ -1582,7 +1582,7 @@
     <string name="reset_settings_message">To zresetuje większość ustawień crDroid do ich wartości domyślnych dla bieżącego użytkownika. Czy chcesz kontynuować?</string>
     <!-- OTA -->
     <string name="ota_crdroid_title">Aktualizacje</string>
-    <string name="ota_crdroid_summary">Sprawdzenie dla aplikacji OTA oraz linków dla twojego urządzenia</string>
+    <string name="ota_crdroid_summary">Sprawdź i pobierz najnowszą aktualizację</string>
     <!-- Categories -->
     <string name="ota_category">OTA</string>
     <string name="links_category">Linki</string>
@@ -1590,18 +1590,18 @@
     <string name="latest_version">Najnowsza wersja: %1$s</string>
     <string name="unknown">Nieznany</string>
     <string name="system_uptodate">Twój system jest aktualny</string>
-    <string name="maintainer_title">Twórca</string>
+    <string name="maintainer_title">Opiekun</string>
     <string name="maintainer_unknown">Brak oficjalnego opiekuna</string>
-    <string name="changelog_title">Changelog serwera</string>
+    <string name="changelog_title">Lista zmian serwera</string>
     <string name="changelog_summary">Sprawdź zmiany w najnowszej dostępnej aktualizacji</string>
     <string name="download_title">Pobierz najnowszą kompilację</string>
     <string name="download_summary">Odwiedź stronę pobierania</string>
-    <string name="gapps_title">Pobierz gapps</string>
-    <string name="gapps_summary">Odwiedź stronę google do pobierania aplikacji</string>
+    <string name="gapps_title">Pobierz GApps</string>
+    <string name="gapps_summary">Odwiedź stronę pobierania aplikacji Google</string>
     <string name="forum_title">Forum</string>
     <string name="forum_summary">Zobacz najnowsze dyskusje</string>
-    <string name="ota_firmware_title">Pobierz kompatybilne recovery</string>
-    <string name="ota_firmware_summary">Odwiedź stronę pobierania oprogramowania</string>
+    <string name="ota_firmware_title">Pobierz kompatybilne oprogramowanie układowe (firmware)</string>
+    <string name="ota_firmware_summary">Odwiedź stronę pobierania oprogramowania układowego</string>
     <string name="modem_title">Pobierz kompatybilny modem</string>
     <string name="modem_summary">Odwiedź stronę pobierania modemu</string>
     <string name="bootloader_title">Pobierz kompatybilny bootloader</string>
@@ -1611,7 +1611,7 @@
     <string name="paypal_title">Wesprzyj</string>
     <string name="paypal_summary">Wesprzyj rozwój systemu</string>
     <string name="telegram_title">Telegram</string>
-    <string name="telegram_summary">Dołącz do najnowszych dyskusji na Telegram dla tego urządzenia</string>
+    <string name="telegram_summary">Dołącz do najnowszych dyskusji na Telegramie dla tego urządzenia</string>
     <!-- Check update -->
     <string name="check_update_title">Sprawdź aktualizacje</string>
     <string name="last_check_summary">Ostatnio sprawdzane: %1$s</string>
@@ -1641,12 +1641,12 @@
     <!-- Dialog -->
     <string name="dialog_message">Sprawdzanie aktualizacji ROM, proszę czekać…</string>
     <!-- Navbar Animation -->
-    <string name="pixel_navbar_anim_title">Animacje pikselowe</string>
+    <string name="pixel_navbar_anim_title">Animacja Pixel</string>
     <string name="pixel_navbar_anim_summary">Włącz w panelu nawigacji animacje w stylu Pixel</string>
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Inteligentne rozwijanie</string>
-    <string name="smart_pulldown_summary">Otwórz szybki ustawienia, gdy jest %1$s powiadomień</string>
-    <string name="smart_pulldown_none_summary">Otwórz szybkie ustawienie gdy nie ma powiadomień</string>
+    <string name="smart_pulldown_summary">Otwórz Szybkie ustawienia, gdy jest %1$s powiadomień</string>
+    <string name="smart_pulldown_none_summary">Otwórz Szybkie ustawienia, gdy nie ma powiadomień</string>
     <string name="smart_pulldown_off">Wyłącz</string>
     <string name="smart_pulldown_none">brak powiadomień</string>
     <string name="smart_pulldown_dismissable">brak usuwalnych</string>
@@ -1656,14 +1656,14 @@
     <string name="statusbar_doubletap_sleep_summary">Dotknij dwukrotnie pasek stanu, aby uśpić urządzenie</string>
     <!-- Auto USB mode chooser -->
     <string name="auto_usb_mode_chooser_title">Wybór trybu Auto USB</string>
-    <string name="auto_usb_mode_chooser_summary">Wybierający tryb pop-up usb kiedy urządzenie jest połączone do komputera</string>
+    <string name="auto_usb_mode_chooser_summary">Wyświetlaj wyskakujące okienko wyboru trybu USB po podłączeniu urządzenia do komputera</string>
     <!-- Vibrate on plugged -->
     <string name="vibration_on_charge_state_changed_title">Wibracje przy podłączaniu</string>
     <string name="vibration_on_charge_state_changed_summary">Wibracje urządzenia, gdy jest podłączane do źródła energii</string>
     <!-- Recents deep clear -->
-    <string name="recents_deep_clear_title">Głęboko oczyszczone</string>
-    <string name="recents_deep_clear_summary">Wyczyszczenie tła proces, gdy używa się wyłączenia ikony do zamknięcia zadania z ostatniego widoku. To może powodować nieoczekiwany wyniki. Niektóre aplikacje mogą przestać działać dopóki ich nie zrestartujesz</string>
-    <string name="qs_tile_title_visibility_title">Tytuł kafelków</string>
+    <string name="recents_deep_clear_title">Dokładne czyszczenie</string>
+    <string name="recents_deep_clear_summary">Wyczyszczenie procesu w tle podczas korzystania z ikony odrzucania w celu odrzucenia zadania z widoku ostatnich. Może to prowadzić do niezamierzonych rezultatów. Niektóre aplikacje mogą przestać działać do czasu ich ponownego uruchomienia.</string>
+    <string name="qs_tile_title_visibility_title">Tytuł kafelka</string>
     <string name="qs_tile_title_visibility_summary">Wyświetlaj tytuł pod każdym kafelkiem</string>
     <!-- Dark SysUI Theme -->
     <string name="dark_theme_title">Motyw</string>
@@ -1678,7 +1678,7 @@
     <string name="qqs_scroll_summary">Zezwól na przewijanie przez małe kafelki Szybkich Ustawień</string>
     <!-- Advanced restart options -->
     <string name="advanced_reboot_title">Uruchom ponownie zaawansowane</string>
-    <string name="advanced_reboot_summary">Dodaj opcję ponownego uruchomienia w trybie recovery lub bottloadera do menu zasilania</string>
+    <string name="advanced_reboot_summary">Gdy urządzenie jest odblokowane uwzględniaj opcje ponownego uruchomienia w trybie recovery lub bootloadera do menu zasilania</string>
     <string name="advanced_reboot_secured_title">Zabezpieczony ekran blokady</string>
     <string name="advanced_reboot_secured_summary">Wyświetlaj zaawansowane opcje restartu na zabezpieczonym ekranie blokady</string>
     <!-- Allow lights in zen mode -->
@@ -2102,7 +2102,7 @@
     <string name="display_cutout_style_immerse">Immersywne</string>
     <string name="display_cutout_style_hide">Ukryj</string>
     <string name="stock_statusbar_in_hide">Domyślna wysokość paska statusu</string>
-    <string name="stock_statusbar_in_hide_summary">Użyj domyślnej wysokości paska statusu w trybie ukrytym</string>
+    <string name="stock_statusbar_in_hide_summary">Użyj domyślnej wysokości paska stanu w trybie ukrytym</string>
     <string name="display_kill_notch_title">Wyłącz wcięcie ekranu</string>
     <string name="display_kill_notch_summary">Całkowicie wyłącz wcięcie ekranu w aplikacjach pełnoekranowych</string>
     <!-- Notch: Full screen apps -->
