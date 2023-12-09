@@ -149,7 +149,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TILE_ANIMATION_INTERPOLATOR, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, 4, UserHandle.USER_CURRENT);
+                Settings.System.QS_LAYOUT_COLUMNS_LANDSCAPE, 2, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_LAYOUT_COLUMNS, 2, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
