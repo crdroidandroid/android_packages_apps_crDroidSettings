@@ -54,14 +54,14 @@
     <string name="network_traffic_settings_title">Wskaźnik ruchu sieci</string>
     <string name="network_traffic_settings_summary">Wyświetl i dostosuj wskaźnik ruchu sieci</string>
     <string name="network_traffic_location_title">Lokalizacja</string>
-    <string name="network_traffic_location_disable">Nieaktywne</string>
+    <string name="network_traffic_location_disable">Wyłączono</string>
     <string name="network_traffic_location_statusbar">Pasek stanu</string>
-    <string name="network_traffic_location_quick_statusbar">Ukryj pasek stanu</string>
+    <string name="network_traffic_location_quick_statusbar">Pasek stanu \"Szybkich ustawień\"</string>
     <string name="network_traffic_mode_title">Tryb wyświetlania</string>
     <string name="network_traffic_mode_up">Tylko wysyłanie</string>
     <string name="network_traffic_mode_down">Tylko pobieranie</string>
     <string name="network_traffic_mode_all">Wysyłanie i pobieranie</string>
-    <string name="network_traffic_autohide">Autoukrywanie</string>
+    <string name="network_traffic_autohide">Automatyczne ukrywanie</string>
     <string name="network_traffic_autohide_summary">Ukryj monitor ruchu przy braku aktywności</string>
     <string name="network_traffic_autohide_kilobits">Kb/s</string>
     <string name="network_traffic_autohide_kilobytes">KB/s</string>
@@ -134,7 +134,7 @@
     <string name="shortcut_action_max">Maksymalny rozmiar wpisów został osiągnięty</string>
     <string name="shortcut_action_warning">Ostrzeżenie</string>
     <string name="shortcut_action_warning_message">Nie można usunąć ostatniego wpisu</string>
-    <string name="shortcut_action_disable_message">Wyłączony\nDodaj wpis, aby włączyć tę funkcję</string>
+    <string name="shortcut_action_disable_message">Wyłączono\nDodaj wpis, aby włączyć tę funkcję</string>
     <string name="shortcut_image_not_valid">Wybrana aplikacja nie ma poprawnej ikony albo nie obsługuje kadrowania ikon. Wybierz inną aplikację.</string>
     <string name="shortcut_duplicate_entry">Wybrana akcja nie może być dodana dwukrotnie</string>
     <string name="shortcut_action_help_shortcut">skrót</string>
@@ -191,7 +191,7 @@
     <string name="shortcuts_icon_picker_package">Pakiet</string>
     <string name="shortcuts_icon_picker_pinterest">Pinterest</string>
     <string name="shortcuts_icon_picker_play">Odtwórz</string>
-    <string name="shortcuts_icon_picker_pocket">Tryb kieszonkowy</string>
+    <string name="shortcuts_icon_picker_pocket">Kieszeń</string>
     <string name="shortcuts_icon_picker_quicksettings">Szybkie ustawienia</string>
     <string name="shortcuts_icon_picker_rss">Kanał RSS</string>
     <string name="shortcuts_icon_picker_sdcard">Karta SD</string>
@@ -774,12 +774,12 @@
     <string name="status_bar_clock_position_left">Po lewej</string>
     <string name="status_bar_clock_position_center">Pośrodku</string>
     <string name="status_bar_clock_position_hidden">Ukryty</string>
-    <string name="status_bar_clock_auto_hide_title">Automatyczne ukrywanie zegara</string>
+    <string name="status_bar_clock_auto_hide_title">Automatyczne ukrywanie</string>
     <string name="status_bar_clock_auto_hide_summary">Ukrywanie i wyświetlanie zegara w regularnych odstępach czasu zaoszczędzając miejsce na pasku stanu</string>
     <string name="status_bar_clock_auto_hide_hdur_title">Długość ukrywania</string>
     <string name="status_bar_clock_auto_hide_hdur_summary">Liczba sekund do ukrycia zegara</string>
     <string name="status_bar_clock_auto_hide_sdur_title">Długość wyświetlania</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Ilość sekund przed ukryciem zegara</string>
+    <string name="status_bar_clock_auto_hide_sdur_summary">Ilość sekund, zanim zegar zostanie ukryty</string>
     <string name="status_bar_am_pm_title">Format 12-godzinny</string>
     <string name="status_bar_am_pm_info">24-godzinny zegar jest aktywny</string>
     <string name="status_bar_am_pm_normal">Normalny</string>
@@ -1093,7 +1093,7 @@
     <string name="hardware_keys_action_volume_panel">Pokaż panel głośności</string>
     <string name="hardware_keys_action_clear_all_notifications">Wyczyść wszystkie powiadomienia</string>
     <string name="hardware_keys_action_notifications_panel">Pokaż panel powiadomień</string>
-    <string name="hardware_keys_action_toggle_qs_panel">Pokaż panel szybkich ustawień</string>
+    <string name="hardware_keys_action_toggle_qs_panel">Pokaż panel \"Szybkich ustawień\"</string>
     <string name="hardware_keys_action_ringer_modes">Tryby dzwonka</string>
     <string name="hardware_keys_action_single_handed_left">Tryb pojedynczej ręki (po lewej)</string>
     <string name="hardware_keys_action_single_handed_right">Tryb pojedynczej ręki (prawa)</string>
@@ -1138,7 +1138,7 @@
     <string name="power_menu_title">Menu zasilania</string>
     <string name="power_menu_actions_title">Czynności </string>
     <string name="power_menu_screenshot_title">Zrzut ekranu</string>
-    <string name="power_menu_screenshot_summary">Naciśnij i przytrzymaj by wykonać częściowy zrzut ekranu</string>
+    <string name="power_menu_screenshot_summary">Przytrzymaj, aby wykonać częściowy zrzut ekranu</string>
     <string name="power_menu_screenrecord_title">Nagrywanie ekranu</string>
     <string name="power_menu_onthego_title">Tryb \"w ruchu\"</string>
     <string name="power_menu_airplane_title">Tryb samolotowy</string>
@@ -1645,8 +1645,8 @@
     <string name="pixel_navbar_anim_summary">Włącz w panelu nawigacji animacje w stylu Pixel</string>
     <!-- Smart pulldown-->
     <string name="smart_pulldown_title">Inteligentne rozwijanie</string>
-    <string name="smart_pulldown_summary">Otwórz Szybkie ustawienia, gdy jest %1$s powiadomień</string>
-    <string name="smart_pulldown_none_summary">Otwórz Szybkie ustawienia, gdy nie ma powiadomień</string>
+    <string name="smart_pulldown_summary">Otwórz \"Szybkie ustawienia\" gdy ilość powiadomień wynosi: %1$s</string>
+    <string name="smart_pulldown_none_summary">Otwórz szybkie ustawienia, w przypadku braku powiadomień</string>
     <string name="smart_pulldown_off">Wyłącz</string>
     <string name="smart_pulldown_none">brak powiadomień</string>
     <string name="smart_pulldown_dismissable">brak usuwalnych</string>
@@ -2021,7 +2021,7 @@
     <string name="signal_style_title">Styl wskaźnika zasięgu</string>
     <string name="signal_style_summary">Ustaw własny wygląd ikony sygnału</string>
     <string name="wifi_style_title">Styl paska WiFi</string>
-    <string name="wifi_style_summary">Ustaw własny wygląd ikony wifi</string>
+    <string name="wifi_style_summary">Ustaw własny wygląd ikony WiFi</string>
     <!-- Battery stats reset -->
     <string name="battery_stats_reset">Zresetuj statystyki</string>
     <string name="battery_stats_message">Spowoduje to wyzerowanie statystyk użycia baterii. Czy chcesz kontynuować?</string>
@@ -2186,18 +2186,18 @@
     <string name="battery_saver_refresh_rate_title">Zmniejsz częstotliwość odświeżania</string>
     <string name="battery_saver_refresh_rate_summary">Użyj 60Hz jako maksymalnej częstotliwości odświeżania, aby oszczędzać energię w trybie oszczędzania baterii</string>
     <!-- Ambient edge lighting -->
-    <string name="pulse_ambient_light_title">Oświetlenie krawędzi</string>
-    <string name="pulse_ambient_light_summary">Podświetl boczne krawędzie ekranu podczas powiadomienia</string>
+    <string name="pulse_ambient_light_title">Podświetlanie krawędzi</string>
+    <string name="pulse_ambient_light_summary">Podświetlaj boczne krawędzie ekranu przy powiadomieniach</string>
     <string name="pulse_ambient_light_color_title">Kolor światła krawędzi</string>
     <string name="pulse_ambient_light_duration_title">Czas podświetlania krawędzi</string>
-    <string name="pulse_ambient_light_duration_summary">Ustawia czas trwania animacji ambient</string>
-    <string name="pulse_ambient_light_layout_title">Podświetlenie krawędzi</string>
+    <string name="pulse_ambient_light_duration_summary">Ustawia czas trwania animacji Ambient</string>
+    <string name="pulse_ambient_light_layout_title">Wygląd podświetlenia krawędzi</string>
     <string name="pulse_ambient_light_layout_solid">Stałe</string>
     <string name="pulse_ambient_light_layout_faded">Zanikanie</string>
     <!-- QS battery -->
     <string name="qs_battery_location_title">Lokalizacja baterii</string>
-    <string name="qs_battery_location_qs_panel">Panel Szybkich ustawień</string>
-    <string name="qs_battery_location_qs_statusbar">Pasek stanu Szybkich ustawień</string>
+    <string name="qs_battery_location_qs_panel">Panel \"Szybkich ustawień\"</string>
+    <string name="qs_battery_location_qs_statusbar">Pasek stanu \"Szybkich ustawień\"</string>
     <string name="qs_use_status_bar_battery_style">Taki jak styl paska stanu</string>
     <!-- QS battery -->
     <string name="lockscreen_lock_icon_title">Ikona blokady</string>
