@@ -113,23 +113,14 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
         updateAnimTileStyle(tileAnimationStyle);
 
-        String isA11Style = Integer.toString(Settings.System.getIntForUser(resolver,
-                Settings.System.QS_TILE_UI_STYLE , 0, UserHandle.USER_CURRENT));
 
         mQsUI = (ListPreference) findPreference(KEY_QS_UI_STYLE);
-        int index = mQsUI.findIndexOfValue(isA11Style);
-        mQsUI.setValue(isA11Style);
-        mQsUI.setSummary(mQsUI.getEntries()[index]);
         mQsUI.setOnPreferenceChangeListener(this);
 
-        String qsPanelStyle = Integer.toString(Settings.System.getIntForUser(resolver,
-                Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT));
-
         mQsPanelStyle = (ListPreference) findPreference(KEY_QS_PANEL_STYLE);
-        index = mQsPanelStyle.findIndexOfValue(qsPanelStyle);
-        mQsPanelStyle.setValue(qsPanelStyle);
-        mQsPanelStyle.setSummary(mQsPanelStyle.getEntries()[index]);
         mQsPanelStyle.setOnPreferenceChangeListener(this);
+
+        checkQSOverlays(mContext);
     }
 
     @Override
@@ -149,21 +140,17 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mQsUI) {
             int value = Integer.parseInt((String) newValue);
-            int index = mQsUI.findIndexOfValue((String) newValue);
-            mQsUI.setValue((String) newValue);
-            mQsUI.setSummary(mQsUI.getEntries()[index]);
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_TILE_UI_STYLE, value, UserHandle.USER_CURRENT);
             updateQsStyle(getActivity());
+            checkQSOverlays(getActivity());
             return true;
         } else if (preference == mQsPanelStyle) {
             int value = Integer.parseInt((String) newValue);
-            int index = mQsPanelStyle.findIndexOfValue((String) newValue);
-            mQsPanelStyle.setValue((String) newValue);
-            mQsPanelStyle.setSummary(mQsPanelStyle.getEntries()[index]);
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_PANEL_STYLE, value, UserHandle.USER_CURRENT);
             updateQsPanelStyle(getActivity());
+            checkQSOverlays(getActivity());
             return true;
         }
         return false;
@@ -296,6 +283,46 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         if (qsPanelStyle > 0) {
             mThemeUtils.setOverlayEnabled(qsPanelStyleCategory, overlayThemePackage, overlayThemeTarget);
         }
+    }
+
+    private void checkQSOverlays(Context context) {
+        ContentResolver resolver = context.getContentResolver();
+        int isA11Style = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_TILE_UI_STYLE , 0, UserHandle.USER_CURRENT);
+        int qsPanelStyle = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_PANEL_STYLE , 0, UserHandle.USER_CURRENT);
+
+        if (isA11Style > 0) {
+            mQsUI.setEnabled(true);
+            mQsPanelStyle.setEnabled(false);
+            if (qsPanelStyle > 0) {
+                qsPanelStyle = 0;
+                Settings.System.putIntForUser(resolver,
+                        Settings.System.QS_PANEL_STYLE, 0, UserHandle.USER_CURRENT);
+                updateQsPanelStyle(context);
+            }
+        } else if (qsPanelStyle > 0) {
+            mQsPanelStyle.setEnabled(true);
+            mQsUI.setEnabled(false);
+            if (isA11Style > 0) {
+                isA11Style = 0;
+                Settings.System.putIntForUser(resolver,
+                        Settings.System.QS_TILE_UI_STYLE, 0, UserHandle.USER_CURRENT);
+                updateQsStyle(context);
+            }
+        } else {
+            mQsUI.setEnabled(true);
+            mQsPanelStyle.setEnabled(true);
+        }
+
+        // Update summaries
+        int index = mQsUI.findIndexOfValue(Integer.toString(isA11Style));
+        mQsUI.setValue(Integer.toString(isA11Style));
+        mQsUI.setSummary(mQsUI.getEntries()[index]);
+
+        index = mQsPanelStyle.findIndexOfValue(Integer.toString(qsPanelStyle));
+        mQsPanelStyle.setValue(Integer.toString(qsPanelStyle));
+        mQsPanelStyle.setSummary(mQsPanelStyle.getEntries()[index]);
     }
 
     @Override
