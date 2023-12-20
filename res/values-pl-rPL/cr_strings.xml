@@ -151,7 +151,7 @@
     <string name="hardware_keys_double_tap_title">Akcja dla dwukrotnego dotknięcia</string>
     <string name="hardware_keys_action_nothing">Brak akcji</string>
     <string name="hardware_keys_action_menu">Otwórz / zamknij menu</string>
-    <string name="hardware_keys_action_app_switch">Przełącznik ostatnio używanych aplikacji</string>
+    <string name="hardware_keys_action_app_switch">Ostatnio uruchomione aplikacje</string>
     <string name="hardware_keys_action_search">Asystent wyszukiwania</string>
     <string name="hardware_keys_action_voice_search">Wyszukiwanie głosowe</string>
     <string name="hardware_keys_action_in_app_search">Wyszukaj w aplikacji</string>
@@ -190,8 +190,8 @@
     <string name="button_wake_summary">Wybudź urządzenie poprzez naciśnięcie przycisku</string>
     <string name="volume_answer_call_title">Odbieranie połączeń</string>
     <string name="volume_answer_call_summary">Odbieranie połączenia przychodzącego za pomocą przycisków głośności</string>
-    <string name="click_partial_screenshot_title">Dotknij, aby wykonać częściowy zrzut ekranu</string>
-    <string name="click_partial_screenshot_summary">Wciśnij przycisk ściszania oraz zasilania, aby wykonać częściowy zrzut ekranu</string>
+    <string name="click_partial_screenshot_title">Częściowy zrzut ekranu</string>
+    <string name="click_partial_screenshot_summary">Wciśnij przyciski ściszania oraz zasilania, aby wykonać częściowy zrzut ekranu</string>
     <!-- Key backlight -->
     <string name="button_backlight_title">Podświetlenie</string>
     <string name="button_backlight_summary">Dostosuj ustawienia podświetlenia przycisków</string>
@@ -337,7 +337,7 @@
     <string name="peak_refresh_rate_title_custom">Najwyższa częstotliwość odświeżania</string>
     <string name="low_power_refresh_rate_title_custom">Niska prędkość odświeżania</string>
     <!-- Status bar - Clock -->
-    <string name="status_bar_clock_title">Zegar oraz data</string>
+    <string name="status_bar_clock_title">Zegar i data</string>
     <string name="status_bar_clock_summary">Dostosuj zegar oraz datę</string>
     <string name="status_bar_clock_seconds_title">Sekundy zegara</string>
     <string name="status_bar_clock_seconds_summary">Wyświetlaj sekundy obok zegara na pasku stanu</string>
@@ -400,9 +400,9 @@
     <string name="battery_bar_style_title">Wyrównanie</string>
     <string name="battery_bar_thickness_title">Grubość</string>
     <string name="battery_bar_animate_title">Animacja ładowania</string>
-    <string name="battery_bar_style_regular">Standardowy</string>
-    <string name="battery_bar_style_center_mirrored">Wyśrodkowany</string>
-    <string name="battery_bar_style_reversed">Odwrócony</string>
+    <string name="battery_bar_style_regular">Standardowe</string>
+    <string name="battery_bar_style_center_mirrored">Do środka, z lustrzanym odbiciem</string>
+    <string name="battery_bar_style_reversed">Odwrócone</string>
     <string name="battery_bar_use_charging_color">Własny kolor paska ładowania</string>
     <string name="battery_bar_blend_color_title">Mieszaj kolory</string>
     <string name="battery_bar_blend_color_summary">Mieszaj pełne/puste kolory odpowiadające procentom baterii</string>
@@ -429,7 +429,7 @@
     <!-- Network traffic -->
     <string name="network_traffic_settings_title">Wskaźnik ruchu sieci</string>
     <string name="network_traffic_settings_summary">Wyświetl i dostosuj wskaźnik ruchu sieci</string>
-    <string name="network_traffic_location_title">Lokalizacja</string>
+    <string name="network_traffic_location_title">Umiejscowienie</string>
     <string name="network_traffic_location_disable">Wyłączono</string>
     <string name="network_traffic_location_statusbar">Pasek stanu</string>
     <string name="network_traffic_location_quick_statusbar">Pasek stanu \"Szybkich ustawień\"</string>
@@ -912,8 +912,8 @@
     <!-- Battery temperature -->
     <string name="battery_temperature">Temperatura baterii</string>
     <!-- QS Transparency -->
-    <string name="qs_transparency_title">Przezroczystość tła</string>
-    <string name="qs_transparency_summary">Ustaw poziom przezroczystości dla tła \"Szybkich ustawień\"</string>
+    <string name="qs_transparency_title">Nieprzezroczystość tła</string>
+    <string name="qs_transparency_summary">Ustaw poziom nieprzezroczystości dla tła \"Szybkich ustawień\"</string>
     <!-- Data usage info in QS footer -->
     <string name="qs_footer_datausage_title">Użycie danych</string>
     <string name="qs_footer_datausage_summary">Pokaż użycie danych w stopce \"Szybkich ustawień\"</string>
@@ -946,6 +946,8 @@
     <string name="qs_tile_layout_summary">Pokaż etykietę pod ikoną zamiast obok niej</string>
     <string name="qs_columns_portrait_title">Kolumny (pionowo)</string>
     <string name="qs_columns_landscape_title">Kolumny (poziomo)</string>
+    <string name="qqs_rows_portrait_title">Szybkie wiersze (pionowo)</string>
+    <string name="qqs_rows_landscape_title">Szybkie wiersze (poziomo)</string>
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">Rozmycie tła</string>
     <string name="statusbar_clock_chip_summary">Wyświetlaj rozmycie chipa za zegarem</string>
@@ -1101,4 +1103,20 @@
     <string name="kg_custom_clock_top_margin_title">Pozycja zegara dwuwierszowego</string>
     <string name="kg_small_clock_text_size_title">Mały rozmiar zegara</string>
     <string name="kg_large_clock_text_size_title">Rozmiar zegara dwuwierszowego</string>
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_ui_style_title">Styl kafelków</string>
+    <string name="qs_tile_ui_style_a11_circle">Okrągłe kafelki</string>
+    <string name="qs_tile_ui_style_a11_square">Kwadratowe kafelki</string>
+    <string name="qs_tile_ui_style_a11_mix">Okrągłe i kwadratowe kafelki</string>
+    <!-- QS Panel Style -->
+    <string name="qs_panel_style_title">Styl panelu \"Szybkich ustawień\"</string>
+    <string name="qs_panel_style_outline">Kontur</string>
+    <string name="qs_panel_style_two_tone">Dwutonowy akcent</string>
+    <string name="qs_panel_style_color_pop">Kolorowy</string>
+    <string name="qs_panel_style_shaded">Cieniowany</string>
+    <string name="qs_panel_style_cyberpunk">Cyberpunk</string>
+    <string name="qs_panel_style_neumorph">Neumorf</string>
+    <string name="qs_panel_style_reflected">Odbity</string>
+    <string name="qs_panel_style_surround">Przestrzenny</string>
+    <string name="qs_panel_style_thin">Cienka linia</string>
 </resources>
