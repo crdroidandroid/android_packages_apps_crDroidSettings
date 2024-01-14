@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2021-2023 crDroid Android Project
+     Copyright (C) 2021-2024 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -37,7 +37,8 @@
     <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
         android:key="accent_color"
         android:title="@string/monet_engine_custom_color_title"
-        android:summary="@string/monet_engine_custom_color_summary" />
+        android:summary="@string/monet_engine_custom_color_summary"
+        android:defaultValue="0xFF1b6ef3" />
 
     <SwitchPreference
         android:key="accent_background"
@@ -47,16 +48,18 @@
 
     <com.crdroid.settings.preferences.colorpicker.ColorPickerPreference
         android:key="bg_color"
-        android:title="@string/monet_engine_color_override_title" />
+        android:title="@string/monet_engine_color_override_title"
+        android:dependency="accent_background"
+        android:defaultValue="0xFF1b6ef3" />
 
     <com.crdroid.settings.preferences.CustomSeekBarPreference
         android:key="luminance_factor"
         android:title="@string/monet_engine_luminance_factor_title"
         android:summary="@string/monet_engine_luminance_factor_summary"
+        android:defaultValue="0"
         android:max="100"
         settings:min="-95"
         settings:interval="5"
-        settings:defaultValue="0"
         settings:units="%"
         settings:showSign="true" />
 
@@ -64,10 +67,10 @@
         android:key="chroma_factor"
         android:title="@string/monet_engine_chroma_factor_title"
         android:summary="@string/monet_engine_chroma_factor_summary"
+        android:defaultValue="0"
         android:max="100"
         settings:min="-95"
         settings:interval="5"
-        settings:defaultValue="0"
         settings:units="%"
         settings:showSign="true" />
 
