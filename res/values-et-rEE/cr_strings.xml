@@ -50,9 +50,9 @@
     <string name="choose_app">Vali rakendus</string>
     <string name="enable">Luba</string>
     <string name="disable">Keela</string>
-    <string name="accent_color">Accent color (Default)</string>
-    <string name="notification_color">Notification color</string>
-    <string name="wallpaper_color">Wallpaper color</string>
+    <string name="accent_color">Rõhuvärv (vaikimisi)</string>
+    <string name="notification_color">Teavituse värv</string>
+    <string name="wallpaper_color">Taustapildi värv</string>
     <string name="custom_color">Kohandatud värv</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Praegune muudatuste logi</string>
@@ -78,7 +78,7 @@
     <string name="crdroid_translate_title">Tõlked</string>
     <string name="crdroid_translate_summary">Aita ROM tõlkida oma emakeelde!</string>
     <string name="crdroid_sponsor_summary">Külasta meie veebisaidi hostpartnerit</string>
-    <string name="crdroid_buildserversponsor_summary">We recommend their servers if interested in one</string>
+    <string name="crdroid_buildserversponsor_summary">Soovitame nende servereid, kui oled huvitatud</string>
     <!-- Donate crDroid -->
     <string name="donate_crdroid_title">Toeta meid</string>
     <string name="donate_crdroid_summary">Anneta edasise arenduse toetamiseks</string>
@@ -234,15 +234,24 @@
     <!-- Monet Engine -->
     <string name="monet_engine_custom_color_title">Aktsentvärv</string>
     <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
-    <string name="monet_engine_custom_bgcolor_title">Background color</string>
+    <string name="monet_engine_custom_bgcolor_title">Taustavärv</string>
     <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
     <string name="monet_engine_color_override_title">Kohandatud värv</string>
-    <string name="monet_engine_luminance_factor_title">Luminance</string>
+    <string name="monet_engine_luminance_factor_title">Heledus</string>
     <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
     <string name="monet_engine_chroma_factor_title">Kroomifaktor</string>
     <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
     <string name="monet_engine_tint_background_title">Tint background</string>
     <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
+    <string name="monet_engine_style_title">Theme style</string>
+    <string name="monet_engine_style_tonal_spot">Tonal Spot (Default)</string>
+    <string name="monet_engine_style_vibrant">Vibrant</string>
+    <string name="monet_engine_style_expressive">Expressive</string>
+    <string name="monet_engine_style_spritz">Spritz</string>
+    <string name="monet_engine_style_rainbow">Rainbow</string>
+    <string name="monet_engine_style_fruit_salad">Fruit Salad</string>
+    <string name="monet_engine_style_muted">Muted</string>
+    <string name="monet_engine_style_content">Content</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Kiiravamine</string>
     <string name="unlock_quick_unlock_control_summary">Ava õige PINi/parooli sisestamisel automaatselt</string>
@@ -266,7 +275,7 @@
     <string name="doze_vibrate_summary">Vibreerimise kestus teavituste pulseerimisel</string>
     <string name="sensor_warning_message">Anduritel põhinevad sätted sõltuvad riistvara ühilduvusest. Säästliku ekraani jaoks andurite lubamine võib energiatarbimist suurendada.</string>
     <!-- Edge light -->
-    <string name="edge_light_title">Edge light</string>
+    <string name="edge_light_title">Servavalgus</string>
     <string name="edge_light_summary">Valgusta ekraani servasid teavituse saabumisel</string>
     <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
     <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
@@ -501,7 +510,7 @@
     <string name="navbar_layout_title">Paigutus</string>
     <string name="navbar_layout_normal">Tavaline</string>
     <string name="navbar_layout_compact">Kompaktne</string>
-    <string name="navbar_layout_expanded">Expanded</string>
+    <string name="navbar_layout_expanded">Laiendatud</string>
     <string name="navbar_layout_leftleaning">Vasakule kalduv</string>
     <string name="navbar_layout_rightleaning">Paremale kalduv</string>
     <string name="navbar_invert_layout_title">Pööra paigutus</string>
@@ -562,7 +571,7 @@
     <string name="qs_brightness_slider_position_top">Üleval</string>
     <string name="qs_brightness_slider_position_bottom">All</string>
     <!-- Brightness slider haptic feedback -->
-    <string name="qs_brightness_slider_haptic_title">Haptic feedback</string>
+    <string name="qs_brightness_slider_haptic_title">Värintagasiside</string>
     <string name="qs_brightness_slider_haptic_summary">Provide haptic feedback on changing brightness using slider</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Automaatse heleduse ikoon</string>
@@ -922,8 +931,8 @@
     <string name="qs_tile_layout_summary">Kuva silt ikooni all, selle asemel et kuvada ikooni kõrval</string>
     <string name="qs_columns_portrait_title">Veerud (püstasendis)</string>
     <string name="qs_columns_landscape_title">Veerud (rõhtasendis)</string>
-    <string name="qqs_rows_portrait_title">Quick QS Rows (portrait)</string>
-    <string name="qqs_rows_landscape_title">Quick QS Rows (landscape)</string>
+    <string name="qqs_rows_portrait_title">Kiir-kiirseadete read (püstasendis)</string>
+    <string name="qqs_rows_landscape_title">Kiir-kiirseadete read (rõhtasendis)</string>
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">Taustakiip</string>
     <string name="statusbar_clock_chip_summary">Kuva kella taga rõhuvärviga kiipi</string>
@@ -931,8 +940,8 @@
     <string name="weather_settings_title">Ilmaseaded</string>
     <string name="weather_settings_summary">Määra ikoonipakk ja ilmateenus</string>
     <string name="lockscreen_weather_category">Ilm</string>
-    <string name="lockscreen_weather_title">Weather update</string>
-    <string name="lockscreen_weather_summary">Display current weather update</string>
+    <string name="lockscreen_weather_title">Ilmateade</string>
+    <string name="lockscreen_weather_summary">Kuva praegust ilmateadet</string>
     <string name="lockscreen_weather_enabled_info">Nõuab ilmateenuse lubamist</string>
     <string name="lockscreen_weather_location_title">Current location</string>
     <string name="lockscreen_weather_location_summary">Kuva praeguse ilmateate asukoht</string>
@@ -953,32 +962,32 @@
     <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
-    <string name="status_bar_logo_style_alien">Alien</string>
+    <string name="status_bar_logo_style_alien">Tulnukas</string>
     <string name="status_bar_logo_style_apple">Apple</string>
-    <string name="status_bar_logo_style_avengers">Avengers</string>
+    <string name="status_bar_logo_style_avengers">Tasujad</string>
     <string name="status_bar_logo_style_batman">Batman</string>
-    <string name="status_bar_logo_style_batman_tdk">Batman The Dark Knight</string>
+    <string name="status_bar_logo_style_batman_tdk">Batman: Pimeduse rüütel</string>
     <string name="status_bar_logo_style_beats">Beats</string>
     <string name="status_bar_logo_style_biohazard">Bioloogiline oht</string>
     <string name="status_bar_logo_style_blackberry">BlackBerry</string>
-    <string name="status_bar_logo_style_cannabis">Cannabis</string>
+    <string name="status_bar_logo_style_cannabis">Kanep</string>
     <string name="status_bar_logo_style_emoticon_cool">Lahe emotikon</string>
     <string name="status_bar_logo_style_emoticon_devil">Saatan emotikon</string>
-    <string name="status_bar_logo_style_fire">Fire</string>
+    <string name="status_bar_logo_style_fire">Tuli</string>
     <string name="status_bar_logo_style_heart">Süda</string>
     <string name="status_bar_logo_style_nike">Nike</string>
-    <string name="status_bar_logo_style_pacman">Pac-man</string>
+    <string name="status_bar_logo_style_pacman">Pac-Man</string>
     <string name="status_bar_logo_style_puma">Puma</string>
     <string name="status_bar_logo_style_rog">ROG</string>
-    <string name="status_bar_logo_style_spiderman">Spider-Man</string>
+    <string name="status_bar_logo_style_spiderman">Ämblikmees</string>
     <string name="status_bar_logo_style_superman">Superman</string>
     <string name="status_bar_logo_style_windows">Windows</string>
     <string name="status_bar_logo_style_xbox">Xbox</string>
     <string name="status_bar_logo_style_ghost">Kummitus</string>
     <string name="status_bar_logo_style_ninja">Ninja</string>
     <string name="status_bar_logo_style_robot">Robot</string>
-    <string name="status_bar_logo_style_ironman">Iron Man</string>
-    <string name="status_bar_logo_style_captain_america">Captain America</string>
+    <string name="status_bar_logo_style_ironman">Raudmees</string>
+    <string name="status_bar_logo_style_captain_america">Kapten Ameerika</string>
     <string name="status_bar_logo_style_flash">Välk</string>
     <string name="status_bar_logo_style_tux">Tux</string>
     <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
@@ -1037,20 +1046,20 @@
     <string name="lockscreen_shortcut_qr">QR-koodi skanner</string>
     <string name="lockscreen_shortcut_camera">Kaamera</string>
     <string name="lockscreen_shortcut_remote">Google TV pult</string>
-    <string name="lockscreen_shortcut_dnd">DND</string>
+    <string name="lockscreen_shortcut_dnd">Mitte segada</string>
     <string name="lockscreen_shortcut_none">Puudub</string>
-    <string name="lockscreen_shortcut_enforce_title">Enforce shortcuts</string>
-    <string name="lockscreen_shortcut_enforce_summary">Do not display next available shortcut if chosen shortcut is not available</string>
+    <string name="lockscreen_shortcut_enforce_title">Jõusta otseteed</string>
+    <string name="lockscreen_shortcut_enforce_summary">Ära kuva järgmist saadaolevat otseteed, kui valitud otsetee pole saadaval</string>
     <!-- App lock -->
-    <string name="app_lock_title">App lock</string>
+    <string name="app_lock_title">Rakenduselukk</string>
     <plurals name="app_lock_summary">
-        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> application is protected</item>
-        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
+        <item quantity="one"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> rakendus on kaitstud</item>
+        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> rakendust on kaitstud</item>
     </plurals>
     <string name="app_lock_authentication_dialog_title">Lahtilukustamine</string>
-    <string name="enable_debugging">Enable debugging</string>
-    <string name="disable_debugging">Disable debugging</string>
-    <string name="app_lock_packages_title">Protected apps</string>
+    <string name="enable_debugging">Luba silumine</string>
+    <string name="disable_debugging">Keela silumine</string>
+    <string name="app_lock_packages_title">Kaitstud rakendused</string>
     <string name="app_lock_packages_summary">Select the apps to protect with biometrics or device credentials</string>
     <string name="app_lock_timeout_title">Auto lock timeout</string>
     <string name="app_lock_timeout_summary">Duration of time after which an unlocked app in background should be locked</string>
@@ -1059,66 +1068,66 @@
     <string name="app_lock_notifications_disabled_summary">Protect an application first</string>
     <string name="app_lock_biometrics_allowed_title">Enable biometrics for unlocking</string>
     <string name="app_lock_footer_text">Bubbles will be automatically dismissed after timeout</string>
-    <string name="enable_protection">Enable protection</string>
-    <string name="hide_from_launcher_title">Hide from launcher</string>
+    <string name="enable_protection">Luba kaitse</string>
+    <string name="hide_from_launcher_title">Peida käivitajast</string>
     <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">Always show when charging</string>
     <string name="doze_on_charge_summary">Display device is charging</string>
     <!-- Volume link notification -->
-    <string name="volume_link_notification_title">Link ring &amp; notification volumes</string>
+    <string name="volume_link_notification_title">Ühenda helina ja teadete helitugevus</string>
     <!-- Radio Info -->
-    <string name="radio_info_title">Radio info</string>
+    <string name="radio_info_title">Raadio teave</string>
     <!-- QS Header -->
-    <string name="qs_header_image_title">Header image</string>
+    <string name="qs_header_image_title">Päisepilt</string>
     <string name="qs_header_image_summary">Select QS background header image</string>
     <string name="qs_header_image_enabled_title">QS header image customization</string>
     <string name="qs_header_image_enabled_summary">Enable QS header image customization</string>
     <string name="qs_header_image_landscape_enabled_title">Show on landscape</string>
     <string name="qs_header_image_landscape_enabled_summary">Display QS header image in landscape mode</string>
-    <string name="qs_header_image_tint_title">Tint</string>
-    <string name="qs_header_image_tint_none">No tint</string>
+    <string name="qs_header_image_tint_title">Toon</string>
+    <string name="qs_header_image_tint_none">Toon puudub</string>
     <string name="qs_header_image_tint_accent">Aktsentvärv</string>
-    <string name="qs_header_image_tint_primary">Primary color</string>
-    <string name="qs_header_image_tint_primary_inverse">Primary color inverse</string>
+    <string name="qs_header_image_tint_primary">Põhivärv</string>
+    <string name="qs_header_image_tint_primary_inverse">Põhivärv pööratud</string>
     <string name="qs_header_image_tint_custom">Kohandatud värv</string>
     <string name="qs_header_image_tint_custom_title">Custom tint color</string>
-    <string name="qs_header_image_height_portrait_title">Height (portrait)</string>
-    <string name="qs_header_image_height_landscape_title">Height (landscape)</string>
-    <string name="qs_header_image_alpha_title">Opacity</string>
-    <string name="qs_header_image_padding_side_title">Side padding</string>
-    <string name="qs_header_image_padding_top_title">Top padding</string>
+    <string name="qs_header_image_height_portrait_title">Kõrgus (püstasendis)</string>
+    <string name="qs_header_image_height_landscape_title">Kõrgus (rõhtasendis)</string>
+    <string name="qs_header_image_alpha_title">Läbipaistmatus</string>
+    <string name="qs_header_image_padding_side_title">Külg-tühimik</string>
+    <string name="qs_header_image_padding_top_title">Üla-tühimik</string>
     <string name="file_header_select_title">Select local image</string>
     <string name="file_header_select_summary">Select image from storage</string>
     <!-- Lockscreen Clock -->
-    <string name="kg_custom_clock_top_margin_title">Double-line clock position</string>
-    <string name="kg_small_clock_text_size_title">Small clock size</string>
-    <string name="kg_large_clock_text_size_title">Double-line clock size</string>
+    <string name="kg_custom_clock_top_margin_title">Kaherealise kella asukoht</string>
+    <string name="kg_small_clock_text_size_title">Väikese kella suurus</string>
+    <string name="kg_large_clock_text_size_title">Kaherealise kella suurus</string>
     <!-- Island Notification -->
     <string name="island_notification_title">Island notification</string>
     <string name="island_notification_summary">Display heads-up notification in Dynamic Island style</string>
-    <string name="island_notification_now_playing_title">Now playing</string>
+    <string name="island_notification_now_playing_title">Hetkel mängib</string>
     <string name="island_notification_now_playing_summary">Display currently playing song in Dynamic Island style</string>
     <string name="island_notification_footer_text">        The Island notification feature, inspired by iOS\'s Dynamic Island, transforms Android\'s heads-up notifications into quick-access and compact notification utility.\n\nIsland Quick Access Controls includes the following features:\n1. Tap island notification to quick answer phone calls.\n2. Long press island notification to reject phone calls.\n3. Long press island notification to expand the island notification preview.
     </string>
     <!-- QS Dual Tone Colors -->
-    <string name="qs_dual_tone_title">Dual tone themed</string>
-    <string name="qs_dual_tone_summary">Use dual tone background colors instead of AOSP single tone</string>
+    <string name="qs_dual_tone_title">Kahetooniline teemaga</string>
+    <string name="qs_dual_tone_summary">Kasuta kahetoonilisi taustavärve AOSP ühetoonilise asemel</string>
     <!-- QS Tiles Style -->
-    <string name="qs_tile_ui_style_title">QS tiles style</string>
-    <string name="qs_tile_ui_style_a11_circle">Circle tiles</string>
-    <string name="qs_tile_ui_style_a11_square">Square tiles</string>
-    <string name="qs_tile_ui_style_a11_mix">Circle &amp; Square tiles</string>
+    <string name="qs_tile_ui_style_title">Kiirseadete paanide stiil</string>
+    <string name="qs_tile_ui_style_a11_circle">Ringikujulised paanid</string>
+    <string name="qs_tile_ui_style_a11_square">Ruudukujulised paanid</string>
+    <string name="qs_tile_ui_style_a11_mix">Ringi- ja ruudukujulised paanid</string>
     <!-- QS Panel Style -->
-    <string name="qs_panel_style_title">QS panel style</string>
-    <string name="qs_panel_style_outline">Outline</string>
-    <string name="qs_panel_style_two_tone">Two-Tone accent</string>
-    <string name="qs_panel_style_color_pop">Color pop</string>
-    <string name="qs_panel_style_shaded">Shaded</string>
-    <string name="qs_panel_style_cyberpunk">Cyberpunk</string>
-    <string name="qs_panel_style_neumorph">Neumorph</string>
-    <string name="qs_panel_style_reflected">Reflected</string>
-    <string name="qs_panel_style_surround">Surround</string>
-    <string name="qs_panel_style_thin">ThinLine</string>
+    <string name="qs_panel_style_title">Kiirseadete paneeli stiil</string>
+    <string name="qs_panel_style_outline">Kontuur</string>
+    <string name="qs_panel_style_two_tone">Kahetooniline rõhuvärv</string>
+    <string name="qs_panel_style_color_pop">Värvi esiletõst</string>
+    <string name="qs_panel_style_shaded">Varjutatud</string>
+    <string name="qs_panel_style_cyberpunk">Küberpunk</string>
+    <string name="qs_panel_style_neumorph">Neumorf</string>
+    <string name="qs_panel_style_reflected">Peegeldatud</string>
+    <string name="qs_panel_style_surround">Ruumiline</string>
+    <string name="qs_panel_style_thin">Õhuke riba</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
 </resources>
