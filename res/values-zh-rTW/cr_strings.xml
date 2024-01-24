@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2023 crDroid Android Project
+     Copyright (C) 2016-2024 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -255,10 +255,10 @@
     <string name="unlock_quick_unlock_control_title">快速解除鎖定</string>
     <string name="unlock_quick_unlock_control_summary">當正確輸入 PIN 碼／密碼時自動解鎖</string>
     <!-- Doze settings -->
-    <string name="doze_display_title">環境顯示</string>
-    <string name="doze_display_summary">設定環境顯示</string>
+    <string name="doze_display_title">微光螢幕</string>
+    <string name="doze_display_summary">設定微光螢幕</string>
     <string name="doze_additional_settings_title">附加設定</string>
-    <string name="doze_additional_settings_summary">自定義設備特定的環境顯示設置</string>
+    <string name="doze_additional_settings_summary">自定義裝置的微光螢幕設定</string>
     <string name="doze_sensor_title">以感測器為主</string>
     <string name="raise_to_wake_title">喚醒</string>
     <string name="raise_to_wake_summary">喚醒設備而不是發出通知</string>
@@ -270,21 +270,21 @@
     <string name="handwave_summary">揮手時顯示通知</string>
     <string name="pocket_title">口袋</string>
     <string name="pocket_summary">從口袋裏拿出時顯示通知</string>
-    <string name="doze_vibrate">振動</string>
+    <string name="doze_vibrate">震動</string>
     <string name="doze_vibrate_summary">通知時震動的持續時間</string>
-    <string name="sensor_warning_message">有關感測器的設定可能會受到硬體相容性的限制。為「環境顯示」啟用感測器可能會增加功耗。</string>
+    <string name="sensor_warning_message">「微光螢幕」相關感測器受到硬體相容性的限制。啟用「微光螢幕」可能會增加功耗。</string>
     <!-- Edge light -->
     <string name="edge_light_title">側光</string>
     <string name="edge_light_summary">通知閃爍時也使螢幕側邊閃爍</string>
     <string name="edge_light_always_trigger_on_pulse_title">一律觸發</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">在使用環境顯示時一律顯示側光</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">在使用微光螢幕時一律顯示側光</string>
     <string name="edge_light_repeat_animation_title">重複閃爍動畫</string>
     <string name="edge_light_repeat_animation_summary_on">重複閃爍動畫直到逾時</string>
     <string name="edge_light_repeat_animation_summary_off">緩慢的閃爍一次</string>
     <string name="edge_light_color_mode_title">側光顏色</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">音樂提示訊息</string>
-    <string name="pulse_on_new_tracks_summary">切換曲目時在AOD上顯示</string>
+    <string name="pulse_on_new_tracks_summary">切換曲目時於微光螢幕上顯示訊息</string>
     <!-- Status bar - icon blocklist -->
     <string name="status_bar_icons_title">狀態欄圖示</string>
     <string name="status_bar_icons_summary">控制顯示哪些狀態列圖示</string>
@@ -534,17 +534,6 @@
     <!-- ANBI -->
     <string name="anbi_title">防誤觸</string>
     <string name="anbi_summary">防止誤觸導覽列按鈕</string>
-    <!-- Live volume steps -->
-    <string name="volume_steps_title">音量調整階數</string>
-    <string name="volume_steps_summary">自訂音量面板中的音量階級</string>
-    <string name="volume_steps_alarm_title">鬧鐘</string>
-    <string name="volume_steps_dtmf_title">DTMF</string>
-    <string name="volume_steps_music_title">媒體</string>
-    <string name="volume_steps_notification_title">通知</string>
-    <string name="volume_steps_ring_title">響鈴</string>
-    <string name="volume_steps_system_title">系統</string>
-    <string name="volume_steps_voice_call_title">通話</string>
-    <string name="volume_steps_reset">重設</string>
     <!-- Three-fingers-swipe to screenshot -->
     <string name="three_finger_gesture">滑動以擷取螢幕畫面</string>
     <string name="three_finger_gesture_summary">同時滑動三支手指以擷取螢幕畫面</string>
@@ -645,7 +634,7 @@
     <string name="notification_heads_up_timeout_summary">彈出通知的顯示時間</string>
     <!-- Less boring heads up -->
     <string name="less_boring_heads_up_title">不感興趣</string>
-    <string name="less_boring_heads_up_summary">僅顯示警報，撥號程式和訊息應用程式的彈出通知</string>
+    <string name="less_boring_heads_up_summary">僅顯示時鐘、電話和訊息應用程式的彈出通知</string>
     <!-- Notifications while screen on -->
     <string name="notification_sound_vib_screen_on_title">煩人通知</string>
     <string name="notification_sound_vib_screen_on_summary">在螢幕開啟時為通知播放音效和震動</string>
@@ -1127,4 +1116,11 @@
     <string name="qs_panel_style_surround">環繞</string>
     <string name="qs_panel_style_thin">細線</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">音量級別</string>
+    <string name="volume_steps_summary">控制個別應用的音量級別</string>
+    <string name="max_music_volume_title">媒體</string>
+    <string name="max_call_volume_title">電話</string>
+    <string name="max_alarm_volume_title">鬧鐘</string>
+    <string name="steps_unit">級別</string>
 </resources>
