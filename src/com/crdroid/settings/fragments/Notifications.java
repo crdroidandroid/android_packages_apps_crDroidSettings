@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2023 crDroid Android Project
+ * Copyright (C) 2016-2024 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,12 +54,19 @@ public class Notifications extends SettingsPreferenceFragment implements
     private static final String LIGHT_BRIGHTNESS_CATEGORY = "light_brightness";
     private static final String BATTERY_LIGHTS_PREF = "battery_lights";
     private static final String NOTIFICATION_LIGHTS_PREF = "notification_lights";
+    private static final String FLASHLIGHT_CATEGORY = "flashlight_category";
+    private static final String FLASHLIGHT_CALL_PREF = "flashlight_on_call";
+    private static final String FLASHLIGHT_DND_PREF = "flashlight_on_call_ignore_dnd";
+    private static final String FLASHLIGHT_RATE_PREF = "flashlight_on_call_rate";
     private static final String HEADS_UP_TIMEOUT_PREF = "heads_up_timeout";
 
     private Preference mAlertSlider;
     private Preference mBatLights;
     private Preference mNotLights;
 
+    private ListPreference mFlashOnCall;
+    private SwitchPreference mFlashOnCallIgnoreDND;
+    private CustomSeekBarPreference mFlashOnCallRate;
     private CustomSeekBarPreference mHeadsUpTimeOut;
 
     @Override
@@ -100,10 +107,37 @@ public class Notifications extends SettingsPreferenceFragment implements
                     (PreferenceCategory) prefScreen.findPreference(LIGHT_BRIGHTNESS_CATEGORY);
             prefScreen.removePreference(lightsCategory);
         }
+
+        if (!Utils.deviceHasFlashlight(mContext)) {
+            final PreferenceCategory flashlightCategory =
+                    (PreferenceCategory) prefScreen.findPreference(FLASHLIGHT_CATEGORY);
+            prefScreen.removePreference(flashlightCategory);
+        } else {
+            mFlashOnCall = (ListPreference)
+                    prefScreen.findPreference(FLASHLIGHT_CALL_PREF);
+            mFlashOnCall.setOnPreferenceChangeListener(this);
+
+            mFlashOnCallIgnoreDND = (SwitchPreference)
+                    prefScreen.findPreference(FLASHLIGHT_DND_PREF);
+            int value = Settings.System.getInt(resolver,
+                    Settings.System.FLASHLIGHT_ON_CALL, 0);
+
+            mFlashOnCallRate = (CustomSeekBarPreference)
+                    prefScreen.findPreference(FLASHLIGHT_RATE_PREF);
+
+            mFlashOnCallIgnoreDND.setEnabled(value > 1);
+            mFlashOnCallRate.setEnabled(value > 0);
+        }
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mFlashOnCall) {
+            int value = Integer.parseInt((String) newValue);
+            mFlashOnCallIgnoreDND.setEnabled(value > 1);
+            mFlashOnCallRate.setEnabled(value > 0);
+            return true;
+        }
         return false;
     }
 
@@ -127,6 +161,12 @@ public class Notifications extends SettingsPreferenceFragment implements
                 Settings.System.LESS_BORING_HEADS_UP, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_SOUND_VIB_SCREEN_ON, 1, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL_IGNORE_DND, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.FLASHLIGHT_ON_CALL_RATE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ALERT_SLIDER_NOTIFICATIONS, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -166,6 +206,12 @@ public class Notifications extends SettingsPreferenceFragment implements
                             com.android.internal.R.bool.config_intrusiveNotificationLed);
                     if (!mNotLightsSupported)
                         keys.add(NOTIFICATION_LIGHTS_PREF);
+
+                    if (!Utils.deviceHasFlashlight(context)) {
+                        keys.add(FLASHLIGHT_CALL_PREF);
+                        keys.add(FLASHLIGHT_DND_PREF);
+                        keys.add(FLASHLIGHT_RATE_PREF);
+                    }
 
                     return keys;
                 }
