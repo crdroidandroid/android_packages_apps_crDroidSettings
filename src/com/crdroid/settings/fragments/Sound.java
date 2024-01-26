@@ -53,6 +53,10 @@ public class Sound extends SettingsPreferenceFragment {
 
     public static final String TAG = "Sound";
 
+    private static final String KEY_VIBRATE_CATEGORY = "incall_vib_options";
+    private static final String KEY_VIBRATE_CONNECT = "vibrate_on_connect";
+    private static final String KEY_VIBRATE_CALLWAITING = "vibrate_on_callwaiting";
+    private static final String KEY_VIBRATE_DISCONNECT = "vibrate_on_disconnect";
     private static final String KEY_VOLUME_PANEL_LEFT = "volume_panel_on_left";
 
     private SwitchPreference mVolumePanelLeft;
@@ -73,6 +77,12 @@ public class Sound extends SettingsPreferenceFragment {
 
         mVolumePanelLeft = (SwitchPreference) prefScreen.findPreference(KEY_VOLUME_PANEL_LEFT);
         mVolumePanelLeft.setChecked(isAudioPanelOnLeft);
+
+        final PreferenceCategory vibCategory = prefScreen.findPreference(KEY_VIBRATE_CATEGORY);
+
+        if (!TelephonyUtils.isVoiceCapable(getActivity())) {
+            prefScreen.removePreference(vibCategory);
+        }
     }
 
     public static void reset(Context mContext) {
@@ -80,6 +90,12 @@ public class Sound extends SettingsPreferenceFragment {
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.VOLUME_PANEL_ON_LEFT, isAudioPanelOnLeftSide(mContext) ? 1 : 0,
                 UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VIBRATE_ON_CONNECT, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VIBRATE_ON_CALLWAITING, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.VIBRATE_ON_DISCONNECT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.VOLUME_DIALOG_TIMEOUT, 3, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -108,5 +124,20 @@ public class Sound extends SettingsPreferenceFragment {
      * For search
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.crdroid_settings_sound);
+            new BaseSearchIndexProvider(R.xml.crdroid_settings_sound) {
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+
+                    if (!TelephonyUtils.isVoiceCapable(context)) {
+                        keys.add(KEY_VIBRATE_CATEGORY);
+                        keys.add(KEY_VIBRATE_CONNECT);
+                        keys.add(KEY_VIBRATE_CALLWAITING);
+                        keys.add(KEY_VIBRATE_DISCONNECT);
+                    }
+
+                    return keys;
+                }
+            };
 }
