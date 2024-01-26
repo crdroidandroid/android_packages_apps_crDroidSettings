@@ -237,16 +237,16 @@
     <string name="monet_summary">Kohanda Monet\' teemamootorit</string>
     <!-- Monet Engine -->
     <string name="monet_engine_custom_color_title">Aktsentvärv</string>
-    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
+    <string name="monet_engine_custom_color_summary">Vali kohandatud rõhuvärv</string>
     <string name="monet_engine_custom_bgcolor_title">Taustavärv</string>
-    <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
+    <string name="monet_engine_custom_bgcolor_summary">Vali kohandatud taustavärv</string>
     <string name="monet_engine_color_override_title">Kohandatud värv</string>
     <string name="monet_engine_luminance_factor_title">Heledus</string>
-    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
+    <string name="monet_engine_luminance_factor_summary">Suuremad väärtused loovad eredamaid värve</string>
     <string name="monet_engine_chroma_factor_title">Kroomifaktor</string>
-    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
-    <string name="monet_engine_tint_background_title">Tint background</string>
-    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
+    <string name="monet_engine_chroma_factor_summary">Suuremad väärtused loovad tugevamaid värve</string>
+    <string name="monet_engine_tint_background_title">Toonita taust</string>
+    <string name="monet_engine_tint_background_summary">Heleduse ja kromaatika valik mõjutab ka taustavärve</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Kiiravamine</string>
     <string name="unlock_quick_unlock_control_summary">Ava õige PINi/parooli sisestamisel automaatselt</string>
@@ -272,12 +272,12 @@
     <!-- Edge light -->
     <string name="edge_light_title">Servavalgus</string>
     <string name="edge_light_summary">Valgusta ekraani servasid teavituse saabumisel</string>
-    <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
-    <string name="edge_light_repeat_animation_title">Repeat animation</string>
-    <string name="edge_light_repeat_animation_summary_on">Repeat until timeout</string>
-    <string name="edge_light_repeat_animation_summary_off">Show only once</string>
-    <string name="edge_light_color_mode_title">Edge light color mode</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Kuva pulseerimisel alati</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Kuvab servavalgust mistahes ajal, kui ambientne kuva on nähtav - mitte ainult teavituste puhul</string>
+    <string name="edge_light_repeat_animation_title">Korda animatsiooni</string>
+    <string name="edge_light_repeat_animation_summary_on">Korda kuni ajalõpuni</string>
+    <string name="edge_light_repeat_animation_summary_off">Kuva vaid ühe korra</string>
+    <string name="edge_light_color_mode_title">Servavalguse värvirežiim</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Muusika tiksuja</string>
     <string name="pulse_on_new_tracks_summary">Kuva säästlikul ekraanil muusikatiksujat, kui lugu vahetub</string>
@@ -328,8 +328,8 @@
     <string name="theme_customization_navbar_summary">Määra kohandatud navigeerimisriba stiil</string>
     <string name="theme_customization_lock_clock_title">Kella teksti suurus</string>
     <string name="theme_customization_lock_clock_summary">Määra lukustuskuva kella fondi stiil</string>
-    <string name="theme_customization_brightness_slider_title">Brightness slider style</string>
-    <string name="theme_customization_brightness_slider_summary">Set custom brightness slider style</string>
+    <string name="theme_customization_brightness_slider_title">Heledusliuguri stiil</string>
+    <string name="theme_customization_brightness_slider_summary">Määra kohandatud heledusliuguri stiil</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Vaikimisi värskendussagedus</string>
     <string name="peak_refresh_rate_title_custom">Maksimaalne värskendussagedus</string>
@@ -575,7 +575,7 @@
     <string name="qs_brightness_slider_position_bottom">All</string>
     <!-- Brightness slider haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">Värintagasiside</string>
-    <string name="qs_brightness_slider_haptic_summary">Provide haptic feedback on changing brightness using slider</string>
+    <string name="qs_brightness_slider_haptic_summary">Liuguri abil heledust muutes kasuta värintagasisidet</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Automaatse heleduse ikoon</string>
     <string name="qs_show_auto_brightness_summary">Kuva kohanduva heleduse lülitit liuguri lähedal</string>
@@ -956,7 +956,7 @@
     <string name="lockscreen_weather_location_title">Ilma asukoht</string>
     <string name="lockscreen_weather_location_summary">Kuva praeguse ilmateate asukoht</string>
     <string name="lockscreen_weather_style_title">Pikslite stiil</string>
-    <string name="lockscreen_weather_style_summary">Display weather as separate row</string>
+    <string name="lockscreen_weather_style_summary">Kuva ilmateade eraldi real</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptiivne taasesitus</string>
     <string name="adaptive_playback_summary">Meedia paus, kui helitugevus on vaigistatud ja jätkake selle suurendamist, suurendades aja jooksul helitugevust</string>
@@ -1061,8 +1061,8 @@
     <string name="lockscreen_shortcut_remote">Google TV pult</string>
     <string name="lockscreen_shortcut_dnd">Mitte segada</string>
     <string name="lockscreen_shortcut_none">Puudub</string>
-    <string name="lockscreen_shortcut_enforce_title">Enforce shortcuts</string>
-    <string name="lockscreen_shortcut_enforce_summary">Do not display next available shortcut if chosen shortcut is not available</string>
+    <string name="lockscreen_shortcut_enforce_title">Jõusta otseteed</string>
+    <string name="lockscreen_shortcut_enforce_summary">Ära kuva järgmist saadaolevat otseteed, kui valitud otsetee pole saadaval</string>
     <!-- App lock -->
     <string name="app_lock_title">Rakenduselukk</string>
     <plurals name="app_lock_summary">
@@ -1073,20 +1073,20 @@
     <string name="enable_debugging">Luba silumine</string>
     <string name="disable_debugging">Keela silumine</string>
     <string name="app_lock_packages_title">Kaitstud rakendused</string>
-    <string name="app_lock_packages_summary">Select the apps to protect with biometrics or device credentials</string>
-    <string name="app_lock_timeout_title">Auto lock timeout</string>
-    <string name="app_lock_timeout_summary">Duration of time after which an unlocked app in background should be locked</string>
-    <string name="app_lock_notifications_title">Redact notifications</string>
-    <string name="app_lock_notifications_summary">Notification content will be hidden and collapsed for selected apps when they are locked. Heads up notifications will be automatically disabled.</string>
-    <string name="app_lock_notifications_disabled_summary">Protect an application first</string>
-    <string name="app_lock_biometrics_allowed_title">Enable biometrics for unlocking</string>
-    <string name="app_lock_footer_text">Bubbles will be automatically dismissed after timeout</string>
+    <string name="app_lock_packages_summary">Vali rakendused, mida kaitsta biomeetria või seadme parooliga</string>
+    <string name="app_lock_timeout_title">Automaatse lukustuse ajalõpp</string>
+    <string name="app_lock_timeout_summary">Aeg, mille möödumisel tuleb taustal olevad lahti lukustatud rakendused taas lukustada</string>
+    <string name="app_lock_notifications_title">Kata teavitused</string>
+    <string name="app_lock_notifications_summary">Valitud rakenduste teavituste sisu peidetakse ja lükatakse kokku, kuni need on lukustatud. Hüpikteavitused keelatakse automaatselt.</string>
+    <string name="app_lock_notifications_disabled_summary">Kõigepealt kaitse mõnda rakendust</string>
+    <string name="app_lock_biometrics_allowed_title">Luba lahti lukustamiseks biomeetria</string>
+    <string name="app_lock_footer_text">Mullid suletakse pärast ajalõppu automaatselt</string>
     <string name="enable_protection">Luba kaitse</string>
     <string name="hide_from_launcher_title">Peida käivitajast</string>
-    <string name="hide_from_launcher_summary">Prevent this application from showing up in any launcher. Requires a launcher restart for changes to take effect.</string>
+    <string name="hide_from_launcher_summary">Väldi selle rakenduse kuvamist mistahes käivitajas. Nõuab jõustumiseks käivitaja taaskäivitamist.</string>
     <!-- Doze on charge -->
-    <string name="doze_on_charge_title">Always show when charging</string>
-    <string name="doze_on_charge_summary">Display device is charging</string>
+    <string name="doze_on_charge_title">Kuva laadimise ajal alati</string>
+    <string name="doze_on_charge_summary">Kuva, et seade laeb</string>
     <!-- Volume link notification -->
     <string name="volume_link_notification_title">Ühenda helina ja teadete helitugevus</string>
     <!-- Radio Info -->
