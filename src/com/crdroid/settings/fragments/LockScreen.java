@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2023 crDroid Android Project
+ * Copyright (C) 2016-2024 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,14 +55,14 @@ public class LockScreen extends SettingsPreferenceFragment
 
     private static final String LOCKSCREEN_INTERFACE_CATEGORY = "lockscreen_interface_category";
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
-    private static final String KEY_UDFPS_SETTINGS = "udfps_settings";
     private static final String KEY_FP_SUCCESS_VIBRATE = "fp_success_vibrate";
     private static final String KEY_FP_ERROR_VIBRATE = "fp_error_vibrate";
     private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
     private static final String KEY_WEATHER = "lockscreen_weather_enabled";
+    private static final String KEY_UDFPS_ANIMATIONS = "udfps_recognizing_animation_preview";
     private static final String SCREEN_OFF_UDFPS_ENABLED = "screen_off_udfps_enabled";
 
-    private Preference mUdfpsSettings;
+    private Preference mUdfpsAnimations;
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
     private Preference mRippleEffect;
@@ -77,26 +77,25 @@ public class LockScreen extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.crdroid_settings_lockscreen);
 
-        PreferenceCategory interfaceCategory = (PreferenceCategory) findPreference(LOCKSCREEN_INTERFACE_CATEGORY);
         PreferenceCategory gestCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GESTURES_CATEGORY);
 
         FingerprintManager mFingerprintManager = (FingerprintManager)
                 getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
-        mUdfpsSettings = (Preference) findPreference(KEY_UDFPS_SETTINGS);
+        mUdfpsAnimations = (Preference) findPreference(KEY_UDFPS_ANIMATIONS);
         mFingerprintVib = (Preference) findPreference(KEY_FP_SUCCESS_VIBRATE);
         mFingerprintVibErr = (Preference) findPreference(KEY_FP_ERROR_VIBRATE);
         mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
         mScreenOffUdfps = (Preference) findPreference(SCREEN_OFF_UDFPS_ENABLED);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
-            interfaceCategory.removePreference(mUdfpsSettings);
+            gestCategory.removePreference(mUdfpsAnimations);
             gestCategory.removePreference(mFingerprintVib);
             gestCategory.removePreference(mFingerprintVibErr);
             gestCategory.removePreference(mRippleEffect);
             gestCategory.removePreference(mScreenOffUdfps);
         } else {
-            if (!Utils.isPackageInstalled(getContext(), "com.crdroid.udfps.icons")) {
-                interfaceCategory.removePreference(mUdfpsSettings);
+            if (!Utils.isPackageInstalled(getContext(), "com.crdroid.udfps.animations")) {
+                gestCategory.removePreference(mUdfpsAnimations);
             }
             Resources resources = getResources();
             boolean screenOffUdfpsAvailable = resources.getBoolean(
@@ -178,14 +177,14 @@ public class LockScreen extends SettingsPreferenceFragment
                     FingerprintManager mFingerprintManager = (FingerprintManager)
                             context.getSystemService(Context.FINGERPRINT_SERVICE);
                     if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
-                        keys.add(KEY_UDFPS_SETTINGS);
+                        keys.add(KEY_UDFPS_ANIMATIONS);
                         keys.add(KEY_FP_SUCCESS_VIBRATE);
                         keys.add(KEY_FP_ERROR_VIBRATE);
                         keys.add(KEY_RIPPLE_EFFECT);
                         keys.add(SCREEN_OFF_UDFPS_ENABLED);
                     } else {
-                        if (!Utils.isPackageInstalled(context, "com.crdroid.udfps.icons")) {
-                            keys.add(KEY_UDFPS_SETTINGS);
+                        if (!Utils.isPackageInstalled(context, "com.crdroid.udfps.animations")) {
+                            keys.add(KEY_UDFPS_ANIMATIONS);
                         }
                         Resources resources = context.getResources();
                         boolean screenOffUdfpsAvailable = resources.getBoolean(
