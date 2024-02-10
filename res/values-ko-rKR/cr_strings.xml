@@ -242,15 +242,15 @@
     <string name="monet_engine_chroma_factor_summary">높은 값은 더 강한 색을 만듬</string>
     <string name="monet_engine_tint_background_title">배경 틴트</string>
     <string name="monet_engine_tint_background_summary">밝기와 채도가 배경색에 영향을 미치도록 함</string>
-    <string name="monet_engine_style_title">Theme style</string>
+    <string name="monet_engine_style_title">테마 스타일</string>
     <string name="monet_engine_style_tonal_spot">Tonal Spot (Default)</string>
     <string name="monet_engine_style_vibrant">Vibrant</string>
     <string name="monet_engine_style_expressive">Expressive</string>
     <string name="monet_engine_style_spritz">Spritz</string>
-    <string name="monet_engine_style_rainbow">Rainbow</string>
-    <string name="monet_engine_style_fruit_salad">Fruit Salad</string>
-    <string name="monet_engine_style_muted">Muted</string>
-    <string name="monet_engine_style_content">Content</string>
+    <string name="monet_engine_style_rainbow">무지개</string>
+    <string name="monet_engine_style_fruit_salad">과일 샐러드</string>
+    <string name="monet_engine_style_muted">음소거됨</string>
+    <string name="monet_engine_style_content">콘텐츠</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">빠른 잠금해제</string>
     <string name="unlock_quick_unlock_control_summary">PIN/비밀번호를 올바르게 입력하면 자동으로 잠금을 해제합니다</string>
@@ -775,7 +775,7 @@
     <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
     <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
     <plurals name="wifi_hotspot_client_limit_summary">
-        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="other">최대 기기 <xliff:g id="device_num">%1$d</xliff:g>대가 이 핫스팟에 연결할 수 있음</item>
     </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">잠금화면에서 빠른 설정 숨기기</string>
@@ -882,7 +882,7 @@
     <!-- Battery temperature -->
     <string name="battery_temperature">배터리 온도</string>
     <!-- QS Transparency -->
-    <string name="qs_opacity_title">Background opacity</string>
+    <string name="qs_opacity_title">배경 불투명도</string>
     <string name="qs_opacity_summary">Set opacity level for QS background</string>
     <string name="qs_footer_opacity_title">Footer opacity</string>
     <string name="qs_footer_opacity_summary">Set opacity level for QS footer</string>
@@ -927,13 +927,13 @@
     <string name="weather_settings_title">날씨 설정</string>
     <string name="weather_settings_summary">아이콘 및 날씨 서비스 설정</string>
     <string name="lockscreen_weather_category">날씨</string>
-    <string name="lockscreen_weather_title">Weather update</string>
-    <string name="lockscreen_weather_summary">Display current weather update</string>
+    <string name="lockscreen_weather_title">날씨 업데이트</string>
+    <string name="lockscreen_weather_summary">현재 날씨 업데이트 표시</string>
     <string name="lockscreen_weather_enabled_info">날씨 정보 제공 서비스 활성화가 필요함</string>
-    <string name="lockscreen_weather_location_title">Current location</string>
+    <string name="lockscreen_weather_location_title">현재 위치</string>
     <string name="lockscreen_weather_location_summary">현재 날씨 위치 표시</string>
-    <string name="lockscreen_weather_text_title">Current condition</string>
-    <string name="lockscreen_weather_text_summary">Display current weather condition summary</string>
+    <string name="lockscreen_weather_text_title">현재 상태</string>
+    <string name="lockscreen_weather_text_summary">현재 날씨 요약 표시</string>
     <string name="lockscreen_weather_style_title">Pixel 스타일</string>
     <string name="lockscreen_weather_style_summary">날씨를 다른 줄에 표시</string>
     <!-- Adaptive Playback -->
@@ -1040,18 +1040,18 @@
     <!-- App lock -->
     <string name="app_lock_title">앱 잠금</string>
     <plurals name="app_lock_summary">
-        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
+        <item quantity="other"><xliff:g example="2" id="Number of applications">%1$d</xliff:g>개의 앱이 보호되고 있습니다</item>
     </plurals>
     <string name="app_lock_authentication_dialog_title">잠금 해제</string>
     <string name="enable_debugging">디버깅 활성화</string>
     <string name="disable_debugging">디버깅 비활성화</string>
     <string name="app_lock_packages_title">보호된 앱</string>
-    <string name="app_lock_packages_summary">Select the apps to protect with biometrics or device credentials</string>
+    <string name="app_lock_packages_summary">생체 인식 또는 기기 보안으로 보호할 앱 선택</string>
     <string name="app_lock_timeout_title">자동 잠금 타임아웃</string>
-    <string name="app_lock_timeout_summary">Duration of time after which an unlocked app in background should be locked</string>
+    <string name="app_lock_timeout_summary">백그라운드에서 잠금 해제된 앱을 잠글 때까지의 시간</string>
     <string name="app_lock_notifications_title">Redact notifications</string>
     <string name="app_lock_notifications_summary">Notification content will be hidden and collapsed for selected apps when they are locked. Heads up notifications will be automatically disabled.</string>
-    <string name="app_lock_notifications_disabled_summary">Protect an application first</string>
+    <string name="app_lock_notifications_disabled_summary">먼저 애플리케이션을 보호하십시오</string>
     <string name="app_lock_biometrics_allowed_title">잠금 해제 할 때 생체 인식 사용</string>
     <string name="app_lock_footer_text">시간 초과 후 버블이 자동으로 해제됩니다</string>
     <string name="enable_protection">보호 활성화</string>
