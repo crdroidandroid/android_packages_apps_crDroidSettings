@@ -44,6 +44,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.lockscreen.UdfpsAnimation;
+import com.crdroid.settings.fragments.lockscreen.UdfpsIconPicker;
 
 import java.util.List;
 
@@ -62,9 +63,11 @@ public class LockScreen extends SettingsPreferenceFragment
     private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
     private static final String KEY_WEATHER = "lockscreen_weather_enabled";
     private static final String KEY_UDFPS_ANIMATIONS = "udfps_recognizing_animation_preview";
+    private static final String KEY_UDFPS_ICONS = "udfps_icon_picker";
     private static final String SCREEN_OFF_UDFPS_ENABLED = "screen_off_udfps_enabled";
 
     private Preference mUdfpsAnimations;
+    private Preference mUdfpsIcons;
     private Preference mFingerprintVib;
     private Preference mFingerprintVibErr;
     private Preference mRippleEffect;
@@ -84,6 +87,7 @@ public class LockScreen extends SettingsPreferenceFragment
         FingerprintManager mFingerprintManager = (FingerprintManager)
                 getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mUdfpsAnimations = (Preference) findPreference(KEY_UDFPS_ANIMATIONS);
+        mUdfpsIcons = (Preference) findPreference(KEY_UDFPS_ICONS);
         mFingerprintVib = (Preference) findPreference(KEY_FP_SUCCESS_VIBRATE);
         mFingerprintVibErr = (Preference) findPreference(KEY_FP_ERROR_VIBRATE);
         mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
@@ -91,6 +95,7 @@ public class LockScreen extends SettingsPreferenceFragment
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             gestCategory.removePreference(mUdfpsAnimations);
+            gestCategory.removePreference(mUdfpsIcons);
             gestCategory.removePreference(mFingerprintVib);
             gestCategory.removePreference(mFingerprintVibErr);
             gestCategory.removePreference(mRippleEffect);
@@ -98,6 +103,9 @@ public class LockScreen extends SettingsPreferenceFragment
         } else {
             if (!Utils.isPackageInstalled(getContext(), "com.crdroid.udfps.animations")) {
                 gestCategory.removePreference(mUdfpsAnimations);
+            }
+            if (!Utils.isPackageInstalled(getContext(), "com.crdroid.udfps.icons")) {
+                gestCategory.removePreference(mUdfpsIcons);
             }
             Resources resources = getResources();
             boolean screenOffUdfpsAvailable = resources.getBoolean(
@@ -145,6 +153,7 @@ public class LockScreen extends SettingsPreferenceFragment
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_WEATHER_TEXT, 1, UserHandle.USER_CURRENT);
         UdfpsAnimation.reset(mContext);
+        UdfpsIconPicker.reset(mContext);
     }
 
     private void updateWeatherSettings() {
@@ -181,6 +190,7 @@ public class LockScreen extends SettingsPreferenceFragment
                             context.getSystemService(Context.FINGERPRINT_SERVICE);
                     if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
                         keys.add(KEY_UDFPS_ANIMATIONS);
+                        keys.add(KEY_UDFPS_ICONS);
                         keys.add(KEY_FP_SUCCESS_VIBRATE);
                         keys.add(KEY_FP_ERROR_VIBRATE);
                         keys.add(KEY_RIPPLE_EFFECT);
@@ -188,6 +198,9 @@ public class LockScreen extends SettingsPreferenceFragment
                     } else {
                         if (!Utils.isPackageInstalled(context, "com.crdroid.udfps.animations")) {
                             keys.add(KEY_UDFPS_ANIMATIONS);
+                        }
+                        if (!Utils.isPackageInstalled(context, "com.crdroid.udfps.icons")) {
+                            keys.add(KEY_UDFPS_ICONS);
                         }
                         Resources resources = context.getResources();
                         boolean screenOffUdfpsAvailable = resources.getBoolean(
