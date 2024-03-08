@@ -22,13 +22,15 @@
     <PreferenceCategory
          android:title="@string/qs_misc_category">
 
-        <!-- QS Header image -->
-        <Preference
+        <!-- QS Header Image -->
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_header_image"
             android:icon="@drawable/ic_header"
-            android:fragment="com.crdroid.settings.fragments.qs.QsHeaderImageSettings"
             android:title="@string/qs_header_image_title"
-            android:summary="@string/qs_header_image_summary" />
+            android:defaultValue="0"
+            settings:interval="1"
+            android:max="24"
+            android:min="0" />
 
         <!-- QS clock
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
