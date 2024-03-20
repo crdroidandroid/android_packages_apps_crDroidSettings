@@ -237,16 +237,16 @@
     <string name="monet_summary">Personalizar o motor de temas Monet</string>
     <!-- Monet Engine -->
     <string name="monet_engine_custom_color_title">Cor do acento</string>
-    <string name="monet_engine_custom_color_summary">Choose custom color for accent</string>
-    <string name="monet_engine_custom_bgcolor_title">Background color</string>
-    <string name="monet_engine_custom_bgcolor_summary">Choose custom color for background</string>
+    <string name="monet_engine_custom_color_summary">Personalizar a cor de destaque</string>
+    <string name="monet_engine_custom_bgcolor_title">Cor de fundo</string>
+    <string name="monet_engine_custom_bgcolor_summary">Personalizar a cor de fundo</string>
     <string name="monet_engine_color_override_title">Cor personalizada</string>
-    <string name="monet_engine_luminance_factor_title">Luminance</string>
-    <string name="monet_engine_luminance_factor_summary">Higher values produce brighter colors</string>
+    <string name="monet_engine_luminance_factor_title">Luminosidade</string>
+    <string name="monet_engine_luminance_factor_summary">Valores maiores produzem cores mais brilhantes</string>
     <string name="monet_engine_chroma_factor_title">Fator cromático</string>
-    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
-    <string name="monet_engine_tint_background_title">Tint background</string>
-    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
+    <string name="monet_engine_chroma_factor_summary">Valores maiores produzem cores mais garridas</string>
+    <string name="monet_engine_tint_background_title">Colorir superfície de fundo</string>
+    <string name="monet_engine_tint_background_summary">Usar as definições de cor e de luminosidade na aplicação da cor de fundo</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Desbloqueio rápido</string>
     <string name="unlock_quick_unlock_control_summary">Desbloquear automaticamente quando o PIN ou palavra-passe correta for inserida</string>
@@ -328,8 +328,8 @@
     <string name="theme_customization_navbar_summary">Definir o estilo da barra de navegação</string>
     <string name="theme_customization_lock_clock_title">Estilo da fonte do relógio</string>
     <string name="theme_customization_lock_clock_summary">Definir estilo da fonte do relógio do ecrã de bloqueio</string>
-    <string name="theme_customization_brightness_slider_title">Brightness slider style</string>
-    <string name="theme_customization_brightness_slider_summary">Set custom brightness slider style</string>
+    <string name="theme_customization_brightness_slider_title">Estilo do controle deslizante de brilho</string>
+    <string name="theme_customization_brightness_slider_summary">Definir o estilo do controle deslizante de brilho</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Taxa de atualização padrão</string>
     <string name="peak_refresh_rate_title_custom">Taxa de atualização máxima</string>
@@ -507,7 +507,7 @@
     <string name="navbar_layout_title">Esquema</string>
     <string name="navbar_layout_normal">Normal</string>
     <string name="navbar_layout_compact">Compacta</string>
-    <string name="navbar_layout_expanded">Expanded</string>
+    <string name="navbar_layout_expanded">Expandido</string>
     <string name="navbar_layout_leftleaning">Alinhada à esquerda</string>
     <string name="navbar_layout_rightleaning">Alinhada à direita</string>
     <string name="navbar_invert_layout_title">Inverter esquema</string>
@@ -565,7 +565,7 @@
     <string name="crdroid_license_title">Licença crDroid</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Controlo de brilho</string>
-    <string name="qs_show_brightness_slider_title">When to show</string>
+    <string name="qs_show_brightness_slider_title">Quando mostrar</string>
     <string name="qs_show_brightness_slider_never">Nunca mostrar</string>
     <string name="qs_show_brightness_slider_expanded">Mostrar quando expandido</string>
     <string name="qs_show_brightness_slider_always">Mostrar sempre</string>
@@ -574,8 +574,8 @@
     <string name="qs_brightness_slider_position_top">Topo</string>
     <string name="qs_brightness_slider_position_bottom">Em baixo</string>
     <!-- Brightness slider haptic feedback -->
-    <string name="qs_brightness_slider_haptic_title">Haptic feedback</string>
-    <string name="qs_brightness_slider_haptic_summary">Provide haptic feedback on changing brightness using slider</string>
+    <string name="qs_brightness_slider_haptic_title">Vibração</string>
+    <string name="qs_brightness_slider_haptic_summary">Vibrar ao alterar o brilho através do controle deslizante</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Botão de brilho automático</string>
     <string name="qs_show_auto_brightness_summary">Mostrar interruptor de brilho automático junto à barra de controlo de brilho</string>
@@ -956,7 +956,7 @@
     <string name="lockscreen_weather_location_title">Localização meteorológica</string>
     <string name="lockscreen_weather_location_summary">Mostrar localização meteorológica atual</string>
     <string name="lockscreen_weather_style_title">Estilo de Pixel</string>
-    <string name="lockscreen_weather_style_summary">Display weather as separate row</string>
+    <string name="lockscreen_weather_style_summary">Mostrar o estado do tempo numa linha separada</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Reprodução adaptativa</string>
     <string name="adaptive_playback_summary">Pausar multimédia quando o volume é silenciado e retomá-la ao aumentar o volume dentro do tempo limite</string>
@@ -1059,10 +1059,10 @@
     <string name="lockscreen_shortcut_qr">Leitor de códigos QR</string>
     <string name="lockscreen_shortcut_camera">Câmara</string>
     <string name="lockscreen_shortcut_remote">Comando do Google TV</string>
-    <string name="lockscreen_shortcut_dnd">DND</string>
+    <string name="lockscreen_shortcut_dnd">Não incomodar</string>
     <string name="lockscreen_shortcut_none">Nenhum</string>
-    <string name="lockscreen_shortcut_enforce_title">Enforce shortcuts</string>
-    <string name="lockscreen_shortcut_enforce_summary">Do not display next available shortcut if chosen shortcut is not available</string>
+    <string name="lockscreen_shortcut_enforce_title">Forçar atalhos</string>
+    <string name="lockscreen_shortcut_enforce_summary">Não mostrar o próximo atalho disponível se o atalho escolhido não estiver disponível</string>
     <!-- App lock -->
     <string name="app_lock_title">Bloqueio de aplicações</string>
     <plurals name="app_lock_summary">
@@ -1088,15 +1088,15 @@
     <string name="doze_on_charge_title">Mostrar sempre ao carregar</string>
     <string name="doze_on_charge_summary">Exibir o ecrã ambiente quando o dispositivo está a carregar</string>
     <!-- Volume link notification -->
-    <string name="volume_link_notification_title">Link ring &amp; notification volumes</string>
+    <string name="volume_link_notification_title">Associar volumes de toque &amp; notificação</string>
     <!-- Radio Info -->
-    <string name="radio_info_title">Radio info</string>
+    <string name="radio_info_title">Informações de rede móvel</string>
     <!-- QS Header -->
-    <string name="qs_header_image_title">Header image</string>
+    <string name="qs_header_image_title">Imagem de cabeçalho</string>
     <!-- Lockscreen Clock -->
-    <string name="kg_custom_clock_top_margin_title">Double-line clock position</string>
-    <string name="kg_small_clock_text_size_title">Small clock size</string>
-    <string name="kg_large_clock_text_size_title">Double-line clock size</string>
+    <string name="kg_custom_clock_top_margin_title">Posição do relógio duplo</string>
+    <string name="kg_small_clock_text_size_title">Tamanho do relógio pequeno</string>
+    <string name="kg_large_clock_text_size_title">Tamanho do relógio duplo</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_ui_style_title">Estilo dos mosaicos</string>
     <string name="qs_tile_ui_style_a11_circle">Mosaicos circulares</string>
