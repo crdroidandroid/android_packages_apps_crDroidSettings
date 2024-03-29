@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2023 crDroid Android Project
+     Copyright (C) 2016-2024 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -80,7 +80,7 @@
             android:summary="@string/power_menu_summary"
             android:fragment="com.crdroid.settings.fragments.buttons.PowerMenuActions" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="power_end_call"
             android:icon="@drawable/ic_end_call"
             android:title="@string/power_end_call_title"
@@ -121,7 +121,7 @@
             android:summary="@string/button_wake_summary"
             android:defaultValue="true" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="home_answer_call"
             android:icon="@drawable/ic_answer_call"
             android:title="@string/home_answer_call_title"
@@ -345,7 +345,7 @@
             android:entryValues="@array/volbtn_cursor_control_values"
             android:persistent="false" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="swap_volume_buttons"
             android:icon="@drawable/ic_rotation"
             android:title="@string/swap_volume_buttons_title"

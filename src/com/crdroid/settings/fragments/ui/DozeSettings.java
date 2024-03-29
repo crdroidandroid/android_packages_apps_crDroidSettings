@@ -35,7 +35,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
@@ -69,13 +69,13 @@ public class DozeSettings extends SettingsPreferenceFragment implements
     private static final String KEY_RAISE_TO_WAKE_GESTURE = "raise_to_wake_gesture";
     private static final String KEY_DOZE_GESTURE_VIBRATE = "doze_gesture_vibrate";
 
-    private SwitchPreference mDozeEnabledPreference;
-    private SwitchPreference mDozeAlwaysOnPreference;
-    private SwitchPreference mTiltPreference;
-    private SwitchPreference mPickUpPreference;
-    private SwitchPreference mHandwavePreference;
-    private SwitchPreference mPocketPreference;
-    private SwitchPreference mRaiseToWakePreference;
+    private SwitchPreferenceCompat mDozeEnabledPreference;
+    private SwitchPreferenceCompat mDozeAlwaysOnPreference;
+    private SwitchPreferenceCompat mTiltPreference;
+    private SwitchPreferenceCompat mPickUpPreference;
+    private SwitchPreferenceCompat mHandwavePreference;
+    private SwitchPreferenceCompat mPocketPreference;
+    private SwitchPreferenceCompat mRaiseToWakePreference;
     private SecureSettingSeekBarPreference mDozeVibratePreference;
 
     private Preference mDozeAlwaysOnSchedulePreference;
@@ -93,8 +93,8 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         PreferenceCategory dozeSensorCategory =
                 (PreferenceCategory) getPreferenceScreen().findPreference(CATEG_DOZE_SENSOR);
 
-        mDozeEnabledPreference = (SwitchPreference) findPreference(KEY_DOZE_ENABLED);
-        mDozeAlwaysOnPreference = (SwitchPreference) findPreference(KEY_DOZE_ALWAYS_ON);
+        mDozeEnabledPreference = (SwitchPreferenceCompat) findPreference(KEY_DOZE_ENABLED);
+        mDozeAlwaysOnPreference = (SwitchPreferenceCompat) findPreference(KEY_DOZE_ALWAYS_ON);
         mDozeAlwaysOnSchedulePreference = findPreference(KEY_DOZE_ALWAYS_ON_SCHEDULE);
 
         boolean dozeEnabledDefault = context.getResources().getBoolean(
@@ -104,11 +104,11 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 dozeEnabledDefault ? 1 : 0, UserHandle.USER_CURRENT) != 0;
         mDozeEnabledPreference.setChecked(dozeEnabled);
 
-        mTiltPreference = (SwitchPreference) findPreference(KEY_DOZE_TILT_GESTURE);
-        mPickUpPreference = (SwitchPreference) findPreference(KEY_DOZE_PICK_UP_GESTURE);
-        mHandwavePreference = (SwitchPreference) findPreference(KEY_DOZE_HANDWAVE_GESTURE);
-        mPocketPreference = (SwitchPreference) findPreference(KEY_DOZE_POCKET_GESTURE);
-        mRaiseToWakePreference = (SwitchPreference) findPreference(KEY_RAISE_TO_WAKE_GESTURE);
+        mTiltPreference = (SwitchPreferenceCompat) findPreference(KEY_DOZE_TILT_GESTURE);
+        mPickUpPreference = (SwitchPreferenceCompat) findPreference(KEY_DOZE_PICK_UP_GESTURE);
+        mHandwavePreference = (SwitchPreferenceCompat) findPreference(KEY_DOZE_HANDWAVE_GESTURE);
+        mPocketPreference = (SwitchPreferenceCompat) findPreference(KEY_DOZE_POCKET_GESTURE);
+        mRaiseToWakePreference = (SwitchPreferenceCompat) findPreference(KEY_RAISE_TO_WAKE_GESTURE);
         mDozeVibratePreference = (SecureSettingSeekBarPreference) findPreference(KEY_DOZE_GESTURE_VIBRATE);
 
         // Hide sensor related features if the device doesn't support them

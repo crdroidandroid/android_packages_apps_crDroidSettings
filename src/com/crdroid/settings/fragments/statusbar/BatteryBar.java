@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2021 crDroid Android Project
+ * Copyright (C) 2016-2024 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
@@ -41,7 +41,7 @@ public class BatteryBar extends SettingsPreferenceFragment
 
     private static final String PREF_BATT_BAR = "statusbar_battery_bar";
 
-    private SwitchPreference mBatteryBar;
+    private SwitchPreferenceCompat mBatteryBar;
 
     private boolean mIsBarSwitchingMode = false;
     private Handler mHandler;
@@ -58,7 +58,7 @@ public class BatteryBar extends SettingsPreferenceFragment
         int intColor;
         String hexColor;
 
-        mBatteryBar = (SwitchPreference) findPreference(PREF_BATT_BAR);
+        mBatteryBar = (SwitchPreferenceCompat) findPreference(PREF_BATT_BAR);
         mHandler = new Handler();
 
         boolean showing = Settings.System.getIntForUser(resolver,

@@ -27,7 +27,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.crdroid.ThemeUtils;
@@ -63,8 +63,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
-    private SwitchPreference mBrightnessSliderHaptic;
-    private SwitchPreference mShowAutoBrightness;
+    private SwitchPreferenceCompat mBrightnessSliderHaptic;
+    private SwitchPreferenceCompat mShowAutoBrightness;
     private ListPreference mTileAnimationStyle;
     private CustomSeekBarPreference mTileAnimationDuration;
     private ListPreference mTileAnimationInterpolator;
@@ -165,8 +165,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_SHOW_BATTERY_PERCENT, 2, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SECURE_LOCKSCREEN_QS_DISABLED, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.NOTIFICATION_MATERIAL_DISMISS, 0, UserHandle.USER_CURRENT);
+//        Settings.System.putIntForUser(resolver,
+  //              Settings.System.NOTIFICATION_MATERIAL_DISMISS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TRANSPARENCY, 100, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,

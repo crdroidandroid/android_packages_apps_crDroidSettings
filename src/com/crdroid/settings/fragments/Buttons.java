@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2023 crDroid Android Project
+ * Copyright (C) 2016-2024 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -104,9 +104,9 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String CATEGORY_VOLUME = "volume_keys";
     private static final String CATEGORY_EXTRAS = "extras_category";
 
-    private SwitchPreference mHardwareKeysDisable;
-    private SwitchPreference mSwapCapacitiveKeys;
-    private SwitchPreference mAnbi;
+    private SwitchPreferenceCompat mHardwareKeysDisable;
+    private SwitchPreferenceCompat mSwapCapacitiveKeys;
+    private SwitchPreferenceCompat mAnbi;
     private ButtonBacklightBrightness backlight;
     private ListPreference mHomeLongPressAction;
     private ListPreference mHomeDoubleTapAction;
@@ -117,13 +117,13 @@ public class Buttons extends SettingsPreferenceFragment implements
     private ListPreference mAssistLongPressAction;
     private ListPreference mAppSwitchPressAction;
     private ListPreference mAppSwitchLongPressAction;
-    private SwitchPreference mCameraWakeScreen;
-    private SwitchPreference mCameraSleepOnRelease;
+    private SwitchPreferenceCompat mCameraWakeScreen;
+    private SwitchPreferenceCompat mCameraSleepOnRelease;
     private ListPreference mVolumeKeyCursorControl;
-    private SwitchPreference mSwapVolumeButtons;
-    private SwitchPreference mPowerEndCall;
-    private SwitchPreference mHomeAnswerCall;
-    private SwitchPreference mTorchLongPressPowerGesture;
+    private SwitchPreferenceCompat mSwapVolumeButtons;
+    private SwitchPreferenceCompat mPowerEndCall;
+    private SwitchPreferenceCompat mHomeAnswerCall;
+    private SwitchPreferenceCompat mTorchLongPressPowerGesture;
     private LineageSystemSettingSeekBarPreference mTorchLongPressPowerTimeout;
 
     private LineageHardwareManager mHardware;
@@ -167,9 +167,9 @@ public class Buttons extends SettingsPreferenceFragment implements
         final PreferenceCategory cameraCategory = prefScreen.findPreference(CATEGORY_CAMERA);
         final PreferenceCategory extrasCategory = prefScreen.findPreference(CATEGORY_EXTRAS);
 
-        mHardwareKeysDisable = (SwitchPreference) extrasCategory.findPreference(HWKEYS_DISABLED);
+        mHardwareKeysDisable = (SwitchPreferenceCompat) extrasCategory.findPreference(HWKEYS_DISABLED);
         mSwapCapacitiveKeys = extrasCategory.findPreference(KEY_SWAP_CAPACITIVE_KEYS);
-        mAnbi = (SwitchPreference) extrasCategory.findPreference(KEY_ANBI);
+        mAnbi = (SwitchPreferenceCompat) extrasCategory.findPreference(KEY_ANBI);
 
         // Power button ends calls.
         mPowerEndCall = findPreference(KEY_POWER_END_CALL);
@@ -376,8 +376,8 @@ public class Buttons extends SettingsPreferenceFragment implements
             }
         }
 
-        SwitchPreference volumeWakeScreen = findPreference(KEY_VOLUME_WAKE_SCREEN);
-        SwitchPreference volumeMusicControls = findPreference(KEY_VOLUME_MUSIC_CONTROLS);
+        SwitchPreferenceCompat volumeWakeScreen = findPreference(KEY_VOLUME_WAKE_SCREEN);
+        SwitchPreferenceCompat volumeMusicControls = findPreference(KEY_VOLUME_MUSIC_CONTROLS);
 
         if (volumeWakeScreen != null) {
             if (volumeMusicControls != null) {

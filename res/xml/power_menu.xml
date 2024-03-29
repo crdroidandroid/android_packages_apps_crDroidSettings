@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2022 crDroid Android Project
+     Copyright (C) 2016-2024 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -24,44 +24,44 @@
         android:key="power_menu_items"
         android:title="@string/power_menu_actions_title" >
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="screenshot"
             android:icon="@drawable/ic_screenshot"
             android:title="@string/power_menu_screenshot_title"
             android:summary="@string/power_menu_screenshot_summary"
             android:defaultValue="false" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="onthego"
             android:icon="@drawable/ic_onthego"
             android:title="@string/power_menu_onthego_title"
             android:defaultValue="false" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="airplane"
             android:icon="@drawable/ic_airplane_mode"
             android:title="@string/power_menu_airplane_title"
             android:defaultValue="false" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="users"
             android:icon="@drawable/ic_user"
             android:title="@string/power_menu_users_title"
             android:defaultValue="false" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="lockdown"
             android:icon="@drawable/ic_lock_outline"
             android:title="@string/power_menu_lockdown_title"
             android:defaultValue="false" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="emergency"
             android:icon="@drawable/ic_emergency"
             android:title="@string/power_menu_emergency_title"
             android:defaultValue="false" />
 
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="devicecontrols"
             android:icon="@drawable/ic_controls_icon"
             android:title="@string/power_menu_devicecontrols_title"

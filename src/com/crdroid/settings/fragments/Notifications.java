@@ -29,7 +29,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
@@ -65,7 +65,7 @@ public class Notifications extends SettingsPreferenceFragment implements
     private Preference mNotLights;
 
     private ListPreference mFlashOnCall;
-    private SwitchPreference mFlashOnCallIgnoreDND;
+    private SwitchPreferenceCompat mFlashOnCallIgnoreDND;
     private CustomSeekBarPreference mFlashOnCallRate;
     private CustomSeekBarPreference mHeadsUpTimeOut;
 
@@ -117,7 +117,7 @@ public class Notifications extends SettingsPreferenceFragment implements
                     prefScreen.findPreference(FLASHLIGHT_CALL_PREF);
             mFlashOnCall.setOnPreferenceChangeListener(this);
 
-            mFlashOnCallIgnoreDND = (SwitchPreference)
+            mFlashOnCallIgnoreDND = (SwitchPreferenceCompat)
                     prefScreen.findPreference(FLASHLIGHT_DND_PREF);
             int value = Settings.System.getInt(resolver,
                     Settings.System.FLASHLIGHT_ON_CALL, 0);

@@ -27,12 +27,10 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
 
-import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.crdroid.OmniJawsClient;
@@ -58,8 +56,6 @@ public class LockScreen extends SettingsPreferenceFragment
 
     private static final String LOCKSCREEN_INTERFACE_CATEGORY = "lockscreen_interface_category";
     private static final String LOCKSCREEN_GESTURES_CATEGORY = "lockscreen_gestures_category";
-    private static final String KEY_FP_SUCCESS_VIBRATE = "fp_success_vibrate";
-    private static final String KEY_FP_ERROR_VIBRATE = "fp_error_vibrate";
     private static final String KEY_RIPPLE_EFFECT = "enable_ripple_effect";
     private static final String KEY_WEATHER = "lockscreen_weather_enabled";
     private static final String KEY_UDFPS_ANIMATIONS = "udfps_recognizing_animation_preview";
@@ -68,8 +64,6 @@ public class LockScreen extends SettingsPreferenceFragment
 
     private Preference mUdfpsAnimations;
     private Preference mUdfpsIcons;
-    private Preference mFingerprintVib;
-    private Preference mFingerprintVibErr;
     private Preference mRippleEffect;
     private Preference mWeather;
     private Preference mScreenOffUdfps;
@@ -88,16 +82,12 @@ public class LockScreen extends SettingsPreferenceFragment
                 getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mUdfpsAnimations = (Preference) findPreference(KEY_UDFPS_ANIMATIONS);
         mUdfpsIcons = (Preference) findPreference(KEY_UDFPS_ICONS);
-        mFingerprintVib = (Preference) findPreference(KEY_FP_SUCCESS_VIBRATE);
-        mFingerprintVibErr = (Preference) findPreference(KEY_FP_ERROR_VIBRATE);
         mRippleEffect = (Preference) findPreference(KEY_RIPPLE_EFFECT);
         mScreenOffUdfps = (Preference) findPreference(SCREEN_OFF_UDFPS_ENABLED);
 
         if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
             gestCategory.removePreference(mUdfpsAnimations);
             gestCategory.removePreference(mUdfpsIcons);
-            gestCategory.removePreference(mFingerprintVib);
-            gestCategory.removePreference(mFingerprintVibErr);
             gestCategory.removePreference(mRippleEffect);
             gestCategory.removePreference(mScreenOffUdfps);
         } else {
@@ -128,8 +118,6 @@ public class LockScreen extends SettingsPreferenceFragment
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        LineageSettings.Secure.putIntForUser(resolver,
-                LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.SCREEN_OFF_UDFPS_ENABLED, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -137,13 +125,7 @@ public class LockScreen extends SettingsPreferenceFragment
         Settings.System.putIntForUser(resolver,
                 Settings.System.DOUBLE_TAP_SLEEP_LOCKSCREEN, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.LOCKSCREEN_ALBUMART_FILTER, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
                 Settings.System.ENABLE_RIPPLE_EFFECT, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.FP_ERROR_VIBRATE, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.FP_SUCCESS_VIBRATE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_ENABLE_POWER_MENU, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
@@ -191,8 +173,6 @@ public class LockScreen extends SettingsPreferenceFragment
                     if (mFingerprintManager == null || !mFingerprintManager.isHardwareDetected()) {
                         keys.add(KEY_UDFPS_ANIMATIONS);
                         keys.add(KEY_UDFPS_ICONS);
-                        keys.add(KEY_FP_SUCCESS_VIBRATE);
-                        keys.add(KEY_FP_ERROR_VIBRATE);
                         keys.add(KEY_RIPPLE_EFFECT);
                         keys.add(SCREEN_OFF_UDFPS_ENABLED);
                     } else {

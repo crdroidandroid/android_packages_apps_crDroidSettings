@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2022 crDroid Android Project
+ * Copyright (C) 2016-2024 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ import android.os.UserManager;
 import android.provider.Settings;
 import android.service.controls.ControlsProviderService;
 
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 
@@ -56,13 +56,13 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
 
     private PreferenceCategory mPowerMenuItemsCategory;
 
-    private SwitchPreference mScreenshotPref;
-    private SwitchPreference mOnTheGoPref;
-    private SwitchPreference mAirplanePref;
-    private SwitchPreference mUsersPref;
-    private SwitchPreference mLockDownPref;
-    private SwitchPreference mEmergencyPref;
-    private SwitchPreference mDeviceControlsPref;
+    private SwitchPreferenceCompat mScreenshotPref;
+    private SwitchPreferenceCompat mOnTheGoPref;
+    private SwitchPreferenceCompat mAirplanePref;
+    private SwitchPreferenceCompat mUsersPref;
+    private SwitchPreferenceCompat mLockDownPref;
+    private SwitchPreferenceCompat mEmergencyPref;
+    private SwitchPreferenceCompat mDeviceControlsPref;
 
     private LineageGlobalActions mLineageGlobalActions;
 
@@ -84,17 +84,17 @@ public class PowerMenuActions extends SettingsPreferenceFragment {
 
         for (String action : PowerMenuConstants.getAllActions()) {
             if (action.equals(GLOBAL_ACTION_KEY_SCREENSHOT)) {
-                mScreenshotPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SCREENSHOT);
+                mScreenshotPref = (SwitchPreferenceCompat) findPreference(GLOBAL_ACTION_KEY_SCREENSHOT);
             } else if (action.equals(GLOBAL_ACTION_KEY_ONTHEGO)) {
-                mOnTheGoPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_ONTHEGO);    
+                mOnTheGoPref = (SwitchPreferenceCompat) findPreference(GLOBAL_ACTION_KEY_ONTHEGO);    
             } else if (action.equals(GLOBAL_ACTION_KEY_AIRPLANE)) {
-                mAirplanePref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_AIRPLANE);
+                mAirplanePref = (SwitchPreferenceCompat) findPreference(GLOBAL_ACTION_KEY_AIRPLANE);
             } else if (action.equals(GLOBAL_ACTION_KEY_USERS)) {
-                mUsersPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_USERS);
+                mUsersPref = (SwitchPreferenceCompat) findPreference(GLOBAL_ACTION_KEY_USERS);
             } else if (action.equals(GLOBAL_ACTION_KEY_LOCKDOWN)) {
-                mLockDownPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_LOCKDOWN);
+                mLockDownPref = (SwitchPreferenceCompat) findPreference(GLOBAL_ACTION_KEY_LOCKDOWN);
             } else if (action.equals(GLOBAL_ACTION_KEY_EMERGENCY)) {
-                mEmergencyPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_EMERGENCY);
+                mEmergencyPref = (SwitchPreferenceCompat) findPreference(GLOBAL_ACTION_KEY_EMERGENCY);
             } else if (action.equals(GLOBAL_ACTION_KEY_DEVICECONTROLS)) {
                 mDeviceControlsPref = findPreference(GLOBAL_ACTION_KEY_DEVICECONTROLS);
             }
