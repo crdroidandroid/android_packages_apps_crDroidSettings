@@ -1,18 +1,8 @@
 /*
- * Copyright (C) 2010 Daniel Nilsson
- * Copyright (C) 2012 The CyanogenMod Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-FileCopyrightText: 2010 Daniel Nilsson
+ * SPDX-FileCopyrightText: 2012 The CyanogenMod Project
+ * SPDX-FileCopyrightText: 2022 The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.crdroid.settings.fragments.notifications.notificationlight;
@@ -34,11 +24,11 @@ import android.graphics.drawable.Drawable;
  */
 public class AlphaPatternDrawable extends Drawable {
 
-    private int mRectangleSize = 10;
+    private final int mRectangleSize;
 
-    private Paint mPaint = new Paint();
-    private Paint mPaintWhite = new Paint();
-    private Paint mPaintGray = new Paint();
+    private final Paint mPaint = new Paint();
+    private final Paint mPaintWhite = new Paint();
+    private final Paint mPaintGray = new Paint();
 
     private int numRectanglesHorizontal;
     private int numRectanglesVertical;
@@ -83,8 +73,8 @@ public class AlphaPatternDrawable extends Drawable {
         int height = bounds.height();
         int width = bounds.width();
 
-        numRectanglesHorizontal = (int) Math.ceil((width / mRectangleSize));
-        numRectanglesVertical = (int) Math.ceil(height / mRectangleSize);
+        numRectanglesHorizontal = (int) Math.ceil((float) width / mRectangleSize);
+        numRectanglesVertical = (int) Math.ceil((float) height / mRectangleSize);
 
         generatePatternBitmap();
     }

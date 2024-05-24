@@ -1,45 +1,28 @@
 /*
- * Copyright (C) 2017 The LineageOS Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.crdroid.settings.fragments.notifications.notificationlight;
 
-import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.UserHandle;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
 
-import lineageos.providers.LineageSettings;
-
-import org.lineageos.internal.notification.LightsCapabilities;
 import org.lineageos.internal.notification.LineageNotification;
 import com.crdroid.settings.preferences.CustomDialogPref;
 import com.android.settings.R;
@@ -47,7 +30,7 @@ import com.android.settings.R;
 public class BrightnessPreference extends CustomDialogPref<AlertDialog>
         implements SeekBar.OnSeekBarChangeListener {
 
-    private static String TAG = "BrightnessPreference";
+    private static final String TAG = "BrightnessPreference";
 
     public static final int LIGHT_BRIGHTNESS_MINIMUM = 1;
     public static final int LIGHT_BRIGHTNESS_MAXIMUM = 255;
@@ -73,13 +56,12 @@ public class BrightnessPreference extends CustomDialogPref<AlertDialog>
     private int mLedColor = DEFAULT_LED_COLOR;
 
     private final Context mContext;
-    private final Handler mHandler;
 
     private final Notification.Builder mNotificationBuilder;
-    private NotificationManager mNotificationManager;
+    private final NotificationManager mNotificationManager;
 
     public interface OnBrightnessChangedListener {
-        public void onBrightnessChanged(int brightness);
+        void onBrightnessChanged(int brightness);
     }
 
     private OnBrightnessChangedListener mListener;
@@ -91,9 +73,6 @@ public class BrightnessPreference extends CustomDialogPref<AlertDialog>
         setDialogLayoutResource(R.layout.dialog_brightness);
 
         mContext = context;
-
-        // Message handler used for led notification update throttling.
-        mHandler = new Handler();
 
         mNotificationManager = context.getSystemService(NotificationManager.class);
 
@@ -126,26 +105,9 @@ public class BrightnessPreference extends CustomDialogPref<AlertDialog>
     protected void onPrepareDialogBuilder(AlertDialog.Builder builder,
             DialogInterface.OnClickListener listener) {
         super.onPrepareDialogBuilder(builder, listener);
-        // Set no-op handler for RESET button
-        // (note, the reset itself is handled in onDismissDialog())
-        builder.setNeutralButton(R.string.reset,
-                new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
-        builder.setPositiveButton(R.string.dlg_ok,
-                new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
-        builder.setNegativeButton(R.string.cancel,
-                new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
+        builder.setNeutralButton(R.string.reset, null);
+        builder.setNegativeButton(R.string.cancel, null);
+        builder.setPositiveButton(R.string.dlg_ok, null);
     }
 
     @Override
@@ -180,15 +142,17 @@ public class BrightnessPreference extends CustomDialogPref<AlertDialog>
         super.onBindDialogView(view);
 
         // Locate text view for percentage value
-        mDialogPercent = (TextView) view.findViewById(R.id.brightness_percent);
+        mDialogPercent = view.findViewById(R.id.brightness_percent);
 
         mVisibleLedBrightness = 0; // LED notification is not showing.
 
-        mBrightnessBar = (SeekBar) view.findViewById(R.id.brightness_seekbar);
+        mBrightnessBar = view.findViewById(R.id.brightness_seekbar);
         mBrightnessBar.setMax(LIGHT_BRIGHTNESS_MAXIMUM);
         mBrightnessBar.setMin(LIGHT_BRIGHTNESS_MINIMUM);
         mBrightnessBar.setOnSeekBarChangeListener(this);
         mBrightnessBar.setProgress(mSeekBarBrightness);
+        mBrightnessBar.setThumb(mContext.getResources().getDrawable(
+                R.drawable.ic_brightness_thumb, mContext.getTheme()));
     }
 
     @Override
@@ -255,7 +219,7 @@ public class BrightnessPreference extends CustomDialogPref<AlertDialog>
         }
     }
 
-    private Handler mLedHandler = new Handler() {
+    private final Handler mLedHandler = new Handler(Looper.getMainLooper()) {
         public void handleMessage(Message msg) {
             updateNotification();
         }
@@ -312,9 +276,7 @@ public class BrightnessPreference extends CustomDialogPref<AlertDialog>
             dest.writeInt(seekBarBrightness);
         }
 
-        public static final Parcelable.Creator<SavedState> CREATOR =
-                new Parcelable.Creator<SavedState>() {
-
+        public static final Parcelable.Creator<SavedState> CREATOR = new Parcelable.Creator<>() {
             public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
