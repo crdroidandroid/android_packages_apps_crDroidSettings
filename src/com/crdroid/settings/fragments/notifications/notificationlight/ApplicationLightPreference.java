@@ -1,17 +1,7 @@
 /*
- * Copyright (C) 2012 The CyanogenMod Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-FileCopyrightText: 2012 The CyanogenMod Project
+ * SPDX-FileCopyrightText: 2017-2022 The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.crdroid.settings.fragments.notifications.notificationlight;
@@ -38,7 +28,7 @@ import com.android.settings.R;
 public class ApplicationLightPreference extends CustomDialogPref<LightSettingsDialog>
         implements View.OnLongClickListener {
 
-    private static String TAG = "AppLightPreference";
+    private static final String TAG = "AppLightPreference";
     public static final int DEFAULT_TIME = 1000;
     public static final int DEFAULT_COLOR = 0xffffff;
 
@@ -61,42 +51,24 @@ public class ApplicationLightPreference extends CustomDialogPref<LightSettingsDi
     private LightSettingsDialog mDialog;
 
     public interface ItemLongClickListener {
-        public boolean onItemLongClick(String key);
+        boolean onItemLongClick(String key);
     }
 
     private ItemLongClickListener mLongClickListener;
 
-    /**
-     * @param context
-     * @param attrs
-     */
     public ApplicationLightPreference(Context context, AttributeSet attrs) {
         this(context, attrs, DEFAULT_COLOR, DEFAULT_TIME, DEFAULT_TIME);
     }
 
-    /**
-     * @param context
-     * @param attrs
-     * @param color
-     * @param onValue
-     * @param offValue
-     */
     public ApplicationLightPreference(Context context, AttributeSet attrs,
                                       int color, int onValue, int offValue) {
         this(context, attrs, color, onValue, offValue,
                 LightsCapabilities.supports(context, LightsCapabilities.LIGHTS_PULSATING_LED));
     }
 
-    /**
-     * @param context
-     * @param attrs
-     * @param color
-     * @param onValue
-     * @param offValue
-     * @param onOffChangeable
-     */
     public ApplicationLightPreference(Context context, AttributeSet attrs,
-                                      int color, int onValue, int offValue, boolean onOffChangeable) {
+                                      int color, int onValue, int offValue,
+                                      boolean onOffChangeable) {
         super(context, attrs);
         mColorValue = color;
         mOnValue = onValue;
@@ -155,7 +127,8 @@ public class ApplicationLightPreference extends CustomDialogPref<LightSettingsDi
     }
 
     private void updatePreferenceViews() {
-        final int size = (int) getContext().getResources().getDimension(R.dimen.oval_notification_size);
+        final int size = (int) getContext().getResources().getDimension(
+                R.dimen.oval_notification_size);
 
         if (mLightColorView != null) {
             mLightColorView.setEnabled(true);
@@ -240,18 +213,8 @@ public class ApplicationLightPreference extends CustomDialogPref<LightSettingsDi
         updatePreferenceViews();
     }
 
-    public void setOnValue(int value) {
-        mOnValue = value;
-        updatePreferenceViews();
-    }
-
     public int getOnValue() {
         return mOnValue;
-    }
-
-    public void setOffValue(int value) {
-        mOffValue = value;
-        updatePreferenceViews();
     }
 
     public int getOffValue() {
@@ -271,16 +234,6 @@ public class ApplicationLightPreference extends CustomDialogPref<LightSettingsDi
         mOffValue = offValue;
         mOnOffChangeable = onOffChangeable;
         updatePreferenceViews();
-    }
-
-    public void setOnOffValue(int onValue, int offValue) {
-        mOnValue = onValue;
-        mOffValue = offValue;
-        updatePreferenceViews();
-    }
-
-    public void setOnOffChangeable(boolean value) {
-        mOnOffChangeable = value;
     }
 
     public void setDefaultValues(int color, int onValue, int offValue) {
@@ -313,8 +266,10 @@ public class ApplicationLightPreference extends CustomDialogPref<LightSettingsDi
             return getContext().getResources().getString(R.string.default_time);
         }
 
-        String[] timeNames = getContext().getResources().getStringArray(R.array.notification_pulse_length_entries);
-        String[] timeValues = getContext().getResources().getStringArray(R.array.notification_pulse_length_values);
+        String[] timeNames = getContext().getResources().getStringArray(
+                R.array.notification_pulse_length_entries);
+        String[] timeValues = getContext().getResources().getStringArray(
+                R.array.notification_pulse_length_values);
 
         for (int i = 0; i < timeValues.length; i++) {
             if (Integer.decode(timeValues[i]).equals(time)) {
@@ -330,8 +285,10 @@ public class ApplicationLightPreference extends CustomDialogPref<LightSettingsDi
             return getContext().getResources().getString(R.string.default_time);
         }
 
-        String[] timeNames = getContext().getResources().getStringArray(R.array.notification_pulse_speed_entries);
-        String[] timeValues = getContext().getResources().getStringArray(R.array.notification_pulse_speed_values);
+        String[] timeNames = getContext().getResources().getStringArray(
+                R.array.notification_pulse_speed_entries);
+        String[] timeValues = getContext().getResources().getStringArray(
+                R.array.notification_pulse_speed_values);
 
         for (int i = 0; i < timeValues.length; i++) {
             if (Integer.decode(timeValues[i]).equals(time)) {

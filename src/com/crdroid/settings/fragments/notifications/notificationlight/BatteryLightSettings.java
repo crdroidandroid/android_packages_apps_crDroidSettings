@@ -1,18 +1,7 @@
 /*
- * Copyright (C) 2012 The CyanogenMod Project
- *               2017-2023 The LineageOS Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * SPDX-FileCopyrightText: 2012 The CyanogenMod Project
+ * SPDX-FileCopyrightText: 2017-2023 The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 package com.crdroid.settings.fragments.notifications.notificationlight;
@@ -87,7 +76,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        final Context context = getContext();
+        final Context context = requireContext();
         final Resources res = getResources();
         final ContentResolver resolver = context.getContentResolver();
 
@@ -103,7 +92,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
                 LightsCapabilities.LIGHTS_SEGMENTED_BATTERY_LED);
 
         addPreferencesFromResource(R.xml.battery_light_settings);
-        getActivity().getActionBar().setTitle(R.string.battery_light_title);
+        requireActivity().getActionBar().setTitle(R.string.battery_light_title);
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
@@ -198,8 +187,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     }
 
     private void refreshColors() {
-        ContentResolver resolver = getActivity().getContentResolver();
-        Resources res = getResources();
+        ContentResolver resolver = requireActivity().getContentResolver();
 
         if (mLowColorPref != null) {
             int lowColor = LineageSettings.System.getIntForUser(resolver,
@@ -217,7 +205,6 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
             int fullColor = LineageSettings.System.getIntForUser(resolver,
                     LineageSettings.System.BATTERY_LIGHT_FULL_COLOR, mDefaultFullColor, UserHandle.USER_CURRENT);
             mFullColorPref.setAllValues(fullColor, 0, 0, false);
-            updateBrightnessPrefColor(fullColor);
         }
 
         if (mReallyFullColorPref != null) {
@@ -244,22 +231,25 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
      * @param key of the specific setting to update
      */
     protected void updateValues(String key, Integer color) {
-        ContentResolver resolver = getActivity().getContentResolver();
-
-        if (key.equals(LOW_COLOR_PREF)) {
-            LineageSettings.System.putIntForUser(resolver,
-                    LineageSettings.System.BATTERY_LIGHT_LOW_COLOR, color, UserHandle.USER_CURRENT);
-        } else if (key.equals(MEDIUM_COLOR_PREF)) {
-            LineageSettings.System.putIntForUser(resolver,
-                    LineageSettings.System.BATTERY_LIGHT_MEDIUM_COLOR, color, UserHandle.USER_CURRENT);
-        } else if (key.equals(FULL_COLOR_PREF)) {
-            LineageSettings.System.putIntForUser(resolver,
-                    LineageSettings.System.BATTERY_LIGHT_FULL_COLOR, color, UserHandle.USER_CURRENT);
-            updateBrightnessPrefColor(color);
-        } else if (key.equals(REALLY_FULL_COLOR_PREF)) {
-            LineageSettings.System.putIntForUser(resolver,
-                    LineageSettings.System.BATTERY_LIGHT_REALLY_FULL_COLOR, color, UserHandle.USER_CURRENT);
-            updateBrightnessPrefColor(color);
+        ContentResolver resolver = requireActivity().getContentResolver();
+        switch (key) {
+            case LOW_COLOR_PREF:
+                LineageSettings.System.putIntForUser(resolver,
+                        LineageSettings.System.BATTERY_LIGHT_LOW_COLOR, color, UserHandle.USER_CURRENT);
+                break;
+            case MEDIUM_COLOR_PREF:
+                LineageSettings.System.putIntForUser(resolver,
+                        LineageSettings.System.BATTERY_LIGHT_MEDIUM_COLOR, color, UserHandle.USER_CURRENT);
+                break;
+            case FULL_COLOR_PREF:
+                LineageSettings.System.putIntForUser(resolver,
+                        LineageSettings.System.BATTERY_LIGHT_FULL_COLOR, color, UserHandle.USER_CURRENT);
+                break;
+            case REALLY_FULL_COLOR_PREF:
+                LineageSettings.System.putIntForUser(resolver,
+                        LineageSettings.System.BATTERY_LIGHT_REALLY_FULL_COLOR, color, UserHandle.USER_CURRENT);
+                updateBrightnessPrefColor(color);
+                break;
         }
     }
 
@@ -285,7 +275,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     }
 
     protected void resetColors() {
-        ContentResolver resolver = getActivity().getContentResolver();
+        ContentResolver resolver = requireActivity().getContentResolver();
 
         // Reset to the framework default colors
         LineageSettings.System.putIntForUser(resolver, LineageSettings.System.BATTERY_LIGHT_LOW_COLOR,
