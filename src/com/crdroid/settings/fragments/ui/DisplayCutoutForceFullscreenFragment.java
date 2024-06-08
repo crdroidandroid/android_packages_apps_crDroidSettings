@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2022 crDroid Android Project
+ * Copyright (C) 2022-2024 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,6 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SectionIndexer;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -42,6 +41,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.settingslib.applications.ApplicationsState;
+import com.google.android.material.materialswitch.MaterialSwitch;
 
 import com.android.settings.R;
 
@@ -299,7 +299,7 @@ public class DisplayCutoutForceFullscreenFragment extends PreferenceFragment
     private static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView title;
         private final ImageView icon;
-        private final Switch state;
+        private final MaterialSwitch state;
         private final View rootView;
 
         private ViewHolder(View view) {
