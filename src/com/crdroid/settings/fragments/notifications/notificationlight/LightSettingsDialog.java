@@ -194,15 +194,11 @@ public class LightSettingsDialog extends AlertDialog implements
         mColorPicker.setColor(state.getInt(STATE_KEY_COLOR), true);
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
+    public void onPause() {
         dismissLed();
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
+    public void onResume() {
         updateLed();
     }
 
