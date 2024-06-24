@@ -940,8 +940,8 @@
     <string name="qs_tile_layout_summary">라벨을 아이콘 옆 대신 아래에 표시</string>
     <string name="qs_columns_portrait_title">행 (세로 모드)</string>
     <string name="qs_columns_landscape_title">행 (가로 모드)</string>
-    <string name="qqs_rows_portrait_title">Quick QS Rows (portrait)</string>
-    <string name="qqs_rows_landscape_title">Quick QS Rows (landscape)</string>
+    <string name="qqs_rows_portrait_title">빠른 QS 행(세로)</string>
+    <string name="qqs_rows_landscape_title">빠른 QS 행(가로)</string>
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">배경 chip</string>
     <string name="statusbar_clock_chip_summary">시계 뒤 강조된 chip 보이기</string>
@@ -1022,9 +1022,9 @@
     <string name="custom_vibration_pattern_summary">진동 패턴 사용자 정의</string>
     <!-- Per-channel vibration pattern -->
     <string name="notification_custom_vibrate_title">커스텀 진동 패턴</string>
-    <string name="notification_custom_vibrate_summary">Replaces the default pattern only\nApp set pattern takes precedence</string>
-    <string name="notification_custom_vibrate_slider1">Vibrate for</string>
-    <string name="notification_custom_vibrate_slider2">Pause for</string>
+    <string name="notification_custom_vibrate_summary">기본 패턴만 대체\n앱 설정 패턴이 우선합니다.</string>
+    <string name="notification_custom_vibrate_slider1">진동 대상</string>
+    <string name="notification_custom_vibrate_slider2">일시 중지</string>
     <!-- Floating rotation button -->
     <string name="floating_rotation_button_title">플로팅 회전 버튼</string>
     <string name="floating_rotation_button_summary">장치가 회전 되었을 때 플로팅 회전 버튼을 보이기</string>
@@ -1033,7 +1033,7 @@
     <string name="netflix_spoof_summary">넷플릭스를 위해 다른 기기로 속이기</string>
     <!-- Captive portal -->
     <string name="captive_portal_title">연결성 확인</string>
-    <string name="captive_portal_summary">Determine if the device can connect to the internet, by contacting Google. Also used to detect captive portals.</string>
+    <string name="captive_portal_summary">Google에 문의하여 디바이스가 인터넷에 연결할 수 있는지 확인합니다. 캡티브 포털을 감지하는 데도 사용됩니다.</string>
     <!-- Battery stats reset -->
     <string name="battery_stats_reset">사용량 초기화?</string>
     <string name="battery_stats_message">배터리 사용 기록이 삭제됩니다</string>
@@ -1060,22 +1060,22 @@
     <string name="lockscreen_shortcut_dnd">방해금지 모드</string>
     <string name="lockscreen_shortcut_none">없음</string>
     <string name="lockscreen_shortcut_enforce_title">바로가기 강제</string>
-    <string name="lockscreen_shortcut_enforce_summary">Do not display next available shortcut if chosen shortcut is not available</string>
+    <string name="lockscreen_shortcut_enforce_summary">선택한 바로가기를 사용할 수 없는 경우 다음 사용 가능한 바로가기를 표시하지 않습니다.</string>
     <!-- App lock -->
     <string name="app_lock_title">앱 잠금</string>
     <plurals name="app_lock_summary">
-        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
+        <item quantity="other"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> 애플리케이션이 보호됨</item>
     </plurals>
     <string name="app_lock_authentication_dialog_title">잠금 해제</string>
     <string name="enable_debugging">디버깅 활성화</string>
     <string name="disable_debugging">디버깅 비활성화</string>
     <string name="app_lock_packages_title">보호된 앱</string>
-    <string name="app_lock_packages_summary">Select the apps to protect with biometrics or device credentials</string>
+    <string name="app_lock_packages_summary">생체 인식 또는 디바이스 자격 증명으로 보호할 앱을 선택하세요.</string>
     <string name="app_lock_timeout_title">자동 잠금 타임아웃</string>
-    <string name="app_lock_timeout_summary">Duration of time after which an unlocked app in background should be locked</string>
-    <string name="app_lock_notifications_title">Redact notifications</string>
-    <string name="app_lock_notifications_summary">Notification content will be hidden and collapsed for selected apps when they are locked. Heads up notifications will be automatically disabled.</string>
-    <string name="app_lock_notifications_disabled_summary">Protect an application first</string>
+    <string name="app_lock_timeout_summary">백그라운드에서 잠금 해제된 앱이 잠겨 있어야 하는 시간 기간</string>
+    <string name="app_lock_notifications_title">알림 삭제</string>
+    <string name="app_lock_notifications_summary">선택한 앱이 잠겨 있으면 알림 콘텐츠가 숨겨지고 앱이 접힙니다. 헤드업 알림은 자동으로 비활성화됩니다.</string>
+    <string name="app_lock_notifications_disabled_summary">애플리케이션을 먼저 보호하세요.</string>
     <string name="app_lock_biometrics_allowed_title">잠금 해제 할 때 생체 인식 사용</string>
     <string name="app_lock_footer_text">시간 초과 후 버블이 자동으로 해제됩니다</string>
     <string name="enable_protection">보호 활성화</string>
@@ -1095,19 +1095,19 @@
     <string name="kg_small_clock_text_size_title">작은 시계 위치</string>
     <string name="kg_large_clock_text_size_title">두 줄 시계 크기</string>
     <!-- QS Tiles Style -->
-    <string name="qs_tile_ui_style_title">QS tiles style</string>
-    <string name="qs_tile_ui_style_a11_circle">Circle tiles</string>
-    <string name="qs_tile_ui_style_a11_square">Square tiles</string>
-    <string name="qs_tile_ui_style_a11_mix">Circle &amp; Square tiles</string>
+    <string name="qs_tile_ui_style_title">QS 타일 스타일</string>
+    <string name="qs_tile_ui_style_a11_circle">원형 타일</string>
+    <string name="qs_tile_ui_style_a11_square">정사각형 타일</string>
+    <string name="qs_tile_ui_style_a11_mix">원형 &amp; 정사각형 타일</string>
     <!-- QS Panel Style -->
-    <string name="qs_panel_style_title">QS panel style</string>
-    <string name="qs_panel_style_outline">Outline</string>
-    <string name="qs_panel_style_two_tone">Two-Tone accent</string>
-    <string name="qs_panel_style_color_pop">Color pop</string>
-    <string name="qs_panel_style_shaded">Shaded</string>
-    <string name="qs_panel_style_cyberpunk">Cyberpunk</string>
-    <string name="qs_panel_style_neumorph">Neumorph</string>
-    <string name="qs_panel_style_reflected">Reflected</string>
-    <string name="qs_panel_style_surround">Surround</string>
-    <string name="qs_panel_style_thin">ThinLine</string>
+    <string name="qs_panel_style_title">QS 패널 스타일</string>
+    <string name="qs_panel_style_outline">개요</string>
+    <string name="qs_panel_style_two_tone">투톤 액센트</string>
+    <string name="qs_panel_style_color_pop">컬러 팝</string>
+    <string name="qs_panel_style_shaded">음영</string>
+    <string name="qs_panel_style_cyberpunk">사이버펑크</string>
+    <string name="qs_panel_style_neumorph">네오모프</string>
+    <string name="qs_panel_style_reflected">반영됨</string>
+    <string name="qs_panel_style_surround">서라운드</string>
+    <string name="qs_panel_style_thin">씬라인</string>
 </resources>
