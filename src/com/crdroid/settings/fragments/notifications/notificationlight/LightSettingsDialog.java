@@ -196,13 +196,8 @@ public class LightSettingsDialog extends AlertDialog implements
 
     @Override
     public void onStop() {
-        try {
-            super.onStop();
-        } catch (Exception e) {
-            // do nothing
-        } finally {
-            dismissLed();
-        }
+        super.onStop();
+        dismissLed();
     }
 
     @Override
