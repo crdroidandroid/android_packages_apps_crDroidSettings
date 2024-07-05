@@ -202,12 +202,12 @@
     <string name="backlight_summary_enabled_with_timeout">مُفعّل لـ <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">مفعّل</string>
     <plurals name="backlight_timeout_time">
-        <item quantity="zero"><xliff:g id="seconds">%d</xliff:g> ثوان</item>
+        <item quantity="zero"><xliff:g id="seconds">%d</xliff:g> ثانية</item>
         <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
         <item quantity="two"><xliff:g id="seconds">%d</xliff:g> seconds</item>
         <item quantity="few"><xliff:g id="seconds">%d</xliff:g> seconds</item>
         <item quantity="many"><xliff:g id="seconds">%d</xliff:g> seconds</item>
-        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> ثوان</item>
     </plurals>
     <!-- Power menu -->
     <string name="power_menu_title">قائمة زر التشغيل</string>
@@ -558,7 +558,7 @@
     <!-- Device Info screen. crDroid legal. -->
     <string name="crdroid_license_title">فريق crDroid</string>
     <!-- Quick Settings brightness slider -->
-    <string name="qs_brightness_slider_category">شريط تمرير السطوع</string>
+    <string name="qs_brightness_slider_category">شريط السطوع</string>
     <string name="qs_show_brightness_slider_title">شريط السطوع</string>
     <string name="qs_show_brightness_slider_never">لا تُظهر أبداً</string>
     <string name="qs_show_brightness_slider_expanded">إظهار عند التوسيع</string>
@@ -768,7 +768,7 @@
     <string name="custom_timeout_summary_4hours">4 ساعات</string>
     <string name="custom_timeout_summary_8hours">8 ساعات</string>
     <!-- WiFi Hotspot -->
-    <string name="wifi_hotspot_ap_band_title">AP Band</string>
+    <string name="wifi_hotspot_ap_band_title">نطاق نقطة الوصول</string>
     <string name="wifi_hotspot_hidden_ssid_title">شبكة مخفية</string>
     <string name="wifi_hotspot_hidden_ssid_summary">لن يظهر اسم نقطة اتصال هاتفك المحمول في قائمة شبكات WLAN المتاحة.</string>
     <string name="wifi_hotspot_client_manager_title">الأجهزة المتصلة</string>
@@ -786,7 +786,7 @@
     <string name="wifi_band_24ghz_and_6ghz">2.4 غيغاهرتز &amp; 6 غيغاهرتز</string>
     <plurals name="wifi_hotspot_client_limit_summary">
         <item quantity="zero">حتى <xliff:g id="device_num">%1$d</xliff:g> جهاز يستطيع الاتصال بنقطة الاتصال هذه</item>
-        <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="other">حتى <xliff:g id="device_num">%1$d</xliff:g> يستطيعون الاتصال بنقطة الاتصال هذه</item>
         <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
         <item quantity="two">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
         <item quantity="few">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
@@ -1058,7 +1058,7 @@
         <item quantity="two">التطبيق<xliff:g example="10" id="Number of applications">%1$d</xliff:g> محمي</item>
         <item quantity="few"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
         <item quantity="many"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
-        <item quantity="other"><xliff:g example="10" id="Number of applications">%1$d</xliff:g> applications are protected</item>
+        <item quantity="other"><xliff:g example="1" id="Number of applications">%1$d</xliff:g> التطبيقات محمية</item>
     </plurals>
     <string name="app_lock_authentication_dialog_title">إلغاء القفل</string>
     <string name="enable_debugging">فعل وضع التصحيح</string>
@@ -1132,7 +1132,7 @@
     <string name="qs_panel_style_shaded">مظلل</string>
     <string name="qs_panel_style_cyberpunk">سايبربانك</string>
     <string name="qs_panel_style_neumorph">Neumorph</string>
-    <string name="qs_panel_style_reflected">ينعكس</string>
+    <string name="qs_panel_style_reflected">منعكس</string>
     <string name="qs_panel_style_surround">مُحيطي</string>
     <string name="qs_panel_style_thin">خيط رفيع</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
@@ -1147,13 +1147,13 @@
     <string name="always_on_display_schedule_title">عرض الجدول الزمني</string>
     <string name="always_on_display_schedule_summary">تعيين الجدول الزمني للعرض دائماً على الشاشة</string>
     <string name="always_on_display_schedule_sunset">غروب</string>
-    <string name="always_on_display_schedule_sunrise">الشروق</string>
+    <string name="always_on_display_schedule_sunrise">شروق</string>
     <string name="always_on_display_schedule_mixed_sunset">التفعيل من غروب الشمس حتى وقت</string>
-    <string name="always_on_display_schedule_mixed_sunrise">Turns on from a time till sunrise</string>
+    <string name="always_on_display_schedule_mixed_sunrise">التفعيل من وقت حتى شروق الشمس</string>
     <!-- IME Space -->
-    <string name="navigation_bar_ime_space_title">IME space</string>
-    <string name="navigation_bar_ime_space_summary">Add space below keyboard when navigation hint is disabled</string>
+    <string name="navigation_bar_ime_space_title">مساحة IME</string>
+    <string name="navigation_bar_ime_space_summary">إضافة مساحة أسفل لوحة المفاتيح عند تعطيل تلميح التنقل</string>
     <!-- QS Bluetooth auto on -->
-    <string name="qs_bt_auto_on_title">Automatic Bluetooth on</string>
-    <string name="qs_bt_auto_on_summary">Always turn on Bluetooth when pressing the Bluetooth QS tile</string>
+    <string name="qs_bt_auto_on_title">تشغيل البلوتوث تلقائياً</string>
+    <string name="qs_bt_auto_on_summary">تشغيل البلوتوث دائماً عند الضغط على بلاط بلوتوث الإعدادات السريعة</string>
 </resources>
