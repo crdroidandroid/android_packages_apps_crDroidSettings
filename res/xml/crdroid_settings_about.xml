@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-     Copyright (C) 2016-2021 crDroid Android Project
+     Copyright (C) 2016-2024 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -101,12 +101,4 @@
         settings:controller="com.android.settings.system.SystemUpdatePreferenceController">
         <intent android:action="android.settings.SYSTEM_UPDATE_SETTINGS" />
     </Preference>
-
-    <!-- crDroid Drill -->
-    <Preference
-        android:key="crdroid_drill"
-        android:icon="@drawable/ic_drill"
-        android:title="@string/drill_title"
-        android:summary="@string/drill_summary"
-        android:fragment="com.crdroid.settings.fragments.about.Drill" />
 </PreferenceScreen>
