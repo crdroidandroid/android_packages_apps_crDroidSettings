@@ -84,9 +84,6 @@
     <string name="donate_crdroid_summary">Prispevajte, da podprete nadaljnji razvoj</string>
     <string name="donate_team_title">crDroid ekipa</string>
     <string name="donate_team_summary">Prispevajte, da podprete gostovanje strežnika, čas delovanja strani in upravljanje na splošno</string>
-    <!-- The Drill -->
-    <string name="drill_title">Postopek</string>
-    <string name="drill_summary">Ste našli hrošča? Naleteli na težavo?</string>
     <!-- OTA -->
     <string name="crdroid_update_title">Posodobitve</string>
     <string name="crdroid_update_summary">Preverite in prenesite zadnjo posodobitev</string>
@@ -242,9 +239,9 @@
     <string name="monet_engine_luminance_factor_title">Svetlost</string>
     <string name="monet_engine_luminance_factor_summary">Višje vrednosti ustvarijo svetlejše barve</string>
     <string name="monet_engine_chroma_factor_title">Dejavnik krome</string>
-    <string name="monet_engine_chroma_factor_summary">Higher values produce stronger colors</string>
-    <string name="monet_engine_tint_background_title">Tint background</string>
-    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
+    <string name="monet_engine_chroma_factor_summary">Višje vrednosti dajejo močnejše barve</string>
+    <string name="monet_engine_tint_background_title">Odtenek ozadja</string>
+    <string name="monet_engine_tint_background_summary">Izbira svetlosti in kroma vpliva tudi na barve ozadja</string>
     <string name="monet_engine_style_title">Theme style</string>
     <string name="monet_engine_style_tonal_spot">Tonal Spot (Default)</string>
     <string name="monet_engine_style_vibrant">Vibrant</string>
@@ -281,14 +278,14 @@
     <string name="doze_vibrate_summary">Trajanje vibriranja ob utripajočih obvestilih</string>
     <string name="sensor_warning_message">Nastavitve, ki temeljijo na tipalih so odvisne od združljivosti strojne opreme. Omogočenje tipal za okoliški zaslon lahko poveča porabo energije.</string>
     <!-- Edge light -->
-    <string name="edge_light_title">Edge light</string>
+    <string name="edge_light_title">Svetloba na robu</string>
     <string name="edge_light_summary">Osvetli robove zaslona ob utripajočih obvestilih</string>
-    <string name="edge_light_always_trigger_on_pulse_title">Always trigger on pulse</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
-    <string name="edge_light_repeat_animation_title">Repeat animation</string>
-    <string name="edge_light_repeat_animation_summary_on">Repeat until timeout</string>
-    <string name="edge_light_repeat_animation_summary_off">Show only once</string>
-    <string name="edge_light_color_mode_title">Edge light color mode</string>
+    <string name="edge_light_always_trigger_on_pulse_title">Vedno se sproži ob impulzu</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Ali naj se svetloba roba prikaže vedno, ko je prikazan ambientalni zaslon, in ne le za obvestila</string>
+    <string name="edge_light_repeat_animation_title">Ponovitev animacije</string>
+    <string name="edge_light_repeat_animation_summary_on">Ponavljajte do izteka časa</string>
+    <string name="edge_light_repeat_animation_summary_off">Prikaži samo enkrat</string>
+    <string name="edge_light_color_mode_title">Barvni način robne svetlobe</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Pokazatelj glasbe</string>
     <string name="pulse_on_new_tracks_summary">Prikaži pokazatelja glasbe na okoliškem zaslonu ob spremembi pesmi</string>
@@ -339,8 +336,8 @@
     <string name="theme_customization_navbar_summary">Nastavite slog vrstice za krmarjenje po meri</string>
     <string name="theme_customization_lock_clock_title">Slog pisave ure</string>
     <string name="theme_customization_lock_clock_summary">Nastavi slog pisave ure zaklenjenega zaslona</string>
-    <string name="theme_customization_brightness_slider_title">Brightness slider style</string>
-    <string name="theme_customization_brightness_slider_summary">Set custom brightness slider style</string>
+    <string name="theme_customization_brightness_slider_title">Slog drsnika za svetlost</string>
+    <string name="theme_customization_brightness_slider_summary">Nastavitev sloga drsnika svetlosti po meri</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Privzeta hitrost osveževanja</string>
     <string name="peak_refresh_rate_title_custom">Najvišja hitrost osveževanja</string>
@@ -516,7 +513,7 @@
     <string name="navbar_layout_title">Postavitev</string>
     <string name="navbar_layout_normal">Normalna</string>
     <string name="navbar_layout_compact">Kompaktna</string>
-    <string name="navbar_layout_expanded">Expanded</string>
+    <string name="navbar_layout_expanded">Razširjeno</string>
     <string name="navbar_layout_leftleaning">Nagnjena levo</string>
     <string name="navbar_layout_rightleaning">Nagnjena desno</string>
     <string name="navbar_invert_layout_title">Obrni razporeditev</string>
@@ -527,7 +524,7 @@
     <string name="navbar_home_long_press_title">Pridržanje Domov</string>
     <string name="navbar_home_double_tap_title">Dvojni tap Domov</string>
     <string name="navbar_app_switch_long_press_title">Pridržanje Nedavno</string>
-    <string name="navbar_app_switch_double_tap_title">Recents double tap</string>
+    <string name="navbar_app_switch_double_tap_title">Ponovni dvojni dotik</string>
     <string name="navbar_edge_long_swipe_title">Dolg poteg iz roba</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Zaznavanje žepa</string>
@@ -566,8 +563,8 @@
     <string name="qs_brightness_slider_position_top">Na vrhu</string>
     <string name="qs_brightness_slider_position_bottom">Spodaj</string>
     <!-- Brightness slider haptic feedback -->
-    <string name="qs_brightness_slider_haptic_title">Haptic feedback</string>
-    <string name="qs_brightness_slider_haptic_summary">Provide haptic feedback on changing brightness using slider</string>
+    <string name="qs_brightness_slider_haptic_title">Haptične povratne informacije</string>
+    <string name="qs_brightness_slider_haptic_summary">Zagotovite haptično povratno informacijo o spreminjanju svetlosti z drsnikom</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Ikona samodejne svetlosti</string>
     <string name="qs_show_auto_brightness_summary">Prikaži preklopnik za prilagodljivo svetlost blizu drsnika</string>
@@ -604,7 +601,7 @@
     <!-- Battery light settings -->
     <string name="light_brightness_category">Nastavitve svetlosti lučke</string>
     <string name="battery_light_title">Lučka za baterijo</string>
-    <string name="battery_light_enable_title">Enable battery light</string>
+    <string name="battery_light_enable_title">Omogočanje luči baterije</string>
     <string name="battery_light_summary">Nastavite barvo led lučke glede na napolnjenost baterije in stanja</string>
     <string name="battery_low_pulse_title">Utripaj, če je baterija skoraj prazna</string>
     <string name="battery_light_full_charge_disabled_title">Izklopi, ko je napolnjena</string>
@@ -615,7 +612,7 @@
     <string name="battery_light_really_full_color_title">Napolnjena (100%)</string>
     <!-- Lights settings screen, notification light settings -->
     <string name="notification_light_title">Lučka obvestila</string>
-    <string name="notification_light_enable_title">Enable notification light</string>
+    <string name="notification_light_enable_title">Omogočanje luči za obvestila</string>
     <string name="notification_light_summary">Nastavite barvo led lučke za obvestila</string>
     <string name="notification_light_general_title">Splošno</string>
     <string name="notification_light_advanced_title">Napredno</string>
@@ -633,7 +630,7 @@
     <!-- Lights settings, LED notification -->
     <string name="led_notification_title">Nastavitve lučke</string>
     <string name="led_notification_text">LED lučka omogočena z nastavitvami</string>
-    <string name="notification_light_add_apps_empty_summary">To add per app control, activate \'%1$s\' and press \'Add\'</string>
+    <string name="notification_light_add_apps_empty_summary">Če želite dodati kontrolo za posamezno aplikacijo, aktivirajte \"%1$s\" in pritisnite \"Dodaj\"</string>
     <!-- Heads up timeout -->
     <string name="notification_heads_up_title">Obvestila na zaslonu</string>
     <string name="notification_heads_up_summary">Dovoli pojavna obvestila</string>
@@ -776,9 +773,9 @@
     <string name="wifi_hotspot_blocked_clients_list_title">Blocked Devices</string>
     <string name="wifi_hotspot_connected_clients_list_title">Connected Devices</string>
     <string name="wifi_hotspot_block_client_dialog_title">Block device</string>
-    <string name="wifi_hotspot_block_client_dialog_text">This action will disconnect \"<xliff:g id="device_name">%1$s</xliff:g>\" from this device and add it to blocklist</string>
+    <string name="wifi_hotspot_block_client_dialog_text">To dejanje odklopi \"<xliff:g id="device_name">%1$s</xliff:g>\" s te naprave in jo doda na seznam blokad</string>
     <string name="wifi_hotspot_unblock_client_dialog_title">Unblock device</string>
-    <string name="wifi_hotspot_unblock_client_dialog_text">The device \"<xliff:g id="device_name">%1$s</xliff:g>\" will be able to connect to this hotspot</string>
+    <string name="wifi_hotspot_unblock_client_dialog_text">Naprava \"<xliff:g id="device_name">%1$s</xliff:g>\" se bo lahko povezala s to dostopno točko</string>
     <string name="wifi_hotspot_client_manager_footer_text">No clients are currently available. Connected and blocked devices will be listed here when available.</string>
     <string name="wifi_band_24ghz_and_5ghz">2.4 GHz &amp; 5 GHz</string>
     <string name="wifi_band_24ghz_and_6ghz">2.4 GHz &amp; 6 GHz</string>
