@@ -31,6 +31,14 @@
             android:targetClass="io.chaldeaprjkt.gamespace.settings.SettingsActivity" />
     </Preference>
 
+    <!-- Hide Developer Status -->
+    <Preference
+        android:key="hide_developer_status_settings"
+        android:icon="@drawable/ic_settings_development"
+        android:title="@string/hide_developer_status_title"
+        android:summary="@string/hide_developer_status_summary"
+        android:fragment="com.crdroid.settings.fragments.HideDeveloperStatusSettings" />
+
     <!-- Google Play Integrity -->
     <com.crdroid.settings.preferences.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops.pi"
