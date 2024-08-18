@@ -204,41 +204,13 @@
             android:summary="@string/qs_tile_layout_summary"
             android:defaultValue="false" />
 
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qs_layout_columns"
+        <Preference
+            android:key="qs_layout_columns_rows"
             android:icon="@drawable/ic_qs_tile"
-            android:title="@string/qs_columns_portrait_title"
-            android:max="5"
-            settings:min="2"
-            settings:interval="1"
-            android:defaultValue="2" />
+            android:title="@string/qs_layout_columns_rows_title"
+            android:summary="@string/qs_layout_columns_rows_summary"
+            android:fragment="com.crdroid.settings.fragments.quicksettings.LayoutSettings" />
 
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qs_layout_columns_landscape"
-            android:icon="@drawable/ic_qs_tile"
-            android:title="@string/qs_columns_landscape_title"
-            android:max="5"
-            settings:min="2"
-            settings:interval="1"
-            android:defaultValue="4" />
-
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qqs_layout_rows"
-            android:icon="@drawable/ic_qs_tile"
-            android:title="@string/qqs_rows_portrait_title"
-            android:max="3"
-            settings:min="1"
-            settings:interval="1"
-            android:defaultValue="2" />
-
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
-            android:key="qqs_layout_rows_landscape"
-            android:icon="@drawable/ic_qs_tile"
-            android:title="@string/qqs_rows_landscape_title"
-            android:max="3"
-            settings:min="1"
-            settings:interval="1"
-            android:defaultValue="1" />
     </PreferenceCategory>
 
     <PreferenceCategory

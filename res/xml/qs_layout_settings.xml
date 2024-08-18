@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/qs_layout_columns_rows_title">
+
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="qs_layout_columns"
+        android:title="@string/qs_columns_portrait_title"
+        android:max="5"
+        settings:min="2"
+        settings:interval="1"
+        android:defaultValue="2" />
+
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="qs_layout_columns_landscape"
+        android:title="@string/qs_columns_landscape_title"
+        android:max="5"
+        settings:min="2"
+        settings:interval="1"
+        android:defaultValue="4" />
+
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="qs_layout_rows"
+        android:title="@string/qs_rows_portrait_title"
+        android:max="5"
+        settings:min="2"
+        settings:interval="1"
+        android:defaultValue="4" />
+
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="qs_layout_rows_landscape"
+        android:title="@string/qs_rows_landscape_title"
+        android:max="3"
+        settings:min="1"
+        settings:interval="1"
+        android:defaultValue="2" />
+
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="qqs_layout_rows"
+        android:title="@string/qqs_rows_portrait_title"
+        android:max="3"
+        settings:min="1"
+        settings:interval="1"
+        android:defaultValue="2" />
+
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="qqs_layout_rows_landscape"
+        android:title="@string/qqs_rows_landscape_title"
+        android:max="3"
+        settings:min="1"
+        settings:interval="1"
+        android:defaultValue="1" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="qs_layout_columns_rows_footer"
+        android:title="@string/qs_layout_columns_rows_footer_text"
+        android:selectable="false"
+        settings:searchable="false" />
+
+</PreferenceScreen>
