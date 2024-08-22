@@ -52,9 +52,11 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
     private static final String SYS_NETFLIX_SPOOF = "persist.sys.pixelprops.netflix";
     private static final String KEY_THREE_FINGERS_SWIPE = "three_fingers_swipe";
+    private static final String KEY_THREE_FINGERS_LONG_SWIPE = "three_fingers_long_swipe";
 
     private Preference mPocketJudge;
     private ListPreference mThreeFingersSwipeAction;
+    private ListPreference mThreeFingersLongSwipeAction;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -77,6 +79,11 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION,
                 defaultThreeFingersSwipeAction);
         mThreeFingersSwipeAction = initList(KEY_THREE_FINGERS_SWIPE, threeFingersSwipeAction);
+
+        Action threeFingersLongSwipeAction = Action.fromSettings(getContentResolver(),
+                LineageSettings.System.KEY_THREE_FINGERS_LONG_SWIPE_ACTION,
+                Action.NOTHING);
+        mThreeFingersLongSwipeAction = initList(KEY_THREE_FINGERS_LONG_SWIPE, threeFingersLongSwipeAction);
     }
 
     private ListPreference initList(String key, Action value) {
@@ -104,6 +111,10 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         if (preference == mThreeFingersSwipeAction) {
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION);
+            return true;
+        } else if (preference == mThreeFingersLongSwipeAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    LineageSettings.System.KEY_THREE_FINGERS_LONG_SWIPE_ACTION);
             return true;
         }
         return false;
