@@ -240,10 +240,10 @@
     <string name="monet_engine_tint_background_title">גון הרקע</string>
     <string name="monet_engine_tint_background_summary">בחירות ההארה ועומק הצבע יחולו גם על צבעי הרקע</string>
     <string name="monet_engine_style_title">סגנון ערכת הנושא</string>
-    <string name="monet_engine_style_tonal_spot">Tonal Spot (Default)</string>
+    <string name="monet_engine_style_tonal_spot">נקודה טונאלית (ברירת מחדל)</string>
     <string name="monet_engine_style_vibrant">מלא חיים</string>
-    <string name="monet_engine_style_expressive">Expressive</string>
-    <string name="monet_engine_style_spritz">Spritz</string>
+    <string name="monet_engine_style_expressive">ביטוי</string>
+    <string name="monet_engine_style_spritz">טשטוש</string>
     <string name="monet_engine_style_rainbow">קשת בענן</string>
     <string name="monet_engine_style_fruit_salad">סלט פירות</string>
     <string name="monet_engine_color_source_title">מקור צבע</string>
@@ -533,9 +533,8 @@
     <!-- ANBI -->
     <string name="anbi_title">מגע מקרי</string>
     <string name="anbi_summary">מניעת אינטרקציה עם כפתורי ניווט בזמן נגיעה במסך</string>
-    <!-- Three-fingers-swipe to screenshot -->
-    <string name="three_finger_gesture">החלק לצילום מסך</string>
-    <string name="three_finger_gesture_summary">החלק עם שלוש אצבעות לצילום מסך</string>
+    <!-- Three fingers swipe action -->
+    <string name="three_fingers_swipe_title">החלקה בשלוש אצבעות</string>
     <!-- Running services - Background processes tab -->
     <string name="background_processes_settings_title">תהליכים הרצים ברקע</string>
     <!-- QS footer icons -->
@@ -885,8 +884,8 @@
     <!-- Battery temperature -->
     <string name="battery_temperature">טמפרטורת הסוללה</string>
     <!-- QS Transparency -->
-    <string name="qs_opacity_title">Background opacity</string>
-    <string name="qs_opacity_summary">Set opacity level for QS background</string>
+    <string name="qs_opacity_title">שקיפות הרקע</string>
+    <string name="qs_opacity_summary">הגדרת מידת השקיפות של רקע האריחים המהירים</string>
     <!-- Data usage info in QS footer -->
     <string name="qs_footer_datausage_title">שימוש בנתונים</string>
     <string name="qs_footer_datausage_summary">הצגת סיכום השימוש בנתונים בכותרת התחתונה של ההגדרות המהירות</string>
@@ -917,8 +916,13 @@
     <string name="qs_tile_label_hide_summary">הצגת סמל בלבד באריח</string>
     <string name="qs_tile_layout_title">פריסה אנכית</string>
     <string name="qs_tile_layout_summary">הצגת הכיתוב מתחת לסמל במקום לידו</string>
+    <string name="qs_layout_columns_rows_title">עמודות &amp; שורות</string>
+    <string name="qs_layout_columns_rows_summary">התאמה של פריסת השורות והעמודות של אריחי ההגדרות המהירות</string>
+    <string name="qs_layout_columns_rows_footer_text">מספר שורות האריחים צריך להיות שווה לזה של סרגל ההגדרות המהירות או גדול ממנו. מספר עמודות גבוה יותר ישמש לסגנון אריחי הגדרות מהירות עגול/רבוע (אנדרואיד 11).</string>
     <string name="qs_columns_portrait_title">עמודות (לאורך)</string>
     <string name="qs_columns_landscape_title">עמודות (לרוחב)</string>
+    <string name="qs_rows_portrait_title">שורות (לאורך)</string>
+    <string name="qs_rows_landscape_title">שורות (לרוחב)</string>
     <string name="qqs_rows_portrait_title">שורות אריחי הגדרות מהירות (אנכי/דיוקן)</string>
     <string name="qqs_rows_landscape_title">שורות אריחי הגדרות מהירות (אופקי/נוף)</string>
     <!-- Statusbar Clock background chip -->
@@ -1009,8 +1013,8 @@
     <string name="netflix_spoof_title">התחזות עבור Netflix</string>
     <string name="netflix_spoof_summary">הצגת המכשיר שלך כמכשיר מדגם שונה עבור Netflix</string>
     <!-- Google Play Integrity Spoof -->
-    <string name="pi_spoof_title">הונאת תקינות Google Play</string>
-    <string name="pi_spoof_summary">הצגת המכשיר שלך כמכשיר מדגם שונה עבור בדיקת תקינות Google Play</string>
+    <string name="pi_spoof_title">עקיפת תיקנות של חנות הגוגל פליי</string>
+    <string name="pi_spoof_summary">הצגת המכשיר שלך כמכשיר מדגם שונה בשביל בדיקת המכשיר לעקיפת חסימה של גוגל פליי</string>
     <!-- Captive portal -->
     <string name="captive_portal_title">בדיקת קישוריות</string>
     <string name="captive_portal_summary">אבחנה אם המכשיר יכול להתחבר לאינטרנט, ע\"י יצירת קשר עם Google. משמש גם לאיתור פורטלים ש\"נחטפו\".</string>
@@ -1104,8 +1108,8 @@
     <string name="island_notification_footer_text">        תכולת התראת \"אי\", בהשראת ה\"אי\" הדינמי של iOS, הופכת את הההתראות המוקפצות לכלי שימושי וקומפקטי עם אפשרויות גישה מהירה.\n\nה\"האפשרויות של \"אי\" הגישה המהירה כוללות את האפשרויות הבאות:\n1. לחיצה על התראת ה\"אי\" למענה מהיר לשיחות טלפון.\n2. לחיצה ממושכת על התראת ה\"אי\" לדחיית שיחות טלפון.\n3. לחיצה ממושכת על התראת ה\"אי\" להרחבת התצוגה המקדימה של התראת ה\"אי\".
     </string>
     <!-- QS Dual Tone Colors -->
-    <string name="qs_dual_tone_title">Dual tone themed</string>
-    <string name="qs_dual_tone_summary">Use dual tone background colors instead of AOSP single tone</string>
+    <string name="qs_dual_tone_title">ערכת נושא כפולה</string>
+    <string name="qs_dual_tone_summary">השתמש בשתי תונים שונים במקום אחד רגיל של המערכת</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_ui_style_title">סגנון אריחי ההגדרות המהירות</string>
     <string name="qs_tile_ui_style_a11_circle">אריחים עגולים</string>
