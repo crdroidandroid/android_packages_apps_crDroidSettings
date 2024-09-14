@@ -24,6 +24,7 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
+import android.provider.MediaStore;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.widget.Toast;
@@ -53,7 +54,7 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
     private static final String CUSTOM_HEADER_PROVIDER = "qs_header_provider";
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String FILE_HEADER_SELECT = "file_header_select";
-    private static final int REQUEST_PICK_IMAGE = 0;
+    private static final int REQUEST_PICK_IMAGE = 10001;
 
     private Preference mHeaderBrowse;
     private ListPreference mDaylightHeaderPack;
@@ -68,7 +69,7 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.qs_header_image_settings);
 
-        ContentResolver resolver = getActivity().getContentResolver();
+        ContentResolver resolver = getContext().getContentResolver();
 
         mHeaderBrowse = findPreference(CUSTOM_HEADER_BROWSE);
         mHeaderBrowse.setEnabled(isBrowseHeaderAvailable());
@@ -104,7 +105,7 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
     }
 
     private void updateHeaderProviderSummary() {
-        String settingHeaderPackage = Settings.System.getString(getActivity().getContentResolver(),
+        String settingHeaderPackage = Settings.System.getString(getContext().getContentResolver(),
                 Settings.System.STATUS_BAR_DAYLIGHT_HEADER_PACK);
         int valueIndex = mDaylightHeaderPack.findIndexOfValue(settingHeaderPackage);
         if (valueIndex >= 0) {
@@ -115,7 +116,7 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
+        ContentResolver resolver = getContext().getContentResolver();
         switch (preference.getKey()) {
             case DAYLIGHT_HEADER_PACK:
                 String dhvalue = (String) newValue;
@@ -147,10 +148,11 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mFileHeader) {
             try {
-                Intent intent = new Intent(Intent.ACTION_PICK);
+                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 intent.setType("image/*");
                 startActivityForResult(intent, REQUEST_PICK_IMAGE);
-            } catch(Exception e) {
+                return true;
+            } catch (Exception e) {
                 Toast.makeText(getContext(), R.string.qs_header_needs_gallery, Toast.LENGTH_LONG).show();
             }
         }
@@ -158,39 +160,38 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
     }
 
     private boolean isBrowseHeaderAvailable() {
-        PackageManager pm = getActivity().getPackageManager();
+        PackageManager pm = getContext().getPackageManager();
         Intent browse = new Intent();
         browse.setClassName("org.omnirom.omnistyle", "org.omnirom.omnistyle.PickHeaderActivity");
         return pm.resolveActivity(browse, 0) != null;
     }
 
     private void getAvailableHeaderPacks(List<String> entries, List<String> values) {
-        Map<String, String> headerMap = new HashMap<String, String>();
-        Intent i = new Intent();
-        PackageManager packageManager = getActivity().getPackageManager();
-        i.setAction("org.omnirom.DaylightHeaderPack");
-        for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
+        Map<String, String> headerMap = new HashMap<>();
+        Intent intent = new Intent();
+        PackageManager packageManager = getContext().getPackageManager();
+        intent.setAction("org.omnirom.DaylightHeaderPack");
+        for (ResolveInfo r : packageManager.queryIntentActivities(intent, 0)) {
             String packageName = r.activityInfo.packageName;
-            String label = r.activityInfo.loadLabel(getActivity().getPackageManager()).toString();
+            String label = r.activityInfo.loadLabel(packageManager).toString();
             if (label == null) {
-                label = r.activityInfo.packageName;
+                label = packageName;
             }
             headerMap.put(label, packageName);
         }
-        i.setAction("org.omnirom.DaylightHeaderPack1");
-        for (ResolveInfo r : packageManager.queryIntentActivities(i, 0)) {
+        intent.setAction("org.omnirom.DaylightHeaderPack1");
+        for (ResolveInfo r : packageManager.queryIntentActivities(intent, 0)) {
             String packageName = r.activityInfo.packageName;
-            String label = r.activityInfo.loadLabel(getActivity().getPackageManager()).toString();
+            String label = r.activityInfo.loadLabel(packageManager).toString();
             if (r.activityInfo.name.endsWith(".theme")) {
                 continue;
             }
             if (label == null) {
                 label = packageName;
             }
-            headerMap.put(label, packageName  + "/" + r.activityInfo.name);
+            headerMap.put(label, packageName + "/" + r.activityInfo.name);
         }
-        List<String> labelList = new ArrayList<String>();
-        labelList.addAll(headerMap.keySet());
+        List<String> labelList = new ArrayList<>(headerMap.keySet());
         Collections.sort(labelList);
         for (String label : labelList) {
             entries.add(label);
@@ -215,12 +216,12 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent result) {
-        if (requestCode == REQUEST_PICK_IMAGE) {
-            if (resultCode != Activity.RESULT_OK) {
-                return;
-            }
+        if (requestCode == REQUEST_PICK_IMAGE && resultCode == Activity.RESULT_OK) {
             final Uri imageUri = result.getData();
-            Settings.System.putString(getContentResolver(), Settings.System.STATUS_BAR_FILE_HEADER_IMAGE, imageUri.toString());
+            if (imageUri != null) {
+                Settings.System.putString(getContentResolver(),
+                    Settings.System.STATUS_BAR_FILE_HEADER_IMAGE, imageUri.toString());
+            }
         }
     }
 
