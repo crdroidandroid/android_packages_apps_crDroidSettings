@@ -123,6 +123,15 @@
             android:persistent="false" />-->
 
          <ListPreference
+            android:key="navigation_bar_corner_long_swipe"
+            android:icon="@drawable/ic_swipe_up"
+            android:dialogTitle="@string/navbar_corner_long_swipe_title"
+            android:title="@string/navbar_corner_long_swipe_title"
+            android:entries="@array/hardware_keys_action_entries"
+            android:entryValues="@array/hardware_keys_action_values"
+            android:persistent="false" />
+
+         <ListPreference
             android:key="navigation_bar_edge_long_swipe"
             android:icon="@drawable/ic_swipe_right"
             android:dialogTitle="@string/navbar_edge_long_swipe_title"
