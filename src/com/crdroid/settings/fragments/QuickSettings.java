@@ -15,10 +15,8 @@
  */
 package com.crdroid.settings.fragments;
 
-import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -80,9 +78,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.crdroid_settings_quicksettings);
 
-        mThemeUtils = new ThemeUtils(getActivity());
+        mThemeUtils = new ThemeUtils(getContext());
 
-        final Context mContext = getActivity().getApplicationContext();
+        final Context mContext = getContext();
         final ContentResolver resolver = mContext.getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
@@ -115,7 +113,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_TILE_ANIMATION_STYLE, 0, UserHandle.USER_CURRENT);
         updateAnimTileStyle(tileAnimationStyle);
 
-
         mQsUI = (ListPreference) findPreference(KEY_QS_UI_STYLE);
         mQsUI.setOnPreferenceChangeListener(this);
 
@@ -127,7 +124,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
+        ContentResolver resolver = getContext().getContentResolver();
 
         if (preference == mShowBrightnessSlider) {
             int value = Integer.parseInt((String) newValue);
@@ -144,15 +141,15 @@ public class QuickSettings extends SettingsPreferenceFragment implements
             int value = Integer.parseInt((String) newValue);
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_TILE_UI_STYLE, value, UserHandle.USER_CURRENT);
-            updateQsStyle(getActivity());
-            checkQSOverlays(getActivity());
+            updateQsStyle(getContext());
+            checkQSOverlays(getContext());
             return true;
         } else if (preference == mQsPanelStyle) {
             int value = Integer.parseInt((String) newValue);
             Settings.System.putIntForUser(resolver,
                     Settings.System.QS_PANEL_STYLE, value, UserHandle.USER_CURRENT);
-            updateQsPanelStyle(getActivity());
-            checkQSOverlays(getActivity());
+            updateQsPanelStyle(getContext());
+            checkQSOverlays(getContext());
             return true;
         }
         return false;
