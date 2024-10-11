@@ -84,6 +84,13 @@
             android:defaultValue="0" />-->
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+            android:key="hide_carrier_on_lockscreen"
+            android:icon="@drawable/ic_signal"
+            android:title="@string/hide_carrier_on_lockscreen_title"
+            android:summary="@string/hide_carrier_on_lockscreen_summary"
+            android:defaultValue="false"/>
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="lockscreen_battery_info"
             android:icon="@drawable/ic_battery_charging"
             android:title="@string/lockscreen_battery_info_title"
