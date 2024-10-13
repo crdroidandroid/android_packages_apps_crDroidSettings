@@ -230,8 +230,8 @@
     <string name="advanced_reboot_secured_title">Suojattu lukitusnäyttö</string>
     <string name="advanced_reboot_secured_summary">Näytä edistyneet uudelleenkäynnistyksen asetukset suojatussa lukitusnäytössä</string>
     <!-- UI settings -->
-    <string name="monet_title">Monet settings</string>
-    <string name="monet_summary">Customize Monet theme engine</string>
+    <string name="monet_title">Monet-asetukset</string>
+    <string name="monet_summary">Mukauta Monet-teeman moottoria</string>
     <!-- Monet Engine -->
     <string name="monet_engine_custom_color_title">Korostusväri</string>
     <string name="monet_engine_custom_color_summary">Valitse korostuksen mukautettu väri</string>
@@ -240,10 +240,10 @@
     <string name="monet_engine_color_override_title">Mukautettu väri</string>
     <string name="monet_engine_luminance_factor_title">Luminanssi</string>
     <string name="monet_engine_luminance_factor_summary">Korkeammat arvot tuottavat kirkkaampia värejä</string>
-    <string name="monet_engine_chroma_factor_title">Chroma factor</string>
+    <string name="monet_engine_chroma_factor_title">Chroma-kerroin</string>
     <string name="monet_engine_chroma_factor_summary">Korkeammat arvot tuottavat vahvempia värejä</string>
     <string name="monet_engine_tint_background_title">Taustan sävy</string>
-    <string name="monet_engine_tint_background_summary">Make luminance and chroma selection affect background colors as well</string>
+    <string name="monet_engine_tint_background_summary">Laita luminanssin ja chroman valinta vaikuttamaan myös taustaväreihin</string>
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Nopea lukituksen avaus</string>
     <string name="unlock_quick_unlock_control_summary">Avaa lukitus automaattisesti kun oikea PIN/salasana on syötetty</string>
@@ -265,19 +265,19 @@
     <string name="pocket_summary">Vilkuta ilmoituksia taskusta poistettaessa</string>
     <string name="doze_vibrate">Värinä</string>
     <string name="doze_vibrate_summary">Värinän kesto ilmoituksen vilkkuessa</string>
-    <string name="sensor_warning_message">Settings based on sensors are subject to hardware compatibility. Enabling sensors for ambient display may increase power drain.</string>
+    <string name="sensor_warning_message">Antureihin perustuvat asetukset riippuvat laitteiston yhteensopivuudesta. Antureiden ottaminen käyttöön ambient-näyttöä varten voi lisätä virrankulutusta.</string>
     <!-- Edge light -->
     <string name="edge_light_title">Reunavalo</string>
     <string name="edge_light_summary">Valaise näytön sivureunat ilmoituspulssilla</string>
     <string name="edge_light_always_trigger_on_pulse_title">Käytä pulssia aina</string>
-    <string name="edge_light_always_trigger_on_pulse_summary">Whether to show edge light whenever ambient display is shown and not just for notifications</string>
+    <string name="edge_light_always_trigger_on_pulse_summary">Näytetäänkö reunavalo aina, kun ambient-näyttö on näkyvissä, eikä vain ilmoitusten yhteydessä</string>
     <string name="edge_light_repeat_animation_title">Toista animaatio</string>
     <string name="edge_light_repeat_animation_summary_on">Toista kunnes aikakatkaistaan</string>
     <string name="edge_light_repeat_animation_summary_off">Näytä vain kerran</string>
     <string name="edge_light_color_mode_title">Reunavalon väritila</string>
     <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Music ticker</string>
-    <string name="pulse_on_new_tracks_summary">Show music ticker on Ambient Display during track change</string>
+    <string name="pulse_on_new_tracks_title">Musiikki lippu</string>
+    <string name="pulse_on_new_tracks_summary">Näytä musiikin ticker Ambient Display -näytössä kappaleen vaihdon aikana</string>
     <!-- Status bar - icon blocklist -->
     <string name="status_bar_icons_title">Tilapalkin kuvakkeet</string>
     <string name="status_bar_icons_summary">Valitse mitkä tilapalkin kuvakkeet näytetään</string>
@@ -305,8 +305,8 @@
     <string name="smart_pulldown_none_summary">Avaa pika-asetukset, kun ilmoituksia ei ole</string>
     <string name="smart_pulldown_off">Ei käytössä</string>
     <string name="smart_pulldown_none">ei ilmoituksia</string>
-    <string name="smart_pulldown_dismissable">no dismissible</string>
-    <string name="smart_pulldown_ongoing">no ongoing</string>
+    <string name="smart_pulldown_dismissable">ei hylättävissä</string>
+    <string name="smart_pulldown_ongoing">ei meneillään</string>
     <!-- Tap to sleep on status bar -->
     <string name="lockscreen_doubletap_sleep_title">Sammuta näyttö napauttamalla</string>
     <string name="lockscreen_doubletap_sleep_summary">Sammuta näyttö kaksoisnapauttamalla lukitusnäytöllä</string>
@@ -458,24 +458,24 @@
     <string name="lockscreen_albumart_filter_title">Median kansikuvan suodatin</string>
     <string name="lockscreen_albumart_filter_none">Ei mitään</string>
     <string name="lockscreen_albumart_filter_grayscale">Harmaasävy</string>
-    <string name="lockscreen_albumart_filter_tint">Accent tinted</string>
+    <string name="lockscreen_albumart_filter_tint">Sävytetty korostus</string>
     <string name="lockscreen_albumart_filter_blur">Sumennus</string>
     <string name="lockscreen_albumart_filter_grayblur">Harmaasävy ja sumennettu</string>
     <!-- Pulse music visualizer -->
     <string name="pulse_help_policy_notice_title">Tietoja Pulsesta</string>
-    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>
+    <string name="pulse_help_policy_notice_summary">Pulse on loistava äänen graafinen taajuuskorjain, kun musiikki soi laitteessa</string>
     <string name="pulse_settings">Pulse</string>
     <string name="pulse_settings_summary">Äänen graafinen taajuuskorjain navigointipalkkia ja lukitusnäyttöä varten</string>
-    <string name="show_navbar_pulse_title">Navbar Pulse</string>
+    <string name="show_navbar_pulse_title">Navigointipalkki Pulse</string>
     <string name="show_navbar_pulse_summary">Äänen graafinen taajuuskorjain navigointipalkissa</string>
-    <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
+    <string name="show_lockscreen_pulse_title">Lukitusnäytön Pulse</string>
     <string name="show_lockscreen_pulse_summary">Äänen graafinen taajuuskorjain lukitusnäytöllä</string>
     <string name="show_ambient_pulse_title">Ambient Pulse</string>
     <string name="show_ambient_pulse_summary">Äänen graafinen taajuuskorjain ambient-näytöllä</string>
     <string name="pulse_render_mode_title">Renderöintitila</string>
-    <string name="pulse_render_mode_fading_bars">Fading blocks</string>
+    <string name="pulse_render_mode_fading_bars">Häivytetyt lohkot</string>
     <string name="pulse_render_mode_solid_lines">Kiinteät viivat</string>
-    <string name="pulse_legacy_mode_advanced_category">Fading blocks mode settings</string>
+    <string name="pulse_legacy_mode_advanced_category">Häivytetyt lohkot -tilan asetukset</string>
     <string name="pulse_custom_fudge_factor">Sanity level</string>
     <string name="pulse_lavalamp_speed_title">Laavalampun nopeus</string>
     <string name="pulse_solid_units_count">Kiinteiden viivojen määrä</string>
@@ -562,7 +562,7 @@
     <string name="crdroid_license_title">crDroid legal</string>
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_category">Kirkkauden säädin</string>
-    <string name="qs_show_brightness_slider_title">When to show</string>
+    <string name="qs_show_brightness_slider_title">Kirkkauden säädin</string>
     <string name="qs_show_brightness_slider_never">Älä näytä koskaan</string>
     <string name="qs_show_brightness_slider_expanded">Näytä laajennettaessa</string>
     <string name="qs_show_brightness_slider_always">Näytä aina</string>
@@ -651,7 +651,7 @@
     <string name="notification_sound_vib_screen_on_title">Noisy notifications</string>
     <string name="notification_sound_vib_screen_on_summary">Play sound and vibration for notifications when screen is on</string>
     <!-- Privacy Indicator -->
-    <string name="mic_camera_privacy_indicator_title">Mic and camera privacy indicator</string>
+    <string name="mic_camera_privacy_indicator_title">Mikrofonin ja kameran yksityisyyden ilmaisin</string>
     <string name="mic_camera_privacy_indicator_summary">Show indicator when any app uses mic or camera</string>
     <string name="location_privacy_indicator_title">Location privacy indicator</string>
     <string name="location_privacy_indicator_summary">Show indicator when any app uses location</string>
@@ -850,70 +850,70 @@
     <string name="columbus_name">Quick Tap</string>
     <string name="columbus_radio_button_extra_widget_a11y_label">%1$s settings</string>
     <string name="columbus_setting_action_assistant_title">Access your digital assistant</string>
-    <string name="columbus_setting_action_launch_summary_no_selection">No app selected</string>
-    <string name="columbus_setting_action_launch_summary_not_installed">App not installed</string>
-    <string name="columbus_setting_action_launch_title">Open app</string>
-    <string name="columbus_setting_action_notification_title">Show notifications</string>
-    <string name="columbus_setting_action_open_app_title">Open app</string>
-    <string name="columbus_setting_action_overview_title">See recent apps</string>
-    <string name="columbus_setting_action_play_pause_title">Play or pause media</string>
+    <string name="columbus_setting_action_launch_summary_no_selection">Ei valittuja sovelluksia</string>
+    <string name="columbus_setting_action_launch_summary_not_installed">Sovellusta ei ole asennettu</string>
+    <string name="columbus_setting_action_launch_title">Avaa sovellus</string>
+    <string name="columbus_setting_action_notification_title">Näytä ilmoitukset</string>
+    <string name="columbus_setting_action_open_app_title">Avaa sovellus</string>
+    <string name="columbus_setting_action_overview_title">Näytä viimeaikaiset sovellukset</string>
+    <string name="columbus_setting_action_play_pause_title">Toista tai keskeytä media</string>
     <string name="columbus_setting_action_screenshot_title">Ota kuvakaappaus</string>
-    <string name="columbus_setting_actions_title">Tap back of phone twice to</string>
-    <string name="columbus_setting_additional_settings_title">Quick Tap strength</string>
-    <string name="columbus_setting_app_selection_help_text">Select an app to open when you tap the back of your phone twice. If you uninstall the app, Quick Tap turns off until you select a different app.</string>
-    <string name="columbus_setting_app_shortcut_selection_help_text">Select what happens when you open this app using Quick Tap.</string>
-    <string name="columbus_setting_enable_switch_title">Use Quick Tap</string>
-    <string name="columbus_setting_sensitivity_title">Require stronger taps</string>
+    <string name="columbus_setting_actions_title">Napauta puhelimen takaosaa kahdesti</string>
+    <string name="columbus_setting_additional_settings_title">Nopean napautuksen voimakkuus</string>
+    <string name="columbus_setting_app_selection_help_text">Valitse sovellus, joka avataan, kun napautat puhelimen takaosaa kahdesti. Jos poistat sovelluksen, Quick Nap kytkeytyy pois päältä, kunnes valitset toisen sovelluksen.</string>
+    <string name="columbus_setting_app_shortcut_selection_help_text">Valitse mitä tapahtuu, kun avaat tämän sovelluksen Quick Tapin avulla.</string>
+    <string name="columbus_setting_enable_switch_title">Käytä Pikanapautusta</string>
+    <string name="columbus_setting_sensitivity_title">Vaadi voimakkaampia napautuksia</string>
     <!-- Game -->
-    <string name="game_dashboard_always_on_summary">Show Game Dashboard shortcut in games</string>
-    <string name="game_dashboard_always_on_title">Game Dashboard</string>
-    <string name="game_dashboard_dnd_rule_name">Gaming</string>
-    <string name="game_dashboard_dnd_summary">Only get notified by important people and apps when playing a game</string>
-    <string name="game_dashboard_dnd_title">Do Not Disturb for games</string>
+    <string name="game_dashboard_always_on_summary">Näytä pelin ohjauspaneelin pikakuvake peleissä</string>
+    <string name="game_dashboard_always_on_title">Pelien hallintapaneeli</string>
+    <string name="game_dashboard_dnd_rule_name">Pelaaminen</string>
+    <string name="game_dashboard_dnd_summary">Saat ilmoituksia vain tärkeiltä henkilöiltä ja sovelluksilta, kun pelaat peliä</string>
+    <string name="game_dashboard_dnd_title">Älä häiritse-tila peleissä</string>
     <!-- reTicker -->
     <string name="reticker_title">reTicker</string>
     <string name="reticker_summary">Replace heads-up notification with slim and less invasive version of redesigned ticker</string>
     <string name="reticker_colored_title">Use app colored background</string>
     <string name="reticker_colored_summary">Replace reTicker background color using notification app main color</string>
     <!-- Smart Pixels -->
-    <string name="smart_pixels_warning_text">Smart pixels is a power saving feature. Depending on how many pixels you decide to turn off, you could see improvement in battery life. Note that in some cases it can result in unresponsive areas on touch screen</string>
-    <string name="smart_pixels_title">Smart Pixels</string>
-    <string name="smart_pixels_summary">Save battery by shutting off extra pixels</string>
-    <string name="smart_pixels_enable_title">Enable Smart Pixels</string>
-    <string name="smart_pixels_enable_summary">Shut off pixels to reduce power consumption</string>
-    <string name="smart_pixels_on_power_save_title">Auto-enable on battery saver</string>
-    <string name="smart_pixels_on_power_save_summary">Enable Smart Pixels when battery saver is enabled</string>
-    <string name="smart_pixels_percent">Percent of pixels to disable</string>
-    <string name="smart_pixels_shift_title">Burn-in protection</string>
-    <string name="smart_pixels_shift_summary">Prevents burn-in on OLED devices by shifting pixels every so often</string>
+    <string name="smart_pixels_warning_text">Älykkäät pikselit on virransäästöominaisuus. Riippuen siitä, kuinka monta pikseliä päätät kytkeä pois päältä, akun kesto voi parantua. Huomaa, että joissakin tapauksissa se voi johtaa siihen, että kosketusnäytön alueet eivät reagoi</string>
+    <string name="smart_pixels_title">Älykkäät pikselit</string>
+    <string name="smart_pixels_summary">Säästä akkua sammuttamalla ylimääräisiä pikseleitä</string>
+    <string name="smart_pixels_enable_title">Ota älykkäät pikselit käyttöön</string>
+    <string name="smart_pixels_enable_summary">Sammuta pikseleitä vähentääksesi virrankulutusta</string>
+    <string name="smart_pixels_on_power_save_title">Ota automaattisesti käyttöön virransäästö tilassa</string>
+    <string name="smart_pixels_on_power_save_summary">Ota älykkäät pikselit käyttöön automaattisesti kun virransäästötila otetaan käyttöön</string>
+    <string name="smart_pixels_percent">Sammutettavien pikseleiden prosenttiosuus</string>
+    <string name="smart_pixels_shift_title">Kiinnipalamisen suojaus</string>
+    <string name="smart_pixels_shift_summary">Estää kiinnipalamisen OLED laitteilla vaihtamalla käytössä olevia pikseleitä vähän väliä</string>
     <!-- Black theme -->
-    <string name="system_black_theme_title">Use black theme</string>
-    <string name="system_black_theme_summary">Force black background colors</string>
+    <string name="system_black_theme_title">Käytä mustaa teemaa</string>
+    <string name="system_black_theme_summary">Pakota mustat taustavärit</string>
     <!-- Material dismiss all button for notifications -->
-    <string name="notification_material_dismiss_title">Clear all notification button</string>
-    <string name="notification_material_dismiss_summary">Replace clear all notification text with material style floating button</string>
+    <string name="notification_material_dismiss_title">Tyhjennä kaikki ilmoitukset -painike</string>
+    <string name="notification_material_dismiss_summary">Korvaa tyhjennä kaikki ilmoitusteksti materiaalityylillä kelluvalla painikkeella</string>
     <!-- Back gesture animation -->
-    <string name="back_gesture_arrow_title">Back gesture animation</string>
-    <string name="back_gesture_arrow_summary">Show an animated arrow for back gesture</string>
+    <string name="back_gesture_arrow_title">Takaisin eleen animaatio</string>
+    <string name="back_gesture_arrow_summary">Näytä animoitu nuoli takaisin-eleelle</string>
     <!-- Back gesture haptic -->
-    <string name="back_gesture_haptic_title">Back gesture haptic</string>
-    <string name="back_gesture_haptic_summary">Vibrate when performing a back gesture</string>
+    <string name="back_gesture_haptic_title">Takaisin-eleen haptinen palaute</string>
+    <string name="back_gesture_haptic_summary">Värinä tehdessäsi takaisin-eleen</string>
     <!-- Battery health -->
-    <string name="current_battery_capacity">Current battery capacity</string>
-    <string name="designed_battery_capacity">Designed battery capacity</string>
-    <string name="battery_charge_cycles">Charge cycles completed</string>
+    <string name="current_battery_capacity">Akun nykyinen kapasiteetti</string>
+    <string name="designed_battery_capacity">Akun suunniteltu kapasiteetti</string>
+    <string name="battery_charge_cycles">Täysiä lataussyklejä</string>
     <!-- Battery temperature -->
-    <string name="battery_temperature">Battery temperature</string>
+    <string name="battery_temperature">Akun lämpötila</string>
     <!-- QS Transparency -->
     <string name="qs_transparency_title">Background transparency</string>
     <string name="qs_transparency_summary">Set transparency level for QS background</string>
     <!-- Data usage info in QS footer -->
-    <string name="qs_footer_datausage_title">Data usage</string>
-    <string name="qs_footer_datausage_summary">Display data usage summary in quick settings footer</string>
+    <string name="qs_footer_datausage_title">Datan käyttö</string>
+    <string name="qs_footer_datausage_summary">Näytä datan käytön yhteenveto pika-asetusten alatunnisteessa</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_title">Tiles animation</string>
-    <string name="qs_tile_animation_style_title">Animation style</string>
-    <string name="qs_tile_animation_duration_title">Animation duration</string>
+    <string name="qs_tile_animation_title">Tiilien animaatio</string>
+    <string name="qs_tile_animation_style_title">Animaation tyyli</string>
+    <string name="qs_tile_animation_duration_title">Animaation kesto</string>
     <string name="qs_tile_animation_interpolator_title">Animation interpolator</string>
     <string name="qs_tile_animation_style_off">No animation</string>
     <string name="qs_tile_animation_style_rotate">Rotate</string>
@@ -947,11 +947,11 @@
     <!-- Weather -->
     <string name="weather_settings_title">Weather settings</string>
     <string name="weather_settings_summary">Setup icon pack and weather service</string>
-    <string name="lockscreen_weather_title">Weather condition</string>
-    <string name="lockscreen_weather_summary">Display current weather condition and temperature</string>
-    <string name="lockscreen_weather_enabled_info">Requires weather service to be enabled</string>
+    <string name="lockscreen_weather_title">Säätila</string>
+    <string name="lockscreen_weather_summary">Näytä nykyinen sää- ja lämpötila</string>
+    <string name="lockscreen_weather_enabled_info">Vaatii sääpalvelun käyttöönottamisen</string>
     <string name="lockscreen_weather_location_title">Weather location</string>
-    <string name="lockscreen_weather_location_summary">Display current weather location</string>
+    <string name="lockscreen_weather_location_summary">Näytä nykyisen sijainnin sää</string>
     <string name="lockscreen_weather_style_title">Pixel style</string>
     <string name="lockscreen_weather_style_summary">Display weather as separate row</string>
     <!-- Adaptive Playback -->
@@ -998,14 +998,14 @@
     <string name="status_bar_logo_style_ubuntu">Ubuntu</string>
     <string name="status_bar_logo_style_mint">Linux Mint</string>
     <!-- APK details on App info screen -->
-    <string name="app_info_install_time">Installed: %1$s</string>
-    <string name="app_info_update_time">Updated: %1$s</string>
+    <string name="app_info_install_time">Asennettu: %1$s</string>
+    <string name="app_info_update_time">Päivitetty %1$s</string>
     <!-- Show clipboard overlay -->
-    <string name="show_clipboard_overlay_title">Show clipboard overlay</string>
-    <string name="show_clipboard_overlay_summary">Show an overlay in the left bottom corner of the screen when something is copied to the clipboard</string>
+    <string name="show_clipboard_overlay_title">Näytä leikepöydän peittokuva</string>
+    <string name="show_clipboard_overlay_summary">Näyttää näytön vasemmassa alakulmassa peittokuvan, kun jotain kopioidaan leikepöydälle</string>
     <!-- Sensor block per-package -->
     <string name="sensor_block_title">Sensor block per-package</string>
-    <string name="sensor_block_summary">Block access to certain sensors for some apps to save battery</string>
+    <string name="sensor_block_summary">Estä pääsy tiettyihin antureihin joillekin sovelluksille akun säästämiseksi</string>
     <string name="sensor_block_app_picker_title">Block sensors for these apps</string>
     <string name="add_sensor_block_package_title">Add apps for Sensor block</string>
     <string name="add_sensor_block_package_summary">Significant motion, accelerometer, linear acceleration sensors will be blocked for these apps</string>
@@ -1037,8 +1037,8 @@
     <string name="captive_portal_title">Connectivity check</string>
     <string name="captive_portal_summary">Determine if the device can connect to the internet, by contacting Google. Also used to detect captive portals.</string>
     <!-- Battery stats reset -->
-    <string name="battery_stats_reset">Reset stats?</string>
-    <string name="battery_stats_message">Battery usage data will be lost</string>
+    <string name="battery_stats_reset">Nollaa tilastot?</string>
+    <string name="battery_stats_message">Akun käyttötiedot menetetään</string>
     <!-- Parallel space -->
     <string name="laboratory_parallel_space_title">Parallel space</string>
     <string name="laboratory_parallel_space_summary">Allow running multiple instances of the same application in parallel</string>
@@ -1057,7 +1057,7 @@
     <string name="lockscreen_shortcut_home">Home controls</string>
     <string name="lockscreen_shortcut_flashlight">Taskulamppu</string>
     <string name="lockscreen_shortcut_qr">QR code scanner</string>
-    <string name="lockscreen_shortcut_camera">Camera</string>
+    <string name="lockscreen_shortcut_camera">Kamera</string>
     <string name="lockscreen_shortcut_remote">Google TV Remote</string>
     <string name="lockscreen_shortcut_dnd">DND</string>
     <string name="lockscreen_shortcut_none">Ei mitään</string>
