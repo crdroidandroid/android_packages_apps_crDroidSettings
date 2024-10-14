@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2026 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:lineage="http://schemas.android.com/apk/res-auto">
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="clock_preview"
+        android:layout="@layout/lockscreen_clock_preview"
+        android:selectable="false"
+        settings:allowDividerBelow="true"
+        settings:isPreferenceVisible="true" />
+ 
+    <com.crdroid.settings.preferences.LockClockFontsPreference
+        android:key="lock_clock_font"
+        android:title="@string/theme_customization_lock_clock_title"
+        android:summary="theme_customization_lock_clock_summary" />
+
+    <com.crdroid.settings.preferences.SecureSettingListPreference
+        android:key="clock_color_mode"
+        android:title="@string/lockscreen_custom_clock_color_mode_title"
+        android:entries="@array/lockscreen_custom_clock_color_mode_entries"
+        android:entryValues="@array/lockscreen_custom_clock_color_mode_values"
+        android:summary="%s"
+        android:defaultValue="default" />
+
+    <com.crdroid.settings.preferences.colorpicker.SecureSettingColorPickerPreference
+        android:key="clock_custom_color"
+        android:title="@string/custom_color"
+        android:defaultValue="0xFFFFFFFF" />
+
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        android:key="clock_text_opacity"
+        android:title="@string/lockscreen_custom_clock_opacity_title"
+        android:summary="@string/lockscreen_custom_clock_opacity_summary"
+        android:defaultValue="100"
+	    android:max="100"
+        settings:min="10" 
+        settings:units="%" />
+
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        android:key="custom_clock_frame_margin_top"
+        android:title="@string/lockscreen_custom_clock_frame_margin_top_title"
+        android:summary="@string/lockscreen_custom_clock_frame_margin_top_summary"
+        android:defaultValue="15"
+	    android:max="100"
+        settings:min="0" 
+        settings:units="@string/unit_pixels" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="custom_clock_style_info"
+        android:title="@string/lockscreen_custom_clock_style_info"
+        android:selectable="false"
+        settings:searchable="false" />
+
+</PreferenceScreen>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="start|center_vertical">
+
+    <!-- "It's" Text -->
+    <TextView
+        android:id="@+id/its_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="It's"
+        android:fontFamily="@*android:string/config_clockFontFamily"
+        android:textSize="28sp"
+        android:textColor="@android:color/system_accent1_300"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Custom Word Clock -->
+    <TextView
+        android:id="@+id/word_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eight"
+        android:lineSpacingExtra="8dp"
+        android:textSize="30sp"
+        android:fontFamily="@*android:string/config_clockFontFamily"
+        android:textColor="@android:color/white" 
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/word_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seventeen"
+        android:lineSpacingExtra="8dp"
+        android:textSize="30sp"
+        android:fontFamily="@*android:string/config_clockFontFamily"
+        android:layout_marginStart="2dp"
+        android:textColor="@android:color/white" />
+</LinearLayout>
