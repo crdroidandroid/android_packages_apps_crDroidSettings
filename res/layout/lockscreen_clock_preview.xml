@@ -1,0 +1,101 @@
+<!--
+     Copyright (C) 2023-2024 the risingOS Android Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="30dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="190dp"
+                android:layout_height="380dp"
+                android:padding="6dp"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:strokeColor="?android:attr/textColorPrimary"
+                app:strokeWidth="3dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.crdroid.settings.utils.WallpaperView
+                        android:id="@+id/wallpaper_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop" />
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/view_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="320dp"
+                        android:paddingVertical="30dp"
+                        android:paddingHorizontal="10dp"
+                        android:background="@android:color/transparent"
+                        android:layout_gravity="top" />
+                        
+                    <TextView
+                        android:id="@+id/clock_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/view_pager"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/white"
+                        android:layout_marginBottom="30dp"
+                        android:layout_gravity="bottom|center_horizontal" />
+
+                </FrameLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/apply_extended_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/apply"
+                android:textAllCaps="false"
+                android:textColor="@color/settingslib_btn_colored_text_material"
+                android:theme="@style/Theme.CollapsingToolbar.Settings"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                style="@style/op_control_text_style_h6"
+                app:backgroundTint="@color/settingslib_btn_colored_background_material"
+                app:fabSize="normal" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/highlight_guide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <include layout="@layout/highlight_guide" />
+        </FrameLayout>
+
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

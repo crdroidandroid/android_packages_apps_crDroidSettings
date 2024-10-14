@@ -62,4 +62,20 @@
         <item name="colorPrimary">@android:color/system_accent1_600</item>
         <item name="colorSecondary">@android:color/system_accent1_600</item>
     </style>
+
+    <style name="op_control_text_style_base">
+        <item name="android:breakStrategy">simple</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="op_control_text_style_body1" parent="@style/op_control_text_style_base">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:fontFamily">@*android:string/config_bodyFontFamily</item>
+    </style>
+    
+    <style name="op_control_text_style_h6" parent="@style/op_control_text_style_base">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:fontFamily">@*android:string/config_headlineFontFamilyMedium</item>
+        <item name="android:elevation">0dp</item>
+    </style>
 </resources>
