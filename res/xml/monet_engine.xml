@@ -20,6 +20,11 @@
     android:key="monet_settings"
     android:title="@string/monet_title">
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="monet_preview"
+        android:layout="@layout/monet_preview"
+        android:selectable="false"/>
+
     <ListPreference
         android:key="theme_style"
         android:title="@string/monet_engine_style_title"
