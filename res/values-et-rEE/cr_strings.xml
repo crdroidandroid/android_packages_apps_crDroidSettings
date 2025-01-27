@@ -54,7 +54,7 @@
     <string name="notification_color">Teavituse värv</string>
     <string name="wallpaper_color">Taustapildi värv</string>
     <string name="custom_color">Kohandatud värv</string>
-    <string name="restart_systemui">Restart SystemUI for change to take effect!</string>
+    <string name="restart_systemui">Muudatuste jõustumiseks taaskäivitage SystemUI!</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Praegune muudatuste logi</string>
     <string name="changelog_crdroid_summary">Vaata paigaldatud ROMi muudatusi</string>
@@ -236,8 +236,8 @@
     <string name="monet_engine_luminance_factor_summary">Suuremad väärtused loovad eredamaid värve</string>
     <string name="monet_engine_chroma_factor_title">Kroomifaktor</string>
     <string name="monet_engine_chroma_factor_summary">Suuremad väärtused loovad tugevamaid värve</string>
-    <string name="monet_engine_whole_palette_title">Whole palette</string>
-    <string name="monet_engine_whole_palette_summary">Make Luminance and Chroma selection affect secondary colors as well</string>
+    <string name="monet_engine_whole_palette_title">Terve palett</string>
+    <string name="monet_engine_whole_palette_summary">Heleduse ja Kroomi valik mõjutab ka sekundaarseid värve</string>
     <string name="monet_engine_tint_background_title">Toonita taust</string>
     <string name="monet_engine_tint_background_summary">Heleduse ja kromaatika valik mõjutab ka taustavärve</string>
     <string name="monet_engine_style_title">Teema stiil</string>
@@ -250,11 +250,11 @@
     <string name="monet_engine_style_monochromatic">Monokromaatiline</string>
     <string name="monet_engine_color_source_title">Värvi allikas</string>
     <string name="monet_engine_color_source_both">Mõlemad (Vaikimisi)</string>
-    <string name="monet_engine_color_source_home">Home wallpaper</string>
-    <string name="monet_engine_color_source_lock">Lock wallpaper</string>
+    <string name="monet_engine_color_source_home">Avaekraani taustapilt</string>
+    <string name="monet_engine_color_source_lock">Lukustusekraani taustapilt</string>
     <string name="monet_engine_color_source_preset">Eelseadistus</string>
     <!-- Auto pin confirm -->
-    <string name="lock_screen_auto_pin_confirm_summary_custom">Unlock automatically if you input a correct PIN. This is slightly less secure than tapping Enter to confirm.</string>
+    <string name="lock_screen_auto_pin_confirm_summary_custom">Ava automaatselt õige PINi sisestamisel. See on natuke vähem turvaline, kui Enteri vajutamine kinnitamiseks.</string>
     <!-- Doze settings -->
     <string name="doze_display_title">Säästlik ekraan</string>
     <string name="doze_display_summary">Seadista säästliku ekraani seadeid</string>
@@ -523,7 +523,7 @@
     <string name="navbar_app_switch_long_press_title">Viimatiste nupu pikk vajutus</string>
     <string name="navbar_app_switch_double_tap_title">Hiljutiste nupu topeltkoputus</string>
     <string name="navbar_edge_long_swipe_title">Serva pikk libistamine</string>
-    <string name="navbar_corner_long_swipe_title">Bottom corner swipe up</string>
+    <string name="navbar_corner_long_swipe_title">Alumisest nurgast üles pühkimine</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Taskutuvastus</string>
     <string name="pocket_judge_summary">Blokeeri ekraan ja nupusisendid, kui seade on taskus</string>
@@ -537,7 +537,7 @@
     <string name="anbi_title">Juhuslik puudutus</string>
     <string name="anbi_summary">Väldi juhuslikke navigeerimisnuppude vajutusi, kui vajutatakse ekraani</string>
     <!-- Three fingers swipe action -->
-    <string name="three_fingers_swipe_title">Three fingers swipe</string>
+    <string name="three_fingers_swipe_title">Kolme sõrmega pühkimine</string>
     <!-- Running services - Background processes tab -->
     <string name="background_processes_settings_title">Taustaprotsessid</string>
     <!-- QS footer icons -->
@@ -760,15 +760,15 @@
     <string name="custom_timeout_summary_2hours">2 tundi</string>
     <string name="custom_timeout_summary_4hours">4 tundi</string>
     <string name="custom_timeout_summary_8hours">8 tundi</string>
-    <string name="custom_timeout_summary_12hours">12 hours</string>
-    <string name="custom_timeout_summary_24hours">24 hours</string>
-    <string name="custom_timeout_summary_36hours">36 hours</string>
-    <string name="custom_timeout_summary_48hours">48 hours</string>
-    <string name="custom_timeout_summary_72hours">72 hours</string>
+    <string name="custom_timeout_summary_12hours">12 tundi</string>
+    <string name="custom_timeout_summary_24hours">24 tundi</string>
+    <string name="custom_timeout_summary_36hours">36 tundi</string>
+    <string name="custom_timeout_summary_48hours">48 tundi</string>
+    <string name="custom_timeout_summary_72hours">72 tundi</string>
     <!-- Default Timeouts -->
-    <string name="custom_timeout_summary_1hour_def">1 hour (Default)</string>
+    <string name="custom_timeout_summary_1hour_def">1 tund (Vaikimisi)</string>
     <!-- WiFi Hotspot -->
-    <string name="wifi_hotspot_ap_band_title">AP Band</string>
+    <string name="wifi_hotspot_ap_band_title">Pääsupunkti sagedusriba</string>
     <string name="wifi_hotspot_hidden_ssid_title">Peidetud võrk</string>
     <string name="wifi_hotspot_hidden_ssid_summary">Teie mobiilse kuumkoha nime ei kuvata saadaolevate WLAN-võrkude loendis.</string>
     <string name="wifi_hotspot_client_manager_title">Ühendatud seadmed</string>
@@ -925,7 +925,7 @@
     <string name="qs_tile_label_hide_summary">Kuva paanil vaid ikooni</string>
     <string name="qs_tile_layout_title">Vertikaalne paigutus</string>
     <string name="qs_tile_layout_summary">Kuva silt ikooni all, selle asemel et kuvada ikooni kõrval</string>
-    <string name="qs_layout_columns_rows_title">Columns &amp; rows</string>
+    <string name="qs_layout_columns_rows_title">Veerud &amp; read</string>
     <string name="qs_layout_columns_rows_summary">Customize QS columns and rows</string>
     <string name="qs_layout_columns_rows_footer_text">QS rows should be equal or greater than QQS rows. Use higher number of columns for circle / square (A11) QS tile style.</string>
     <string name="qs_columns_portrait_title">Veerud (püstasendis)</string>
@@ -948,10 +948,10 @@
     <string name="lockscreen_weather_location_summary">Kuva praeguse ilmateate asukoht</string>
     <string name="lockscreen_weather_text_title">Praegused ilmaolud</string>
     <string name="lockscreen_weather_text_summary">Kuva praeguste ilmastikutingimuste kokkuvõtet</string>
-    <string name="lockscreen_weather_wind_info_title">Wind info</string>
-    <string name="lockscreen_weather_wind_info_summary">Display current wind speed and direction</string>
-    <string name="lockscreen_weather_humidity_info_title">Humidity info</string>
-    <string name="lockscreen_weather_humidity_info_summary">Display current humidity in percentage</string>
+    <string name="lockscreen_weather_wind_info_title">Tuule info</string>
+    <string name="lockscreen_weather_wind_info_summary">Näita hetkest tuule kiirust ja suunda</string>
+    <string name="lockscreen_weather_humidity_info_title">Niiskuse info</string>
+    <string name="lockscreen_weather_humidity_info_summary">Näita hetkest niiskust protsentides</string>
     <!-- Adaptive Playback -->
     <string name="adaptive_playback_title">Adaptiivne taasesitus</string>
     <string name="adaptive_playback_summary">Meedia paus, kui helitugevus on vaigistatud ja jätkake selle suurendamist, suurendades aja jooksul helitugevust</string>
@@ -1024,8 +1024,8 @@
     <string name="netflix_spoof_title">Netflixi petmine</string>
     <string name="netflix_spoof_summary">Peta oma seade Netflixi jaoks teiseks mudeliks</string>
     <!-- Google Play Integrity Spoof -->
-    <string name="pi_spoof_title">Google Play Integrity spoof</string>
-    <string name="pi_spoof_summary">Spoof your device as different model for Google Play Integrity</string>
+    <string name="pi_spoof_title">Google Play Terviklikkuse petmine</string>
+    <string name="pi_spoof_summary">Peta oma seade Google Play Terviklikkuse jaoks teiseks mudeliks</string>
     <!-- Captive portal -->
     <string name="captive_portal_title">Ühenduvuse kontroll</string>
     <string name="captive_portal_summary">Kontrollib Google\'iga ühendust võttes, kas seade saab internetiga ühenduda. Kasutatakse ka kinnitusportaalide tuvastamiseks.</string>
@@ -1148,24 +1148,24 @@
     <string name="qs_bt_show_dialog_title">Bluetooth tile dialog</string>
     <string name="qs_bt_show_dialog_summary">Show bluetooth dialog or toggle bluetooth state on tapping bluetooth tile</string>
     <!-- Carrier name on lockscreen -->
-    <string name="lockscreen_show_carrier_title">Carrier name</string>
-    <string name="lockscreen_show_carrier_summary">Display carrier name in the status bar</string>
+    <string name="lockscreen_show_carrier_title">Operaatori nimi</string>
+    <string name="lockscreen_show_carrier_summary">Kuva olekuribal operaatori nimi</string>
     <!-- Statusbar Padding -->
     <string name="statusbar_extra_padding_category">Extra padding</string>
     <string name="statusbar_extra_padding_start_title">Start padding</string>
     <string name="statusbar_extra_padding_top_title">Top padding</string>
     <string name="statusbar_extra_padding_end_title">End padding</string>
     <!-- Wi-Fi MAC address randomization -->
-    <string name="wifi_per_connection_random_mac_addr">Use per-connection randomized MAC (default)</string>
-    <string name="wifi_per_network_random_mac_addr">Use per-network randomized MAC</string>
-    <string name="wifi_device_mac_addr">Use device MAC</string>
+    <string name="wifi_per_connection_random_mac_addr">Kasuta ühenduse kohta randomiseeritud MAC-i (vaikimisi)</string>
+    <string name="wifi_per_network_random_mac_addr">Kasuta võrgupõhist randomiseeritud MAC-i</string>
+    <string name="wifi_device_mac_addr">Kasuta seadme MAC-aadressit</string>
     <!-- Ambient wake -->
     <string name="doze_gesture_ambient_title">Show Ambient</string>
     <string name="doze_gesture_ambient_summary">Show Ambient Display instead of fully waking the screen up</string>
     <string name="gesture_wake_ambient">Show Ambient</string>
-    <string name="gesture_wake">Fully wake</string>
+    <string name="gesture_wake">Täiesti ärkvel</string>
     <!-- Sidebar -->
-    <string name="sidebar_title">Sidebar</string>
+    <string name="sidebar_title">Külgmenüü</string>
     <string name="sidebar_summary">Quickly open apps in a floating window</string>
     <!-- Smartspace -->
     <string name="lockscreen_smartspace_title">Smartspace</string>
@@ -1177,19 +1177,19 @@
     <string name="clipboard_auto_clear_enabled_title">Kasuta lõikepuhvri automaatset tühjendamist</string>
     <string name="clipboard_auto_clear_timeout_disable_clipboard">Keela lõikepuhver</string>
     <!-- Increasing ring tone volume -->
-    <string name="increasing_ring_volume_option_title">Increasing ring volume</string>
+    <string name="increasing_ring_volume_option_title">Helina helitugevuse suurendamine</string>
     <string name="increasing_ring_min_volume_title">Start volume</string>
     <string name="increasing_ring_ramp_up_time_title">Ramp-up time</string>
     <!-- Disable DNS for VPN -->
     <string name="vpn_enforce_dns_title">Disable for VPN</string>
     <string name="vpn_enforce_dns_summary">Disable the private DNS when connected to a VPN and restore upon disconnecting</string>
     <!-- Cycle through ringer modes gesture -->
-    <string name="prevent_ringing_option_cycle">Cycle through modes</string>
-    <string name="prevent_ringing_option_cycle_summary">On (cycle through modes)</string>
+    <string name="prevent_ringing_option_cycle">Liigu režiimide vahel</string>
+    <string name="prevent_ringing_option_cycle_summary">Sees (liigu režiimide vahel)</string>
     <!-- Application downgrade -->
-    <string name="app_downgrade_title">Allow app downgrade</string>
-    <string name="app_downgrade_summary">This allows you to downgrade applications. Note that this may lead to crashes and data corruption.</string>
+    <string name="app_downgrade_title">Luba rakenduse vanemale versioonile üleminek</string>
+    <string name="app_downgrade_summary">See võimaldab teil rakendusi viia vanematele versioonidele. Pange tähele, et see võib põhjustada krahhe ja andmete rikkumist.</string>
     <!-- Heads-up -->
-    <string name="compact_heads_up_notifications_enabled_title">Compact heads-up</string>
-    <string name="compact_heads_up_notifications_enabled_summary">Display notifications in compact size</string>
+    <string name="compact_heads_up_notifications_enabled_title">Kompaktne heads-up</string>
+    <string name="compact_heads_up_notifications_enabled_summary">Kuva teated kompaktses suuruses</string>
 </resources>
