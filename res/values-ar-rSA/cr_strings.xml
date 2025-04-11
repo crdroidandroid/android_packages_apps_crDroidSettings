@@ -197,10 +197,10 @@
     <string name="backlight_summary_enabled">مفعّل</string>
     <plurals name="backlight_timeout_time">
         <item quantity="zero"><xliff:g id="seconds">%d</xliff:g> ثانية</item>
-        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
-        <item quantity="two"><xliff:g id="seconds">%d</xliff:g> seconds</item>
-        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> seconds</item>
-        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> seconds</item>
+        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> ثانية</item>
+        <item quantity="two"><xliff:g id="seconds">%d</xliff:g> ثوان</item>
+        <item quantity="few"><xliff:g id="seconds">%d</xliff:g> ثوان</item>
+        <item quantity="many"><xliff:g id="seconds">%d</xliff:g> ثوان</item>
         <item quantity="other"><xliff:g id="seconds">%d</xliff:g> ثانيه
 <xliff:g id="seconds">%d</xliff:g> ثوان</item>
     </plurals>
@@ -240,8 +240,8 @@
     <string name="monet_engine_luminance_factor_summary">إدخال قيم أعلى ينتج ألوانًا أسطع</string>
     <string name="monet_engine_chroma_factor_title">عامل Chroma</string>
     <string name="monet_engine_chroma_factor_summary">إدخال قيم أعلى تنتج ألوانًا أكثر تشبعًا</string>
-    <string name="monet_engine_whole_palette_title">Whole palette</string>
-    <string name="monet_engine_whole_palette_summary">Make Luminance and Chroma selection affect secondary colors as well</string>
+    <string name="monet_engine_whole_palette_title">اللوحة كاملة</string>
+    <string name="monet_engine_whole_palette_summary">اجعل لون الإضاءة والكروما يؤثران على ألوان الخلفية</string>
     <string name="monet_engine_tint_background_title">خلفية التظليل</string>
     <string name="monet_engine_tint_background_summary">اجعل لون الإضاءة والكروما يؤثران على ألوان الخلفية</string>
     <string name="monet_engine_style_title">نمط السمة</string>
@@ -251,7 +251,7 @@
     <string name="monet_engine_style_spritz">رش</string>
     <string name="monet_engine_style_rainbow">قوس المطر</string>
     <string name="monet_engine_style_fruit_salad">سلطة فواكه</string>
-    <string name="monet_engine_style_monochromatic">Monochromatic</string>
+    <string name="monet_engine_style_monochromatic">أحادي اللون</string>
     <string name="monet_engine_color_source_title">مصدر اللون</string>
     <string name="monet_engine_color_source_both">كلاهما (الافتراضي)</string>
     <string name="monet_engine_color_source_home">خلفية الصفحة الرئيسية</string>
@@ -527,7 +527,7 @@
     <string name="navbar_app_switch_long_press_title">التطبيقات الحديثة (ضغط مطوّل)</string>
     <string name="navbar_app_switch_double_tap_title">Recents double tap</string>
     <string name="navbar_edge_long_swipe_title">تمريرة طويلة من الزاوية</string>
-    <string name="navbar_corner_long_swipe_title">Bottom corner swipe up</string>
+    <string name="navbar_corner_long_swipe_title">تمرير الزاوية السفلية للأعلى</string>
     <!-- Pocket judge -->
     <string name="pocket_judge_title">إستشعار الجيب</string>
     <string name="pocket_judge_summary">الغاء تفعيل الشاشة و أزرار الإدخال عندما يكون الجهاز في الجيب</string>
@@ -541,7 +541,7 @@
     <string name="anbi_title">اللمس الغير مقصود</string>
     <string name="anbi_summary">منع التفاعل مع أزرار شريط التنقل أثناء لمس الشاشة</string>
     <!-- Three fingers swipe action -->
-    <string name="three_fingers_swipe_title">Three fingers swipe</string>
+    <string name="three_fingers_swipe_title">سحب بثلاثة أصابع</string>
     <!-- Running services - Background processes tab -->
     <string name="background_processes_settings_title">عمليات الخلفية</string>
     <!-- QS footer icons -->
@@ -782,11 +782,11 @@
     <string name="wifi_band_24ghz_and_6ghz">2.4 غيغاهرتز &amp; 6 غيغاهرتز</string>
     <plurals name="wifi_hotspot_client_limit_summary">
         <item quantity="zero">حتى <xliff:g id="device_num">%1$d</xliff:g> جهاز يستطيع الاتصال بنقطة الاتصال هذه</item>
-        <item quantity="other">حتى <xliff:g id="device_num">%1$d</xliff:g> يستطيعون الاتصال بنقطة الاتصال هذه</item>
-        <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
-        <item quantity="two">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
-        <item quantity="few">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
-        <item quantity="many">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
+        <item quantity="other">حتى <xliff:g id="device_num">%1$d</xliff:g> جهاز يستطيع الاتصال بنقطة الاتصال هذه</item>
+        <item quantity="one">هذا الجهاز\"<xliff:g id="device_num">%1$d</xliff:g>\" سيكون قادرا على الاتصال بنقطة الاتصال هذه</item>
+        <item quantity="two">حتى <xliff:g id="device_num">%1$d</xliff:g> جهاز يستطيع الاتصال بنقطة الاتصال هذه</item>
+        <item quantity="few">حتى <xliff:g id="device_num">%1$d</xliff:g> جهاز يستطيع الاتصال بنقطة الاتصال هذه</item>
+        <item quantity="many">حتى <xliff:g id="device_num">%1$d</xliff:g> جهاز يستطيع الاتصال بنقطة الاتصال هذه</item>
     </plurals>
     <!-- Disable QS -->
     <string name="disable_qs_title">إخفاء الإعدادات السريعة على شاشة القفل</string>
@@ -925,9 +925,9 @@
     <string name="qs_tile_label_hide_summary">إظهار الرمز فقط في قائمة الإعدادات السريعة</string>
     <string name="qs_tile_layout_title">التخطيط العمودي</string>
     <string name="qs_tile_layout_summary">إظهار التسمية أسفل الرمز بدلا من ذلك بجوار الرمز</string>
-    <string name="qs_layout_columns_rows_title">Columns &amp; rows</string>
-    <string name="qs_layout_columns_rows_summary">Customize QS columns and rows</string>
-    <string name="qs_layout_columns_rows_footer_text">QS rows should be equal or greater than QQS rows. Use higher number of columns for circle / square (A11) QS tile style.</string>
+    <string name="qs_layout_columns_rows_title">الأعمدة &amp; صفوف</string>
+    <string name="qs_layout_columns_rows_summary">تخصيص أعمدة وصفوف الإعدادات السريعة</string>
+    <string name="qs_layout_columns_rows_footer_text">صفوف الإعدادات السريعة يجب أن تكون مساوية أو أكبر من صفوف الإعدادات السريعة (QQS). استخدم عدد أكبر من الأعمدة لشكل مربع / دائرة (A11) نمط مربع الإعدادات السريعة (QQS).</string>
     <string name="qs_columns_portrait_title">الأعمدة (رأسي)</string>
     <string name="qs_columns_landscape_title">الأعمدة (أفقي)</string>
     <string name="qs_rows_portrait_title">الصفوف (رأسي)</string>
@@ -943,7 +943,7 @@
     <string name="lockscreen_weather_category">الطقس</string>
     <string name="lockscreen_weather_title">تحديث الطقس</string>
     <string name="lockscreen_weather_summary">عرض تحديث الطقس الحالي</string>
-    <string name="lockscreen_weather_enabled_info">Requires custom weather service configured and smartspace disabled</string>
+    <string name="lockscreen_weather_enabled_info">يتطلب خدمة الطقس المخصصة تهيئة و تعطيل المساحة الذكية</string>
     <string name="lockscreen_weather_location_title">الموقع الحالي</string>
     <string name="lockscreen_weather_location_summary">عرض موقع الطقس الحالي</string>
     <string name="lockscreen_weather_text_title">الوضع الحالي</string>
@@ -1022,8 +1022,8 @@
     <string name="netflix_spoof_title">انتحال نيتفليكس</string>
     <string name="netflix_spoof_summary">انتحال جهازك كجهاز آخر لتشغيل نتلفيكس</string>
     <!-- Google Play Integrity Spoof -->
-    <string name="pi_spoof_title">Google Play Integrity spoof</string>
-    <string name="pi_spoof_summary">Spoof your device as different model for Google Play Integrity</string>
+    <string name="pi_spoof_title">نقطة سلامة Google Play</string>
+    <string name="pi_spoof_summary">انتحال جهازك كجهاز آخر لتشغيل نتلفيكس</string>
     <!-- Captive portal -->
     <string name="captive_portal_title">التحقق من الاتصال</string>
     <string name="captive_portal_summary">تحديد ما إذا كان الجهاز يستطيع الإتصال بالإنترنت، عن طريق الاتصال بجوجل. يستخدم أيضا للكشف عن المنافذ المقيدة.</string>
@@ -1164,11 +1164,11 @@
     <string name="lockscreen_show_carrier_title">Carrier name</string>
     <string name="lockscreen_show_carrier_summary">Display carrier name in the status bar</string>
     <!-- Statusbar Padding -->
-    <string name="statusbar_extra_padding_category">Extra padding</string>
-    <string name="statusbar_extra_padding_start_title">Start padding</string>
-    <string name="statusbar_extra_padding_top_title">Top padding</string>
-    <string name="statusbar_extra_padding_end_title">End padding</string>
+    <string name="statusbar_extra_padding_category">هامش اضافي</string>
+    <string name="statusbar_extra_padding_start_title">بداية الهامش</string>
+    <string name="statusbar_extra_padding_top_title">الهامش العلوي</string>
+    <string name="statusbar_extra_padding_end_title">نهاية الهامش</string>
     <!-- Smartspace -->
-    <string name="lockscreen_smartspace_title">Smartspace</string>
-    <string name="lockscreen_smartspace_summary">Show Google Smartspace when available</string>
+    <string name="lockscreen_smartspace_title">المساحة الذكية</string>
+    <string name="lockscreen_smartspace_summary">إظهار مساحة جوجل الذكية عندما تكون متاحة</string>
 </resources>
