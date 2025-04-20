@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024-2025 the Lunaris-OS Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/ongoing_progress_settings_title" >
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="ongoing_action_chip"
+        android:title="@string/ongoing_action_chip_title"
+        android:summary="@string/ongoing_action_chip_summary"
+        android:defaultValue="false" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="ongoing_media_progress"
+        android:title="@string/ongoing_media_progress_title"
+        android:summary="@string/ongoing_media_progress_summary"
+        android:defaultValue="false" />
+
+     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="ongoing_compact_mode"
+        android:title="@string/ongoing_compact_mode_title"
+        android:summary="@string/ongoing_compact_mode_summary"
+        android:defaultValue="false" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="ongoing_progress_footer"
+        android:title="@string/ongoing_progress_footer_text"
+        android:selectable="false"
+        settings:searchable="false" />
+
+</PreferenceScreen>

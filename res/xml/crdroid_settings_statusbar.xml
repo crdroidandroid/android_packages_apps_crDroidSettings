@@ -55,6 +55,13 @@
             android:summary="@string/statusbar_clock_chip_summary" />
 
         <Preference
+            android:key="ongoing_progress_settings"
+            android:icon="@drawable/ic_autoplay"
+            android:title="@string/ongoing_progress_settings_title"
+            android:summary="@string/ongoing_progress_settings_summary"
+            android:fragment="com.crdroid.settings.fragments.statusbar.OngoingProgressBar" />
+
+        <Preference
             android:key="network_traffic_settings"
             android:icon="@drawable/ic_traffic"
             android:title="@string/network_traffic_settings_title"
