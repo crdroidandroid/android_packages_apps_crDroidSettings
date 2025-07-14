@@ -89,7 +89,7 @@
             android:key="qs_show_battery_estimate"
             android:icon="@drawable/ic_timelapse_cr"
             android:title="@string/battery_estimate_title"
-            android:summary="@string/battery_estimate_summary" /> -->
+            android:summary="@string/battery_estimate_summary" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="secure_lockscreen_qs_disabled"
@@ -113,7 +113,7 @@
             settings:interval="1"
             settings:units="%"
             android:max="100"
-            android:min="1" />
+            android:min="1" /> -->
 
         <!-- QS Bluetooth Dialog -->
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -125,10 +125,9 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
          android:title="@string/qs_brightness_slider_category">
 
-        <!-- Brightness slider -->
         <lineageos.preference.LineageSecureSettingListPreference
             android:key="qs_show_brightness_slider"
             android:icon="@drawable/ic_brightness"
@@ -158,9 +157,9 @@
             android:summary="@string/qs_show_auto_brightness_summary"
             android:defaultValue="true" />
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="qs_layout_category"
         android:title="@string/qs_layout_category_title">
 
@@ -211,9 +210,9 @@
             android:summary="@string/qs_layout_columns_rows_summary"
             android:fragment="com.crdroid.settings.fragments.quicksettings.LayoutSettings" />
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:title="@string/qs_tile_animation_title">
 
         <com.crdroid.settings.preferences.SystemSettingListPreference
@@ -242,9 +241,9 @@
             android:entryValues="@array/qs_tile_animation_interpolator_values"
             android:defaultValue="0" />
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
-    <PreferenceCategory 
+    <!--<PreferenceCategory 
          android:title="@string/qs_footer_category">
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
@@ -253,7 +252,7 @@
             android:title="@string/qs_footer_datausage_title"
             android:summary="@string/qs_footer_datausage_summary" />
 
-        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_footer_warnings"
             android:icon="@drawable/ic_key"
             android:title="@string/qs_footer_warnings_title"
@@ -294,7 +293,7 @@
             android:key="notification_material_dismiss"
             android:icon="@drawable/ic_notification_clear_all"
             android:title="@string/notification_material_dismiss_title"
-            android:summary="@string/notification_material_dismiss_summary" />-->
+            android:summary="@string/notification_material_dismiss_summary" />
 
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 </PreferenceScreen>
