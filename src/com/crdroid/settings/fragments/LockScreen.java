@@ -73,8 +73,6 @@ public class LockScreen extends SettingsPreferenceFragment
     private SwitchPreferenceCompat mSmartspace;
     private SwitchPreferenceCompat mWeather;
 
-    private OmniJawsClient mWeatherClient;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,7 +115,6 @@ public class LockScreen extends SettingsPreferenceFragment
         mWeather = (SwitchPreferenceCompat) findPreference(KEY_WEATHER);
         mWeather.setOnPreferenceChangeListener(this);
 
-        mWeatherClient = new OmniJawsClient(getContext());
         updateWeatherSettings();
     }
 
@@ -172,9 +169,9 @@ public class LockScreen extends SettingsPreferenceFragment
     }
 
     private void updateWeatherSettings() {
-        if (mWeatherClient == null || mWeather == null || mSmartspace == null) return;
+        if (mWeather == null || mSmartspace == null) return;
 
-        boolean weatherEnabled = mWeatherClient.isOmniJawsEnabled();
+        boolean weatherEnabled = OmniJawsClient.get().isOmniJawsEnabled(getContext());
         mWeather.setEnabled(!mSmartspace.isChecked() && weatherEnabled);
         mWeather.setSummary(!mSmartspace.isChecked() && weatherEnabled ? R.string.lockscreen_weather_summary :
             R.string.lockscreen_weather_enabled_info);
