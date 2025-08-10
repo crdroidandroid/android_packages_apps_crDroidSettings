@@ -54,8 +54,12 @@
     <Preference
         android:key="crdroid_donate"
         android:icon="@drawable/ic_donate"
-        android:title="@string/donate_crdroid_title"
-        android:summary="@string/donate_crdroid_summary" />
+        android:title="@string/crdroid_donate_preference_title"
+        android:summary="@string/crdroid_donate_preference_summary">
+        <intent android:action="android.intent.action.MAIN"
+             android:targetPackage="com.android.settings"
+             android:targetClass="com.crdroid.settings.fragments.about.DonateActivity"/>
+    </Preference>
 
     <!-- crDroid Source -->
     <Preference
