@@ -42,6 +42,12 @@ public class DonateReceiver extends BroadcastReceiver {
         final String action = intent != null ? intent.getAction() : null;
 
         UserManager um = ctx.getSystemService(UserManager.class);
+
+        if (!um.isPrimaryUser()) {
+            Log.d(TAG, "Not running as the primary user, skipping notification");
+            return;
+        }
+
         final boolean unlocked = um == null || um.isUserUnlocked();
 
         if (!unlocked && !Intent.ACTION_USER_UNLOCKED.equals(action)) {
