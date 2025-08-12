@@ -23,7 +23,7 @@ import com.android.settings.R;
 
 public class DonateReceiver extends BroadcastReceiver {
 
-    private static final String TAG = "DonateWorker";
+    private static final String TAG = "DonateReceiver";
 
     public static final String DONATE_LAST_CHECKED = "pref_donate_checked_in";
 
@@ -54,10 +54,6 @@ public class DonateReceiver extends BroadcastReceiver {
             return;
         }
 
-        if (androidx.core.content.ContextCompat.isDeviceProtectedStorage(ctx)) {
-            ctx = ctx.createCredentialProtectedStorageContext();
-        }
-
         if (isCoolDownActive(ctx)) {
             return;
         }
@@ -75,7 +71,7 @@ public class DonateReceiver extends BroadcastReceiver {
         long last = PreferenceManager.getDefaultSharedPreferences(ctx)
                        .getLong(DONATE_LAST_CHECKED, 0L);
         long elapsed = (now - last) / (60_000L);
-        if (elapsed < COOLDOWN_MIN) {
+        if (last > 0 && elapsed < COOLDOWN_MIN) {
             Log.d(TAG, "Donate notification suppressed due to cooldown.");
             // Reschedule after cooldown
             long remaining = Math.max(1, COOLDOWN_MIN - elapsed);
