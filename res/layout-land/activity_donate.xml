@@ -54,6 +54,31 @@
                 android:textAlignment="center"
                 android:textColor="?android:attr/textColorSecondary" />
 
+            <ProgressBar
+                android:id="@+id/crdroid_donation_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:visibility="gone"
+                android:contentDescription="@string/crdroid_donation_progress_content_description"/>
+
+            <TextView
+                android:id="@+id/crdroid_donation_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/crdroid_donation_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="14sp"/>
+
             <Button
                 android:id="@+id/crdroid_donate_button"
                 android:drawableStart="@drawable/ic_donate_notification"
