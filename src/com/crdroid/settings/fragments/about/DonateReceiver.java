@@ -40,21 +40,26 @@ public class DonateReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context ctx, Intent intent) {
         final String action = intent != null ? intent.getAction() : null;
+        if (action == null) return;
 
         UserManager um = ctx.getSystemService(UserManager.class);
+        if (um == null) {
+            Log.d(TAG, "User service not ready, skipping notification");
+            return;
+        }
 
         if (!um.isPrimaryUser()) {
             Log.d(TAG, "Not running as the primary user, skipping notification");
             return;
         }
 
-        final boolean unlocked = um == null || um.isUserUnlocked();
-
-        if (!unlocked && !Intent.ACTION_USER_UNLOCKED.equals(action)) {
+        if (!um.isUserUnlocked() && !Intent.ACTION_USER_UNLOCKED.equals(action)) {
+            Log.d(TAG, "User not unlocked, skipping notification");
             return;
         }
 
         if (isCoolDownActive(ctx)) {
+            Log.d(TAG, "Cooldown period active, skipping notification");
             return;
         }
 
@@ -72,7 +77,6 @@ public class DonateReceiver extends BroadcastReceiver {
                        .getLong(DONATE_LAST_CHECKED, 0L);
         long elapsed = (now - last) / (60_000L);
         if (last > 0 && elapsed < COOLDOWN_MIN) {
-            Log.d(TAG, "Donate notification suppressed due to cooldown.");
             // Reschedule after cooldown
             long remaining = Math.max(1, COOLDOWN_MIN - elapsed);
             scheduleNext(ctx, remaining);
