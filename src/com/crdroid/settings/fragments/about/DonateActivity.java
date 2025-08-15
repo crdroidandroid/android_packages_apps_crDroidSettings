@@ -30,6 +30,7 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.DecimalFormat;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutorService;
@@ -41,6 +42,8 @@ public class DonateActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
     private TextView statSummary;
+    private TextView progressStart;
+    private TextView progressGoal;
 
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
 
@@ -55,6 +58,8 @@ public class DonateActivity extends AppCompatActivity {
 
         progressBar = findViewById(R.id.crdroid_donate_progress);
         statSummary = findViewById(R.id.crdroid_donate_stat_summary);
+        progressStart = findViewById(R.id.crdroid_donate_progress_start);
+        progressGoal = findViewById(R.id.crdroid_donate_progress_goal);
 
         donateNow.setOnClickListener(v -> openDonatePage());
         dismiss.setOnClickListener(v -> onDismissClick());
@@ -130,6 +135,8 @@ public class DonateActivity extends AppCompatActivity {
         if (json == null || json.has("error")) {
             progressBar.setVisibility(View.GONE);
             statSummary.setVisibility(View.GONE);
+            progressStart.setVisibility(View.GONE);
+            progressGoal.setVisibility(View.GONE);
             return;
         }
 
@@ -150,11 +157,17 @@ public class DonateActivity extends AppCompatActivity {
                 double remaining = goal - raised;
                 statSummary.setText(getString(R.string.crdroid_donate_still_needed, (int) remaining));
             }
+            progressStart.setVisibility(View.VISIBLE);
+            DecimalFormat df = new DecimalFormat("0.##");
+            progressGoal.setVisibility(View.VISIBLE);
+            progressGoal.setText(df.format(goal));
         } catch (Exception e) {
             Log.d(TAG, "json: " + json);
             Log.e(TAG, "Error: ", e);
             progressBar.setVisibility(View.GONE);
             statSummary.setVisibility(View.GONE);
+            progressStart.setVisibility(View.GONE);
+            progressGoal.setVisibility(View.GONE);
         }
     }
 
