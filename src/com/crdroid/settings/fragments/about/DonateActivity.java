@@ -106,25 +106,19 @@ public class DonateActivity extends AppCompatActivity {
                 connection.setConnectTimeout(5000);
                 connection.setReadTimeout(5000);
 
-                int responseCode = connection.getResponseCode();
-                if (responseCode == HttpURLConnection.HTTP_OK) {
-                    InputStream in = new BufferedInputStream(connection.getInputStream());
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-                    StringBuilder sb = new StringBuilder();
-
-                    String line;
-                    while ((line = reader.readLine()) != null) {
-                        sb.append(line);
+                if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                    try (InputStream in = new BufferedInputStream(connection.getInputStream());
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(in))) {
+                        StringBuilder sb = new StringBuilder();
+                        String line;
+                        while ((line = reader.readLine()) != null) sb.append(line);
+                        json = new JSONObject(sb.toString());
                     }
-
-                    json = new JSONObject(sb.toString());
                 }
             } catch (Exception e) {
                 Log.e(TAG, "Error fetching donation data", e);
             } finally {
-                if (connection != null) {
-                    connection.disconnect();
-                }
+                if (connection != null) connection.disconnect();
             }
 
             final JSONObject finalJson = json;
@@ -140,8 +134,8 @@ public class DonateActivity extends AppCompatActivity {
         }
 
         try {
-            double raised = json.getDouble("raised");
-            double goal = json.getDouble("goal");
+            double raised = json.optDouble("raised", 0);
+            double goal = json.optDouble("goal", 0);
 
             progressBar.setVisibility(View.VISIBLE);
             statSummary.setVisibility(View.VISIBLE);
@@ -150,7 +144,7 @@ public class DonateActivity extends AppCompatActivity {
             progressBar.setMax(100);
             progressBar.setProgress(Math.min(progress, 100));
 
-            if (raised > goal) {
+            if (goal == 0 || raised >= goal) {
                 statSummary.setText(getString(R.string.crdroid_donate_thank_you));
             } else {
                 double remaining = goal - raised;
