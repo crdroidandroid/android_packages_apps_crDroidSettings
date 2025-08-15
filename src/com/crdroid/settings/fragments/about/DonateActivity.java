@@ -40,8 +40,7 @@ public class DonateActivity extends AppCompatActivity {
     private static final String TAG = "DonateActivity";
 
     private ProgressBar progressBar;
-    private TextView label;
-    private TextView countView;
+    private TextView statSummary;
 
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
 
@@ -54,19 +53,14 @@ public class DonateActivity extends AppCompatActivity {
         Button donateNow = findViewById(R.id.crdroid_donate_button);
         Button dismiss = findViewById(R.id.crdroid_later_button);
 
-        progressBar = findViewById(R.id.crdroid_donation_progress);
-        label = findViewById(R.id.crdroid_donation_label);
-        countView = findViewById(R.id.crdroid_donation_count);
+        progressBar = findViewById(R.id.crdroid_donate_progress);
+        statSummary = findViewById(R.id.crdroid_donate_stat_summary);
 
         donateNow.setOnClickListener(v -> openDonatePage());
         dismiss.setOnClickListener(v -> onDismissClick());
 
         DonateReceiver.cancelNotification(this);
         setLastChecked();
-
-        progressBar.setVisibility(View.GONE);
-        label.setVisibility(View.GONE);
-        countView.setVisibility(View.GONE);
 
         if (isNetworkAvailable(this)) {
             fetchDonationData();
@@ -141,44 +135,32 @@ public class DonateActivity extends AppCompatActivity {
     private void updateUI(JSONObject json) {
         if (json == null || json.has("error")) {
             progressBar.setVisibility(View.GONE);
-            label.setVisibility(View.GONE);
-            countView.setVisibility(View.GONE);
+            statSummary.setVisibility(View.GONE);
             return;
         }
 
         try {
             double raised = json.getDouble("raised");
             double goal = json.getDouble("goal");
-            double count = json.getDouble("count");
 
             progressBar.setVisibility(View.VISIBLE);
-            label.setVisibility(View.VISIBLE);
-            countView.setVisibility(View.VISIBLE);
+            statSummary.setVisibility(View.VISIBLE);
 
             int progress = (int) ((raised / goal) * 100);
             progressBar.setMax(100);
             progressBar.setProgress(Math.min(progress, 100));
-            progressBar.setContentDescription(getString(
-                    R.string.crdroid_donation_progress_content_description,
-                    (int) raised,
-                    (int) goal
-            ));
 
             if (raised > goal) {
-                label.setText(getString(R.string.crdroid_donation_thank_you));
+                statSummary.setText(getString(R.string.crdroid_donate_thank_you));
             } else {
                 double remaining = goal - raised;
-                label.setText(getString(R.string.crdroid_donation_still_needed, (int) remaining));
+                statSummary.setText(getString(R.string.crdroid_donate_still_needed, (int) remaining));
             }
-
-            countView.setText(getString(R.string.crdroid_donation_count, (int) count));
-
         } catch (Exception e) {
             Log.d(TAG, "json: " + json);
             Log.e(TAG, "Error: ", e);
             progressBar.setVisibility(View.GONE);
-            label.setVisibility(View.GONE);
-            countView.setVisibility(View.GONE);
+            statSummary.setVisibility(View.GONE);
         }
     }
 

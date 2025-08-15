@@ -27,16 +27,36 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <ImageView
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="@dimen/logo_height"
-            android:layout_marginBottom="48dp"
+            android:layout_height="match_parent"
             android:layout_marginEnd="2dp"
             android:layout_marginStart="2dp"
-            android:layout_marginTop="24dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/support_logo" />
+            android:layout_marginTop="16dp"
+            android:paddingBottom="48dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@drawable/support_logo" />
+
+            <Button
+                android:id="@+id/crdroid_later_button"
+                style="@style/Base.Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/crdroid_later_button" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -54,31 +74,6 @@
                 android:textAlignment="center"
                 android:textColor="?android:attr/textColorSecondary" />
 
-            <ProgressBar
-                android:id="@+id/crdroid_donation_progress"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:max="100"
-                android:visibility="gone"
-                android:contentDescription="@string/crdroid_donation_progress_content_description"/>
-
-            <TextView
-                android:id="@+id/crdroid_donation_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="16sp"/>
-
-            <TextView
-                android:id="@+id/crdroid_donation_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:textColor="?android:attr/textColorSecondary"
-                android:textSize="14sp"/>
-
             <Button
                 android:id="@+id/crdroid_donate_button"
                 android:drawableStart="@drawable/ic_donate_notification"
@@ -88,20 +83,25 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/crdroid_donate_button" />
+
+            <ProgressBar
+                android:id="@+id/crdroid_donate_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:max="100"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/crdroid_donate_stat_summary"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="6dp"
+                android:visibility="gone"
+                android:textAlignment="center"
+                android:textColor="?android:attr/textColorSecondary" />
         </LinearLayout>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/crdroid_later_button"
-        style="@style/Base.Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="48dp"
-        android:paddingBottom="8dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingTop="8dp"
-        android:text="@string/crdroid_later_button" />
 </RelativeLayout>
