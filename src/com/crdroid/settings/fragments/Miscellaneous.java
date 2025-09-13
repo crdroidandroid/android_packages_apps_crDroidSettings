@@ -58,14 +58,12 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
 
     private static final String POCKET_JUDGE = "pocket_judge";
     private static final String KEY_GMS_CERT_SPOOF = "pi_gms_cert_chain";
-    private static final String KEY_THREE_FINGERS_SWIPE = "three_fingers_swipe";
     private static final String KEYBOX_DATA_KEY = "keybox_data_setting";
 
     private ActivityResultLauncher<Intent> mKeyboxFilePickerLauncher;
     private KeyboxDataPreference mKeyboxDataPreference;
     private SwitchPreferenceCompat mDisableForceIntegrity;
     private Preference mPocketJudge;
-    private ListPreference mThreeFingersSwipeAction;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -81,11 +79,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 com.android.internal.R.bool.config_pocketModeSupported);
         if (!mPocketJudgeSupported)
             prefScreen.removePreference(mPocketJudge);
-
-        Action threeFingersSwipeAction = Action.fromSettings(getContentResolver(),
-                LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION,
-                Action.NOTHING);
-        mThreeFingersSwipeAction = initList(KEY_THREE_FINGERS_SWIPE, threeFingersSwipeAction);
 
         mDisableForceIntegrity = (SwitchPreferenceCompat) findPreference(KEY_GMS_CERT_SPOOF);
         if (mDisableForceIntegrity != null) {
@@ -131,11 +124,6 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mThreeFingersSwipeAction) {
-            handleListChange((ListPreference) preference, newValue,
-                    LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION);
-            return true;
-        }
         return false;
     }
 

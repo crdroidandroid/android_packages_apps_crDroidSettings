@@ -105,14 +105,14 @@
     </Preference>
 
     <!-- Three fingers swipe action -->
-    <ListPreference
-        android:key="three_fingers_swipe"
+    <Preference
+        android:key="gesture_three_fingers_swipe_action"
         android:icon="@drawable/ic_three_finger_gesture"
-        android:dialogTitle="@string/three_fingers_swipe_title"
-        android:title="@string/three_fingers_swipe_title"
-        android:entries="@array/hardware_keys_action_entries"
-        android:entryValues="@array/hardware_keys_action_values"
-        android:persistent="false" />
+        android:title="@string/nt_gesture_three_finger_swipe"
+        android:summary="@string/nt_gesture_three_finger_swipe_summary"
+        android:fragment="com.android.settings.gestures.ThreeFingerSwipeSettings"
+        settings:searchable="false"
+        settings:controller="com.android.settings.gestures.ThreeFingerSwipePreferenceController" />
 
     <!-- Sensor block per package -->
     <Preference
