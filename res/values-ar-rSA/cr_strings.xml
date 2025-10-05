@@ -475,50 +475,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">تنبيهات سفلية</string>
     <string name="qs_footer_warnings_summary">عرض تحذير أسفل لوحة الإعدادات السريعة عندما تكون الشبكة مراقبة عن طريق تطبيقات خارجية أو شبكة افتراضية</string>
-    <!-- Media art -->
-    <string name="media_art_title">بوستر الاغنية</string>
-    <string name="media_art_summary">عرض صورة غلاف الألبوم عند تشغيل الموسيقى</string>
-    <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">عرض غلاف الألبوم على الشاشة</string>
-    <string name="lockscreen_albumart_filter_none">لا شيء</string>
-    <string name="lockscreen_albumart_filter_grayscale">تدرج رمادي</string>
-    <string name="lockscreen_albumart_filter_tint">لون المظهر</string>
-    <string name="lockscreen_albumart_filter_blur">ضبابي</string>
-    <string name="lockscreen_albumart_filter_grayblur">تدرج رمادي وضبابي</string>
-    <!-- Pulse music visualizer -->
-    <string name="pulse_help_policy_notice_title">حول النبض المرئي</string>
-    <string name="pulse_help_policy_notice_summary">Pulse هي معادل صوتي ممتاز عند تشغيل الموسيقى على الجهاز</string>
-    <string name="pulse_settings">نبض</string>
-    <string name="pulse_settings_summary">معادل صوت رسومي لشريط التنقل وشاشة القفل</string>
-    <string name="show_navbar_pulse_title">نبض شريط التنقل</string>
-    <string name="show_navbar_pulse_summary">معادل صوت رسومي على شريط التنقل</string>
-    <string name="show_lockscreen_pulse_title">نبض شاشة القفل</string>
-    <string name="show_lockscreen_pulse_summary">معادل صوت رسومي على شاشة القفل</string>
-    <string name="show_ambient_pulse_title">شريط الـPulse</string>
-    <string name="show_ambient_pulse_summary">معادل الصوت الرسومي على شريط التنقل</string>
-    <string name="pulse_render_mode_title">وضع المعالجة</string>
-    <string name="pulse_render_mode_fading_bars">كتل متلاشية</string>
-    <string name="pulse_render_mode_solid_lines">خطوط صلبة</string>
-    <string name="pulse_legacy_mode_advanced_category">إعدادات وضع الكتل المتلاشية</string>
-    <string name="pulse_custom_fudge_factor">مستوى الانتظام</string>
-    <string name="pulse_lavalamp_speed_title">سرعة الإضاءة السلسة</string>
-    <string name="pulse_solid_units_count">عدد الخطوط المتصلة</string>
-    <string name="pulse_solid_units_opacity">عتامة الخطوط المتصلة</string>
-    <string name="pulse_solid_units_rounded_title">زوايا دائرية للشاشة</string>
-    <string name="pulse_solid_units_rounded_summary">خطوط متصلة مع أطراف دائرية</string>
-    <string name="pulse_solid_dimen_category">إعدادات وضع الخطوط المتصلة</string>
-    <string name="pulse_color_mode_title">اللون</string>
-    <string name="pulse_color_accent">اللون الأساسي</string>
-    <string name="pulse_color_custom">مخصص</string>
-    <string name="pulse_color_lava_lamp">الإضاءة السلسة</string>
-    <string name="pulse_color_auto">ألبوم</string>
-    <string name="pulse_color_user_title">اختر لوناً</string>
-    <string name="pulse_smoothing_enabled_title">تشغيل وضع السلاسة</string>
-    <string name="pulse_smoothing_enabled_summary">كل شريط سيتم عرضه بسلاسة اكثر</string>
-    <string name="pulse_custom_dimen">عرض الشريط</string>
-    <string name="pulse_custom_div">تباعد الأسطر</string>
-    <string name="pulse_filled_block_size">حجم الكتلة</string>
-    <string name="pulse_empty_block_size">تباعد الكتل</string>
     <!-- Navigation Bar -->
     <string name="navbar_visibility_title">شريط التنقل</string>
     <string name="navbar_visibility_summary">عرض شريط التنقل في أسفل الشاشة</string>
@@ -577,9 +533,10 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="qs_brightness_slider_position_title">الموضع</string>
     <string name="qs_brightness_slider_position_top">في الأعلى</string>
     <string name="qs_brightness_slider_position_bottom">في الأسفل</string>
-    <!-- Brightness slider haptic feedback -->
+    <!-- Brightness slider / QS tile haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">مردود فعل لمسي</string>
     <string name="qs_brightness_slider_haptic_summary">تقديم ردود الفعل اللمسية حول تغيير السطوع باستخدام شريط التمرير</string>
+    <string name="qs_tile_haptic_summary">Provide haptic feedback on taping QS tiles</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">أيقونة السطوع التلقائي</string>
     <string name="qs_show_auto_brightness_summary">إظهار مؤشر تبديل للسطوع التكيفي بالقرب من شريط التمرير</string>
@@ -824,9 +781,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
         <item quantity="few">حتى <xliff:g id="device_num">%1$d</xliff:g> يستطيعون الاتصال بنقطة الاتصال هذه</item>
         <item quantity="many">حتى <xliff:g id="device_num">%1$d</xliff:g> يستطيعون الاتصال بنقطة الاتصال هذه</item>
     </plurals>
-    <!-- Disable QS -->
-    <string name="disable_qs_title">إخفاء الإعدادات السريعة على شاشة القفل</string>
-    <string name="disable_qs_summary">منع الوصول إلى مربعات الإعدادات السريعة على شاشة القفل</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">قائمة زر التشغيل</string>
     <string name="lockscreen_enable_power_menu_summary">السماح بالوصول إلى قائمة التشغيل اثناء قفل الشاشة</string>
@@ -1150,11 +1104,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- QS Dual Tone Colors -->
     <string name="qs_dual_tone_title">سمة النغمة المزدوجة</string>
     <string name="qs_dual_tone_summary">استخدام ألوان خلفية ذات نغمة مزدوجة بدلاً من نغمة واحدة</string>
-    <!-- QS Tiles Style -->
-    <string name="qs_tile_ui_style_title">نمط مربعات الإعدادات السريعة</string>
-    <string name="qs_tile_ui_style_a11_circle">بلاطة دائرية</string>
-    <string name="qs_tile_ui_style_a11_square">بلاطة مربعة</string>
-    <string name="qs_tile_ui_style_a11_mix">بلاط &amp; مربع الدائرة</string>
     <!-- QS Panel Style -->
     <string name="qs_panel_style_title">نمط الإعدادات السريعة للوحة</string>
     <string name="qs_panel_style_outline">التخطيط</string>
@@ -1268,4 +1217,57 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="keybox_toast_missing_data">Invalid keybox XML: required fields missing</string>
     <string name="keybox_toast_file_loaded">Keybox loaded</string>
     <string name="keybox_toast_file_cleared">Keybox cleared</string>
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_shape_title">QS tiles shape</string>
+    <string name="qs_tile_shape_dynamic">Dynamic</string>
+    <string name="qs_tile_shape_circle">دائرة</string>
+    <string name="qs_tile_shape_rounded_square">Rounded square</string>
+    <string name="qs_tile_shape_square">Square</string>
+    <!-- Force dark mode -->
+    <string name="force_dark_title">Dark mode for third-party apps</string>
+    <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
+    <!-- Brightness Slider Style -->
+    <string name="qs_brightness_slider_shape_title">Brightness slider shape</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Force LTE CA</string>
+    <string name="force_lte_ca_summary">Force LTE carrier aggregation to work</string>
+    <!-- QS on lockscreen -->
+    <string name="lockscreen_quick_settings_title">QS on lock screen</string>
+    <string name="lockscreen_quick_settings_summary">Allow swipe down on lock screen to view Quick Settings</string>
+    <!-- Lock screen media art -->
+    <string name="ls_media_art_title">بوستر الاغنية</string>
+    <string name="ls_media_art_summary">عرض صورة غلاف الألبوم عند تشغيل الموسيقى</string>
+    <!-- Lock screen album art filter -->
+    <string name="ls_media_art_filter_title">عرض غلاف الألبوم على الشاشة</string>
+    <string name="ls_media_art_filter_none">لا شيء</string>
+    <string name="ls_media_art_filter_blur">ضبابي</string>
+    <string name="ls_media_art_filter_grayscale">تدرج رمادي</string>
+    <string name="ls_media_art_filter_sepia">Sepia</string>
+    <string name="ls_media_art_filter_tint">لون المظهر</string>
+    <string name="ls_media_art_filter_invert">Invert</string>
+    <string name="ls_media_art_filter_grayblur">Grayscale and blur</string>
+    <!-- Lock screen media art fade level -->
+    <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
+    <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
+    <!-- Lock screen media art blur level -->
+    <string name="ls_media_art_blur_level_title">Media art blur level</string>
+    <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_settings_title">Pulse Visualizer</string>
+    <string name="pulse_settings_summary">معادل صوت رسومي لشريط التنقل وشاشة القفل</string>
+    <string name="pulse_rounded_bars_title">Rounded bars</string>
+    <string name="pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
+    <string name="pulse_color">Visualizer color</string>
+    <string name="pulse_color_lavalamp">Lavalamp</string>
+    <string name="pulse_color_album">Album art</string>
+    <string name="pulse_color_accent">اللون الأساسي</string>
+    <string name="pulse_bar_count_title">Number of bars</string>
+    <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
+    <string name="pulse_bar_count_units">bars</string>
+    <string name="pulse_renderer">Visualizer style</string>
+    <string name="pulse_renderer_solid">خطوط صلبة</string>
+    <string name="pulse_renderer_fading">كتل متلاشية</string>
+    <!-- Notification Row -->
+    <string name="notification_row_transparency_title">Translucent notifications</string>
+    <string name="notification_row_transparency_summary">Set translucent background for notifications</string>
 </resources>
