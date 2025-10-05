@@ -469,50 +469,6 @@
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">页脚提醒</string>
     <string name="qs_footer_warnings_summary">当网络被 VPN 或者应用程序监测时，在快速设置底部显示提醒</string>
-    <!-- Media art -->
-    <string name="media_art_title">媒体封面</string>
-    <string name="media_art_summary">可用时显示媒体封面</string>
-    <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">媒体封面艺术过滤器</string>
-    <string name="lockscreen_albumart_filter_none">无</string>
-    <string name="lockscreen_albumart_filter_grayscale">灰度</string>
-    <string name="lockscreen_albumart_filter_tint">主题色</string>
-    <string name="lockscreen_albumart_filter_blur">模糊</string>
-    <string name="lockscreen_albumart_filter_grayblur">灰度和模糊</string>
-    <!-- Pulse music visualizer -->
-    <string name="pulse_help_policy_notice_title">关于脉冲</string>
-    <string name="pulse_help_policy_notice_summary">当音乐在设备上播放时，脉冲是出色的音频图形均衡器</string>
-    <string name="pulse_settings">脉冲信号</string>
-    <string name="pulse_settings_summary">导航栏和锁屏的音频图形均衡器</string>
-    <string name="show_navbar_pulse_title">导航栏脉冲</string>
-    <string name="show_navbar_pulse_summary">导航栏上的音频图形均衡器</string>
-    <string name="show_lockscreen_pulse_title">锁屏脉冲</string>
-    <string name="show_lockscreen_pulse_summary">锁屏上的音频图形均衡器</string>
-    <string name="show_ambient_pulse_title">息屏脉冲</string>
-    <string name="show_ambient_pulse_summary">在息屏显示界面显示音频可视化效果</string>
-    <string name="pulse_render_mode_title">渲染模式</string>
-    <string name="pulse_render_mode_fading_bars">渐变块</string>
-    <string name="pulse_render_mode_solid_lines">实线</string>
-    <string name="pulse_legacy_mode_advanced_category">渐变模式设置</string>
-    <string name="pulse_custom_fudge_factor">清晰等级</string>
-    <string name="pulse_lavalamp_speed_title">熔岩灯速度</string>
-    <string name="pulse_solid_units_count">实线计数</string>
-    <string name="pulse_solid_units_opacity">实线不透明度</string>
-    <string name="pulse_solid_units_rounded_title">圆角</string>
-    <string name="pulse_solid_units_rounded_summary">带圆形提示的实线</string>
-    <string name="pulse_solid_dimen_category">实线模式设置</string>
-    <string name="pulse_color_mode_title">颜色</string>
-    <string name="pulse_color_accent">强调色</string>
-    <string name="pulse_color_custom">自定义</string>
-    <string name="pulse_color_lava_lamp">熔岩灯</string>
-    <string name="pulse_color_auto">专辑</string>
-    <string name="pulse_color_user_title">选择颜色</string>
-    <string name="pulse_smoothing_enabled_title">开启平滑模式</string>
-    <string name="pulse_smoothing_enabled_summary">每条频谱线动画更平滑</string>
-    <string name="pulse_custom_dimen">栏宽度</string>
-    <string name="pulse_custom_div">栏间距</string>
-    <string name="pulse_filled_block_size">方块大小</string>
-    <string name="pulse_empty_block_size">方块间距</string>
     <!-- Navigation Bar -->
     <string name="navbar_visibility_title">导航栏</string>
     <string name="navbar_visibility_summary">在屏幕底部显示导航栏</string>
@@ -571,9 +527,10 @@
     <string name="qs_brightness_slider_position_title">位置</string>
     <string name="qs_brightness_slider_position_top">顶部</string>
     <string name="qs_brightness_slider_position_bottom">底部</string>
-    <!-- Brightness slider haptic feedback -->
+    <!-- Brightness slider / QS tile haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">触觉反馈</string>
     <string name="qs_brightness_slider_haptic_summary">在使用滑块改变亮度时提供震动反馈</string>
+    <string name="qs_tile_haptic_summary">Provide haptic feedback on taping QS tiles</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">自动亮度图标</string>
     <string name="qs_show_auto_brightness_summary">在亮度滑块附近显示自动调节亮度开关</string>
@@ -813,9 +770,6 @@
     <plurals name="wifi_hotspot_client_limit_summary">
         <item quantity="other">最多 <xliff:g id="device_num">%1$d</xliff:g> 个设备可以连接到这个热点上</item>
     </plurals>
-    <!-- Disable QS -->
-    <string name="disable_qs_title">在锁屏界面隐藏快速设置</string>
-    <string name="disable_qs_summary">防止在锁屏界面上访问快速设置磁贴</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">电源菜单</string>
     <string name="lockscreen_enable_power_menu_summary">允许在锁屏界面使用电源菜单</string>
@@ -1136,11 +1090,6 @@
     <!-- QS Dual Tone Colors -->
     <string name="qs_dual_tone_title">双色调主题</string>
     <string name="qs_dual_tone_summary">使用双色调背景色而非 AOSP 单色调</string>
-    <!-- QS Tiles Style -->
-    <string name="qs_tile_ui_style_title">快速设置磁贴风格</string>
-    <string name="qs_tile_ui_style_a11_circle">圆形磁贴</string>
-    <string name="qs_tile_ui_style_a11_square">方形磁贴</string>
-    <string name="qs_tile_ui_style_a11_mix">圆形 &amp; 方形磁贴</string>
     <!-- QS Panel Style -->
     <string name="qs_panel_style_title">快速设置面板样式</string>
     <string name="qs_panel_style_outline">描边</string>
@@ -1246,12 +1195,65 @@
     <string name="custom_style_ios">IOS</string>
     <string name="custom_style_layers">层次</string>
     <!-- Keybox Data -->
-    <string name="keybox_data_title">Keybox attestation override</string>
-    <string name="keybox_data_summary">Load a custom keybox XML to override device key attestation</string>
-    <string name="keybox_data_loaded_summary">Custom keybox XML loaded. Delete to clear.</string>
-    <string name="keybox_delete_content_description">Clear keybox data</string>
-    <string name="keybox_toast_invalid_file_selected">Not an XML file. Choose a valid keybox XML.</string>
-    <string name="keybox_toast_missing_data">Invalid keybox XML: required fields missing</string>
-    <string name="keybox_toast_file_loaded">Keybox loaded</string>
-    <string name="keybox_toast_file_cleared">Keybox cleared</string>
+    <string name="keybox_data_title">Keybox 认证覆盖</string>
+    <string name="keybox_data_summary">加载自定义的Keybox XML 以覆盖设备密钥认证</string>
+    <string name="keybox_data_loaded_summary">自定义Keybox XML 已加载。删除以清空。</string>
+    <string name="keybox_delete_content_description">清除Keybox数据</string>
+    <string name="keybox_toast_invalid_file_selected">不是XML文件。请选择有效的Keybox XML。</string>
+    <string name="keybox_toast_missing_data">无效的Keybox XML：缺少必填字段</string>
+    <string name="keybox_toast_file_loaded">Keybox已加载</string>
+    <string name="keybox_toast_file_cleared">Keybox已清除</string>
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_shape_title">QS tiles shape</string>
+    <string name="qs_tile_shape_dynamic">Dynamic</string>
+    <string name="qs_tile_shape_circle">环形图标</string>
+    <string name="qs_tile_shape_rounded_square">Rounded square</string>
+    <string name="qs_tile_shape_square">Square</string>
+    <!-- Force dark mode -->
+    <string name="force_dark_title">Dark mode for third-party apps</string>
+    <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
+    <!-- Brightness Slider Style -->
+    <string name="qs_brightness_slider_shape_title">Brightness slider shape</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Force LTE CA</string>
+    <string name="force_lte_ca_summary">Force LTE carrier aggregation to work</string>
+    <!-- QS on lockscreen -->
+    <string name="lockscreen_quick_settings_title">QS on lock screen</string>
+    <string name="lockscreen_quick_settings_summary">Allow swipe down on lock screen to view Quick Settings</string>
+    <!-- Lock screen media art -->
+    <string name="ls_media_art_title">媒体封面</string>
+    <string name="ls_media_art_summary">可用时显示媒体封面</string>
+    <!-- Lock screen album art filter -->
+    <string name="ls_media_art_filter_title">媒体封面艺术过滤器</string>
+    <string name="ls_media_art_filter_none">无</string>
+    <string name="ls_media_art_filter_blur">模糊</string>
+    <string name="ls_media_art_filter_grayscale">灰度</string>
+    <string name="ls_media_art_filter_sepia">Sepia</string>
+    <string name="ls_media_art_filter_tint">主题色</string>
+    <string name="ls_media_art_filter_invert">Invert</string>
+    <string name="ls_media_art_filter_grayblur">Grayscale and blur</string>
+    <!-- Lock screen media art fade level -->
+    <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
+    <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
+    <!-- Lock screen media art blur level -->
+    <string name="ls_media_art_blur_level_title">Media art blur level</string>
+    <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_settings_title">Pulse Visualizer</string>
+    <string name="pulse_settings_summary">导航栏和锁屏的音频图形均衡器</string>
+    <string name="pulse_rounded_bars_title">Rounded bars</string>
+    <string name="pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
+    <string name="pulse_color">Visualizer color</string>
+    <string name="pulse_color_lavalamp">Lavalamp</string>
+    <string name="pulse_color_album">Album art</string>
+    <string name="pulse_color_accent">强调色</string>
+    <string name="pulse_bar_count_title">Number of bars</string>
+    <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
+    <string name="pulse_bar_count_units">bars</string>
+    <string name="pulse_renderer">Visualizer style</string>
+    <string name="pulse_renderer_solid">实线</string>
+    <string name="pulse_renderer_fading">渐变块</string>
+    <!-- Notification Row -->
+    <string name="notification_row_transparency_title">Translucent notifications</string>
+    <string name="notification_row_transparency_summary">Set translucent background for notifications</string>
 </resources>
