@@ -470,50 +470,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Footer alerts</string>
     <string name="qs_footer_warnings_summary">Display an alert at bottom of QS panel when network is monitored by external apps or VPN</string>
-    <!-- Media art -->
-    <string name="media_art_title">Albumomslagsillustrationer</string>
-    <string name="media_art_summary">Vise mediers albumomslagsillustrationer, når tilgængelige</string>
-    <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Mediealbumillustrationer, filter</string>
-    <string name="lockscreen_albumart_filter_none">Ingen</string>
-    <string name="lockscreen_albumart_filter_grayscale">Gråtoner</string>
-    <string name="lockscreen_albumart_filter_tint">Overgangstoning</string>
-    <string name="lockscreen_albumart_filter_blur">Sløre</string>
-    <string name="lockscreen_albumart_filter_grayblur">Gråtonet og sløret</string>
-    <!-- Pulse music visualizer -->
-    <string name="pulse_help_policy_notice_title">Om Pulse</string>
-    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>
-    <string name="pulse_settings">Pulsering</string>
-    <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
-    <string name="show_navbar_pulse_title">Navbar Pulse</string>
-    <string name="show_navbar_pulse_summary">Grafisk equalizer på navigeringsbjælken</string>
-    <string name="show_lockscreen_pulse_title">Lockscreen Pulse</string>
-    <string name="show_lockscreen_pulse_summary">Audio graphic equalizer on the lockscreen</string>
-    <string name="show_ambient_pulse_title">Ambient Pulse</string>
-    <string name="show_ambient_pulse_summary">Audio graphic equalizer on the ambient screen</string>
-    <string name="pulse_render_mode_title">Afspilningstilstand</string>
-    <string name="pulse_render_mode_fading_bars">Blokudtoninger</string>
-    <string name="pulse_render_mode_solid_lines">Faste linjer</string>
-    <string name="pulse_legacy_mode_advanced_category">Indstillinger for blokudtonongstilstand</string>
-    <string name="pulse_custom_fudge_factor">Tilregnelighedniveau</string>
-    <string name="pulse_lavalamp_speed_title">Lava lamp speed</string>
-    <string name="pulse_solid_units_count">Antal faste linjer</string>
-    <string name="pulse_solid_units_opacity">Opacitet for faste linjer</string>
-    <string name="pulse_solid_units_rounded_title">Afrundede hjørner</string>
-    <string name="pulse_solid_units_rounded_summary">Solid lines with rounded tip</string>
-    <string name="pulse_solid_dimen_category">Indstillinger for faste linjer-tilstand</string>
-    <string name="pulse_color_mode_title">Farve</string>
-    <string name="pulse_color_accent">Accent</string>
-    <string name="pulse_color_custom">Tilpasset</string>
-    <string name="pulse_color_lava_lamp">Lavalampe</string>
-    <string name="pulse_color_auto">Album</string>
-    <string name="pulse_color_user_title">Choose color</string>
-    <string name="pulse_smoothing_enabled_title">Turn on smoothing</string>
-    <string name="pulse_smoothing_enabled_summary">Each bar is animated more smoothly</string>
-    <string name="pulse_custom_dimen">Bjælkebredde</string>
-    <string name="pulse_custom_div">Bjælkeafstand</string>
-    <string name="pulse_filled_block_size">Blokstørrelse</string>
-    <string name="pulse_empty_block_size">Blokafstand</string>
     <!-- Navigation Bar -->
     <string name="navbar_visibility_title">Navigeringsbjælke</string>
     <string name="navbar_visibility_summary">Display navigation bar at bottom of screen</string>
@@ -572,9 +528,10 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="qs_brightness_slider_position_title">Position</string>
     <string name="qs_brightness_slider_position_top">Øverst</string>
     <string name="qs_brightness_slider_position_bottom">Bund</string>
-    <!-- Brightness slider haptic feedback -->
+    <!-- Brightness slider / QS tile haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">Haptic feedback</string>
     <string name="qs_brightness_slider_haptic_summary">Provide haptic feedback on changing brightness using slider</string>
+    <string name="qs_tile_haptic_summary">Provide haptic feedback on taping QS tiles</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Auto brightness icon</string>
     <string name="qs_show_auto_brightness_summary">Vis kontakt til tilpasset lysstyrke nær skyderen</string>
@@ -815,9 +772,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
         <item quantity="other">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
         <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
     </plurals>
-    <!-- Disable QS -->
-    <string name="disable_qs_title">Hide QS on secure lock screen</string>
-    <string name="disable_qs_summary">Prevent access to QS tiles on secure lock screen</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Tænd-/Sluk-menu</string>
     <string name="lockscreen_enable_power_menu_summary">Allow accessing power menu on secure lockscreen</string>
@@ -1137,11 +1091,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- QS Dual Tone Colors -->
     <string name="qs_dual_tone_title">Dual tone themed</string>
     <string name="qs_dual_tone_summary">Use dual tone background colors instead of AOSP single tone</string>
-    <!-- QS Tiles Style -->
-    <string name="qs_tile_ui_style_title">QS tiles style</string>
-    <string name="qs_tile_ui_style_a11_circle">Circle tiles</string>
-    <string name="qs_tile_ui_style_a11_square">Square tiles</string>
-    <string name="qs_tile_ui_style_a11_mix">Circle &amp; Square tiles</string>
     <!-- QS Panel Style -->
     <string name="qs_panel_style_title">QS panel style</string>
     <string name="qs_panel_style_outline">Outline</string>
@@ -1255,4 +1204,57 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="keybox_toast_missing_data">Invalid keybox XML: required fields missing</string>
     <string name="keybox_toast_file_loaded">Keybox loaded</string>
     <string name="keybox_toast_file_cleared">Keybox cleared</string>
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_shape_title">QS tiles shape</string>
+    <string name="qs_tile_shape_dynamic">Dynamic</string>
+    <string name="qs_tile_shape_circle">Cirkel</string>
+    <string name="qs_tile_shape_rounded_square">Rounded square</string>
+    <string name="qs_tile_shape_square">Square</string>
+    <!-- Force dark mode -->
+    <string name="force_dark_title">Dark mode for third-party apps</string>
+    <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
+    <!-- Brightness Slider Style -->
+    <string name="qs_brightness_slider_shape_title">Brightness slider shape</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Force LTE CA</string>
+    <string name="force_lte_ca_summary">Force LTE carrier aggregation to work</string>
+    <!-- QS on lockscreen -->
+    <string name="lockscreen_quick_settings_title">QS on lock screen</string>
+    <string name="lockscreen_quick_settings_summary">Allow swipe down on lock screen to view Quick Settings</string>
+    <!-- Lock screen media art -->
+    <string name="ls_media_art_title">Albumomslagsillustrationer</string>
+    <string name="ls_media_art_summary">Vise mediers albumomslagsillustrationer, når tilgængelige</string>
+    <!-- Lock screen album art filter -->
+    <string name="ls_media_art_filter_title">Mediealbumillustrationer, filter</string>
+    <string name="ls_media_art_filter_none">Ingen</string>
+    <string name="ls_media_art_filter_blur">Sløre</string>
+    <string name="ls_media_art_filter_grayscale">Gråtoner</string>
+    <string name="ls_media_art_filter_sepia">Sepia</string>
+    <string name="ls_media_art_filter_tint">Overgangstoning</string>
+    <string name="ls_media_art_filter_invert">Invert</string>
+    <string name="ls_media_art_filter_grayblur">Grayscale and blur</string>
+    <!-- Lock screen media art fade level -->
+    <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
+    <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
+    <!-- Lock screen media art blur level -->
+    <string name="ls_media_art_blur_level_title">Media art blur level</string>
+    <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_settings_title">Pulse Visualizer</string>
+    <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
+    <string name="pulse_rounded_bars_title">Rounded bars</string>
+    <string name="pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
+    <string name="pulse_color">Visualizer color</string>
+    <string name="pulse_color_lavalamp">Lavalamp</string>
+    <string name="pulse_color_album">Album art</string>
+    <string name="pulse_color_accent">Accent</string>
+    <string name="pulse_bar_count_title">Number of bars</string>
+    <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
+    <string name="pulse_bar_count_units">bars</string>
+    <string name="pulse_renderer">Visualizer style</string>
+    <string name="pulse_renderer_solid">Faste linjer</string>
+    <string name="pulse_renderer_fading">Blokudtoninger</string>
+    <!-- Notification Row -->
+    <string name="notification_row_transparency_title">Translucent notifications</string>
+    <string name="notification_row_transparency_summary">Set translucent background for notifications</string>
 </resources>
