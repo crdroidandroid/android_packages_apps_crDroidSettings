@@ -469,50 +469,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Peringatan footer</string>
     <string name="qs_footer_warnings_summary">Tampilkan peringatan di bagian bawah panel QS saat jaringan dipantau oleh aplikasi eksternal atau VPN</string>
-    <!-- Media art -->
-    <string name="media_art_title">Sampul album media</string>
-    <string name="media_art_summary">Tampilkan sampul media jika tersedia</string>
-    <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Filter seni sampul media</string>
-    <string name="lockscreen_albumart_filter_none">Tidak ada</string>
-    <string name="lockscreen_albumart_filter_grayscale">Skala abu-abu</string>
-    <string name="lockscreen_albumart_filter_tint">Aksen diwarnai</string>
-    <string name="lockscreen_albumart_filter_blur">Mengaburkan</string>
-    <string name="lockscreen_albumart_filter_grayblur">Skala abu-abu dan kabur</string>
-    <!-- Pulse music visualizer -->
-    <string name="pulse_help_policy_notice_title">Tentang Visual Audio</string>
-    <string name="pulse_help_policy_notice_summary">Visual Audio adalah equalizer grafis audio yang brilian saat musik diputar di perangkat</string>
-    <string name="pulse_settings">Visual Audio</string>
-    <string name="pulse_settings_summary">Equalizer grafis audio untuk bilah navigasi dan layar kunci</string>
-    <string name="show_navbar_pulse_title">Visual Audio Bilah Navigasi</string>
-    <string name="show_navbar_pulse_summary">Equalizer grafis audio pada bilah navigasi</string>
-    <string name="show_lockscreen_pulse_title">Visual Audio Layar Kunci</string>
-    <string name="show_lockscreen_pulse_summary">Equalizer grafis audio pada layar kunci</string>
-    <string name="show_ambient_pulse_title">Visual Audio Layar Ambien</string>
-    <string name="show_ambient_pulse_summary">Equalizer grafis audio pada layar ambien</string>
-    <string name="pulse_render_mode_title">Mode render</string>
-    <string name="pulse_render_mode_fading_bars">Blok memudar</string>
-    <string name="pulse_render_mode_solid_lines">Garis padat</string>
-    <string name="pulse_legacy_mode_advanced_category">Pengaturan mode blok memudar</string>
-    <string name="pulse_custom_fudge_factor">Tingkat kewajaran</string>
-    <string name="pulse_lavalamp_speed_title">Kecepatan lampu lava</string>
-    <string name="pulse_solid_units_count">Jumlah garis padat</string>
-    <string name="pulse_solid_units_opacity">Opasitas garis padat</string>
-    <string name="pulse_solid_units_rounded_title">Sudut melengkung</string>
-    <string name="pulse_solid_units_rounded_summary">Garis padat dengan ujung melengkung</string>
-    <string name="pulse_solid_dimen_category">Pengaturan mode garis padat</string>
-    <string name="pulse_color_mode_title">Warna</string>
-    <string name="pulse_color_accent">Aksen</string>
-    <string name="pulse_color_custom">Kustom</string>
-    <string name="pulse_color_lava_lamp">Lampu lava</string>
-    <string name="pulse_color_auto">Album</string>
-    <string name="pulse_color_user_title">Pilih warna</string>
-    <string name="pulse_smoothing_enabled_title">Aktifkan smoothing</string>
-    <string name="pulse_smoothing_enabled_summary">Setiap bar dianimasikan lebih halus</string>
-    <string name="pulse_custom_dimen">Lebar bar</string>
-    <string name="pulse_custom_div">Jarak bar</string>
-    <string name="pulse_filled_block_size">Ukuran blok</string>
-    <string name="pulse_empty_block_size">Jarak blok</string>
     <!-- Navigation Bar -->
     <string name="navbar_visibility_title">Bilah navigasi</string>
     <string name="navbar_visibility_summary">Tampilkan bilah navigasi di bagian bawah layar</string>
@@ -571,9 +527,10 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="qs_brightness_slider_position_title">Posisi</string>
     <string name="qs_brightness_slider_position_top">Atas</string>
     <string name="qs_brightness_slider_position_bottom">Bawah</string>
-    <!-- Brightness slider haptic feedback -->
+    <!-- Brightness slider / QS tile haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">Umpan balik haptik</string>
     <string name="qs_brightness_slider_haptic_summary">Berikan umpan balik haptik untuk mengubah kecerahan menggunakan slider</string>
+    <string name="qs_tile_haptic_summary">Provide haptic feedback on taping QS tiles</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Ikon Kecerahan Otomatis</string>
     <string name="qs_show_auto_brightness_summary">Tampilkan tombol kecerahan otomatis di dekat slider kecerahan</string>
@@ -813,9 +770,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <plurals name="wifi_hotspot_client_limit_summary">
         <item quantity="other">Hingga <xliff:g id="device_num">%1$d</xliff:g> perangkat dapat terhubung ke hotspot ini</item>
     </plurals>
-    <!-- Disable QS -->
-    <string name="disable_qs_title">Sembunyikan Setelan Cepat pada layar kunci aman</string>
-    <string name="disable_qs_summary">Cegah akses ke ubin Setelan Cepat pada layar kunci aman</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Menu daya pada layar kunci</string>
     <string name="lockscreen_enable_power_menu_summary">Izinkan mengakses menu daya pada layar kunci aman</string>
@@ -1134,11 +1088,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- QS Dual Tone Colors -->
     <string name="qs_dual_tone_title">Bertema nada ganda</string>
     <string name="qs_dual_tone_summary">Gunakan warna latar belakang nada ganda daripada warna tunggal AOSP</string>
-    <!-- QS Tiles Style -->
-    <string name="qs_tile_ui_style_title">Gaya bingkai Setelan Cepat</string>
-    <string name="qs_tile_ui_style_a11_circle">Ubin lingkaran</string>
-    <string name="qs_tile_ui_style_a11_square">Ubin kotak</string>
-    <string name="qs_tile_ui_style_a11_mix">Lingkaran &amp; Ubin persegi</string>
     <!-- QS Panel Style -->
     <string name="qs_panel_style_title">Gaya QS panel</string>
     <string name="qs_panel_style_outline">Garis besar</string>
@@ -1252,4 +1201,57 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="keybox_toast_missing_data">Invalid keybox XML: required fields missing</string>
     <string name="keybox_toast_file_loaded">Keybox loaded</string>
     <string name="keybox_toast_file_cleared">Keybox cleared</string>
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_shape_title">QS tiles shape</string>
+    <string name="qs_tile_shape_dynamic">Dynamic</string>
+    <string name="qs_tile_shape_circle">Lingkaran</string>
+    <string name="qs_tile_shape_rounded_square">Rounded square</string>
+    <string name="qs_tile_shape_square">Square</string>
+    <!-- Force dark mode -->
+    <string name="force_dark_title">Dark mode for third-party apps</string>
+    <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
+    <!-- Brightness Slider Style -->
+    <string name="qs_brightness_slider_shape_title">Brightness slider shape</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Paksa LTE CA</string>
+    <string name="force_lte_ca_summary">Paksa agregasi operator LTE agar berfungsi</string>
+    <!-- QS on lockscreen -->
+    <string name="lockscreen_quick_settings_title">QS on lock screen</string>
+    <string name="lockscreen_quick_settings_summary">Allow swipe down on lock screen to view Quick Settings</string>
+    <!-- Lock screen media art -->
+    <string name="ls_media_art_title">Sampul album media</string>
+    <string name="ls_media_art_summary">Tampilkan sampul media jika tersedia</string>
+    <!-- Lock screen album art filter -->
+    <string name="ls_media_art_filter_title">Filter seni sampul media</string>
+    <string name="ls_media_art_filter_none">Tidak ada</string>
+    <string name="ls_media_art_filter_blur">Mengaburkan</string>
+    <string name="ls_media_art_filter_grayscale">Skala abu-abu</string>
+    <string name="ls_media_art_filter_sepia">Sepia</string>
+    <string name="ls_media_art_filter_tint">Aksen diwarnai</string>
+    <string name="ls_media_art_filter_invert">Invert</string>
+    <string name="ls_media_art_filter_grayblur">Grayscale and blur</string>
+    <!-- Lock screen media art fade level -->
+    <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
+    <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
+    <!-- Lock screen media art blur level -->
+    <string name="ls_media_art_blur_level_title">Media art blur level</string>
+    <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_settings_title">Pulse Visualizer</string>
+    <string name="pulse_settings_summary">Equalizer grafis audio untuk bilah navigasi dan layar kunci</string>
+    <string name="pulse_rounded_bars_title">Rounded bars</string>
+    <string name="pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
+    <string name="pulse_color">Visualizer color</string>
+    <string name="pulse_color_lavalamp">Lavalamp</string>
+    <string name="pulse_color_album">Album art</string>
+    <string name="pulse_color_accent">Aksen</string>
+    <string name="pulse_bar_count_title">Number of bars</string>
+    <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
+    <string name="pulse_bar_count_units">bars</string>
+    <string name="pulse_renderer">Visualizer style</string>
+    <string name="pulse_renderer_solid">Garis padat</string>
+    <string name="pulse_renderer_fading">Blok memudar</string>
+    <!-- Notification Row -->
+    <string name="notification_row_transparency_title">Translucent notifications</string>
+    <string name="notification_row_transparency_summary">Set translucent background for notifications</string>
 </resources>
