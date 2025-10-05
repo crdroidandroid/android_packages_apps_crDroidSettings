@@ -471,50 +471,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Alerte de subsol</string>
     <string name="qs_footer_warnings_summary">Afișează o alertă în partea de jos a panoului setărilor rapide atunci când rețeaua este monitorizată de aplicații externe sau VPN</string>
-    <!-- Media art -->
-    <string name="media_art_title">Copertă media</string>
-    <string name="media_art_summary">Afişează coperta media atunci când este disponibiă</string>
-    <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Filtru cover media</string>
-    <string name="lockscreen_albumart_filter_none">Nici unul</string>
-    <string name="lockscreen_albumart_filter_grayscale">Nuanțe de gri</string>
-    <string name="lockscreen_albumart_filter_tint">Accentuare fumurie</string>
-    <string name="lockscreen_albumart_filter_blur">Translucenta</string>
-    <string name="lockscreen_albumart_filter_grayblur">Tonuri de gri şi translucente</string>
-    <!-- Pulse music visualizer -->
-    <string name="pulse_help_policy_notice_title">Despre Pulse</string>
-    <string name="pulse_help_policy_notice_summary">Pulse este un excelent egalizator grafic audio atunci când muzica este redată pe dispozitiv</string>
-    <string name="pulse_settings">Puls</string>
-    <string name="pulse_settings_summary">Egalizator grafic audio pentru bara de navigare şi ecranul de blocare</string>
-    <string name="show_navbar_pulse_title">Pulse in bara de navigare</string>
-    <string name="show_navbar_pulse_summary">Egalizator grafic audio pe bara de navigare</string>
-    <string name="show_lockscreen_pulse_title">Pulsare pe ecran blocare</string>
-    <string name="show_lockscreen_pulse_summary">Egalizator grafic audio pe ecranul de blocare</string>
-    <string name="show_ambient_pulse_title">Pulse pe ecran ambiental</string>
-    <string name="show_ambient_pulse_summary">Egalizator grafic audio pe ecranul ambiental</string>
-    <string name="pulse_render_mode_title">Modul de randare</string>
-    <string name="pulse_render_mode_fading_bars">Decolorare blocuri</string>
-    <string name="pulse_render_mode_solid_lines">Linii solide</string>
-    <string name="pulse_legacy_mode_advanced_category">Setările modului decolorare blocuri</string>
-    <string name="pulse_custom_fudge_factor">Nivel echilibrat</string>
-    <string name="pulse_lavalamp_speed_title">Viteză lampă de lavă</string>
-    <string name="pulse_solid_units_count">Numărul de linii solide</string>
-    <string name="pulse_solid_units_opacity">Opacitate linii solide</string>
-    <string name="pulse_solid_units_rounded_title">Colţuri rotunjite</string>
-    <string name="pulse_solid_units_rounded_summary">Linii solide cu virf rotunjit</string>
-    <string name="pulse_solid_dimen_category">Setările modului linii solide</string>
-    <string name="pulse_color_mode_title">Culoare</string>
-    <string name="pulse_color_accent">Accent</string>
-    <string name="pulse_color_custom">Personalizat</string>
-    <string name="pulse_color_lava_lamp">Lampa cu lava</string>
-    <string name="pulse_color_auto">Album</string>
-    <string name="pulse_color_user_title">Alege culoarea</string>
-    <string name="pulse_smoothing_enabled_title">Porniți uniformizarea</string>
-    <string name="pulse_smoothing_enabled_summary">Fiecare bară este animată mai ușor</string>
-    <string name="pulse_custom_dimen">Lățime bară</string>
-    <string name="pulse_custom_div">Spațiere bară</string>
-    <string name="pulse_filled_block_size">Mărimea blocului</string>
-    <string name="pulse_empty_block_size">Spațiere bloc</string>
     <!-- Navigation Bar -->
     <string name="navbar_visibility_title">Bară de navigare</string>
     <string name="navbar_visibility_summary">Afișează bara de navigare în partea de jos a ecranului</string>
@@ -573,9 +529,10 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <string name="qs_brightness_slider_position_title">Poziție</string>
     <string name="qs_brightness_slider_position_top">Sus</string>
     <string name="qs_brightness_slider_position_bottom">Jos</string>
-    <!-- Brightness slider haptic feedback -->
+    <!-- Brightness slider / QS tile haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">Feedback haptic</string>
     <string name="qs_brightness_slider_haptic_summary">Furnizați feedback haptic despre schimbarea luminozității folosind glisorul</string>
+    <string name="qs_tile_haptic_summary">Provide haptic feedback on taping QS tiles</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Pictogramă luminozitate automată</string>
     <string name="qs_show_auto_brightness_summary">Arată comutator pentru luminozitate adaptivă lângă glisor</string>
@@ -817,9 +774,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
         <item quantity="one">Până la <xliff:g id="device_num">%1$d</xliff:g> dispozitiv se poate conecta la acest hotspot</item>
         <item quantity="few">Până la <xliff:g id="device_num">%1$d</xliff:g> dispozitiv se poate conecta la acest hotspot</item>
     </plurals>
-    <!-- Disable QS -->
-    <string name="disable_qs_title">Ascunde setări rapide pe ecranul de blocare securizat</string>
-    <string name="disable_qs_summary">Împiedică accesul la setări rapide pe ecranul de blocare securizat</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Meniu de alimentare</string>
     <string name="lockscreen_enable_power_menu_summary">Permite accesarea meniului de alimentare pe ecranul de blocare securizat</string>
@@ -1140,11 +1094,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <!-- QS Dual Tone Colors -->
     <string name="qs_dual_tone_title">Ton dublu tematic</string>
     <string name="qs_dual_tone_summary">Folosește culori de fundal pentru tonuri duble în locul unui singur ton AOSP</string>
-    <!-- QS Tiles Style -->
-    <string name="qs_tile_ui_style_title">Stil Setări rapide</string>
-    <string name="qs_tile_ui_style_a11_circle">Circular</string>
-    <string name="qs_tile_ui_style_a11_square">Pătrat</string>
-    <string name="qs_tile_ui_style_a11_mix">Cirular &amp; pătrat</string>
     <!-- QS Panel Style -->
     <string name="qs_panel_style_title">Stil panou QS</string>
     <string name="qs_panel_style_outline">Contur</string>
@@ -1250,12 +1199,65 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <string name="custom_style_ios">IOS</string>
     <string name="custom_style_layers">Straturi</string>
     <!-- Keybox Data -->
-    <string name="keybox_data_title">Keybox attestation override</string>
-    <string name="keybox_data_summary">Load a custom keybox XML to override device key attestation</string>
-    <string name="keybox_data_loaded_summary">Custom keybox XML loaded. Delete to clear.</string>
-    <string name="keybox_delete_content_description">Clear keybox data</string>
-    <string name="keybox_toast_invalid_file_selected">Not an XML file. Choose a valid keybox XML.</string>
-    <string name="keybox_toast_missing_data">Invalid keybox XML: required fields missing</string>
-    <string name="keybox_toast_file_loaded">Keybox loaded</string>
-    <string name="keybox_toast_file_cleared">Keybox cleared</string>
+    <string name="keybox_data_title">Suprascriere atestare cu cheie proprie</string>
+    <string name="keybox_data_summary">Încarcă o cheie XML personalizată pentru a suprascrie atestarea dispozitivului</string>
+    <string name="keybox_data_loaded_summary">XML încărcat. Apasă pentru ștergere.</string>
+    <string name="keybox_delete_content_description">Ștergeți datele cheii</string>
+    <string name="keybox_toast_invalid_file_selected">Nu este un fișier XML. Alegeți un XML valid.</string>
+    <string name="keybox_toast_missing_data">Cheie XML: câmpurile obligatorii lipsesc</string>
+    <string name="keybox_toast_file_loaded">Cheie încărcată</string>
+    <string name="keybox_toast_file_cleared">Cheie ștearsă</string>
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_shape_title">QS tiles shape</string>
+    <string name="qs_tile_shape_dynamic">Dynamic</string>
+    <string name="qs_tile_shape_circle">Cerc</string>
+    <string name="qs_tile_shape_rounded_square">Rounded square</string>
+    <string name="qs_tile_shape_square">Square</string>
+    <!-- Force dark mode -->
+    <string name="force_dark_title">Dark mode for third-party apps</string>
+    <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
+    <!-- Brightness Slider Style -->
+    <string name="qs_brightness_slider_shape_title">Brightness slider shape</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Force LTE CA</string>
+    <string name="force_lte_ca_summary">Force LTE carrier aggregation to work</string>
+    <!-- QS on lockscreen -->
+    <string name="lockscreen_quick_settings_title">QS on lock screen</string>
+    <string name="lockscreen_quick_settings_summary">Allow swipe down on lock screen to view Quick Settings</string>
+    <!-- Lock screen media art -->
+    <string name="ls_media_art_title">Copertă media</string>
+    <string name="ls_media_art_summary">Afişează coperta media atunci când este disponibiă</string>
+    <!-- Lock screen album art filter -->
+    <string name="ls_media_art_filter_title">Filtru cover media</string>
+    <string name="ls_media_art_filter_none">Nici unul</string>
+    <string name="ls_media_art_filter_blur">Translucenta</string>
+    <string name="ls_media_art_filter_grayscale">Nuanțe de gri</string>
+    <string name="ls_media_art_filter_sepia">Sepia</string>
+    <string name="ls_media_art_filter_tint">Accentuare fumurie</string>
+    <string name="ls_media_art_filter_invert">Invert</string>
+    <string name="ls_media_art_filter_grayblur">Grayscale and blur</string>
+    <!-- Lock screen media art fade level -->
+    <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
+    <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
+    <!-- Lock screen media art blur level -->
+    <string name="ls_media_art_blur_level_title">Media art blur level</string>
+    <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_settings_title">Pulse Visualizer</string>
+    <string name="pulse_settings_summary">Egalizator grafic audio pentru bara de navigare şi ecranul de blocare</string>
+    <string name="pulse_rounded_bars_title">Rounded bars</string>
+    <string name="pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
+    <string name="pulse_color">Visualizer color</string>
+    <string name="pulse_color_lavalamp">Lavalamp</string>
+    <string name="pulse_color_album">Album art</string>
+    <string name="pulse_color_accent">Accent</string>
+    <string name="pulse_bar_count_title">Number of bars</string>
+    <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
+    <string name="pulse_bar_count_units">bars</string>
+    <string name="pulse_renderer">Visualizer style</string>
+    <string name="pulse_renderer_solid">Linii solide</string>
+    <string name="pulse_renderer_fading">Decolorare blocuri</string>
+    <!-- Notification Row -->
+    <string name="notification_row_transparency_title">Translucent notifications</string>
+    <string name="notification_row_transparency_summary">Set translucent background for notifications</string>
 </resources>
