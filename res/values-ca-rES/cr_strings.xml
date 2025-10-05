@@ -470,50 +470,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Alertes del peu</string>
     <string name="qs_footer_warnings_summary">Mostra un advertiment a la part inferior del panell de configuració ràpida quan la xarxa estigui sent monitorada per aplicacions externes o VPN</string>
-    <!-- Media art -->
-    <string name="media_art_title">Carátules Multimèdia</string>
-    <string name="media_art_summary">Mostra la caràtula multimèdia si és disponible</string>
-    <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Filtre de caràtules multimèdia</string>
-    <string name="lockscreen_albumart_filter_none">Cap</string>
-    <string name="lockscreen_albumart_filter_grayscale">Escala de grisos</string>
-    <string name="lockscreen_albumart_filter_tint">Ènfasi tintat</string>
-    <string name="lockscreen_albumart_filter_blur">Difuminat</string>
-    <string name="lockscreen_albumart_filter_grayblur">Escala de grisos i difuminat</string>
-    <!-- Pulse music visualizer -->
-    <string name="pulse_help_policy_notice_title">Sobre Pulse</string>
-    <string name="pulse_help_policy_notice_summary">Pulse és un equalitzador gràfic brillant quan sona música al dispositiu</string>
-    <string name="pulse_settings">Pulse</string>
-    <string name="pulse_settings_summary">Equalitzador gràfic d\'àudio per a la barra de navegació i pantalla de bloqueig</string>
-    <string name="show_navbar_pulse_title">Pulse a la barra de navegació</string>
-    <string name="show_navbar_pulse_summary">Equalitzador gràfic d\'àudio a la barra de navegació</string>
-    <string name="show_lockscreen_pulse_title">Pulse a la pantalla de bloqueig</string>
-    <string name="show_lockscreen_pulse_summary">Equalitzador gràfic d\'àudio a la pantalla de bloqueig</string>
-    <string name="show_ambient_pulse_title">Pulse ambient</string>
-    <string name="show_ambient_pulse_summary">Equalitzador gràfic d\'àudio a la pantalla ambient</string>
-    <string name="pulse_render_mode_title">Mode de renderització</string>
-    <string name="pulse_render_mode_fading_bars">Esvaïment de blocs</string>
-    <string name="pulse_render_mode_solid_lines">Línies sòlides</string>
-    <string name="pulse_legacy_mode_advanced_category">Configuració del mode d\'esvaïment de blocs</string>
-    <string name="pulse_custom_fudge_factor">Nivell de sensibilitat</string>
-    <string name="pulse_lavalamp_speed_title">Velocitat del llum de lava</string>
-    <string name="pulse_solid_units_count">Nombre de línies sòlides</string>
-    <string name="pulse_solid_units_opacity">Opacitat de les línies sòlides</string>
-    <string name="pulse_solid_units_rounded_title">Cantonades arrodonides</string>
-    <string name="pulse_solid_units_rounded_summary">Línies sòlides amb puntes arrodonides</string>
-    <string name="pulse_solid_dimen_category">Configuració del mode de línies sòlides</string>
-    <string name="pulse_color_mode_title">Color</string>
-    <string name="pulse_color_accent">Èmfasi</string>
-    <string name="pulse_color_custom">Personalitzat</string>
-    <string name="pulse_color_lava_lamp">Llum de lava</string>
-    <string name="pulse_color_auto">Àlbum</string>
-    <string name="pulse_color_user_title">Tria el color</string>
-    <string name="pulse_smoothing_enabled_title">Activa el suavitzat</string>
-    <string name="pulse_smoothing_enabled_summary">L\'animació de les barres és més suau</string>
-    <string name="pulse_custom_dimen">Amplada de la barra</string>
-    <string name="pulse_custom_div">Espaiat entre barres</string>
-    <string name="pulse_filled_block_size">Mida del bloc</string>
-    <string name="pulse_empty_block_size">Espaiat entre blocs</string>
     <!-- Navigation Bar -->
     <string name="navbar_visibility_title">Barra de navegació</string>
     <string name="navbar_visibility_summary">Mostra la barra de navegació a la part de sota de la pantalla</string>
@@ -572,9 +528,10 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="qs_brightness_slider_position_title">Posició</string>
     <string name="qs_brightness_slider_position_top">Part superior</string>
     <string name="qs_brightness_slider_position_bottom">Part inferior</string>
-    <!-- Brightness slider haptic feedback -->
+    <!-- Brightness slider / QS tile haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">Haptic feedback</string>
     <string name="qs_brightness_slider_haptic_summary">Provide haptic feedback on changing brightness using slider</string>
+    <string name="qs_tile_haptic_summary">Provide haptic feedback on taping QS tiles</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Icona de brillantor automàtica</string>
     <string name="qs_show_auto_brightness_summary">Mostra el commutador de lluminositat automàtica al costat del regulador de lluentor</string>
@@ -815,9 +772,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
         <item quantity="other">Es poden connectar fins a <xliff:g id="device_num">%1$d</xliff:g> dispositius a aquest punt d\'accés</item>
         <item quantity="one">Es pot connectar fins a <xliff:g id="device_num">%1$d</xliff:g> dispositiu a aquest punt d\'accés</item>
     </plurals>
-    <!-- Disable QS -->
-    <string name="disable_qs_title">Amaga el panell de configuració ràpida a la pantalla de bloqueig</string>
-    <string name="disable_qs_summary">Impedeix l\'accés a la configuració ràpida des de la pantalla de bloqueig</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Menú d\'apagat</string>
     <string name="lockscreen_enable_power_menu_summary">Permet accedir al menú d\'apagat en la pantalla de bloqueig segura</string>
@@ -1137,11 +1091,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- QS Dual Tone Colors -->
     <string name="qs_dual_tone_title">Dual tone themed</string>
     <string name="qs_dual_tone_summary">Use dual tone background colors instead of AOSP single tone</string>
-    <!-- QS Tiles Style -->
-    <string name="qs_tile_ui_style_title">QS tiles style</string>
-    <string name="qs_tile_ui_style_a11_circle">Circle tiles</string>
-    <string name="qs_tile_ui_style_a11_square">Square tiles</string>
-    <string name="qs_tile_ui_style_a11_mix">Circle &amp; Square tiles</string>
     <!-- QS Panel Style -->
     <string name="qs_panel_style_title">QS panel style</string>
     <string name="qs_panel_style_outline">Outline</string>
@@ -1255,4 +1204,57 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="keybox_toast_missing_data">Invalid keybox XML: required fields missing</string>
     <string name="keybox_toast_file_loaded">Keybox loaded</string>
     <string name="keybox_toast_file_cleared">Keybox cleared</string>
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_shape_title">QS tiles shape</string>
+    <string name="qs_tile_shape_dynamic">Dynamic</string>
+    <string name="qs_tile_shape_circle">Cercle</string>
+    <string name="qs_tile_shape_rounded_square">Rounded square</string>
+    <string name="qs_tile_shape_square">Square</string>
+    <!-- Force dark mode -->
+    <string name="force_dark_title">Dark mode for third-party apps</string>
+    <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
+    <!-- Brightness Slider Style -->
+    <string name="qs_brightness_slider_shape_title">Brightness slider shape</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Force LTE CA</string>
+    <string name="force_lte_ca_summary">Force LTE carrier aggregation to work</string>
+    <!-- QS on lockscreen -->
+    <string name="lockscreen_quick_settings_title">QS on lock screen</string>
+    <string name="lockscreen_quick_settings_summary">Allow swipe down on lock screen to view Quick Settings</string>
+    <!-- Lock screen media art -->
+    <string name="ls_media_art_title">Carátules Multimèdia</string>
+    <string name="ls_media_art_summary">Mostra la caràtula multimèdia si és disponible</string>
+    <!-- Lock screen album art filter -->
+    <string name="ls_media_art_filter_title">Filtre de caràtules multimèdia</string>
+    <string name="ls_media_art_filter_none">Cap</string>
+    <string name="ls_media_art_filter_blur">Difuminat</string>
+    <string name="ls_media_art_filter_grayscale">Escala de grisos</string>
+    <string name="ls_media_art_filter_sepia">Sepia</string>
+    <string name="ls_media_art_filter_tint">Ènfasi tintat</string>
+    <string name="ls_media_art_filter_invert">Invert</string>
+    <string name="ls_media_art_filter_grayblur">Grayscale and blur</string>
+    <!-- Lock screen media art fade level -->
+    <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
+    <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
+    <!-- Lock screen media art blur level -->
+    <string name="ls_media_art_blur_level_title">Media art blur level</string>
+    <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_settings_title">Pulse Visualizer</string>
+    <string name="pulse_settings_summary">Equalitzador gràfic d\'àudio per a la barra de navegació i pantalla de bloqueig</string>
+    <string name="pulse_rounded_bars_title">Rounded bars</string>
+    <string name="pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
+    <string name="pulse_color">Visualizer color</string>
+    <string name="pulse_color_lavalamp">Lavalamp</string>
+    <string name="pulse_color_album">Album art</string>
+    <string name="pulse_color_accent">Èmfasi</string>
+    <string name="pulse_bar_count_title">Number of bars</string>
+    <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
+    <string name="pulse_bar_count_units">bars</string>
+    <string name="pulse_renderer">Visualizer style</string>
+    <string name="pulse_renderer_solid">Línies sòlides</string>
+    <string name="pulse_renderer_fading">Esvaïment de blocs</string>
+    <!-- Notification Row -->
+    <string name="notification_row_transparency_title">Translucent notifications</string>
+    <string name="notification_row_transparency_summary">Set translucent background for notifications</string>
 </resources>
