@@ -472,50 +472,6 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Alerty w stopce</string>
     <string name="qs_footer_warnings_summary">Wyświetlaj ostrzeżenie na dole panelu szybkich ustawień, gdy sieć jest monitorowana przez zewnętrzne aplikacje lub VPN</string>
-    <!-- Media art -->
-    <string name="media_art_title">Okładka albumu</string>
-    <string name="media_art_summary">Wyświetlaj okładki albumów, gdy są dostępne</string>
-    <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Filtr okładki albumu</string>
-    <string name="lockscreen_albumart_filter_none">Brak</string>
-    <string name="lockscreen_albumart_filter_grayscale">Skala szarości</string>
-    <string name="lockscreen_albumart_filter_tint">Akcentowane przyciemnienie</string>
-    <string name="lockscreen_albumart_filter_blur">Rozmycie</string>
-    <string name="lockscreen_albumart_filter_grayblur">Skala szarości i rozmycie</string>
-    <!-- Pulse music visualizer -->
-    <string name="pulse_help_policy_notice_title">O Pulse</string>
-    <string name="pulse_help_policy_notice_summary">Pulse jest znakomitym korektorem graficznym dźwięku podczas odtwarzania muzyki na urządzeniu</string>
-    <string name="pulse_settings">Pulse</string>
-    <string name="pulse_settings_summary">Korektor graficzny dźwięku na pasku nawigacji i ekranie blokady</string>
-    <string name="show_navbar_pulse_title">Pulse na pasku nawigacji</string>
-    <string name="show_navbar_pulse_summary">Wizualizacja korektora graficznego na pasku nawigacji</string>
-    <string name="show_lockscreen_pulse_title">Pulse na ekranie blokady</string>
-    <string name="show_lockscreen_pulse_summary">Wizualizacja korektora graficznego na ekranie blokady</string>
-    <string name="show_ambient_pulse_title">Pulse na ekranie Ambient</string>
-    <string name="show_ambient_pulse_summary">Wizualizacja dźwięku na ekranie Ambient</string>
-    <string name="pulse_render_mode_title">Tryb renderowania</string>
-    <string name="pulse_render_mode_fading_bars">Zanikanie bloków</string>
-    <string name="pulse_render_mode_solid_lines">Linie ciągłe</string>
-    <string name="pulse_legacy_mode_advanced_category">Ustawienia trybu zanikania</string>
-    <string name="pulse_custom_fudge_factor">Poziom skuteczności</string>
-    <string name="pulse_lavalamp_speed_title">Prędkość lampy lawowej</string>
-    <string name="pulse_solid_units_count">Liczba linii ciągłych</string>
-    <string name="pulse_solid_units_opacity">Przezroczystość ciągłych linii</string>
-    <string name="pulse_solid_units_rounded_title">Zaokrąglone narożniki</string>
-    <string name="pulse_solid_units_rounded_summary">Linie ciągłe z zaokrągloną końcówką</string>
-    <string name="pulse_solid_dimen_category">Ustawienia trybu linii ciągłych</string>
-    <string name="pulse_color_mode_title">Kolor</string>
-    <string name="pulse_color_accent">Akcent</string>
-    <string name="pulse_color_custom">Własny</string>
-    <string name="pulse_color_lava_lamp">Lampa lawowa</string>
-    <string name="pulse_color_auto">Album</string>
-    <string name="pulse_color_user_title">Wybierz kolor</string>
-    <string name="pulse_smoothing_enabled_title">Włącz wygładzanie</string>
-    <string name="pulse_smoothing_enabled_summary">Każdy pasek jest animowany płynniej</string>
-    <string name="pulse_custom_dimen">Szerokość paska</string>
-    <string name="pulse_custom_div">Odstęp między paskami</string>
-    <string name="pulse_filled_block_size">Rozmiar bloku</string>
-    <string name="pulse_empty_block_size">Odstępy w bloku</string>
     <!-- Navigation Bar -->
     <string name="navbar_visibility_title">Pasek nawigacji</string>
     <string name="navbar_visibility_summary">Wyświetlaj pasek nawigacji na dole ekranu</string>
@@ -574,9 +530,10 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="qs_brightness_slider_position_title">Położenie</string>
     <string name="qs_brightness_slider_position_top">Góra</string>
     <string name="qs_brightness_slider_position_bottom">Dół</string>
-    <!-- Brightness slider haptic feedback -->
+    <!-- Brightness slider / QS tile haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">Wibracja przy naciśnięciu</string>
     <string name="qs_brightness_slider_haptic_summary">Wibracje przy zmianie jasności za pomocą suwaka</string>
+    <string name="qs_tile_haptic_summary">Provide haptic feedback on taping QS tiles</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Ikona automatycznej jasności</string>
     <string name="qs_show_auto_brightness_summary">Pokaż przełącznik dla automatycznej jasności blisko paska</string>
@@ -819,9 +776,6 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
         <item quantity="few">Maksymalnie <xliff:g id="device_num">%1$d</xliff:g> urządzenia mogą się połączyć z tym punktem dostępu</item>
         <item quantity="many">Maksymalnie <xliff:g id="device_num">%1$d</xliff:g> urządzeń może się połączyć z tym punktem dostępu</item>
     </plurals>
-    <!-- Disable QS -->
-    <string name="disable_qs_title">Ukryj szybkie ustawienia z poziomu blokady ekranu</string>
-    <string name="disable_qs_summary">Blokuj dostęp do kafelków szybkich ustawień z poziomu blokady ekranu</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Menu zasilania</string>
     <string name="lockscreen_enable_power_menu_summary">Zezwól na dostęp do menu zasilania z poziomu zabezpieczonego ekranu blokady</string>
@@ -1143,11 +1097,6 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <!-- QS Dual Tone Colors -->
     <string name="qs_dual_tone_title">Dwutonowy tematyczny</string>
     <string name="qs_dual_tone_summary">Używaj dwutonowych kolorów tła zamiast pojedynczego tonu AOSP</string>
-    <!-- QS Tiles Style -->
-    <string name="qs_tile_ui_style_title">Styl kafelków</string>
-    <string name="qs_tile_ui_style_a11_circle">Okrągłe kafelki</string>
-    <string name="qs_tile_ui_style_a11_square">Kwadratowe kafelki</string>
-    <string name="qs_tile_ui_style_a11_mix">Okrągłe i kwadratowe kafelki</string>
     <!-- QS Panel Style -->
     <string name="qs_panel_style_title">Styl panelu szybkich ustawień</string>
     <string name="qs_panel_style_outline">Kontur</string>
@@ -1261,4 +1210,57 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="keybox_toast_missing_data">Nieprawidłowy plik XML zestawu. Brakuje wymaganych pól</string>
     <string name="keybox_toast_file_loaded">Zestaw załadowany</string>
     <string name="keybox_toast_file_cleared">Zestaw wyczyszczony</string>
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_shape_title">QS tiles shape</string>
+    <string name="qs_tile_shape_dynamic">Dynamic</string>
+    <string name="qs_tile_shape_circle">Okrąg</string>
+    <string name="qs_tile_shape_rounded_square">Rounded square</string>
+    <string name="qs_tile_shape_square">Square</string>
+    <!-- Force dark mode -->
+    <string name="force_dark_title">Dark mode for third-party apps</string>
+    <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
+    <!-- Brightness Slider Style -->
+    <string name="qs_brightness_slider_shape_title">Brightness slider shape</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Wymuś LTE CA</string>
+    <string name="force_lte_ca_summary">Wymuś agregację LTE</string>
+    <!-- QS on lockscreen -->
+    <string name="lockscreen_quick_settings_title">QS on lock screen</string>
+    <string name="lockscreen_quick_settings_summary">Allow swipe down on lock screen to view Quick Settings</string>
+    <!-- Lock screen media art -->
+    <string name="ls_media_art_title">Okładka albumu</string>
+    <string name="ls_media_art_summary">Wyświetlaj okładki albumów, gdy są dostępne</string>
+    <!-- Lock screen album art filter -->
+    <string name="ls_media_art_filter_title">Filtr okładki albumu</string>
+    <string name="ls_media_art_filter_none">Brak</string>
+    <string name="ls_media_art_filter_blur">Rozmycie</string>
+    <string name="ls_media_art_filter_grayscale">Skala szarości</string>
+    <string name="ls_media_art_filter_sepia">Sepia</string>
+    <string name="ls_media_art_filter_tint">Akcentowane przyciemnienie</string>
+    <string name="ls_media_art_filter_invert">Invert</string>
+    <string name="ls_media_art_filter_grayblur">Grayscale and blur</string>
+    <!-- Lock screen media art fade level -->
+    <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
+    <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
+    <!-- Lock screen media art blur level -->
+    <string name="ls_media_art_blur_level_title">Media art blur level</string>
+    <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_settings_title">Pulse Visualizer</string>
+    <string name="pulse_settings_summary">Korektor graficzny dźwięku na pasku nawigacji i ekranie blokady</string>
+    <string name="pulse_rounded_bars_title">Rounded bars</string>
+    <string name="pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
+    <string name="pulse_color">Visualizer color</string>
+    <string name="pulse_color_lavalamp">Lavalamp</string>
+    <string name="pulse_color_album">Album art</string>
+    <string name="pulse_color_accent">Akcent</string>
+    <string name="pulse_bar_count_title">Number of bars</string>
+    <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
+    <string name="pulse_bar_count_units">bars</string>
+    <string name="pulse_renderer">Visualizer style</string>
+    <string name="pulse_renderer_solid">Linie ciągłe</string>
+    <string name="pulse_renderer_fading">Zanikanie bloków</string>
+    <!-- Notification Row -->
+    <string name="notification_row_transparency_title">Translucent notifications</string>
+    <string name="notification_row_transparency_summary">Set translucent background for notifications</string>
 </resources>
