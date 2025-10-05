@@ -470,50 +470,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Jaluse hoiatused</string>
     <string name="qs_footer_warnings_summary">Kuva kiirseadete paneeli allosas hoiatust, kui võrku jälgivad välised rakendused või VPN</string>
-    <!-- Media art -->
-    <string name="media_art_title">Meedia kaanepilt</string>
-    <string name="media_art_summary">Kuva saadavusel meedia kaanepilt</string>
-    <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Meedia kaanepildi filter</string>
-    <string name="lockscreen_albumart_filter_none">Puudub</string>
-    <string name="lockscreen_albumart_filter_grayscale">Hallskaala</string>
-    <string name="lockscreen_albumart_filter_tint">Toonitud rõhuvärv</string>
-    <string name="lockscreen_albumart_filter_blur">Hägustatud</string>
-    <string name="lockscreen_albumart_filter_grayblur">Hallskaalas ja hägustatud</string>
-    <!-- Pulse music visualizer -->
-    <string name="pulse_help_policy_notice_title">Pulse kohta</string>
-    <string name="pulse_help_policy_notice_summary">Pulse on hiilgav heli graafiline ekvalaiser, kui seadmes mängib muusika</string>
-    <string name="pulse_settings">Pulseerimine</string>
-    <string name="pulse_settings_summary">Heli graafiline ekvalaiser navigeerimisribal ja lukustuskuval</string>
-    <string name="show_navbar_pulse_title">Navigeerimisriba Pulse</string>
-    <string name="show_navbar_pulse_summary">Heli graafiline ekvalaiser navigeerimisribal</string>
-    <string name="show_lockscreen_pulse_title">Lukustuskuva Pulse</string>
-    <string name="show_lockscreen_pulse_summary">Heli graafiline ekvalaiser lukustusekraanil</string>
-    <string name="show_ambient_pulse_title">Säästliku ekraani Pulse</string>
-    <string name="show_ambient_pulse_summary">Heli graafiline ekvalaiser säästlikul ekraanil</string>
-    <string name="pulse_render_mode_title">Renderdusviis</string>
-    <string name="pulse_render_mode_fading_bars">Hääbuvad kastid</string>
-    <string name="pulse_render_mode_solid_lines">Pidevjooned</string>
-    <string name="pulse_legacy_mode_advanced_category">Hääbuvate kastide režiimi seaded</string>
-    <string name="pulse_custom_fudge_factor">Mõistlikkuse tase</string>
-    <string name="pulse_lavalamp_speed_title">Laavalambi kiirus</string>
-    <string name="pulse_solid_units_count">Pidevjoonte arv</string>
-    <string name="pulse_solid_units_opacity">Pidevjoonte läbipaistmatus</string>
-    <string name="pulse_solid_units_rounded_title">Ümarad nurgad</string>
-    <string name="pulse_solid_units_rounded_summary">Ümara tipuga pidevjooned</string>
-    <string name="pulse_solid_dimen_category">Pidevjoonte režiimi seaded</string>
-    <string name="pulse_color_mode_title">Värv</string>
-    <string name="pulse_color_accent">Rõhuvärv</string>
-    <string name="pulse_color_custom">Kohandatud</string>
-    <string name="pulse_color_lava_lamp">Laavalamp</string>
-    <string name="pulse_color_auto">Album</string>
-    <string name="pulse_color_user_title">Vali värv</string>
-    <string name="pulse_smoothing_enabled_title">Lülita silumine sisse</string>
-    <string name="pulse_smoothing_enabled_summary">Iga riba animeeritakse sujuvamalt</string>
-    <string name="pulse_custom_dimen">Riba laius</string>
-    <string name="pulse_custom_div">Riba vahed</string>
-    <string name="pulse_filled_block_size">Ploki suurus</string>
-    <string name="pulse_empty_block_size">Ploki vahed</string>
     <!-- Navigation Bar -->
     <string name="navbar_visibility_title">Navigeerimisriba</string>
     <string name="navbar_visibility_summary">Kuva ekraani allosas navigeerimisriba</string>
@@ -572,9 +528,10 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="qs_brightness_slider_position_title">Asukoht</string>
     <string name="qs_brightness_slider_position_top">Üleval</string>
     <string name="qs_brightness_slider_position_bottom">All</string>
-    <!-- Brightness slider haptic feedback -->
+    <!-- Brightness slider / QS tile haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">Värintagasiside</string>
     <string name="qs_brightness_slider_haptic_summary">Liuguri abil heledust muutes kasuta värintagasisidet</string>
+    <string name="qs_tile_haptic_summary">Provide haptic feedback on taping QS tiles</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Automaatse heleduse ikoon</string>
     <string name="qs_show_auto_brightness_summary">Kuva kohanduva heleduse lülitit liuguri lähedal</string>
@@ -815,9 +772,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
         <item quantity="other">Selle kuumkohaga saab ühenduse luua kuni <xliff:g id="device_num">%1$d</xliff:g> seadet</item>
         <item quantity="one">Selle kuumkohaga saab ühenduse luua kuni <xliff:g id="device_num">%1$d</xliff:g> seade</item>
     </plurals>
-    <!-- Disable QS -->
-    <string name="disable_qs_title">Peida kiirseaded turvalisel lukustuskuval</string>
-    <string name="disable_qs_summary">Väldi kiirseadete paanidele ligipääsu turvalisel lukustuskuval</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Toitemenüü</string>
     <string name="lockscreen_enable_power_menu_summary">Luba toitemenüü ligipääs turvalisel lukustuskuval</string>
@@ -1137,11 +1091,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- QS Dual Tone Colors -->
     <string name="qs_dual_tone_title">Kahetooniline teemaga</string>
     <string name="qs_dual_tone_summary">Kasuta kahetoonilisi taustavärve AOSP ühetoonilise asemel</string>
-    <!-- QS Tiles Style -->
-    <string name="qs_tile_ui_style_title">Kiirseadete paanide stiil</string>
-    <string name="qs_tile_ui_style_a11_circle">Ringikujulised paanid</string>
-    <string name="qs_tile_ui_style_a11_square">Ruudukujulised paanid</string>
-    <string name="qs_tile_ui_style_a11_mix">Ringi- ja ruudukujulised paanid</string>
     <!-- QS Panel Style -->
     <string name="qs_panel_style_title">Kiirseadete paneeli stiil</string>
     <string name="qs_panel_style_outline">Kontuur</string>
@@ -1255,4 +1204,57 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="keybox_toast_missing_data">Invalid keybox XML: required fields missing</string>
     <string name="keybox_toast_file_loaded">Keybox loaded</string>
     <string name="keybox_toast_file_cleared">Keybox cleared</string>
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_shape_title">QS tiles shape</string>
+    <string name="qs_tile_shape_dynamic">Dynamic</string>
+    <string name="qs_tile_shape_circle">Ring</string>
+    <string name="qs_tile_shape_rounded_square">Rounded square</string>
+    <string name="qs_tile_shape_square">Square</string>
+    <!-- Force dark mode -->
+    <string name="force_dark_title">Dark mode for third-party apps</string>
+    <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
+    <!-- Brightness Slider Style -->
+    <string name="qs_brightness_slider_shape_title">Brightness slider shape</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Force LTE CA</string>
+    <string name="force_lte_ca_summary">Force LTE carrier aggregation to work</string>
+    <!-- QS on lockscreen -->
+    <string name="lockscreen_quick_settings_title">QS on lock screen</string>
+    <string name="lockscreen_quick_settings_summary">Allow swipe down on lock screen to view Quick Settings</string>
+    <!-- Lock screen media art -->
+    <string name="ls_media_art_title">Meedia kaanepilt</string>
+    <string name="ls_media_art_summary">Kuva saadavusel meedia kaanepilt</string>
+    <!-- Lock screen album art filter -->
+    <string name="ls_media_art_filter_title">Meedia kaanepildi filter</string>
+    <string name="ls_media_art_filter_none">Puudub</string>
+    <string name="ls_media_art_filter_blur">Hägustatud</string>
+    <string name="ls_media_art_filter_grayscale">Hallskaala</string>
+    <string name="ls_media_art_filter_sepia">Sepia</string>
+    <string name="ls_media_art_filter_tint">Toonitud rõhuvärv</string>
+    <string name="ls_media_art_filter_invert">Invert</string>
+    <string name="ls_media_art_filter_grayblur">Grayscale and blur</string>
+    <!-- Lock screen media art fade level -->
+    <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
+    <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
+    <!-- Lock screen media art blur level -->
+    <string name="ls_media_art_blur_level_title">Media art blur level</string>
+    <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_settings_title">Pulse Visualizer</string>
+    <string name="pulse_settings_summary">Heli graafiline ekvalaiser navigeerimisribal ja lukustuskuval</string>
+    <string name="pulse_rounded_bars_title">Rounded bars</string>
+    <string name="pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
+    <string name="pulse_color">Visualizer color</string>
+    <string name="pulse_color_lavalamp">Lavalamp</string>
+    <string name="pulse_color_album">Album art</string>
+    <string name="pulse_color_accent">Rõhuvärv</string>
+    <string name="pulse_bar_count_title">Number of bars</string>
+    <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
+    <string name="pulse_bar_count_units">bars</string>
+    <string name="pulse_renderer">Visualizer style</string>
+    <string name="pulse_renderer_solid">Pidevjooned</string>
+    <string name="pulse_renderer_fading">Hääbuvad kastid</string>
+    <!-- Notification Row -->
+    <string name="notification_row_transparency_title">Translucent notifications</string>
+    <string name="notification_row_transparency_summary">Set translucent background for notifications</string>
 </resources>
