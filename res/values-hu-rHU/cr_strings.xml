@@ -470,50 +470,6 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Figyelmeztetések a láblécen</string>
     <string name="qs_footer_warnings_summary">Figyelmeztetés megjelenítése a gyorsbeállítások-panel alján, ha a hálózatot külső alkalmazás vagy a VPN figyeli</string>
-    <!-- Media art -->
-    <string name="media_art_title">A média albumborítója</string>
-    <string name="media_art_summary">Ha elérhető, jelenítse meg a zenei album borítóját</string>
-    <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Médiaborító-szűrő</string>
-    <string name="lockscreen_albumart_filter_none">Nincs</string>
-    <string name="lockscreen_albumart_filter_grayscale">Szürkeárnyalatos</string>
-    <string name="lockscreen_albumart_filter_tint">Kiemelőszínhez igazodó</string>
-    <string name="lockscreen_albumart_filter_blur">Homályosított</string>
-    <string name="lockscreen_albumart_filter_grayblur">Szürkeárnyalatos és homályosított</string>
-    <!-- Pulse music visualizer -->
-    <string name="pulse_help_policy_notice_title">Pulse információk</string>
-    <string name="pulse_help_policy_notice_summary">A Pulse egy brilliáns audiógrafikus hangszínszabályozó a zenelejátszáshoz</string>
-    <string name="pulse_settings">Pulse</string>
-    <string name="pulse_settings_summary">Egy audiógrafikus hangszínszabályozó a navigációs sávhoz és a záróképernyőhöz</string>
-    <string name="show_navbar_pulse_title">Pulse a navigációs sávhoz</string>
-    <string name="show_navbar_pulse_summary">A navigációs sáv audiógrafikus hangszínszabályozója</string>
-    <string name="show_lockscreen_pulse_title">Pulse a záróképernyőhöz</string>
-    <string name="show_lockscreen_pulse_summary">A záróképernyő audiógrafikus hangszínszabályozója</string>
-    <string name="show_ambient_pulse_title">Pulse a környezeti kijelzőn</string>
-    <string name="show_ambient_pulse_summary">A környezeti kijelző audiógrafikus hangszínszabályozója</string>
-    <string name="pulse_render_mode_title">A renderelés módja</string>
-    <string name="pulse_render_mode_fading_bars">Halványuló blokkok</string>
-    <string name="pulse_render_mode_solid_lines">Folytonos vonalak</string>
-    <string name="pulse_legacy_mode_advanced_category">Halványuló blokkok üzemmód beállításai</string>
-    <string name="pulse_custom_fudge_factor">Az ésszerűség szintje</string>
-    <string name="pulse_lavalamp_speed_title">A Lávalámpa sebessége</string>
-    <string name="pulse_solid_units_count">Folytonos vonalak száma</string>
-    <string name="pulse_solid_units_opacity">Folytonos vonalak átlátszósága</string>
-    <string name="pulse_solid_units_rounded_title">Lekerekített sarkok</string>
-    <string name="pulse_solid_units_rounded_summary">Folyamatos vonal, kerekitett vég</string>
-    <string name="pulse_solid_dimen_category">Folytonos vonalak üzemmód beállításai</string>
-    <string name="pulse_color_mode_title">Szín</string>
-    <string name="pulse_color_accent">Kiemelőszín</string>
-    <string name="pulse_color_custom">Egyéni</string>
-    <string name="pulse_color_lava_lamp">Lávalámpa</string>
-    <string name="pulse_color_auto">Album</string>
-    <string name="pulse_color_user_title">Színválasztás</string>
-    <string name="pulse_smoothing_enabled_title">Az egyenletesség bekapcsolása</string>
-    <string name="pulse_smoothing_enabled_summary">Az összes sávanimáció sokkal egyenletesebb</string>
-    <string name="pulse_custom_dimen">Sávszélesség</string>
-    <string name="pulse_custom_div">Sávtérköz</string>
-    <string name="pulse_filled_block_size">Blokkméret</string>
-    <string name="pulse_empty_block_size">Blokktérköz</string>
     <!-- Navigation Bar -->
     <string name="navbar_visibility_title">Navigációs sáv</string>
     <string name="navbar_visibility_summary">A navigációs sáv megjelenítése a képernyő alján</string>
@@ -572,9 +528,10 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="qs_brightness_slider_position_title">Pozíció</string>
     <string name="qs_brightness_slider_position_top">Felül</string>
     <string name="qs_brightness_slider_position_bottom">Alul</string>
-    <!-- Brightness slider haptic feedback -->
+    <!-- Brightness slider / QS tile haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">Rezgő visszajelzés</string>
     <string name="qs_brightness_slider_haptic_summary">Rezgéssel jelzi, ha fényerő-szabályzás történt a csúszkával</string>
+    <string name="qs_tile_haptic_summary">Provide haptic feedback on taping QS tiles</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Az automatikus fényerő ikonja</string>
     <string name="qs_show_auto_brightness_summary">Az alkalmazkodó fényerő kapcsolója a csúszka közelében</string>
@@ -815,9 +772,6 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
         <item quantity="other">Maximum <xliff:g id="device_num">%1$d</xliff:g> készülék csatlakozhat erre a hostpothoz</item>
         <item quantity="one">Maximum <xliff:g id="device_num">%1$d</xliff:g> készülék csatlakozhat erre a hostpothoz</item>
     </plurals>
-    <!-- Disable QS -->
-    <string name="disable_qs_title">A gyorsbeállítások elrejtése</string>
-    <string name="disable_qs_summary">A biztonságos képernyőzáron nem férhet hozzá a gyorsbeállításokhoz</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Kikapcsolómenü</string>
     <string name="lockscreen_enable_power_menu_summary">A Kikapcsolómenü elérhető a védett záróképernyőn</string>
@@ -1139,11 +1093,6 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <!-- QS Dual Tone Colors -->
     <string name="qs_dual_tone_title">Kéttónusúan témázott</string>
     <string name="qs_dual_tone_summary">Használjon kéttónusú háttérszíneket az AOSP egytónusú helyett</string>
-    <!-- QS Tiles Style -->
-    <string name="qs_tile_ui_style_title">A Gyorsbeállítás-csempék stílusa</string>
-    <string name="qs_tile_ui_style_a11_circle">Körcsempék</string>
-    <string name="qs_tile_ui_style_a11_square">Négyzetcsempék</string>
-    <string name="qs_tile_ui_style_a11_mix">Kör- és négyzetcsempék</string>
     <!-- QS Panel Style -->
     <string name="qs_panel_style_title">A Gyorsbeállítások panel stílusa</string>
     <string name="qs_panel_style_outline">Körvonalas</string>
@@ -1257,4 +1206,57 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="keybox_toast_missing_data">Érvénytelen Keybox-XML: kötelező mezők hiányoznak</string>
     <string name="keybox_toast_file_loaded">A Keybox betöltve</string>
     <string name="keybox_toast_file_cleared">A Keybox tisztítva</string>
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_shape_title">QS tiles shape</string>
+    <string name="qs_tile_shape_dynamic">Dynamic</string>
+    <string name="qs_tile_shape_circle">Kör</string>
+    <string name="qs_tile_shape_rounded_square">Rounded square</string>
+    <string name="qs_tile_shape_square">Square</string>
+    <!-- Force dark mode -->
+    <string name="force_dark_title">Dark mode for third-party apps</string>
+    <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
+    <!-- Brightness Slider Style -->
+    <string name="qs_brightness_slider_shape_title">Brightness slider shape</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Az LTE CA erőltetése</string>
+    <string name="force_lte_ca_summary">A működéshez kényszerítse az LTE szolgáltató aggregációt</string>
+    <!-- QS on lockscreen -->
+    <string name="lockscreen_quick_settings_title">QS on lock screen</string>
+    <string name="lockscreen_quick_settings_summary">Allow swipe down on lock screen to view Quick Settings</string>
+    <!-- Lock screen media art -->
+    <string name="ls_media_art_title">A média albumborítója</string>
+    <string name="ls_media_art_summary">Ha elérhető, jelenítse meg a zenei album borítóját</string>
+    <!-- Lock screen album art filter -->
+    <string name="ls_media_art_filter_title">Médiaborító-szűrő</string>
+    <string name="ls_media_art_filter_none">Nincs</string>
+    <string name="ls_media_art_filter_blur">Homályosított</string>
+    <string name="ls_media_art_filter_grayscale">Szürkeárnyalatos</string>
+    <string name="ls_media_art_filter_sepia">Sepia</string>
+    <string name="ls_media_art_filter_tint">Kiemelőszínhez igazodó</string>
+    <string name="ls_media_art_filter_invert">Invert</string>
+    <string name="ls_media_art_filter_grayblur">Grayscale and blur</string>
+    <!-- Lock screen media art fade level -->
+    <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
+    <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
+    <!-- Lock screen media art blur level -->
+    <string name="ls_media_art_blur_level_title">Media art blur level</string>
+    <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_settings_title">Pulse Visualizer</string>
+    <string name="pulse_settings_summary">Egy audiógrafikus hangszínszabályozó a navigációs sávhoz és a záróképernyőhöz</string>
+    <string name="pulse_rounded_bars_title">Rounded bars</string>
+    <string name="pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
+    <string name="pulse_color">Visualizer color</string>
+    <string name="pulse_color_lavalamp">Lavalamp</string>
+    <string name="pulse_color_album">Album art</string>
+    <string name="pulse_color_accent">Kiemelőszín</string>
+    <string name="pulse_bar_count_title">Number of bars</string>
+    <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
+    <string name="pulse_bar_count_units">bars</string>
+    <string name="pulse_renderer">Visualizer style</string>
+    <string name="pulse_renderer_solid">Folytonos vonalak</string>
+    <string name="pulse_renderer_fading">Halványuló blokkok</string>
+    <!-- Notification Row -->
+    <string name="notification_row_transparency_title">Translucent notifications</string>
+    <string name="notification_row_transparency_summary">Set translucent background for notifications</string>
 </resources>
