@@ -471,50 +471,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">Upozorenja u podnožju Brzih podešavanja</string>
     <string name="qs_footer_warnings_summary">Prikaži obaveštenje u dnu panela Brzih podešavanja kada je mrežni saobraćaj posmatran od druge aplikacije ili VPN</string>
-    <!-- Media art -->
-    <string name="media_art_title">Odaberi sliku omota</string>
-    <string name="media_art_summary">Prikaži sliku omota kada bude dostupna</string>
-    <!-- Lockscreen album art filter -->
-    <string name="lockscreen_albumart_filter_title">Filter omota medijskog sadržaja</string>
-    <string name="lockscreen_albumart_filter_none">Nijedan</string>
-    <string name="lockscreen_albumart_filter_grayscale">Crno-beli prikaz</string>
-    <string name="lockscreen_albumart_filter_tint">Nijansa naglašene boje</string>
-    <string name="lockscreen_albumart_filter_blur">Zamućeno</string>
-    <string name="lockscreen_albumart_filter_grayblur">U crno-belom prikazu i zamućeno</string>
-    <!-- Pulse music visualizer -->
-    <string name="pulse_help_policy_notice_title">O Pulsu</string>
-    <string name="pulse_help_policy_notice_summary">Pulse je briljantan audio grafički ekvilajzer kada je muzika puštena na uređaju</string>
-    <string name="pulse_settings">Pulse</string>
-    <string name="pulse_settings_summary">Audio grafički ekvilajzer za navigacionu traku i zaključani ekran</string>
-    <string name="show_navbar_pulse_title">Pulse na navigacionoj traci</string>
-    <string name="show_navbar_pulse_summary">Audio grafički ekvilajzer za navigacionu traku</string>
-    <string name="show_lockscreen_pulse_title">Pulse na zaključanom ekranu</string>
-    <string name="show_lockscreen_pulse_summary">Audio grafički ekvilajzer na zaključanom ekranu</string>
-    <string name="show_ambient_pulse_title">Ambient Pulse</string>
-    <string name="show_ambient_pulse_summary">Audio grafički ekvilajzer na ambijentalnom prikazu ekranu</string>
-    <string name="pulse_render_mode_title">Režim renderovanja</string>
-    <string name="pulse_render_mode_fading_bars">Opadajući blokovi</string>
-    <string name="pulse_render_mode_solid_lines">Pune linije</string>
-    <string name="pulse_legacy_mode_advanced_category">Podešavanje režima opadajućih blokova</string>
-    <string name="pulse_custom_fudge_factor">Nivo duha</string>
-    <string name="pulse_lavalamp_speed_title">Brzina lava lampe</string>
-    <string name="pulse_solid_units_count">Broj punih linija</string>
-    <string name="pulse_solid_units_opacity">Prozirnost punih linija</string>
-    <string name="pulse_solid_units_rounded_title">Zaobljeni ćoškovi</string>
-    <string name="pulse_solid_units_rounded_summary">Pune linije sa zaobljenim čoškovima</string>
-    <string name="pulse_solid_dimen_category">Podešavanje režima punih linija</string>
-    <string name="pulse_color_mode_title">Boja</string>
-    <string name="pulse_color_accent">Naglašena boja</string>
-    <string name="pulse_color_custom">Prilagođeno</string>
-    <string name="pulse_color_lava_lamp">Lava lampa</string>
-    <string name="pulse_color_auto">Album</string>
-    <string name="pulse_color_user_title">Izabеri boju</string>
-    <string name="pulse_smoothing_enabled_title">Uključi izglađivanje</string>
-    <string name="pulse_smoothing_enabled_summary">Svaki stub je izglađenije animiran</string>
-    <string name="pulse_custom_dimen">Širina stuba</string>
-    <string name="pulse_custom_div">Razmak izmedju stubova</string>
-    <string name="pulse_filled_block_size">Veličina bloka</string>
-    <string name="pulse_empty_block_size">Razmak izmedju blokova</string>
     <!-- Navigation Bar -->
     <string name="navbar_visibility_title">Navigaciona traka</string>
     <string name="navbar_visibility_summary">Prikaži navigacionu traku na dnu ekrana</string>
@@ -573,9 +529,10 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="qs_brightness_slider_position_title">Pozicija</string>
     <string name="qs_brightness_slider_position_top">Vrh</string>
     <string name="qs_brightness_slider_position_bottom">Dole</string>
-    <!-- Brightness slider haptic feedback -->
+    <!-- Brightness slider / QS tile haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">Haptic feedback</string>
     <string name="qs_brightness_slider_haptic_summary">Provide haptic feedback on changing brightness using slider</string>
+    <string name="qs_tile_haptic_summary">Provide haptic feedback on taping QS tiles</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Ikona automatskog osvetljenja</string>
     <string name="qs_show_auto_brightness_summary">Prikaži prečicu za prilagodljivu osvetljenost pored klizača</string>
@@ -817,9 +774,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
         <item quantity="one">Up to <xliff:g id="device_num">%1$d</xliff:g> device can connect to this hotspot</item>
         <item quantity="few">Up to <xliff:g id="device_num">%1$d</xliff:g> devices can connect to this hotspot</item>
     </plurals>
-    <!-- Disable QS -->
-    <string name="disable_qs_title">Sakri Brza podešavanja pri zaključanom ekranu</string>
-    <string name="disable_qs_summary">Spreči korišćenje Brzih podešavanja na zaključanom ekranu</string>
     <!-- Power menu on secure lockscreen -->
     <string name="lockscreen_enable_power_menu_title">Meni uključenja</string>
     <string name="lockscreen_enable_power_menu_summary">Dozvoli prikaz menija za uključivanje na zaključanom ekranu</string>
@@ -1140,11 +1094,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- QS Dual Tone Colors -->
     <string name="qs_dual_tone_title">Dual tone themed</string>
     <string name="qs_dual_tone_summary">Use dual tone background colors instead of AOSP single tone</string>
-    <!-- QS Tiles Style -->
-    <string name="qs_tile_ui_style_title">QS tiles style</string>
-    <string name="qs_tile_ui_style_a11_circle">Circle tiles</string>
-    <string name="qs_tile_ui_style_a11_square">Square tiles</string>
-    <string name="qs_tile_ui_style_a11_mix">Circle &amp; Square tiles</string>
     <!-- QS Panel Style -->
     <string name="qs_panel_style_title">QS panel style</string>
     <string name="qs_panel_style_outline">Outline</string>
@@ -1258,4 +1207,57 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="keybox_toast_missing_data">Invalid keybox XML: required fields missing</string>
     <string name="keybox_toast_file_loaded">Keybox loaded</string>
     <string name="keybox_toast_file_cleared">Keybox cleared</string>
+    <!-- QS Tiles Style -->
+    <string name="qs_tile_shape_title">QS tiles shape</string>
+    <string name="qs_tile_shape_dynamic">Dynamic</string>
+    <string name="qs_tile_shape_circle">Krug</string>
+    <string name="qs_tile_shape_rounded_square">Rounded square</string>
+    <string name="qs_tile_shape_square">Square</string>
+    <!-- Force dark mode -->
+    <string name="force_dark_title">Dark mode for third-party apps</string>
+    <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
+    <!-- Brightness Slider Style -->
+    <string name="qs_brightness_slider_shape_title">Brightness slider shape</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Force LTE CA</string>
+    <string name="force_lte_ca_summary">Force LTE carrier aggregation to work</string>
+    <!-- QS on lockscreen -->
+    <string name="lockscreen_quick_settings_title">QS on lock screen</string>
+    <string name="lockscreen_quick_settings_summary">Allow swipe down on lock screen to view Quick Settings</string>
+    <!-- Lock screen media art -->
+    <string name="ls_media_art_title">Odaberi sliku omota</string>
+    <string name="ls_media_art_summary">Prikaži sliku omota kada bude dostupna</string>
+    <!-- Lock screen album art filter -->
+    <string name="ls_media_art_filter_title">Filter omota medijskog sadržaja</string>
+    <string name="ls_media_art_filter_none">Nijedan</string>
+    <string name="ls_media_art_filter_blur">Zamućeno</string>
+    <string name="ls_media_art_filter_grayscale">Crno-beli prikaz</string>
+    <string name="ls_media_art_filter_sepia">Sepia</string>
+    <string name="ls_media_art_filter_tint">Nijansa naglašene boje</string>
+    <string name="ls_media_art_filter_invert">Invert</string>
+    <string name="ls_media_art_filter_grayblur">Grayscale and blur</string>
+    <!-- Lock screen media art fade level -->
+    <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
+    <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
+    <!-- Lock screen media art blur level -->
+    <string name="ls_media_art_blur_level_title">Media art blur level</string>
+    <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
+    <!-- Pulse music visualizer -->
+    <string name="pulse_settings_title">Pulse Visualizer</string>
+    <string name="pulse_settings_summary">Audio grafički ekvilajzer za navigacionu traku i zaključani ekran</string>
+    <string name="pulse_rounded_bars_title">Rounded bars</string>
+    <string name="pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
+    <string name="pulse_color">Visualizer color</string>
+    <string name="pulse_color_lavalamp">Lavalamp</string>
+    <string name="pulse_color_album">Album art</string>
+    <string name="pulse_color_accent">Naglašena boja</string>
+    <string name="pulse_bar_count_title">Number of bars</string>
+    <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
+    <string name="pulse_bar_count_units">bars</string>
+    <string name="pulse_renderer">Visualizer style</string>
+    <string name="pulse_renderer_solid">Pune linije</string>
+    <string name="pulse_renderer_fading">Opadajući blokovi</string>
+    <!-- Notification Row -->
+    <string name="notification_row_transparency_title">Translucent notifications</string>
+    <string name="notification_row_transparency_summary">Set translucent background for notifications</string>
 </resources>
