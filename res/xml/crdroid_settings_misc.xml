@@ -31,12 +31,6 @@
             android:targetClass="io.chaldeaprjkt.gamespace.settings.SettingsActivity" />
     </Preference>
 
-    <!-- Keybox Data -->
-    <com.crdroid.settings.preferences.KeyboxDataPreference
-        android:key="keybox_data_setting"
-        android:icon="@drawable/ic_key"
-        android:title="@string/keybox_data_title"/>
-
     <!-- Google Play Integrity -->
     <com.crdroid.settings.preferences.SystemPropertySwitchPreference
         android:key="persist.sys.pixelprops.pi"
@@ -44,6 +38,19 @@
         android:title="@string/pi_spoof_title"
         android:summary="@string/pi_spoof_summary"
         android:defaultValue="true" />
+
+    <!-- Keybox Data -->
+    <com.crdroid.settings.preferences.KeyboxDataPreference
+        android:key="keybox_data_setting"
+        android:icon="@drawable/ic_key"
+        android:title="@string/keybox_data_title"/>
+
+    <!-- Block attestation even with Keybox Data -->
+    <com.crdroid.settings.preferences.SystemPropertySwitchPreference
+        android:key="persist.sys.pixelprops.gmscertchain"
+        android:icon="@drawable/ic_key"
+        android:title="@string/pi_gmscertchain_title"
+        android:summary="@string/pi_gmscertchain_summary" />
 
     <!-- Unlock FPS for specific games -->
     <com.crdroid.settings.preferences.SystemPropertySwitchPreference

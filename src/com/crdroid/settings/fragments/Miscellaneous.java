@@ -34,6 +34,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto;
+import com.android.internal.util.crdroid.KeyProviderManager;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -41,6 +42,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.misc.SensorBlock;
 import com.crdroid.settings.preferences.KeyboxDataPreference;
+import com.crdroid.settings.preferences.SystemPropertySwitchPreference;
 
 import java.util.List;
 
@@ -55,6 +57,8 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
     public static final String TAG = "Miscellaneous";
 
     private static final String POCKET_JUDGE = "pocket_judge";
+    private static final String SYS_PI_SPOOF = "persist.sys.pixelprops.pi";
+    private static final String SYS_GMS_CERT_SPOOF = "persist.sys.pixelprops.gmscertchain";
     private static final String SYS_GAMES_SPOOF = "persist.sys.pixelprops.games";
     private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
     private static final String SYS_NETFLIX_SPOOF = "persist.sys.pixelprops.netflix";
@@ -63,6 +67,7 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
 
     private ActivityResultLauncher<Intent> mKeyboxFilePickerLauncher;
     private KeyboxDataPreference mKeyboxDataPreference;
+    private SystemPropertySwitchPreference mDisableForceIntegrity;
     private Preference mPocketJudge;
     private ListPreference mThreeFingersSwipeAction;
 
@@ -86,6 +91,11 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 Action.NOTHING);
         mThreeFingersSwipeAction = initList(KEY_THREE_FINGERS_SWIPE, threeFingersSwipeAction);
 
+        mDisableForceIntegrity = findPreference(SYS_GMS_CERT_SPOOF);
+        if (mDisableForceIntegrity != null) {
+            mDisableForceIntegrity.setEnabled(KeyProviderManager.isKeyboxAvailable());
+        }
+
         mKeyboxFilePickerLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
@@ -94,6 +104,9 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                     Preference pref = findPreference(KEYBOX_DATA_KEY);
                     if (pref instanceof KeyboxDataPreference) {
                         ((KeyboxDataPreference) pref).handleFileSelected(uri);
+                    }
+                    if (mDisableForceIntegrity != null) {
+                        mDisableForceIntegrity.setEnabled(KeyProviderManager.isKeyboxAvailable());
                     }
                 }
             }
@@ -145,6 +158,8 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.AUTO_BRIGHTNESS_ONE_SHOT, 0, UserHandle.USER_CURRENT);
+        SystemProperties.set(SYS_PI_SPOOF, "true");
+        SystemProperties.set(SYS_GMS_CERT_SPOOF, "false");
         SystemProperties.set(SYS_GAMES_SPOOF, "false");
         SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
         SystemProperties.set(SYS_NETFLIX_SPOOF, "false");
