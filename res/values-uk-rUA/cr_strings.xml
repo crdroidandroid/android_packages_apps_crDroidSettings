@@ -53,7 +53,7 @@
     <string name="accent_color">Колір акценту (за замовчуванням)</string>
     <string name="notification_color">Колір сповіщення</string>
     <string name="wallpaper_color">Колір шпалер</string>
-    <string name="rainbow_color">Rainbow color</string>
+    <string name="rainbow_color">Колір веселки</string>
     <string name="custom_color">Власний колір</string>
     <string name="restart_systemui">Перезапустіть SystemUI для застосування змін!</string>
     <string name="default_value">За замовчуванням</string>
@@ -101,13 +101,6 @@
     <!-- OTA -->
     <string name="crdroid_update_title">Оновлення</string>
     <string name="crdroid_update_summary">Перевірка та завантаження останнього оновлення</string>
-    <!-- App details: open play store link if app is user installed -->
-    <string name="app_play_store">Google Play</string>
-    <!-- Custom seekbar -->
-    <string name="custom_seekbar_value">Значення: <xliff:g id="v">%s</xliff:g></string>
-    <string name="custom_seekbar_default_value">за замовчуванням</string>
-    <string name="custom_seekbar_default_value_to_set">Значення за замовчуванням: <xliff:g id="v">%s</xliff:g>\nДовге натискання для встановлення</string>
-    <string name="custom_seekbar_default_value_is_set">Значення за замовчуванням встановлено</string>
     <!-- Units -->
     <string name="unit_seconds">секунди</string>
     <string name="unit_milliseconds">мілісекунди</string>
@@ -298,9 +291,9 @@
     <string name="edge_light_pulse_count_summary">Кількість імпульсів для світла по краях</string>
     <string name="edge_light_stroke_width_title">Ширина штриха</string>
     <string name="edge_light_stroke_width_summary">Встановіть товщину світлих смужок по краях</string>
-    <string name="edge_light_style_title">Render style</string>
-    <string name="edge_light_style_default">Default (left/right)</string>
-    <string name="edge_light_style_frame">Frame (all sides)</string>
+    <string name="edge_light_style_title">Стиль візуалізації</string>
+    <string name="edge_light_style_default">За замовчуванням (ліворуч/правопуч)</string>
+    <string name="edge_light_style_frame">Кадр (всі сторони)</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Світломузика</string>
     <string name="pulse_on_new_tracks_summary">Показувати музичну візуалізацію на AOD під час зміни треку</string>
@@ -440,9 +433,6 @@
     <string name="qs_date_title">Дата</string>
     <string name="qs_date_summary">Відображати дату в заголовку швидкого рядка стану</string>
     <!-- QS battery -->
-    <string name="qs_battery_location_title">Розташування індикатора батареї</string>
-    <string name="qs_battery_location_qs_panel">Панель швидких налаштувань</string>
-    <string name="qs_battery_location_qs_statusbar">Рядок стану</string>
     <string name="qs_use_status_bar_battery_style">Дотримуватись стилю рядка стану</string>
     <!-- Battery estimate -->
     <string name="battery_estimate_title">Оцінка залишку батареї</string>
@@ -642,9 +632,6 @@
     <!-- Gaming mode -->
     <string name="gaming_mode_title">Ігровий простір</string>
     <string name="gaming_mode_summary">Додаткові можливості для поглибленого ігрового досвіду</string>
-    <!-- Navbar Animation -->
-    <string name="pixel_navbar_anim_title">Анімація як у Pixel</string>
-    <string name="pixel_navbar_anim_summary">Увімкнути анімацію в стилі Pixel для 2 / 3 кнопки в навігаційній панелі</string>
     <!-- Fingerprint Ripple Effect -->
     <string name="enable_fingerprint_ripple_effect_title">Ефект пульсації</string>
     <string name="enable_fingerprint_ripple_effect_summary">Відображати ефекти на екрані під час розблокування відбитком</string>
@@ -709,8 +696,6 @@
     <string name="volume_dialog_timeout_title">Час показу панелі гучності</string>
     <string name="volume_panel_on_left_title">Панель гучності ліворуч</string>
     <string name="volume_dialog_haptic_feedback_title">Будильник панелі гучності</string>
-    <!-- Legacy WFD settings -->
-    <string name="legacy_wfd_video_mode_title">Режим відео</string>
     <!-- UDFPS settings -->
     <string name="udfps_settings_title">Налаштування UDFPS</string>
     <string name="udfps_settings_summary">Налаштувати сканер відбитків пальців</string>
@@ -798,56 +783,6 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Кнопка примусової зупинки</string>
     <string name="notification_guts_kill_app_button_summary">Показувати кнопку примусової зупинки при довгому натисненні на сповіщення</string>
-    <!-- Columbus -->
-    <string name="columbus_gesture_detected">Знайдено швидкий дотик!</string>
-    <string name="columbus_gesture_enrollment_complete">Готово</string>
-    <string name="columbus_gesture_enrollment_do_it_later">Не зараз</string>
-    <string name="columbus_gesture_enrollment_settings">Перейти до Налаштувань</string>
-    <string name="columbus_gesture_enrollment_try_it">Спробувати</string>
-    <string name="columbus_gesture_training_action_no_selection_error">Будь ласка, виберіть дію для виконання</string>
-    <string name="columbus_gesture_training_action_text">Вкажіть, що станеться при використанні Швидкої позначки. Ви зможете змінити це пізніше в налаштуваннях.</string>
-    <string name="columbus_gesture_training_action_title">Виберіть опцію швидкого дотику</string>
-    <string name="columbus_gesture_training_enrolling_first_gesture">… Подвійний тап 1 з 2 помічено</string>
-    <string name="columbus_gesture_training_enrolling_first_gesture_text">Давайте спробуємо ще раз. Швидко натискайте на задній панелі вашого телефону двічі.</string>
-    <string name="columbus_gesture_training_enrolling_first_gesture_title">Добре!</string>
-    <string name="columbus_gesture_training_enrolling_second_gesture">… Подвійний тап 2 з 2 помічено</string>
-    <string name="columbus_gesture_training_enrolling_second_gesture_text">Ви готові розпочати використання швидкого дотику</string>
-    <string name="columbus_gesture_training_enrolling_second_gesture_title">У тебе це є!</string>
-    <string name="columbus_gesture_training_enrolling_text">Швидко натисніть по задній панелі телефону двічі.</string>
-    <string name="columbus_gesture_training_enrolling_title">Спробуйте швидкий дотик</string>
-    <string name="columbus_gesture_training_finished_text">Щоб змінити рівень натискання, необхідний для використання Швидкого Дотику, перейдіть до Налаштування.</string>
-    <string name="columbus_gesture_training_finished_title">Ви налаштували швидкий тап</string>
-    <string name="columbus_gesture_training_intro_text_accidental">Ви двічі натиснули на задній частині вашого пристрою, що дозволяє використовувати свого помічника на ходу. Ви можете налаштувати цей жест в налаштуваннях.</string>
-    <string name="columbus_gesture_training_intro_text_suw">Зробити зняток, показати сповіщення, або розпочати ще одну дію у двох дотиках.</string>
-    <string name="columbus_gesture_training_intro_title">Швидке натискання для швидких дій</string>
-    <string name="columbus_gesture_training_launch_no_selection_error">Будь ласка, виберіть додаток для відкриття</string>
-    <string name="columbus_gesture_training_launch_text">Виберіть програму, яку ви відкриваєте при використанні Quick Tap.</string>
-    <string name="columbus_gesture_training_launch_title">Виберіть додаток для відкриття</string>
-    <string name="columbus_launch_app_extra_widget_a11y_label">Налаштування ярлика %1$s</string>
-    <string name="columbus_launch_settings_activity_title">Налаштування швидкого натискання</string>
-    <string name="columbus_name">Швидкий дотик</string>
-    <string name="columbus_radio_button_extra_widget_a11y_label">Налаштування %1$s</string>
-    <string name="columbus_setting_action_assistant_title">Доступ до вашого цифрового помічника</string>
-    <string name="columbus_setting_action_launch_summary_no_selection">Не вибрано жодної програми</string>
-    <string name="columbus_setting_action_launch_summary_not_installed">Додаток не встановлено</string>
-    <string name="columbus_setting_action_launch_title">Відкрити додаток</string>
-    <string name="columbus_setting_action_notification_title">Показувати сповіщення</string>
-    <string name="columbus_setting_action_open_app_title">Відкрити додаток</string>
-    <string name="columbus_setting_action_overview_title">Дивитися останні програми</string>
-    <string name="columbus_setting_action_play_pause_title">Відтворення або пауза медіа</string>
-    <string name="columbus_setting_action_screenshot_title">Зробити знімок екрану</string>
-    <string name="columbus_setting_actions_title">Подвійне натискання на задній панелі</string>
-    <string name="columbus_setting_additional_settings_title">Сила швидкого натискання</string>
-    <string name="columbus_setting_app_selection_help_text">Виберіть застосунок, щоб відкрити, коли ви натискаєте «Назад» телефону двічі. Якщо ви видалите застосунок, швидкий дотик вимикати, поки не виберете іншу програму.</string>
-    <string name="columbus_setting_app_shortcut_selection_help_text">Оберіть, що відбувається при відкритті цього додатку за допомогою Quick Tap.</string>
-    <string name="columbus_setting_enable_switch_title">Використовуйте Quick Tap</string>
-    <string name="columbus_setting_sensitivity_title">Спробуйте натискати сильніше</string>
-    <!-- Game -->
-    <string name="game_dashboard_always_on_summary">Показувати ярлик Панелі гри в іграх</string>
-    <string name="game_dashboard_always_on_title">Ігрова панель</string>
-    <string name="game_dashboard_dnd_rule_name">Ігри</string>
-    <string name="game_dashboard_dnd_summary">Отримувати сповіщення тільки від важливих людей та програм під час гри</string>
-    <string name="game_dashboard_dnd_title">Режим \"Не турбувати\" для ігор</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Розумні пікселі - це функція економії заряду. В залежності від того, скільки пікселів ви вирішили вимкнути, це може збільшити час роботи батареї. Зверніть увагу, в деяких випадках це може призвести до того, що на сенсорному екрані</string>
     <string name="smart_pixels_title">Смарт Пікселі</string>
@@ -908,8 +843,6 @@
     <string name="qs_tile_label_hide_title">Приховати підписи</string>
     <string name="qs_tile_label_size_title">Розмір тексту мітки</string>
     <string name="qs_tile_label_hide_summary">Показувати іконку тільки на плитці</string>
-    <string name="qs_tile_layout_title">Вертикальне розташування</string>
-    <string name="qs_tile_layout_summary">Відображати значок під іконкою поряд з міткою</string>
     <string name="qs_layout_columns_rows_title">Кількість стовпців &amp; рядків</string>
     <string name="qs_layout_columns_rows_summary">Налаштування стовпців та рядків швидких налаштувань</string>
     <string name="qs_layout_columns_rows_footer_text">Рядки швидких налаштувань повинні бути рівні або більше рядків QQQ. Використовуйте більшу кількість стовпців для кола / квадратного (A11) стилю плитки швидких налаштувань.</string>
@@ -997,11 +930,6 @@
     <string name="pattern_custom">Користувацький</string>
     <string name="custom_vibration_pattern_title">Користувацький шаблон</string>
     <string name="custom_vibration_pattern_summary">Встановіть власний шаблон вібрації</string>
-    <!-- Per-channel vibration pattern -->
-    <string name="notification_custom_vibrate_title">Користувацький шаблон вібрації</string>
-    <string name="notification_custom_vibrate_summary">Замінює типовий візерунок тільки\nвстановити шаблон програми має пріоритет</string>
-    <string name="notification_custom_vibrate_slider1">Вібрація для</string>
-    <string name="notification_custom_vibrate_slider2">Пауза для</string>
     <!-- Floating rotation button -->
     <string name="floating_rotation_button_title">Плаваюча кнопка повороту</string>
     <string name="floating_rotation_button_summary">Показувати кнопку з плаваючим обертанням на пристрої</string>
@@ -1017,30 +945,9 @@
     <!-- Battery stats reset -->
     <string name="battery_stats_reset">Скинути статистику?</string>
     <string name="battery_stats_message">Дані про використання акумулятора буде втрачено</string>
-    <!-- Parallel space -->
-    <string name="laboratory_parallel_space_title">Паралельний простір</string>
-    <string name="laboratory_parallel_space_summary">Дозволити запуск кількох екземплярів однакової програми паралельно</string>
     <!-- WiFi Standard icon -->
     <string name="wifi_standard_icon_title">WiFi стандарти</string>
     <string name="wifi_standard_icon_summary">Показувати WiFi стандарт поруч із сигналом WiFi</string>
-    <!-- Google services -->
-    <string name="gms_enabled_title">Сервіси Google</string>
-    <string name="gms_enabled_summary">Управління сервісами Google та основними додатками</string>
-    <string name="gms_enabled_footer">Перед відключенням служб Google та основних додатків, вам потрібно вимкнути \"знайти мій пристрій\" і двоетапну перевірку для вашого облікового запису Google. Настійно рекомендується підтримувати цей параметр увімкненим іншим програмам, залежним від компонентів Google. Якщо у вас виникнуть питання після зміни цього налаштування, виконайте скидання до заводських налаштувань.</string>
-    <!-- Lockscreen bottom shortcuts -->
-    <string name="lockscreen_shortcut_category">Ярлики в нижніх кутах</string>
-    <string name="lockscreen_shortcut_start_title">Лівий ярлик</string>
-    <string name="lockscreen_shortcut_end_title">Правий ярлик</string>
-    <string name="lockscreen_shortcut_wallet">Гаманець</string>
-    <string name="lockscreen_shortcut_home">Керування домашнім екраном</string>
-    <string name="lockscreen_shortcut_flashlight">Ліхтарик</string>
-    <string name="lockscreen_shortcut_qr">QR сканер</string>
-    <string name="lockscreen_shortcut_camera">Камера</string>
-    <string name="lockscreen_shortcut_remote">Пульт Google TV</string>
-    <string name="lockscreen_shortcut_dnd">Не турбувати</string>
-    <string name="lockscreen_shortcut_none">Жодної</string>
-    <string name="lockscreen_shortcut_enforce_title">Застосувати примусові ярлики</string>
-    <string name="lockscreen_shortcut_enforce_summary">Не відображати наступний доступний ярлик, якщо обраний ярлик недоступний</string>
     <!-- App lock -->
     <string name="app_lock_title">Блокування програм</string>
     <plurals name="app_lock_summary">
@@ -1090,24 +997,6 @@
     <string name="qs_header_needs_gallery">Ви повинні встановити застосунок для галереї!</string>
     <string name="qs_header_offset_title">Зміщення зображення заголовка</string>
     <string name="qs_header_offset_summary">Налаштувати розмір заголовка зображення</string>
-    <!-- Lockscreen Clock -->
-    <string name="kg_custom_clock_top_margin_title">Дворядкова позиція годинника</string>
-    <string name="kg_small_clock_text_size_title">Розмір маленького годинника</string>
-    <string name="kg_large_clock_text_size_title">Розмір подвійного рядку годинника</string>
-    <!-- QS Dual Tone Colors -->
-    <string name="qs_dual_tone_title">Подвійна тематика</string>
-    <string name="qs_dual_tone_summary">Використовувати подвійний тональний фон замість окремого тону AOSP</string>
-    <!-- QS Panel Style -->
-    <string name="qs_panel_style_title">Стиль панелі швидких налаштувань</string>
-    <string name="qs_panel_style_outline">Контурні</string>
-    <string name="qs_panel_style_two_tone">Двотоновий акцент</string>
-    <string name="qs_panel_style_color_pop">Кольоровий ефект</string>
-    <string name="qs_panel_style_shaded">Затінений</string>
-    <string name="qs_panel_style_cyberpunk">Кіберпанк</string>
-    <string name="qs_panel_style_neumorph">Невморф</string>
-    <string name="qs_panel_style_reflected">Відбитий</string>
-    <string name="qs_panel_style_surround">Об\'ємний</string>
-    <string name="qs_panel_style_thin">Тінетка</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- Volume Steps -->
     <string name="volume_steps_title">Рівні гучності</string>
@@ -1171,16 +1060,6 @@
     <!-- Heads-up -->
     <string name="compact_heads_up_notifications_enabled_title">Компактні сповіщення</string>
     <string name="compact_heads_up_notifications_enabled_summary">Показувати сповіщення в компактному розмірі</string>
-    <!-- Long press navbar to search -->
-    <string name="navbar_long_press_gesture_title">Натисніть і утримуйте для пошуку</string>
-    <string name="navbar_long_press_gesture_summary">Натисніть і утримуйте кнопку Додому або маркер навігації для пошуку з використанням вмісту на вашому екрані</string>
-    <!-- Circle to search -->
-    <string name="search_all_entrypoints_enabled_title">Коло для пошуку</string>
-    <string name="search_all_entrypoints_enabled_summary">Використовувати CTS замість Google Lens для довгого натискання на навігаційну панель</string>
-    <!-- Navigation bar IME space -->
-    <string name="navigation_bar_ime_space_title">Місце під клавіатурою</string>
-    <string name="navigation_bar_ime_space_narrow">Вузький</string>
-    <string name="navigation_bar_ime_space_hidden">Приховано</string>
     <!-- Navigation bar taskbar -->
     <string name="navigation_bar_enable_taskbar_title">Панель задач</string>
     <string name="navigation_bar_enable_taskbar_summary">Показувати панель завдань з вибраним режимом навігації</string>
@@ -1249,7 +1128,7 @@
     <string name="pulse_settings_title">Візуалізація Імпульсу</string>
     <string name="pulse_settings_summary">Графічний аудіо еквалайзер для панелі навігації та екрану блокування</string>
     <string name="ambient_pulse_enabled_title">Пульсація на Завжди включеному екрані</string>
-    <string name="ambient_pulse_enabled_summary">Show visualizer on Ambient Display</string>
+    <string name="ambient_pulse_enabled_summary">Показати візуалізацію на Ambient Display</string>
     <string name="pulse_rounded_bars_title">Закруглені панелі</string>
     <string name="pulse_rounded_bars_summary">Показати панель візуалізації за допомогою закруглених кутів</string>
     <string name="pulse_color">Колір візуалізації</string>
@@ -1262,9 +1141,9 @@
     <string name="pulse_renderer">Стиль візуалізатора</string>
     <string name="pulse_renderer_solid">Суцільні лінії</string>
     <string name="pulse_renderer_fading">Згасаючі блоки</string>
-    <string name="pulse_renderer_neon_glow">Neon glow</string>
-    <string name="pulse_renderer_retro_vu_meter">Retro VU meter</string>
-    <string name="pulse_renderer_minimal_wave">Minimal wave</string>
+    <string name="pulse_renderer_neon_glow">Неоновий світлий</string>
+    <string name="pulse_renderer_retro_vu_meter">Ретро VU метр</string>
+    <string name="pulse_renderer_minimal_wave">Мінімальна хвиля</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">Прозорі сповіщення</string>
     <string name="notification_row_transparency_summary">Показувати сповіщення про напівпрозорі налаштування швидкого доступу</string>
