@@ -100,13 +100,6 @@
     <!-- OTA -->
     <string name="crdroid_update_title">Aktualizace</string>
     <string name="crdroid_update_summary">Zkontrolovat aktualizaci OTA a\u00a0odkazy pro zařízení</string>
-    <!-- App details: open play store link if app is user installed -->
-    <string name="app_play_store">Obchod Play</string>
-    <!-- Custom seekbar -->
-    <string name="custom_seekbar_value">Hodnota: <xliff:g id="v">%s</xliff:g></string>
-    <string name="custom_seekbar_default_value">výchozí hodnota</string>
-    <string name="custom_seekbar_default_value_to_set">Výchozí hodnota: <xliff:g id="v">%s</xliff:g>\nDlouze klepněte na šipku pro její nastavení</string>
-    <string name="custom_seekbar_default_value_is_set">Výchozí hodnota je nastavena</string>
     <!-- Units -->
     <string name="unit_seconds">s</string>
     <string name="unit_milliseconds">ms</string>
@@ -439,9 +432,6 @@
     <string name="qs_date_title">Datum</string>
     <string name="qs_date_summary">Zobrazit datum v\u00a0záhlaví stavového řádku Rychlého nastavení</string>
     <!-- QS battery -->
-    <string name="qs_battery_location_title">Umístění baterie</string>
-    <string name="qs_battery_location_qs_panel">Panel Rychlého nastavení</string>
-    <string name="qs_battery_location_qs_statusbar">Stavový řádek Rychlého nastavení</string>
     <string name="qs_use_status_bar_battery_style">Použít styl stavového řádku</string>
     <!-- Battery estimate -->
     <string name="battery_estimate_title">Odhad výdrže baterie</string>
@@ -641,9 +631,6 @@
     <!-- Gaming mode -->
     <string name="gaming_mode_title">Herní prostor</string>
     <string name="gaming_mode_summary">Další funkce pro pohlcující herní zážitek</string>
-    <!-- Navbar Animation -->
-    <string name="pixel_navbar_anim_title">Animace Pixel</string>
-    <string name="pixel_navbar_anim_summary">Povolit animaci ve stylu Pixel na dvoutlačítkovém / třítlačítkovém navigačním panelu</string>
     <!-- Fingerprint Ripple Effect -->
     <string name="enable_fingerprint_ripple_effect_title">Efekt zvlnění</string>
     <string name="enable_fingerprint_ripple_effect_summary">Zobrazit efekt zvlnění při odemknutí zařízení pomocí otisku prstu</string>
@@ -708,8 +695,6 @@
     <string name="volume_dialog_timeout_title">Doba trvání zobrazení Panelu hlasitosti</string>
     <string name="volume_panel_on_left_title">Panel hlasitosti vlevo</string>
     <string name="volume_dialog_haptic_feedback_title">Haptická odezva panelu hlasitosti</string>
-    <!-- Legacy WFD settings -->
-    <string name="legacy_wfd_video_mode_title">Režim videa</string>
     <!-- UDFPS settings -->
     <string name="udfps_settings_title">Přizpůsobení čtečky otisků prstů</string>
     <string name="udfps_settings_summary">Přizpůsobit čtečku otisků prstů</string>
@@ -797,56 +782,6 @@
     <!-- Notification guts kill app button -->
     <string name="notification_guts_kill_app_button_title">Tlačítko „Vynutit ukončení“</string>
     <string name="notification_guts_kill_app_button_summary">Zobrazit tlačítko pro vynucení ukončení aplikace při dlouhém stisku v\u00a0nabídce oznámení</string>
-    <!-- Columbus -->
-    <string name="columbus_gesture_detected">Bylo zaznamenáno Rychlé poklepání!</string>
-    <string name="columbus_gesture_enrollment_complete">Hotovo</string>
-    <string name="columbus_gesture_enrollment_do_it_later">Teď ne</string>
-    <string name="columbus_gesture_enrollment_settings">Přejít do Nastavení</string>
-    <string name="columbus_gesture_enrollment_try_it">Vyzkoušet</string>
-    <string name="columbus_gesture_training_action_no_selection_error">Vyberte prosím akci k\u00a0provedení</string>
-    <string name="columbus_gesture_training_action_text">Vyberte, co se má stát, když použijete Rychlé poklepání. Později to můžete změnit v\u00a0nastavení.</string>
-    <string name="columbus_gesture_training_action_title">Vyberte možnost Rychlého poklepání</string>
-    <string name="columbus_gesture_training_enrolling_first_gesture">… Bylo zjištěno dvojité klepnutí 1\u00a0ze\u00a02</string>
-    <string name="columbus_gesture_training_enrolling_first_gesture_text">Zkusme to ještě jednou. Dvakrát rychle klepněte na zadní stranu telefonu.</string>
-    <string name="columbus_gesture_training_enrolling_first_gesture_title">Výborně!</string>
-    <string name="columbus_gesture_training_enrolling_second_gesture">… Bylo zjištěno dvojité klepnutí 2\u00a0ze\u00a02</string>
-    <string name="columbus_gesture_training_enrolling_second_gesture_text">Jste připraveni začít používat Rychlé poklepání</string>
-    <string name="columbus_gesture_training_enrolling_second_gesture_title">Dobrá práce!</string>
-    <string name="columbus_gesture_training_enrolling_text">Rychle dvakrát klepněte na zadní stranu telefonu.</string>
-    <string name="columbus_gesture_training_enrolling_title">Vyzkoušejte Rychlé poklepání</string>
-    <string name="columbus_gesture_training_finished_text">Chcete‑li změnit sílu klepnutí potřebnou k\u00a0použití Rychlého poklepání, přejděte do nastavení.</string>
-    <string name="columbus_gesture_training_finished_title">Nastavili jste Rychlé poklepání</string>
-    <string name="columbus_gesture_training_intro_text_accidental">Právě jste dvakrát klepnuli na zadní stranu vašeho zařízení, což vám umožňuje použít vašeho Asistenta on‑the‑go. Toto gesto si můžete přizpůsobit v\u00a0nastavení.</string>
-    <string name="columbus_gesture_training_intro_text_suw">Pořídit snímek obrazovky, zobrazit oznámení nebo zahájit další akci dvěma klepnutími.</string>
-    <string name="columbus_gesture_training_intro_title">Rychlé poklepání pro rychlé akce</string>
-    <string name="columbus_gesture_training_launch_no_selection_error">Vyberte prosím aplikaci, kterou chcete otevřít</string>
-    <string name="columbus_gesture_training_launch_text">Vyberte aplikaci, kterou chcete otevřít, když použijete Rychlé poklepání.</string>
-    <string name="columbus_gesture_training_launch_title">Vyberte aplikaci k\u00a0otevření</string>
-    <string name="columbus_launch_app_extra_widget_a11y_label">Nastavení zástupce %1$s</string>
-    <string name="columbus_launch_settings_activity_title">Nastavení Rychlého poklepání</string>
-    <string name="columbus_name">Rychlé poklepání</string>
-    <string name="columbus_radio_button_extra_widget_a11y_label">Nastavení %1$s</string>
-    <string name="columbus_setting_action_assistant_title">Přístup k\u00a0vašemu digitálnímu asistentovi</string>
-    <string name="columbus_setting_action_launch_summary_no_selection">Není vybrána žádná aplikace</string>
-    <string name="columbus_setting_action_launch_summary_not_installed">Aplikace není nainstalována</string>
-    <string name="columbus_setting_action_launch_title">Otevřít aplikaci</string>
-    <string name="columbus_setting_action_notification_title">Zobrazovat oznámení</string>
-    <string name="columbus_setting_action_open_app_title">Otevřít aplikaci</string>
-    <string name="columbus_setting_action_overview_title">Zobrazit nedávné aplikace</string>
-    <string name="columbus_setting_action_play_pause_title">Přehrát nebo pozastavit média</string>
-    <string name="columbus_setting_action_screenshot_title">Pořídit snímek obrazovky</string>
-    <string name="columbus_setting_actions_title">Dvojitým klepnutím na zadní stranu telefonu</string>
-    <string name="columbus_setting_additional_settings_title">Síla Rychlého poklepání</string>
-    <string name="columbus_setting_app_selection_help_text">Vyberte aplikaci, která se otevře, když dvakrát klepnete na zadní stranu telefonu. Pokud aplikaci odinstalujete, Rychlé poklepání se vypne, dokud nevyberete jinou aplikaci.</string>
-    <string name="columbus_setting_app_shortcut_selection_help_text">Vyberte, co se má stát, když otevřete tuto aplikaci pomocí Rychlého poklepání.</string>
-    <string name="columbus_setting_enable_switch_title">Používat Rychlé poklepání</string>
-    <string name="columbus_setting_sensitivity_title">Vyžadovat silnější klepnutí</string>
-    <!-- Game -->
-    <string name="game_dashboard_always_on_summary">Zobrazit ve hrách zástupce Herního přehledu</string>
-    <string name="game_dashboard_always_on_title">Herní přehled</string>
-    <string name="game_dashboard_dnd_rule_name">Hraní</string>
-    <string name="game_dashboard_dnd_summary">Být upozorňován pouze důležitými lidmi a\u00a0aplikacemi během hraní hry</string>
-    <string name="game_dashboard_dnd_title">Režim Nerušit pro hry</string>
     <!-- Smart Pixels -->
     <string name="smart_pixels_warning_text">Smart Pixels je funkce šetřící energii. V\u00a0závislosti na počtu pixelů, které se rozhodnete vypnout, můžete zaznamenat zlepšení výdrže baterie. Mějte na paměti, že v\u00a0některých případech může místy dojít ke ztrátě citlivosti dotykové obrazovky</string>
     <string name="smart_pixels_title">Smart Pixels</string>
@@ -907,8 +842,6 @@
     <string name="qs_tile_label_hide_title">Skrýt popisek</string>
     <string name="qs_tile_label_size_title">Velikost textu popisku</string>
     <string name="qs_tile_label_hide_summary">Zobrazit v\u00a0dlaždici pouze ikonu</string>
-    <string name="qs_tile_layout_title">Svislé rozložení</string>
-    <string name="qs_tile_layout_summary">Zobrazit popisek pod ikonou namísto vedle ikony</string>
     <string name="qs_layout_columns_rows_title">Sloupce a řádky</string>
     <string name="qs_layout_columns_rows_summary">Přizpůsobit sloupce a řádky QS</string>
     <string name="qs_layout_columns_rows_footer_text">Počet řádků QS by měl být stejný nebo vyšší než počet řádků QQS. Použijte vyšší počet sloupců pro styl QS dlaždic tvaru kružnice/čtverce (A11).</string>
@@ -996,11 +929,6 @@
     <string name="pattern_custom">Vlastní</string>
     <string name="custom_vibration_pattern_title">Vlastní vzor</string>
     <string name="custom_vibration_pattern_summary">Nastavit vlastní vzor vibrací</string>
-    <!-- Per-channel vibration pattern -->
-    <string name="notification_custom_vibrate_title">Vlastní vzor vibrací</string>
-    <string name="notification_custom_vibrate_summary">Nahradí pouze výchozí vzor\nVzor nastavený aplikací má přednost</string>
-    <string name="notification_custom_vibrate_slider1">Vibrovat po dobu</string>
-    <string name="notification_custom_vibrate_slider2">Pozastavit po dobu</string>
     <!-- Floating rotation button -->
     <string name="floating_rotation_button_title">Plovoucí tlačítko otáčení</string>
     <string name="floating_rotation_button_summary">Zobrazit plovoucí tlačítko otáčení při otočení zařízení</string>
@@ -1016,30 +944,9 @@
     <!-- Battery stats reset -->
     <string name="battery_stats_reset">Obnovit statistiky?</string>
     <string name="battery_stats_message">Data o využití baterie budou ztracena</string>
-    <!-- Parallel space -->
-    <string name="laboratory_parallel_space_title">Paralelní prostor</string>
-    <string name="laboratory_parallel_space_summary">Umožňuje spuštění více instancí téže aplikace současně</string>
     <!-- WiFi Standard icon -->
     <string name="wifi_standard_icon_title">Wi‑Fi standard</string>
     <string name="wifi_standard_icon_summary">Zobrazit vedle Wi‑Fi signálu Wi‑Fi standard</string>
-    <!-- Google services -->
-    <string name="gms_enabled_title">Služby Google</string>
-    <string name="gms_enabled_summary">Ovládání služeb Google a\u00a0základních aplikací</string>
-    <string name="gms_enabled_footer">Před vypnutím služeb Google a\u00a0základních aplikací byste měli zakázat funkci „Najdi moje zařízení“ a\u00a0dvoufázové ověření na účtu Google. Důrazně doporučujeme ponechat toto nastavení povolené, jinak budou ovlivněny aplikace závislé na součástech Google. Pokud po změně tohoto nastavení narazíte na jakékoliv potíže, proveďte obnovení továrního nastavení.</string>
-    <!-- Lockscreen bottom shortcuts -->
-    <string name="lockscreen_shortcut_category">Dolní zkratky</string>
-    <string name="lockscreen_shortcut_start_title">Zástupce vlevo</string>
-    <string name="lockscreen_shortcut_end_title">Zástupce vpravo</string>
-    <string name="lockscreen_shortcut_wallet">Peněženka</string>
-    <string name="lockscreen_shortcut_home">Ovládání plochy</string>
-    <string name="lockscreen_shortcut_flashlight">Svítilna</string>
-    <string name="lockscreen_shortcut_qr">Skener QR kódů</string>
-    <string name="lockscreen_shortcut_camera">Fotoaparát</string>
-    <string name="lockscreen_shortcut_remote">Google TV Remote</string>
-    <string name="lockscreen_shortcut_dnd">Režim „Nerušit“</string>
-    <string name="lockscreen_shortcut_none">Žádná</string>
-    <string name="lockscreen_shortcut_enforce_title">Vynutit zkratky</string>
-    <string name="lockscreen_shortcut_enforce_summary">Nezobrazovat další dostupnou zkratku, pokud vybraná zkratka není k\u00a0dispozici</string>
     <!-- App lock -->
     <string name="app_lock_title">Zámek aplikací</string>
     <plurals name="app_lock_summary">
@@ -1089,24 +996,6 @@
     <string name="qs_header_needs_gallery">Musíte nainstalovat aplikaci galerie!</string>
     <string name="qs_header_offset_title">Odsazení obrázku záhlaví</string>
     <string name="qs_header_offset_summary">Upravit velikost záhlaví obrázku</string>
-    <!-- Lockscreen Clock -->
-    <string name="kg_custom_clock_top_margin_title">Pozice dvouřádkových hodin</string>
-    <string name="kg_small_clock_text_size_title">Malá velikost hodin</string>
-    <string name="kg_large_clock_text_size_title">Velikost dvouřádkových hodin</string>
-    <!-- QS Dual Tone Colors -->
-    <string name="qs_dual_tone_title">Motiv duálního tónu</string>
-    <string name="qs_dual_tone_summary">Použít dvojité barvy pozadí namísto jednoduchého tónu AOSP</string>
-    <!-- QS Panel Style -->
-    <string name="qs_panel_style_title">Styl QS panelu</string>
-    <string name="qs_panel_style_outline">Ohraničení</string>
-    <string name="qs_panel_style_two_tone">Dvoubarevný odstín</string>
-    <string name="qs_panel_style_color_pop">Color pop</string>
-    <string name="qs_panel_style_shaded">Stínovaný</string>
-    <string name="qs_panel_style_cyberpunk">Kyberpunk</string>
-    <string name="qs_panel_style_neumorph">Neumorf</string>
-    <string name="qs_panel_style_reflected">Zrcadlený</string>
-    <string name="qs_panel_style_surround">Surround</string>
-    <string name="qs_panel_style_thin">Tenká linka</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- Volume Steps -->
     <string name="volume_steps_title">Kroky hlasitosti</string>
@@ -1170,16 +1059,6 @@
     <!-- Heads-up -->
     <string name="compact_heads_up_notifications_enabled_title">Kompaktní plovoucí oznámení</string>
     <string name="compact_heads_up_notifications_enabled_summary">Zobrazovat oznámení v kompaktní velikosti</string>
-    <!-- Long press navbar to search -->
-    <string name="navbar_long_press_gesture_title">Vyhledat dlouhým podržením</string>
-    <string name="navbar_long_press_gesture_summary">Dotkněte se a přidržte domácí tlačítko nebo navigační lištu pro vyhledávání pomocí obsahu na vaší obrazovce</string>
-    <!-- Circle to search -->
-    <string name="search_all_entrypoints_enabled_title">Zakroužkuj a hledej</string>
-    <string name="search_all_entrypoints_enabled_summary">Použít CTS namísto Google Lens při dlouhém podržení navigační lišty</string>
-    <!-- Navigation bar IME space -->
-    <string name="navigation_bar_ime_space_title">Prostor IME</string>
-    <string name="navigation_bar_ime_space_narrow">Úzký</string>
-    <string name="navigation_bar_ime_space_hidden">Skrytý</string>
     <!-- Navigation bar taskbar -->
     <string name="navigation_bar_enable_taskbar_title">Hlavní Panel</string>
     <string name="navigation_bar_enable_taskbar_summary">Zobrazit hlavní panel s vybraným režimem navigace</string>
