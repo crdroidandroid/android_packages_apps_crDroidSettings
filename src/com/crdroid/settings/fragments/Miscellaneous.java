@@ -22,7 +22,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.view.View;
@@ -32,6 +31,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceScreen;
+import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.internal.util.crdroid.KeyProviderManager;
@@ -42,7 +42,6 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.misc.SensorBlock;
 import com.crdroid.settings.preferences.KeyboxDataPreference;
-import com.crdroid.settings.preferences.SystemPropertySwitchPreference;
 
 import java.util.List;
 
@@ -57,17 +56,13 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
     public static final String TAG = "Miscellaneous";
 
     private static final String POCKET_JUDGE = "pocket_judge";
-    private static final String SYS_PI_SPOOF = "persist.sys.pixelprops.pi";
-    private static final String SYS_GMS_CERT_SPOOF = "persist.sys.pixelprops.gmscertchain";
-    private static final String SYS_GAMES_SPOOF = "persist.sys.pixelprops.games";
-    private static final String SYS_PHOTOS_SPOOF = "persist.sys.pixelprops.gphotos";
-    private static final String SYS_NETFLIX_SPOOF = "persist.sys.pixelprops.netflix";
+    private static final String KEY_GMS_CERT_SPOOF = "pi_gms_cert_chain";
     private static final String KEY_THREE_FINGERS_SWIPE = "three_fingers_swipe";
     private static final String KEYBOX_DATA_KEY = "keybox_data_setting";
 
     private ActivityResultLauncher<Intent> mKeyboxFilePickerLauncher;
     private KeyboxDataPreference mKeyboxDataPreference;
-    private SystemPropertySwitchPreference mDisableForceIntegrity;
+    private SwitchPreferenceCompat mDisableForceIntegrity;
     private Preference mPocketJudge;
     private ListPreference mThreeFingersSwipeAction;
 
@@ -91,7 +86,7 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 Action.NOTHING);
         mThreeFingersSwipeAction = initList(KEY_THREE_FINGERS_SWIPE, threeFingersSwipeAction);
 
-        mDisableForceIntegrity = findPreference(SYS_GMS_CERT_SPOOF);
+        mDisableForceIntegrity = (SwitchPreferenceCompat) findPreference(KEY_GMS_CERT_SPOOF);
         if (mDisableForceIntegrity != null) {
             mDisableForceIntegrity.setEnabled(KeyProviderManager.isKeyboxAvailable());
         }
@@ -158,11 +153,16 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
                 Settings.System.POCKET_JUDGE, 0, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.AUTO_BRIGHTNESS_ONE_SHOT, 0, UserHandle.USER_CURRENT);
-        SystemProperties.set(SYS_PI_SPOOF, "true");
-        SystemProperties.set(SYS_GMS_CERT_SPOOF, "false");
-        SystemProperties.set(SYS_GAMES_SPOOF, "false");
-        SystemProperties.set(SYS_PHOTOS_SPOOF, "true");
-        SystemProperties.set(SYS_NETFLIX_SPOOF, "false");
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PI_ENABLE_SPOOF, 1, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PI_GMS_CERT_CHAIN, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PI_GAMES_SPOOF, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PI_PHOTOS_SPOOF, 1, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PI_NETFLIX_SPOOF, 0, UserHandle.USER_CURRENT);
         SensorBlock.reset(mContext);
     }
 
