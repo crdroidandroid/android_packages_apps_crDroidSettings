@@ -97,6 +97,9 @@ public class DonateReceiver extends BroadcastReceiver {
     }
 
     private void showDonateNotification(Context ctx) {
+        NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
+        nm.cancel(DONATE_NOTIFICATION_ID);
+
         createChannelIfNeeded(ctx);
 
         PendingIntent contentPi = PendingIntent.getActivity(
@@ -110,9 +113,9 @@ public class DonateReceiver extends BroadcastReceiver {
                 .setContentText(ctx.getString(R.string.crdroid_donate_notification_text))
                 .setContentIntent(contentPi)
                 .setAutoCancel(true)
+                .setOnlyAlertOnce(true)
                 .setPriority(NotificationCompat.PRIORITY_HIGH);
 
-        NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
         nm.notify(DONATE_NOTIFICATION_ID, b.build());
 
         scheduleNext(ctx, REPEAT_DELAY_MIN);
