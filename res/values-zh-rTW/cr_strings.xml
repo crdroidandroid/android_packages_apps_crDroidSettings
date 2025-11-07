@@ -53,7 +53,7 @@
     <string name="accent_color">強調色（預設）</string>
     <string name="notification_color">通知指示燈顏色</string>
     <string name="wallpaper_color">桌布顏色</string>
-    <string name="rainbow_color">Rainbow color</string>
+    <string name="rainbow_color">彩色</string>
     <string name="custom_color">自訂顏色</string>
     <string name="restart_systemui">重新啟動系統介面以使變更生效</string>
     <string name="default_value">預設</string>
@@ -287,14 +287,14 @@
     <string name="edge_light_pulse_count_summary">燈條邊緣的脈衝數</string>
     <string name="edge_light_stroke_width_title">線條粗細</string>
     <string name="edge_light_stroke_width_summary">設定燈條邊緣的厚度</string>
-    <string name="edge_light_style_title">Render style</string>
-    <string name="edge_light_style_default">Default (left/right)</string>
-    <string name="edge_light_style_frame">Frame (all sides)</string>
-    <string name="edge_light_animation_effect_title">Animation effect</string>
-    <string name="edge_light_animation_effect_none">Standard</string>
-    <string name="edge_light_animation_effect_breathing">Breathing</string>
-    <string name="edge_light_animation_effect_wave">Wave</string>
-    <string name="edge_light_animation_effect_sparkle">Sparkle</string>
+    <string name="edge_light_style_title">風格</string>
+    <string name="edge_light_style_default">預設（左/右）</string>
+    <string name="edge_light_style_frame">框架（所有側面）</string>
+    <string name="edge_light_animation_effect_title">動畫效果</string>
+    <string name="edge_light_animation_effect_none">標準</string>
+    <string name="edge_light_animation_effect_breathing">呼吸燈</string>
+    <string name="edge_light_animation_effect_wave">波浪</string>
+    <string name="edge_light_animation_effect_sparkle">閃爍</string>
     <string name="edge_light_animation_effect_chase">Chase</string>
     <string name="edge_light_animation_effect_comet">Comet</string>
     <!-- Ambient Ticker -->
@@ -1088,12 +1088,12 @@
     <string name="keybox_toast_file_cleared">Keybox 已清除</string>
     <!-- Block attestation even with Keybox Data -->
     <string name="pi_gmscertchain_title">Disable forcing strong integrity</string>
-    <string name="pi_gmscertchain_summary">When enabled, do not enforce strong integrity from valid custom keybox and depend on Google Play Integrity spoof to fix apps like Google Pay</string>
+    <string name="pi_gmscertchain_summary">啟用此功能後，不會強制嚴格完整性檢查可能導致 Google Pay 等應用程式無法運作；啟用此選項可修復這類應用程式</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_shape_title">快速設定磁貼形狀</string>
     <string name="qs_tile_shape_dynamic">動態</string>
     <string name="qs_tile_shape_circle">圓形</string>
-    <string name="qs_tile_shape_rounded_square_smooth">Rounded square (smooth)</string>
+    <string name="qs_tile_shape_rounded_square_smooth">圓角</string>
     <string name="qs_tile_shape_rounded_square">圓角矩形</string>
     <string name="qs_tile_shape_square">矩形</string>
     <!-- Force dark mode -->
@@ -1111,7 +1111,7 @@
     <string name="ls_media_art_title">專輯封面</string>
     <string name="ls_media_art_summary">可用時顯示專輯封面</string>
     <!-- Lock screen media art on Ambient Display -->
-    <string name="ambient_media_art_title">Ambient media cover art</string>
+    <string name="ambient_media_art_title">環境媒體封面藝術</string>
     <string name="ambient_media_art_summary">Display media cover art on Ambient display when available</string>
     <!-- Lock screen album art filter -->
     <string name="ls_media_art_filter_title">媒體封面效果</string>
@@ -1145,21 +1145,21 @@
     <string name="pulse_renderer">視覺化效果樣式</string>
     <string name="pulse_renderer_solid">實線</string>
     <string name="pulse_renderer_fading">漸層方塊</string>
-    <string name="pulse_renderer_neon_glow">Neon glow</string>
-    <string name="pulse_renderer_retro_vu_meter">Retro VU meter</string>
-    <string name="pulse_renderer_minimal_wave">Minimal wave</string>
+    <string name="pulse_renderer_neon_glow">霓虹燈</string>
+    <string name="pulse_renderer_retro_vu_meter">復古指針儀表</string>
+    <string name="pulse_renderer_minimal_wave">極簡波浪</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">半透明通知</string>
     <string name="notification_row_transparency_summary">快速設定通知的半透明背景</string>
     <string name="notification_row_transparency_lockscreen_title">半透明鎖定螢幕通知</string>
     <string name="notification_row_transparency_lockscreen_summary">在鎖定畫面中設定半透明通知背景</string>
     <!-- Ambient Wallpaper -->
-    <string name="doze_always_on_wallpaper_title">Ambient wallpaper</string>
-    <string name="doze_always_on_wallpaper_summary">Show lockscreen wallpaper on Ambient Display</string>
+    <string name="doze_always_on_wallpaper_title">環境壁紙</string>
+    <string name="doze_always_on_wallpaper_summary">在環境顯示模式下顯示鎖定螢幕壁紙</string>
     <!-- Squiggle animation for media notification -->
     <string name="media_squiggle_animation_title">Squiggle animation</string>
-    <string name="media_squiggle_animation_summary">Show seekbar squiggle animation in media panel when playing media</string>
+    <string name="media_squiggle_animation_summary">播放媒體時，在媒體面板中顯示進度條</string>
     <!-- Vbmeta hash attestation -->
-    <string name="vbmeta_attestation_title">Autofix VBMeta detection</string>
-    <string name="vbmeta_attestation_summary">Perform key attestation to generate verified boot hash on boot. Requires system restart.</string>
+    <string name="vbmeta_attestation_title">自動修復 VBMeta 檢測</string>
+    <string name="vbmeta_attestation_summary">啟動時執行金鑰認證以產生已驗證的啟動雜湊值。需要重啟系統。</string>
 </resources>
