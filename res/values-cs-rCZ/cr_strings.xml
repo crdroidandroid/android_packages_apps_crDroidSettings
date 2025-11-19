@@ -281,12 +281,12 @@
     <string name="edge_light_summary">Rozsvítit boční okraje obrazovky po přijetí oznámení</string>
     <string name="edge_light_color_mode_title">Režim barev</string>
     <string name="edge_light_pulse_count_title">Počet pulzů</string>
-    <string name="edge_light_pulse_count_summary">Number of pulses for edge light</string>
-    <string name="edge_light_stroke_width_title">Stroke width</string>
-    <string name="edge_light_stroke_width_summary">Set thickness for edge light bars</string>
+    <string name="edge_light_pulse_count_summary">Počet pulzů nasvícení okrajů</string>
+    <string name="edge_light_stroke_width_title">Šířka obrysu</string>
+    <string name="edge_light_stroke_width_summary">Nastavení tloušťky sloupců nasvícení okrajů</string>
     <string name="edge_light_style_title">Styl vykreslení</string>
-    <string name="edge_light_style_default">Default (left/right)</string>
-    <string name="edge_light_style_frame">Frame (all sides)</string>
+    <string name="edge_light_style_default">Výchozí (vlevo/vpravo)</string>
+    <string name="edge_light_style_frame">Orámování (ze všech stran)</string>
     <string name="edge_light_animation_effect_title">Efekt animace</string>
     <string name="edge_light_animation_effect_none">Standardní</string>
     <string name="edge_light_animation_effect_breathing">Dýchání</string>
@@ -1087,7 +1087,7 @@
     <string name="keybox_toast_file_loaded">Keybox načten</string>
     <string name="keybox_toast_file_cleared">Úložiště klíčů vymazáno</string>
     <!-- Block attestation even with Keybox Data -->
-    <string name="pi_gmscertchain_title">Disable forcing strong integrity</string>
+    <string name="pi_gmscertchain_title">Zakázat vynucování silné integrity</string>
     <string name="pi_gmscertchain_summary">When enabled, do not enforce strong integrity from valid custom keybox and depend on Google Play Integrity spoof to fix apps like Google Pay</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_shape_title">Tvar dlaždic QS</string>
@@ -1100,13 +1100,13 @@
     <string name="force_dark_title">Dark mode for third-party apps</string>
     <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
     <!-- Brightness Slider Style -->
-    <string name="qs_brightness_slider_shape_title">Brightness slider shape</string>
+    <string name="qs_brightness_slider_shape_title">Tvar posuvníku jasu</string>
     <!-- Force LTE_CA -->
     <string name="force_lte_ca">Vynutit LTE CA</string>
     <string name="force_lte_ca_summary">Vynutit agregaci LTE operátora</string>
     <!-- QS on lockscreen -->
-    <string name="lockscreen_quick_settings_title">QS on lock screen</string>
-    <string name="lockscreen_quick_settings_summary">Allow swipe down on lock screen to view Quick Settings</string>
+    <string name="lockscreen_quick_settings_title">QS na obrazovce uzamčení</string>
+    <string name="lockscreen_quick_settings_summary">Umožnit na obrazovce uzamčení přejetím dolů zobrazit Rychlé nastavení</string>
     <!-- Lock screen media art -->
     <string name="ls_media_art_title">Obal alba</string>
     <string name="ls_media_art_summary">Zobrazit obal alba, je‑li dostupný</string>
@@ -1120,7 +1120,7 @@
     <string name="ls_media_art_filter_grayscale">Odstíny šedi</string>
     <string name="ls_media_art_filter_sepia">Sépie</string>
     <string name="ls_media_art_filter_tint">Zabarven dle doplňkové barvy</string>
-    <string name="ls_media_art_filter_invert">Invert</string>
+    <string name="ls_media_art_filter_invert">Převrátit</string>
     <string name="ls_media_art_filter_grayblur">Škála šedé a rozmazání</string>
     <!-- Lock screen media art fade level -->
     <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
@@ -1129,37 +1129,37 @@
     <string name="ls_media_art_blur_level_title">Media art blur level</string>
     <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
     <!-- Pulse music visualizer -->
-    <string name="pulse_settings_title">Pulse Visualizer</string>
+    <string name="pulse_settings_title">Vizualizér Pulse</string>
     <string name="pulse_settings_summary">Audio grafický ekvalizér v\u00a0navigačním panelu a\u00a0na obrazovce uzamčení</string>
     <string name="ambient_pulse_enabled_title">Ambientní ekvalizér</string>
-    <string name="ambient_pulse_enabled_summary">Show visualizer on Ambient Display</string>
+    <string name="ambient_pulse_enabled_summary">Zobrazit na Ambientní obrazovce vizualizér</string>
     <string name="pulse_rounded_bars_title">Rounded bars</string>
     <string name="pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
-    <string name="pulse_color">Visualizer color</string>
+    <string name="pulse_color">Barva vizualizéru</string>
     <string name="pulse_color_lavalamp">Lávová lampa</string>
-    <string name="pulse_color_album">Album art</string>
+    <string name="pulse_color_album">Obal alba</string>
     <string name="pulse_color_accent">Doplňková barva</string>
-    <string name="pulse_bar_count_title">Number of bars</string>
-    <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
-    <string name="pulse_bar_count_units">bars</string>
-    <string name="pulse_renderer">Visualizer style</string>
+    <string name="pulse_bar_count_title">Počet sloupců</string>
+    <string name="pulse_bar_count_summary">Nastavte, kolik sloupců se zobrazí ve vizualizéru</string>
+    <string name="pulse_bar_count_units">sloupce</string>
+    <string name="pulse_renderer">Styl vizualizace</string>
     <string name="pulse_renderer_solid">Plné čáry</string>
     <string name="pulse_renderer_fading">Vyblednutí sloupců</string>
-    <string name="pulse_renderer_neon_glow">Neon glow</string>
-    <string name="pulse_renderer_retro_vu_meter">Retro VU meter</string>
-    <string name="pulse_renderer_minimal_wave">Minimal wave</string>
+    <string name="pulse_renderer_neon_glow">Neonový svit</string>
+    <string name="pulse_renderer_retro_vu_meter">Retro VU metr</string>
+    <string name="pulse_renderer_minimal_wave">Minimální vlna</string>
     <string name="pulse_renderer_sparkle">Jiskra</string>
     <!-- Notification Row -->
-    <string name="notification_row_transparency_title">Translucent notifications</string>
+    <string name="notification_row_transparency_title">Průsvitná oznámení</string>
     <string name="notification_row_transparency_summary">Nastavit v QS průsvitné pozadí oznámení</string>
     <string name="notification_row_transparency_lockscreen_title">Průsvitná oznámení na obrazovce uzamčení</string>
     <string name="notification_row_transparency_lockscreen_summary">Nastavit na obrazovce uzamčení průsvitné pozadí oznámení</string>
     <!-- Ambient Wallpaper -->
-    <string name="doze_always_on_wallpaper_title">Ambient wallpaper</string>
-    <string name="doze_always_on_wallpaper_summary">Show lockscreen wallpaper on Ambient Display</string>
+    <string name="doze_always_on_wallpaper_title">Pozadí Ambientní obrazovky</string>
+    <string name="doze_always_on_wallpaper_summary">Zobrazí na Ambientní obrazovce pozadí obrazovky uzamčení</string>
     <!-- Squiggle animation for media notification -->
-    <string name="media_squiggle_animation_title">Squiggle animation</string>
-    <string name="media_squiggle_animation_summary">Show seekbar squiggle animation in media panel when playing media</string>
+    <string name="media_squiggle_animation_title">Animace zvlnění</string>
+    <string name="media_squiggle_animation_summary">Zobrazit na vyhledávacím panelu na panelu médií během přehrávání animaci zvlnění</string>
     <!-- Vbmeta hash attestation -->
     <string name="vbmeta_attestation_title">Automaticky opravit detekci VBMeta</string>
     <string name="vbmeta_attestation_summary">Provést ověření klíče pro generování ověřeného boot hashe při spuštění. Vyžaduje restart systému.</string>
