@@ -146,10 +146,10 @@ public class StatusbarIcons extends SettingsPreferenceFragment {
                 if (!pkg.equals(mSelectedPkg)) {
                     String oldPkg = mSelectedPkg;
                     mSelectedPkg = pkg;
+                    mThemeUtils.setOverlayEnabled(mCategory, oldPkg, oldPkg);
                     applyOverlays(pkg);
-                    updateActivatedStatus(oldPkg);
-                    updateActivatedStatus(mSelectedPkg);
                 }
+                updateActivatedStatus();
             });
         }
 
@@ -176,11 +176,8 @@ public class StatusbarIcons extends SettingsPreferenceFragment {
             return mPkgs.size();
         }
 
-        private void updateActivatedStatus(String pkg) {
-            int index = mPkgs.indexOf(pkg);
-            if (index >= 0) {
-                notifyItemChanged(index);
-            }
+        private void updateActivatedStatus() {
+            notifyDataSetChanged();
         }
 
         public static class CustomViewHolder extends RecyclerView.ViewHolder {

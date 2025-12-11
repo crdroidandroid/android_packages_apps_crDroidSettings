@@ -144,7 +144,9 @@ public class IconShapes extends SettingsPreferenceFragment {
             holder.itemView.setActivated(pkg.equals(mSelectedPkg));
             holder.itemView.setOnClickListener(view -> {
                 if (!pkg.equals(mSelectedPkg)) {
+                    String oldPkg = mSelectedPkg;
                     mSelectedPkg = pkg;
+                    mThemeUtils.setOverlayEnabled(mCategory, oldPkg, oldPkg);
                     mThemeUtils.setOverlayEnabled(mCategory, pkg, "android");
                 }
                 updateActivatedStatus();

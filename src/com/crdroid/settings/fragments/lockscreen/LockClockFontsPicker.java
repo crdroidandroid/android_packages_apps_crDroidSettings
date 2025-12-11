@@ -140,13 +140,16 @@ public class LockClockFontsPicker extends SettingsPreferenceFragment {
 
             holder.itemView.setActivated(pkg.equals(mSelectedPkg));
             holder.itemView.setOnClickListener(view -> {
-                updateActivatedStatus(mSelectedPkg, false);
-                updateActivatedStatus(pkg, true);
+                boolean updated = false;
                 if (!pkg.equals(mSelectedPkg)) {
+                    String oldPkg = mSelectedPkg;
                     mSelectedPkg = pkg;
+                    mThemeUtils.setOverlayEnabled(mCategory, oldPkg, oldPkg);
                     mThemeUtils.setOverlayEnabled(mCategory, mSelectedPkg, "android");
-                    SystemUtils.restartSystemUI(context);
+                    updated = true;
                 }
+                updateActivatedStatus();
+                if (updated) SystemUtils.showSystemUiRestartDialog(context);
             });
         }
 
@@ -166,13 +169,8 @@ public class LockClockFontsPicker extends SettingsPreferenceFragment {
             }
         }
 
-        private void updateActivatedStatus(String pkg, boolean isActivated) {
-            int index = mPkgs.indexOf(pkg);
-            if (index < 0) return;
-            RecyclerView.ViewHolder holder = mRecyclerView.findViewHolderForAdapterPosition(index);
-            if (holder != null && holder.itemView != null) {
-                holder.itemView.setActivated(isActivated);
-            }
+        private void updateActivatedStatus() {
+            notifyDataSetChanged();
         }
 
         private Typeface getTypeface(Context context, String pkg) {
