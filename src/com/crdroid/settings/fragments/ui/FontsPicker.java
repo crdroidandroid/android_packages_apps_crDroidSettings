@@ -35,9 +35,10 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
+import com.android.internal.util.crdroid.ThemeUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.util.crdroid.ThemeUtils;
+import com.crdroid.settings.utils.SystemUtils;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
@@ -134,13 +135,16 @@ public class FontsPicker extends SettingsPreferenceFragment {
             holder.itemView.setActivated(pkg.equals(mSelectedPkg));
 
             holder.itemView.setOnClickListener(view -> {
+                boolean updated = false;
                 if (!pkg.equals(mSelectedPkg)) {
                     String oldPkg = mSelectedPkg;
                     mSelectedPkg = pkg;
                     mThemeUtils.setOverlayEnabled(mCategory, oldPkg, oldPkg);
                     mThemeUtils.setOverlayEnabled(mCategory, pkg, "android");
+                    updated = true;
                 }
                 updateActivatedStatus();
+                if (updated) SystemUtils.restartSystemUI(context);
             });
         }
 
