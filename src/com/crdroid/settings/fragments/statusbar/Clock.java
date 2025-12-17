@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2024 crDroid Android Project
+ * Copyright (C) 2016-2025 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -208,12 +208,6 @@ public class Clock extends SettingsPreferenceFragment
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
 
-        Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_HDURATION, 60, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.STATUS_BAR_CLOCK_AUTO_HIDE_SDURATION, 5, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_CLOCK_DATE_DISPLAY, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
