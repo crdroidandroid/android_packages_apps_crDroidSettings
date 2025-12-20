@@ -101,7 +101,7 @@ public class Sound extends SettingsPreferenceFragment {
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.VOLUME_DIALOG_DISMISS_TIMEOUT, 3000, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
-                Settings.Secure.VOLUME_DIALOG_HAPTIC_FEEDBACK, 0, UserHandle.USER_CURRENT);
+                Settings.Secure.VOLUME_DIALOG_HAPTIC_FEEDBACK, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.VIBRATE_ON_CONNECT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
