@@ -40,9 +40,6 @@ import com.crdroid.settings.fragments.ui.DozeSettings;
 import com.crdroid.settings.fragments.ui.EdgeLightSettings;
 import com.crdroid.settings.fragments.ui.SmartPixels;
 import com.crdroid.settings.fragments.ui.MonetSettings;
-import com.crdroid.settings.utils.TelephonyUtils;
-
-import com.android.internal.util.crdroid.ThemeUtils;
 
 import java.util.List;
 
@@ -54,8 +51,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
     private static final String SMART_PIXELS = "smart_pixels";
-
-    private static final String KEY_SIGNAL_ICON = "android.theme.customization.signal_icon";
 
     private Preference mShowCutoutForce;
     private Preference mSmartPixels;
@@ -82,11 +77,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 com.android.internal.R.bool.config_supportSmartPixels);
         if (!mSmartPixelsSupported)
             prefScreen.removePreference(mSmartPixels);
-
-        boolean voiceCapable = TelephonyUtils.isVoiceCapable(mContext);
-        if (!voiceCapable) {
-            prefScreen.removePreference(prefScreen.findPreference(KEY_SIGNAL_ICON));
-        }
     }
 
     @Override
@@ -137,11 +127,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
                             com.android.internal.R.bool.config_supportSmartPixels);
                     if (!mSmartPixelsSupported)
                         keys.add(SMART_PIXELS);
-
-                    boolean voiceCapable = TelephonyUtils.isVoiceCapable(context);
-                    if (!voiceCapable) {
-                        keys.add(KEY_SIGNAL_ICON);
-                    }
 
                     return keys;
                 }
