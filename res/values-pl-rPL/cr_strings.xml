@@ -360,14 +360,8 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="status_bar_clock_position_right">Prawo</string>
     <string name="status_bar_clock_position_left">Lewo</string>
     <string name="status_bar_clock_position_center">Wyśrodkuj</string>
-    <string name="status_bar_clock_position_hidden">Ukryty</string>
     <string name="status_bar_clock_auto_hide_title">Automatyczne ukrywanie</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">Ukrywaj zegar, jeśli widoczny jest launcher</string>
-    <string name="status_bar_clock_auto_hide_summary">Ukrywaj zegar w regularnych odstępach czasu</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Długość ukrywania</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Liczba sekund do ukrycia zegara</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Długość wyświetlania</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Ilość sekund, zanim zegar zostanie ukryty</string>
+    <string name="status_bar_clock_auto_hide_summary">Ukryjwaj zegar, jeśli widoczny jest launcher</string>
     <string name="status_bar_am_pm_title">Format 12-godzinny</string>
     <string name="status_bar_am_pm_info">24-godzinny zegar jest aktywny</string>
     <string name="status_bar_am_pm_normal">Normalny</string>
@@ -388,7 +382,6 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="clock_date_position">Położenie daty</string>
     <string name="clock_date_right">Po prawej stronie zegara</string>
     <string name="clock_date_left">Po lewej stronie zegara</string>
-    <string name="clock_font_size_title">Rozmiar czcionki zegara</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Styl ikony baterii</string>
     <string name="status_bar_battery_style_icon_portrait">Ikona pionowa</string>
@@ -402,6 +395,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="status_bar_battery_percent_title">Procent baterii</string>
     <string name="status_bar_battery_percent_hidden">Ukryty</string>
     <string name="status_bar_battery_percent_text_inside">Wewnątrz ikony</string>
+    <string name="status_bar_battery_percent_text_next">Obok ikony</string>
     <string name="status_bar_battery_percent_text_next_right">Poza ikoną (po prawej)</string>
     <string name="status_bar_battery_percent_text_next_left">Poza ikoną (po lewej)</string>
     <string name="status_bar_battery_text_charging_title">Poziom baterii w trakcie ładowania</string>
@@ -996,13 +990,6 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="qs_header_offset_title">Przesunięcie obrazu nagłówka</string>
     <string name="qs_header_offset_summary">Dostosuj rozmiar obrazu nagłówka</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">Poziomy głośności</string>
-    <string name="volume_steps_summary">Regulacja poziomu głośności poszczególnych źródeł dźwięku</string>
-    <string name="max_music_volume_title">Multimedia</string>
-    <string name="max_call_volume_title">Połączenia</string>
-    <string name="max_alarm_volume_title">Alarmy</string>
-    <string name="steps_unit">kroków</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Harmonogram ekranu</string>
     <string name="always_on_display_schedule_summary">Ustaw harmonogram dla ekranu zawsze włączonego</string>
@@ -1165,4 +1152,8 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <!-- Vbmeta hash attestation -->
     <string name="vbmeta_attestation_title">Automatyczna naprawa wykrywania VBMeta</string>
     <string name="vbmeta_attestation_summary">Wykonaj uwierzytelnianie klucza, aby wygenerować zweryfikowany skrót rozruchowy podczas uruchamiania. Wymaga ponownego uruchomienia systemu.</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Nie weryfikuj</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">Nie określono certyfikatu. Twoje połączenie nie będzie prywatne.</string>
 </resources>

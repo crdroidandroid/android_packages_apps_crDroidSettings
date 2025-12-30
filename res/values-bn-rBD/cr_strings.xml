@@ -358,14 +358,8 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="status_bar_clock_position_right">ডানে</string>
     <string name="status_bar_clock_position_left">বামে</string>
     <string name="status_bar_clock_position_center">মাঝামাঝি</string>
-    <string name="status_bar_clock_position_hidden">লুকায়িত</string>
     <string name="status_bar_clock_auto_hide_title">স্বয়ংক্রিয় লুকাবে</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">লঞ্চার দৃশ্যমান হলে ঘড়ি লুকাবে</string>
-    <string name="status_bar_clock_auto_hide_summary">কিছুক্ষণ পরপর ঘড়ি আড়াল করুন</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">সময়কাল লুকিয়ে রাখুন</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">ঘড়ি লুকানোর জন্য সেকেন্ডের সংখ্যা</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">সময়কাল প্রদর্শন করুন</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">ঘড়ি লুকানোর আগে অপেক্ষা করার জন্য সেকেন্ডের সংখ্যা</string>
+    <string name="status_bar_clock_auto_hide_summary">লঞ্চার দৃশ্যমান হলে ঘড়ি লুকাবে</string>
     <string name="status_bar_am_pm_title">পূর্বাহ্ণ/অপরাহ্ণের স্টাইল</string>
     <string name="status_bar_am_pm_info">২৪ ঘন্টার ঘড়ি সক্রিয় করা হয়েছে</string>
     <string name="status_bar_am_pm_normal">সাধারণ</string>
@@ -386,7 +380,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="clock_date_position">তারিখের অবস্থান</string>
     <string name="clock_date_right">সময়ের ডানে</string>
     <string name="clock_date_left">সময়ের বামে</string>
-    <string name="clock_font_size_title">ঘড়ির লেখার সাইজ</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">ব্যাটারি স্টাইল</string>
     <string name="status_bar_battery_style_icon_portrait">আইকন পোট্রেট</string>
@@ -400,6 +393,7 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="status_bar_battery_percent_title">ব্যাটারি পার্সেন্টেজ</string>
     <string name="status_bar_battery_percent_hidden">লুকানো</string>
     <string name="status_bar_battery_percent_text_inside">আইকনের ভিতরে</string>
+    <string name="status_bar_battery_percent_text_next">Next to the icon</string>
     <string name="status_bar_battery_percent_text_next_right">আইকনের পাশে (ডান দিকে)</string>
     <string name="status_bar_battery_percent_text_next_left">আইকনের পাশে (বাম দিকে)</string>
     <string name="status_bar_battery_text_charging_title">চার্জ করার সময় ব্যাটারির শতাংশ</string>
@@ -990,13 +984,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="qs_header_offset_title">Header image offset</string>
     <string name="qs_header_offset_summary">Adjust the image header size</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">Volume Steps</string>
-    <string name="volume_steps_summary">Control the granularity of each stream</string>
-    <string name="max_music_volume_title">মিডিয়া</string>
-    <string name="max_call_volume_title">কল সমূহ</string>
-    <string name="max_alarm_volume_title">Alarms</string>
-    <string name="steps_unit">steps</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Display schedule</string>
     <string name="always_on_display_schedule_summary">Set schedule for always on display</string>
@@ -1159,4 +1146,8 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- Vbmeta hash attestation -->
     <string name="vbmeta_attestation_title">Autofix VBMeta detection</string>
     <string name="vbmeta_attestation_summary">Perform key attestation to generate verified boot hash on boot. Requires system restart.</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Do not validate</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
 </resources>

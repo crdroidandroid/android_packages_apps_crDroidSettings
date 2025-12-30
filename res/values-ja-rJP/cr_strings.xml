@@ -358,14 +358,8 @@
     <string name="status_bar_clock_position_right">右</string>
     <string name="status_bar_clock_position_left">左</string>
     <string name="status_bar_clock_position_center">中央</string>
-    <string name="status_bar_clock_position_hidden">非表示</string>
     <string name="status_bar_clock_auto_hide_title">自動的に隠す</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">ホームアプリを表示しているときは時計を隠します</string>
-    <string name="status_bar_clock_auto_hide_summary">一定間隔で時計を隠します</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">非表示にするまでの時間</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">時計を非表示にする秒数を指定します</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">表示する時間</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">時計を非表示にするまでの待ち時間を指定します</string>
+    <string name="status_bar_clock_auto_hide_summary">ホームアプリを表示しているときは時計を隠します</string>
     <string name="status_bar_am_pm_title">AM / PM のスタイル</string>
     <string name="status_bar_am_pm_info">24時間表示が有効です</string>
     <string name="status_bar_am_pm_normal">標準</string>
@@ -386,7 +380,6 @@
     <string name="clock_date_position">日付の位置</string>
     <string name="clock_date_right">時刻の右</string>
     <string name="clock_date_left">時刻の左</string>
-    <string name="clock_font_size_title">時計のフォントサイズ</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">バッテリースタイル</string>
     <string name="status_bar_battery_style_icon_portrait">縦向きのアイコン</string>
@@ -400,6 +393,7 @@
     <string name="status_bar_battery_percent_title">バッテリーパーセント表示</string>
     <string name="status_bar_battery_percent_hidden">非表示</string>
     <string name="status_bar_battery_percent_text_inside">アイコンの内側</string>
+    <string name="status_bar_battery_percent_text_next">アイコンの隣</string>
     <string name="status_bar_battery_percent_text_next_right">アイコンの隣（右）</string>
     <string name="status_bar_battery_percent_text_next_left">アイコンの隣（左）</string>
     <string name="status_bar_battery_text_charging_title">充電中のバッテリーパーセント</string>
@@ -988,13 +982,6 @@
     <string name="qs_header_offset_title">ヘッダー画像オフセット</string>
     <string name="qs_header_offset_summary">ヘッダー画像のサイズを調整します</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">音量の段階</string>
-    <string name="volume_steps_summary">各ストリームの音量段階数を変更します</string>
-    <string name="max_music_volume_title">メディア</string>
-    <string name="max_call_volume_title">通話</string>
-    <string name="max_alarm_volume_title">アラーム</string>
-    <string name="steps_unit">段階</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">表示スケジュール</string>
     <string name="always_on_display_schedule_summary">常時表示ディスプレイを指定した期間に有効化します</string>
@@ -1157,4 +1144,8 @@
     <!-- Vbmeta hash attestation -->
     <string name="vbmeta_attestation_title">Autofix VBMeta detection</string>
     <string name="vbmeta_attestation_summary">Perform key attestation to generate verified boot hash on boot. Requires system restart.</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Do not validate</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
 </resources>

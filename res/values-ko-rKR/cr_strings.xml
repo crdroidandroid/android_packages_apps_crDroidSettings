@@ -357,14 +357,8 @@
     <string name="status_bar_clock_position_right">오른쪽</string>
     <string name="status_bar_clock_position_left">왼쪽</string>
     <string name="status_bar_clock_position_center">가운데</string>
-    <string name="status_bar_clock_position_hidden">숨김</string>
     <string name="status_bar_clock_auto_hide_title">자동 숨김</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">홈 화면에 있을 때 시계 숨기기</string>
-    <string name="status_bar_clock_auto_hide_summary">일정 시간 뒤에 시계 숨기기</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">시간 제한</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">시계를 숨기기까지 기다릴 시간 설정</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">표시 기간</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">시계를 숨기기 전에 기다릴 시간 설정</string>
+    <string name="status_bar_clock_auto_hide_summary">홈 화면에 있을 때 시계 숨기기</string>
     <string name="status_bar_am_pm_title">오전/오후 스타일</string>
     <string name="status_bar_am_pm_info">24시간 형식 사용 중</string>
     <string name="status_bar_am_pm_normal">기본</string>
@@ -385,7 +379,6 @@
     <string name="clock_date_position">날짜 위치</string>
     <string name="clock_date_right">시간 오른편</string>
     <string name="clock_date_left">시간 왼편</string>
-    <string name="clock_font_size_title">시계 글꼴 크기</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">배터리 스타일</string>
     <string name="status_bar_battery_style_icon_portrait">세로 아이콘</string>
@@ -399,6 +392,7 @@
     <string name="status_bar_battery_percent_title">배터리 백분율</string>
     <string name="status_bar_battery_percent_hidden">숨김</string>
     <string name="status_bar_battery_percent_text_inside">아이콘 안</string>
+    <string name="status_bar_battery_percent_text_next">Next to the icon</string>
     <string name="status_bar_battery_percent_text_next_right">아이콘 오른편</string>
     <string name="status_bar_battery_percent_text_next_left">아이콘 왼편</string>
     <string name="status_bar_battery_text_charging_title">충전 중일 때 표시</string>
@@ -987,13 +981,6 @@
     <string name="qs_header_offset_title">헤더 이미지 위치</string>
     <string name="qs_header_offset_summary">이미지 헤더 크기 조정</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">볼륨 조절 단계</string>
-    <string name="volume_steps_summary">각 볼륨을 총 몇 단계로 나누어 조절할 것인지 설정</string>
-    <string name="max_music_volume_title">미디어</string>
-    <string name="max_call_volume_title">통화</string>
-    <string name="max_alarm_volume_title">알람</string>
-    <string name="steps_unit">단계</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">표시 일정</string>
     <string name="always_on_display_schedule_summary">AOD를 사용할 일정 지정</string>
@@ -1156,4 +1143,8 @@
     <!-- Vbmeta hash attestation -->
     <string name="vbmeta_attestation_title">Autofix VBMeta detection</string>
     <string name="vbmeta_attestation_summary">Perform key attestation to generate verified boot hash on boot. Requires system restart.</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Do not validate</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
 </resources>

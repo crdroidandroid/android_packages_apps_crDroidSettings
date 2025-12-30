@@ -361,14 +361,8 @@
     <string name="status_bar_clock_position_right">Справа</string>
     <string name="status_bar_clock_position_left">Злева</string>
     <string name="status_bar_clock_position_center">Па цэнтры</string>
-    <string name="status_bar_clock_position_hidden">Схавана</string>
     <string name="status_bar_clock_auto_hide_title">Хаваць аўтаматычна</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">Схаваць гадзіннік, калі адкрыты працоўны стол</string>
-    <string name="status_bar_clock_auto_hide_summary">Хаваць гадзіны з рэгулярным інтэрвалам</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Працягласць утойвання</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Колькасць секунд да ўтойвання гадзін</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Працягласць адлюстравання</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Колькасць секунд чакання да ўтойвання гадзін</string>
+    <string name="status_bar_clock_auto_hide_summary">Схаваць гадзіннік, калі адкрыты працоўны стол</string>
     <string name="status_bar_am_pm_title">Варыянт \"AM/PM\"</string>
     <string name="status_bar_am_pm_info">24-гадзінны фармат часу</string>
     <string name="status_bar_am_pm_normal">Звычайны</string>
@@ -389,7 +383,6 @@
     <string name="clock_date_position">Размяшчэнне даты</string>
     <string name="clock_date_right">Справа ад гадзінніка</string>
     <string name="clock_date_left">Злева ад гадзінніка</string>
-    <string name="clock_font_size_title">Памер шрыфта гадзінніка</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Стыль батарэі</string>
     <string name="status_bar_battery_style_icon_portrait">Вертыкальны значок</string>
@@ -403,6 +396,7 @@
     <string name="status_bar_battery_percent_title">Працэнт зарада батарэі</string>
     <string name="status_bar_battery_percent_hidden">Схаваны</string>
     <string name="status_bar_battery_percent_text_inside">Унутры значка</string>
+    <string name="status_bar_battery_percent_text_next">Next to the icon</string>
     <string name="status_bar_battery_percent_text_next_right">Побач са значком (справа)</string>
     <string name="status_bar_battery_percent_text_next_left">Побач са значком (злева)</string>
     <string name="status_bar_battery_text_charging_title">Працэнт зарада акумулятара падчас зарадкі</string>
@@ -998,13 +992,6 @@
     <string name="qs_header_offset_title">Вышыня выявы</string>
     <string name="qs_header_offset_summary">Змяніць вышыню выявы загалоўка</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">Узроўні гучнасці</string>
-    <string name="volume_steps_summary">Кантралюйце дэталізацыю кожнага патоку</string>
-    <string name="max_music_volume_title">Медыя</string>
-    <string name="max_call_volume_title">Выклікі</string>
-    <string name="max_alarm_volume_title">Будзільнікі</string>
-    <string name="steps_unit">крокаў</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Расклад паказу</string>
     <string name="always_on_display_schedule_summary">Усталяваць расклад для пастаяннага адлюстравання</string>
@@ -1167,4 +1154,8 @@
     <!-- Vbmeta hash attestation -->
     <string name="vbmeta_attestation_title">Autofix VBMeta detection</string>
     <string name="vbmeta_attestation_summary">Perform key attestation to generate verified boot hash on boot. Requires system restart.</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Do not validate</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
 </resources>
