@@ -360,14 +360,8 @@
     <string name="status_bar_clock_position_right">Справа</string>
     <string name="status_bar_clock_position_left">Слева</string>
     <string name="status_bar_clock_position_center">По центру</string>
-    <string name="status_bar_clock_position_hidden">Не показывать</string>
     <string name="status_bar_clock_auto_hide_title">Автоскрытие</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">Скрывать часы, если открыт рабочий стол</string>
-    <string name="status_bar_clock_auto_hide_summary">Скрывать часы через регулярные промежутки времени</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Длительность скрытия</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Количество секунд, в течение которых часы будут скрыты</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Длительность отображения</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Количество секунд до скрытия часов</string>
+    <string name="status_bar_clock_auto_hide_summary">Скрывать часы, если открыт рабочий стол</string>
     <string name="status_bar_am_pm_title">Стиль AM/PM</string>
     <string name="status_bar_am_pm_info">24-часовой формат включен</string>
     <string name="status_bar_am_pm_normal">Обычный</string>
@@ -388,7 +382,6 @@
     <string name="clock_date_position">Расположение даты</string>
     <string name="clock_date_right">Справа от часов</string>
     <string name="clock_date_left">Слева от часов</string>
-    <string name="clock_font_size_title">Размер шрифта часов</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Вид батареи</string>
     <string name="status_bar_battery_style_icon_portrait">Вертикальный значок</string>
@@ -402,6 +395,7 @@
     <string name="status_bar_battery_percent_title">Процент заряда батареи</string>
     <string name="status_bar_battery_percent_hidden">Скрыт</string>
     <string name="status_bar_battery_percent_text_inside">Внутри значка</string>
+    <string name="status_bar_battery_percent_text_next">Рядом со значком</string>
     <string name="status_bar_battery_percent_text_next_right">Рядом со значком (справа)</string>
     <string name="status_bar_battery_percent_text_next_left">Рядом со значком (слева)</string>
     <string name="status_bar_battery_text_charging_title">Процент заряда батареи при зарядке</string>
@@ -996,13 +990,6 @@
     <string name="qs_header_offset_title">Смещение изображения</string>
     <string name="qs_header_offset_summary">Изменение высоты изображения заголовка</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">Ступени громкости</string>
-    <string name="volume_steps_summary">Контролируйте степень детализации каждого потока</string>
-    <string name="max_music_volume_title">Медиа</string>
-    <string name="max_call_volume_title">Вызовы</string>
-    <string name="max_alarm_volume_title">Будильники</string>
-    <string name="steps_unit">шагов</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Расписание отображения</string>
     <string name="always_on_display_schedule_summary">Расписание всегда включенного экрана</string>
@@ -1069,7 +1056,7 @@
     <string name="systemui_restart_message">Чтобы изменения вступили в силу, требуется перезагрузка интерфейса. Сделать это сейчас?</string>
     <string name="systemui_restart_yes">Да</string>
     <string name="systemui_restart_not_now">Не сейчас</string>
-    <string name="systemui_restart_process">Перезапустите интерфейс для применения изменений...</string>
+    <string name="systemui_restart_process">Перезапуск интерфейса, для применения изменений...</string>
     <!-- Notification / Power Menu Styles -->
     <string name="notification_style_title">Стиль уведомления</string>
     <string name="powermenu_style_title">Стиль меню питания</string>
@@ -1165,4 +1152,8 @@
     <!-- Vbmeta hash attestation -->
     <string name="vbmeta_attestation_title">Автоисправление обнаружения VBMeta</string>
     <string name="vbmeta_attestation_summary">Выполните проверку ключа, чтобы сгенерировать подтверждённый загрузочный хэш. Требуется перезагрузка системы.</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Не проверять</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">Сертификат не указан. Ваше соединение не будет защищено.</string>
 </resources>

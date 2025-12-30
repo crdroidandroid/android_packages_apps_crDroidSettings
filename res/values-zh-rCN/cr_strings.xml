@@ -357,14 +357,8 @@
     <string name="status_bar_clock_position_right">右侧</string>
     <string name="status_bar_clock_position_left">左侧</string>
     <string name="status_bar_clock_position_center">居中</string>
-    <string name="status_bar_clock_position_hidden">隐藏</string>
     <string name="status_bar_clock_auto_hide_title">自动隐藏</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">如果启动器可见，则隐藏时钟</string>
-    <string name="status_bar_clock_auto_hide_summary">定期隐藏时钟</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">隐藏持续时间</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">隐藏时钟的秒数</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">显示持续时间</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">隐藏时钟前等待的秒数</string>
+    <string name="status_bar_clock_auto_hide_summary">如果启动器可见，则隐藏时钟</string>
     <string name="status_bar_am_pm_title">上午/下午样式</string>
     <string name="status_bar_am_pm_info">启用 24 小时制</string>
     <string name="status_bar_am_pm_normal">正常</string>
@@ -385,7 +379,6 @@
     <string name="clock_date_position">日期位置</string>
     <string name="clock_date_right">位于时间右侧</string>
     <string name="clock_date_left">位于时间左侧</string>
-    <string name="clock_font_size_title">时钟字体大小</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">电池样式</string>
     <string name="status_bar_battery_style_icon_portrait">纵向图标</string>
@@ -399,6 +392,7 @@
     <string name="status_bar_battery_percent_title">电量百分比</string>
     <string name="status_bar_battery_percent_hidden">隐藏</string>
     <string name="status_bar_battery_percent_text_inside">图标内</string>
+    <string name="status_bar_battery_percent_text_next">图标旁</string>
     <string name="status_bar_battery_percent_text_next_right">图标右侧</string>
     <string name="status_bar_battery_percent_text_next_left">图标左侧</string>
     <string name="status_bar_battery_text_charging_title">充电时电池百分比</string>
@@ -989,13 +983,6 @@
     <string name="qs_header_offset_title">标题图片偏移</string>
     <string name="qs_header_offset_summary">调整标题图片大小</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">音量等级</string>
-    <string name="volume_steps_summary">控制每个音量条的精度</string>
-    <string name="max_music_volume_title">媒体</string>
-    <string name="max_call_volume_title">电话</string>
-    <string name="max_alarm_volume_title">闹钟</string>
-    <string name="steps_unit">级别</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">显示时间</string>
     <string name="always_on_display_schedule_summary">设置始终显示的时间</string>
@@ -1142,7 +1129,7 @@
     <string name="pulse_renderer_neon_glow">霓虹灯</string>
     <string name="pulse_renderer_retro_vu_meter">音量调节器</string>
     <string name="pulse_renderer_minimal_wave">最小波浪</string>
-    <string name="pulse_renderer_sparkle">闪耀</string>
+    <string name="pulse_renderer_sparkle">闪烁</string>
     <string name="pulse_renderer_matrix">矩阵</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">半透明通知</string>
@@ -1158,4 +1145,8 @@
     <!-- Vbmeta hash attestation -->
     <string name="vbmeta_attestation_title">自动修复 VBMeta 检测</string>
     <string name="vbmeta_attestation_summary">执行密钥验证以在启动时生成验证的启动哈希。需要重启系统。</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">不验证</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">未指定证书。您的连接将不是私密的。</string>
 </resources>

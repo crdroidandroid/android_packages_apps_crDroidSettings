@@ -358,14 +358,8 @@
     <string name="status_bar_clock_position_right">Отдясно</string>
     <string name="status_bar_clock_position_left">Отляво</string>
     <string name="status_bar_clock_position_center">В средата</string>
-    <string name="status_bar_clock_position_hidden">Скрит</string>
     <string name="status_bar_clock_auto_hide_title">Автоматично скриване</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">Скриване на часовника, ако стартерът е видим</string>
-    <string name="status_bar_clock_auto_hide_summary">Скриване на часовника на редовни интервали</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Скриване на продължителността</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Брой секунди за скриване на часовника</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Показване на продължителност</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Брой секунди за изчакване, преди да скриете часовника</string>
+    <string name="status_bar_clock_auto_hide_summary">Скриване на часовника, ако стартерът е видим</string>
     <string name="status_bar_am_pm_title">AM/PM стил</string>
     <string name="status_bar_am_pm_info">Включен 24-часов формат за време</string>
     <string name="status_bar_am_pm_normal">Нормален</string>
@@ -386,7 +380,6 @@
     <string name="clock_date_position">Позиция на датата</string>
     <string name="clock_date_right">Вдясно от часовника</string>
     <string name="clock_date_left">Вляво от часовника</string>
-    <string name="clock_font_size_title">时钟字体大小</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Стил на индикатора за батерията</string>
     <string name="status_bar_battery_style_icon_portrait">Вертикална икона</string>
@@ -400,6 +393,7 @@
     <string name="status_bar_battery_percent_title">Процент на батерията</string>
     <string name="status_bar_battery_percent_hidden">Скрит</string>
     <string name="status_bar_battery_percent_text_inside">Вътре в иконата</string>
+    <string name="status_bar_battery_percent_text_next">Next to the icon</string>
     <string name="status_bar_battery_percent_text_next_right">До иконата (вдясно)</string>
     <string name="status_bar_battery_percent_text_next_left">До иконата (вляво)</string>
     <string name="status_bar_battery_text_charging_title">Процент на батерията при зареждане</string>
@@ -990,13 +984,6 @@
     <string name="qs_header_offset_title">Отместване на  header изображение</string>
     <string name="qs_header_offset_summary">Регулиране, размера на header фон</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">Звукови стъпки</string>
-    <string name="volume_steps_summary">Control the granularity of each stream</string>
-    <string name="max_music_volume_title">Медия</string>
-    <string name="max_call_volume_title">Обаждания</string>
-    <string name="max_alarm_volume_title">Будилници</string>
-    <string name="steps_unit">стъпки</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Покажи график</string>
     <string name="always_on_display_schedule_summary">Задай график за постоянно показване</string>
@@ -1159,4 +1146,8 @@
     <!-- Vbmeta hash attestation -->
     <string name="vbmeta_attestation_title">Autofix VBMeta detection</string>
     <string name="vbmeta_attestation_summary">Perform key attestation to generate verified boot hash on boot. Requires system restart.</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Do not validate</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
 </resources>

@@ -358,14 +358,8 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="status_bar_clock_position_right">Højre</string>
     <string name="status_bar_clock_position_left">Venstre</string>
     <string name="status_bar_clock_position_center">Center</string>
-    <string name="status_bar_clock_position_hidden">Skjult</string>
     <string name="status_bar_clock_auto_hide_title">Auto-skjul</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">Hide clock if launcher is visible</string>
-    <string name="status_bar_clock_auto_hide_summary">Hide clock at regular interval</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Skjul varighed</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Antal sekunder at skjule uret</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Visningsvarighed</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Antal sekunder at vente før uret skjules</string>
+    <string name="status_bar_clock_auto_hide_summary">Hide clock if launcher is visible</string>
     <string name="status_bar_am_pm_title">AM/PM stil</string>
     <string name="status_bar_am_pm_info">24-timers ur er aktiveret</string>
     <string name="status_bar_am_pm_normal">Normal</string>
@@ -386,7 +380,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="clock_date_position">Datoposition</string>
     <string name="clock_date_right">Til højre for klokkeslæt</string>
     <string name="clock_date_left">Til venstre for klokkeslæ</string>
-    <string name="clock_font_size_title">Clock font size</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Batteristil</string>
     <string name="status_bar_battery_style_icon_portrait">Ikon, stående</string>
@@ -400,6 +393,7 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="status_bar_battery_percent_title">Batteriprocent</string>
     <string name="status_bar_battery_percent_hidden">Skjult</string>
     <string name="status_bar_battery_percent_text_inside">Inde i ikonet</string>
+    <string name="status_bar_battery_percent_text_next">Next to the icon</string>
     <string name="status_bar_battery_percent_text_next_right">Next to the icon (right)</string>
     <string name="status_bar_battery_percent_text_next_left">Next to the icon (left)</string>
     <string name="status_bar_battery_text_charging_title">Battery percentage when charging</string>
@@ -990,13 +984,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="qs_header_offset_title">Header image offset</string>
     <string name="qs_header_offset_summary">Adjust the image header size</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">Volume Steps</string>
-    <string name="volume_steps_summary">Control the granularity of each stream</string>
-    <string name="max_music_volume_title">Medier</string>
-    <string name="max_call_volume_title">Opkald</string>
-    <string name="max_alarm_volume_title">Alarms</string>
-    <string name="steps_unit">steps</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Display schedule</string>
     <string name="always_on_display_schedule_summary">Set schedule for always on display</string>
@@ -1159,4 +1146,8 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- Vbmeta hash attestation -->
     <string name="vbmeta_attestation_title">Autofix VBMeta detection</string>
     <string name="vbmeta_attestation_summary">Perform key attestation to generate verified boot hash on boot. Requires system restart.</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Do not validate</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
 </resources>

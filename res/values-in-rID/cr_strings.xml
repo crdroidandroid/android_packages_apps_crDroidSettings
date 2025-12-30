@@ -90,7 +90,7 @@
     <string name="crdroid_donate_message">crDroid Android adalah proyek sumber terbuka yang membutuhkan bantuan Anda untuk menjaga situs web tetap online, server build kami tetap berjalan, dan menyediakan build berkualitas tinggi untuk perangkat Anda.\n\n
 Donasi kecil akan membantu proyek ini tetap berjalan dan berkembang. Anda dapat mengabaikan pesan ini, tetapi dukungan Anda sangat berarti bagi kami.</string>
     <string name="crdroid_donate_button">Donasi sekarang</string>
-    <string name="crdroid_later_button">Maybe next month</string>
+    <string name="crdroid_later_button">Mungkin bulan depan</string>
     <string name="crdroid_channel_name">Pemberitahuan crDroid</string>
     <string name="crdroid_channel_desc">Pemberitahuan khusus proyek</string>
     <string name="crdroid_donate_still_needed">Kami masih membutuhkan €%,d bulan ini. Bantu kami mencapai target.</string>
@@ -278,8 +278,8 @@ Donasi kecil akan membantu proyek ini tetap berjalan dan berkembang. Anda dapat 
     <string name="edge_light_title">Cahaya Tepi</string>
     <string name="edge_light_summary">Menambahkan pencahayaan sisi samping dari layar di denyut pemberitahuan</string>
     <string name="edge_light_color_mode_title">Mode warna</string>
-    <string name="edge_light_pulse_count_title">Pulse count</string>
-    <string name="edge_light_pulse_count_summary">Number of pulses for edge light</string>
+    <string name="edge_light_pulse_count_title">Hitungan detakan</string>
+    <string name="edge_light_pulse_count_summary">Berapa kali detakan untuk cahaya tepi</string>
     <string name="edge_light_stroke_width_title">Tebal garis</string>
     <string name="edge_light_stroke_width_summary">Atur ketebalan untuk bilah cahaya tepi</string>
     <string name="edge_light_style_title">Gaya render</string>
@@ -357,14 +357,8 @@ Donasi kecil akan membantu proyek ini tetap berjalan dan berkembang. Anda dapat 
     <string name="status_bar_clock_position_right">Kanan</string>
     <string name="status_bar_clock_position_left">Kiri</string>
     <string name="status_bar_clock_position_center">Tengah</string>
-    <string name="status_bar_clock_position_hidden">Tersembunyi</string>
     <string name="status_bar_clock_auto_hide_title">Sembunyikan otomatis</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">Sembunyikan jam jika peluncur terlihat</string>
-    <string name="status_bar_clock_auto_hide_summary">Sembunyikan jam secara berkala</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Sembunyikan durasi</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Jumlah detik untuk menyembunyikan jam</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Tampilkan durasi</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Jumlah detik untuk menunggu sebelum menyembunyikan jam</string>
+    <string name="status_bar_clock_auto_hide_summary">Sembunyikan jam jika peluncur terlihat</string>
     <string name="status_bar_am_pm_title">Gaya AM/PM</string>
     <string name="status_bar_am_pm_info">Waktu 24-jam diaktifkan</string>
     <string name="status_bar_am_pm_normal">Normal</string>
@@ -385,7 +379,6 @@ Donasi kecil akan membantu proyek ini tetap berjalan dan berkembang. Anda dapat 
     <string name="clock_date_position">Posisi tanggal</string>
     <string name="clock_date_right">Sebelah kanan jam</string>
     <string name="clock_date_left">Sebelah kiri jam</string>
-    <string name="clock_font_size_title">Ukuran font jam</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Gaya Baterai</string>
     <string name="status_bar_battery_style_icon_portrait">Ikon potret</string>
@@ -399,6 +392,7 @@ Donasi kecil akan membantu proyek ini tetap berjalan dan berkembang. Anda dapat 
     <string name="status_bar_battery_percent_title">Persentase baterai</string>
     <string name="status_bar_battery_percent_hidden">Tersembunyi</string>
     <string name="status_bar_battery_percent_text_inside">Di dalam ikon</string>
+    <string name="status_bar_battery_percent_text_next">Di samping ikon</string>
     <string name="status_bar_battery_percent_text_next_right">Di sebelah ikon (kanan)</string>
     <string name="status_bar_battery_percent_text_next_left">Di sebelah ikon (kiri)</string>
     <string name="status_bar_battery_text_charging_title">Persentase baterai saat pengisian</string>
@@ -524,7 +518,7 @@ Donasi kecil akan membantu proyek ini tetap berjalan dan berkembang. Anda dapat 
     <!-- Brightness slider / QS tile haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">Umpan balik haptik</string>
     <string name="qs_brightness_slider_haptic_summary">Berikan umpan balik haptik untuk mengubah kecerahan menggunakan slider</string>
-    <string name="qs_tile_haptic_summary">Provide haptic feedback on tapping QS tiles</string>
+    <string name="qs_tile_haptic_summary">Umpan balik haptik saat menekan ubin Setelan Cepat</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Ikon Kecerahan Otomatis</string>
     <string name="qs_show_auto_brightness_summary">Tampilkan tombol kecerahan otomatis di dekat slider kecerahan</string>
@@ -987,13 +981,6 @@ Donasi kecil akan membantu proyek ini tetap berjalan dan berkembang. Anda dapat 
     <string name="qs_header_offset_title">Offset gambar header</string>
     <string name="qs_header_offset_summary">Sesuaikan ukuran header gambar</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">Tingkat Volume</string>
-    <string name="volume_steps_summary">Kontrol granularitas setiap aliran</string>
-    <string name="max_music_volume_title">Media</string>
-    <string name="max_call_volume_title">Panggilan</string>
-    <string name="max_alarm_volume_title">Alarm</string>
-    <string name="steps_unit">langkah</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Jadwal tampilan</string>
     <string name="always_on_display_schedule_summary">Atur jadwal untuk always on display</string>
@@ -1095,8 +1082,8 @@ Beberapa layar mungkin tampak mati.</string>
     <!-- Brightness Slider Style -->
     <string name="qs_brightness_slider_shape_title">Bentuk penggeser kecerahan</string>
     <!-- Force LTE_CA -->
-    <string name="force_lte_ca_title">LTE carrier aggregation</string>
-    <string name="force_lte_ca_summary">Enhances LTE bandwidth by aggregating supported bands</string>
+    <string name="force_lte_ca_title">Agregasi operator LTE</string>
+    <string name="force_lte_ca_summary">Meningkatkan bandwidth LTE dengan menggabungkan pita frekuensi yang didukung</string>
     <!-- QS on lockscreen -->
     <string name="lockscreen_quick_settings_title">Setelan Cepat pada layar kunci</string>
     <string name="lockscreen_quick_settings_summary">Sembunyikan semua setelan cepat di bayangan notifikasi saat perangkat terkunci</string>
@@ -1126,14 +1113,14 @@ Beberapa layar mungkin tampak mati.</string>
     <string name="pulse_settings_summary">Equalizer grafis audio untuk bilah navigasi dan layar kunci</string>
     <string name="ambient_pulse_enabled_title">Visual Audio Layar Ambien</string>
     <string name="ambient_pulse_enabled_summary">Tampilkan visualisasi di Tampilan Ambient</string>
-    <string name="pulse_rounded_bars_title">Rounded bars</string>
-    <string name="pulse_rounded_bars_summary">Display visualizer bars with rounded corners</string>
-    <string name="pulse_color">Visualizer color</string>
-    <string name="pulse_color_lavalamp">Lavalamp</string>
-    <string name="pulse_color_album">Album art</string>
+    <string name="pulse_rounded_bars_title">Bar membulat</string>
+    <string name="pulse_rounded_bars_summary">Tampilkan bar visualisasi dengan sudut membulat</string>
+    <string name="pulse_color">Warna visualisasi</string>
+    <string name="pulse_color_lavalamp">Lampu lava</string>
+    <string name="pulse_color_album">Sampul album</string>
     <string name="pulse_color_accent">Aksen</string>
-    <string name="pulse_bar_count_title">Number of bars</string>
-    <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
+    <string name="pulse_bar_count_title">Jumlah bar</string>
+    <string name="pulse_bar_count_summary">Atur seberapa banyak bar yang tampil pada visualisasi</string>
     <string name="pulse_bar_count_units">bars</string>
     <string name="pulse_renderer">Gaya Visualisasi</string>
     <string name="pulse_renderer_solid">Garis padat</string>
@@ -1147,14 +1134,18 @@ Beberapa layar mungkin tampak mati.</string>
     <string name="notification_row_transparency_title">Notifikasi transparan</string>
     <string name="notification_row_transparency_summary">Tetapkan latar belakang transparan untuk notifikasi di Setelan Cepat</string>
     <string name="notification_row_transparency_lockscreen_title">Notifikasi layar kunci transparan</string>
-    <string name="notification_row_transparency_lockscreen_summary">Set translucent background for notifications in lockscreen</string>
+    <string name="notification_row_transparency_lockscreen_summary">Atur latar transparan untuk notifikasi di layar kunci</string>
     <!-- Ambient Wallpaper -->
-    <string name="doze_always_on_wallpaper_title">Ambient wallpaper</string>
-    <string name="doze_always_on_wallpaper_summary">Show lockscreen wallpaper on Ambient Display</string>
+    <string name="doze_always_on_wallpaper_title">Wallpaper ambient</string>
+    <string name="doze_always_on_wallpaper_summary">Tampilkan wallpaper layar kunci pada Tampilan Ambient</string>
     <!-- Squiggle animation for media notification -->
     <string name="media_squiggle_animation_title">Animasi coretan</string>
     <string name="media_squiggle_animation_summary">Tampilkan animasi coretan di panel media saat memutar media</string>
     <!-- Vbmeta hash attestation -->
     <string name="vbmeta_attestation_title">Deteksi VBMeta Perbaikan Otomatis</string>
     <string name="vbmeta_attestation_summary">Lakukan atestasi kunci untuk menghasilkan hash boot terverifikasi saat boot. Sistem perlu dimulai ulang.</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Jangan validasi</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">Tidak ada sertifikat yang ditentukan. Koneksi Anda tidak akan bersifat pribadi.</string>
 </resources>

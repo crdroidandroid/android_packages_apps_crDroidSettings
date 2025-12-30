@@ -360,14 +360,8 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="status_bar_clock_position_right">Desno</string>
     <string name="status_bar_clock_position_left">Levo</string>
     <string name="status_bar_clock_position_center">Na sredini</string>
-    <string name="status_bar_clock_position_hidden">Skrita</string>
     <string name="status_bar_clock_auto_hide_title">Samodejno skrij</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">Skrij uro, če je zaganjalnik viden</string>
-    <string name="status_bar_clock_auto_hide_summary">Skrij uro ob rednem časovnem razmiku</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Trajanje skritja</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Število sekund skritja ure</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Prikaži trajanje</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Število sekund čakanja pred skrivanjem ure</string>
+    <string name="status_bar_clock_auto_hide_summary">Skrij uro, če je zaganjalnik viden</string>
     <string name="status_bar_am_pm_title">Slog AM/PM</string>
     <string name="status_bar_am_pm_info">24-urni način je omogočen</string>
     <string name="status_bar_am_pm_normal">Običajni</string>
@@ -388,7 +382,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="clock_date_position">Položaj datuma</string>
     <string name="clock_date_right">Desno od ure</string>
     <string name="clock_date_left">Levo od ure</string>
-    <string name="clock_font_size_title">Velikost pisave ure</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Slog baterije</string>
     <string name="status_bar_battery_style_icon_portrait">Pokončna ikona</string>
@@ -402,6 +395,7 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="status_bar_battery_percent_title">Odstotek baterije</string>
     <string name="status_bar_battery_percent_hidden">Skrit</string>
     <string name="status_bar_battery_percent_text_inside">V ikoni</string>
+    <string name="status_bar_battery_percent_text_next">Poleg ikone</string>
     <string name="status_bar_battery_percent_text_next_right">Ob ikoni (desno)</string>
     <string name="status_bar_battery_percent_text_next_left">Ob ikoni (levo)</string>
     <string name="status_bar_battery_text_charging_title">Odstotek baterije med polnjenjem</string>
@@ -996,13 +990,6 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="qs_header_offset_title">Odmik glave slike</string>
     <string name="qs_header_offset_summary">Prilagodite velikost glave slike</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">Koraki glasnosti</string>
-    <string name="volume_steps_summary">Nadzorujte podrobnost vsakega toka</string>
-    <string name="max_music_volume_title">Medij</string>
-    <string name="max_call_volume_title">Klici</string>
-    <string name="max_alarm_volume_title">Budilke</string>
-    <string name="steps_unit">koraki</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Urnik prikaza</string>
     <string name="always_on_display_schedule_summary">Nastavite urnik za always on display</string>
@@ -1165,4 +1152,8 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- Vbmeta hash attestation -->
     <string name="vbmeta_attestation_title">Autofix VBMeta detection</string>
     <string name="vbmeta_attestation_summary">Perform key attestation to generate verified boot hash on boot. Requires system restart.</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Do not validate</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
 </resources>

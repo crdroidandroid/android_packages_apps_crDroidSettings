@@ -358,14 +358,8 @@ Una piccola donazione aiuta a mantenere vivo e a migliorare questo progetto. Puo
     <string name="status_bar_clock_position_right">Destra</string>
     <string name="status_bar_clock_position_left">Sinistra</string>
     <string name="status_bar_clock_position_center">Centrato</string>
-    <string name="status_bar_clock_position_hidden">Nascosto</string>
     <string name="status_bar_clock_auto_hide_title">Nascondi automaticamente</string>
-    <string name="status_bar_clock_auto_hide_launcher_summary">Nascondi l\'orologio se il launcher è visibile</string>
-    <string name="status_bar_clock_auto_hide_summary">Nascondi l\'orologio a intervalli regolari</string>
-    <string name="status_bar_clock_auto_hide_hdur_title">Durata scomparsa</string>
-    <string name="status_bar_clock_auto_hide_hdur_summary">Numero di secondi per nascondere l\'orologio</string>
-    <string name="status_bar_clock_auto_hide_sdur_title">Mostra durata</string>
-    <string name="status_bar_clock_auto_hide_sdur_summary">Numero di secondi di attesa prima di nascondere l\'orologio</string>
+    <string name="status_bar_clock_auto_hide_summary">Nascondi l\'orologio se il launcher è visibile</string>
     <string name="status_bar_am_pm_title">Stile AM/PM</string>
     <string name="status_bar_am_pm_info">Formato 24 ore abilitato</string>
     <string name="status_bar_am_pm_normal">Normale</string>
@@ -386,7 +380,6 @@ Una piccola donazione aiuta a mantenere vivo e a migliorare questo progetto. Puo
     <string name="clock_date_position">Posizione della data</string>
     <string name="clock_date_right">A destra dell\'ora</string>
     <string name="clock_date_left">A sinistra dell\'ora</string>
-    <string name="clock_font_size_title">Dimensione carattere orologio</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Stile batteria</string>
     <string name="status_bar_battery_style_icon_portrait">Icona verticale</string>
@@ -400,6 +393,7 @@ Una piccola donazione aiuta a mantenere vivo e a migliorare questo progetto. Puo
     <string name="status_bar_battery_percent_title">Percentuale batteria</string>
     <string name="status_bar_battery_percent_hidden">Nascosta</string>
     <string name="status_bar_battery_percent_text_inside">All\'interno dell\'icona</string>
+    <string name="status_bar_battery_percent_text_next">Next to the icon</string>
     <string name="status_bar_battery_percent_text_next_right">Accanto all\'icona (a destra)</string>
     <string name="status_bar_battery_percent_text_next_left">Accanto all\'icona (a sinistra)</string>
     <string name="status_bar_battery_text_charging_title">Percentuale batteria quando in carica</string>
@@ -991,13 +985,6 @@ Una piccola donazione aiuta a mantenere vivo e a migliorare questo progetto. Puo
     <string name="qs_header_offset_title">Spostamento immagine intestazione</string>
     <string name="qs_header_offset_summary">Regola la dimensione intestazione immagine</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
-    <!-- Volume Steps -->
-    <string name="volume_steps_title">Livelli Volume</string>
-    <string name="volume_steps_summary">Controllo della granularità di ogni flusso</string>
-    <string name="max_music_volume_title">Multimedia</string>
-    <string name="max_call_volume_title">Chiamate</string>
-    <string name="max_alarm_volume_title">Allarmi</string>
-    <string name="steps_unit">passi</string>
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Visualizzazione pianificazione</string>
     <string name="always_on_display_schedule_summary">Imposta la pianificazione per l\'always on display</string>
@@ -1160,4 +1147,8 @@ Una piccola donazione aiuta a mantenere vivo e a migliorare questo progetto. Puo
     <!-- Vbmeta hash attestation -->
     <string name="vbmeta_attestation_title">Autofix VBMeta detection</string>
     <string name="vbmeta_attestation_summary">Perform key attestation to generate verified boot hash on boot. Requires system restart.</string>
+    <!-- Menu option for not validating the EAP server -->
+    <string name="wifi_do_not_validate_eap_server">Do not validate</string>
+    <!-- Warning message displayed if user choses not to validate the EAP server -->
+    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
 </resources>
