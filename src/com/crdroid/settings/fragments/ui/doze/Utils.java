@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017-2023 crDroid Android Project
+ * Copyright (C) 2017-2026 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -75,7 +75,7 @@ public final class Utils {
     public static boolean isDozeEnabled(Context context) {
         return Settings.Secure.getIntForUser(context.getContentResolver(),
                 Settings.Secure.DOZE_ENABLED, context.getResources().getBoolean(
-                com.android.internal.R.bool.config_doze_enabled_by_default) ? 1 : 0,
+                com.android.internal.R.bool.config_dozeEnabled) ? 1 : 0,
                 UserHandle.USER_CURRENT) != 0;
     }
 
@@ -118,7 +118,9 @@ public final class Utils {
 
     public static boolean pickUpEnabled(Context context) {
         return Settings.Secure.getIntForUser(context.getContentResolver(),
-                Settings.Secure.DOZE_PICK_UP_GESTURE, 0, UserHandle.USER_CURRENT) == 1;
+                Settings.Secure.DOZE_PICK_UP_GESTURE, context.getResources().getBoolean(
+                com.android.internal.R.bool.config_dozePickupGestureEnabled) ? 1 : 0,
+                UserHandle.USER_CURRENT) == 1;
     }
 
     public static boolean handwaveGestureEnabled(Context context) {

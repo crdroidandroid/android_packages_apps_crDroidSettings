@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2025 crDroid Android Project
+ * Copyright (C) 2018-2026 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -93,15 +93,10 @@ public class DozeSettings extends SettingsPreferenceFragment implements
                 (PreferenceCategory) getPreferenceScreen().findPreference(CATEG_DOZE_SENSOR);
 
         mDozeEnabledPreference = (SwitchPreferenceCompat) findPreference(KEY_DOZE_ENABLED);
+        mDozeEnabledPreference.setChecked(Utils.isDozeEnabled(context));
+
         mDozeAlwaysOnPreference = (SwitchPreferenceCompat) findPreference(KEY_DOZE_ALWAYS_ON);
         mDozeAlwaysOnSchedulePreference = findPreference(KEY_DOZE_ALWAYS_ON_SCHEDULE);
-
-        boolean dozeEnabledDefault = context.getResources().getBoolean(
-                com.android.internal.R.bool.config_doze_enabled_by_default);
-        boolean dozeEnabled = Settings.Secure.getIntForUser(resolver,
-                Settings.Secure.DOZE_ENABLED,
-                dozeEnabledDefault ? 1 : 0, UserHandle.USER_CURRENT) != 0;
-        mDozeEnabledPreference.setChecked(dozeEnabled);
 
         mTiltPreference = (SwitchPreferenceCompat) findPreference(KEY_DOZE_TILT_GESTURE);
         mPickUpPreference = (SwitchPreferenceCompat) findPreference(KEY_DOZE_PICK_UP_GESTURE);
@@ -123,12 +118,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
             if (!Utils.getPickupSensor(context)) {
                 dozeSensorCategory.removePreference(mPickUpPreference);
             } else {
-                boolean pickupGestureDefault = context.getResources().getBoolean(
-                        com.android.internal.R.bool.config_dozePickupGestureEnabled);
-                boolean pickupGesture = Settings.Secure.getIntForUser(resolver,
-                        Settings.Secure.DOZE_PICK_UP_GESTURE,
-                        pickupGestureDefault ? 1 : 0, UserHandle.USER_CURRENT) != 0;
-                mPickUpPreference.setChecked(pickupGesture);
+                mPickUpPreference.setChecked(Utils.pickUpEnabled(context));
                 mPickUpPreference.setOnPreferenceChangeListener(this);
             }
             if (!Utils.getProximitySensor(context)) {
@@ -147,12 +137,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
             getPreferenceScreen().removePreference(mDozeAlwaysOnPreference);
             getPreferenceScreen().removePreference(mDozeAlwaysOnSchedulePreference);
         } else {
-            boolean dozeAlwaysOnDefault = context.getResources().getBoolean(
-                    com.android.internal.R.bool.config_dozeAlwaysOnEnabled);
-            boolean dozeAlwaysOn = Settings.Secure.getIntForUser(resolver,
-                    Settings.Secure.DOZE_ALWAYS_ON,
-                    dozeAlwaysOnDefault ? 1 : 0, UserHandle.USER_CURRENT) != 0;
-            mDozeAlwaysOnPreference.setChecked(dozeAlwaysOn);
+            mDozeAlwaysOnPreference.setChecked(Utils.isDozeAlwaysOnEnabled(context));
             mDozeAlwaysOnPreference.setOnPreferenceChangeListener(this);
         }
     }
@@ -249,7 +234,7 @@ public class DozeSettings extends SettingsPreferenceFragment implements
         ContentResolver resolver = mContext.getContentResolver();
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.DOZE_ENABLED, mContext.getResources().getBoolean(
-                com.android.internal.R.bool.config_doze_enabled_by_default) ? 1 : 0,
+                com.android.internal.R.bool.config_dozeEnabled) ? 1 : 0,
                 UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.DOZE_ALWAYS_ON, mContext.getResources().getBoolean(
