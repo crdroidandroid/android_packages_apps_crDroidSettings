@@ -17,6 +17,7 @@ package com.crdroid.settings.fragments.lockscreen;
 
 import android.content.Context;
 import android.content.ContentResolver;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.Settings;
@@ -61,10 +62,14 @@ public class PulseSettings extends SettingsPreferenceFragment {
                 Settings.Secure.PULSE_ROUNDED_BARS, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putStringForUser(resolver,
                 Settings.Secure.PULSE_COLOR, "lavalamp", UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PULSE_CUSTOM_COLOR, Color.WHITE, UserHandle.USER_CURRENT);
         Settings.Secure.putStringForUser(resolver,
                 Settings.Secure.PULSE_RENDERER, "solid", UserHandle.USER_CURRENT);
        Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.PULSE_BASS_HAPTICS, 0, UserHandle.USER_CURRENT);
+       Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.PULSE_HEIGHT_MULTIPLIER, 100, UserHandle.USER_CURRENT);
     }
 
     @Override
