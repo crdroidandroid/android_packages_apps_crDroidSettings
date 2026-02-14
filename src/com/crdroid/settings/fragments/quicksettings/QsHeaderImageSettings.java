@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 crDroid Android Project
+ * Copyright (C) 2024-2026 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package com.crdroid.settings.fragments.quicksettings;
 
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -27,6 +28,7 @@ import android.os.UserHandle;
 import android.provider.MediaStore;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.preference.ListPreference;
@@ -39,6 +41,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
 
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -55,6 +59,9 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String FILE_HEADER_SELECT = "file_header_select";
     private static final int REQUEST_PICK_IMAGE = 10001;
+
+    private static final String QSHEADER_RELATIVE_PATH = "Pictures/QSHeader";
+    private static final String QSHEADER_DISPLAY_NAME = "qs_header_image";
 
     private Preference mHeaderBrowse;
     private ListPreference mDaylightHeaderPack;
@@ -148,14 +155,18 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(Preference preference) {
         if (preference == mFileHeader) {
             try {
-                Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.addCategory(Intent.CATEGORY_OPENABLE);
                 intent.setType("image/*");
                 intent.putExtra(Intent.EXTRA_MIME_TYPES,
                         new String[]{"image/jpeg","image/png","image/gif","image/webp"});
+                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 startActivityForResult(intent, REQUEST_PICK_IMAGE);
                 return true;
             } catch (Exception e) {
-                Toast.makeText(getContext(), R.string.qs_header_needs_gallery, Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),
+                        R.string.qs_header_needs_gallery,
+                        Toast.LENGTH_LONG).show();
             }
         }
         return super.onPreferenceTreeClick(preference);
@@ -217,13 +228,81 @@ public class QsHeaderImageSettings extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent result) {
-        if (requestCode == REQUEST_PICK_IMAGE && resultCode == Activity.RESULT_OK) {
-            final Uri imageUri = result.getData();
-            if (imageUri != null) {
-                Settings.System.putString(getContentResolver(),
-                    Settings.System.STATUS_BAR_FILE_HEADER_IMAGE, imageUri.toString());
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode != REQUEST_PICK_IMAGE || resultCode != Activity.RESULT_OK
+                || data == null) return;
+
+        Uri inUri = data.getData();
+        if (inUri == null) return;
+
+        ContentResolver cr = getContext().getContentResolver();
+
+        deleteExistingHeaderImages(cr);
+
+        Uri outUri = createHeaderImage(cr, inUri);
+        if (outUri != null) {
+            Settings.System.putString(cr,
+                    Settings.System.STATUS_BAR_FILE_HEADER_IMAGE,
+                    outUri.toString());
+        }
+    }
+
+    private void deleteExistingHeaderImages(ContentResolver cr) {
+        final Uri collection = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+
+        final String selection =
+                MediaStore.MediaColumns.RELATIVE_PATH + "=? AND " +
+                MediaStore.MediaColumns.DISPLAY_NAME + " LIKE ?";
+        final String[] args = new String[] {
+                QSHEADER_RELATIVE_PATH + "/",
+                QSHEADER_DISPLAY_NAME + "%"
+        };
+
+        try {
+            cr.delete(collection, selection, args);
+        } catch (Exception ignored) {}
+    }
+
+    private Uri createHeaderImage(ContentResolver cr, Uri inUri) {
+        String mime = cr.getType(inUri);
+        if (mime == null) mime = "image/*";
+
+        ContentValues values = new ContentValues();
+        values.put(MediaStore.MediaColumns.DISPLAY_NAME, QSHEADER_DISPLAY_NAME);
+        values.put(MediaStore.MediaColumns.MIME_TYPE, mime);
+        values.put(MediaStore.MediaColumns.RELATIVE_PATH, QSHEADER_RELATIVE_PATH);
+        values.put(MediaStore.MediaColumns.IS_PENDING, 1);
+
+        Uri outUri = null;
+        try {
+            outUri = cr.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+            if (outUri == null) return null;
+
+            try (InputStream in = cr.openInputStream(inUri);
+                 OutputStream out = cr.openOutputStream(outUri, "wt")) {
+
+                if (in == null || out == null) return null;
+
+                byte[] buf = new byte[8192];
+                int len;
+                while ((len = in.read(buf)) > 0) {
+                    out.write(buf, 0, len);
+                }
+                out.flush();
             }
+
+            ContentValues done = new ContentValues();
+            done.put(MediaStore.MediaColumns.IS_PENDING, 0);
+            cr.update(outUri, done, null, null);
+
+            return outUri;
+        } catch (Exception e) {
+            if (outUri != null) {
+                try { cr.delete(outUri, null, null); } catch (Exception ignored) {}
+            }
+            return null;
         }
     }
 
