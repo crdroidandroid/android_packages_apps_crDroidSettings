@@ -157,6 +157,10 @@ public class Notifications extends SettingsPreferenceFragment implements
         Settings.Global.putInt(resolver,
                 Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED, 1);
         Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.NOTIFICATION_ROW_TRANSPARENCY, 1, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.NOTIFICATION_ROW_TRANSPARENCY_LOCKSCREEN, 1, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.MEDIA_SQUIGGLE_ANIMATION, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LESS_BORING_HEADS_UP, 0, UserHandle.USER_CURRENT);
