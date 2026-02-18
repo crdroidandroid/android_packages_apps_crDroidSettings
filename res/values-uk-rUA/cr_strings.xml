@@ -1165,17 +1165,19 @@
     <string name="search_region">Пошук регіонів</string>
     <string name="search_region_page">Пошук сторінки регіону</string>
     <!-- Data Usage Cycle -->
-    <string name="billing_cycle_type_title">Mobile data usage cycle type</string>
-    <string name="billing_cycle_type_monthly">Monthly</string>
-    <string name="billing_cycle_type_weekly">Weekly</string>
-    <string name="billing_cycle_type_daily">Daily</string>
-    <string name="billing_cycle_less_than_one_hour_left">Less than 1 hour left</string>
+    <string name="billing_cycle_type_title">Тип циклу використання мобільних даних</string>
+    <string name="billing_cycle_type_monthly">Місячний</string>
+    <string name="billing_cycle_type_weekly">Щотижневий</string>
+    <string name="billing_cycle_type_daily">Денний</string>
+    <string name="billing_cycle_less_than_one_hour_left">Залишилося менше 1 години</string>
     <string name="billing_cycle_hours_left">{count, plural,
-        =1      {# hour left}
-        other   {# hours left}
+        one {}
+        few {# годин залишилося}
+        many {# годин залишилося}=1      {Залишилося # годину}
+        other   {# годин залишилося}
         }</string>
-    <string name="cycle_type_weekly_title">Usage cycle reset day</string>
-    <string name="cycle_type_weekly_sub">Day of each week:\n1 = Monday</string>
-    <string name="cycle_type_daily_title">Usage cycle reset hour</string>
-    <string name="cycle_type_daily_sub">Hour of each day:</string>
+    <string name="cycle_type_weekly_title">День скидання циклу використання</string>
+    <string name="cycle_type_weekly_sub">День кожного тижня:\n1 = Понеділок</string>
+    <string name="cycle_type_daily_title">Година скидання циклу використання</string>
+    <string name="cycle_type_daily_sub">Година кожного дня:</string>
 </resources>
