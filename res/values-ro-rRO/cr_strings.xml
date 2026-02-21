@@ -844,19 +844,19 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <string name="qqs_rows_landscape_title">Rânduri Rapide (peisaj)</string>
     <!-- Statusbar Clock background chip -->
     <string name="statusbar_clock_chip_title">Cip de fundal</string>
-    <string name="statusbar_clock_chip_summary">Select custom background chip behind clock</string>
-    <string name="solid_accent">Solid color accent</string>
+    <string name="statusbar_clock_chip_summary">Selectaţi un cip de fundal personalizat în spatele ceasului</string>
+    <string name="solid_accent">Culoare solidă de accent</string>
     <string name="outline">Contur</string>
-    <string name="solid_accent_gradient">Solid color accent gradient</string>
-    <string name="solid_gradient">Solid gradient side</string>
-    <string name="solid_gradient_corner">Solid accent gradient sharp</string>
-    <string name="solid_gradient_void">Gradient void</string>
-    <string name="solid_gradient_neumorph">Neumorph gradient</string>
-    <string name="solid_gradient_stroke">Sharp gradient stroke</string>
-    <string name="solid_accent_transperent">Accent transperent</string>
-    <string name="solid_gradient_light">Gradient light</string>
-    <string name="solid_gradient_shape">Sharp gradient corner</string>
-    <string name="solid_gradient_void_light">Gradient void light</string>
+    <string name="solid_accent_gradient">Gradient accentuat de culoare solidă</string>
+    <string name="solid_gradient">Gradient solid lateral</string>
+    <string name="solid_gradient_corner">Accent solid gradient ascuțit</string>
+    <string name="solid_gradient_void">Gradient anulat</string>
+    <string name="solid_gradient_neumorph">Gradient Neumorph</string>
+    <string name="solid_gradient_stroke">Contur gradient ascuțit</string>
+    <string name="solid_accent_transperent">Accent transparent</string>
+    <string name="solid_gradient_light">Gradient luminos</string>
+    <string name="solid_gradient_shape">Colț gradient ascuțit</string>
+    <string name="solid_gradient_void_light">Gradient vid luminos</string>
     <!-- Weather -->
     <string name="weather_settings_title">Setări vreme</string>
     <string name="weather_settings_summary">Configurarea pachetului de pictograme și a serviciului meteo</string>
@@ -882,7 +882,7 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <string name="status_bar_logo_summary">Afișează o siglă personalizată pe partea stângă sau dreaptă a barei de stare</string>
     <string name="status_bar_logo_position_title">Pozitie logo</string>
     <string name="status_bar_logo_style_title">Stil logo</string>
-    <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
+    <string name="status_bar_logo_style_summary">Selectați un logo personalizat pentru afișare</string>
     <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
@@ -1167,25 +1167,26 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <!-- Warning message displayed if user choses not to validate the EAP server -->
     <string name="wifi_do_not_validate_eap_server_warning">Nu s-a specificat niciun certificat. Conexiunea nu va fi privată.</string>
     <!-- Multi Audio Focus -->
-    <string name="multi_audio_focus_title">Multi audio focus</string>
-    <string name="multi_audio_focus_summary">Allow multiple apps to play audio simultaneously</string>
+    <string name="multi_audio_focus_title">Focus audio multiplu</string>
+    <string name="multi_audio_focus_summary">Permite aplicațiilor multiple să redea audio simultan</string>
     <!-- Locale Picker -->
-    <string name="clear_search_query_description">Clear query</string>
-    <string name="language_picker_page">Language picker page</string>
-    <string name="search_region">Search regions</string>
-    <string name="search_region_page">Search region page</string>
+    <string name="clear_search_query_description">Șterge interogarea</string>
+    <string name="language_picker_page">Pagina selectorului de limbă</string>
+    <string name="search_region">Regiuni de căutare</string>
+    <string name="search_region_page">Căutare pagină regiune</string>
     <!-- Data Usage Cycle -->
-    <string name="billing_cycle_type_title">Mobile data usage cycle type</string>
-    <string name="billing_cycle_type_monthly">Monthly</string>
-    <string name="billing_cycle_type_weekly">Weekly</string>
-    <string name="billing_cycle_type_daily">Daily</string>
-    <string name="billing_cycle_less_than_one_hour_left">Less than 1 hour left</string>
+    <string name="billing_cycle_type_title">Tipul ciclului de utilizare a datelor mobile</string>
+    <string name="billing_cycle_type_monthly">Lunar</string>
+    <string name="billing_cycle_type_weekly">Săptămânal</string>
+    <string name="billing_cycle_type_daily">Zilnic</string>
+    <string name="billing_cycle_less_than_one_hour_left">Mai puțin de o oră rămasă</string>
     <string name="billing_cycle_hours_left">{count, plural,
-        =1      {# hour left}
-        other   {# hours left}
+        one {}
+        few {# ore rămase}=1      {A mai rămas # oră}
+        other   {# ore rămase}
         }</string>
-    <string name="cycle_type_weekly_title">Usage cycle reset day</string>
-    <string name="cycle_type_weekly_sub">Day of each week:\n1 = Monday</string>
-    <string name="cycle_type_daily_title">Usage cycle reset hour</string>
-    <string name="cycle_type_daily_sub">Hour of each day:</string>
+    <string name="cycle_type_weekly_title">Ziua de resetare a ciclului de utilizare</string>
+    <string name="cycle_type_weekly_sub">Zi a fiecărei săptămâni:\n1 = luni</string>
+    <string name="cycle_type_daily_title">Resetarea ciclului de utilizare oră</string>
+    <string name="cycle_type_daily_sub">Ora de zi cu zi:</string>
 </resources>
