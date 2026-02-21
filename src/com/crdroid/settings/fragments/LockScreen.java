@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2025 crDroid Android Project
+ * Copyright (C) 2016-2026 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -170,8 +170,8 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.LOCKSCREEN_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
         PulseSettings.reset(mContext);
         MediaArtSettings.reset(mContext);
-        UdfpsAnimation.reset(mContext);
-        UdfpsIconPicker.reset(mContext);
+        UdfpsAnimation.Companion.reset(mContext);
+        UdfpsIconPicker.Companion.reset(mContext);
     }
 
     private void updateWeatherSettings() {
