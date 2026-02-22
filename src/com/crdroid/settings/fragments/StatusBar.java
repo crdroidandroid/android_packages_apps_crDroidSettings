@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2025 crDroid Android Project
+ * Copyright (C) 2016-2026 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -125,7 +125,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
-                LineageSettings.System.STATUS_BAR_CLOCK, 0, UserHandle.USER_CURRENT);
+                LineageSettings.System.STATUS_BAR_CLOCK, 2, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
                 LineageSettings.System.STATUS_BAR_BATTERY_STYLE, 0, UserHandle.USER_CURRENT);
         LineageSettings.System.putIntForUser(resolver,
