@@ -30,4 +30,36 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="CrDroidTabText" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="CrDroidTabTextSelected" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CrDroidTabLayout" parent="Widget.MaterialComponents.TabLayout">
+        <item name="tabTextAppearance">@style/CrDroidTabText</item>
+        <item name="tabSelectedTextAppearance">@style/CrDroidTabTextSelected</item>
+
+        <item name="tabTextColor">?android:attr/textColorSecondary</item>
+        <item name="tabSelectedTextColor">?android:attr/textColorPrimary</item>
+
+        <item name="tabIndicatorFullWidth">false</item>
+        <item name="tabRippleColor">@android:color/system_accent1_200</item>
+
+        <item name="tabIndicatorHeight">5dp</item>
+        <item name="tabIndicatorColor">@android:color/system_accent1_300</item>
+        <item name="tabInlineLabel">true</item>
+        <item name="tabMode">scrollable</item>
+
+    </style>
+
+    <style name="CrDroidMaterialOverlay" parent="ThemeOverlay.MaterialComponents">
+        <item name="colorAccent">@android:color/system_accent1_600</item>
+        <item name="colorPrimary">@android:color/system_accent1_600</item>
+        <item name="colorSecondary">@android:color/system_accent1_600</item>
+    </style>
 </resources>

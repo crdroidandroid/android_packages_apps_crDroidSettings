@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017-2020 crDroid Android Project
+     Copyright (C) 2017-2026 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,37 +14,33 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<RelativeLayout
-     xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-     xmlns:tools="http://schemas.android.com/tools"
-     android:layout_width="match_parent"
-     android:layout_height="match_parent"
-     tools:context="in.city.bytes.view.MainActivity">
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/crdroid_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
-        <com.crdroid.settings.PagerSlidingTabStrip
+        <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
-            app:pstsShouldExpand="false"
-            app:pstsTabTextFontFamily="@*android:string/config_headlineFontFamilyMedium"
-            app:pstsTabTextStyle="bold"
-            android:layout_width="match_parent"
-            android:background="@color/config_tab_color"
-            android:layout_height="48dp" />
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".crDroidSettingsLayout"
-            android:paddingTop="8dp" />
-    </LinearLayout>
-</RelativeLayout>
+            android:theme="@style/CrDroidMaterialOverlay"
+            android:background="@drawable/cr_tab_strip_bg"
+            style="@style/CrDroidTabLayout" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
