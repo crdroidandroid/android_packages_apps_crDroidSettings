@@ -38,7 +38,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.crdroid.settings.fragments.sound.AdaptivePlayback;
 import com.crdroid.settings.utils.DeviceUtils;
 import com.crdroid.settings.utils.TelephonyUtils;
 
@@ -110,7 +109,6 @@ public class Sound extends SettingsPreferenceFragment {
                 Settings.System.VIBRATE_ON_DISCONNECT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.SCREENSHOT_SHUTTER_SOUND, 1, UserHandle.USER_CURRENT);
-        AdaptivePlayback.reset(mContext);
     }
 
     private static boolean isAudioPanelOnLeftSide(Context context) {
