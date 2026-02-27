@@ -50,6 +50,14 @@
         android:summary="@string/edge_light_summary"
         android:fragment="com.crdroid.settings.fragments.ui.EdgeLightSettings" />
 
+    <!-- Gradient Customization -->
+    <Preference
+        android:key="gradient_settings"
+        android:icon="@drawable/ic_gradient"
+        android:title="@string/gradient_settings_title"
+        android:summary="@string/gradient_settings_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.GradientSettings" />
+
     <!-- Charging animation -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="charging_animation"

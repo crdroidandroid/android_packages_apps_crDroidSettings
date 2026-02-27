@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2025 crDroid Android Project
+ * Copyright (C) 2016-2026 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.ui.DozeSettings;
 import com.crdroid.settings.fragments.ui.EdgeLightSettings;
+import com.crdroid.settings.fragments.ui.GradientSettings;
 import com.crdroid.settings.fragments.ui.SmartPixels;
 import com.crdroid.settings.fragments.ui.MonetSettings;
 
@@ -97,6 +98,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
         DozeSettings.reset(mContext);
         EdgeLightSettings.reset(mContext);
+        GradientSettings.reset(mContext);
         MonetSettings.reset(mContext);
         SmartPixels.reset(mContext);
     }
