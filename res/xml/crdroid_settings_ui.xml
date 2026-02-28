@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2025 crDroid Android Project
+     Copyright (C) 2016-2026 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -58,6 +58,21 @@
         android:summary="@string/gradient_settings_summary"
         android:fragment="com.crdroid.settings.fragments.ui.GradientSettings" />
 
+    <!-- Font style -->
+    <com.crdroid.settings.preferences.FontsPickerPreference
+        android:key="system_font"
+        android:icon="@drawable/ic_font"
+        android:title="@string/theme_customization_font_title"
+        android:summary="theme_customization_font_summary" />
+
+    <!-- Monet Theme Engine -->
+    <Preference
+        android:key="monet_engine"
+        android:icon="@drawable/ic_themes"
+        android:title="@string/monet_title"
+        android:summary="@string/monet_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.MonetSettings" />
+
     <!-- Charging animation -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="charging_animation"
@@ -95,14 +110,6 @@
         android:summary="@string/smart_pixels_summary" 
         android:fragment="com.crdroid.settings.fragments.ui.SmartPixels" />
 
-    <!-- Monet Theme Engine -->
-    <Preference
-        android:key="monet_engine"
-        android:icon="@drawable/ic_themes"
-        android:title="@string/monet_title"
-        android:summary="@string/monet_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.MonetSettings" />
-
     <!-- Navbar Style
     <Preference
         android:key="android.theme.customization.navbar"
@@ -130,14 +137,6 @@
         android:entryValues="@array/custom_style_values"
         android:summary="%s"
         android:defaultValue="0" /> -->
-
-    <!-- Font style -->
-    <Preference
-        android:key="android.theme.customization.fonts"
-        android:icon="@drawable/ic_font"
-        android:title="@string/theme_customization_font_title"
-        android:summary="@string/theme_customization_font_summary"
-        android:fragment="com.crdroid.settings.fragments.ui.FontsPicker"/>
 
     <!-- Icon pack
     <Preference
