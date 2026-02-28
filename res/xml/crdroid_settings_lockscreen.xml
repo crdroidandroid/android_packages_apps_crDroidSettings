@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2016-2025 crDroid Android Project
+     Copyright (C) 2016-2026 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -24,13 +24,11 @@
         android:title="@string/qs_clock_title">
 
         <!-- Lockscreen Clock Font style -->
-        <Preference
-            android:key="android.theme.customization.lockscreen_clock_font"
+        <com.crdroid.settings.preferences.LockClockFontsPreference
+            android:key="lock_clock_font"
             android:icon="@drawable/ic_font"
             android:title="@string/theme_customization_lock_clock_title"
-            android:summary="@string/theme_customization_lock_clock_summary"
-            android:fragment="com.crdroid.settings.fragments.lockscreen.LockClockFontsPicker"/>
-
+            android:summary="theme_customization_lock_clock_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory
