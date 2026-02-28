@@ -66,19 +66,23 @@ class StatusBarLogoStylePreference @JvmOverloads constructor(
 
     override fun onClick() {
         val ctx = context
-        val content = LayoutInflater.from(ctx).inflate(R.layout.item_view, null)
+        val content = LayoutInflater.from(ctx).inflate(R.layout.selector_item_view, null)
 
         recyclerView = content.findViewById<RecyclerView>(R.id.recycler_view).apply {
             setHasFixedSize(true)
 
-            val span = if (ctx.resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                2
-            } else {
-                1
-            }
-
+            val isLandscape = ctx.resources.configuration.orientation ==
+                    Configuration.ORIENTATION_LANDSCAPE
+            val span = if (isLandscape) 2 else 1
             layoutManager = GridLayoutManager(ctx, span)
             adapter = IconAdapter(getCurrentValue())
+
+            post {
+                val fraction = if (isLandscape) 0.75f else 0.6f
+                val maxHeight = (ctx.resources.displayMetrics.heightPixels * fraction).toInt()
+                layoutParams.height = maxHeight
+                requestLayout()
+            }
         }
 
         dialog = AlertDialog.Builder(ctx)
