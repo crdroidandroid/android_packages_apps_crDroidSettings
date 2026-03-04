@@ -839,20 +839,20 @@
     <string name="qqs_rows_portrait_title">Hàng cài đặt nhanh (dọc)</string>
     <string name="qqs_rows_landscape_title">Hàng cài đặt nhanh (ngang)</string>
     <!-- Statusbar Clock background chip -->
-    <string name="statusbar_clock_chip_title">Màu nền đồng hồ</string>
-    <string name="statusbar_clock_chip_summary">Select custom background chip behind clock</string>
-    <string name="solid_accent">Solid color accent</string>
+    <string name="statusbar_clock_chip_title">Nền chip của đồng hồ</string>
+    <string name="statusbar_clock_chip_summary">Chọn chip nền tùy chỉnh phía sau đồng hồ</string>
+    <string name="solid_accent">Điểm nhấn màu rắn</string>
     <string name="outline">Đường nét</string>
-    <string name="solid_accent_gradient">Solid color accent gradient</string>
-    <string name="solid_gradient">Solid gradient side</string>
-    <string name="solid_gradient_corner">Solid accent gradient sharp</string>
-    <string name="solid_gradient_void">Gradient void</string>
-    <string name="solid_gradient_neumorph">Neumorph gradient</string>
-    <string name="solid_gradient_stroke">Sharp gradient stroke</string>
-    <string name="solid_accent_transperent">Accent transperent</string>
-    <string name="solid_gradient_light">Gradient light</string>
-    <string name="solid_gradient_shape">Sharp gradient corner</string>
-    <string name="solid_gradient_void_light">Gradient void light</string>
+    <string name="solid_accent_gradient">Gradient điểm nhấn màu rắn</string>
+    <string name="solid_gradient">Mặt gradient rắn</string>
+    <string name="solid_gradient_corner">Độ nét gradient điểm nhấn rắn</string>
+    <string name="solid_gradient_void">Khoảng trống gradient</string>
+    <string name="solid_gradient_neumorph">Gradient trung tính</string>
+    <string name="solid_gradient_stroke">Nét vẽ gradient sắc nét</string>
+    <string name="solid_accent_transperent">Điểm nhấn trong suốt</string>
+    <string name="solid_gradient_light">Ánh sáng gradient</string>
+    <string name="solid_gradient_shape">Góc gradient sắc nét</string>
+    <string name="solid_gradient_void_light">Ánh sáng khoảng trống gradient</string>
     <!-- Weather -->
     <string name="weather_settings_title">Cài đặt thời tiết</string>
     <string name="weather_settings_summary">Thiết lập gói biểu tượng và dịch vụ thời tiết</string>
@@ -878,7 +878,7 @@
     <string name="status_bar_logo_summary">Hiển thị biểu tượng tùy chỉnh ở bên trái hoặc bên phải của thanh trạng thái</string>
     <string name="status_bar_logo_position_title">Vị trí biểu tượng</string>
     <string name="status_bar_logo_style_title">Kiểu dáng của biểu tượng</string>
-    <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
+    <string name="status_bar_logo_style_summary">Chọn logo tùy chỉnh để hiển thị</string>
     <string name="status_bar_logo_style_crdroid">hệ thống</string>
     <string name="status_bar_logo_style_android">Hệ điều hành</string>
     <string name="status_bar_logo_style_adidas">Tập đoàn phân phối</string>
@@ -1163,25 +1163,67 @@ Dùng để phát hiện các cổng kết nối cố định.</string>
     <!-- Warning message displayed if user choses not to validate the EAP server -->
     <string name="wifi_do_not_validate_eap_server_warning">Không có chứng chỉ nào được chỉ định. Kết nối của bạn sẽ không phải là riêng tư.</string>
     <!-- Multi Audio Focus -->
-    <string name="multi_audio_focus_title">Multi audio focus</string>
-    <string name="multi_audio_focus_summary">Allow multiple apps to play audio simultaneously</string>
+    <string name="multi_audio_focus_title">Đa tiêu điểm âm thanh</string>
+    <string name="multi_audio_focus_summary">Cho phép nhiều ứng dụng phát âm thanh cùng lúc</string>
     <!-- Locale Picker -->
-    <string name="clear_search_query_description">Clear query</string>
-    <string name="language_picker_page">Language picker page</string>
-    <string name="search_region">Search regions</string>
-    <string name="search_region_page">Search region page</string>
+    <string name="clear_search_query_description">Dọn truy vấn</string>
+    <string name="language_picker_page">Trang chọn ngôn ngữ</string>
+    <string name="search_region">Tìm kiếm vùng</string>
+    <string name="search_region_page">Trang tìm kiếm vùng</string>
     <!-- Data Usage Cycle -->
-    <string name="billing_cycle_type_title">Mobile data usage cycle type</string>
-    <string name="billing_cycle_type_monthly">Monthly</string>
-    <string name="billing_cycle_type_weekly">Weekly</string>
-    <string name="billing_cycle_type_daily">Daily</string>
-    <string name="billing_cycle_less_than_one_hour_left">Less than 1 hour left</string>
+    <string name="billing_cycle_type_title">Loại chu kỳ sử dụng dữ liệu di động</string>
+    <string name="billing_cycle_type_monthly">Hàng tháng</string>
+    <string name="billing_cycle_type_weekly">Hàng tuần</string>
+    <string name="billing_cycle_type_daily">Hằng ngày</string>
+    <string name="billing_cycle_less_than_one_hour_left">Còn chưa đến 1 giờ</string>
     <string name="billing_cycle_hours_left">{count, plural,
-        =1      {# hour left}
-        other   {# hours left}
+        =1      {# giờ còn lại}
+        other   {# giờ còn lại}
         }</string>
-    <string name="cycle_type_weekly_title">Usage cycle reset day</string>
-    <string name="cycle_type_weekly_sub">Day of each week:\n1 = Monday</string>
-    <string name="cycle_type_daily_title">Usage cycle reset hour</string>
-    <string name="cycle_type_daily_sub">Hour of each day:</string>
+    <string name="cycle_type_weekly_title">Ngày đặt lại chu kỳ sử dụng</string>
+    <string name="cycle_type_weekly_sub">Ngày trong mỗi tuần:\n1 = Thứ hai</string>
+    <string name="cycle_type_daily_title">Giờ đặt lại chu kỳ sử dụng</string>
+    <string name="cycle_type_daily_sub">Giờ trong mỗi ngày:</string>
+    <!-- Gradient styles -->
+    <string name="gradient_settings_title">Tuỳ chỉnh gradient</string>
+    <string name="gradient_settings_summary">Áp dụng màu gradient cho các thành phần hệ thống khác nhau</string>
+    <string name="gradient_elements_category">Thành phần hệ thống</string>
+    <string name="gradient_colors_category">Màu gradient</string>
+    <string name="qs_tile_gradient_title">Gradient ô QS</string>
+    <string name="qs_tile_gradient_summary">Bật nền gradient cho ô QS</string>
+    <string name="qs_brightness_slider_gradient_title">Gradient thanh trượt độ sáng QS</string>
+    <string name="qs_brightness_slider_gradient_summary">Bật nền gradient cho thanh trượt độ sáng QS</string>
+    <string name="volume_slider_gradient_title">Gradient thanh trượt âm lượng</string>
+    <string name="volume_slider_gradient_summary">Bật nền gradient cho thanh trượt âm lượng</string>
+    <string name="custom_gradient_color_mode_title">Chế độ màu gradient</string>
+    <string name="custom_gradient_color_mode_auto">Chế độ tự động</string>
+    <string name="custom_gradient_color_mode_custom">Chế độ tùy chỉnh</string>
+    <string name="custom_gradient_start_color_title">Màu bắt đầu gradient</string>
+    <string name="custom_gradient_end_color_title">Màu kết thúc gradient</string>
+    <!-- Ongoing action chip -->
+    <string name="ongoing_progress_settings_title">Chip hành động trên thanh trạng thái</string>
+    <string name="ongoing_progress_settings_summary">Tùy chỉnh chip hành động để hiện chỉ báo tiến độ</string>
+    <string name="ongoing_action_chip_title">Chip hành động đang diễn ra</string>
+    <string name="ongoing_action_chip_summary">Hiển thị chỉ báo tiến độ cho các hành động đang diễn ra như tải xuống</string>
+    <string name="ongoing_media_progress_title">Tiến trình phương tiện</string>
+    <string name="ongoing_media_progress_summary">Hiển thị tiến trình phát lại phương tiện</string>
+    <string name="ongoing_progress_footer_text">\"Chip hành động trên thanh trạng thái cung cấp thông tin cập nhật theo thời gian thực cho cả phát lại phương tiện và các hoạt động tải xuống/tải lên.
+
+Tiến trình phương tiện:
+• Hiển thị tiến trình phát lại nhạc và video khi phương tiện đang phát.
+• Chạm một lần để mở điều khiển phát lại.
+• Chạm hai lần để phát/tạm dừng.
+• Vuốt sang trái để bỏ qua đến bài hát trước.
+• Vuốt sang phải để bỏ qua đến bài hát tiếp theo.
+• Nhấn giữ để mở ứng dụng phương tiện.
+
+Tiến trình Tải xuống/Tải lên:
+• Hiển thị tiến trình cho các hoạt động tải xuống và tải lên đang diễn ra.
+• Tự động ẩn khi không có hoạt động truyền tải nào được phát hiện.
+• Chạm một lần để mở ứng dụng chịu trách nhiệm tải xuống.
+
+Thanh tiến trình tự động chuyển đổi giữa trạng thái phương tiện và tải xuống, đảm bảo bạn luôn có thông tin liên quan nhất trong một cái nhìn thoáng qua.\"
+    </string>
+    <string name="ongoing_compact_mode_title">Chỉ báo tiến độ nhỏ gọn</string>
+    <string name="ongoing_compact_mode_summary">Sử dụng một chỉ báo tròn nhỏ gọn cho các hành động đang diễn ra</string>
 </resources>

@@ -839,20 +839,20 @@ Donasi kecil akan membantu proyek ini tetap berjalan dan berkembang. Anda dapat 
     <string name="qqs_rows_portrait_title">Baris Setelan Cepat (potret)</string>
     <string name="qqs_rows_landscape_title">Baris Setelan Cepat (lanskap)</string>
     <!-- Statusbar Clock background chip -->
-    <string name="statusbar_clock_chip_title">Latar belakang keping</string>
-    <string name="statusbar_clock_chip_summary">Select custom background chip behind clock</string>
-    <string name="solid_accent">Solid color accent</string>
-    <string name="outline">Garis besar</string>
-    <string name="solid_accent_gradient">Solid color accent gradient</string>
-    <string name="solid_gradient">Solid gradient side</string>
-    <string name="solid_gradient_corner">Solid accent gradient sharp</string>
-    <string name="solid_gradient_void">Gradient void</string>
-    <string name="solid_gradient_neumorph">Neumorph gradient</string>
-    <string name="solid_gradient_stroke">Sharp gradient stroke</string>
-    <string name="solid_accent_transperent">Accent transperent</string>
-    <string name="solid_gradient_light">Gradient light</string>
-    <string name="solid_gradient_shape">Sharp gradient corner</string>
-    <string name="solid_gradient_void_light">Gradient void light</string>
+    <string name="statusbar_clock_chip_title">Chip latar belakang jam</string>
+    <string name="statusbar_clock_chip_summary">Pilih chip latar belakang kustom di belakang jam</string>
+    <string name="solid_accent">Aksen warna padat</string>
+    <string name="outline">Garis luar</string>
+    <string name="solid_accent_gradient">Aksen warna padat bergradasi</string>
+    <string name="solid_gradient">Gradien samping padat</string>
+    <string name="solid_gradient_corner">Gradien warna aksen padat dan tajam</string>
+    <string name="solid_gradient_void">Gradien ruang kosong</string>
+    <string name="solid_gradient_neumorph">Gradien neumorph</string>
+    <string name="solid_gradient_stroke">Gradien garis tajam</string>
+    <string name="solid_accent_transperent">Aksen transparan</string>
+    <string name="solid_gradient_light">Gradien terang</string>
+    <string name="solid_gradient_shape">Gradien pojok tajam</string>
+    <string name="solid_gradient_void_light">Gradien ruang kosong terang</string>
     <!-- Weather -->
     <string name="weather_settings_title">Pengaturan cuaca</string>
     <string name="weather_settings_summary">Atur paket ikon dan servis cuaca</string>
@@ -878,7 +878,7 @@ Donasi kecil akan membantu proyek ini tetap berjalan dan berkembang. Anda dapat 
     <string name="status_bar_logo_summary">Tampilkan logo khusus di kiri atau kanan bilah status</string>
     <string name="status_bar_logo_position_title">Posisi Logo</string>
     <string name="status_bar_logo_style_title">Gaya logo</string>
-    <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
+    <string name="status_bar_logo_style_summary">Pilih logo kustom yang ingin ditampilkan</string>
     <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
@@ -1170,17 +1170,59 @@ Beberapa layar mungkin tampak mati.</string>
     <string name="search_region">Search regions</string>
     <string name="search_region_page">Search region page</string>
     <!-- Data Usage Cycle -->
-    <string name="billing_cycle_type_title">Mobile data usage cycle type</string>
-    <string name="billing_cycle_type_monthly">Monthly</string>
-    <string name="billing_cycle_type_weekly">Weekly</string>
-    <string name="billing_cycle_type_daily">Daily</string>
-    <string name="billing_cycle_less_than_one_hour_left">Less than 1 hour left</string>
+    <string name="billing_cycle_type_title">Jenis siklus penggunaan data seluler</string>
+    <string name="billing_cycle_type_monthly">Bulanan</string>
+    <string name="billing_cycle_type_weekly">Mingguan</string>
+    <string name="billing_cycle_type_daily">Harian</string>
+    <string name="billing_cycle_less_than_one_hour_left">Kurang dari 1 jam lagi</string>
     <string name="billing_cycle_hours_left">{count, plural,
-        =1      {# hour left}
-        other   {# hours left}
+        =1      {# satu jam tersisa}
+        other   {# beberapa jam lagi}
         }</string>
-    <string name="cycle_type_weekly_title">Usage cycle reset day</string>
-    <string name="cycle_type_weekly_sub">Day of each week:\n1 = Monday</string>
-    <string name="cycle_type_daily_title">Usage cycle reset hour</string>
-    <string name="cycle_type_daily_sub">Hour of each day:</string>
+    <string name="cycle_type_weekly_title">Reset ulang hari siklus penggunaan</string>
+    <string name="cycle_type_weekly_sub">Hari dalam seminggu:\n1 = Senin</string>
+    <string name="cycle_type_daily_title">Reset ulang jam siklus penggunaan</string>
+    <string name="cycle_type_daily_sub">Jam setiap hari:</string>
+    <!-- Gradient styles -->
+    <string name="gradient_settings_title">Kustomisasi gradien</string>
+    <string name="gradient_settings_summary">Terapkan warna gradien ke berbagai elemen sistem</string>
+    <string name="gradient_elements_category">Elemen sistem</string>
+    <string name="gradient_colors_category">Warna gradien</string>
+    <string name="qs_tile_gradient_title">Gradien ubin Setelan Cepat</string>
+    <string name="qs_tile_gradient_summary">Aktifkan latar belakang gradien untuk ubin Setelan Cepat</string>
+    <string name="qs_brightness_slider_gradient_title">Gradien penggeser kecerahan</string>
+    <string name="qs_brightness_slider_gradient_summary">Aktifkan latar belakang gradien untuk penggeser kecerahan Setelan Cepat</string>
+    <string name="volume_slider_gradient_title">Gradien penggeser volume</string>
+    <string name="volume_slider_gradient_summary">Aktifkan latar belakang gradien untuk penggeser volume</string>
+    <string name="custom_gradient_color_mode_title">Mode warna gradien</string>
+    <string name="custom_gradient_color_mode_auto">Mode otomatis</string>
+    <string name="custom_gradient_color_mode_custom">Mode kustom</string>
+    <string name="custom_gradient_start_color_title">Warna awal gradien</string>
+    <string name="custom_gradient_end_color_title">Warna akhir gradien</string>
+    <!-- Ongoing action chip -->
+    <string name="ongoing_progress_settings_title">Chip aksi bilah status</string>
+    <string name="ongoing_progress_settings_summary">Sesuaikan chip aksi untuk menampilkan indikator kemajuan</string>
+    <string name="ongoing_action_chip_title">Chip aksi berkelanjutan</string>
+    <string name="ongoing_action_chip_summary">Tampilkan indikator kemajuan untuk tindakan yang sedang berlangsung seperti pengunduhan</string>
+    <string name="ongoing_media_progress_title">Kemajuan media</string>
+    <string name="ongoing_media_progress_summary">Menampilkan kemajuan pemutaran media</string>
+    <string name="ongoing_progress_footer_text">\"Chip aksi bilah status menyediakan pembaruan waktu nyata untuk pemutaran media dan unduhan/unggahan aktif.
+
+Kemajuan Media:
+• Menampilkan kemajuan pemutaran musik dan video saat media diputar.
+• Ketuk sekali untuk membuka kontrol pemutaran.
+• Ketuk dua kali untuk beralih antara putar/jeda.
+• Geser ke kiri untuk melompati ke trek sebelumnya.
+• Geser ke kanan untuk melompati ke trek berikutnya.
+• Tekan lama untuk membuka aplikasi media.
+
+Kemajuan Unduhan/Unggahan:
+• Menampilkan kemajuan untuk unduhan dan unggahan yang sedang berlangsung.
+• Secara otomatis disembunyikan saat tidak ada transfer aktif yang terdeteksi.
+• Ketuk sekali untuk membuka aplikasi yang bertanggung jawab atas unduhan.
+
+Bilah kemajuan secara dinamis beralih antara status media dan unduhan, memastikan Anda selalu memiliki informasi yang paling relevan dalam sekejap.\"
+    </string>
+    <string name="ongoing_compact_mode_title">Indikator kemajuan ringkas</string>
+    <string name="ongoing_compact_mode_summary">Gunakan indikator melingkar yang ringkas untuk tindakan yang sedang berlangsung</string>
 </resources>
