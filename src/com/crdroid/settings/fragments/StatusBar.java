@@ -47,6 +47,7 @@ import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.statusbar.BatteryBar;
 import com.crdroid.settings.fragments.statusbar.Clock;
+import com.crdroid.settings.fragments.statusbar.ClockChipSettings;
 import com.crdroid.settings.fragments.statusbar.DynamicBar;
 import com.crdroid.settings.fragments.statusbar.NetworkTrafficSettings;
 import com.crdroid.settings.preferences.SystemSettingSeekBarPreference;
@@ -246,6 +247,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         BatteryBar.reset(mContext);
         Clock.reset(mContext);
+        ClockChipSettings.reset(mContext);
         DynamicBar.Companion.reset(mContext);
         NetworkTrafficSettings.reset(mContext);
     }
