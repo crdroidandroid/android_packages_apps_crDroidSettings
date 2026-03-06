@@ -29,6 +29,8 @@ public class OngoingProgressBar extends SettingsPreferenceFragment {
                 Settings.System.ONGOING_MEDIA_PROGRESS, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.ONGOING_COMPACT_MODE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.ONGOING_CHIP_COLOR_MODE, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
