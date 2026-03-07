@@ -27,6 +27,7 @@ import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.crdroid.settings.preferences.SystemSettingListPreference;
 import com.crdroid.settings.preferences.SystemSettingSeekBarPreference;
 import com.crdroid.settings.preferences.colorpicker.SystemSettingColorPickerPreference;
 
@@ -39,6 +40,7 @@ public class ClockChipSettings extends SettingsPreferenceFragment
     private static final String KEY_GRADIENT_START_COLOR  = "statusbar_clock_chip_gradient_start_color";
     private static final String KEY_GRADIENT_END_COLOR = "statusbar_clock_chip_gradient_end_color";
     private static final String KEY_GRADIENT_ANGLE = "statusbar_clock_chip_gradient_angle";
+    private static final String KEY_GRADIENT_MASK_TEXT = "statusbar_clock_chip_gradient_mask_text";
 
     private static final int CHIP_STYLE_CUSTOM_GRADIENT = 13;
 
@@ -48,6 +50,7 @@ public class ClockChipSettings extends SettingsPreferenceFragment
     private SystemSettingColorPickerPreference mGradientStartColor;
     private SystemSettingColorPickerPreference mGradientEndColor;
     private SystemSettingSeekBarPreference mGradientAngle;
+    private SystemSettingListPreference mGradientMaskText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,6 +70,10 @@ public class ClockChipSettings extends SettingsPreferenceFragment
 
         mGradientAngle =
                 (SystemSettingSeekBarPreference) findPreference(KEY_GRADIENT_ANGLE);
+
+
+        mGradientMaskText =
+                (SystemSettingListPreference) findPreference(KEY_GRADIENT_MASK_TEXT);
 
         int currentStyle = Settings.System.getIntForUser(
                 resolver,
@@ -95,6 +102,7 @@ public class ClockChipSettings extends SettingsPreferenceFragment
         if (mGradientStartColor != null) mGradientStartColor.setVisible(isGradient);
         if (mGradientEndColor != null) mGradientEndColor.setVisible(isGradient);
         if (mGradientAngle != null) mGradientAngle.setVisible(isGradient);
+        if (mGradientMaskText != null) mGradientMaskText.setVisible(isGradient);
     }
 
     public static void reset(Context context) {
@@ -110,6 +118,9 @@ public class ClockChipSettings extends SettingsPreferenceFragment
                 DEFAULT_GRADIENT_END_COLOR, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_CLOCK_CHIP_GRADIENT_ANGLE, 0,
+                UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUSBAR_CLOCK_CHIP_GRADIENT_MASK_TEXT, 0,
                 UserHandle.USER_CURRENT);
     }
 

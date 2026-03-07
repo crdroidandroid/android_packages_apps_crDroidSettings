@@ -47,4 +47,13 @@
         settings:units="°"
         android:visible="false" />
 
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="statusbar_clock_chip_gradient_mask_text"
+        android:title="@string/clock_chip_gradient_mask_text_title"
+        android:summary="%s"
+        android:entries="@array/clock_chip_gradient_mask_text_entries"
+        android:entryValues="@array/clock_chip_gradient_mask_text_values"
+        android:defaultValue="0"
+        android:visible="false" />
+
 </PreferenceScreen>
