@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2025 crDroid Android Project
+ * Copyright (C) 2016-2026 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -49,7 +49,6 @@ public class Notifications extends SettingsPreferenceFragment implements
 
     public static final String TAG = "Notifications";
 
-    private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
     private static final String LIGHT_BRIGHTNESS_CATEGORY = "light_brightness";
     private static final String BATTERY_LIGHTS_PREF = "battery_lights";
     private static final String NOTIFICATION_LIGHTS_PREF = "notification_lights";
@@ -59,7 +58,6 @@ public class Notifications extends SettingsPreferenceFragment implements
     private static final String FLASHLIGHT_RATE_PREF = "flashlight_on_call_rate";
     private static final String HEADS_UP_TIMEOUT_PREF = "heads_up_timeout";
 
-    private Preference mAlertSlider;
     private Preference mBatLights;
     private Preference mNotLights;
 
@@ -78,12 +76,6 @@ public class Notifications extends SettingsPreferenceFragment implements
         final Context mContext = getActivity().getApplicationContext();
         final ContentResolver resolver = mContext.getContentResolver();
         final Resources res = mContext.getResources();
-
-        mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
-        boolean mAlertSliderAvailable = res.getBoolean(
-                com.android.internal.R.bool.config_hasAlertSlider);
-        if (!mAlertSliderAvailable)
-            prefScreen.removePreference(mAlertSlider);
 
         mHeadsUpTimeOut = (CustomSeekBarPreference)
                             prefScreen.findPreference(HEADS_UP_TIMEOUT_PREF);
@@ -173,8 +165,6 @@ public class Notifications extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.FLASHLIGHT_ON_CALL_RATE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
-                Settings.System.ALERT_SLIDER_NOTIFICATIONS, 1, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
                 Settings.System.NOTIFICATION_GUTS_KILL_APP_BUTTON, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.HEADS_UP_TIMEOUT, getDefaultDecay(mContext), UserHandle.USER_CURRENT);
@@ -195,11 +185,6 @@ public class Notifications extends SettingsPreferenceFragment implements
                 public List<String> getNonIndexableKeys(Context context) {
                     List<String> keys = super.getNonIndexableKeys(context);
                     final Resources res = context.getResources();
-
-                    boolean mAlertSliderAvailable = res.getBoolean(
-                            com.android.internal.R.bool.config_hasAlertSlider);
-                    if (!mAlertSliderAvailable)
-                        keys.add(ALERT_SLIDER_PREF);
 
                     boolean mBatLightsSupported = res.getInteger(
                             org.lineageos.platform.internal.R.integer.config_deviceLightCapabilities) >= 64;
