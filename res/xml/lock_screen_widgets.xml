@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 the risingOS Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/lockscreen_widgets_title">
+    
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_info_widgets_enabled"
+        android:title="@string/lockscreen_display_widgets_title"
+        android:summary="@string/lockscreen_display_widgets_summary"
+        android:defaultValue="false" />
+
+    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        android:key="lockscreen_widgets_enabled"
+        android:title="@string/lockscreen_widgets_enabled_title"
+        android:summary="@string/lockscreen_widgets_enabled_summary"
+        android:defaultValue="false" />
+
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="lockscreen_widgets_style"
+        android:dependency="lockscreen_widgets_enabled"
+        android:title="@string/lockscreen_widgets_style_title"
+        android:entries="@array/lockscreen_widgets_style_entries"
+        android:entryValues="@array/lockscreen_widgets_style_values"
+        android:defaultValue="0"
+        android:summary="%s" />
+
+    <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        android:key="lockscreen_widgets_transparency"
+        android:title="@string/lockscreen_widgets_transparency_title"
+        android:summary="@string/lockscreen_widgets_transparency_summary"
+        android:dependency="lockscreen_widgets_enabled"
+        android:defaultValue="100"
+        settings:interval="1"
+        settings:units="%"
+        android:max="100"
+        android:min="0" />
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="lockscreen_widgets_preview"
+        android:layout="@layout/lockscreen_widgets_preview" />
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="apply_change_button"
+        android:layout="@layout/apply_change_button" />
+
+</PreferenceScreen>

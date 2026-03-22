@@ -30,6 +30,14 @@
             android:title="@string/lockscreen_custom_clock_style_title"
             android:summary="@string/lockscreen_custom_clock_style_summary"
             android:fragment="com.crdroid.settings.fragments.lockscreen.CustomClockPreview" />
+
+        <!-- Lockscreen widgets -->
+        <Preference
+            android:key="lockscreen_widgets"
+            android:icon="@drawable/ic_widget_menu"
+            android:title="@string/lockscreen_widgets_title"
+            android:summary="@string/lockscreen_widgets_enabled_summary"
+            android:fragment="com.crdroid.settings.fragments.lockscreen.LockScreenWidgets" />
     </PreferenceCategory>
 
     <PreferenceCategory
