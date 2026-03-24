@@ -39,6 +39,15 @@
         android:summary="%s"
         android:defaultValue="default" />
 
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        android:key="lock_screen_custom_clock_size_scale"
+        android:title="@string/lockscreen_custom_clock_size_title"
+        android:summary="@string/lockscreen_custom_clock_size_summary"
+        android:defaultValue="100"
+        android:max="150"
+        settings:min="50"
+        settings:units="%" />
+
     <com.crdroid.settings.preferences.colorpicker.SecureSettingColorPickerPreference
         android:key="lock_screen_custom_clock_custom_color"
         android:title="@string/custom_color"
@@ -53,12 +62,18 @@
         settings:min="10" 
         settings:units="%" />
 
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="lock_screen_custom_clock_aod_anim"
+        android:title="@string/lockscreen_custom_clock_aod_anim_title"
+        android:summary="@string/lockscreen_custom_clock_aod_anim_summary"
+        android:defaultValue="true" />
+
     <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
         android:key="lock_screen_custom_clock_margin_top"
         android:title="@string/lockscreen_custom_clock_frame_margin_top_title"
         android:summary="@string/lockscreen_custom_clock_frame_margin_top_summary"
         android:defaultValue="15"
-	    android:max="100"
+        android:max="100"
         settings:min="0" 
         settings:units="@string/unit_pixels" />
 
