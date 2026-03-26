@@ -58,12 +58,20 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_BRIGHTNESS_SLIDER_HAPTIC = "qs_brightness_slider_haptic";
     private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
     private static final String KEY_QS_TILE_HAPTIC = "qs_tile_haptic";
+    private static final String KEY_QS_PANEL_STYLE = "qs_panel_style";
+    private static final String KEY_QS_TILE_SHAPE = "qs_tile_shape";
+    private static final String KEY_QS_TILE_ICON_SHAPE = "qs_tile_icon_shape";
+    private static final String KEY_QS_TILE_LABEL_HIDE = "qs_tile_label_hide";
 
     private ListPreference mShowBrightnessSlider;
     private ListPreference mBrightnessSliderPosition;
     private SwitchPreferenceCompat mBrightnessSliderHaptic;
     private SwitchPreferenceCompat mShowAutoBrightness;
     private SwitchPreferenceCompat mQsTileHaptic;
+    private ListPreference mQsPanelStyle;
+    private Preference mQsTileShape;
+    private Preference mQsTileIconShape;
+    private SwitchPreferenceCompat mQsTileLabelHide;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -105,6 +113,30 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         } else {
             brightnessCategory.removePreference(mShowAutoBrightness);
         }
+
+        mQsPanelStyle = findPreference(KEY_QS_PANEL_STYLE);
+        mQsPanelStyle.setOnPreferenceChangeListener(this);
+        mQsTileShape = findPreference(KEY_QS_TILE_SHAPE);
+        mQsTileIconShape = findPreference(KEY_QS_TILE_ICON_SHAPE);
+        mQsTileLabelHide = findPreference(KEY_QS_TILE_LABEL_HIDE);
+
+        int panelStyle = Settings.System.getIntForUser(resolver,
+                Settings.System.QS_PANEL_STYLE, 0, UserHandle.USER_CURRENT);
+        updatePanelStylePrefs(panelStyle);
+    }
+
+    private void updatePanelStylePrefs(int panelStyle) {
+        boolean isClassic = panelStyle == 1;
+
+        if (mQsTileShape != null) {
+            mQsTileShape.setVisible(!isClassic);
+        }
+        if (mQsTileIconShape != null) {
+            mQsTileIconShape.setVisible(isClassic);
+        }
+        if (mQsTileLabelHide != null) {
+            mQsTileLabelHide.setVisible(isClassic);
+        }
     }
 
     @Override
@@ -118,6 +150,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 mBrightnessSliderHaptic.setEnabled(value > 0);
             if (mShowAutoBrightness != null)
                 mShowAutoBrightness.setEnabled(value > 0);
+            return true;
+        } else if (preference == mQsPanelStyle) {
+            int value = Integer.parseInt((String) newValue);
+            updatePanelStylePrefs(value);
             return true;
         }
         return false;
@@ -143,6 +179,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
                 Settings.System.QS_TILE_HAPTIC, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.QS_TILE_SHAPE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_PANEL_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.QS_TILE_LABEL_HIDE, 0, UserHandle.USER_CURRENT);
+        Settings.System.putStringForUser(resolver,
+                Settings.System.QS_TILE_ICON_SHAPE, "circle", UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,
                 LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT);
         LineageSettings.Secure.putIntForUser(resolver,

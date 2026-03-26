@@ -151,6 +151,14 @@
         android:title="@string/qs_layout_category_title">
 
         <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="qs_panel_style"
+            android:icon="@drawable/ic_tile_medium"
+            android:title="@string/qs_panel_style_title"
+            android:entries="@array/qs_panel_style_entries"
+            android:entryValues="@array/qs_panel_style_values"
+            android:defaultValue="0" />
+
+        <com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="qs_tile_shape"
             android:icon="@drawable/ic_shapes"
             android:title="@string/qs_tile_shape_title"
@@ -158,14 +166,19 @@
             android:entryValues="@array/qs_tile_shape_values"
             android:defaultValue="0" />
 
-        <!--<com.crdroid.settings.preferences.SystemSettingSwitchPreference
+        <com.crdroid.settings.preferences.QSTileIconShapePreference
+            android:key="qs_tile_icon_shape"
+            android:icon="@drawable/ic_shapes"
+            android:title="@string/qs_tile_shape_title" />
+
+        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_tile_label_hide"
             android:icon="@drawable/ic_text"
             android:title="@string/qs_tile_label_hide_title"
             android:summary="@string/qs_tile_label_hide_summary"
             android:defaultValue="false" />
 
-        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+        <!--<com.crdroid.settings.preferences.SystemSettingSeekBarPreference
             android:key="qs_tile_label_size"
             android:icon="@drawable/ic_text"
             android:title="@string/qs_tile_label_size_title"
