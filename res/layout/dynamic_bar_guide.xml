@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 crDroid Android Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="4dp"
+    android:paddingBottom="16dp">
+
+    <!-- Chip Swipe Demo -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dynamic_bar_card_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dynamic_bar_guide_swipe_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="16dp" />
+
+            <com.crdroid.settings.fragments.statusbar.DynamicBarChipSwipeDemoView
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="16dp" />
+
+    <!-- Guide Steps -->
+    <include layout="@layout/dynamic_bar_guide_step"
+        android:id="@+id/guide_step_1" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="12dp" />
+
+    <include layout="@layout/dynamic_bar_guide_step"
+        android:id="@+id/guide_step_2" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="12dp" />
+
+    <include layout="@layout/dynamic_bar_guide_step"
+        android:id="@+id/guide_step_3" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="12dp" />
+
+    <include layout="@layout/dynamic_bar_guide_step"
+        android:id="@+id/guide_step_4" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="12dp" />
+
+    <include layout="@layout/dynamic_bar_guide_step"
+        android:id="@+id/guide_step_5" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="16dp" />
+
+    <!-- Expanded Card Demo -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dynamic_bar_card_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dynamic_bar_guide_expand_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="16dp" />
+
+            <com.crdroid.settings.fragments.statusbar.DynamicBarExpandedDemoView
+                android:layout_width="match_parent"
+                android:layout_height="120dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="16dp" />
+
+    <!-- Keyguard Chip Demo -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dynamic_bar_card_bg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dynamic_bar_guide_keyguard_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="16dp" />
+
+            <com.crdroid.settings.fragments.statusbar.DynamicBarKeyguardDemoView
+                android:layout_width="match_parent"
+                android:layout_height="64dp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

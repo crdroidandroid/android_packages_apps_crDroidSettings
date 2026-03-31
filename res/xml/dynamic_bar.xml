@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/dynamic_bar">
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="dynamic_bar_hero_banner"
+        android:layout="@layout/dynamic_bar_hero_banner"
+        android:selectable="false" />
+
+    <lineageos.preference.SecureSettingMainSwitchPreference
+        android:key="ax_dynamic_bar_enabled"
+        android:title="@string/dynamic_bar_enable"
+        android:defaultValue="false" />
+
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="ax_dynamic_bar_keyguard_enabled"
+        android:title="@string/dynamic_bar_keyguard_enable"
+        android:summary="@string/dynamic_bar_keyguard_enable_summary"
+        android:defaultValue="true"
+        android:dependency="ax_dynamic_bar_enabled" />
+
+    <PreferenceCategory
+        android:key="dynamic_bar_events_category"
+        android:title="@string/dynamic_bar_events"
+        android:dependency="ax_dynamic_bar_enabled">
+
+        <SwitchPreferenceCompat
+            android:key="event_screen_recording"
+            android:title="@string/dynamic_bar_event_recording"
+            android:summary="@string/dynamic_bar_event_recording_summary"
+            android:icon="@drawable/ic_fiber_manual_record"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_privacy"
+            android:title="@string/dynamic_bar_event_privacy"
+            android:summary="@string/dynamic_bar_event_privacy_summary"
+            android:icon="@drawable/ic_videocam"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_audio_recording"
+            android:title="@string/dynamic_bar_event_audio_recording"
+            android:summary="@string/dynamic_bar_event_audio_recording_summary"
+            android:icon="@drawable/ic_mic"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_media"
+            android:title="@string/dynamic_bar_event_media"
+            android:summary="@string/dynamic_bar_event_media_summary"
+            android:icon="@drawable/ic_music_note"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_notification"
+            android:title="@string/dynamic_bar_event_notification"
+            android:summary="@string/dynamic_bar_event_notification_summary"
+            android:icon="@drawable/ic_notifications"
+            android:defaultValue="true" />
+
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="ax_dynamic_bar_compact_notifications"
+            android:title="@string/dynamic_bar_compact_notifications"
+            android:summary="@string/dynamic_bar_compact_notifications_summary"
+            android:icon="@drawable/ic_compact_notifications"
+            android:defaultValue="true"
+            android:dependency="event_notification" />
+
+        <SwitchPreferenceCompat
+            android:key="event_timer"
+            android:title="@string/dynamic_bar_event_timer"
+            android:summary="@string/dynamic_bar_event_timer_summary"
+            android:icon="@drawable/ic_timer"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_stopwatch"
+            android:title="@string/dynamic_bar_event_stopwatch"
+            android:summary="@string/dynamic_bar_event_stopwatch_summary"
+            android:icon="@drawable/ic_timer"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_alarm"
+            android:title="@string/dynamic_bar_event_alarm"
+            android:summary="@string/dynamic_bar_event_alarm_summary"
+            android:icon="@drawable/ic_alarm"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_charging"
+            android:title="@string/dynamic_bar_event_charging"
+            android:summary="@string/dynamic_bar_event_charging_summary"
+            android:icon="@drawable/ic_battery_charging_full"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_bluetooth"
+            android:title="@string/dynamic_bar_event_bluetooth"
+            android:summary="@string/dynamic_bar_event_bluetooth_summary"
+            android:icon="@drawable/ic_bluetooth"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_hotspot"
+            android:title="@string/dynamic_bar_event_hotspot"
+            android:summary="@string/dynamic_bar_event_hotspot_summary"
+            android:icon="@drawable/ic_wifi_tethering"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_ringer"
+            android:title="@string/dynamic_bar_event_ringer"
+            android:summary="@string/dynamic_bar_event_ringer_summary"
+            android:icon="@drawable/ic_vibration"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_vpn"
+            android:title="@string/dynamic_bar_event_vpn"
+            android:summary="@string/dynamic_bar_event_vpn_summary"
+            android:icon="@drawable/ic_vpn_key"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_clipboard"
+            android:title="@string/dynamic_bar_event_clipboard"
+            android:summary="@string/dynamic_bar_event_clipboard_summary"
+            android:icon="@drawable/ic_content_copy"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_torch"
+            android:title="@string/dynamic_bar_event_torch"
+            android:summary="@string/dynamic_bar_event_torch_summary"
+            android:icon="@drawable/ic_flashlight"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_casting"
+            android:title="@string/dynamic_bar_event_casting"
+            android:summary="@string/dynamic_bar_event_casting_summary"
+            android:icon="@drawable/ic_cast"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_promoted_ongoing"
+            android:title="@string/dynamic_bar_event_ongoing"
+            android:summary="@string/dynamic_bar_event_ongoing_summary"
+            android:icon="@drawable/ic_notifications"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_sports"
+            android:title="@string/dynamic_bar_event_sports"
+            android:summary="@string/dynamic_bar_event_sports_summary"
+            android:icon="@drawable/ic_sports_score"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_app_switch"
+            android:title="@string/dynamic_bar_event_app_switch"
+            android:summary="@string/dynamic_bar_event_app_switch_summary"
+            android:icon="@drawable/ic_swap_horiz"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="event_biometric_unlock"
+            android:title="@string/dynamic_bar_event_biometric"
+            android:summary="@string/dynamic_bar_event_biometric_summary"
+            android:icon="@drawable/ic_fingerprint"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="dynamic_bar_guide_category">
+
+        <Preference
+            android:key="dynamic_bar_guide"
+            android:title="@string/dynamic_bar_guide_title"
+            android:summary="@string/dynamic_bar_guide_chip"
+            android:icon="@drawable/ic_touch_app"
+            android:fragment="com.crdroid.settings.fragments.statusbar.DynamicBarGuide" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="dynamic_bar_footer_category">
+
+        <Preference
+            android:key="dynamic_bar_footer"
+            android:title="@string/dynamic_bar_footer_title"
+            android:summary="@string/dynamic_bar_footer_body"
+            android:icon="@drawable/ic_info"
+            android:selectable="false" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
