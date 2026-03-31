@@ -1199,38 +1199,6 @@ Mit einer kleinen Spende trägst du dazu bei, dass das Projekt am Leben bleibt u
     <string name="custom_gradient_color_mode_custom">Benutzerdefinierter Modus</string>
     <string name="custom_gradient_start_color_title">Anfangsfarbe Farbverlauf</string>
     <string name="custom_gradient_end_color_title">Endfarbe Farbverlauf</string>
-    <!-- Ongoing action chip -->
-    <string name="ongoing_progress_settings_title">Statusleisten-Aktivitätschip</string>
-    <string name="ongoing_progress_settings_summary">Aktivitätschip mit einer Fortschrittsanzeige versehen</string>
-    <string name="ongoing_action_chip_title">Chip für laufende Aktivitäten</string>
-    <string name="ongoing_action_chip_summary">Statusanzeige für laufende Aktionen wie Downloads anzeigen</string>
-    <string name="ongoing_media_progress_title">Medienfortschritt</string>
-    <string name="ongoing_media_progress_summary">Wiedergabefortschritt von Medien anzeigen</string>
-    <string name="ongoing_progress_footer_text">„Der Statusleisten-Aktivitätschip zeigt Echtzeitinformationen über Medienwiedergabe und laufende Downloads/Uploads.
-
-Medienfortschritt:
-• Zeigt den Wiedergabefortschritt von Musik und Videos bei der Medienwiedergabe.
-• Einmalig Tippen: Wiedergabesteuerung öffnen.
-• Doppeltippen: Wiedergabe starten oder pausieren.
-• Nach links wischen: Zu vorherigem Titel springen.
-• Nach rechts wischen: Zu nächstem Titel springen.
-• Tippen und Halten: Medien-App öffnen.
-
-Download-/Upload-Fortschritt:
-• Fortschrittanzeige für laufende Herunter- und Hochladevorgänge.
-• Wird bei keinerlei erkannten Übertragungen automatisch ausgeblendet.
-• Bei einmaligem Tippen wird die App geöffnet, über die der Download läuft.
-
-Die Fortschrittanzeige wechselt dynamisch zwischen Medien- und Downloadanzeige, sodass zu jeder Zeit die wichtigsten Infos auf einen Blick ersichtlich sind.“
-    </string>
-    <string name="ongoing_compact_mode_title">Kompakte Fortschrittsanzeige</string>
-    <string name="ongoing_compact_mode_summary">Kompakte, kreisförmige Anzeige für laufende Aktivitäten verwenden</string>
-    <string name="ongoing_chip_color_mode_title">Hintergrundfarbe für Medienchip</string>
-    <string name="ongoing_chip_color_mode_accent">Systemakzentfarbe</string>
-    <string name="ongoing_chip_color_mode_icon">Farbe des App-Symbols</string>
-    <string name="ongoing_chip_color_mode_album_art">Farbe des Albumcovers</string>
-    <string name="ongoing_chip_bg_alpha_title">Hintergrundtransparenz des Chips</string>
-    <string name="ongoing_chip_bg_alpha_summary">Deckkraft des Chips für laufende Aktivitäten anpassen</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">Benutzerdefinierter Uhrenstil</string>
     <string name="lockscreen_custom_clock_style_summary">Stil der Sperrbildschirm-Uhr konfigurieren</string>
@@ -1267,4 +1235,68 @@ Die Fortschrittanzeige wechselt dynamisch zwischen Medien- und Downloadanzeige, 
     <string name="shape_teardrop">Tränenform</string>
     <string name="shape_vessel">Vessel</string>
     <string name="shape_rounded_hexagon">Abgerundetes Sechseck</string>
+    <!-- Dynamic Bar -->
+    <string name="dynamic_bar">Dynamic Bar</string>
+    <string name="dynamic_bar_summary">Smart status bar chip for active events like recording, media, timers, and more</string>
+    <string name="dynamic_bar_enable">Enable Dynamic Bar</string>
+    <string name="dynamic_bar_enable_summary">Show a dynamic chip on the status bar for live events</string>
+    <string name="dynamic_bar_keyguard_enable">Lock screen chip</string>
+    <string name="dynamic_bar_keyguard_enable_summary">Show the Dynamic Bar chip on the lock screen with controls and quick actions</string>
+    <string name="dynamic_bar_events">Events</string>
+    <string name="dynamic_bar_events_summary">Choose which events appear in the Dynamic Bar</string>
+    <string name="dynamic_bar_event_recording">Screen Recording</string>
+    <string name="dynamic_bar_event_recording_summary">Active screen recording indicator</string>
+    <string name="dynamic_bar_event_privacy">Privacy Indicators</string>
+    <string name="dynamic_bar_event_privacy_summary">Camera and microphone access alerts</string>
+    <string name="dynamic_bar_event_audio_recording">Audio Recording</string>
+    <string name="dynamic_bar_event_audio_recording_summary">Voice recorder and audio capture</string>
+    <string name="dynamic_bar_event_media">Media Playback</string>
+    <string name="dynamic_bar_event_media_summary">Now playing music and audio controls</string>
+    <string name="dynamic_bar_event_notification">Benachrichtigungen</string>
+    <string name="dynamic_bar_event_notification_summary">Incoming notification alerts</string>
+    <string name="dynamic_bar_compact_notifications">Compact notifications</string>
+    <string name="dynamic_bar_compact_notifications_summary">Show notifications as a small chip first, tap to expand</string>
+    <string name="dynamic_bar_event_timer">Timer</string>
+    <string name="dynamic_bar_event_timer_summary">Countdown timer from Clock app</string>
+    <string name="dynamic_bar_event_stopwatch">Stopwatch</string>
+    <string name="dynamic_bar_event_stopwatch_summary">Running stopwatch from Clock app</string>
+    <string name="dynamic_bar_event_alarm">Alarm</string>
+    <string name="dynamic_bar_event_alarm_summary">Ringing and upcoming alarms</string>
+    <string name="dynamic_bar_event_charging">Aufladen</string>
+    <string name="dynamic_bar_event_charging_summary">Battery level when plugged in</string>
+    <string name="dynamic_bar_event_bluetooth">Bluetooth</string>
+    <string name="dynamic_bar_event_bluetooth_summary">Device connection status</string>
+    <string name="dynamic_bar_event_hotspot">Hotspot</string>
+    <string name="dynamic_bar_event_hotspot_summary">Mobile hotspot active indicator</string>
+    <string name="dynamic_bar_event_ringer">Ringer Mode</string>
+    <string name="dynamic_bar_event_ringer_summary">Silent, vibrate, and ring mode changes</string>
+    <string name="dynamic_bar_event_vpn">VPN</string>
+    <string name="dynamic_bar_event_vpn_summary">Active VPN connection indicator</string>
+    <string name="dynamic_bar_event_clipboard">Clipboard</string>
+    <string name="dynamic_bar_event_clipboard_summary">Copied text and image preview</string>
+    <string name="dynamic_bar_event_torch">Taschenlampe</string>
+    <string name="dynamic_bar_event_torch_summary">Flashlight toggle and brightness</string>
+    <string name="dynamic_bar_event_casting">Casting</string>
+    <string name="dynamic_bar_event_casting_summary">Screen cast and media cast status</string>
+    <string name="dynamic_bar_event_ongoing">Ongoing Activities</string>
+    <string name="dynamic_bar_event_ongoing_summary">Navigation, deliveries, and other live activities</string>
+    <string name="dynamic_bar_event_sports">Sports</string>
+    <string name="dynamic_bar_event_sports_summary">Live scores and game updates</string>
+    <string name="dynamic_bar_event_app_switch">Recent app switch</string>
+    <string name="dynamic_bar_event_app_switch_summary">Show chip when switching between recent apps</string>
+    <string name="dynamic_bar_event_biometric">Biometric unlock</string>
+    <string name="dynamic_bar_event_biometric_summary">Show chip on fingerprint or face unlock</string>
+    <string name="dynamic_bar_guide_title">How to use</string>
+    <string name="dynamic_bar_guide_chip">Events appear in the status bar showing active events like recording, media playback, and timers</string>
+    <string name="dynamic_bar_guide_swipe">When multiple events are active, swipe left or right on the chip to cycle through them</string>
+    <string name="dynamic_bar_guide_expand">Tap a chip to expand it into a detailed card with controls and additional information</string>
+    <string name="dynamic_bar_guide_dismiss">Swipe the expanded card away to dismiss it. The event continues in the background</string>
+    <string name="dynamic_bar_guide_keyguard">Dynamic bar chip also appears at the bottom of the lock screen with playback controls and quick actions</string>
+    <string name="dynamic_bar_guide_chip_title">Chip appearance</string>
+    <string name="dynamic_bar_guide_swipe_title">Swipe between chips</string>
+    <string name="dynamic_bar_guide_expand_title">Tap to expand</string>
+    <string name="dynamic_bar_guide_dismiss_title">Swipe to dismiss</string>
+    <string name="dynamic_bar_guide_keyguard_title">Lock screen chip</string>
+    <string name="dynamic_bar_footer_title">About Dynamic Bar</string>
+    <string name="dynamic_bar_footer_body">Dynamic Bar transforms your status bar into an interactive hub. Status chips appear and animate based on system events, giving you at-a-glance information without interrupting your workflow.\n\nEach event type has its own accent color and expanded card with quick actions.</string>
 </resources>
