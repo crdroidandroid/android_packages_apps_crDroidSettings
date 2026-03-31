@@ -281,8 +281,8 @@
     <string name="edge_light_color_mode_title">색상 모드</string>
     <string name="edge_light_pulse_count_title">Pulse 카운트</string>
     <string name="edge_light_pulse_count_summary">엣지 라이트 펄스 수</string>
-    <string name="edge_light_stroke_width_title">Stroke width</string>
-    <string name="edge_light_stroke_width_summary">Set thickness for edge light bars</string>
+    <string name="edge_light_stroke_width_title">선 굵기</string>
+    <string name="edge_light_stroke_width_summary">엣지 라이트 바 두께 설정</string>
     <string name="edge_light_style_title">렌더 스타일</string>
     <string name="edge_light_style_default">기본값(왼쪽/오른쪽)</string>
     <string name="edge_light_style_frame">프레임(모든 면)</string>
@@ -1083,17 +1083,17 @@
     <string name="qs_tile_shape_title">빠른 설정 타일 모양</string>
     <string name="qs_tile_shape_dynamic">역동적인</string>
     <string name="qs_tile_shape_circle">원형</string>
-    <string name="qs_tile_shape_rounded_square_smooth">Rounded square (smooth)</string>
+    <string name="qs_tile_shape_rounded_square_smooth">둥근 사각형 (매끄러운)</string>
     <string name="qs_tile_shape_rounded_square">모서리가 둥근 사각형</string>
     <string name="qs_tile_shape_square">정사각형</string>
     <!-- Force dark mode -->
-    <string name="force_dark_title">Dark mode for third-party apps</string>
+    <string name="force_dark_title">서드 파티 앱의 다크 모드</string>
     <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
     <!-- Brightness Slider Style -->
     <string name="qs_brightness_slider_shape_title">Brightness slider shape</string>
     <!-- Force LTE_CA -->
     <string name="force_lte_ca_title">LTE 캐리어 어그리게이션</string>
-    <string name="force_lte_ca_summary">Enhances LTE bandwidth by aggregating supported bands</string>
+    <string name="force_lte_ca_summary">지원되는 대역을 통합하여 LTE 대역폭 향상</string>
     <!-- QS on lockscreen -->
     <string name="lockscreen_quick_settings_title">잠금 화면에서 빠른설정</string>
     <string name="lockscreen_quick_settings_summary">잠금 화면에서 아래로 스와이프하여 빠른 설정을 볼 수 있도록 허용</string>
@@ -1119,7 +1119,7 @@
     <string name="ls_media_art_blur_level_title">Media art blur level</string>
     <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
     <!-- Pulse music visualizer -->
-    <string name="pulse_settings_title">Pulse Visualizer</string>
+    <string name="pulse_settings_title">Pulse 시각화</string>
     <string name="pulse_settings_summary">내비게이션 바 및 잠금 화면에 오디오 그래픽 이퀄라이저 표시</string>
     <string name="ambient_pulse_enabled_title">절전 모드 자동 해제 Pluse</string>
     <string name="ambient_pulse_enabled_summary">Show visualizer on Ambient Display</string>
@@ -1131,19 +1131,19 @@
     <string name="pulse_color_accent">강조 색상</string>
     <string name="pulse_bar_count_title">Number of bars</string>
     <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
-    <string name="pulse_bar_count_units">bars</string>
-    <string name="pulse_renderer">Visualizer style</string>
+    <string name="pulse_bar_count_units">바</string>
+    <string name="pulse_renderer">시각화 스타일</string>
     <string name="pulse_renderer_solid">실선</string>
     <string name="pulse_renderer_fading">사라지는 블록</string>
     <string name="pulse_renderer_neon_glow">Neon glow</string>
     <string name="pulse_renderer_retro_vu_meter">Retro VU meter</string>
     <string name="pulse_renderer_minimal_wave">Minimal wave</string>
     <string name="pulse_renderer_sparkle">Sparkle</string>
-    <string name="pulse_renderer_matrix">Matrix</string>
+    <string name="pulse_renderer_matrix">매트릭스</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">Translucent notifications</string>
-    <string name="notification_row_transparency_summary">Set translucent background for notifications in QS</string>
-    <string name="notification_row_transparency_lockscreen_title">Translucent lockscreen notifications</string>
+    <string name="notification_row_transparency_summary">빠른 설정 알림에 반투명 배경 설정</string>
+    <string name="notification_row_transparency_lockscreen_title">반투명 잠금 화면 알림</string>
     <string name="notification_row_transparency_lockscreen_summary">잠금 화면 알림에 반투명 배경 설정</string>
     <!-- Ambient Wallpaper -->
     <string name="doze_always_on_wallpaper_title">Ambient wallpaper</string>
@@ -1173,12 +1173,12 @@
     <string name="billing_cycle_type_daily">매일</string>
     <string name="billing_cycle_less_than_one_hour_left">한 시간 미만 남음</string>
     <string name="billing_cycle_hours_left">{count, plural,
-        =1      {# hour left}
-        other   {# hours left}
+        =1      {# 시간 남음}
+        other   {# 시간 남음}
         }</string>
-    <string name="cycle_type_weekly_title">Usage cycle reset day</string>
+    <string name="cycle_type_weekly_title">사용량 주기 재설정 날짜</string>
     <string name="cycle_type_weekly_sub">Day of each week:\n1 = Monday</string>
-    <string name="cycle_type_daily_title">Usage cycle reset hour</string>
+    <string name="cycle_type_daily_title">사용량 주기 재설정 시간</string>
     <string name="cycle_type_daily_sub">Hour of each day:</string>
     <!-- Gradient styles -->
     <string name="gradient_settings_title">Gradients customization</string>
@@ -1260,7 +1260,7 @@ The progress bar dynamically switches between media and download states, ensurin
     <string name="shape_rice_balls">Rice balls</string>
     <string name="shape_rounded_rect">모서리가 둥근 직사각형</string>
     <string name="shape_squircle">모서리가 둥근 정사각형</string>
-    <string name="shape_tapered_rect">Tapered rect</string>
+    <string name="shape_tapered_rect">사다리꼴 사각형</string>
     <string name="shape_teardrop">물방울</string>
     <string name="shape_vessel">항아리</string>
     <string name="shape_rounded_hexagon">모서리가 둥근 육각형</string>
