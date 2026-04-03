@@ -73,6 +73,18 @@
         android:summary="@string/monet_summary"
         android:fragment="com.crdroid.settings.fragments.ui.MonetSettings" />
 
+    <!-- Themes -->
+    <Preference
+        android:key="custom_system_theme"
+        android:icon="@drawable/ic_asterisk"
+        android:title="@string/custom_system_theme_title"
+        android:summary="@string/custom_system_theme_summary">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.axion.axthemestore"
+            android:targetClass="com.android.axion.axthemestore.MainActivity" />
+    </Preference>
+
     <!-- Charging animation -->
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="charging_animation"
