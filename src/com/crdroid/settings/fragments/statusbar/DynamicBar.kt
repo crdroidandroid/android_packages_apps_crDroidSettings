@@ -15,7 +15,6 @@ import android.os.Looper
 import android.os.UserHandle
 import android.provider.Settings
 import androidx.preference.Preference
-import androidx.preference.PreferenceCategory
 import androidx.preference.SwitchPreferenceCompat
 import com.android.internal.logging.nano.MetricsProto
 import com.android.settings.R
@@ -57,6 +56,7 @@ class DynamicBar : SettingsPreferenceFragment() {
         super.onCreate(savedInstanceState)
         addPreferencesFromResource(R.xml.dynamic_bar)
 
+        setupKeyguardSubPrefs()
         setupEventToggles()
         updateCompactNotificationVisibility()
         registerObserver()
@@ -65,6 +65,24 @@ class DynamicBar : SettingsPreferenceFragment() {
     override fun onDestroy() {
         super.onDestroy()
         settingsObserver?.let { resolver.unregisterContentObserver(it) }
+    }
+
+    private fun setupKeyguardSubPrefs() {
+        val keyguardPref = findPreference<SwitchPreferenceCompat>(SETTINGS_KEY_KEYGUARD_ENABLED)
+        keyguardPref?.setOnPreferenceChangeListener { _, newValue ->
+            updateKeyguardSubPrefsVisibility(newValue as Boolean)
+            true
+        }
+        // Set initial visibility from current setting value
+        val keyguardEnabled = Settings.Secure.getIntForUser(
+            resolver, SETTINGS_KEY_KEYGUARD_ENABLED, 1, UserHandle.USER_CURRENT
+        ) == 1
+        updateKeyguardSubPrefsVisibility(keyguardEnabled)
+    }
+
+    private fun updateKeyguardSubPrefsVisibility(keyguardEnabled: Boolean) {
+        findPreference<Preference>(SETTINGS_KEY_BATTERY_CHIP_MODE)?.isVisible = keyguardEnabled
+        findPreference<Preference>(SETTINGS_KEY_COMPACT_CHIP_ENABLED)?.isVisible = keyguardEnabled
     }
 
     private fun setupEventToggles() {
@@ -126,12 +144,22 @@ class DynamicBar : SettingsPreferenceFragment() {
                         }
                         updateCompactNotificationVisibility()
                     }
+                    SETTINGS_KEY_KEYGUARD_ENABLED -> {
+                        val enabled = Settings.Secure.getIntForUser(
+                            resolver, SETTINGS_KEY_KEYGUARD_ENABLED, 1, UserHandle.USER_CURRENT
+                        ) == 1
+                        updateKeyguardSubPrefsVisibility(enabled)
+                    }
                 }
             }
         }
 
         resolver.registerContentObserver(
             Settings.Secure.getUriFor(SETTINGS_KEY_EVENTS),
+            false, settingsObserver!!
+        )
+        resolver.registerContentObserver(
+            Settings.Secure.getUriFor(SETTINGS_KEY_KEYGUARD_ENABLED),
             false, settingsObserver!!
         )
     }
@@ -145,6 +173,8 @@ class DynamicBar : SettingsPreferenceFragment() {
         private const val SETTINGS_KEY_KEYGUARD_ENABLED = "ax_dynamic_bar_keyguard_enabled"
         private const val SETTINGS_KEY_EVENTS = "ax_dynamic_bar_events"
         private const val SETTINGS_KEY_COMPACT_NOTIFICATIONS = "ax_dynamic_bar_compact_notifications"
+        private const val SETTINGS_KEY_BATTERY_CHIP_MODE = "ax_dynamic_bar_keyguard_battery_chip_mode"
+        private const val SETTINGS_KEY_COMPACT_CHIP_ENABLED = "ax_dynamic_bar_keyguard_compact_chip_enabled"
 
         @JvmStatic
         fun reset(context: Context) {
@@ -159,6 +189,14 @@ class DynamicBar : SettingsPreferenceFragment() {
             )
             Settings.Secure.putIntForUser(
                 resolver, SETTINGS_KEY_COMPACT_NOTIFICATIONS, 1,
+                UserHandle.USER_CURRENT
+            )
+            Settings.Secure.putIntForUser(
+                resolver, SETTINGS_KEY_COMPACT_CHIP_ENABLED, 0,
+                UserHandle.USER_CURRENT
+            )
+            Settings.Secure.putIntForUser(
+                resolver, SETTINGS_KEY_BATTERY_CHIP_MODE, 1,
                 UserHandle.USER_CURRENT
             )
         }
