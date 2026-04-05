@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="start|center"
+    android:layout_gravity="start|center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/clock_frame"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextClock
+            android:textSize="17dp"
+            android:textColor="@android:color/white"
+            android:fontFamily="@*android:string/config_clockFontFamily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textAlignment="viewStart"
+            android:format12Hour="EEEE"
+            android:format24Hour="EEEE"/>
+
+        <FrameLayout
+            android:layout_gravity="start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextClock
+                android:textSize="54dp"
+                android:textColor="@android:color/white"
+                android:fontFamily="@*android:string/config_clockFontFamily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:format12Hour="h:mm"
+                android:format24Hour="H:mm"/>
+
+            <TextClock
+                android:textSize="54dp"
+                android:textColor="@android:color/holo_red_light"
+                android:fontFamily="@*android:string/config_clockFontFamily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:format12Hour="h"
+                android:format24Hour="H"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="start|center_vertical">
+
+            <TextClock
+                android:textSize="15dp"
+                android:textColor="@android:color/white"
+                android:fontFamily="@*android:string/config_clockFontFamily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:format12Hour="MMM dd"
+                android:format24Hour="MMM dd"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
