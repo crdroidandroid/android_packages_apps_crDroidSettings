@@ -1207,38 +1207,6 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="custom_gradient_color_mode_custom">Tryb użytkownika</string>
     <string name="custom_gradient_start_color_title">Kolor początkowy gradientu</string>
     <string name="custom_gradient_end_color_title">Kolor końcowy gradientu</string>
-    <!-- Ongoing action chip -->
-    <string name="ongoing_progress_settings_title">Mapa akcji na pasku stanu</string>
-    <string name="ongoing_progress_settings_summary">Dostosuj przycisk akcji, aby wyświetlać wskaźnik postępu</string>
-    <string name="ongoing_action_chip_title">Akcja na pasku postępu</string>
-    <string name="ongoing_action_chip_summary">Wyświetlaj wskaźnik postępu dla trwających działań, takich jak pobieranie plików</string>
-    <string name="ongoing_media_progress_title">Postęp multimediów</string>
-    <string name="ongoing_media_progress_summary">Wyświetlaj postęp odtwarzania multimediów</string>
-    <string name="ongoing_progress_footer_text">\"Pasek stanu zapewnia aktualizacje w czasie rzeczywistym zarówno dla odtwarzania multimediów, jak i aktywnych pobrań/wysyłek.
-
-Postęp odtwarzania multimediów:
-• Wyświetla postęp odtwarzania muzyki i wideo podczas odtwarzania multimediów.
-• Jedno dotknięcie otwiera elementy sterujące odtwarzaniem.
-• Dwukrotne dotknięcie przełącza na odtwarzanie/pauzę.
-• Przesunięcie w lewo powoduje przejście do poprzedniego utworu.
-• Przesunięcie w prawo powoduje przejście do następnego utworu.
-• Długie naciśnięcie otwiera aplikację multimedialną. 
-
-Postęp pobierania/wysyłania:
-• Pokazuje postęp bieżących pobrań i wysyłania.
-• Automatycznie ukrywa się, gdy nie wykryto żadnych aktywnych transferów.
-• Jedno dotknięcie otwiera aplikację odpowiedzialną za pobieranie.
-
-Pasek postępu dynamicznie przełącza się między stanami multimediów i pobierania, zapewniając zawsze najbardziej istotne informacje na pierwszy rzut oka”.
-    </string>
-    <string name="ongoing_compact_mode_title">Kompaktowy wskaźnik postępu</string>
-    <string name="ongoing_compact_mode_summary">Używaj kompaktowego, okrągłego wskaźnika dla trwających akcji</string>
-    <string name="ongoing_chip_color_mode_title">Kolor tła multimediów</string>
-    <string name="ongoing_chip_color_mode_accent">Kolor akcentujący systemu</string>
-    <string name="ongoing_chip_color_mode_icon">Kolor ikon aplikacji</string>
-    <string name="ongoing_chip_color_mode_album_art">Kolor okładki albumu</string>
-    <string name="ongoing_chip_bg_alpha_title">Przezroczystość tła</string>
-    <string name="ongoing_chip_bg_alpha_summary">Dostosuj przezroczystość trwającego znacznika akcji</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">Własny styl zegara</string>
     <string name="lockscreen_custom_clock_style_summary">Skonfiguruj style zegara na ekranie blokady</string>
@@ -1275,4 +1243,82 @@ Pasek postępu dynamicznie przełącza się między stanami multimediów i pobie
     <string name="shape_teardrop">Łza</string>
     <string name="shape_vessel">Kadź</string>
     <string name="shape_rounded_hexagon">Zaokrąglony sześciokąt</string>
+    <string name="shape_just_icons">Just icons</string>
+    <string name="shape_pokesign">Pokésign</string>
+    <string name="shape_ninja">Ninja</string>
+    <string name="shape_outline_style">Outline style</string>
+    <string name="shape_dotted_circle">Kropkowany okrąg</string>
+    <string name="shape_squaremedo">Squaremedo</string>
+    <!-- Dynamic Bar -->
+    <string name="dynamic_bar">Pasek dynamiczny</string>
+    <string name="dynamic_bar_summary">Inteligentny wskaźnik na pasku stanu dla aktywnych zdarzeń, takich jak nagrywanie, multimedia, minutniki i inne</string>
+    <string name="dynamic_bar_enable">Włącz pasek dynamiczny</string>
+    <string name="dynamic_bar_enable_summary">Pokazuj dynamiczny wskaźnik na pasku stanu dla aktywnych zdarzeń</string>
+    <string name="dynamic_bar_keyguard_enable">Dynamic bar on lock screen</string>
+    <string name="dynamic_bar_keyguard_enable_summary">Replace keyguard indication with dynamic bar chip on the lock screen with controls and quick actions</string>
+    <string name="dynamic_bar_keyguard_battery_chip">Battery info on lock screen</string>
+    <string name="dynamic_bar_keyguard_battery_chip_disabled">Nigdy nie pokazuj</string>
+    <string name="dynamic_bar_keyguard_battery_chip_charging">Only when charging</string>
+    <string name="dynamic_bar_keyguard_battery_chip_always">Always show</string>
+    <string name="dynamic_bar_keyguard_compact_chip">Compact lock screen chip</string>
+    <string name="dynamic_bar_keyguard_compact_chip_summary">Always use the compact chip style on the lockscreen. When disabled, compact mode is used only when space is limited.</string>
+    <string name="dynamic_bar_events">Wydarzenia</string>
+    <string name="dynamic_bar_event_recording">Nagrywanie ekranu</string>
+    <string name="dynamic_bar_event_recording_summary">Aktywny wskaźnik nagrywania ekranu</string>
+    <string name="dynamic_bar_event_privacy">Wskaźniki prywatności</string>
+    <string name="dynamic_bar_event_privacy_summary">Alerty dostępu do kamery i mikrofonu</string>
+    <string name="dynamic_bar_event_audio_recording">Nagrywanie dźwięku</string>
+    <string name="dynamic_bar_event_audio_recording_summary">Rejestrator głosu i przechwytywanie dźwięku</string>
+    <string name="dynamic_bar_event_media">Odtwarzanie multimediów</string>
+    <string name="dynamic_bar_event_media_summary">Aktualnie odtwarzana muzyka i sterowanie dźwiękiem</string>
+    <string name="dynamic_bar_event_notification">Powiadomienia</string>
+    <string name="dynamic_bar_event_notification_summary">Alerty powiadomień przychodzących</string>
+    <string name="dynamic_bar_compact_notifications">Kompaktowe powiadomienia</string>
+    <string name="dynamic_bar_compact_notifications_summary">Pokazuj powiadomienia jako mały wskaźnik, dotknij aby rozwinąć</string>
+    <string name="dynamic_bar_event_timer">Minutnik</string>
+    <string name="dynamic_bar_event_timer_summary">Minutnik odliczania z aplikacji Zegar</string>
+    <string name="dynamic_bar_event_stopwatch">Stoper</string>
+    <string name="dynamic_bar_event_stopwatch_summary">Uruchamianie stopera z aplikacji Zegar</string>
+    <string name="dynamic_bar_event_alarm">Alarm</string>
+    <string name="dynamic_bar_event_alarm_summary">Dzwoniące i nadchodzące alarmy</string>
+    <string name="dynamic_bar_event_charging">Charging started</string>
+    <string name="dynamic_bar_event_charging_summary">Poziom baterii podczas podłączania</string>
+    <string name="dynamic_bar_event_bluetooth">Bluetooth</string>
+    <string name="dynamic_bar_event_bluetooth_summary">Stan połączenia urządzenia</string>
+    <string name="dynamic_bar_event_hotspot">Punkt dostępu</string>
+    <string name="dynamic_bar_event_hotspot_summary">Wskaźnik aktywnego mobilnego punktu dostępu</string>
+    <string name="dynamic_bar_event_ringer">Tryb dzwonka</string>
+    <string name="dynamic_bar_event_ringer_summary">Zmiana trybu cichego, wibracji i dzwonka</string>
+    <string name="dynamic_bar_event_vpn">VPN</string>
+    <string name="dynamic_bar_event_vpn_summary">Wskaźnik aktywnego połączenia VPN</string>
+    <string name="dynamic_bar_event_clipboard">Schowek</string>
+    <string name="dynamic_bar_event_clipboard_summary">Skopiowany tekst i podgląd obrazu</string>
+    <string name="dynamic_bar_event_torch">Latarka</string>
+    <string name="dynamic_bar_event_torch_summary">Przełącznik latarki i jasność</string>
+    <string name="dynamic_bar_event_casting">Przesyłanie</string>
+    <string name="dynamic_bar_event_casting_summary">Stan przesyłania ekranu i multimediów</string>
+    <string name="dynamic_bar_event_ongoing">Bieżące aktywności</string>
+    <string name="dynamic_bar_event_ongoing_summary">Nawigacja, doręczenia i inne działania na żywo</string>
+    <string name="dynamic_bar_event_sports">Sport</string>
+    <string name="dynamic_bar_event_sports_summary">Wyniki na żywo i aktualności z meczów</string>
+    <string name="dynamic_bar_event_app_switch">Przełącznik ostatnich aplikacji</string>
+    <string name="dynamic_bar_event_app_switch_summary">Pokaż wskaźnik podczas przełączania się między ostatnimi aplikacjami</string>
+    <string name="dynamic_bar_event_biometric">Odblokowywanie biometryczne</string>
+    <string name="dynamic_bar_event_biometric_summary">Pokaż wskaźnik przy odblokowywaniu odciskiem palca lub twarzą</string>
+    <string name="dynamic_bar_guide_title">Jak używać dynamicznego paska</string>
+    <string name="dynamic_bar_guide_chip">Wydarzenia pojawiają się na pasku stanu i pokazują aktywne zdarzenia, takie jak nagrywanie, odtwarzanie multimediów i minutniki</string>
+    <string name="dynamic_bar_guide_swipe">Gdy aktywnych jest wiele zdarzeń, przesuń palcem w lewo lub w prawo na wskaźniku, aby je przeglądać</string>
+    <string name="dynamic_bar_guide_expand">Dotknij wskaźnik, aby rozwinąć go w szczegółową kartę z elementami sterowania i dodatkowymi informacjami</string>
+    <string name="dynamic_bar_guide_dismiss">Przesuń rozwiniętą kartę, aby ją zamknąć. Zdarzenie będzie kontynuowane w tle</string>
+    <string name="dynamic_bar_guide_keyguard">Wskaźnik paska dynamicznego pojawia się również u dołu ekranu blokady z elementami sterowania odtwarzaniem i szybkimi akcjami</string>
+    <string name="dynamic_bar_guide_chip_title">Wygląd wskaźnika</string>
+    <string name="dynamic_bar_guide_swipe_title">Przesuwaj między wskaźnikami</string>
+    <string name="dynamic_bar_guide_expand_title">Dotknij, aby rozwinąć</string>
+    <string name="dynamic_bar_guide_dismiss_title">Przesuń, aby odrzucić</string>
+    <string name="dynamic_bar_guide_keyguard_title">Wskaźnik na ekranie blokady</string>
+    <string name="dynamic_bar_footer_title">O pasku dynamicznym</string>
+    <string name="dynamic_bar_footer_body">Pasek dynamiczny przekształca pasek stanu w interaktywne centrum. Wskaźniki stanu pojawiają się i animują w zależności od zdarzeń systemowych, dostarczając informacje w skrócie bez przerywania pracy.\n\nKażdy typ zdarzenia ma własny kolor akcentu oraz rozwijającą się kartę z szybkimi akcjami.</string>
+    <!-- Themes -->
+    <string name="custom_system_theme_title">Themes</string>
+    <string name="custom_system_theme_summary">Customize system appearance with themes and icon packs</string>
 </resources>
