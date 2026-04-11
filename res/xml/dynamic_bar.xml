@@ -40,13 +40,8 @@
         android:title="@string/dynamic_bar_keyguard_battery_chip"
         android:entries="@array/dynamic_bar_keyguard_battery_chip_entries"
         android:entryValues="@array/dynamic_bar_keyguard_battery_chip_values"
-        android:defaultValue="1" />
-
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
-        android:key="ax_dynamic_bar_keyguard_compact_chip_enabled"
-        android:title="@string/dynamic_bar_keyguard_compact_chip"
-        android:summary="@string/dynamic_bar_keyguard_compact_chip_summary"
-        android:defaultValue="false" />
+        android:defaultValue="1"
+        android:dependency="ax_dynamic_bar_keyguard_enabled" />
 
     <PreferenceCategory
         android:key="dynamic_bar_events_category"
