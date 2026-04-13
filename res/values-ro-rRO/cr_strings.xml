@@ -674,12 +674,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <string name="display_cutout_force_fullscreen_title">Aplicații ecran complet</string>
     <string name="display_cutout_force_fullscreen_summary">Forţaţi aplicațiile să ignore spațiul pentru notch</string>
     <string name="display_cutout_force_fullscreen_no_apps">Nicio aplicație</string>
-    <!-- Unlimited google photos storage -->
-    <string name="use_photos_spoof_title">Stocare nelimitată de fotografii</string>
-    <string name="use_photos_spoof_summary">Setare a dispozitivului ca Pixel XL pentru aplicația Google Photos doar pentru a oferi stocare nelimitată pentru backup</string>
-    <!-- Unlock FPS for specific games -->
-    <string name="use_games_spoof_title">Deblochează FPS mai mare în jocuri</string>
-    <string name="use_games_spoof_summary">Setare a dispozitivului ca model diferit pentru anumite jocuri pentru a debloca FPS mai mare</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">Panou de volum</string>
     <string name="volume_dialog_timeout_title">Timeout al panoului de volum</string>
@@ -934,12 +928,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <!-- Floating rotation button -->
     <string name="floating_rotation_button_title">Buton rotire plutitor</string>
     <string name="floating_rotation_button_summary">Arată un buton de rotire plutitor când dispozitivul este rotit</string>
-    <!-- Netflix Spoof -->
-    <string name="netflix_spoof_title">Falsificare Netflix</string>
-    <string name="netflix_spoof_summary">Setarea dispozitivul ca model diferit pentru Netflix</string>
-    <!-- Google Play Integrity Spoof -->
-    <string name="pi_spoof_title">Falsifică integritate Google Play</string>
-    <string name="pi_spoof_summary">Falsifică indentitatea telefonului cu un alt model pentru a putea trece de verificare integritate Google Play</string>
     <!-- Captive portal -->
     <string name="captive_portal_title">Verificare conectivitate</string>
     <string name="captive_portal_summary">Stabiliți dacă dispozitivul se poate conecta la internet, contactând Google. De asemenea este folosit pentru a detecta portaluri captive.</string>
@@ -1073,18 +1061,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <string name="custom_style_fluid">Lichid (transparent)</string>
     <string name="custom_style_ios">IOS</string>
     <string name="custom_style_layers">Straturi</string>
-    <!-- Keybox Data -->
-    <string name="keybox_data_title">Suprascriere atestare cu cheie proprie</string>
-    <string name="keybox_data_summary">Încarcă o cheie XML personalizată pentru a suprascrie atestarea dispozitivului</string>
-    <string name="keybox_data_loaded_summary">XML încărcat. Apasă pentru ștergere.</string>
-    <string name="keybox_delete_content_description">Ștergeți datele cheii</string>
-    <string name="keybox_toast_invalid_file_selected">Nu este un fișier XML. Alegeți un XML valid.</string>
-    <string name="keybox_toast_missing_data">Cheie XML: câmpurile obligatorii lipsesc</string>
-    <string name="keybox_toast_file_loaded">Cheie încărcată</string>
-    <string name="keybox_toast_file_cleared">Cheie ștearsă</string>
-    <!-- Block attestation even with Keybox Data -->
-    <string name="pi_gmscertchain_title">Dezactivează forțarea integrității puternice</string>
-    <string name="pi_gmscertchain_summary">Când este activată, nu impune integritate puternică din o cheie validă și depinde de validare prin amprenta din build pentru Integritate Google Play pentru a repara aplicații precum Google Pay</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_shape_title">Forma dalelor QS</string>
     <string name="qs_tile_shape_dynamic">Dinamic</string>
@@ -1157,9 +1133,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <!-- Squiggle animation for media notification -->
     <string name="media_squiggle_animation_title">Animație comutator</string>
     <string name="media_squiggle_animation_summary">Afișați animația barei de căutare în panoul media atunci când redați media</string>
-    <!-- Vbmeta hash attestation -->
-    <string name="vbmeta_attestation_title">Reparare detectare VBMeta</string>
-    <string name="vbmeta_attestation_summary">Efectuează atestare cheie pentru a genera boothash verificat la pornire. Necesită repornirea sistemului.</string>
     <!-- Menu option for not validating the EAP server -->
     <string name="wifi_do_not_validate_eap_server">Nu valida</string>
     <!-- Warning message displayed if user choses not to validate the EAP server -->
@@ -1317,4 +1290,87 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <!-- Themes -->
     <string name="custom_system_theme_title">Teme</string>
     <string name="custom_system_theme_summary">Personalizați aspectul sistemului cu teme și pachete de pictograme</string>
+    <!-- Misc preference entries -->
+    <string name="play_integrity_fix_title">Play Integrity Fix</string>
+    <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints</string>
+    <string name="tricky_store_title">TrickyStore</string>
+    <string name="tricky_store_summary">Manage keybox and target apps for attestation</string>
+    <string name="game_spoofing_title">Game spoofing</string>
+    <string name="game_spoofing_summary">Spoof device properties for specific games</string>
+    <!-- Play Integrity Fix -->
+    <string name="pif_status">Status</string>
+    <string name="pif_active_config">Active configuration</string>
+    <string name="pif_no_config">No configuration loaded</string>
+    <string name="pif_config_loaded">Configuration loaded</string>
+    <string name="pif_fetch_pixel_beta">Fetch Pixel Beta fingerprint</string>
+    <string name="pif_fetch_pixel_beta_summary">Download latest Pixel Beta fingerprint from Google</string>
+    <string name="pif_fetching">Fetching from Google\u2026</string>
+    <string name="pif_fetched_model">Fetched fingerprint for %s</string>
+    <string name="pif_import_config">Import configuration</string>
+    <string name="pif_import_config_summary">Import PIF config from a file</string>
+    <string name="pif_imported_as">Imported as %s</string>
+    <string name="pif_delete_config">Delete active configuration</string>
+    <string name="pif_delete_config_summary">Remove the currently active config file</string>
+    <string name="pif_delete_title">Delete %s?</string>
+    <string name="pif_delete_message">This configuration file will be permanently removed.</string>
+    <string name="pif_delete">Șterge</string>
+    <string name="pif_deleted">Deleted %s</string>
+    <string name="pif_settings">Setări</string>
+    <string name="pif_spoof_photos">Spoof Google Photos</string>
+    <string name="pif_spoof_photos_summary">Unlimited original quality backup</string>
+    <string name="pif_config_details">Configuration details</string>
+    <string name="pif_failed">Failed: %s</string>
+    <string name="pif_select_device">Select device</string>
+    <string name="pif_generating">Generating configuration\u2026</string>
+    <!-- TrickyStore -->
+    <string name="ts_keybox_management">Keybox management</string>
+    <string name="ts_import_keybox">Import keybox</string>
+    <string name="ts_no_keybox">No keybox installed</string>
+    <string name="ts_keybox_installed">Keybox installed</string>
+    <string name="ts_keybox_imported">Keybox imported successfully</string>
+    <string name="ts_delete_keybox">Delete keybox</string>
+    <string name="ts_delete_keybox_summary">Remove keybox file</string>
+    <string name="ts_delete_keybox_title">Delete keybox?</string>
+    <string name="ts_delete_keybox_message">The keybox file will be permanently removed.</string>
+    <string name="ts_delete">Șterge</string>
+    <string name="ts_keybox_deleted">Keybox deleted</string>
+    <string name="ts_target_configuration">Target configuration</string>
+    <string name="ts_manage_target_apps">Manage target apps</string>
+    <string name="ts_no_targets">No target apps configured</string>
+    <string name="ts_target_apps_count">%d apps configured</string>
+    <string name="ts_import_target_list">Import target list</string>
+    <string name="ts_import_target_list_summary">Import target.txt from a file</string>
+    <string name="ts_target_list_imported">Target list imported</string>
+    <string name="ts_loading_apps">Loading apps\u2026</string>
+    <string name="ts_save">Salvaţi</string>
+    <string name="ts_targets_saved">Target list saved</string>
+    <string name="ts_failed">Failed: %s</string>
+    <string name="ts_target_mode">Target mode</string>
+    <string name="ts_target_mode_auto">Auto</string>
+    <string name="ts_target_mode_leaf">Leaf hack</string>
+    <string name="ts_target_mode_cert">Certificate generation</string>
+    <!-- Game Spoofing -->
+    <string name="gs_enable">Enable game spoofing</string>
+    <string name="gs_enable_summary">Spoof device properties for configured games</string>
+    <string name="gs_add_app">Add game</string>
+    <string name="gs_add_app_summary">Select an app and device profile to spoof</string>
+    <string name="gs_reload">Reload</string>
+    <string name="gs_reload_summary">Reload configuration from disk</string>
+    <string name="gs_configured_apps">Configured games</string>
+    <string name="gs_no_apps">No games configured</string>
+    <string name="gs_no_apps_summary">Tap \"Add game\" to get started</string>
+    <string name="gs_select_app">Select app</string>
+    <string name="gs_select_profile">Select device profile</string>
+    <string name="gs_edit_props">Edit properties</string>
+    <string name="gs_change_profile">Change device profile</string>
+    <string name="gs_remove">Remove</string>
+    <string name="gs_remove_title">Remove game?</string>
+    <string name="gs_remove_message">Remove %s from game spoofing?</string>
+    <string name="gs_edit_app">Edit %s</string>
+    <string name="gs_key">Key</string>
+    <string name="gs_value">Value</string>
+    <string name="gs_save">Salvaţi</string>
+    <string name="gs_config_saved">Configuration saved</string>
+    <string name="gs_loading_apps">Loading apps\u2026</string>
+    <string name="gs_failed">Failed: %s</string>
 </resources>
