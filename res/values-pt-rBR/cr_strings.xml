@@ -287,7 +287,7 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="edge_light_style_title">Render style</string>
     <string name="edge_light_style_default">Padrão (esquerda/direita)</string>
     <string name="edge_light_style_frame">Frame (all sides)</string>
-    <string name="edge_light_animation_effect_title">Animation effect</string>
+    <string name="edge_light_animation_effect_title">Efeito de animação</string>
     <string name="edge_light_animation_effect_none">Padrão</string>
     <string name="edge_light_animation_effect_breathing">Breathing</string>
     <string name="edge_light_animation_effect_wave">Onda</string>
@@ -673,12 +673,6 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="display_cutout_force_fullscreen_title">Aplicativos em tela cheia</string>
     <string name="display_cutout_force_fullscreen_summary">Forçar aplicativos a ignorar o espaço do entalhe</string>
     <string name="display_cutout_force_fullscreen_no_apps">Nenhum aplicativo</string>
-    <!-- Unlimited google photos storage -->
-    <string name="use_photos_spoof_title">Armazenamento de fotos ilimitado</string>
-    <string name="use_photos_spoof_summary">Mascarar seu dispositivo como Pixel XL para ter acesso ilimitado ao armazenamento de backup no Google Fotos</string>
-    <!-- Unlock FPS for specific games -->
-    <string name="use_games_spoof_title">Desbloquear máximo de FPS nos jogos</string>
-    <string name="use_games_spoof_summary">Mascarar seu dispositivo como um modelo diferente para desbloquear mais FPS nos jogos</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">Painel de volume</string>
     <string name="volume_dialog_timeout_title">Tempo limite do painel de volume</string>
@@ -932,12 +926,6 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <!-- Floating rotation button -->
     <string name="floating_rotation_button_title">Botão de rotação flutuante</string>
     <string name="floating_rotation_button_summary">Mostrar um botão de rotação flutuante quando o dispositivo for rotacionado</string>
-    <!-- Netflix Spoof -->
-    <string name="netflix_spoof_title">Mascarar Netflix</string>
-    <string name="netflix_spoof_summary">Mascare seu dispositivo como um modelo diferente para Netflix</string>
-    <!-- Google Play Integrity Spoof -->
-    <string name="pi_spoof_title">Mascarar Integridade da Google Play</string>
-    <string name="pi_spoof_summary">Mascare seu dispositivo como um modelo diferente para a Integridade da Google Play</string>
     <!-- Captive portal -->
     <string name="captive_portal_title">Verificar conectividade</string>
     <string name="captive_portal_summary">Determine se o dispositivo pode conectar-se à internet, entrando em contato com o Google. Também usado para detectar portais cativos.</string>
@@ -1070,18 +1058,6 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="custom_style_fluid">Fluído (transparente)</string>
     <string name="custom_style_ios">IOS</string>
     <string name="custom_style_layers">Camadas</string>
-    <!-- Keybox Data -->
-    <string name="keybox_data_title">Keybox attestation override</string>
-    <string name="keybox_data_summary">Load a custom keybox XML to override device key attestation</string>
-    <string name="keybox_data_loaded_summary">Custom keybox XML loaded. Delete to clear.</string>
-    <string name="keybox_delete_content_description">Clear keybox data</string>
-    <string name="keybox_toast_invalid_file_selected">Not an XML file. Choose a valid keybox XML.</string>
-    <string name="keybox_toast_missing_data">Invalid keybox XML: required fields missing</string>
-    <string name="keybox_toast_file_loaded">Keybox loaded</string>
-    <string name="keybox_toast_file_cleared">Keybox cleared</string>
-    <!-- Block attestation even with Keybox Data -->
-    <string name="pi_gmscertchain_title">Disable forcing strong integrity</string>
-    <string name="pi_gmscertchain_summary">When enabled, do not enforce strong integrity from valid custom keybox and depend on Google Play Integrity spoof to fix apps like Google Pay</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_shape_title">QS tiles shape</string>
     <string name="qs_tile_shape_dynamic">Dinâmico</string>
@@ -1114,7 +1090,7 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="ls_media_art_filter_sepia">Sepia</string>
     <string name="ls_media_art_filter_tint">Cor de destaque</string>
     <string name="ls_media_art_filter_invert">Invert</string>
-    <string name="ls_media_art_filter_grayblur">Grayscale and blur</string>
+    <string name="ls_media_art_filter_grayblur">Escala de cinza e desfoque</string>
     <!-- Lock screen media art fade level -->
     <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
     <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
@@ -1132,7 +1108,7 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="pulse_color_lavalamp">Lavalamp</string>
     <string name="pulse_color_album">Album art</string>
     <string name="pulse_color_accent">Cor de Destaque</string>
-    <string name="pulse_bar_count_title">Number of bars</string>
+    <string name="pulse_bar_count_title">Número de barras</string>
     <string name="pulse_bar_count_summary">Set how many bars are shown in the visualizer</string>
     <string name="pulse_bar_count_units">bars</string>
     <string name="pulse_renderer">Visualizer style</string>
@@ -1144,26 +1120,23 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="pulse_renderer_sparkle">Sparkle</string>
     <string name="pulse_renderer_matrix">Matrix</string>
     <!-- Notification Row -->
-    <string name="notification_row_transparency_title">Translucent notifications</string>
-    <string name="notification_row_transparency_summary">Set translucent background for notifications in QS</string>
-    <string name="notification_row_transparency_lockscreen_title">Translucent lockscreen notifications</string>
+    <string name="notification_row_transparency_title">Notificações transparentes</string>
+    <string name="notification_row_transparency_summary">Deixa o fundo das notificações transparente nas configurações rápidas</string>
+    <string name="notification_row_transparency_lockscreen_title">Notificações transparentes na tela de bloqueio</string>
     <string name="notification_row_transparency_lockscreen_summary">Set translucent background for notifications in lockscreen</string>
     <!-- Ambient Wallpaper -->
     <string name="doze_always_on_wallpaper_title">Ambient wallpaper</string>
-    <string name="doze_always_on_wallpaper_summary">Show lockscreen wallpaper on Ambient Display</string>
+    <string name="doze_always_on_wallpaper_summary">Mostra o papel de parede da tela de bloqueio na tela ambiente</string>
     <!-- Squiggle animation for media notification -->
     <string name="media_squiggle_animation_title">Squiggle animation</string>
     <string name="media_squiggle_animation_summary">Show seekbar squiggle animation in media panel when playing media</string>
-    <!-- Vbmeta hash attestation -->
-    <string name="vbmeta_attestation_title">Autofix VBMeta detection</string>
-    <string name="vbmeta_attestation_summary">Perform key attestation to generate verified boot hash on boot. Requires system restart.</string>
     <!-- Menu option for not validating the EAP server -->
     <string name="wifi_do_not_validate_eap_server">Do not validate</string>
     <!-- Warning message displayed if user choses not to validate the EAP server -->
     <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
     <!-- Multi Audio Focus -->
     <string name="multi_audio_focus_title">Multi audio focus</string>
-    <string name="multi_audio_focus_summary">Allow multiple apps to play audio simultaneously</string>
+    <string name="multi_audio_focus_summary">Permite múltiplas fontes de áudio simultaneamente</string>
     <!-- Locale Picker -->
     <string name="clear_search_query_description">Clear query</string>
     <string name="language_picker_page">Language picker page</string>
@@ -1171,10 +1144,10 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="search_region_page">Search region page</string>
     <!-- Data Usage Cycle -->
     <string name="billing_cycle_type_title">Mobile data usage cycle type</string>
-    <string name="billing_cycle_type_monthly">Monthly</string>
-    <string name="billing_cycle_type_weekly">Weekly</string>
-    <string name="billing_cycle_type_daily">Daily</string>
-    <string name="billing_cycle_less_than_one_hour_left">Less than 1 hour left</string>
+    <string name="billing_cycle_type_monthly">Mensal</string>
+    <string name="billing_cycle_type_weekly">Semanal</string>
+    <string name="billing_cycle_type_daily">Diário</string>
+    <string name="billing_cycle_less_than_one_hour_left">Menos de 1 hora restante</string>
     <string name="billing_cycle_hours_left">{count, plural,
         =1      {# hour left}
         other   {# hours left}
@@ -1313,4 +1286,91 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <!-- Themes -->
     <string name="custom_system_theme_title">Themes</string>
     <string name="custom_system_theme_summary">Customize system appearance with themes and icon packs</string>
+    <!-- Misc preference entries -->
+    <string name="play_integrity_fix_title">Play Integrity Fix</string>
+    <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints for basic integrity</string>
+    <string name="tricky_store_title">TrickyStore</string>
+    <string name="tricky_store_summary">Manage keybox and target apps for attestation for strong integrity</string>
+    <string name="game_spoofing_title">Game spoofing</string>
+    <string name="game_spoofing_summary">Spoof device properties for specific games</string>
+    <!-- Play Integrity Fix -->
+    <string name="pif_status">Status</string>
+    <string name="pif_active_config">Active configuration</string>
+    <string name="pif_no_config">No configuration loaded</string>
+    <string name="pif_config_loaded">Configuration loaded</string>
+    <string name="pif_fetch_pixel_beta">Fetch Pixel Beta fingerprint</string>
+    <string name="pif_fetch_pixel_beta_summary">Download latest Pixel Beta fingerprint from Google</string>
+    <string name="pif_fetching">Fetching from Google\u2026</string>
+    <string name="pif_fetched_model">Fetched fingerprint for %s</string>
+    <string name="pif_import_config">Import configuration</string>
+    <string name="pif_import_config_summary">Import PIF config from a file</string>
+    <string name="pif_imported_as">Imported as %s</string>
+    <string name="pif_delete_config">Delete active configuration</string>
+    <string name="pif_delete_config_summary">Remove the currently active config file</string>
+    <string name="pif_delete_title">Delete %s?</string>
+    <string name="pif_delete_message">This configuration file will be permanently removed.</string>
+    <string name="pif_delete">Excluir</string>
+    <string name="pif_deleted">Deleted %s</string>
+    <string name="pif_settings">Configurações</string>
+    <string name="pif_spoof_photos">Spoof Google Photos</string>
+    <string name="pif_spoof_photos_summary">Unlimited original quality backup</string>
+    <string name="pif_config_details">Configuration details</string>
+    <string name="pif_failed">Failed: %s</string>
+    <string name="pif_select_device">Select device</string>
+    <string name="pif_generating">Generating configuration\u2026</string>
+    <string name="pif_footer_title">Passing basic integrity</string>
+    <string name="pif_footer_body">1. Tap \"Fetch Pixel Beta fingerprint\" and select a device from the available list.\n2. If no devices are found, import a working PIF config from a trusted source. Config files are not provided; you must find one yourself.\n3. Recheck your Play Integrity status.\n\nAlways delete the active configuration before loading a new one. Loading an expired PIF config will cause strong integrity via TrickyStore to fail, even with a valid keybox.</string>
+    <!-- TrickyStore -->
+    <string name="ts_keybox_management">Keybox management</string>
+    <string name="ts_import_keybox">Import keybox</string>
+    <string name="ts_no_keybox">No keybox installed</string>
+    <string name="ts_keybox_installed">Keybox installed</string>
+    <string name="ts_keybox_imported">Keybox imported successfully</string>
+    <string name="ts_delete_keybox">Delete keybox</string>
+    <string name="ts_delete_keybox_summary">Remove keybox file</string>
+    <string name="ts_delete_keybox_title">Delete keybox?</string>
+    <string name="ts_delete_keybox_message">The keybox file will be permanently removed.</string>
+    <string name="ts_delete">Excluir</string>
+    <string name="ts_keybox_deleted">Keybox deleted</string>
+    <string name="ts_target_configuration">Target configuration</string>
+    <string name="ts_manage_target_apps">Manage target apps</string>
+    <string name="ts_no_targets">No target apps configured</string>
+    <string name="ts_target_apps_count">%d apps configured</string>
+    <string name="ts_import_target_list">Import target list</string>
+    <string name="ts_import_target_list_summary">Import target.txt from a file</string>
+    <string name="ts_target_list_imported">Target list imported</string>
+    <string name="ts_loading_apps">Loading apps\u2026</string>
+    <string name="ts_save">Salvar</string>
+    <string name="ts_targets_saved">Target list saved</string>
+    <string name="ts_failed">Failed: %s</string>
+    <string name="ts_target_mode">Target mode</string>
+    <string name="ts_target_mode_auto">Auto</string>
+    <string name="ts_target_mode_leaf">Leaf hack</string>
+    <string name="ts_target_mode_cert">Certificate generation</string>
+    <string name="ts_footer_title">Passing strong integrity</string>
+    <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
+    <!-- Game Spoofing -->
+    <string name="gs_enable">Enable game spoofing</string>
+    <string name="gs_enable_summary">Spoof device properties for configured games</string>
+    <string name="gs_add_app">Add game</string>
+    <string name="gs_add_app_summary">Select an app and device profile to spoof</string>
+    <string name="gs_reload">Reload</string>
+    <string name="gs_reload_summary">Reload configuration from disk</string>
+    <string name="gs_configured_apps">Configured games</string>
+    <string name="gs_no_apps">No games configured</string>
+    <string name="gs_no_apps_summary">Tap \"Add game\" to get started</string>
+    <string name="gs_select_app">Select app</string>
+    <string name="gs_select_profile">Select device profile</string>
+    <string name="gs_edit_props">Edit properties</string>
+    <string name="gs_change_profile">Change device profile</string>
+    <string name="gs_remove">Remove</string>
+    <string name="gs_remove_title">Remove game?</string>
+    <string name="gs_remove_message">Remove %s from game spoofing?</string>
+    <string name="gs_edit_app">Edit %s</string>
+    <string name="gs_key">Key</string>
+    <string name="gs_value">Value</string>
+    <string name="gs_save">Salvar</string>
+    <string name="gs_config_saved">Configuration saved</string>
+    <string name="gs_loading_apps">Loading apps\u2026</string>
+    <string name="gs_failed">Failed: %s</string>
 </resources>
