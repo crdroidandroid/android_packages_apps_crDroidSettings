@@ -1293,28 +1293,28 @@
     <string name="custom_system_theme_title">Темы оформления</string>
     <string name="custom_system_theme_summary">Настройте внешний вид системы с помощью тем и наборов значков</string>
     <!-- Misc preference entries -->
-    <string name="play_integrity_fix_title">Play Integrity Fix</string>
-    <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints</string>
+    <string name="play_integrity_fix_title">Исправление Play Integrity</string>
+    <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints for basic integrity</string>
     <string name="tricky_store_title">TrickyStore</string>
-    <string name="tricky_store_summary">Manage keybox and target apps for attestation</string>
-    <string name="game_spoofing_title">Game spoofing</string>
-    <string name="game_spoofing_summary">Spoof device properties for specific games</string>
+    <string name="tricky_store_summary">Manage keybox and target apps for attestation for strong integrity</string>
+    <string name="game_spoofing_title">Подмена устройства для игр</string>
+    <string name="game_spoofing_summary">Подмена свойств устройства для конкретных игр</string>
     <!-- Play Integrity Fix -->
-    <string name="pif_status">Status</string>
-    <string name="pif_active_config">Active configuration</string>
-    <string name="pif_no_config">No configuration loaded</string>
-    <string name="pif_config_loaded">Configuration loaded</string>
-    <string name="pif_fetch_pixel_beta">Fetch Pixel Beta fingerprint</string>
-    <string name="pif_fetch_pixel_beta_summary">Download latest Pixel Beta fingerprint from Google</string>
-    <string name="pif_fetching">Fetching from Google\u2026</string>
-    <string name="pif_fetched_model">Fetched fingerprint for %s</string>
-    <string name="pif_import_config">Import configuration</string>
-    <string name="pif_import_config_summary">Import PIF config from a file</string>
-    <string name="pif_imported_as">Imported as %s</string>
-    <string name="pif_delete_config">Delete active configuration</string>
-    <string name="pif_delete_config_summary">Remove the currently active config file</string>
-    <string name="pif_delete_title">Delete %s?</string>
-    <string name="pif_delete_message">This configuration file will be permanently removed.</string>
+    <string name="pif_status">Статус</string>
+    <string name="pif_active_config">Текущая конфигурация</string>
+    <string name="pif_no_config">Конфигурация не загружена</string>
+    <string name="pif_config_loaded">Конфигурация загружена</string>
+    <string name="pif_fetch_pixel_beta">Получить отпечаток Pixel Beta</string>
+    <string name="pif_fetch_pixel_beta_summary">Загрузить последний отпечаток Pixel Beta от Google</string>
+    <string name="pif_fetching">Получение от Google\u2026</string>
+    <string name="pif_fetched_model">Получен отпечаток для %s</string>
+    <string name="pif_import_config">Импорт конфигурации</string>
+    <string name="pif_import_config_summary">Импорт конфигурации PIF из файла</string>
+    <string name="pif_imported_as">Импортировано как %s</string>
+    <string name="pif_delete_config">Удалить активную конфигурацию</string>
+    <string name="pif_delete_config_summary">Удаление текущего активного файла конфигурации</string>
+    <string name="pif_delete_title">Удалить %s?</string>
+    <string name="pif_delete_message">Этот конфигурационный файл будет удален навсегда.</string>
     <string name="pif_delete">Удалить</string>
     <string name="pif_deleted">Deleted %s</string>
     <string name="pif_settings">Настройки</string>
@@ -1324,6 +1324,8 @@
     <string name="pif_failed">Failed: %s</string>
     <string name="pif_select_device">Select device</string>
     <string name="pif_generating">Generating configuration\u2026</string>
+    <string name="pif_footer_title">Passing basic integrity</string>
+    <string name="pif_footer_body">1. Tap \"Fetch Pixel Beta fingerprint\" and select a device from the available list.\n2. If no devices are found, import a working PIF config from a trusted source. Config files are not provided; you must find one yourself.\n3. Recheck your Play Integrity status.\n\nAlways delete the active configuration before loading a new one. Loading an expired PIF config will cause strong integrity via TrickyStore to fail, even with a valid keybox.</string>
     <!-- TrickyStore -->
     <string name="ts_keybox_management">Keybox management</string>
     <string name="ts_import_keybox">Import keybox</string>
@@ -1348,9 +1350,11 @@
     <string name="ts_targets_saved">Target list saved</string>
     <string name="ts_failed">Failed: %s</string>
     <string name="ts_target_mode">Target mode</string>
-    <string name="ts_target_mode_auto">Auto</string>
+    <string name="ts_target_mode_auto">Авто</string>
     <string name="ts_target_mode_leaf">Leaf hack</string>
     <string name="ts_target_mode_cert">Certificate generation</string>
+    <string name="ts_footer_title">Passing strong integrity</string>
+    <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">Enable game spoofing</string>
     <string name="gs_enable_summary">Spoof device properties for configured games</string>
@@ -1366,13 +1370,13 @@
     <string name="gs_edit_props">Edit properties</string>
     <string name="gs_change_profile">Change device profile</string>
     <string name="gs_remove">Remove</string>
-    <string name="gs_remove_title">Remove game?</string>
-    <string name="gs_remove_message">Remove %s from game spoofing?</string>
-    <string name="gs_edit_app">Edit %s</string>
-    <string name="gs_key">Key</string>
-    <string name="gs_value">Value</string>
+    <string name="gs_remove_title">Удалить игру?</string>
+    <string name="gs_remove_message">Удалить %s из игровой подмены?</string>
+    <string name="gs_edit_app">Изменить %s</string>
+    <string name="gs_key">Ключ</string>
+    <string name="gs_value">Значение</string>
     <string name="gs_save">Сохранить</string>
-    <string name="gs_config_saved">Configuration saved</string>
-    <string name="gs_loading_apps">Loading apps\u2026</string>
-    <string name="gs_failed">Failed: %s</string>
+    <string name="gs_config_saved">Конфигурация сохранена</string>
+    <string name="gs_loading_apps">Загрузка приложений\u2026</string>
+    <string name="gs_failed">Ошибка: %s</string>
 </resources>
