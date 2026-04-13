@@ -87,7 +87,7 @@ class ClockPickerFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        themeUtils = ThemeUtils(requireContext())
+        themeUtils = ThemeUtils.getInstance(requireContext())
     }
 
     override fun onCreateView(
