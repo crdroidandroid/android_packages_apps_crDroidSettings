@@ -673,12 +673,6 @@
     <string name="display_cutout_force_fullscreen_title">Приложения на цял екран</string>
     <string name="display_cutout_force_fullscreen_summary">Принуждаване на приложенията да игнорират пространството около прореза</string>
     <string name="display_cutout_force_fullscreen_no_apps">没有应用</string>
-    <!-- Unlimited google photos storage -->
-    <string name="use_photos_spoof_title">Неограничено съхранение на снимки</string>
-    <string name="use_photos_spoof_summary">Престори устройството си като Pixel XL за приложението Google Снимки само за да предостави неограничен обем за архивиране</string>
-    <!-- Unlock FPS for specific games -->
-    <string name="use_games_spoof_title">Отключете по-висок FPS в игрите</string>
-    <string name="use_games_spoof_summary">Подправете устройството си като различен модел за конкретни игри, за да отключите по-висок FPS</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">Звуков панел</string>
     <string name="volume_dialog_timeout_title">Време за изчакване на панела за звука</string>
@@ -932,12 +926,6 @@
     <!-- Floating rotation button -->
     <string name="floating_rotation_button_title">浮动旋转按钮</string>
     <string name="floating_rotation_button_summary">在设备旋转时显示浮动旋转按钮</string>
-    <!-- Netflix Spoof -->
-    <string name="netflix_spoof_title">Netflix 认证伪装</string>
-    <string name="netflix_spoof_summary">在 Netflix 中将您的设备伪装成不同的型号</string>
-    <!-- Google Play Integrity Spoof -->
-    <string name="pi_spoof_title">Фалшифициране на Google Play Integrity</string>
-    <string name="pi_spoof_summary">Фалшифициране на модела на устройството за Google Play Integrity</string>
     <!-- Captive portal -->
     <string name="captive_portal_title">连接检查</string>
     <string name="captive_portal_summary">通过联系 Google 确定设备是否可以连接到互联网，也用于检测强制登录页面。</string>
@@ -1070,18 +1058,6 @@
     <string name="custom_style_fluid">Течност (Прозрачно)</string>
     <string name="custom_style_ios">IOS</string>
     <string name="custom_style_layers">Слоеве</string>
-    <!-- Keybox Data -->
-    <string name="keybox_data_title">Замяна на удостоверяването на Keybox</string>
-    <string name="keybox_data_summary">Заредете персонализиран XML файл за ключове, за да отмените удостоверяването на ключове на устройството</string>
-    <string name="keybox_data_loaded_summary">Къстам keybox XML е зареден. Изтрий за изчистване.</string>
-    <string name="keybox_delete_content_description">Изчисти keybox дани</string>
-    <string name="keybox_toast_invalid_file_selected">Не е XML файл. Изберете валиден keybox XML.</string>
-    <string name="keybox_toast_missing_data">Невалиден keybox XML: липсват полета</string>
-    <string name="keybox_toast_file_loaded">Keybox е зареден</string>
-    <string name="keybox_toast_file_cleared">Keybox е изчистен</string>
-    <!-- Block attestation even with Keybox Data -->
-    <string name="pi_gmscertchain_title">Деактивирай строга целостност</string>
-    <string name="pi_gmscertchain_summary">Когато е активирано, не се налага строга защита на целостта от валидна персонализирана кутия за ключове и се разчита на имитация на целостта в Google Play за коригиране на приложения като Google Pay</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_shape_title">Стил на QS плочки</string>
     <string name="qs_tile_shape_dynamic">Динамичен</string>
@@ -1154,9 +1130,6 @@
     <!-- Squiggle animation for media notification -->
     <string name="media_squiggle_animation_title">Подскачаща анимация</string>
     <string name="media_squiggle_animation_summary">Показване на анимация на вълнообразна лента за търсене в медийния панел при възпроизвеждане на медия</string>
-    <!-- Vbmeta hash attestation -->
-    <string name="vbmeta_attestation_title">Автоматично-поправи VBMeta проверка</string>
-    <string name="vbmeta_attestation_summary">Извършете удостоверяване на ключ, за да генерирате проверен хеш за зареждане при зареждане. Изисква рестартиране на системата.</string>
     <!-- Menu option for not validating the EAP server -->
     <string name="wifi_do_not_validate_eap_server">Без удостоверяване</string>
     <!-- Warning message displayed if user choses not to validate the EAP server -->
@@ -1313,4 +1286,87 @@
     <!-- Themes -->
     <string name="custom_system_theme_title">Themes</string>
     <string name="custom_system_theme_summary">Customize system appearance with themes and icon packs</string>
+    <!-- Misc preference entries -->
+    <string name="play_integrity_fix_title">Play Integrity Fix</string>
+    <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints</string>
+    <string name="tricky_store_title">TrickyStore</string>
+    <string name="tricky_store_summary">Manage keybox and target apps for attestation</string>
+    <string name="game_spoofing_title">Game spoofing</string>
+    <string name="game_spoofing_summary">Spoof device properties for specific games</string>
+    <!-- Play Integrity Fix -->
+    <string name="pif_status">Status</string>
+    <string name="pif_active_config">Active configuration</string>
+    <string name="pif_no_config">No configuration loaded</string>
+    <string name="pif_config_loaded">Configuration loaded</string>
+    <string name="pif_fetch_pixel_beta">Fetch Pixel Beta fingerprint</string>
+    <string name="pif_fetch_pixel_beta_summary">Download latest Pixel Beta fingerprint from Google</string>
+    <string name="pif_fetching">Fetching from Google\u2026</string>
+    <string name="pif_fetched_model">Fetched fingerprint for %s</string>
+    <string name="pif_import_config">Import configuration</string>
+    <string name="pif_import_config_summary">Import PIF config from a file</string>
+    <string name="pif_imported_as">Imported as %s</string>
+    <string name="pif_delete_config">Delete active configuration</string>
+    <string name="pif_delete_config_summary">Remove the currently active config file</string>
+    <string name="pif_delete_title">Delete %s?</string>
+    <string name="pif_delete_message">This configuration file will be permanently removed.</string>
+    <string name="pif_delete">Изтриване</string>
+    <string name="pif_deleted">Deleted %s</string>
+    <string name="pif_settings">Настройки</string>
+    <string name="pif_spoof_photos">Spoof Google Photos</string>
+    <string name="pif_spoof_photos_summary">Unlimited original quality backup</string>
+    <string name="pif_config_details">Configuration details</string>
+    <string name="pif_failed">Failed: %s</string>
+    <string name="pif_select_device">Select device</string>
+    <string name="pif_generating">Generating configuration\u2026</string>
+    <!-- TrickyStore -->
+    <string name="ts_keybox_management">Keybox management</string>
+    <string name="ts_import_keybox">Import keybox</string>
+    <string name="ts_no_keybox">No keybox installed</string>
+    <string name="ts_keybox_installed">Keybox installed</string>
+    <string name="ts_keybox_imported">Keybox imported successfully</string>
+    <string name="ts_delete_keybox">Delete keybox</string>
+    <string name="ts_delete_keybox_summary">Remove keybox file</string>
+    <string name="ts_delete_keybox_title">Delete keybox?</string>
+    <string name="ts_delete_keybox_message">The keybox file will be permanently removed.</string>
+    <string name="ts_delete">Изтриване</string>
+    <string name="ts_keybox_deleted">Keybox deleted</string>
+    <string name="ts_target_configuration">Target configuration</string>
+    <string name="ts_manage_target_apps">Manage target apps</string>
+    <string name="ts_no_targets">No target apps configured</string>
+    <string name="ts_target_apps_count">%d apps configured</string>
+    <string name="ts_import_target_list">Import target list</string>
+    <string name="ts_import_target_list_summary">Import target.txt from a file</string>
+    <string name="ts_target_list_imported">Target list imported</string>
+    <string name="ts_loading_apps">Loading apps\u2026</string>
+    <string name="ts_save">Запиши</string>
+    <string name="ts_targets_saved">Target list saved</string>
+    <string name="ts_failed">Failed: %s</string>
+    <string name="ts_target_mode">Target mode</string>
+    <string name="ts_target_mode_auto">Auto</string>
+    <string name="ts_target_mode_leaf">Leaf hack</string>
+    <string name="ts_target_mode_cert">Certificate generation</string>
+    <!-- Game Spoofing -->
+    <string name="gs_enable">Enable game spoofing</string>
+    <string name="gs_enable_summary">Spoof device properties for configured games</string>
+    <string name="gs_add_app">Add game</string>
+    <string name="gs_add_app_summary">Select an app and device profile to spoof</string>
+    <string name="gs_reload">Reload</string>
+    <string name="gs_reload_summary">Reload configuration from disk</string>
+    <string name="gs_configured_apps">Configured games</string>
+    <string name="gs_no_apps">No games configured</string>
+    <string name="gs_no_apps_summary">Tap \"Add game\" to get started</string>
+    <string name="gs_select_app">Select app</string>
+    <string name="gs_select_profile">Select device profile</string>
+    <string name="gs_edit_props">Edit properties</string>
+    <string name="gs_change_profile">Change device profile</string>
+    <string name="gs_remove">Remove</string>
+    <string name="gs_remove_title">Remove game?</string>
+    <string name="gs_remove_message">Remove %s from game spoofing?</string>
+    <string name="gs_edit_app">Edit %s</string>
+    <string name="gs_key">Key</string>
+    <string name="gs_value">Value</string>
+    <string name="gs_save">Запиши</string>
+    <string name="gs_config_saved">Configuration saved</string>
+    <string name="gs_loading_apps">Loading apps\u2026</string>
+    <string name="gs_failed">Failed: %s</string>
 </resources>
