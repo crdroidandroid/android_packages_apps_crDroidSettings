@@ -1219,14 +1219,14 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="dynamic_bar_summary">Smart status bar chip for active events like recording, media, timers, and more</string>
     <string name="dynamic_bar_enable">Enable Dynamic Bar</string>
     <string name="dynamic_bar_enable_summary">Show a dynamic chip on the status bar for live events</string>
-    <string name="dynamic_bar_keyguard_enable">Dynamic bar on lock screen</string>
-    <string name="dynamic_bar_keyguard_enable_summary">Replace keyguard indication with dynamic bar chip on the lock screen with controls and quick actions</string>
-    <string name="dynamic_bar_keyguard_battery_chip">Battery info on lock screen</string>
+    <string name="dynamic_bar_keyguard_enable">Dynamische balk op vergrendelscherm</string>
+    <string name="dynamic_bar_keyguard_enable_summary">Vervang vergrendelscherm indicatie door dynamische chip op de balk met besturing en snelle acties</string>
+    <string name="dynamic_bar_keyguard_battery_chip">Batterij info op vergrendeld scherm</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">Nooit weergeven</string>
-    <string name="dynamic_bar_keyguard_battery_chip_charging">Only when charging</string>
-    <string name="dynamic_bar_keyguard_battery_chip_always">Always show</string>
-    <string name="dynamic_bar_keyguard_compact_chip">Compact lock screen chip</string>
-    <string name="dynamic_bar_keyguard_compact_chip_summary">Always use the compact chip style on the lockscreen. When disabled, compact mode is used only when space is limited.</string>
+    <string name="dynamic_bar_keyguard_battery_chip_charging">Alleen bij opladen</string>
+    <string name="dynamic_bar_keyguard_battery_chip_always">Altijd weergeven</string>
+    <string name="dynamic_bar_keyguard_compact_chip">Compacte vergrendelscherm chip</string>
+    <string name="dynamic_bar_keyguard_compact_chip_summary">Gebruik altijd de compacte chip stijl op het vergrendelscherm. Indien uitgeschakeld wordt de compacte modus alleen gebruikt wanneer de ruimte beperkt is.</string>
     <string name="dynamic_bar_events">Events</string>
     <string name="dynamic_bar_event_recording">Scherm opnemen</string>
     <string name="dynamic_bar_event_recording_summary">Active screen recording indicator</string>
@@ -1246,7 +1246,7 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="dynamic_bar_event_stopwatch_summary">Lopende stopwatch vanaf de klok app</string>
     <string name="dynamic_bar_event_alarm">Alarm</string>
     <string name="dynamic_bar_event_alarm_summary">Ringing and upcoming alarms</string>
-    <string name="dynamic_bar_event_charging">Charging started</string>
+    <string name="dynamic_bar_event_charging">Opladen gestart</string>
     <string name="dynamic_bar_event_charging_summary">Battery level when plugged in</string>
     <string name="dynamic_bar_event_bluetooth">Bluetooth</string>
     <string name="dynamic_bar_event_bluetooth_summary">Device connection status</string>
@@ -1288,9 +1288,9 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="custom_system_theme_summary">Pas systeemweergave aan met thema\'s en pictogrampakketten</string>
     <!-- Misc preference entries -->
     <string name="play_integrity_fix_title">Play Integrity Fix</string>
-    <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints</string>
+    <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints for basic integrity</string>
     <string name="tricky_store_title">TrickyStore</string>
-    <string name="tricky_store_summary">Manage keybox and target apps for attestation</string>
+    <string name="tricky_store_summary">Manage keybox and target apps for attestation for strong integrity</string>
     <string name="game_spoofing_title">Game spoofing</string>
     <string name="game_spoofing_summary">Spoof device properties for specific games</string>
     <!-- Play Integrity Fix -->
@@ -1318,6 +1318,8 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="pif_failed">Failed: %s</string>
     <string name="pif_select_device">Select device</string>
     <string name="pif_generating">Generating configuration\u2026</string>
+    <string name="pif_footer_title">Passing basic integrity</string>
+    <string name="pif_footer_body">1. Tap \"Fetch Pixel Beta fingerprint\" and select a device from the available list.\n2. If no devices are found, import a working PIF config from a trusted source. Config files are not provided; you must find one yourself.\n3. Recheck your Play Integrity status.\n\nAlways delete the active configuration before loading a new one. Loading an expired PIF config will cause strong integrity via TrickyStore to fail, even with a valid keybox.</string>
     <!-- TrickyStore -->
     <string name="ts_keybox_management">Keybox management</string>
     <string name="ts_import_keybox">Import keybox</string>
@@ -1345,6 +1347,8 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="ts_target_mode_auto">Auto</string>
     <string name="ts_target_mode_leaf">Leaf hack</string>
     <string name="ts_target_mode_cert">Certificate generation</string>
+    <string name="ts_footer_title">Passing strong integrity</string>
+    <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">Enable game spoofing</string>
     <string name="gs_enable_summary">Spoof device properties for configured games</string>
