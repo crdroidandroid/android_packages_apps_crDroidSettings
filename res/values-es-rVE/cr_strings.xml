@@ -1288,9 +1288,9 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="custom_system_theme_summary">Customize system appearance with themes and icon packs</string>
     <!-- Misc preference entries -->
     <string name="play_integrity_fix_title">Play Integrity Fix</string>
-    <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints</string>
+    <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints for basic integrity</string>
     <string name="tricky_store_title">TrickyStore</string>
-    <string name="tricky_store_summary">Manage keybox and target apps for attestation</string>
+    <string name="tricky_store_summary">Manage keybox and target apps for attestation for strong integrity</string>
     <string name="game_spoofing_title">Game spoofing</string>
     <string name="game_spoofing_summary">Spoof device properties for specific games</string>
     <!-- Play Integrity Fix -->
@@ -1318,6 +1318,8 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="pif_failed">Failed: %s</string>
     <string name="pif_select_device">Select device</string>
     <string name="pif_generating">Generating configuration\u2026</string>
+    <string name="pif_footer_title">Passing basic integrity</string>
+    <string name="pif_footer_body">1. Tap \"Fetch Pixel Beta fingerprint\" and select a device from the available list.\n2. If no devices are found, import a working PIF config from a trusted source. Config files are not provided; you must find one yourself.\n3. Recheck your Play Integrity status.\n\nAlways delete the active configuration before loading a new one. Loading an expired PIF config will cause strong integrity via TrickyStore to fail, even with a valid keybox.</string>
     <!-- TrickyStore -->
     <string name="ts_keybox_management">Keybox management</string>
     <string name="ts_import_keybox">Import keybox</string>
@@ -1345,6 +1347,8 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="ts_target_mode_auto">Auto</string>
     <string name="ts_target_mode_leaf">Leaf hack</string>
     <string name="ts_target_mode_cert">Certificate generation</string>
+    <string name="ts_footer_title">Passing strong integrity</string>
+    <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">Enable game spoofing</string>
     <string name="gs_enable_summary">Spoof device properties for configured games</string>
