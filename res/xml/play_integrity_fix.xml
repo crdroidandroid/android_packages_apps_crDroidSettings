@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/play_integrity_fix_title">
+
+    <PreferenceCategory
+        android:key="pif_status_category"
+        android:title="@string/pif_status">
+
+        <Preference
+            android:key="pif_active_config"
+            android:title="@string/pif_active_config"
+            android:summary="@string/pif_no_config"
+            android:selectable="false" />
+
+        <Preference
+            android:key="pif_fetch_beta"
+            android:title="@string/pif_fetch_pixel_beta"
+            android:summary="@string/pif_fetch_pixel_beta_summary" />
+
+        <Preference
+            android:key="pif_import_config"
+            android:title="@string/pif_import_config"
+            android:summary="@string/pif_import_config_summary" />
+
+        <Preference
+            android:key="pif_delete_config"
+            android:title="@string/pif_delete_config"
+            android:summary="@string/pif_delete_config_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pif_settings_category"
+        android:title="@string/pif_settings">
+
+        <SwitchPreferenceCompat
+            android:key="pif_spoof_photos"
+            android:title="@string/pif_spoof_photos"
+            android:summary="@string/pif_spoof_photos_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pif_config_details_category"
+        android:title="@string/pif_config_details" />
+
+</PreferenceScreen>

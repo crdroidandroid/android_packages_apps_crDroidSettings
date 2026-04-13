@@ -18,6 +18,30 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <!-- Play Integrity Fix -->
+    <Preference
+        android:key="play_integrity_fix"
+        android:icon="@drawable/ic_fingerprint"
+        android:title="@string/play_integrity_fix_title"
+        android:summary="@string/play_integrity_fix_summary"
+        android:fragment="com.crdroid.settings.fragments.misc.PlayIntegrityFix" />
+
+    <!-- TrickyStore -->
+    <Preference
+        android:key="tricky_store"
+        android:icon="@drawable/ic_vpn_key"
+        android:title="@string/tricky_store_title"
+        android:summary="@string/tricky_store_summary"
+        android:fragment="com.crdroid.settings.fragments.misc.TrickyStore" />
+
+    <!-- Game Spoofing -->
+    <Preference
+        android:key="game_spoofing"
+        android:icon="@drawable/ic_swap_horiz"
+        android:title="@string/game_spoofing_title"
+        android:summary="@string/game_spoofing_summary"
+        android:fragment="com.crdroid.settings.fragments.misc.GameSpoofing" />
+
     <!-- Gaming mode -->
     <Preference
         android:key="gaming_mode"
