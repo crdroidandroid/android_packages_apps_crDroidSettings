@@ -675,12 +675,6 @@
     <string name="display_cutout_force_fullscreen_title">Повноекранні додатки</string>
     <string name="display_cutout_force_fullscreen_summary">Змусити додатки ігнорувати виріз</string>
     <string name="display_cutout_force_fullscreen_no_apps">Немає додатків</string>
-    <!-- Unlimited google photos storage -->
-    <string name="use_photos_spoof_title">Необмежена пам\'ять фотографій</string>
-    <string name="use_photos_spoof_summary">Імітація вашого пристрою в форматі Pixel XL для додатка Google Photos забезпечить необмежену кількість пам\'яті для резервного копіювання</string>
-    <!-- Unlock FPS for specific games -->
-    <string name="use_games_spoof_title">Розблокування вищого FPS в іграх</string>
-    <string name="use_games_spoof_summary">Імітувати ваш пристрій як іншу модель для розблокування вищих FPS для деяких ігор</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">Панель гучності</string>
     <string name="volume_dialog_timeout_title">Час показу панелі гучності</string>
@@ -936,12 +930,6 @@
     <!-- Floating rotation button -->
     <string name="floating_rotation_button_title">Плаваюча кнопка повороту</string>
     <string name="floating_rotation_button_summary">Показувати кнопку з плаваючим обертанням на пристрої</string>
-    <!-- Netflix Spoof -->
-    <string name="netflix_spoof_title">Маскувати пристрій для Netflix</string>
-    <string name="netflix_spoof_summary">Імітувати ваш пристрій як іншу модель для Netflix</string>
-    <!-- Google Play Integrity Spoof -->
-    <string name="pi_spoof_title">Комплекс цілісності Google Play</string>
-    <string name="pi_spoof_summary">Імітувати ваш пристрій як іншу модель для Google Play Integrity</string>
     <!-- Captive portal -->
     <string name="captive_portal_title">Перевірка підключення</string>
     <string name="captive_portal_summary">Визначте, якщо пристрій може підключатися до інтернету, зв\'язавшись із Google. Також використовується для виявлення портальних порталів.</string>
@@ -1076,18 +1064,6 @@
     <string name="custom_style_fluid">Флюїд (прозорий)</string>
     <string name="custom_style_ios">IOS</string>
     <string name="custom_style_layers">Шари</string>
-    <!-- Keybox Data -->
-    <string name="keybox_data_title">Заміна атестації Keybox</string>
-    <string name="keybox_data_summary">Завантажте користувацьку клавіатуру XML для замінення атестації клавіш пристрою</string>
-    <string name="keybox_data_loaded_summary">Користувацьке вікно ключів XML завантажено. Видаліть для очищення.</string>
-    <string name="keybox_delete_content_description">Почистьте дані ключів</string>
-    <string name="keybox_toast_invalid_file_selected">Не XML-файл. Виберіть дійсний файл XML для ключа.</string>
-    <string name="keybox_toast_missing_data">Невірний XML: обов\'язкові поля keybox пропущено</string>
-    <string name="keybox_toast_file_loaded">Keybox завантажений</string>
-    <string name="keybox_toast_file_cleared">Keybox очищений</string>
-    <!-- Block attestation even with Keybox Data -->
-    <string name="pi_gmscertchain_title">Вимкнути примусову цілісність</string>
-    <string name="pi_gmscertchain_summary">При включенні не застосовуйте сильну цілісність з дійсних користувальницьких ключів і не залежить від місця цілісності Google Play, щоб виправити такі програми як Google Pay</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_shape_title">Стиль плиток швидких налаштувань</string>
     <string name="qs_tile_shape_dynamic">Динамічні</string>
@@ -1160,9 +1136,6 @@
     <!-- Squiggle animation for media notification -->
     <string name="media_squiggle_animation_title">Анімація хвилястих ліній</string>
     <string name="media_squiggle_animation_summary">Показувати анімацію перемотки екрану при відтворенні медіа</string>
-    <!-- Vbmeta hash attestation -->
-    <string name="vbmeta_attestation_title">Автовиправлення розпізнавання VBMeta</string>
-    <string name="vbmeta_attestation_summary">Виконайте хеш ключа при завантаженні щоб генерувати перевірений хеш. Для запуску необхідно перезапустити систему.</string>
     <!-- Menu option for not validating the EAP server -->
     <string name="wifi_do_not_validate_eap_server">Не перевіряти</string>
     <!-- Warning message displayed if user choses not to validate the EAP server -->
@@ -1321,4 +1294,91 @@
     <!-- Themes -->
     <string name="custom_system_theme_title">Теми</string>
     <string name="custom_system_theme_summary">Налаштування зовнішнього вигляду системи за допомогою тем та пакетів значків</string>
+    <!-- Misc preference entries -->
+    <string name="play_integrity_fix_title">Play Integrity Fix</string>
+    <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints for basic integrity</string>
+    <string name="tricky_store_title">TrickyStore</string>
+    <string name="tricky_store_summary">Manage keybox and target apps for attestation for strong integrity</string>
+    <string name="game_spoofing_title">Підміна пристрою для ігор</string>
+    <string name="game_spoofing_summary">Підміна властивостей пристрою для конкретних ігор</string>
+    <!-- Play Integrity Fix -->
+    <string name="pif_status">Статус</string>
+    <string name="pif_active_config">Активна конфігурація</string>
+    <string name="pif_no_config">Жодної конфігурації не завантажено</string>
+    <string name="pif_config_loaded">Конфігурацію завантажено</string>
+    <string name="pif_fetch_pixel_beta">Отримати відбитки пальців Pixel</string>
+    <string name="pif_fetch_pixel_beta_summary">Завантажити останній Pixel Beta відбиток пальця з Google</string>
+    <string name="pif_fetching">Отримання з Google\u2026</string>
+    <string name="pif_fetched_model">Отримано відбиток для %s</string>
+    <string name="pif_import_config">Імпортувати конфігурацію</string>
+    <string name="pif_import_config_summary">Імпортувати PIF конфігурацію з файлу</string>
+    <string name="pif_imported_as">Імпортовано як %s</string>
+    <string name="pif_delete_config">Видалити активну конфігурацію</string>
+    <string name="pif_delete_config_summary">Видалити поточний поточний файл налаштувань</string>
+    <string name="pif_delete_title">Видалити %s?</string>
+    <string name="pif_delete_message">Цей файл конфігурації буде остаточно видалено.</string>
+    <string name="pif_delete">Видалити</string>
+    <string name="pif_deleted">Видалити %s</string>
+    <string name="pif_settings">Налаштування</string>
+    <string name="pif_spoof_photos">Підміна Google Фото</string>
+    <string name="pif_spoof_photos_summary">Необмежене резервне копіювання в оригінальній якості</string>
+    <string name="pif_config_details">Подробиці налаштування</string>
+    <string name="pif_failed">Не вдалося: %s</string>
+    <string name="pif_select_device">Обрати пристрій</string>
+    <string name="pif_generating">Генерування конфігурації\u2026</string>
+    <string name="pif_footer_title">Passing basic integrity</string>
+    <string name="pif_footer_body">1. Tap \"Fetch Pixel Beta fingerprint\" and select a device from the available list.\n2. If no devices are found, import a working PIF config from a trusted source. Config files are not provided; you must find one yourself.\n3. Recheck your Play Integrity status.\n\nAlways delete the active configuration before loading a new one. Loading an expired PIF config will cause strong integrity via TrickyStore to fail, even with a valid keybox.</string>
+    <!-- TrickyStore -->
+    <string name="ts_keybox_management">Керування ключами</string>
+    <string name="ts_import_keybox">Імпортувати Keybox</string>
+    <string name="ts_no_keybox">Не встановлено жодного набору ключів</string>
+    <string name="ts_keybox_installed">Keybox встановлено</string>
+    <string name="ts_keybox_imported">Keybox успішно імпортовано</string>
+    <string name="ts_delete_keybox">Видалити Keybox</string>
+    <string name="ts_delete_keybox_summary">Видалити файл keybox</string>
+    <string name="ts_delete_keybox_title">Видалити Keybox?</string>
+    <string name="ts_delete_keybox_message">Цей файл конфігурації буде остаточно видалено.</string>
+    <string name="ts_delete">Видалити</string>
+    <string name="ts_keybox_deleted">Keybox видалено</string>
+    <string name="ts_target_configuration">Цільова конфігурація</string>
+    <string name="ts_manage_target_apps">Керувати цільовими програмами</string>
+    <string name="ts_no_targets">Немає налаштованих цільових додатків</string>
+    <string name="ts_target_apps_count">%d додатків налаштовано</string>
+    <string name="ts_import_target_list">Список цілей імпорту</string>
+    <string name="ts_import_target_list_summary">Імпорт target.txt з файлу</string>
+    <string name="ts_target_list_imported">Цільовий список імпортовано</string>
+    <string name="ts_loading_apps">Завантаження додатків\u2026</string>
+    <string name="ts_save">Зберегти</string>
+    <string name="ts_targets_saved">Список цільових збережених</string>
+    <string name="ts_failed">Не вдалося: %s</string>
+    <string name="ts_target_mode">Режим цілі</string>
+    <string name="ts_target_mode_auto">Автоматично</string>
+    <string name="ts_target_mode_leaf">Листяний лайфхак</string>
+    <string name="ts_target_mode_cert">Створення сертифіката</string>
+    <string name="ts_footer_title">Passing strong integrity</string>
+    <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
+    <!-- Game Spoofing -->
+    <string name="gs_enable">Увімкнути спуфінг гри</string>
+    <string name="gs_enable_summary">Підміна властивостей пристрою для конкретних ігор</string>
+    <string name="gs_add_app">Додати гру</string>
+    <string name="gs_add_app_summary">Виберіть профіль програми та пристрою, щоб використовувати його</string>
+    <string name="gs_reload">Оновити</string>
+    <string name="gs_reload_summary">Перезавантажити конфігурацію з диска</string>
+    <string name="gs_configured_apps">Налаштовані ігри</string>
+    <string name="gs_no_apps">Немає налаштованих ігор</string>
+    <string name="gs_no_apps_summary">Натисніть \"Додати гру\" щоб почати</string>
+    <string name="gs_select_app">Оберіть програму</string>
+    <string name="gs_select_profile">Виберіть профіль пристрою</string>
+    <string name="gs_edit_props">Редагувати властивості</string>
+    <string name="gs_change_profile">Виберіть профіль пристрою</string>
+    <string name="gs_remove">Вилучити</string>
+    <string name="gs_remove_title">Видалити гру?</string>
+    <string name="gs_remove_message">Видалити %s з ігрових розгалужень?</string>
+    <string name="gs_edit_app">Редагувати %s</string>
+    <string name="gs_key">Ключ</string>
+    <string name="gs_value">Значення</string>
+    <string name="gs_save">Зберегти</string>
+    <string name="gs_config_saved">Налаштування збережено</string>
+    <string name="gs_loading_apps">Завантаження додатків\u2026</string>
+    <string name="gs_failed">Не вдалося: %s</string>
 </resources>
