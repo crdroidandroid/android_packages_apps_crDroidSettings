@@ -69,7 +69,7 @@ public class CustomClockPreview extends SettingsPreferenceFragment {
         super.onCreate(savedInstanceState);
 
         getActivity().setTitle(getString(R.string.lockscreen_custom_clock_style_title));
-        mThemeUtils = new ThemeUtils(getActivity());
+        mThemeUtils = ThemeUtils.getInstance(getActivity());
 
         addPreferencesFromResource(R.xml.lockscreen_clock_preview_settings);
     }

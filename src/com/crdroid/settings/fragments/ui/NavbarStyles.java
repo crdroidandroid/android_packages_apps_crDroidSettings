@@ -55,7 +55,7 @@ public class NavbarStyles extends SettingsPreferenceFragment {
         super.onCreate(savedInstanceState);
         if (!isAdded()) return;
         requireActivity().setTitle(R.string.theme_customization_navbar_title);
-        mThemeUtils = new ThemeUtils(requireContext());
+        mThemeUtils = ThemeUtils.getInstance(getActivity());
         mPkgs = mThemeUtils.getOverlayPackagesForCategory(mCategory, "com.android.launcher3");
     }
 
