@@ -673,12 +673,6 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="display_cutout_force_fullscreen_title">Volledige scherm apps</string>
     <string name="display_cutout_force_fullscreen_summary">Dwing apps om notch ruimte te negeren</string>
     <string name="display_cutout_force_fullscreen_no_apps">Geen apps</string>
-    <!-- Unlimited google photos storage -->
-    <string name="use_photos_spoof_title">Onbeperkte opslag foto\'s</string>
-    <string name="use_photos_spoof_summary">Je apparaat spoofen als Pixel XL voor Google Photos app enkel voor onbeperkte opslag voor back-up</string>
-    <!-- Unlock FPS for specific games -->
-    <string name="use_games_spoof_title">Ontgrendel hogere FPS in spellen</string>
-    <string name="use_games_spoof_summary">Spoof je apparaat als een ander model voor specifieke spellen om hogere FPS te ontgrendelen</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">Volumepaneel</string>
     <string name="volume_dialog_timeout_title">Volumepaneel timeout</string>
@@ -932,12 +926,6 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <!-- Floating rotation button -->
     <string name="floating_rotation_button_title">Zwevende rotatie knop</string>
     <string name="floating_rotation_button_summary">Toon een zwevende rotatie knop wanneer het apparaat wordt gedraaid</string>
-    <!-- Netflix Spoof -->
-    <string name="netflix_spoof_title">Netflix spoof</string>
-    <string name="netflix_spoof_summary">Je apparaat spoofen als ander model voor Netflix</string>
-    <!-- Google Play Integrity Spoof -->
-    <string name="pi_spoof_title">Google Play Integrity spoof</string>
-    <string name="pi_spoof_summary">Je apparaat spoofen als een ander model voor Google Play Integrity</string>
     <!-- Captive portal -->
     <string name="captive_portal_title">Verbindingscontrole</string>
     <string name="captive_portal_summary">Bepaal of het apparaat verbinding kan maken met het internet door contact op te nemen met Google. Ook gebruikt om captive portalen te detecteren.</string>
@@ -1070,18 +1058,6 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="custom_style_fluid">Vloeistof (transparant)</string>
     <string name="custom_style_ios">IOS</string>
     <string name="custom_style_layers">Lagen</string>
-    <!-- Keybox Data -->
-    <string name="keybox_data_title">Keybox attestatie overschrijven</string>
-    <string name="keybox_data_summary">Laad een aangepast keybox XML om apparaatkey attestatie te overschrijven</string>
-    <string name="keybox_data_loaded_summary">Aangepaste keybox XML geladen. Verwijder om te wissen.</string>
-    <string name="keybox_delete_content_description">Verwijder keybox gegevens</string>
-    <string name="keybox_toast_invalid_file_selected">Geen XML bestand. Kies een geldige keybox XML.</string>
-    <string name="keybox_toast_missing_data">Ongeldige keybox XML: verplichte velden ontbreken</string>
-    <string name="keybox_toast_file_loaded">Keybox geladen</string>
-    <string name="keybox_toast_file_cleared">Keybox gewist</string>
-    <!-- Block attestation even with Keybox Data -->
-    <string name="pi_gmscertchain_title">Schakel het forceren van sterke integriteit uit</string>
-    <string name="pi_gmscertchain_summary">Wanneer ingeschakeld, forceer sterke integriteit van geldige aangepaste keybox niet en reken op de Google Play Integrity spoof om apps zoals Google Pay op te lossen</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_shape_title">QS tegel stijl</string>
     <string name="qs_tile_shape_dynamic">Dynamisch</string>
@@ -1154,9 +1130,6 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <!-- Squiggle animation for media notification -->
     <string name="media_squiggle_animation_title">Squiggle animatie</string>
     <string name="media_squiggle_animation_summary">Zoekbalk squiggle animatie weergeven in het mediapaneel wanneer media wordt afgespeeld</string>
-    <!-- Vbmeta hash attestation -->
-    <string name="vbmeta_attestation_title">Autofix VBMeta-detectie</string>
-    <string name="vbmeta_attestation_summary">Voer sleutelbevestiging uit om geverifieerde opstarthash te genereren. Vereist herstarten van het systeem.</string>
     <!-- Menu option for not validating the EAP server -->
     <string name="wifi_do_not_validate_eap_server">Niet valideren</string>
     <!-- Warning message displayed if user choses not to validate the EAP server -->
@@ -1242,75 +1215,162 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="shape_dotted_circle">Gestippelde cirkel</string>
     <string name="shape_squaremedo">Squaremedo</string>
     <!-- Dynamic Bar -->
-    <string name="dynamic_bar">Dynamic Bar</string>
-    <string name="dynamic_bar_summary">Smart status bar chip for active events like recording, media, timers, and more</string>
-    <string name="dynamic_bar_enable">Enable Dynamic Bar</string>
-    <string name="dynamic_bar_enable_summary">Show a dynamic chip on the status bar for live events</string>
-    <string name="dynamic_bar_keyguard_enable">Dynamic bar on lock screen</string>
-    <string name="dynamic_bar_keyguard_enable_summary">Replace keyguard indication with dynamic bar chip on the lock screen with controls and quick actions</string>
-    <string name="dynamic_bar_keyguard_battery_chip">Battery info on lock screen</string>
+    <string name="dynamic_bar">Dynamische balk</string>
+    <string name="dynamic_bar_summary">Slimme statusbalk chip voor actieve gebeurtenissen zoals opnemen, media, timers, en meer</string>
+    <string name="dynamic_bar_enable">Dynamische balk inschakelen</string>
+    <string name="dynamic_bar_enable_summary">Toon een dynamische chip op de statusbalk voor live evenementen</string>
+    <string name="dynamic_bar_keyguard_enable">Dynamische balk op vergrendelscherm</string>
+    <string name="dynamic_bar_keyguard_enable_summary">Vervang vergrendelscherm indicatie door dynamische chip op de balk met besturing en snelle acties</string>
+    <string name="dynamic_bar_keyguard_battery_chip">Batterij info op vergrendeld scherm</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">Nooit weergeven</string>
-    <string name="dynamic_bar_keyguard_battery_chip_charging">Only when charging</string>
-    <string name="dynamic_bar_keyguard_battery_chip_always">Always show</string>
-    <string name="dynamic_bar_keyguard_compact_chip">Compact lock screen chip</string>
-    <string name="dynamic_bar_keyguard_compact_chip_summary">Always use the compact chip style on the lockscreen. When disabled, compact mode is used only when space is limited.</string>
-    <string name="dynamic_bar_events">Events</string>
+    <string name="dynamic_bar_keyguard_battery_chip_charging">Alleen bij opladen</string>
+    <string name="dynamic_bar_keyguard_battery_chip_always">Altijd weergeven</string>
+    <string name="dynamic_bar_keyguard_compact_chip">Compacte vergrendelscherm chip</string>
+    <string name="dynamic_bar_keyguard_compact_chip_summary">Gebruik altijd de compacte chip stijl op het vergrendelscherm. Indien uitgeschakeld wordt de compacte modus alleen gebruikt wanneer de ruimte beperkt is.</string>
+    <string name="dynamic_bar_events">Evenementen</string>
     <string name="dynamic_bar_event_recording">Scherm opnemen</string>
-    <string name="dynamic_bar_event_recording_summary">Active screen recording indicator</string>
+    <string name="dynamic_bar_event_recording_summary">Indicator actieve schermopname</string>
     <string name="dynamic_bar_event_privacy">Privacy indicatoren</string>
-    <string name="dynamic_bar_event_privacy_summary">Camera and microphone access alerts</string>
+    <string name="dynamic_bar_event_privacy_summary">Toegang tot camera en microfoon waarschuwingen</string>
     <string name="dynamic_bar_event_audio_recording">Geluidsopname</string>
-    <string name="dynamic_bar_event_audio_recording_summary">Voice recorder and audio capture</string>
+    <string name="dynamic_bar_event_audio_recording_summary">Spraakrecorder en audio opname</string>
     <string name="dynamic_bar_event_media">Media afspelen</string>
-    <string name="dynamic_bar_event_media_summary">Now playing music and audio controls</string>
+    <string name="dynamic_bar_event_media_summary">Muziek en audio besturing worden nu afgespeeld</string>
     <string name="dynamic_bar_event_notification">Meldingen</string>
-    <string name="dynamic_bar_event_notification_summary">Incoming notification alerts</string>
-    <string name="dynamic_bar_compact_notifications">Compact notifications</string>
-    <string name="dynamic_bar_compact_notifications_summary">Show notifications as a small chip first, tap to expand</string>
+    <string name="dynamic_bar_event_notification_summary">Inkomende meldingen</string>
+    <string name="dynamic_bar_compact_notifications">Compacte meldingen</string>
+    <string name="dynamic_bar_compact_notifications_summary">Toon meldingen als een kleine chip eerst, tik om uit te breiden</string>
     <string name="dynamic_bar_event_timer">Timer</string>
     <string name="dynamic_bar_event_timer_summary">Afteltimer van de klok app</string>
     <string name="dynamic_bar_event_stopwatch">Stopwatch</string>
     <string name="dynamic_bar_event_stopwatch_summary">Lopende stopwatch vanaf de klok app</string>
     <string name="dynamic_bar_event_alarm">Alarm</string>
-    <string name="dynamic_bar_event_alarm_summary">Ringing and upcoming alarms</string>
-    <string name="dynamic_bar_event_charging">Charging started</string>
-    <string name="dynamic_bar_event_charging_summary">Battery level when plugged in</string>
+    <string name="dynamic_bar_event_alarm_summary">Beltoon en aankomende alarmen</string>
+    <string name="dynamic_bar_event_charging">Opladen gestart</string>
+    <string name="dynamic_bar_event_charging_summary">Batterij niveau wanneer aangesloten</string>
     <string name="dynamic_bar_event_bluetooth">Bluetooth</string>
-    <string name="dynamic_bar_event_bluetooth_summary">Device connection status</string>
+    <string name="dynamic_bar_event_bluetooth_summary">Apparaat verbindingsstatus</string>
     <string name="dynamic_bar_event_hotspot">Hotspot</string>
-    <string name="dynamic_bar_event_hotspot_summary">Mobile hotspot active indicator</string>
-    <string name="dynamic_bar_event_ringer">Ringer Mode</string>
-    <string name="dynamic_bar_event_ringer_summary">Silent, vibrate, and ring mode changes</string>
+    <string name="dynamic_bar_event_hotspot_summary">Mobiele hotspot actieve indicator</string>
+    <string name="dynamic_bar_event_ringer">Beltoonmodus</string>
+    <string name="dynamic_bar_event_ringer_summary">Stille, trillen en beltoon modus veranderen</string>
     <string name="dynamic_bar_event_vpn">VPN</string>
-    <string name="dynamic_bar_event_vpn_summary">Active VPN connection indicator</string>
-    <string name="dynamic_bar_event_clipboard">Clipboard</string>
-    <string name="dynamic_bar_event_clipboard_summary">Copied text and image preview</string>
+    <string name="dynamic_bar_event_vpn_summary">Indicator voor actieve VPN verbinding</string>
+    <string name="dynamic_bar_event_clipboard">Klembord</string>
+    <string name="dynamic_bar_event_clipboard_summary">Gekopieerde text en afbeelding preview</string>
     <string name="dynamic_bar_event_torch">Zaklamp</string>
-    <string name="dynamic_bar_event_torch_summary">Flashlight toggle and brightness</string>
-    <string name="dynamic_bar_event_casting">Casting</string>
-    <string name="dynamic_bar_event_casting_summary">Screen cast and media cast status</string>
+    <string name="dynamic_bar_event_torch_summary">Zaklamp schakelaar en helderheid</string>
+    <string name="dynamic_bar_event_casting">Casten</string>
+    <string name="dynamic_bar_event_casting_summary">Scherm en media cast status</string>
     <string name="dynamic_bar_event_ongoing">Lopende activiteiten</string>
-    <string name="dynamic_bar_event_ongoing_summary">Navigation, deliveries, and other live activities</string>
+    <string name="dynamic_bar_event_ongoing_summary">Navigatie, leveringen, en andere live activiteiten</string>
     <string name="dynamic_bar_event_sports">Sports</string>
-    <string name="dynamic_bar_event_sports_summary">Live scores and game updates</string>
-    <string name="dynamic_bar_event_app_switch">Recent app switch</string>
-    <string name="dynamic_bar_event_app_switch_summary">Show chip when switching between recent apps</string>
-    <string name="dynamic_bar_event_biometric">Biometric unlock</string>
-    <string name="dynamic_bar_event_biometric_summary">Show chip on fingerprint or face unlock</string>
+    <string name="dynamic_bar_event_sports_summary">Live scores en spel updates</string>
+    <string name="dynamic_bar_event_app_switch">Recente app schakelaar</string>
+    <string name="dynamic_bar_event_app_switch_summary">Toon chip bij schakelen tussen recente apps</string>
+    <string name="dynamic_bar_event_biometric">Biometrische ontgrendelen</string>
+    <string name="dynamic_bar_event_biometric_summary">Toon chip op vingerafdruk of gezichtsontgrendeling</string>
     <string name="dynamic_bar_guide_title">Hoe gebruik je dynamische balk</string>
-    <string name="dynamic_bar_guide_chip">Events appear in the status bar showing active events like recording, media playback, and timers</string>
-    <string name="dynamic_bar_guide_swipe">When multiple events are active, swipe left or right on the chip to cycle through them</string>
-    <string name="dynamic_bar_guide_expand">Tap a chip to expand it into a detailed card with controls and additional information</string>
-    <string name="dynamic_bar_guide_dismiss">Swipe the expanded card away to dismiss it. The event continues in the background</string>
-    <string name="dynamic_bar_guide_keyguard">Dynamic bar chip also appears at the bottom of the lock screen with playback controls and quick actions</string>
-    <string name="dynamic_bar_guide_chip_title">Chip appearance</string>
-    <string name="dynamic_bar_guide_swipe_title">Swipe between chips</string>
-    <string name="dynamic_bar_guide_expand_title">Tap to expand</string>
-    <string name="dynamic_bar_guide_dismiss_title">Swipe to dismiss</string>
-    <string name="dynamic_bar_guide_keyguard_title">Lock screen chip</string>
-    <string name="dynamic_bar_footer_title">About Dynamic Bar</string>
-    <string name="dynamic_bar_footer_body">Dynamic Bar transforms your status bar into an interactive hub. Status chips appear and animate based on system events, giving you at-a-glance information without interrupting your workflow.\n\nEach event type has its own accent color and expanded card with quick actions.</string>
+    <string name="dynamic_bar_guide_chip">Gebeurtenissen verschijnen in de statusbalk met actieve gebeurtenissen zoals opnemen, afspelen van media en timers</string>
+    <string name="dynamic_bar_guide_swipe">Wanneer meerdere gebeurtenissen actief zijn, veeg naar links of rechts op de chip om er door te gaan</string>
+    <string name="dynamic_bar_guide_expand">Tik op een chip om uit te breiden naar een gedetailleerde kaart met besturingselementen en aanvullende informatie</string>
+    <string name="dynamic_bar_guide_dismiss">Veeg de uitgebreide kaart weg om deze te negeren. Het evenement gaat verder op de achtergrond</string>
+    <string name="dynamic_bar_guide_keyguard">Dynamische balkchip wordt ook weergegeven aan de onderkant van het vergrendelscherm met afspeel besturingselementen en snelle acties</string>
+    <string name="dynamic_bar_guide_chip_title">Chip uiterlijk</string>
+    <string name="dynamic_bar_guide_swipe_title">Veeg tussen chips</string>
+    <string name="dynamic_bar_guide_expand_title">Tik om uit te vouwen</string>
+    <string name="dynamic_bar_guide_dismiss_title">Veeg om te sluiten</string>
+    <string name="dynamic_bar_guide_keyguard_title">Vergrendelscherm chip</string>
+    <string name="dynamic_bar_footer_title">Over dynamische balk</string>
+    <string name="dynamic_bar_footer_body">Dynamische balk verandert uw statusbalk in een interactieve hub. Status chips verschijnen en animeren op basis van systeem gebeurtenissen, waardoor u per oogopslag informatie krijgt zonder uw workflow te onderbreken.\n\nElk event type heeft zijn eigen accentkleur en uitgebreide kaart met snelle acties.</string>
     <!-- Themes -->
     <string name="custom_system_theme_title">Thema\'s</string>
     <string name="custom_system_theme_summary">Pas systeemweergave aan met thema\'s en pictogrampakketten</string>
+    <!-- Misc preference entries -->
+    <string name="play_integrity_fix_title">Play Integrity Fix</string>
+    <string name="play_integrity_fix_summary">Beheer PIF configuratie en apparaat vingerafdrukken voor basisintegriteit</string>
+    <string name="tricky_store_title">TrickyStore</string>
+    <string name="tricky_store_summary">Beheer de keybox en doelapps voor bevestiging van een sterke integriteit</string>
+    <string name="game_spoofing_title">Game spoofing</string>
+    <string name="game_spoofing_summary">Apparaateigenschappen voor specifieke spellen omzeilen</string>
+    <!-- Play Integrity Fix -->
+    <string name="pif_status">Status</string>
+    <string name="pif_active_config">Actieve configuratie</string>
+    <string name="pif_no_config">Geen configuratie geladen</string>
+    <string name="pif_config_loaded">Configuratie geladen</string>
+    <string name="pif_fetch_pixel_beta">Ophalen van Pixel Beta vingerafdruk</string>
+    <string name="pif_fetch_pixel_beta_summary">Download laatste Pixel Beta vingerafdruk van Google</string>
+    <string name="pif_fetching">Ophalen van Google\u2026</string>
+    <string name="pif_fetched_model">Vingerafdruk voor %s opgehaald</string>
+    <string name="pif_import_config">Configuratie importeren</string>
+    <string name="pif_import_config_summary">PIF configuratie uit een bestand importeren</string>
+    <string name="pif_imported_as">Geïmporteerd als %s</string>
+    <string name="pif_delete_config">Actieve configuratie verwijderen</string>
+    <string name="pif_delete_config_summary">Verwijder het huidige actieve configuratiebestand</string>
+    <string name="pif_delete_title">Verwijder %s?</string>
+    <string name="pif_delete_message">Dit configuratiebestand zal permanent worden verwijderd.</string>
+    <string name="pif_delete">Verwijderen</string>
+    <string name="pif_deleted">Verwijderd %s</string>
+    <string name="pif_settings">Instellingen</string>
+    <string name="pif_spoof_photos">Google Foto\'s spoofen</string>
+    <string name="pif_spoof_photos_summary">Onbeperkte originele kwaliteit back-up</string>
+    <string name="pif_config_details">Configuratie details</string>
+    <string name="pif_failed">Mislukt: %s</string>
+    <string name="pif_select_device">Apparaat selecteren</string>
+    <string name="pif_generating">Configuratie aanmaken\u2026</string>
+    <string name="pif_footer_title">Basisintegriteit behaald</string>
+    <string name="pif_footer_body">1. Tik op \"Ophalen van Pixel Beta vingerafdruk\" en selecteer een apparaat uit de beschikbare lijst.\n2. Als er geen apparaten worden gevonden, importeer een werkende PIF configuratie van een vertrouwde bron. Configuratiebestanden zijn niet beschikbaar; u moet er zelf één vinden.\n3. Controleer je Play Integrity status.\n\nVerwijder altijd de actieve configuratie voordat je een nieuwe laadt. Het laden van een verlopen PIF configuratie zal zorgen voor een sterke integriteit via TrickyStore, zelfs met een geldige sleutelbox.</string>
+    <!-- TrickyStore -->
+    <string name="ts_keybox_management">Keybox beheer</string>
+    <string name="ts_import_keybox">Keybox importeren</string>
+    <string name="ts_no_keybox">Geen keybox geïnstalleerd</string>
+    <string name="ts_keybox_installed">Keybox geïnstalleerd</string>
+    <string name="ts_keybox_imported">Keybox succesvol geïmporteerd</string>
+    <string name="ts_delete_keybox">Verwijder keybox</string>
+    <string name="ts_delete_keybox_summary">Verwijder keybox bestand</string>
+    <string name="ts_delete_keybox_title">Verwijder keybox?</string>
+    <string name="ts_delete_keybox_message">Dit configuratiebestand zal permanent worden verwijderd.</string>
+    <string name="ts_delete">Verwijderen</string>
+    <string name="ts_keybox_deleted">Keybox verwijderd</string>
+    <string name="ts_target_configuration">Doelconfiguratie</string>
+    <string name="ts_manage_target_apps">Beheren van doelapps</string>
+    <string name="ts_no_targets">Geen doel-apps geconfigureerd</string>
+    <string name="ts_target_apps_count">%d apps geconfigureerd</string>
+    <string name="ts_import_target_list">Importeer doellijst</string>
+    <string name="ts_import_target_list_summary">Importeer target.txt uit een bestand</string>
+    <string name="ts_target_list_imported">Doellijst geimporteerd</string>
+    <string name="ts_loading_apps">Apps laden\u2026</string>
+    <string name="ts_save">Opslaan</string>
+    <string name="ts_targets_saved">Doellijst opgeslagen</string>
+    <string name="ts_failed">Mislukt: %s</string>
+    <string name="ts_target_mode">Doelmodus</string>
+    <string name="ts_target_mode_auto">Automatisch</string>
+    <string name="ts_target_mode_leaf">Blader hack</string>
+    <string name="ts_target_mode_cert">Certificaat generatie</string>
+    <string name="ts_footer_title">Sterke integriteit behaald</string>
+    <string name="ts_footer_body">1. Verkrijg een geldige keybox XML van een vertrouwde bron. Sleutelvakken worden niet opgegeven; je moet er zelf een vinden.\n2. Klik op \"Toetsenvak importeren\" en laad het bestand.\n3. Open \"Doelapps beheren\" en selecteer Google Play Services en Google Play Store.\n4. Stel de doelmodus in op \"Leaf\" als je apparaat een werkende TEE heeft, anders laat het staan als Auto.\n5. Controleer je Play Integrity status.\n\nAltijd het bestaande sleutelveld verwijderen voordat u een nieuwe importeert. Als Google een keybox intrekt, kan het het nog steeds toestaan om door te gaan met de integriteit van het apparaat, ook al zal sterke integriteit mislukken.</string>
+    <!-- Game Spoofing -->
+    <string name="gs_enable">Schakel spelspoofing in</string>
+    <string name="gs_enable_summary">Apparaateigenschappen voor geconfigureerde spellen spoofen</string>
+    <string name="gs_add_app">Game toevoegen</string>
+    <string name="gs_add_app_summary">Selecteer een app en apparaatprofiel om te spoofen</string>
+    <string name="gs_reload">Herladen</string>
+    <string name="gs_reload_summary">Herlaad configuratie van schijf</string>
+    <string name="gs_configured_apps">Geconfigureerde spellen</string>
+    <string name="gs_no_apps">Geen spellen geconfigureerd</string>
+    <string name="gs_no_apps_summary">Tik op \"Voeg spel toe\" om te beginnen</string>
+    <string name="gs_select_app">Selecteer app</string>
+    <string name="gs_select_profile">Apparaatprofiel selecteren</string>
+    <string name="gs_edit_props">Bewerk eigenschappen</string>
+    <string name="gs_change_profile">Apparaatprofiel wijzigen</string>
+    <string name="gs_remove">Verwijderen</string>
+    <string name="gs_remove_title">Game verwijderen?</string>
+    <string name="gs_remove_message">%s verwijderen van spelspoofing?</string>
+    <string name="gs_edit_app">Bewerken %s</string>
+    <string name="gs_key">Key</string>
+    <string name="gs_value">Waarde</string>
+    <string name="gs_save">Opslaan</string>
+    <string name="gs_config_saved">Configuratie opgeslagen</string>
+    <string name="gs_loading_apps">Apps laden\u2026</string>
+    <string name="gs_failed">Mislukt: %s</string>
 </resources>

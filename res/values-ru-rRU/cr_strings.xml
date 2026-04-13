@@ -675,12 +675,6 @@
     <string name="display_cutout_force_fullscreen_title">Полноэкранные приложения</string>
     <string name="display_cutout_force_fullscreen_summary">Принудительно игнорировать вырез экрана</string>
     <string name="display_cutout_force_fullscreen_no_apps">Приложений нет</string>
-    <!-- Unlimited google photos storage -->
-    <string name="use_photos_spoof_title">Безлимитный «Google Фото»</string>
-    <string name="use_photos_spoof_summary">Маскировка устройства под Pixel XL для «Google Фото», чтобы предоставить неограниченное хранилище для резервного копирования фотографий</string>
-    <!-- Unlock FPS for specific games -->
-    <string name="use_games_spoof_title">Высокий FPS в играх</string>
-    <string name="use_games_spoof_summary">Маскировка устройства под другую модель для определённых игр, чтобы разблокировать более высокий FPS</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">Панель громкости</string>
     <string name="volume_dialog_timeout_title">Время отображения панели</string>
@@ -936,12 +930,6 @@
     <!-- Floating rotation button -->
     <string name="floating_rotation_button_title">Плавающая кнопка поворота</string>
     <string name="floating_rotation_button_summary">Показывать плавающую кнопку поворота при вращении устройства</string>
-    <!-- Netflix Spoof -->
-    <string name="netflix_spoof_title">Подмена устройства для Netflix</string>
-    <string name="netflix_spoof_summary">Подменять модель устройства для корректной работы Netflix</string>
-    <!-- Google Play Integrity Spoof -->
-    <string name="pi_spoof_title">Подмена для Google Play Integrity</string>
-    <string name="pi_spoof_summary">Подмена модели устройства для Google Play Integrity</string>
     <!-- Captive portal -->
     <string name="captive_portal_title">Проверка подключения</string>
     <string name="captive_portal_summary">Проверяется, может ли устройство подключиться к Интернету, связавшись с Google. Также используется для обнаружения порталов авторизации.</string>
@@ -1076,18 +1064,6 @@
     <string name="custom_style_fluid">Жидкость (прозрачная)</string>
     <string name="custom_style_ios">IOS</string>
     <string name="custom_style_layers">Слои</string>
-    <!-- Keybox Data -->
-    <string name="keybox_data_title">Подмена ключей аттестации</string>
-    <string name="keybox_data_summary">Загрузить свой XML с ключами для замены ключей аттестации устройства</string>
-    <string name="keybox_data_loaded_summary">XML ключи загружены. Для очистки - удалите их.</string>
-    <string name="keybox_delete_content_description">Очистить данные ключей</string>
-    <string name="keybox_toast_invalid_file_selected">Это не XML файл. Выберите допустимый формат XML ключей.</string>
-    <string name="keybox_toast_missing_data">Некорректный XML файл с ключами: отсутствуют обязательные поля</string>
-    <string name="keybox_toast_file_loaded">Файл с ключами загружен</string>
-    <string name="keybox_toast_file_cleared">Ключи очищены</string>
-    <!-- Block attestation even with Keybox Data -->
-    <string name="pi_gmscertchain_title">Отключить принудительную аттестацию</string>
-    <string name="pi_gmscertchain_summary">Если включено - не применять строгую аттестацию из переопределённых ключей аттестации и полагаться на подмену Google Play для исправления приложений, таких как Google Pay</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_shape_title">Форма плиток</string>
     <string name="qs_tile_shape_dynamic">Динамические</string>
@@ -1160,9 +1136,6 @@
     <!-- Squiggle animation for media notification -->
     <string name="media_squiggle_animation_title">Волнистая анимация</string>
     <string name="media_squiggle_animation_summary">Показывать волнистую линию прогресса, на панели мультимедиа, при воспроизведении мультимедийных файлов</string>
-    <!-- Vbmeta hash attestation -->
-    <string name="vbmeta_attestation_title">Автоисправление обнаружения VBMeta</string>
-    <string name="vbmeta_attestation_summary">Выполните проверку ключа, чтобы сгенерировать подтверждённый загрузочный хэш. Требуется перезагрузка системы.</string>
     <!-- Menu option for not validating the EAP server -->
     <string name="wifi_do_not_validate_eap_server">Не проверять</string>
     <!-- Warning message displayed if user choses not to validate the EAP server -->
@@ -1319,4 +1292,91 @@
     <!-- Themes -->
     <string name="custom_system_theme_title">Темы оформления</string>
     <string name="custom_system_theme_summary">Настройте внешний вид системы с помощью тем и наборов значков</string>
+    <!-- Misc preference entries -->
+    <string name="play_integrity_fix_title">Исправление Play Integrity</string>
+    <string name="play_integrity_fix_summary">Управление конфигурацией PIF и отпечатками устройства для обеспечения базовой целостности</string>
+    <string name="tricky_store_title">TrickyStore</string>
+    <string name="tricky_store_summary">Управление ключами и целевыми приложениями для проверки строгой целостности</string>
+    <string name="game_spoofing_title">Подмена устройства для игр</string>
+    <string name="game_spoofing_summary">Подмена свойств устройства для конкретных игр</string>
+    <!-- Play Integrity Fix -->
+    <string name="pif_status">Статус</string>
+    <string name="pif_active_config">Текущая конфигурация</string>
+    <string name="pif_no_config">Конфигурация не загружена</string>
+    <string name="pif_config_loaded">Конфигурация загружена</string>
+    <string name="pif_fetch_pixel_beta">Получить отпечаток Pixel Beta</string>
+    <string name="pif_fetch_pixel_beta_summary">Загрузить последний отпечаток Pixel Beta от Google</string>
+    <string name="pif_fetching">Получение от Google\u2026</string>
+    <string name="pif_fetched_model">Получен отпечаток для %s</string>
+    <string name="pif_import_config">Импорт конфигурации</string>
+    <string name="pif_import_config_summary">Импорт конфигурации PIF из файла</string>
+    <string name="pif_imported_as">Импортировано как %s</string>
+    <string name="pif_delete_config">Удалить активную конфигурацию</string>
+    <string name="pif_delete_config_summary">Удаление текущего активного файла конфигурации</string>
+    <string name="pif_delete_title">Удалить %s?</string>
+    <string name="pif_delete_message">Этот конфигурационный файл будет удален навсегда.</string>
+    <string name="pif_delete">Удалить</string>
+    <string name="pif_deleted">Удалено %s</string>
+    <string name="pif_settings">Настройки</string>
+    <string name="pif_spoof_photos">Подмена для Google Фото</string>
+    <string name="pif_spoof_photos_summary">Неограниченное резервное копирование в оригинальном качестве</string>
+    <string name="pif_config_details">Сведения о конфигурации</string>
+    <string name="pif_failed">Ошибка: %s</string>
+    <string name="pif_select_device">Выбор устройства</string>
+    <string name="pif_generating">Создание конфигурации\u2026</string>
+    <string name="pif_footer_title">Проверка базовой целостности</string>
+    <string name="pif_footer_body">1. Нажмите \"Получить отпечаток Pixel Beta\" и выберите устройство из списка доступных.\n2. Если устройства не найдены, импортируйте рабочую конфигурацию PIF из надёжного источника. Мы не предоставляем файлы конфигурации, вы должны найти их самостоятельно.\n3. Перепроверьте статус Play Integrity.\n\nВ любом случае удаляйте активную конфигурацию перед загрузкой новой. Загрузка конфигурации PIF с истекшим сроком действия приведёт к сбою проверки строгой целостности с помощью TrickyStore, даже при наличии действительного набора ключей.</string>
+    <!-- TrickyStore -->
+    <string name="ts_keybox_management">Управление ключами</string>
+    <string name="ts_import_keybox">Импорт ключей</string>
+    <string name="ts_no_keybox">Ключи не установлены</string>
+    <string name="ts_keybox_installed">Ключи установлены</string>
+    <string name="ts_keybox_imported">Ключи успешно импортированы</string>
+    <string name="ts_delete_keybox">Удалить ключи</string>
+    <string name="ts_delete_keybox_summary">Удалить файл ключей</string>
+    <string name="ts_delete_keybox_title">Удалить ключи?</string>
+    <string name="ts_delete_keybox_message">Файл с ключами будет удалён навсегда.</string>
+    <string name="ts_delete">Удалить</string>
+    <string name="ts_keybox_deleted">Ключи удалены</string>
+    <string name="ts_target_configuration">Текущая конфигурация</string>
+    <string name="ts_manage_target_apps">Управление целевыми приложениями</string>
+    <string name="ts_no_targets">Целевые приложения не настроены</string>
+    <string name="ts_target_apps_count">Настроено приложений: %d</string>
+    <string name="ts_import_target_list">Импорт целевого списка</string>
+    <string name="ts_import_target_list_summary">Импортировать target.txt из файла</string>
+    <string name="ts_target_list_imported">Целевой список импортирован</string>
+    <string name="ts_loading_apps">Загрузка приложений\u2026</string>
+    <string name="ts_save">Сохранить</string>
+    <string name="ts_targets_saved">Целевой список сохранён</string>
+    <string name="ts_failed">Ошибка: %s</string>
+    <string name="ts_target_mode">Целевой режим</string>
+    <string name="ts_target_mode_auto">Авто</string>
+    <string name="ts_target_mode_leaf">Leaf hack</string>
+    <string name="ts_target_mode_cert">Создание сертификата</string>
+    <string name="ts_footer_title">Проверка строгой целостности</string>
+    <string name="ts_footer_body">1. Получите действительный XML-файл с ключами из надёжного источника. Мы не предоставляем файл с ключами, вы должны найти его самостоятельно.\n2. Нажмите \"Импорт ключей\" и загрузите файл.\n3. Откройте \"Управление целевыми приложениями\" и выберите сервисы Google Play и Google Play Store.\n4. Установите целевой режим на \"Leaf hack\", если на вашем устройстве работает TEE, в противном случае оставьте \"Авто\".\n5. Перепроверьте статус Play Integrity.\n\nВ любом случае удаляйте существующие ключи перед загрузкой новых. Если Google отзовёт ключи, он все равно может проходить базовую целостность, даже если при этом не будет проходить строгая целостность.</string>
+    <!-- Game Spoofing -->
+    <string name="gs_enable">Вкл. подмену для игр</string>
+    <string name="gs_enable_summary">Подмена свойств устройства для конкретных игр</string>
+    <string name="gs_add_app">Добавить игру</string>
+    <string name="gs_add_app_summary">Выберите приложение и профиль устройства для подмены</string>
+    <string name="gs_reload">Обновить</string>
+    <string name="gs_reload_summary">Перезагрузить конфигурацию с диска</string>
+    <string name="gs_configured_apps">Настроенные игры</string>
+    <string name="gs_no_apps">Нет настроенных игр</string>
+    <string name="gs_no_apps_summary">Нажмите \"Добавить игру\", чтобы начать</string>
+    <string name="gs_select_app">Выберите приложение</string>
+    <string name="gs_select_profile">Выберите профиль устройства</string>
+    <string name="gs_edit_props">Изменить свойства</string>
+    <string name="gs_change_profile">Изменить профиль устройства</string>
+    <string name="gs_remove">Удалить</string>
+    <string name="gs_remove_title">Удалить игру?</string>
+    <string name="gs_remove_message">Удалить %s из игровой подмены?</string>
+    <string name="gs_edit_app">Изменить %s</string>
+    <string name="gs_key">Ключ</string>
+    <string name="gs_value">Значение</string>
+    <string name="gs_save">Сохранить</string>
+    <string name="gs_config_saved">Конфигурация сохранена</string>
+    <string name="gs_loading_apps">Загрузка приложений\u2026</string>
+    <string name="gs_failed">Ошибка: %s</string>
 </resources>

@@ -674,12 +674,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <string name="display_cutout_force_fullscreen_title">Aplicații ecran complet</string>
     <string name="display_cutout_force_fullscreen_summary">Forţaţi aplicațiile să ignore spațiul pentru notch</string>
     <string name="display_cutout_force_fullscreen_no_apps">Nicio aplicație</string>
-    <!-- Unlimited google photos storage -->
-    <string name="use_photos_spoof_title">Stocare nelimitată de fotografii</string>
-    <string name="use_photos_spoof_summary">Setare a dispozitivului ca Pixel XL pentru aplicația Google Photos doar pentru a oferi stocare nelimitată pentru backup</string>
-    <!-- Unlock FPS for specific games -->
-    <string name="use_games_spoof_title">Deblochează FPS mai mare în jocuri</string>
-    <string name="use_games_spoof_summary">Setare a dispozitivului ca model diferit pentru anumite jocuri pentru a debloca FPS mai mare</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">Panou de volum</string>
     <string name="volume_dialog_timeout_title">Timeout al panoului de volum</string>
@@ -934,12 +928,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <!-- Floating rotation button -->
     <string name="floating_rotation_button_title">Buton rotire plutitor</string>
     <string name="floating_rotation_button_summary">Arată un buton de rotire plutitor când dispozitivul este rotit</string>
-    <!-- Netflix Spoof -->
-    <string name="netflix_spoof_title">Falsificare Netflix</string>
-    <string name="netflix_spoof_summary">Setarea dispozitivul ca model diferit pentru Netflix</string>
-    <!-- Google Play Integrity Spoof -->
-    <string name="pi_spoof_title">Falsifică integritate Google Play</string>
-    <string name="pi_spoof_summary">Falsifică indentitatea telefonului cu un alt model pentru a putea trece de verificare integritate Google Play</string>
     <!-- Captive portal -->
     <string name="captive_portal_title">Verificare conectivitate</string>
     <string name="captive_portal_summary">Stabiliți dacă dispozitivul se poate conecta la internet, contactând Google. De asemenea este folosit pentru a detecta portaluri captive.</string>
@@ -1073,18 +1061,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <string name="custom_style_fluid">Lichid (transparent)</string>
     <string name="custom_style_ios">IOS</string>
     <string name="custom_style_layers">Straturi</string>
-    <!-- Keybox Data -->
-    <string name="keybox_data_title">Suprascriere atestare cu cheie proprie</string>
-    <string name="keybox_data_summary">Încarcă o cheie XML personalizată pentru a suprascrie atestarea dispozitivului</string>
-    <string name="keybox_data_loaded_summary">XML încărcat. Apasă pentru ștergere.</string>
-    <string name="keybox_delete_content_description">Ștergeți datele cheii</string>
-    <string name="keybox_toast_invalid_file_selected">Nu este un fișier XML. Alegeți un XML valid.</string>
-    <string name="keybox_toast_missing_data">Cheie XML: câmpurile obligatorii lipsesc</string>
-    <string name="keybox_toast_file_loaded">Cheie încărcată</string>
-    <string name="keybox_toast_file_cleared">Cheie ștearsă</string>
-    <!-- Block attestation even with Keybox Data -->
-    <string name="pi_gmscertchain_title">Dezactivează forțarea integrității puternice</string>
-    <string name="pi_gmscertchain_summary">Când este activată, nu impune integritate puternică din o cheie validă și depinde de validare prin amprenta din build pentru Integritate Google Play pentru a repara aplicații precum Google Pay</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_shape_title">Forma dalelor QS</string>
     <string name="qs_tile_shape_dynamic">Dinamic</string>
@@ -1157,9 +1133,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <!-- Squiggle animation for media notification -->
     <string name="media_squiggle_animation_title">Animație comutator</string>
     <string name="media_squiggle_animation_summary">Afișați animația barei de căutare în panoul media atunci când redați media</string>
-    <!-- Vbmeta hash attestation -->
-    <string name="vbmeta_attestation_title">Reparare detectare VBMeta</string>
-    <string name="vbmeta_attestation_summary">Efectuează atestare cheie pentru a genera boothash verificat la pornire. Necesită repornirea sistemului.</string>
     <!-- Menu option for not validating the EAP server -->
     <string name="wifi_do_not_validate_eap_server">Nu valida</string>
     <!-- Warning message displayed if user choses not to validate the EAP server -->
@@ -1317,4 +1290,91 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <!-- Themes -->
     <string name="custom_system_theme_title">Teme</string>
     <string name="custom_system_theme_summary">Personalizați aspectul sistemului cu teme și pachete de pictograme</string>
+    <!-- Misc preference entries -->
+    <string name="play_integrity_fix_title">Reparația integrității play</string>
+    <string name="play_integrity_fix_summary">Gestionează configurația PIF și amprentele digitale ale dispozitivului pentru integritatea de bază</string>
+    <string name="tricky_store_title">TrickyStore</string>
+    <string name="tricky_store_summary">Gestionați caseta cheie și aplicațiile țintă pentru atestare pentru integritate puternică</string>
+    <string name="game_spoofing_title">Falsificare model pentru jocuri</string>
+    <string name="game_spoofing_summary">Simulează proprietățile dispozitivului pentru jocuri specifice</string>
+    <!-- Play Integrity Fix -->
+    <string name="pif_status">Status</string>
+    <string name="pif_active_config">Configurare activă</string>
+    <string name="pif_no_config">Nicio configurație încărcată</string>
+    <string name="pif_config_loaded">Configurare încărcată</string>
+    <string name="pif_fetch_pixel_beta">Preia amprenta Pixel Beta</string>
+    <string name="pif_fetch_pixel_beta_summary">Descarcă ultima amprentă Pixel Beta de la Google</string>
+    <string name="pif_fetching">Preluare de la Google\u2026</string>
+    <string name="pif_fetched_model">Amprentă preluată pentru %s</string>
+    <string name="pif_import_config">Importă configurație</string>
+    <string name="pif_import_config_summary">Importă configurația PIF dintr-un fișier</string>
+    <string name="pif_imported_as">Importat ca %s</string>
+    <string name="pif_delete_config">Șterge configurația activă</string>
+    <string name="pif_delete_config_summary">Elimină fișierul de configurare activ</string>
+    <string name="pif_delete_title">Ştergeţi %s?</string>
+    <string name="pif_delete_message">Acest fișier de configurare va fi șters definitiv.</string>
+    <string name="pif_delete">Șterge</string>
+    <string name="pif_deleted">S-a șters %s</string>
+    <string name="pif_settings">Setări</string>
+    <string name="pif_spoof_photos">Falsificare Google Photos</string>
+    <string name="pif_spoof_photos_summary">Copie de rezervă de calitate originală nelimitată</string>
+    <string name="pif_config_details">Detalii de configurare</string>
+    <string name="pif_failed">Eșuat: %s</string>
+    <string name="pif_select_device">Selectaţi dispozitivul</string>
+    <string name="pif_generating">Se generează configurația\u2026</string>
+    <string name="pif_footer_title">Trecerea integrității de bază</string>
+    <string name="pif_footer_body">1. Apasă pe \"Preia amprenta Pixel Beta\" și selectează un dispozitiv din lista disponibilă.\n2. Dacă nu sunt găsite dispozitive, importă o configurație PIF funcțională dintr-o sursă de încredere. Fişierele de configurare nu sunt furnizate; trebuie să găsiţi unul singur.\n3. Repetați starea de integritate.\n\nȘtergeți întotdeauna configurația activă înainte de a încărca una nouă. Încărcarea unei configurări PIF expirate va cauza o integritate puternică prin TrickyStore de a eșua, chiar și cu o cheie validă.</string>
+    <!-- TrickyStore -->
+    <string name="ts_keybox_management">Gestionare cheie</string>
+    <string name="ts_import_keybox">Importă cheie</string>
+    <string name="ts_no_keybox">Nici o cheie instalată</string>
+    <string name="ts_keybox_installed">Cheie instalată</string>
+    <string name="ts_keybox_imported">Cheie importată cu succes</string>
+    <string name="ts_delete_keybox">Stergere cheie</string>
+    <string name="ts_delete_keybox_summary">Elimină fișierul cu cheia</string>
+    <string name="ts_delete_keybox_title">Ștergeți cheia?</string>
+    <string name="ts_delete_keybox_message">Fișierul cu cheia va fi șters definitiv.</string>
+    <string name="ts_delete">Șterge</string>
+    <string name="ts_keybox_deleted">Cheie stearsă</string>
+    <string name="ts_target_configuration">Configurație țintă</string>
+    <string name="ts_manage_target_apps">Gestionați aplicațiile țintă</string>
+    <string name="ts_no_targets">Nicio aplicație țintă configurată</string>
+    <string name="ts_target_apps_count">%d aplicații configurate</string>
+    <string name="ts_import_target_list">Importă listă</string>
+    <string name="ts_import_target_list_summary">Importă target.txt dintr-un fișier</string>
+    <string name="ts_target_list_imported">Listă importată</string>
+    <string name="ts_loading_apps">Se încarcă aplicațiile\u2026</string>
+    <string name="ts_save">Salvaţi</string>
+    <string name="ts_targets_saved">Listă salvată</string>
+    <string name="ts_failed">Eșuat: %s</string>
+    <string name="ts_target_mode">Mod target</string>
+    <string name="ts_target_mode_auto">Automat</string>
+    <string name="ts_target_mode_leaf">Hack frunză</string>
+    <string name="ts_target_mode_cert">Generare certificat</string>
+    <string name="ts_footer_title">Transmiterea integrității puternice</string>
+    <string name="ts_footer_body">1. Obține o cheie XML validă dintr-o sursă de încredere. Cheile nu sunt furnizate; trebuie să găsești una singur.\n2. Apăsați pe \"Importă cheie\" și încărcă fișierul.\n3. Deschide \"Gestionați aplicațiile țintă\" și selectați Google Play Services și Google Play Store.\n4. Setaţi modul ţintă la \"Frunză\" dacă dispozitivul are un DEEE funcţional, altfel lăsaţi-l ca Auto.\n5. Reverificaţi starea de integritate.\n\nȘtergeți întotdeauna cheia existentă înainte de a importa una nouă. În cazul în care Google revocă o cheie, aceasta poate permite trecerea în mod automat către integritatea dispozitivului, chiar dacă integritatea puternică va eșua.</string>
+    <!-- Game Spoofing -->
+    <string name="gs_enable">Activează falsificarea jocurilor</string>
+    <string name="gs_enable_summary">Simulează proprietățile dispozitivului pentru jocuri specifice</string>
+    <string name="gs_add_app">Adaugă joc</string>
+    <string name="gs_add_app_summary">Selectaţi un profil al aplicaţiei şi dispozitivului pentru falsificare</string>
+    <string name="gs_reload">Reîncarcă</string>
+    <string name="gs_reload_summary">Reîncarcă configurația de pe disc</string>
+    <string name="gs_configured_apps">Jocuri configurate</string>
+    <string name="gs_no_apps">Nici un joc configurat</string>
+    <string name="gs_no_apps_summary">Apasă \"Adaugă joc\" pentru a începe</string>
+    <string name="gs_select_app">Selectați aplicația</string>
+    <string name="gs_select_profile">Selectaţi profilul dispozitivului</string>
+    <string name="gs_edit_props">Editează proprietăți</string>
+    <string name="gs_change_profile">Schimbă profilul dispozitivului</string>
+    <string name="gs_remove">Șterge</string>
+    <string name="gs_remove_title">Eliminați jocul?</string>
+    <string name="gs_remove_message">Eliminați %s din lista de jocuri?</string>
+    <string name="gs_edit_app">Editează %s</string>
+    <string name="gs_key">Cheie</string>
+    <string name="gs_value">Valoare</string>
+    <string name="gs_save">Salvaţi</string>
+    <string name="gs_config_saved">Configurație salvată</string>
+    <string name="gs_loading_apps">Se încarcă aplicațiile\u2026</string>
+    <string name="gs_failed">Eșuat: %s</string>
 </resources>

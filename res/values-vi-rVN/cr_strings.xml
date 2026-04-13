@@ -672,12 +672,6 @@
     <string name="display_cutout_force_fullscreen_title">Ứng dụng toàn màn hình</string>
     <string name="display_cutout_force_fullscreen_summary">Buộc các ứng dụng bỏ qua không gian tai thỏ</string>
     <string name="display_cutout_force_fullscreen_no_apps">Không có ứng dụng</string>
-    <!-- Unlimited google photos storage -->
-    <string name="use_photos_spoof_title">Lưu trữ hình ảnh không giới hạn</string>
-    <string name="use_photos_spoof_summary">Giả mạo thiết bị của bạn dưới dạng Pixel XL chỉ dành cho ứng dụng Google Photos để cung cấp bộ nhớ không giới hạn để sao lưu</string>
-    <!-- Unlock FPS for specific games -->
-    <string name="use_games_spoof_title">Mở khóa FPS cao hơn trong trò chơi</string>
-    <string name="use_games_spoof_summary">Giả mạo thiết bị của bạn làm kiểu máy khác cho các trò chơi cụ thể để mở khóa FPS cao hơn</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">Bảng điều chỉnh âm lượng</string>
     <string name="volume_dialog_timeout_title">Thời gian chờ hộp thoại âm lượng</string>
@@ -930,12 +924,6 @@
     <!-- Floating rotation button -->
     <string name="floating_rotation_button_title">Nút xoay màn hình nổi</string>
     <string name="floating_rotation_button_summary">Hiển thị nút xoay nổi khi xoay thiết bị</string>
-    <!-- Netflix Spoof -->
-    <string name="netflix_spoof_title">Giả mạo Netflix</string>
-    <string name="netflix_spoof_summary">Giả mạo thiết bị của bạn thành kiểu máy khác cho Netflix</string>
-    <!-- Google Play Integrity Spoof -->
-    <string name="pi_spoof_title">Giả mạo tính toàn vẹn google</string>
-    <string name="pi_spoof_summary">Giả mạo thiết bị sang kiểu máy khác để đảm bảo tính toàn vẹn</string>
     <!-- Captive portal -->
     <string name="captive_portal_title">Kiểm tra kết nối</string>
     <string name="captive_portal_summary">Xác định thiết bị có kết nối với mạng hay không bằng cách kết nối dịch vụ google.
@@ -1069,18 +1057,6 @@ Dùng để phát hiện các cổng kết nối cố định.</string>
     <string name="custom_style_fluid">Chất lỏng (trong suốt)</string>
     <string name="custom_style_ios">IOS</string>
     <string name="custom_style_layers">Lớp</string>
-    <!-- Keybox Data -->
-    <string name="keybox_data_title">Ghi đè xác thực hộp khóa</string>
-    <string name="keybox_data_summary">Tải tệp hộp khóa tùy chỉnh để ghi đè xác thực khóa thiết bị</string>
-    <string name="keybox_data_loaded_summary">Đã nạp tệp hộp khóa tùy chỉnh.</string>
-    <string name="keybox_delete_content_description">Xóa dữ liệu hộp khóa</string>
-    <string name="keybox_toast_invalid_file_selected">Tệp sai định dạng hãy chọn tệp xml hợp lệ.</string>
-    <string name="keybox_toast_missing_data">Hộp khóa không hợp lệ: thiếu trường bắt buộc</string>
-    <string name="keybox_toast_file_loaded">Đã nạp hộp khóa</string>
-    <string name="keybox_toast_file_cleared">Đã xóa bỏ hộp khóa</string>
-    <!-- Block attestation even with Keybox Data -->
-    <string name="pi_gmscertchain_title">Tắt bắt buộc tính toàn vẹn mạnh mẽ</string>
-    <string name="pi_gmscertchain_summary">Bật sẽ không áp dụng tính toàn vẹn mạnh từ hộp khóa tùy chỉnh hợp lệ nên phụ thuộc vào giả mạo tính toàn vẹn để sửa các ứng dụng thanh toán</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_shape_title">Hình dạng ô cài đặt nhanh</string>
     <string name="qs_tile_shape_dynamic">Năng động</string>
@@ -1153,9 +1129,6 @@ Dùng để phát hiện các cổng kết nối cố định.</string>
     <!-- Squiggle animation for media notification -->
     <string name="media_squiggle_animation_title">Hiệu ứng nghệch ngoặc</string>
     <string name="media_squiggle_animation_summary">Hiện hiệu ứng nghệch ngoặc của thanh tiến trình trong bảng đa phương tiện khi phát</string>
-    <!-- Vbmeta hash attestation -->
-    <string name="vbmeta_attestation_title">Tự động sửa lỗi phát hiện siêu dữ liệu</string>
-    <string name="vbmeta_attestation_summary">Thực hiện xác thực khóa để tạo mã băm khởi động đã xác minh sẽ cần khởi động lại hệ thống.</string>
     <!-- Menu option for not validating the EAP server -->
     <string name="wifi_do_not_validate_eap_server">Không xác thực</string>
     <!-- Warning message displayed if user choses not to validate the EAP server -->
@@ -1312,4 +1285,91 @@ Dùng để phát hiện các cổng kết nối cố định.</string>
     <!-- Themes -->
     <string name="custom_system_theme_title">Themes</string>
     <string name="custom_system_theme_summary">Customize system appearance with themes and icon packs</string>
+    <!-- Misc preference entries -->
+    <string name="play_integrity_fix_title">Play Integrity Fix</string>
+    <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints for basic integrity</string>
+    <string name="tricky_store_title">TrickyStore</string>
+    <string name="tricky_store_summary">Manage keybox and target apps for attestation for strong integrity</string>
+    <string name="game_spoofing_title">Game spoofing</string>
+    <string name="game_spoofing_summary">Spoof device properties for specific games</string>
+    <!-- Play Integrity Fix -->
+    <string name="pif_status">Status</string>
+    <string name="pif_active_config">Active configuration</string>
+    <string name="pif_no_config">No configuration loaded</string>
+    <string name="pif_config_loaded">Configuration loaded</string>
+    <string name="pif_fetch_pixel_beta">Fetch Pixel Beta fingerprint</string>
+    <string name="pif_fetch_pixel_beta_summary">Download latest Pixel Beta fingerprint from Google</string>
+    <string name="pif_fetching">Fetching from Google\u2026</string>
+    <string name="pif_fetched_model">Fetched fingerprint for %s</string>
+    <string name="pif_import_config">Import configuration</string>
+    <string name="pif_import_config_summary">Import PIF config from a file</string>
+    <string name="pif_imported_as">Imported as %s</string>
+    <string name="pif_delete_config">Delete active configuration</string>
+    <string name="pif_delete_config_summary">Remove the currently active config file</string>
+    <string name="pif_delete_title">Delete %s?</string>
+    <string name="pif_delete_message">This configuration file will be permanently removed.</string>
+    <string name="pif_delete">Xóa</string>
+    <string name="pif_deleted">Deleted %s</string>
+    <string name="pif_settings">Cài đặt</string>
+    <string name="pif_spoof_photos">Spoof Google Photos</string>
+    <string name="pif_spoof_photos_summary">Unlimited original quality backup</string>
+    <string name="pif_config_details">Configuration details</string>
+    <string name="pif_failed">Failed: %s</string>
+    <string name="pif_select_device">Select device</string>
+    <string name="pif_generating">Generating configuration\u2026</string>
+    <string name="pif_footer_title">Passing basic integrity</string>
+    <string name="pif_footer_body">1. Tap \"Fetch Pixel Beta fingerprint\" and select a device from the available list.\n2. If no devices are found, import a working PIF config from a trusted source. Config files are not provided; you must find one yourself.\n3. Recheck your Play Integrity status.\n\nAlways delete the active configuration before loading a new one. Loading an expired PIF config will cause strong integrity via TrickyStore to fail, even with a valid keybox.</string>
+    <!-- TrickyStore -->
+    <string name="ts_keybox_management">Keybox management</string>
+    <string name="ts_import_keybox">Import keybox</string>
+    <string name="ts_no_keybox">No keybox installed</string>
+    <string name="ts_keybox_installed">Keybox installed</string>
+    <string name="ts_keybox_imported">Keybox imported successfully</string>
+    <string name="ts_delete_keybox">Delete keybox</string>
+    <string name="ts_delete_keybox_summary">Remove keybox file</string>
+    <string name="ts_delete_keybox_title">Delete keybox?</string>
+    <string name="ts_delete_keybox_message">The keybox file will be permanently removed.</string>
+    <string name="ts_delete">Xóa</string>
+    <string name="ts_keybox_deleted">Keybox deleted</string>
+    <string name="ts_target_configuration">Target configuration</string>
+    <string name="ts_manage_target_apps">Manage target apps</string>
+    <string name="ts_no_targets">No target apps configured</string>
+    <string name="ts_target_apps_count">%d apps configured</string>
+    <string name="ts_import_target_list">Import target list</string>
+    <string name="ts_import_target_list_summary">Import target.txt from a file</string>
+    <string name="ts_target_list_imported">Target list imported</string>
+    <string name="ts_loading_apps">Loading apps\u2026</string>
+    <string name="ts_save">Lưu</string>
+    <string name="ts_targets_saved">Target list saved</string>
+    <string name="ts_failed">Failed: %s</string>
+    <string name="ts_target_mode">Target mode</string>
+    <string name="ts_target_mode_auto">Auto</string>
+    <string name="ts_target_mode_leaf">Leaf hack</string>
+    <string name="ts_target_mode_cert">Certificate generation</string>
+    <string name="ts_footer_title">Passing strong integrity</string>
+    <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
+    <!-- Game Spoofing -->
+    <string name="gs_enable">Enable game spoofing</string>
+    <string name="gs_enable_summary">Spoof device properties for configured games</string>
+    <string name="gs_add_app">Add game</string>
+    <string name="gs_add_app_summary">Select an app and device profile to spoof</string>
+    <string name="gs_reload">Reload</string>
+    <string name="gs_reload_summary">Reload configuration from disk</string>
+    <string name="gs_configured_apps">Configured games</string>
+    <string name="gs_no_apps">No games configured</string>
+    <string name="gs_no_apps_summary">Tap \"Add game\" to get started</string>
+    <string name="gs_select_app">Select app</string>
+    <string name="gs_select_profile">Select device profile</string>
+    <string name="gs_edit_props">Edit properties</string>
+    <string name="gs_change_profile">Change device profile</string>
+    <string name="gs_remove">Remove</string>
+    <string name="gs_remove_title">Remove game?</string>
+    <string name="gs_remove_message">Remove %s from game spoofing?</string>
+    <string name="gs_edit_app">Edit %s</string>
+    <string name="gs_key">Key</string>
+    <string name="gs_value">Value</string>
+    <string name="gs_save">Lưu</string>
+    <string name="gs_config_saved">Configuration saved</string>
+    <string name="gs_loading_apps">Loading apps\u2026</string>
+    <string name="gs_failed">Failed: %s</string>
 </resources>

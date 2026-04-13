@@ -673,12 +673,6 @@ Una piccola donazione aiuta a mantenere vivo e a migliorare questo progetto. Puo
     <string name="display_cutout_force_fullscreen_title">App a schermo intero</string>
     <string name="display_cutout_force_fullscreen_summary">Forza le applicazioni a ignorare lo spazio del notch</string>
     <string name="display_cutout_force_fullscreen_no_apps">Nessuna applicazione</string>
-    <!-- Unlimited google photos storage -->
-    <string name="use_photos_spoof_title">Archivio foto illimitato</string>
-    <string name="use_photos_spoof_summary">Maschera il tuo dispositivo rendendolo come un Pixel XL per l\'app Google Foto così da fornire spazio di archiviazione illimitato per i tuoi backup</string>
-    <!-- Unlock FPS for specific games -->
-    <string name="use_games_spoof_title">Sblocca FPS più alti nei giochi</string>
-    <string name="use_games_spoof_summary">Maschera il dispositivo come modello diverso per i giochi specifici e sbloccare FPS più alto</string>
     <!-- Volume panel -->
     <string name="volume_panel_category">Pannello volume</string>
     <string name="volume_dialog_timeout_title">Durata pannello volume</string>
@@ -932,12 +926,6 @@ Una piccola donazione aiuta a mantenere vivo e a migliorare questo progetto. Puo
     <!-- Floating rotation button -->
     <string name="floating_rotation_button_title">Pulsante di rotazione fluttuante</string>
     <string name="floating_rotation_button_summary">Mostra un pulsante di rotazione fluttuante quando il dispositivo viene ruotato</string>
-    <!-- Netflix Spoof -->
-    <string name="netflix_spoof_title">Maschera Netflix</string>
-    <string name="netflix_spoof_summary">Maschera il dispositivo come un modello diverso per Netflix</string>
-    <!-- Google Play Integrity Spoof -->
-    <string name="pi_spoof_title">Maschera integrità Google Play</string>
-    <string name="pi_spoof_summary">Maschera il dispositivo come un modello diverso per l\'integrità di Google Play</string>
     <!-- Captive portal -->
     <string name="captive_portal_title">Controllo connettività</string>
     <string name="captive_portal_summary">Determinare se il dispositivo può connettersi a internet, contattando Google. Utilizzato anche per rilevare portali vincolati.</string>
@@ -1071,18 +1059,6 @@ Una piccola donazione aiuta a mantenere vivo e a migliorare questo progetto. Puo
     <string name="custom_style_fluid">Fluido (Trasparente)</string>
     <string name="custom_style_ios">iOS</string>
     <string name="custom_style_layers">Livelli</string>
-    <!-- Keybox Data -->
-    <string name="keybox_data_title">Override della keybox attestation</string>
-    <string name="keybox_data_summary">Carica un XML custom di keybox per sovrascrivere l\'attestazione del dispositivo</string>
-    <string name="keybox_data_loaded_summary">Custom keybox XML caricato. Elimina per cancellare.</string>
-    <string name="keybox_delete_content_description">Cancella dati keybox</string>
-    <string name="keybox_toast_invalid_file_selected">Non è un XML. Scegli un keybox XML valido.</string>
-    <string name="keybox_toast_missing_data">Keybox XML non valido: campi obbligatori mancanti</string>
-    <string name="keybox_toast_file_loaded">Keybox caricato</string>
-    <string name="keybox_toast_file_cleared">Keybox cancellato</string>
-    <!-- Block attestation even with Keybox Data -->
-    <string name="pi_gmscertchain_title">Disattiva l\'imposizione di integrità forte</string>
-    <string name="pi_gmscertchain_summary">Se abilitata, non applicare una forte integrità da keybox personalizzato valido e dipendi da Google Play Integrity spoof per risolvere applicazioni come Google Pay</string>
     <!-- QS Tiles Style -->
     <string name="qs_tile_shape_title">Stile dei riquadri</string>
     <string name="qs_tile_shape_dynamic">Dinamico</string>
@@ -1155,9 +1131,6 @@ Una piccola donazione aiuta a mantenere vivo e a migliorare questo progetto. Puo
     <!-- Squiggle animation for media notification -->
     <string name="media_squiggle_animation_title">Animazione ondulatoria</string>
     <string name="media_squiggle_animation_summary">Mostra un animazione ondulatoria della barra di ricerca nel pannello multimediale durante la riproduzione di media</string>
-    <!-- Vbmeta hash attestation -->
-    <string name="vbmeta_attestation_title">Rilevamento automatico VBMeta</string>
-    <string name="vbmeta_attestation_summary">Esegui l\'attestazione della chiave per generare l\'hash di boot verificato all\'avvio. Richiede il riavvio del sistema.</string>
     <!-- Menu option for not validating the EAP server -->
     <string name="wifi_do_not_validate_eap_server">Non convalidare</string>
     <!-- Warning message displayed if user choses not to validate the EAP server -->
@@ -1314,4 +1287,91 @@ Una piccola donazione aiuta a mantenere vivo e a migliorare questo progetto. Puo
     <!-- Themes -->
     <string name="custom_system_theme_title">Themes</string>
     <string name="custom_system_theme_summary">Customize system appearance with themes and icon packs</string>
+    <!-- Misc preference entries -->
+    <string name="play_integrity_fix_title">Play Integrity Fix</string>
+    <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints for basic integrity</string>
+    <string name="tricky_store_title">TrickyStore</string>
+    <string name="tricky_store_summary">Manage keybox and target apps for attestation for strong integrity</string>
+    <string name="game_spoofing_title">Game spoofing</string>
+    <string name="game_spoofing_summary">Spoof device properties for specific games</string>
+    <!-- Play Integrity Fix -->
+    <string name="pif_status">Status</string>
+    <string name="pif_active_config">Active configuration</string>
+    <string name="pif_no_config">No configuration loaded</string>
+    <string name="pif_config_loaded">Configuration loaded</string>
+    <string name="pif_fetch_pixel_beta">Fetch Pixel Beta fingerprint</string>
+    <string name="pif_fetch_pixel_beta_summary">Download latest Pixel Beta fingerprint from Google</string>
+    <string name="pif_fetching">Fetching from Google\u2026</string>
+    <string name="pif_fetched_model">Fetched fingerprint for %s</string>
+    <string name="pif_import_config">Import configuration</string>
+    <string name="pif_import_config_summary">Import PIF config from a file</string>
+    <string name="pif_imported_as">Imported as %s</string>
+    <string name="pif_delete_config">Delete active configuration</string>
+    <string name="pif_delete_config_summary">Remove the currently active config file</string>
+    <string name="pif_delete_title">Delete %s?</string>
+    <string name="pif_delete_message">This configuration file will be permanently removed.</string>
+    <string name="pif_delete">Elimina</string>
+    <string name="pif_deleted">Deleted %s</string>
+    <string name="pif_settings">Impostazioni</string>
+    <string name="pif_spoof_photos">Spoof Google Photos</string>
+    <string name="pif_spoof_photos_summary">Unlimited original quality backup</string>
+    <string name="pif_config_details">Configuration details</string>
+    <string name="pif_failed">Failed: %s</string>
+    <string name="pif_select_device">Select device</string>
+    <string name="pif_generating">Generating configuration\u2026</string>
+    <string name="pif_footer_title">Passing basic integrity</string>
+    <string name="pif_footer_body">1. Tap \"Fetch Pixel Beta fingerprint\" and select a device from the available list.\n2. If no devices are found, import a working PIF config from a trusted source. Config files are not provided; you must find one yourself.\n3. Recheck your Play Integrity status.\n\nAlways delete the active configuration before loading a new one. Loading an expired PIF config will cause strong integrity via TrickyStore to fail, even with a valid keybox.</string>
+    <!-- TrickyStore -->
+    <string name="ts_keybox_management">Keybox management</string>
+    <string name="ts_import_keybox">Import keybox</string>
+    <string name="ts_no_keybox">No keybox installed</string>
+    <string name="ts_keybox_installed">Keybox installed</string>
+    <string name="ts_keybox_imported">Keybox imported successfully</string>
+    <string name="ts_delete_keybox">Delete keybox</string>
+    <string name="ts_delete_keybox_summary">Remove keybox file</string>
+    <string name="ts_delete_keybox_title">Delete keybox?</string>
+    <string name="ts_delete_keybox_message">The keybox file will be permanently removed.</string>
+    <string name="ts_delete">Elimina</string>
+    <string name="ts_keybox_deleted">Keybox deleted</string>
+    <string name="ts_target_configuration">Target configuration</string>
+    <string name="ts_manage_target_apps">Manage target apps</string>
+    <string name="ts_no_targets">No target apps configured</string>
+    <string name="ts_target_apps_count">%d apps configured</string>
+    <string name="ts_import_target_list">Import target list</string>
+    <string name="ts_import_target_list_summary">Import target.txt from a file</string>
+    <string name="ts_target_list_imported">Target list imported</string>
+    <string name="ts_loading_apps">Loading apps\u2026</string>
+    <string name="ts_save">Salva</string>
+    <string name="ts_targets_saved">Target list saved</string>
+    <string name="ts_failed">Failed: %s</string>
+    <string name="ts_target_mode">Target mode</string>
+    <string name="ts_target_mode_auto">Auto</string>
+    <string name="ts_target_mode_leaf">Leaf hack</string>
+    <string name="ts_target_mode_cert">Certificate generation</string>
+    <string name="ts_footer_title">Passing strong integrity</string>
+    <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
+    <!-- Game Spoofing -->
+    <string name="gs_enable">Enable game spoofing</string>
+    <string name="gs_enable_summary">Spoof device properties for configured games</string>
+    <string name="gs_add_app">Add game</string>
+    <string name="gs_add_app_summary">Select an app and device profile to spoof</string>
+    <string name="gs_reload">Reload</string>
+    <string name="gs_reload_summary">Reload configuration from disk</string>
+    <string name="gs_configured_apps">Configured games</string>
+    <string name="gs_no_apps">No games configured</string>
+    <string name="gs_no_apps_summary">Tap \"Add game\" to get started</string>
+    <string name="gs_select_app">Select app</string>
+    <string name="gs_select_profile">Select device profile</string>
+    <string name="gs_edit_props">Edit properties</string>
+    <string name="gs_change_profile">Change device profile</string>
+    <string name="gs_remove">Remove</string>
+    <string name="gs_remove_title">Remove game?</string>
+    <string name="gs_remove_message">Remove %s from game spoofing?</string>
+    <string name="gs_edit_app">Edit %s</string>
+    <string name="gs_key">Key</string>
+    <string name="gs_value">Value</string>
+    <string name="gs_save">Salva</string>
+    <string name="gs_config_saved">Configuration saved</string>
+    <string name="gs_loading_apps">Loading apps\u2026</string>
+    <string name="gs_failed">Failed: %s</string>
 </resources>
