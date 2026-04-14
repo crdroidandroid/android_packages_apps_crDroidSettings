@@ -315,7 +315,7 @@ class TrickyStore : SettingsPreferenceFragment() {
     override fun getMetricsCategory(): Int = MetricsProto.MetricsEvent.CRDROID_SETTINGS
 
     companion object {
-        private const val TRICKYSTORE_PATH = "/data/adb/tricky_store"
+        private const val TRICKYSTORE_PATH = "/data/system/tricky_store"
         private const val KEYBOX_FILE = "keybox.xml"
         private const val TARGET_FILE = "target.txt"
         private const val VENDING_PACKAGE = "com.android.vending"

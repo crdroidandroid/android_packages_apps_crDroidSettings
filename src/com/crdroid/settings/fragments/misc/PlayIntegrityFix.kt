@@ -300,7 +300,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
 
     companion object {
         private const val TAG = "PlayIntegrityFix"
-        private const val PIF_PATH = "/data/adb/playintegrityfix"
+        private const val PIF_PATH = "/data/system/playintegrityfix"
         private val PIF_FILES = listOf("custom.pif.prop", "custom.pif.json", "pif.prop", "pif.json")
         private const val DEFAULT_CONFIG_FILE = "pif.json"
         private const val GOOGLE_URL = "https://developer.android.com"
