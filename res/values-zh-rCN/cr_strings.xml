@@ -1289,7 +1289,7 @@
     <string name="play_integrity_fix_title">Play 完整性修复</string>
     <string name="play_integrity_fix_summary">管理PIF配置和设备指纹以保证基本完整性</string>
     <string name="tricky_store_title">TrickyStore</string>
-    <string name="tricky_store_summary">Manage keybox and target apps for attestation for strong integrity</string>
+    <string name="tricky_store_summary">管理Keybox密钥和目标应用以保证强完整性</string>
     <string name="game_spoofing_title">游戏伪装</string>
     <string name="game_spoofing_summary">针对特定游戏的伪装设备属性</string>
     <!-- Play Integrity Fix -->
@@ -1317,8 +1317,8 @@
     <string name="pif_failed">操作失败：%s</string>
     <string name="pif_select_device">选择设备</string>
     <string name="pif_generating">生成配置\u2026</string>
-    <string name="pif_footer_title">Passing basic integrity</string>
-    <string name="pif_footer_body">1. Tap \"Fetch Pixel Beta fingerprint\" and select a device from the available list.\n2. If no devices are found, import a working PIF config from a trusted source. Config files are not provided; you must find one yourself.\n3. Recheck your Play Integrity status.\n\nAlways delete the active configuration before loading a new one. Loading an expired PIF config will cause strong integrity via TrickyStore to fail, even with a valid keybox.</string>
+    <string name="pif_footer_title">基本完整性校验通过</string>
+    <string name="pif_footer_body">1. 点击\"获取 Pixel Beta 指纹\"并从可用列表中选择一个设备。\n2. 如果找不到设备，请从可信来源导入一个可用的 PIF 配置。配置文件不会提供；你必须自己找。\n3. 重新检查你的 Play 完整性状态。\n\n 每次加载新配置前，请务必删除当前使用中的配置。加载过期的 PIF 配置会导致 TrickyStore 的强完整性验证失败，即使 Keybox密钥有效。</string>
     <!-- TrickyStore -->
     <string name="ts_keybox_management">管理Keybox密钥</string>
     <string name="ts_import_keybox">导入Keybox密钥</string>
@@ -1344,10 +1344,10 @@
     <string name="ts_failed">操作失败：%s</string>
     <string name="ts_target_mode">目标模式</string>
     <string name="ts_target_mode_auto">自动</string>
-    <string name="ts_target_mode_leaf">Leaf hack</string>
+    <string name="ts_target_mode_leaf">证书变更</string>
     <string name="ts_target_mode_cert">证书生成</string>
-    <string name="ts_footer_title">Passing strong integrity</string>
-    <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
+    <string name="ts_footer_title">强完整性校验通过</string>
+    <string name="ts_footer_body">1. 从可信来源获取有效的Keybox XML文件。Keybox密钥不会提供；你必须自己寻找。\n2. 点击\"导入keybox密钥\"并加载文件。\n3. 打开\"管理目标应用\"并选择 Google Play Services 和 Google Play Store。\n4. 如果你的设备有可用的 TEE，将目标模式设置为\"Leaf\"，否则保持为自动。\n5. 重新检查你的 Play 完整性状态。\n\n 导入新 Keybox密钥前，务必删除现有的keybox密钥。如果谷歌吊销了Keybox密钥，即使强完整性失败，它可能仍然允许通过设备完整性。</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">启用游戏伪装</string>
     <string name="gs_enable_summary">为特定游戏伪装设备型号</string>
