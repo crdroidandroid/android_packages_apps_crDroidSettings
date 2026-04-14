@@ -142,6 +142,19 @@ class TrickyStore : SettingsPreferenceFragment() {
         findPreference<Preference>("ts_manage_targets")?.summary =
             if (targetCount > 0) getString(R.string.ts_target_apps_count, targetCount)
             else getString(R.string.ts_no_targets)
+ 
+        findPreference<ListPreference>("ts_target_mode")?.value = readCurrentMode()
+    }
+
+    private fun readCurrentMode(): String {
+        val targetFile = File(TRICKYSTORE_PATH, TARGET_FILE)
+        if (!targetFile.exists()) return "auto"
+        val firstLine = targetFile.readLines().firstOrNull { it.isNotBlank() } ?: return "auto"
+        return when {
+            firstLine.trimEnd().endsWith("!") -> "cert"
+            firstLine.trimEnd().endsWith("?") -> "leaf"
+            else -> "auto"
+        }
     }
 
     private fun showDeleteKeyboxDialog() {
