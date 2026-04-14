@@ -56,12 +56,12 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="ts_footer_category">
+        android:key="ts_footer_category"
+        android:title="@string/ts_footer_title">
 
-        <Preference
+        <com.android.settingslib.widget.FooterPreference
             android:key="ts_footer"
-            android:title="@string/ts_footer_title"
-            android:summary="@string/ts_footer_body"
+            android:title="@string/ts_footer_body"
             android:selectable="false" />
     </PreferenceCategory>
 
