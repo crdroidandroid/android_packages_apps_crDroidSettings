@@ -182,7 +182,17 @@ class LockClockFontsPreference @JvmOverloads constructor(
 
                 showSystemUiRestartDialogWithAction(ctx,
                     onConfirm = {
-                        applyOverlayInBackground(old, pending) {
+                        applyOverlayInBackground(
+                            old, pending,
+                            onFailed = {
+                                selectedPkg = old
+                                notifyDataSetChanged()
+                                Toast.makeText(
+                                    ctx, R.string.toast_failed_apply_font,
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        ) {
                             SystemUtils.restartSystemUI(ctx)
                         }
                     },
@@ -201,14 +211,17 @@ class LockClockFontsPreference @JvmOverloads constructor(
         private fun applyOverlayInBackground(
             oldPkg: String,
             newPkg: String,
+            onFailed: () -> Unit,
             onDone: () -> Unit
         ) {
             overlayExecutor.execute {
                 try {
                     themeUtils.setOverlayEnabled(CATEGORY, oldPkg, oldPkg)
                     themeUtils.setOverlayEnabled(CATEGORY, newPkg, "android")
-                } finally {
                     mainHandler.post { onDone() }
+                } catch (e: Exception) {
+                    Log.e(TAG, "Failed to apply lock clock font overlay", e)
+                    mainHandler.post { onFailed() }
                 }
             }
         }
