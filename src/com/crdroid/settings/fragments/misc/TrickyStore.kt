@@ -14,6 +14,8 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Process
+import android.provider.Settings
+import android.util.Base64
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -24,7 +26,7 @@ import androidx.preference.PreferenceCategory
 import com.android.internal.logging.nano.MetricsProto
 import com.android.settings.R
 import com.android.settings.SettingsPreferenceFragment
-import java.io.File
+import java.nio.charset.StandardCharsets
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -42,12 +44,14 @@ class TrickyStore : SettingsPreferenceFragment() {
         if (result.resultCode == Activity.RESULT_OK) {
             result.data?.data?.let { uri ->
                 try {
-                    val dir = File(TRICKYSTORE_PATH).also { if (!it.exists()) it.mkdirs() }
-                    val keyboxFile = File(dir, KEYBOX_FILE)
-                    requireContext().contentResolver.openInputStream(uri)?.use { input ->
-                        keyboxFile.outputStream().use { output -> input.copyTo(output) }
-                    }
-                    keyboxFile.setReadable(true, false)
+                    val bytes = requireContext().contentResolver.openInputStream(uri)?.use { it.readBytes() }
+                        ?: ByteArray(0)
+                    val encoded = Base64.encodeToString(bytes, Base64.NO_WRAP)
+                    Settings.Secure.putString(
+                        requireContext().contentResolver,
+                        KEYBOX_KEY,
+                        encoded
+                    )
                     killPlayStore()
                     toast(getString(R.string.ts_keybox_imported))
                     refreshStatus()
@@ -64,12 +68,14 @@ class TrickyStore : SettingsPreferenceFragment() {
         if (result.resultCode == Activity.RESULT_OK) {
             result.data?.data?.let { uri ->
                 try {
-                    val dir = File(TRICKYSTORE_PATH).also { if (!it.exists()) it.mkdirs() }
-                    val targetFile = File(dir, TARGET_FILE)
-                    requireContext().contentResolver.openInputStream(uri)?.use { input ->
-                        targetFile.outputStream().use { output -> input.copyTo(output) }
-                    }
-                    targetFile.setReadable(true, false)
+                    val text = requireContext().contentResolver.openInputStream(uri)?.use { input ->
+                        input.readBytes().toString(StandardCharsets.UTF_8)
+                    } ?: ""
+                    Settings.Secure.putString(
+                        requireContext().contentResolver,
+                        TARGET_KEY,
+                        text
+                    )
                     toast(getString(R.string.ts_target_list_imported))
                     refreshStatus()
                 } catch (e: Exception) {
@@ -98,7 +104,6 @@ class TrickyStore : SettingsPreferenceFragment() {
         }
 
         findPreference<ListPreference>("ts_target_mode")?.setOnPreferenceChangeListener { _, newValue ->
-            // Re-save existing targets with updated mode suffix
             resaveTargetsWithMode(newValue as String)
             true
         }
@@ -117,7 +122,6 @@ class TrickyStore : SettingsPreferenceFragment() {
             true
         }
 
-        File(TRICKYSTORE_PATH).also { if (!it.exists()) it.mkdirs() }
         refreshStatus()
     }
 
@@ -127,10 +131,13 @@ class TrickyStore : SettingsPreferenceFragment() {
     }
 
     private fun refreshStatus() {
-        val keyboxExists = File(TRICKYSTORE_PATH, KEYBOX_FILE).exists()
-        val targetFile = File(TRICKYSTORE_PATH, TARGET_FILE)
-        val targetCount = if (targetFile.exists()) {
-            targetFile.readLines().count { it.isNotBlank() }
+        val keyboxExists = !Settings.Secure.getString(
+            requireContext().contentResolver, KEYBOX_KEY
+        ).isNullOrEmpty()
+
+        val targetContent = Settings.Secure.getString(requireContext().contentResolver, TARGET_KEY)
+        val targetCount = if (!targetContent.isNullOrEmpty()) {
+            targetContent.lines().count { it.isNotBlank() }
         } else 0
 
         findPreference<Preference>("ts_import_keybox")?.summary =
@@ -142,14 +149,14 @@ class TrickyStore : SettingsPreferenceFragment() {
         findPreference<Preference>("ts_manage_targets")?.summary =
             if (targetCount > 0) getString(R.string.ts_target_apps_count, targetCount)
             else getString(R.string.ts_no_targets)
- 
+
         findPreference<ListPreference>("ts_target_mode")?.value = readCurrentMode()
     }
 
     private fun readCurrentMode(): String {
-        val targetFile = File(TRICKYSTORE_PATH, TARGET_FILE)
-        if (!targetFile.exists()) return "auto"
-        val firstLine = targetFile.readLines().firstOrNull { it.isNotBlank() } ?: return "auto"
+        val targetContent = Settings.Secure.getString(requireContext().contentResolver, TARGET_KEY)
+            ?: return "auto"
+        val firstLine = targetContent.lines().firstOrNull { it.isNotBlank() } ?: return "auto"
         return when {
             firstLine.trimEnd().endsWith("!") -> "cert"
             firstLine.trimEnd().endsWith("?") -> "leaf"
@@ -163,7 +170,11 @@ class TrickyStore : SettingsPreferenceFragment() {
             .setMessage(R.string.ts_delete_keybox_message)
             .setPositiveButton(R.string.ts_delete) { _, _ ->
                 try {
-                    File(TRICKYSTORE_PATH, KEYBOX_FILE).delete()
+                    Settings.Secure.putString(
+                        requireContext().contentResolver,
+                        KEYBOX_KEY,
+                        null
+                    )
                     toast(getString(R.string.ts_keybox_deleted))
                     refreshStatus()
                 } catch (e: Exception) {
@@ -267,9 +278,9 @@ class TrickyStore : SettingsPreferenceFragment() {
     }
 
     private fun readTargetPackages(): Set<String> {
-        val targetFile = File(TRICKYSTORE_PATH, TARGET_FILE)
-        if (!targetFile.exists()) return emptySet()
-        return targetFile.readLines()
+        val content = Settings.Secure.getString(requireContext().contentResolver, TARGET_KEY)
+            ?: return emptySet()
+        return content.lines()
             .map { it.trim().removeSuffix("?").removeSuffix("!") }
             .filter { it.isNotBlank() }
             .toSet()
@@ -278,13 +289,14 @@ class TrickyStore : SettingsPreferenceFragment() {
     private fun saveTargetFile(packages: Array<String>, checked: BooleanArray) {
         try {
             val suffix = getTargetModeSuffix()
-            val dir = File(TRICKYSTORE_PATH).also { if (!it.exists()) it.mkdirs() }
-            val targetFile = File(dir, TARGET_FILE)
             val selected = packages.zip(checked.toList())
                 .filter { it.second }
                 .map { it.first + suffix }
-            targetFile.writeText(selected.joinToString("\n"))
-            targetFile.setReadable(true, false)
+            Settings.Secure.putString(
+                requireContext().contentResolver,
+                TARGET_KEY,
+                selected.joinToString("\n")
+            )
             toast(getString(R.string.ts_targets_saved))
         } catch (e: Exception) {
             toast(getString(R.string.ts_failed, e.message ?: ""))
@@ -305,10 +317,11 @@ class TrickyStore : SettingsPreferenceFragment() {
             val currentPackages = readTargetPackages()
             if (currentPackages.isEmpty()) return
 
-            val dir = File(TRICKYSTORE_PATH).also { if (!it.exists()) it.mkdirs() }
-            val targetFile = File(dir, TARGET_FILE)
-            targetFile.writeText(currentPackages.joinToString("\n") { it + suffix })
-            targetFile.setReadable(true, false)
+            Settings.Secure.putString(
+                requireContext().contentResolver,
+                TARGET_KEY,
+                currentPackages.joinToString("\n") { it + suffix }
+            )
         } catch (e: Exception) {
             toast(getString(R.string.ts_failed, e.message ?: ""))
         }
@@ -328,9 +341,8 @@ class TrickyStore : SettingsPreferenceFragment() {
     override fun getMetricsCategory(): Int = MetricsProto.MetricsEvent.CRDROID_SETTINGS
 
     companion object {
-        private const val TRICKYSTORE_PATH = "/data/system/tricky_store"
-        private const val KEYBOX_FILE = "keybox.xml"
-        private const val TARGET_FILE = "target.txt"
+        private const val KEYBOX_KEY = "spoof_trickystore_keybox"
+        private const val TARGET_KEY = "spoof_trickystore_target"
         private const val VENDING_PACKAGE = "com.android.vending"
     }
 }

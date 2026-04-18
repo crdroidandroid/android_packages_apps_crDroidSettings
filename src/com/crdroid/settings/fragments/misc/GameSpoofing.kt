@@ -8,6 +8,7 @@ package com.crdroid.settings.fragments.misc
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.view.LayoutInflater
 import android.widget.EditText
@@ -20,7 +21,6 @@ import androidx.preference.SwitchPreferenceCompat
 import com.android.internal.logging.nano.MetricsProto
 import com.android.settings.R
 import com.android.settings.SettingsPreferenceFragment
-import java.io.File
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -61,7 +61,6 @@ class GameSpoofing : SettingsPreferenceFragment() {
             true
         }
 
-        File(CONFIG_PATH).also { if (!it.exists()) it.mkdirs() }
         loadConfig()
     }
 
@@ -74,7 +73,6 @@ class GameSpoofing : SettingsPreferenceFragment() {
         scope.launch {
             val result = withContext(Dispatchers.IO) { readGamePropsConfig() }
             enabled = result.first
-            // Resolve app names from PackageManager
             val pm = requireContext().packageManager
             gameConfigs = result.second.map { game ->
                 val label = try {
@@ -254,6 +252,49 @@ class GameSpoofing : SettingsPreferenceFragment() {
         }
     }
 
+    private fun readGamePropsConfig(): Pair<Boolean, List<GameConfig>> {
+        val content = Settings.Secure.getString(requireContext().contentResolver, GAMEPROPS_CONFIG_KEY)
+            ?: return false to emptyList()
+        return try {
+            val json = JSONObject(content)
+            val isEnabled = json.optBoolean("enabled", false)
+            val games = mutableListOf<GameConfig>()
+            val gamesObj = json.optJSONObject("games")
+            gamesObj?.keys()?.forEach { pkg ->
+                val propsObj = gamesObj.getJSONObject(pkg)
+                val props = mutableMapOf<String, String>()
+                propsObj.keys().forEach { k -> props[k] = propsObj.getString(k) }
+                games.add(GameConfig(pkg, pkg, props))
+            }
+            isEnabled to games
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to load config", e)
+            false to emptyList()
+        }
+    }
+
+    private fun writeGamePropsConfig(isEnabled: Boolean, games: List<GameConfig>) {
+        try {
+            val json = JSONObject()
+            json.put("enabled", isEnabled)
+            val gamesObj = JSONObject()
+            games.forEach { game ->
+                val propsObj = JSONObject()
+                game.props.forEach { (k, v) -> propsObj.put(k, v) }
+                gamesObj.put(game.packageName, propsObj)
+            }
+            json.put("games", gamesObj)
+            Settings.Secure.putString(
+                requireContext().contentResolver,
+                GAMEPROPS_CONFIG_KEY,
+                json.toString(2)
+            )
+            Log.i(TAG, "Config saved successfully")
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to save config", e)
+        }
+    }
+
     private fun getInstalledApps(): Pair<Array<String>, Array<String>> {
         val pm = requireContext().packageManager
         val apps = pm.getInstalledApplications(PackageManager.GET_META_DATA)
@@ -271,8 +312,7 @@ class GameSpoofing : SettingsPreferenceFragment() {
 
     companion object {
         private const val TAG = "GameSpoofing"
-        private const val CONFIG_PATH = "/data/system/gameprops"
-        private const val CONFIG_FILE = "gameprops.json"
+        private const val GAMEPROPS_CONFIG_KEY = "spoof_gameprops_config"
 
         private val PRESET_PROFILES = listOf(
             "ROG Phone 8 Pro" to mapOf("MODEL" to "ASUS_AI2401_A", "MANUFACTURER" to "asus"),
@@ -282,45 +322,5 @@ class GameSpoofing : SettingsPreferenceFragment() {
             "Black Shark 4" to mapOf("MODEL" to "2SM-X706B", "MANUFACTURER" to "blackshark"),
             "Lenovo Y700" to mapOf("MODEL" to "Lenovo TB-9707F", "MANUFACTURER" to "Lenovo"),
         )
-
-        private fun readGamePropsConfig(): Pair<Boolean, List<GameConfig>> {
-            val file = File(CONFIG_PATH, CONFIG_FILE)
-            if (!file.exists()) return false to emptyList()
-            return try {
-                val json = JSONObject(file.readText())
-                val isEnabled = json.optBoolean("enabled", false)
-                val games = mutableListOf<GameConfig>()
-                val gamesObj = json.optJSONObject("games")
-                gamesObj?.keys()?.forEach { pkg ->
-                    val propsObj = gamesObj.getJSONObject(pkg)
-                    val props = mutableMapOf<String, String>()
-                    propsObj.keys().forEach { k -> props[k] = propsObj.getString(k) }
-                    games.add(GameConfig(pkg, pkg, props))
-                }
-                isEnabled to games
-            } catch (e: Exception) {
-                Log.e(TAG, "Failed to load config", e)
-                false to emptyList()
-            }
-        }
-
-        private fun writeGamePropsConfig(isEnabled: Boolean, games: List<GameConfig>) {
-            try {
-                val json = JSONObject()
-                json.put("enabled", isEnabled)
-                val gamesObj = JSONObject()
-                games.forEach { game ->
-                    val propsObj = JSONObject()
-                    game.props.forEach { (k, v) -> propsObj.put(k, v) }
-                    gamesObj.put(game.packageName, propsObj)
-                }
-                json.put("games", gamesObj)
-                val file = File(CONFIG_PATH, CONFIG_FILE)
-                file.writeText(json.toString(2))
-                file.setReadable(true, false)
-            } catch (e: Exception) {
-                Log.e(TAG, "Failed to save config", e)
-            }
-        }
     }
 }

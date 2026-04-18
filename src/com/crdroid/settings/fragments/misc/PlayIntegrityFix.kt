@@ -10,6 +10,7 @@ import android.app.ActivityManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -20,7 +21,6 @@ import androidx.preference.SwitchPreferenceCompat
 import com.android.internal.logging.nano.MetricsProto
 import com.android.settings.R
 import com.android.settings.SettingsPreferenceFragment
-import java.io.File
 import java.net.URL
 import java.nio.charset.StandardCharsets
 import kotlinx.coroutines.CoroutineScope
@@ -35,7 +35,6 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
 
-    private var activeConfigFileName: String? = null
     private var activeConfigData: Map<String, String> = emptyMap()
 
     private val importLauncher = registerForActivityResult(
@@ -44,17 +43,17 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         if (result.resultCode == Activity.RESULT_OK) {
             result.data?.data?.let { uri ->
                 try {
-                    val pifDir = File(PIF_PATH).also { if (!it.exists()) it.mkdirs() }
-                    val fileName = uri.lastPathSegment?.substringAfterLast('/') ?: "pif.prop"
-                    val targetName = if (fileName.endsWith(".json")) "custom.pif.json" else "custom.pif.prop"
-                    val targetFile = File(pifDir, targetName)
-
-                    requireContext().contentResolver.openInputStream(uri)?.use { input ->
-                        targetFile.outputStream().use { output -> input.copyTo(output) }
-                    }
-                    targetFile.setReadable(true, false)
+                    val content = requireContext().contentResolver.openInputStream(uri)?.use { input ->
+                        input.readBytes().toString(StandardCharsets.UTF_8)
+                    } ?: ""
+                    val normalized = normalizePifPayload(content)
+                    Settings.Secure.putString(
+                        requireContext().contentResolver,
+                        PIF_CONFIG_KEY,
+                        normalized
+                    )
                     killPlayStore()
-                    toast(getString(R.string.pif_imported_as, targetName))
+                    toast(getString(R.string.pif_imported_as, PIF_CONFIG_NAME))
                     refreshStatus()
                 } catch (e: Exception) {
                     toast(getString(R.string.pif_failed, e.message ?: ""))
@@ -91,7 +90,6 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             true
         }
 
-        File(PIF_PATH).also { if (!it.exists()) it.mkdirs() }
         refreshStatus()
     }
 
@@ -101,28 +99,15 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
     }
 
     private fun refreshStatus() {
-        var foundActive: String? = null
-        var activeData: Map<String, String> = emptyMap()
+        val content = Settings.Secure.getString(requireContext().contentResolver, PIF_CONFIG_KEY)
+        activeConfigData = if (!content.isNullOrEmpty()) readConfigData(content) else emptyMap()
+        val exists = activeConfigData.isNotEmpty()
 
-        for (fileName in PIF_FILES) {
-            val file = File(PIF_PATH, fileName)
-            if (file.exists()) {
-                if (foundActive == null) {
-                    foundActive = fileName
-                    activeData = readConfigData(file)
-                }
-            }
-        }
-
-        activeConfigFileName = foundActive
-        activeConfigData = activeData
-
-        // Update active config preference
         val activePref = findPreference<Preference>("pif_active_config")
-        if (foundActive != null) {
-            val model = activeData["MODEL"] ?: ""
-            val fingerprint = activeData["FINGERPRINT"] ?: ""
-            activePref?.title = foundActive
+        if (exists) {
+            val model = activeConfigData["MODEL"] ?: ""
+            val fingerprint = activeConfigData["FINGERPRINT"] ?: ""
+            activePref?.title = PIF_CONFIG_NAME
             activePref?.summary = if (model.isNotEmpty()) {
                 "MODEL: $model" + if (fingerprint.isNotEmpty()) "\nFINGERPRINT: $fingerprint" else ""
             } else {
@@ -133,15 +118,12 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             activePref?.summary = getString(R.string.pif_no_config)
         }
 
-        // Update delete button
-        findPreference<Preference>("pif_delete_config")?.isEnabled = foundActive != null
+        findPreference<Preference>("pif_delete_config")?.isEnabled = exists
 
-        // Update spoofPhotos switch
-        val spoofPhotos = activeData["spoofPhotos"]?.let { it == "true" || it == "1" } ?: false
+        val spoofPhotos = activeConfigData["spoofPhotos"]?.let { it == "true" || it == "1" } ?: false
         findPreference<SwitchPreferenceCompat>("pif_spoof_photos")?.isChecked = spoofPhotos
 
-        // Populate config details
-        populateConfigDetails(activeData)
+        populateConfigDetails(activeConfigData)
     }
 
     private fun populateConfigDetails(data: Map<String, String>) {
@@ -164,7 +146,6 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             })
         }
 
-        // Show remaining keys not in displayOrder
         data.keys.filter { it !in displayOrder && !it.startsWith("spoof") && it != "DEBUG" && it != "verboseLogs" }
             .forEach { key ->
                 category.addPreference(Preference(requireContext()).apply {
@@ -176,14 +157,17 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
     }
 
     private fun showDeleteDialog() {
-        val fileName = activeConfigFileName ?: return
         AlertDialog.Builder(requireContext())
-            .setTitle(getString(R.string.pif_delete_title, fileName))
+            .setTitle(getString(R.string.pif_delete_title, PIF_CONFIG_NAME))
             .setMessage(R.string.pif_delete_message)
             .setPositiveButton(R.string.pif_delete) { _, _ ->
                 try {
-                    File(PIF_PATH, fileName).delete()
-                    toast(getString(R.string.pif_deleted, fileName))
+                    Settings.Secure.putString(
+                        requireContext().contentResolver,
+                        PIF_CONFIG_KEY,
+                        null
+                    )
+                    toast(getString(R.string.pif_deleted, PIF_CONFIG_NAME))
                     refreshStatus()
                 } catch (e: Exception) {
                     toast(getString(R.string.pif_failed, e.message ?: ""))
@@ -207,7 +191,6 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                     return@launch
                 }
 
-                // Resolve model names and show picker
                 val modelNames = devices.map { it.model }.toTypedArray()
 
                 AlertDialog.Builder(requireContext())
@@ -236,12 +219,11 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 val result = withContext(Dispatchers.IO) { buildPifFromDevice(device) }
                 when (result) {
                     is PifFetchResult.Success -> {
-                        withContext(Dispatchers.IO) {
-                            val pifDir = File(PIF_PATH).also { if (!it.exists()) it.mkdirs() }
-                            val targetFile = File(pifDir, "pif.json")
-                            targetFile.writeText(result.pifData.toString(2))
-                            targetFile.setReadable(true, false)
-                        }
+                        Settings.Secure.putString(
+                            requireContext().contentResolver,
+                            PIF_CONFIG_KEY,
+                            result.pifData.toString(2)
+                        )
                         killPlayStore()
                         toast(getString(R.string.pif_fetched_model, result.model))
                         refreshStatus()
@@ -260,25 +242,19 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
     }
 
     /**
-     * Updates a key-value pair in the active config file.
-     * If no config file exists, creates pif.json with just this value.
+     * Updates a key-value pair in the active config stored in Settings.Secure.
+     * If no config exists yet, creates a new JSON object with just this value.
      */
     private fun updateConfigValue(key: String, value: String) {
-        val fileName = activeConfigFileName ?: DEFAULT_CONFIG_FILE
         try {
-            val pifDir = File(PIF_PATH).also { if (!it.exists()) it.mkdirs() }
-            val file = File(pifDir, fileName)
-            if (fileName.endsWith(".json")) {
-                val json = if (file.exists()) JSONObject(file.readText()) else JSONObject()
-                json.put(key, value)
-                file.writeText(json.toString(2))
-            } else {
-                val lines = if (file.exists()) file.readLines().toMutableList() else mutableListOf()
-                val idx = lines.indexOfFirst { it.trim().startsWith("$key=") }
-                if (idx != -1) lines[idx] = "$key=$value" else lines.add("$key=$value")
-                file.writeText(lines.joinToString("\n"))
-            }
-            file.setReadable(true, false)
+            val existing = Settings.Secure.getString(requireContext().contentResolver, PIF_CONFIG_KEY)
+            val json = try { JSONObject(existing ?: "") } catch (e: Exception) { JSONObject() }
+            json.put(key, value)
+            Settings.Secure.putString(
+                requireContext().contentResolver,
+                PIF_CONFIG_KEY,
+                json.toString(2)
+            )
             refreshStatus()
         } catch (e: Exception) {
             toast(getString(R.string.pif_failed, e.message ?: ""))
@@ -300,9 +276,8 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
 
     companion object {
         private const val TAG = "PlayIntegrityFix"
-        private const val PIF_PATH = "/data/system/playintegrityfix"
-        private val PIF_FILES = listOf("custom.pif.prop", "custom.pif.json", "pif.prop", "pif.json")
-        private const val DEFAULT_CONFIG_FILE = "pif.json"
+        private const val PIF_CONFIG_KEY = "spoof_pif_config"
+        private const val PIF_CONFIG_NAME = "pif.json"
         private const val GOOGLE_URL = "https://developer.android.com"
         private const val VENDING_PACKAGE = "com.android.vending"
 
@@ -330,20 +305,23 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             "stallion" to "Pixel 10a",
         )
 
-        private fun readConfigData(file: File): Map<String, String> {
-            if (!file.exists()) return emptyMap()
+        /**
+         * Reads the config from a JSON string (stored in Settings.Secure).
+         * Also handles legacy prop-format strings in case an old value is present.
+         */
+        private fun readConfigData(content: String): Map<String, String> {
             return try {
-                val content = file.readText()
                 val result = mutableMapOf<String, String>()
-                if (file.name.endsWith(".json")) {
-                    val json = JSONObject(content)
+                val trimmed = content.trim()
+                if (trimmed.startsWith("{")) {
+                    val json = JSONObject(trimmed)
                     json.keys().forEach { key -> result[key] = json.optString(key, "") }
                 } else {
-                    content.lines().forEach { line ->
-                        val trimmed = line.trim()
-                        if (trimmed.isNotEmpty() && !trimmed.startsWith("#") && !trimmed.startsWith("//")) {
-                            val eq = trimmed.indexOf('=')
-                            if (eq > 0) result[trimmed.substring(0, eq).trim()] = trimmed.substring(eq + 1).trim()
+                    trimmed.lines().forEach { line ->
+                        val l = line.trim()
+                        if (l.isNotEmpty() && !l.startsWith("#") && !l.startsWith("//")) {
+                            val eq = l.indexOf('=')
+                            if (eq > 0) result[l.substring(0, eq).trim()] = l.substring(eq + 1).trim()
                         }
                     }
                 }
@@ -352,6 +330,28 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 Log.e(TAG, "Failed to read config", e)
                 emptyMap()
             }
+        }
+
+        /**
+         * Normalises an imported PIF payload (JSON or prop-format) to a JSON string
+         * suitable for storage in Settings.Secure.
+         */
+        private fun normalizePifPayload(raw: String): String {
+            val trimmed = raw.trim()
+            if (trimmed.isEmpty()) return "{}"
+            if (trimmed.startsWith("{")) return trimmed
+            val json = JSONObject()
+            trimmed.lines().forEach { line ->
+                val stripped = line.trim()
+                if (stripped.isEmpty() || stripped.startsWith("#") || stripped.startsWith("//")) return@forEach
+                val eq = stripped.indexOf('=')
+                if (eq > 0) {
+                    val key = stripped.substring(0, eq).trim()
+                    val value = stripped.substring(eq + 1).trim().substringBefore('#').trim()
+                    if (key.isNotEmpty()) json.put(key, value)
+                }
+            }
+            return json.toString(2)
         }
 
         private fun fetchPartialUrl(url: String, maxBytes: Int): String {
@@ -392,7 +392,6 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             val knownVersions = Regex("""https://developer\.android\.com/about/versions/(\d+)""")
                 .findAll(versionsHtml).map { it.groupValues[1].toInt() }.toSet().sortedDescending()
 
-            // Try next unreleased version first (may have beta), then known versions
             val maxVersion = knownVersions.firstOrNull() ?: return emptyList()
             val versions = listOf(maxVersion + 1) + knownVersions
 
@@ -420,7 +419,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         }
 
         /**
-         * Phase 2: Fetch OTA metadata for a specific device and build pif.json.
+         * Phase 2: Fetch OTA metadata for a specific device and build pif JSON.
          */
         private fun buildPifFromDevice(pifDevice: PifDevice): PifFetchResult {
             try {
