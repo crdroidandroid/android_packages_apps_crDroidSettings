@@ -494,48 +494,57 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         private fun fetchAvailableCanaryDevices(): Pair<List<PifDevice>, String?> {
             try {
                 val versionsHtml = URL("$GOOGLE_URL/about/versions").readText(StandardCharsets.UTF_8)
-                val latestVersion = Regex("""https://developer\.android\.com/about/versions/(\d+)""")
-                    .findAll(versionsHtml)
-                    .map { it.groupValues[1].toInt() }
-                    .toSortedSet()
-                    .maxOrNull() ?: return emptyList<PifDevice>() to null
+                val knownVersions = Regex("""https://developer\.android\.com/about/versions/(\d+)""")
+                    .findAll(versionsHtml).map { it.groupValues[1].toInt() }.toSet().sortedDescending()
 
-                val latestHtml = URL("$GOOGLE_URL/about/versions/$latestVersion").readText(StandardCharsets.UTF_8)
-                val qprPath = Regex("""href="(/about/versions/$latestVersion/qpr(\d+)/download-ota)"""")
-                    .findAll(latestHtml)
-                    .map { it.groupValues[2].toInt() to it.groupValues[1] }
-                    .maxByOrNull { it.first }
-                    ?.second ?: return emptyList<PifDevice>() to null
+                val maxVersion = knownVersions.firstOrNull() ?: return emptyList<PifDevice>() to null
+                val versions = listOf(maxVersion + 1) + knownVersions
 
-                val fiHtml = URL("$GOOGLE_URL$qprPath").readText(StandardCharsets.UTF_8)
                 val rowPattern = Regex(
                     """<tr id="([^"]+)">\s*<td[^>]*>([^<]+)</td>""",
                     RegexOption.DOT_MATCHES_ALL
                 )
 
-                val devices = mutableListOf<PifDevice>()
-                val seen = mutableSetOf<String>()
-                rowPattern.findAll(fiHtml).forEach { match ->
-                    val device = match.groupValues[1]
-                    if (device in seen) return@forEach
-                    seen.add(device)
-                    val model = match.groupValues[2].trim().ifEmpty { DEVICE_MODEL_MAP[device] ?: device }
-                    devices.add(
-                        PifDevice(
-                            product = "${device}_beta",
-                            device = device,
-                            model = model,
-                            otaUrl = "",
-                        )
-                    )
+                for (version in versions) {
+                    try {
+                        val latestHtml = URL("$GOOGLE_URL/about/versions/$version")
+                            .readText(StandardCharsets.UTF_8)
+                        val qprPath = Regex("""href="(/about/versions/$version/qpr(\d+)/download-ota)"""")
+                            .findAll(latestHtml)
+                            .map { it.groupValues[2].toInt() to it.groupValues[1] }
+                            .maxByOrNull { it.first }
+                            ?.second ?: continue
+
+                        val fiHtml = URL("$GOOGLE_URL$qprPath").readText(StandardCharsets.UTF_8)
+
+                        val devices = mutableListOf<PifDevice>()
+                        val seen = mutableSetOf<String>()
+                        rowPattern.findAll(fiHtml).forEach { match ->
+                            val device = match.groupValues[1]
+                            if (device in seen) return@forEach
+                            seen.add(device)
+                            val model = match.groupValues[2].trim()
+                                .ifEmpty { DEVICE_MODEL_MAP[device] ?: device }
+                            devices.add(
+                                PifDevice(
+                                    product = "${device}_beta",
+                                    device = device,
+                                    model = model,
+                                    otaUrl = "",
+                                )
+                            )
+                        }
+
+                        if (devices.isEmpty()) continue
+
+                        val flashHtml = URL(FLASH_URL).readText(StandardCharsets.UTF_8)
+                        val apiKey = Regex("""AIza[0-9A-Za-z_-]{35}""").find(flashHtml)?.value
+
+                        return devices to apiKey
+                    } catch (_: Exception) { continue }
                 }
 
-                if (devices.isEmpty()) return emptyList<PifDevice>() to null
-
-                val flashHtml = URL(FLASH_URL).readText(StandardCharsets.UTF_8)
-                val apiKey = Regex("""AIza[0-9A-Za-z_-]{35}""").find(flashHtml)?.value
-
-                return devices to apiKey
+                return emptyList<PifDevice>() to null
             } catch (e: Exception) {
                 Log.e(TAG, "Canary device fetch failed", e)
                 return emptyList<PifDevice>() to null
