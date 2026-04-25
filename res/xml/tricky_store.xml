@@ -39,20 +39,25 @@
         <Preference
             android:key="ts_manage_targets"
             android:title="@string/ts_manage_target_apps"
-            android:summary="@string/ts_no_targets" />
-
-        <ListPreference
-            android:key="ts_target_mode"
-            android:title="@string/ts_target_mode"
-            android:summary="%s"
-            android:entries="@array/ts_target_mode_entries"
-            android:entryValues="@array/ts_target_mode_values"
-            android:defaultValue="auto" />
+            android:summary="@string/ts_no_targets"
+            android:fragment="com.crdroid.settings.fragments.misc.TrickyStoreAppSettings" />
 
         <Preference
             android:key="ts_import_targets"
             android:title="@string/ts_import_target_list"
             android:summary="@string/ts_import_target_list_summary" />
+
+        <Preference
+            android:key="ts_verification_mode"
+            android:title="@string/ts_verification_mode"
+            android:summary="@string/ts_verification_mode_auto"
+            android:enabled="false"
+            android:selectable="false" />
+
+        <Preference
+            android:key="ts_security_patch"
+            android:title="@string/ts_security_patch"
+            android:summary="@string/ts_no_patch" />
     </PreferenceCategory>
 
     <PreferenceCategory
