@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2018-2022 crDroid Android Project
+     Copyright (C) 2018-2026 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -19,36 +19,23 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/smart_pixels_title" >
 
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="smart_pixels_enable"
-        android:title="@string/smart_pixels_enable_title"
-        android:summary="@string/smart_pixels_enable_summary" />
+    <lineageos.preference.SecureSettingMainSwitchPreference
+        android:key="smart_pixel_filter_enabled"
+        android:title="@string/enable" />
 
-    <com.crdroid.settings.preferences.SystemSettingListPreference
-        android:key="smart_pixels_pattern"
-        android:entries="@array/smart_pixels_percent_strings"
-        android:entryValues="@array/smart_pixels_percent_values"
-        android:defaultValue="5"
-        android:dependency="smart_pixels_enable"
+    <com.crdroid.settings.preferences.SecureSettingSeekBarPreference
+        android:key="smart_pixel_filter_percent"
         android:title="@string/smart_pixels_percent"
-        android:dialogTitle="@string/smart_pixels_percent" />
-
-    <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-        android:key="smart_pixels_on_power_save"
-        android:title="@string/smart_pixels_on_power_save_title"
-        android:summary="@string/smart_pixels_on_power_save_summary" />
-
-    <com.crdroid.settings.preferences.SystemSettingListPreference
-        android:key="smart_pixels_shift_timeout"
-        android:entries="@array/smart_pixels_shift_times"
-        android:entryValues="@array/smart_pixels_shift_values"
-        android:defaultValue="4"
-        android:title="@string/smart_pixels_shift_title"
-        android:summary="@string/smart_pixels_shift_summary"
-        android:dialogTitle="@string/smart_pixels_shift_title" />
+        android:defaultValue="25"
+        android:max="75"
+        settings:min="10"
+        settings:units="%"
+        settings:interval="1"
+        android:dependency="smart_pixel_filter_enabled" />
 
     <com.android.settingslib.widget.FooterPreference
         android:key="smart_pixels_footer"
+        android:title="@string/smart_pixels_warning_text"
         android:selectable="false"
         settings:searchable="false" />
 </PreferenceScreen>
