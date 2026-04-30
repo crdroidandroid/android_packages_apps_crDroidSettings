@@ -771,13 +771,7 @@
     <string name="smart_pixels_warning_text">«Умные пиксели» - средство экономии заряда. В зависимости от того, сколько пикселей вы захотите отключить, это может привести к значительному увеличению времени работы от батареи. Обратите внимание, что в некоторых случаях это может привести к невосприимчивости областей на экране</string>
     <string name="smart_pixels_title">«Умные пиксели»</string>
     <string name="smart_pixels_summary">Экономьте заряд батареи, отключая лишние точки экрана</string>
-    <string name="smart_pixels_enable_title">Включить «Умные пиксели»</string>
-    <string name="smart_pixels_enable_summary">Выключить пиксели для снижения энергопотребления</string>
-    <string name="smart_pixels_on_power_save_title">Включать в режиме энергосбережения</string>
-    <string name="smart_pixels_on_power_save_summary">Включить «Умные пиксели», когда включен режим энергосбережения</string>
     <string name="smart_pixels_percent">Процент отключаемых пикселей</string>
-    <string name="smart_pixels_shift_title">Защита от выгорания</string>
-    <string name="smart_pixels_shift_summary">Предотвращение выгорания OLED экранов путём смещения пикселей с некоторой частотой</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">Использовать чёрную тему</string>
     <string name="system_black_theme_summary">Будет использоваться чёрный цвет фона</string>
@@ -1234,10 +1228,6 @@
     <string name="dynamic_bar_keyguard_compact_chip">Компактный индикатор</string>
     <string name="dynamic_bar_keyguard_compact_chip_summary">Всегда использовать компактной стиль индикатора на экране блокировки. Если этот режим отключен, компактный стиль будет использоваться только при ограниченном пространстве.</string>
     <string name="dynamic_bar_events">События</string>
-    <string name="dynamic_bar_event_recording">Запись экрана</string>
-    <string name="dynamic_bar_event_recording_summary">Индикатор записи экрана</string>
-    <string name="dynamic_bar_event_privacy">Индикаторы конфиденциальности</string>
-    <string name="dynamic_bar_event_privacy_summary">Оповещения о доступе к камере и микрофону</string>
     <string name="dynamic_bar_event_audio_recording">Запись аудио</string>
     <string name="dynamic_bar_event_audio_recording_summary">Диктофон и аудиозапись</string>
     <string name="dynamic_bar_event_call">Текущий вызов</string>
@@ -1268,8 +1258,6 @@
     <string name="dynamic_bar_event_clipboard_summary">Скопированный текст и просмотр изображения</string>
     <string name="dynamic_bar_event_torch">Фонарик</string>
     <string name="dynamic_bar_event_torch_summary">Вкл/выкл фонарика и яркость</string>
-    <string name="dynamic_bar_event_casting">Трансляция</string>
-    <string name="dynamic_bar_event_casting_summary">Состояние трансляции экрана и медиа</string>
     <string name="dynamic_bar_event_ongoing">Текущая деятельность</string>
     <string name="dynamic_bar_event_ongoing_summary">Навигация, доставка и другие активные действия</string>
     <string name="dynamic_bar_event_sports">Спорт</string>
@@ -1328,6 +1316,9 @@
     <string name="pif_generating">Создание конфигурации\u2026</string>
     <string name="pif_footer_title">Проверка базовой целостности</string>
     <string name="pif_footer_body">1. Нажмите \"Получить отпечаток Pixel Beta\" и выберите устройство из списка доступных.\n2. Если устройства не найдены, импортируйте рабочую конфигурацию PIF из надёжного источника. Мы не предоставляем файлы конфигурации, вы должны найти их самостоятельно.\n3. Перепроверьте статус Play Integrity.\n\nВ любом случае удаляйте активную конфигурацию перед загрузкой новой. Загрузка конфигурации PIF с истекшим сроком действия приведёт к сбою проверки строгой целостности с помощью TrickyStore, даже при наличии действительного набора ключей.</string>
+    <string name="pif_select_channel">Выберите канал</string>
+    <string name="pif_channel_latest_release">Последняя версия</string>
+    <string name="pif_channel_canary_release">Ранняя версия (Canary)</string>
     <!-- TrickyStore -->
     <string name="ts_keybox_management">Управление ключами</string>
     <string name="ts_import_keybox">Импорт ключей</string>
@@ -1348,6 +1339,7 @@
     <string name="ts_import_target_list_summary">Импортировать target.txt из файла</string>
     <string name="ts_target_list_imported">Целевой список импортирован</string>
     <string name="ts_loading_apps">Загрузка приложений\u2026</string>
+    <string name="ts_auto_select">Автовыбор</string>
     <string name="ts_save">Сохранить</string>
     <string name="ts_targets_saved">Целевой список сохранён</string>
     <string name="ts_failed">Ошибка: %s</string>
@@ -1381,4 +1373,7 @@
     <string name="gs_config_saved">Конфигурация сохранена</string>
     <string name="gs_loading_apps">Загрузка приложений\u2026</string>
     <string name="gs_failed">Ошибка: %s</string>
+    <!-- Build details -->
+    <string name="build_maintainer_title">Сопровождающий устройство</string>
+    <string name="build_maintainer_summary">Неофициальная</string>
 </resources>
