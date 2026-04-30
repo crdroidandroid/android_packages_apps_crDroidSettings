@@ -771,13 +771,7 @@
     <string name="smart_pixels_warning_text">פיקסלים חכמים היא תכונה חוסכת אנרגיה. בתלות במספר הפיקסלים שהחלטת לכבות, ניתן יהיה לראות שיפור באורך חיי הסוללה. יודגש כי במקרים מסויימים ייתכן שאזורים מסויימים במסך לא יגיבו למגע.</string>
     <string name="smart_pixels_title">פיקסלים חכמים</string>
     <string name="smart_pixels_summary">חסכון בסוללה ע\"י כיבוי פיקסלים עודפים</string>
-    <string name="smart_pixels_enable_title">התרת פיקסלים חכמים</string>
-    <string name="smart_pixels_enable_summary">כיבוי פיקסלים לצמצום צריכת החשמל</string>
-    <string name="smart_pixels_on_power_save_title">התרה אוטומטית במצב חסכון בסוללה</string>
-    <string name="smart_pixels_on_power_save_summary">התרת פיקסלים חכמים כאשר מצב חסכון בסוללה מופעל</string>
     <string name="smart_pixels_percent">אחוז הפיקסלים שיושבתו</string>
-    <string name="smart_pixels_shift_title">הגנה מצריבות מסך</string>
-    <string name="smart_pixels_shift_summary">מניעת צריבות מסך במסכי OLED ע\"י הזזת פיקסלים תכופה</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">שימוש בערכת נושא שחורה</string>
     <string name="system_black_theme_summary">כפיית צבעי רקע שחורים</string>
@@ -1234,10 +1228,6 @@
     <string name="dynamic_bar_keyguard_compact_chip">Compact lock screen chip</string>
     <string name="dynamic_bar_keyguard_compact_chip_summary">Always use the compact chip style on the lockscreen. When disabled, compact mode is used only when space is limited.</string>
     <string name="dynamic_bar_events">Events</string>
-    <string name="dynamic_bar_event_recording">Screen recording</string>
-    <string name="dynamic_bar_event_recording_summary">Active screen recording indicator</string>
-    <string name="dynamic_bar_event_privacy">Privacy indicators</string>
-    <string name="dynamic_bar_event_privacy_summary">Camera and microphone access alerts</string>
     <string name="dynamic_bar_event_audio_recording">Audio recording</string>
     <string name="dynamic_bar_event_audio_recording_summary">Voice recorder and audio capture</string>
     <string name="dynamic_bar_event_call">Ongoing call</string>
@@ -1268,8 +1258,6 @@
     <string name="dynamic_bar_event_clipboard_summary">Copied text and image preview</string>
     <string name="dynamic_bar_event_torch">פנס</string>
     <string name="dynamic_bar_event_torch_summary">Flashlight toggle and brightness</string>
-    <string name="dynamic_bar_event_casting">Casting</string>
-    <string name="dynamic_bar_event_casting_summary">Screen cast and media cast status</string>
     <string name="dynamic_bar_event_ongoing">Ongoing activities</string>
     <string name="dynamic_bar_event_ongoing_summary">Navigation, deliveries, and other live activities</string>
     <string name="dynamic_bar_event_sports">Sports</string>
@@ -1328,6 +1316,9 @@
     <string name="pif_generating">Generating configuration\u2026</string>
     <string name="pif_footer_title">Passing basic integrity</string>
     <string name="pif_footer_body">1. Tap \"Fetch Pixel Beta fingerprint\" and select a device from the available list.\n2. If no devices are found, import a working PIF config from a trusted source. Config files are not provided; you must find one yourself.\n3. Recheck your Play Integrity status.\n\nAlways delete the active configuration before loading a new one. Loading an expired PIF config will cause strong integrity via TrickyStore to fail, even with a valid keybox.</string>
+    <string name="pif_select_channel">Select channel</string>
+    <string name="pif_channel_latest_release">Latest release</string>
+    <string name="pif_channel_canary_release">Canary release</string>
     <!-- TrickyStore -->
     <string name="ts_keybox_management">Keybox management</string>
     <string name="ts_import_keybox">Import keybox</string>
@@ -1348,6 +1339,7 @@
     <string name="ts_import_target_list_summary">Import target.txt from a file</string>
     <string name="ts_target_list_imported">Target list imported</string>
     <string name="ts_loading_apps">Loading apps\u2026</string>
+    <string name="ts_auto_select">Auto-select</string>
     <string name="ts_save">שמירה</string>
     <string name="ts_targets_saved">Target list saved</string>
     <string name="ts_failed">Failed: %s</string>
@@ -1381,4 +1373,7 @@
     <string name="gs_config_saved">Configuration saved</string>
     <string name="gs_loading_apps">Loading apps\u2026</string>
     <string name="gs_failed">Failed: %s</string>
+    <!-- Build details -->
+    <string name="build_maintainer_title">Device maintainer</string>
+    <string name="build_maintainer_summary">Unofficial</string>
 </resources>
