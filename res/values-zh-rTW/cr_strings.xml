@@ -764,13 +764,7 @@
     <string name="smart_pixels_warning_text">智慧像素能藉由減少顯示的像素數量來達到省電效果，但在某些情況下可能會使觸控靈敏度降低。</string>
     <string name="smart_pixels_title">智慧像素</string>
     <string name="smart_pixels_summary">透過停用多餘的像素來節省電池電量</string>
-    <string name="smart_pixels_enable_title">啟用智慧像素</string>
-    <string name="smart_pixels_enable_summary">停用像素以降低電量消耗</string>
-    <string name="smart_pixels_on_power_save_title">在省電模式下自動啟用</string>
-    <string name="smart_pixels_on_power_save_summary">啟用省電模式時也啟用智慧像素</string>
     <string name="smart_pixels_percent">停用的像素百分比</string>
-    <string name="smart_pixels_shift_title">螢幕烙印保護</string>
-    <string name="smart_pixels_shift_summary">透過不時移動像素的位置來防止使用 OLED 螢幕的裝置產生烙印</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">使用深色主題</string>
     <string name="system_black_theme_summary">強制使用黑色背景</string>
@@ -1224,10 +1218,6 @@
     <string name="dynamic_bar_keyguard_compact_chip">精簡型鎖定螢幕方塊</string>
     <string name="dynamic_bar_keyguard_compact_chip_summary">在鎖定螢幕上固定使用精簡型方塊樣式。停用時，僅在空間有限的情況下才會使用精簡模式。</string>
     <string name="dynamic_bar_events">事件</string>
-    <string name="dynamic_bar_event_recording">螢幕錄製</string>
-    <string name="dynamic_bar_event_recording_summary">螢幕錄製中的指示器</string>
-    <string name="dynamic_bar_event_privacy">隱私指示器</string>
-    <string name="dynamic_bar_event_privacy_summary">相機和麥克風存取警示</string>
     <string name="dynamic_bar_event_audio_recording">音訊錄音</string>
     <string name="dynamic_bar_event_audio_recording_summary">錄音與音訊擷取</string>
     <string name="dynamic_bar_event_call">Ongoing call</string>
@@ -1258,8 +1248,6 @@
     <string name="dynamic_bar_event_clipboard_summary">已複製的文字和圖片預覽</string>
     <string name="dynamic_bar_event_torch">手電筒</string>
     <string name="dynamic_bar_event_torch_summary">手電筒開關與亮度</string>
-    <string name="dynamic_bar_event_casting">投放</string>
-    <string name="dynamic_bar_event_casting_summary">螢幕投放與媒體投放狀態</string>
     <string name="dynamic_bar_event_ongoing">進行中的活動</string>
     <string name="dynamic_bar_event_ongoing_summary">導航、外送及其他即時活動</string>
     <string name="dynamic_bar_event_sports">運動</string>
@@ -1318,6 +1306,9 @@
     <string name="pif_generating">Generating configuration\u2026</string>
     <string name="pif_footer_title">Passing basic integrity</string>
     <string name="pif_footer_body">1. Tap \"Fetch Pixel Beta fingerprint\" and select a device from the available list.\n2. If no devices are found, import a working PIF config from a trusted source. Config files are not provided; you must find one yourself.\n3. Recheck your Play Integrity status.\n\nAlways delete the active configuration before loading a new one. Loading an expired PIF config will cause strong integrity via TrickyStore to fail, even with a valid keybox.</string>
+    <string name="pif_select_channel">Select channel</string>
+    <string name="pif_channel_latest_release">Latest release</string>
+    <string name="pif_channel_canary_release">Canary release</string>
     <!-- TrickyStore -->
     <string name="ts_keybox_management">Keybox management</string>
     <string name="ts_import_keybox">Import keybox</string>
@@ -1338,6 +1329,7 @@
     <string name="ts_import_target_list_summary">Import target.txt from a file</string>
     <string name="ts_target_list_imported">Target list imported</string>
     <string name="ts_loading_apps">Loading apps\u2026</string>
+    <string name="ts_auto_select">Auto-select</string>
     <string name="ts_save">儲存</string>
     <string name="ts_targets_saved">Target list saved</string>
     <string name="ts_failed">Failed: %s</string>
@@ -1371,4 +1363,7 @@
     <string name="gs_config_saved">Configuration saved</string>
     <string name="gs_loading_apps">Loading apps\u2026</string>
     <string name="gs_failed">Failed: %s</string>
+    <!-- Build details -->
+    <string name="build_maintainer_title">Device maintainer</string>
+    <string name="build_maintainer_summary">Unofficial</string>
 </resources>

@@ -765,13 +765,7 @@
     <string name="smart_pixels_warning_text">智能像素是一种省电功能。 根据您决定关闭多少像素，您可能会看到电池寿命有所改善。 请注意，在某些情况下，它可能会导致触摸屏上出现无响应区域</string>
     <string name="smart_pixels_title">智能像素</string>
     <string name="smart_pixels_summary">通过关闭额外的像素来节省电量</string>
-    <string name="smart_pixels_enable_title">自动启用智能像素</string>
-    <string name="smart_pixels_enable_summary">减少像素以降低功耗</string>
-    <string name="smart_pixels_on_power_save_title">省电模式时自动启用</string>
-    <string name="smart_pixels_on_power_save_summary">开启省电模式时自动启用智能像素</string>
     <string name="smart_pixels_percent">禁用的像素数量</string>
-    <string name="smart_pixels_shift_title">烧屏保护</string>
-    <string name="smart_pixels_shift_summary">通过移动屏幕像素来防止使用 OLED 屏幕的设备发生烧屏</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">使用黑色主题</string>
     <string name="system_black_theme_summary">强制使用黑色背景</string>
@@ -1227,10 +1221,6 @@
     <string name="dynamic_bar_keyguard_compact_chip">紧凑型锁屏胶囊</string>
     <string name="dynamic_bar_keyguard_compact_chip_summary">始终在锁屏界面上使用紧凑型胶囊。禁用后，仅在空间有限时使用紧凑模式。</string>
     <string name="dynamic_bar_events">事件</string>
-    <string name="dynamic_bar_event_recording">屏幕录制</string>
-    <string name="dynamic_bar_event_recording_summary">激活屏幕录制指示器</string>
-    <string name="dynamic_bar_event_privacy">隐私指示器</string>
-    <string name="dynamic_bar_event_privacy_summary">相机和麦克风访问提醒</string>
     <string name="dynamic_bar_event_audio_recording">音频录制</string>
     <string name="dynamic_bar_event_audio_recording_summary">语音录制和音频抓取</string>
     <string name="dynamic_bar_event_call">正在通话</string>
@@ -1261,8 +1251,6 @@
     <string name="dynamic_bar_event_clipboard_summary">复制的文本和图片预览</string>
     <string name="dynamic_bar_event_torch">手电筒</string>
     <string name="dynamic_bar_event_torch_summary">手电筒开关和亮度</string>
-    <string name="dynamic_bar_event_casting">投射到</string>
-    <string name="dynamic_bar_event_casting_summary">屏幕投射和媒体投影状态</string>
     <string name="dynamic_bar_event_ongoing">进行中的活动</string>
     <string name="dynamic_bar_event_ongoing_summary">导航、配送和其他实时活动</string>
     <string name="dynamic_bar_event_sports">体育运动</string>
@@ -1321,6 +1309,9 @@
     <string name="pif_generating">生成配置\u2026</string>
     <string name="pif_footer_title">基本完整性校验通过</string>
     <string name="pif_footer_body">1. 点击\"获取 Pixel Beta 指纹\"并从可用列表中选择一个设备。\n2. 如果找不到设备，请从可信来源导入一个可用的 PIF 配置。配置文件不会提供；你必须自己找。\n3. 重新检查你的 Play 完整性状态。\n\n 每次加载新配置前，请务必删除当前使用中的配置。加载过期的 PIF 配置会导致 TrickyStore 的强完整性验证失败，即使 Keybox密钥有效。</string>
+    <string name="pif_select_channel">选择通道</string>
+    <string name="pif_channel_latest_release">正式版本</string>
+    <string name="pif_channel_canary_release">测试版本</string>
     <!-- TrickyStore -->
     <string name="ts_keybox_management">管理Keybox密钥</string>
     <string name="ts_import_keybox">导入Keybox密钥</string>
@@ -1341,6 +1332,7 @@
     <string name="ts_import_target_list_summary">从文件导入目标.txt</string>
     <string name="ts_target_list_imported">目标列表已导入</string>
     <string name="ts_loading_apps">正在加载应用\u2026</string>
+    <string name="ts_auto_select">自动选择</string>
     <string name="ts_save">保存</string>
     <string name="ts_targets_saved">目标列表已保存</string>
     <string name="ts_failed">操作失败：%s</string>
@@ -1374,4 +1366,7 @@
     <string name="gs_config_saved">配置已保存</string>
     <string name="gs_loading_apps">正在加载应用\u2026</string>
     <string name="gs_failed">操作失败：%s</string>
+    <!-- Build details -->
+    <string name="build_maintainer_title">设备维护者</string>
+    <string name="build_maintainer_summary">非官方版本</string>
 </resources>

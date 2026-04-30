@@ -765,13 +765,7 @@
     <string name="smart_pixels_warning_text">스마트 픽셀은 배터리 절약 기능입니다. 픽셀을 더 많이 끌수록 배터리 사용량이 줄어듭니다. 화면 터치에 반응하지 않는 구역이 생길 수 있습니다.</string>
     <string name="smart_pixels_title">스미트 픽셀</string>
     <string name="smart_pixels_summary">추가로 픽셀을 꺼 배터리 소모 절약</string>
-    <string name="smart_pixels_enable_title">스마트 픽셀 사용</string>
-    <string name="smart_pixels_enable_summary">픽셀을 꺼 배터리 소모 절약</string>
-    <string name="smart_pixels_on_power_save_title">배터리 절약 모드 사용 시 켜기</string>
-    <string name="smart_pixels_on_power_save_summary">배터리 절약 모드를 켰을 때 자동으로 스마트 픽셀 사용</string>
     <string name="smart_pixels_percent">끌 픽셀 백분율</string>
-    <string name="smart_pixels_shift_title">번인 방지</string>
-    <string name="smart_pixels_shift_summary">일정 시간마다 픽셀을 옮겨 OLED 기기에서 번인 방지</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">검정 테마 사용</string>
     <string name="system_black_theme_summary">검은색 배경 색상 강제 사용</string>
@@ -1225,14 +1219,10 @@
     <string name="dynamic_bar_keyguard_compact_chip">컴팩트 잠금 화면 칩</string>
     <string name="dynamic_bar_keyguard_compact_chip_summary">잠금 화면에서는 항상 컴팩트 칩 스타일을 사용하세요. 이 기능을 비활성화하면 공간이 부족할 때만 컴팩트 모드가 사용됩니다.</string>
     <string name="dynamic_bar_events">이벤트</string>
-    <string name="dynamic_bar_event_recording">화면 녹화</string>
-    <string name="dynamic_bar_event_recording_summary">활성 화면 녹화 표시</string>
-    <string name="dynamic_bar_event_privacy">개인정보 보호 표시</string>
-    <string name="dynamic_bar_event_privacy_summary">카메라 및 마이크 접근 알림</string>
     <string name="dynamic_bar_event_audio_recording">오디오 녹음</string>
     <string name="dynamic_bar_event_audio_recording_summary">음성 녹음 및 오디오 캡처</string>
-    <string name="dynamic_bar_event_call">Ongoing call</string>
-    <string name="dynamic_bar_event_call_summary">Incoming and active calls</string>
+    <string name="dynamic_bar_event_call">통화중</string>
+    <string name="dynamic_bar_event_call_summary">전화가 와서 통화 중</string>
     <string name="dynamic_bar_event_media">미디어 재생</string>
     <string name="dynamic_bar_event_media_summary">현재 재생 중인 음악 및 오디오 컨트롤</string>
     <string name="dynamic_bar_event_notification">알림</string>
@@ -1259,8 +1249,6 @@
     <string name="dynamic_bar_event_clipboard_summary">복사된 텍스트 및 이미지 미리보기</string>
     <string name="dynamic_bar_event_torch">손전등</string>
     <string name="dynamic_bar_event_torch_summary">손전등 스위치 및 밝기 조절</string>
-    <string name="dynamic_bar_event_casting">캐스팅</string>
-    <string name="dynamic_bar_event_casting_summary">화면 전송과 미디어 전송 상태</string>
     <string name="dynamic_bar_event_ongoing">진행 중인 활동</string>
     <string name="dynamic_bar_event_ongoing_summary">내비게이션, 전달 및 기타 실시간 활동</string>
     <string name="dynamic_bar_event_sports">스포츠</string>
@@ -1319,6 +1307,9 @@
     <string name="pif_generating">설정 생성 중\u2026</string>
     <string name="pif_footer_title">기본 무결성 통과됨</string>
     <string name="pif_footer_body">1. \'Pixel Beta 지문 가져오기\'를 누르고 사용 가능한 목록에서 기기를 선택하세요.\n2. 목록에 기기가 없다면, 신뢰할 수 있는 소스에서 정상 작동하는 PIF 설정 파일을 가져오세요. 설정 파일은 별도로 제공되지 않으므로 직접 구하셔야 합니다.\n3. Play Integrity 상태를 다시 확인하세요.\n\n새 설정을 불러오기 전에는 항상 기존의 활성된 설정을 삭제하세요. 유효한 키박스가 있더라도 만료된 PIF 설정을 로드하면 TrickyStore를 통한 강력한 무결성 검사에 실패하게 됩니다.</string>
+    <string name="pif_select_channel">채널 선택</string>
+    <string name="pif_channel_latest_release">최신 릴리스</string>
+    <string name="pif_channel_canary_release">카나리 릴리스</string>
     <!-- TrickyStore -->
     <string name="ts_keybox_management">Keybox 관리</string>
     <string name="ts_import_keybox">Keybox 가져오기</string>
@@ -1339,6 +1330,7 @@
     <string name="ts_import_target_list_summary">파일에서 target.txt 가져오기</string>
     <string name="ts_target_list_imported">대상 목록을 가져왔습니다</string>
     <string name="ts_loading_apps">앱 로드 중\u2026</string>
+    <string name="ts_auto_select">자동 선택</string>
     <string name="ts_save">저장</string>
     <string name="ts_targets_saved">대상 목록 저장됨</string>
     <string name="ts_failed">실패함: %s</string>
@@ -1372,4 +1364,7 @@
     <string name="gs_config_saved">설정이 저장되었습니다</string>
     <string name="gs_loading_apps">앱 로드 중\u2026</string>
     <string name="gs_failed">실패함: %s</string>
+    <!-- Build details -->
+    <string name="build_maintainer_title">장치 유지관리자</string>
+    <string name="build_maintainer_summary">비공식</string>
 </resources>
