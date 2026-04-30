@@ -771,13 +771,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="smart_pixels_warning_text">Inteligentne piksele to funkcja oszczędzania energii. W zależności od tego ile pikseli zdecydujesz się wyłączyć, możesz zauważyć poprawę żywotności baterii. Należy pamiętać, że w niektórych przypadkach może to spowodować brak reakcji na obszarach ekranu dotykowego</string>
     <string name="smart_pixels_title">Inteligentne piksele</string>
     <string name="smart_pixels_summary">Oszczędza baterię wyłączając dodatkowe piksele</string>
-    <string name="smart_pixels_enable_title">Włącz Inteligentne piksele</string>
-    <string name="smart_pixels_enable_summary">Wyłącza piksele, aby zmniejszyć użycie energii</string>
-    <string name="smart_pixels_on_power_save_title">Automatycznie włączaj podczas oszczędzania baterii</string>
-    <string name="smart_pixels_on_power_save_summary">Włącza Inteligentne piksele, gdy włączone jest oszczędzanie baterii</string>
     <string name="smart_pixels_percent">Procent pikseli do wyłączenia</string>
-    <string name="smart_pixels_shift_title">Ochrona przed wypaleniem ekranu</string>
-    <string name="smart_pixels_shift_summary">Zapobiega wypaleniu ekranu OLED poprzez częste przełączanie pikseli</string>
     <!-- Black theme -->
     <string name="system_black_theme_title">Używaj czarnego motywu</string>
     <string name="system_black_theme_summary">Wymuszaj czarne kolory tła</string>
@@ -1236,14 +1230,10 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="dynamic_bar_keyguard_compact_chip">Kompaktowy układ dla ekranu blokady</string>
     <string name="dynamic_bar_keyguard_compact_chip_summary">Zawsze używaj kompaktowego stylu wskaźnika na ekranie blokady. Po wyłączeniu tryb kompaktowy jest używany tylko wtedy, gdy brakuje miejsca.</string>
     <string name="dynamic_bar_events">Wydarzenia</string>
-    <string name="dynamic_bar_event_recording">Nagrywanie ekranu</string>
-    <string name="dynamic_bar_event_recording_summary">Aktywny wskaźnik nagrywania ekranu</string>
-    <string name="dynamic_bar_event_privacy">Wskaźniki prywatności</string>
-    <string name="dynamic_bar_event_privacy_summary">Alerty dostępu do kamery i mikrofonu</string>
     <string name="dynamic_bar_event_audio_recording">Nagrywanie dźwięku</string>
     <string name="dynamic_bar_event_audio_recording_summary">Rejestrator głosu i przechwytywanie dźwięku</string>
-    <string name="dynamic_bar_event_call">Ongoing call</string>
-    <string name="dynamic_bar_event_call_summary">Incoming and active calls</string>
+    <string name="dynamic_bar_event_call">Trwające połączenie</string>
+    <string name="dynamic_bar_event_call_summary">Połączenia przychodzące i aktywne</string>
     <string name="dynamic_bar_event_media">Odtwarzanie multimediów</string>
     <string name="dynamic_bar_event_media_summary">Aktualnie odtwarzana muzyka i sterowanie dźwiękiem</string>
     <string name="dynamic_bar_event_notification">Powiadomienia</string>
@@ -1270,8 +1260,6 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="dynamic_bar_event_clipboard_summary">Skopiowany tekst i podgląd obrazu</string>
     <string name="dynamic_bar_event_torch">Latarka</string>
     <string name="dynamic_bar_event_torch_summary">Przełącznik latarki i jasność</string>
-    <string name="dynamic_bar_event_casting">Przesyłanie</string>
-    <string name="dynamic_bar_event_casting_summary">Stan przesyłania ekranu i multimediów</string>
     <string name="dynamic_bar_event_ongoing">Bieżące aktywności</string>
     <string name="dynamic_bar_event_ongoing_summary">Nawigacja, doręczenia i inne działania na żywo</string>
     <string name="dynamic_bar_event_sports">Sport</string>
@@ -1330,6 +1318,9 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pif_generating">Generowanie konfiguracji\u2026</string>
     <string name="pif_footer_title">Spełnianie podstawowych wymogów podstawowej integralności</string>
     <string name="pif_footer_body">1. Dotknij „Pobierz odcisk palca Pixel Beta” i wybierz urządzenie z dostępnej listy.\n2. Jeśli nie znaleziono żadnych urządzeń, zaimportuj działającą konfigurację PIF z zaufanego źródła. Pliki konfiguracyjne nie są udostępniane; musisz je znaleźć samodzielnie.\n3. Sprawdź ponownie stan integralności Play.\n\nPrzed załadowaniem nowej konfiguracji zawsze usuń aktywną konfigurację. Załadowanie wygasłej konfiguracji PIF spowoduje niepowodzenie silnej integralności za pośrednictwem TrickyStore, nawet przy użyciu prawidłowego klucza.</string>
+    <string name="pif_select_channel">Wybierz kanał</string>
+    <string name="pif_channel_latest_release">Najnowsze wydanie</string>
+    <string name="pif_channel_canary_release">Wydanie Canary</string>
     <!-- TrickyStore -->
     <string name="ts_keybox_management">Zarządzanie zestawem kluczy</string>
     <string name="ts_import_keybox">Importuj zestaw kluczy</string>
@@ -1350,6 +1341,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_import_target_list_summary">Importuj target.txt z pliku</string>
     <string name="ts_target_list_imported">Zaimportowano listę docelową</string>
     <string name="ts_loading_apps">Ładowanie aplikacji\u2026</string>
+    <string name="ts_auto_select">Automatyczny wybór</string>
     <string name="ts_save">Zapisz</string>
     <string name="ts_targets_saved">Lista docelowa zapisana</string>
     <string name="ts_failed">Niepowodzenie: %s</string>
@@ -1383,4 +1375,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="gs_config_saved">Konfiguracja zapisana</string>
     <string name="gs_loading_apps">Ładowanie aplikacji\u2026</string>
     <string name="gs_failed">Niepowodzenie: %s</string>
+    <!-- Build details -->
+    <string name="build_maintainer_title">Opiekun urządzenia</string>
+    <string name="build_maintainer_summary">Nieoficjalny</string>
 </resources>
