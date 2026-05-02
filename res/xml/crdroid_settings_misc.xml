@@ -42,6 +42,19 @@
         android:summary="@string/game_spoofing_summary"
         android:fragment="com.crdroid.settings.fragments.misc.GameSpoofing" />
 
+    <!-- Sandbox -->
+    <Preference
+        android:key="sandbox"
+        android:icon="@drawable/ic_sandbox"
+        android:title="@string/sandbox_title"
+        android:summary="@string/sandbox_summary">
+
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="com.android.axion.sandbox"
+            android:targetClass="com.android.axion.sandbox.MainActivity" />
+    </Preference>
+
     <!-- Gaming mode -->
     <Preference
         android:key="gaming_mode"
