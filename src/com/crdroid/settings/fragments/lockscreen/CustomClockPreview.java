@@ -107,7 +107,26 @@ public class CustomClockPreview extends SettingsPreferenceFragment {
         R.layout.keyguard_anci_clockdate_sternum, // 42
         R.layout.keyguard_sparkCircle, // 43
         R.layout.keyguard_sparkList, // 44
-};
+        R.layout.keyguard_clock_miui2, // 45
+        R.layout.keyguard_clock_ios2, // 46
+        R.layout.keyguard_clock_ios3, // 47
+        R.layout.keyguard_clock_ios4, // 48
+        R.layout.keyguard_clock_ios5, // 49
+        R.layout.keyguard_clock_ios6, // 50
+        R.layout.keyguard_clock_ios7, // 51
+        R.layout.keyguard_clock_ios8, // 52
+        R.layout.keyguard_clock_ios9, // 53
+        R.layout.keyguard_clock_ios10, // 54
+        R.layout.keyguard_clock_ios11, // 55
+        R.layout.keyguard_clock_ios12, // 56
+        R.layout.keyguard_clock_big1, // 57
+        R.layout.keyguard_clock_big2, // 58
+        R.layout.keyguard_clock_big3, // 59
+        R.layout.keyguard_clock_sweet, // 60
+        R.layout.keyguard_clock_pixel, // 61
+        R.layout.keyguard_clock_samurai, // 62
+        R.layout.keyguard_clock_gateway, // 63
+    };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -235,6 +254,25 @@ public class CustomClockPreview extends SettingsPreferenceFragment {
             "Anci Sternum",
             "Spark Circle",
             "Spark List",
+            "HyperOS Clock",
+            "iOS 2",
+            "iOS 3",
+            "iOS 4",
+            "iOS 5",
+            "iOS 6",
+            "iOS 7",
+            "iOS 8",
+            "iOS 9",
+            "iOS 10",
+            "iOS 11",
+            "iOS 12",
+            "Big 1",
+            "Big 2",
+            "Big 3",
+            "Sweet",
+            "Pixel",
+            "Samurai",
+            "Gateway",
         };
         if (clockNameTextView != null && position >= 0 && position < clockNames.length) {
             clockNameTextView.setText(clockNames[position]);
