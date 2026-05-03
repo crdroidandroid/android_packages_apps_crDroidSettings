@@ -31,11 +31,14 @@
         android:defaultValue="true"
         android:dependency="lockscreen_pulse_enabled" />
 
-    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+    <com.crdroid.settings.preferences.SecureSettingListPreference
         android:key="pulse_bass_haptics"
         android:title="@string/pulse_bass_haptics_title"
-        android:summary="@string/pulse_bass_haptics_summary"
-        android:defaultValue="false"
+        android:summary="%s"
+        android:dialogTitle="@string/pulse_bass_haptics_title"
+        android:entries="@array/pulse_bass_haptics_entries"
+        android:entryValues="@array/pulse_bass_haptics_values"
+        android:defaultValue="0"
         android:dependency="lockscreen_pulse_enabled" />
 
     <com.crdroid.settings.preferences.SecureSettingListPreference
