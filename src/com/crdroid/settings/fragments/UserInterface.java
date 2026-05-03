@@ -89,7 +89,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 UserHandle.USER_CURRENT);
 
         DozeSettings.reset(mContext);
-        EdgeLightSettings.reset(mContext);
+        EdgeLightSettings.Companion.reset(mContext);
         GradientSettings.Companion.reset(mContext);
         MonetSettings.reset(mContext);
         SmartPixels.reset(mContext);

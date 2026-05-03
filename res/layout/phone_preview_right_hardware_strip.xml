@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) crDroid Android Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/phone_preview_hardware_volume_height"
+    android:clipChildren="false"
+    android:importantForAccessibility="no">
+
+    <View
+        android:layout_width="@dimen/phone_preview_hardware_strip_width"
+        android:layout_height="@dimen/phone_preview_hardware_volume_height"
+        android:layout_gravity="center|top"
+        android:background="@drawable/phone_preview_hardware_capsule" />
+
+    <View
+        android:layout_width="@dimen/phone_preview_hardware_strip_width"
+        android:layout_height="@dimen/phone_preview_hardware_power_height"
+        android:layout_gravity="center|top"
+        android:background="@drawable/phone_preview_hardware_capsule"
+        android:translationY="@dimen/phone_preview_hardware_power_above_volume_dy" />
+
+</FrameLayout>

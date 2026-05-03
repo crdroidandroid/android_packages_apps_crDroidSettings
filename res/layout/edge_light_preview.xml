@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) crDroid Android Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:clipChildren="false"
+        android:layoutDirection="ltr">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="@dimen/phone_preview_screen_width"
+            android:layout_height="@dimen/phone_preview_screen_height"
+            android:layout_gravity="start|center"
+            android:padding="@dimen/edge_light_preview_shell_content_inset"
+            app:cardCornerRadius="@dimen/edge_light_preview_shell_corner_radius"
+            app:cardElevation="2dp"
+            app:strokeColor="@color/edge_light_preview_shell_stroke"
+            app:strokeWidth="3dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/black">
+
+                <View
+                    android:layout_width="@dimen/edge_light_preview_punchhole_size"
+                    android:layout_height="@dimen/edge_light_preview_punchhole_size"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="@dimen/edge_light_preview_punchhole_margin_top"
+                    android:background="@drawable/edge_light_preview_punchhole"
+                    android:contentDescription="@null"
+                    android:importantForAccessibility="no" />
+
+                <com.crdroid.settings.fragments.ui.EdgeLightPreviewView
+                    android:id="@+id/edge_light_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </FrameLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <include
+            layout="@layout/phone_preview_right_hardware_strip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center"
+            android:layout_marginStart="@dimen/phone_preview_screen_width"
+            android:translationX="@dimen/phone_preview_hardware_translation_x" />
+
+    </FrameLayout>
+
+</LinearLayout>
