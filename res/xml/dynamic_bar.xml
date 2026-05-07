@@ -195,12 +195,12 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="dynamic_bar_footer_category">
+        android:key="dynamic_bar_footer_category"
+        android:title="@string/dynamic_bar_footer_title">
 
-        <Preference
+        <com.android.settingslib.widget.FooterPreference
             android:key="dynamic_bar_footer"
-            android:title="@string/dynamic_bar_footer_title"
-            android:summary="@string/dynamic_bar_footer_body"
+            android:title="@string/dynamic_bar_footer_body"
             android:icon="@drawable/ic_info"
             android:selectable="false" />
     </PreferenceCategory>
