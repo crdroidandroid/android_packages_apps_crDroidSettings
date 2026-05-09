@@ -47,8 +47,8 @@
         android:key="pif_settings_category"
         android:title="@string/pif_settings">
 
-        <SwitchPreferenceCompat
-            android:key="pif_spoof_photos"
+        <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+            android:key="spoof_pif_photos"
             android:title="@string/pif_spoof_photos"
             android:summary="@string/pif_spoof_photos_summary"
             android:defaultValue="false" />

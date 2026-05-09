@@ -87,8 +87,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             true
         }
 
-        findPreference<SwitchPreferenceCompat>("pif_spoof_photos")?.setOnPreferenceChangeListener { _, newValue ->
-            updateConfigValue("spoofPhotos", (newValue as Boolean).toString())
+        findPreference<SwitchPreferenceCompat>("spoof_pif_photos")?.setOnPreferenceChangeListener { _, newValue ->
             killPackage(PHOTOS_PACKAGE)
             killPackage(VENDING_PACKAGE)
             true
@@ -123,9 +122,6 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         }
 
         findPreference<Preference>("pif_delete_config")?.isEnabled = exists
-
-        val spoofPhotos = activeConfigData["spoofPhotos"]?.let { it == "true" || it == "1" } ?: false
-        findPreference<SwitchPreferenceCompat>("pif_spoof_photos")?.isChecked = spoofPhotos
 
         populateConfigDetails(activeConfigData)
     }
@@ -272,26 +268,6 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 fetchPref?.summary = getString(R.string.pif_fetch_pixel_beta_summary)
                 fetchPref?.isEnabled = true
             }
-        }
-    }
-
-    /**
-     * Updates a key-value pair in the active config stored in Settings.Secure.
-     * If no config exists yet, creates a new JSON object with just this value.
-     */
-    private fun updateConfigValue(key: String, value: String) {
-        try {
-            val existing = Settings.Secure.getString(requireContext().contentResolver, PIF_CONFIG_KEY)
-            val json = try { JSONObject(existing ?: "") } catch (e: Exception) { JSONObject() }
-            json.put(key, value)
-            Settings.Secure.putString(
-                requireContext().contentResolver,
-                PIF_CONFIG_KEY,
-                json.toString(2)
-            )
-            refreshStatus()
-        } catch (e: Exception) {
-            toast(getString(R.string.pif_failed, e.message ?: ""))
         }
     }
 
