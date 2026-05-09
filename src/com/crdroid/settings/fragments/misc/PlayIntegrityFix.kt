@@ -54,7 +54,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                         PIF_CONFIG_KEY,
                         normalized
                     )
-                    killPlayStore()
+                    killPackage(VENDING_PACKAGE)
                     toast(getString(R.string.pif_imported_as, PIF_CONFIG_NAME))
                     refreshStatus()
                 } catch (e: Exception) {
@@ -89,6 +89,8 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
 
         findPreference<SwitchPreferenceCompat>("pif_spoof_photos")?.setOnPreferenceChangeListener { _, newValue ->
             updateConfigValue("spoofPhotos", (newValue as Boolean).toString())
+            killPackage(PHOTOS_PACKAGE)
+            killPackage(VENDING_PACKAGE)
             true
         }
 
@@ -256,7 +258,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                             PIF_CONFIG_KEY,
                             result.pifData.toString(2)
                         )
-                        killPlayStore()
+                        killPackage(VENDING_PACKAGE)
                         toast(getString(R.string.pif_fetched_model, result.model))
                         refreshStatus()
                     }
@@ -293,10 +295,10 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         }
     }
 
-    private fun killPlayStore() {
+    private fun killPackage(pkg: String) {
         try {
             val am = requireContext().getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
-            am.forceStopPackage(VENDING_PACKAGE)
+            am.forceStopPackage(pkg)
         } catch (_: Exception) {}
     }
 
@@ -315,6 +317,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         private const val FLASH_API = "https://content-flashstation-pa.googleapis.com/v1/builds"
         private const val PIXEL_BULLETIN_URL = "https://source.android.com/docs/security/bulletin/pixel"
         private const val VENDING_PACKAGE = "com.android.vending"
+        private const val PHOTOS_PACKAGE = "com.google.android.apps.photos"
 
         private val DEVICE_MODEL_MAP = mapOf(
             "oriole" to "Pixel 6",
