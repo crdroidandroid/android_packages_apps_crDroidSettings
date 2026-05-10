@@ -10,6 +10,7 @@ import android.app.ActivityManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.UserHandle;
 import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
@@ -102,7 +103,8 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
     }
 
     private fun refreshStatus() {
-        val content = Settings.Secure.getString(requireContext().contentResolver, PIF_CONFIG_KEY)
+        val content = Settings.Secure.getStringForUser(requireContext().contentResolver,
+                        PIF_CONFIG_KEY, UserHandle.USER_CURRENT)
         activeConfigData = if (!content.isNullOrEmpty()) readConfigData(content) else emptyMap()
         val exists = activeConfigData.isNotEmpty()
 
