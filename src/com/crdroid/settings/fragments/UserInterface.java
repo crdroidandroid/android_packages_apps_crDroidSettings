@@ -79,8 +79,6 @@ public class UserInterface extends SettingsPreferenceFragment implements
 
     public static void reset(Context mContext) {
         ContentResolver resolver = mContext.getContentResolver();
-        Settings.System.putIntForUser(resolver,
-                Settings.System.CHARGING_ANIMATION, 1, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.PULSE_ON_NEW_TRACKS, 0, UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
