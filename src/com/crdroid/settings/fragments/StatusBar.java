@@ -150,6 +150,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUSBAR_NOTIF_COUNT, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL_LOCKSCREEN, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_LOGO, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.STATUS_BAR_LOGO_POSITION, 0, UserHandle.USER_CURRENT);
