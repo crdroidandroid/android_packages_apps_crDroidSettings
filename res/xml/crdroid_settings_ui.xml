@@ -85,6 +85,14 @@
             android:targetClass="com.android.axion.axthemestore.MainActivity" />
     </Preference>
 
+    <!-- Settings icon -->
+    <Preference
+        android:key="settings_icon"
+        android:icon="@drawable/ic_format_paint"
+        android:title="@string/settings_icon_title"
+        android:summary="@string/settings_icon_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.SettingsIcon" />
+
     <!-- Charging animation
     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
         android:key="charging_animation"

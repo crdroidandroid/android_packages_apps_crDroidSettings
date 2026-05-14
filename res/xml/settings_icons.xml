@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <!--
+      Copyright (C) 2021-2026 crDroid Android Project
+ 
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+ 
+           http://www.apache.org/licenses/LICENSE-2.0
+ 
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+ -->
+ <PreferenceScreen
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+     android:title="@string/settings_icon_title">
+     
+     <!-- Combined icon style -->
+     <com.crdroid.settings.preferences.SystemSettingListPreference
+         android:key="settings_icon_style"
+         android:title="@string/settings_icon_style_title"
+         android:entries="@array/settings_icon_style_entries"
+         android:entryValues="@array/settings_icon_style_values"
+         android:defaultValue="0" />
+
+     <!-- Random colors -->
+     <com.crdroid.settings.preferences.SystemSettingSwitchPreference
+         android:key="settings_icon_random_colors"
+         android:title="@string/settings_icon_random_colors_title"
+         android:summary="@string/settings_icon_random_colors_summary"
+         android:defaultValue="false" />
+         
+     <!-- Corner style -->
+     <com.crdroid.settings.preferences.SystemSettingListPreference
+         android:key="settings_icon_corner_style"
+         android:title="@string/settings_icon_corner_style_title"
+         android:entries="@array/settings_corner_style_entries"
+         android:entryValues="@array/settings_corner_style_values"
+         android:defaultValue="0" />
+ 
+ </PreferenceScreen>

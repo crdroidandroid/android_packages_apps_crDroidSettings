@@ -39,8 +39,9 @@ import com.android.settingslib.search.SearchIndexable;
 import com.crdroid.settings.fragments.ui.DozeSettings;
 import com.crdroid.settings.fragments.ui.EdgeLightSettings;
 import com.crdroid.settings.fragments.ui.GradientSettings;
-import com.crdroid.settings.fragments.ui.SmartPixels;
 import com.crdroid.settings.fragments.ui.MonetSettings;
+import com.crdroid.settings.fragments.ui.SettingsIcon;
+import com.crdroid.settings.fragments.ui.SmartPixels;
 
 import java.util.List;
 
@@ -90,6 +91,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
         EdgeLightSettings.Companion.reset(mContext);
         GradientSettings.Companion.reset(mContext);
         MonetSettings.reset(mContext);
+        SettingsIcon.Companion.reset(mContext);
         SmartPixels.reset(mContext);
     }
 
