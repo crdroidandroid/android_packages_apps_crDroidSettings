@@ -793,19 +793,19 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="qs_footer_datausage_title">Uso de datos</string>
     <string name="qs_footer_datausage_summary">Resumen de uso de datos al pie del panel de los ajustes rápidos</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_style_title">QS tiles animation</string>
+    <string name="qs_tile_animation_style_title">Animación de los mosaicos de ajustes rápidos</string>
     <string name="qs_tile_animation_style_bounce">Rebotar</string>
-    <string name="qs_tile_animation_style_ripple">Ripple</string>
+    <string name="qs_tile_animation_style_ripple">Ondulación</string>
     <string name="qs_tile_animation_style_flip">Voltear</string>
-    <string name="qs_tile_animation_style_fade">Fade</string>
+    <string name="qs_tile_animation_style_fade">Desvanecimiento</string>
     <string name="qs_tile_animation_style_pulse">Pulso</string>
-    <string name="qs_tile_animation_style_shake">Shake</string>
-    <string name="qs_tile_animation_style_wobble">Wobble</string>
-    <string name="qs_tile_animation_style_spin">Spin</string>
-    <string name="qs_tile_animation_style_squish">Squish</string>
+    <string name="qs_tile_animation_style_shake">Sacudida</string>
+    <string name="qs_tile_animation_style_wobble">Tambaleo</string>
+    <string name="qs_tile_animation_style_spin">Giro</string>
+    <string name="qs_tile_animation_style_squish">Compresión</string>
     <string name="qs_tile_animation_style_tilt">Inclinación</string>
-    <string name="qs_tile_animation_style_heartbeat">Heartbeat</string>
-    <string name="qs_tile_animation_style_swing">Swing</string>
+    <string name="qs_tile_animation_style_heartbeat">Latido</string>
+    <string name="qs_tile_animation_style_swing">Balanceo</string>
     <!-- Screenshot shutter sound  -->
     <string name="screenshot_shutter_sound_title">Sonido de captura de pantalla</string>
     <string name="screenshot_shutter_sound_summary">Reproducir sonido cuando se haga una captura de pantalla</string>
@@ -1093,10 +1093,10 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="pulse_settings_summary">Ecualizador gráfico de audio para la barra de navegación y pantalla de bloqueo</string>
     <string name="ambient_pulse_enabled_title">Pulse en pantalla ambiente</string>
     <string name="ambient_pulse_enabled_summary">Mostrar Visualizador en Pantalla Ambiente</string>
-    <string name="pulse_bass_haptics_title">Bass haptics</string>
-    <string name="pulse_bass_haptics_none">No subtle vibration on sharp bass spikes</string>
-    <string name="pulse_bass_haptics_running">Only when pulse is showing</string>
-    <string name="pulse_bass_haptics_always">Whenever media playback is active</string>
+    <string name="pulse_bass_haptics_title">Vibración de graves</string>
+    <string name="pulse_bass_haptics_none">Sin vibración sutil en picos de graves agudos</string>
+    <string name="pulse_bass_haptics_running">Solo cuando se muestra el pulso</string>
+    <string name="pulse_bass_haptics_always">Siempre que la reproducción multimedia esté activa</string>
     <string name="pulse_rounded_bars_title">Barras Redondeadas</string>
     <string name="pulse_rounded_bars_summary">Barras de Visualización con Esquinas Redondeadas</string>
     <string name="pulse_color">Color del Visualizador</string>
@@ -1114,8 +1114,8 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="pulse_renderer_minimal_wave">Onda Mínima</string>
     <string name="pulse_renderer_sparkle">Destellos</string>
     <string name="pulse_renderer_matrix">Matrix</string>
-    <string name="pulse_renderer_particle">Particle</string>
-    <string name="pulse_renderer_waveform">Waveform</string>
+    <string name="pulse_renderer_particle">Partículas</string>
+    <string name="pulse_renderer_waveform">Forma de onda</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">Notificaciones Translúcidas</string>
     <string name="notification_row_transparency_summary">Establecer Fondo Traslúcido para las Notificaciones en Configuración Rápida</string>
@@ -1333,31 +1333,31 @@ Cada tipo de evento tiene su propio color de acento y una tarjeta expandida con 
     <string name="ts_manage_target_apps">Administrar aplicaciones de destino</string>
     <string name="ts_no_targets">No hay aplicaciones de destino configuradas</string>
     <string name="ts_target_apps_count">%d aplicaciones configuradas</string>
-    <string name="ts_import_target_list">Import target list</string>
-    <string name="ts_import_target_list_summary">Import target.txt from a file</string>
-    <string name="ts_target_list_imported">Target list imported</string>
+    <string name="ts_import_target_list">Importar lista de objetivos</string>
+    <string name="ts_import_target_list_summary">Importar target.txt desde un archivo</string>
+    <string name="ts_target_list_imported">Lista de objetivos importada</string>
     <string name="ts_loading_apps">Cargando aplicaciones\u2026</string>
     <string name="ts_auto_select">Autoseleccionar</string>
     <string name="ts_save">Guardar</string>
-    <string name="ts_targets_saved">Target list saved</string>
+    <string name="ts_targets_saved">Lista de objetivos guardada</string>
     <string name="ts_failed">Fallo: %s</string>
-    <string name="ts_target_mode">Target mode</string>
-    <string name="ts_target_mode_auto">Auto</string>
+    <string name="ts_target_mode">Modo objetivo</string>
+    <string name="ts_target_mode_auto">Automático</string>
     <string name="ts_target_mode_leaf">Leaf hack</string>
-    <string name="ts_target_mode_cert">Certificate generation</string>
-    <string name="ts_footer_title">Passing strong integrity</string>
-    <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
+    <string name="ts_target_mode_cert">Generación de certificados</string>
+    <string name="ts_footer_title">Superando la integridad fuerte</string>
+    <string name="ts_footer_body">1. Obtén un keybox XML válido desde una fuente confiable. Los keyboxes no se proporcionan; debes buscar uno por tu cuenta.\n2. Toca “Importar keybox” y carga el archivo.\n3. Abre “Gestionar aplicaciones objetivo” y selecciona Google Play Services y Google Play Store.\n4. Establece el modo objetivo en “Leaf” si tu dispositivo tiene un TEE funcional; de lo contrario, déjalo en Auto.\n5. Vuelve a comprobar el estado de Play Integrity.\n\nElimina siempre el keybox existente antes de importar uno nuevo. Si Google revoca un keybox, es posible que aún permita superar la integridad del dispositivo, aunque la integridad fuerte fallará.</string>
     <!-- Game Spoofing -->
-    <string name="gs_enable">Enable game spoofing</string>
-    <string name="gs_enable_summary">Spoof device properties for configured games</string>
-    <string name="gs_add_app">Add game</string>
-    <string name="gs_add_app_summary">Select an app and device profile to spoof</string>
-    <string name="gs_reload">Reload</string>
-    <string name="gs_reload_summary">Reload configuration from disk</string>
-    <string name="gs_configured_apps">Configured games</string>
-    <string name="gs_no_apps">No games configured</string>
-    <string name="gs_no_apps_summary">Tap \"Add game\" to get started</string>
-    <string name="gs_select_app">Select app</string>
+    <string name="gs_enable">Activar suplantación en juegos</string>
+    <string name="gs_enable_summary">Suplantar las propiedades del dispositivo para los juegos configurados</string>
+    <string name="gs_add_app">Agregar juego</string>
+    <string name="gs_add_app_summary">Selecciona una aplicación y un perfil de dispositivo para suplantar</string>
+    <string name="gs_reload">Recargar</string>
+    <string name="gs_reload_summary">Recargar la configuración desde el almacenamiento</string>
+    <string name="gs_configured_apps">Juegos configurados</string>
+    <string name="gs_no_apps">No hay juegos configurados</string>
+    <string name="gs_no_apps_summary">Toca “Añadir juego” para empezar</string>
+    <string name="gs_select_app">Seleccionar aplicación</string>
     <string name="gs_select_profile">Seleccionar perfil del dispositivo</string>
     <string name="gs_edit_props">Editar propiedades</string>
     <string name="gs_change_profile">Cambiar perfil del dispositivo</string>
@@ -1374,4 +1374,20 @@ Cada tipo de evento tiene su propio color de acento y una tarjeta expandida con 
     <!-- Build details -->
     <string name="build_maintainer_title">Mantenedor del dispositivo</string>
     <string name="build_maintainer_summary">No oficial</string>
+    <!-- Settings UI -->
+    <string name="settings_icon_title">Settings style</string>
+    <string name="settings_icon_summary">Customize Settings app UI style</string>
+    <string name="settings_icon_style_title">Settings icon style</string>
+    <string name="settings_icon_style_expressive">Material expressive</string>
+    <string name="settings_icon_style_colored_bg">Colored background and white icon</string>
+    <string name="settings_icon_style_gradient_bg">Gradient background and white icon</string>
+    <string name="settings_icon_style_accent_outline">Accent outline and icon</string>
+    <string name="settings_icon_style_colored_outline">Colored outline and icon</string>
+    <string name="settings_icon_style_colored_icon">Colored icon only</string>
+    <string name="settings_icon_style_accent_icon">Accent icon only</string>
+    <string name="settings_icon_corner_style_title">Settings icons corner style</string>
+    <string name="settings_icon_corner_style_circle">Círculo</string>
+    <string name="settings_icon_corner_style_rounded_square">Recuadrado Redondeado</string>
+    <string name="settings_icon_random_colors_title">Random colors</string>
+    <string name="settings_icon_random_colors_summary">Use random colors for each icon</string>
 </resources>
