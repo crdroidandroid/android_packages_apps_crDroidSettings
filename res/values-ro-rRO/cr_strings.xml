@@ -58,6 +58,13 @@
     <string name="restart_systemui">Reporniți SystemUI pentru ca modificările să aibă efect!</string>
     <string name="default_value">Prestabilit</string>
     <string name="apply">Aplică</string>
+    <string name="show_system_apps">Show system apps</string>
+    <string name="hide_system_apps">Hide system apps</string>
+    <string name="search_apps">Căutare aplicații</string>
+    <string name="clear_search">Clear search</string>
+    <string name="select_all">Select all</string>
+    <string name="auto_select">Auto-select</string>
+    <string name="system_badge">SYS</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Jurnal modificări curente</string>
     <string name="changelog_crdroid_summary">Vezi modificările în ROM-ul instalat</string>
@@ -1332,7 +1339,6 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <string name="ts_delete_keybox_summary">Elimină fișierul cu cheia</string>
     <string name="ts_delete_keybox_title">Ștergeți cheia?</string>
     <string name="ts_delete_keybox_message">Fișierul cu cheia va fi șters definitiv.</string>
-    <string name="ts_delete">Șterge</string>
     <string name="ts_keybox_deleted">Cheie stearsă</string>
     <string name="ts_target_configuration">Configurație țintă</string>
     <string name="ts_manage_target_apps">Gestionați aplicațiile țintă</string>
@@ -1341,17 +1347,21 @@ O donație mică ajută la menținerea acestui proiect în viață și la îmbun
     <string name="ts_import_target_list">Importă listă</string>
     <string name="ts_import_target_list_summary">Importă target.txt dintr-un fișier</string>
     <string name="ts_target_list_imported">Listă importată</string>
-    <string name="ts_loading_apps">Se încarcă aplicațiile\u2026</string>
-    <string name="ts_auto_select">Auto-selectare</string>
-    <string name="ts_save">Salvaţi</string>
-    <string name="ts_targets_saved">Listă salvată</string>
     <string name="ts_failed">Eșuat: %s</string>
-    <string name="ts_target_mode">Mod target</string>
-    <string name="ts_target_mode_auto">Automat</string>
-    <string name="ts_target_mode_leaf">Hack frunză</string>
-    <string name="ts_target_mode_cert">Generare certificat</string>
     <string name="ts_footer_title">Transmiterea integrității puternice</string>
     <string name="ts_footer_body">1. Obține o cheie XML validă dintr-o sursă de încredere. Cheile nu sunt furnizate; trebuie să găsești una singur.\n2. Apăsați pe \"Importă cheie\" și încărcă fișierul.\n3. Deschide \"Gestionați aplicațiile țintă\" și selectați Google Play Services și Google Play Store.\n4. Setaţi modul ţintă la \"Frunză\" dacă dispozitivul are un DEEE funcţional, altfel lăsaţi-l ca Auto.\n5. Reverificaţi starea de integritate.\n\nȘtergeți întotdeauna cheia existentă înainte de a importa una nouă. În cazul în care Google revocă o cheie, aceasta poate permite trecerea în mod automat către integritatea dispozitivului, chiar dacă integritatea puternică va eșua.</string>
+    <string name="ts_verification_mode">Verification mode</string>
+    <string name="ts_verification_mode_auto">Auto</string>
+    <string name="ts_verification_auto_count">%1$d auto</string>
+    <string name="ts_verification_cert_count">%1$d cert</string>
+    <string name="ts_verification_leaf_count">%1$d leaf</string>
+    <string name="ts_invalid_patch_date">Invalid date format. Use YYYY-MM-DD</string>
+    <string name="ts_security_patch">Security patch date</string>
+    <string name="ts_no_patch">Not set (using device default)</string>
+    <string name="ts_selected_count">%d selected</string>
+    <string name="ts_mode_auto">Auto</string>
+    <string name="ts_mode_leaf">Frunză</string>
+    <string name="ts_mode_cert">Cert</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">Activează falsificarea jocurilor</string>
     <string name="gs_enable_summary">Simulează proprietățile dispozitivului pentru jocuri specifice</string>
