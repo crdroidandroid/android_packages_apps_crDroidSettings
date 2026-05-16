@@ -58,6 +58,13 @@
     <string name="restart_systemui">Перезапустите интерфейс, для применения изменений!</string>
     <string name="default_value">По умолчанию</string>
     <string name="apply">Применить</string>
+    <string name="show_system_apps">Показать системные</string>
+    <string name="hide_system_apps">Скрыть системные</string>
+    <string name="search_apps">Поиск приложений</string>
+    <string name="clear_search">Очистить поиск</string>
+    <string name="select_all">Выбрать все</string>
+    <string name="auto_select">Автовыбор</string>
+    <string name="system_badge">SYS</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Список изменений</string>
     <string name="changelog_crdroid_summary">Просмотр изменений установленной прошивки</string>
@@ -311,6 +318,8 @@
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">Управление яркостью</string>
     <string name="status_bar_toggle_brightness_summary">Регулировать яркость экрана движением пальца по строке состояния</string>
+    <string name="status_bar_toggle_brightness_lockscreen_title">Регулировка яркости</string>
+    <string name="status_bar_toggle_brightness_lockscreen_summary">Разрешить регулировку яркости в строке состояния на экране блокировки</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">Быстрый доступ</string>
     <string name="status_bar_quick_qs_pulldown_summary">Смахивание вниз строки состояния %1$s открывает быстрые настройки</string>
@@ -797,22 +806,19 @@
     <string name="qs_footer_datausage_title">Трафик приложений</string>
     <string name="qs_footer_datausage_summary">Показывать статистику использования трафика в нижней части быстрых настроек</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_title">Анимация плиток</string>
-    <string name="qs_tile_animation_style_title">Стиль анимации</string>
-    <string name="qs_tile_animation_duration_title">Длительность</string>
-    <string name="qs_tile_animation_interpolator_title">Интерполятор анимации</string>
-    <string name="qs_tile_animation_style_off">Без анимации</string>
-    <string name="qs_tile_animation_style_rotate">Вращение</string>
-    <string name="qs_tile_animation_style_flipx">Листание по оси X</string>
-    <string name="qs_tile_animation_style_flipy">Листание по оси Y</string>
-    <string name="qs_tile_animation_interpolator_linearInterpolator">Линейный</string>
-    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Ускорение</string>
-    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Замедление</string>
-    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Ускорение и замедление</string>
-    <string name="qs_tile_animation_interpolator_bounceInterpolator">Отскок</string>
-    <string name="qs_tile_animation_interpolator_overshootInterpolator">Перекручивание</string>
-    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Раскручивание</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Раскрутка и перекручивание</string>
+    <string name="qs_tile_animation_style_title">Анимация плиток</string>
+    <string name="qs_tile_animation_style_bounce">Отскок</string>
+    <string name="qs_tile_animation_style_ripple">Рябь</string>
+    <string name="qs_tile_animation_style_flip">Листание</string>
+    <string name="qs_tile_animation_style_fade">Затухание</string>
+    <string name="qs_tile_animation_style_pulse">Эквалайзер</string>
+    <string name="qs_tile_animation_style_shake">Тряска</string>
+    <string name="qs_tile_animation_style_wobble">Покачивание</string>
+    <string name="qs_tile_animation_style_spin">Вращение</string>
+    <string name="qs_tile_animation_style_squish">Сжатие</string>
+    <string name="qs_tile_animation_style_tilt">Наклон</string>
+    <string name="qs_tile_animation_style_heartbeat">Cердцебиение</string>
+    <string name="qs_tile_animation_style_swing">Качели</string>
     <!-- Screenshot shutter sound  -->
     <string name="screenshot_shutter_sound_title">Звук снимка экрана</string>
     <string name="screenshot_shutter_sound_summary">Звук при создании снимка экрана</string>
@@ -1102,6 +1108,10 @@
     <string name="pulse_settings_summary">Графический аудио эквалайзер для панели навигации и экрана блокировки</string>
     <string name="ambient_pulse_enabled_title">На «Активном экране»</string>
     <string name="ambient_pulse_enabled_summary">Показать визуализацию на активном экране</string>
+    <string name="pulse_bass_haptics_title">Вибрация при басе</string>
+    <string name="pulse_bass_haptics_none">Не вибрировать на резких пиках баса</string>
+    <string name="pulse_bass_haptics_running">Только при отображении пульсации</string>
+    <string name="pulse_bass_haptics_always">Когда проигрывается медиа</string>
     <string name="pulse_rounded_bars_title">Скруглённые полосы</string>
     <string name="pulse_rounded_bars_summary">Отображать полосы визуализации с закруглёнными углами</string>
     <string name="pulse_color">Цвет визуализации</string>
@@ -1119,6 +1129,8 @@
     <string name="pulse_renderer_minimal_wave">Небольшая волна</string>
     <string name="pulse_renderer_sparkle">Сияние</string>
     <string name="pulse_renderer_matrix">Матрица</string>
+    <string name="pulse_renderer_particle">Частица</string>
+    <string name="pulse_renderer_waveform">Форма звука</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">Прозрачные уведомления</string>
     <string name="notification_row_transparency_summary">Прозрачный фон уведомлений в быстрых настройках</string>
@@ -1329,7 +1341,6 @@
     <string name="ts_delete_keybox_summary">Удалить файл ключей</string>
     <string name="ts_delete_keybox_title">Удалить ключи?</string>
     <string name="ts_delete_keybox_message">Файл с ключами будет удалён навсегда.</string>
-    <string name="ts_delete">Удалить</string>
     <string name="ts_keybox_deleted">Ключи удалены</string>
     <string name="ts_target_configuration">Текущая конфигурация</string>
     <string name="ts_manage_target_apps">Управление целевыми приложениями</string>
@@ -1338,17 +1349,21 @@
     <string name="ts_import_target_list">Импорт целевого списка</string>
     <string name="ts_import_target_list_summary">Импортировать target.txt из файла</string>
     <string name="ts_target_list_imported">Целевой список импортирован</string>
-    <string name="ts_loading_apps">Загрузка приложений\u2026</string>
-    <string name="ts_auto_select">Автовыбор</string>
-    <string name="ts_save">Сохранить</string>
-    <string name="ts_targets_saved">Целевой список сохранён</string>
     <string name="ts_failed">Ошибка: %s</string>
-    <string name="ts_target_mode">Целевой режим</string>
-    <string name="ts_target_mode_auto">Авто</string>
-    <string name="ts_target_mode_leaf">Leaf hack</string>
-    <string name="ts_target_mode_cert">Создание сертификата</string>
     <string name="ts_footer_title">Проверка строгой целостности</string>
     <string name="ts_footer_body">1. Получите действительный XML-файл с ключами из надёжного источника. Мы не предоставляем файл с ключами, вы должны найти его самостоятельно.\n2. Нажмите \"Импорт ключей\" и загрузите файл.\n3. Откройте \"Управление целевыми приложениями\" и выберите сервисы Google Play и Google Play Store.\n4. Установите целевой режим на \"Leaf hack\", если на вашем устройстве работает TEE, в противном случае оставьте \"Авто\".\n5. Перепроверьте статус Play Integrity.\n\nВ любом случае удаляйте существующие ключи перед загрузкой новых. Если Google отзовёт ключи, он все равно может проходить базовую целостность, даже если при этом не будет проходить строгая целостность.</string>
+    <string name="ts_verification_mode">Режим проверки</string>
+    <string name="ts_verification_mode_auto">Авто</string>
+    <string name="ts_verification_auto_count">%1$d авто</string>
+    <string name="ts_verification_cert_count">Сертификат %1$d</string>
+    <string name="ts_verification_leaf_count">Лист %1$d</string>
+    <string name="ts_invalid_patch_date">Неверный формат даты. Используйте YYYY-MM-DD</string>
+    <string name="ts_security_patch">Дата обновления безопасности</string>
+    <string name="ts_no_patch">Не задано (используем устройства по умолчанию)</string>
+    <string name="ts_selected_count">Выбрано %d</string>
+    <string name="ts_mode_auto">Авто</string>
+    <string name="ts_mode_leaf">Лист</string>
+    <string name="ts_mode_cert">Сертификат</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">Вкл. подмену для игр</string>
     <string name="gs_enable_summary">Подмена свойств устройства для конкретных игр</string>
@@ -1376,4 +1391,20 @@
     <!-- Build details -->
     <string name="build_maintainer_title">Сопровождающий устройство</string>
     <string name="build_maintainer_summary">Неофициальная</string>
+    <!-- Settings UI -->
+    <string name="settings_icon_title">Стиль настроек</string>
+    <string name="settings_icon_summary">Настройка интерфейса приложения настроек</string>
+    <string name="settings_icon_style_title">Настройки стиля значка</string>
+    <string name="settings_icon_style_expressive">Экспрессивный материал</string>
+    <string name="settings_icon_style_colored_bg">Цветной фон и белый значок</string>
+    <string name="settings_icon_style_gradient_bg">Градиентный фон и белый значок</string>
+    <string name="settings_icon_style_accent_outline">Акцентный контур и значок</string>
+    <string name="settings_icon_style_colored_outline">Цветной контур и значок</string>
+    <string name="settings_icon_style_colored_icon">Только цветной значок</string>
+    <string name="settings_icon_style_accent_icon">Только акцентный значок</string>
+    <string name="settings_icon_corner_style_title">Настройки стиля углов значков</string>
+    <string name="settings_icon_corner_style_circle">Круг</string>
+    <string name="settings_icon_corner_style_rounded_square">Скруглённый квадрат</string>
+    <string name="settings_icon_random_colors_title">Случайный цвет</string>
+    <string name="settings_icon_random_colors_summary">Использовать случайные цвета для каждого значка</string>
 </resources>

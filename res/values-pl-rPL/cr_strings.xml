@@ -58,6 +58,13 @@
     <string name="restart_systemui">Uruchom ponownie interfejs systemowy, aby zmiana zaczęła obowiązywać!</string>
     <string name="default_value">Domyślny</string>
     <string name="apply">Zastosuj</string>
+    <string name="show_system_apps">Show system apps</string>
+    <string name="hide_system_apps">Hide system apps</string>
+    <string name="search_apps">Szukaj aplikacji</string>
+    <string name="clear_search">Clear search</string>
+    <string name="select_all">Select all</string>
+    <string name="auto_select">Auto-select</string>
+    <string name="system_badge">SYS</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Bieżąca lista zmian</string>
     <string name="changelog_crdroid_summary">Pokaż zmiany w zainstalowanym systemie</string>
@@ -311,6 +318,8 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">Kontrola jasności</string>
     <string name="status_bar_toggle_brightness_summary">Kontroluj jasność przesuwając palcem po pasku stanu</string>
+    <string name="status_bar_toggle_brightness_lockscreen_title">Kontrola jasności na ekranie blokady</string>
+    <string name="status_bar_toggle_brightness_lockscreen_summary">Zezwalaj na regulację jasności na pasku stanu ekranu blokady</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">Szybkie rozwijanie</string>
     <string name="status_bar_quick_qs_pulldown_summary">%1$s krawędź paska stanu rozwija szybkie ustawienia</string>
@@ -797,22 +806,19 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="qs_footer_datausage_title">Użycie danych</string>
     <string name="qs_footer_datausage_summary">Pokazuj użycie danych w stopce szybkich ustawień</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_title">Animacja kafelków</string>
-    <string name="qs_tile_animation_style_title">Styl animacji</string>
-    <string name="qs_tile_animation_duration_title">Czas trwania animacji</string>
-    <string name="qs_tile_animation_interpolator_title">Animacja uzupełniająca</string>
-    <string name="qs_tile_animation_style_off">Brak animacji</string>
-    <string name="qs_tile_animation_style_rotate">Obróć</string>
-    <string name="qs_tile_animation_style_flipx">Odwróć X</string>
-    <string name="qs_tile_animation_style_flipy">Obróć Y</string>
-    <string name="qs_tile_animation_interpolator_linearInterpolator">Liniowo</string>
-    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Przyspiesz</string>
-    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Zwolnij</string>
-    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Przyspiesz i zwolnij</string>
-    <string name="qs_tile_animation_interpolator_bounceInterpolator">Odbicie</string>
-    <string name="qs_tile_animation_interpolator_overshootInterpolator">Przekroczenie</string>
-    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Przewiduj</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Przewiduj przekroczenie</string>
+    <string name="qs_tile_animation_style_title">Animacja kafelków</string>
+    <string name="qs_tile_animation_style_bounce">Odbicie</string>
+    <string name="qs_tile_animation_style_ripple">Falowanie</string>
+    <string name="qs_tile_animation_style_flip">Obróć</string>
+    <string name="qs_tile_animation_style_fade">Zanikanie</string>
+    <string name="qs_tile_animation_style_pulse">Pulse</string>
+    <string name="qs_tile_animation_style_shake">Potrząsanie</string>
+    <string name="qs_tile_animation_style_wobble">Drganie</string>
+    <string name="qs_tile_animation_style_spin">Obrót</string>
+    <string name="qs_tile_animation_style_squish">Ściskanie</string>
+    <string name="qs_tile_animation_style_tilt">Przechylenie</string>
+    <string name="qs_tile_animation_style_heartbeat">Bicie serca</string>
+    <string name="qs_tile_animation_style_swing">Kołysanie</string>
     <!-- Screenshot shutter sound  -->
     <string name="screenshot_shutter_sound_title">Dźwięk zrzutu ekranu</string>
     <string name="screenshot_shutter_sound_summary">Odtwarzaj dźwięk po wykonaniu zrzutu ekranu</string>
@@ -1102,6 +1108,10 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pulse_settings_summary">Pokazuj wizualizator słupkowy na ekranie blokady podczas odtwarzania muzyki</string>
     <string name="ambient_pulse_enabled_title">Pulse na ekranie Ambient</string>
     <string name="ambient_pulse_enabled_summary">Pokazuj wizualizator na ekranie Ambient</string>
+    <string name="pulse_bass_haptics_title">Wibracje basu</string>
+    <string name="pulse_bass_haptics_none">Brak subtelnych wibracji przy gwałtownych skokach basu</string>
+    <string name="pulse_bass_haptics_running">Tylko gdy pulsujące powiadomienie jest wyświetlane</string>
+    <string name="pulse_bass_haptics_always">Zawsze, gdy odtwarzanie multimediów jest aktywne</string>
     <string name="pulse_rounded_bars_title">Zaokrąglone słupki</string>
     <string name="pulse_rounded_bars_summary">Wyświetlaj słupki wizualizatora z zaokrąglonymi narożnikami</string>
     <string name="pulse_color">Kolor wizualizatora</string>
@@ -1119,6 +1129,8 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pulse_renderer_minimal_wave">Minimalna fala</string>
     <string name="pulse_renderer_sparkle">Iskra</string>
     <string name="pulse_renderer_matrix">Macierz</string>
+    <string name="pulse_renderer_particle">Cząsteczka</string>
+    <string name="pulse_renderer_waveform">Kształt fali</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">Przeźroczyste powiadomienia</string>
     <string name="notification_row_transparency_summary">Ustaw przezroczyste tło dla powiadomień w szybkich ustawieniach</string>
@@ -1331,7 +1343,6 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_delete_keybox_summary">Usuń plik zestawu kluczy</string>
     <string name="ts_delete_keybox_title">Usunąć zestaw kluczy?</string>
     <string name="ts_delete_keybox_message">Ten plik zestawu kluczy zostanie trwale usunięty.</string>
-    <string name="ts_delete">Usuń</string>
     <string name="ts_keybox_deleted">Usunięto zestaw kluczy</string>
     <string name="ts_target_configuration">Konfiguracja docelowa</string>
     <string name="ts_manage_target_apps">Zarządzaj aplikacjami docelowymi</string>
@@ -1340,17 +1351,21 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_import_target_list">Importuj listę docelową</string>
     <string name="ts_import_target_list_summary">Importuj target.txt z pliku</string>
     <string name="ts_target_list_imported">Zaimportowano listę docelową</string>
-    <string name="ts_loading_apps">Ładowanie aplikacji\u2026</string>
-    <string name="ts_auto_select">Automatyczny wybór</string>
-    <string name="ts_save">Zapisz</string>
-    <string name="ts_targets_saved">Lista docelowa zapisana</string>
     <string name="ts_failed">Niepowodzenie: %s</string>
-    <string name="ts_target_mode">Tryb docelowy</string>
-    <string name="ts_target_mode_auto">Automatycznie</string>
-    <string name="ts_target_mode_leaf">Podmiana certyfikatu</string>
-    <string name="ts_target_mode_cert">Generowanie certyfikatu</string>
     <string name="ts_footer_title">Spełnianie podstawowych wymogów silnej integralności</string>
     <string name="ts_footer_body">1. Pobierz poprawny plik XML zestawu kluczy z zaufanego źródła. Zestawy kluczy nie są udostępniane; musisz samodzielnie znaleźć odpowiedni.\n2. Wybierz opcję „Importuj zestaw kluczy” i załaduj plik.\n3. Otwórz „Zarządzaj aplikacjami docelowymi” i wybierz Usługi Google Play oraz Sklep Google Play.\n4. Ustaw tryb docelowy na \"Certyfikat”, jeśli twoje urządzenie ma działający TEE, w przeciwnym razie pozostaw ustawienie „Auto”.\n5. Ponownie sprawdź status integralności Play.\n\nZawsze usuwaj istniejący plik XML przed zaimportowaniem nowego. Jeśli Google unieważni plik XML, może on nadal zezwalać na przekazanie integralności urządzenia, mimo że integralność silna zakończy się niepowodzeniem.</string>
+    <string name="ts_verification_mode">Verification mode</string>
+    <string name="ts_verification_mode_auto">Auto</string>
+    <string name="ts_verification_auto_count">%1$d auto</string>
+    <string name="ts_verification_cert_count">%1$d cert</string>
+    <string name="ts_verification_leaf_count">%1$d leaf</string>
+    <string name="ts_invalid_patch_date">Invalid date format. Use YYYY-MM-DD</string>
+    <string name="ts_security_patch">Security patch date</string>
+    <string name="ts_no_patch">Not set (using device default)</string>
+    <string name="ts_selected_count">%d selected</string>
+    <string name="ts_mode_auto">Auto</string>
+    <string name="ts_mode_leaf">Liść</string>
+    <string name="ts_mode_cert">Cert</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">Włącz fałszowanie gier</string>
     <string name="gs_enable_summary">Podszywanie się pod właściwości innego urządzenia dla skonfigurowanych gier</string>
@@ -1378,4 +1393,20 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <!-- Build details -->
     <string name="build_maintainer_title">Opiekun urządzenia</string>
     <string name="build_maintainer_summary">Nieoficjalny</string>
+    <!-- Settings UI -->
+    <string name="settings_icon_title">Styl ustawień</string>
+    <string name="settings_icon_summary">Dostosuj styl interfejsu aplikacji ustawienia</string>
+    <string name="settings_icon_style_title">Styl ikony ustawień</string>
+    <string name="settings_icon_style_expressive">Material expressive</string>
+    <string name="settings_icon_style_colored_bg">Kolorowe tło i biała ikona</string>
+    <string name="settings_icon_style_gradient_bg">Tło z gradientem i biała ikona</string>
+    <string name="settings_icon_style_accent_outline">Kontur akcentu i ikona</string>
+    <string name="settings_icon_style_colored_outline">Kolorowa obwódka i ikona</string>
+    <string name="settings_icon_style_colored_icon">Tylko kolorowa ikona</string>
+    <string name="settings_icon_style_accent_icon">Tylko ikona akcentu</string>
+    <string name="settings_icon_corner_style_title">Styl krawędzi ikon dla ustawień</string>
+    <string name="settings_icon_corner_style_circle">Okrąg</string>
+    <string name="settings_icon_corner_style_rounded_square">Zaokrąglony kwadrat</string>
+    <string name="settings_icon_random_colors_title">Losowe kolory</string>
+    <string name="settings_icon_random_colors_summary">Używaj losowych kolorów dla każdej ikony</string>
 </resources>

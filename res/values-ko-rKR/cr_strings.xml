@@ -58,6 +58,13 @@
     <string name="restart_systemui">변경 사항을 적용하려면 시스템 UI를 다시 시작해야 합니다.</string>
     <string name="default_value">기본값</string>
     <string name="apply">적용</string>
+    <string name="show_system_apps">Show system apps</string>
+    <string name="hide_system_apps">Hide system apps</string>
+    <string name="search_apps">앱 검색</string>
+    <string name="clear_search">Clear search</string>
+    <string name="select_all">Select all</string>
+    <string name="auto_select">Auto-select</string>
+    <string name="system_badge">SYS</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">현재 변경 내역</string>
     <string name="changelog_crdroid_summary">설치된 ROM의 변경 사항을 봅니다.</string>
@@ -308,6 +315,8 @@
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">밝기 제어</string>
     <string name="status_bar_toggle_brightness_summary">상태 표시줄을 가로로 쓸어 화면 밝기 조절</string>
+    <string name="status_bar_toggle_brightness_lockscreen_title">Brightness control on lockscreen</string>
+    <string name="status_bar_toggle_brightness_lockscreen_summary">Allow brightness brightness control on lockscreen status bar</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">빠른 내리기</string>
     <string name="status_bar_quick_qs_pulldown_summary">상태 표시줄의 %1$s 가장자리를 내려 빠른 설정 표시</string>
@@ -791,22 +800,19 @@
     <string name="qs_footer_datausage_title">데이터 사용량</string>
     <string name="qs_footer_datausage_summary">빠른 설정 아래쪽에 데이터 사용량 표시</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_title">타일 애니메이션</string>
-    <string name="qs_tile_animation_style_title">애니메이션 스타일</string>
-    <string name="qs_tile_animation_duration_title">애니메이션 길이</string>
-    <string name="qs_tile_animation_interpolator_title">애니메이션 인터폴레이터</string>
-    <string name="qs_tile_animation_style_off">애니메이션 없음</string>
-    <string name="qs_tile_animation_style_rotate">회전</string>
-    <string name="qs_tile_animation_style_flipx">X축 반전</string>
-    <string name="qs_tile_animation_style_flipy">Y축 반전</string>
-    <string name="qs_tile_animation_interpolator_linearInterpolator">선형</string>
-    <string name="qs_tile_animation_interpolator_accelerateInterpolator">가속</string>
-    <string name="qs_tile_animation_interpolator_decelerateInterpolator">감속</string>
-    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">가속 후 천천히</string>
-    <string name="qs_tile_animation_interpolator_bounceInterpolator">튕기기</string>
-    <string name="qs_tile_animation_interpolator_overshootInterpolator">오버 슈트</string>
-    <string name="qs_tile_animation_interpolator_anticipateInterpolator">예측 보간</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">예측 및 오버 슈트</string>
+    <string name="qs_tile_animation_style_title">빠른 설정 타일 애니메이션</string>
+    <string name="qs_tile_animation_style_bounce">튕기기</string>
+    <string name="qs_tile_animation_style_ripple">잔물결</string>
+    <string name="qs_tile_animation_style_flip">뒤집기</string>
+    <string name="qs_tile_animation_style_fade">서서히 사라지기</string>
+    <string name="qs_tile_animation_style_pulse">펄스</string>
+    <string name="qs_tile_animation_style_shake">흔들기</string>
+    <string name="qs_tile_animation_style_wobble">흔들림</string>
+    <string name="qs_tile_animation_style_spin">회전</string>
+    <string name="qs_tile_animation_style_squish">스쿼시</string>
+    <string name="qs_tile_animation_style_tilt">기울이기</string>
+    <string name="qs_tile_animation_style_heartbeat">심장 박동</string>
+    <string name="qs_tile_animation_style_swing">스윙</string>
     <!-- Screenshot shutter sound  -->
     <string name="screenshot_shutter_sound_title">스크린샷 촬영음</string>
     <string name="screenshot_shutter_sound_summary">스크린샷을 촬영할 때 소리 재생</string>
@@ -1093,6 +1099,10 @@
     <string name="pulse_settings_summary">내비게이션 바 및 잠금 화면에 오디오 그래픽 이퀄라이저 표시</string>
     <string name="ambient_pulse_enabled_title">절전 모드 자동 해제 Pluse</string>
     <string name="ambient_pulse_enabled_summary">Ambient Display에 시각화 표시</string>
+    <string name="pulse_bass_haptics_title">저음 햅틱</string>
+    <string name="pulse_bass_haptics_none">급격한 저음 상승 시 미세 진동 제외</string>
+    <string name="pulse_bass_haptics_running">펄스 표시 중에만</string>
+    <string name="pulse_bass_haptics_always">미디어 재생 중에는 항상</string>
     <string name="pulse_rounded_bars_title">둥근 막대</string>
     <string name="pulse_rounded_bars_summary">시각화 바의 모서리를 둥글게 표시</string>
     <string name="pulse_color">시각화 색상</string>
@@ -1110,6 +1120,8 @@
     <string name="pulse_renderer_minimal_wave">미니멀 파동</string>
     <string name="pulse_renderer_sparkle">스파클</string>
     <string name="pulse_renderer_matrix">매트릭스</string>
+    <string name="pulse_renderer_particle">입자</string>
+    <string name="pulse_renderer_waveform">파형</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">반투명 알림</string>
     <string name="notification_row_transparency_summary">빠른 설정 알림에 반투명 배경 설정</string>
@@ -1320,7 +1332,6 @@
     <string name="ts_delete_keybox_summary">Keybox 파일 제거</string>
     <string name="ts_delete_keybox_title">Keybox를 삭제하시겠습니까?</string>
     <string name="ts_delete_keybox_message">Keybox 파일이 영구적으로 삭제됩니다.</string>
-    <string name="ts_delete">삭제</string>
     <string name="ts_keybox_deleted">Keybox 삭제됨</string>
     <string name="ts_target_configuration">대상 설정</string>
     <string name="ts_manage_target_apps">대상 앱 관리</string>
@@ -1329,17 +1340,21 @@
     <string name="ts_import_target_list">대상 목록 가져오기</string>
     <string name="ts_import_target_list_summary">파일에서 target.txt 가져오기</string>
     <string name="ts_target_list_imported">대상 목록을 가져왔습니다</string>
-    <string name="ts_loading_apps">앱 로드 중\u2026</string>
-    <string name="ts_auto_select">자동 선택</string>
-    <string name="ts_save">저장</string>
-    <string name="ts_targets_saved">대상 목록 저장됨</string>
     <string name="ts_failed">실패함: %s</string>
-    <string name="ts_target_mode">대상 모드</string>
-    <string name="ts_target_mode_auto">Auto</string>
-    <string name="ts_target_mode_leaf">Leaf hack</string>
-    <string name="ts_target_mode_cert">인증서 생성</string>
     <string name="ts_footer_title">강력한 무결성 통과</string>
     <string name="ts_footer_body">1. 신뢰할 수 있는 소스에서 유효한 Keybox XML 파일을 확보하세요. Keybox는 별도로 제공되지 않으므로 직접 구하셔야 합니다.\n2. \'Keybox 가져오기\'를 누르고 파일을 불러오세요.\n3. \'대상 앱 관리\'를 열고 Google Play 서비스 및 Google Play 스토어를 선택하세요.\n4. 기기의 TEE가 정상 작동한다면 대상 모드를 \'Leaf\'로 설정하고, 그렇지 않다면 \'자동\'으로 두세요.\n5. Play Integrity 상태를 다시 확인하세요.\n\n새 Keybox를 가져오기 전에는 항상 기존 키박스를 삭제하세요. Google이 특정 Keybox를 무효화한 경우, 강력한 무결성 검사는 실패하더라도 기기 무결성 단계까지는 통과될 수 있습니다.</string>
+    <string name="ts_verification_mode">Verification mode</string>
+    <string name="ts_verification_mode_auto">Auto</string>
+    <string name="ts_verification_auto_count">%1$d auto</string>
+    <string name="ts_verification_cert_count">%1$d cert</string>
+    <string name="ts_verification_leaf_count">%1$d leaf</string>
+    <string name="ts_invalid_patch_date">Invalid date format. Use YYYY-MM-DD</string>
+    <string name="ts_security_patch">Security patch date</string>
+    <string name="ts_no_patch">Not set (using device default)</string>
+    <string name="ts_selected_count">%d selected</string>
+    <string name="ts_mode_auto">Auto</string>
+    <string name="ts_mode_leaf">잎사귀</string>
+    <string name="ts_mode_cert">Cert</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">게임 스푸핑 활성화</string>
     <string name="gs_enable_summary">설정된 게임에 대해 기기 속성 스푸핑 적용</string>
@@ -1367,4 +1382,20 @@
     <!-- Build details -->
     <string name="build_maintainer_title">장치 유지관리자</string>
     <string name="build_maintainer_summary">비공식</string>
+    <!-- Settings UI -->
+    <string name="settings_icon_title">Settings style</string>
+    <string name="settings_icon_summary">Customize Settings app UI style</string>
+    <string name="settings_icon_style_title">Settings icon style</string>
+    <string name="settings_icon_style_expressive">Material expressive</string>
+    <string name="settings_icon_style_colored_bg">Colored background and white icon</string>
+    <string name="settings_icon_style_gradient_bg">Gradient background and white icon</string>
+    <string name="settings_icon_style_accent_outline">Accent outline and icon</string>
+    <string name="settings_icon_style_colored_outline">Colored outline and icon</string>
+    <string name="settings_icon_style_colored_icon">Colored icon only</string>
+    <string name="settings_icon_style_accent_icon">Accent icon only</string>
+    <string name="settings_icon_corner_style_title">Settings icons corner style</string>
+    <string name="settings_icon_corner_style_circle">원형</string>
+    <string name="settings_icon_corner_style_rounded_square">모서리가 둥근 사각형</string>
+    <string name="settings_icon_random_colors_title">Random colors</string>
+    <string name="settings_icon_random_colors_summary">Use random colors for each icon</string>
 </resources>

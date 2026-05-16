@@ -58,6 +58,13 @@
     <string name="restart_systemui">重启系统界面以使更改生效！</string>
     <string name="default_value">默认</string>
     <string name="apply">应用</string>
+    <string name="show_system_apps">Show system apps</string>
+    <string name="hide_system_apps">Hide system apps</string>
+    <string name="search_apps">搜索应用</string>
+    <string name="clear_search">Clear search</string>
+    <string name="select_all">Select all</string>
+    <string name="auto_select">Auto-select</string>
+    <string name="system_badge">SYS</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">更新日志</string>
     <string name="changelog_crdroid_summary">查看已安装 ROM 中的变化</string>
@@ -308,6 +315,8 @@
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">亮度调节</string>
     <string name="status_bar_toggle_brightness_summary">通过在状态栏上滑动来调整亮度</string>
+    <string name="status_bar_toggle_brightness_lockscreen_title">锁屏界面亮度控制</string>
+    <string name="status_bar_toggle_brightness_lockscreen_summary">允许在锁屏状态栏上控制亮度</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">快速下拉</string>
     <string name="status_bar_quick_qs_pulldown_summary">沿状态栏的 %1$s 边缘下拉开启快捷设置完整菜单</string>
@@ -791,22 +800,19 @@
     <string name="qs_footer_datausage_title">数据使用</string>
     <string name="qs_footer_datausage_summary">在快速设置页脚显示数据使用情况摘要</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_title">磁贴动画</string>
-    <string name="qs_tile_animation_style_title">动画样式</string>
-    <string name="qs_tile_animation_duration_title">动画持续时间</string>
-    <string name="qs_tile_animation_interpolator_title">动画插值器</string>
-    <string name="qs_tile_animation_style_off">无动画</string>
-    <string name="qs_tile_animation_style_rotate">旋转</string>
-    <string name="qs_tile_animation_style_flipx">翻转 X</string>
-    <string name="qs_tile_animation_style_flipy">翻转 Y</string>
-    <string name="qs_tile_animation_interpolator_linearInterpolator">线性</string>
-    <string name="qs_tile_animation_interpolator_accelerateInterpolator">加速</string>
-    <string name="qs_tile_animation_interpolator_decelerateInterpolator">减速</string>
-    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">先加速后减速</string>
-    <string name="qs_tile_animation_interpolator_bounceInterpolator">弹跳</string>
-    <string name="qs_tile_animation_interpolator_overshootInterpolator">越界</string>
-    <string name="qs_tile_animation_interpolator_anticipateInterpolator">预留</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">预留和越界</string>
+    <string name="qs_tile_animation_style_title">快速设置磁贴动画</string>
+    <string name="qs_tile_animation_style_bounce">弹跳</string>
+    <string name="qs_tile_animation_style_ripple">波纹</string>
+    <string name="qs_tile_animation_style_flip">翻转</string>
+    <string name="qs_tile_animation_style_fade">淡出</string>
+    <string name="qs_tile_animation_style_pulse">脉冲</string>
+    <string name="qs_tile_animation_style_shake">摇晃</string>
+    <string name="qs_tile_animation_style_wobble">晃动</string>
+    <string name="qs_tile_animation_style_spin">旋转</string>
+    <string name="qs_tile_animation_style_squish">挤压</string>
+    <string name="qs_tile_animation_style_tilt">倾斜</string>
+    <string name="qs_tile_animation_style_heartbeat">心跳</string>
+    <string name="qs_tile_animation_style_swing">摇摆</string>
     <!-- Screenshot shutter sound  -->
     <string name="screenshot_shutter_sound_title">截图提示音</string>
     <string name="screenshot_shutter_sound_summary">截图时播放音效</string>
@@ -1095,6 +1101,10 @@
     <string name="pulse_settings_summary">导航栏和锁屏的音频图形均衡器</string>
     <string name="ambient_pulse_enabled_title">环境脉冲</string>
     <string name="ambient_pulse_enabled_summary">息屏显示视觉效果</string>
+    <string name="pulse_bass_haptics_title">低音触觉</string>
+    <string name="pulse_bass_haptics_none">在低音尖峰时不应有轻微的震动</string>
+    <string name="pulse_bass_haptics_running">仅显示脉冲时</string>
+    <string name="pulse_bass_haptics_always">当媒体播放处于活动状态时</string>
     <string name="pulse_rounded_bars_title">圆形条</string>
     <string name="pulse_rounded_bars_summary">显示带圆角的可视化程序栏</string>
     <string name="pulse_color">可视化效果颜色</string>
@@ -1112,6 +1122,8 @@
     <string name="pulse_renderer_minimal_wave">最小波浪</string>
     <string name="pulse_renderer_sparkle">闪烁</string>
     <string name="pulse_renderer_matrix">矩阵</string>
+    <string name="pulse_renderer_particle">粒子</string>
+    <string name="pulse_renderer_waveform">波形</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">半透明通知</string>
     <string name="notification_row_transparency_summary">设置快速设置通知的半透明背景</string>
@@ -1322,7 +1334,6 @@
     <string name="ts_delete_keybox_summary">移除Keybox密钥文件</string>
     <string name="ts_delete_keybox_title">删除Keybox密钥？</string>
     <string name="ts_delete_keybox_message">此Keybox文件将被永久删除。</string>
-    <string name="ts_delete">删除</string>
     <string name="ts_keybox_deleted">Keybox密钥已删除</string>
     <string name="ts_target_configuration">目标配置</string>
     <string name="ts_manage_target_apps">管理目标应用</string>
@@ -1331,17 +1342,21 @@
     <string name="ts_import_target_list">导入目标列表</string>
     <string name="ts_import_target_list_summary">从文件导入目标.txt</string>
     <string name="ts_target_list_imported">目标列表已导入</string>
-    <string name="ts_loading_apps">正在加载应用\u2026</string>
-    <string name="ts_auto_select">自动选择</string>
-    <string name="ts_save">保存</string>
-    <string name="ts_targets_saved">目标列表已保存</string>
     <string name="ts_failed">操作失败：%s</string>
-    <string name="ts_target_mode">目标模式</string>
-    <string name="ts_target_mode_auto">自动</string>
-    <string name="ts_target_mode_leaf">证书变更</string>
-    <string name="ts_target_mode_cert">证书生成</string>
     <string name="ts_footer_title">强完整性校验通过</string>
     <string name="ts_footer_body">1. 从可信来源获取有效的Keybox XML文件。Keybox密钥不会提供；你必须自己寻找。\n2. 点击\"导入keybox密钥\"并加载文件。\n3. 打开\"管理目标应用\"并选择 Google Play Services 和 Google Play Store。\n4. 如果你的设备有可用的 TEE，将目标模式设置为\"Leaf\"，否则保持为自动。\n5. 重新检查你的 Play 完整性状态。\n\n 导入新 Keybox密钥前，务必删除现有的keybox密钥。如果谷歌吊销了Keybox密钥，即使强完整性失败，它可能仍然允许通过设备完整性。</string>
+    <string name="ts_verification_mode">Verification mode</string>
+    <string name="ts_verification_mode_auto">Auto</string>
+    <string name="ts_verification_auto_count">%1$d auto</string>
+    <string name="ts_verification_cert_count">%1$d cert</string>
+    <string name="ts_verification_leaf_count">%1$d leaf</string>
+    <string name="ts_invalid_patch_date">Invalid date format. Use YYYY-MM-DD</string>
+    <string name="ts_security_patch">Security patch date</string>
+    <string name="ts_no_patch">Not set (using device default)</string>
+    <string name="ts_selected_count">%d selected</string>
+    <string name="ts_mode_auto">Auto</string>
+    <string name="ts_mode_leaf">叶形</string>
+    <string name="ts_mode_cert">Cert</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">启用游戏伪装</string>
     <string name="gs_enable_summary">为特定游戏伪装设备型号</string>
@@ -1369,4 +1384,20 @@
     <!-- Build details -->
     <string name="build_maintainer_title">设备维护者</string>
     <string name="build_maintainer_summary">非官方版本</string>
+    <!-- Settings UI -->
+    <string name="settings_icon_title">设置样式</string>
+    <string name="settings_icon_summary">自定义设置应用界面样式</string>
+    <string name="settings_icon_style_title">设置图标样式</string>
+    <string name="settings_icon_style_expressive">Material 样式</string>
+    <string name="settings_icon_style_colored_bg">彩色背景和白色图标</string>
+    <string name="settings_icon_style_gradient_bg">渐变背景和白色图标</string>
+    <string name="settings_icon_style_accent_outline">强调色描边和图标</string>
+    <string name="settings_icon_style_colored_outline">彩色描边和图标</string>
+    <string name="settings_icon_style_colored_icon">仅彩色图标</string>
+    <string name="settings_icon_style_accent_icon">仅强调色图标</string>
+    <string name="settings_icon_corner_style_title">设置图标角样式</string>
+    <string name="settings_icon_corner_style_circle">环形图标</string>
+    <string name="settings_icon_corner_style_rounded_square">圆角矩形</string>
+    <string name="settings_icon_random_colors_title">随机颜色</string>
+    <string name="settings_icon_random_colors_summary">对每个图标使用随机颜色</string>
 </resources>

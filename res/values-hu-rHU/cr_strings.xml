@@ -58,6 +58,13 @@
     <string name="restart_systemui">Indítsa újra a rendszerfelületet a változtatás érvénybe léptetéséhez!</string>
     <string name="default_value">Alapértelmezett</string>
     <string name="apply">Alkalmazás</string>
+    <string name="show_system_apps">Rendszeralkalmazások megjelenítése</string>
+    <string name="hide_system_apps">Rendszeralkalmazások elrejtése</string>
+    <string name="search_apps">Alkalmazások keresése</string>
+    <string name="clear_search">Keresőmező törlése</string>
+    <string name="select_all">Az összes kijelölése</string>
+    <string name="auto_select">Automatikus választás</string>
+    <string name="system_badge">RENDSZER</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Aktuális változáslista</string>
     <string name="changelog_crdroid_summary">Nézze meg a telepített ROM-ban végrehajtott változtatásokat</string>
@@ -309,6 +316,8 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">Fényerőszabályozás</string>
     <string name="status_bar_toggle_brightness_summary">Fényerő változtatása az állapotsoron való csúsztatással</string>
+    <string name="status_bar_toggle_brightness_lockscreen_title">Fényerő-vezérlés a Képernyőzáron</string>
+    <string name="status_bar_toggle_brightness_lockscreen_summary">Lehetővé teszi a fényerő állítását a Záróképernyő állapotsorán</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">Gyors legördítés</string>
     <string name="status_bar_quick_qs_pulldown_summary">Gyorsbeállítások megjelenítése az állapotsor %1$s oldalán történő lehúzáskor</string>
@@ -793,22 +802,19 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="qs_footer_datausage_title">Adathasználat</string>
     <string name="qs_footer_datausage_summary">Megjeleníti az Adathasználat összesítését a gyorsbeállítások láblécében</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_title">Csempeanimáció</string>
-    <string name="qs_tile_animation_style_title">Animációstílus</string>
-    <string name="qs_tile_animation_duration_title">Animációhossz</string>
-    <string name="qs_tile_animation_interpolator_title">Animáció közbeiktató</string>
-    <string name="qs_tile_animation_style_off">Nincs animáció</string>
-    <string name="qs_tile_animation_style_rotate">Forgatás</string>
-    <string name="qs_tile_animation_style_flipx">X-fordulat</string>
-    <string name="qs_tile_animation_style_flipy">Y-fordulat</string>
-    <string name="qs_tile_animation_interpolator_linearInterpolator">Lineáris</string>
-    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Gyorsuló</string>
-    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Lassuló</string>
-    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Gyorsuló/Lassuló</string>
-    <string name="qs_tile_animation_interpolator_bounceInterpolator">Visszapattanó</string>
-    <string name="qs_tile_animation_interpolator_overshootInterpolator">Túlzó</string>
-    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Siettetett</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Siettetett-Túlzó</string>
+    <string name="qs_tile_animation_style_title">a Gyorsbeállítási csempék animációja</string>
+    <string name="qs_tile_animation_style_bounce">Visszapattanó</string>
+    <string name="qs_tile_animation_style_ripple">Fodrozódás</string>
+    <string name="qs_tile_animation_style_flip">Fordulás</string>
+    <string name="qs_tile_animation_style_fade">Halványuló</string>
+    <string name="qs_tile_animation_style_pulse">Pulse</string>
+    <string name="qs_tile_animation_style_shake">Rázós</string>
+    <string name="qs_tile_animation_style_wobble">Imbolygó</string>
+    <string name="qs_tile_animation_style_spin">Pörgetés</string>
+    <string name="qs_tile_animation_style_squish">Facsart</string>
+    <string name="qs_tile_animation_style_tilt">Billenés</string>
+    <string name="qs_tile_animation_style_heartbeat">Szívverés</string>
+    <string name="qs_tile_animation_style_swing">Hinta</string>
     <!-- Screenshot shutter sound  -->
     <string name="screenshot_shutter_sound_title">A képernyőmentés hangja</string>
     <string name="screenshot_shutter_sound_summary">Így hang jelzi majd a képernyőmentést</string>
@@ -1098,6 +1104,10 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="pulse_settings_summary">Egy audiógrafikus hangszínszabályozó a navigációs sávhoz és a záróképernyőhöz</string>
     <string name="ambient_pulse_enabled_title">Impulzus a környezeti kijelzőn</string>
     <string name="ambient_pulse_enabled_summary">A \'Környezeti kijelző\' vizualizálása</string>
+    <string name="pulse_bass_haptics_title">Rezgés basszusra</string>
+    <string name="pulse_bass_haptics_none">Nincs rezgés az éles basszushangoknál</string>
+    <string name="pulse_bass_haptics_running">Csak akkor, ha a pulzálás látható</string>
+    <string name="pulse_bass_haptics_always">Mindig amikor a médialejátszás aktív</string>
     <string name="pulse_rounded_bars_title">Lekerekített rudak</string>
     <string name="pulse_rounded_bars_summary">Lekerekített sarkú vizualizációs sávok megjelenítése</string>
     <string name="pulse_color">Vizualizáció színe</string>
@@ -1115,6 +1125,8 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="pulse_renderer_minimal_wave">Egyszerű hullám</string>
     <string name="pulse_renderer_sparkle">Szikra</string>
     <string name="pulse_renderer_matrix">Mátrix</string>
+    <string name="pulse_renderer_particle">Részecske</string>
+    <string name="pulse_renderer_waveform">Hullámforma</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">Áttetsző értesítések</string>
     <string name="notification_row_transparency_summary">Az értesítések áttetsző háttérének beállítása a gyorsbeállításokon</string>
@@ -1225,7 +1237,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="dynamic_bar_keyguard_compact_chip_summary">Mindig a kompakt kitöltési stílust használja a záróképernyőn. Letiltás esetén a kompakt mód csak kevés hely esetén lesz használatban.</string>
     <string name="dynamic_bar_events">Events</string>
     <string name="dynamic_bar_event_audio_recording">Hangfelvétel</string>
-    <string name="dynamic_bar_event_audio_recording_summary">Voice recorder and audio capture</string>
+    <string name="dynamic_bar_event_audio_recording_summary">Hangfelvétel és hangmentés</string>
     <string name="dynamic_bar_event_call">Folyamatban lévő hívás</string>
     <string name="dynamic_bar_event_call_summary">Bejövő és aktív hívások</string>
     <string name="dynamic_bar_event_media">Médialejátszás</string>
@@ -1325,7 +1337,6 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="ts_delete_keybox_summary">Remove keybox file</string>
     <string name="ts_delete_keybox_title">Delete keybox?</string>
     <string name="ts_delete_keybox_message">The keybox file will be permanently removed.</string>
-    <string name="ts_delete">Törlés</string>
     <string name="ts_keybox_deleted">Keybox deleted</string>
     <string name="ts_target_configuration">Target configuration</string>
     <string name="ts_manage_target_apps">Manage target apps</string>
@@ -1334,17 +1345,21 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="ts_import_target_list">Import target list</string>
     <string name="ts_import_target_list_summary">Import target.txt from a file</string>
     <string name="ts_target_list_imported">Target list imported</string>
-    <string name="ts_loading_apps">Loading apps\u2026</string>
-    <string name="ts_auto_select">Automatikus választás</string>
-    <string name="ts_save">Mentés</string>
-    <string name="ts_targets_saved">Target list saved</string>
     <string name="ts_failed">Failed: %s</string>
-    <string name="ts_target_mode">Target mode</string>
-    <string name="ts_target_mode_auto">Auto</string>
-    <string name="ts_target_mode_leaf">Leaf hack</string>
-    <string name="ts_target_mode_cert">Certificate generation</string>
     <string name="ts_footer_title">Passing strong integrity</string>
     <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
+    <string name="ts_verification_mode">Ellenőrzési mód</string>
+    <string name="ts_verification_mode_auto">Automatikus</string>
+    <string name="ts_verification_auto_count">%1$d automatikus módon</string>
+    <string name="ts_verification_cert_count">%1$d cert (teljes) módban</string>
+    <string name="ts_verification_leaf_count">%1$d leaf (külső héj) módban</string>
+    <string name="ts_invalid_patch_date">Hibás dátumformátum. YYYY-MM-DD a helyes.</string>
+    <string name="ts_security_patch">A biztonsági javítócsomag dátuma</string>
+    <string name="ts_no_patch">Nincs beállítva (a készülék alapértelmezését használja)</string>
+    <string name="ts_selected_count">%d kiválasztva</string>
+    <string name="ts_mode_auto">Automatikus</string>
+    <string name="ts_mode_leaf">Falevél</string>
+    <string name="ts_mode_cert">Cert (teljes)</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">Enable game spoofing</string>
     <string name="gs_enable_summary">Spoof device properties for configured games</string>
@@ -1372,4 +1387,20 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <!-- Build details -->
     <string name="build_maintainer_title">Készülékfelelős</string>
     <string name="build_maintainer_summary">Nem hivatalos</string>
+    <!-- Settings UI -->
+    <string name="settings_icon_title">a Beállítások stílusa</string>
+    <string name="settings_icon_summary">Személyre szabhatja a Beállítások alkalmazás rendszerfelületi stílusát</string>
+    <string name="settings_icon_style_title">a Beállítások ikon stílusa</string>
+    <string name="settings_icon_style_expressive">Material kifejező</string>
+    <string name="settings_icon_style_colored_bg">Színezett háttér és fehér ikon</string>
+    <string name="settings_icon_style_gradient_bg">Átmenetes háttér és fehér ikon</string>
+    <string name="settings_icon_style_accent_outline">Kiemelt körvonal és ikon</string>
+    <string name="settings_icon_style_colored_outline">Színezett körvonal és ikon</string>
+    <string name="settings_icon_style_colored_icon">Csak az ikon színezett</string>
+    <string name="settings_icon_style_accent_icon">Csak az ikon kiemelt</string>
+    <string name="settings_icon_corner_style_title">a Beállítások ikon sarkainak stílusa</string>
+    <string name="settings_icon_corner_style_circle">Kör</string>
+    <string name="settings_icon_corner_style_rounded_square">Lekerekített négyzet</string>
+    <string name="settings_icon_random_colors_title">Véletlen színek</string>
+    <string name="settings_icon_random_colors_summary">Minden ikon véletlen színezésű</string>
 </resources>

@@ -58,6 +58,13 @@
     <string name="restart_systemui">Reštartujte SystemUI, aby sa zmeny prejavili!</string>
     <string name="default_value">Predvolená</string>
     <string name="apply">Apply</string>
+    <string name="show_system_apps">Show system apps</string>
+    <string name="hide_system_apps">Hide system apps</string>
+    <string name="search_apps">Search apps</string>
+    <string name="clear_search">Clear search</string>
+    <string name="select_all">Select all</string>
+    <string name="auto_select">Auto-select</string>
+    <string name="system_badge">SYS</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Aktuálny zoznam zmien</string>
     <string name="changelog_crdroid_summary">Zobraziť zmeny v nainštalovanej ROM</string>
@@ -312,6 +319,8 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">Ovládanie jasu</string>
     <string name="status_bar_toggle_brightness_summary">Nastaviť jas posúvaním prsta po stavovom riadku</string>
+    <string name="status_bar_toggle_brightness_lockscreen_title">Brightness control on lockscreen</string>
+    <string name="status_bar_toggle_brightness_lockscreen_summary">Allow brightness brightness control on lockscreen status bar</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">Rýchle vysunutie ponuky</string>
     <string name="status_bar_quick_qs_pulldown_summary">Potiahnutím stavového riadku dolu zo strany: %1$s, sa vysunie lišta rýchlych nastavení</string>
@@ -798,22 +807,19 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <string name="qs_footer_datausage_title">Využitie dát</string>
     <string name="qs_footer_datausage_summary">Zobraziť ikonu Nastavenia v päte Rýchlych nastavení</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_title">Animácia dlaždíc</string>
-    <string name="qs_tile_animation_style_title">Štýl animácie</string>
-    <string name="qs_tile_animation_duration_title">Dĺžka trvania animácie</string>
-    <string name="qs_tile_animation_interpolator_title">Interpolácia animácie</string>
-    <string name="qs_tile_animation_style_off">Bez animácie</string>
-    <string name="qs_tile_animation_style_rotate">Otočenie</string>
-    <string name="qs_tile_animation_style_flipx">Prevrátiť X</string>
-    <string name="qs_tile_animation_style_flipy">Prevrátiť Y</string>
-    <string name="qs_tile_animation_interpolator_linearInterpolator">Lineárna</string>
-    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Zrýchlenie</string>
-    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Spomalenie</string>
-    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Zrýchlenie a spomalenie</string>
-    <string name="qs_tile_animation_interpolator_bounceInterpolator">Odrazenie</string>
-    <string name="qs_tile_animation_interpolator_overshootInterpolator">Prekročenie</string>
-    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Predbiehanie</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Predbiehnanie a prekročenie</string>
+    <string name="qs_tile_animation_style_title">QS tiles animation</string>
+    <string name="qs_tile_animation_style_bounce">Odrazenie</string>
+    <string name="qs_tile_animation_style_ripple">Ripple</string>
+    <string name="qs_tile_animation_style_flip">Preklopenie</string>
+    <string name="qs_tile_animation_style_fade">Fade</string>
+    <string name="qs_tile_animation_style_pulse">Pulz</string>
+    <string name="qs_tile_animation_style_shake">Shake</string>
+    <string name="qs_tile_animation_style_wobble">Wobble</string>
+    <string name="qs_tile_animation_style_spin">Spin</string>
+    <string name="qs_tile_animation_style_squish">Squish</string>
+    <string name="qs_tile_animation_style_tilt">Naklonenie</string>
+    <string name="qs_tile_animation_style_heartbeat">Heartbeat</string>
+    <string name="qs_tile_animation_style_swing">Swing</string>
     <!-- Screenshot shutter sound  -->
     <string name="screenshot_shutter_sound_title">Zvuk pri snímke obrazovky</string>
     <string name="screenshot_shutter_sound_summary">Prehrá zvukový efekt pri snímke obrazovky</string>
@@ -1103,6 +1109,10 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <string name="pulse_settings_summary">Audio grafický ekvalizér v navigačnom paneli a na uzamknutej obrazovke</string>
     <string name="ambient_pulse_enabled_title">Ambientný equalizér</string>
     <string name="ambient_pulse_enabled_summary">Zobraziť vizualizér na ambientnom displeji</string>
+    <string name="pulse_bass_haptics_title">Bass haptics</string>
+    <string name="pulse_bass_haptics_none">No subtle vibration on sharp bass spikes</string>
+    <string name="pulse_bass_haptics_running">Only when pulse is showing</string>
+    <string name="pulse_bass_haptics_always">Whenever media playback is active</string>
     <string name="pulse_rounded_bars_title">Zaoblené stĺpce</string>
     <string name="pulse_rounded_bars_summary">Zobraziť vizualizáciu stĺpcov so zaoblenými rohmi</string>
     <string name="pulse_color">Farba vizualizácie</string>
@@ -1120,6 +1130,8 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <string name="pulse_renderer_minimal_wave">Minimálna vlna</string>
     <string name="pulse_renderer_sparkle">Žiara</string>
     <string name="pulse_renderer_matrix">Matrix</string>
+    <string name="pulse_renderer_particle">Particle</string>
+    <string name="pulse_renderer_waveform">Waveform</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">Priesvitné oznámenia</string>
     <string name="notification_row_transparency_summary">Nastaviť priesvitné pozadie pre oznámenia v QS</string>
@@ -1330,7 +1342,6 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <string name="ts_delete_keybox_summary">Remove keybox file</string>
     <string name="ts_delete_keybox_title">Delete keybox?</string>
     <string name="ts_delete_keybox_message">The keybox file will be permanently removed.</string>
-    <string name="ts_delete">Odstrániť</string>
     <string name="ts_keybox_deleted">Keybox deleted</string>
     <string name="ts_target_configuration">Target configuration</string>
     <string name="ts_manage_target_apps">Manage target apps</string>
@@ -1339,17 +1350,21 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <string name="ts_import_target_list">Import target list</string>
     <string name="ts_import_target_list_summary">Import target.txt from a file</string>
     <string name="ts_target_list_imported">Target list imported</string>
-    <string name="ts_loading_apps">Loading apps\u2026</string>
-    <string name="ts_auto_select">Auto-select</string>
-    <string name="ts_save">Uložiť</string>
-    <string name="ts_targets_saved">Target list saved</string>
     <string name="ts_failed">Failed: %s</string>
-    <string name="ts_target_mode">Target mode</string>
-    <string name="ts_target_mode_auto">Auto</string>
-    <string name="ts_target_mode_leaf">Leaf hack</string>
-    <string name="ts_target_mode_cert">Certificate generation</string>
     <string name="ts_footer_title">Passing strong integrity</string>
     <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
+    <string name="ts_verification_mode">Verification mode</string>
+    <string name="ts_verification_mode_auto">Auto</string>
+    <string name="ts_verification_auto_count">%1$d auto</string>
+    <string name="ts_verification_cert_count">%1$d cert</string>
+    <string name="ts_verification_leaf_count">%1$d leaf</string>
+    <string name="ts_invalid_patch_date">Invalid date format. Use YYYY-MM-DD</string>
+    <string name="ts_security_patch">Security patch date</string>
+    <string name="ts_no_patch">Not set (using device default)</string>
+    <string name="ts_selected_count">%d selected</string>
+    <string name="ts_mode_auto">Auto</string>
+    <string name="ts_mode_leaf">Leaf</string>
+    <string name="ts_mode_cert">Cert</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">Enable game spoofing</string>
     <string name="gs_enable_summary">Spoof device properties for configured games</string>
@@ -1377,4 +1392,20 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <!-- Build details -->
     <string name="build_maintainer_title">Device maintainer</string>
     <string name="build_maintainer_summary">Unofficial</string>
+    <!-- Settings UI -->
+    <string name="settings_icon_title">Settings style</string>
+    <string name="settings_icon_summary">Customize Settings app UI style</string>
+    <string name="settings_icon_style_title">Settings icon style</string>
+    <string name="settings_icon_style_expressive">Material expressive</string>
+    <string name="settings_icon_style_colored_bg">Colored background and white icon</string>
+    <string name="settings_icon_style_gradient_bg">Gradient background and white icon</string>
+    <string name="settings_icon_style_accent_outline">Accent outline and icon</string>
+    <string name="settings_icon_style_colored_outline">Colored outline and icon</string>
+    <string name="settings_icon_style_colored_icon">Colored icon only</string>
+    <string name="settings_icon_style_accent_icon">Accent icon only</string>
+    <string name="settings_icon_corner_style_title">Settings icons corner style</string>
+    <string name="settings_icon_corner_style_circle">Kruh</string>
+    <string name="settings_icon_corner_style_rounded_square">Zaoblený štvorec</string>
+    <string name="settings_icon_random_colors_title">Random colors</string>
+    <string name="settings_icon_random_colors_summary">Use random colors for each icon</string>
 </resources>

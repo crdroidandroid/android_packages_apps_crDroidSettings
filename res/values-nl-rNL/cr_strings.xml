@@ -58,6 +58,13 @@
     <string name="restart_systemui">Herstart SystemUI om veranderingen van kracht te laten worden!</string>
     <string name="default_value">Standaard</string>
     <string name="apply">Toepassen</string>
+    <string name="show_system_apps">Show system apps</string>
+    <string name="hide_system_apps">Hide system apps</string>
+    <string name="search_apps">Apps zoeken</string>
+    <string name="clear_search">Clear search</string>
+    <string name="select_all">Select all</string>
+    <string name="auto_select">Auto-select</string>
+    <string name="system_badge">SYS</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Huidige veranderingen</string>
     <string name="changelog_crdroid_summary">Bekijk wijzigingen in de geïnstalleerde rom</string>
@@ -309,6 +316,8 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">Helderheid beheren</string>
     <string name="status_bar_toggle_brightness_summary">Helderheid aanpassen door over de statusbalk te vegen</string>
+    <string name="status_bar_toggle_brightness_lockscreen_title">Helderheid controle op vergrendelscherm</string>
+    <string name="status_bar_toggle_brightness_lockscreen_summary">Helderheidscontrole toestaan op vergrendelscherm statusbalk</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">Snel omlaag trekken</string>
     <string name="status_bar_quick_qs_pulldown_summary">%1$s rand van de status bar laat snelle instellingen verschijnen</string>
@@ -793,22 +802,19 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="qs_footer_datausage_title">Dataverbruik</string>
     <string name="qs_footer_datausage_summary">Toon samenvatting van gegevensgebruik in voettekst Snelle instellingen</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_title">Tegels animatie</string>
-    <string name="qs_tile_animation_style_title">Animatiestijl</string>
-    <string name="qs_tile_animation_duration_title">Animatie duur</string>
-    <string name="qs_tile_animation_interpolator_title">Animatie interpolator</string>
-    <string name="qs_tile_animation_style_off">Geen animatie</string>
-    <string name="qs_tile_animation_style_rotate">Draaien</string>
-    <string name="qs_tile_animation_style_flipx">X spiegelen</string>
-    <string name="qs_tile_animation_style_flipy">Y spiegelen</string>
-    <string name="qs_tile_animation_interpolator_linearInterpolator">Lineair</string>
-    <string name="qs_tile_animation_interpolator_accelerateInterpolator">Versnel</string>
-    <string name="qs_tile_animation_interpolator_decelerateInterpolator">Vertraag</string>
-    <string name="qs_tile_animation_interpolator_accelerateDecelerateInterpolator">Versnellen vertragen</string>
-    <string name="qs_tile_animation_interpolator_bounceInterpolator">Stuiter</string>
-    <string name="qs_tile_animation_interpolator_overshootInterpolator">Voorbijschieten</string>
-    <string name="qs_tile_animation_interpolator_anticipateInterpolator">Anticipeer</string>
-    <string name="qs_tile_animation_interpolator_anticipateOvershootInterpolator">Anticipeer voorbijschieten</string>
+    <string name="qs_tile_animation_style_title">QS tegel animatie</string>
+    <string name="qs_tile_animation_style_bounce">Stuiteren</string>
+    <string name="qs_tile_animation_style_ripple">Rimpeling</string>
+    <string name="qs_tile_animation_style_flip">Omdraaien</string>
+    <string name="qs_tile_animation_style_fade">Vervagen</string>
+    <string name="qs_tile_animation_style_pulse">Pulseren</string>
+    <string name="qs_tile_animation_style_shake">Schudden</string>
+    <string name="qs_tile_animation_style_wobble">Wobbel</string>
+    <string name="qs_tile_animation_style_spin">Draai</string>
+    <string name="qs_tile_animation_style_squish">Squish</string>
+    <string name="qs_tile_animation_style_tilt">Kantelen</string>
+    <string name="qs_tile_animation_style_heartbeat">Hartslag</string>
+    <string name="qs_tile_animation_style_swing">Swing</string>
     <!-- Screenshot shutter sound  -->
     <string name="screenshot_shutter_sound_title">Screenshot geluid</string>
     <string name="screenshot_shutter_sound_summary">Geluid afspelen wanneer schermafbeelding wordt genomen</string>
@@ -1096,6 +1102,10 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="pulse_settings_summary">Audio grafische equalizer voor navigatiebalk en vergrendelscherm</string>
     <string name="ambient_pulse_enabled_title">Ambient Pulse</string>
     <string name="ambient_pulse_enabled_summary">Toon visualizer op Ambient Display</string>
+    <string name="pulse_bass_haptics_title">Bass haptics</string>
+    <string name="pulse_bass_haptics_none">Geen subtiele trillingen op scherpe bas pieken</string>
+    <string name="pulse_bass_haptics_running">Alleen wanneer pulse wordt weergegeven</string>
+    <string name="pulse_bass_haptics_always">Wanneer afspelen van media actief is</string>
     <string name="pulse_rounded_bars_title">Afgeronde balken</string>
     <string name="pulse_rounded_bars_summary">Toon visualizer balken met afgeronde hoeken</string>
     <string name="pulse_color">Visualizer kleuren</string>
@@ -1113,6 +1123,8 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="pulse_renderer_minimal_wave">Minimale golf</string>
     <string name="pulse_renderer_sparkle">Fonkeling</string>
     <string name="pulse_renderer_matrix">Matrix</string>
+    <string name="pulse_renderer_particle">Deeltje</string>
+    <string name="pulse_renderer_waveform">Golfvorm</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">Transparante meldingen</string>
     <string name="notification_row_transparency_summary">Stel doorschijnende achtergrond in voor meldingen in Snelle instellingen</string>
@@ -1323,7 +1335,6 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="ts_delete_keybox_summary">Verwijder keybox bestand</string>
     <string name="ts_delete_keybox_title">Verwijder keybox?</string>
     <string name="ts_delete_keybox_message">Dit configuratiebestand zal permanent worden verwijderd.</string>
-    <string name="ts_delete">Verwijderen</string>
     <string name="ts_keybox_deleted">Keybox verwijderd</string>
     <string name="ts_target_configuration">Doelconfiguratie</string>
     <string name="ts_manage_target_apps">Beheren van doelapps</string>
@@ -1332,17 +1343,21 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="ts_import_target_list">Importeer doellijst</string>
     <string name="ts_import_target_list_summary">Importeer target.txt uit een bestand</string>
     <string name="ts_target_list_imported">Doellijst geimporteerd</string>
-    <string name="ts_loading_apps">Apps laden\u2026</string>
-    <string name="ts_auto_select">Automatisch selecteren</string>
-    <string name="ts_save">Opslaan</string>
-    <string name="ts_targets_saved">Doellijst opgeslagen</string>
     <string name="ts_failed">Mislukt: %s</string>
-    <string name="ts_target_mode">Doelmodus</string>
-    <string name="ts_target_mode_auto">Automatisch</string>
-    <string name="ts_target_mode_leaf">Blader hack</string>
-    <string name="ts_target_mode_cert">Certificaat generatie</string>
     <string name="ts_footer_title">Sterke integriteit behaald</string>
     <string name="ts_footer_body">1. Verkrijg een geldige keybox XML van een vertrouwde bron. Sleutelvakken worden niet opgegeven; je moet er zelf een vinden.\n2. Klik op \"Toetsenvak importeren\" en laad het bestand.\n3. Open \"Doelapps beheren\" en selecteer Google Play Services en Google Play Store.\n4. Stel de doelmodus in op \"Leaf\" als je apparaat een werkende TEE heeft, anders laat het staan als Auto.\n5. Controleer je Play Integrity status.\n\nAltijd het bestaande sleutelveld verwijderen voordat u een nieuwe importeert. Als Google een keybox intrekt, kan het het nog steeds toestaan om door te gaan met de integriteit van het apparaat, ook al zal sterke integriteit mislukken.</string>
+    <string name="ts_verification_mode">Verification mode</string>
+    <string name="ts_verification_mode_auto">Auto</string>
+    <string name="ts_verification_auto_count">%1$d auto</string>
+    <string name="ts_verification_cert_count">%1$d cert</string>
+    <string name="ts_verification_leaf_count">%1$d leaf</string>
+    <string name="ts_invalid_patch_date">Invalid date format. Use YYYY-MM-DD</string>
+    <string name="ts_security_patch">Security patch date</string>
+    <string name="ts_no_patch">Not set (using device default)</string>
+    <string name="ts_selected_count">%d selected</string>
+    <string name="ts_mode_auto">Auto</string>
+    <string name="ts_mode_leaf">Blad</string>
+    <string name="ts_mode_cert">Cert</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">Schakel spelspoofing in</string>
     <string name="gs_enable_summary">Apparaateigenschappen voor geconfigureerde spellen spoofen</string>
@@ -1370,4 +1385,20 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <!-- Build details -->
     <string name="build_maintainer_title">Apparaat onderhouder</string>
     <string name="build_maintainer_summary">Onofficieel</string>
+    <!-- Settings UI -->
+    <string name="settings_icon_title">Stijl instellingen</string>
+    <string name="settings_icon_summary">Aanpassen instellingen UI stijl</string>
+    <string name="settings_icon_style_title">Instellingen pictogram stijl</string>
+    <string name="settings_icon_style_expressive">Materiaal expressief</string>
+    <string name="settings_icon_style_colored_bg">Gekleurde achtergrond en wit pictogram</string>
+    <string name="settings_icon_style_gradient_bg">Gekleurde achtergrond en wit pictogram</string>
+    <string name="settings_icon_style_accent_outline">Accent omtrek en pictogram</string>
+    <string name="settings_icon_style_colored_outline">Gekleurde omtrek en pictogram</string>
+    <string name="settings_icon_style_colored_icon">Alleen gekleurd pictogram</string>
+    <string name="settings_icon_style_accent_icon">Alleen omtrek pictogram</string>
+    <string name="settings_icon_corner_style_title">Hoekstijl instellingen pictogrammen</string>
+    <string name="settings_icon_corner_style_circle">Cirkel</string>
+    <string name="settings_icon_corner_style_rounded_square">Afgerond vierkant</string>
+    <string name="settings_icon_random_colors_title">Willekeurige kleuren</string>
+    <string name="settings_icon_random_colors_summary">Gebruik willekeurige kleuren voor elk pictogram</string>
 </resources>
