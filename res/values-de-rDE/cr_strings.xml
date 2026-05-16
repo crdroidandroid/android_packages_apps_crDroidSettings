@@ -58,6 +58,13 @@
     <string name="restart_systemui">System-UI neu starten zum Anwenden von Änderungen!</string>
     <string name="default_value">Standard</string>
     <string name="apply">Anwenden</string>
+    <string name="show_system_apps">Show system apps</string>
+    <string name="hide_system_apps">Hide system apps</string>
+    <string name="search_apps">Apps suchen</string>
+    <string name="clear_search">Clear search</string>
+    <string name="select_all">Select all</string>
+    <string name="auto_select">Auto-select</string>
+    <string name="system_badge">SYS</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Aktueller Changelog</string>
     <string name="changelog_crdroid_summary">Änderungen in der installierten ROM anzeigen</string>
@@ -1328,7 +1335,6 @@ Mit einer kleinen Spende trägst du dazu bei, dass das Projekt am Leben bleibt u
     <string name="ts_delete_keybox_summary">Keybox-Datei entfernen</string>
     <string name="ts_delete_keybox_title">Keybox löschen?</string>
     <string name="ts_delete_keybox_message">Dadurch wird diese Keybox-Datei dauerhaft gelöscht.</string>
-    <string name="ts_delete">Löschen</string>
     <string name="ts_keybox_deleted">Keybox gelöscht</string>
     <string name="ts_target_configuration">Zielkonfiguration</string>
     <string name="ts_manage_target_apps">Ziel-Apps verwalten</string>
@@ -1337,17 +1343,21 @@ Mit einer kleinen Spende trägst du dazu bei, dass das Projekt am Leben bleibt u
     <string name="ts_import_target_list">Zielliste importieren</string>
     <string name="ts_import_target_list_summary">Target.txt von einer Datei importieren</string>
     <string name="ts_target_list_imported">Zielliste importiert</string>
-    <string name="ts_loading_apps">Apps werden geladen \u2026</string>
-    <string name="ts_auto_select">Autom. Auswahl</string>
-    <string name="ts_save">Speichern</string>
-    <string name="ts_targets_saved">Zielliste gespeichert</string>
     <string name="ts_failed">Fehlgeschlagen: %s</string>
-    <string name="ts_target_mode">Zielmodus</string>
-    <string name="ts_target_mode_auto">Automatisch</string>
-    <string name="ts_target_mode_leaf">Leaf-Hack</string>
-    <string name="ts_target_mode_cert">Zertifikatserstellung</string>
     <string name="ts_footer_title">„Strong Integrity“ wird erreicht</string>
     <string name="ts_footer_body">1. Beschaffe dir aus vertrauenswürdiger Quelle eine Keybox-XML. Keyboxes werden nicht bereitgestellt; bitte selbst eine suchen.\n2. Tippe auf „Keybox importieren“ und lade die Datei.\n3. Öffne „Ziel-Apps festlegen“ und wähle Google-Play-Dienste und Google Play Store aus.\n4. Lege als Zielmodus „Leaf“ fest, sofern dein Gerät eine funktionierende TEE hat, andernfalls belasse ihn auf „Automatisch“.\n5. Prüfe erneut deinen Play-Integrity-Status.\n\nLösche immer bestehende Keyboxes, ehe du eine neue lädst. Mit einer Keybox, die von Google ungültig gemacht wurde, kannst du teilweise noch Device Integrity erreichen, jedoch keine Strong Integrity.</string>
+    <string name="ts_verification_mode">Verification mode</string>
+    <string name="ts_verification_mode_auto">Auto</string>
+    <string name="ts_verification_auto_count">%1$d auto</string>
+    <string name="ts_verification_cert_count">%1$d cert</string>
+    <string name="ts_verification_leaf_count">%1$d leaf</string>
+    <string name="ts_invalid_patch_date">Invalid date format. Use YYYY-MM-DD</string>
+    <string name="ts_security_patch">Security patch date</string>
+    <string name="ts_no_patch">Not set (using device default)</string>
+    <string name="ts_selected_count">%d selected</string>
+    <string name="ts_mode_auto">Auto</string>
+    <string name="ts_mode_leaf">Laubblatt</string>
+    <string name="ts_mode_cert">Cert</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">Spiel-Spoofing aktivieren</string>
     <string name="gs_enable_summary">Konfigurierten Spielen andere Geräteeigenschaften vortäuschen</string>
