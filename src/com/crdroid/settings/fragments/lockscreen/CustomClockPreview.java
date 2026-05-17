@@ -119,13 +119,17 @@ public class CustomClockPreview extends SettingsPreferenceFragment {
         R.layout.keyguard_clock_ios10, // 54
         R.layout.keyguard_clock_ios11, // 55
         R.layout.keyguard_clock_ios12, // 56
-        R.layout.keyguard_clock_big1, // 57
-        R.layout.keyguard_clock_big2, // 58
-        R.layout.keyguard_clock_big3, // 59
-        R.layout.keyguard_clock_sweet, // 60
-        R.layout.keyguard_clock_pixel, // 61
-        R.layout.keyguard_clock_samurai, // 62
-        R.layout.keyguard_clock_gateway, // 63
+        R.layout.keyguard_clock_ios13, // 57
+        R.layout.keyguard_clock_ios14, // 58
+        R.layout.keyguard_clock_big1, // 59
+        R.layout.keyguard_clock_big2, // 60
+        R.layout.keyguard_clock_big3, // 61
+        R.layout.keyguard_clock_big4, // 62
+        R.layout.keyguard_clock_sweet, // 63
+        R.layout.keyguard_clock_pixel, // 64
+        R.layout.keyguard_clock_samurai, // 65
+        R.layout.keyguard_clock_gateway, // 66
+        R.layout.keyguard_clock_tall, // 67
     };
 
     @Override
@@ -266,13 +270,17 @@ public class CustomClockPreview extends SettingsPreferenceFragment {
             "iOS 10",
             "iOS 11",
             "iOS 12",
+            "iOS 13",
+            "iOS 14",
             "Big 1",
             "Big 2",
             "Big 3",
+            "Big 4",
             "Sweet",
             "Pixel",
             "Samurai",
             "Gateway",
+            "Tall clock",
         };
         if (clockNameTextView != null && position >= 0 && position < clockNames.length) {
             clockNameTextView.setText(clockNames[position]);
