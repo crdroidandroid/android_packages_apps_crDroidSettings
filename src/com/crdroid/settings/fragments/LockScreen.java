@@ -42,7 +42,6 @@ import com.crdroid.settings.fragments.lockscreen.UdfpsAnimation;
 import com.crdroid.settings.fragments.lockscreen.UdfpsIconPicker;
 import com.crdroid.settings.utils.DeviceUtils;
 import com.crdroid.settings.utils.SystemUtils;
-import com.crdroid.settings.utils.TelephonyUtils;
 
 import java.util.List;
 
@@ -62,8 +61,6 @@ public class LockScreen extends SettingsPreferenceFragment
 
     private static final String KEY_FP_SUCCESS = "fp_success_vibrate";
     private static final String KEY_FP_ERROR = "fp_error_vibrate";
-
-    private static final String KEY_CARRIER_NAME = "lockscreen_show_carrier";
 
     private Preference mUdfpsAnimations;
     private Preference mUdfpsIcons;
@@ -107,12 +104,6 @@ public class LockScreen extends SettingsPreferenceFragment
         if (!hasFingerprint || !hapticAvailable) {
             gestCategory.removePreference(mFpSuccessVib);
             gestCategory.removePreference(mFpErrorVib);
-        }
-
-        if (!TelephonyUtils.isVoiceCapable(context)) {
-            PreferenceCategory intCategory = (PreferenceCategory) findPreference(LOCKSCREEN_INTERFACE_CATEGORY);
-            SwitchPreferenceCompat carrierName = findPreference(KEY_CARRIER_NAME);
-            intCategory.removePreference(carrierName);
         }
 
         mSmartspace = (SwitchPreferenceCompat) findPreference(KEY_SMARTSPACE);
@@ -166,8 +157,6 @@ public class LockScreen extends SettingsPreferenceFragment
                 Settings.System.LOCKSCREEN_WEATHER_WIND_INFO, 0, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.LOCKSCREEN_WEATHER_HUMIDITY_INFO, 0, UserHandle.USER_CURRENT);
-        Settings.System.putIntForUser(resolver,
-                Settings.System.LOCKSCREEN_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
         PulseSettings.reset(mContext);
         MediaArtSettings.reset(mContext);
         UdfpsAnimation.Companion.reset(mContext);
@@ -221,9 +210,6 @@ public class LockScreen extends SettingsPreferenceFragment
                     if (!hasFingerprint || !hapticAvailable) {
                         keys.add(KEY_FP_SUCCESS);
                         keys.add(KEY_FP_ERROR);
-                    }
-                    if (!TelephonyUtils.isVoiceCapable(context)) {
-                        keys.add(KEY_CARRIER_NAME);
                     }
                     return keys;
                 }

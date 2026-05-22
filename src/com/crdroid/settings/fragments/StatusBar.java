@@ -16,15 +16,21 @@
 package com.crdroid.settings.fragments;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
+import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -45,6 +51,7 @@ import com.crdroid.settings.fragments.statusbar.DynamicBar;
 import com.crdroid.settings.fragments.statusbar.NetworkTrafficSettings;
 import com.crdroid.settings.preferences.SystemSettingSeekBarPreference;
 import com.crdroid.settings.utils.DeviceUtils;
+import com.crdroid.settings.utils.TelephonyUtils;
 
 import lineageos.preference.LineageSystemSettingListPreference;
 import lineageos.providers.LineageSettings;
@@ -59,6 +66,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private static final String STATUS_BAR_CLOCK_STYLE = "status_bar_clock";
     private static final String QUICK_PULLDOWN = "qs_quick_pulldown";
+    private static final String STATUS_BAR_CARRIER_KEY = "status_bar_carrier_key";
+    private static final String CARRIER_NAME = "lockscreen_show_carrier";
+    private static final String CUSTOM_CARRIER_LABEL = "lockscreen_show_custom_carrier_text";
 
     private static final int PULLDOWN_DIR_NONE = 0;
     private static final int PULLDOWN_DIR_RIGHT = 1;
@@ -67,6 +77,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
     private LineageSystemSettingListPreference mStatusBarClock;
     private LineageSystemSettingListPreference mQuickPulldown;
+
+    private Preference mCustomCarrierTextPref;
+    private String mCustomCarrierText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -106,6 +119,16 @@ public class StatusBar extends SettingsPreferenceFragment implements
             mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries_rtl);
             mQuickPulldown.setEntryValues(R.array.status_bar_quick_qs_pulldown_values_rtl);
         }
+
+        if (!TelephonyUtils.isVoiceCapable(mContext)) {
+            Preference carrierCategory = findPreference(STATUS_BAR_CARRIER_KEY);
+            if (carrierCategory != null) {
+                prefScreen.removePreference(carrierCategory);
+            }
+        } else {
+            mCustomCarrierTextPref = findPreference(CUSTOM_CARRIER_LABEL);
+            updateCustomCarrierTextSummary();
+        }
     }
 
     @Override
@@ -116,6 +139,59 @@ public class StatusBar extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(Preference preference) {
+        if (CUSTOM_CARRIER_LABEL.equals(preference.getKey())) {
+            final ContentResolver resolver = getActivity().getContentResolver();
+
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+            alert.setTitle(R.string.custom_carrier_label_title);
+            alert.setMessage(R.string.custom_carrier_label_dialog_message);
+
+            LinearLayout container = new LinearLayout(getActivity());
+            container.setOrientation(LinearLayout.VERTICAL);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT);
+            lp.setMargins(55, 20, 55, 20);
+
+            final EditText input = new EditText(getActivity());
+            input.setText(TextUtils.isEmpty(mCustomCarrierText) ? "" : mCustomCarrierText);
+            input.setSelection(input.getText().length());
+            input.setLayoutParams(lp);
+            input.setGravity(Gravity.START | Gravity.TOP);
+            container.addView(input);
+            alert.setView(container);
+
+            alert.setPositiveButton(getString(android.R.string.ok),
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            String value = input.getText().toString();
+                            Settings.System.putStringForUser(resolver,
+                                    CUSTOM_CARRIER_LABEL, value, UserHandle.USER_CURRENT);
+                            updateCustomCarrierTextSummary();
+                        }
+                    });
+            alert.setNegativeButton(getString(android.R.string.cancel), null);
+            alert.show();
+            return true;
+        }
+        return super.onPreferenceTreeClick(preference);
+    }
+
+    private void updateCustomCarrierTextSummary() {
+        if (mCustomCarrierTextPref == null) return;
+        mCustomCarrierText = Settings.System.getStringForUser(
+                getActivity().getContentResolver(),
+                CUSTOM_CARRIER_LABEL, UserHandle.USER_CURRENT);
+        if (TextUtils.isEmpty(mCustomCarrierText)) {
+            mCustomCarrierTextPref.setSummary(R.string.custom_carrier_label_summary);
+        } else {
+            mCustomCarrierTextPref.setSummary(mCustomCarrierText);
+        }
     }
 
     public static void reset(Context mContext) {
@@ -163,6 +239,10 @@ public class StatusBar extends SettingsPreferenceFragment implements
                 Settings.System.DATA_DISABLED_ICON, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.WIFI_STANDARD_ICON, 0, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.LOCKSCREEN_SHOW_CARRIER, 1, UserHandle.USER_CURRENT);
+        Settings.System.putStringForUser(resolver,
+                Settings.System.LOCKSCREEN_SHOW_CUSTOM_CARRIER_TEXT, "", UserHandle.USER_CURRENT);
 
         BatteryBar.reset(mContext);
         Clock.reset(mContext);
@@ -202,5 +282,18 @@ public class StatusBar extends SettingsPreferenceFragment implements
      * For search
      */
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.crdroid_settings_statusbar);
+            new BaseSearchIndexProvider(R.xml.crdroid_settings_statusbar) {
+
+                @Override
+                public List<String> getNonIndexableKeys(Context context) {
+                    List<String> keys = super.getNonIndexableKeys(context);
+
+                    if (!TelephonyUtils.isVoiceCapable(context)) {
+                        keys.add(CARRIER_NAME);
+                        keys.add(CUSTOM_CARRIER_LABEL);
+                    }
+                    return keys;
+                }
+            };
+
 }
