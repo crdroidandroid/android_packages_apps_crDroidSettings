@@ -58,13 +58,13 @@
     <string name="restart_systemui">Uruchom ponownie interfejs systemowy, aby zmiana zaczęła obowiązywać!</string>
     <string name="default_value">Domyślny</string>
     <string name="apply">Zastosuj</string>
-    <string name="show_system_apps">Show system apps</string>
-    <string name="hide_system_apps">Hide system apps</string>
+    <string name="show_system_apps">Pokazuj aplikacje systemowe</string>
+    <string name="hide_system_apps">Ukrywaj aplikacje systemowe</string>
     <string name="search_apps">Szukaj aplikacji</string>
-    <string name="clear_search">Clear search</string>
-    <string name="select_all">Select all</string>
-    <string name="auto_select">Auto-select</string>
-    <string name="system_badge">SYS</string>
+    <string name="clear_search">Wyczyść wyszukiwanie</string>
+    <string name="select_all">Zaznacz wszystko</string>
+    <string name="auto_select">Automatyczny wybór</string>
+    <string name="system_badge">System</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Bieżąca lista zmian</string>
     <string name="changelog_crdroid_summary">Pokaż zmiany w zainstalowanym systemie</string>
@@ -999,9 +999,15 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <!-- QS Bluetooth Dialog -->
     <string name="qs_bt_show_dialog_title">Okno dialogowe kafelka Bluetooth</string>
     <string name="qs_bt_show_dialog_summary">Wyświetlaj okno dialogowe Bluetooth lub przełączaj stan Bluetooth po dotknięciu kafelka Bluetooth</string>
-    <!-- Carrier name on lockscreen -->
-    <string name="lockscreen_show_carrier_title">Nazwa operatora</string>
-    <string name="lockscreen_show_carrier_summary">Pokazuj nazwę operatora na pasku stanu</string>
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Etykieta operatora</string>
+    <string name="lockscreen_show_carrier_title">Pokazuj etykietę operatora</string>
+    <string name="carrier_show_lockscreen_only">Tylko na ekranie blokady</string>
+    <string name="carrier_show_statusbar_only">Tylko na pasku stanu</string>
+    <string name="carrier_show_both">Na ekranie blokady i pasku stanu</string>
+    <string name="custom_carrier_label_title">Własna etykieta operatora</string>
+    <string name="custom_carrier_label_summary">Dotknij, aby ustawić własną etykietę operatora</string>
+    <string name="custom_carrier_label_dialog_message">Zastępuj etykietę operatora własnym tekstem. Pozostaw pole puste, aby używać prawdziwej etykiety operatora.</string>
     <!-- Statusbar Padding -->
     <string name="statusbar_extra_padding_category">Dodatkowe wypełnienie</string>
     <string name="statusbar_extra_padding_start_title">Początkowe wypełnienie</string>
@@ -1196,6 +1202,10 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="lockscreen_custom_clock_frame_margin_top_title">Własna wysokość zegara</string>
     <string name="lockscreen_custom_clock_frame_margin_top_summary">Dostosuj wysokość własnego stylu zegara</string>
     <string name="lockscreen_custom_clock_color_mode_title">Własny tryb kolorów zegara</string>
+    <string name="lockscreen_custom_clock_size_title">Rozmiar zegara</string>
+    <string name="lockscreen_custom_clock_size_summary">Skaluj zegar ekranu blokady</string>
+    <string name="lockscreen_custom_clock_aod_anim_title">Własna animacja zegara ekranu zawsze włączonego</string>
+    <string name="lockscreen_custom_clock_aod_anim_summary">Ustaw animację w trybie ekran zawsze włączony dla własnego stylu zegara</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">Styl panelu szybkich ustawień</string>
     <string name="qs_panel_style_card">Styl karty</string>
@@ -1354,18 +1364,18 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_failed">Niepowodzenie: %s</string>
     <string name="ts_footer_title">Spełnianie podstawowych wymogów silnej integralności</string>
     <string name="ts_footer_body">1. Pobierz poprawny plik XML zestawu kluczy z zaufanego źródła. Zestawy kluczy nie są udostępniane; musisz samodzielnie znaleźć odpowiedni.\n2. Wybierz opcję „Importuj zestaw kluczy” i załaduj plik.\n3. Otwórz „Zarządzaj aplikacjami docelowymi” i wybierz Usługi Google Play oraz Sklep Google Play.\n4. Ustaw tryb docelowy na \"Certyfikat”, jeśli twoje urządzenie ma działający TEE, w przeciwnym razie pozostaw ustawienie „Auto”.\n5. Ponownie sprawdź status integralności Play.\n\nZawsze usuwaj istniejący plik XML przed zaimportowaniem nowego. Jeśli Google unieważni plik XML, może on nadal zezwalać na przekazanie integralności urządzenia, mimo że integralność silna zakończy się niepowodzeniem.</string>
-    <string name="ts_verification_mode">Verification mode</string>
-    <string name="ts_verification_mode_auto">Auto</string>
+    <string name="ts_verification_mode">Tryb weryfikacji</string>
+    <string name="ts_verification_mode_auto">Automatyczny</string>
     <string name="ts_verification_auto_count">%1$d auto</string>
     <string name="ts_verification_cert_count">%1$d cert</string>
-    <string name="ts_verification_leaf_count">%1$d leaf</string>
-    <string name="ts_invalid_patch_date">Invalid date format. Use YYYY-MM-DD</string>
-    <string name="ts_security_patch">Security patch date</string>
-    <string name="ts_no_patch">Not set (using device default)</string>
-    <string name="ts_selected_count">%d selected</string>
-    <string name="ts_mode_auto">Auto</string>
+    <string name="ts_verification_leaf_count">%1$d liść</string>
+    <string name="ts_invalid_patch_date">Nieprawidłowy format daty. Użyj RRRR-MM-DD</string>
+    <string name="ts_security_patch">Data poprawki bezpieczeństwa</string>
+    <string name="ts_no_patch">Nie ustawiono (używając domyślnych ustawień urządzenia)</string>
+    <string name="ts_selected_count">%d wybrano</string>
+    <string name="ts_mode_auto">Automatyczny</string>
     <string name="ts_mode_leaf">Liść</string>
-    <string name="ts_mode_cert">Cert</string>
+    <string name="ts_mode_cert">Certyfikat</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">Włącz fałszowanie gier</string>
     <string name="gs_enable_summary">Podszywanie się pod właściwości innego urządzenia dla skonfigurowanych gier</string>

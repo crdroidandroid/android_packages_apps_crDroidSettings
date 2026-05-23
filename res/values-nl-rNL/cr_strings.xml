@@ -58,12 +58,12 @@
     <string name="restart_systemui">Herstart SystemUI om veranderingen van kracht te laten worden!</string>
     <string name="default_value">Standaard</string>
     <string name="apply">Toepassen</string>
-    <string name="show_system_apps">Show system apps</string>
-    <string name="hide_system_apps">Hide system apps</string>
+    <string name="show_system_apps">Toon systeem apps</string>
+    <string name="hide_system_apps">Verberg systeem apps</string>
     <string name="search_apps">Apps zoeken</string>
-    <string name="clear_search">Clear search</string>
-    <string name="select_all">Select all</string>
-    <string name="auto_select">Auto-select</string>
+    <string name="clear_search">Wis zoekopdracht</string>
+    <string name="select_all">Alles selecteren</string>
+    <string name="auto_select">Automatisch selecteren</string>
     <string name="system_badge">SYS</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Huidige veranderingen</string>
@@ -993,9 +993,15 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <!-- QS Bluetooth Dialog -->
     <string name="qs_bt_show_dialog_title">Bluetooth tegel dialoog</string>
     <string name="qs_bt_show_dialog_summary">Bluetooth dialoogvenster weergeven of bluetooth status in-/uitschakelen bij het aanraken van bluetooth tegel</string>
-    <!-- Carrier name on lockscreen -->
-    <string name="lockscreen_show_carrier_title">Operator naam</string>
-    <string name="lockscreen_show_carrier_summary">Operator naam in de statusbalk weergeven</string>
+    <!-- Carrier name on lockscreen/statusbar -->
+    <string name="status_bar_carrier_category_title">Providernaam</string>
+    <string name="lockscreen_show_carrier_title">Provider label weergeven</string>
+    <string name="carrier_show_lockscreen_only">Alleen vergrendelscherm</string>
+    <string name="carrier_show_statusbar_only">Alleen statusbalk</string>
+    <string name="carrier_show_both">Vergrendelscherm &amp; statusbalk</string>
+    <string name="custom_carrier_label_title">Aangepaste providernaam</string>
+    <string name="custom_carrier_label_summary">Tik om een aangepast providerlabel in te stellen</string>
+    <string name="custom_carrier_label_dialog_message">Vervang providerlabel door aangepaste tekst. Laat leeg om het echte providerlabel te gebruiken.</string>
     <!-- Statusbar Padding -->
     <string name="statusbar_extra_padding_category">Extra padding</string>
     <string name="statusbar_extra_padding_start_title">Opvulling starten</string>
@@ -1188,6 +1194,10 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="lockscreen_custom_clock_frame_margin_top_title">Aangepaste klok hoogte</string>
     <string name="lockscreen_custom_clock_frame_margin_top_summary">Pas de hoogte van aangepaste klok stijl aan</string>
     <string name="lockscreen_custom_clock_color_mode_title">Aangepaste klok kleurmodus</string>
+    <string name="lockscreen_custom_clock_size_title">Grootte klok</string>
+    <string name="lockscreen_custom_clock_size_summary">Schaal de vergrendelscherm klok</string>
+    <string name="lockscreen_custom_clock_aod_anim_title">Aangepaste AOD klok animatie</string>
+    <string name="lockscreen_custom_clock_aod_anim_summary">AOD animatie instellen voor aangepaste klok stijl</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">QS paneel stijl</string>
     <string name="qs_panel_style_card">Kaart stijl</string>
@@ -1346,16 +1356,16 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="ts_failed">Mislukt: %s</string>
     <string name="ts_footer_title">Sterke integriteit behaald</string>
     <string name="ts_footer_body">1. Verkrijg een geldige keybox XML van een vertrouwde bron. Sleutelvakken worden niet opgegeven; je moet er zelf een vinden.\n2. Klik op \"Toetsenvak importeren\" en laad het bestand.\n3. Open \"Doelapps beheren\" en selecteer Google Play Services en Google Play Store.\n4. Stel de doelmodus in op \"Leaf\" als je apparaat een werkende TEE heeft, anders laat het staan als Auto.\n5. Controleer je Play Integrity status.\n\nAltijd het bestaande sleutelveld verwijderen voordat u een nieuwe importeert. Als Google een keybox intrekt, kan het het nog steeds toestaan om door te gaan met de integriteit van het apparaat, ook al zal sterke integriteit mislukken.</string>
-    <string name="ts_verification_mode">Verification mode</string>
-    <string name="ts_verification_mode_auto">Auto</string>
-    <string name="ts_verification_auto_count">%1$d auto</string>
+    <string name="ts_verification_mode">Verificatie modus</string>
+    <string name="ts_verification_mode_auto">Automatisch</string>
+    <string name="ts_verification_auto_count">%1$d automatisch</string>
     <string name="ts_verification_cert_count">%1$d cert</string>
-    <string name="ts_verification_leaf_count">%1$d leaf</string>
-    <string name="ts_invalid_patch_date">Invalid date format. Use YYYY-MM-DD</string>
-    <string name="ts_security_patch">Security patch date</string>
-    <string name="ts_no_patch">Not set (using device default)</string>
-    <string name="ts_selected_count">%d selected</string>
-    <string name="ts_mode_auto">Auto</string>
+    <string name="ts_verification_leaf_count">%1$d blad</string>
+    <string name="ts_invalid_patch_date">Ongeldig datumformaat. Gebruik JJJJ-MM-DD</string>
+    <string name="ts_security_patch">Datum beveiligingspatch</string>
+    <string name="ts_no_patch">Niet ingesteld (apparaat standaard)</string>
+    <string name="ts_selected_count">%d geselecteerd</string>
+    <string name="ts_mode_auto">Automatisch</string>
     <string name="ts_mode_leaf">Blad</string>
     <string name="ts_mode_cert">Cert</string>
     <!-- Game Spoofing -->
