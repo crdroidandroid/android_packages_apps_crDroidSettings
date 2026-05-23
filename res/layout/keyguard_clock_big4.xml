@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/clock_frame"
-    android:orientation="vertical"
-    android:gravity="center_horizontal|top"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal|top"
+    android:gravity="center_horizontal|top"
+    android:orientation="vertical">
 
     <TextClock
         android:id="@+id/date_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textSize="15sp"
+        android:layout_marginTop="5dp"
+        android:textSize="10sp"
         android:textColor="@android:color/white"
         android:fontFamily="@font/Bebas"
         android:singleLine="true"
@@ -26,8 +27,8 @@
         android:id="@+id/hour_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-6dp"
-        android:textSize="90dp"
+        android:layout_marginTop="-7.5dp"
+        android:textSize="100dp"
         android:textColor="@android:color/white"
         android:fontFamily="@font/Bebas"
         android:layout_gravity="center"
@@ -38,7 +39,8 @@
         android:id="@+id/minute_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="90dp"
+        android:layout_marginTop="-7.5dp"
+        android:textSize="100dp"
         android:textColor="@android:color/white"
         android:fontFamily="@font/Gobold"
         android:layout_gravity="center"

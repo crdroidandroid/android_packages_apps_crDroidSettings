@@ -8,37 +8,32 @@
     android:gravity="center_horizontal|top"
     android:orientation="vertical">
 
-    <LinearLayout
+    <TextClock
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="vertical">
+        android:layout_gravity="center"
+        android:fontFamily="@font/LightPixel"
+        android:layout_marginBottom="-3dp"
+        android:format12Hour="hhmm"
+        android:format24Hour="HHmm"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="60dp" />
 
-        <TextClock
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/LightPixel"
-            android:layout_marginBottom="-6dp"
-            android:format12Hour="hhmm"
-            android:format24Hour="HHmm"
-            android:gravity="center"
-            android:singleLine="true"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="40dp" />
-
-        <TextClock
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/GoldenAge"
-            android:format12Hour="dd MMM yyyy"
-            android:format24Hour="dd MMM yyyy"
-            android:gravity="center"
-            android:singleLine="true"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="14dp" />
-
-    </LinearLayout>
+    <TextClock
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/GoldenAge"
+        android:format12Hour="dd MMM yyyy"
+        android:format24Hour="dd MMM yyyy"
+        android:gravity="center"
+        android:singleLine="true"
+        android:tag="text1|nolineheight"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="10dp" />
 
 </LinearLayout>
