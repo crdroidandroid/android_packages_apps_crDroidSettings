@@ -229,6 +229,11 @@ class TrickyStore : SettingsPreferenceFragment() {
             am.forceStopPackage(VENDING_PACKAGE)
             am.forceStopPackage(DROIDGUARD_PACKAGE)
             am.forceStopPackage(GMS_PACKAGE)
+            am.forceStopPackage(RKPD_PACKAGE)
+            // Clear Play Store's cached attestation results so the new
+            // keybox/config takes effect immediately (mirrors Specter's gms.sh).
+            requireContext().packageManager.clearApplicationUserData(
+                VENDING_PACKAGE, null)
         } catch (_: Exception) {}
     }
 
@@ -244,5 +249,6 @@ class TrickyStore : SettingsPreferenceFragment() {
         private const val VENDING_PACKAGE = "com.android.vending"
         private const val DROIDGUARD_PACKAGE = "com.google.android.gms.unstable"
         private const val GMS_PACKAGE = "com.google.android.gms"
+        private const val RKPD_PACKAGE = "com.google.android.rkpdapp"
     }
 }
