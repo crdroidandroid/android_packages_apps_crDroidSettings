@@ -57,13 +57,13 @@
     <string name="custom_color">Vlastná farba</string>
     <string name="restart_systemui">Reštartujte SystemUI, aby sa zmeny prejavili!</string>
     <string name="default_value">Predvolená</string>
-    <string name="apply">Apply</string>
-    <string name="show_system_apps">Show system apps</string>
-    <string name="hide_system_apps">Hide system apps</string>
-    <string name="search_apps">Search apps</string>
-    <string name="clear_search">Clear search</string>
-    <string name="select_all">Select all</string>
-    <string name="auto_select">Auto-select</string>
+    <string name="apply">Použiť</string>
+    <string name="show_system_apps">Zobraziť systémové aplikácie</string>
+    <string name="hide_system_apps">Skryť systémové aplikácie</string>
+    <string name="search_apps">Vyhľadávanie aplikácií</string>
+    <string name="clear_search">Vyčistiť vyhľadávanie</string>
+    <string name="select_all">Označiť všetko</string>
+    <string name="auto_select">Automaticky vybrať</string>
     <string name="system_badge">SYS</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Aktuálny zoznam zmien</string>
@@ -163,6 +163,7 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <string name="hardware_keys_action_play_pause_music">Spustiť/zastaviť prehrávanie hudby</string>
     <string name="hardware_keys_action_torch">Baterka</string>
     <string name="hardware_keys_action_screenshot">Snímka obrazovky</string>
+    <string name="hardware_keys_action_partial_screenshot">Take partial screenshot</string>
     <string name="hardware_keys_action_volume_panel">Prepnúť panel hlasitosti</string>
     <string name="hardware_keys_action_clear_all_notifications">Vymazať všetky upozornenia</string>
     <string name="hardware_keys_action_notifications_panel">Prepnúť panel oznámenia</string>
@@ -319,8 +320,8 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">Ovládanie jasu</string>
     <string name="status_bar_toggle_brightness_summary">Nastaviť jas posúvaním prsta po stavovom riadku</string>
-    <string name="status_bar_toggle_brightness_lockscreen_title">Brightness control on lockscreen</string>
-    <string name="status_bar_toggle_brightness_lockscreen_summary">Allow brightness brightness control on lockscreen status bar</string>
+    <string name="status_bar_toggle_brightness_lockscreen_title">Ovládanie jasu na uzamknutej obrazovke</string>
+    <string name="status_bar_toggle_brightness_lockscreen_summary">Povoliť nastavenie jasu na stavovom riadku</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">Rýchle vysunutie ponuky</string>
     <string name="status_bar_quick_qs_pulldown_summary">Potiahnutím stavového riadku dolu zo strany: %1$s, sa vysunie lišta rýchlych nastavení</string>
@@ -807,19 +808,19 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <string name="qs_footer_datausage_title">Využitie dát</string>
     <string name="qs_footer_datausage_summary">Zobraziť ikonu Nastavenia v päte Rýchlych nastavení</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_style_title">QS tiles animation</string>
+    <string name="qs_tile_animation_style_title">QS animácia dlaždíc</string>
     <string name="qs_tile_animation_style_bounce">Odrazenie</string>
-    <string name="qs_tile_animation_style_ripple">Ripple</string>
+    <string name="qs_tile_animation_style_ripple">Vlnenie</string>
     <string name="qs_tile_animation_style_flip">Preklopenie</string>
-    <string name="qs_tile_animation_style_fade">Fade</string>
+    <string name="qs_tile_animation_style_fade">Blednutie</string>
     <string name="qs_tile_animation_style_pulse">Pulz</string>
-    <string name="qs_tile_animation_style_shake">Shake</string>
+    <string name="qs_tile_animation_style_shake">Zatrasenie</string>
     <string name="qs_tile_animation_style_wobble">Wobble</string>
-    <string name="qs_tile_animation_style_spin">Spin</string>
+    <string name="qs_tile_animation_style_spin">Točenie</string>
     <string name="qs_tile_animation_style_squish">Squish</string>
     <string name="qs_tile_animation_style_tilt">Naklonenie</string>
-    <string name="qs_tile_animation_style_heartbeat">Heartbeat</string>
-    <string name="qs_tile_animation_style_swing">Swing</string>
+    <string name="qs_tile_animation_style_heartbeat">Tlkot srdca</string>
+    <string name="qs_tile_animation_style_swing">Hojdanie</string>
     <!-- Screenshot shutter sound  -->
     <string name="screenshot_shutter_sound_title">Zvuk pri snímke obrazovky</string>
     <string name="screenshot_shutter_sound_summary">Prehrá zvukový efekt pri snímke obrazovky</string>
@@ -838,7 +839,7 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <string name="qqs_rows_portrait_title">Riadkov rýchlych QS (na výšku)</string>
     <string name="qqs_rows_landscape_title">Riadkov rýchlych QS (na šírku)</string>
     <!-- Statusbar Clock background chip -->
-    <string name="statusbar_clock_chip_title">Clock background chip</string>
+    <string name="statusbar_clock_chip_title">Čipové pozadie hodín</string>
     <string name="statusbar_clock_chip_summary">Vybrať vlastné pozadie za hodinami</string>
     <string name="solid_accent">Jednofarebný akcent</string>
     <string name="outline">Obrys</string>
@@ -1001,14 +1002,14 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <string name="qs_bt_show_dialog_title">Dialógové okno Bluetooth dlaždice</string>
     <string name="qs_bt_show_dialog_summary">Zobrazte dialógové okno Bluetooth alebo prepnite stav bluetooth po ťuknutí na dlaždicu Bluetooth</string>
     <!-- Carrier name on lockscreen/statusbar -->
-    <string name="status_bar_carrier_category_title">Carrier label</string>
-    <string name="lockscreen_show_carrier_title">Show carrier label</string>
+    <string name="status_bar_carrier_category_title">Názov operátora</string>
+    <string name="lockscreen_show_carrier_title">Zobraziť názov operátora</string>
     <string name="carrier_show_lockscreen_only">Lockscreen only</string>
-    <string name="carrier_show_statusbar_only">Status bar only</string>
+    <string name="carrier_show_statusbar_only">Iba stavový riadok</string>
     <string name="carrier_show_both">Lockscreen &amp; status bar</string>
     <string name="custom_carrier_label_title">Vlastný názov operátora</string>
     <string name="custom_carrier_label_summary">Tap to set a custom carrier label</string>
-    <string name="custom_carrier_label_dialog_message">Replace the carrier label with custom text. Leave empty to use the real carrier label.</string>
+    <string name="custom_carrier_label_dialog_message">Vymeniť označenie operátora z vlastným textom. Nechať prázdne na použitie reálneho označenia.</string>
     <!-- Statusbar Padding -->
     <string name="statusbar_extra_padding_category">Extra výplň priestoru</string>
     <string name="statusbar_extra_padding_start_title">Začiatok výplne priestoru</string>
@@ -1115,10 +1116,10 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <string name="pulse_settings_summary">Audio grafický ekvalizér v navigačnom paneli a na uzamknutej obrazovke</string>
     <string name="ambient_pulse_enabled_title">Ambientný equalizér</string>
     <string name="ambient_pulse_enabled_summary">Zobraziť vizualizér na ambientnom displeji</string>
-    <string name="pulse_bass_haptics_title">Bass haptics</string>
-    <string name="pulse_bass_haptics_none">No subtle vibration on sharp bass spikes</string>
-    <string name="pulse_bass_haptics_running">Only when pulse is showing</string>
-    <string name="pulse_bass_haptics_always">Whenever media playback is active</string>
+    <string name="pulse_bass_haptics_title">Basové reakcie</string>
+    <string name="pulse_bass_haptics_none">Žiadne vibrácie na basových špičkách</string>
+    <string name="pulse_bass_haptics_running">Iba keď sa ukáže pulz</string>
+    <string name="pulse_bass_haptics_always">Keď je prehrávanie aktívne</string>
     <string name="pulse_rounded_bars_title">Zaoblené stĺpce</string>
     <string name="pulse_rounded_bars_summary">Zobraziť vizualizáciu stĺpcov so zaoblenými rohmi</string>
     <string name="pulse_color">Farba vizualizácie</string>
@@ -1150,23 +1151,23 @@ Malý dar pomáha udržiavať tento projekt pri živote a zlepšovať sa. Túto 
     <string name="media_squiggle_animation_title">Squiggle animation</string>
     <string name="media_squiggle_animation_summary">Show seekbar squiggle animation in media panel when playing media</string>
     <!-- Menu option for not validating the EAP server -->
-    <string name="wifi_do_not_validate_eap_server">Do not validate</string>
+    <string name="wifi_do_not_validate_eap_server">Neoverovať</string>
     <!-- Warning message displayed if user choses not to validate the EAP server -->
-    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
+    <string name="wifi_do_not_validate_eap_server_warning">Žiaden certifikát nie je určený. Pripojenie nebude súkromné.</string>
     <!-- Multi Audio Focus -->
-    <string name="multi_audio_focus_title">Multi audio focus</string>
-    <string name="multi_audio_focus_summary">Allow multiple apps to play audio simultaneously</string>
+    <string name="multi_audio_focus_title">Viac zvukové sústredenie</string>
+    <string name="multi_audio_focus_summary">Povolenie viacerých aplikácií, aby hrali spoločne zvuk</string>
     <!-- Locale Picker -->
     <string name="clear_search_query_description">Clear query</string>
-    <string name="language_picker_page">Language picker page</string>
-    <string name="search_region">Search regions</string>
-    <string name="search_region_page">Search region page</string>
+    <string name="language_picker_page">Stránka výberu jazyka</string>
+    <string name="search_region">Vyhľadať oblasť</string>
+    <string name="search_region_page">Vyhľadať stránku oblastí</string>
     <!-- Data Usage Cycle -->
     <string name="billing_cycle_type_title">Mobile data usage cycle type</string>
-    <string name="billing_cycle_type_monthly">Monthly</string>
-    <string name="billing_cycle_type_weekly">Weekly</string>
-    <string name="billing_cycle_type_daily">Daily</string>
-    <string name="billing_cycle_less_than_one_hour_left">Less than 1 hour left</string>
+    <string name="billing_cycle_type_monthly">Mesačne</string>
+    <string name="billing_cycle_type_weekly">Týždenne</string>
+    <string name="billing_cycle_type_daily">Denne</string>
+    <string name="billing_cycle_less_than_one_hour_left">Zostáva menej než 1 hodina</string>
     <string name="billing_cycle_hours_left">{count, plural,
         =1      {# hour left}
         other   {# hours left}

@@ -162,6 +162,7 @@ Donasi kecil akan membantu proyek ini tetap berjalan dan berkembang. Anda dapat 
     <string name="hardware_keys_action_play_pause_music">Putar/jeda pemutaran musik</string>
     <string name="hardware_keys_action_torch">Hidup/matikan senter</string>
     <string name="hardware_keys_action_screenshot">Ambil tangkapan layar</string>
+    <string name="hardware_keys_action_partial_screenshot">Take partial screenshot</string>
     <string name="hardware_keys_action_volume_panel">Tombol alihkan Panel Volume</string>
     <string name="hardware_keys_action_clear_all_notifications">Hapus semua notifikasi</string>
     <string name="hardware_keys_action_notifications_panel">Tombol panel notifikasi</string>
@@ -315,8 +316,8 @@ Donasi kecil akan membantu proyek ini tetap berjalan dan berkembang. Anda dapat 
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">Kontrol kecerahan</string>
     <string name="status_bar_toggle_brightness_summary">Sesuaikan kecerahan dengan menggeser di bilah status</string>
-    <string name="status_bar_toggle_brightness_lockscreen_title">Brightness control on lockscreen</string>
-    <string name="status_bar_toggle_brightness_lockscreen_summary">Allow brightness brightness control on lockscreen status bar</string>
+    <string name="status_bar_toggle_brightness_lockscreen_title">Kontrol kecerahan pada layar kunci</string>
+    <string name="status_bar_toggle_brightness_lockscreen_summary">Izinkan kontrol kecerahan pada bilah status layar kunci</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">Tarik kebawah cepat</string>
     <string name="status_bar_quick_qs_pulldown_summary">%1$s tepi bilah status menarik ke bawah setelan cepat</string>
@@ -811,8 +812,8 @@ Donasi kecil akan membantu proyek ini tetap berjalan dan berkembang. Anda dapat 
     <string name="qs_tile_animation_style_spin">Berputar</string>
     <string name="qs_tile_animation_style_squish">Remas</string>
     <string name="qs_tile_animation_style_tilt">Miring</string>
-    <string name="qs_tile_animation_style_heartbeat">Heartbeat</string>
-    <string name="qs_tile_animation_style_swing">Swing</string>
+    <string name="qs_tile_animation_style_heartbeat">Denyut jantung</string>
+    <string name="qs_tile_animation_style_swing">Mengayun</string>
     <!-- Screenshot shutter sound  -->
     <string name="screenshot_shutter_sound_title">Suara tangkapan layar</string>
     <string name="screenshot_shutter_sound_summary">Putar suara saat tangkapan layar diambil</string>
@@ -991,14 +992,14 @@ Donasi kecil akan membantu proyek ini tetap berjalan dan berkembang. Anda dapat 
     <string name="qs_bt_show_dialog_title">Dialog ubin bluetooth</string>
     <string name="qs_bt_show_dialog_summary">Tampilkan dialog bluetooth atau alihkan status bluetooth saat mengetuk ubin bluetooth</string>
     <!-- Carrier name on lockscreen/statusbar -->
-    <string name="status_bar_carrier_category_title">Carrier label</string>
-    <string name="lockscreen_show_carrier_title">Show carrier label</string>
-    <string name="carrier_show_lockscreen_only">Lockscreen only</string>
-    <string name="carrier_show_statusbar_only">Status bar only</string>
-    <string name="carrier_show_both">Lockscreen &amp; status bar</string>
+    <string name="status_bar_carrier_category_title">Label operator</string>
+    <string name="lockscreen_show_carrier_title">Tampilkan label operator</string>
+    <string name="carrier_show_lockscreen_only">Hanya layar kunci</string>
+    <string name="carrier_show_statusbar_only">Hanya bilah status</string>
+    <string name="carrier_show_both">Layar kunci &amp; Bilah status</string>
     <string name="custom_carrier_label_title">Kustom label pembawa</string>
-    <string name="custom_carrier_label_summary">Tap to set a custom carrier label</string>
-    <string name="custom_carrier_label_dialog_message">Replace the carrier label with custom text. Leave empty to use the real carrier label.</string>
+    <string name="custom_carrier_label_summary">Ketuk untuk mengatur label operator kustom</string>
+    <string name="custom_carrier_label_dialog_message">Ganti label operator dengan teks kustom. Biarkan kosong untuk menggunakan label operator yang sebenarnya.</string>
     <!-- Statusbar Padding -->
     <string name="statusbar_extra_padding_category">Ekstra padding</string>
     <string name="statusbar_extra_padding_start_title">Bantalan awal</string>
@@ -1106,7 +1107,7 @@ Beberapa layar mungkin tampak mati.</string>
     <string name="pulse_settings_summary">Equalizer grafis audio untuk bilah navigasi dan layar kunci</string>
     <string name="ambient_pulse_enabled_title">Visual Audio Layar Ambien</string>
     <string name="ambient_pulse_enabled_summary">Tampilkan visualisasi di Tampilan Ambient</string>
-    <string name="pulse_bass_haptics_title">Bass haptics</string>
+    <string name="pulse_bass_haptics_title">Haptik bass</string>
     <string name="pulse_bass_haptics_none">Tidak ada getaran halus pada lonjakan bass yang tajam</string>
     <string name="pulse_bass_haptics_running">Hanya saat denyut terlihat</string>
     <string name="pulse_bass_haptics_always">Setiap kali pemutaran media aktif</string>
@@ -1127,8 +1128,8 @@ Beberapa layar mungkin tampak mati.</string>
     <string name="pulse_renderer_minimal_wave">Gelombang minimal</string>
     <string name="pulse_renderer_sparkle">Berkilau</string>
     <string name="pulse_renderer_matrix">Matrix</string>
-    <string name="pulse_renderer_particle">Particle</string>
-    <string name="pulse_renderer_waveform">Waveform</string>
+    <string name="pulse_renderer_particle">Partikel</string>
+    <string name="pulse_renderer_waveform">Gelombang</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">Notifikasi transparan</string>
     <string name="notification_row_transparency_summary">Tetapkan latar belakang transparan untuk notifikasi di Setelan Cepat</string>
@@ -1244,8 +1245,8 @@ Beberapa layar mungkin tampak mati.</string>
     <string name="dynamic_bar_events">Acara</string>
     <string name="dynamic_bar_event_audio_recording">Rekaman audio</string>
     <string name="dynamic_bar_event_audio_recording_summary">Perekam suara dan perekaman audio</string>
-    <string name="dynamic_bar_event_call">Ongoing call</string>
-    <string name="dynamic_bar_event_call_summary">Incoming and active calls</string>
+    <string name="dynamic_bar_event_call">Panggilan sedang berlangsung</string>
+    <string name="dynamic_bar_event_call_summary">Panggilan masuk dan aktif</string>
     <string name="dynamic_bar_event_media">Pemutaran media</string>
     <string name="dynamic_bar_event_media_summary">Kontrol pemutaran musik dan audio</string>
     <string name="dynamic_bar_event_notification">Notifikasi</string>
