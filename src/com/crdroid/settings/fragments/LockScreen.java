@@ -111,8 +111,6 @@ public class LockScreen extends SettingsPreferenceFragment
 
         mWeather = (SwitchPreferenceCompat) findPreference(KEY_WEATHER);
         mWeather.setOnPreferenceChangeListener(this);
-
-        updateWeatherSettings();
     }
 
     @Override

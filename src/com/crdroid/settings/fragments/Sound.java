@@ -62,6 +62,8 @@ public class Sound extends SettingsPreferenceFragment {
     private SwitchPreferenceCompat mVolumePanelLeft;
     private SwitchPreferenceCompat mVolumeHaptic;
 
+    private static volatile Boolean sAudioPanelOnLeft = null;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,15 +114,22 @@ public class Sound extends SettingsPreferenceFragment {
     }
 
     private static boolean isAudioPanelOnLeftSide(Context context) {
+        Boolean cached = sAudioPanelOnLeft;
+        if (cached != null) {
+            return cached;
+        }
+        boolean result = false;
         try {
-            Context con = context.createPackageContext("org.lineageos.lineagesettings", 0);
+            Context con = context.createPackageContext(
+                    "org.lineageos.lineagesettings", 0);
             int id = con.getResources().getIdentifier("def_volume_panel_on_left",
                     "bool", "org.lineageos.lineagesettings");
-            if (id <= 0) return false;
-            return con.getResources().getBoolean(id);
-        } catch (Exception e) {
-            return false;
-        }
+            if (id > 0) {
+                result = con.getResources().getBoolean(id);
+            }
+        } catch (Exception e) { }
+        sAudioPanelOnLeft = result;
+        return result;
     }
 
     @Override
