@@ -57,6 +57,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_BRIGHTNESS_SLIDER_POSITION = "qs_brightness_slider_position";
     private static final String KEY_BRIGHTNESS_SLIDER_HAPTIC = "qs_brightness_slider_haptic";
     private static final String KEY_SHOW_AUTO_BRIGHTNESS = "qs_show_auto_brightness";
+    private static final String KEY_SHOW_VOLUME_SLIDER = "qs_show_volume_slider";
+    private static final String KEY_SHOW_RINGER_MODE = "qs_show_ringer_mode";
     private static final String KEY_QS_TILE_HAPTIC = "qs_tile_haptic";
     private static final String KEY_QS_PANEL_STYLE = "qs_panel_style";
     private static final String KEY_QS_TILE_SHAPE = "qs_tile_shape";
@@ -64,9 +66,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements
     private static final String KEY_QS_TILE_LABEL_HIDE = "qs_tile_label_hide";
 
     private ListPreference mShowBrightnessSlider;
+    private ListPreference mVolumeSliderMode;
     private ListPreference mBrightnessSliderPosition;
     private SwitchPreferenceCompat mBrightnessSliderHaptic;
     private SwitchPreferenceCompat mShowAutoBrightness;
+    private SwitchPreferenceCompat mShowRingerMode;
     private SwitchPreferenceCompat mQsTileHaptic;
     private ListPreference mQsPanelStyle;
     private Preference mQsTileShape;
@@ -89,6 +93,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         mShowBrightnessSlider.setOnPreferenceChangeListener(this);
         boolean showSlider = LineageSettings.Secure.getIntForUser(resolver,
                 LineageSettings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT) > 0;
+
+        mVolumeSliderMode = findPreference(KEY_SHOW_VOLUME_SLIDER);
+        mVolumeSliderMode.setEnabled(showSlider);
 
         mBrightnessSliderPosition = findPreference(KEY_BRIGHTNESS_SLIDER_POSITION);
         mBrightnessSliderPosition.setEnabled(showSlider);
@@ -113,6 +120,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         } else {
             brightnessCategory.removePreference(mShowAutoBrightness);
         }
+
+        mShowRingerMode = findPreference(KEY_SHOW_RINGER_MODE);
+        mShowRingerMode.setEnabled(showSlider);
 
         mQsPanelStyle = findPreference(KEY_QS_PANEL_STYLE);
         mQsPanelStyle.setOnPreferenceChangeListener(this);
@@ -146,10 +156,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements
         if (preference == mShowBrightnessSlider) {
             int value = Integer.parseInt((String) newValue);
             mBrightnessSliderPosition.setEnabled(value > 0);
+            mVolumeSliderMode.setEnabled(value > 0);
             if (mBrightnessSliderHaptic != null)
                 mBrightnessSliderHaptic.setEnabled(value > 0);
             if (mShowAutoBrightness != null)
                 mShowAutoBrightness.setEnabled(value > 0);
+            mShowRingerMode.setEnabled(value > 0);
             return true;
         } else if (preference == mQsPanelStyle) {
             int value = Integer.parseInt((String) newValue);

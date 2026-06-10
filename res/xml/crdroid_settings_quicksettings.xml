@@ -115,6 +115,14 @@
             android:defaultValue="1" />
 
         <com.crdroid.settings.preferences.SystemSettingListPreference
+            android:key="qs_show_volume_slider"
+            android:icon="@drawable/ic_sliders"
+            android:title="@string/qs_show_volume_slider_title"
+            android:entries="@array/qs_show_volume_slider_entries"
+            android:entryValues="@array/qs_show_volume_slider_values"
+            android:defaultValue="1" />
+
+        <com.crdroid.settings.preferences.SystemSettingListPreference
             android:key="qs_brightness_slider_shape"
             android:icon="@drawable/ic_shapes"
             android:title="@string/qs_brightness_slider_shape_title"
@@ -145,19 +153,11 @@
             android:defaultValue="true" />
 
         <com.crdroid.settings.preferences.SystemSettingSwitchPreference
-            android:key="qs_show_volume_slider"
-            android:icon="@drawable/ic_music_note"
-            android:title="@string/qs_show_volume_slider_title"
-            android:summary="@string/qs_show_volume_slider_summary"
-            android:defaultValue="true" />
-
-        <com.crdroid.settings.preferences.SystemSettingSwitchPreference
             android:key="qs_show_ringer_mode"
             android:icon="@drawable/ic_speaker_on"
             android:title="@string/qs_show_ringer_mode_title"
             android:summary="@string/qs_show_ringer_mode_summary"
-            android:defaultValue="true"
-            android:dependency="qs_show_volume_slider" />
+            android:defaultValue="true" />
 
     </PreferenceCategory>
 
