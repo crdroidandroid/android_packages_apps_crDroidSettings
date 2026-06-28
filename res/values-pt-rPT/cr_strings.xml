@@ -58,11 +58,11 @@
     <string name="restart_systemui">Reinicie a SystemUI para que a alteração tenha efeito!</string>
     <string name="default_value">Predefinido</string>
     <string name="apply">Aplicar</string>
-    <string name="show_system_apps">Show system apps</string>
-    <string name="hide_system_apps">Hide system apps</string>
+    <string name="show_system_apps">Mostrar aplicações de sistema</string>
+    <string name="hide_system_apps">Ocultar aplicações de sistema</string>
     <string name="search_apps">Pesquisar aplicações</string>
     <string name="clear_search">Clear search</string>
-    <string name="select_all">Select all</string>
+    <string name="select_all">Selecionar tudo</string>
     <string name="auto_select">Auto-select</string>
     <string name="system_badge">SYS</string>
     <!-- Changelog -->
@@ -317,7 +317,7 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">Controlo do brilho</string>
     <string name="status_bar_toggle_brightness_summary">Ajustar o brilho deslizando pela barra de estado</string>
-    <string name="status_bar_toggle_brightness_lockscreen_title">Brightness control on lockscreen</string>
+    <string name="status_bar_toggle_brightness_lockscreen_title">Controle de brilho na tela de bloqueio</string>
     <string name="status_bar_toggle_brightness_lockscreen_summary">Allow brightness brightness control on lockscreen status bar</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">Abertura rápida</string>
@@ -807,7 +807,7 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="qs_tile_animation_style_bounce">Pular</string>
     <string name="qs_tile_animation_style_ripple">Ripple</string>
     <string name="qs_tile_animation_style_flip">Inverter</string>
-    <string name="qs_tile_animation_style_fade">Fade</string>
+    <string name="qs_tile_animation_style_fade">Desvanecer</string>
     <string name="qs_tile_animation_style_pulse">Pulse</string>
     <string name="qs_tile_animation_style_shake">Shake</string>
     <string name="qs_tile_animation_style_wobble">Wobble</string>
@@ -845,7 +845,7 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="solid_gradient_neumorph">Neumorph gradient</string>
     <string name="solid_gradient_stroke">Sharp gradient stroke</string>
     <string name="solid_accent_transperent">Accent transperent</string>
-    <string name="solid_gradient_light">Gradient light</string>
+    <string name="solid_gradient_light">Luz gradiente</string>
     <string name="solid_gradient_shape">Sharp gradient corner</string>
     <string name="solid_gradient_void_light">Gradient void light</string>
     <!-- Weather -->
@@ -995,14 +995,14 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="qs_bt_show_dialog_title">Diálogo de botões Bluetooth</string>
     <string name="qs_bt_show_dialog_summary">Mostrar caixa de diálogo Bluetooth ou alternar o estado do bluetooth ao tocar no botão do bluetooth</string>
     <!-- Carrier name on lockscreen/statusbar -->
-    <string name="status_bar_carrier_category_title">Carrier label</string>
-    <string name="lockscreen_show_carrier_title">Show carrier label</string>
+    <string name="status_bar_carrier_category_title">Nome da operadora</string>
+    <string name="lockscreen_show_carrier_title">Mostrar nome da operadora</string>
     <string name="carrier_show_lockscreen_only">Lockscreen only</string>
     <string name="carrier_show_statusbar_only">Status bar only</string>
-    <string name="carrier_show_both">Lockscreen &amp; status bar</string>
+    <string name="carrier_show_both">Ecrã de bloqueio &amp; barra de estado</string>
     <string name="custom_carrier_label_title">Personalizar nome da operadora</string>
-    <string name="custom_carrier_label_summary">Tap to set a custom carrier label</string>
-    <string name="custom_carrier_label_dialog_message">Replace the carrier label with custom text. Leave empty to use the real carrier label.</string>
+    <string name="custom_carrier_label_summary">Toque para definir um nome de operadora personalizado</string>
+    <string name="custom_carrier_label_dialog_message">Substitua o nome da operadora por texto personalizado. Deixe em branco para usar o nome real da operadora.</string>
     <!-- Statusbar Padding -->
     <string name="statusbar_extra_padding_category">Espaçamento extra</string>
     <string name="statusbar_extra_padding_start_title">Espaçamento lateral esquerdo</string>
@@ -1073,7 +1073,7 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="qs_tile_shape_rounded_square">Quadrado arredondado</string>
     <string name="qs_tile_shape_square">Quadrado</string>
     <!-- Force dark mode -->
-    <string name="force_dark_title">Dark mode for third-party apps</string>
+    <string name="force_dark_title">Modo escuro para aplicações de terceiros</string>
     <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
     <!-- Brightness Slider Style -->
     <string name="qs_brightness_slider_shape_title">Forma do cursor do brilho da tela</string>
@@ -1103,7 +1103,7 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
     <!-- Lock screen media art blur level -->
     <string name="ls_media_art_blur_level_title">Media art blur level</string>
-    <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
+    <string name="ls_media_art_blur_level_summary">Intensidade de desfoque quando filtro de desfoque é aplicado</string>
     <!-- Pulse music visualizer -->
     <string name="pulse_settings_title">Pulse Visualizer</string>
     <string name="pulse_settings_summary">Equalizador gráfico de áudio para a barra de navegação e ecrã de bloqueio</string>
@@ -1130,10 +1130,10 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="pulse_renderer_minimal_wave">Onda mínima</string>
     <string name="pulse_renderer_sparkle">Brilho</string>
     <string name="pulse_renderer_matrix">Matriz</string>
-    <string name="pulse_renderer_particle">Particle</string>
+    <string name="pulse_renderer_particle">Partícula</string>
     <string name="pulse_renderer_waveform">Waveform</string>
     <!-- Notification Row -->
-    <string name="notification_row_transparency_title">Translucent notifications</string>
+    <string name="notification_row_transparency_title">Notificações translúcidas</string>
     <string name="notification_row_transparency_summary">Set translucent background for notifications in QS</string>
     <string name="notification_row_transparency_lockscreen_title">Notificações translúcidas no ecrã de bloqueio</string>
     <string name="notification_row_transparency_lockscreen_summary">Definir fundo translúcido para as notificações no ecrã de bloqueio</string>
@@ -1148,13 +1148,13 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <!-- Warning message displayed if user choses not to validate the EAP server -->
     <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
     <!-- Multi Audio Focus -->
-    <string name="multi_audio_focus_title">Multi audio focus</string>
+    <string name="multi_audio_focus_title">Múltiplas fontes de áudio</string>
     <string name="multi_audio_focus_summary">Permitir que várias aplicações reproduzam áudio simultaneamente</string>
     <!-- Locale Picker -->
     <string name="clear_search_query_description">Limpar consulta</string>
     <string name="language_picker_page">Página para escolher linguagem</string>
     <string name="search_region">Procurar regiões</string>
-    <string name="search_region_page">Search region page</string>
+    <string name="search_region_page">Página de pesquisa de região</string>
     <!-- Data Usage Cycle -->
     <string name="billing_cycle_type_title">Tipo de ciclo de utilização dos dados móveis</string>
     <string name="billing_cycle_type_monthly">Mensalmente</string>
@@ -1166,13 +1166,13 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
         other   {# horas restantes}
         }</string>
     <string name="cycle_type_weekly_title">Usage cycle reset day</string>
-    <string name="cycle_type_weekly_sub">Day of each week:\n1 = Monday</string>
+    <string name="cycle_type_weekly_sub">Dia de cada semana:\n1 = segunda-feira</string>
     <string name="cycle_type_daily_title">Usage cycle reset hour</string>
-    <string name="cycle_type_daily_sub">Hour of each day:</string>
+    <string name="cycle_type_daily_sub">Hora de cada dia:</string>
     <!-- Gradient styles -->
     <string name="gradient_settings_title">Gradients customization</string>
     <string name="gradient_settings_summary">Apply gradient colors to various system elements</string>
-    <string name="gradient_elements_category">System elements</string>
+    <string name="gradient_elements_category">Elementos do sistema</string>
     <string name="gradient_colors_category">Gradient colors</string>
     <string name="qs_tile_gradient_title">QS tiles gradient</string>
     <string name="qs_tile_gradient_summary">Enable gradient backgrounds for QS tiles</string>
@@ -1180,13 +1180,13 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="qs_brightness_slider_gradient_summary">Enable gradient backgrounds for QS brightness slider</string>
     <string name="volume_slider_gradient_title">Volume slider gradient</string>
     <string name="volume_slider_gradient_summary">Enable gradient backgrounds for volume slider</string>
-    <string name="custom_gradient_color_mode_title">Gradient color mode</string>
-    <string name="custom_gradient_color_mode_auto">Auto mode</string>
-    <string name="custom_gradient_color_mode_custom">Custom mode</string>
-    <string name="custom_gradient_start_color_title">Gradient start color</string>
-    <string name="custom_gradient_end_color_title">Gradient end color</string>
+    <string name="custom_gradient_color_mode_title">Modo de cor gradiente</string>
+    <string name="custom_gradient_color_mode_auto">Modo automático</string>
+    <string name="custom_gradient_color_mode_custom">Modo personalizado</string>
+    <string name="custom_gradient_start_color_title">Cor inicial do gradiente</string>
+    <string name="custom_gradient_end_color_title">Cor final do gradiente</string>
     <!-- Custom clock style -->
-    <string name="lockscreen_custom_clock_style_title">Custom clock style</string>
+    <string name="lockscreen_custom_clock_style_title">Estilo personalizado do relógio</string>
     <string name="lockscreen_custom_clock_style_summary">Configure lock screen clock styles</string>
     <string name="lockscreen_custom_clock_style_highlight_text">Swipe left or right to preview clock styles</string>
     <string name="lockscreen_custom_clock_style_info">Custom clock style replaces AOSP clock styles with custom clocks. Smartspace will be disabled. You can enable and use custom weather instead.</string>
@@ -1195,40 +1195,40 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="lockscreen_custom_clock_frame_margin_top_title">Custom clock height</string>
     <string name="lockscreen_custom_clock_frame_margin_top_summary">Adjust the height of custom clock style</string>
     <string name="lockscreen_custom_clock_color_mode_title">Custom clock color mode</string>
-    <string name="lockscreen_custom_clock_size_title">Clock size</string>
+    <string name="lockscreen_custom_clock_size_title">Tamanho do relógio</string>
     <string name="lockscreen_custom_clock_size_summary">Scale the lock screen clock</string>
     <string name="lockscreen_custom_clock_aod_anim_title">Custom clock AOD animation</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">Set AOD animation for custom clock style</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">QS Panel style</string>
     <string name="qs_panel_style_card">Card style</string>
-    <string name="qs_panel_style_classic">Classic style</string>
+    <string name="qs_panel_style_classic">Estilo clássico</string>
     <string name="shape_circle">Círculo</string>
     <string name="shape_square">Quadrado</string>
-    <string name="shape_four_sided_cookie">4-sided cookie</string>
-    <string name="shape_seven_sided_cookie">7-sided cookie</string>
+    <string name="shape_four_sided_cookie">Bolacha de 4 lados</string>
+    <string name="shape_seven_sided_cookie">Bolacha de 7 lados</string>
     <string name="shape_arch">Arch</string>
     <string name="shape_ios_rounded_square">iOS rounded shape</string>
-    <string name="shape_meow">Meow</string>
-    <string name="shape_flower">Flower</string>
+    <string name="shape_meow">Miau</string>
+    <string name="shape_flower">Flor</string>
     <string name="shape_heart">Coração</string>
-    <string name="shape_hexagon">Hexagon</string>
-    <string name="shape_leaf">Leaf</string>
-    <string name="shape_cloudy">Cloudy</string>
-    <string name="shape_cylindrical">Cylindrical</string>
-    <string name="shape_stretched">Stretched</string>
+    <string name="shape_hexagon">Hexágono</string>
+    <string name="shape_leaf">Folha</string>
+    <string name="shape_cloudy">Nublado</string>
+    <string name="shape_cylindrical">Cilíndrico</string>
+    <string name="shape_stretched">Esticado</string>
     <string name="shape_pebble">Pebble</string>
     <string name="shape_rice_balls">Rice balls</string>
-    <string name="shape_rounded_rect">Rounded rectangle</string>
+    <string name="shape_rounded_rect">Retângulo arredondado</string>
     <string name="shape_squircle">Squircle</string>
     <string name="shape_tapered_rect">Tapered rect</string>
     <string name="shape_teardrop">Teardrop</string>
     <string name="shape_vessel">Vessel</string>
-    <string name="shape_rounded_hexagon">Rounded hexagon</string>
+    <string name="shape_rounded_hexagon">Hexágono arredondado</string>
     <string name="shape_just_icons">Just icons</string>
     <string name="shape_pokesign">Pokésign</string>
     <string name="shape_ninja">Ninja</string>
-    <string name="shape_outline_style">Outline style</string>
+    <string name="shape_outline_style">Estilo do contorno</string>
     <string name="shape_dotted_circle">Círculo pontilhado</string>
     <string name="shape_squaremedo">Squaremedo</string>
     <!-- Dynamic Bar -->
@@ -1238,36 +1238,36 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="dynamic_bar_enable_summary">Show a dynamic chip on the status bar for live events</string>
     <string name="dynamic_bar_keyguard_enable">Dynamic bar on lock screen</string>
     <string name="dynamic_bar_keyguard_enable_summary">Replace keyguard indication with dynamic bar chip on the lock screen with controls and quick actions</string>
-    <string name="dynamic_bar_keyguard_battery_chip">Battery info on lock screen</string>
+    <string name="dynamic_bar_keyguard_battery_chip">Informações da bateria no ecrã de bloqueio</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">Nunca mostrar</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">Only when charging</string>
-    <string name="dynamic_bar_keyguard_battery_chip_always">Always show</string>
+    <string name="dynamic_bar_keyguard_battery_chip_always">Mostrar sempre</string>
     <string name="dynamic_bar_keyguard_compact_chip">Compact lock screen chip</string>
     <string name="dynamic_bar_keyguard_compact_chip_summary">Always use the compact chip style on the lockscreen. When disabled, compact mode is used only when space is limited.</string>
-    <string name="dynamic_bar_events">Events</string>
-    <string name="dynamic_bar_event_audio_recording">Audio recording</string>
-    <string name="dynamic_bar_event_audio_recording_summary">Voice recorder and audio capture</string>
+    <string name="dynamic_bar_events">Eventos</string>
+    <string name="dynamic_bar_event_audio_recording">Gravação de áudio</string>
+    <string name="dynamic_bar_event_audio_recording_summary">Gravador de voz e captura de áudio</string>
     <string name="dynamic_bar_event_call">Ongoing call</string>
-    <string name="dynamic_bar_event_call_summary">Incoming and active calls</string>
-    <string name="dynamic_bar_event_media">Media playback</string>
+    <string name="dynamic_bar_event_call_summary">Chamadas recebidas e ativas</string>
+    <string name="dynamic_bar_event_media">Reprodução de multimédia</string>
     <string name="dynamic_bar_event_media_summary">Now playing music and audio controls</string>
     <string name="dynamic_bar_event_notification">Notificações</string>
     <string name="dynamic_bar_event_notification_summary">Incoming notification alerts</string>
-    <string name="dynamic_bar_compact_notifications">Compact notifications</string>
+    <string name="dynamic_bar_compact_notifications">Notificações compactas</string>
     <string name="dynamic_bar_compact_notifications_summary">Show notifications as a small chip first, tap to expand</string>
-    <string name="dynamic_bar_event_timer">Timer</string>
+    <string name="dynamic_bar_event_timer">Temporizador</string>
     <string name="dynamic_bar_event_timer_summary">Countdown timer from clock app</string>
-    <string name="dynamic_bar_event_stopwatch">Stopwatch</string>
+    <string name="dynamic_bar_event_stopwatch">Cronómetro</string>
     <string name="dynamic_bar_event_stopwatch_summary">Running stopwatch from clock app</string>
-    <string name="dynamic_bar_event_alarm">Alarm</string>
+    <string name="dynamic_bar_event_alarm">Alarme</string>
     <string name="dynamic_bar_event_alarm_summary">Ringing and upcoming alarms</string>
-    <string name="dynamic_bar_event_charging">Charging started</string>
+    <string name="dynamic_bar_event_charging">Carregamento iniciado</string>
     <string name="dynamic_bar_event_charging_summary">Battery level when plugged in</string>
     <string name="dynamic_bar_event_bluetooth">Bluetooth</string>
-    <string name="dynamic_bar_event_bluetooth_summary">Device connection status</string>
+    <string name="dynamic_bar_event_bluetooth_summary">Estado da ligação do dispositivo</string>
     <string name="dynamic_bar_event_hotspot">Hotspot</string>
     <string name="dynamic_bar_event_hotspot_summary">Mobile hotspot active indicator</string>
-    <string name="dynamic_bar_event_ringer">Ringer Mode</string>
+    <string name="dynamic_bar_event_ringer">Modo de toque</string>
     <string name="dynamic_bar_event_ringer_summary">Silent, vibrate, and ring mode changes</string>
     <string name="dynamic_bar_event_vpn">VPN</string>
     <string name="dynamic_bar_event_vpn_summary">Active VPN connection indicator</string>
@@ -1278,10 +1278,10 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="dynamic_bar_event_ongoing">Ongoing activities</string>
     <string name="dynamic_bar_event_ongoing_summary">Navigation, deliveries, and other live activities</string>
     <string name="dynamic_bar_event_sports">Sports</string>
-    <string name="dynamic_bar_event_sports_summary">Live scores and game updates</string>
+    <string name="dynamic_bar_event_sports_summary">Resultados ao vivo e atualizações dos jogos</string>
     <string name="dynamic_bar_event_app_switch">Recent app switch</string>
     <string name="dynamic_bar_event_app_switch_summary">Show chip when switching between recent apps</string>
-    <string name="dynamic_bar_event_biometric">Biometric unlock</string>
+    <string name="dynamic_bar_event_biometric">Desbloqueio biométrico</string>
     <string name="dynamic_bar_event_biometric_summary">Show chip on fingerprint or face unlock</string>
     <string name="dynamic_bar_guide_title">How to use Dynamic Bar</string>
     <string name="dynamic_bar_guide_chip">Events appear in the status bar showing active events like recording, media playback, and timers</string>
@@ -1297,8 +1297,8 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="dynamic_bar_footer_title">About Dynamic Bar</string>
     <string name="dynamic_bar_footer_body">Dynamic Bar transforms your status bar into an interactive hub. Status chips appear and animate based on system events, giving you at-a-glance information without interrupting your workflow.\n\nEach event type has its own accent color and expanded card with quick actions.</string>
     <!-- Themes -->
-    <string name="custom_system_theme_title">Themes</string>
-    <string name="custom_system_theme_summary">Customize system appearance with themes and icon packs</string>
+    <string name="custom_system_theme_title">Temas</string>
+    <string name="custom_system_theme_summary">Personalizar a aparência do sistema com temas e pacotes de ícones</string>
     <!-- Misc preference entries -->
     <string name="play_integrity_fix_title">Play Integrity Fix</string>
     <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints for basic integrity</string>
@@ -1307,31 +1307,31 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="game_spoofing_title">Game spoofing</string>
     <string name="game_spoofing_summary">Spoof device properties for specific games</string>
     <!-- Play Integrity Fix -->
-    <string name="pif_status">Status</string>
-    <string name="pif_active_config">Active configuration</string>
-    <string name="pif_no_config">No configuration loaded</string>
-    <string name="pif_config_loaded">Configuration loaded</string>
+    <string name="pif_status">Estado</string>
+    <string name="pif_active_config">Configuração ativa</string>
+    <string name="pif_no_config">Nenhuma configuração carregada</string>
+    <string name="pif_config_loaded">Configuração carregada</string>
     <string name="pif_fetch_pixel_beta">Fetch Pixel Beta fingerprint</string>
     <string name="pif_fetch_pixel_beta_summary">Download latest Pixel Beta fingerprint from Google</string>
-    <string name="pif_fetching">Fetching from Google\u2026</string>
+    <string name="pif_fetching">Obtendo do Google\u2026</string>
     <string name="pif_fetched_model">Fetched fingerprint for %s</string>
-    <string name="pif_import_config">Import configuration</string>
+    <string name="pif_import_config">Importar configuração</string>
     <string name="pif_import_config_summary">Import PIF config from a file</string>
-    <string name="pif_imported_as">Imported as %s</string>
+    <string name="pif_imported_as">Importado como %s</string>
     <string name="pif_delete_config">Delete active configuration</string>
     <string name="pif_delete_config_summary">Remove the currently active config file</string>
-    <string name="pif_delete_title">Delete %s?</string>
+    <string name="pif_delete_title">Eliminar %s?</string>
     <string name="pif_delete_message">This configuration file will be permanently removed.</string>
     <string name="pif_delete">Apagar</string>
-    <string name="pif_deleted">Deleted %s</string>
+    <string name="pif_deleted">Eliminado %s</string>
     <string name="pif_settings">Configurações</string>
     <string name="pif_spoof_photos">Spoof Google Photos</string>
     <string name="pif_spoof_photos_summary">Unlimited original quality backup</string>
-    <string name="pif_config_details">Configuration details</string>
-    <string name="pif_failed">Failed: %s</string>
-    <string name="pif_select_device">Select device</string>
-    <string name="pif_generating">Generating configuration\u2026</string>
-    <string name="pif_footer_title">Passing basic integrity</string>
+    <string name="pif_config_details">Detalhes da configuração</string>
+    <string name="pif_failed">Falhou: %s</string>
+    <string name="pif_select_device">Selecionar dispositivo</string>
+    <string name="pif_generating">Gerando configuração\u2026</string>
+    <string name="pif_footer_title">Passando na integridade básica</string>
     <string name="pif_footer_body">1. Tap \"Fetch Pixel Beta fingerprint\" and select a device from the available list.\n2. If no devices are found, import a working PIF config from a trusted source. Config files are not provided; you must find one yourself.\n3. Recheck your Play Integrity status.\n\nAlways delete the active configuration before loading a new one. Loading an expired PIF config will cause strong integrity via TrickyStore to fail, even with a valid keybox.</string>
     <string name="pif_select_channel">Select channel</string>
     <string name="pif_channel_latest_release">Latest release</string>
@@ -1357,18 +1357,18 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="ts_failed">Falhou: %s</string>
     <string name="ts_footer_title">Passou na integridade forte </string>
     <string name="ts_footer_body">1. Obtenha um Keybox XML válido de uma fonte confiável. Keyboxes não são fornecidas; Devem ser encontradas por si.\n2. Toque em \"Importar Keybox\" e carregue o arquivo.\n3. Abra \"Gerir apps alvo\" e selecione a app Google Play Services e Google Play Store.\n4. Defina o modo de alvo para \"Folha\" se o seu dispositivo tiver o TEE a funcionar, caso contrário, deixe selecionado Auto.\n5. Volte a verificar o seu status do Play Integrity.\n\nRemova sempre a Keybox existente antes de importar uma nova. Se a Google revogar uma Keybox, poderá ser possível permitir que se passe no teste de integridade do disposivito mesmo apesar de a integridade forte falhar.</string>
-    <string name="ts_verification_mode">Verification mode</string>
-    <string name="ts_verification_mode_auto">Auto</string>
-    <string name="ts_verification_auto_count">%1$d auto</string>
-    <string name="ts_verification_cert_count">%1$d cert</string>
+    <string name="ts_verification_mode">Modo de verificação</string>
+    <string name="ts_verification_mode_auto">Automático</string>
+    <string name="ts_verification_auto_count">%1$d automático</string>
+    <string name="ts_verification_cert_count">%1$d certificado</string>
     <string name="ts_verification_leaf_count">%1$d leaf</string>
-    <string name="ts_invalid_patch_date">Invalid date format. Use YYYY-MM-DD</string>
-    <string name="ts_security_patch">Security patch date</string>
-    <string name="ts_no_patch">Not set (using device default)</string>
-    <string name="ts_selected_count">%d selected</string>
-    <string name="ts_mode_auto">Auto</string>
-    <string name="ts_mode_leaf">Leaf</string>
-    <string name="ts_mode_cert">Cert</string>
+    <string name="ts_invalid_patch_date">Formato de data inválido. Use AAAA-MM-DD</string>
+    <string name="ts_security_patch">Data do patch de segurança</string>
+    <string name="ts_no_patch">Não definido (usando o padrão do dispositivo)</string>
+    <string name="ts_selected_count">%d selecionado</string>
+    <string name="ts_mode_auto">Automático</string>
+    <string name="ts_mode_leaf">Folha</string>
+    <string name="ts_mode_cert">Certificado</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">Habilitar spoofing de jogos</string>
     <string name="gs_enable_summary">Fazer Spoof as propriedades do dispositivo para jogos configurados</string>
@@ -1394,29 +1394,29 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Pode descart
     <string name="gs_loading_apps">A Carregar aplicações\u2026</string>
     <string name="gs_failed">Falhou: %s</string>
     <!-- Build details -->
-    <string name="build_maintainer_title">Device maintainer</string>
-    <string name="build_maintainer_summary">Unofficial</string>
+    <string name="build_maintainer_title">Responsável pela manutenção do dispositivo</string>
+    <string name="build_maintainer_summary">Não oficial</string>
     <!-- Settings UI -->
     <string name="settings_icon_title">Settings style</string>
     <string name="settings_icon_summary">Customize Settings app UI style</string>
     <string name="settings_icon_style_title">Settings icon style</string>
     <string name="settings_icon_style_expressive">Material expressive</string>
-    <string name="settings_icon_style_colored_bg">Colored background and white icon</string>
-    <string name="settings_icon_style_gradient_bg">Gradient background and white icon</string>
-    <string name="settings_icon_style_accent_outline">Accent outline and icon</string>
-    <string name="settings_icon_style_colored_outline">Colored outline and icon</string>
+    <string name="settings_icon_style_colored_bg">Fundo colorido e ícone branco</string>
+    <string name="settings_icon_style_gradient_bg">Fundo gradiente e ícone branco</string>
+    <string name="settings_icon_style_accent_outline">Detalhar contorno e ícone</string>
+    <string name="settings_icon_style_colored_outline">Ícone e contorno coloridos</string>
     <string name="settings_icon_style_colored_icon">Colored icon only</string>
     <string name="settings_icon_style_accent_icon">Accent icon only</string>
     <string name="settings_icon_corner_style_title">Settings icons corner style</string>
     <string name="settings_icon_corner_style_circle">Círculo</string>
     <string name="settings_icon_corner_style_rounded_square">Quadrado arredondado</string>
-    <string name="settings_icon_random_colors_title">Random colors</string>
+    <string name="settings_icon_random_colors_title">Cores aleatórias</string>
     <string name="settings_icon_random_colors_summary">Use random colors for each icon</string>
     <!-- Volume slider -->
     <string name="qs_show_volume_slider_title">Slider mode</string>
     <string name="qs_show_volume_slider_hide">Only brightness slider</string>
     <string name="qs_show_volume_slider_both">Both brightness and volume sliders</string>
     <string name="qs_show_volume_slider_only">Only volume slider</string>
-    <string name="qs_show_ringer_mode_title">Ringer mode</string>
+    <string name="qs_show_ringer_mode_title">Modo de toque</string>
     <string name="qs_show_ringer_mode_summary">Show ringer mode icon with the volume slider</string>
 </resources>
