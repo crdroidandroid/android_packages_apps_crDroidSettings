@@ -63,7 +63,7 @@
     <string name="search_apps">Uygulama ara</string>
     <string name="clear_search">Aramayı temizle</string>
     <string name="select_all">Tümünü seç</string>
-    <string name="auto_select">Otomatikman seç</string>
+    <string name="auto_select">Otomatik seçim</string>
     <string name="system_badge">SYS</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Mevcut değişiklikler</string>
@@ -391,6 +391,10 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="clock_date_position">Tarih konumu</string>
     <string name="clock_date_right">Saatin sağında</string>
     <string name="clock_date_left">Saatin solunda</string>
+    <string name="status_bar_clock_period_separator_title">Nokta ile ayır</string>
+    <string name="status_bar_clock_period_separator_summary">Saati gösterirken nokta kullan (ör. 10.45)</string>
+    <string name="status_bar_clock_bold_title">Kalın saat</string>
+    <string name="status_bar_clock_bold_summary">Durum çubuğundaki saati kalın yaz</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Pil stili</string>
     <string name="status_bar_battery_style_icon_portrait">Dikey simge</string>
@@ -495,6 +499,9 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Cep algılama</string>
     <string name="pocket_judge_summary">Cihaz cebinizdeyken ekran ve tuş girişlerini engelleyin</string>
+    <!-- Screen-on memory reclaim -->
+    <string name="screen_on_memory_reclaim_title">Ekran açılırken belleği temizle</string>
+    <string name="screen_on_memory_reclaim_summary">Kill cached background apps shortly after the screen turns on to free memory</string>
     <!-- Disable HW keys -->
     <string name="hwkeys_disabled_title">Donanım tuşları</string>
     <string name="hwkeys_disabled_summary">Etkinleştirildiğinde donanım tuşları devre dışı bırakılır</string>
@@ -804,7 +811,7 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="qs_footer_datausage_summary">Hızlı ayarlar alt bilgisinde veri kullanım özetini göster</string>
     <!-- QS Tiles animation  -->
     <string name="qs_tile_animation_style_title">Hızlı ayar kare animasyonu</string>
-    <string name="qs_tile_animation_style_bounce">Sıçrat</string>
+    <string name="qs_tile_animation_style_bounce">Sekme</string>
     <string name="qs_tile_animation_style_ripple">Dalgacık</string>
     <string name="qs_tile_animation_style_flip">Çevir</string>
     <string name="qs_tile_animation_style_fade">Soldur</string>
@@ -846,7 +853,7 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="solid_gradient_stroke">Keskin gradyan tarzı</string>
     <string name="solid_accent_transperent">Vurgu şeffaflığı</string>
     <string name="solid_gradient_light">Renk geçişi ışığı</string>
-    <string name="solid_gradient_shape">Renk geçişi köşesi</string>
+    <string name="solid_gradient_shape">Köşe renk geçişi</string>
     <string name="solid_gradient_void_light">Vurgu boşluğu ışığı</string>
     <!-- Weather -->
     <string name="weather_settings_title">Hava durumu ayarları</string>
@@ -999,7 +1006,7 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="lockscreen_show_carrier_title">Operatör etiketini göster</string>
     <string name="carrier_show_lockscreen_only">Yalnızca kilit ekranında</string>
     <string name="carrier_show_statusbar_only">Yalnızca durum çubuğunda</string>
-    <string name="carrier_show_both">Kilit ekranında ve durum çubuğunda</string>
+    <string name="carrier_show_both">Kilit Ekranı ve Durum Çubuğu</string>
     <string name="custom_carrier_label_title">Özel operatör etiketi</string>
     <string name="custom_carrier_label_summary">Operatöre özel bir etiket ayarlamak için dokunun</string>
     <string name="custom_carrier_label_dialog_message">Operatör etiketini özel bir yazıyla değiştir. Operatörün gerçek etiketini kullanmak için boş bırak.</string>
@@ -1173,30 +1180,30 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="gradient_settings_title">Gradyan kişiselleştirme</string>
     <string name="gradient_settings_summary">Çeşitli sistem ögelerine gradyan renkler uygula</string>
     <string name="gradient_elements_category">Sistem ögeleri</string>
-    <string name="gradient_colors_category">Gradyan renkleri</string>
-    <string name="qs_tile_gradient_title">Hızlı ayar simgeleri gradyanı</string>
-    <string name="qs_tile_gradient_summary">Hızlı ayar simgelerinde gradyan arka plan kullan</string>
-    <string name="qs_brightness_slider_gradient_title">Hızlı ayar parlaklık kaydırıcısı gradyanı</string>
-    <string name="qs_brightness_slider_gradient_summary">Hızlı ayar parlaklık kaydırıcısında gradyan arka plan kullan</string>
-    <string name="volume_slider_gradient_title">Ses kaydırıcısı gradyanı</string>
-    <string name="volume_slider_gradient_summary">Ses kaydırıcısında gradyan arka plan kullan</string>
-    <string name="custom_gradient_color_mode_title">Gradyan renk kipi</string>
+    <string name="gradient_colors_category">Renk geçişleri</string>
+    <string name="qs_tile_gradient_title">Hızlı ayar simgeleri renk geçişi</string>
+    <string name="qs_tile_gradient_summary">Hızlı ayar simgeleri için renk geçişli arka planları etkinleştir</string>
+    <string name="qs_brightness_slider_gradient_title">Hızlı ayar parlaklık kaydırıcısı renk geçişi</string>
+    <string name="qs_brightness_slider_gradient_summary">Hızlı ayar parlaklık kaydırıcısında renk geçişi arka plan kullan</string>
+    <string name="volume_slider_gradient_title">Ses kaydırıcısı renk geçişi</string>
+    <string name="volume_slider_gradient_summary">Ses kaydırıcısında renk geçişi arka plan kullan</string>
+    <string name="custom_gradient_color_mode_title">Renk geçişi modu</string>
     <string name="custom_gradient_color_mode_auto">Otomatik</string>
     <string name="custom_gradient_color_mode_custom">Özel kip</string>
-    <string name="custom_gradient_start_color_title">Gradyan başlangıcı rengi</string>
-    <string name="custom_gradient_end_color_title">Gradyan bitişi rengi</string>
+    <string name="custom_gradient_start_color_title">Renk geçişi başlangıç rengi</string>
+    <string name="custom_gradient_end_color_title">Renk geçişi bitiş rengi</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">Özel saat stili</string>
     <string name="lockscreen_custom_clock_style_summary">Kilit ekranı saat stillerini yapılandır</string>
     <string name="lockscreen_custom_clock_style_highlight_text">Saat stillerini ön izlemek için sola veya sağa kaydırın</string>
-    <string name="lockscreen_custom_clock_style_info">Özelleştirilmiş saat stili, özelleştirilmiş saatlerle birlikte AOSP saat stillerinin yerine geçer. Smartspace devre dışı kalacak. Bunun yerine özelleştirilmiş hava durumunu aktif edip kullanabilirsiniz.</string>
+    <string name="lockscreen_custom_clock_style_info">Özel saat stili, AOSP saat stillerini özel saatlerle değiştirir. Smartspace devre dışı bırakılacaktır. Bunun yerine özel hava durumunu etkinleştirebilir ve kullanabilirsiniz.</string>
     <string name="lockscreen_custom_clock_opacity_title">Özel saat saydamlığı</string>
-    <string name="lockscreen_custom_clock_opacity_summary">Özel saat stilinin opaklığını ayarla</string>
+    <string name="lockscreen_custom_clock_opacity_summary">Özel saat stilinin şeffaflığını ayarla</string>
     <string name="lockscreen_custom_clock_frame_margin_top_title">Özel saat yüksekliği</string>
     <string name="lockscreen_custom_clock_frame_margin_top_summary">Özel saat stilinin yüksekliğini ayarla</string>
     <string name="lockscreen_custom_clock_color_mode_title">Özel saat renk modu</string>
     <string name="lockscreen_custom_clock_size_title">Saat boyutu</string>
-    <string name="lockscreen_custom_clock_size_summary">Kilit ekranı saatini ölçeklendir</string>
+    <string name="lockscreen_custom_clock_size_summary">Kilit ekranı saatinin boyutunu ayarla</string>
     <string name="lockscreen_custom_clock_aod_anim_title">Özel AOD saat animasyonu</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">Özel saat stili için AOD animasyonu ayarla</string>
     <!-- QS Panel style -->
@@ -1208,7 +1215,7 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="shape_four_sided_cookie">4 kenarlı kurabiye</string>
     <string name="shape_seven_sided_cookie">7 kenarlı kurabiye</string>
     <string name="shape_arch">Kemer</string>
-    <string name="shape_ios_rounded_square">iOS yuvarlak şekli</string>
+    <string name="shape_ios_rounded_square">iOS tarzı köşe şekli</string>
     <string name="shape_meow">Miyav</string>
     <string name="shape_flower">Çiçek</string>
     <string name="shape_heart">Kalp</string>
@@ -1226,24 +1233,24 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="shape_vessel">Gemi</string>
     <string name="shape_rounded_hexagon">Yuvarlak altıgen</string>
     <string name="shape_just_icons">Sadece simgeler</string>
-    <string name="shape_pokesign">Pokeişaret</string>
+    <string name="shape_pokesign">Poké imzası</string>
     <string name="shape_ninja">Ninja</string>
     <string name="shape_outline_style">Anahat stili</string>
     <string name="shape_dotted_circle">Noktalı daire</string>
-    <string name="shape_squaremedo">Karemedo</string>
+    <string name="shape_squaremedo">Kare mod</string>
     <!-- Dynamic Bar -->
     <string name="dynamic_bar">Dinamik Çubuk</string>
     <string name="dynamic_bar_summary">Kayıt, medya, zamanlayıcı gibi aktif etkinlikler için akıllı durum çubuğu yongası</string>
     <string name="dynamic_bar_enable">Dinamik Çubuğu Etkinleştir</string>
     <string name="dynamic_bar_enable_summary">Canlı etkinlikler için durum çubuğunda dinamik yonga göster</string>
     <string name="dynamic_bar_keyguard_enable">Kilit ekranındaki dinamik çubuk</string>
-    <string name="dynamic_bar_keyguard_enable_summary">Kilit ekranında parola giriş göstergesini kontrol ve hızlı eylemler ile dinamik çubuk yongasıyla değiştir</string>
+    <string name="dynamic_bar_keyguard_enable_summary">Kilit ekranındaki bilgi yazısı yerine; kontroller ve hızlı işlemler içeren dinamik bir çubuk çipi kullan</string>
     <string name="dynamic_bar_keyguard_battery_chip">Kilit ekranındaki pil bilgisi</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">Asla gösterme</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">Sadece şarjda iken</string>
     <string name="dynamic_bar_keyguard_battery_chip_always">Her zaman göster</string>
-    <string name="dynamic_bar_keyguard_compact_chip">Kilit ekranında kompakt yonga</string>
-    <string name="dynamic_bar_keyguard_compact_chip_summary">Kilit ekranında her zaman kompakt yonga stilini kullan. Bu kapalı ise kompakt mod sadece alan limitliyken kullanılır.</string>
+    <string name="dynamic_bar_keyguard_compact_chip">Kompakt kilit ekranı çipi</string>
+    <string name="dynamic_bar_keyguard_compact_chip_summary">Kilit ekranında her zaman kompakt çip stilini kullan. Devre dışı bırakıldığında, kompakt mod yalnızca alan kısıtlı olduğunda kullanılır.</string>
     <string name="dynamic_bar_events">Etkinlikler</string>
     <string name="dynamic_bar_event_audio_recording">Ses kaydı</string>
     <string name="dynamic_bar_event_audio_recording_summary">Konuşma ve ekran sesi kaydı</string>
@@ -1262,13 +1269,13 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="dynamic_bar_event_alarm">Alarm</string>
     <string name="dynamic_bar_event_alarm_summary">Çalan ve gelecek alarmlar</string>
     <string name="dynamic_bar_event_charging">Şarj başladı</string>
-    <string name="dynamic_bar_event_charging_summary">Şarjdayken pil göstergesi</string>
+    <string name="dynamic_bar_event_charging_summary">Şarj olurken pil seviyesini göster</string>
     <string name="dynamic_bar_event_bluetooth">Bluetooth</string>
     <string name="dynamic_bar_event_bluetooth_summary">Aygıt bağlantı durumu</string>
     <string name="dynamic_bar_event_hotspot">Erişim noktası</string>
     <string name="dynamic_bar_event_hotspot_summary">Mobil erişim noktası etkinlik göstergesi</string>
     <string name="dynamic_bar_event_ringer">Zil sesi modu</string>
-    <string name="dynamic_bar_event_ringer_summary">Sessiz, titreşimli ve sesli mod değişiklikleri</string>
+    <string name="dynamic_bar_event_ringer_summary">Sessiz, titreşim ve zil sesi modu değişiklikleri</string>
     <string name="dynamic_bar_event_vpn">VPN</string>
     <string name="dynamic_bar_event_vpn_summary">Etkin VPN bağlantısı göstergesi</string>
     <string name="dynamic_bar_event_clipboard">Pano</string>
@@ -1298,10 +1305,10 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="dynamic_bar_footer_body">Dinamik çubuk, durum çubuğunuzu etkileşimli bir kontrol merkezine dönüştürür. Durum yongaları sistem etkinliklerine göre belirip görünür, böylece işinizin arasına girmeden bir bakış atmanızı sağlar.\n\nHer bir eylemin kendi rengi ve çabuk eylemlere ulaşabileceğiniz, geniş kartı vardır.</string>
     <!-- Themes -->
     <string name="custom_system_theme_title">Temalar</string>
-    <string name="custom_system_theme_summary">Sistem görünümünü temalar ve simge paketleriyle kişiselleştir</string>
+    <string name="custom_system_theme_summary">Sistem görünümünü temalar ve simge paketleri ile özelleştir</string>
     <!-- Misc preference entries -->
     <string name="play_integrity_fix_title">Play Integrity Düzeltmesi</string>
-    <string name="play_integrity_fix_summary">Basic integrity için cihaz parmak izini ve PIF yapılandırmasını yönetin</string>
+    <string name="play_integrity_fix_summary">Temel integrity için PIF yapılandırmasını ve cihaz parmak izlerini yönet</string>
     <string name="tricky_store_title">TrickyStore</string>
     <string name="tricky_store_summary">Keybox\'ı yönet ve hedef uygulamalar için strong integrity\'i yönetin</string>
     <string name="game_spoofing_title">Oyun taklidi</string>
@@ -1311,8 +1318,8 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="pif_active_config">Aktif yapılandırma</string>
     <string name="pif_no_config">Yapılandırma yüklenmedi</string>
     <string name="pif_config_loaded">Yapılandırma yüklendi</string>
-    <string name="pif_fetch_pixel_beta">Pixel Beta parmak izini al</string>
-    <string name="pif_fetch_pixel_beta_summary">Google\'dan en güncel Pixel Beta parmak izini indirin</string>
+    <string name="pif_fetch_pixel_beta">Pixel Beta parmak izini getir</string>
+    <string name="pif_fetch_pixel_beta_summary">En güncel Pixel Beta parmak izini Google\'dan indir</string>
     <string name="pif_fetching">Google\u2026\'dan parmak izi alınıyor</string>
     <string name="pif_fetched_model">%s için parmak izi alındı</string>
     <string name="pif_import_config">Yapılandırmayı içe aktar</string>
@@ -1325,13 +1332,13 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="pif_delete">Sil</string>
     <string name="pif_deleted">Silindi %s</string>
     <string name="pif_settings">Ayarlar</string>
-    <string name="pif_spoof_photos">Google Fotoğraflar taklidi</string>
+    <string name="pif_spoof_photos">Google Fotoğraflar\'ı maskele</string>
     <string name="pif_spoof_photos_summary">Sınırsız orijinal kalitede yedekleme</string>
     <string name="pif_config_details">Yapılandırma Ayrıntıları</string>
     <string name="pif_failed">Başarısız oldu: %s</string>
     <string name="pif_select_device">Cihaz seçin</string>
     <string name="pif_generating">Yapılandırma oluşturuluyor\u2026</string>
-    <string name="pif_footer_title">Basic integrity geçiyor</string>
+    <string name="pif_footer_title">Basic integrity sağla</string>
     <string name="pif_footer_body">1. \"Pixel Beta Parmak izini getir\" seçeneğine dokunun ve var olan cihazlar listesinden bir cihaz seçin.\n2. Eğer hiçbir cihaz bulunamazsa, güvenilir bir kaynaktan çalışan bir PIF ayarını içeri aktarın. Ayar dosyaları sağlanmaz; bunu sizin bulmanız gerekir.\n3. Play Integrity durumunu tekrar kontrol edin. \n\nYeni bir ayar dosyasını yüklemeden önce her zaman aktif ayarı silin. Süresi dolmuş bir PIF dosyası yüklemek, keybox geçerli olsa bile TrickyStore ile sağlanan Strong Integrity\'nin başarısız olmasına neden olacaktır.</string>
     <string name="pif_select_channel">Kanal seç</string>
     <string name="pif_channel_latest_release">Son sürüm</string>
@@ -1419,4 +1426,22 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="qs_show_volume_slider_only">Sadece ses kaydırıcısı</string>
     <string name="qs_show_ringer_mode_title">Zil sesi modu</string>
     <string name="qs_show_ringer_mode_summary">Ses düzeyi kaydırma çubuğunun yanında zil sesi modu simgesini göster</string>
+    <!-- App list fragment -->
+    <string name="app_list_search">Ara</string>
+    <string name="app_list_search_apps">Uygulama ara</string>
+    <string name="app_list_loading">Uygulamalar yükleniyor\u2026</string>
+    <!-- Expanded Dark theme exceptions -->
+    <string name="dark_theme_per_app_title">Genişletilmiş mod istisnaları</string>
+    <string name="dark_theme_per_app_summary">Genişletilmiş karanlık modu kullanmak yerine kendi görünümünde kalacak uygulamaları seçin</string>
+    <!-- Reality Display Engine -->
+    <string name="display_engine_category">Görüntü motoru</string>
+    <string name="display_engine_mode_title">Gerçeklik görüntü motoru</string>
+    <string name="x_reality_engine_mode_title">X-Reality motoru</string>
+    <string name="vivid_engine_mode_title">Canlı ekran</string>
+    <string name="triluminous_engine_mode_title">Triluminos ekran</string>
+    <string name="natural_engine_mode_title">Doğal görüntü</string>
+    <string name="cinema_engine_mode_title">Sinema ekranı</string>
+    <string name="reading_engine_mode_title">Konfor (Okuma modu)</string>
+    <string name="display_engine_default">Varsayılan</string>
+    <string name="display_engine_mode_footer_text">Sony\'nin Bravia/X-Reality motorundan esinlenen Görüntü Motoru; zenginleştirilmiş parlaklık ve renk doygunluğu için Canlı modu, geliştirilmiş ayrıntı ve renk doğruluğu için X-Reality modunu, daha geniş renk aralığı için Triluminos modunu sunar.</string>
 </resources>

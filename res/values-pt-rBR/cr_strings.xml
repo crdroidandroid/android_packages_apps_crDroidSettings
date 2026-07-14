@@ -58,13 +58,13 @@
     <string name="restart_systemui">Reinicie o SystemUI para que a alteração tenha efeito!</string>
     <string name="default_value">Padrão</string>
     <string name="apply">Aplicar</string>
-    <string name="show_system_apps">Show system apps</string>
-    <string name="hide_system_apps">Hide system apps</string>
+    <string name="show_system_apps">Mostrar aplicativos do sistema</string>
+    <string name="hide_system_apps">Ocultar aplicativos do sistema</string>
     <string name="search_apps">Pesquisar aplicativos</string>
-    <string name="clear_search">Clear search</string>
-    <string name="select_all">Select all</string>
-    <string name="auto_select">Auto-select</string>
-    <string name="system_badge">SYS</string>
+    <string name="clear_search">Limpar pesquisa</string>
+    <string name="select_all">Selecionar tudo</string>
+    <string name="auto_select">Seleção automática</string>
+    <string name="system_badge">SISTEMA</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Registro das últimas alterações</string>
     <string name="changelog_crdroid_summary">Mostrar alterações da ROM instalada</string>
@@ -162,7 +162,7 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="hardware_keys_action_play_pause_music">Reproduzir/Pausar Reprodução de música</string>
     <string name="hardware_keys_action_torch">Ligar/desligar a lanterna</string>
     <string name="hardware_keys_action_screenshot">Tirar captura de tela</string>
-    <string name="hardware_keys_action_partial_screenshot">Take partial screenshot</string>
+    <string name="hardware_keys_action_partial_screenshot">Captura da tela parcial</string>
     <string name="hardware_keys_action_volume_panel">Alternar painel do volume</string>
     <string name="hardware_keys_action_clear_all_notifications">Limpar todas as notificações</string>
     <string name="hardware_keys_action_notifications_panel">Alternar painel de notificações</string>
@@ -294,13 +294,13 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="edge_light_stroke_width_summary">Definir espessura para barras de luz de borda</string>
     <string name="edge_light_style_title">Render style</string>
     <string name="edge_light_style_default">Padrão (esquerda/direita)</string>
-    <string name="edge_light_style_frame">Frame (all sides)</string>
+    <string name="edge_light_style_frame">Quadro (todos os lados)</string>
     <string name="edge_light_animation_effect_title">Efeito de animação</string>
     <string name="edge_light_animation_effect_none">Padrão</string>
-    <string name="edge_light_animation_effect_breathing">Breathing</string>
+    <string name="edge_light_animation_effect_breathing">Respiração</string>
     <string name="edge_light_animation_effect_wave">Onda</string>
-    <string name="edge_light_animation_effect_sparkle">Sparkle</string>
-    <string name="edge_light_animation_effect_chase">Chase</string>
+    <string name="edge_light_animation_effect_sparkle">Brilhante</string>
+    <string name="edge_light_animation_effect_chase">Perseguir</string>
     <string name="edge_light_animation_effect_comet">Cometa</string>
     <!-- Ambient Ticker -->
     <string name="pulse_on_new_tracks_title">Ticker de música</string>
@@ -317,8 +317,8 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">Controle de brilho</string>
     <string name="status_bar_toggle_brightness_summary">Ajuste o brilho deslizando pela barra de status</string>
-    <string name="status_bar_toggle_brightness_lockscreen_title">Brightness control on lockscreen</string>
-    <string name="status_bar_toggle_brightness_lockscreen_summary">Allow brightness brightness control on lockscreen status bar</string>
+    <string name="status_bar_toggle_brightness_lockscreen_title">Controle de brilho na tela de bloqueio</string>
+    <string name="status_bar_toggle_brightness_lockscreen_summary">Permitir controle de brilho na barra de status da tela de bloqueio</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">Puxar rápido para baixo</string>
     <string name="status_bar_quick_qs_pulldown_summary">Puxe a borda da barra de status rapidamente para baixo para expandir o painel de configurações rápidas</string>
@@ -391,6 +391,10 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="clock_date_position">Posição da data</string>
     <string name="clock_date_right">À direita do relógio</string>
     <string name="clock_date_left">À esquerda do relógio</string>
+    <string name="status_bar_clock_period_separator_title">Period separator</string>
+    <string name="status_bar_clock_period_separator_summary">Show the time with a period instead of a colon (10.45 instead of 10:45)</string>
+    <string name="status_bar_clock_bold_title">Bold clock</string>
+    <string name="status_bar_clock_bold_summary">Show the status bar clock in bold text</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Estilo do ícone da bateria</string>
     <string name="status_bar_battery_style_icon_portrait">Ícone retrato</string>
@@ -495,6 +499,9 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Detecção no bolso</string>
     <string name="pocket_judge_summary">Bloquear a tela e os botões quando o dispositivo estiver no bolso</string>
+    <!-- Screen-on memory reclaim -->
+    <string name="screen_on_memory_reclaim_title">Screen-on memory reclaim</string>
+    <string name="screen_on_memory_reclaim_summary">Kill cached background apps shortly after the screen turns on to free memory</string>
     <!-- Disable HW keys -->
     <string name="hwkeys_disabled_title">Desabilitar teclas do hardware</string>
     <string name="hwkeys_disabled_summary">Ativando isso as teclas de navegação do hardware serão desativadas</string>
@@ -530,7 +537,7 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <!-- Brightness slider / QS tile haptic feedback -->
     <string name="qs_brightness_slider_haptic_title">Retorno tátil</string>
     <string name="qs_brightness_slider_haptic_summary">Vibrar ao deslizar pela barra de brilho</string>
-    <string name="qs_tile_haptic_summary">Provide haptic feedback on tapping QS tiles</string>
+    <string name="qs_tile_haptic_summary">Fornece feedback tátil ao tocar em blocos de configurações rápidas</string>
     <!-- Quick Settings brightness icon -->
     <string name="qs_show_auto_brightness_title">Ícone de brilho automático</string>
     <string name="qs_show_auto_brightness_summary">Mostrar botão de brilho automático</string>
@@ -803,7 +810,7 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="qs_footer_datausage_title">Uso de dados</string>
     <string name="qs_footer_datausage_summary">Mostrar resumo de uso de dados no rodapé das configurações rápidas</string>
     <!-- QS Tiles animation  -->
-    <string name="qs_tile_animation_style_title">QS tiles animation</string>
+    <string name="qs_tile_animation_style_title">Animação do bloco de configurações rápidas</string>
     <string name="qs_tile_animation_style_bounce">Pular</string>
     <string name="qs_tile_animation_style_ripple">Ripple</string>
     <string name="qs_tile_animation_style_flip">Inverter</string>
@@ -1128,7 +1135,7 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="pulse_renderer_neon_glow">Neon glow</string>
     <string name="pulse_renderer_retro_vu_meter">Retro VU meter</string>
     <string name="pulse_renderer_minimal_wave">Minimal wave</string>
-    <string name="pulse_renderer_sparkle">Sparkle</string>
+    <string name="pulse_renderer_sparkle">Brilhante</string>
     <string name="pulse_renderer_matrix">Matrix</string>
     <string name="pulse_renderer_particle">Particle</string>
     <string name="pulse_renderer_waveform">Waveform</string>
@@ -1419,4 +1426,22 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="qs_show_volume_slider_only">Only volume slider</string>
     <string name="qs_show_ringer_mode_title">Ringer mode</string>
     <string name="qs_show_ringer_mode_summary">Show ringer mode icon with the volume slider</string>
+    <!-- App list fragment -->
+    <string name="app_list_search">Search</string>
+    <string name="app_list_search_apps">Pesquisar aplicativos</string>
+    <string name="app_list_loading">Loading apps\u2026</string>
+    <!-- Expanded Dark theme exceptions -->
+    <string name="dark_theme_per_app_title">Expanded mode exceptions</string>
+    <string name="dark_theme_per_app_summary">Choose apps that keep their own appearance instead of using expanded Dark theme</string>
+    <!-- Reality Display Engine -->
+    <string name="display_engine_category">Display engine</string>
+    <string name="display_engine_mode_title">Reality display engine</string>
+    <string name="x_reality_engine_mode_title">X-Reality engine</string>
+    <string name="vivid_engine_mode_title">Vivid display</string>
+    <string name="triluminous_engine_mode_title">Triluminous display</string>
+    <string name="natural_engine_mode_title">Natural display</string>
+    <string name="cinema_engine_mode_title">Cinema display</string>
+    <string name="reading_engine_mode_title">Comfort display (Reading mode)</string>
+    <string name="display_engine_default">Padrão</string>
+    <string name="display_engine_mode_footer_text">Inspired by Sony\'s Bravia/X-Reality engine, the Display Engine features Vivid mode for enhanced brightness and color saturation, X-Reality mode for improved detail and color accuracy, and Triluminous mode for a wider color range.</string>
 </resources>
