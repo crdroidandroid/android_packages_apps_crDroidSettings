@@ -964,7 +964,7 @@
     <string name="hide_from_launcher_summary">このアプリがどのホームアプリにも表示されないようにします。変更を有効にするには、ホームアプリの再起動が必要です。</string>
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">充電時に常に表示する</string>
-    <string name="doze_on_charge_summary">Display info when device is charging</string>
+    <string name="doze_on_charge_summary">デバイスの充電中に情報を表示します</string>
     <!-- Volume link notification -->
     <string name="volume_link_notification_title">着信と通知の音量をリンク</string>
     <!-- Radio Info -->
@@ -1105,19 +1105,19 @@
     <string name="ls_media_art_filter_grayblur">グレースケールとぼかし</string>
     <!-- Lock screen media art fade level -->
     <string name="ls_media_art_fade_level_title">メディアカバーアートのフェードレベル</string>
-    <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
+    <string name="ls_media_art_fade_level_summary">メディアカバーアートのフェードレベルを設定します</string>
     <!-- Lock screen media art blur level -->
     <string name="ls_media_art_blur_level_title">メディアアートのぼかしレベル</string>
-    <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
+    <string name="ls_media_art_blur_level_summary">フィルターがぼかしの場合に適用されるぼかしの強度</string>
     <!-- Pulse music visualizer -->
     <string name="pulse_settings_title">Pulse ビジュアライザー</string>
     <string name="pulse_settings_summary">ナビゲーションバーとロック画面にグラフィックイコライザーを表示します</string>
     <string name="ambient_pulse_enabled_title">アンビエント Pulse</string>
     <string name="ambient_pulse_enabled_summary">アンビエント表示にビジュアライザーを表示する</string>
-    <string name="pulse_bass_haptics_title">Bass haptics</string>
-    <string name="pulse_bass_haptics_none">No subtle vibration on sharp bass spikes</string>
-    <string name="pulse_bass_haptics_running">Only when pulse is showing</string>
-    <string name="pulse_bass_haptics_always">Whenever media playback is active</string>
+    <string name="pulse_bass_haptics_title">低音ハプティクス</string>
+    <string name="pulse_bass_haptics_none">低音スパイクでの振動をオフ</string>
+    <string name="pulse_bass_haptics_running">Pulse 表示中のみ振動させる</string>
+    <string name="pulse_bass_haptics_always">メディア再生中は常に振動させる</string>
     <string name="pulse_rounded_bars_title">Rounded bars</string>
     <string name="pulse_rounded_bars_summary">ビジュアライザーのバーの角を丸くする</string>
     <string name="pulse_color">ビジュアライザーの色</string>
@@ -1126,17 +1126,17 @@
     <string name="pulse_color_accent">アクセント</string>
     <string name="pulse_bar_count_title">バーの数</string>
     <string name="pulse_bar_count_summary">ビジュアライザーに表示するバーの数を設定します</string>
-    <string name="pulse_bar_count_units">bars</string>
+    <string name="pulse_bar_count_units">バー</string>
     <string name="pulse_renderer">ビジュアライザーのスタイル</string>
     <string name="pulse_renderer_solid">ソリッドライン</string>
     <string name="pulse_renderer_fading">フェーディングブロック</string>
-    <string name="pulse_renderer_neon_glow">Neon glow</string>
-    <string name="pulse_renderer_retro_vu_meter">Retro VU meter</string>
-    <string name="pulse_renderer_minimal_wave">Minimal wave</string>
+    <string name="pulse_renderer_neon_glow">ネオングロー</string>
+    <string name="pulse_renderer_retro_vu_meter">レトロ VU メーター</string>
+    <string name="pulse_renderer_minimal_wave">ミニマルウェーブ</string>
     <string name="pulse_renderer_sparkle">スパークル（きらめき）</string>
-    <string name="pulse_renderer_matrix">Matrix</string>
-    <string name="pulse_renderer_particle">Particle</string>
-    <string name="pulse_renderer_waveform">Waveform</string>
+    <string name="pulse_renderer_matrix">マトリックス</string>
+    <string name="pulse_renderer_particle">パーティクル</string>
+    <string name="pulse_renderer_waveform">ウェーブ</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">半透明な通知</string>
     <string name="notification_row_transparency_summary">Set translucent background for notifications in QS</string>
@@ -1288,7 +1288,7 @@
     <string name="dynamic_bar_event_app_switch_summary">最近使用したアプリを切り替えるときにチップを表示</string>
     <string name="dynamic_bar_event_biometric">生体認証によるロック解除</string>
     <string name="dynamic_bar_event_biometric_summary">指紋または顔認証によるロック解除時にチップを表示</string>
-    <string name="dynamic_bar_guide_title">How to use Dynamic Bar</string>
+    <string name="dynamic_bar_guide_title">ダイナミックバーの使用方法</string>
     <string name="dynamic_bar_guide_chip">Events appear in the status bar showing active events like recording, media playback, and timers</string>
     <string name="dynamic_bar_guide_swipe">When multiple events are active, swipe left or right on the chip to cycle through them</string>
     <string name="dynamic_bar_guide_expand">Tap a chip to expand it into a detailed card with controls and additional information</string>
@@ -1298,9 +1298,9 @@
     <string name="dynamic_bar_guide_swipe_title">Swipe between chips</string>
     <string name="dynamic_bar_guide_expand_title">Tap to expand</string>
     <string name="dynamic_bar_guide_dismiss_title">Swipe to dismiss</string>
-    <string name="dynamic_bar_guide_keyguard_title">Lock screen chip</string>
-    <string name="dynamic_bar_footer_title">About Dynamic Bar</string>
-    <string name="dynamic_bar_footer_body">Dynamic Bar transforms your status bar into an interactive hub. Status chips appear and animate based on system events, giving you at-a-glance information without interrupting your workflow.\n\nEach event type has its own accent color and expanded card with quick actions.</string>
+    <string name="dynamic_bar_guide_keyguard_title">ロック画面のチップ</string>
+    <string name="dynamic_bar_footer_title">ダイナミックバーについて</string>
+    <string name="dynamic_bar_footer_body">ダイナミックバーは、ステータスバーをインタラクティブなハブに変えます。システムイベントに基づいてステータスチップが表示・アニメーションされるため、作業を中断することなく一目で情報を確認できます。\n\n各イベントタイプには独自のアクセントカラーがあり、展開されたカードからクイックアクションが可能です。</string>
     <!-- Themes -->
     <string name="custom_system_theme_title">テーマ</string>
     <string name="custom_system_theme_summary">テーマやアイコンパックでシステムの見た目をカスタマイズする</string>
