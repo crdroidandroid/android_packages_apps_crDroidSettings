@@ -58,12 +58,12 @@
     <string name="restart_systemui">Redémarrer l’interface système pour appliquer les changements !</string>
     <string name="default_value">Par défaut</string>
     <string name="apply">Appliquer</string>
-    <string name="show_system_apps">Show system apps</string>
-    <string name="hide_system_apps">Hide system apps</string>
+    <string name="show_system_apps">Afficher les applications système</string>
+    <string name="hide_system_apps">Masquer les applications système</string>
     <string name="search_apps">Rechercher des applications</string>
-    <string name="clear_search">Clear search</string>
-    <string name="select_all">Select all</string>
-    <string name="auto_select">Auto-select</string>
+    <string name="clear_search">Effacer la recherche</string>
+    <string name="select_all">Tout sélectionner</string>
+    <string name="auto_select">Sélection automatique</string>
     <string name="system_badge">SYS</string>
     <!-- Changelog -->
     <string name="changelog_crdroid_title">Liste des changements</string>
@@ -162,7 +162,7 @@ Un petit don aide à maintenir ce projet en vie et à l\'améliorer. Vous pouvez
     <string name="hardware_keys_action_play_pause_music">Lecture/pause de la musique</string>
     <string name="hardware_keys_action_torch">Activer/désactiver la lampe torche</string>
     <string name="hardware_keys_action_screenshot">Faire une capture d\'écran</string>
-    <string name="hardware_keys_action_partial_screenshot">Take partial screenshot</string>
+    <string name="hardware_keys_action_partial_screenshot">Effectuer une capture d\'écran partielle</string>
     <string name="hardware_keys_action_volume_panel">Ouvrir/fermer le panneau de volume</string>
     <string name="hardware_keys_action_clear_all_notifications">Effacer toutes les notifications</string>
     <string name="hardware_keys_action_notifications_panel">Basculer le panneau des notifications</string>
@@ -317,8 +317,8 @@ Un petit don aide à maintenir ce projet en vie et à l\'améliorer. Vous pouvez
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">Réglage de la luminosité</string>
     <string name="status_bar_toggle_brightness_summary">Ajuster la luminosité en glissant le long de la barre d\'état</string>
-    <string name="status_bar_toggle_brightness_lockscreen_title">Brightness control on lockscreen</string>
-    <string name="status_bar_toggle_brightness_lockscreen_summary">Allow brightness brightness control on lockscreen status bar</string>
+    <string name="status_bar_toggle_brightness_lockscreen_title">Réglage de la luminosité sur l\'écran de verrouillage</string>
+    <string name="status_bar_toggle_brightness_lockscreen_summary">Autoriser le réglage de la luminosité depuis la barre d\'état de l\'écran de verrouillage</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">Déroulement complet</string>
     <string name="status_bar_quick_qs_pulldown_summary">Le côté %1$s de la barre d\'état déroule totalement les paramètres rapides</string>
@@ -391,10 +391,10 @@ Un petit don aide à maintenir ce projet en vie et à l\'améliorer. Vous pouvez
     <string name="clock_date_position">Position de la date</string>
     <string name="clock_date_right">À droite de l\'horloge</string>
     <string name="clock_date_left">À gauche de l\'heure</string>
-    <string name="status_bar_clock_period_separator_title">Period separator</string>
-    <string name="status_bar_clock_period_separator_summary">Show the time with a period instead of a colon (10.45 instead of 10:45)</string>
-    <string name="status_bar_clock_bold_title">Bold clock</string>
-    <string name="status_bar_clock_bold_summary">Show the status bar clock in bold text</string>
+    <string name="status_bar_clock_period_separator_title">Séparateur de période</string>
+    <string name="status_bar_clock_period_separator_summary">Affichez l\'heure avec un point au lieu de deux-points (10.45 au lieu de 10:45)</string>
+    <string name="status_bar_clock_bold_title">Horloge au design audacieux</string>
+    <string name="status_bar_clock_bold_summary">Afficher l\'horloge de la barre d\'état en gras</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Style de l\'icône de la batterie</string>
     <string name="status_bar_battery_style_icon_portrait">Icône au format portrait</string>
@@ -500,8 +500,8 @@ Un petit don aide à maintenir ce projet en vie et à l\'améliorer. Vous pouvez
     <string name="pocket_judge_title">Détection de mise en poche</string>
     <string name="pocket_judge_summary">Bloquer l\'utilisation des boutons ou de l\'écran lorsque l\'appareil est dans la poche</string>
     <!-- Screen-on memory reclaim -->
-    <string name="screen_on_memory_reclaim_title">Screen-on memory reclaim</string>
-    <string name="screen_on_memory_reclaim_summary">Kill cached background apps shortly after the screen turns on to free memory</string>
+    <string name="screen_on_memory_reclaim_title">Récupération de mémoire lorsque l\'écran est allumé</string>
+    <string name="screen_on_memory_reclaim_summary">Fermer les applications d\'arrière-plan en cache peu après l\'allumage de l\'écran pour libérer de la mémoire</string>
     <!-- Disable HW keys -->
     <string name="hwkeys_disabled_title">Touches matérielles</string>
     <string name="hwkeys_disabled_summary">Désactiver les touches matérielles pour la navigation</string>
@@ -846,15 +846,15 @@ Un petit don aide à maintenir ce projet en vie et à l\'améliorer. Vous pouvez
     <string name="solid_accent">Couleur d\'accentuation unie</string>
     <string name="outline">Contour</string>
     <string name="solid_accent_gradient">Dégradé d\'accentuation de couleur unie</string>
-    <string name="solid_gradient">Solid gradient side</string>
-    <string name="solid_gradient_corner">Solid accent gradient sharp</string>
+    <string name="solid_gradient">Côté avec dégradé uni</string>
+    <string name="solid_gradient_corner">Dégradé d\'accentuation net et soutenu</string>
     <string name="solid_gradient_void">Dégradé vide</string>
     <string name="solid_gradient_neumorph">Dégradé neumorphique</string>
-    <string name="solid_gradient_stroke">Sharp gradient stroke</string>
+    <string name="solid_gradient_stroke">Tracé à dégradé net</string>
     <string name="solid_accent_transperent">Accentuation de la transparence</string>
     <string name="solid_gradient_light">Luminosité du dégradé</string>
-    <string name="solid_gradient_shape">Sharp gradient corner</string>
-    <string name="solid_gradient_void_light">Gradient void light</string>
+    <string name="solid_gradient_shape">Coin à dégradé net</string>
+    <string name="solid_gradient_void_light">Lumière de vide en dégradé</string>
     <!-- Weather -->
     <string name="weather_settings_title">Paramètres météo</string>
     <string name="weather_settings_summary">Configurer le pack d\'icônes et le service météo</string>
@@ -880,7 +880,7 @@ Un petit don aide à maintenir ce projet en vie et à l\'améliorer. Vous pouvez
     <string name="status_bar_logo_summary">Afficher un logo personnalisé à gauche ou à droite de la barre d\'état</string>
     <string name="status_bar_logo_position_title">Position du logo</string>
     <string name="status_bar_logo_style_title">Style du logo</string>
-    <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
+    <string name="status_bar_logo_style_summary">Sélectionnez le logo personnalisé à afficher</string>
     <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
@@ -967,7 +967,7 @@ Les notifications flottantes seront automatiquement désactivées.</string>
     <string name="hide_from_launcher_summary">Empêcher cette application d\'apparaître dans tous les lanceurs d\'applications. Nécessite un redémarrage du lanceur pour que les changements prennent effet.</string>
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">Toujours allumé pendant la charge</string>
-    <string name="doze_on_charge_summary">Display info when device is charging</string>
+    <string name="doze_on_charge_summary">Afficher des informations lorsque l\'appareil est en charge</string>
     <!-- Volume link notification -->
     <string name="volume_link_notification_title">Lier le volume de la sonnerie et des notifications</string>
     <!-- Radio Info -->
