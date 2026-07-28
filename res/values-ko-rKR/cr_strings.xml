@@ -162,7 +162,7 @@
     <string name="hardware_keys_action_play_pause_music">음악 재생/일시정지</string>
     <string name="hardware_keys_action_torch">손전등 켜기/끄기</string>
     <string name="hardware_keys_action_screenshot">스크린샷 촬영</string>
-    <string name="hardware_keys_action_partial_screenshot">Take partial screenshot</string>
+    <string name="hardware_keys_action_partial_screenshot">부분 스크린샷 캡처</string>
     <string name="hardware_keys_action_volume_panel">볼륨 패널 열기/닫기</string>
     <string name="hardware_keys_action_clear_all_notifications">모든 알림 지우기</string>
     <string name="hardware_keys_action_notifications_panel">알림 패널 열기/닫기</string>
@@ -316,8 +316,8 @@
     <!-- Status bar - Brightness control -->
     <string name="status_bar_toggle_brightness_title">밝기 제어</string>
     <string name="status_bar_toggle_brightness_summary">상태 표시줄을 가로로 쓸어 화면 밝기 조절</string>
-    <string name="status_bar_toggle_brightness_lockscreen_title">Brightness control on lockscreen</string>
-    <string name="status_bar_toggle_brightness_lockscreen_summary">Allow brightness brightness control on lockscreen status bar</string>
+    <string name="status_bar_toggle_brightness_lockscreen_title">잠금 화면 밝기 조절</string>
+    <string name="status_bar_toggle_brightness_lockscreen_summary">잠금화면 상태 표시줄에서 밝기 조절 허용</string>
     <!-- Status bar - Quick pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">빠른 내리기</string>
     <string name="status_bar_quick_qs_pulldown_summary">상태 표시줄의 %1$s 가장자리를 내려 빠른 설정 표시</string>
@@ -390,10 +390,10 @@
     <string name="clock_date_position">날짜 위치</string>
     <string name="clock_date_right">시간 오른편</string>
     <string name="clock_date_left">시간 왼편</string>
-    <string name="status_bar_clock_period_separator_title">Period separator</string>
-    <string name="status_bar_clock_period_separator_summary">Show the time with a period instead of a colon (10.45 instead of 10:45)</string>
-    <string name="status_bar_clock_bold_title">Bold clock</string>
-    <string name="status_bar_clock_bold_summary">Show the status bar clock in bold text</string>
+    <string name="status_bar_clock_period_separator_title">마침표 구분자</string>
+    <string name="status_bar_clock_period_separator_summary">시간을 표시할 때는 콜론 대신 마침표를 사용 (예: 10:45 대신 10.45)</string>
+    <string name="status_bar_clock_bold_title">시계 굵게 표시</string>
+    <string name="status_bar_clock_bold_summary">상태 표시줄 시계를 굵은 글씨로 표시</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">배터리 스타일</string>
     <string name="status_bar_battery_style_icon_portrait">세로 아이콘</string>
@@ -499,8 +499,8 @@
     <string name="pocket_judge_title">주머니 감지</string>
     <string name="pocket_judge_summary">기기가 주머니에 있을 때 화면 및 버튼 입력 방지</string>
     <!-- Screen-on memory reclaim -->
-    <string name="screen_on_memory_reclaim_title">Screen-on memory reclaim</string>
-    <string name="screen_on_memory_reclaim_summary">Kill cached background apps shortly after the screen turns on to free memory</string>
+    <string name="screen_on_memory_reclaim_title">화면 켜짐 시 메모리 회수</string>
+    <string name="screen_on_memory_reclaim_summary">화면이 켜진 직후 캐시된 백그라운드 앱을 종료하여 메모리를 확보</string>
     <!-- Disable HW keys -->
     <string name="hwkeys_disabled_title">하드웨어 키 사용 안함</string>
     <string name="hwkeys_disabled_summary">하드웨어 키로 탐색 사용 안함</string>
@@ -999,14 +999,14 @@
     <string name="qs_bt_show_dialog_title">블루투스 타일 대화 상자</string>
     <string name="qs_bt_show_dialog_summary">블루투스 타일을 눌렀을 때 블루투스 대화 상자 표시, 또는 블루투스 켜짐/꺼짐 상태 전환</string>
     <!-- Carrier name on lockscreen/statusbar -->
-    <string name="status_bar_carrier_category_title">Carrier label</string>
-    <string name="lockscreen_show_carrier_title">Show carrier label</string>
-    <string name="carrier_show_lockscreen_only">Lockscreen only</string>
-    <string name="carrier_show_statusbar_only">Status bar only</string>
+    <string name="status_bar_carrier_category_title">통신사 이름</string>
+    <string name="lockscreen_show_carrier_title">통신사 이름 표시</string>
+    <string name="carrier_show_lockscreen_only">잠금 화면에만</string>
+    <string name="carrier_show_statusbar_only">상태 표시줄에만</string>
     <string name="carrier_show_both">Lockscreen &amp; status bar</string>
     <string name="custom_carrier_label_title">사용자 정의 캐리어 라벨</string>
     <string name="custom_carrier_label_summary">Tap to set a custom carrier label</string>
-    <string name="custom_carrier_label_dialog_message">Replace the carrier label with custom text. Leave empty to use the real carrier label.</string>
+    <string name="custom_carrier_label_dialog_message">통신사 이름을 사용자 지정 텍스트로 바꾸세요. 실제 통신사 이름을 사용하려면 비워 두세요.</string>
     <!-- Statusbar Padding -->
     <string name="statusbar_extra_padding_category">추가 여백</string>
     <string name="statusbar_extra_padding_start_title">시작 여백</string>
@@ -1429,7 +1429,7 @@
     <string name="app_list_loading">앱 로드 중\u2026</string>
     <!-- Expanded Dark theme exceptions -->
     <string name="dark_theme_per_app_title">Expanded mode exceptions</string>
-    <string name="dark_theme_per_app_summary">Choose apps that keep their own appearance instead of using expanded Dark theme</string>
+    <string name="dark_theme_per_app_summary">확장된 어두운 테마를 사용하는 대신 원래 모양을 유지하는 앱을 선택</string>
     <!-- Reality Display Engine -->
     <string name="display_engine_category">디스플레이 엔진</string>
     <string name="display_engine_mode_title">현실 디스플레이 엔진</string>
@@ -1440,5 +1440,5 @@
     <string name="cinema_engine_mode_title">Cinema display</string>
     <string name="reading_engine_mode_title">Comfort display (Reading mode)</string>
     <string name="display_engine_default">기본값</string>
-    <string name="display_engine_mode_footer_text">Inspired by Sony\'s Bravia/X-Reality engine, the Display Engine features Vivid mode for enhanced brightness and color saturation, X-Reality mode for improved detail and color accuracy, and Triluminous mode for a wider color range.</string>
+    <string name="display_engine_mode_footer_text">소니의 브라비아/X-리얼리티 엔진에서 영감을 받은 디스플레이 엔진은 밝기와 색상 채도를 향상시키는 비비드 모드, 디테일과 색상 정확도를 개선하는 X-리얼리티 모드, 그리고 더 넓은 색상 범위를 제공하는 트리루미너스 모드를 갖추고 있습니다.</string>
 </resources>
