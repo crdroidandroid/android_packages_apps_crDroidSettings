@@ -391,10 +391,10 @@
     <string name="clock_date_position">日付の位置</string>
     <string name="clock_date_right">時刻の右</string>
     <string name="clock_date_left">時刻の左</string>
-    <string name="status_bar_clock_period_separator_title">Period separator</string>
-    <string name="status_bar_clock_period_separator_summary">Show the time with a period instead of a colon (10.45 instead of 10:45)</string>
-    <string name="status_bar_clock_bold_title">Bold clock</string>
-    <string name="status_bar_clock_bold_summary">Show the status bar clock in bold text</string>
+    <string name="status_bar_clock_period_separator_title">ピリオドで区切る</string>
+    <string name="status_bar_clock_period_separator_summary">コロンの代わりにピリオドで時刻を表示します (10:45の代わりに10.45)</string>
+    <string name="status_bar_clock_bold_title">太字の時計</string>
+    <string name="status_bar_clock_bold_summary">ステータスバーの時計を太字で表示します</string>
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">バッテリースタイル</string>
     <string name="status_bar_battery_style_icon_portrait">縦向きのアイコン</string>
@@ -500,8 +500,8 @@
     <string name="pocket_judge_title">ポケット検出</string>
     <string name="pocket_judge_summary">ポケットに入っている時にタッチやボタン入力を無効化します</string>
     <!-- Screen-on memory reclaim -->
-    <string name="screen_on_memory_reclaim_title">Screen-on memory reclaim</string>
-    <string name="screen_on_memory_reclaim_summary">Kill cached background apps shortly after the screen turns on to free memory</string>
+    <string name="screen_on_memory_reclaim_title">画面点灯時のメモリ解放</string>
+    <string name="screen_on_memory_reclaim_summary">画面がオンになった直後に、キャッシュされたバックグラウンドアプリを終了してメモリを解放します</string>
     <!-- Disable HW keys -->
     <string name="hwkeys_disabled_title">ハードウェアキーを無効化</string>
     <string name="hwkeys_disabled_summary">ハードウェアキーでのナビゲーションを無効化します</string>
@@ -851,9 +851,9 @@
     <string name="solid_gradient_neumorph">ニューモフィズムグラデーション</string>
     <string name="solid_gradient_stroke">シャープグラデーションストローク</string>
     <string name="solid_accent_transperent">透明なアクセント</string>
-    <string name="solid_gradient_light">Gradient light</string>
-    <string name="solid_gradient_shape">Sharp gradient corner</string>
-    <string name="solid_gradient_void_light">Gradient void light</string>
+    <string name="solid_gradient_light">グラデーションライト</string>
+    <string name="solid_gradient_shape">シャープグラデーションコーナー</string>
+    <string name="solid_gradient_void_light">グラデーションボイドライト</string>
     <!-- Weather -->
     <string name="weather_settings_title">天気の設定</string>
     <string name="weather_settings_summary">アイコンパックと天気サービスを設定します</string>
@@ -964,7 +964,7 @@
     <string name="hide_from_launcher_summary">このアプリがどのホームアプリにも表示されないようにします。変更を有効にするには、ホームアプリの再起動が必要です。</string>
     <!-- Doze on charge -->
     <string name="doze_on_charge_title">充電時に常に表示する</string>
-    <string name="doze_on_charge_summary">Display info when device is charging</string>
+    <string name="doze_on_charge_summary">デバイスの充電中に情報を表示します</string>
     <!-- Volume link notification -->
     <string name="volume_link_notification_title">着信と通知の音量をリンク</string>
     <!-- Radio Info -->
@@ -1000,14 +1000,14 @@
     <string name="qs_bt_show_dialog_title">Bluetooth タイルダイアログ</string>
     <string name="qs_bt_show_dialog_summary">Bluetooth タイルをタップしたとき、Bluetooth ダイアログを表示するか Bluetooth の状態を切り替えます</string>
     <!-- Carrier name on lockscreen/statusbar -->
-    <string name="status_bar_carrier_category_title">Carrier label</string>
-    <string name="lockscreen_show_carrier_title">Show carrier label</string>
-    <string name="carrier_show_lockscreen_only">Lockscreen only</string>
-    <string name="carrier_show_statusbar_only">Status bar only</string>
-    <string name="carrier_show_both">Lockscreen &amp; status bar</string>
+    <string name="status_bar_carrier_category_title">キャリアラベル</string>
+    <string name="lockscreen_show_carrier_title">キャリアラベルの表示</string>
+    <string name="carrier_show_lockscreen_only">ロック画面のみ</string>
+    <string name="carrier_show_statusbar_only">ステータスバーのみ</string>
+    <string name="carrier_show_both">ロック画面とステータスバー</string>
     <string name="custom_carrier_label_title">カスタムキャリアラベル</string>
-    <string name="custom_carrier_label_summary">Tap to set a custom carrier label</string>
-    <string name="custom_carrier_label_dialog_message">Replace the carrier label with custom text. Leave empty to use the real carrier label.</string>
+    <string name="custom_carrier_label_summary">タップしてカスタムキャリアラベルを設定</string>
+    <string name="custom_carrier_label_dialog_message">キャリアラベルをカスタムテキストに置き換えます。実際のキャリアラベルを使用する場合は空のままにしてください。</string>
     <!-- Statusbar Padding -->
     <string name="statusbar_extra_padding_category">余白を増やす</string>
     <string name="statusbar_extra_padding_start_title">パディングを開始</string>
@@ -1071,12 +1071,12 @@
     <string name="custom_style_ios">iOS</string>
     <string name="custom_style_layers">レイヤー</string>
     <!-- QS Tiles Style -->
-    <string name="qs_tile_shape_title">QS tiles shape</string>
-    <string name="qs_tile_shape_dynamic">Dynamic</string>
+    <string name="qs_tile_shape_title">クイック設定タイルの形</string>
+    <string name="qs_tile_shape_dynamic">ダイナミック</string>
     <string name="qs_tile_shape_circle">円</string>
-    <string name="qs_tile_shape_rounded_square_smooth">Rounded square (smooth)</string>
-    <string name="qs_tile_shape_rounded_square">Rounded square</string>
-    <string name="qs_tile_shape_square">Square</string>
+    <string name="qs_tile_shape_rounded_square_smooth">角丸四角形 (スムーズ)</string>
+    <string name="qs_tile_shape_rounded_square">角丸四角形</string>
+    <string name="qs_tile_shape_square">四角形</string>
     <!-- Force dark mode -->
     <string name="force_dark_title">サードパーティアプリにダークモードを強制する</string>
     <string name="force_dark_summary">ダークモードに対応していないアプリに暗い色を強制します。一部の表示がおかしくなることがあります。</string>
@@ -1086,38 +1086,38 @@
     <string name="force_lte_ca_title">LTE carrier aggregation</string>
     <string name="force_lte_ca_summary">Enhances LTE bandwidth by aggregating supported bands</string>
     <!-- QS on lockscreen -->
-    <string name="lockscreen_quick_settings_title">QS on lock screen</string>
-    <string name="lockscreen_quick_settings_summary">Allow swipe down on lock screen to view Quick Settings</string>
+    <string name="lockscreen_quick_settings_title">ロック画面でのクイック設定</string>
+    <string name="lockscreen_quick_settings_summary">ロック画面で下にスワイプしてクイック設定を表示できるようにする</string>
     <!-- Lock screen media art -->
     <string name="ls_media_art_title">メディアのカバーアート</string>
     <string name="ls_media_art_summary">使用可能な場合、カバーアートを表示します</string>
     <!-- Lock screen media art on Ambient Display -->
-    <string name="ambient_media_art_title">Ambient media cover art</string>
-    <string name="ambient_media_art_summary">Display media cover art on Ambient display when available</string>
+    <string name="ambient_media_art_title">アンビエントメディアカバーアート</string>
+    <string name="ambient_media_art_summary">利用可能な場合は、アンビエント表示にメディアカバーアートを表示します</string>
     <!-- Lock screen album art filter -->
     <string name="ls_media_art_filter_title">メディアカバーアートのフィルター</string>
     <string name="ls_media_art_filter_none">なし</string>
     <string name="ls_media_art_filter_blur">ぼかし</string>
     <string name="ls_media_art_filter_grayscale">グレースケール</string>
-    <string name="ls_media_art_filter_sepia">Sepia</string>
+    <string name="ls_media_art_filter_sepia">セピア</string>
     <string name="ls_media_art_filter_tint">アクセント色</string>
-    <string name="ls_media_art_filter_invert">Invert</string>
-    <string name="ls_media_art_filter_grayblur">Grayscale and blur</string>
+    <string name="ls_media_art_filter_invert">反転</string>
+    <string name="ls_media_art_filter_grayblur">グレースケールとぼかし</string>
     <!-- Lock screen media art fade level -->
-    <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
-    <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
+    <string name="ls_media_art_fade_level_title">メディアカバーアートのフェードレベル</string>
+    <string name="ls_media_art_fade_level_summary">メディアカバーアートのフェードレベルを設定します</string>
     <!-- Lock screen media art blur level -->
-    <string name="ls_media_art_blur_level_title">Media art blur level</string>
-    <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
+    <string name="ls_media_art_blur_level_title">メディアアートのぼかしレベル</string>
+    <string name="ls_media_art_blur_level_summary">フィルターがぼかしの場合に適用されるぼかしの強度</string>
     <!-- Pulse music visualizer -->
     <string name="pulse_settings_title">Pulse Visualizer</string>
     <string name="pulse_settings_summary">ナビゲーションバーとロック画面にグラフィックイコライザーを表示します</string>
     <string name="ambient_pulse_enabled_title">アンビエント Pulse</string>
-    <string name="ambient_pulse_enabled_summary">Show visualizer on Ambient Display</string>
-    <string name="pulse_bass_haptics_title">Bass haptics</string>
-    <string name="pulse_bass_haptics_none">No subtle vibration on sharp bass spikes</string>
-    <string name="pulse_bass_haptics_running">Only when pulse is showing</string>
-    <string name="pulse_bass_haptics_always">Whenever media playback is active</string>
+    <string name="ambient_pulse_enabled_summary">アンビエント表示にビジュアライザーを表示する</string>
+    <string name="pulse_bass_haptics_title">低音ハプティクス</string>
+    <string name="pulse_bass_haptics_none">低音スパイクでの振動をオフ</string>
+    <string name="pulse_bass_haptics_running">Pulse 表示中のみ振動させる</string>
+    <string name="pulse_bass_haptics_always">メディア再生中は常に振動させる</string>
     <string name="pulse_rounded_bars_title">Rounded bars</string>
     <string name="pulse_rounded_bars_summary">ビジュアライザーのバーの角を丸くする</string>
     <string name="pulse_color">ビジュアライザーの色</string>
@@ -1126,28 +1126,28 @@
     <string name="pulse_color_accent">アクセント</string>
     <string name="pulse_bar_count_title">バーの数</string>
     <string name="pulse_bar_count_summary">ビジュアライザーに表示するバーの数を設定します</string>
-    <string name="pulse_bar_count_units">bars</string>
+    <string name="pulse_bar_count_units">本</string>
     <string name="pulse_renderer">ビジュアライザーのスタイル</string>
     <string name="pulse_renderer_solid">ソリッドライン</string>
     <string name="pulse_renderer_fading">フェーディングブロック</string>
-    <string name="pulse_renderer_neon_glow">Neon glow</string>
-    <string name="pulse_renderer_retro_vu_meter">Retro VU meter</string>
-    <string name="pulse_renderer_minimal_wave">Minimal wave</string>
+    <string name="pulse_renderer_neon_glow">ネオングロー</string>
+    <string name="pulse_renderer_retro_vu_meter">レトロ VU メーター</string>
+    <string name="pulse_renderer_minimal_wave">ミニマルウェーブ</string>
     <string name="pulse_renderer_sparkle">スパークル（きらめき）</string>
-    <string name="pulse_renderer_matrix">Matrix</string>
-    <string name="pulse_renderer_particle">Particle</string>
-    <string name="pulse_renderer_waveform">Waveform</string>
+    <string name="pulse_renderer_matrix">マトリックス</string>
+    <string name="pulse_renderer_particle">パーティクル</string>
+    <string name="pulse_renderer_waveform">ウェーブ</string>
     <!-- Notification Row -->
-    <string name="notification_row_transparency_title">Translucent notifications</string>
+    <string name="notification_row_transparency_title">半透明な通知</string>
     <string name="notification_row_transparency_summary">Set translucent background for notifications in QS</string>
-    <string name="notification_row_transparency_lockscreen_title">Translucent lockscreen notifications</string>
+    <string name="notification_row_transparency_lockscreen_title">半透明なロック画面の通知</string>
     <string name="notification_row_transparency_lockscreen_summary">Set translucent background for notifications in lockscreen</string>
     <!-- Ambient Wallpaper -->
-    <string name="doze_always_on_wallpaper_title">Ambient wallpaper</string>
-    <string name="doze_always_on_wallpaper_summary">Show lockscreen wallpaper on Ambient Display</string>
+    <string name="doze_always_on_wallpaper_title">アンビエント壁紙</string>
+    <string name="doze_always_on_wallpaper_summary">アンビエント表示にロック画面の壁紙を表示する</string>
     <!-- Squiggle animation for media notification -->
-    <string name="media_squiggle_animation_title">Squiggle animation</string>
-    <string name="media_squiggle_animation_summary">Show seekbar squiggle animation in media panel when playing media</string>
+    <string name="media_squiggle_animation_title">波線アニメーション</string>
+    <string name="media_squiggle_animation_summary">メディア再生時にメディアパネルでシークバーを波線で表示します</string>
     <!-- Menu option for not validating the EAP server -->
     <string name="wifi_do_not_validate_eap_server">Do not validate</string>
     <!-- Warning message displayed if user choses not to validate the EAP server -->
@@ -1175,10 +1175,10 @@
     <string name="cycle_type_daily_title">Usage cycle reset hour</string>
     <string name="cycle_type_daily_sub">Hour of each day:</string>
     <!-- Gradient styles -->
-    <string name="gradient_settings_title">Gradients customization</string>
+    <string name="gradient_settings_title">グラデーションのカスタマイズ</string>
     <string name="gradient_settings_summary">Apply gradient colors to various system elements</string>
-    <string name="gradient_elements_category">System elements</string>
-    <string name="gradient_colors_category">Gradient colors</string>
+    <string name="gradient_elements_category">システムの要素</string>
+    <string name="gradient_colors_category">グラデーションカラー</string>
     <string name="qs_tile_gradient_title">QS tiles gradient</string>
     <string name="qs_tile_gradient_summary">Enable gradient backgrounds for QS tiles</string>
     <string name="qs_brightness_slider_gradient_title">QS brightness slider gradient</string>
@@ -1191,25 +1191,25 @@
     <string name="custom_gradient_start_color_title">Gradient start color</string>
     <string name="custom_gradient_end_color_title">Gradient end color</string>
     <!-- Custom clock style -->
-    <string name="lockscreen_custom_clock_style_title">Custom clock style</string>
-    <string name="lockscreen_custom_clock_style_summary">Configure lock screen clock styles</string>
+    <string name="lockscreen_custom_clock_style_title">カスタム時計スタイル</string>
+    <string name="lockscreen_custom_clock_style_summary">ロック画面の時計のスタイルを設定します</string>
     <string name="lockscreen_custom_clock_style_highlight_text">Swipe left or right to preview clock styles</string>
     <string name="lockscreen_custom_clock_style_info">Custom clock style replaces AOSP clock styles with custom clocks. Smartspace will be disabled. You can enable and use custom weather instead.</string>
     <string name="lockscreen_custom_clock_opacity_title">Custom clock opacity</string>
     <string name="lockscreen_custom_clock_opacity_summary">Adjust the transparency of custom clock style</string>
     <string name="lockscreen_custom_clock_frame_margin_top_title">Custom clock height</string>
     <string name="lockscreen_custom_clock_frame_margin_top_summary">Adjust the height of custom clock style</string>
-    <string name="lockscreen_custom_clock_color_mode_title">Custom clock color mode</string>
-    <string name="lockscreen_custom_clock_size_title">Clock size</string>
+    <string name="lockscreen_custom_clock_color_mode_title">カスタムクロックのカラーモード</string>
+    <string name="lockscreen_custom_clock_size_title">時計のサイズ</string>
     <string name="lockscreen_custom_clock_size_summary">Scale the lock screen clock</string>
     <string name="lockscreen_custom_clock_aod_anim_title">Custom clock AOD animation</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">Set AOD animation for custom clock style</string>
     <!-- QS Panel style -->
-    <string name="qs_panel_style_title">QS Panel style</string>
-    <string name="qs_panel_style_card">Card style</string>
-    <string name="qs_panel_style_classic">Classic style</string>
+    <string name="qs_panel_style_title">クイック設定パネルのスタイル</string>
+    <string name="qs_panel_style_card">カードスタイル</string>
+    <string name="qs_panel_style_classic">クラシックスタイル</string>
     <string name="shape_circle">円</string>
-    <string name="shape_square">Square</string>
+    <string name="shape_square">四角形</string>
     <string name="shape_four_sided_cookie">4-sided cookie</string>
     <string name="shape_seven_sided_cookie">7-sided cookie</string>
     <string name="shape_arch">Arch</string>
@@ -1237,112 +1237,112 @@
     <string name="shape_dotted_circle">点線の円</string>
     <string name="shape_squaremedo">Squaremedo</string>
     <!-- Dynamic Bar -->
-    <string name="dynamic_bar">Dynamic Bar</string>
-    <string name="dynamic_bar_summary">Smart status bar chip for active events like recording, media, timers, and more</string>
-    <string name="dynamic_bar_enable">Enable Dynamic Bar</string>
-    <string name="dynamic_bar_enable_summary">Show a dynamic chip on the status bar for live events</string>
-    <string name="dynamic_bar_keyguard_enable">Dynamic bar on lock screen</string>
-    <string name="dynamic_bar_keyguard_enable_summary">Replace keyguard indication with dynamic bar chip on the lock screen with controls and quick actions</string>
-    <string name="dynamic_bar_keyguard_battery_chip">Battery info on lock screen</string>
+    <string name="dynamic_bar">ダイナミックバー</string>
+    <string name="dynamic_bar_summary">録音、メディア、タイマーなどのアクティブなイベントを表示するスマートステータスバーチップ</string>
+    <string name="dynamic_bar_enable">ダイナミックバーを有効化</string>
+    <string name="dynamic_bar_enable_summary">ライブイベント用にステータスバーにダイナミックチップを表示します</string>
+    <string name="dynamic_bar_keyguard_enable">ロック画面にダイナミックバーを表示</string>
+    <string name="dynamic_bar_keyguard_enable_summary">ロック画面のキーガード表示を、コントロールとクイックアクションを備えたダイナミックバーチップに置き換えます</string>
+    <string name="dynamic_bar_keyguard_battery_chip">ロック画面でバッテリー情報を表示</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">表示しない</string>
-    <string name="dynamic_bar_keyguard_battery_chip_charging">Only when charging</string>
-    <string name="dynamic_bar_keyguard_battery_chip_always">Always show</string>
-    <string name="dynamic_bar_keyguard_compact_chip">Compact lock screen chip</string>
-    <string name="dynamic_bar_keyguard_compact_chip_summary">Always use the compact chip style on the lockscreen. When disabled, compact mode is used only when space is limited.</string>
-    <string name="dynamic_bar_events">Events</string>
-    <string name="dynamic_bar_event_audio_recording">Audio recording</string>
-    <string name="dynamic_bar_event_audio_recording_summary">Voice recorder and audio capture</string>
-    <string name="dynamic_bar_event_call">Ongoing call</string>
-    <string name="dynamic_bar_event_call_summary">Incoming and active calls</string>
-    <string name="dynamic_bar_event_media">Media playback</string>
-    <string name="dynamic_bar_event_media_summary">Now playing music and audio controls</string>
+    <string name="dynamic_bar_keyguard_battery_chip_charging">充電中のみ</string>
+    <string name="dynamic_bar_keyguard_battery_chip_always">常に表示</string>
+    <string name="dynamic_bar_keyguard_compact_chip">コンパクトなロック画面チップ</string>
+    <string name="dynamic_bar_keyguard_compact_chip_summary">常にロック画面でコンパクトチップスタイルを使用します。無効にすると、スペースが限られている場合にのみコンパクトモードが使用されます。</string>
+    <string name="dynamic_bar_events">イベント</string>
+    <string name="dynamic_bar_event_audio_recording">音声の録音</string>
+    <string name="dynamic_bar_event_audio_recording_summary">ボイスレコーダーとオーディオキャプチャ</string>
+    <string name="dynamic_bar_event_call">通話中</string>
+    <string name="dynamic_bar_event_call_summary">着信およびアクティブな通話</string>
+    <string name="dynamic_bar_event_media">メディアの再生</string>
+    <string name="dynamic_bar_event_media_summary">再生中の音楽とオーディオコントロール</string>
     <string name="dynamic_bar_event_notification">通知</string>
-    <string name="dynamic_bar_event_notification_summary">Incoming notification alerts</string>
-    <string name="dynamic_bar_compact_notifications">Compact notifications</string>
-    <string name="dynamic_bar_compact_notifications_summary">Show notifications as a small chip first, tap to expand</string>
-    <string name="dynamic_bar_event_timer">Timer</string>
-    <string name="dynamic_bar_event_timer_summary">Countdown timer from clock app</string>
-    <string name="dynamic_bar_event_stopwatch">Stopwatch</string>
-    <string name="dynamic_bar_event_stopwatch_summary">Running stopwatch from clock app</string>
-    <string name="dynamic_bar_event_alarm">Alarm</string>
-    <string name="dynamic_bar_event_alarm_summary">Ringing and upcoming alarms</string>
-    <string name="dynamic_bar_event_charging">Charging started</string>
-    <string name="dynamic_bar_event_charging_summary">Battery level when plugged in</string>
+    <string name="dynamic_bar_event_notification_summary">受信した通知のアラート</string>
+    <string name="dynamic_bar_compact_notifications">コンパクトな通知</string>
+    <string name="dynamic_bar_compact_notifications_summary">通知を最初に小さなチップとして表示し、タップで展開します</string>
+    <string name="dynamic_bar_event_timer">タイマー</string>
+    <string name="dynamic_bar_event_timer_summary">時計アプリのカウントダウンタイマー</string>
+    <string name="dynamic_bar_event_stopwatch">ストップウォッチ</string>
+    <string name="dynamic_bar_event_stopwatch_summary">時計アプリのストップウォッチ</string>
+    <string name="dynamic_bar_event_alarm">アラーム</string>
+    <string name="dynamic_bar_event_alarm_summary">鳴動中および今後のアラーム</string>
+    <string name="dynamic_bar_event_charging">充電開始</string>
+    <string name="dynamic_bar_event_charging_summary">電源接続時のバッテリー残量</string>
     <string name="dynamic_bar_event_bluetooth">Bluetooth</string>
-    <string name="dynamic_bar_event_bluetooth_summary">Device connection status</string>
-    <string name="dynamic_bar_event_hotspot">Hotspot</string>
-    <string name="dynamic_bar_event_hotspot_summary">Mobile hotspot active indicator</string>
-    <string name="dynamic_bar_event_ringer">Ringer Mode</string>
-    <string name="dynamic_bar_event_ringer_summary">Silent, vibrate, and ring mode changes</string>
+    <string name="dynamic_bar_event_bluetooth_summary">デバイスの接続状態</string>
+    <string name="dynamic_bar_event_hotspot">ホットスポット</string>
+    <string name="dynamic_bar_event_hotspot_summary">モバイルホットスポットのアクティブインジケーター</string>
+    <string name="dynamic_bar_event_ringer">着信モード</string>
+    <string name="dynamic_bar_event_ringer_summary">サイレント、バイブレーション、着信モードの変更</string>
     <string name="dynamic_bar_event_vpn">VPN</string>
-    <string name="dynamic_bar_event_vpn_summary">Active VPN connection indicator</string>
-    <string name="dynamic_bar_event_clipboard">Clipboard</string>
-    <string name="dynamic_bar_event_clipboard_summary">Copied text and image preview</string>
+    <string name="dynamic_bar_event_vpn_summary">アクティブな VPN 接続インジケーター</string>
+    <string name="dynamic_bar_event_clipboard">クリップボード</string>
+    <string name="dynamic_bar_event_clipboard_summary">コピーされたテキストと画像のプレビュー</string>
     <string name="dynamic_bar_event_torch">ライト</string>
-    <string name="dynamic_bar_event_torch_summary">Flashlight toggle and brightness</string>
-    <string name="dynamic_bar_event_ongoing">Ongoing activities</string>
-    <string name="dynamic_bar_event_ongoing_summary">Navigation, deliveries, and other live activities</string>
-    <string name="dynamic_bar_event_sports">Sports</string>
-    <string name="dynamic_bar_event_sports_summary">Live scores and game updates</string>
-    <string name="dynamic_bar_event_app_switch">Recent app switch</string>
-    <string name="dynamic_bar_event_app_switch_summary">Show chip when switching between recent apps</string>
-    <string name="dynamic_bar_event_biometric">Biometric unlock</string>
-    <string name="dynamic_bar_event_biometric_summary">Show chip on fingerprint or face unlock</string>
-    <string name="dynamic_bar_guide_title">How to use Dynamic Bar</string>
-    <string name="dynamic_bar_guide_chip">Events appear in the status bar showing active events like recording, media playback, and timers</string>
-    <string name="dynamic_bar_guide_swipe">When multiple events are active, swipe left or right on the chip to cycle through them</string>
-    <string name="dynamic_bar_guide_expand">Tap a chip to expand it into a detailed card with controls and additional information</string>
-    <string name="dynamic_bar_guide_dismiss">Swipe the expanded card away to dismiss it. The event continues in the background</string>
-    <string name="dynamic_bar_guide_keyguard">Dynamic bar chip also appears at the bottom of the lock screen with playback controls and quick actions</string>
-    <string name="dynamic_bar_guide_chip_title">Chip appearance</string>
-    <string name="dynamic_bar_guide_swipe_title">Swipe between chips</string>
-    <string name="dynamic_bar_guide_expand_title">Tap to expand</string>
-    <string name="dynamic_bar_guide_dismiss_title">Swipe to dismiss</string>
-    <string name="dynamic_bar_guide_keyguard_title">Lock screen chip</string>
-    <string name="dynamic_bar_footer_title">About Dynamic Bar</string>
-    <string name="dynamic_bar_footer_body">Dynamic Bar transforms your status bar into an interactive hub. Status chips appear and animate based on system events, giving you at-a-glance information without interrupting your workflow.\n\nEach event type has its own accent color and expanded card with quick actions.</string>
+    <string name="dynamic_bar_event_torch_summary">フラッシュライトの切り替えと明るさ</string>
+    <string name="dynamic_bar_event_ongoing">進行中のアクティビティ</string>
+    <string name="dynamic_bar_event_ongoing_summary">ナビゲーション、配達、その他のライブアクティビティ</string>
+    <string name="dynamic_bar_event_sports">スポーツ</string>
+    <string name="dynamic_bar_event_sports_summary">ライブスコアと試合の更新情報</string>
+    <string name="dynamic_bar_event_app_switch">最近のアプリの切り替え</string>
+    <string name="dynamic_bar_event_app_switch_summary">最近使用したアプリを切り替えるときにチップを表示</string>
+    <string name="dynamic_bar_event_biometric">生体認証によるロック解除</string>
+    <string name="dynamic_bar_event_biometric_summary">指紋または顔認証によるロック解除時にチップを表示</string>
+    <string name="dynamic_bar_guide_title">ダイナミックバーの使い方</string>
+    <string name="dynamic_bar_guide_chip">録音、メディア再生、タイマーなどのアクティブなイベントがステータスバーに表示されます</string>
+    <string name="dynamic_bar_guide_swipe">複数のイベントがアクティブな場合、チップを左右にスワイプして切り替えることができます</string>
+    <string name="dynamic_bar_guide_expand">チップをタップすると、コントロールや詳細情報が含まれた詳細カードに展開されます</string>
+    <string name="dynamic_bar_guide_dismiss">展開されたカードをスワイプして閉じます。イベントはバックグラウンドで継続されます</string>
+    <string name="dynamic_bar_guide_keyguard">ダイナミックバーチップは、再生コントロールやクイックアクションとともにロック画面の下部にも表示されます</string>
+    <string name="dynamic_bar_guide_chip_title">チップの表示</string>
+    <string name="dynamic_bar_guide_swipe_title">チップをスワイプ</string>
+    <string name="dynamic_bar_guide_expand_title">タップして展開</string>
+    <string name="dynamic_bar_guide_dismiss_title">スワイプして閉じる</string>
+    <string name="dynamic_bar_guide_keyguard_title">ロック画面のチップ</string>
+    <string name="dynamic_bar_footer_title">ダイナミックバーについて</string>
+    <string name="dynamic_bar_footer_body">ダイナミックバーは、ステータスバーをインタラクティブなハブに変えます。システムイベントに基づいてステータスチップが表示・アニメーションされるため、作業を中断することなく一目で情報を確認できます。\n\n各イベントタイプには独自のアクセントカラーがあり、展開されたカードからクイックアクションが可能です。</string>
     <!-- Themes -->
-    <string name="custom_system_theme_title">Themes</string>
-    <string name="custom_system_theme_summary">Customize system appearance with themes and icon packs</string>
+    <string name="custom_system_theme_title">テーマ</string>
+    <string name="custom_system_theme_summary">テーマやアイコンパックでシステムの見た目をカスタマイズする</string>
     <!-- Misc preference entries -->
     <string name="play_integrity_fix_title">Play Integrity Fix</string>
-    <string name="play_integrity_fix_summary">Manage PIF configuration and device fingerprints for basic integrity</string>
+    <string name="play_integrity_fix_summary">基本的な整合性のために、PIF設定とデバイスのフィンガープリントを管理します</string>
     <string name="tricky_store_title">TrickyStore</string>
-    <string name="tricky_store_summary">Manage keybox and target apps for attestation for strong integrity</string>
-    <string name="game_spoofing_title">Game spoofing</string>
-    <string name="game_spoofing_summary">Spoof device properties for specific games</string>
+    <string name="tricky_store_summary">強力な整合性のために、keybox とターゲットアプリを管理します</string>
+    <string name="game_spoofing_title">ゲームスプーフィング</string>
+    <string name="game_spoofing_summary">特定のゲーム向けにデバイスプロパティを偽装</string>
     <!-- Play Integrity Fix -->
-    <string name="pif_status">Status</string>
-    <string name="pif_active_config">Active configuration</string>
-    <string name="pif_no_config">No configuration loaded</string>
-    <string name="pif_config_loaded">Configuration loaded</string>
-    <string name="pif_fetch_pixel_beta">Fetch Pixel Beta fingerprint</string>
-    <string name="pif_fetch_pixel_beta_summary">Download latest Pixel Beta fingerprint from Google</string>
-    <string name="pif_fetching">Fetching from Google\u2026</string>
-    <string name="pif_fetched_model">Fetched fingerprint for %s</string>
-    <string name="pif_import_config">Import configuration</string>
-    <string name="pif_import_config_summary">Import PIF config from a file</string>
-    <string name="pif_imported_as">Imported as %s</string>
-    <string name="pif_delete_config">Delete active configuration</string>
-    <string name="pif_delete_config_summary">Remove the currently active config file</string>
-    <string name="pif_delete_title">Delete %s?</string>
-    <string name="pif_delete_message">This configuration file will be permanently removed.</string>
+    <string name="pif_status">ステータス</string>
+    <string name="pif_active_config">アクティブな設定</string>
+    <string name="pif_no_config">設定が読み込まれていません</string>
+    <string name="pif_config_loaded">設定が読み込まれました</string>
+    <string name="pif_fetch_pixel_beta">Pixel Beta フィンガープリントを取得</string>
+    <string name="pif_fetch_pixel_beta_summary">Google から最新の Pixel Beta フィンガープリントをダウンロードします</string>
+    <string name="pif_fetching">Google から取得中\u2026</string>
+    <string name="pif_fetched_model">%s のフィンガープリントを取得しました</string>
+    <string name="pif_import_config">設定をインポート</string>
+    <string name="pif_import_config_summary">ファイルからPIF設定をインポートします</string>
+    <string name="pif_imported_as">%s としてインポートされました</string>
+    <string name="pif_delete_config">アクティブな設定を削除</string>
+    <string name="pif_delete_config_summary">現在アクティブな設定ファイルを削除</string>
+    <string name="pif_delete_title">%s を削除しますか？</string>
+    <string name="pif_delete_message">この設定ファイルは完全に削除されます。</string>
     <string name="pif_delete">削除</string>
-    <string name="pif_deleted">Deleted %s</string>
+    <string name="pif_deleted">%s を削除しました</string>
     <string name="pif_settings">設定</string>
-    <string name="pif_spoof_photos">Spoof Google Photos</string>
-    <string name="pif_spoof_photos_summary">Unlimited original quality backup</string>
-    <string name="pif_config_details">Configuration details</string>
-    <string name="pif_failed">Failed: %s</string>
-    <string name="pif_select_device">Select device</string>
-    <string name="pif_generating">Generating configuration\u2026</string>
+    <string name="pif_spoof_photos">Google フォトを偽装</string>
+    <string name="pif_spoof_photos_summary">オリジナル品質で無制限にバックアップ</string>
+    <string name="pif_config_details">設定の詳細</string>
+    <string name="pif_failed">失敗: %s</string>
+    <string name="pif_select_device">デバイスを選択</string>
+    <string name="pif_generating">設定を生成中\u2026</string>
     <string name="pif_footer_title">Passing basic integrity</string>
-    <string name="pif_footer_body">1. Tap \"Fetch Pixel Beta fingerprint\" and select a device from the available list.\n2. If no devices are found, import a working PIF config from a trusted source. Config files are not provided; you must find one yourself.\n3. Recheck your Play Integrity status.\n\nAlways delete the active configuration before loading a new one. Loading an expired PIF config will cause strong integrity via TrickyStore to fail, even with a valid keybox.</string>
-    <string name="pif_select_channel">Select channel</string>
+    <string name="pif_footer_body">1. \"Pixel Beta フィンガープリントを取得\" をタップし、利用可能なリストからデバイスを選択します。\n2. デバイスが見つからない場合は、信頼できるソースから動作するPIF設定をインポートしてください。設定ファイルは提供されていませんので、ご自身で入手する必要があります。\n3. Play Integrityのステータスを再確認してください。\n\n新しい設定を読み込む前に、必ず現在有効な設定を削除してください。期限切れのPIF設定を読み込むと、有効なKeyboxを使用していても、TrickyStore経由の「強力な整合性」チェックが失敗する原因となります。</string>
+    <string name="pif_select_channel">チャンネルを選択</string>
     <string name="pif_channel_latest_release">Latest release</string>
     <string name="pif_channel_canary_release">Canary release</string>
     <!-- TrickyStore -->
-    <string name="ts_keybox_management">Keybox management</string>
+    <string name="ts_keybox_management">Keyboxの管理</string>
     <string name="ts_import_keybox">Import keybox</string>
     <string name="ts_no_keybox">No keybox installed</string>
     <string name="ts_keybox_installed">Keybox installed</string>
@@ -1352,14 +1352,14 @@
     <string name="ts_delete_keybox_title">Delete keybox?</string>
     <string name="ts_delete_keybox_message">The keybox file will be permanently removed.</string>
     <string name="ts_keybox_deleted">Keybox deleted</string>
-    <string name="ts_target_configuration">Target configuration</string>
+    <string name="ts_target_configuration">ターゲット設定</string>
     <string name="ts_manage_target_apps">Manage target apps</string>
     <string name="ts_no_targets">No target apps configured</string>
     <string name="ts_target_apps_count">%d apps configured</string>
     <string name="ts_import_target_list">Import target list</string>
     <string name="ts_import_target_list_summary">Import target.txt from a file</string>
     <string name="ts_target_list_imported">Target list imported</string>
-    <string name="ts_failed">Failed: %s</string>
+    <string name="ts_failed">失敗: %s</string>
     <string name="ts_footer_title">Passing strong integrity</string>
     <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
     <string name="ts_verification_mode">Verification mode</string>
@@ -1375,8 +1375,8 @@
     <string name="ts_mode_leaf">Leaf</string>
     <string name="ts_mode_cert">Cert</string>
     <!-- Game Spoofing -->
-    <string name="gs_enable">Enable game spoofing</string>
-    <string name="gs_enable_summary">Spoof device properties for configured games</string>
+    <string name="gs_enable">ゲームスプーフィングを有効化</string>
+    <string name="gs_enable_summary">設定したゲームにデバイスプロパティを偽装</string>
     <string name="gs_add_app">Add game</string>
     <string name="gs_add_app_summary">Select an app and device profile to spoof</string>
     <string name="gs_reload">Reload</string>
@@ -1389,20 +1389,20 @@
     <string name="gs_edit_props">Edit properties</string>
     <string name="gs_change_profile">Change device profile</string>
     <string name="gs_remove">Remove</string>
-    <string name="gs_remove_title">Remove game?</string>
-    <string name="gs_remove_message">Remove %s from game spoofing?</string>
+    <string name="gs_remove_title">ゲームを削除しますか？</string>
+    <string name="gs_remove_message">%s をゲームスプーフィングから削除しますか？</string>
     <string name="gs_edit_app">Edit %s</string>
     <string name="gs_key">Key</string>
     <string name="gs_value">Value</string>
     <string name="gs_save">保存</string>
     <string name="gs_config_saved">Configuration saved</string>
     <string name="gs_loading_apps">Loading apps\u2026</string>
-    <string name="gs_failed">Failed: %s</string>
+    <string name="gs_failed">失敗: %s</string>
     <!-- Build details -->
     <string name="build_maintainer_title">Device maintainer</string>
     <string name="build_maintainer_summary">Unofficial</string>
     <!-- Settings UI -->
-    <string name="settings_icon_title">Settings style</string>
+    <string name="settings_icon_title">設定のスタイル</string>
     <string name="settings_icon_summary">Customize Settings app UI style</string>
     <string name="settings_icon_style_title">Settings icon style</string>
     <string name="settings_icon_style_expressive">Material expressive</string>
@@ -1414,16 +1414,16 @@
     <string name="settings_icon_style_accent_icon">Accent icon only</string>
     <string name="settings_icon_corner_style_title">Settings icons corner style</string>
     <string name="settings_icon_corner_style_circle">円</string>
-    <string name="settings_icon_corner_style_rounded_square">Rounded square</string>
+    <string name="settings_icon_corner_style_rounded_square">角丸四角形</string>
     <string name="settings_icon_random_colors_title">Random colors</string>
     <string name="settings_icon_random_colors_summary">Use random colors for each icon</string>
     <!-- Volume slider -->
-    <string name="qs_show_volume_slider_title">Slider mode</string>
-    <string name="qs_show_volume_slider_hide">Only brightness slider</string>
-    <string name="qs_show_volume_slider_both">Both brightness and volume sliders</string>
-    <string name="qs_show_volume_slider_only">Only volume slider</string>
-    <string name="qs_show_ringer_mode_title">Ringer mode</string>
-    <string name="qs_show_ringer_mode_summary">Show ringer mode icon with the volume slider</string>
+    <string name="qs_show_volume_slider_title">スライダーモード</string>
+    <string name="qs_show_volume_slider_hide">明るさスライダーのみ</string>
+    <string name="qs_show_volume_slider_both">明るさスライダーと音量スライダー</string>
+    <string name="qs_show_volume_slider_only">音量スライダーのみ</string>
+    <string name="qs_show_ringer_mode_title">着信モード</string>
+    <string name="qs_show_ringer_mode_summary">音量スライダーに着信モードアイコンを表示</string>
     <!-- App list fragment -->
     <string name="app_list_search">Search</string>
     <string name="app_list_search_apps">アプリを検索</string>
