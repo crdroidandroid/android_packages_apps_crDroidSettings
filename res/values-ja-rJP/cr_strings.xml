@@ -499,9 +499,6 @@
     <!-- Pocket judge -->
     <string name="pocket_judge_title">ポケット検出</string>
     <string name="pocket_judge_summary">ポケットに入っている時にタッチやボタン入力を無効化します</string>
-    <!-- Screen-on memory reclaim -->
-    <string name="screen_on_memory_reclaim_title">画面点灯時のメモリ解放</string>
-    <string name="screen_on_memory_reclaim_summary">画面がオンになった直後に、キャッシュされたバックグラウンドアプリを終了してメモリを解放します</string>
     <!-- Disable HW keys -->
     <string name="hwkeys_disabled_title">ハードウェアキーを無効化</string>
     <string name="hwkeys_disabled_summary">ハードウェアキーでのナビゲーションを無効化します</string>
@@ -879,7 +876,7 @@
     <string name="status_bar_logo_summary">ステータスバーの左右にカスタムロゴを表示します</string>
     <string name="status_bar_logo_position_title">ロゴの位置</string>
     <string name="status_bar_logo_style_title">ロゴのスタイル</string>
-    <string name="status_bar_logo_style_summary">Select custom logo to be displayed</string>
+    <string name="status_bar_logo_style_summary">表示するカスタムロゴを選択</string>
     <string name="status_bar_logo_style_crdroid">crDroid</string>
     <string name="status_bar_logo_style_android">Android</string>
     <string name="status_bar_logo_style_adidas">Adidas</string>
@@ -1083,8 +1080,8 @@
     <!-- Brightness Slider Style -->
     <string name="qs_brightness_slider_shape_title">明るさスライダーの形</string>
     <!-- Force LTE_CA -->
-    <string name="force_lte_ca_title">LTE carrier aggregation</string>
-    <string name="force_lte_ca_summary">Enhances LTE bandwidth by aggregating supported bands</string>
+    <string name="force_lte_ca_title">LTE キャリアアグリゲーション</string>
+    <string name="force_lte_ca_summary">サポートされている帯域を集約することでLTE帯域幅を強化します</string>
     <!-- QS on lockscreen -->
     <string name="lockscreen_quick_settings_title">ロック画面でのクイック設定</string>
     <string name="lockscreen_quick_settings_summary">ロック画面で下にスワイプしてクイック設定を表示できるようにする</string>
@@ -1110,7 +1107,7 @@
     <string name="ls_media_art_blur_level_title">メディアアートのぼかしレベル</string>
     <string name="ls_media_art_blur_level_summary">フィルターがぼかしの場合に適用されるぼかしの強度</string>
     <!-- Pulse music visualizer -->
-    <string name="pulse_settings_title">Pulse Visualizer</string>
+    <string name="pulse_settings_title">Pulse ビジュアライザー</string>
     <string name="pulse_settings_summary">ナビゲーションバーとロック画面にグラフィックイコライザーを表示します</string>
     <string name="ambient_pulse_enabled_title">アンビエント Pulse</string>
     <string name="ambient_pulse_enabled_summary">アンビエント表示にビジュアライザーを表示する</string>
@@ -1118,10 +1115,10 @@
     <string name="pulse_bass_haptics_none">低音スパイクでの振動をオフ</string>
     <string name="pulse_bass_haptics_running">Pulse 表示中のみ振動させる</string>
     <string name="pulse_bass_haptics_always">メディア再生中は常に振動させる</string>
-    <string name="pulse_rounded_bars_title">Rounded bars</string>
+    <string name="pulse_rounded_bars_title">角丸バー</string>
     <string name="pulse_rounded_bars_summary">ビジュアライザーのバーの角を丸くする</string>
     <string name="pulse_color">ビジュアライザーの色</string>
-    <string name="pulse_color_lavalamp">Lavalamp</string>
+    <string name="pulse_color_lavalamp">色が変化するランプ</string>
     <string name="pulse_color_album">アルバムアート</string>
     <string name="pulse_color_accent">アクセント</string>
     <string name="pulse_bar_count_title">バーの数</string>
@@ -1139,9 +1136,9 @@
     <string name="pulse_renderer_waveform">ウェーブ</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">半透明な通知</string>
-    <string name="notification_row_transparency_summary">Set translucent background for notifications in QS</string>
+    <string name="notification_row_transparency_summary">クイック設定の通知の背景を半透明にする</string>
     <string name="notification_row_transparency_lockscreen_title">半透明なロック画面の通知</string>
-    <string name="notification_row_transparency_lockscreen_summary">Set translucent background for notifications in lockscreen</string>
+    <string name="notification_row_transparency_lockscreen_summary">ロック画面の通知の背景を半透明にする</string>
     <!-- Ambient Wallpaper -->
     <string name="doze_always_on_wallpaper_title">アンビエント壁紙</string>
     <string name="doze_always_on_wallpaper_summary">アンビエント表示にロック画面の壁紙を表示する</string>
@@ -1149,93 +1146,93 @@
     <string name="media_squiggle_animation_title">波線アニメーション</string>
     <string name="media_squiggle_animation_summary">メディア再生時にメディアパネルでシークバーを波線で表示します</string>
     <!-- Menu option for not validating the EAP server -->
-    <string name="wifi_do_not_validate_eap_server">Do not validate</string>
+    <string name="wifi_do_not_validate_eap_server">検証しない</string>
     <!-- Warning message displayed if user choses not to validate the EAP server -->
-    <string name="wifi_do_not_validate_eap_server_warning">No certificate specified. Your connection will not be private.</string>
+    <string name="wifi_do_not_validate_eap_server_warning">証明書が指定されていません。この接続ではプライバシーは保護されません。</string>
     <!-- Multi Audio Focus -->
-    <string name="multi_audio_focus_title">Multi audio focus</string>
-    <string name="multi_audio_focus_summary">Allow multiple apps to play audio simultaneously</string>
+    <string name="multi_audio_focus_title">マルチオーディオフォーカス</string>
+    <string name="multi_audio_focus_summary">複数のアプリが同時にオーディオを再生できるようにします</string>
     <!-- Locale Picker -->
-    <string name="clear_search_query_description">Clear query</string>
-    <string name="language_picker_page">Language picker page</string>
-    <string name="search_region">Search regions</string>
-    <string name="search_region_page">Search region page</string>
+    <string name="clear_search_query_description">検索キーワードを削除</string>
+    <string name="language_picker_page">言語ピッカーページ</string>
+    <string name="search_region">地域を検索</string>
+    <string name="search_region_page">地域ページを検索</string>
     <!-- Data Usage Cycle -->
-    <string name="billing_cycle_type_title">Mobile data usage cycle type</string>
-    <string name="billing_cycle_type_monthly">Monthly</string>
-    <string name="billing_cycle_type_weekly">Weekly</string>
-    <string name="billing_cycle_type_daily">Daily</string>
-    <string name="billing_cycle_less_than_one_hour_left">Less than 1 hour left</string>
+    <string name="billing_cycle_type_title">モバイルデータ使用サイクルタイプ</string>
+    <string name="billing_cycle_type_monthly">毎月</string>
+    <string name="billing_cycle_type_weekly">毎週</string>
+    <string name="billing_cycle_type_daily">毎日</string>
+    <string name="billing_cycle_less_than_one_hour_left">残り1 時間未満</string>
     <string name="billing_cycle_hours_left">{count, plural,
-        =1      {# hour left}
-        other   {# hours left}
-        }</string>
-    <string name="cycle_type_weekly_title">Usage cycle reset day</string>
-    <string name="cycle_type_weekly_sub">Day of each week:\n1 = Monday</string>
-    <string name="cycle_type_daily_title">Usage cycle reset hour</string>
-    <string name="cycle_type_daily_sub">Hour of each day:</string>
+  =1    {残り # 時間}
+  other {残り # 時間}
+}</string>
+    <string name="cycle_type_weekly_title">使用サイクルのリセット日</string>
+    <string name="cycle_type_weekly_sub">各曜日:\n1 = 月曜日</string>
+    <string name="cycle_type_daily_title">使用サイクルのリセット日</string>
+    <string name="cycle_type_daily_sub">リセットする時刻：</string>
     <!-- Gradient styles -->
     <string name="gradient_settings_title">グラデーションのカスタマイズ</string>
-    <string name="gradient_settings_summary">Apply gradient colors to various system elements</string>
+    <string name="gradient_settings_summary">様々なシステム要素にグラデーションを適用します</string>
     <string name="gradient_elements_category">システムの要素</string>
     <string name="gradient_colors_category">グラデーションカラー</string>
-    <string name="qs_tile_gradient_title">QS tiles gradient</string>
-    <string name="qs_tile_gradient_summary">Enable gradient backgrounds for QS tiles</string>
-    <string name="qs_brightness_slider_gradient_title">QS brightness slider gradient</string>
-    <string name="qs_brightness_slider_gradient_summary">Enable gradient backgrounds for QS brightness slider</string>
-    <string name="volume_slider_gradient_title">Volume slider gradient</string>
-    <string name="volume_slider_gradient_summary">Enable gradient backgrounds for volume slider</string>
-    <string name="custom_gradient_color_mode_title">Gradient color mode</string>
-    <string name="custom_gradient_color_mode_auto">Auto mode</string>
-    <string name="custom_gradient_color_mode_custom">Custom mode</string>
-    <string name="custom_gradient_start_color_title">Gradient start color</string>
-    <string name="custom_gradient_end_color_title">Gradient end color</string>
+    <string name="qs_tile_gradient_title">クイック設定のグラデーション</string>
+    <string name="qs_tile_gradient_summary">クイック設定の背景にグラデーションを適用します</string>
+    <string name="qs_brightness_slider_gradient_title">クイック設定の明るさスライダーのグラデーション</string>
+    <string name="qs_brightness_slider_gradient_summary">クイック設定の明るさスライダーにグラデーションを適用します</string>
+    <string name="volume_slider_gradient_title">音量パネルのグラデーション</string>
+    <string name="volume_slider_gradient_summary">音量パネルの背景にグラデーションを適応します</string>
+    <string name="custom_gradient_color_mode_title">グラデーションの色</string>
+    <string name="custom_gradient_color_mode_auto">自動</string>
+    <string name="custom_gradient_color_mode_custom">カスタム</string>
+    <string name="custom_gradient_start_color_title">グラデーションの開始の色</string>
+    <string name="custom_gradient_end_color_title">グラデーションの終了の色</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">カスタム時計スタイル</string>
     <string name="lockscreen_custom_clock_style_summary">ロック画面の時計のスタイルを設定します</string>
-    <string name="lockscreen_custom_clock_style_highlight_text">Swipe left or right to preview clock styles</string>
-    <string name="lockscreen_custom_clock_style_info">Custom clock style replaces AOSP clock styles with custom clocks. Smartspace will be disabled. You can enable and use custom weather instead.</string>
-    <string name="lockscreen_custom_clock_opacity_title">Custom clock opacity</string>
-    <string name="lockscreen_custom_clock_opacity_summary">Adjust the transparency of custom clock style</string>
-    <string name="lockscreen_custom_clock_frame_margin_top_title">Custom clock height</string>
-    <string name="lockscreen_custom_clock_frame_margin_top_summary">Adjust the height of custom clock style</string>
+    <string name="lockscreen_custom_clock_style_highlight_text">左右にスワイプして時計スタイルをプレビューできます</string>
+    <string name="lockscreen_custom_clock_style_info">カスタム時計スタイルはAOSPの時計スタイルをカスタム時計に置き換えます。ロック画面のウィジェットは無効になります。代わりにカスタムの天候を有効にして使用できます。</string>
+    <string name="lockscreen_custom_clock_opacity_title">時計の透明度</string>
+    <string name="lockscreen_custom_clock_opacity_summary">カスタム時計スタイルの透明度を調整します</string>
+    <string name="lockscreen_custom_clock_frame_margin_top_title">時計の高さ</string>
+    <string name="lockscreen_custom_clock_frame_margin_top_summary">カスタム時計スタイルの高さを調整します</string>
     <string name="lockscreen_custom_clock_color_mode_title">カスタムクロックのカラーモード</string>
     <string name="lockscreen_custom_clock_size_title">時計のサイズ</string>
-    <string name="lockscreen_custom_clock_size_summary">Scale the lock screen clock</string>
-    <string name="lockscreen_custom_clock_aod_anim_title">Custom clock AOD animation</string>
-    <string name="lockscreen_custom_clock_aod_anim_summary">Set AOD animation for custom clock style</string>
+    <string name="lockscreen_custom_clock_size_summary">ロック画面の時計のサイズを変更する</string>
+    <string name="lockscreen_custom_clock_aod_anim_title">AODアニメーション</string>
+    <string name="lockscreen_custom_clock_aod_anim_summary">カスタム時計スタイルの AOD アニメーションを設定します</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">クイック設定パネルのスタイル</string>
     <string name="qs_panel_style_card">カードスタイル</string>
     <string name="qs_panel_style_classic">クラシックスタイル</string>
     <string name="shape_circle">円</string>
     <string name="shape_square">四角形</string>
-    <string name="shape_four_sided_cookie">4-sided cookie</string>
-    <string name="shape_seven_sided_cookie">7-sided cookie</string>
-    <string name="shape_arch">Arch</string>
-    <string name="shape_ios_rounded_square">iOS rounded shape</string>
-    <string name="shape_meow">Meow</string>
-    <string name="shape_flower">Flower</string>
+    <string name="shape_four_sided_cookie">4つ角のクッキー</string>
+    <string name="shape_seven_sided_cookie">7つ角のクッキー</string>
+    <string name="shape_arch">アーチ</string>
+    <string name="shape_ios_rounded_square">iOSの丸みを帯びた形状</string>
+    <string name="shape_meow">ニャー🐈</string>
+    <string name="shape_flower">花</string>
     <string name="shape_heart">ハート</string>
-    <string name="shape_hexagon">Hexagon</string>
-    <string name="shape_leaf">Leaf</string>
-    <string name="shape_cloudy">Cloudy</string>
-    <string name="shape_cylindrical">Cylindrical</string>
-    <string name="shape_stretched">Stretched</string>
-    <string name="shape_pebble">Pebble</string>
-    <string name="shape_rice_balls">Rice balls</string>
-    <string name="shape_rounded_rect">Rounded rectangle</string>
-    <string name="shape_squircle">Squircle</string>
-    <string name="shape_tapered_rect">Tapered rect</string>
-    <string name="shape_teardrop">Teardrop</string>
-    <string name="shape_vessel">Vessel</string>
-    <string name="shape_rounded_hexagon">Rounded hexagon</string>
-    <string name="shape_just_icons">Just icons</string>
-    <string name="shape_pokesign">Pokésign</string>
+    <string name="shape_hexagon">六角形</string>
+    <string name="shape_leaf">葉っぱ</string>
+    <string name="shape_cloudy">雲</string>
+    <string name="shape_cylindrical">円筒</string>
+    <string name="shape_stretched">ストレッチ</string>
+    <string name="shape_pebble">小石</string>
+    <string name="shape_rice_balls">おにぎり</string>
+    <string name="shape_rounded_rect">角丸長方形</string>
+    <string name="shape_squircle">角丸四角形</string>
+    <string name="shape_tapered_rect">先が細い長方形</string>
+    <string name="shape_teardrop">涙</string>
+    <string name="shape_vessel">容器</string>
+    <string name="shape_rounded_hexagon">角丸六角形</string>
+    <string name="shape_just_icons">アイコンのみ</string>
+    <string name="shape_pokesign">ポケサイン</string>
     <string name="shape_ninja">忍者</string>
-    <string name="shape_outline_style">Outline style</string>
+    <string name="shape_outline_style">アウトラインのスタイル</string>
     <string name="shape_dotted_circle">点線の円</string>
-    <string name="shape_squaremedo">Squaremedo</string>
+    <string name="shape_squaremedo">星型八角形</string>
     <!-- Dynamic Bar -->
     <string name="dynamic_bar">ダイナミックバー</string>
     <string name="dynamic_bar_summary">録音、メディア、タイマーなどのアクティブなイベントを表示するスマートステータスバーチップ</string>
@@ -1336,87 +1333,87 @@
     <string name="pif_failed">失敗: %s</string>
     <string name="pif_select_device">デバイスを選択</string>
     <string name="pif_generating">設定を生成中\u2026</string>
-    <string name="pif_footer_title">Passing basic integrity</string>
+    <string name="pif_footer_title">基本的な整合性をパスする</string>
     <string name="pif_footer_body">1. \"Pixel Beta フィンガープリントを取得\" をタップし、利用可能なリストからデバイスを選択します。\n2. デバイスが見つからない場合は、信頼できるソースから動作するPIF設定をインポートしてください。設定ファイルは提供されていませんので、ご自身で入手する必要があります。\n3. Play Integrityのステータスを再確認してください。\n\n新しい設定を読み込む前に、必ず現在有効な設定を削除してください。期限切れのPIF設定を読み込むと、有効なKeyboxを使用していても、TrickyStore経由の「強力な整合性」チェックが失敗する原因となります。</string>
     <string name="pif_select_channel">チャンネルを選択</string>
-    <string name="pif_channel_latest_release">Latest release</string>
-    <string name="pif_channel_canary_release">Canary release</string>
+    <string name="pif_channel_latest_release">最新のリリース</string>
+    <string name="pif_channel_canary_release">Canary リリース</string>
     <!-- TrickyStore -->
     <string name="ts_keybox_management">Keyboxの管理</string>
-    <string name="ts_import_keybox">Import keybox</string>
-    <string name="ts_no_keybox">No keybox installed</string>
-    <string name="ts_keybox_installed">Keybox installed</string>
-    <string name="ts_keybox_imported">Keybox imported successfully</string>
-    <string name="ts_delete_keybox">Delete keybox</string>
-    <string name="ts_delete_keybox_summary">Remove keybox file</string>
-    <string name="ts_delete_keybox_title">Delete keybox?</string>
-    <string name="ts_delete_keybox_message">The keybox file will be permanently removed.</string>
-    <string name="ts_keybox_deleted">Keybox deleted</string>
+    <string name="ts_import_keybox">キーボックスをインポート</string>
+    <string name="ts_no_keybox">キーボックスがインストールされていません</string>
+    <string name="ts_keybox_installed">キーボックスがインストールされています</string>
+    <string name="ts_keybox_imported">キーボックスのインポートに成功しました</string>
+    <string name="ts_delete_keybox">キーボックスを削除</string>
+    <string name="ts_delete_keybox_summary">キーボックスファイルを削除</string>
+    <string name="ts_delete_keybox_title">キーボックスを削除しますか？</string>
+    <string name="ts_delete_keybox_message">キーボックスファイルは完全に削除されます。</string>
+    <string name="ts_keybox_deleted">キーボックスを削除しました</string>
     <string name="ts_target_configuration">ターゲット設定</string>
-    <string name="ts_manage_target_apps">Manage target apps</string>
-    <string name="ts_no_targets">No target apps configured</string>
-    <string name="ts_target_apps_count">%d apps configured</string>
-    <string name="ts_import_target_list">Import target list</string>
-    <string name="ts_import_target_list_summary">Import target.txt from a file</string>
-    <string name="ts_target_list_imported">Target list imported</string>
+    <string name="ts_manage_target_apps">ターゲットアプリの管理</string>
+    <string name="ts_no_targets">ターゲットアプリが設定されていません</string>
+    <string name="ts_target_apps_count">%d 個のアプリが設定済み</string>
+    <string name="ts_import_target_list">ターゲットリストをインポート</string>
+    <string name="ts_import_target_list_summary">ファイルから target.txt をインポートします</string>
+    <string name="ts_target_list_imported">ターゲットリストをインポートしました</string>
     <string name="ts_failed">失敗: %s</string>
-    <string name="ts_footer_title">Passing strong integrity</string>
-    <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
-    <string name="ts_verification_mode">Verification mode</string>
-    <string name="ts_verification_mode_auto">Auto</string>
-    <string name="ts_verification_auto_count">%1$d auto</string>
-    <string name="ts_verification_cert_count">%1$d cert</string>
-    <string name="ts_verification_leaf_count">%1$d leaf</string>
-    <string name="ts_invalid_patch_date">Invalid date format. Use YYYY-MM-DD</string>
-    <string name="ts_security_patch">Security patch date</string>
-    <string name="ts_no_patch">Not set (using device default)</string>
-    <string name="ts_selected_count">%d selected</string>
-    <string name="ts_mode_auto">Auto</string>
-    <string name="ts_mode_leaf">Leaf</string>
-    <string name="ts_mode_cert">Cert</string>
+    <string name="ts_footer_title">強力な整合性をパスする</string>
+    <string name="ts_footer_body">1. 信頼できるソースから有効なキーボックス XML を入手してください。キーボックスは提供されないため、各自で用意する必要があります。\n2. 「キーボックスをインポート」をタップしてファイルを読み込みます。\n3. 「ターゲットアプリの管理」を開き、Google Play 開発者サービスと Google Play ストアを選択します。\n4. デバイスの TEE が動作している場合はターゲットモードを「リーフ」に設定し、そうでない場合は「自動」のままにします。\n5. Play Integrity ステータスを再確認してください。\n\n新しいキーボックスをインポートする前に、必ず既存のものを削除してください。Google がキーボックスを無効化した場合、Strong Integrity は失敗しますが、Device Integrity まではパスできる可能性があります。</string>
+    <string name="ts_verification_mode">確認モード</string>
+    <string name="ts_verification_mode_auto">自動</string>
+    <string name="ts_verification_auto_count">%1$d 自動</string>
+    <string name="ts_verification_cert_count">%1$d 証明書</string>
+    <string name="ts_verification_leaf_count">%1$d 葉</string>
+    <string name="ts_invalid_patch_date">日付の形式が無効です。YYYY-MM-DD を使用してください</string>
+    <string name="ts_security_patch">セキュリティパッチの日付</string>
+    <string name="ts_no_patch">未設定 (デバイスの既定を使用)</string>
+    <string name="ts_selected_count">%d件選択済み</string>
+    <string name="ts_mode_auto">自動</string>
+    <string name="ts_mode_leaf">葉</string>
+    <string name="ts_mode_cert">証明書</string>
     <!-- Game Spoofing -->
     <string name="gs_enable">ゲームスプーフィングを有効化</string>
     <string name="gs_enable_summary">設定したゲームにデバイスプロパティを偽装</string>
-    <string name="gs_add_app">Add game</string>
-    <string name="gs_add_app_summary">Select an app and device profile to spoof</string>
-    <string name="gs_reload">Reload</string>
-    <string name="gs_reload_summary">Reload configuration from disk</string>
-    <string name="gs_configured_apps">Configured games</string>
-    <string name="gs_no_apps">No games configured</string>
-    <string name="gs_no_apps_summary">Tap \"Add game\" to get started</string>
-    <string name="gs_select_app">Select app</string>
-    <string name="gs_select_profile">Select device profile</string>
-    <string name="gs_edit_props">Edit properties</string>
-    <string name="gs_change_profile">Change device profile</string>
-    <string name="gs_remove">Remove</string>
+    <string name="gs_add_app">ゲームを追加</string>
+    <string name="gs_add_app_summary">アプリと端末のプロファイルを偽装します</string>
+    <string name="gs_reload">再読み込み</string>
+    <string name="gs_reload_summary">ディスクから設定を読み込みます</string>
+    <string name="gs_configured_apps">ゲーム設定</string>
+    <string name="gs_no_apps">ゲームが設定されていません</string>
+    <string name="gs_no_apps_summary">「ゲームを追加」をタップして始めましょう</string>
+    <string name="gs_select_app">アプリを選択</string>
+    <string name="gs_select_profile">デバイスのプロファイルを選択</string>
+    <string name="gs_edit_props">プロパティを編集</string>
+    <string name="gs_change_profile">デバイスのプロファイルを変更</string>
+    <string name="gs_remove">削除</string>
     <string name="gs_remove_title">ゲームを削除しますか？</string>
     <string name="gs_remove_message">%s をゲームスプーフィングから削除しますか？</string>
-    <string name="gs_edit_app">Edit %s</string>
-    <string name="gs_key">Key</string>
-    <string name="gs_value">Value</string>
+    <string name="gs_edit_app">%s を編集</string>
+    <string name="gs_key">キー</string>
+    <string name="gs_value">値</string>
     <string name="gs_save">保存</string>
-    <string name="gs_config_saved">Configuration saved</string>
-    <string name="gs_loading_apps">Loading apps\u2026</string>
+    <string name="gs_config_saved">設定を保存しました</string>
+    <string name="gs_loading_apps">アプリを読み込んでいます\u2026</string>
     <string name="gs_failed">失敗: %s</string>
     <!-- Build details -->
-    <string name="build_maintainer_title">Device maintainer</string>
-    <string name="build_maintainer_summary">Unofficial</string>
+    <string name="build_maintainer_title">デバイスのメンテナー</string>
+    <string name="build_maintainer_summary">非公式</string>
     <!-- Settings UI -->
     <string name="settings_icon_title">設定のスタイル</string>
-    <string name="settings_icon_summary">Customize Settings app UI style</string>
-    <string name="settings_icon_style_title">Settings icon style</string>
-    <string name="settings_icon_style_expressive">Material expressive</string>
-    <string name="settings_icon_style_colored_bg">Colored background and white icon</string>
-    <string name="settings_icon_style_gradient_bg">Gradient background and white icon</string>
-    <string name="settings_icon_style_accent_outline">Accent outline and icon</string>
-    <string name="settings_icon_style_colored_outline">Colored outline and icon</string>
-    <string name="settings_icon_style_colored_icon">Colored icon only</string>
-    <string name="settings_icon_style_accent_icon">Accent icon only</string>
-    <string name="settings_icon_corner_style_title">Settings icons corner style</string>
+    <string name="settings_icon_summary">設定アプリの UI スタイルをカスタマイズしよう</string>
+    <string name="settings_icon_style_title">設定内のアイコンのスタイル</string>
+    <string name="settings_icon_style_expressive">Material Expressive</string>
+    <string name="settings_icon_style_colored_bg">色付きの背景・白いアイコン</string>
+    <string name="settings_icon_style_gradient_bg">グラデーションの背景・白いアイコン</string>
+    <string name="settings_icon_style_accent_outline">アクセントのアウトライン・アイコン</string>
+    <string name="settings_icon_style_colored_outline">色付きのアウトライン・アイコン</string>
+    <string name="settings_icon_style_colored_icon">カラフルのアイコンのみ</string>
+    <string name="settings_icon_style_accent_icon">アクセントカラーのアイコンのみ</string>
+    <string name="settings_icon_corner_style_title">設定内のアイコンの形</string>
     <string name="settings_icon_corner_style_circle">円</string>
     <string name="settings_icon_corner_style_rounded_square">角丸四角形</string>
-    <string name="settings_icon_random_colors_title">Random colors</string>
-    <string name="settings_icon_random_colors_summary">Use random colors for each icon</string>
+    <string name="settings_icon_random_colors_title">ランダムな色</string>
+    <string name="settings_icon_random_colors_summary">アイコンごとにランダムな色を使用</string>
     <!-- Volume slider -->
     <string name="qs_show_volume_slider_title">スライダーモード</string>
     <string name="qs_show_volume_slider_hide">明るさスライダーのみ</string>
@@ -1425,21 +1422,21 @@
     <string name="qs_show_ringer_mode_title">着信モード</string>
     <string name="qs_show_ringer_mode_summary">音量スライダーに着信モードアイコンを表示</string>
     <!-- App list fragment -->
-    <string name="app_list_search">Search</string>
+    <string name="app_list_search">検索</string>
     <string name="app_list_search_apps">アプリを検索</string>
-    <string name="app_list_loading">Loading apps\u2026</string>
+    <string name="app_list_loading">アプリを読み込んでいます\u2026</string>
     <!-- Expanded Dark theme exceptions -->
-    <string name="dark_theme_per_app_title">Expanded mode exceptions</string>
-    <string name="dark_theme_per_app_summary">Choose apps that keep their own appearance instead of using expanded Dark theme</string>
+    <string name="dark_theme_per_app_title">拡張モードの例外</string>
+    <string name="dark_theme_per_app_summary">拡張ダークテーマを使用しないアプリを選択してください</string>
     <!-- Reality Display Engine -->
-    <string name="display_engine_category">Display engine</string>
-    <string name="display_engine_mode_title">Reality display engine</string>
-    <string name="x_reality_engine_mode_title">X-Reality engine</string>
-    <string name="vivid_engine_mode_title">Vivid display</string>
-    <string name="triluminous_engine_mode_title">Triluminous display</string>
-    <string name="natural_engine_mode_title">Natural display</string>
-    <string name="cinema_engine_mode_title">Cinema display</string>
-    <string name="reading_engine_mode_title">Comfort display (Reading mode)</string>
+    <string name="display_engine_category">表示エンジン</string>
+    <string name="display_engine_mode_title">ディスプレイ表示エンジン</string>
+    <string name="x_reality_engine_mode_title">X-Reality エンジン</string>
+    <string name="vivid_engine_mode_title">鮮やか</string>
+    <string name="triluminous_engine_mode_title">トリルミネート表示</string>
+    <string name="natural_engine_mode_title">自然</string>
+    <string name="cinema_engine_mode_title">映画</string>
+    <string name="reading_engine_mode_title">コンフォート（読書モード）</string>
     <string name="display_engine_default">デフォルト</string>
-    <string name="display_engine_mode_footer_text">Inspired by Sony\'s Bravia/X-Reality engine, the Display Engine features Vivid mode for enhanced brightness and color saturation, X-Reality mode for improved detail and color accuracy, and Triluminous mode for a wider color range.</string>
+    <string name="display_engine_mode_footer_text">SonyのBravia/X-Reality エンジンに着想を得たディスプレイエンジンは、明るさと彩度を向上させる「鮮やか」、ディティールと色の精度を向上させる「X-Reality」、より広いカラーレンジを実現する「トリルミネート」を搭載しています。</string>
 </resources>
