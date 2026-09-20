@@ -1,6 +1,7 @@
 /*
  * Copyright (C) 2010 Daniel Nilsson
  * Copyright (C) 2013 Slimroms
+ * Copyright (C) 2026 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,154 +20,180 @@ package com.crdroid.settings.preferences.colorpicker;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 /**
- * This class draws a panel which which will be filled with a color which can be set.
- * It can be used to show the currently selected color which you will get from
- * the {@link ColorPickerView}.
- * @author Daniel Nilsson
- *
+ * A single color swatch: rounded Material 3 shape, checkerboard behind translucent colors,
+ * hairline outline, and an optional check mark used to mark the active preset.
  */
 public class ColorPickerPanelView extends View {
 
-    /**
-     * The width in pixels of the border
-     * surrounding the color panel.
-     */
-    private final static float    BORDER_WIDTH_PX = 1;
+    private static final float DEFAULT_CORNER_DP = 12f;
+    private static final float OUTLINE_WIDTH_DP = 1f;
+    private static final float CHECK_STROKE_DP = 2f;
 
-    private float mDensity = 1f;
-
-    private int         mBorderColor = 0xff6E6E6E;
-    private int         mColor = 0xff000000;
-
-    private Paint        mBorderPaint;
-    private Paint        mColorPaint;
-
-    private RectF        mDrawingRect;
-    private RectF        mColorRect;
+    private final Paint mColorPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint mOutlinePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint mCheckPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final RectF mRect = new RectF();
+    private final Path mCheckPath = new Path();
 
     private AlphaPatternDrawable mAlphaPattern;
+    private float mCornerRadius;
+    private boolean mCircular;
+    private boolean mChecked;
 
+    @ColorInt private int mColor = Color.BLACK;
+    @ColorInt private int mBorderColor;
 
-    public ColorPickerPanelView(Context context){
+    public ColorPickerPanelView(Context context) {
         this(context, null);
     }
 
-    public ColorPickerPanelView(Context context, AttributeSet attrs){
+    public ColorPickerPanelView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ColorPickerPanelView(Context context, AttributeSet attrs, int defStyle) {
+    public ColorPickerPanelView(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        init();
+
+        mCornerRadius = ColorPickerUtils.dp(context, DEFAULT_CORNER_DP);
+        mBorderColor = ColorPickerUtils.resolveThemeColor(context,
+                android.R.attr.colorControlNormal, 0xFF6E6E6E);
+
+        mOutlinePaint.setStyle(Paint.Style.STROKE);
+        mOutlinePaint.setStrokeWidth(ColorPickerUtils.dp(context, OUTLINE_WIDTH_DP));
+
+        mCheckPaint.setStyle(Paint.Style.STROKE);
+        mCheckPaint.setStrokeWidth(ColorPickerUtils.dp(context, CHECK_STROKE_DP));
+        mCheckPaint.setStrokeCap(Paint.Cap.ROUND);
+        mCheckPaint.setStrokeJoin(Paint.Join.ROUND);
+
+        mAlphaPattern = new AlphaPatternDrawable((int) ColorPickerUtils.dp(context, 4f));
     }
 
-    private void init(){
-        mBorderPaint = new Paint();
-        mColorPaint = new Paint();
-        mDensity = getContext().getResources().getDisplayMetrics().density;
-    }
-
-
-    @Override
-    protected void onDraw(Canvas canvas) {
-
-        final RectF    rect = mColorRect;
-
-        if(BORDER_WIDTH_PX > 0){
-            mBorderPaint.setColor(mBorderColor);
-            canvas.drawRect(mDrawingRect, mBorderPaint);
+    /** Draws the swatch as a circle (used by the preference widget). */
+    public void setCircular(boolean circular) {
+        if (mCircular != circular) {
+            mCircular = circular;
+            updateShape();
+            invalidate();
         }
-
-        if(mAlphaPattern != null){
-            mAlphaPattern.draw(canvas);
-        }
-
-        mColorPaint.setColor(mColor);
-
-        canvas.drawRect(rect, mColorPaint);
     }
 
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+    public void setCornerRadius(float radius) {
+        if (!mCircular && mCornerRadius != radius) {
+            mCornerRadius = radius;
+            updateShape();
+            invalidate();
+        }
+    }
 
-        int width = MeasureSpec.getSize(widthMeasureSpec);
-        int height = MeasureSpec.getSize(heightMeasureSpec);
+    /** Marks this swatch as the currently selected preset. */
+    public void setChecked(boolean checked) {
+        if (mChecked != checked) {
+            mChecked = checked;
+            invalidate();
+        }
+    }
 
-        setMeasuredDimension(width, height);
+    public boolean isChecked() {
+        return mChecked;
+    }
+
+    public void setColor(@ColorInt int color) {
+        if (mColor != color) {
+            mColor = color;
+            invalidate();
+        }
+    }
+
+    @ColorInt
+    public int getColor() {
+        return mColor;
+    }
+
+    public void setBorderColor(@ColorInt int color) {
+        if (mBorderColor != color) {
+            mBorderColor = color;
+            invalidate();
+        }
+    }
+
+    @ColorInt
+    public int getBorderColor() {
+        return mBorderColor;
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-
-        mDrawingRect = new RectF();
-        mDrawingRect.left =  getPaddingLeft();
-        mDrawingRect.right  = w - getPaddingRight();
-        mDrawingRect.top = getPaddingTop();
-        mDrawingRect.bottom = h - getPaddingBottom();
-
-        setUpColorRect();
-
+        mRect.set(getPaddingLeft(), getPaddingTop(), w - getPaddingRight(), h - getPaddingBottom());
+        updateShape();
     }
 
-    private void setUpColorRect(){
-        final RectF    dRect = mDrawingRect;
+    private void updateShape() {
+        if (mRect.isEmpty()) {
+            return;
+        }
+        final float radius = mCircular
+                ? Math.min(mRect.width(), mRect.height()) / 2f
+                : mCornerRadius;
+        mAlphaPattern.setCornerRadius(radius);
+        mAlphaPattern.setBounds(Math.round(mRect.left), Math.round(mRect.top),
+                Math.round(mRect.right), Math.round(mRect.bottom));
 
-        float left = dRect.left + BORDER_WIDTH_PX;
-        float top = dRect.top + BORDER_WIDTH_PX;
-        float bottom = dRect.bottom - BORDER_WIDTH_PX;
-        float right = dRect.right - BORDER_WIDTH_PX;
-
-        mColorRect = new RectF(left,top, right, bottom);
-
-        mAlphaPattern = new AlphaPatternDrawable((int)(5 * mDensity));
-
-        mAlphaPattern.setBounds(
-            Math.round(mColorRect.left),
-            Math.round(mColorRect.top),
-            Math.round(mColorRect.right),
-            Math.round(mColorRect.bottom)
-        );
-
+        final float cx = mRect.centerX();
+        final float cy = mRect.centerY();
+        final float unit = Math.min(mRect.width(), mRect.height()) / 8f;
+        mCheckPath.reset();
+        mCheckPath.moveTo(cx - unit * 1.6f, cy);
+        mCheckPath.lineTo(cx - unit * 0.4f, cy + unit * 1.2f);
+        mCheckPath.lineTo(cx + unit * 1.7f, cy - unit * 1.2f);
     }
 
-    /**
-     * Set the color that should be shown by this view.
-     * @param color
-     */
-    public void setColor(int color){
-        mColor = color;
-        invalidate();
+    @Override
+    protected void onDraw(@NonNull Canvas canvas) {
+        if (mRect.isEmpty()) {
+            return;
+        }
+        final float radius = mCircular
+                ? Math.min(mRect.width(), mRect.height()) / 2f
+                : mCornerRadius;
+
+        if (Color.alpha(mColor) < 255) {
+            mAlphaPattern.draw(canvas);
+        }
+
+        mColorPaint.setColor(mColor);
+        canvas.drawRoundRect(mRect, radius, radius, mColorPaint);
+
+        mOutlinePaint.setColor(mBorderColor);
+        mOutlinePaint.setAlpha(0x3D);
+        final float inset = mOutlinePaint.getStrokeWidth() / 2f;
+        canvas.drawRoundRect(mRect.left + inset, mRect.top + inset,
+                mRect.right - inset, mRect.bottom - inset, radius, radius, mOutlinePaint);
+
+        if (mChecked) {
+            mCheckPaint.setColor(ColorPickerUtils.contrastingColor(mColor));
+            canvas.drawPath(mCheckPath, mCheckPaint);
+        }
     }
 
-    /**
-     * Get the color currently show by this view.
-     * @return
-     */
-    public int getColor(){
-        return mColor;
+    @Override
+    public void onInitializeAccessibilityNodeInfo(@NonNull AccessibilityNodeInfo info) {
+        super.onInitializeAccessibilityNodeInfo(info);
+        info.setCheckable(isClickable());
+        info.setChecked(mChecked);
     }
-
-    /**
-     * Set the color of the border surrounding the panel.
-     * @param color
-     */
-    public void setBorderColor(int color){
-        mBorderColor = color;
-        invalidate();
-    }
-
-    /**
-     * Get the color of the border surrounding the panel.
-     */
-    public int getBorderColor(){
-        return mBorderColor;
-    }
-
 }

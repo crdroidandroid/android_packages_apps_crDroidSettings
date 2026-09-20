@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 crDroid Android Project
+     Copyright (C) 2017-2026 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,137 +14,120 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="36dp"
-    android:layout_marginEnd="36dp"
-    android:padding="20dp"
-    android:orientation="vertical">
+    android:clipChildren="true"
+    android:clipToPadding="true"
+    android:overScrollMode="never"
+    android:scrollIndicators="top|bottom"
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
-        android:layout_marginTop="3dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:clipChildren="true"
+        android:clipToPadding="true"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <com.crdroid.settings.preferences.colorpicker.ColorPickerView
+            android:id="@+id/color_picker_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/hex_label"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:text="@string/hex"
-            android:textSize="20sp" />
+            android:layout_marginTop="20dp"
+            android:labelFor="@+id/hex"
+            android:textAppearance="?android:attr/textAppearanceListItemSecondary" />
 
         <EditText
             android:id="@+id/hex"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hex_hint" />
-
-        <ImageButton
-            android:id="@+id/enter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:background="@android:color/transparent"
-            android:gravity="center"
-            android:src="@drawable/ic_action_set" />
-    </LinearLayout>
-
-    <com.crdroid.settings.preferences.colorpicker.ColorPickerView
-        android:id="@+id/color_picker_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:tag="portrait" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:orientation="horizontal"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginTop="2dp">
-
-        <com.crdroid.settings.preferences.colorpicker.ColorPickerPanelView
-            android:id="@+id/white_panel"
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
-            android:layout_weight="0.5" />
-
-        <com.crdroid.settings.preferences.colorpicker.ColorPickerPanelView
-            android:id="@+id/black_panel"
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
-            android:layout_weight="0.5" />
-
-        <com.crdroid.settings.preferences.colorpicker.ColorPickerPanelView
-            android:id="@+id/cyan_panel"
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
-            android:layout_weight="0.5" />
-
-        <com.crdroid.settings.preferences.colorpicker.ColorPickerPanelView
-            android:id="@+id/red_panel"
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
-            android:layout_weight="0.5" />
-
-        <com.crdroid.settings.preferences.colorpicker.ColorPickerPanelView
-            android:id="@+id/green_panel"
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="6dp"
-            android:layout_weight="0.5" />
-
-        <com.crdroid.settings.preferences.colorpicker.ColorPickerPanelView
-            android:id="@+id/yellow_panel"
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5" />
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/press_color_to_apply"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
-        android:layout_marginBottom="10dp">
-
-        <com.crdroid.settings.preferences.colorpicker.ColorPickerPanelView
-            android:id="@+id/old_color_panel"
-            android:layout_width="0px"
-            android:layout_height="fill_parent"
-            android:layout_weight="0.5" />
+            android:layout_marginTop="4dp"
+            android:imeOptions="actionDone"
+            android:inputType="textCapCharacters|textNoSuggestions"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textAppearance="?android:attr/textAppearanceListItem" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:text="@string/arrow_right"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp" />
-
-        <com.crdroid.settings.preferences.colorpicker.ColorPickerPanelView
-            android:id="@+id/new_color_panel"
-            android:layout_width="0px"
+            android:id="@+id/hex_error"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5" />
+            android:layout_marginTop="4dp"
+            android:text="@string/color_picker_hex_invalid"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="?android:attr/colorError"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/preset_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/color_picker_presets"
+            android:textAppearance="?android:attr/textAppearanceListItemSecondary" />
+
+        <HorizontalScrollView
+            android:id="@+id/preset_scroller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:clipChildren="true"
+            android:clipToPadding="true"
+            android:overScrollMode="never"
+            android:requiresFadingEdge="horizontal"
+            android:fadingEdgeLength="16dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/preset_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clipChildren="true"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.crdroid.settings.preferences.colorpicker.ColorPickerPanelView
+                android:id="@+id/old_color_panel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/color_picker_current_color" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:gravity="center"
+                android:importantForAccessibility="no"
+                android:text="@string/color_picker_arrow_right"
+                android:textSize="20sp" />
+
+            <com.crdroid.settings.preferences.colorpicker.ColorPickerPanelView
+                android:id="@+id/new_color_panel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/color_picker_new_color" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

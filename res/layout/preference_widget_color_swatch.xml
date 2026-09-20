@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2026 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingEnd="8dp">
+
+    <ImageButton
+        android:id="@+id/color_reset"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="12dp"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/color_picker_reset"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_settings_backup_restore"
+        android:tint="?android:attr/colorControlNormal" />
+
+    <ImageView
+        android:id="@+id/color_preview"
+        android:layout_width="@dimen/oval_notification_size"
+        android:layout_height="@dimen/oval_notification_size"
+        android:importantForAccessibility="no" />
+</LinearLayout>
