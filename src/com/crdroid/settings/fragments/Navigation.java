@@ -65,6 +65,8 @@ public class Navigation extends SettingsPreferenceFragment {
                 Settings.System.GESTURE_NAVBAR_LENGTH_MODE, 1, UserHandle.USER_CURRENT);
         Settings.System.putIntForUser(resolver,
                 Settings.System.GESTURE_NAVBAR_HEIGHT_MODE, 3, UserHandle.USER_CURRENT);
+        Settings.System.putIntForUser(resolver,
+                Settings.System.GESTURE_NAVBAR_SPACE_MODE, 0, UserHandle.USER_CURRENT);
     }
 
     @Override
