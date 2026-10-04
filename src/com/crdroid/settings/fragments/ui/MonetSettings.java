@@ -162,7 +162,9 @@ public class MonetSettings extends DashboardFragment implements
                     color = object.optString(OVERLAY_CATEGORY_SYSTEM_PALETTE);
                     mAccentColorValue = ColorPickerPreference.convertToColorInt(color);
                 } else {
-                    mAccentColorValue = mSharedPreferences.getInt(PREF_ACCENT_COLOR, DEFAULT_COLOR);
+                    mAccentColorValue = source.equals(COLOR_SOURCE_PRESET)
+                            ? mSharedPreferences.getInt(PREF_ACCENT_COLOR, DEFAULT_COLOR)
+                            : getActivity().getColor(android.R.color.system_accent1_500);
                     color = ColorPickerPreference.convertToRGB(mAccentColorValue).replace("#", "");
                 }
                 boolean hasBGColor = object.has(OVERLAY_CATEGORY_BG_COLOR);
