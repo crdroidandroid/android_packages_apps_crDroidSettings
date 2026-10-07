@@ -73,7 +73,6 @@ class crDroidSettingsLayout : SettingsPreferenceFragment() {
         }
 
         pager!!.adapter = adapter
-        pager!!.offscreenPageLimit = 1
 
         mediator = TabLayoutMediator(tabs!!, pager!!) { tab, position ->
             tab.setText(TAB_TITLES[position])
