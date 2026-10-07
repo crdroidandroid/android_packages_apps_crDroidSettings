@@ -17,6 +17,7 @@ import android.view.ViewGroup
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 
@@ -69,6 +70,11 @@ class crDroidSettingsLayout : SettingsPreferenceFragment() {
                 7 -> Miscellaneous()
                 8 -> About()
                 else -> StatusBar()
+            }
+
+            override fun onAttachedToRecyclerView(rv: RecyclerView) {
+                super.onAttachedToRecyclerView(rv)
+                rv.setItemViewCacheSize(getItemCount())
             }
         }
 
