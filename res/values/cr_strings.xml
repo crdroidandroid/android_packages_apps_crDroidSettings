@@ -1580,6 +1580,27 @@ A small donation helps keep this project alive and improving. You can dismiss th
 
     <!-- TrickyStore -->
     <string name="ts_keybox_management">Keybox management</string>
+    <string name="ts_auto_update">Automatic keybox updates</string>
+    <string name="ts_auto_update_summary">Fetch the official keybox and check it for revocation every 24 hours</string>
+    <string name="ts_auto_update_off_summary">Off: the keybox is only changed by hand</string>
+    <string name="ts_fetch_keybox">Fetch official keybox</string>
+    <string name="ts_fetch_keybox_summary">Download the keybox published for this ROM</string>
+    <string name="ts_updating_keybox">Updating keybox\u2026</string>
+    <string name="ts_check_revocation">Check revocation status</string>
+    <string name="ts_check_revocation_summary">Validate the certificate chain and ask Google whether the key was revoked</string>
+    <string name="ts_checking">Checking\u2026</string>
+    <string name="ts_status">Keybox status</string>
+    <string name="ts_status_unknown">Unknown</string>
+    <string name="ts_status_valid">Valid</string>
+    <string name="ts_status_expiring_soon">Expiring soon</string>
+    <string name="ts_status_revoked">Revoked</string>
+    <string name="ts_status_suspended">Suspended</string>
+    <string name="ts_status_chain_invalid">Invalid certificate chain</string>
+    <string name="ts_status_untrusted_root">Untrusted root certificate</string>
+    <string name="ts_status_no_keybox">No keybox installed</string>
+    <string name="ts_keybox_source_official">Downloaded</string>
+    <string name="ts_keybox_source_user">Imported</string>
+    <string name="ts_last_updated">Updated %1$s</string>
     <string name="ts_import_keybox">Import keybox</string>
     <string name="ts_no_keybox">No keybox installed</string>
     <string name="ts_keybox_installed">Keybox installed</string>
@@ -1598,7 +1619,7 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="ts_target_list_imported">Target list imported</string>
     <string name="ts_failed">Failed: %s</string>
     <string name="ts_footer_title">Passing strong integrity</string>
-    <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nAlways delete the existing keybox before importing a new one. If Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
+    <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not bundled with the ROM; you must find one yourself.\n2. Leave \"Automatic keybox updates\" on to let the ROM fetch and validate a keybox for you, or tap \"Import keybox\" to load your own.\n3. Open \"Manage target apps\" and select Google Play Services and Google Play Store.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nThe revocation status is rechecked once a day. When Google revokes a downloaded keybox it is replaced automatically; a keybox you imported yourself is never removed without your say.</string>
     <string name="ts_verification_mode">Verification mode</string>
     <string name="ts_verification_mode_auto">Auto</string>
     <string name="ts_verification_auto_count">%1$d auto</string>
