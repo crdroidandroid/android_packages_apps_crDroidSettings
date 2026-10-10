@@ -32,10 +32,15 @@
     <string name="display_title">디스플레이</string>
     <string name="ui_title">사용자 인터페이스</string>
     <!-- Color Picker -->
-    <string name="dialog_color_picker">색상 선택</string>
-    <string name="press_color_to_apply">적용하고자 하는 색상을 누르세요.</string>
-    <string name="set">설정</string>
-    <string name="color_default">기본값</string>
+    <string name="color_picker_title">Select color</string>
+    <string name="color_picker_select">Select</string>
+    <string name="color_picker_reset">Reset to default</string>
+    <string name="color_picker_presets">Presets</string>
+    <string name="color_picker_hex_rgb">Hex (#RRGGBB)</string>
+    <string name="color_picker_hex_argb">Hex (#AARRGGBB)</string>
+    <string name="color_picker_hex_invalid">Enter a valid hex color</string>
+    <string name="color_picker_current_color">Current color</string>
+    <string name="color_picker_new_color">New color</string>
     <!-- General strings -->
     <string name="ok">확인</string>
     <string name="reset">초기화</string>
@@ -310,6 +315,10 @@
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">블루투스 배터리 상태</string>
     <string name="bluetooth_battery_summary">연결된 블루투스 기기의 배터리 상태를 확인할 수 있을 경우 표시합니다.</string>
+    <!-- Title for the Bluetooth device details preference that chooses which audio codec a paired device is played with. [CHAR LIMIT=40] -->
+    <string name="bluetooth_details_audio_codec_title">Audio codec</string>
+    <!-- Summary shown when the audio codec of a paired device cannot be read or chosen. [CHAR LIMIT=40] -->
+    <string name="bluetooth_details_audio_codec_unavailable">Not available</string>
     <!-- Tap to sleep on status bar -->
     <string name="statusbar_doubletap_sleep_title">두 번 눌러 화면 끄기</string>
     <string name="statusbar_doubletap_sleep_summary">상태 표시줄을 두 번 눌러 기기 화면 끄기</string>
@@ -1133,6 +1142,8 @@
     <string name="pulse_renderer_matrix">매트릭스</string>
     <string name="pulse_renderer_particle">입자</string>
     <string name="pulse_renderer_waveform">파형</string>
+    <string name="pulse_height_multiplier_title">Pulse height</string>
+    <string name="pulse_height_multiplier_summary">Adjust height for the visualizer shown</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">반투명 알림</string>
     <string name="notification_row_transparency_summary">빠른 설정 알림에 반투명 배경 설정</string>
@@ -1417,6 +1428,7 @@
     <string name="qs_show_volume_slider_title">슬라이더 모드</string>
     <string name="qs_show_volume_slider_hide">밝기 조절 슬라이더만</string>
     <string name="qs_show_volume_slider_both">밝기 및 볼륨 슬라이더 모두</string>
+    <string name="qs_show_volume_slider_below">Volume slider below brightness slider</string>
     <string name="qs_show_volume_slider_only">볼륨 슬라이더만</string>
     <string name="qs_show_ringer_mode_title">벨소리 모드</string>
     <string name="qs_show_ringer_mode_summary">볼륨 슬라이더에 벨소리 모드 아이콘 표시</string>

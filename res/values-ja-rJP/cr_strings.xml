@@ -32,10 +32,15 @@
     <string name="display_title">ディスプレイ</string>
     <string name="ui_title">UI 設定</string>
     <!-- Color Picker -->
-    <string name="dialog_color_picker">カラーピッカー</string>
-    <string name="press_color_to_apply">下の色をタップして適用します</string>
-    <string name="set">設定</string>
-    <string name="color_default">デフォルト</string>
+    <string name="color_picker_title">色を選択</string>
+    <string name="color_picker_select">選択</string>
+    <string name="color_picker_reset">デフォルトにリセット</string>
+    <string name="color_picker_presets">プリセット</string>
+    <string name="color_picker_hex_rgb">16進数 (#RRGGBB)</string>
+    <string name="color_picker_hex_argb">16進数 (#AARRGGBB)</string>
+    <string name="color_picker_hex_invalid">有効な16進数の色を入力してください</string>
+    <string name="color_picker_current_color">現在の色</string>
+    <string name="color_picker_new_color">新しい色</string>
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">リセット</string>
@@ -311,6 +316,10 @@
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Bluetooth のバッテリー状態</string>
     <string name="bluetooth_battery_summary">利用可能な場合、接続中の Bluetooth デバイスのバッテリー残量を表示します</string>
+    <!-- Title for the Bluetooth device details preference that chooses which audio codec a paired device is played with. [CHAR LIMIT=40] -->
+    <string name="bluetooth_details_audio_codec_title">Audio codec</string>
+    <!-- Summary shown when the audio codec of a paired device cannot be read or chosen. [CHAR LIMIT=40] -->
+    <string name="bluetooth_details_audio_codec_unavailable">Not available</string>
     <!-- Tap to sleep on status bar -->
     <string name="statusbar_doubletap_sleep_title">ダブルタップでスリープ</string>
     <string name="statusbar_doubletap_sleep_summary">ステータスバーをダブルタップしてデバイスをスリープさせます</string>
@@ -1134,6 +1143,8 @@
     <string name="pulse_renderer_matrix">マトリックス</string>
     <string name="pulse_renderer_particle">パーティクル</string>
     <string name="pulse_renderer_waveform">ウェーブ</string>
+    <string name="pulse_height_multiplier_title">Pulse height</string>
+    <string name="pulse_height_multiplier_summary">Adjust height for the visualizer shown</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">半透明な通知</string>
     <string name="notification_row_transparency_summary">クイック設定の通知の背景を半透明にする</string>
@@ -1418,6 +1429,7 @@
     <string name="qs_show_volume_slider_title">スライダーモード</string>
     <string name="qs_show_volume_slider_hide">明るさスライダーのみ</string>
     <string name="qs_show_volume_slider_both">明るさスライダーと音量スライダー</string>
+    <string name="qs_show_volume_slider_below">明るさスライダーの下の音量スライダー</string>
     <string name="qs_show_volume_slider_only">音量スライダーのみ</string>
     <string name="qs_show_ringer_mode_title">着信モード</string>
     <string name="qs_show_ringer_mode_summary">音量スライダーに着信モードアイコンを表示</string>

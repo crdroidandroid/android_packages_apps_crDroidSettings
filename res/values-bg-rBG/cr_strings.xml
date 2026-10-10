@@ -32,10 +32,15 @@
     <string name="display_title">Дисплей</string>
     <string name="ui_title">Потребителски интерфейс</string>
     <!-- Color Picker -->
-    <string name="dialog_color_picker">Избор на цвят</string>
-    <string name="press_color_to_apply">Изберете цвят по-долу, за да го приложите</string>
-    <string name="set">Приложи</string>
-    <string name="color_default">По подразбиране</string>
+    <string name="color_picker_title">Select color</string>
+    <string name="color_picker_select">Select</string>
+    <string name="color_picker_reset">Reset to default</string>
+    <string name="color_picker_presets">Presets</string>
+    <string name="color_picker_hex_rgb">Hex (#RRGGBB)</string>
+    <string name="color_picker_hex_argb">Hex (#AARRGGBB)</string>
+    <string name="color_picker_hex_invalid">Enter a valid hex color</string>
+    <string name="color_picker_current_color">Current color</string>
+    <string name="color_picker_new_color">New color</string>
     <!-- General strings -->
     <string name="ok">Ok</string>
     <string name="reset">Нулиране</string>
@@ -311,6 +316,10 @@
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Състояние на батерията на Bluetooth</string>
     <string name="bluetooth_battery_summary">Показване на състоянието на батерията за свързаното bluetooth устройство, ако има такова</string>
+    <!-- Title for the Bluetooth device details preference that chooses which audio codec a paired device is played with. [CHAR LIMIT=40] -->
+    <string name="bluetooth_details_audio_codec_title">Audio codec</string>
+    <!-- Summary shown when the audio codec of a paired device cannot be read or chosen. [CHAR LIMIT=40] -->
+    <string name="bluetooth_details_audio_codec_unavailable">Not available</string>
     <!-- Tap to sleep on status bar -->
     <string name="statusbar_doubletap_sleep_title">Натиснете, за заспиване</string>
     <string name="statusbar_doubletap_sleep_summary">Докоснете два пъти лентата на състоянието, за да поставите устройството в заспиване</string>
@@ -1136,6 +1145,8 @@
     <string name="pulse_renderer_matrix">Matrix</string>
     <string name="pulse_renderer_particle">Частица</string>
     <string name="pulse_renderer_waveform">Форма на вълната</string>
+    <string name="pulse_height_multiplier_title">Pulse height</string>
+    <string name="pulse_height_multiplier_summary">Adjust height for the visualizer shown</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">Прозрачни известия</string>
     <string name="notification_row_transparency_summary">Направи прозрачен фон за известия в QS</string>
@@ -1420,6 +1431,7 @@
     <string name="qs_show_volume_slider_title">Режим на плъзгача</string>
     <string name="qs_show_volume_slider_hide">Само плъзгача за яркост</string>
     <string name="qs_show_volume_slider_both">Плъзгача за яркостта и за звук</string>
+    <string name="qs_show_volume_slider_below">Volume slider below brightness slider</string>
     <string name="qs_show_volume_slider_only">Само плъзгача за звук</string>
     <string name="qs_show_ringer_mode_title">Режим на звънене</string>
     <string name="qs_show_ringer_mode_summary">Покажи режимът за звънене със плъзгача за звука</string>
