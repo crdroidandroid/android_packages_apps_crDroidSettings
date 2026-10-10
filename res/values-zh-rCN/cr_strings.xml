@@ -32,10 +32,15 @@
     <string name="display_title">显示</string>
     <string name="ui_title">用户界面</string>
     <!-- Color Picker -->
-    <string name="dialog_color_picker">取色器</string>
-    <string name="press_color_to_apply">点击以使用下列颜色</string>
-    <string name="set">设置</string>
-    <string name="color_default">默认</string>
+    <string name="color_picker_title">选择颜色</string>
+    <string name="color_picker_select">选择</string>
+    <string name="color_picker_reset">恢复默认</string>
+    <string name="color_picker_presets">预设</string>
+    <string name="color_picker_hex_rgb">十六进制 (#RRGGBB)</string>
+    <string name="color_picker_hex_argb">十六进制 (#AARRGGBB)</string>
+    <string name="color_picker_hex_invalid">请输入有效的十六进制颜色代码</string>
+    <string name="color_picker_current_color">当前颜色</string>
+    <string name="color_picker_new_color">新建颜色</string>
     <!-- General strings -->
     <string name="ok">确定</string>
     <string name="reset">重置</string>
@@ -310,6 +315,10 @@
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">蓝牙电池状态</string>
     <string name="bluetooth_battery_summary">若设备支持，显示当前连接的蓝牙设备电量</string>
+    <!-- Title for the Bluetooth device details preference that chooses which audio codec a paired device is played with. [CHAR LIMIT=40] -->
+    <string name="bluetooth_details_audio_codec_title">Audio codec</string>
+    <!-- Summary shown when the audio codec of a paired device cannot be read or chosen. [CHAR LIMIT=40] -->
+    <string name="bluetooth_details_audio_codec_unavailable">Not available</string>
     <!-- Tap to sleep on status bar -->
     <string name="statusbar_doubletap_sleep_title">双击睡眠</string>
     <string name="statusbar_doubletap_sleep_summary">双击状态栏使设备睡眠</string>
@@ -1135,6 +1144,8 @@
     <string name="pulse_renderer_matrix">矩阵</string>
     <string name="pulse_renderer_particle">粒子</string>
     <string name="pulse_renderer_waveform">波形</string>
+    <string name="pulse_height_multiplier_title">Pulse height</string>
+    <string name="pulse_height_multiplier_summary">Adjust height for the visualizer shown</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">半透明通知</string>
     <string name="notification_row_transparency_summary">设置快速设置通知的半透明背景</string>
@@ -1419,6 +1430,7 @@
     <string name="qs_show_volume_slider_title">滑块模式</string>
     <string name="qs_show_volume_slider_hide">仅亮度滑块</string>
     <string name="qs_show_volume_slider_both">亮度和音量滑块</string>
+    <string name="qs_show_volume_slider_below">音量滑块置于亮度滑块下方</string>
     <string name="qs_show_volume_slider_only">仅音量滑块</string>
     <string name="qs_show_ringer_mode_title">响铃模式</string>
     <string name="qs_show_ringer_mode_summary">在音量滑块处显示铃声模式图标</string>
