@@ -273,10 +273,10 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <!-- Auto pin confirm -->
     <string name="lock_screen_auto_pin_confirm_summary_custom">Odblokuj automatycznie po wprowadzeniu poprawnego kodu PIN. Jest to nieco mniej bezpieczne niż dotknięcie przycisku Enter w celu potwierdzenia.</string>
     <!-- Doze settings -->
-    <string name="doze_display_title">Ekran Ambient</string>
-    <string name="doze_display_summary">Konfigurowanie ustawień dla ekranu Ambient</string>
+    <string name="doze_display_title">Ekran aktywny</string>
+    <string name="doze_display_summary">Konfigurowanie ustawień w trybie Ekran aktywny</string>
     <string name="doze_additional_settings_title">Dodatkowe ustawienia</string>
-    <string name="doze_additional_settings_summary">Dostosuj ustawienia ekranu Ambient</string>
+    <string name="doze_additional_settings_summary">Dostosuj ustawienia w trybie Ekran aktywny</string>
     <string name="doze_sensor_title">Oparte na czujniku</string>
     <string name="raise_to_wake_title">Wybudzanie</string>
     <string name="raise_to_wake_summary">Wybudzanie urządzenia zamiast pulsującego powiadomienia</string>
@@ -290,7 +290,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pocket_summary">Pulsujące powiadomienia po wyjęciu z kieszeni</string>
     <string name="doze_vibrate">Wibracje</string>
     <string name="doze_vibrate_summary">Czas trwania wibracji podczas pulsowania powiadomień</string>
-    <string name="sensor_warning_message">Ustawienia oparte na czujnikach podlegają kompatybilności sprzętowej. Włączenie czujników dla ekranu Ambient może zwiększyć zużycie energii.</string>
+    <string name="sensor_warning_message">Ustawienia oparte na czujnikach podlegają kompatybilności sprzętowej. Włączenie czujników w trybie tryb Ekran aktywny może zwiększyć zużycie energii.</string>
     <!-- Edge light -->
     <string name="edge_light_title">Światło krawędzi</string>
     <string name="edge_light_summary">Podświetlaj boczne krawędzie ekranu przy powiadomieniach</string>
@@ -310,8 +310,8 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="edge_light_animation_effect_chase">Pościg</string>
     <string name="edge_light_animation_effect_comet">Kometa</string>
     <!-- Ambient Ticker -->
-    <string name="pulse_on_new_tracks_title">Ambientowa muzyka</string>
-    <string name="pulse_on_new_tracks_summary">Pokazuj pasek muzyczny na ekranie Ambient podczas zmiany utworu</string>
+    <string name="pulse_on_new_tracks_title">Pasek muzyczny</string>
+    <string name="pulse_on_new_tracks_summary">Pokazuj pasek muzyczny w trybie Ekran aktywny podczas zmiany utworu</string>
     <!-- Status bar - icon blocklist -->
     <string name="status_bar_icons_title">Ikony paska stanu</string>
     <string name="status_bar_icons_summary">Wybierz które ikony mogą być wyświetlane na pasku stanu</string>
@@ -1028,9 +1028,9 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="wifi_per_network_random_mac_addr">Używaj losowego adresu MAC dla sieci</string>
     <string name="wifi_device_mac_addr">Używaj adresu MAC urządzenia</string>
     <!-- Ambient wake -->
-    <string name="doze_gesture_ambient_title">Pokazuj aktywny wyświetlacz</string>
-    <string name="doze_gesture_ambient_summary">Pokazuj aktywny wyświetlacz, zamiast wybudzać ekran</string>
-    <string name="gesture_wake_ambient">Pokazuj aktywny wyświetlacz</string>
+    <string name="doze_gesture_ambient_title">Pokazuj tryb Ekran aktywny</string>
+    <string name="doze_gesture_ambient_summary">Pokazuj tryb Ekran aktywny, zamiast wybudzać ekran</string>
+    <string name="gesture_wake_ambient">Pokazuj tryb Ekran aktywny</string>
     <string name="gesture_wake">Wybudzanie</string>
     <!-- Sidebar -->
     <string name="sidebar_title">Panel boczny</string>
@@ -1102,8 +1102,8 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ls_media_art_title">Okładka albumu</string>
     <string name="ls_media_art_summary">Wyświetlaj okładki albumów, gdy są dostępne</string>
     <!-- Lock screen media art on Ambient Display -->
-    <string name="ambient_media_art_title">Ambientowa okładka multimediów</string>
-    <string name="ambient_media_art_summary">Wyświetlaj okładki multimediów na wyświetlaczu Ambient, jeśli są dostępne</string>
+    <string name="ambient_media_art_title">Grafiki albumów w trybie Ekran aktywny</string>
+    <string name="ambient_media_art_summary">Wyświetlaj grafiki albumów w trybie Ekran aktywny, jeśli są dostępne</string>
     <!-- Lock screen album art filter -->
     <string name="ls_media_art_filter_title">Filtr okładki albumu</string>
     <string name="ls_media_art_filter_none">Brak</string>
@@ -1122,8 +1122,8 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <!-- Pulse music visualizer -->
     <string name="pulse_settings_title">Wizualizator pulsacyjny</string>
     <string name="pulse_settings_summary">Pokazuj wizualizator słupkowy na ekranie blokady podczas odtwarzania muzyki</string>
-    <string name="ambient_pulse_enabled_title">Pulse na ekranie Ambient</string>
-    <string name="ambient_pulse_enabled_summary">Pokazuj wizualizator na ekranie Ambient</string>
+    <string name="ambient_pulse_enabled_title">Pulse w trybie Ekran aktywny</string>
+    <string name="ambient_pulse_enabled_summary">Pokazuj wizualizator w trybie Ekran aktywny</string>
     <string name="pulse_bass_haptics_title">Wibracje basu</string>
     <string name="pulse_bass_haptics_none">Brak subtelnych wibracji przy gwałtownych skokach basu</string>
     <string name="pulse_bass_haptics_running">Tylko gdy pulsujące powiadomienie jest wyświetlane</string>
@@ -1154,7 +1154,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="notification_row_transparency_lockscreen_summary">Ustaw przezroczyste tło dla powiadomień na ekranie blokady</string>
     <!-- Ambient Wallpaper -->
     <string name="doze_always_on_wallpaper_title">Tapeta Ambient</string>
-    <string name="doze_always_on_wallpaper_summary">Pokazuj tapetę ekranu blokady na ekranie Ambient</string>
+    <string name="doze_always_on_wallpaper_summary">Pokazuj tapetę ekranu blokady w trybie Ekran aktywny</string>
     <!-- Squiggle animation for media notification -->
     <string name="media_squiggle_animation_title">Animacja squiggle</string>
     <string name="media_squiggle_animation_summary">Pokazuj animację squiggle na pasku wyszukiwania podczas odtwarzania multimediów</string>
