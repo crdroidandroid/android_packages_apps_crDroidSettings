@@ -21,6 +21,29 @@
         android:key="ts_keybox_category"
         android:title="@string/ts_keybox_management">
 
+        <SwitchPreferenceCompat
+            android:key="ts_auto_update"
+            android:title="@string/ts_auto_update"
+            android:summary="@string/ts_auto_update_summary"
+            android:defaultValue="true"
+            android:persistent="false" />
+
+        <Preference
+            android:key="ts_keybox_status"
+            android:title="@string/ts_status"
+            android:summary="@string/ts_status_unknown"
+            android:selectable="false" />
+
+        <Preference
+            android:key="ts_check_revocation"
+            android:title="@string/ts_check_revocation"
+            android:summary="@string/ts_check_revocation_summary" />
+
+        <Preference
+            android:key="ts_fetch_keybox"
+            android:title="@string/ts_fetch_keybox"
+            android:summary="@string/ts_fetch_keybox_summary" />
+
         <Preference
             android:key="ts_import_keybox"
             android:title="@string/ts_import_keybox"
