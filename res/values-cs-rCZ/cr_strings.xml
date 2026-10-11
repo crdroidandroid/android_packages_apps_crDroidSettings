@@ -32,10 +32,15 @@
     <string name="display_title">Zobrazení</string>
     <string name="ui_title">Uživatelské rozhraní</string>
     <!-- Color Picker -->
-    <string name="dialog_color_picker">Výběr barvy</string>
-    <string name="press_color_to_apply">Klepněte na barvu, kterou chcete použít</string>
-    <string name="set">Nastavit</string>
-    <string name="color_default">Výchozí</string>
+    <string name="color_picker_title">Vyberte barvu</string>
+    <string name="color_picker_select">Vybrat</string>
+    <string name="color_picker_reset">Obnovit výchozí</string>
+    <string name="color_picker_presets">Předvolby</string>
+    <string name="color_picker_hex_rgb">Hex (#ČČZZMM)</string>
+    <string name="color_picker_hex_argb">Hex (#AAČČZZMM)</string>
+    <string name="color_picker_hex_invalid">Zadejte platnou hex barvu</string>
+    <string name="color_picker_current_color">Aktuální barva</string>
+    <string name="color_picker_new_color">Nová barva</string>
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Resetovat</string>
@@ -312,6 +317,10 @@
     <!-- Bluetooth status -->
     <string name="bluetooth_battery_title">Stav baterie Bluetooth zařízení</string>
     <string name="bluetooth_battery_summary">Zobrazit stav baterie připojeného Bluetooth zařízení, je‑li dostupný</string>
+    <!-- Title for the Bluetooth device details preference that chooses which audio codec a paired device is played with. [CHAR LIMIT=40] -->
+    <string name="bluetooth_details_audio_codec_title">Audio codec</string>
+    <!-- Summary shown when the audio codec of a paired device cannot be read or chosen. [CHAR LIMIT=40] -->
+    <string name="bluetooth_details_audio_codec_unavailable">Not available</string>
     <!-- Tap to sleep on status bar -->
     <string name="statusbar_doubletap_sleep_title">Uspat dvojím poklepáním</string>
     <string name="statusbar_doubletap_sleep_summary">Dvojím poklepáním na stavový řádek uvést zařízení do režimu spánku</string>
@@ -1141,6 +1150,8 @@
     <string name="pulse_renderer_matrix">Matrix</string>
     <string name="pulse_renderer_particle">Particle</string>
     <string name="pulse_renderer_waveform">Waveform</string>
+    <string name="pulse_height_multiplier_title">Pulse height</string>
+    <string name="pulse_height_multiplier_summary">Adjust height for the visualizer shown</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">Průsvitná oznámení</string>
     <string name="notification_row_transparency_summary">Nastavit v QS průsvitné pozadí oznámení</string>
@@ -1427,6 +1438,7 @@
     <string name="qs_show_volume_slider_title">Režim posuvníku</string>
     <string name="qs_show_volume_slider_hide">Pouze posuvník jasu</string>
     <string name="qs_show_volume_slider_both">Posuvníky jasu a hlasitosti</string>
+    <string name="qs_show_volume_slider_below">Posuvník hlasitosti pod posuvníkem jasu</string>
     <string name="qs_show_volume_slider_only">Pouze posuvník hlasitosti</string>
     <string name="qs_show_ringer_mode_title">Režim vyzvánění</string>
     <string name="qs_show_ringer_mode_summary">Zobrazit ikonu režimu vyzvánění spolu s posuvníkem hlasitosti</string>
