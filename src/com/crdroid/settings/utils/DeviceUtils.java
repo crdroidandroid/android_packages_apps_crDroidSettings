@@ -17,6 +17,7 @@ package com.crdroid.settings.utils;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.hardware.fingerprint.FingerprintManager;
 import android.graphics.Point;
@@ -201,6 +202,9 @@ public class DeviceUtils {
     }
 
     public static boolean hasFingerprint(Context context) {
+        if (!context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)) {
+            return false;
+        }
         FingerprintManager fp = (FingerprintManager) context.getSystemService(Context.FINGERPRINT_SERVICE);
         if (fp == null || !fp.isHardwareDetected()) {
             return false;
