@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: crDroid Android Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<!-- The list is the root of the dialog content, like the ListView of a stock
+     AlertDialog list. Side padding comes from the dialog theme so rows line up
+     with the title, and the scroll indicators sit on the list edges so the
+     divider spans the dialog and rows are clipped by it. -->
+<androidx.recyclerview.widget.RecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:paddingStart="?android:attr/dialogPreferredPadding"
+    android:paddingTop="@dimen/settingslib_expressive_space_small1"
+    android:paddingEnd="?android:attr/dialogPreferredPadding"
+    android:paddingBottom="@dimen/settingslib_expressive_space_extrasmall2"
+    android:scrollIndicators="top|bottom"
+    android:scrollbars="none" />

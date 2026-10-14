@@ -14,7 +14,6 @@ import android.graphics.drawable.Drawable
 import android.os.UserHandle
 import android.provider.Settings
 import android.util.AttributeSet
-import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -66,7 +65,7 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
 
     override fun onClick() {
         val ctx = context
-        val content = LayoutInflater.from(ctx).inflate(R.layout.selector_item_view, null)
+        val content = LayoutInflater.from(ctx).inflate(R.layout.picker_dialog, null)
 
         recyclerView = content.findViewById<RecyclerView>(R.id.recycler_view).apply {
             setHasFixedSize(true)
@@ -97,7 +96,6 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
                 }
                 dlg.show()
                 applyDialogWidth(dlg)
-                tintDialogAccent(dlg)
             }
     }
 
@@ -162,24 +160,6 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
         }
     }
 
-    private fun tintDialogAccent(dlg: AlertDialog) {
-        val tv = TypedValue()
-        val theme = context.theme
-        if (!theme.resolveAttribute(android.R.attr.colorAccent, tv, true)) return
-
-        val accent = if (tv.resourceId != 0) context.getColor(tv.resourceId) else tv.data
-        if (accent == 0) return
-
-        val w = dlg.window
-        if (w != null) {
-            val titleId = context.resources.getIdentifier("alertTitle", "id", "android")
-            val titleView = if (titleId != 0) w.decorView.findViewById<TextView>(titleId) else null
-            titleView?.setTextColor(accent)
-        }
-
-        dlg.getButton(AlertDialog.BUTTON_NEGATIVE)?.setTextColor(accent)
-    }
-
     private inner class IconAdapter(applied: Int) :
         RecyclerView.Adapter<IconAdapter.IconViewHolder>() {
 
@@ -187,7 +167,7 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IconViewHolder {
             val v = LayoutInflater.from(parent.context)
-                .inflate(R.layout.clock_chip_option, parent, false)
+                .inflate(R.layout.clock_option, parent, false)
             return IconViewHolder(v)
         }
 
@@ -198,10 +178,11 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
             holder.clock.setPadding(8, 2, 8, 2)
             holder.clock.textAlignment = View.TEXT_ALIGNMENT_CENTER
 
-            if (styleIndex != 0 && styleIndex != 2 && styleIndex != 8) {
-                holder.clock.setTextColor(Color.WHITE)
-            } else {
-                holder.clock.setTextColor(resolveTextColorPrimary(holder.clock.context))
+            when (styleIndex) {
+                0, 2, 8 -> holder.clock.setTextColor(
+                    holder.clock.context.getColorStateList(R.color.picker_option_text)
+                )
+                else -> holder.clock.setTextColor(Color.WHITE)
             }
 
             holder.name.visibility = View.VISIBLE
@@ -210,6 +191,14 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
             holder.itemView.isActivated = (styleIndex == selectedIndex)
 
             holder.itemView.setOnClickListener {
+                if (styleIndex == selectedIndex) {
+                    dialog?.dismiss()
+                    return@setOnClickListener
+                }
+                if (!this@ClockBackgroundChipPreference.callChangeListener(styleIndex)) {
+                    return@setOnClickListener
+                }
+
                 val old = selectedIndex
                 selectedIndex = styleIndex
 
@@ -235,15 +224,6 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
             if (idx < 0) return 0
             if (idx >= chipDrawables.size) return 0
             return idx
-        }
-
-        private fun resolveTextColorPrimary(ctx: Context): Int {
-            val tv = TypedValue()
-            return if (ctx.theme.resolveAttribute(android.R.attr.textColorPrimary, tv, true)) {
-                if (tv.resourceId != 0) ctx.getColor(tv.resourceId) else tv.data
-            } else {
-                0xff000000.toInt()
-            }
         }
 
         inner class IconViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
