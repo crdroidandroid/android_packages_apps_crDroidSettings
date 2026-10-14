@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: crDroid Android Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/settingslib_expressive_space_extrasmall1"
+    android:minHeight="@dimen/settingslib_expressive_space_medium5"
+    android:paddingStart="@dimen/settingslib_expressive_space_small3"
+    android:paddingEnd="@dimen/settingslib_expressive_space_small1"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="@drawable/bg_picker_option">
+
+    <FrameLayout
+        android:id="@+id/option_tile"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/settingslib_expressive_space_extrasmall4"
+        android:paddingVertical="@dimen/settingslib_expressive_space_extrasmall4">
+
+        <TextClock
+            android:id="@+id/option_clock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:format12Hour="hh:mm"
+            android:format24Hour="kk:mm"
+            android:textAppearance="@style/OptionTitleTextAppearance" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/option_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/settingslib_expressive_space_small1"
+        android:paddingVertical="@dimen/settingslib_expressive_space_extrasmall6"
+        android:textAppearance="@style/TextAppearance.SettingsLib.BodyLarge"
+        android:textAlignment="viewStart"
+        android:textColor="@color/picker_option_text" />
+</LinearLayout>

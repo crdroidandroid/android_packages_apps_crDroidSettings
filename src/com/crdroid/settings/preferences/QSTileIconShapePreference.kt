@@ -199,6 +199,14 @@ class QSTileIconShapePreference @JvmOverloads constructor(
             holder.itemView.isActivated = (position == selectedIndex)
 
             holder.itemView.setOnClickListener {
+                if (position == selectedIndex) {
+                    dialog?.dismiss()
+                    return@setOnClickListener
+                }
+                if (!this@QSTileIconShapePreference.callChangeListener(shapeKey)) {
+                    return@setOnClickListener
+                }
+
                 val old = selectedIndex
                 selectedIndex = position
 
@@ -209,7 +217,6 @@ class QSTileIconShapePreference @JvmOverloads constructor(
                 )
 
                 summary = entries[position]
-                callChangeListener(shapeKey)
 
                 notifyItemChanged(old)
                 notifyItemChanged(selectedIndex)

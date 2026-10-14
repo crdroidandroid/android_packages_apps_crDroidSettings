@@ -216,6 +216,14 @@ class StatusBarLogoStylePreference @JvmOverloads constructor(
             holder.itemView.isActivated = (styleIndex == selectedIndex)
 
             holder.itemView.setOnClickListener {
+                if (styleIndex == selectedIndex) {
+                    dialog?.dismiss()
+                    return@setOnClickListener
+                }
+                if (!this@StatusBarLogoStylePreference.callChangeListener(styleIndex)) {
+                    return@setOnClickListener
+                }
+
                 val old = selectedIndex
                 selectedIndex = styleIndex
 

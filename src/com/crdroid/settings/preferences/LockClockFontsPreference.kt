@@ -13,13 +13,13 @@ import android.graphics.Typeface
 import android.os.Handler
 import android.os.Looper
 import android.util.AttributeSet
-import android.util.TypedValue
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.preference.Preference
 import androidx.preference.PreferenceManager
@@ -57,7 +57,7 @@ class LockClockFontsPreference @JvmOverloads constructor(
 
     override fun onClick() {
         val ctx = context
-        val content = LayoutInflater.from(ctx).inflate(R.layout.selector_item_view, null)
+        val content = LayoutInflater.from(ctx).inflate(R.layout.picker_dialog, null)
 
         recyclerView = content.findViewById<RecyclerView>(R.id.recycler_view).apply {
             setHasFixedSize(true)
@@ -88,7 +88,6 @@ class LockClockFontsPreference @JvmOverloads constructor(
                 }
                 dlg.show()
                 applyDialogWidth(dlg)
-                tintDialogAccent(dlg)
             }
     }
 
@@ -133,24 +132,6 @@ class LockClockFontsPreference @JvmOverloads constructor(
         }
     }
 
-    private fun tintDialogAccent(dlg: AlertDialog) {
-        val tv = TypedValue()
-        val theme = context.theme
-        if (!theme.resolveAttribute(android.R.attr.colorAccent, tv, true)) return
-
-        val accent = if (tv.resourceId != 0) context.getColor(tv.resourceId) else tv.data
-        if (accent == 0) return
-
-        val w = dlg.window
-        if (w != null) {
-            val titleId = context.resources.getIdentifier("alertTitle", "id", "android")
-            val titleView = if (titleId != 0) w.decorView.findViewById<TextView>(titleId) else null
-            titleView?.setTextColor(accent)
-        }
-
-        dlg.getButton(AlertDialog.BUTTON_NEGATIVE)?.setTextColor(accent)
-    }
-
     private inner class FontsAdapter(
         private val ctx: Context,
         private val pkgs: List<String>,
@@ -165,7 +146,7 @@ class LockClockFontsPreference @JvmOverloads constructor(
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FontsViewHolder {
             val v = LayoutInflater.from(parent.context)
-                .inflate(R.layout.clock_font_option, parent, false)
+                .inflate(R.layout.clock_option, parent, false)
             return FontsViewHolder(v)
         }
 
@@ -177,7 +158,9 @@ class LockClockFontsPreference @JvmOverloads constructor(
             holder.clock.setPadding(8, 2, 8, 2)
             holder.clock.textAlignment = View.TEXT_ALIGNMENT_CENTER
             if (tf != null) holder.clock.typeface = tf
-            holder.clock.setTextColor(resolveTextColorPrimary(holder.clock.context))
+            holder.clock.setTextColor(
+                holder.clock.context.getColorStateList(R.color.picker_option_text)
+            )
 
             holder.name.visibility = View.VISIBLE
             holder.name.text = if (pkg == "android") "Default" else label
@@ -245,15 +228,6 @@ class LockClockFontsPreference @JvmOverloads constructor(
                     onLater()
                 }
                 .show()
-        }
-
-        private fun resolveTextColorPrimary(ctx: Context): Int {
-            val tv = TypedValue()
-            return if (ctx.theme.resolveAttribute(android.R.attr.textColorPrimary, tv, true)) {
-                if (tv.resourceId != 0) ctx.getColor(tv.resourceId) else tv.data
-            } else {
-                0xff000000.toInt()
-            }
         }
 
         inner class FontsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
