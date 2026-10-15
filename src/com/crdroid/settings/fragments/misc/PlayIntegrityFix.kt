@@ -55,7 +55,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                         PIF_CONFIG_KEY,
                         normalized
                     )
-                    killPackage(VENDING_PACKAGE)
+                    restartTargetPackages()
                     toast(getString(R.string.pif_imported_as, PIF_CONFIG_NAME))
                     refreshStatus()
                 } catch (e: Exception) {
@@ -88,9 +88,8 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             true
         }
 
-        findPreference<SwitchPreferenceCompat>("spoof_pif_photos")?.setOnPreferenceChangeListener { _, newValue ->
-            killPackage(PHOTOS_PACKAGE)
-            killPackage(VENDING_PACKAGE)
+        findPreference<SwitchPreferenceCompat>("spoof_pif_photos")?.setOnPreferenceChangeListener { _, _ ->
+            restartTargetPackages(includePhotos = true)
             true
         }
 
@@ -102,10 +101,14 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         scope.cancel()
     }
 
-    private fun refreshStatus() {
+    private fun readCurrentConfig(): Map<String, String> {
         val content = Settings.Secure.getStringForUser(requireContext().contentResolver,
                         PIF_CONFIG_KEY, UserHandle.USER_CURRENT)
-        activeConfigData = if (!content.isNullOrEmpty()) readConfigData(content) else emptyMap()
+        return if (!content.isNullOrEmpty()) readConfigData(content) else emptyMap()
+    }
+
+    private fun refreshStatus() {
+        activeConfigData = readCurrentConfig()
         val exists = activeConfigData.isNotEmpty()
 
         val activePref = findPreference<Preference>("pif_active_config")
@@ -169,6 +172,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                         PIF_CONFIG_KEY,
                         null
                     )
+                    restartTargetPackages(includePhotos = true)
                     toast(getString(R.string.pif_deleted, PIF_CONFIG_NAME))
                     refreshStatus()
                 } catch (e: Exception) {
@@ -251,12 +255,22 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 }
                 when (result) {
                     is PifFetchResult.Success -> {
+                        // Carry over user-tuned spoof flags from the previous config
+                        // unless the freshly generated config already defines them.
+                        val existing = readCurrentConfig()
+                        PRESERVED_KEYS.forEach { key ->
+                            existing[key]?.let { value ->
+                                if (!result.pifData.has(key)) {
+                                    result.pifData.put(key, value)
+                                }
+                            }
+                        }
                         Settings.Secure.putString(
                             requireContext().contentResolver,
                             PIF_CONFIG_KEY,
                             result.pifData.toString(2)
                         )
-                        killPackage(VENDING_PACKAGE)
+                        restartTargetPackages()
                         toast(getString(R.string.pif_fetched_model, result.model))
                         refreshStatus()
                     }
@@ -273,11 +287,17 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         }
     }
 
-    private fun killPackage(pkg: String) {
+    private fun restartTargetPackages(includePhotos: Boolean = false) {
         try {
             val am = requireContext().getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
-            am.forceStopPackage(pkg)
-        } catch (_: Exception) {}
+            am.forceStopPackage(GMS_PACKAGE)
+            am.forceStopPackage(VENDING_PACKAGE)
+            if (includePhotos) {
+                am.forceStopPackage(PHOTOS_PACKAGE)
+            }
+        } catch (e: Exception) {
+            Log.w(TAG, "Failed to restart target packages: ${e.message}")
+        }
     }
 
     private fun toast(msg: String) {
@@ -295,7 +315,16 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         private const val FLASH_API = "https://content-flashstation-pa.googleapis.com/v1/builds"
         private const val PIXEL_BULLETIN_URL = "https://source.android.com/docs/security/bulletin/pixel"
         private const val VENDING_PACKAGE = "com.android.vending"
+        private const val GMS_PACKAGE = "com.google.android.gms"
         private const val PHOTOS_PACKAGE = "com.google.android.apps.photos"
+
+        private val VERSIONS_REGEX =
+            Regex("""(?:https://developer\.android\.com)?/about/versions/(\d+)""")
+
+        private val PRESERVED_KEYS = listOf(
+            "spoofBuild", "spoofProps", "spoofProvider", "spoofSignature",
+            "spoofVendingBuild", "spoofVendingSdk", "DEBUG", "verboseLogs"
+        )
 
         private val DEVICE_MODEL_MAP = mapOf(
             "oriole" to "Pixel 6",
@@ -325,6 +354,28 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             "cubs" to "Pixel 11",
             "formosan" to "Pixel 11a",
         )
+
+        /** SDK level each device launched with. Unknown/new devices fall back to the newest. */
+        private fun initialSdkIntFor(device: String): String = when (device) {
+            "oriole", "raven" -> "31"
+            "bluejay" -> "32"
+            "panther", "cheetah", "lynx", "felix", "tangorpro" -> "33"
+            "shiba", "husky", "akita", "tokay", "caiman", "komodo", "comet" -> "34"
+            "tegu", "stallion" -> "35"
+            "frankel", "blazer", "mustang", "rango" -> "36"
+            "cubs", "grizzly", "kodiak", "yogi" -> "37"
+            else -> "37"
+        }
+
+        /** Default spoof flags written into every freshly generated config. */
+        private fun JSONObject.putDefaultSpoofFlags(): JSONObject = apply {
+            put("spoofBuild", "true")
+            put("spoofProps", "true")
+            put("spoofProvider", "false")
+            put("spoofSignature", "false")
+            put("spoofVendingBuild", "true")
+            put("spoofVendingSdk", "false")
+        }
 
         /**
          * Reads the config from a JSON string (stored in Settings.Secure).
@@ -393,6 +444,12 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             }
         }
 
+        private fun fetchKnownVersions(): List<Int> {
+            val versionsHtml = URL("$GOOGLE_URL/about/versions").readText(StandardCharsets.UTF_8)
+            return VERSIONS_REGEX.findAll(versionsHtml)
+                .map { it.groupValues[1].toInt() }.toSet().sortedDescending()
+        }
+
         data class PifDevice(
             val product: String,
             val device: String,
@@ -409,9 +466,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
          * Phase 1: Scrape Google developer site to find all available beta devices.
          */
         private fun fetchAvailableDevices(): List<PifDevice> {
-            val versionsHtml = URL("$GOOGLE_URL/about/versions").readText(StandardCharsets.UTF_8)
-            val knownVersions = Regex("""https://developer\.android\.com/about/versions/(\d+)""")
-                .findAll(versionsHtml).map { it.groupValues[1].toInt() }.toSet().sortedDescending()
+            val knownVersions = fetchKnownVersions()
 
             val maxVersion = knownVersions.firstOrNull() ?: return emptyList()
             val versions = listOf(maxVersion + 1) + knownVersions
@@ -467,10 +522,10 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                     put("PRODUCT", pifDevice.product)
                     put("RELEASE", release)
                     put("SECURITY_PATCH", securityPatch)
-                    put("DEVICE_INITIAL_SDK_INT", "21")
+                    put("DEVICE_INITIAL_SDK_INT", initialSdkIntFor(pifDevice.device))
                     put("DEBUG", false)
                     put("SDK_INT", "32")
-                }
+                }.putDefaultSpoofFlags()
                 return PifFetchResult.Success(pifDevice.model, pifJson)
             } catch (e: Exception) {
                 return PifFetchResult.Error("Failed: ${e.message}")
@@ -479,9 +534,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
 
         private fun fetchAvailableCanaryDevices(): Pair<List<PifDevice>, String?> {
             try {
-                val versionsHtml = URL("$GOOGLE_URL/about/versions").readText(StandardCharsets.UTF_8)
-                val knownVersions = Regex("""https://developer\.android\.com/about/versions/(\d+)""")
-                    .findAll(versionsHtml).map { it.groupValues[1].toInt() }.toSet().sortedDescending()
+                val knownVersions = fetchKnownVersions()
 
                 val maxVersion = knownVersions.firstOrNull() ?: return emptyList<PifDevice>() to null
                 val versions = listOf(maxVersion + 1) + knownVersions
@@ -609,10 +662,10 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                     put("PRODUCT", pifDevice.product)
                     put("RELEASE", "CANARY")
                     put("SECURITY_PATCH", securityPatch)
-                    put("DEVICE_INITIAL_SDK_INT", "32")
+                    put("DEVICE_INITIAL_SDK_INT", initialSdkIntFor(pifDevice.device))
                     put("DEBUG", false)
                     put("SDK_INT", "32")
-                }
+                }.putDefaultSpoofFlags()
 
                 return PifFetchResult.Success(pifDevice.model, pifJson)
             } catch (e: Exception) {
