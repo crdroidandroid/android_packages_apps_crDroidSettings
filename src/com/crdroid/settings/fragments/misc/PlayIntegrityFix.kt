@@ -319,6 +319,11 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             "mustang" to "Pixel 10 Pro XL",
             "rango" to "Pixel 10 Pro Fold",
             "stallion" to "Pixel 10a",
+            "yogi" to "Pixel 11 Pro Fold",
+            "kodiak" to "Pixel 11 Pro XL",
+            "grizzly" to "Pixel 11 Pro",
+            "cubs" to "Pixel 11",
+            "formosan" to "Pixel 11a",
         )
 
         /**
