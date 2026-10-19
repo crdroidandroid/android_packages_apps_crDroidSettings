@@ -14,8 +14,10 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
+import androidx.preference.SwitchPreferenceCompat
 import com.android.internal.logging.nano.MetricsProto
 import com.android.settings.R
 import com.android.settings.SettingsPreferenceFragment
@@ -85,7 +87,66 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             true
         }
 
+        setupFlagPreferences()
         refreshStatus()
+    }
+
+    /**
+     * The flag preferences are not persisted on their own: every change is written
+     * into the active spoof_pif_config JSON, which the framework re-reads (and then
+     * restarts DroidGuard / Play Store) on its own.
+     */
+    private fun setupFlagPreferences() {
+        FLAG_PREFS.forEach { (prefKey, configKey) ->
+            findPreference<SwitchPreferenceCompat>(prefKey)?.setOnPreferenceChangeListener { _, newValue ->
+                updateConfigFlag(configKey, (newValue as Boolean).toString())
+                false // refreshStatus() applies the stored value to the switch
+            }
+        }
+
+        findPreference<ListPreference>(PREF_VERBOSE_LOGS)?.setOnPreferenceChangeListener { _, newValue ->
+            updateConfigFlag(KEY_VERBOSE_LOGS, newValue as String)
+            false
+        }
+    }
+
+    private fun updateConfigFlag(key: String, value: String) {
+        try {
+            val resolver = requireContext().contentResolver
+            val raw = Settings.Secure.getStringForUser(resolver, PIF_CONFIG_KEY, UserHandle.USER_CURRENT)
+            if (raw.isNullOrBlank()) {
+                toast(getString(R.string.pif_no_config))
+                return
+            }
+            val json = JSONObject(normalizePifPayload(raw))
+            json.put(key, value)
+            Settings.Secure.putString(resolver, PIF_CONFIG_KEY, json.toString(2))
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to update $key", e)
+            toast(getString(R.string.pif_failed, e.message ?: ""))
+        }
+        refreshStatus()
+    }
+
+    private fun refreshFlagPreferences(data: Map<String, String>, configExists: Boolean) {
+        // Flags live inside the config, so they can only be edited when one is loaded.
+        findPreference<PreferenceCategory>("pif_flags_category")?.isEnabled = configExists
+
+        fun flagValue(key: String) = isTrue(data[key] ?: DEFAULT_SPOOF_FLAGS[key] ?: "false")
+
+        FLAG_PREFS.forEach { (prefKey, configKey) ->
+            findPreference<SwitchPreferenceCompat>(prefKey)?.isChecked = flagValue(configKey)
+        }
+
+        // The framework only applies spoofVendingSdk when Play Store build spoofing is off.
+        findPreference<SwitchPreferenceCompat>(PREF_VENDING_SDK)?.isEnabled =
+            !flagValue(KEY_VENDING_BUILD)
+
+        findPreference<ListPreference>(PREF_VERBOSE_LOGS)?.apply {
+            val stored = data[KEY_VERBOSE_LOGS] ?: DEFAULT_VERBOSE_LOGS
+            value = if (findIndexOfValue(stored) >= 0) stored else DEFAULT_VERBOSE_LOGS
+            summary = entry
+        }
     }
 
     override fun onDestroy() {
@@ -120,6 +181,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
 
         findPreference<Preference>("pif_delete_config")?.isEnabled = exists
 
+        refreshFlagPreferences(activeConfigData, exists)
         populateConfigDetails(activeConfigData)
     }
 
@@ -292,6 +354,26 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
 
         private val VERSIONS_REGEX =
             Regex("""(?:https://developer\.android\.com)?/about/versions/(\d+)""")
+
+        private const val KEY_VENDING_BUILD = "spoofVendingBuild"
+        private const val KEY_VERBOSE_LOGS = "verboseLogs"
+        private const val DEFAULT_VERBOSE_LOGS = "0"
+        private const val PREF_VENDING_SDK = "pif_flag_spoof_vending_sdk"
+        private const val PREF_VERBOSE_LOGS = "pif_flag_verbose_logs"
+
+        /** Switch preference key -> config key it edits. */
+        private val FLAG_PREFS = linkedMapOf(
+            "pif_flag_spoof_build" to "spoofBuild",
+            "pif_flag_spoof_props" to "spoofProps",
+            "pif_flag_spoof_provider" to "spoofProvider",
+            "pif_flag_spoof_signature" to "spoofSignature",
+            "pif_flag_spoof_vending_build" to KEY_VENDING_BUILD,
+            PREF_VENDING_SDK to "spoofVendingSdk",
+            "pif_flag_debug" to "DEBUG",
+        )
+
+        /** Same truthiness rule as PlayIntegritySpoofService.processKeyValue(). */
+        private fun isTrue(value: String) = value == "1" || value.equals("true", ignoreCase = true)
 
         /** Keys carried over from the previous config when a new one is fetched. */
         private val PRESERVED_KEYS = listOf(

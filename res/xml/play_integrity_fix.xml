@@ -54,6 +54,61 @@
             android:defaultValue="true" />
     </PreferenceCategory>
 
+    <!-- Flags stored inside spoof_pif_config; written by PlayIntegrityFix.kt, not persisted -->
+    <PreferenceCategory
+        android:key="pif_flags_category"
+        android:title="@string/pif_flags_title">
+
+        <SwitchPreferenceCompat
+            android:key="pif_flag_spoof_build"
+            android:title="@string/pif_flag_spoof_build_title"
+            android:summary="@string/pif_flag_spoof_build_summary"
+            android:persistent="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pif_flag_spoof_props"
+            android:title="@string/pif_flag_spoof_props_title"
+            android:summary="@string/pif_flag_spoof_props_summary"
+            android:persistent="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pif_flag_spoof_provider"
+            android:title="@string/pif_flag_spoof_provider_title"
+            android:summary="@string/pif_flag_spoof_provider_summary"
+            android:persistent="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pif_flag_spoof_signature"
+            android:title="@string/pif_flag_spoof_signature_title"
+            android:summary="@string/pif_flag_spoof_signature_summary"
+            android:persistent="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pif_flag_spoof_vending_build"
+            android:title="@string/pif_flag_spoof_vending_build_title"
+            android:summary="@string/pif_flag_spoof_vending_build_summary"
+            android:persistent="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pif_flag_spoof_vending_sdk"
+            android:title="@string/pif_flag_spoof_vending_sdk_title"
+            android:summary="@string/pif_flag_spoof_vending_sdk_summary"
+            android:persistent="false" />
+
+        <SwitchPreferenceCompat
+            android:key="pif_flag_debug"
+            android:title="@string/pif_flag_debug_title"
+            android:summary="@string/pif_flag_debug_summary"
+            android:persistent="false" />
+
+        <ListPreference
+            android:key="pif_flag_verbose_logs"
+            android:title="@string/pif_flag_verbose_logs_title"
+            android:entries="@array/pif_verbose_logs_entries"
+            android:entryValues="@array/pif_verbose_logs_values"
+            android:persistent="false" />
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:key="pif_footer_category"
         android:title="@string/pif_footer_title">
