@@ -276,10 +276,13 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 }
 
                 val modelNames = devices.map { it.model }.toTypedArray()
+                // Preselect the device the active config already spoofs, if it is still offered.
+                val currentIndex = devices.indexOfFirst { it.device == activeConfigData["DEVICE"] }
 
                 AlertDialog.Builder(requireContext())
                     .setTitle(R.string.pif_select_device)
-                    .setItems(modelNames) { _, which ->
+                    .setSingleChoiceItems(modelNames, currentIndex) { dialog, which ->
+                        dialog.dismiss()
                         generateAndSavePif(devices[which], channel, apiKey)
                     }
                     .setNegativeButton(android.R.string.cancel, null)
@@ -598,7 +601,6 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                     put("RELEASE", release)
                     put("SECURITY_PATCH", securityPatch)
                     put("DEVICE_INITIAL_SDK_INT", initialSdkIntFor(pifDevice.device))
-                    put("SDK_INT", "32")
                 }
                 return PifFetchResult.Success(pifDevice.model, pifJson)
             } catch (e: Exception) {
@@ -613,47 +615,41 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 val maxVersion = knownVersions.firstOrNull() ?: return emptyList<PifDevice>() to null
                 val versions = listOf(maxVersion + 1) + knownVersions
 
-                val rowPattern = Regex(
-                    """<tr id="([^"]+)">\s*<td[^>]*>([^<]+)</td>""",
-                    RegexOption.DOT_MATCHES_ALL
-                )
-
                 for (version in versions) {
                     try {
                         val latestHtml = URL("$GOOGLE_URL/about/versions/$version")
                             .readText(StandardCharsets.UTF_8)
-                        val qprPath = Regex("""href="(/about/versions/$version/qpr(\d+)/download-ota)"""")
-                            .findAll(latestHtml)
-                            .map { it.groupValues[2].toInt() to it.groupValues[1] }
-                            .maxByOrNull { it.first }
-                            ?.second ?: continue
 
-                        val fiHtml = URL("$GOOGLE_URL$qprPath").readText(StandardCharsets.UTF_8)
+                        // Beta download pages: factory images (".../download") and OTAs
+                        // (".../download-ota"), either for the base release or a QPR.
+                        val pages = Regex(
+                            """href="(/about/versions/$version(?:/qpr(\d+))?/download(?:-ota)?)""""
+                        ).findAll(latestHtml)
+                            .map { it.groupValues[1] to (it.groupValues[2].toIntOrNull() ?: 0) }
+                            .toList()
+                        if (pages.isEmpty()) continue
 
-                        val devices = mutableListOf<PifDevice>()
-                        val seen = mutableSetOf<String>()
-                        rowPattern.findAll(fiHtml).forEach { match ->
-                            val device = match.groupValues[1]
-                            if (device in seen) return@forEach
-                            seen.add(device)
-                            val model = match.groupValues[2].trim()
-                                .ifEmpty { DEVICE_MODEL_MAP[device] ?: device }
-                            devices.add(
-                                PifDevice(
-                                    product = "${device}_beta",
-                                    device = device,
-                                    model = model,
-                                    otaUrl = "",
-                                )
-                            )
-                        }
+                        // Newest QPR (or the base release when there is none), then the
+                        // longer of its FI / OTA device tables, as autopif does.
+                        val newestQpr = pages.maxOf { it.second }
+                        val devices = pages.filter { it.second == newestQpr }
+                            .map { it.first }
+                            .distinct()
+                            .mapNotNull { path ->
+                                try {
+                                    parseDeviceTable(URL("$GOOGLE_URL$path").readText(StandardCharsets.UTF_8))
+                                } catch (e: Exception) {
+                                    Log.d(TAG, "Failed to read $path: ${e.message}")
+                                    null
+                                }
+                            }
+                            .maxByOrNull { it.size }
+                            .orEmpty()
 
                         if (devices.isEmpty()) continue
 
                         val flashHtml = URL(FLASH_URL).readText(StandardCharsets.UTF_8)
-                        val apiKey = Regex("""AIza[0-9A-Za-z_-]{35}""").find(flashHtml)?.value
-
-                        return devices to apiKey
+                        return devices to extractFlashApiKey(flashHtml)
                     } catch (_: Exception) { continue }
                 }
 
@@ -662,6 +658,38 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 Log.e(TAG, "Canary device fetch failed", e)
                 return emptyList<PifDevice>() to null
             }
+        }
+
+        private val DEVICE_ROW_REGEX = Regex(
+            """<tr id="([^"]+)">\s*<td[^>]*>([^<]+)</td>""",
+            RegexOption.DOT_MATCHES_ALL
+        )
+
+        private val API_KEY_REGEX = Regex("""AIza[0-9A-Za-z_-]{35}""")
+
+        /** Parses a beta download page's device table into codename/model pairs. */
+        private fun parseDeviceTable(html: String): List<PifDevice> {
+            val devices = mutableListOf<PifDevice>()
+            val seen = mutableSetOf<String>()
+            DEVICE_ROW_REGEX.findAll(html).forEach { match ->
+                val device = match.groupValues[1]
+                if (!seen.add(device)) return@forEach
+                val model = match.groupValues[2].trim()
+                    .ifEmpty { DEVICE_MODEL_MAP[device] ?: device }
+                devices.add(PifDevice(product = "${device}_beta", device = device, model = model, otaUrl = ""))
+            }
+            return devices
+        }
+
+        /**
+         * The Flash Tool key lives in the page's data-client-config attribute (HTML-escaped
+         * JSON). Look there first so another Google key on the page is never picked up,
+         * and only fall back to scanning the whole page.
+         */
+        private fun extractFlashApiKey(html: String): String? {
+            val clientConfig = Regex("""data-client-config="([^"]*)"""").find(html)?.groupValues?.get(1)
+            return clientConfig?.let { API_KEY_REGEX.find(it)?.value }
+                ?: API_KEY_REGEX.find(html)?.value
         }
 
         private fun buildCanaryPifFromDevice(pifDevice: PifDevice, apiKey: String): PifFetchResult {
@@ -737,7 +765,6 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                     put("RELEASE", "CANARY")
                     put("SECURITY_PATCH", securityPatch)
                     put("DEVICE_INITIAL_SDK_INT", initialSdkIntFor(pifDevice.device))
-                    put("SDK_INT", "32")
                 }
 
                 return PifFetchResult.Success(pifDevice.model, pifJson)
