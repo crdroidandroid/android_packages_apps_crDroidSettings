@@ -6,11 +6,9 @@
 package com.crdroid.settings.fragments.misc
 
 import android.app.Activity
-import android.app.ActivityManager
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.UserHandle;
+import android.os.UserHandle
 import android.provider.Settings
 import android.util.Log
 import android.widget.Toast
@@ -18,7 +16,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
-import androidx.preference.SwitchPreferenceCompat
 import com.android.internal.logging.nano.MetricsProto
 import com.android.settings.R
 import com.android.settings.SettingsPreferenceFragment
@@ -55,10 +52,10 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                         PIF_CONFIG_KEY,
                         normalized
                     )
-                    restartTargetPackages()
                     toast(getString(R.string.pif_imported_as, PIF_CONFIG_NAME))
                     refreshStatus()
                 } catch (e: Exception) {
+                    Log.e(TAG, "Failed to import config", e)
                     toast(getString(R.string.pif_failed, e.message ?: ""))
                 }
             }
@@ -85,11 +82,6 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
 
         findPreference<Preference>("pif_delete_config")?.setOnPreferenceClickListener {
             showDeleteDialog()
-            true
-        }
-
-        findPreference<SwitchPreferenceCompat>("spoof_pif_photos")?.setOnPreferenceChangeListener { _, _ ->
-            restartTargetPackages(includePhotos = true)
             true
         }
 
@@ -172,7 +164,6 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                         PIF_CONFIG_KEY,
                         null
                     )
-                    restartTargetPackages(includePhotos = true)
                     toast(getString(R.string.pif_deleted, PIF_CONFIG_NAME))
                     refreshStatus()
                 } catch (e: Exception) {
@@ -255,22 +246,19 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 }
                 when (result) {
                     is PifFetchResult.Success -> {
-                        // Carry over user-tuned spoof flags from the previous config
-                        // unless the freshly generated config already defines them.
+                        // User-tuned flags from the previous config win; defaults only
+                        // fill in whatever is still missing afterwards.
                         val existing = readCurrentConfig()
                         PRESERVED_KEYS.forEach { key ->
-                            existing[key]?.let { value ->
-                                if (!result.pifData.has(key)) {
-                                    result.pifData.put(key, value)
-                                }
-                            }
+                            existing[key]?.let { value -> result.pifData.put(key, value) }
                         }
+                        result.pifData.putDefaultSpoofFlags()
+
                         Settings.Secure.putString(
                             requireContext().contentResolver,
                             PIF_CONFIG_KEY,
                             result.pifData.toString(2)
                         )
-                        restartTargetPackages()
                         toast(getString(R.string.pif_fetched_model, result.model))
                         refreshStatus()
                     }
@@ -284,19 +272,6 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 fetchPref?.summary = getString(R.string.pif_fetch_pixel_beta_summary)
                 fetchPref?.isEnabled = true
             }
-        }
-    }
-
-    private fun restartTargetPackages(includePhotos: Boolean = false) {
-        try {
-            val am = requireContext().getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
-            am.forceStopPackage(GMS_PACKAGE)
-            am.forceStopPackage(VENDING_PACKAGE)
-            if (includePhotos) {
-                am.forceStopPackage(PHOTOS_PACKAGE)
-            }
-        } catch (e: Exception) {
-            Log.w(TAG, "Failed to restart target packages: ${e.message}")
         }
     }
 
@@ -314,16 +289,28 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         private const val FLASH_URL = "https://flash.android.com"
         private const val FLASH_API = "https://content-flashstation-pa.googleapis.com/v1/builds"
         private const val PIXEL_BULLETIN_URL = "https://source.android.com/docs/security/bulletin/pixel"
-        private const val VENDING_PACKAGE = "com.android.vending"
-        private const val GMS_PACKAGE = "com.google.android.gms"
-        private const val PHOTOS_PACKAGE = "com.google.android.apps.photos"
 
         private val VERSIONS_REGEX =
             Regex("""(?:https://developer\.android\.com)?/about/versions/(\d+)""")
 
+        /** Keys carried over from the previous config when a new one is fetched. */
         private val PRESERVED_KEYS = listOf(
             "spoofBuild", "spoofProps", "spoofProvider", "spoofSignature",
             "spoofVendingBuild", "spoofVendingSdk", "DEBUG", "verboseLogs"
+        )
+
+        /**
+         * Defaults for freshly fetched configs. These must match the defaults that
+         * PlayIntegritySpoofService.loadConfigInternal() applies when a key is absent.
+         */
+        private val DEFAULT_SPOOF_FLAGS = linkedMapOf(
+            "spoofBuild" to "true",
+            "spoofProps" to "true",
+            "spoofProvider" to "false",
+            "spoofSignature" to "false",
+            "spoofVendingBuild" to "true",
+            "spoofVendingSdk" to "false",
+            "DEBUG" to "false",
         )
 
         private val DEVICE_MODEL_MAP = mapOf(
@@ -367,14 +354,9 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             else -> "37"
         }
 
-        /** Default spoof flags written into every freshly generated config. */
+        /** Adds each default flag only when the config does not already define it. */
         private fun JSONObject.putDefaultSpoofFlags(): JSONObject = apply {
-            put("spoofBuild", "true")
-            put("spoofProps", "true")
-            put("spoofProvider", "false")
-            put("spoofSignature", "false")
-            put("spoofVendingBuild", "true")
-            put("spoofVendingSdk", "false")
+            DEFAULT_SPOOF_FLAGS.forEach { (key, value) -> if (!has(key)) put(key, value) }
         }
 
         /**
@@ -393,7 +375,10 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                         val l = line.trim()
                         if (l.isNotEmpty() && !l.startsWith("#") && !l.startsWith("//")) {
                             val eq = l.indexOf('=')
-                            if (eq > 0) result[l.substring(0, eq).trim()] = l.substring(eq + 1).trim()
+                            if (eq > 0) {
+                                result[l.substring(0, eq).trim()] =
+                                    l.substring(eq + 1).substringBefore('#').trim()
+                            }
                         }
                     }
                 }
@@ -405,24 +390,32 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         }
 
         /**
-         * Normalises an imported PIF payload (JSON or prop-format) to a JSON string
-         * suitable for storage in Settings.Secure.
+         * Validates an imported PIF payload (JSON or prop-format) and normalises it
+         * to a JSON string for Settings.Secure. Throws if the payload is empty or
+         * malformed, so a broken file is never stored.
          */
         private fun normalizePifPayload(raw: String): String {
             val trimmed = raw.trim()
-            if (trimmed.isEmpty()) return "{}"
-            if (trimmed.startsWith("{")) return trimmed
-            val json = JSONObject()
-            trimmed.lines().forEach { line ->
-                val stripped = line.trim()
-                if (stripped.isEmpty() || stripped.startsWith("#") || stripped.startsWith("//")) return@forEach
-                val eq = stripped.indexOf('=')
-                if (eq > 0) {
-                    val key = stripped.substring(0, eq).trim()
-                    val value = stripped.substring(eq + 1).trim().substringBefore('#').trim()
-                    if (key.isNotEmpty()) json.put(key, value)
+            require(trimmed.isNotEmpty()) { "Config file is empty" }
+
+            val json = if (trimmed.startsWith("{")) {
+                JSONObject(trimmed)
+            } else {
+                JSONObject().apply {
+                    trimmed.lines().forEach { line ->
+                        val stripped = line.trim()
+                        if (stripped.isEmpty() || stripped.startsWith("#") || stripped.startsWith("//")) return@forEach
+                        val eq = stripped.indexOf('=')
+                        if (eq > 0) {
+                            val key = stripped.substring(0, eq).trim()
+                            val value = stripped.substring(eq + 1).trim().substringBefore('#').trim()
+                            if (key.isNotEmpty()) put(key, value)
+                        }
+                    }
                 }
             }
+
+            require(json.length() > 0) { "Config file has no valid entries" }
             return json.toString(2)
         }
 
@@ -523,9 +516,8 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                     put("RELEASE", release)
                     put("SECURITY_PATCH", securityPatch)
                     put("DEVICE_INITIAL_SDK_INT", initialSdkIntFor(pifDevice.device))
-                    put("DEBUG", false)
                     put("SDK_INT", "32")
-                }.putDefaultSpoofFlags()
+                }
                 return PifFetchResult.Success(pifDevice.model, pifJson)
             } catch (e: Exception) {
                 return PifFetchResult.Error("Failed: ${e.message}")
@@ -663,9 +655,8 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                     put("RELEASE", "CANARY")
                     put("SECURITY_PATCH", securityPatch)
                     put("DEVICE_INITIAL_SDK_INT", initialSdkIntFor(pifDevice.device))
-                    put("DEBUG", false)
                     put("SDK_INT", "32")
-                }.putDefaultSpoofFlags()
+                }
 
                 return PifFetchResult.Success(pifDevice.model, pifJson)
             } catch (e: Exception) {
