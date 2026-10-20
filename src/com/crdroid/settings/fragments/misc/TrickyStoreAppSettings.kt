@@ -13,6 +13,7 @@ import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.provider.Settings
+import android.security.trickystore.TrickyStoreService
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -100,13 +101,44 @@ class TrickyStoreAppSettings : SettingsPreferenceFragment() {
 
     companion object {
         const val TARGET_KEY = "spoof_trickystore_target"
-        val DEFAULT_TARGETS = setOf(
-            "com.google.android.gms",
-            "com.android.vending",
-        )
-        val DEFAULT_TARGET_MODES = mapOf(
-            "com.revolut.revolut" to TargetMode.CERT_GEN,
-        )
+
+        /**
+         * Single source of truth for the defaults. Parsed from the framework's
+         * [TrickyStoreService.DEFAULT_TARGET_LIST] so the app's "auto select" and the
+         * backend's automatic seed-on-keybox-load can never drift apart. Modes come
+         * straight from the suffixes (`?` leaf, `!` cert-gen, `-` skip, plain auto).
+         */
+        val DEFAULT_TARGET_MAP: Map<String, TargetMode> =
+            parseTargetList(TrickyStoreService.DEFAULT_TARGET_LIST)
+
+        /** Packages selected by "auto select" (every default, whatever its mode). */
+        val DEFAULT_TARGETS: Set<String> = DEFAULT_TARGET_MAP.keys
+
+        /** Backwards-compatible alias: only the non-AUTO defaults with their modes. */
+        val DEFAULT_TARGET_MODES: Map<String, TargetMode> =
+            DEFAULT_TARGET_MAP.filterValues { it != TargetMode.AUTO }
+
+        /**
+         * Parses a SPOOF_TRICKYSTORE_TARGET-format list ("pkg", "pkg?", "pkg!",
+         * "pkg-", with "#" comments) into a package → mode map. Shared by the
+         * defaults above and by the per-screen loader so both read suffixes the
+         * same way.
+         */
+        fun parseTargetList(list: String?): Map<String, TargetMode> {
+            val result = LinkedHashMap<String, TargetMode>()
+            if (list.isNullOrEmpty()) return result
+            list.lines().forEach { raw ->
+                val t = raw.trim()
+                if (t.isEmpty() || t.startsWith("#")) return@forEach
+                when {
+                    t.endsWith("?") -> result[t.dropLast(1).trim()] = TargetMode.LEAF_HACK
+                    t.endsWith("!") -> result[t.dropLast(1).trim()] = TargetMode.CERT_GEN
+                    t.endsWith("-") -> return@forEach
+                    else -> result[t] = TargetMode.AUTO
+                }
+            }
+            return result
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -154,26 +186,12 @@ private fun TrickyStoreAppSettingsContent(
     var isLoading by remember { mutableStateOf(true) }
     val allApps = remember { mutableStateListOf<TrickyAppState>() }
 
-    fun loadTargetMap(): Map<String, TargetMode> {
-        val result = mutableMapOf<String, TargetMode>()
-        val content = Settings.Secure.getString(
-            context.contentResolver, TrickyStoreAppSettings.TARGET_KEY,
-        ) ?: return result
-        content.lines().forEach { line ->
-            val trimmed = line.trim()
-            if (trimmed.isNotBlank()) {
-                when {
-                    trimmed.endsWith("?") ->
-                        result[trimmed.dropLast(1)] = TargetMode.LEAF_HACK
-                    trimmed.endsWith("!") ->
-                        result[trimmed.dropLast(1)] = TargetMode.CERT_GEN
-                    else ->
-                        result[trimmed] = TargetMode.AUTO
-                }
-            }
-        }
-        return result
-    }
+    fun loadTargetMap(): Map<String, TargetMode> =
+        TrickyStoreAppSettings.parseTargetList(
+            Settings.Secure.getString(
+                context.contentResolver, TrickyStoreAppSettings.TARGET_KEY,
+            ),
+        )
 
     fun saveTargets() {
         val lines = allApps
@@ -319,21 +337,19 @@ private fun TrickyStoreAppSettingsContent(
                     onClick = {
                         allApps.indices.forEach { i ->
                             val pkg = allApps[i].entry.packageName
+                            val defMode = TrickyStoreAppSettings.DEFAULT_TARGET_MAP[pkg]
                             allApps[i] = allApps[i].copy(
                                 entry = allApps[i].entry.copy(
-                                    isSelected = pkg in TrickyStoreAppSettings.DEFAULT_TARGETS ||
-                                            pkg in TrickyStoreAppSettings.DEFAULT_TARGET_MODES,
+                                    isSelected = defMode != null,
                                 ),
-                                mode = TrickyStoreAppSettings.DEFAULT_TARGET_MODES[pkg]
-                                    ?: TargetMode.AUTO,
+                                mode = defMode ?: TargetMode.AUTO,
                             )
                         }
                         scope.launch(Dispatchers.IO) {
                             saveTargets()
                             killPackages(
                                 activityManager,
-                                TrickyStoreAppSettings.DEFAULT_TARGETS +
-                                    TrickyStoreAppSettings.DEFAULT_TARGET_MODES.keys,
+                                TrickyStoreAppSettings.DEFAULT_TARGETS,
                             )
                         }
                     },
