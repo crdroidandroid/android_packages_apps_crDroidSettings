@@ -366,10 +366,10 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="theme_customization_brightness_slider_title">Estilo de la barra de brillo</string>
     <string name="theme_customization_brightness_slider_summary">Establece un estilo personalizado de la barra de brillo</string>
     <!-- Fonts -->
-    <string name="add_font">Add font</string>
+    <string name="add_font"></string>
     <string name="font_preview_dialog_title">Font preview</string>
-    <string name="toast_failed_apply_font">Failed to apply font</string>
-    <string name="toast_invalid_font_file">Invalid font file</string>
+    <string name="toast_failed_apply_font">No se pudo aplicar la fuente</string>
+    <string name="toast_invalid_font_file">Archivo de fuente inválido</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Frecuencia de refresco predeterminada</string>
     <string name="peak_refresh_rate_title_custom">Frecuencia máxima de refresco</string>
@@ -1076,10 +1076,10 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="systemui_restart_not_now">Ahora no</string>
     <string name="systemui_restart_process">Reiniciando interfaz de usuario para aplicar los cambios...</string>
     <!-- System reboot -->
-    <string name="reboot_required_title">Reboot required</string>
-    <string name="reboot_required_message">A reboot is required to apply changes. Reboot now?</string>
-    <string name="action_later">Later</string>
-    <string name="action_reboot_now">Reboot now</string>
+    <string name="reboot_required_title">Se requiere reinicio</string>
+    <string name="reboot_required_message">Es necesario reiniciar para aplicar los cambios. ¿Reiniciar ahora?</string>
+    <string name="action_later">Luego</string>
+    <string name="action_reboot_now">Reiniciar ahora</string>
     <!-- Notification / Power Menu Styles -->
     <string name="notification_style_title">Estilo de notificación</string>
     <string name="powermenu_style_title">Estilo del menú de apagado</string>
@@ -1362,6 +1362,26 @@ Cada tipo de evento tiene su propio color de acento y una tarjeta expandida con 
     <string name="pif_select_channel">Seleccionar canal</string>
     <string name="pif_channel_latest_release">Última versión</string>
     <string name="pif_channel_canary_release">Versión Canary</string>
+    <string name="pif_flags_title">Spoofing options</string>
+    <string name="pif_flag_spoof_build_title">Spoof build fields</string>
+    <string name="pif_flag_spoof_build_summary">Apply the config\'s Build fields to DroidGuard</string>
+    <string name="pif_flag_spoof_props_title">Spoof system properties</string>
+    <string name="pif_flag_spoof_props_summary">Override fingerprint, security patch and other ro.* properties for DroidGuard</string>
+    <string name="pif_flag_spoof_provider_title">Spoof keystore provider</string>
+    <string name="pif_flag_spoof_provider_summary">Block DroidGuard from reading key attestation certificates. Usually left off when a valid keybox is installed</string>
+    <string name="pif_flag_spoof_signature_title">Spoof ROM signature</string>
+    <string name="pif_flag_spoof_signature_summary">Report a stock platform signature for the android package</string>
+    <string name="pif_flag_spoof_vending_build_title">Spoof Play Store build</string>
+    <string name="pif_flag_spoof_vending_build_summary">Apply the config\'s Build fields to the Play Store</string>
+    <string name="pif_flag_spoof_vending_sdk_title">Spoof Play Store SDK level</string>
+    <string name="pif_flag_spoof_vending_sdk_summary">Report SDK 32 to the Play Store. Only used when Play Store build spoofing is off</string>
+    <string name="pif_flag_debug_title">Debug logging</string>
+    <string name="pif_flag_debug_summary">Log every spoofed field to logcat</string>
+    <string name="pif_flag_verbose_logs_title">Verbose logs</string>
+    <string name="pif_verbose_logs_off">Apagado</string>
+    <string name="pif_verbose_logs_basic">Basic</string>
+    <string name="pif_verbose_logs_detailed">Detailed</string>
+    <string name="pif_verbose_logs_full">Completo</string>
     <!-- TrickyStore -->
     <string name="ts_keybox_management">Gestión de teclas</string>
     <string name="ts_import_keybox">Importar keybox</string>
