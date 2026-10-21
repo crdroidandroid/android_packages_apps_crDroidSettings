@@ -341,8 +341,12 @@ class TrickyStore : SettingsPreferenceFragment() {
         }
         applyExpiryUi(summary?.earliestExpiry)
 
-        val targets = TrickyStoreAppSettings.parseTargetList(
-            Settings.Secure.getString(resolver, TARGET_KEY))
+        // Count only installed targets: uninstalled defaults stay in the stored list so
+        // they apply once installed, but they aren't "configured" from the user's view.
+        val targets = TrickyStoreAppSettings.installedTargets(
+            requireContext().packageManager,
+            TrickyStoreAppSettings.parseTargetList(Settings.Secure.getString(resolver, TARGET_KEY)),
+        )
         ui.targetCount = targets.size
         ui.verificationSummary = buildVerificationSummary(targets)
 

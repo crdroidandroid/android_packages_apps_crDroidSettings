@@ -108,6 +108,14 @@ class TrickyStoreAppSettings : SettingsPreferenceFragment() {
             DEFAULT_TARGET_MAP.filterValues { it != TargetMode.AUTO }
 
         /**
+         * The targets that are installed for this user. Uninstalled defaults stay in the
+         * stored list (so an app installed later is covered at once) but are not counted
+         * as configured anywhere in the UI.
+         */
+        fun installedTargets(pm: PackageManager, targets: Map<String, TargetMode>) =
+            targets.filterKeys { isInstalled(pm, it) }
+
+        /**
          * Parses the text target format ("pkg", "pkg?", "pkg!", "pkg-", "#" comments) or the
          * JSON array form ({"package", "mode"}) into package -> mode, keeping order. Skip
          * entries are kept: dropping them here would silently remove them on the next save.
@@ -187,9 +195,12 @@ private fun TrickyStoreAppSettingsContent(context: Context) {
     var isLoading by remember { mutableStateOf(true) }
     val allApps = remember { mutableStateListOf<TrickyAppState>() }
 
-    // Targets that are configured but not in the visible list (installed but filtered out,
-    // e.g. Xposed managers or system helpers). They are written back untouched on save.
+    // Targets that are configured but not in the visible list: installed but filtered out
+    // (Xposed managers, system apps while hidden) or defaults that aren't installed. They
+    // are written back untouched on save.
     var hiddenTargets by remember { mutableStateOf<Map<String, TargetMode>>(emptyMap()) }
+    // How many of hiddenTargets are installed; only those count as configured.
+    var hiddenInstalledCount by remember { mutableStateOf(0) }
 
     fun saveTargets() {
         val visible = allApps.filter { it.entry.isSelected }
@@ -264,9 +275,11 @@ private fun TrickyStoreAppSettingsContent(context: Context) {
                 )
             }
             val visiblePkgs = states.map { it.entry.packageName }.toSet()
-            states to cleaned.filterKeys { it !in visiblePkgs }
+            val hiddenMap = cleaned.filterKeys { it !in visiblePkgs }
+            states to (hiddenMap to TrickyStoreAppSettings.installedTargets(pm, hiddenMap).size)
         }
-        hiddenTargets = hidden
+        hiddenTargets = hidden.first
+        hiddenInstalledCount = hidden.second
         allApps.clear()
         allApps.addAll(apps)
         isLoading = false
@@ -281,7 +294,7 @@ private fun TrickyStoreAppSettingsContent(context: Context) {
         }
     }
 
-    val activeCount = allApps.count { it.entry.isSelected } + hiddenTargets.size
+    val activeCount = allApps.count { it.entry.isSelected } + hiddenInstalledCount
 
     Column(
         modifier = Modifier
@@ -373,6 +386,8 @@ private fun TrickyStoreAppSettingsContent(context: Context) {
                         }
                         val visible = allApps.map { it.entry.packageName }.toSet()
                         hiddenTargets = defaults.filterKeys { it !in visible }
+                        hiddenInstalledCount = TrickyStoreAppSettings
+                            .installedTargets(context.packageManager, hiddenTargets).size
                         saveTargets()
                         // Restart whatever the reset added or removed.
                         val after = defaults.keys
