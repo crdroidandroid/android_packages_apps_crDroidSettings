@@ -53,8 +53,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.ComposeView
-import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.android.internal.logging.nano.MetricsProto
@@ -170,8 +168,7 @@ class TrickyStoreAppSettings : SettingsPreferenceFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View = ComposeView(requireContext()).apply {
-        setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
+    ): View = spoofComposeView(requireContext()).apply {
         setContent {
             SettingsTheme {
                 TrickyStoreAppSettingsContent(context = requireContext())
@@ -410,9 +407,10 @@ private fun TrickyStoreAppSettingsContent(context: Context) {
             else -> LazyColumn(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1f),
+                    .weight(1f)
+                    .toolbarNestedScroll(),
                 verticalArrangement = Arrangement.spacedBy(SpoofDimens.RowGap),
-                contentPadding = PaddingValues(bottom = 80.dp),
+                contentPadding = PaddingValues(bottom = 24.dp + spoofBottomInset()),
             ) {
                 itemsIndexed(filteredApps, key = { _, s -> s.entry.packageName }) { index, state ->
                     AppPickerItem(
