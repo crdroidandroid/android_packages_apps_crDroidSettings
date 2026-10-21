@@ -9,6 +9,7 @@
 package com.crdroid.settings.fragments.misc
 
 import android.app.ActivityManager
+import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
@@ -28,9 +29,12 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -84,16 +88,22 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.platform.ViewCompositionStrategy
+import androidx.compose.ui.platform.rememberNestedScrollInteropConnection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
 import androidx.core.graphics.drawable.toBitmap
+import androidx.core.view.ViewCompat
 import com.android.settings.R
 import java.util.Locale
 
@@ -247,6 +257,31 @@ private val LocalSpoofRowShape = compositionLocalOf<Shape> { SpoofShapes.single 
 // Page scaffolding
 // ---------------------------------------------------------------------------
 
+/**
+ * The ComposeView every spoofing fragment returns from onCreateView. Nested scrolling is
+ * enabled so the scroll events [toolbarNestedScroll] forwards reach the activity's
+ * CoordinatorLayout, which is what collapses the CollapsingToolbarLayout.
+ */
+fun spoofComposeView(context: Context): ComposeView = ComposeView(context).apply {
+    setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
+    ViewCompat.setNestedScrollingEnabled(this, true)
+}
+
+/**
+ * Forwards this scroll container's nested scroll to the hosting View hierarchy. Without it
+ * the collapsing toolbar never collapses, and because AppBarLayout.ScrollingViewBehavior
+ * sizes the content for the collapsed toolbar, the last part of the page stays below the
+ * screen edge. Must come before verticalScroll / on the LazyColumn modifier.
+ */
+@Composable
+fun Modifier.toolbarNestedScroll(): Modifier =
+    this.nestedScroll(rememberNestedScrollInteropConnection())
+
+/** Bottom navigation bar inset, so the last row can scroll clear of the gesture bar. */
+@Composable
+fun spoofBottomInset(): Dp =
+    WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
+
 /** Scrollable page body with the standard screen inset. */
 @Composable
 fun SpoofScreen(
@@ -256,9 +291,10 @@ fun SpoofScreen(
     Column(
         modifier = modifier
             .fillMaxSize()
+            .toolbarNestedScroll()
             .verticalScroll(rememberScrollState())
             .padding(horizontal = SpoofDimens.ScreenInset)
-            .padding(top = 8.dp, bottom = 32.dp),
+            .padding(top = 8.dp, bottom = 32.dp + spoofBottomInset()),
         content = content,
     )
 }
