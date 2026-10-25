@@ -113,6 +113,9 @@ class GameSpoofing : SettingsPreferenceFragment() {
     /** Config keys other than "enabled" and "games" (e.g. "debug"), written back unchanged. */
     private var extraKeys: JSONObject = JSONObject()
 
+    /** Bumped on every save, so a load that started before the save doesn't overwrite it. */
+    private var saveGeneration = 0
+
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -125,18 +128,19 @@ class GameSpoofing : SettingsPreferenceFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View = spoofComposeView(requireContext()).apply {
+        val fragment = this@GameSpoofing
         setContent {
             SettingsTheme {
                 GameSpoofingContent(
                     state = ui,
-                    onEnabledChange = ::setEnabled,
-                    onAddGame = ::openAddGame,
+                    onEnabledChange = fragment::setSpoofingEnabled,
+                    onAddGame = fragment::openAddGame,
                     onPickApp = { app ->
                         ui.dialog = GsDialog.Profile(app.packageName, app.label)
                     },
-                    onPickProfile = ::applyProfile,
-                    onSaveProps = ::saveProps,
-                    onRemove = ::removeGame,
+                    onPickProfile = fragment::applyProfile,
+                    onSaveProps = fragment::saveProps,
+                    onRemove = fragment::removeGame,
                 )
             }
         }
@@ -157,6 +161,7 @@ class GameSpoofing : SettingsPreferenceFragment() {
     // ---- Config I/O ------------------------------------------------------------------------
 
     private fun loadConfig() {
+        val startedAt = saveGeneration
         scope.launch {
             val pm = requireContext().packageManager
             val (enabled, games, extras) = withContext(Dispatchers.IO) {
@@ -177,6 +182,11 @@ class GameSpoofing : SettingsPreferenceFragment() {
                     parsed.third,
                 )
             }
+            // The user changed something while this was reading; the screen is newer.
+            if (saveGeneration != startedAt) {
+                ui.loading = false
+                return@launch
+            }
             ui.enabled = enabled
             extraKeys = extras
             ui.games.clear()
@@ -186,6 +196,7 @@ class GameSpoofing : SettingsPreferenceFragment() {
     }
 
     private fun saveConfig() {
+        saveGeneration++
         try {
             val json = JSONObject(extraKeys.toString())
             json.put("enabled", ui.enabled)
@@ -210,7 +221,7 @@ class GameSpoofing : SettingsPreferenceFragment() {
 
     // ---- Actions ---------------------------------------------------------------------------
 
-    private fun setEnabled(enabled: Boolean) {
+    private fun setSpoofingEnabled(enabled: Boolean) {
         ui.enabled = enabled
         saveConfig()
         restart(ui.games.map { it.packageName })
