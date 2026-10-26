@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2024 crDroid Android Project
+     Copyright (C) 2024-2026 crDroid Android Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -43,11 +43,7 @@
         android:title="@string/qs_header_browse_title"
         android:summary="@string/qs_header_browse_summary"
         android:persistent="false"
-        android:dependency="status_bar_custom_header" >
-        <intent android:action="android.intent.action.MAIN"
-                android:targetPackage="org.omnirom.omnistyle"
-                android:targetClass="org.omnirom.omnistyle.PickHeaderActivity" />
-        </Preference>
+        android:dependency="status_bar_custom_header" />
 
     <Preference
         android:key="file_header_select"
@@ -72,7 +68,7 @@
         android:summary="@string/qs_header_shadow_summary"
         android:max="200"
         android:min="0"
-        android:defaultValue="0" 
+        android:defaultValue="0"
         android:dependency="status_bar_custom_header" />
 
 </PreferenceScreen>
