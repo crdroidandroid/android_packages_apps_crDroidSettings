@@ -18,35 +18,34 @@ package com.crdroid.settings.preferences
 
 import android.content.Context
 import android.graphics.Typeface
-import android.graphics.fonts.FontFamilyUpdateRequest
-import android.graphics.fonts.FontFileUpdateRequest
 import android.graphics.fonts.FontFileUtil
 import android.graphics.fonts.FontManager
-import android.graphics.fonts.FontStyle
 import android.net.Uri
 import android.os.ParcelFileDescriptor
 import android.os.ServiceManager
-import android.os.UserHandle
 import android.provider.OpenableColumns
-import android.provider.Settings
 import android.util.Log
 import com.android.internal.statusbar.IStatusBarService
-import com.android.internal.util.crdroid.ThemeUtils
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import org.json.JSONObject
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.nio.channels.FileChannel
 
 /**
- * Installs a user-supplied .ttf / .otf as the system font through [FontManager] and the
- * Google Sans Flex font overlay.
+ * Installs a user-supplied .ttf / .otf as the system UI font through the custom-font API of
+ * [FontManager] ("base: Support custom fonts for system wide").
+ *
+ * The framework stores the file under /data/fonts with fs-verity, registers it as the
+ * "sans-serif" custom family and puts it in front of every UI family (sans-serif*,
+ * google-sans*, variable-*, roboto*, source-sans-pro*). So, unlike the previous
+ * implementation, no family is replaced and no font overlay has to be forced on. The only
+ * overlay rule is that a font overlay whose family isn't a UI family would hide the custom
+ * font, so the caller switches the overlay back to Default.
  *
  * Nothing here shows UI. Every blocking call runs on [Dispatchers.IO] and outcomes come back
- * as values, so the caller decides how to report them and the work is safe to run outside a
- * screen's lifecycle.
+ * as values, so the caller decides how to report them.
  */
 class ExternalFontInstaller(context: Context) {
 
@@ -54,14 +53,18 @@ class ExternalFontInstaller(context: Context) {
         private const val TAG = "ExternalFontInstaller"
         private const val CUSTOM_FONT_FILE = "cust_font.ttf"
         private const val TEMP_PREVIEW_FONT = "preview_font.ttf"
-        private const val MAX_FONT_BYTES = 32L * 1024L * 1024L
-        private const val OVERLAY_CATEGORY_FONT = "android.theme.customization.font"
-        private const val DEFAULT_FONT_PACKAGE = "android"
-        const val DEFAULT_FONT_FAMILY = "google-sans-flex"
-        private const val DEFAULT_FONT_OVERLAY = "com.android.theme.font.googlesansflex"
 
-        /** FontManager result code used when the request could not even be sent. */
-        const val RESULT_EXCEPTION = -1
+        /** Same limit as UpdatableFontDir.MAX_CUSTOM_FONT_FILE_SIZE. */
+        const val MAX_FONT_BYTES = 64L * 1024L * 1024L
+
+        /** Family the framework registers the custom font under. */
+        const val CUSTOM_FONT_FAMILY = "sans-serif"
+
+        /**
+         * Our own code for "the call didn't get through" (exception, missing service). Kept
+         * clear of FontManager's RESULT_* values, which use -1..-9 and -10001..-10008.
+         */
+        const val RESULT_EXCEPTION = -20000
 
         fun rebootDevice() {
             runCatching {
@@ -85,20 +88,32 @@ class ExternalFontInstaller(context: Context) {
 
     sealed interface InstallResult {
         data class Success(val postScriptName: String) : InstallResult
-        /** The file is gone or no longer parses as a font. */
+        /** The file is gone, too large, or no longer parses as a font. */
         data object Invalid : InstallResult
-        /** FontManager rejected the update; [code] is a FontManager.RESULT_* value. */
+        /** FontManager rejected the request; [code] is a FontManager.RESULT_* value. */
         data class Failed(val code: Int) : InstallResult
     }
 
     private val context: Context = context.applicationContext
-    private val fontManager: FontManager = this.context.getSystemService(FontManager::class.java)
+    private val fontManager: FontManager? = this.context.getSystemService(FontManager::class.java)
+
+    // ---- State -----------------------------------------------------------------------------
+
+    /**
+     * PostScript name of the active custom font, straight from FontManagerService. It changes
+     * as soon as a font is installed or cleared, before the reboot, so it matches what the
+     * next boot will use. Null when none is active or the service can't be asked.
+     */
+    fun customFontName(): String? = runCatching { fontManager?.customFontName }
+        .onFailure { Log.e(TAG, "getCustomFontName failed", it) }
+        .getOrNull()
+        ?.takeIf { it.isNotEmpty() }
 
     // ---- Preview ---------------------------------------------------------------------------
 
     /**
      * Copies [uri] into the cache and parses it. Returns null when the file can't be read,
-     * is larger than 32 MB or isn't a font Android can load.
+     * is larger than [MAX_FONT_BYTES] or isn't a font Android can load.
      */
     suspend fun inspect(uri: Uri): FontFilePreview? = withContext(Dispatchers.IO) {
         val file = copyUriToCache(uri, TEMP_PREVIEW_FONT) ?: return@withContext null
@@ -124,90 +139,92 @@ class ExternalFontInstaller(context: Context) {
     /** Deletes the cached preview copy when the user backs out of installing it. */
     fun discardPreview() = cleanupPreviewFont()
 
-    /** Typeface of the installed custom font, for previews. Null if none is installed. */
-    fun loadInstalledTypeface(): Typeface? = runCatching {
-        // filesDir is current; cacheDir is where older builds kept the copy.
-        listOf(File(context.filesDir, CUSTOM_FONT_FILE), File(context.cacheDir, CUSTOM_FONT_FILE))
+    /**
+     * Typeface of the installed custom font, for previews. Uses the private copy kept at
+     * install time, and falls back to the system's copy in /data/fonts when that is gone.
+     */
+    fun loadInstalledTypeface(): Typeface? {
+        val local = listOf(File(context.filesDir, CUSTOM_FONT_FILE), File(context.cacheDir, CUSTOM_FONT_FILE))
             .firstOrNull { it.isFile && it.length() > 0L }
-            ?.let { Typeface.createFromFile(it) }
-    }.getOrNull()
+        val file = local ?: customFontName()?.let { systemFontFile(it) }
+        return file?.let { runCatching { Typeface.createFromFile(it) }.getOrNull() }
+    }
 
-    // ---- Install ---------------------------------------------------------------------------
+    // ---- Install / clear -------------------------------------------------------------------
 
     /**
-     * Pushes [preview] into the system font table as Google Sans Flex. This does not switch
-     * the font overlay yet; call [updateThemeOverlays] afterwards. That write makes the
-     * running activity recreate, so record any state that has to survive that first.
+     * Hands [preview] to FontManagerService. On success the font is part of the system font
+     * map for processes started from now on; running processes keep their font until they
+     * restart, hence the reboot prompt.
      */
     suspend fun install(preview: FontFilePreview): InstallResult = withContext(Dispatchers.IO) {
         val source = preview.file
+        if (!source.isFile || source.length() > MAX_FONT_BYTES) return@withContext InstallResult.Invalid
         val postScriptName = extractPostScriptName(source) ?: return@withContext InstallResult.Invalid
+        val manager = fontManager ?: return@withContext InstallResult.Failed(RESULT_EXCEPTION)
 
-        // Keep a private copy for the picker's preview; the system keeps its own in /data/fonts.
-        val target = File(context.filesDir, CUSTOM_FONT_FILE)
-        val staged = File(context.filesDir, "$CUSTOM_FONT_FILE.tmp")
-        val copied = runCatching {
-            source.copyTo(staged, overwrite = true)
-            if (target.exists() && !target.delete()) error("Could not replace installed font copy")
-            if (!staged.renameTo(target)) error("Could not move installed font copy")
-        }.onFailure {
-            Log.e(TAG, "Failed to stage font file", it)
-            staged.delete()
-        }.isSuccess
-        if (!copied) return@withContext InstallResult.Failed(RESULT_EXCEPTION)
-
-        val code = applyFontToSystem(target, postScriptName)
+        val code = runCatching {
+            ParcelFileDescriptor.open(source, ParcelFileDescriptor.MODE_READ_ONLY).use { pfd ->
+                manager.installCustomFont(pfd)
+            }
+        }.onFailure { Log.e(TAG, "installCustomFont failed", it) }
+            .getOrDefault(RESULT_EXCEPTION)
         if (code != FontManager.RESULT_SUCCESS) {
-            target.delete()
+            Log.e(TAG, "installCustomFont returned $code for $postScriptName")
             return@withContext InstallResult.Failed(code)
         }
+
+        // Private copy for the picker's preview; the system keeps its own in /data/fonts.
+        runCatching {
+            val target = File(context.filesDir, CUSTOM_FONT_FILE)
+            val staged = File(context.filesDir, "$CUSTOM_FONT_FILE.tmp")
+            source.copyTo(staged, overwrite = true)
+            if (!staged.renameTo(target)) {
+                staged.delete()
+                error("Could not move preview copy")
+            }
+        }.onFailure { Log.w(TAG, "Could not keep a preview copy of the custom font", it) }
         File(context.cacheDir, CUSTOM_FONT_FILE).delete()
         cleanupPreviewFont()
         InstallResult.Success(postScriptName)
     }
 
     /**
-     * Points the font overlay category at Google Sans Flex so the replaced family is used.
-     * SystemUI's theme controller applies it, which recreates the running activities.
+     * Removes the custom font from the system font configuration. Blocking: call off the main
+     * thread. Returns a FontManager.RESULT_* value or [RESULT_EXCEPTION].
      */
-    fun updateThemeOverlays() {
-        val resolver = context.contentResolver
-        val userId = UserHandle.myUserId()
-
-        val json = runCatching {
-            val current = Settings.Secure.getStringForUser(
-                resolver,
-                Settings.Secure.THEME_CUSTOMIZATION_OVERLAY_PACKAGES,
-                userId
-            )
-            if (current.isNullOrEmpty()) JSONObject() else JSONObject(current)
-        }.getOrElse { JSONObject() }
-
-        runCatching {
-            if (json.has(OVERLAY_CATEGORY_FONT)) json.remove(OVERLAY_CATEGORY_FONT)
-            json.put(OVERLAY_CATEGORY_FONT, DEFAULT_FONT_OVERLAY)
-
-            Settings.Secure.putStringForUser(
-                resolver,
-                Settings.Secure.THEME_CUSTOMIZATION_OVERLAY_PACKAGES,
-                json.toString(),
-                userId
-            )
-        }.onFailure { Log.e(TAG, "Failed to persist custom font overlay", it) }
-    }
-
-    /** Drops the custom font from the system font table. Blocking: call off the main thread. */
-    fun resetFontUpdates() {
-        fontManager.clearUpdates()
-        ThemeUtils.getInstance(context).setOverlayEnabled(
-            OVERLAY_CATEGORY_FONT, DEFAULT_FONT_PACKAGE, DEFAULT_FONT_PACKAGE
-        )
-        File(context.filesDir, CUSTOM_FONT_FILE).delete()
-        File(context.cacheDir, CUSTOM_FONT_FILE).delete()
-        cleanupPreviewFont()
+    fun clearCustomFont(): Int {
+        val code = runCatching { fontManager?.clearCustomFont() ?: RESULT_EXCEPTION }
+            .onFailure { Log.e(TAG, "clearCustomFont failed", it) }
+            .getOrDefault(RESULT_EXCEPTION)
+        if (code == FontManager.RESULT_SUCCESS) {
+            File(context.filesDir, CUSTOM_FONT_FILE).delete()
+            File(context.cacheDir, CUSTOM_FONT_FILE).delete()
+            cleanupPreviewFont()
+        }
+        return code
     }
 
     // ---- Internals -------------------------------------------------------------------------
+
+    /**
+     * The installed custom font's file, looked up in FontManager.getFontConfig(). The config
+     * type (android.text.FontConfig) is walked by reflection: its family layout changed in
+     * Android 14 and some getters are hidden.
+     */
+    private fun systemFontFile(postScriptName: String): File? = runCatching {
+        val config = fontManager?.fontConfig ?: return@runCatching null
+        val named = (config.call("getNamedFamilyLists") as? List<*>).orEmpty()
+            .flatMap { (it.call("getFamilies") as? List<*>).orEmpty() }
+        val legacy = (config.call("getFontFamilies") as? List<*>).orEmpty()
+        (named + legacy).asSequence()
+            .flatMap { (it.call("getFontList") as? List<*>).orEmpty().asSequence() }
+            .firstOrNull { it.call("getPostScriptName") == postScriptName }
+            ?.call("getFile") as? File
+    }.getOrNull()?.takeIf { it.isFile }
+
+    private fun Any?.call(method: String): Any? =
+        this?.javaClass?.getMethod(method)?.invoke(this)
 
     private fun copyUriToCache(uri: Uri, fileName: String): File? {
         val cacheFile = File(context.cacheDir, fileName)
@@ -270,34 +287,6 @@ class ExternalFontInstaller(context: Context) {
     }.onFailure {
         Log.e(TAG, "Failed to inspect font file", it)
     }.getOrNull()
-
-    /** Returns a FontManager.RESULT_* code, or [RESULT_EXCEPTION]. */
-    private fun applyFontToSystem(fontFile: File, postScriptName: String): Int = runCatching {
-        ParcelFileDescriptor.open(fontFile, ParcelFileDescriptor.MODE_READ_ONLY).use { pfd ->
-            val fontFileUpdateRequest = FontFileUpdateRequest(pfd, ByteArray(0))
-
-            val fontRegular = FontFamilyUpdateRequest.Font.Builder(
-                postScriptName,
-                FontStyle()
-            ).build()
-
-            val familyRegular = FontFamilyUpdateRequest.FontFamily.Builder(
-                DEFAULT_FONT_FAMILY,
-                listOf(fontRegular)
-            ).build()
-
-            val updateRequest = FontFamilyUpdateRequest.Builder()
-                .addFontFileUpdateRequest(fontFileUpdateRequest)
-                .addFontFamily(familyRegular)
-                .build()
-
-            fontManager.updateFontFamily(updateRequest, fontManager.fontConfig.configVersion)
-        }
-    }.onFailure {
-        Log.e(TAG, "Failed to update system font", it)
-    }.getOrDefault(RESULT_EXCEPTION).also {
-        if (it != FontManager.RESULT_SUCCESS) Log.e(TAG, "updateFontFamily returned $it")
-    }
 
     private fun cleanupPreviewFont() {
         try {

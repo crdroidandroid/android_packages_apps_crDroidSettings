@@ -13,6 +13,7 @@ import android.content.res.ApkAssets
 import android.content.res.AssetManager
 import android.content.res.Resources
 import android.graphics.Typeface
+import android.graphics.fonts.FontManager
 import android.os.SystemClock
 import android.provider.Settings
 import android.util.Log
@@ -49,16 +50,29 @@ internal class FontRepository(context: Context) {
 
     private val context: Context = context.applicationContext
     private val themeUtils: ThemeUtils = ThemeUtils.getInstance(this.context)
+    private val installer = ExternalFontInstaller(this.context)
 
     fun appliedPackage(): String =
         themeUtils.getOverlayInfos(CATEGORY).firstOrNull { it.isEnabled }?.packageName
             ?: DEFAULT_PACKAGE
 
-    /** PostScript name of the installed custom font, null when none is active. */
-    fun customFontName(): String? =
-        Settings.Secure.getString(context.contentResolver, CUSTOM_FONT_NAME_KEY)
+    /**
+     * PostScript name of the active custom font, null when none is active.
+     *
+     * FontManagerService is the source of truth. The custom_font_name setting is only a
+     * mirror for anything else that reads it, and is corrected here when it disagrees (for
+     * example a name left over from the previous implementation, whose font the new backend
+     * drops on the first boot).
+     */
+    fun customFontName(): String? {
+        val name = installer.customFontName()
+        val mirrored = Settings.Secure.getString(context.contentResolver, CUSTOM_FONT_NAME_KEY)
             ?.takeIf { it.isNotEmpty() }
+        if (mirrored != name) setCustomFontName(name)
+        return name
+    }
 
+    /** Updates the custom_font_name mirror; see [customFontName]. */
     fun setCustomFontName(name: String?) {
         Settings.Secure.putString(context.contentResolver, CUSTOM_FONT_NAME_KEY, name.orEmpty())
     }
@@ -96,26 +110,43 @@ internal class FontRepository(context: Context) {
     }
 
     /**
-     * Switches to [newPackage]. With [fromCustom] the custom font is first removed from the
-     * system font table. Same calls, in the same order, as the previous picker. Blocking.
+     * Switches to [newPackage]. With [fromCustom] the custom font is first cleared from the
+     * system font configuration. Blocking. Returns FontManager.RESULT_SUCCESS or the code of
+     * the step that failed ([ExternalFontInstaller.RESULT_EXCEPTION] for the overlay).
      */
-    fun applyOverlay(newPackage: String, fromCustom: Boolean, installer: ExternalFontInstaller): Boolean =
-        try {
-            // Read before the reset: with a custom font this is the Google Sans Flex overlay.
-            val oldPackage = appliedPackage()
-            if (fromCustom) installer.resetFontUpdates()
-            themeUtils.setOverlayEnabled(CATEGORY, oldPackage, oldPackage)
-            themeUtils.setOverlayEnabled(CATEGORY, newPackage, DEFAULT_PACKAGE)
-            true
-        } catch (e: Exception) {
-            Log.e(TAG, "Failed to apply font overlay $newPackage", e)
-            false
+    fun applyOverlay(newPackage: String, fromCustom: Boolean): Int {
+        if (fromCustom) {
+            val code = installer.clearCustomFont()
+            if (code != FontManager.RESULT_SUCCESS) return code
+            setCustomFontName(null)
         }
+        return if (setOverlay(newPackage)) FontManager.RESULT_SUCCESS
+        else ExternalFontInstaller.RESULT_EXCEPTION
+    }
+
+    /**
+     * Turns font overlays off, so the UI families (which the custom font is placed in front
+     * of) are what the system uses. Blocking. Returns false if it failed.
+     */
+    fun resetOverlayToDefault(): Boolean =
+        appliedPackage() == DEFAULT_PACKAGE || setOverlay(DEFAULT_PACKAGE)
+
+    /** Same ThemeUtils calls, in the same order, as the previous picker. */
+    private fun setOverlay(newPackage: String): Boolean = try {
+        val oldPackage = appliedPackage()
+        themeUtils.setOverlayEnabled(CATEGORY, oldPackage, oldPackage)
+        themeUtils.setOverlayEnabled(CATEGORY, newPackage, DEFAULT_PACKAGE)
+        true
+    } catch (e: Exception) {
+        Log.e(TAG, "Failed to apply font overlay $newPackage", e)
+        false
+    }
 
     companion object {
         private const val TAG = "FontRepository"
         private const val BODY_FONT_RES = "config_bodyFontFamily"
         private const val FRAMEWORK_RES_APK = "/system/framework/framework-res.apk"
+        private const val FALLBACK_BODY_FONT = "google-sans-flex"
 
         @Volatile
         private var stockBodyFont: String? = null
@@ -127,9 +158,9 @@ internal class FontRepository(context: Context) {
          * The real stock font for "Default", read once per process.
          *
          * The family name can't be resolved through the running system: the font table is
-         * rebuilt at boot for the font that was active then, and a custom font replaces the
-         * stock family outright, so both Typeface.create() and SystemFonts' parsed config
-         * returned the boot-time font. [StockFontFiles] reads the font XML files on disk
+         * rebuilt at boot for the font that was active then, and an installed custom font is
+         * placed in front of every UI family, so Typeface.create() returns the boot-time or
+         * custom font. [StockFontFiles] reads the font XML files on disk
          * instead and loads the stock font file directly. The family name is the fallback.
          */
         private fun stockTypeface(): Typeface? {
@@ -167,8 +198,8 @@ internal class FontRepository(context: Context) {
                 Log.e(TAG, "Could not read stock $BODY_FONT_RES from $FRAMEWORK_RES_APK", t)
                 null
             }
-            // Last resort: the family the custom-font installer replaces is the stock one.
-            return (family?.takeIf { it.isNotBlank() } ?: ExternalFontInstaller.DEFAULT_FONT_FAMILY)
+            // Last resort: the platform's default UI family.
+            return (family?.takeIf { it.isNotBlank() } ?: FALLBACK_BODY_FONT)
                 .also { stockBodyFont = it }
         }
 
@@ -320,6 +351,24 @@ internal object FontOps {
                 generation++
             }
         }
+    }
+
+    /** User-facing explanation of a FontManager.RESULT_* code. */
+    fun errorMessage(context: Context, code: Int): String = when (code) {
+        FontManager.RESULT_ERROR_FONT_UPDATER_DISABLED ->
+            context.getString(R.string.font_error_updater_disabled)
+        FontManager.RESULT_ERROR_INVALID_FONT_FILE ->
+            context.getString(R.string.font_error_invalid_file)
+        FontManager.RESULT_ERROR_INVALID_FONT_NAME ->
+            context.getString(R.string.font_error_invalid_name)
+        FontManager.RESULT_ERROR_DOWNGRADING ->
+            context.getString(R.string.font_error_downgrading)
+        FontManager.RESULT_ERROR_VERIFICATION_FAILURE ->
+            context.getString(R.string.font_error_verification)
+        FontManager.RESULT_ERROR_FAILED_TO_WRITE_FONT_FILE,
+        FontManager.RESULT_ERROR_FAILED_UPDATE_CONFIG ->
+            context.getString(R.string.font_error_storage)
+        else -> context.getString(R.string.font_install_failed, code)
     }
 
     fun toast(context: Context, resId: Int, vararg args: Any) {

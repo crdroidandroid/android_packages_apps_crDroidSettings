@@ -8,6 +8,7 @@ package com.crdroid.settings.fragments.ui.fonts
 import android.app.Application
 import android.content.Context
 import android.graphics.Typeface
+import android.graphics.fonts.FontManager
 import android.net.Uri
 import android.os.Bundle
 import android.text.SpannableString
@@ -114,6 +115,9 @@ internal sealed interface FontDialog {
     data class Apply(val option: FontOption, val fromCustom: Boolean) : FontDialog
 
     class Install(val preview: ExternalFontInstaller.FontFilePreview) : FontDialog
+
+    /** A failed install or switch, explained. Toasts cut these messages short. */
+    data class Error(val message: String) : FontDialog
 }
 
 class FontPickerViewModel(application: Application) : AndroidViewModel(application) {
@@ -202,15 +206,20 @@ class FontPickerViewModel(application: Application) : AndroidViewModel(applicati
             val previous = tracker.pending()
             // Recorded first: the overlay change below recreates this activity.
             tracker.markPending(kind, option.label)
-            val ok = withContext(Dispatchers.IO) {
-                repo.applyOverlay(option.packageName, fromCustom, installer)
+            val code = withContext(Dispatchers.IO) {
+                repo.applyOverlay(option.packageName, fromCustom)
             }
-            if (!ok) {
+            if (code != FontManager.RESULT_SUCCESS) {
                 tracker.restore(previous)
-                FontOps.toast(app, R.string.toast_failed_apply_font)
+                dialog = FontDialog.Error(
+                    if (code == ExternalFontInstaller.RESULT_EXCEPTION) {
+                        app.getString(R.string.toast_failed_apply_font)
+                    } else {
+                        FontOps.errorMessage(app, code)
+                    },
+                )
                 return@run
             }
-            if (fromCustom) repo.setCustomFontName(null)
             if (restartNow) {
                 when (tracker.pending()?.kind ?: kind) {
                     RestartKind.REBOOT -> ExternalFontInstaller.rebootDevice()
@@ -247,11 +256,20 @@ class FontPickerViewModel(application: Application) : AndroidViewModel(applicati
                     repo.setCustomFontName(result.postScriptName)
                     // Recorded before the overlay switch, which recreates this activity.
                     tracker.markPending(RestartKind.REBOOT, result.postScriptName)
-                    installer.updateThemeOverlays()
+                    // The custom font sits in front of the UI families; an overlay pointing the
+                    // UI at another family would hide it, so go back to Default.
+                    val overlayReset = withContext(Dispatchers.IO) { repo.resetOverlayToDefault() }
+                    if (!overlayReset) FontOps.toast(app, R.string.font_overlay_reset_failed)
                     if (rebootNow) ExternalFontInstaller.rebootDevice()
                 }
                 InstallResult.Invalid -> FontOps.toast(app, R.string.toast_invalid_font_file)
-                is InstallResult.Failed -> FontOps.toast(app, R.string.font_install_failed, result.code)
+                is InstallResult.Failed -> dialog = FontDialog.Error(
+                    if (result.code == ExternalFontInstaller.RESULT_EXCEPTION) {
+                        app.getString(R.string.font_install_failed, result.code)
+                    } else {
+                        FontOps.errorMessage(app, result.code)
+                    },
+                )
             }
         }
     }
