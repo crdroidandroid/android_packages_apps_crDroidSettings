@@ -66,6 +66,7 @@ import com.android.settings.R
 import com.crdroid.settings.fragments.misc.SectionLabel
 import com.crdroid.settings.fragments.misc.SpoofAction
 import com.crdroid.settings.fragments.misc.SpoofActionRow
+import com.crdroid.settings.fragments.misc.SpoofDialog
 import com.crdroid.settings.fragments.misc.SpoofFooter
 import com.crdroid.settings.fragments.misc.SpoofPrimaryAction
 import com.crdroid.settings.fragments.misc.SpoofScreen
@@ -467,6 +468,14 @@ private fun FontDialogs(vm: FontPickerViewModel) {
                 onDismiss = vm::dismissDialog,
             )
         }
+        is FontDialog.Error -> SpoofDialog(
+            onDismissRequest = vm::dismissDialog,
+            title = stringResource(R.string.font_error_title),
+            text = { Text(dialog.message, style = MaterialTheme.typography.bodyMedium) },
+            confirmButton = {
+                TextButton(onClick = vm::dismissDialog) { Text(stringResource(android.R.string.ok)) }
+            },
+        )
     }
 }
 
