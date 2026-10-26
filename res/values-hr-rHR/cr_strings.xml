@@ -388,7 +388,7 @@ Mala donacija pomaže u održavanju i poboljšanju ovog projekta. Možete odbaci
     <string name="font_apply_restart_later">Apply, restart later</string>
     <string name="font_apply_reboot_now">Apply and reboot</string>
     <string name="font_apply_reboot_later">Apply, reboot later</string>
-    <string name="font_install_message">This font replaces the system font everywhere until you pick another one. Only this file\'s style is installed, so bold and italic text is generated from it. A reboot is needed to apply it.</string>
+    <string name="font_install_message">This font is used for system and app text until you pick another font. Only this file\'s style is installed, so bold and italic text is generated from it. The font style is set back to Default, and a reboot is needed to apply it everywhere.</string>
     <string name="font_install_reboot_now">Install and reboot</string>
     <string name="font_install_reboot_later">Install, reboot later</string>
     <string name="font_pending_reboot_title">Reboot to finish</string>
@@ -398,7 +398,15 @@ Mala donacija pomaže u održavanju i poboljšanju ovog projekta. Možete odbaci
     <string name="font_restart_systemui">Restart SystemUI</string>
     <string name="font_summary_pending_reboot">%1$s · reboot pending</string>
     <string name="font_summary_pending_systemui">%1$s · SystemUI restart pending</string>
-    <string name="font_picker_footer">Font styles provided by the system are listed above. To use your own, tap Add font and choose a .ttf or .otf file. Files up to 32 MB are supported.</string>
+    <string name="font_picker_footer">Font styles provided by the system are listed above. To use your own, tap Add font and choose a .ttf or .otf file of up to 64 MB. A custom font is used for all system and app text that uses the standard UI fonts.</string>
+    <string name="font_error_title">Couldn\'t change the font</string>
+    <string name="font_error_updater_disabled">Custom fonts aren\'t available on this device. They need fs-verity support in the kernel and on the data partition.</string>
+    <string name="font_error_invalid_file">This file isn\'t a font the system can use. Only OpenType fonts (.ttf, .otf) of up to 64 MB are supported.</string>
+    <string name="font_error_invalid_name">This font has no PostScript name, so the system can\'t register it.</string>
+    <string name="font_error_downgrading">The system already has a newer version of this font.</string>
+    <string name="font_error_verification">The system couldn\'t protect the font file with fs-verity, so it was not installed.</string>
+    <string name="font_error_storage">The system couldn\'t save the font. Check that there is free storage and try again.</string>
+    <string name="font_overlay_reset_failed">Custom font installed, but the font style couldn\'t be set back to Default</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Zadana brzina osvježavanja</string>
     <string name="peak_refresh_rate_title_custom">Najviša brzina osvježavanja</string>
