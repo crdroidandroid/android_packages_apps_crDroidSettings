@@ -16,7 +16,7 @@
         <TextClock
             android:textSize="17dp"
             android:textColor="@android:color/white"
-            android:fontFamily="@*android:string/config_clockFontFamily"
+            android:fontFamily="@font/SlateForOnePlus-Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -24,33 +24,40 @@
             android:format12Hour="EEEE"
             android:format24Hour="EEEE"/>
 
-        <FrameLayout
-            android:layout_gravity="start"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextClock
-                android:textSize="54dp"
-                android:textColor="@android:color/white"
-                android:fontFamily="@*android:string/config_clockFontFamily"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:singleLine="true"
-                android:includeFontPadding="false"
-                android:format12Hour="h:mm"
-                android:format24Hour="H:mm"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:orientation="horizontal"
+            android:gravity="start|bottom"
+            android:paddingStart="0dp">
 
             <TextClock
                 android:textSize="54dp"
                 android:textColor="@android:color/holo_red_light"
-                android:fontFamily="@*android:string/config_clockFontFamily"
-                android:layout_width="match_parent"
+                android:fontFamily="@font/SlateForOnePlus-Bold"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:includeFontPadding="false"
+                android:letterSpacing="0"
+                android:paddingStart="0dp"
                 android:format12Hour="h"
                 android:format24Hour="H"/>
-        </FrameLayout>
+
+            <TextClock
+                android:textSize="54dp"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/SlateForOnePlus-Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:includeFontPadding="false"
+                android:letterSpacing="0"
+                android:paddingStart="0dp"
+                android:format12Hour=":mm"
+                android:format24Hour=":mm"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -61,7 +68,7 @@
             <TextClock
                 android:textSize="15dp"
                 android:textColor="@android:color/white"
-                android:fontFamily="@*android:string/config_clockFontFamily"
+                android:fontFamily="@font/SlateForOnePlus-Regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
