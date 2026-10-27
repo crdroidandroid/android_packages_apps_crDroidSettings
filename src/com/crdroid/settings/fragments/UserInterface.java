@@ -86,6 +86,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 Settings.Secure.DOZE_ALWAYS_ON_WALLPAPER_ENABLED, mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_dozeSupportsAodWallpaper) ? 1 : 0,
                 UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                Settings.Secure.SHADE_COLOR_STYLE, 0, UserHandle.USER_CURRENT);
 
         DozeSettings.reset(mContext);
         EdgeLightSettings.Companion.reset(mContext);

@@ -50,6 +50,17 @@
         android:summary="@string/edge_light_summary"
         android:fragment="com.crdroid.settings.fragments.ui.EdgeLightSettings" />
 
+    <!-- Shade style -->
+    <com.crdroid.settings.preferences.SecureSettingListPreference
+        android:key="shade_color_style"
+        android:icon="@drawable/ic_blur"
+        android:title="@string/shade_color_style_title"
+        android:summary="@string/shade_color_style_summary"
+        android:dialogTitle="@string/shade_color_style_title"
+        android:entries="@array/shade_color_style_entries"
+        android:entryValues="@array/shade_color_style_values"
+        android:defaultValue="0" />
+
     <!-- Gradient Customization -->
     <Preference
         android:key="gradient_settings"
