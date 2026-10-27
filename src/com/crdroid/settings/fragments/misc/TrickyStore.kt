@@ -453,8 +453,12 @@ class TrickyStore : SettingsPreferenceFragment() {
             try {
                 val array = JSONArray(text)
                 for (i in 0 until array.length()) {
-                    val pkg = (array.get(i) as JSONObject).getString("package")
+                    val obj = array.get(i) as JSONObject
+                    val pkg = obj.getString("package")
                     require(PACKAGE_REGEX.matches(pkg)) { pkg }
+                    obj.optString("mode").takeIf { it.isNotEmpty() }?.let { mode ->
+                        require(mode.uppercase() in VALID_TARGET_MODES) { "mode: $mode" }
+                    }
                 }
             } catch (e: Exception) {
                 toast(getString(R.string.ts_target_list_invalid, e.message ?: "JSON"))
@@ -495,6 +499,11 @@ class TrickyStore : SettingsPreferenceFragment() {
         private val DATE_REGEX = Regex("""(\d{4})-?(\d{2})(?:-?(\d{2}))?""")
         // Resolved by TrickyStoreService.resolvePatchTemplate() to the current UTC month.
         private val TEMPLATE_REGEX = Regex("""YYYY-MM-(\d{2})""")
+
+        // Mode strings TrickyStoreService.parseTargetsJson accepts; anything else there
+        // falls back to AUTO, so the UI refuses it rather than let it degrade silently.
+        private val VALID_TARGET_MODES = setOf("AUTO", "LEAF_HACK", "GENERATE", "SKIP")
+
         // parsePatchLevel() returns null for these, so the real Build patch is reported.
         private val DEVICE_PATCH_VALUES = setOf("no", "prop")
         private val PATCH_KEYS = setOf("system", "vendor", "boot", "all")
