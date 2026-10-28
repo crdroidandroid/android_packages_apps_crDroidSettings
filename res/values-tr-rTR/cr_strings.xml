@@ -1459,8 +1459,8 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="ts_revocation_chain_invalid">The certificate chain does not verify (%1$s)</string>
     <string name="ts_revocation_untrusted_root">The chain does not lead to a Google attestation root</string>
     <string name="ts_revocation_unverified">Google could not be reached. The status will be checked again later</string>
-    <string name="ts_revocation_error">Check failed: %s</string>
-    <string name="ts_revocation_last_checked">Last checked %1$s</string>
+    <string name="ts_revocation_error">Kontrol başarısız oldu: %s</string>
+    <string name="ts_revocation_last_checked">Son kontrol: %1$s</string>
     <string name="ts_chip_valid">Geçerli</string>
     <string name="ts_chip_expiring">Sona eriyor</string>
     <string name="ts_chip_revoked">İptal edilmiş</string>
@@ -1494,11 +1494,11 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="ts_import_target_list_summary">target.txt dosyasından içe aktar</string>
     <string name="ts_target_list_imported">Hedef listesi içe aktarıldı</string>
     <string name="ts_target_list_invalid">Target list rejected near: %s</string>
-    <string name="ts_system_apps">System apps</string>
-    <string name="ts_add_user_apps">Add user apps</string>
+    <string name="ts_system_apps">Sistem uygulamaları</string>
+    <string name="ts_add_user_apps">Kullanıcı uygulamaları ekle</string>
     <plurals name="ts_added_installed_count">
-        <item quantity="one">Added %d app</item>
-        <item quantity="other">Added %d apps</item>
+        <item quantity="one">%d uygulaması eklendi</item>
+        <item quantity="other">%d uygulamaları eklendi</item>
     </plurals>
     <string name="ts_failed">Başarısız oldu: %s</string>
     <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file. Its revocation status is checked with Google right away and again every 24 hours while you visit this screen.\n3. Google Play Services, the Play Store and other common targets are added automatically. Open \"Manage target apps\" to change them.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nIf Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
@@ -1506,9 +1506,9 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="ts_verification_auto_count">%1$d otomatik</string>
     <string name="ts_verification_cert_count">%1$d sertifika</string>
     <string name="ts_verification_leaf_count">%1$d yaprak</string>
-    <string name="ts_verification_skip_count">%1$d skip</string>
+    <string name="ts_verification_skip_count">%1$d atla</string>
     <string name="ts_patch_dialog_message">A date (YYYY-MM-DD or YYYY-MM), a template like YYYY-MM-05 that follows the current month, or \"no\" to report the device\'s own patch. Use system / vendor / boot / all lines with optional [package] sections to set them separately.</string>
-    <string name="ts_invalid_patch_date">Invalid patch level. Use YYYY-MM-DD</string>
+    <string name="ts_invalid_patch_date">Yama düzeyi geçersiz. YYYY-AA-GG kullanın</string>
     <string name="ts_invalid_patch">Invalid patch level. Use a date, a YYYY-MM-DD template, or \"no\"</string>
     <string name="ts_security_patch">Güvenlik yaması tarihi</string>
     <string name="ts_no_patch">Ayarlanmadı (cihaz varsayılanı kullanılıyor)</string>
