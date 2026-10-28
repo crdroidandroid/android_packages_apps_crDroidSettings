@@ -369,9 +369,45 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="theme_customization_brightness_slider_summary">Ustaw własny styl suwaka jasności</string>
     <!-- Fonts -->
     <string name="add_font">Dodaj czcionkę</string>
-    <string name="font_preview_dialog_title">Podgląd czcionki</string>
     <string name="toast_failed_apply_font">Nie udało się zastosować czcionki</string>
     <string name="toast_invalid_font_file">Nieprawidłowy plik czcionki</string>
+    <string name="font_default">Domyślny</string>
+    <string name="font_current">Aktualna czcionka</string>
+    <string name="font_selected">Wybrano</string>
+    <string name="font_system_section">Czcionki systemowe</string>
+    <string name="font_custom_section">Własna czcionka</string>
+    <string name="font_custom_chip">Własna</string>
+    <string name="font_replace_custom">Zainstaluj inną czcionkę</string>
+    <string name="font_replace">Zastąp</string>
+    <string name="font_remove">Usuń</string>
+    <string name="font_reading">Czytanie pliku z czcionką…</string>
+    <string name="font_installing">Instalowanie %1$s…</string>
+    <string name="font_install_failed">Nie można zainstalować czcionki (błąd %1$d)</string>
+    <string name="font_apply_systemui_message">Aplikacje natychmiast przełączają się na %1$s. Pasek stanu, ekran blokady i szybkie ustawienia przełączają się po ponownym uruchomieniu SystemUI.</string>
+    <string name="font_apply_reboot_message">Spowoduje to usunięcie własnej czcionki i przełączenie na czcionkę %1$s. Aby wszystkie aplikacje zaczęły korzystać z nowej czcionki, konieczne jest ponowne uruchomienie.</string>
+    <string name="font_apply_restart_now">Zastosuj i uruchom ponownie SystemUI</string>
+    <string name="font_apply_restart_later">Zastosuj, uruchom ponownie później</string>
+    <string name="font_apply_reboot_now">Zastosuj i uruchom ponownie</string>
+    <string name="font_apply_reboot_later">Zastosuj, uruchom ponownie później</string>
+    <string name="font_install_message">Ta czcionka będzie używana w tekście systemowym i aplikacjach, dopóki nie wybierzesz innej czcionki. Zainstalowany jest tylko styl zawarty w tym pliku, więc tekst pogrubiony i kursywa są generowane na jego podstawie. Styl czcionki zostaje przywrócony do wartości domyślnej, ażeby zmiany zaczęły obowiązywać wszędzie, konieczne jest ponowne uruchomienie.</string>
+    <string name="font_install_reboot_now">Zainstaluj i uruchom ponownie</string>
+    <string name="font_install_reboot_later">Zainstaluj, uruchom ponownie później</string>
+    <string name="font_pending_reboot_title">Uruchom ponownie, aby zakończyć</string>
+    <string name="font_pending_reboot_body">Ustawiono %1$s. Niektóre aplikacje zachowują poprzednią czcionkę aż do ponownego uruchomienia systemu.</string>
+    <string name="font_pending_systemui_title">Uruchom ponownie SystemUI, aby dokończyć</string>
+    <string name="font_pending_systemui_body">Ustawiono %1$s. Pasek stanu, ekran blokady i szybkie ustawienia zachowują poprzednią czcionkę do momentu ponownego uruchomienia SystemUI.</string>
+    <string name="font_restart_systemui">Uruchom ponownie SystemUI</string>
+    <string name="font_summary_pending_reboot">%1$s · oczekiwanie na ponowne uruchomienie</string>
+    <string name="font_summary_pending_systemui">%1$s · Oczekiwanie na ponowne uruchomienie SystemUI</string>
+    <string name="font_picker_footer">Style czcionek udostępniane przez system zostały wymienione powyżej. Aby użyć własnej czcionki, dotknij opcji „Dodaj czcionkę” i wybierz plik w formacie .ttf lub .otf o rozmiarze nieprzekraczającym 64 MB. Własna czcionka będzie stosowana we wszystkich tekstach systemowych i aplikacjach, które korzystają ze standardowych czcionek interfejsu użytkownika.</string>
+    <string name="font_error_title">Nie można zmienić czcionki</string>
+    <string name="font_error_updater_disabled">Na tym urządzeniu nie są dostępne własne czcionki. Wymagają one obsługi funkcji fs-verity w jądrze systemu oraz na partycji danych.</string>
+    <string name="font_error_invalid_file">Ten plik nie jest czcionką, z której może korzystać system. Obsługiwane są wyłącznie czcionki OpenType (.ttf, .otf) o rozmiarze do 64 MB.</string>
+    <string name="font_error_invalid_name">Ta czcionka nie ma nazwy PostScript, więc system nie może jej zarejestrować.</string>
+    <string name="font_error_downgrading">System posiada już nowszą wersję tej czcionki.</string>
+    <string name="font_error_verification">System nie mógł zabezpieczyć pliku czcionki za pomocą fs-verity, więc nie został on zainstalowany.</string>
+    <string name="font_error_storage">System nie mógł zapisać czcionki. Sprawdź, czy jest wystarczająca ilość wolnego miejsca, i spróbuj ponownie.</string>
+    <string name="font_overlay_reset_failed">Zainstalowano własną czcionkę, ale nie udało się przywrócić domyślnego stylu czcionki</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Domyślna częstotliwość odświeżania</string>
     <string name="peak_refresh_rate_title_custom">Najwyższa częstotliwość odświeżania</string>
@@ -1007,6 +1043,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="qs_header_needs_gallery">Musisz zainstalować aplikację do obsługi obrazów!</string>
     <string name="qs_header_offset_title">Przesunięcie obrazu nagłówka</string>
     <string name="qs_header_offset_summary">Dostosuj rozmiar obrazu nagłówka</string>
+    <string name="qs_header_file_failed">Nie można załadować wybranego obrazu</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Harmonogram ekranu</string>
@@ -1506,7 +1543,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="gs_no_matching_apps">Brak pasujących aplikacji</string>
     <string name="gs_select_app">Wybierz aplikację</string>
     <string name="gs_select_profile">Wybierz profil urządzenia</string>
-    <string name="gs_profile_custom">Własna</string>
+    <string name="gs_profile_custom">Własny</string>
     <string name="gs_profile_custom_ellipsis">Własny…</string>
     <string name="gs_edit_props_short">Edytuj</string>
     <string name="gs_profile_short">Profil</string>
@@ -1567,4 +1604,10 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="reading_engine_mode_title">Wygodny ekran (tryb czytania)</string>
     <string name="display_engine_default">Domyślny</string>
     <string name="display_engine_mode_footer_text">Zainspirowany silnikiem Bravia/X-Reality firmy Sony, silnik wyświetlania oferuje tryb Żywy dla większej jasności i nasycenia kolorów. Tryb X-Reality poprawia szczegółowość i dokładność kolorów, a Trójświetlny zapewnia wyjątkowo precyzyjne odwzorowanie barw.</string>
+    <!-- Shade style -->
+    <string name="shade_color_style_title">Styl cieniowania</string>
+    <string name="shade_color_style_summary">Wybierz wygląd paska powiadomień i animacji na ekranie blokady</string>
+    <string name="shade_color_style_aosp">Domyślne kolory Android</string>
+    <string name="shade_color_style_glass">Przezroczysty, matowy panel, przez który prześwituje tapeta</string>
+    <string name="shade_color_style_tinted">Panel w kolorze akcentującym, z efektem rozmycia lub bez</string>
 </resources>

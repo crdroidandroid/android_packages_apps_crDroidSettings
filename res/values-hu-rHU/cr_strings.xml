@@ -367,9 +367,45 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="theme_customization_brightness_slider_summary">Itt állíthatja be a csúszka egyéni stílusát</string>
     <!-- Fonts -->
     <string name="add_font">Add font</string>
-    <string name="font_preview_dialog_title">Font preview</string>
     <string name="toast_failed_apply_font">Failed to apply font</string>
     <string name="toast_invalid_font_file">Invalid font file</string>
+    <string name="font_default">Alapértelmezett</string>
+    <string name="font_current">Jelenlegi betűtípus</string>
+    <string name="font_selected">Kiválasztva</string>
+    <string name="font_system_section">Rendszer betűtípusok</string>
+    <string name="font_custom_section">Egyéni betűtípus</string>
+    <string name="font_custom_chip">Egyéni</string>
+    <string name="font_replace_custom">Install another font</string>
+    <string name="font_replace">Csere</string>
+    <string name="font_remove">Eltávolítás</string>
+    <string name="font_reading">Reading font file…</string>
+    <string name="font_installing">%1$s telepítése…</string>
+    <string name="font_install_failed">Couldn\'t install font (error %1$d)</string>
+    <string name="font_apply_systemui_message">Apps switch to %1$s right away. The status bar, lock screen and quick settings switch after SystemUI restarts.</string>
+    <string name="font_apply_reboot_message">This removes your custom font and switches to %1$s. A reboot is needed before every app uses the new font.</string>
+    <string name="font_apply_restart_now">Apply and restart SystemUI</string>
+    <string name="font_apply_restart_later">Apply, restart later</string>
+    <string name="font_apply_reboot_now">Apply and reboot</string>
+    <string name="font_apply_reboot_later">Apply, reboot later</string>
+    <string name="font_install_message">Ez a betűtípus szolgál a rendszer és az alkalmazásszövegek megjelenítésére, amíg Ön másikat nem választ. A rendszer csak ezt a fájlstílust telepíti, így a félkövér és dőlt szövegek is ebből képződnek. A betűtípus stílusa visszaáll az alapértelmezettre; a módosítás teljes körű érvényesítéséhez újraindítás szükséges.</string>
+    <string name="font_install_reboot_now">Install and reboot</string>
+    <string name="font_install_reboot_later">Install, reboot later</string>
+    <string name="font_pending_reboot_title">Reboot to finish</string>
+    <string name="font_pending_reboot_body">%1$s is set. Some apps keep the previous font until you reboot.</string>
+    <string name="font_pending_systemui_title">Restart SystemUI to finish</string>
+    <string name="font_pending_systemui_body">%1$s is set. The status bar, lock screen and quick settings keep the previous font until SystemUI restarts.</string>
+    <string name="font_restart_systemui">Restart SystemUI</string>
+    <string name="font_summary_pending_reboot">%1$s · reboot pending</string>
+    <string name="font_summary_pending_systemui">%1$s · SystemUI restart pending</string>
+    <string name="font_picker_footer">A rendszer-betűtípusok fent láthatók. Saját betűtípus használatához kattintson a \'Betűtípus hozzáadása\' lehetőségre, és válasszon ki egy legfeljebb 64 MB méretű .ttf vagy .otf fájlt. Az új betűtípus minden rendszer- és alkalmazás-szövegnél megjelenik, ami a szabványos felhasználói felületi betűtípusokat használja.</string>
+    <string name="font_error_title">A betűkészlet megváltoztatása nem sikerült</string>
+    <string name="font_error_updater_disabled">Ezen a készüléken nem használható egyéni betűtípus. A kernelben és az adatpartíción fs-verity támogatás szükséges.</string>
+    <string name="font_error_invalid_file">Ez a fájl nem olyan betűtípus, amelyet a rendszer használni tud. Kizárólag max. 64 MB méretű OpenType betűtípusok (.ttf, .otf) támogatottak.</string>
+    <string name="font_error_invalid_name">Ennek a betűtípusnak nincs PostScript-neve, ezért a rendszer nem tudja regisztrálni.</string>
+    <string name="font_error_downgrading">A rendszer jelenleg ennél frissebb verziót használ.</string>
+    <string name="font_error_verification">A rendszer nem tudta megvédeni a betűtípusfájlt az fs-verity-vel, ezért nem került telepítésre.</string>
+    <string name="font_error_storage">A rendszer nem tudta menteni a betűtípust. Szabadítson fel tárhelyet majd próbálja újra.</string>
+    <string name="font_overlay_reset_failed">Egyéni betűtípus telepítve, de a betűstílust nem sikerült visszaállítani az alapértelmezettre</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Alapértelmezett képernyőfrissítés</string>
     <string name="peak_refresh_rate_title_custom">Képernyőfrissítés-emelés</string>
@@ -1003,6 +1039,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="qs_header_needs_gallery">Telepítenie kéne egy Galéria-alkalmazást!</string>
     <string name="qs_header_offset_title">Fejléckép-elhelyezés</string>
     <string name="qs_header_offset_summary">Állítsa be a kép fejlécét</string>
+    <string name="qs_header_file_failed">A kijelölt képet nem lehet betölteni</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">AOD-ütemezés</string>
@@ -1559,4 +1596,10 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="reading_engine_mode_title">Komfortos képernyő (Olvasómód)</string>
     <string name="display_engine_default">Alapértelmezett</string>
     <string name="display_engine_mode_footer_text">A Sony Bravia X-Reality motorja inspirálta, háromféle mód van benne: Vivid mód a fokozott fényerőért és színtelítettségért, X-Reality mód a jobb részletgazdagságért és színpontosságért, míg Triluminos mód a híresen pontos kijelzőszínekért.</string>
+    <!-- Shade style -->
+    <string name="shade_color_style_title">Felületstílus</string>
+    <string name="shade_color_style_summary">Válassza ki hogyan nézzen ki a értesítési sáv és a záróképernyő feloldófelülete</string>
+    <string name="shade_color_style_aosp">Gyári Android-színek</string>
+    <string name="shade_color_style_glass">Átlátszó, mattított panel, amelyen keresztül látszik a háttérkép</string>
+    <string name="shade_color_style_tinted">A kiemelőszínnel árnyalt panel, elmosódással vagy anélkül</string>
 </resources>

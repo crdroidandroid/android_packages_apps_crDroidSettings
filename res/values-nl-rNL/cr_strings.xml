@@ -367,9 +367,45 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="theme_customization_brightness_slider_summary">Stel een aangepaste helderheidsregelaar stijl in</string>
     <!-- Fonts -->
     <string name="add_font">Lettertype toevoegen</string>
-    <string name="font_preview_dialog_title">Voorbeeld lettertype</string>
     <string name="toast_failed_apply_font">Kon lettertype niet toepassen</string>
     <string name="toast_invalid_font_file">Ongeldig lettertype bestand</string>
+    <string name="font_default">Standaard</string>
+    <string name="font_current">Huidig lettertype</string>
+    <string name="font_selected">Geselecteerd</string>
+    <string name="font_system_section">Systeem lettertypen</string>
+    <string name="font_custom_section">Aangepaste lettertypen</string>
+    <string name="font_custom_chip">Aangepast</string>
+    <string name="font_replace_custom">Installeer een ander lettertype</string>
+    <string name="font_replace">Vervangen</string>
+    <string name="font_remove">Verwijderen</string>
+    <string name="font_reading">Lees lettertype bestand ...</string>
+    <string name="font_installing">%1$s installeren…</string>
+    <string name="font_install_failed">Kon lettertype niet installeren (fout %1$d)</string>
+    <string name="font_apply_systemui_message">Apps schakelen meteen naar %1$s. De statusbalk, vergrendelingsscherm en snelle instellingen schakelen na een herstart van de SysteemUI.</string>
+    <string name="font_apply_reboot_message">Dit verwijdert je aangepaste lettertype en schakelt over naar %1$s. Een herstart is nodig voordat elke app het nieuwe lettertype gebruikt.</string>
+    <string name="font_apply_restart_now">SysteemUI toepassen en herstarten</string>
+    <string name="font_apply_restart_later">Toepassing, later herstarten</string>
+    <string name="font_apply_reboot_now">Toepassen en opnieuw opstarten</string>
+    <string name="font_apply_reboot_later">Toepassen, later opnieuw opstarten</string>
+    <string name="font_install_message">Dit lettertype wordt gebruikt voor systeem- en app-tekst totdat u een ander lettertype kiest. Alleen de stijl van dit bestand is geïnstalleerd, dus dikgedrukte en cursieve tekst wordt hierdoor gegenereerd. De lettertype stijl is weer ingesteld op standaard en een herstart is nodig om deze overal toe te passen.</string>
+    <string name="font_install_reboot_now">Installeren en opnieuw opstarten</string>
+    <string name="font_install_reboot_later">Installeren, later opnieuw opstarten</string>
+    <string name="font_pending_reboot_title">Herstarten om te voltooien</string>
+    <string name="font_pending_reboot_body">%1$s is ingesteld. Sommige apps houden het vorige lettertype bij tot u opnieuw opstart.</string>
+    <string name="font_pending_systemui_title">Herstart SystemUI om te voltooien</string>
+    <string name="font_pending_systemui_body">%1$s is ingesteld. De statusbalk, vergrendelingsscherm en snelle instellingen houden het vorige lettertype bij tot de SysteemUI opnieuw opstart.</string>
+    <string name="font_restart_systemui">SystemUI herstarten</string>
+    <string name="font_summary_pending_reboot">%1$s · herstart in behandeling</string>
+    <string name="font_summary_pending_systemui">%1$s · SysteemUI herstart in behandeling</string>
+    <string name="font_picker_footer">Tekenstijlen van het systeem worden hierboven weergegeven. Om uw eigen stijl te gebruiken, tikt u op het lettertype toevoegen en kies een .ttf of . tf bestand van maximaal 64 MB. Een aangepast lettertype wordt gebruikt voor alle systeem en app tekst die gebruik maakt van standaard UI lettertypes.</string>
+    <string name="font_error_title">Kan lettertype niet wijzigen</string>
+    <string name="font_error_updater_disabled">Aangepaste lettertypen zijn niet beschikbaar op dit apparaat. Ze hebben ondersteuning nodig in de kernel en op de data-partitie.</string>
+    <string name="font_error_invalid_file">Dit bestand is geen lettertype dat het systeem kan gebruiken. Alleen OpenType lettertypen (.ttf, .otf) van maximaal 64 MB worden ondersteund.</string>
+    <string name="font_error_invalid_name">Dit lettertype heeft geen PostScript-naam, dus het systeem kan het niet registreren.</string>
+    <string name="font_error_downgrading">Het systeem heeft al een nieuwere versie van dit lettertje.</string>
+    <string name="font_error_verification">Het systeem kon het lettertypebestand niet beschermen met omheindheid, het is dus niet geïnstalleerd.</string>
+    <string name="font_error_storage">Het systeem kan het lettertype niet opslaan. Controleer of er gratis opslag is en probeer het opnieuw.</string>
+    <string name="font_overlay_reset_failed">Aangepast lettertype geïnstalleerd, maar de lettertype stijl kon niet worden teruggezet naar de standaard</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Standaard vernieuwingsfrequentie</string>
     <string name="peak_refresh_rate_title_custom">Piek vernieuwingsfrequentie</string>
@@ -1001,6 +1037,7 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="qs_header_needs_gallery">Je moet een galerij app installeren!</string>
     <string name="qs_header_offset_title">Verschuiving kopafbeelding</string>
     <string name="qs_header_offset_summary">Pas de afmeting van de kopafbeelding aan</string>
+    <string name="qs_header_file_failed">Kan de geselecteerde afbeelding niet laden</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Schema weergeven</string>
@@ -1557,4 +1594,10 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="reading_engine_mode_title">Comfort weergave (Leesmodus)</string>
     <string name="display_engine_default">Standaard</string>
     <string name="display_engine_mode_footer_text">Geïnspireerd door Sony\'s Bravia/X-Reality engine, de Display Engine heeft een Vivid modus voor verbeterde helderheid en kleurverzadiging, X-Reality modus voor verbeterde nauwkeurigheid en kleurnauwkeurigheid en Trilumineuze modus voor een groter kleurbereik.</string>
+    <!-- Shade style -->
+    <string name="shade_color_style_title">Stijl schaduw</string>
+    <string name="shade_color_style_summary">Kies hoe de schaduw melding en het vergrendelingsscherm er uitzien</string>
+    <string name="shade_color_style_aosp">Standaard Android kleuren</string>
+    <string name="shade_color_style_glass">Helder, mat paneel waar je achtergrond doorheen schemert</string>
+    <string name="shade_color_style_tinted">Paneel getind met je accentkleur, met of zonder vervaging</string>
 </resources>

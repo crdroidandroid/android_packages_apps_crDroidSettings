@@ -369,9 +369,45 @@
     <string name="theme_customization_brightness_slider_summary">Установить свой стиль регулятора яркости</string>
     <!-- Fonts -->
     <string name="add_font">Добавить шрифт</string>
-    <string name="font_preview_dialog_title">Предпросмотр шрифта</string>
     <string name="toast_failed_apply_font">Не удалось применить шрифт</string>
     <string name="toast_invalid_font_file">Некорректный файл шрифта</string>
+    <string name="font_default">По умолчанию</string>
+    <string name="font_current">Текущий шрифт</string>
+    <string name="font_selected">Выбран</string>
+    <string name="font_system_section">Системные шрифты</string>
+    <string name="font_custom_section">Свой шрифт</string>
+    <string name="font_custom_chip">Свои настройки</string>
+    <string name="font_replace_custom">Установить другой шрифт</string>
+    <string name="font_replace">Заменить</string>
+    <string name="font_remove">Удалить</string>
+    <string name="font_reading">Чтение файла шрифта…</string>
+    <string name="font_installing">Установка %1$s…</string>
+    <string name="font_install_failed">Не удалось установить шрифт (ошибка %1$d)</string>
+    <string name="font_apply_systemui_message">Приложения сразу переключатся на %1$s. Строка состояния, экран блокировки и быстрые настройки переключатся после перезапуска интерфейса.</string>
+    <string name="font_apply_reboot_message">Это приведёт к удалению вашего шрифта и переключению на %1$s. Чтобы каждое приложение использовало новый шрифт, необходима перезагрузка.</string>
+    <string name="font_apply_restart_now">Применить и перезапустить интерфейс</string>
+    <string name="font_apply_restart_later">Применить, перезапустить позже</string>
+    <string name="font_apply_reboot_now">Применить и перезагрузиться</string>
+    <string name="font_apply_reboot_later">Применить, перезагрузиться позже</string>
+    <string name="font_install_message">Этот шрифт используется в системе и в приложениях, пока вы не выберете другой. Установлен только один вариант начертания, поэтому полужирный и курсивный текст генерируются на его основе. Для шрифта установлено значение «По умолчанию»; чтобы изменения вступили в силу повсеместно, необходимо перезагрузить устройство.</string>
+    <string name="font_install_reboot_now">Установить и перезагрузится</string>
+    <string name="font_install_reboot_later">Установить, перезагрузиться позже</string>
+    <string name="font_pending_reboot_title">Перезагрузить, чтобы завершить</string>
+    <string name="font_pending_reboot_body">%1$s установлен. Некоторые приложения сохранят предыдущий шрифт до перезагрузки.</string>
+    <string name="font_pending_systemui_title">Перезапустить интерфейс для завершения</string>
+    <string name="font_pending_systemui_body">%1$s установлен. Строка состояния, экран блокировки и быстрые настройки сохранят предыдущий шрифт до перезагрузки интерфейса.</string>
+    <string name="font_restart_systemui">Перезапустить интерфейс</string>
+    <string name="font_summary_pending_reboot">%1$s · ожидается перезагрузка</string>
+    <string name="font_summary_pending_systemui">%1$s · ожидается перезапуск интерфейса</string>
+    <string name="font_picker_footer">Выше представлен список шрифтов, доступных в системе. Чтобы использовать собственный шрифт, нажмите «Добавить шрифт» и выберите файл в формате .ttf или .otf размером до 64 МБ. Добавленный шрифт будет применяться ко всей системе и приложениям, в которых используются стандартные шрифты интерфейса.</string>
+    <string name="font_error_title">Не удалось изменить шрифт</string>
+    <string name="font_error_updater_disabled">На этом устройстве недоступны свои шрифты. Для их использования требуется поддержка fs-verity в ядре и разделе /data.</string>
+    <string name="font_error_invalid_file">Этот файл не является шрифтом, который может использовать система. Поддерживаются только шрифты OpenType (.ttf, .otf) размером до 64 МБ.</string>
+    <string name="font_error_invalid_name">У этого шрифта нет названия в формате PostScript, поэтому система не может его зарегистрировать.</string>
+    <string name="font_error_downgrading">В системе уже установлена более новая версия этого шрифта.</string>
+    <string name="font_error_verification">Системе не удалось защитить файл шрифта с помощью fs-verity, поэтому он не был установлен.</string>
+    <string name="font_error_storage">Системе не удалось сохранить шрифт. Убедитесь, что на диске достаточно свободного места, и повторите попытку.</string>
+    <string name="font_overlay_reset_failed">Свой шрифт установлен, но стиль шрифта не удалось вернуть к значению «По умолчанию»</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Частота обновления по умолчанию</string>
     <string name="peak_refresh_rate_title_custom">Максимальная частота обновления</string>
@@ -1007,6 +1043,7 @@
     <string name="qs_header_needs_gallery">Вы должны установить приложение галереи!</string>
     <string name="qs_header_offset_title">Смещение изображения</string>
     <string name="qs_header_offset_summary">Изменение высоты изображения заголовка</string>
+    <string name="qs_header_file_failed">Не удалось загрузить выбранное изображение</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Расписание отображения</string>
@@ -1401,7 +1438,7 @@
     <string name="pif_verbose_logs_off">Отключено</string>
     <string name="pif_verbose_logs_basic">Простой</string>
     <string name="pif_verbose_logs_detailed">Детальный</string>
-    <string name="pif_verbose_logs_full">Весь экран</string>
+    <string name="pif_verbose_logs_full">Нет места</string>
     <!-- TrickyStore -->
     <string name="ts_import_keybox">Импорт ключей</string>
     <string name="ts_replace_keybox">Замена ключей</string>
@@ -1565,4 +1602,10 @@
     <string name="reading_engine_mode_title">Комфортный (режим чтения)</string>
     <string name="display_engine_default">По умолчанию</string>
     <string name="display_engine_mode_footer_text">Движок отрисовки экрана, создан на основе технологии Sony Bravia/X-Reality Engine, поддерживает режим «Яркий экран» для повышения яркости и насыщенности цветов, режим «X-Reality» для улучшения детализации и точности цветопередачи, а также режим «Трёхцветный экран», для расширения цветового диапазона.</string>
+    <!-- Shade style -->
+    <string name="shade_color_style_title">Стиль затенения</string>
+    <string name="shade_color_style_summary">Выбор вида затенения шторки уведомлений и экрана блокировки</string>
+    <string name="shade_color_style_aosp">Цвета Android</string>
+    <string name="shade_color_style_glass">Прозрачная матовая панель, сквозь которую видны обои</string>
+    <string name="shade_color_style_tinted">Панель, тонированная в акцентный цвет, с размытием и без</string>
 </resources>

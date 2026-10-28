@@ -367,9 +367,45 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="theme_customization_brightness_slider_summary">Özel parlaklık kaydırıcı stilini ayarla</string>
     <!-- Fonts -->
     <string name="add_font">Add font</string>
-    <string name="font_preview_dialog_title">Font preview</string>
     <string name="toast_failed_apply_font">Failed to apply font</string>
     <string name="toast_invalid_font_file">Invalid font file</string>
+    <string name="font_default">Varsayılan</string>
+    <string name="font_current">Mevcut yazı tipi</string>
+    <string name="font_selected">Seçildi</string>
+    <string name="font_system_section">Sistem yazı tipleri</string>
+    <string name="font_custom_section">Özel yazı tipi</string>
+    <string name="font_custom_chip">Özel</string>
+    <string name="font_replace_custom">Başka yazı tipi kur</string>
+    <string name="font_replace">Değiştir</string>
+    <string name="font_remove">Kaldır</string>
+    <string name="font_reading">Yazı tipi dosyası okunuyor…</string>
+    <string name="font_installing">%1$s kuruluyor…</string>
+    <string name="font_install_failed">Yazı tipi kurulamadı (%1$d hatası)</string>
+    <string name="font_apply_systemui_message">Uygulamalar hemen %1$s\'e geçer. Durum çubuğu, kilit ekranı ve hızlı ayarlar; SystemUI yeniden başlatılınca geçer.</string>
+    <string name="font_apply_reboot_message">Bu özel yazı tipinizi kaldırır ve %1$s ile değiştirir. Tüm uygulamaların yeni yazı tipini kullaması için yeniden başlatma gerekir.</string>
+    <string name="font_apply_restart_now">Uygula ve SystemUI\'yı yeniden başlat</string>
+    <string name="font_apply_restart_later">Uygula, daha sonra yeniden başlat</string>
+    <string name="font_apply_reboot_now">Uygula ve yeniden başlat</string>
+    <string name="font_apply_reboot_later">Uygula, daha sonra yeniden başlat</string>
+    <string name="font_install_message">Bu yazı tipi siz başka yazı tipi seçene kadar sistem ve uygulama yazıları için kullanılır. Sadece bu dosyanın stili kurulu, yani kalın ve eğik yazılar bu dosyadan oluşturulur. Yazı tipi stili Varsayılana geri ayarlandı ve heryerde uygulamak için yeniden başlatma gerekli.</string>
+    <string name="font_install_reboot_now">Yükle ve yeniden başlat</string>
+    <string name="font_install_reboot_later">Yükle, daha sonra yeniden başlat</string>
+    <string name="font_pending_reboot_title">Tamamlamak için yeniden başlat</string>
+    <string name="font_pending_reboot_body">%1$s ayarlandı. Bazı uygulamalar yeniden başlatana kadar önceki yazı tipini kullanır.</string>
+    <string name="font_pending_systemui_title">Tamamlamak için Sistem Arayüzünü yeniden başlat</string>
+    <string name="font_pending_systemui_body">%1$s ayarlandı. Durum çubuğu, kilit ekranı ve hızlı ayarlar Sistem Arayüzü yeniden başlayana kadar önceki yazı tipini kullanır.</string>
+    <string name="font_restart_systemui">Sistem Arayüzünü yeniden başlat</string>
+    <string name="font_summary_pending_reboot">%1$s · yeniden başlatma bekleniyor</string>
+    <string name="font_summary_pending_systemui">%1$s · Sistem Arayüzü yeniden başlatma bekleniyor</string>
+    <string name="font_picker_footer">Sistemin sağladığı yazı tipleri yukarıda listelenmiştir. Kendinizinkini kullanmak için Yazı tipi ekle\'ye basıp 64MB\'a kadar bir .ttf veya .otf dosyası seçin. Özel yazı tipi standart arayüz yazı tipini kullanan bütün sistem ve uygulama yazıları için kullanılır.</string>
+    <string name="font_error_title">Yazı tipi değiştirilemedi</string>
+    <string name="font_error_updater_disabled">Özel yazı tipleri bu cihazda kullanılabilir değil. Çekirdek ve veri bölmesinde fs-verity desteğine ihtiyaç duyarlar.</string>
+    <string name="font_error_invalid_file">Bu dosya sistemin kullanabileceği bir yazı tipi değil. Yalnızca 64 MB\'a kadar OpenType yazı tipleri (.ttf, .otf) desteklidir.</string>
+    <string name="font_error_invalid_name">Bu yazı tipinin bir PostScript adı bulunmuyor, bu sebeple sistem onu kayıt edemez.</string>
+    <string name="font_error_downgrading">Sistem zaten bu yazı tipinin daha yeni bir sürümüne sahip.</string>
+    <string name="font_error_verification">Sistem, yazı tipini fs-verity ile koruyamadığı için yazı tipi kurulamadı.</string>
+    <string name="font_error_storage">Sistem yazı tipini kaydedemedi. Depolamada boş yer olduğunu kontrol edip tekrar deneyin.</string>
+    <string name="font_overlay_reset_failed">Özel yazı tipi yüklendi fakat yazı tipi stili Varsılana geri ayarlanamadı</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Varsayılan yenileme hızı</string>
     <string name="peak_refresh_rate_title_custom">En yüksek yenileme hızı</string>
@@ -1001,6 +1037,7 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="qs_header_needs_gallery">Bir galeri uygulaması yüklemelisin.</string>
     <string name="qs_header_offset_title">Başlık resmi konumu</string>
     <string name="qs_header_offset_summary">Başlık resmi boyutunu ayarla</string>
+    <string name="qs_header_file_failed">Seçilen görüntü yüklenemedi</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">Görüntüyü zamanla</string>
@@ -1557,4 +1594,10 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="reading_engine_mode_title">Konfor (Okuma modu)</string>
     <string name="display_engine_default">Varsayılan</string>
     <string name="display_engine_mode_footer_text">Sony\'nin Bravia/X-Reality motorundan esinlenen Görüntü Motoru; zenginleştirilmiş parlaklık ve renk doygunluğu için Canlı modu, geliştirilmiş ayrıntı ve renk doğruluğu için X-Reality modunu, daha geniş renk aralığı için Triluminos modunu sunar.</string>
+    <!-- Shade style -->
+    <string name="shade_color_style_title">Shade style</string>
+    <string name="shade_color_style_summary">Choose how the notification shade and lock screen bouncer look</string>
+    <string name="shade_color_style_aosp">Stock Android colors</string>
+    <string name="shade_color_style_glass">Clear, frosted panel that lets your wallpaper show through</string>
+    <string name="shade_color_style_tinted">Panel tinted with your accent color, with or without blur</string>
 </resources>
