@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2024 crDroid Android Project
+ * Copyright (C) 2016-2026 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -189,7 +189,7 @@ public class Buttons extends SettingsPreferenceFragment implements
                 org.lineageos.platform.internal.R.integer.config_doubleTapOnHomeBehavior));
         Action defaultAppSwitchLongPressAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_longPressOnAppSwitchBehavior));
-        Action defaultAssistLongPressAction = Action.VOICE_SEARCH;
+
         Action homeLongPressAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION,
                 defaultHomeLongPressAction);
@@ -204,9 +204,6 @@ public class Buttons extends SettingsPreferenceFragment implements
         Action appSwitchDoubleTapAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_APP_SWITCH_DOUBLE_TAP_ACTION,
                 Action.LAST_APP);
-        Action assistLongPressAction = Action.fromSettings(resolver,
-                LineageSettings.System.KEY_ASSIST_LONG_PRESS_ACTION,
-                defaultAssistLongPressAction);
         Action backLongPressAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION,
                 defaultBackLongPressAction);
@@ -295,10 +292,16 @@ public class Buttons extends SettingsPreferenceFragment implements
                 assistCategory.removePreference(findPreference(KEY_ASSIST_WAKE_SCREEN));
             }
 
+            Action defaultAssistPressAction = Action.fromIntSafe(res.getInteger(
+                    org.lineageos.platform.internal.R.integer.config_pressOnAssistBehavior));
             Action pressAction = Action.fromSettings(resolver,
-                    LineageSettings.System.KEY_ASSIST_ACTION, Action.SEARCH);
+                    LineageSettings.System.KEY_ASSIST_ACTION, defaultAssistPressAction);
             mAssistPressAction = initList(KEY_ASSIST_PRESS, pressAction);
 
+            Action defaultAssistLongPressAction = Action.fromIntSafe(res.getInteger(
+                    org.lineageos.platform.internal.R.integer.config_longPressOnAssistBehavior));
+            Action assistLongPressAction = Action.fromSettings(resolver,
+                    LineageSettings.System.KEY_ASSIST_LONG_PRESS_ACTION, defaultAssistLongPressAction);
             mAssistLongPressAction = initList(KEY_ASSIST_LONG_PRESS, assistLongPressAction);
         }
         if (!hasAssistKey || assistCategory.getPreferenceCount() == 0) {
