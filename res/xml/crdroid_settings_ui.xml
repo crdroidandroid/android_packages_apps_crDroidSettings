@@ -42,6 +42,14 @@
         android:title="@string/pulse_on_new_tracks_title"
         android:summary="@string/pulse_on_new_tracks_summary" />
 
+    <!-- Battery saver dark theme -->
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="battery_saver_dark_theme"
+        android:icon="@drawable/ic_battery_saver"
+        android:title="@string/battery_saver_dark_theme_title"
+        android:summary="@string/battery_saver_dark_theme_summary"
+        android:defaultValue="true" />
+
     <!-- Edge Light -->
     <Preference
         android:key="edge_light_settings"
