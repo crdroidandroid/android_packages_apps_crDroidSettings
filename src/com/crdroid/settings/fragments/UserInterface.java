@@ -52,6 +52,7 @@ public class UserInterface extends SettingsPreferenceFragment implements
     public static final String TAG = "UserInterface";
 
     private static final String KEY_FORCE_FULL_SCREEN = "display_cutout_force_fullscreen_settings";
+    private static final String KEY_BATTERY_SAVER_DARK_THEME = "battery_saver_dark_theme";
 
     private Preference mShowCutoutForce;
 
@@ -88,6 +89,8 @@ public class UserInterface extends SettingsPreferenceFragment implements
                 UserHandle.USER_CURRENT);
         Settings.Secure.putIntForUser(resolver,
                 Settings.Secure.SHADE_COLOR_STYLE, 0, UserHandle.USER_CURRENT);
+        Settings.Secure.putIntForUser(resolver,
+                KEY_BATTERY_SAVER_DARK_THEME, 1, UserHandle.USER_CURRENT);
 
         DozeSettings.reset(mContext);
         EdgeLightSettings.Companion.reset(mContext);
