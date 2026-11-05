@@ -83,10 +83,10 @@ internal object PifFetcher {
         "bluejay" -> "32"
         "panther", "cheetah", "lynx", "felix", "tangorpro" -> "33"
         "shiba", "husky", "akita", "tokay", "caiman", "komodo", "comet" -> "34"
-        "tegu", "stallion" -> "35"
-        "frankel", "blazer", "mustang", "rango" -> "36"
+        "tegu" -> "35"
+        "stallion", "frankel", "blazer", "mustang", "rango" -> "36"
         "cubs", "grizzly", "kodiak", "yogi" -> "37"
-        else -> "37"
+        else -> "32"
     }
 
     fun fetchDevices(channel: PifChannel): DeviceList = when (channel) {
