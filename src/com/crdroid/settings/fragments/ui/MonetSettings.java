@@ -66,6 +66,13 @@ public class MonetSettings extends DashboardFragment implements
             "android.theme.customization.luminance_factor";
     private static final String OVERLAY_CHROMA_FACTOR =
             "android.theme.customization.chroma_factor";
+    private static final String OVERLAY_PRIMARY_CHROMA_BOOST =
+            "android.theme.customization.primary_chroma_boost";
+    private static final String OVERLAY_PALETTE_PREFIX =
+            "android.theme.customization.palette_";
+    private static final String[] PALETTE_NAMES = {
+            "primary", "secondary", "tertiary", "neutral"
+    };
     private static final String OVERLAY_WHOLE_PALETTE =
             "android.theme.customization.whole_palette";
     private static final String OVERLAY_TINT_BACKGROUND =
@@ -94,6 +101,10 @@ public class MonetSettings extends DashboardFragment implements
     private ColorPickerPreference mBgColorPref;
     private CustomSeekBarPreference mLuminancePref;
     private CustomSeekBarPreference mChromaPref;
+    private final CustomSeekBarPreference[] mPaletteChromaPrefs =
+            new CustomSeekBarPreference[PALETTE_NAMES.length];
+    private final CustomSeekBarPreference[] mPaletteValuePrefs =
+            new CustomSeekBarPreference[PALETTE_NAMES.length];
     private SwitchPreferenceCompat mWholePalettePref;
     private SwitchPreferenceCompat mTintBackgroundPref;
 
@@ -118,6 +129,10 @@ public class MonetSettings extends DashboardFragment implements
         mBgColorPref = findPreference(PREF_BG_COLOR);
         mLuminancePref = findPreference(PREF_LUMINANCE_FACTOR);
         mChromaPref = findPreference(PREF_CHROMA_FACTOR);
+        for (int i = 0; i < PALETTE_NAMES.length; i++) {
+            mPaletteChromaPrefs[i] = findPreference("monet_" + PALETTE_NAMES[i] + "_chroma");
+            mPaletteValuePrefs[i] = findPreference("monet_" + PALETTE_NAMES[i] + "_value");
+        }
         mWholePalettePref = findPreference(PREF_WHOLE_PALETTE);
         mTintBackgroundPref = findPreference(PREF_TINT_BACKGROUND);
         mSharedPreferences = getActivity().getSharedPreferences(TAG, Context.MODE_PRIVATE);
@@ -131,6 +146,10 @@ public class MonetSettings extends DashboardFragment implements
         mBgColorPref.setOnPreferenceChangeListener(this);
         mLuminancePref.setOnPreferenceChangeListener(this);
         mChromaPref.setOnPreferenceChangeListener(this);
+        for (int i = 0; i < PALETTE_NAMES.length; i++) {
+            mPaletteChromaPrefs[i].setOnPreferenceChangeListener(this);
+            mPaletteValuePrefs[i].setOnPreferenceChangeListener(this);
+        }
         mWholePalettePref.setOnPreferenceChangeListener(this);
         mTintBackgroundPref.setOnPreferenceChangeListener(this);
     }
@@ -184,6 +203,8 @@ public class MonetSettings extends DashboardFragment implements
                 final boolean tintBG = object.optInt(OVERLAY_TINT_BACKGROUND, 0) == 1;
                 final float lumin = (float) object.optDouble(OVERLAY_LUMINANCE_FACTOR, 1d);
                 final float chroma = (float) object.optDouble(OVERLAY_CHROMA_FACTOR, 1d);
+                final int previousPrimaryBoost = Math.max(0, Math.min(300,
+                        object.optInt(OVERLAY_PRIMARY_CHROMA_BOOST, 0)));
                 // style handling
                 boolean styleUpdated = false;
                 if (style != null && !style.isEmpty()) {
@@ -220,6 +241,13 @@ public class MonetSettings extends DashboardFragment implements
                 if (chroma > 1d) chromaV = Math.round((chroma - 1f) * 100f);
                 else if (chroma < 1d) chromaV = -1 * Math.round((1f - chroma) * 100f);
                 mChromaPref.setValue(chromaV);
+                for (int i = 0; i < PALETTE_NAMES.length; i++) {
+                    final int oldPrimaryPercent = i == 0 ? 100 + previousPrimaryBoost : 100;
+                    mPaletteChromaPrefs[i].setValue(Math.max(0, Math.min(600,
+                            object.optInt(paletteKey(i, "chroma"), oldPrimaryPercent))));
+                    mPaletteValuePrefs[i].setValue(Math.max(0, Math.min(200,
+                            object.optInt(paletteKey(i, "value"), 100))));
+                }
                 mWholePalettePref.setChecked(wholePalette);
                 mTintBackgroundPref.setChecked(tintBG);
             } catch (JSONException | IllegalArgumentException ignored) {}
@@ -272,6 +300,15 @@ public class MonetSettings extends DashboardFragment implements
             boolean value = (Boolean) newValue;
             setTintBackgroundValue(value);
             return true;
+        }
+        for (int i = 0; i < PALETTE_NAMES.length; i++) {
+            if (preference == mPaletteChromaPrefs[i]) {
+                setPaletteFactor(i, "chroma", (Integer) newValue);
+                return true;
+            } else if (preference == mPaletteValuePrefs[i]) {
+                setPaletteFactor(i, "value", (Integer) newValue);
+                return true;
+            }
         }
         return false;
     }
@@ -385,6 +422,26 @@ public class MonetSettings extends DashboardFragment implements
                 object.remove(OVERLAY_CHROMA_FACTOR);
             else
                 object.putOpt(OVERLAY_CHROMA_FACTOR, 1d + ((double) chroma / 100d));
+            putSettingsJson(object);
+        } catch (JSONException | IllegalArgumentException ignored) {}
+    }
+
+    private static String paletteKey(int index, String component) {
+        return OVERLAY_PALETTE_PREFIX + PALETTE_NAMES[index] + "_" + component;
+    }
+
+    private void setPaletteFactor(int index, String component, int percent) {
+        try {
+            JSONObject object = getSettingsJson();
+            final String key = paletteKey(index, component);
+            final int bounded = Math.max(0, Math.min(600, percent));
+            if (bounded == 100)
+                object.remove(key);
+            else
+                object.putOpt(key, bounded);
+            // A new primary setting supersedes the previous 0..300% boost setting.
+            if (index == 0 && "chroma".equals(component))
+                object.remove(OVERLAY_PRIMARY_CHROMA_BOOST);
             putSettingsJson(object);
         } catch (JSONException | IllegalArgumentException ignored) {}
     }
