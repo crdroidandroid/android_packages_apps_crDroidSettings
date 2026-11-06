@@ -393,14 +393,14 @@
     <string name="font_summary_pending_reboot">%1$s - 다시 시작 대기</string>
     <string name="font_summary_pending_systemui">%1$s - 시스템 UI 재시작 대기</string>
     <string name="font_picker_footer"></string>
-    <string name="font_error_title">Couldn\'t change the font</string>
-    <string name="font_error_updater_disabled">Custom fonts aren\'t available on this device. They need fs-verity support in the kernel and on the data partition.</string>
-    <string name="font_error_invalid_file">This file isn\'t a font the system can use. Only OpenType fonts (.ttf, .otf) of up to 64 MB are supported.</string>
-    <string name="font_error_invalid_name">This font has no PostScript name, so the system can\'t register it.</string>
-    <string name="font_error_downgrading">The system already has a newer version of this font.</string>
-    <string name="font_error_verification">The system couldn\'t protect the font file with fs-verity, so it was not installed.</string>
-    <string name="font_error_storage">The system couldn\'t save the font. Check that there is free storage and try again.</string>
-    <string name="font_overlay_reset_failed">Custom font installed, but the font style couldn\'t be set back to Default</string>
+    <string name="font_error_title">글꼴을 변경하지 않았습니다</string>
+    <string name="font_error_updater_disabled">사용자 지정 글꼴은 현재 기기에서 지원하지 않습니다. 커널과 데이터 파티션에서 fs-verify를 지원해야 합니다.</string>
+    <string name="font_error_invalid_file">이 파일은 시스템이 사용할 수 있는 글꼴이 아닙니다.  64 MB 이하의 OpenType 글꼴(.ttf, .otf)만 지원합니다.</string>
+    <string name="font_error_invalid_name">글꼴이 PostScript 이름을 가지고 있지 않아 시스템에 등록할 수 없습니다.</string>
+    <string name="font_error_downgrading">이미 시스템에 해당 글꼴의 새로운 버전이 있습니다.</string>
+    <string name="font_error_verification">시스템이 fs-verify로 글꼴 파일을 보호할 수 없어 설치되지 않았습니다.</string>
+    <string name="font_error_storage">시스템이 글꼴을 저장하지 못했습니다. 남은 저장 공간이 있는지 확인하고 다시 시도하세요.</string>
+    <string name="font_overlay_reset_failed">사용자 지정 글꼴이 설치되었으나 글꼴 스타일이 기본값으로 바뀌지 않았습니다.</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">기본 화면 재생률</string>
     <string name="peak_refresh_rate_title_custom">최대 화면 재생률</string>
@@ -1030,7 +1030,7 @@
     <string name="qs_header_needs_gallery">사용할 수 있는 갤러리 앱이 없습니다.</string>
     <string name="qs_header_offset_title">헤더 이미지 위치</string>
     <string name="qs_header_offset_summary">이미지 헤더 크기 조정</string>
-    <string name="qs_header_file_failed">Couldn\'t load the selected image</string>
+    <string name="qs_header_file_failed">선택한 이미지를 불러올 수 없습니다.</string>
     <!-- Label for a numbered SIM card.  [CHAR LIMIT=40] -->
     <!-- AOD Schedule -->
     <string name="always_on_display_schedule_title">표시 일정</string>
@@ -1106,10 +1106,10 @@
     <string name="systemui_restart_not_now">나중에</string>
     <string name="systemui_restart_process">변경사항을 적용하기 위해 시스템UI 재시작 중...</string>
     <!-- System reboot -->
-    <string name="reboot_required_title">Reboot required</string>
-    <string name="reboot_required_message">A reboot is required to apply changes. Reboot now?</string>
-    <string name="action_later">Later</string>
-    <string name="action_reboot_now">Reboot now</string>
+    <string name="reboot_required_title">다시 시작 권장</string>
+    <string name="reboot_required_message">변경 사항을 적용하기 위해 다시 시작이 권장됩니다. 기기를 재시작하시겠습니까?</string>
+    <string name="action_later">나중에</string>
+    <string name="action_reboot_now">지금 다시 시작</string>
     <!-- Notification / Power Menu Styles -->
     <string name="notification_style_title">알림 스타일</string>
     <string name="powermenu_style_title">전원 메뉴 스타일</string>
@@ -1185,7 +1185,7 @@
     <string name="pulse_renderer_matrix">매트릭스</string>
     <string name="pulse_renderer_particle">입자</string>
     <string name="pulse_renderer_waveform">파형</string>
-    <string name="pulse_height_multiplier_title">Pulse height</string>
+    <string name="pulse_height_multiplier_title">파장 높이</string>
     <string name="pulse_height_multiplier_summary">Adjust height for the visualizer shown</string>
     <!-- Notification Row -->
     <string name="notification_row_transparency_title">반투명 알림</string>
