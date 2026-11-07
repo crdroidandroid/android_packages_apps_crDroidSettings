@@ -18,6 +18,7 @@ import androidx.compose.material.icons.rounded.CalendarMonth
 import androidx.compose.material.icons.rounded.DeleteOutline
 import androidx.compose.material.icons.rounded.FileOpen
 import androidx.compose.material.icons.rounded.Key
+import androidx.compose.material.icons.rounded.NotificationsActive
 import androidx.compose.material.icons.rounded.Policy
 import androidx.compose.material.icons.rounded.Refresh
 import androidx.compose.material.icons.rounded.Tune
@@ -62,6 +63,12 @@ internal class TsUiState {
     var expiryTone by mutableStateOf(SpoofTone.Neutral)
     var expiryChip by mutableStateOf<String?>(null)
 
+    /** Background revocation / expiry alerts; on by default. */
+    var alertsEnabled by mutableStateOf(true)
+    /** False without a keybox or once it has expired: nothing left to alert about. */
+    var alertsAvailable by mutableStateOf(false)
+    var alertsSummary by mutableStateOf("")
+
     var statusChip by mutableStateOf("")
     var statusTone by mutableStateOf(SpoofTone.Neutral)
     var statusSummary by mutableStateOf("")
@@ -80,6 +87,9 @@ internal interface TsActions {
     fun onManageTargets()
     fun onImportTargets()
     fun onEditPatch()
+
+    /** Keybox alerts switch flipped. */
+    fun onAlertsToggle(enabled: Boolean)
 
     fun onConfirmDeleteKeybox()
 
@@ -172,6 +182,16 @@ internal fun TrickyStoreContent(state: TsUiState, actions: TsActions) {
                             chipTone = state.expiryTone,
                         )
                     }
+                }
+                item {
+                    SpoofSwitchRow(
+                        title = stringResource(R.string.ts_alerts_title),
+                        summary = state.alertsSummary,
+                        icon = Icons.Rounded.NotificationsActive,
+                        checked = state.alertsEnabled && state.alertsAvailable,
+                        enabled = state.alertsAvailable,
+                        onCheckedChange = actions::onAlertsToggle,
+                    )
                 }
             }
         }
