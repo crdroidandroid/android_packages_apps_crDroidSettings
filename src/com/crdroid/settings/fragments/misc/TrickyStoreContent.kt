@@ -71,6 +71,16 @@ internal class TsUiState {
     var verificationSummary by mutableStateOf("")
     var patchSummary by mutableStateOf("")
     var patchStale by mutableStateOf(false)
+
+    var rkpSupported by mutableStateOf(false)
+    var rkpAvailable by mutableStateOf(false)
+    var rkpEnabled by mutableStateOf(false)
+    var rkpImported by mutableStateOf(false)
+    var rkpBusy by mutableStateOf(false)
+    var rkpActive by mutableStateOf(false)
+    var rkpChanging by mutableStateOf(false)
+    var rkpCanProvision by mutableStateOf(false)
+    var rkpStatus by mutableStateOf("")
 }
 
 internal interface TsActions {
@@ -94,6 +104,9 @@ internal interface TsActions {
 
     /** [wipe] is true when the user agreed to clear Play Store data. */
     fun onWipePlayStore(wipe: Boolean)
+
+    fun onRkpEnabledChange(enabled: Boolean)
+    fun onRkpProvision()
 }
 
 @Composable
@@ -102,11 +115,11 @@ internal fun TrickyStoreContent(state: TsUiState, actions: TsActions) {
     SpoofScreen {
         SpoofingHeaderCard(
             title = stringResource(R.string.tricky_store_title),
-            subtitle = if (state.keyboxExists) {
-                stringResource(R.string.ts_keybox_installed) + " \u00b7 " +
+            subtitle = when {
+                state.rkpActive -> stringResource(R.string.ts_rkp_active_subtitle)
+                state.keyboxExists -> stringResource(R.string.ts_keybox_installed) + " \u00b7 " +
                     stringResource(R.string.ts_target_apps_count, state.targetCount)
-            } else {
-                stringResource(R.string.ts_no_keybox)
+                else -> stringResource(R.string.ts_no_keybox)
             },
         ) {
             Icon(
@@ -172,6 +185,35 @@ internal fun TrickyStoreContent(state: TsUiState, actions: TsActions) {
                             chipTone = state.expiryTone,
                         )
                     }
+                }
+            }
+        }
+
+        if (state.rkpSupported) {
+            SpoofGroup(title = stringResource(R.string.ts_rkp_title)) {
+                item {
+                    SpoofSwitchRow(
+                        title = stringResource(R.string.ts_rkp_enabled),
+                        summary = stringResource(R.string.ts_rkp_enabled_summary),
+                        checked = state.rkpEnabled,
+                        onCheckedChange = actions::onRkpEnabledChange,
+                        enabled = state.rkpAvailable && !state.rkpImported &&
+                            !state.rkpBusy && !state.rkpChanging,
+                    )
+                }
+                item {
+                    SpoofNavRow(
+                        title = stringResource(R.string.ts_rkp_provision),
+                        summary = stringResource(R.string.ts_rkp_provision_summary),
+                        enabled = state.rkpCanProvision && !state.rkpChanging,
+                        onClick = actions::onRkpProvision,
+                    )
+                }
+                item {
+                    SpoofRow(
+                        title = stringResource(R.string.ts_rkp_status),
+                        summary = state.rkpStatus,
+                    )
                 }
             }
         }

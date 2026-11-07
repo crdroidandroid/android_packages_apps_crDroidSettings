@@ -9,6 +9,7 @@ import android.app.Activity
 import android.app.ActivityManager
 import android.content.Intent
 import android.os.Bundle
+import android.os.UserHandle
 import android.provider.Settings
 import android.security.trickystore.TrickyStoreService
 import android.util.Base64
@@ -27,13 +28,17 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
 import java.nio.charset.StandardCharsets
 import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.Locale
 import java.util.concurrent.TimeUnit
 
 class TrickyStore : SettingsPreferenceFragment() {
@@ -49,6 +54,9 @@ class TrickyStore : SettingsPreferenceFragment() {
 
     /** Set after an import so the Play Store wipe prompt follows the status result. */
     private var offerWipeAfterCheck = false
+
+    // Revision of the last device RKP keybox seen by the poll loop.
+    private var lastDuckRkpRevision = -1L
 
     private val keyboxPicker = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -150,6 +158,12 @@ class TrickyStore : SettingsPreferenceFragment() {
                 requireContext().packageManager.clearApplicationUserData(VENDING_PACKAGE, null)
             } catch (_: Exception) {}
         }
+
+        override fun onRkpEnabledChange(enabled: Boolean) =
+            changeDuckRkp { ActivityManager.getService().setDuckRkpEnabled(enabled) }
+
+        override fun onRkpProvision() =
+            changeDuckRkp { ActivityManager.getService().provisionDuckRkp() }
     }
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {}
@@ -158,6 +172,7 @@ class TrickyStore : SettingsPreferenceFragment() {
         super.onCreate(savedInstanceState)
         requireActivity().title = getString(R.string.tricky_store_title)
         refreshStatus()
+        startDuckRkpPolling()
     }
 
     override fun onCreateView(
@@ -483,6 +498,118 @@ class TrickyStore : SettingsPreferenceFragment() {
         val am = requireContext().getSystemService(ActivityManager::class.java)
         killPackages(am, GMS_FAMILY_PACKAGES)
     }
+
+    // ---- Device RKP (Duck V1) -------------------------------------------------------------
+
+    private fun startDuckRkpPolling() {
+        scope.launch {
+            while (isActive) {
+                if (isResumed) refreshDuckRkp()
+                delay(1500)
+            }
+        }
+    }
+
+    private suspend fun refreshDuckRkp() {
+        val next = withContext(Dispatchers.IO) {
+            runCatching { ActivityManager.getService().duckRkpState }.getOrNull()
+        }
+        if (!isAdded) return
+        val revision = next?.getLong("revision", 0L) ?: -1L
+        applyDuckRkpState(next)
+        if (next != null && lastDuckRkpRevision != -1L && revision != lastDuckRkpRevision &&
+            next.getBoolean("active") && !next.getBoolean("imported")) {
+            // A new generated keybox was saved; cached attestation verdicts must go.
+            stopGmsFamily()
+        }
+        lastDuckRkpRevision = revision
+    }
+
+    private fun applyDuckRkpState(state: Bundle?) {
+        val owner = UserHandle.myUserId() == UserHandle.USER_SYSTEM
+        ui.rkpSupported = state?.getBoolean("available") == true
+        ui.rkpAvailable = owner && ui.rkpSupported
+        ui.rkpEnabled = ui.rkpSupported && state?.getBoolean("enabled") == true
+        ui.rkpImported = state?.getBoolean("imported") == true
+        ui.rkpBusy = state?.getBoolean("busy") == true
+        ui.rkpActive = state?.getBoolean("active") == true
+        ui.rkpCanProvision = ui.rkpAvailable && ui.rkpEnabled && !ui.rkpImported &&
+            !ui.rkpBusy && (state?.getLong("retry_after_ms") ?: 0L) == 0L
+        ui.rkpStatus = duckRkpStatus(state, owner)
+    }
+
+    private fun duckRkpStatus(state: Bundle?, owner: Boolean): String {
+        if (!owner) return getString(R.string.ts_rkp_owner_only)
+        if (state == null || !state.getBoolean("available")) {
+            return getString(R.string.ts_rkp_unavailable)
+        }
+        if (state.getBoolean("imported")) return getString(R.string.ts_rkp_imported)
+        if (!state.getBoolean("enabled")) return getString(R.string.ts_rkp_disabled)
+        if (!state.getString("error").isNullOrEmpty()) {
+            val error = duckRkpError(state)
+            return when {
+                state.getBoolean("automatic_paused") ->
+                    getString(R.string.ts_rkp_auto_paused, error)
+                state.getLong("next_automatic_at") > 0 -> getString(
+                    R.string.ts_rkp_auto_retry, error,
+                    formatTime(state.getLong("next_automatic_at")))
+                else -> error
+            }
+        }
+        if (state.getBoolean("busy")) {
+            return getString(when (state.getString("stage")) {
+                "fetching" -> R.string.ts_rkp_fetching
+                "signing" -> R.string.ts_rkp_signing
+                "validating", "saving" -> R.string.ts_rkp_validating
+                else -> R.string.ts_rkp_hardware
+            })
+        }
+        if (state.getBoolean("active")) {
+            return getString(R.string.ts_rkp_ready,
+                formatTime(state.getLong("expires_at")),
+                formatTime(state.getLong("renew_at")))
+        }
+        if (state.getBoolean("waiting_for_network")) {
+            return getString(R.string.ts_rkp_waiting_network)
+        }
+        val expiresAt = state.getLong("expires_at")
+        if (expiresAt in 1..System.currentTimeMillis()) return getString(R.string.ts_rkp_expired)
+        return getString(R.string.ts_rkp_idle)
+    }
+
+    private fun duckRkpError(state: Bundle): String = when (state.getString("error")) {
+        "hal_rejected", "native_rejected" ->
+            getString(R.string.ts_rkp_hal_rejected, state.getInt("detail"))
+        "native_unavailable" -> getString(R.string.ts_rkp_native_unavailable)
+        "native_transport" -> getString(R.string.ts_rkp_native_transport)
+        "invalid_hal_response" -> getString(R.string.ts_rkp_invalid_response)
+        "http_error" -> getString(R.string.ts_rkp_http_error, state.getInt("detail"))
+        "hal_unsupported", "hal_unavailable", "missing_eek" ->
+            getString(R.string.ts_rkp_unsupported)
+        "network_error" -> getString(R.string.ts_rkp_network_error)
+        "submission_unknown" -> getString(R.string.ts_rkp_submission_unknown)
+        "certificate_invalid", "stored_key_invalid" -> getString(R.string.ts_rkp_invalid_chain)
+        "timeout", "native_timeout" -> getString(R.string.ts_rkp_timeout)
+        "canceled" -> getString(R.string.ts_rkp_canceled)
+        "save_failed" -> getString(R.string.ts_rkp_save_failed)
+        else -> getString(R.string.ts_rkp_action_failed)
+    }
+
+    /** Runs one framework call off the main thread, then refreshes the status rows. */
+    private fun changeDuckRkp(action: () -> Unit) {
+        if (ui.rkpChanging) return
+        ui.rkpChanging = true
+        scope.launch {
+            val result = withContext(Dispatchers.IO) { runCatching(action) }
+            ui.rkpChanging = false
+            if (!isAdded) return@launch
+            if (result.isFailure) toast(getString(R.string.ts_rkp_action_failed))
+            refreshDuckRkp()
+        }
+    }
+
+    private fun formatTime(millis: Long): String =
+        SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(Date(millis))
 
     private fun toast(msg: String) =
         Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
