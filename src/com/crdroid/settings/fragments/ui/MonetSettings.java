@@ -66,13 +66,13 @@ public class MonetSettings extends DashboardFragment implements
             "android.theme.customization.luminance_factor";
     private static final String OVERLAY_CHROMA_FACTOR =
             "android.theme.customization.chroma_factor";
+    // Legacy primary-only boost (0..300 %). Migrated into palette_primary_chroma.
     private static final String OVERLAY_PRIMARY_CHROMA_BOOST =
             "android.theme.customization.primary_chroma_boost";
+    // Per-palette factors in percent: palette_<name>_<component>. Keep in sync with
+    // ThemeOverlayApplier / ThemeOverlayController in SystemUI.
     private static final String OVERLAY_PALETTE_PREFIX =
             "android.theme.customization.palette_";
-    private static final String[] PALETTE_NAMES = {
-            "primary", "secondary", "tertiary", "neutral"
-    };
     private static final String OVERLAY_WHOLE_PALETTE =
             "android.theme.customization.whole_palette";
     private static final String OVERLAY_TINT_BACKGROUND =
@@ -81,6 +81,7 @@ public class MonetSettings extends DashboardFragment implements
     private static final String COLOR_SOURCE_HOME = "home_wallpaper";
     private static final String COLOR_SOURCE_LOCK = "lock_wallpaper";
     private static final String TIMESTAMP_FIELD = "_applied_timestamp";
+    private static final String STYLE_MONOCHROMATIC = "MONOCHROMATIC";
 
     private static final String PREF_THEME_STYLE = "theme_style";
     private static final String PREF_COLOR_SOURCE = "color_source";
@@ -91,6 +92,20 @@ public class MonetSettings extends DashboardFragment implements
     private static final String PREF_CHROMA_FACTOR = "chroma_factor";
     private static final String PREF_WHOLE_PALETTE = "whole_palette";
     private static final String PREF_TINT_BACKGROUND = "tint_background";
+
+    private static final String[] PALETTE_NAMES = {
+            "primary", "secondary", "tertiary", "neutral"
+    };
+    private static final int PALETTE_PRIMARY = 0;
+    private static final String COMPONENT_CHROMA = "chroma";
+    private static final String COMPONENT_VALUE = "value";
+    private static final int DEFAULT_PERCENT = 100;
+    // Slider ranges; must match res/xml/monet_engine.xml.
+    private static final int CHROMA_MIN_PERCENT = 0;
+    private static final int CHROMA_MAX_PERCENT = 600;
+    private static final int VALUE_MIN_PERCENT = 50;
+    private static final int VALUE_MAX_PERCENT = 150;
+    private static final int LEGACY_BOOST_MAX_PERCENT = 300;
 
     private static final int DEFAULT_COLOR = 0xFF1b6ef3;
 
@@ -130,8 +145,8 @@ public class MonetSettings extends DashboardFragment implements
         mLuminancePref = findPreference(PREF_LUMINANCE_FACTOR);
         mChromaPref = findPreference(PREF_CHROMA_FACTOR);
         for (int i = 0; i < PALETTE_NAMES.length; i++) {
-            mPaletteChromaPrefs[i] = findPreference("monet_" + PALETTE_NAMES[i] + "_chroma");
-            mPaletteValuePrefs[i] = findPreference("monet_" + PALETTE_NAMES[i] + "_value");
+            mPaletteChromaPrefs[i] = findPreference(palettePrefKey(i, COMPONENT_CHROMA));
+            mPaletteValuePrefs[i] = findPreference(palettePrefKey(i, COMPONENT_VALUE));
         }
         mWholePalettePref = findPreference(PREF_WHOLE_PALETTE);
         mTintBackgroundPref = findPreference(PREF_TINT_BACKGROUND);
@@ -203,8 +218,10 @@ public class MonetSettings extends DashboardFragment implements
                 final boolean tintBG = object.optInt(OVERLAY_TINT_BACKGROUND, 0) == 1;
                 final float lumin = (float) object.optDouble(OVERLAY_LUMINANCE_FACTOR, 1d);
                 final float chroma = (float) object.optDouble(OVERLAY_CHROMA_FACTOR, 1d);
-                final int previousPrimaryBoost = Math.max(0, Math.min(300,
-                        object.optInt(OVERLAY_PRIMARY_CHROMA_BOOST, 0)));
+                // Same 0..300 % clamp SystemUI applies to the legacy key.
+                final int legacyPrimaryBoost = clamp(
+                        readPercent(object, OVERLAY_PRIMARY_CHROMA_BOOST, 0),
+                        0, LEGACY_BOOST_MAX_PERCENT);
                 // style handling
                 boolean styleUpdated = false;
                 if (style != null && !style.isEmpty()) {
@@ -222,6 +239,7 @@ public class MonetSettings extends DashboardFragment implements
                     updateListByValue(mThemeStylePref,
                             mThemeStylePref.getEntryValues()[0].toString());
                 }
+                updatePaletteChromaEnablement(mThemeStylePref.getValue());
                 // color handling
                 final String sourceVal = (source == null || source.isEmpty() ||
                         (source.equals(COLOR_SOURCE_HOME) && both)) ? "both" : source;
@@ -242,11 +260,12 @@ public class MonetSettings extends DashboardFragment implements
                 else if (chroma < 1d) chromaV = -1 * Math.round((1f - chroma) * 100f);
                 mChromaPref.setValue(chromaV);
                 for (int i = 0; i < PALETTE_NAMES.length; i++) {
-                    final int oldPrimaryPercent = i == 0 ? 100 + previousPrimaryBoost : 100;
-                    mPaletteChromaPrefs[i].setValue(Math.max(0, Math.min(600,
-                            object.optInt(paletteKey(i, "chroma"), oldPrimaryPercent))));
-                    mPaletteValuePrefs[i].setValue(Math.max(0, Math.min(200,
-                            object.optInt(paletteKey(i, "value"), 100))));
+                    final int chromaFallback = i == PALETTE_PRIMARY
+                            ? DEFAULT_PERCENT + legacyPrimaryBoost : DEFAULT_PERCENT;
+                    mPaletteChromaPrefs[i].setValue(clampForComponent(COMPONENT_CHROMA,
+                            readPercent(object, paletteKey(i, COMPONENT_CHROMA), chromaFallback)));
+                    mPaletteValuePrefs[i].setValue(clampForComponent(COMPONENT_VALUE,
+                            readPercent(object, paletteKey(i, COMPONENT_VALUE), DEFAULT_PERCENT)));
                 }
                 mWholePalettePref.setChecked(wholePalette);
                 mTintBackgroundPref.setChecked(tintBG);
@@ -261,6 +280,7 @@ public class MonetSettings extends DashboardFragment implements
             String value = (String) newValue;
             setStyleValue(value);
             updateListByValue(mThemeStylePref, value, false);
+            updatePaletteChromaEnablement(value);
             return true;
         } else if (preference == mColorSourcePref) {
             String value = (String) newValue;
@@ -303,10 +323,10 @@ public class MonetSettings extends DashboardFragment implements
         }
         for (int i = 0; i < PALETTE_NAMES.length; i++) {
             if (preference == mPaletteChromaPrefs[i]) {
-                setPaletteFactor(i, "chroma", (Integer) newValue);
+                setPaletteFactor(i, COMPONENT_CHROMA, (Integer) newValue);
                 return true;
             } else if (preference == mPaletteValuePrefs[i]) {
-                setPaletteFactor(i, "value", (Integer) newValue);
+                setPaletteFactor(i, COMPONENT_VALUE, (Integer) newValue);
                 return true;
             }
         }
@@ -329,6 +349,14 @@ public class MonetSettings extends DashboardFragment implements
         mAccentBackgroundPref.setEnabled(shouldEnable);
         setColorValue();
         setBgColorValue();
+    }
+
+    /** Monochromatic palettes have zero chroma, so chroma multipliers have no effect there. */
+    private void updatePaletteChromaEnablement(String style) {
+        final boolean enabled = !STYLE_MONOCHROMATIC.equals(style);
+        for (CustomSeekBarPreference pref : mPaletteChromaPrefs) {
+            pref.setEnabled(enabled);
+        }
     }
 
     private JSONObject getSettingsJson() throws JSONException {
@@ -430,17 +458,37 @@ public class MonetSettings extends DashboardFragment implements
         return OVERLAY_PALETTE_PREFIX + PALETTE_NAMES[index] + "_" + component;
     }
 
+    private static String palettePrefKey(int index, String component) {
+        return "monet_" + PALETTE_NAMES[index] + "_" + component;
+    }
+
+    private static int clamp(int value, int min, int max) {
+        return Math.max(min, Math.min(max, value));
+    }
+
+    private static int clampForComponent(String component, int percent) {
+        return COMPONENT_VALUE.equals(component)
+                ? clamp(percent, VALUE_MIN_PERCENT, VALUE_MAX_PERCENT)
+                : clamp(percent, CHROMA_MIN_PERCENT, CHROMA_MAX_PERCENT);
+    }
+
+    /** Reads a stored percent the same way SystemUI does (as a double), rounded for the UI. */
+    private static int readPercent(JSONObject object, String key, int fallback) {
+        final double percent = object.optDouble(key, fallback);
+        return Double.isFinite(percent) ? (int) Math.round(percent) : fallback;
+    }
+
     private void setPaletteFactor(int index, String component, int percent) {
         try {
             JSONObject object = getSettingsJson();
             final String key = paletteKey(index, component);
-            final int bounded = Math.max(0, Math.min(600, percent));
-            if (bounded == 100)
+            final int bounded = clampForComponent(component, percent);
+            if (bounded == DEFAULT_PERCENT)
                 object.remove(key);
             else
                 object.putOpt(key, bounded);
             // A new primary setting supersedes the previous 0..300% boost setting.
-            if (index == 0 && "chroma".equals(component))
+            if (index == PALETTE_PRIMARY && COMPONENT_CHROMA.equals(component))
                 object.remove(OVERLAY_PRIMARY_CHROMA_BOOST);
             putSettingsJson(object);
         } catch (JSONException | IllegalArgumentException ignored) {}

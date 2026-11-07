@@ -91,7 +91,8 @@
         android:summary="@string/monet_engine_tint_background_summary"
         android:defaultValue="false" />
 
-    <!-- 100% is the unmodified Monet palette. -->
+    <!-- Per-palette controls. 100% is the unmodified Monet palette.
+         Ranges must match MonetSettings (CHROMA_* / VALUE_* constants). -->
     <PreferenceCategory android:title="@string/monet_palette_primary">
         <com.crdroid.settings.preferences.CustomSeekBarPreference
             android:key="monet_primary_chroma"
@@ -107,8 +108,8 @@
             android:title="@string/monet_primary_value"
             android:summary="@string/monet_palette_value_summary"
             android:defaultValue="100"
-            android:max="200"
-            settings:min="0"
+            android:max="150"
+            settings:min="50"
             settings:interval="5"
             settings:units="%" />
     </PreferenceCategory>
@@ -128,8 +129,8 @@
             android:title="@string/monet_secondary_value"
             android:summary="@string/monet_palette_value_summary"
             android:defaultValue="100"
-            android:max="200"
-            settings:min="0"
+            android:max="150"
+            settings:min="50"
             settings:interval="5"
             settings:units="%" />
     </PreferenceCategory>
@@ -149,8 +150,8 @@
             android:title="@string/monet_tertiary_value"
             android:summary="@string/monet_palette_value_summary"
             android:defaultValue="100"
-            android:max="200"
-            settings:min="0"
+            android:max="150"
+            settings:min="50"
             settings:interval="5"
             settings:units="%" />
     </PreferenceCategory>
@@ -170,8 +171,8 @@
             android:title="@string/monet_neutral_value"
             android:summary="@string/monet_palette_value_summary"
             android:defaultValue="100"
-            android:max="200"
-            settings:min="0"
+            android:max="150"
+            settings:min="50"
             settings:interval="5"
             settings:units="%" />
     </PreferenceCategory>
