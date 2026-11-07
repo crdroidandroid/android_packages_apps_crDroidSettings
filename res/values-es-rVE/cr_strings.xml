@@ -251,20 +251,20 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="monet_engine_luminance_factor_summary">Valores más altos producen colores más brillantes</string>
     <string name="monet_engine_chroma_factor_title">Factor cromático</string>
     <string name="monet_engine_chroma_factor_summary">Valores más altos producen colores más fuertes</string>
-    <string name="monet_palette_primary">Primary color</string>
-    <string name="monet_palette_secondary">Secondary color</string>
-    <string name="monet_palette_tertiary">Tertiary color</string>
-    <string name="monet_palette_neutral">Neutral color</string>
-    <string name="monet_primary_chroma">Primary chroma</string>
-    <string name="monet_primary_value">Primary tone</string>
-    <string name="monet_secondary_chroma">Secondary chroma</string>
-    <string name="monet_secondary_value">Secondary tone</string>
-    <string name="monet_tertiary_chroma">Tertiary chroma</string>
-    <string name="monet_tertiary_value">Tertiary tone</string>
-    <string name="monet_neutral_chroma">Neutral chroma</string>
-    <string name="monet_neutral_value">Neutral tone</string>
-    <string name="monet_palette_chroma_summary" formatted="false">100% is stock. Lower values mute the colors, 0% removes them entirely. Higher values make them stronger.</string>
-    <string name="monet_palette_value_summary" formatted="false">100% is stock. Lower values darken the colors, higher values lighten them. Extreme values can make text harder to read.</string>
+    <string name="monet_palette_primary">Color principal</string>
+    <string name="monet_palette_secondary">Color secundario</string>
+    <string name="monet_palette_tertiary">Color terciario</string>
+    <string name="monet_palette_neutral">Color neutro</string>
+    <string name="monet_primary_chroma">Croma principal</string>
+    <string name="monet_primary_value">Tono principal</string>
+    <string name="monet_secondary_chroma">Croma secundario</string>
+    <string name="monet_secondary_value">Tono secundario</string>
+    <string name="monet_tertiary_chroma">Croma terciario</string>
+    <string name="monet_tertiary_value">Tono terciario</string>
+    <string name="monet_neutral_chroma">Croma neutro</string>
+    <string name="monet_neutral_value">Tono neutro</string>
+    <string name="monet_palette_chroma_summary" formatted="false">100 % es el valor original. Valores bajos atenúan los colores, 0 % los elimina por completo. Valores altos los intensifican.</string>
+    <string name="monet_palette_value_summary" formatted="false">100 % corresponde al valor original. Valores bajos oscurecen los colores, valores altos los aclaran. Valores extremos pueden dificultar la lectura del texto.</string>
     <string name="monet_engine_whole_palette_title">Toda la paleta</string>
     <string name="monet_engine_whole_palette_summary">Hacer que la selección de luminancia y croma también afecte a los colores secundarios</string>
     <string name="monet_engine_tint_background_title">Tinte de fondo</string>
@@ -1417,6 +1417,15 @@ Cada tipo de evento tiene su propio color de acento y una tarjeta expandida con 
     <string name="pif_channel_latest_release_summary">Huella digital de la beta actual OTA</string>
     <string name="pif_channel_canary_release">Versión Canary</string>
     <string name="pif_channel_canary_release_summary">La compilación Canary más reciente de Android Flash Tool</string>
+    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <string name="pif_auto_refresh_title">Auto-refresh fingerprint</string>
+    <string name="pif_auto_refresh_summary_on">Checks daily for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
+    <string name="pif_auto_refresh_summary_off">Off. The %1$s fingerprint (%2$s) only changes when you fetch or import one</string>
+    <string name="pif_auto_refresh_last_checked">Last checked: %1$s</string>
+    <string name="pif_auto_refresh_channel_name">Corrección de integridad de Google Play</string>
+    <string name="pif_auto_refresh_channel_description">Tells you when a newer fingerprint was applied automatically</string>
+    <string name="pif_auto_refresh_notification_title">Fingerprint updated</string>
+    <string name="pif_auto_refresh_notification_text">Applied a newer %1$s fingerprint (security patch %2$s) and cleared Play Store data.</string>
     <string name="pif_canary_build">Compilación Canary</string>
     <string name="pif_beta_build">Compilación beta</string>
     <string name="pif_patch_summary">Parche de seguridad %1$s</string>
@@ -1469,6 +1478,22 @@ Cada tipo de evento tiene su propio color de acento y una tarjeta expandida con 
     <string name="ts_keybox_expiry">Vencimiento del certificado</string>
     <string name="ts_keybox_expiry_summary">El certificado con vencimiento más próximo caduca el %1$s</string>
     <string name="ts_days_left">%1$dd restante</string>
+    <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
+    <string name="ts_alerts_title">Keybox alerts</string>
+    <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
+    <string name="ts_alerts_summary_on">Checks daily with Google. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks daily with Google for revocation status. Expiry reminder on %1$s</string>
+    <string name="ts_alerts_summary_due">The keybox expires in less than a day, load a new one soon</string>
+    <string name="ts_alerts_summary_expired">The keybox has expired. Load a new keybox to get alerts again</string>
+    <string name="ts_alerts_summary_blocked">Notifications for Settings are turned off, so alerts can\'t be shown</string>
+    <string name="ts_alerts_channel_name">Keybox alerts</string>
+    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or expires in one day</string>
+    <string name="ts_alert_expiry_title">Keybox expires in 1 day</string>
+    <string name="ts_alert_expiry_text">Your TrickyStore keybox expires on %1$s. Load a new keybox soon to keep passing Play Integrity.</string>
+    <string name="ts_alert_revoked_title">Keybox revocado</string>
+    <string name="ts_alert_revoked_text">Google has revoked your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>
+    <string name="ts_alert_suspended_title">Keybox suspendido</string>
+    <string name="ts_alert_suspended_text">Google has suspended your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>
     <string name="ts_revocation_status">Estado de revocación de Google</string>
     <string name="ts_revocation_checking">Comprobando con Google…</string>
     <string name="ts_revocation_not_yet_checked">Aún no se ha comprobado. Toca para comprobarlo ahora</string>
