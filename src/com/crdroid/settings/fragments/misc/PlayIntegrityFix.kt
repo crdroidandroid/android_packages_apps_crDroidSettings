@@ -31,7 +31,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.nio.charset.StandardCharsets
+import java.text.DateFormat
 import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 
@@ -60,6 +62,8 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                     getString(R.string.pif_invalid_fingerprint)
                 }
                 writeConfig(normalized)
+                PifAutoRefresh.clearSource(requireContext())
+                refreshStatus()
                 toast(getString(R.string.pif_imported_as, PIF_CONFIG_NAME))
                 ui.dialog = PifDialog.WipePlayStore
             } catch (e: Exception) {
@@ -96,6 +100,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         override fun onConfirmDelete() {
             try {
                 Settings.Secure.putString(requireContext().contentResolver, PIF_CONFIG_KEY, null)
+                PifAutoRefresh.clearSource(requireContext())
                 toast(getString(R.string.pif_deleted, PIF_CONFIG_NAME))
             } catch (e: Exception) {
                 toast(getString(R.string.pif_failed, e.message ?: ""))
@@ -135,6 +140,11 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             ui.photosSpoof = enabled
         }
 
+        override fun onAutoRefreshChange(enabled: Boolean) {
+            PifAutoRefresh.setEnabled(requireContext(), enabled)
+            refreshStatus()
+        }
+
         override fun onEditValue(key: String, value: String): String? {
             if (value.isEmpty()) return getString(R.string.pif_value_empty)
             if (key in INT_KEYS && value.toIntOrNull() == null) {
@@ -151,6 +161,11 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 // Keep the derived fields in step with the new fingerprint so the screen
                 // shows what the framework will actually apply.
                 if (key == "FINGERPRINT") fingerprintFields(value).forEach { (k, v) -> json.put(k, v) }
+            }
+            // A hand-edited fingerprint must not be replaced by the next auto-refresh.
+            if (key == "FINGERPRINT") {
+                PifAutoRefresh.clearSource(requireContext())
+                refreshStatus()
             }
             return null
         }
@@ -185,6 +200,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
 
     override fun onResume() {
         super.onResume()
+        PifAutoRefresh.sync(requireContext())
         refreshStatus()
     }
 
@@ -213,6 +229,35 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         val photos = Settings.Secure.getString(requireContext().contentResolver, PHOTOS_KEY)
         // Same rule as the framework: unset means enabled.
         ui.photosSpoof = photos == null || photos == "1" || photos.equals("true", true)
+
+        applyAutoRefreshUi()
+    }
+
+    private fun applyAutoRefreshUi() {
+        val ctx = requireContext()
+        val source = PifAutoRefresh.readSource(ctx)
+        ui.autoRefreshAvailable = source != null && ui.config["DEVICE"] == source.device
+        ui.autoRefreshEnabled = PifAutoRefresh.isEnabled(ctx)
+        if (source == null) {
+            ui.autoRefreshSummary = ""
+            return
+        }
+        val channel = getString(
+            if (source.channel == PifChannel.CANARY) R.string.pif_channel_canary_release
+            else R.string.pif_channel_latest_release)
+        val model = source.model.ifEmpty { source.device }
+        ui.autoRefreshSummary = if (!ui.autoRefreshEnabled) {
+            getString(R.string.pif_auto_refresh_summary_off, model, channel)
+        } else {
+            val base = getString(R.string.pif_auto_refresh_summary_on, model, channel)
+            PifAutoRefresh.lastChecked(ctx)?.let { at ->
+                base + "\n" + getString(
+                    R.string.pif_auto_refresh_last_checked,
+                    DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
+                        .format(Date(at)),
+                )
+            } ?: base
+        }
     }
 
     private fun writeConfig(json: String) {
@@ -293,15 +338,10 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 if (!isAdded) return@launch
                 when (result) {
                     is PifFetchResult.Success -> {
-                        // User-tuned flags from the previous config win; defaults only
-                        // fill in whatever is still missing afterwards.
-                        val existing = readRawConfig()
-                            ?.let { readConfigData(it) }.orEmpty()
-                        FLAG_KEYS.forEach { key ->
-                            existing[key]?.let { result.pifData.put(key, it) }
-                        }
-                        result.pifData.putDefaultSpoofFlags()
-                        writeConfig(result.pifData.toString(2))
+                        writeConfig(mergeFetchedConfig(result.pifData, readRawConfig()))
+                        // Remember where it came from so it can be refreshed daily.
+                        PifAutoRefresh.setSource(requireContext(), channel, device)
+                        refreshStatus()
                         toast(getString(R.string.pif_fetched_model, result.model))
                         ui.dialog = PifDialog.WipePlayStore
                     }
@@ -371,6 +411,13 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         }
 
         internal fun isValidFingerprint(value: String) = FINGERPRINT_REGEX.matches(value.trim())
+
+        internal fun mergeFetchedConfig(pifData: JSONObject, existingRaw: String?): String {
+            val existing = existingRaw?.let { readConfigData(it) }.orEmpty()
+            FLAG_KEYS.forEach { key -> existing[key]?.let { pifData.put(key, it) } }
+            pifData.putDefaultSpoofFlags()
+            return pifData.toString(2)
+        }
 
         /** The fields expandFingerprint() would derive from [fingerprint]. */
         private fun fingerprintFields(fingerprint: String): Map<String, String> {
