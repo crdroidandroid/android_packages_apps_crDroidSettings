@@ -91,4 +91,89 @@
         android:summary="@string/monet_engine_tint_background_summary"
         android:defaultValue="false" />
 
+    <!-- 100% is the unmodified Monet palette. -->
+    <PreferenceCategory android:title="@string/monet_palette_primary">
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="monet_primary_chroma"
+            android:title="@string/monet_primary_chroma"
+            android:summary="@string/monet_palette_chroma_summary"
+            android:defaultValue="100"
+            android:max="600"
+            settings:min="0"
+            settings:interval="5"
+            settings:units="%" />
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="monet_primary_value"
+            android:title="@string/monet_primary_value"
+            android:summary="@string/monet_palette_value_summary"
+            android:defaultValue="100"
+            android:max="200"
+            settings:min="0"
+            settings:interval="5"
+            settings:units="%" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/monet_palette_secondary">
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="monet_secondary_chroma"
+            android:title="@string/monet_secondary_chroma"
+            android:summary="@string/monet_palette_chroma_summary"
+            android:defaultValue="100"
+            android:max="600"
+            settings:min="0"
+            settings:interval="5"
+            settings:units="%" />
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="monet_secondary_value"
+            android:title="@string/monet_secondary_value"
+            android:summary="@string/monet_palette_value_summary"
+            android:defaultValue="100"
+            android:max="200"
+            settings:min="0"
+            settings:interval="5"
+            settings:units="%" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/monet_palette_tertiary">
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="monet_tertiary_chroma"
+            android:title="@string/monet_tertiary_chroma"
+            android:summary="@string/monet_palette_chroma_summary"
+            android:defaultValue="100"
+            android:max="600"
+            settings:min="0"
+            settings:interval="5"
+            settings:units="%" />
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="monet_tertiary_value"
+            android:title="@string/monet_tertiary_value"
+            android:summary="@string/monet_palette_value_summary"
+            android:defaultValue="100"
+            android:max="200"
+            settings:min="0"
+            settings:interval="5"
+            settings:units="%" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/monet_palette_neutral">
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="monet_neutral_chroma"
+            android:title="@string/monet_neutral_chroma"
+            android:summary="@string/monet_palette_chroma_summary"
+            android:defaultValue="100"
+            android:max="600"
+            settings:min="0"
+            settings:interval="5"
+            settings:units="%" />
+        <com.crdroid.settings.preferences.CustomSeekBarPreference
+            android:key="monet_neutral_value"
+            android:title="@string/monet_neutral_value"
+            android:summary="@string/monet_palette_value_summary"
+            android:defaultValue="100"
+            android:max="200"
+            settings:min="0"
+            settings:interval="5"
+            settings:units="%" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
