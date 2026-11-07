@@ -253,6 +253,20 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="monet_engine_luminance_factor_summary">Wyższe wartości tworzą jaśniejsze kolory</string>
     <string name="monet_engine_chroma_factor_title">Współczynnik barwy</string>
     <string name="monet_engine_chroma_factor_summary">Wyższe wartości tworzą mocniejsze kolory</string>
+    <string name="monet_palette_primary">Kolor podstawowy</string>
+    <string name="monet_palette_secondary">Kolor drugorzędny</string>
+    <string name="monet_palette_tertiary">Kolor trzeciorzędny</string>
+    <string name="monet_palette_neutral">Kolor neutralny</string>
+    <string name="monet_primary_chroma">Nasycenie podstawowe</string>
+    <string name="monet_primary_value">Ton podstawowy</string>
+    <string name="monet_secondary_chroma">Nasycenie drugorzędne</string>
+    <string name="monet_secondary_value">Ton drugorzędny</string>
+    <string name="monet_tertiary_chroma">Nasycenie trzeciorzędne</string>
+    <string name="monet_tertiary_value">Ton trzeciorzędny</string>
+    <string name="monet_neutral_chroma">Nasycenie neutralne</string>
+    <string name="monet_neutral_value">Ton neutralny</string>
+    <string name="monet_palette_chroma_summary" formatted="false">Wartość 100% oznacza ustawienia domyślne. Niższe wartości powodują stłumienie kolorów, a wartość 0% całkowicie je usuwa. Wyższe wartości powodują ich wzmocnienie.</string>
+    <string name="monet_palette_value_summary" formatted="false">100% to wartość domyślna. Niższe wartości powodują przyciemnienie kolorów, a wyższe – ich rozjaśnienie. Skrajne wartości mogą utrudniać czytanie tekstu.</string>
     <string name="monet_engine_whole_palette_title">Cała paleta</string>
     <string name="monet_engine_whole_palette_summary">Spraw, aby wybór jasności i chrominancji wpływał również na kolory tła</string>
     <string name="monet_engine_tint_background_title">Odcień tła</string>
@@ -371,7 +385,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="add_font">Dodaj czcionkę</string>
     <string name="toast_failed_apply_font">Nie udało się zastosować czcionki</string>
     <string name="toast_invalid_font_file">Nieprawidłowy plik czcionki</string>
-    <string name="font_default">Domyślny</string>
+    <string name="font_default">Domyślna</string>
     <string name="font_current">Aktualna czcionka</string>
     <string name="font_selected">Wybrano</string>
     <string name="font_system_section">Czcionki systemowe</string>
@@ -1410,6 +1424,15 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pif_channel_latest_release_summary">Odcisk palca z aktualnej wersji beta OTA</string>
     <string name="pif_channel_canary_release">Wydanie Canary</string>
     <string name="pif_channel_canary_release_summary">Najnowsza wersja Canary z narzędzia Android Flash Tool</string>
+    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <string name="pif_auto_refresh_title">Auto-refresh fingerprint</string>
+    <string name="pif_auto_refresh_summary_on">Checks daily for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
+    <string name="pif_auto_refresh_summary_off">Off. The %1$s fingerprint (%2$s) only changes when you fetch or import one</string>
+    <string name="pif_auto_refresh_last_checked">Last checked: %1$s</string>
+    <string name="pif_auto_refresh_channel_name">Naprawa integralności Google Play</string>
+    <string name="pif_auto_refresh_channel_description">Tells you when a newer fingerprint was applied automatically</string>
+    <string name="pif_auto_refresh_notification_title">Fingerprint updated</string>
+    <string name="pif_auto_refresh_notification_text">Applied a newer %1$s fingerprint (security patch %2$s) and cleared Play Store data.</string>
     <string name="pif_canary_build">Kompilacja Canary</string>
     <string name="pif_beta_build">Kompilacja Beta</string>
     <string name="pif_patch_summary">Poprawka bezpieczeństwa: %1$s</string>
@@ -1419,7 +1442,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pif_value_empty">Wartość nie może być pusta</string>
     <string name="pif_value_not_integer">Musi być liczbą całkowitą</string>
     <string name="pif_invalid_fingerprint">Nieprawidłowy format odcisku palca</string>
-    <string name="pif_footer_body">1. Dotknij „Pobierz odcisk Pixel”, wybierz kanał oraz urządzenie.\n2. Jeśli nie znaleziono żadnych urządzeń, zaimportuj działającą konfigurację PIF z zaufanego źródła. Pliki konfiguracyjne nie są dostarczane; musisz znaleźć je samodzielnie.\n3. Sprawdź ponownie status integralności Play.\n\nDroidGuard i Sklep Play są automatycznie uruchamiane ponownie po zmianie konfiguracji. Wczytanie wygasłej konfiguracji PIF spowoduje niepowodzenie weryfikacji integralności za pomocą TrickyStore, nawet przy użyciu prawidłowego magazynu kluczy.\n\nPodczas korzystania z magazynu kluczy pozostaw opcję „Spoof keystore provider” wyłączoną, ponieważ omija ona proces poświadczania magazynu kluczy.</string>
+    <string name="pif_footer_body">1. Dotknij „Pobierz odcisk palca Pixel”, wybierz kanał oraz urządzenie.\n2. Jeśli nie znaleziono żadnych urządzeń, zaimportuj działającą konfigurację PIF z zaufanego źródła. Pliki konfiguracyjne nie są dostarczane; musisz znaleźć je samodzielnie.\n3. Sprawdź ponownie status integralności Play.\n\nDroidGuard i Sklep Play są automatycznie uruchamiane ponownie po zmianie konfiguracji. Wczytanie wygasłej konfiguracji PIF spowoduje niepowodzenie weryfikacji integralności za pomocą TrickyStore, nawet przy użyciu prawidłowego magazynu kluczy.\n\nPodczas korzystania z magazynu kluczy pozostaw opcję „Fałszuj dostawcę zestawu kluczy” wyłączoną, ponieważ omija ona proces poświadczania magazynu kluczy.</string>
     <string name="pif_flags_title">Opcje fałszowania</string>
     <string name="pif_flag_spoof_build_title">Pola fałszowania kompilacji</string>
     <string name="pif_flag_spoof_build_summary">Stosuje konfigurację kompilacji do DroidGuard</string>
@@ -1460,6 +1483,22 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_keybox_expiry">Wygaśnięcie certyfikatu</string>
     <string name="ts_keybox_expiry_summary">Najwcześniejszy certyfikat \"liść\" traci ważność %1$s</string>
     <string name="ts_days_left">Pozostało %1$dd</string>
+    <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
+    <string name="ts_alerts_title">Keybox alerts</string>
+    <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
+    <string name="ts_alerts_summary_on">Checks daily with Google. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks daily with Google for revocation status. Expiry reminder on %1$s</string>
+    <string name="ts_alerts_summary_due">The keybox expires in less than a day, load a new one soon</string>
+    <string name="ts_alerts_summary_expired">The keybox has expired. Load a new keybox to get alerts again</string>
+    <string name="ts_alerts_summary_blocked">Notifications for Settings are turned off, so alerts can\'t be shown</string>
+    <string name="ts_alerts_channel_name">Keybox alerts</string>
+    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or expires in one day</string>
+    <string name="ts_alert_expiry_title">Keybox expires in 1 day</string>
+    <string name="ts_alert_expiry_text">Your TrickyStore keybox expires on %1$s. Load a new keybox soon to keep passing Play Integrity.</string>
+    <string name="ts_alert_revoked_title">Odrzucono zestaw kluczy</string>
+    <string name="ts_alert_revoked_text">Google has revoked your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>
+    <string name="ts_alert_suspended_title">Zestaw kluczy zawieszony</string>
+    <string name="ts_alert_suspended_text">Google has suspended your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>
     <string name="ts_revocation_status">Status unieważnienia w Google</string>
     <string name="ts_revocation_checking">Sprawdzanie z Google…</string>
     <string name="ts_revocation_not_yet_checked">Jeszcze nie sprawdzono. Dotknij, aby sprawdzić teraz</string>
@@ -1515,7 +1554,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
         <item quantity="other">Dodano %d aplikacji</item>
     </plurals>
     <string name="ts_failed">Niepowodzenie: %s</string>
-    <string name="ts_footer_body">1. Pobierz poprawny plik XML zestawu kluczy z zaufanego źródła. Zestawy kluczy nie są udostępniane; musisz samodzielnie znaleźć odpowiedni.\n2. Naciśnij „Importuj zestaw kluczy” i załaduj plik. Jego status unieważnienia jest sprawdzany w serwisie Google natychmiast, a następnie co 24 godziny, gdy przeglądasz ten ekran.\n3. Usługi Google Play, Sklep Play i inne popularne cele są dodawane automatycznie. Aby je zmienić, otwórz opcję „Zarządzaj aplikacjami docelowymi”.\n4. Ustaw tryb docelowy na „Liść”, jeśli twoje urządzenie posiada działające środowisko TEE, w przeciwnym razie pozostaw ustawienie „Auto”.\n5. Ponownie sprawdź status integralności w Play.\n\nJeśli Google unieważni zestaw kluczy, może nadal zezwolić na przejście do poziomu integralności urządzenia, nawet jeśli test silnej integralności zakończy się niepowodzeniem.</string>
+    <string name="ts_footer_body">1. Pobierz poprawny plik XML zestawu kluczy z zaufanego źródła. Zestawy kluczy nie są udostępniane; musisz samodzielnie znaleźć odpowiedni.\n2. Naciśnij „Importuj zestaw kluczy” i załaduj plik. Jego status unieważnienia jest sprawdzany w serwisie Google natychmiast, a następnie co 24 godziny, gdy przeglądasz ten ekran.\n3. Usługi Google Play, Sklep Play i inne popularne cele są dodawane automatycznie. Aby je zmienić, otwórz opcję „Zarządzaj aplikacjami docelowymi”.\n4. Ustaw tryb docelowy na „Liść”, jeśli twoje urządzenie posiada działające środowisko TEE, w przeciwnym razie pozostaw ustawienie „Automatyczny”.\n5. Ponownie sprawdź status integralności w Play.\n\nJeśli Google unieważni zestaw kluczy, może nadal zezwolić na przejście do poziomu integralności urządzenia, nawet jeśli test silnej integralności zakończy się niepowodzeniem.</string>
     <string name="ts_verification_mode">Tryb weryfikacji</string>
     <string name="ts_verification_auto_count">%1$d auto</string>
     <string name="ts_verification_cert_count">%1$d cert</string>
@@ -1529,7 +1568,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_patch_device">Poziom poprawki urządzenia (bez nadpisywania)</string>
     <string name="ts_patch_custom_blocks">Indywidualne poziomy dla poszczególnych partycji lub aplikacji</string>
     <string name="ts_patch_stale_chip">Stary 12+ miesięcy</string>
-    <string name="ts_mode_auto">Automatycznie</string>
+    <string name="ts_mode_auto">Automatyczny</string>
     <string name="ts_mode_leaf">Liść</string>
     <string name="ts_mode_cert">Certyfikat</string>
     <string name="ts_mode_skip">Pomiń</string>
@@ -1561,7 +1600,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="gs_footer_body">W wybranej grze w polach „Build” widoczna jest identyfikacja wybranego urządzenia. Gry uruchamiają się ponownie po zmianie ich konfiguracji. Niektóre gry wykorzystują tę funkcję do odblokowania wyższych częstotliwości odświeżania lub lepszych ustawień graficznych.</string>
     <!-- Build details -->
     <string name="build_maintainer_title">Opiekun urządzenia</string>
-    <string name="build_maintainer_summary">Nieoficjalny</string>
+    <string name="build_maintainer_unofficial">Nieoficjalny</string>
     <!-- Settings UI -->
     <string name="settings_icon_title">Styl ustawień</string>
     <string name="settings_icon_summary">Dostosuj styl interfejsu aplikacji ustawienia</string>
@@ -1610,4 +1649,9 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="shade_color_style_aosp">Domyślne kolory Android</string>
     <string name="shade_color_style_glass">Przezroczysty, matowy panel, przez który prześwituje tapeta</string>
     <string name="shade_color_style_tinted">Panel w kolorze akcentującym, z efektem rozmycia lub bez</string>
+    <!-- Battery saver dark theme -->
+    <string name="battery_saver_dark_theme_title">Włącz z oszczędzaniem baterii</string>
+    <string name="battery_saver_dark_theme_summary">Ciemny motyw włącza się i pozostaje aktywny, gdy włączona jest funkcja oszczędzania baterii. Zapewnia to największą oszczędność baterii na ekranach OLED.</string>
+    <!-- Not shown in the UI; describes the preference for the settings API -->
+    <string name="battery_saver_dark_theme_purpose">Określa, czy tryb oszczędzania baterii włącza ciemny motyw i uniemożliwia jego zmianę do momentu wyłączenia tego trybu.</string>
 </resources>

@@ -253,6 +253,20 @@
     <string name="monet_engine_luminance_factor_summary">Чем больше значение, тем ярче цвета</string>
     <string name="monet_engine_chroma_factor_title">Коэффициент цветности</string>
     <string name="monet_engine_chroma_factor_summary">Более высокие значения дают более яркие цвета</string>
+    <string name="monet_palette_primary">Первичный цвет</string>
+    <string name="monet_palette_secondary">Вторичный цвет</string>
+    <string name="monet_palette_tertiary">Третий цвет</string>
+    <string name="monet_palette_neutral">Нейтральный цвет</string>
+    <string name="monet_primary_chroma">Первичная насыщенность</string>
+    <string name="monet_primary_value">Первичный тон</string>
+    <string name="monet_secondary_chroma">Вторичная насыщенность</string>
+    <string name="monet_secondary_value">Вторичный тон</string>
+    <string name="monet_tertiary_chroma">Третья насыщенность</string>
+    <string name="monet_tertiary_value">Третий тон</string>
+    <string name="monet_neutral_chroma">Нейтральная насыщенность</string>
+    <string name="monet_neutral_value">Нейтральный тон</string>
+    <string name="monet_palette_chroma_summary" formatted="false">100% — это исходное состояние. Более низкие значения делают цвета менее насыщенными, а при 0% они исчезают полностью. Более высокие значения делают цвета более интенсивными.</string>
+    <string name="monet_palette_value_summary" formatted="false">100% — это исходное значение. Более низкие значения делают цвета темнее, а более высокие — светлее. При использовании крайних значений текст может стать труднее для чтения.</string>
     <string name="monet_engine_whole_palette_title">Вся палитра</string>
     <string name="monet_engine_whole_palette_summary">Выбор яркости и насыщенности также влияет на второстепенные цвета</string>
     <string name="monet_engine_tint_background_title">Оттенок фона</string>
@@ -1408,6 +1422,15 @@
     <string name="pif_channel_latest_release_summary">Отпечаток из текущей бета-версии OTA</string>
     <string name="pif_channel_canary_release">Ранняя версия (Canary)</string>
     <string name="pif_channel_canary_release_summary">Новейшая ранняя сборка из Android Flash Tool</string>
+    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <string name="pif_auto_refresh_title">Auto-refresh fingerprint</string>
+    <string name="pif_auto_refresh_summary_on">Checks daily for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
+    <string name="pif_auto_refresh_summary_off">Off. The %1$s fingerprint (%2$s) only changes when you fetch or import one</string>
+    <string name="pif_auto_refresh_last_checked">Last checked: %1$s</string>
+    <string name="pif_auto_refresh_channel_name">Исправление Play Integrity</string>
+    <string name="pif_auto_refresh_channel_description">Tells you when a newer fingerprint was applied automatically</string>
+    <string name="pif_auto_refresh_notification_title">Fingerprint updated</string>
+    <string name="pif_auto_refresh_notification_text">Applied a newer %1$s fingerprint (security patch %2$s) and cleared Play Store data.</string>
     <string name="pif_canary_build">Ранняя сборка</string>
     <string name="pif_beta_build">Бета-сборка</string>
     <string name="pif_patch_summary">Обновление безопасности: %1$s</string>
@@ -1458,6 +1481,22 @@
     <string name="ts_keybox_expiry">Сертификат просрочен</string>
     <string name="ts_keybox_expiry_summary">Срок действия самого раннего сертификата истекает %1$s</string>
     <string name="ts_days_left">Осталось %1$dд</string>
+    <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
+    <string name="ts_alerts_title">Keybox alerts</string>
+    <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
+    <string name="ts_alerts_summary_on">Checks daily with Google. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks daily with Google for revocation status. Expiry reminder on %1$s</string>
+    <string name="ts_alerts_summary_due">The keybox expires in less than a day, load a new one soon</string>
+    <string name="ts_alerts_summary_expired">The keybox has expired. Load a new keybox to get alerts again</string>
+    <string name="ts_alerts_summary_blocked">Notifications for Settings are turned off, so alerts can\'t be shown</string>
+    <string name="ts_alerts_channel_name">Keybox alerts</string>
+    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or expires in one day</string>
+    <string name="ts_alert_expiry_title">Keybox expires in 1 day</string>
+    <string name="ts_alert_expiry_text">Your TrickyStore keybox expires on %1$s. Load a new keybox soon to keep passing Play Integrity.</string>
+    <string name="ts_alert_revoked_title">Ключи отозваны</string>
+    <string name="ts_alert_revoked_text">Google has revoked your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>
+    <string name="ts_alert_suspended_title">Ключи приостановлены</string>
+    <string name="ts_alert_suspended_text">Google has suspended your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>
     <string name="ts_revocation_status">Статус отзыва Google</string>
     <string name="ts_revocation_checking">Проверка через Google…</string>
     <string name="ts_revocation_not_yet_checked">Ещё не проверено. Нажмите, чтобы проверить</string>
@@ -1559,7 +1598,7 @@
     <string name="gs_footer_body">Выбранная игра видит идентификатор устройства в названиях полей. Игры перезапускаются при изменении их конфигурации. Некоторые игры используют эту функцию, чтобы повысить частоту кадров или настройки графики.</string>
     <!-- Build details -->
     <string name="build_maintainer_title">Сопровождающий устройство</string>
-    <string name="build_maintainer_summary">Неофициальная</string>
+    <string name="build_maintainer_unofficial">Неофициальная</string>
     <!-- Settings UI -->
     <string name="settings_icon_title">Стиль настроек</string>
     <string name="settings_icon_summary">Настройка интерфейса приложения настроек</string>
@@ -1608,4 +1647,9 @@
     <string name="shade_color_style_aosp">Цвета Android</string>
     <string name="shade_color_style_glass">Прозрачная матовая панель, сквозь которую видны обои</string>
     <string name="shade_color_style_tinted">Панель, тонированная в акцентный цвет, с размытием и без</string>
+    <!-- Battery saver dark theme -->
+    <string name="battery_saver_dark_theme_title">Включать с режимом энергосбережения</string>
+    <string name="battery_saver_dark_theme_summary">При включении режима экономии заряда аккумулятора будет активирована и остается включенной тёмная тема. Это позволяет максимально экономить заряд на экранах типа OLED.</string>
+    <!-- Not shown in the UI; describes the preference for the settings API -->
+    <string name="battery_saver_dark_theme_purpose">Определяет, включает ли режим энергосбережения тёмную тему оформления и блокирует ли возможность её изменения до тех пор, пока этот режим не будет отключен.</string>
 </resources>
