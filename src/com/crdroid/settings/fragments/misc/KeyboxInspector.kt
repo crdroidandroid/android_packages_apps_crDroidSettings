@@ -53,7 +53,7 @@ internal object KeyboxInspector {
 
     private val ROOTS_TTL_MS = TimeUnit.DAYS.toMillis(30)
     private val OFFLINE_TRUST_MS = TimeUnit.DAYS.toMillis(7)
-    private val EXPIRY_WARN_MS = TimeUnit.DAYS.toMillis(14)
+    private val EXPIRY_WARN_MS = TimeUnit.DAYS.toMillis(7)
 
     /** Interval for the automatic re-check when the TrickyStore screen is resumed. */
     val RECHECK_INTERVAL_MS: Long = TimeUnit.HOURS.toMillis(24)
