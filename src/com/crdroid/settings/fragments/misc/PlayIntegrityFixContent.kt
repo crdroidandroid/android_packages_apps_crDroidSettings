@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Autorenew
 import androidx.compose.material.icons.rounded.BugReport
 import androidx.compose.material.icons.rounded.CloudDownload
 import androidx.compose.material.icons.rounded.DeleteOutline
@@ -56,6 +57,11 @@ internal class PifUiState {
     var photosSpoof by mutableStateOf(true)
     var verboseLabel by mutableStateOf("")
 
+    /** True when the active config was fetched online and can be refreshed daily. */
+    var autoRefreshAvailable by mutableStateOf(false)
+    var autoRefreshEnabled by mutableStateOf(true)
+    var autoRefreshSummary by mutableStateOf("")
+
     /** Days since the config's SECURITY_PATCH, null when absent or unparsable. */
     var patchAgeDays by mutableStateOf<Long?>(null)
 }
@@ -73,6 +79,7 @@ internal interface PifActions {
     fun onVerboseLogs()
     fun onPickVerbose(index: Int)
     fun onPhotosChange(enabled: Boolean)
+    fun onAutoRefreshChange(enabled: Boolean)
 
     /** Returns an error message to keep the edit dialog open, or null once saved. */
     fun onEditValue(key: String, value: String): String?
@@ -235,6 +242,18 @@ internal fun PlayIntegrityFixContent(state: PifUiState, actions: PifActions) {
                     checked = state.photosSpoof,
                     onCheckedChange = actions::onPhotosChange,
                 )
+            }
+            if (state.autoRefreshAvailable) {
+                item {
+                    SpoofSwitchRow(
+                        title = stringResource(R.string.pif_auto_refresh_title),
+                        summary = state.autoRefreshSummary,
+                        icon = Icons.Rounded.Autorenew,
+                        checked = state.autoRefreshEnabled,
+                        enabled = !state.fetching,
+                        onCheckedChange = actions::onAutoRefreshChange,
+                    )
+                }
             }
         }
 
