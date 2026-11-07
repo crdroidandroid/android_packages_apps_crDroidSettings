@@ -7,6 +7,7 @@ package com.crdroid.settings.fragments.misc
 
 import android.app.Activity
 import android.app.ActivityManager
+import android.app.NotificationManager
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
@@ -111,6 +112,11 @@ class TrickyStore : SettingsPreferenceFragment() {
             ui.dialog = TsDialog.PatchDate(current)
         }
 
+        override fun onAlertsToggle(enabled: Boolean) {
+            KeyboxMonitor.setEnabled(requireContext(), enabled)
+            refreshStatus()
+        }
+
         override fun onConfirmDeleteKeybox() = deleteKeybox()
 
         override fun onSavePatch(value: String): String? {
@@ -175,6 +181,7 @@ class TrickyStore : SettingsPreferenceFragment() {
     override fun onResume() {
         super.onResume()
         refreshStatus()
+        KeyboxMonitor.sync(requireContext())
         // Re-check at most once a day while the screen is visited; the user can force a
         // check from the status row at any time.
         val last = report?.checkedAt ?: 0L
@@ -215,6 +222,7 @@ class TrickyStore : SettingsPreferenceFragment() {
         }
         val encoded = Base64.encodeToString(xml.toByteArray(Charsets.UTF_8), Base64.NO_WRAP)
         Settings.Secure.putString(requireContext().contentResolver, KEYBOX_KEY, encoded)
+        KeyboxMonitor.sync(requireContext())
         stopGmsFamily()
         toast(getString(R.string.ts_keybox_imported))
         refreshStatus()
@@ -227,6 +235,7 @@ class TrickyStore : SettingsPreferenceFragment() {
         ui.checking = false
         Settings.Secure.putString(requireContext().contentResolver, KEYBOX_KEY, "")
         KeyboxInspector.clearReport(requireContext())
+        KeyboxMonitor.sync(requireContext())
         stopGmsFamily()
         toast(getString(R.string.ts_keybox_deleted))
         refreshStatus()
@@ -308,6 +317,10 @@ class TrickyStore : SettingsPreferenceFragment() {
                 R.string.ts_flag_root_title to getString(R.string.ts_flag_root_message)
             else -> return
         }
+        // The user is looking at the verdict; don't also notify about it in the background.
+        if (status == KeyboxInspector.Status.REVOKED || status == KeyboxInspector.Status.SUSPENDED) {
+            keyboxHash?.let { KeyboxMonitor.markRevokedSeen(requireContext(), it) }
+        }
         ui.dialog = TsDialog.Flagged(getString(title), message)
     }
 
@@ -337,6 +350,7 @@ class TrickyStore : SettingsPreferenceFragment() {
             )
         }
         applyExpiryUi(summary?.earliestExpiry)
+        applyAlertsUi(summary?.earliestExpiry)
 
         // Count only installed targets: uninstalled defaults stay in the stored list so
         // they apply once installed, but they aren't "configured" from the user's view.
@@ -374,6 +388,28 @@ class TrickyStore : SettingsPreferenceFragment() {
             days < 0 -> SpoofTone.Negative
             days <= 14 -> SpoofTone.Warning
             else -> SpoofTone.Positive
+        }
+    }
+
+    private fun applyAlertsUi(expiry: Long?) {
+        val ctx = requireContext()
+        val now = System.currentTimeMillis()
+        val expired = expiry != null && now >= expiry
+        ui.alertsEnabled = KeyboxMonitor.isEnabled(ctx)
+        ui.alertsAvailable = ui.keyboxExists && !expired
+        val blocked = ctx.getSystemService(NotificationManager::class.java)
+            ?.areNotificationsEnabled() == false
+        ui.alertsSummary = when {
+            expired -> getString(R.string.ts_alerts_summary_expired)
+            !ui.alertsEnabled -> getString(R.string.ts_alerts_summary_off)
+            blocked -> getString(R.string.ts_alerts_summary_blocked)
+            expiry == null -> getString(R.string.ts_alerts_summary_on)
+            now >= KeyboxMonitor.triggerAt(expiry) -> getString(R.string.ts_alerts_summary_due)
+            else -> getString(
+                R.string.ts_alerts_summary_scheduled,
+                DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
+                    .format(Date(KeyboxMonitor.triggerAt(expiry))),
+            )
         }
     }
 
@@ -488,7 +524,7 @@ class TrickyStore : SettingsPreferenceFragment() {
         Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
 
     companion object {
-        private const val KEYBOX_KEY = "spoof_trickystore_keybox"
+        internal const val KEYBOX_KEY = "spoof_trickystore_keybox"
         private const val TARGET_KEY = TrickyStoreAppSettings.TARGET_KEY
         internal const val PATCH_KEY = "spoof_trickystore_patch"
 
