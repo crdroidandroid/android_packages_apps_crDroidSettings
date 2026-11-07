@@ -60,9 +60,6 @@ internal object KeyboxMonitor {
     /** The expiry-due check waits this long for a network before running without one. */
     private val NOW_DEADLINE_MS = TimeUnit.MINUTES.toMillis(30)
 
-    private val REVOKED_STATES =
-        setOf(KeyboxInspector.Status.REVOKED, KeyboxInspector.Status.SUSPENDED)
-
     private class Keybox(val xml: String, val hash: String, val expiry: Long?)
 
     fun isEnabled(context: Context): Boolean =
@@ -110,14 +107,9 @@ internal object KeyboxMonitor {
 
         val previous = KeyboxInspector.loadReport(ctx, hash)
         val fresh = runCatching { KeyboxInspector.inspect(ctx, keybox.xml) }.getOrNull()
-        // A failed network check must not erase a known bad verdict (same rule as the screen).
-        val keepPrevious = fresh == null ||
-            (fresh.status == KeyboxInspector.Status.UNVERIFIED && previous != null &&
-                previous.status != KeyboxInspector.Status.VALID &&
-                previous.status != KeyboxInspector.Status.UNVERIFIED)
-        val report = if (keepPrevious) previous else fresh!!.also {
-            KeyboxInspector.saveReport(ctx, hash, it)
-        }
+        // Same rule as the screen: a failed network check must not erase a known bad verdict.
+        val report = KeyboxInspector.resolve(previous, fresh)
+        if (report != null && report === fresh) KeyboxInspector.saveReport(ctx, hash, report)
 
         // Is this keybox still the one installed, and are alerts still on? The check above
         // can take a while, and the user may have deleted or replaced it meanwhile.
@@ -125,9 +117,9 @@ internal object KeyboxMonitor {
 
         val prefs = prefsFor(ctx, hash)
         val status = report?.status
-        if (status in REVOKED_STATES) {
+        if (report != null && report.status.isRevoked) {
             if (!prefs.getBoolean(PREF_REVOKED_NOTIFIED, false)) {
-                postRevoked(ctx, status!!, report?.reason.orEmpty())
+                postRevoked(ctx, report.status, report.reason)
             }
             // An expiry reminder for a revoked keybox would only add noise.
             prefs.edit()

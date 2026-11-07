@@ -75,7 +75,7 @@ internal object KeyboxInspector {
         /** Every chain verifies to a Google root and no serial is on the status list. */
         VALID,
 
-        /** As VALID, but a leaf certificate expires within two weeks. */
+        /** As VALID, but a leaf certificate expires within [EXPIRY_WARN_MS]. */
         EXPIRING_SOON,
 
         /** A serial is listed as REVOKED. */
@@ -95,6 +95,24 @@ internal object KeyboxInspector {
 
         /** Structure is fine, but the status list (or the root list) could not be reached. */
         UNVERIFIED,
+        ;
+
+        /** Anything the user should act on. VALID and UNVERIFIED are not. */
+        val isBad: Boolean get() = this != VALID && this != UNVERIFIED
+
+        /** Listed on Google's attestation status list. */
+        val isRevoked: Boolean get() = this == REVOKED || this == SUSPENDED
+    }
+
+    /**
+     * The report to keep after a check: [fresh] unless it is missing, or it is only
+     * UNVERIFIED (offline) while [previous] is a known bad verdict, which must not be erased
+     * by a failed network check. Shared by the TrickyStore screen and [KeyboxMonitor].
+     */
+    fun resolve(previous: Report?, fresh: Report?): Report? = when {
+        fresh == null -> previous
+        fresh.status == Status.UNVERIFIED && previous?.status?.isBad == true -> previous
+        else -> fresh
     }
 
     data class Report(
@@ -199,22 +217,24 @@ internal object KeyboxInspector {
         // 1. Revocation list. A revoked or suspended keybox is reported as such whatever
         //    else is wrong with it, since that is what decides STRONG integrity.
         var offline = false
-        val statusList = fetchJson(STATUS_URL)?.let { runCatching { JSONObject(it) }.getOrNull() }
-        if (statusList != null) {
-            val entries = statusList.optJSONObject("entries")
-            if (entries != null) {
-                for (serial in serials) {
-                    val entry = entries.optJSONObject(serial) ?: continue
-                    val listed = entry.optString("status").uppercase()
-                    val reason = entry.optString("reason").uppercase()
-                    val status = when (listed) {
-                        "REVOKED" -> Status.REVOKED
-                        "SUSPENDED" -> Status.SUSPENDED
-                        else -> null
-                    } ?: continue
-                    rememberBadSerial(prefs, serial, status, now)
-                    return Report(status, reason, now)
-                }
+        // A response without an "entries" object (error page, truncated body, format change)
+        // is treated like no response: it must neither clear the cached bad serials below
+        // nor be taken as a clean answer.
+        val entries = fetchJson(STATUS_URL)
+            ?.let { runCatching { JSONObject(it) }.getOrNull() }
+            ?.optJSONObject("entries")
+        if (entries != null) {
+            for (serial in serials) {
+                val entry = entries.optJSONObject(serial) ?: continue
+                val listed = entry.optString("status").uppercase()
+                val reason = entry.optString("reason").uppercase()
+                val status = when (listed) {
+                    "REVOKED" -> Status.REVOKED
+                    "SUSPENDED" -> Status.SUSPENDED
+                    else -> null
+                } ?: continue
+                rememberBadSerial(prefs, serial, status, now)
+                return Report(status, reason, now)
             }
             forgetBadSerials(prefs, serials)
         } else {
