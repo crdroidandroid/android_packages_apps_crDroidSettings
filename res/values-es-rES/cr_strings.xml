@@ -1389,6 +1389,7 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="spoof_wipe_playstore_title">¿Borrar datos de Play Store?</string>
     <string name="spoof_wipe_playstore_message">Los veredictos de integridad quedan almacenados en caché por Play Store. Borrar sus datos hace que la nueva configuración surta efecto de inmediato, pero cierra la sesión de Play Store y borra la cola de descargas.</string>
     <string name="spoof_wipe_confirm">Borrar datos</string>
+    <string name="spoof_choice_select">Seleccionar</string>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Configuración activa</string>
     <string name="pif_no_config">Ninguna configuración cargada</string>
@@ -1421,13 +1422,13 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="pif_channel_canary_release_summary">La compilación Canary más reciente de Android Flash Tool</string>
     <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">Actualización automática de huella digital</string>
-    <string name="pif_auto_refresh_summary_on">Checks daily for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
-    <string name="pif_auto_refresh_summary_off">Off. The %1$s fingerprint (%2$s) only changes when you fetch or import one</string>
-    <string name="pif_auto_refresh_last_checked">Last checked: %1$s</string>
+    <string name="pif_auto_refresh_summary_on">Comprueba diariamente si hay una huella digital %1$s más reciente en el canal %2$s. Cuando encuentra una, se aplica y se borran los datos de Play Store</string>
+    <string name="pif_auto_refresh_summary_off">Desactivado. La huella digital %1$s (%2$s) solo cambia cuando obtienes o importas una</string>
+    <string name="pif_auto_refresh_last_checked">Última comprobación: %1$s</string>
     <string name="pif_auto_refresh_channel_name">Play Integrity Fix</string>
-    <string name="pif_auto_refresh_channel_description">Tells you when a newer fingerprint was applied automatically</string>
-    <string name="pif_auto_refresh_notification_title">Fingerprint updated</string>
-    <string name="pif_auto_refresh_notification_text">Applied a newer %1$s fingerprint (security patch %2$s) and cleared Play Store data.</string>
+    <string name="pif_auto_refresh_channel_description">Indica cuándo se aplicó automáticamente una huella digital más reciente</string>
+    <string name="pif_auto_refresh_notification_title">Huella digital actualizada</string>
+    <string name="pif_auto_refresh_notification_text">Se aplicó una huella digital %1$s más reciente (parche de seguridad %2$s) y se borraron los datos de Play Store.</string>
     <string name="pif_canary_build">Compilación Canary</string>
     <string name="pif_beta_build">Compilación beta</string>
     <string name="pif_patch_summary">Parche de seguridad %1$s</string>
@@ -1481,21 +1482,21 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="ts_keybox_expiry_summary">El certificado con vencimiento más próximo caduca el %1$s</string>
     <string name="ts_days_left">%1$dd restante</string>
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
-    <string name="ts_alerts_title">Keybox alerts</string>
-    <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
-    <string name="ts_alerts_summary_on">Checks daily with Google. You\'ll be notified if the keybox is revoked</string>
-    <string name="ts_alerts_summary_scheduled">Checks daily with Google for revocation status. Expiry reminder on %1$s</string>
-    <string name="ts_alerts_summary_due">The keybox expires in less than a day, load a new one soon</string>
-    <string name="ts_alerts_summary_expired">The keybox has expired. Load a new keybox to get alerts again</string>
-    <string name="ts_alerts_summary_blocked">Notifications for Settings are turned off, so alerts can\'t be shown</string>
-    <string name="ts_alerts_channel_name">Keybox alerts</string>
-    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or expires in one day</string>
-    <string name="ts_alert_expiry_title">Keybox expires in 1 day</string>
-    <string name="ts_alert_expiry_text">Your TrickyStore keybox expires on %1$s. Load a new keybox soon to keep passing Play Integrity.</string>
+    <string name="ts_alerts_title">Alertas de Keybox</string>
+    <string name="ts_alerts_summary_off">Desactivado. No recibirás notificaciones si la keybox es revocada o está a punto de caducar</string>
+    <string name="ts_alerts_summary_on">Comprueba diariamente con Google. Recibirás una notificación si la keybox es revocada</string>
+    <string name="ts_alerts_summary_scheduled">Comprueba diariamente con Google el estado de revocación. Recordatorio de caducidad el %1$s</string>
+    <string name="ts_alerts_summary_due">La keybox caduca en menos de un día, carga pronto una nueva</string>
+    <string name="ts_alerts_summary_expired">La keybox ha caducado. Carga una nueva para volver a recibir alertas</string>
+    <string name="ts_alerts_summary_blocked">Las notificaciones de Ajustes están desactivadas, por lo que no se pueden mostrar las alertas</string>
+    <string name="ts_alerts_channel_name">Alertas de Keybox</string>
+    <string name="ts_alerts_channel_description">Notifica cuando Google revoca la keybox de TrickyStore o cuando caduca en un día</string>
+    <string name="ts_alert_expiry_title">La keybox caduca en 1 día</string>
+    <string name="ts_alert_expiry_text">Su keybox de TrickyStore caduca el %1$s. Carga pronto una nueva para seguir pasando Play Integrity.</string>
     <string name="ts_alert_revoked_title">Keybox revocado</string>
-    <string name="ts_alert_revoked_text">Google has revoked your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>
+    <string name="ts_alert_revoked_text">Google ha suspendido tu keybox de TrickyStore (motivo: %1$s). La integridad fuerte fallará hasta que se cargue una nueva.</string>
     <string name="ts_alert_suspended_title">Keybox suspendido</string>
-    <string name="ts_alert_suspended_text">Google has suspended your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>
+    <string name="ts_alert_suspended_text">Google ha suspendido tu keybox de TrickyStore (motivo: %1$s). La integridad fuerte fallará hasta que se cargue una nueva.</string>
     <string name="ts_revocation_status">Estado de revocación de Google</string>
     <string name="ts_revocation_checking">Comprobando con Google…</string>
     <string name="ts_revocation_not_yet_checked">Aún no se ha comprobado. Toca para comprobarlo ahora</string>
