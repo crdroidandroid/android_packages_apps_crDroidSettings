@@ -41,6 +41,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
@@ -832,8 +833,10 @@ fun SpoofConfirmDialog(
 }
 
 /**
- * Single-choice list dialog. Picking a row calls [onPick] and dismisses the dialog;
- * [summaries] adds an optional second line per option.
+ * Single-choice list dialog. Tapping a row only moves the selection; Select dismisses the
+ * dialog and calls [onPick] with it, and stays disabled until a row is selected.
+ * [selected] is the initial selection (-1 for none); [summaries] adds an optional second
+ * line per option.
  */
 @Composable
 fun SpoofChoiceDialog(
@@ -844,6 +847,7 @@ fun SpoofChoiceDialog(
     onDismiss: () -> Unit,
     summaries: List<String?> = emptyList(),
 ) {
+    var current by rememberSaveable(options, selected) { mutableStateOf(selected) }
     SpoofDialog(
         onDismissRequest = onDismiss,
         title = title,
@@ -852,6 +856,7 @@ fun SpoofChoiceDialog(
                 modifier = Modifier
                     .fillMaxWidth()
                     .heightIn(max = 420.dp)
+                    .selectableGroup()
                     .verticalScroll(rememberScrollState()),
             ) {
                 options.forEachIndexed { index, option ->
@@ -860,14 +865,14 @@ fun SpoofChoiceDialog(
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(16.dp))
                             .selectable(
-                                selected = index == selected,
+                                selected = index == current,
                                 role = Role.RadioButton,
-                                onClick = { onDismiss(); onPick(index) },
+                                onClick = { current = index },
                             )
                             .padding(vertical = 10.dp, horizontal = 4.dp),
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
-                        RadioButton(selected = index == selected, onClick = null)
+                        RadioButton(selected = index == current, onClick = null)
                         Spacer(Modifier.width(12.dp))
                         Column(Modifier.weight(1f)) {
                             Text(option, style = MaterialTheme.typography.bodyLarge)
@@ -884,6 +889,12 @@ fun SpoofChoiceDialog(
             }
         },
         confirmButton = {
+            TextButton(
+                onClick = { val pick = current; onDismiss(); onPick(pick) },
+                enabled = current in options.indices,
+            ) { Text(stringResource(R.string.spoof_choice_select)) }
+        },
+        dismissButton = {
             TextButton(onClick = onDismiss) { Text(stringResource(android.R.string.cancel)) }
         },
     )
