@@ -5,10 +5,12 @@
 
 package com.crdroid.settings.fragments.misc
 
+import android.os.Build
 import android.util.Log
 import org.json.JSONObject
 import java.net.URL
 import java.nio.charset.StandardCharsets
+import kotlin.math.abs
 
 /**
  * Pixel fingerprint sources for Play Integrity Fix, moved out of the fragment unchanged:
@@ -77,16 +79,42 @@ internal object PifFetcher {
         "formosan" to "Pixel 11a",
     )
 
-    /** SDK level each device launched with. Unknown/new devices fall back to the newest. */
-    fun initialSdkIntFor(device: String): String = when (device) {
-        "oriole", "raven" -> "31"
-        "bluejay" -> "32"
-        "panther", "cheetah", "lynx", "felix", "tangorpro" -> "33"
-        "shiba", "husky", "akita", "tokay", "caiman", "komodo", "comet" -> "34"
-        "tegu" -> "35"
-        "stallion", "frankel", "blazer", "mustang", "rango" -> "36"
-        "cubs", "grizzly", "kodiak", "yogi" -> "37"
-        else -> "32"
+    /** SDK level each Pixel launched with. */
+    private val DEVICE_INITIAL_SDK = mapOf(
+        "oriole" to 31, "raven" to 31,
+        "bluejay" to 32,
+        "panther" to 33, "cheetah" to 33, "lynx" to 33, "felix" to 33, "tangorpro" to 33,
+        "shiba" to 34, "husky" to 34, "akita" to 34,
+        "tokay" to 34, "caiman" to 34, "komodo" to 34, "comet" to 34,
+        "tegu" to 35,
+        "stallion" to 36, "frankel" to 36, "blazer" to 36, "mustang" to 36, "rango" to 36,
+        "cubs" to 37, "grizzly" to 37, "kodiak" to 37, "yogi" to 37,
+    )
+
+    /** Lowest launch SDK of any Pixel above; older devices are matched to it. */
+    private const val MIN_PIXEL_INITIAL_SDK = 31
+
+    /** SDK level each device launched with. Unknown devices fall back to 32. */
+    fun initialSdkIntFor(device: String): String =
+        (DEVICE_INITIAL_SDK[device] ?: 32).toString()
+
+    /** The SDK level this device first shipped with. */
+    fun currentInitialSdk(): Int =
+        Build.VERSION.DEVICE_INITIAL_SDK_INT.takeIf { it > 0 } ?: Build.VERSION.SDK_INT
+
+    /**
+     * Codenames in [devices] whose launch SDK best matches [deviceInitialSdk]: the
+     * closest level offered, the lower one on a tie. Devices at or below 31 are
+     * matched as 31, so oriole/raven are preferred, then bluejay. Codenames with no
+     * known launch SDK are never suggested.
+     */
+    fun suggestedDevices(devices: List<PifDevice>, deviceInitialSdk: Int): Set<String> {
+        val levels = devices.mapNotNull { DEVICE_INITIAL_SDK[it.device] }.distinct()
+        if (levels.isEmpty()) return emptySet()
+        val target = deviceInitialSdk.coerceAtLeast(MIN_PIXEL_INITIAL_SDK)
+        val best = levels.minWith(compareBy<Int>({ abs(it - target) }, { it }))
+        return devices.filter { DEVICE_INITIAL_SDK[it.device] == best }
+            .mapTo(mutableSetOf()) { it.device }
     }
 
     fun fetchDevices(channel: PifChannel): DeviceList = when (channel) {
