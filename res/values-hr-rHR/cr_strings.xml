@@ -401,15 +401,15 @@ Mala donacija pomaže u održavanju i poboljšanju ovog projekta. Možete odbaci
     <string name="font_apply_restart_now">Primijeni i ponovno pokreni SystemUI</string>
     <string name="font_apply_restart_later">Primijeni i ponovno pokreni kasnije</string>
     <string name="font_apply_reboot_now">Primijeni i ponovno pokreni</string>
-    <string name="font_apply_reboot_later">Apply, reboot later</string>
-    <string name="font_install_message">This font is used for system and app text until you pick another font. Only this file\'s style is installed, so bold and italic text is generated from it. The font style is set back to Default, and a reboot is needed to apply it everywhere.</string>
-    <string name="font_install_reboot_now">Install and reboot</string>
-    <string name="font_install_reboot_later">Install, reboot later</string>
-    <string name="font_pending_reboot_title">Reboot to finish</string>
-    <string name="font_pending_reboot_body">%1$s is set. Some apps keep the previous font until you reboot.</string>
-    <string name="font_pending_systemui_title">Restart SystemUI to finish</string>
-    <string name="font_pending_systemui_body">%1$s is set. The status bar, lock screen and quick settings keep the previous font until SystemUI restarts.</string>
-    <string name="font_restart_systemui">Restart SystemUI</string>
+    <string name="font_apply_reboot_later">Primijeni i ponovno pokreni kasnije</string>
+    <string name="font_install_message">Ovaj se font koristi za tekst u sustavu i aplikacijama sve dok ne odaberete drugi font. Instaliran je samo stil iz ove datoteke, stoga se podebljani i nakošeni tekst generiraju na temelju njega. Stil fonta vraćen je na „Zadano”, a za primjenu te promjene u cijelom sustavu potrebno je ponovno pokrenuti uređaj.</string>
+    <string name="font_install_reboot_now">Instaliraj i ponovo pokreni</string>
+    <string name="font_install_reboot_later">Instaliraj i ponovno pokreni kasnije</string>
+    <string name="font_pending_reboot_title">Ponovno pokrenite za dovršetak</string>
+    <string name="font_pending_reboot_body">Postavljeno je: %1$s. Neke aplikacije zadržavaju prethodni font sve dok ponovno ne pokrenete uređaj.</string>
+    <string name="font_pending_systemui_title">Ponovno pokrenite SystemUI za dovršetak</string>
+    <string name="font_pending_systemui_body">Postavljeno je: %1$s. Statusna traka, zaključani zaslon i brze postavke zadržavaju prethodni font sve dok se SystemUI ponovno ne pokrene.</string>
+    <string name="font_restart_systemui">Ponovno pokreni SystemUI</string>
     <string name="font_summary_pending_reboot">%1$s · reboot pending</string>
     <string name="font_summary_pending_systemui">%1$s · SystemUI restart pending</string>
     <string name="font_picker_footer">Font styles provided by the system are listed above. To use your own, tap Add font and choose a .ttf or .otf file of up to 64 MB. A custom font is used for all system and app text that uses the standard UI fonts.</string>
@@ -1097,7 +1097,7 @@ Mala donacija pomaže u održavanju i poboljšanju ovog projekta. Možete odbaci
     <string name="sidebar_summary">快速開啟小窗化應用</string>
     <!-- Smartspace -->
     <string name="lockscreen_smartspace_title">Smartspace</string>
-    <string name="lockscreen_smartspace_summary">Show Google Smartspace when available</string>
+    <string name="lockscreen_smartspace_summary">Prikaži Google Smartspace kada je dostupan</string>
     <!-- Clipboard auto clear -->
     <string name="clipboard_auto_clear_timeout_title">Istek vremena za automatsko brisanje međuspremnika</string>
     <string name="clipboard_auto_clear_title">Automatsko brisanje međuspremnika</string>
@@ -1105,7 +1105,7 @@ Mala donacija pomaže u održavanju i poboljšanju ovog projekta. Možete odbaci
     <string name="clipboard_auto_clear_enabled_title">Koristi automatsko brisanje međuspremnika</string>
     <string name="clipboard_auto_clear_timeout_disable_clipboard">Onemogući međuspremnik</string>
     <!-- Increasing ring tone volume -->
-    <string name="increasing_ring_volume_option_title">Increasing ring volume</string>
+    <string name="increasing_ring_volume_option_title">Pojačavanje glasnoće zvona</string>
     <string name="increasing_ring_min_volume_title">Početna jačina zvuka</string>
     <string name="increasing_ring_ramp_up_time_title">Vrijeme podizanja</string>
     <!-- Disable DNS for VPN -->
@@ -1133,10 +1133,10 @@ Mala donacija pomaže u održavanju i poboljšanju ovog projekta. Možete odbaci
     <string name="systemui_restart_not_now">Ne sada</string>
     <string name="systemui_restart_process">Ponovno pokretanje UI sustava radi primjene promjena...</string>
     <!-- System reboot -->
-    <string name="reboot_required_title">Reboot required</string>
-    <string name="reboot_required_message">A reboot is required to apply changes. Reboot now?</string>
-    <string name="action_later">Later</string>
-    <string name="action_reboot_now">Reboot now</string>
+    <string name="reboot_required_title">Potrebno je ponovno pokretanje</string>
+    <string name="reboot_required_message">Za primjenu promjena potrebno je ponovno pokretanje. Želite li ponovno pokrenuti sada?</string>
+    <string name="action_later">Kasnije</string>
+    <string name="action_reboot_now">Ponovno pokreni sada</string>
     <!-- Notification / Power Menu Styles -->
     <string name="notification_style_title">Stil obavijesti</string>
     <string name="powermenu_style_title">Stil izbornika napajanja</string>
@@ -1146,23 +1146,23 @@ Mala donacija pomaže u održavanju i poboljšanju ovog projekta. Možete odbaci
     <string name="custom_style_ios">IOS</string>
     <string name="custom_style_layers">Slojevi</string>
     <!-- QS Tiles Style -->
-    <string name="qs_tile_shape_title">QS tiles shape</string>
-    <string name="qs_tile_shape_dynamic">Dynamic</string>
+    <string name="qs_tile_shape_title">Oblik QS pločica</string>
+    <string name="qs_tile_shape_dynamic">Dinamično</string>
     <string name="qs_tile_shape_circle">Krug</string>
-    <string name="qs_tile_shape_rounded_square_smooth">Rounded square (smooth)</string>
-    <string name="qs_tile_shape_rounded_square">Rounded square</string>
-    <string name="qs_tile_shape_square">Square</string>
+    <string name="qs_tile_shape_rounded_square_smooth">Zaobljeni kvadrat (gladak)</string>
+    <string name="qs_tile_shape_rounded_square">Zaobljeni kvadrat</string>
+    <string name="qs_tile_shape_square">Kvadrat</string>
     <!-- Force dark mode -->
-    <string name="force_dark_title">Dark mode for third-party apps</string>
-    <string name="force_dark_summary">Forces darker colors in apps lacking dark mode. Some screens may appear off.</string>
+    <string name="force_dark_title">Tamni način rada za aplikacije trećih strana</string>
+    <string name="force_dark_summary">Primjenjuje tamnije boje u aplikacijama koje nemaju tamni način rada. Neki prikazi mogu izgledati neobično.</string>
     <!-- Brightness Slider Style -->
-    <string name="qs_brightness_slider_shape_title">Brightness slider shape</string>
+    <string name="qs_brightness_slider_shape_title">Stil klizača svjetline</string>
     <!-- Force LTE_CA -->
-    <string name="force_lte_ca_title">LTE carrier aggregation</string>
-    <string name="force_lte_ca_summary">Enhances LTE bandwidth by aggregating supported bands</string>
+    <string name="force_lte_ca_title">Agregacija nosilaca u LTE-u</string>
+    <string name="force_lte_ca_summary">Povećava LTE propusnost objedinjavanjem podržanih frekvencijskih pojaseva</string>
     <!-- QS on lockscreen -->
-    <string name="lockscreen_quick_settings_title">QS on lock screen</string>
-    <string name="lockscreen_quick_settings_summary">Allow swipe down on lock screen to view Quick Settings</string>
+    <string name="lockscreen_quick_settings_title">Brze postavke na zaključanom zaslonu</string>
+    <string name="lockscreen_quick_settings_summary">Omogući povlačenje prema dolje na zaključanom zaslonu za prikaz brzih postavki</string>
     <!-- Lock screen media art -->
     <string name="ls_media_art_title">Omoti albuma</string>
     <string name="ls_media_art_summary">Prikaži omot albuma kad je dostupan</string>
@@ -1176,13 +1176,13 @@ Mala donacija pomaže u održavanju i poboljšanju ovog projekta. Možete odbaci
     <string name="ls_media_art_filter_grayscale">Sivi tonovi</string>
     <string name="ls_media_art_filter_sepia">Sepia</string>
     <string name="ls_media_art_filter_tint">Naglasno zatamnjeno</string>
-    <string name="ls_media_art_filter_invert">Invert</string>
-    <string name="ls_media_art_filter_grayblur">Grayscale and blur</string>
+    <string name="ls_media_art_filter_invert">Obrnuto</string>
+    <string name="ls_media_art_filter_grayblur">Sivi tonovi i zamućeno</string>
     <!-- Lock screen media art fade level -->
-    <string name="ls_media_art_fade_level_title">Media cover art fade level</string>
-    <string name="ls_media_art_fade_level_summary">Set media cover art fade level</string>
+    <string name="ls_media_art_fade_level_title">Razina postupnog nestajanja naslovnice medija</string>
+    <string name="ls_media_art_fade_level_summary">Postavi razinu postupnog nestajanja naslovnice medija</string>
     <!-- Lock screen media art blur level -->
-    <string name="ls_media_art_blur_level_title">Media art blur level</string>
+    <string name="ls_media_art_blur_level_title">Razina zamućenja medijske umjetnosti</string>
     <string name="ls_media_art_blur_level_summary">Blur intensity when blur filter is applied</string>
     <!-- Pulse music visualizer -->
     <string name="pulse_settings_title">Pulse Visualizer</string>
