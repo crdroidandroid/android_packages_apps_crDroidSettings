@@ -309,9 +309,19 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                         pickerDevices = list.devices
                         pickerChannel = channel
                         pickerApiKey = list.apiKey
-                        // Preselect the device the active config already spoofs, if offered.
+                        val suggested = PifFetcher.suggestedDevices(
+                            list.devices, PifFetcher.currentInitialSdk())
+                        val names = list.devices.map {
+                            if (it.device in suggested)
+                                getString(R.string.pif_device_suggested, it.model)
+                            else it.model
+                        }
+                        // Preselect the device the active config already spoofs, otherwise
+                        // the first suggested one.
                         val current = list.devices.indexOfFirst { it.device == ui.config["DEVICE"] }
-                        ui.dialog = PifDialog.DevicePicker(list.devices.map { it.model }, current)
+                            .takeIf { it >= 0 }
+                            ?: list.devices.indexOfFirst { it.device in suggested }
+                        ui.dialog = PifDialog.DevicePicker(names, current)
                     }
                 }
             } catch (e: Exception) {
