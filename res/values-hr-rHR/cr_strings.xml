@@ -32,15 +32,15 @@
     <string name="display_title">Zaslon</string>
     <string name="ui_title">Korisničko sučelje</string>
     <!-- Color Picker -->
-    <string name="color_picker_title">Select color</string>
+    <string name="color_picker_title">Odaberi boju</string>
     <string name="color_picker_select">Odaberi</string>
     <string name="color_picker_reset">Vrati na zadano</string>
     <string name="color_picker_presets">Predlošci</string>
     <string name="color_picker_hex_rgb">Hex (#RRGGBB)</string>
     <string name="color_picker_hex_argb">Hex (#AARRGGBB)</string>
-    <string name="color_picker_hex_invalid">Enter a valid hex color</string>
-    <string name="color_picker_current_color">Current color</string>
-    <string name="color_picker_new_color">New color</string>
+    <string name="color_picker_hex_invalid">Unesite valjanu heksadecimalnu boju</string>
+    <string name="color_picker_current_color">Trenutačna boja</string>
+    <string name="color_picker_new_color">Nova boja</string>
     <!-- General strings -->
     <string name="ok">U redu</string>
     <string name="reset">Poništi</string>
@@ -252,20 +252,20 @@ Mala donacija pomaže u održavanju i poboljšanju ovog projekta. Možete odbaci
     <string name="monet_engine_luminance_factor_summary">Veće vrijednosti daju svjetlije boje</string>
     <string name="monet_engine_chroma_factor_title">Chroma faktor</string>
     <string name="monet_engine_chroma_factor_summary">Veće vrijednosti daju jače boje</string>
-    <string name="monet_palette_primary">Primary color</string>
-    <string name="monet_palette_secondary">Secondary color</string>
-    <string name="monet_palette_tertiary">Tertiary color</string>
-    <string name="monet_palette_neutral">Neutral color</string>
-    <string name="monet_primary_chroma">Primary chroma</string>
-    <string name="monet_primary_value">Primary tone</string>
-    <string name="monet_secondary_chroma">Secondary chroma</string>
-    <string name="monet_secondary_value">Secondary tone</string>
-    <string name="monet_tertiary_chroma">Tertiary chroma</string>
-    <string name="monet_tertiary_value">Tertiary tone</string>
-    <string name="monet_neutral_chroma">Neutral chroma</string>
-    <string name="monet_neutral_value">Neutral tone</string>
-    <string name="monet_palette_chroma_summary" formatted="false">100% is stock. Lower values mute the colors, 0% removes them entirely. Higher values make them stronger.</string>
-    <string name="monet_palette_value_summary" formatted="false">100% is stock. Lower values darken the colors, higher values lighten them. Extreme values can make text harder to read.</string>
+    <string name="monet_palette_primary">Primarna boja</string>
+    <string name="monet_palette_secondary">Sekundarna boja</string>
+    <string name="monet_palette_tertiary">Tercijarna boja</string>
+    <string name="monet_palette_neutral">Neutralna boja</string>
+    <string name="monet_primary_chroma">Primarna kroma</string>
+    <string name="monet_primary_value">Primarni ton</string>
+    <string name="monet_secondary_chroma">Sekundarna kroma</string>
+    <string name="monet_secondary_value">Sekundarni ton</string>
+    <string name="monet_tertiary_chroma">Tercijarna kroma</string>
+    <string name="monet_tertiary_value">Tercijarni ton</string>
+    <string name="monet_neutral_chroma">Neutralna kroma</string>
+    <string name="monet_neutral_value">Neutralni ton</string>
+    <string name="monet_palette_chroma_summary" formatted="false">100 % je zadana vrijednost. Niže vrijednosti prigušuju boje, a 0 % ih u potpunosti uklanja. Više vrijednosti čine ih intenzivnijima.</string>
+    <string name="monet_palette_value_summary" formatted="false">100 % je zadana vrijednost. Niže vrijednosti čine boje tamnijima, a više ih čine svjetlijima. Ekstremne vrijednosti mogu otežati čitanje teksta.</string>
     <string name="monet_engine_whole_palette_title">Cijela paleta</string>
     <string name="monet_engine_whole_palette_summary">Odabir svjetline i kromatike također utječe na sekundarne boje</string>
     <string name="monet_engine_tint_background_title">Nijansa pozadine</string>
@@ -332,9 +332,9 @@ Mala donacija pomaže u održavanju i poboljšanju ovog projekta. Možete odbaci
     <string name="bluetooth_battery_title">Status Bluetooth baterije</string>
     <string name="bluetooth_battery_summary">Prikažite razinu baterije za povezani Bluetooth uređaj, ako je dostupan</string>
     <!-- Title for the Bluetooth device details preference that chooses which audio codec a paired device is played with. [CHAR LIMIT=40] -->
-    <string name="bluetooth_details_audio_codec_title">Audio codec</string>
+    <string name="bluetooth_details_audio_codec_title">Audio kodek</string>
     <!-- Summary shown when the audio codec of a paired device cannot be read or chosen. [CHAR LIMIT=40] -->
-    <string name="bluetooth_details_audio_codec_unavailable">Not available</string>
+    <string name="bluetooth_details_audio_codec_unavailable">Nije dostupno</string>
     <!-- Tap to sleep on status bar -->
     <string name="statusbar_doubletap_sleep_title">Dodirni za stanje mirovanja</string>
     <string name="statusbar_doubletap_sleep_summary">Dvaput dodirnite statusnu traku da biste stavili uređaj u stanje mirovanja</string>
@@ -381,26 +381,26 @@ Mala donacija pomaže u održavanju i poboljšanju ovog projekta. Možete odbaci
     <string name="theme_customization_brightness_slider_title">Stil klizača svjetline</string>
     <string name="theme_customization_brightness_slider_summary">Prilagođeni stil klizača svjetline</string>
     <!-- Fonts -->
-    <string name="add_font">Add font</string>
-    <string name="toast_failed_apply_font">Failed to apply font</string>
-    <string name="toast_invalid_font_file">Invalid font file</string>
+    <string name="add_font">Dodaj font</string>
+    <string name="toast_failed_apply_font">Primjena fonta nije uspjela</string>
+    <string name="toast_invalid_font_file">Neispravna datoteka fonta</string>
     <string name="font_default">Zadano</string>
-    <string name="font_current">Current font</string>
-    <string name="font_selected">Selected</string>
-    <string name="font_system_section">System fonts</string>
-    <string name="font_custom_section">Custom font</string>
+    <string name="font_current">Trenutačni font</string>
+    <string name="font_selected">Odabrano</string>
+    <string name="font_system_section">Font sustava</string>
+    <string name="font_custom_section">Prilagođeni font</string>
     <string name="font_custom_chip">Prilagođeno</string>
-    <string name="font_replace_custom">Install another font</string>
-    <string name="font_replace">Replace</string>
-    <string name="font_remove">Remove</string>
-    <string name="font_reading">Reading font file…</string>
-    <string name="font_installing">Installing %1$s…</string>
-    <string name="font_install_failed">Couldn\'t install font (error %1$d)</string>
-    <string name="font_apply_systemui_message">Apps switch to %1$s right away. The status bar, lock screen and quick settings switch after SystemUI restarts.</string>
-    <string name="font_apply_reboot_message">This removes your custom font and switches to %1$s. A reboot is needed before every app uses the new font.</string>
-    <string name="font_apply_restart_now">Apply and restart SystemUI</string>
-    <string name="font_apply_restart_later">Apply, restart later</string>
-    <string name="font_apply_reboot_now">Apply and reboot</string>
+    <string name="font_replace_custom">Instalirajte drugi font</string>
+    <string name="font_replace">Zamijeni</string>
+    <string name="font_remove">Ukloni</string>
+    <string name="font_reading">Čitanje datoteke fonta…</string>
+    <string name="font_installing">Instaliranje %1$s…</string>
+    <string name="font_install_failed">Nije bilo moguće instalirati font (pogreška %1$d)</string>
+    <string name="font_apply_systemui_message">Aplikacije odmah prelaze na %1$s. Statusna traka, zaključani zaslon i brze postavke mijenjaju se nakon ponovnog pokretanja sustava SystemUI.</string>
+    <string name="font_apply_reboot_message">Ovo uklanja vaš prilagođeni font i prelazi na %1$s. Potrebno je ponovno pokretanje uređaja kako bi sve aplikacije počele koristiti novi font.</string>
+    <string name="font_apply_restart_now">Primijeni i ponovno pokreni SystemUI</string>
+    <string name="font_apply_restart_later">Primijeni i ponovno pokreni kasnije</string>
+    <string name="font_apply_reboot_now">Primijeni i ponovno pokreni</string>
     <string name="font_apply_reboot_later">Apply, reboot later</string>
     <string name="font_install_message">This font is used for system and app text until you pick another font. Only this file\'s style is installed, so bold and italic text is generated from it. The font style is set back to Default, and a reboot is needed to apply it everywhere.</string>
     <string name="font_install_reboot_now">Install and reboot</string>
@@ -710,12 +710,12 @@ Mala donacija pomaže u održavanju i poboljšanju ovog projekta. Možete odbaci
     <string name="enable_fingerprint_ripple_effect_summary">Prikaži efekt valova pri otključavanju otiskom prsta</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Animacija isključivanja zaslona</string>
-    <string name="screen_off_animation_colorfade">ColorFade</string>
+    <string name="screen_off_animation_colorfade">Blijeđenje boja</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Skala</string>
     <string name="screen_off_animation_iris">Iris</string>
-    <string name="screen_off_animation_desaturate">Desaturate</string>
-    <string name="screen_off_animation_shutter">Shutter</string>
+    <string name="screen_off_animation_desaturate">Smanji zasićenje</string>
+    <string name="screen_off_animation_shutter">Okidač</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Vibracija provjere otiska prsta</string>
     <string name="fp_success_vibrate_summary">Zavibriraj kada je autentifikacija otiskom prsta uspješna</string>
