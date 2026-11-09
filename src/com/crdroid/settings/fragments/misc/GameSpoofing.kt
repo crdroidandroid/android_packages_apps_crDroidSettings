@@ -16,6 +16,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -33,12 +34,17 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
+import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.DeleteOutline
 import androidx.compose.material.icons.rounded.Edit
+import androidx.compose.material.icons.rounded.ExpandLess
+import androidx.compose.material.icons.rounded.ExpandMore
 import androidx.compose.material.icons.rounded.PhoneAndroid
 import androidx.compose.material.icons.rounded.SportsEsports
 import androidx.compose.material.icons.rounded.SwapHoriz
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FilterChip
@@ -56,6 +62,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -79,7 +86,8 @@ import java.util.Locale
  *     { "enabled": true, "debug": false, "games": { "<pkg>": { "MODEL": "...", ... } } }
  *
  * The service loads the config once per process, so every change force-stops the games it
- * touches.
+ * touches. Keys are picked from [GameSpoofing.SPOOFABLE_FIELDS] rather than typed, so a
+ * misspelt field name can no longer be saved.
  */
 class GameSpoofing : SettingsPreferenceFragment() {
 
@@ -89,6 +97,18 @@ class GameSpoofing : SettingsPreferenceFragment() {
         val icon: Drawable?,
         val props: Map<String, String>,
     )
+
+    internal data class SpoofField(
+        val name: String,
+        val owner: String,
+        val example: String,
+        val pattern: Regex? = null,
+    ) {
+        val qualifiedName: String get() = "$owner.$name"
+
+        fun isValid(value: String): Boolean =
+            value.none { it.isISOControl() } && (pattern?.matches(value) ?: true)
+    }
 
     internal sealed interface GsDialog {
         object AddGame : GsDialog
@@ -162,12 +182,12 @@ class GameSpoofing : SettingsPreferenceFragment() {
 
     private fun loadConfig() {
         val startedAt = saveGeneration
+        val context = requireContext()
+        val pm = context.packageManager
+        val resolver = context.contentResolver
         scope.launch {
-            val pm = requireContext().packageManager
             val (enabled, games, extras) = withContext(Dispatchers.IO) {
-                val content = Settings.Secure.getString(
-                    requireContext().contentResolver, GAMEPROPS_CONFIG_KEY)
-                val parsed = parseConfig(content)
+                val parsed = parseConfig(Settings.Secure.getString(resolver, GAMEPROPS_CONFIG_KEY))
                 Triple(
                     parsed.first,
                     parsed.second.map { (pkg, props) ->
@@ -231,8 +251,8 @@ class GameSpoofing : SettingsPreferenceFragment() {
         ui.dialog = GsDialog.AddGame
         if (ui.installedApps.isNotEmpty() || ui.appsLoading) return
         ui.appsLoading = true
+        val pm = requireContext().packageManager
         scope.launch {
-            val pm = requireContext().packageManager
             ui.installedApps = withContext(Dispatchers.IO) {
                 filterInstalledApps(pm = pm, showSystem = true, targeted = emptySet())
                     .map { app ->
@@ -286,20 +306,66 @@ class GameSpoofing : SettingsPreferenceFragment() {
         private const val TAG = "GameSpoofing"
         private const val GAMEPROPS_CONFIG_KEY = "spoof_gameprops_config"
 
-        internal val PRESET_PROFILES = listOf(
-            "ROG Phone 8 Pro" to mapOf("MODEL" to "ASUS_AI2401_A", "MANUFACTURER" to "asus"),
-            "Galaxy S24 Ultra" to mapOf("MODEL" to "SM-S928B", "MANUFACTURER" to "samsung"),
-            "Xiaomi 13 Pro" to mapOf("MODEL" to "2210132C", "MANUFACTURER" to "Xiaomi"),
-            "OnePlus 9 Pro" to mapOf("MODEL" to "LE2101", "MANUFACTURER" to "OnePlus"),
-            "Black Shark 4" to mapOf("MODEL" to "2SM-X706B", "MANUFACTURER" to "blackshark"),
-            "Lenovo Y700" to mapOf("MODEL" to "Lenovo TB-9707F", "MANUFACTURER" to "Lenovo"),
+        private const val BUILD = "Build"
+        private const val BUILD_VERSION = "Build.VERSION"
+
+        /**
+         * Fields the editor offers, most commonly spoofed first. Names must match the Java
+         * field names exactly; GamePropsSpoofService looks them up in Build, then
+         * Build.VERSION. Only String fields are listed: changing SDK_INT or other numeric
+         * fields in-process breaks framework code inside the game.
+         */
+        internal val SPOOFABLE_FIELDS = listOf(
+            SpoofField("MODEL", BUILD, "SM-S928B"),
+            SpoofField("MANUFACTURER", BUILD, "samsung"),
+            SpoofField("BRAND", BUILD, "samsung"),
+            SpoofField("DEVICE", BUILD, "e3q"),
+            SpoofField("PRODUCT", BUILD, "e3qxxx"),
+            SpoofField("BOARD", BUILD, "pineapple"),
+            SpoofField("HARDWARE", BUILD, "qcom"),
+            SpoofField("SOC_MANUFACTURER", BUILD, "QTI"),
+            SpoofField("SOC_MODEL", BUILD, "SM8650"),
+            SpoofField(
+                "FINGERPRINT", BUILD,
+                "brand/product/device:release/id/incremental:type/tags",
+                Regex("""[^/:\s]+/[^/:\s]+/[^/:\s]+:[^/:\s]+/[^/:\s]+/[^/:\s]+:[^/:\s]+/[^/:\s]+"""),
+            ),
+            SpoofField("ID", BUILD, "UP1A.231005.007", Regex("""\S+""")),
+            SpoofField("DISPLAY", BUILD, "UP1A.231005.007"),
+            SpoofField("TYPE", BUILD, "user", Regex("""user|userdebug|eng""")),
+            SpoofField("TAGS", BUILD, "release-keys", Regex("""\S+""")),
+            SpoofField("RELEASE", BUILD_VERSION, "14", Regex("""\d+(\.\d+){0,2}""")),
+            SpoofField("INCREMENTAL", BUILD_VERSION, "S928BXXU1AWLA", Regex("""\S+""")),
+            SpoofField("SECURITY_PATCH", BUILD_VERSION, "2024-01-01", Regex("""\d{4}-\d{2}-\d{2}""")),
         )
 
-        /** Build / Build.VERSION field names, as GamePropsSpoofService looks them up. */
-        internal val FIELD_NAME_REGEX = Regex("""[A-Za-z_][A-Za-z0-9_]*""")
+        internal fun fieldFor(name: String): SpoofField? =
+            SPOOFABLE_FIELDS.firstOrNull { it.name == name }
+
+        internal val PRESET_PROFILES = listOf(
+            "ROG Phone 8 Pro" to mapOf(
+                "BRAND" to "asus", "MANUFACTURER" to "asus", "MODEL" to "ASUS_AI2401_A"),
+            "Galaxy S24 Ultra" to mapOf(
+                "BRAND" to "samsung", "MANUFACTURER" to "samsung", "MODEL" to "SM-S928B"),
+            "Xiaomi 13 Pro" to mapOf(
+                "BRAND" to "Xiaomi", "MANUFACTURER" to "Xiaomi", "MODEL" to "2210132C"),
+            "OnePlus 9 Pro" to mapOf(
+                "BRAND" to "OnePlus", "MANUFACTURER" to "OnePlus", "MODEL" to "LE2101"),
+            "Black Shark 4" to mapOf(
+                "BRAND" to "blackshark", "MANUFACTURER" to "blackshark", "MODEL" to "2SM-X706B"),
+            "Lenovo Y700" to mapOf(
+                "BRAND" to "Lenovo", "MANUFACTURER" to "Lenovo", "MODEL" to "Lenovo TB-9707F"),
+        )
+
+        /**
+         * Index of the preset [props] equals, or -1. Configs saved before presets set BRAND
+         * (MODEL + MANUFACTURER only) still count as that preset.
+         */
+        internal fun profileIndex(props: Map<String, String>): Int =
+            PRESET_PROFILES.indexOfFirst { (_, preset) -> preset == props || preset - "BRAND" == props }
 
         internal fun profileName(props: Map<String, String>): String? =
-            PRESET_PROFILES.firstOrNull { it.second == props }?.first
+            PRESET_PROFILES.getOrNull(profileIndex(props))?.first
 
         /** (enabled, games, other top-level keys) from the stored JSON. */
         private fun parseConfig(
@@ -503,10 +569,10 @@ private fun GsDialogs(
                 title = stringResource(R.string.gs_select_profile),
                 options = names,
                 summaries = GameSpoofing.PRESET_PROFILES.map { (_, props) ->
-                    props.entries.joinToString(" \u00b7 ") { it.value }
+                    props.values.distinct().joinToString(" \u00b7 ")
                 } + null,
                 selected = current?.let { props ->
-                    GameSpoofing.PRESET_PROFILES.indexOfFirst { it.second == props }
+                    GameSpoofing.profileIndex(props)
                         .takeIf { it >= 0 } ?: GameSpoofing.PRESET_PROFILES.size
                 } ?: -1,
                 onPick = { index ->
@@ -628,7 +694,11 @@ private fun AddGameDialog(
     )
 }
 
-/** Key/value editor for one game. Blank rows are ignored; an empty result removes the game. */
+/**
+ * Key/value editor for one game. Each key is picked from [GameSpoofing.SPOOFABLE_FIELDS];
+ * a field already used by another row isn't offered again. Rows with a blank value are
+ * ignored; an empty result removes the game.
+ */
 @Composable
 private fun EditPropsDialog(
     label: String,
@@ -639,12 +709,16 @@ private fun EditPropsDialog(
     val rows = remember {
         mutableStateListOf<Pair<String, String>>().apply {
             addAll(initial.entries.map { it.key to it.value })
-            if (isEmpty()) add("MODEL" to "")
+            if (isEmpty()) add(GameSpoofing.SPOOFABLE_FIELDS.first().name to "")
         }
     }
     var error by remember { mutableStateOf<String?>(null) }
     val invalidKey = stringResource(R.string.gs_invalid_key)
+    val invalidValue = stringResource(R.string.gs_invalid_value)
     val duplicateKey = stringResource(R.string.gs_duplicate_key)
+
+    val usedKeys = rows.map { it.first }.toSet()
+    val nextFree = GameSpoofing.SPOOFABLE_FIELDS.firstOrNull { it.name !in usedKeys }
 
     SpoofDialog(
         onDismissRequest = onDismiss,
@@ -662,20 +736,25 @@ private fun EditPropsDialog(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
                 rows.forEachIndexed { index, (key, value) ->
+                    val field = GameSpoofing.fieldFor(key)
+                    val choices = GameSpoofing.SPOOFABLE_FIELDS
+                        .filter { it.name == key || it.name !in usedKeys }
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                            SpoofTextField(
-                                value = key,
-                                onValueChange = { rows[index] = it.trim().uppercase() to value; error = null },
-                                label = stringResource(R.string.gs_key),
+                            FieldDropdown(
+                                selected = key,
+                                known = field != null,
+                                options = choices,
+                                onSelect = { rows[index] = it to value; error = null },
                             )
                             SpoofTextField(
                                 value = value,
                                 onValueChange = { rows[index] = key to it; error = null },
                                 label = stringResource(R.string.gs_value),
+                                placeholder = field?.example,
                             )
                         }
-                        IconButton(onClick = { rows.removeAt(index) }) {
+                        IconButton(onClick = { rows.removeAt(index); error = null }) {
                             Icon(
                                 Icons.Rounded.Close,
                                 contentDescription = stringResource(R.string.gs_remove),
@@ -683,7 +762,10 @@ private fun EditPropsDialog(
                         }
                     }
                 }
-                TextButton(onClick = { rows.add("" to "") }) {
+                TextButton(
+                    onClick = { nextFree?.let { rows.add(it.name to "") } },
+                    enabled = nextFree != null,
+                ) {
                     Icon(Icons.Rounded.Add, contentDescription = null, modifier = Modifier.size(18.dp))
                     Spacer(Modifier.width(6.dp))
                     Text(stringResource(R.string.gs_add_property))
@@ -701,10 +783,14 @@ private fun EditPropsDialog(
             TextButton(onClick = {
                 val filled = rows.map { (k, v) -> k.trim() to v.trim() }
                     .filter { (k, v) -> k.isNotEmpty() && v.isNotEmpty() }
-                val bad = filled.firstOrNull { !GameSpoofing.FIELD_NAME_REGEX.matches(it.first) }
+                val badKey = filled.firstOrNull { GameSpoofing.fieldFor(it.first) == null }
+                val badValue = filled.firstOrNull { (k, v) ->
+                    GameSpoofing.fieldFor(k)?.isValid(v) == false
+                }
                 when {
-                    bad != null -> error = invalidKey.format(bad.first)
+                    badKey != null -> error = invalidKey.format(badKey.first)
                     filled.map { it.first }.toSet().size != filled.size -> error = duplicateKey
+                    badValue != null -> error = invalidValue.format(badValue.first)
                     else -> onSave(linkedMapOf(*filled.toTypedArray()))
                 }
             }) { Text(stringResource(R.string.gs_save)) }
@@ -713,4 +799,71 @@ private fun EditPropsDialog(
             TextButton(onClick = onDismiss) { Text(stringResource(android.R.string.cancel)) }
         },
     )
+}
+
+/**
+ * Read-only field showing the selected Build field name; tapping it opens a menu of
+ * [options]. [known] is false for a key loaded from an older config that isn't in
+ * SPOOFABLE_FIELDS; the field is drawn in the error state until the user picks another.
+ */
+@Composable
+private fun FieldDropdown(
+    selected: String,
+    known: Boolean,
+    options: List<GameSpoofing.SpoofField>,
+    onSelect: (String) -> Unit,
+) {
+    var expanded by remember { mutableStateOf(false) }
+    Box {
+        SpoofTextField(
+            value = selected,
+            onValueChange = {},
+            readOnly = true,
+            label = stringResource(R.string.gs_key),
+            isError = !known,
+            supportingText = GameSpoofing.fieldFor(selected)?.qualifiedName,
+            trailingIcon = {
+                Icon(
+                    if (expanded) Icons.Rounded.ExpandLess else Icons.Rounded.ExpandMore,
+                    contentDescription = null,
+                )
+            },
+        )
+        // TextField consumes taps for focus, so the menu is opened by an overlay instead.
+        Box(
+            Modifier
+                .matchParentSize()
+                .clip(SpoofShapes.field)
+                .clickable { expanded = true },
+        )
+        DropdownMenu(
+            expanded = expanded,
+            onDismissRequest = { expanded = false },
+            modifier = Modifier.heightIn(max = 360.dp),
+        ) {
+            options.forEach { option ->
+                DropdownMenuItem(
+                    text = {
+                        Column {
+                            Text(option.name, style = MaterialTheme.typography.bodyLarge)
+                            Text(
+                                option.qualifiedName,
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
+                        }
+                    },
+                    onClick = {
+                        expanded = false
+                        onSelect(option.name)
+                    },
+                    trailingIcon = if (option.name == selected) {
+                        { Icon(Icons.Rounded.Check, contentDescription = null) }
+                    } else {
+                        null
+                    },
+                )
+            }
+        }
+    }
 }
