@@ -251,6 +251,20 @@
     <string name="monet_engine_luminance_factor_summary">値が高いほど明るい色になります</string>
     <string name="monet_engine_chroma_factor_title">彩度係数</string>
     <string name="monet_engine_chroma_factor_summary">値が高いほど色が濃くなります</string>
+    <string name="monet_palette_primary">原色</string>
+    <string name="monet_palette_secondary">二次色</string>
+    <string name="monet_palette_tertiary">三次色</string>
+    <string name="monet_palette_neutral">ニュートラルカラー</string>
+    <string name="monet_primary_chroma">プライマリークロマ</string>
+    <string name="monet_primary_value">プライマリートーン</string>
+    <string name="monet_secondary_chroma">セカンダリクロマ</string>
+    <string name="monet_secondary_value">セカンダリトーン</string>
+    <string name="monet_tertiary_chroma">三次クロマ</string>
+    <string name="monet_tertiary_value">三次クロマ</string>
+    <string name="monet_neutral_chroma">ニュートラルクロマ</string>
+    <string name="monet_neutral_value">ニュートラルトーン</string>
+    <string name="monet_palette_chroma_summary" formatted="false">100%が標準です。値を下げると色が抑えられ、0%にすると色が完全に消えます。値を上げると、色がより強くなります。</string>
+    <string name="monet_palette_value_summary" formatted="false">100%が標準です。値を下げると色は暗くなり、上げると明るくなります。極端な値を設定すると、テキストが読みにくくなる可能性があります。</string>
     <string name="monet_engine_whole_palette_title">パレット全体</string>
     <string name="monet_engine_whole_palette_summary">輝度とクロマの選択をセカンダリカラーにも反映させます</string>
     <string name="monet_engine_tint_background_title">背景を明るくする</string>
@@ -695,9 +709,12 @@
     <string name="enable_fingerprint_ripple_effect_summary">指紋認証でのロック解除時に波紋エフェクトを表示します</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">画面消灯時のアニメーション</string>
-    <string name="screen_off_animation_default">デフォルト</string>
+    <string name="screen_off_animation_colorfade">色のフェード</string>
     <string name="screen_off_animation_crt">ブラウン管</string>
     <string name="screen_off_animation_scale">スケール</string>
+    <string name="screen_off_animation_iris">アイリス</string>
+    <string name="screen_off_animation_desaturate">彩度を下げる</string>
+    <string name="screen_off_animation_shutter">シャッター</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">指紋認証時の振動</string>
     <string name="fp_success_vibrate_summary">指紋認証が成功した際に振動させます</string>
@@ -1370,6 +1387,7 @@
     <string name="spoof_wipe_playstore_title">Playストアのデータを消去しますか？</string>
     <string name="spoof_wipe_playstore_message">整合性判定の結果は、Playストアによってキャッシュされます。Playストアのデータを消去すると新しい設定が即座に反映されますが、同時にPlayストアからサインアウトされ、ダウンロードキューもクリアされます。</string>
     <string name="spoof_wipe_confirm">データを消去</string>
+    <string name="spoof_choice_select">選択</string>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">アクティブな設定</string>
     <string name="pif_no_config">設定が読み込まれていません</string>
@@ -1395,11 +1413,21 @@
     <string name="pif_no_devices_found">デバイスが見つかりません</string>
     <string name="pif_no_api_key">Flash Tool API キーの抽出に失敗しました</string>
     <string name="pif_select_device">デバイスを選択</string>
+    <string name="pif_device_suggested">%1$s · Suggested</string>
     <string name="pif_select_channel">チャンネルを選択</string>
     <string name="pif_channel_latest_release">最新のリリース</string>
     <string name="pif_channel_latest_release_summary">現在のベータ版OTAからのフィンガープリント</string>
     <string name="pif_channel_canary_release">Canary リリース</string>
     <string name="pif_channel_canary_release_summary">Android Flash ツールからの最新のCanary ビルド</string>
+    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <string name="pif_auto_refresh_title">フィンガープリントを自動更新する</string>
+    <string name="pif_auto_refresh_summary_on">%1$s チャンネルの新しい %2$s フィンガープリントを毎日チェックします。見つかった場合は適用され、Playストアのデータが消去されます</string>
+    <string name="pif_auto_refresh_summary_off">オフ。 %1$s フィンガープリント（%2$s）は、取得またはインポートしたときにのみ変更されます</string>
+    <string name="pif_auto_refresh_last_checked">最終確認: %1$s</string>
+    <string name="pif_auto_refresh_channel_name">Play Integrity Fix</string>
+    <string name="pif_auto_refresh_channel_description">新しいフィンガープリントが自動的に適用されたときに通知します</string>
+    <string name="pif_auto_refresh_notification_title">指紋が更新されました</string>
+    <string name="pif_auto_refresh_notification_text">新しい %1$s フィンガープリント（セキュリティパッチ %2$s）を適用し、Play ストア データをクリアしました。</string>
     <string name="pif_canary_build">Canary ビルド</string>
     <string name="pif_beta_build">ベータビルド</string>
     <string name="pif_patch_summary">セキュリティパッチ %1$s</string>
@@ -1450,6 +1478,22 @@
     <string name="ts_keybox_expiry">証明書の有効期限</string>
     <string name="ts_keybox_expiry_summary">最も期限が近いリーフ証明書の有効期限: %1$s</string>
     <string name="ts_days_left">%1$d日後</string>
+    <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
+    <string name="ts_alerts_title">キーボックスアラート</string>
+    <string name="ts_alerts_summary_off">オフ。キーボックスが破棄された場合や期限切れになる場合は通知されません</string>
+    <string name="ts_alerts_summary_on">Googleで毎日チェックします。キーボックスが無効になった場合に通知されます</string>
+    <string name="ts_alerts_summary_scheduled">失効状態については、Googleで毎日チェックします。 %1$sの期限切れリマインダー</string>
+    <string name="ts_alerts_summary_due">キーボックスの有効期限は1日未満です。すぐに新しいキーを読み込みます</string>
+    <string name="ts_alerts_summary_expired">キーボックスの有効期限が切れています。再度アラートを取得するには、新しいキーボックスを読み込んでください</string>
+    <string name="ts_alerts_summary_blocked">設定の通知がオフになっているため、アラートを表示できません</string>
+    <string name="ts_alerts_channel_name">キーボックスアラート</string>
+    <string name="ts_alerts_channel_description">TrickyStoreキーボックスがGoogleによって取り消されたり、1日で期限切れになったときに通知します</string>
+    <string name="ts_alert_expiry_title">キーボックスの有効期限は1日後に切れます</string>
+    <string name="ts_alert_expiry_text">TrickyStoreのキーボックスは %1$sに期限が切れます。すぐに新しいキーボックスを読み込んで、Play Integrity を維持します。</string>
+    <string name="ts_alert_revoked_title">キーボックスが取り消されました</string>
+    <string name="ts_alert_revoked_text">GoogleはTrickyStoreのキーボックスを取り消しました（理由： %1$s）。新しいキーボックスを読み込むまでStrong integrityは失敗します。</string>
+    <string name="ts_alert_suspended_title">キーボックスが一時停止されました</string>
+    <string name="ts_alert_suspended_text">GoogleはTrickyStoreのキーボックスを一時停止しました（理由： %1$s）。新しいキーボックスをロードするまでStrong integrityは失敗します。</string>
     <string name="ts_revocation_status">Googleの失効状態</string>
     <string name="ts_revocation_checking">Googleで確認しています…</string>
     <string name="ts_revocation_not_yet_checked">まだ確認されていません。タップして今すぐ確認してください</string>
@@ -1538,17 +1582,18 @@
     <string name="gs_remove_title">ゲームを削除しますか？</string>
     <string name="gs_remove_message">%s をゲームスプーフィングから削除しますか？</string>
     <string name="gs_edit_app">%s を編集</string>
-    <string name="gs_edit_hint">MODEL、MANUFACTURER、BRAND、DEVICEなどのビルドフィールド名。空の行は無視されます。</string>
+    <string name="gs_edit_hint">Pick field names such as MODEL, MANUFACTURER, BRAND or DEVICE. Empty rows are ignored.</string>
     <string name="gs_key">項目</string>
     <string name="gs_value">値</string>
+    <string name="gs_invalid_value">%s has an invalid value</string>
     <string name="gs_add_property">項目を追加</string>
-    <string name="gs_invalid_key">無効な項目名: %s</string>
+    <string name="gs_invalid_key">%s isn\'t a supported field. Pick one from the list or remove the row.</string>
     <string name="gs_duplicate_key">各項目は1回のみ設定できます</string>
     <string name="gs_save">保存</string>
     <string name="gs_footer_body">選択されたゲームは、指定したデバイス識別子をシステムのビルド情報として認識します。設定が変更されると、該当するゲームは自動的に再起動します。ゲームによっては、この仕組みを利用することで高フレームレートや高画質設定を解放できる場合があります。</string>
     <!-- Build details -->
     <string name="build_maintainer_title">デバイスのメンテナー</string>
-    <string name="build_maintainer_summary">非公式</string>
+    <string name="build_maintainer_unofficial">非公式</string>
     <!-- Settings UI -->
     <string name="settings_icon_title">設定のスタイル</string>
     <string name="settings_icon_summary">設定アプリの UI スタイルをカスタマイズしよう</string>
@@ -1597,4 +1642,9 @@
     <string name="shade_color_style_aosp">Android のストックカラー</string>
     <string name="shade_color_style_glass">壁紙が透けて見える、すりガラス風のクリアパネル</string>
     <string name="shade_color_style_tinted">アクセントカラーで色付けされたパネル（ぼかしの有無を選択可能）</string>
+    <!-- Battery saver dark theme -->
+    <string name="battery_saver_dark_theme_title">バッテリー セーバーで ON にする</string>
+    <string name="battery_saver_dark_theme_summary">バッテリーセーバーがオンのときは、ダークテーマが有効になり、そのまま維持されます。有機ELディスプレイでは、この設定が最もバッテリーを節約できます。</string>
+    <!-- Not shown in the UI; describes the preference for the settings API -->
+    <string name="battery_saver_dark_theme_purpose">バッテリーセーバーがオンになったときにダークテーマを有効にするかどうか、および、バッテリーセーバーがオフになるまでその設定の変更を禁止するかどうかを制御します。</string>
 </resources>

@@ -249,6 +249,20 @@
     <string name="monet_engine_luminance_factor_summary">較高的亮度會使色彩看起來較亮</string>
     <string name="monet_engine_chroma_factor_title">色彩濃度</string>
     <string name="monet_engine_chroma_factor_summary">較高的彩度會使色彩看起來更鮮明</string>
+    <string name="monet_palette_primary">Primary color</string>
+    <string name="monet_palette_secondary">Secondary color</string>
+    <string name="monet_palette_tertiary">Tertiary color</string>
+    <string name="monet_palette_neutral">Neutral color</string>
+    <string name="monet_primary_chroma">Primary chroma</string>
+    <string name="monet_primary_value">Primary tone</string>
+    <string name="monet_secondary_chroma">Secondary chroma</string>
+    <string name="monet_secondary_value">Secondary tone</string>
+    <string name="monet_tertiary_chroma">Tertiary chroma</string>
+    <string name="monet_tertiary_value">Tertiary tone</string>
+    <string name="monet_neutral_chroma">Neutral chroma</string>
+    <string name="monet_neutral_value">Neutral tone</string>
+    <string name="monet_palette_chroma_summary" formatted="false">100% is stock. Lower values mute the colors, 0% removes them entirely. Higher values make them stronger.</string>
+    <string name="monet_palette_value_summary" formatted="false">100% is stock. Lower values darken the colors, higher values lighten them. Extreme values can make text harder to read.</string>
     <string name="monet_engine_whole_palette_title">整體色盤</string>
     <string name="monet_engine_whole_palette_summary">讓亮度和色度選項也使用整體色盤的次要顏色</string>
     <string name="monet_engine_tint_background_title">背景著色</string>
@@ -693,9 +707,12 @@
     <string name="enable_fingerprint_ripple_effect_summary">以指紋解鎖時顯示波紋效果</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">螢幕關閉動畫</string>
-    <string name="screen_off_animation_default">預設</string>
+    <string name="screen_off_animation_colorfade">ColorFade</string>
     <string name="screen_off_animation_crt">陰極射線管</string>
     <string name="screen_off_animation_scale">縮放</string>
+    <string name="screen_off_animation_iris">Iris</string>
+    <string name="screen_off_animation_desaturate">Desaturate</string>
+    <string name="screen_off_animation_shutter">Shutter</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">指紋辨識震動</string>
     <string name="fp_success_vibrate_summary">指紋辨識通過時震動</string>
@@ -1368,6 +1385,7 @@
     <string name="spoof_wipe_playstore_title">Clear Play Store data?</string>
     <string name="spoof_wipe_playstore_message">Integrity verdicts are cached by the Play Store. Clearing its data makes the new configuration take effect right away, but signs the Play Store out and clears its download queue.</string>
     <string name="spoof_wipe_confirm">Clear data</string>
+    <string name="spoof_choice_select">選取</string>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">活動配置</string>
     <string name="pif_no_config">未載入任何配置</string>
@@ -1393,11 +1411,21 @@
     <string name="pif_no_devices_found">No devices found</string>
     <string name="pif_no_api_key">Failed to extract Flash Tool API key</string>
     <string name="pif_select_device">選擇裝置</string>
+    <string name="pif_device_suggested">%1$s · Suggested</string>
     <string name="pif_select_channel">選取通道</string>
     <string name="pif_channel_latest_release">最新正式版</string>
     <string name="pif_channel_latest_release_summary">Fingerprint from the current beta OTA</string>
     <string name="pif_channel_canary_release">金絲雀版本</string>
     <string name="pif_channel_canary_release_summary">Newest Canary build from the Android Flash Tool</string>
+    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <string name="pif_auto_refresh_title">Auto-refresh fingerprint</string>
+    <string name="pif_auto_refresh_summary_on">Checks daily for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
+    <string name="pif_auto_refresh_summary_off">Off. The %1$s fingerprint (%2$s) only changes when you fetch or import one</string>
+    <string name="pif_auto_refresh_last_checked">Last checked: %1$s</string>
+    <string name="pif_auto_refresh_channel_name">裝置完整性修正</string>
+    <string name="pif_auto_refresh_channel_description">Tells you when a newer fingerprint was applied automatically</string>
+    <string name="pif_auto_refresh_notification_title">Fingerprint updated</string>
+    <string name="pif_auto_refresh_notification_text">Applied a newer %1$s fingerprint (security patch %2$s) and cleared Play Store data.</string>
     <string name="pif_canary_build">Canary build</string>
     <string name="pif_beta_build">Beta build</string>
     <string name="pif_patch_summary">Security patch %1$s</string>
@@ -1448,6 +1476,22 @@
     <string name="ts_keybox_expiry">Certificate expiry</string>
     <string name="ts_keybox_expiry_summary">Earliest leaf certificate expires on %1$s</string>
     <string name="ts_days_left">%1$dd left</string>
+    <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
+    <string name="ts_alerts_title">Keybox alerts</string>
+    <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
+    <string name="ts_alerts_summary_on">Checks daily with Google. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks daily with Google for revocation status. Expiry reminder on %1$s</string>
+    <string name="ts_alerts_summary_due">The keybox expires in less than a day, load a new one soon</string>
+    <string name="ts_alerts_summary_expired">The keybox has expired. Load a new keybox to get alerts again</string>
+    <string name="ts_alerts_summary_blocked">Notifications for Settings are turned off, so alerts can\'t be shown</string>
+    <string name="ts_alerts_channel_name">Keybox alerts</string>
+    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or expires in one day</string>
+    <string name="ts_alert_expiry_title">Keybox expires in 1 day</string>
+    <string name="ts_alert_expiry_text">Your TrickyStore keybox expires on %1$s. Load a new keybox soon to keep passing Play Integrity.</string>
+    <string name="ts_alert_revoked_title">Keybox revoked</string>
+    <string name="ts_alert_revoked_text">Google has revoked your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>
+    <string name="ts_alert_suspended_title">Keybox suspended</string>
+    <string name="ts_alert_suspended_text">Google has suspended your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>
     <string name="ts_revocation_status">Google revocation status</string>
     <string name="ts_revocation_checking">Checking with Google…</string>
     <string name="ts_revocation_not_yet_checked">Not checked yet. Tap to check now</string>
@@ -1536,17 +1580,18 @@
     <string name="gs_remove_title">要移除遊戲嗎？</string>
     <string name="gs_remove_message">要將%s從遊戲偽裝中移除嗎？</string>
     <string name="gs_edit_app">編輯%s</string>
-    <string name="gs_edit_hint">Build field names such as MODEL, MANUFACTURER, BRAND or DEVICE. Empty rows are ignored.</string>
+    <string name="gs_edit_hint">Pick field names such as MODEL, MANUFACTURER, BRAND or DEVICE. Empty rows are ignored.</string>
     <string name="gs_key">Field</string>
     <string name="gs_value">值</string>
+    <string name="gs_invalid_value">%s has an invalid value</string>
     <string name="gs_add_property">Add field</string>
-    <string name="gs_invalid_key">Invalid field name: %s</string>
+    <string name="gs_invalid_key">%s isn\'t a supported field. Pick one from the list or remove the row.</string>
     <string name="gs_duplicate_key">Each field can only be set once</string>
     <string name="gs_save">儲存</string>
     <string name="gs_footer_body">The selected game sees the chosen device identity in its Build fields. Games are restarted when their configuration changes. Some games use this to unlock higher frame rates or graphics settings.</string>
     <!-- Build details -->
     <string name="build_maintainer_title">裝置維護者</string>
-    <string name="build_maintainer_summary">非官方</string>
+    <string name="build_maintainer_unofficial">非官方</string>
     <!-- Settings UI -->
     <string name="settings_icon_title">設定樣式</string>
     <string name="settings_icon_summary">自訂「設定」應用程式的使用者介面樣式</string>
@@ -1595,4 +1640,9 @@
     <string name="shade_color_style_aosp">Stock Android colors</string>
     <string name="shade_color_style_glass">Clear, frosted panel that lets your wallpaper show through</string>
     <string name="shade_color_style_tinted">Panel tinted with your accent color, with or without blur</string>
+    <!-- Battery saver dark theme -->
+    <string name="battery_saver_dark_theme_title">Turn on with Battery Saver</string>
+    <string name="battery_saver_dark_theme_summary">Dark theme turns on and stays on while Battery Saver is on. Saves the most battery on OLED screens.</string>
+    <!-- Not shown in the UI; describes the preference for the settings API -->
+    <string name="battery_saver_dark_theme_purpose">Controls whether Battery Saver turns on dark theme and prevents changing it until Battery Saver turns off.</string>
 </resources>

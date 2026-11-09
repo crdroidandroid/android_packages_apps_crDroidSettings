@@ -253,6 +253,20 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="monet_engine_luminance_factor_summary">Wyższe wartości tworzą jaśniejsze kolory</string>
     <string name="monet_engine_chroma_factor_title">Współczynnik barwy</string>
     <string name="monet_engine_chroma_factor_summary">Wyższe wartości tworzą mocniejsze kolory</string>
+    <string name="monet_palette_primary">Kolor podstawowy</string>
+    <string name="monet_palette_secondary">Kolor drugorzędny</string>
+    <string name="monet_palette_tertiary">Kolor trzeciorzędny</string>
+    <string name="monet_palette_neutral">Kolor neutralny</string>
+    <string name="monet_primary_chroma">Nasycenie podstawowe</string>
+    <string name="monet_primary_value">Ton podstawowy</string>
+    <string name="monet_secondary_chroma">Nasycenie drugorzędne</string>
+    <string name="monet_secondary_value">Ton drugorzędny</string>
+    <string name="monet_tertiary_chroma">Nasycenie trzeciorzędne</string>
+    <string name="monet_tertiary_value">Ton trzeciorzędny</string>
+    <string name="monet_neutral_chroma">Nasycenie neutralne</string>
+    <string name="monet_neutral_value">Ton neutralny</string>
+    <string name="monet_palette_chroma_summary" formatted="false">Wartość 100% oznacza ustawienia domyślne. Niższe wartości powodują stłumienie kolorów, a wartość 0% całkowicie je usuwa. Wyższe wartości powodują ich wzmocnienie.</string>
+    <string name="monet_palette_value_summary" formatted="false">100% to wartość domyślna. Niższe wartości powodują przyciemnienie kolorów, a wyższe – ich rozjaśnienie. Skrajne wartości mogą utrudniać czytanie tekstu.</string>
     <string name="monet_engine_whole_palette_title">Cała paleta</string>
     <string name="monet_engine_whole_palette_summary">Spraw, aby wybór jasności i chrominancji wpływał również na kolory tła</string>
     <string name="monet_engine_tint_background_title">Odcień tła</string>
@@ -371,7 +385,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="add_font">Dodaj czcionkę</string>
     <string name="toast_failed_apply_font">Nie udało się zastosować czcionki</string>
     <string name="toast_invalid_font_file">Nieprawidłowy plik czcionki</string>
-    <string name="font_default">Domyślny</string>
+    <string name="font_default">Domyślna</string>
     <string name="font_current">Aktualna czcionka</string>
     <string name="font_selected">Wybrano</string>
     <string name="font_system_section">Czcionki systemowe</string>
@@ -697,9 +711,12 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="enable_fingerprint_ripple_effect_summary">Pokazuj efekt fali podczas odblokowywania odciskiem palca</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Animacja wyłączenia ekranu</string>
-    <string name="screen_off_animation_default">Domyślna</string>
+    <string name="screen_off_animation_colorfade">Zanikanie kolorów</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Skala</string>
+    <string name="screen_off_animation_iris">Źrenica</string>
+    <string name="screen_off_animation_desaturate">Zmniejszanie nasycenia</string>
+    <string name="screen_off_animation_shutter">Migawka</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Wibracja uwierzytelniania odcisku palca</string>
     <string name="fp_success_vibrate_summary">Wibracje po udanym uwierzytelnieniu odcisku palca</string>
@@ -1380,6 +1397,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="spoof_wipe_playstore_title">Wyczyścić dane Sklepu Google Play?</string>
     <string name="spoof_wipe_playstore_message">Wyniki sprawdzania integralności są przechowywane w pamięci podręcznej Sklepu Play. Wyczyszczenie jego danych powoduje natychmiastowe zastosowanie nowej konfiguracji, ale powoduje również wylogowanie ze Sklepu Play i wyczyszczenie jego kolejki pobrań.</string>
     <string name="spoof_wipe_confirm">Wyczyść dane</string>
+    <string name="spoof_choice_select">Wybierz</string>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Aktywna konfiguracja</string>
     <string name="pif_no_config">Brak załadowanych konfiguracji</string>
@@ -1405,11 +1423,21 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pif_no_devices_found">Nie znaleziono urządzeń</string>
     <string name="pif_no_api_key">Nie udało się wyodrębnić klucza API Flash Tool</string>
     <string name="pif_select_device">Wybierz urządzenie</string>
+    <string name="pif_device_suggested">%1$s · Suggested</string>
     <string name="pif_select_channel">Wybierz kanał</string>
     <string name="pif_channel_latest_release">Najnowsze wydanie</string>
     <string name="pif_channel_latest_release_summary">Odcisk palca z aktualnej wersji beta OTA</string>
     <string name="pif_channel_canary_release">Wydanie Canary</string>
     <string name="pif_channel_canary_release_summary">Najnowsza wersja Canary z narzędzia Android Flash Tool</string>
+    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <string name="pif_auto_refresh_title">Automatyczne odświeżanie odcisku palca</string>
+    <string name="pif_auto_refresh_summary_on">Codziennie sprawdza, czy na kanale %2$s pojawił się nowszy odcisk %1$s. W przypadku znalezienia takiego odcisku zostaje on zastosowany, a dane ze Sklepu Play są usuwane</string>
+    <string name="pif_auto_refresh_summary_off">Wyłączono. Odcisk palca %1$s (%2$s) zmienia się tylko po pobraniu lub zaimportowaniu jednego</string>
+    <string name="pif_auto_refresh_last_checked">Ostatnio sprawdzane: %1$s</string>
+    <string name="pif_auto_refresh_channel_name">Naprawa integralności Google Play</string>
+    <string name="pif_auto_refresh_channel_description">Informuje, kiedy automatycznie dodano nowszy odcisk palca</string>
+    <string name="pif_auto_refresh_notification_title">Odcisk palca zaktualizowany</string>
+    <string name="pif_auto_refresh_notification_text">Zainstalowano nowszą wersję %1$s (poprawka zabezpieczeń %2$s) i wyczyszczono dane ze Sklepu Play.</string>
     <string name="pif_canary_build">Kompilacja Canary</string>
     <string name="pif_beta_build">Kompilacja Beta</string>
     <string name="pif_patch_summary">Poprawka bezpieczeństwa: %1$s</string>
@@ -1419,7 +1447,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pif_value_empty">Wartość nie może być pusta</string>
     <string name="pif_value_not_integer">Musi być liczbą całkowitą</string>
     <string name="pif_invalid_fingerprint">Nieprawidłowy format odcisku palca</string>
-    <string name="pif_footer_body">1. Dotknij „Pobierz odcisk Pixel”, wybierz kanał oraz urządzenie.\n2. Jeśli nie znaleziono żadnych urządzeń, zaimportuj działającą konfigurację PIF z zaufanego źródła. Pliki konfiguracyjne nie są dostarczane; musisz znaleźć je samodzielnie.\n3. Sprawdź ponownie status integralności Play.\n\nDroidGuard i Sklep Play są automatycznie uruchamiane ponownie po zmianie konfiguracji. Wczytanie wygasłej konfiguracji PIF spowoduje niepowodzenie weryfikacji integralności za pomocą TrickyStore, nawet przy użyciu prawidłowego magazynu kluczy.\n\nPodczas korzystania z magazynu kluczy pozostaw opcję „Spoof keystore provider” wyłączoną, ponieważ omija ona proces poświadczania magazynu kluczy.</string>
+    <string name="pif_footer_body">1. Dotknij „Pobierz odcisk palca Pixel”, wybierz kanał oraz urządzenie.\n2. Jeśli nie znaleziono żadnych urządzeń, zaimportuj działającą konfigurację PIF z zaufanego źródła. Pliki konfiguracyjne nie są dostarczane; musisz znaleźć je samodzielnie.\n3. Sprawdź ponownie status integralności Play.\n\nDroidGuard i Sklep Play są automatycznie uruchamiane ponownie po zmianie konfiguracji. Wczytanie wygasłej konfiguracji PIF spowoduje niepowodzenie weryfikacji integralności za pomocą TrickyStore, nawet przy użyciu prawidłowego magazynu kluczy.\n\nPodczas korzystania z magazynu kluczy pozostaw opcję „Fałszuj dostawcę zestawu kluczy” wyłączoną, ponieważ omija ona proces poświadczania magazynu kluczy.</string>
     <string name="pif_flags_title">Opcje fałszowania</string>
     <string name="pif_flag_spoof_build_title">Pola fałszowania kompilacji</string>
     <string name="pif_flag_spoof_build_summary">Stosuje konfigurację kompilacji do DroidGuard</string>
@@ -1460,6 +1488,22 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_keybox_expiry">Wygaśnięcie certyfikatu</string>
     <string name="ts_keybox_expiry_summary">Najwcześniejszy certyfikat \"liść\" traci ważność %1$s</string>
     <string name="ts_days_left">Pozostało %1$dd</string>
+    <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
+    <string name="ts_alerts_title">Powiadomienia zestawu kluczy</string>
+    <string name="ts_alerts_summary_off">Wyłączono. Nie otrzymasz powiadomienia, jeśli uprawnienia do skrzynki kluczy zostaną cofnięte lub wkrótce wygasną</string>
+    <string name="ts_alerts_summary_on">Codziennie sprawdza to za pomocą Google. Otrzymasz powiadomienie, jeśli dostęp do skrzynki kluczy zostanie cofnięty</string>
+    <string name="ts_alerts_summary_scheduled">Codziennie sprawdza w Google, czy certyfikat nie został unieważniony. Przypomnienie o wygaśnięciu certyfikatu %1$s</string>
+    <string name="ts_alerts_summary_due">Okres ważności skrzynki kluczy wygasa za niecały dzień – wkrótce załaduj nową</string>
+    <string name="ts_alerts_summary_expired">Okres ważności skrzynki kluczy wygasł. Załaduj nową skrzynkę kluczy, aby ponownie otrzymywać powiadomienia</string>
+    <string name="ts_alerts_summary_blocked">Powiadomienia dotyczące ustawień są wyłączone, więc alerty nie mogą być wyświetlane</string>
+    <string name="ts_alerts_channel_name">Powiadomienia zestawu kluczy</string>
+    <string name="ts_alerts_channel_description">Powiadamia cię, gdy skrzynka kluczy TrickyStore zostanie cofnięta przez Google lub jej ważność wygaśnie za jeden dzień</string>
+    <string name="ts_alert_expiry_title">Okres ważności skrzynki kluczy wygasa za 1 dzień</string>
+    <string name="ts_alert_expiry_text">Twój zestaw kluczy TrickyStore traci ważność %1$s. Jak najszybciej załaduj nowy zestaw kluczy, aby nadal spełniać wymagania integralności Play.</string>
+    <string name="ts_alert_revoked_title">Odrzucono zestaw kluczy</string>
+    <string name="ts_alert_revoked_text">Firma Google unieważniła twój klucz TrickyStore (przyczyna: %1$s). Sprawdzanie integralności zakończy się niepowodzeniem, dopóki nie załadujesz nowego klucza.</string>
+    <string name="ts_alert_suspended_title">Zestaw kluczy zawieszony</string>
+    <string name="ts_alert_suspended_text">Firma Google zawiesiła twoją skrzynkę kluczy TrickyStore (przyczyna: %1$s). Sprawdzanie integralności zakończy się niepowodzeniem, dopóki nie załadujesz nowej skrzynki kluczy.</string>
     <string name="ts_revocation_status">Status unieważnienia w Google</string>
     <string name="ts_revocation_checking">Sprawdzanie z Google…</string>
     <string name="ts_revocation_not_yet_checked">Jeszcze nie sprawdzono. Dotknij, aby sprawdzić teraz</string>
@@ -1515,7 +1559,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
         <item quantity="other">Dodano %d aplikacji</item>
     </plurals>
     <string name="ts_failed">Niepowodzenie: %s</string>
-    <string name="ts_footer_body">1. Pobierz poprawny plik XML zestawu kluczy z zaufanego źródła. Zestawy kluczy nie są udostępniane; musisz samodzielnie znaleźć odpowiedni.\n2. Naciśnij „Importuj zestaw kluczy” i załaduj plik. Jego status unieważnienia jest sprawdzany w serwisie Google natychmiast, a następnie co 24 godziny, gdy przeglądasz ten ekran.\n3. Usługi Google Play, Sklep Play i inne popularne cele są dodawane automatycznie. Aby je zmienić, otwórz opcję „Zarządzaj aplikacjami docelowymi”.\n4. Ustaw tryb docelowy na „Liść”, jeśli twoje urządzenie posiada działające środowisko TEE, w przeciwnym razie pozostaw ustawienie „Auto”.\n5. Ponownie sprawdź status integralności w Play.\n\nJeśli Google unieważni zestaw kluczy, może nadal zezwolić na przejście do poziomu integralności urządzenia, nawet jeśli test silnej integralności zakończy się niepowodzeniem.</string>
+    <string name="ts_footer_body">1. Pobierz poprawny plik XML zestawu kluczy z zaufanego źródła. Zestawy kluczy nie są udostępniane; musisz samodzielnie znaleźć odpowiedni.\n2. Naciśnij „Importuj zestaw kluczy” i załaduj plik. Jego status unieważnienia jest sprawdzany w serwisie Google natychmiast, a następnie co 24 godziny, gdy przeglądasz ten ekran.\n3. Usługi Google Play, Sklep Play i inne popularne cele są dodawane automatycznie. Aby je zmienić, otwórz opcję „Zarządzaj aplikacjami docelowymi”.\n4. Ustaw tryb docelowy na „Liść”, jeśli twoje urządzenie posiada działające środowisko TEE, w przeciwnym razie pozostaw ustawienie „Automatyczny”.\n5. Ponownie sprawdź status integralności w Play.\n\nJeśli Google unieważni zestaw kluczy, może nadal zezwolić na przejście do poziomu integralności urządzenia, nawet jeśli test silnej integralności zakończy się niepowodzeniem.</string>
     <string name="ts_verification_mode">Tryb weryfikacji</string>
     <string name="ts_verification_auto_count">%1$d auto</string>
     <string name="ts_verification_cert_count">%1$d cert</string>
@@ -1529,7 +1573,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_patch_device">Poziom poprawki urządzenia (bez nadpisywania)</string>
     <string name="ts_patch_custom_blocks">Indywidualne poziomy dla poszczególnych partycji lub aplikacji</string>
     <string name="ts_patch_stale_chip">Stary 12+ miesięcy</string>
-    <string name="ts_mode_auto">Automatycznie</string>
+    <string name="ts_mode_auto">Automatyczny</string>
     <string name="ts_mode_leaf">Liść</string>
     <string name="ts_mode_cert">Certyfikat</string>
     <string name="ts_mode_skip">Pomiń</string>
@@ -1551,17 +1595,18 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="gs_remove_title">Usunąć grę?</string>
     <string name="gs_remove_message">Usunąć %s z listy sfałszowanych gier?</string>
     <string name="gs_edit_app">Edytuj %s</string>
-    <string name="gs_edit_hint">Wprowadź nazwy pól, takie jak MODEL, PRODUCENT, MARKA lub URZĄDZENIE. Puste wiersze są pomijane.</string>
+    <string name="gs_edit_hint">Pick field names such as MODEL, MANUFACTURER, BRAND or DEVICE. Empty rows are ignored.</string>
     <string name="gs_key">Pole</string>
     <string name="gs_value">Wartość</string>
+    <string name="gs_invalid_value">%s has an invalid value</string>
     <string name="gs_add_property">Dodaj pole</string>
-    <string name="gs_invalid_key">Nieprawidłowa nazwa pola: %s</string>
+    <string name="gs_invalid_key">%s isn\'t a supported field. Pick one from the list or remove the row.</string>
     <string name="gs_duplicate_key">Każde pole można ustawić tylko raz</string>
     <string name="gs_save">Zapisz</string>
     <string name="gs_footer_body">W wybranej grze w polach „Build” widoczna jest identyfikacja wybranego urządzenia. Gry uruchamiają się ponownie po zmianie ich konfiguracji. Niektóre gry wykorzystują tę funkcję do odblokowania wyższych częstotliwości odświeżania lub lepszych ustawień graficznych.</string>
     <!-- Build details -->
     <string name="build_maintainer_title">Opiekun urządzenia</string>
-    <string name="build_maintainer_summary">Nieoficjalny</string>
+    <string name="build_maintainer_unofficial">Nieoficjalny</string>
     <!-- Settings UI -->
     <string name="settings_icon_title">Styl ustawień</string>
     <string name="settings_icon_summary">Dostosuj styl interfejsu aplikacji ustawienia</string>
@@ -1610,4 +1655,9 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="shade_color_style_aosp">Domyślne kolory Android</string>
     <string name="shade_color_style_glass">Przezroczysty, matowy panel, przez który prześwituje tapeta</string>
     <string name="shade_color_style_tinted">Panel w kolorze akcentującym, z efektem rozmycia lub bez</string>
+    <!-- Battery saver dark theme -->
+    <string name="battery_saver_dark_theme_title">Włącz z oszczędzaniem baterii</string>
+    <string name="battery_saver_dark_theme_summary">Ciemny motyw włącza się i pozostaje aktywny, gdy włączona jest funkcja oszczędzania baterii. Zapewnia to największą oszczędność baterii na ekranach OLED.</string>
+    <!-- Not shown in the UI; describes the preference for the settings API -->
+    <string name="battery_saver_dark_theme_purpose">Określa, czy tryb oszczędzania baterii włącza ciemny motyw i uniemożliwia jego zmianę do momentu wyłączenia tego trybu.</string>
 </resources>
