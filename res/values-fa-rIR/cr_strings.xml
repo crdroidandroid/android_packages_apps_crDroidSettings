@@ -251,20 +251,20 @@
     <string name="monet_engine_luminance_factor_summary">مقادیر بالاتر رنگ های روشن تری تولید می کنند</string>
     <string name="monet_engine_chroma_factor_title">عامل کروما</string>
     <string name="monet_engine_chroma_factor_summary">مقادیر بالاتر رنگ های قوی تری تولید می کنند</string>
-    <string name="monet_palette_primary">Primary color</string>
-    <string name="monet_palette_secondary">Secondary color</string>
-    <string name="monet_palette_tertiary">Tertiary color</string>
-    <string name="monet_palette_neutral">Neutral color</string>
-    <string name="monet_primary_chroma">Primary chroma</string>
-    <string name="monet_primary_value">Primary tone</string>
-    <string name="monet_secondary_chroma">Secondary chroma</string>
-    <string name="monet_secondary_value">Secondary tone</string>
-    <string name="monet_tertiary_chroma">Tertiary chroma</string>
-    <string name="monet_tertiary_value">Tertiary tone</string>
-    <string name="monet_neutral_chroma">Neutral chroma</string>
-    <string name="monet_neutral_value">Neutral tone</string>
-    <string name="monet_palette_chroma_summary" formatted="false">100% is stock. Lower values mute the colors, 0% removes them entirely. Higher values make them stronger.</string>
-    <string name="monet_palette_value_summary" formatted="false">100% is stock. Lower values darken the colors, higher values lighten them. Extreme values can make text harder to read.</string>
+    <string name="monet_palette_primary">رنگ اصلی</string>
+    <string name="monet_palette_secondary">رنگ ثانویه</string>
+    <string name="monet_palette_tertiary">رنگ ثالث</string>
+    <string name="monet_palette_neutral">رنگ طبیعی</string>
+    <string name="monet_primary_chroma">کروما اصلی</string>
+    <string name="monet_primary_value">لهجه اصلی</string>
+    <string name="monet_secondary_chroma">کروما ثانویه</string>
+    <string name="monet_secondary_value">لهجه ثانویه</string>
+    <string name="monet_tertiary_chroma">کرومای ثالثیه</string>
+    <string name="monet_tertiary_value">لهجه ثالثیه</string>
+    <string name="monet_neutral_chroma">کروما طبیعی</string>
+    <string name="monet_neutral_value">لهجه طبیعی</string>
+    <string name="monet_palette_chroma_summary" formatted="false">۱۰۰٪ رنگ‌های اصلی هستند. مقادیر پایین‌تر، رنگ‌ها را کم‌رنگ‌تر می‌کنند، ۰٪ آن‌ها را به‌طور کامل حذف می‌کند. مقادیر بالاتر، آن‌ها را قوی‌تر می‌کند.</string>
+    <string name="monet_palette_value_summary" formatted="false">۱۰۰٪ رنگ‌های اصلی هستند. مقادیر کمتر، رنگ‌ها را تیره‌تر و مقادیر بالاتر، آن‌ها را روشن‌تر می‌کنند. مقادیر خیلی زیاد می‌توانند خواندن متن را دشوارتر کنند.</string>
     <string name="monet_engine_whole_palette_title">پالت کامل</string>
     <string name="monet_engine_whole_palette_summary">نورتابی و پراکنده انتخابی روی رنگ‌های ثانویه نیز تأثیر بگذارد</string>
     <string name="monet_engine_tint_background_title">رنگ پس زمینه</string>
@@ -709,12 +709,12 @@
     <string name="enable_fingerprint_ripple_effect_summary">نمایش جلوه موج دار در باز کردن قفل با اثر انگشت</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">انیمیشن خاموش شدن صفحه</string>
-    <string name="screen_off_animation_colorfade">ColorFade</string>
+    <string name="screen_off_animation_colorfade">رنگ محو شده</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">مقیاس</string>
-    <string name="screen_off_animation_iris">Iris</string>
-    <string name="screen_off_animation_desaturate">Desaturate</string>
-    <string name="screen_off_animation_shutter">Shutter</string>
+    <string name="screen_off_animation_iris">قوس</string>
+    <string name="screen_off_animation_desaturate">غیر اشباع</string>
+    <string name="screen_off_animation_shutter">دیافراگم</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">لرزش هنگام تایید اثر انگشت</string>
     <string name="fp_success_vibrate_summary">لرزش زمانی که شناسایی اثر انگشت موفقیت امیز باشد</string>
@@ -1415,21 +1415,21 @@
     <string name="pif_no_devices_found">دستگاهی پیدا نشد</string>
     <string name="pif_no_api_key">استخراج کلید API ابزار فلش ناموفق بود</string>
     <string name="pif_select_device">انتخاب دستگاه</string>
-    <string name="pif_device_suggested">%1$s · Suggested</string>
+    <string name="pif_device_suggested">%1$s - پیشنهادی</string>
     <string name="pif_select_channel">انتخاب کانال</string>
     <string name="pif_channel_latest_release">آخرین نسخه</string>
     <string name="pif_channel_latest_release_summary">اثر انگشت از نسخه بتای فعلی بروزرسانی بی‌سیم</string>
     <string name="pif_channel_canary_release">نسخه کاناری</string>
     <string name="pif_channel_canary_release_summary">جدیدترین نسخه قناری از طریق ابزار فلش اندروید</string>
     <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
-    <string name="pif_auto_refresh_title">Auto-refresh fingerprint</string>
-    <string name="pif_auto_refresh_summary_on">Checks daily for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
-    <string name="pif_auto_refresh_summary_off">Off. The %1$s fingerprint (%2$s) only changes when you fetch or import one</string>
-    <string name="pif_auto_refresh_last_checked">Last checked: %1$s</string>
+    <string name="pif_auto_refresh_title">تازه‌سازی خودکار اثرانگشت</string>
+    <string name="pif_auto_refresh_summary_on">روزانه اثر انگشت جدیدتر %1$s را در کانال %2$s بررسی می‌کند. وقتی اثری پیدا شود، اعمال شده و داده‌های فروشگاه پلی پاک می‌شود</string>
+    <string name="pif_auto_refresh_summary_off">خاموش.%1$s اثر انگشت (%2$s) فقط زمانی تغییر می‌کند که شما یکی از آنها را دریافت یا وارد کنید</string>
+    <string name="pif_auto_refresh_last_checked">آخرین بررسی: %1$s</string>
     <string name="pif_auto_refresh_channel_name">رفع مشکل Play Integrity</string>
-    <string name="pif_auto_refresh_channel_description">Tells you when a newer fingerprint was applied automatically</string>
-    <string name="pif_auto_refresh_notification_title">Fingerprint updated</string>
-    <string name="pif_auto_refresh_notification_text">Applied a newer %1$s fingerprint (security patch %2$s) and cleared Play Store data.</string>
+    <string name="pif_auto_refresh_channel_description">به شما می‌گوید چه زمانی اثر انگشت جدیدتری به طور خودکار اعمال شده است</string>
+    <string name="pif_auto_refresh_notification_title">اثرانگشت به روز شد</string>
+    <string name="pif_auto_refresh_notification_text">اثر انگشت جدیدتر %1$s (وصله امنیتی %2$s) را اعمال شد و داده‌های فروشگاه پلی پاک شدند.</string>
     <string name="pif_canary_build">نسخه قناری</string>
     <string name="pif_beta_build">نسخه آزمایشی</string>
     <string name="pif_patch_summary">وصله امنیتی %1$s</string>
@@ -1481,16 +1481,16 @@
     <string name="ts_keybox_expiry_summary">قدیمی‌ترین گواهی برگ در تاریخ %1$s منقضی می‌شود</string>
     <string name="ts_days_left">%1$dروز باقی‌مانده</string>
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
-    <string name="ts_alerts_title">Keybox alerts</string>
-    <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
-    <string name="ts_alerts_summary_on">Checks daily with Google. You\'ll be notified if the keybox is revoked</string>
-    <string name="ts_alerts_summary_scheduled">Checks daily with Google for revocation status. Expiry reminder on %1$s</string>
-    <string name="ts_alerts_summary_due">The keybox expires in less than a day, load a new one soon</string>
-    <string name="ts_alerts_summary_expired">The keybox has expired. Load a new keybox to get alerts again</string>
-    <string name="ts_alerts_summary_blocked">Notifications for Settings are turned off, so alerts can\'t be shown</string>
-    <string name="ts_alerts_channel_name">Keybox alerts</string>
-    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or expires in one day</string>
-    <string name="ts_alert_expiry_title">Keybox expires in 1 day</string>
+    <string name="ts_alerts_title">هشدارهای جعبه کلید</string>
+    <string name="ts_alerts_summary_off">خاموش. در صورت لغو یا نزدیک شدن به انقضای صفحه‌کلید، به شما اطلاع داده نخواهد شد</string>
+    <string name="ts_alerts_summary_on">روزانه با گوگل بررسی می‌شود. در صورت لغو شدن جعبه‌کلید، به شما اطلاع داده خواهد شد</string>
+    <string name="ts_alerts_summary_scheduled">وضعیت ابطال را روزانه با گوگل بررسی می‌کند. یادآوری انقضا در %1$s</string>
+    <string name="ts_alerts_summary_due">جعبه‌کلید کمتر از یک روز دیگر منقضی می‌شود، یک جعبه‌کلید جدید را نصب کنید</string>
+    <string name="ts_alerts_summary_expired">جعبه‌کلید منقضی شده است. برای دریافت مجدد هشدارها، یک جعبه‌کلید جدید بارگذاری کنید</string>
+    <string name="ts_alerts_summary_blocked">اعلان‌های تنظیمات خاموش هستند، بنابراین هشدارها نمایش داده نمی‌شوند</string>
+    <string name="ts_alerts_channel_name">هشدارهای جعبه کلید</string>
+    <string name="ts_alerts_channel_description">وقتی که گوگل جعبه‌کلید TrickyStore را لغو می‌کند یا در عرض یک روز منقضی می‌شود، به شما اطلاع می‌دهد</string>
+    <string name="ts_alert_expiry_title">جعبه‌کلید تا ۱ روز دیگر منقضی می‌شود</string>
     <string name="ts_alert_expiry_text">Your TrickyStore keybox expires on %1$s. Load a new keybox soon to keep passing Play Integrity.</string>
     <string name="ts_alert_revoked_title">جعبه کلید باطل شد</string>
     <string name="ts_alert_revoked_text">Google has revoked your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>
