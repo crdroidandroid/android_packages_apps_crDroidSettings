@@ -353,6 +353,32 @@ private fun PendingRestartBanner(
     modifier: Modifier = Modifier,
 ) {
     val reboot = pending.kind == RestartKind.REBOOT
+    RestartBanner(
+        title = stringResource(
+            if (reboot) R.string.font_pending_reboot_title
+            else R.string.font_pending_systemui_title,
+        ),
+        body = stringResource(
+            if (reboot) R.string.font_pending_reboot_body
+            else R.string.font_pending_systemui_body,
+            pending.fontLabel,
+        ),
+        action = stringResource(
+            if (reboot) R.string.action_reboot_now else R.string.font_restart_systemui,
+        ),
+        onRestart = onRestart,
+        modifier = modifier,
+    )
+}
+
+@Composable
+internal fun RestartBanner(
+    title: String,
+    body: String,
+    action: String,
+    onRestart: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     Surface(
         modifier = modifier.fillMaxWidth(),
         shape = SpoofShapes.single,
@@ -365,22 +391,12 @@ private fun PendingRestartBanner(
                 Spacer(Modifier.width(12.dp))
                 Column(Modifier.weight(1f)) {
                     Text(
-                        text = stringResource(
-                            if (reboot) R.string.font_pending_reboot_title
-                            else R.string.font_pending_systemui_title,
-                        ),
+                        text = title,
                         style = MaterialTheme.typography.titleSmall,
                         fontWeight = FontWeight.SemiBold,
                     )
                     Spacer(Modifier.height(2.dp))
-                    Text(
-                        text = stringResource(
-                            if (reboot) R.string.font_pending_reboot_body
-                            else R.string.font_pending_systemui_body,
-                            pending.fontLabel,
-                        ),
-                        style = MaterialTheme.typography.bodyMedium,
-                    )
+                    Text(text = body, style = MaterialTheme.typography.bodyMedium)
                 }
             }
             Spacer(Modifier.height(12.dp))
@@ -393,18 +409,14 @@ private fun PendingRestartBanner(
                     contentColor = MaterialTheme.colorScheme.onTertiary,
                 ),
             ) {
-                Text(
-                    stringResource(
-                        if (reboot) R.string.action_reboot_now else R.string.font_restart_systemui,
-                    ),
-                )
+                Text(action)
             }
         }
     }
 }
 
 @Composable
-private fun BusyBanner(text: String, modifier: Modifier = Modifier) {
+internal fun BusyBanner(text: String, modifier: Modifier = Modifier) {
     Surface(
         modifier = modifier.fillMaxWidth(),
         shape = SpoofShapes.single,

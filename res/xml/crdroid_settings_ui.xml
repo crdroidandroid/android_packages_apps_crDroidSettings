@@ -77,6 +77,14 @@
         android:summary="@string/theme_customization_font_summary"
         android:fragment="com.crdroid.settings.fragments.ui.fonts.FontPicker" />
 
+    <!-- System emoji -->
+    <Preference
+        android:key="system_emoji"
+        android:icon="@drawable/ic_emoji"
+        android:title="@string/emoji_picker_title"
+        android:summary="@string/emoji_picker_summary"
+        android:fragment="com.crdroid.settings.fragments.ui.fonts.EmojiPicker" />
+
     <!-- Monet Theme Engine -->
     <Preference
         android:key="monet_engine"
