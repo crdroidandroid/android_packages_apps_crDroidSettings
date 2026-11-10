@@ -5,6 +5,7 @@
 
 package com.crdroid.settings.fragments.ui.fonts
 
+import android.app.ActivityManager
 import android.app.Application
 import android.content.Context
 import android.graphics.Paint
@@ -17,6 +18,8 @@ import android.graphics.text.TextRunShaper
 import android.net.Uri
 import android.os.Bundle
 import android.os.ParcelFileDescriptor
+import android.os.Process
+import android.os.UserHandle
 import android.provider.OpenableColumns
 import android.util.Log
 import android.view.LayoutInflater
@@ -157,6 +160,26 @@ internal class EmojiRepository(context: Context) {
         .onFailure { Log.e(TAG, "applyCustomEmojiToApps failed", it) }
         .getOrNull() ?: ExternalFontInstaller.RESULT_EXCEPTION
 
+    /**
+     * Apps like Gboard cache rendered emoji until their process dies. killUid rather than
+     * forceStopPackage so apps aren't left stopped and keep their alarms and pushes. Blocking.
+     */
+    fun killRunningApps() {
+        val am = context.getSystemService(ActivityManager::class.java) ?: return
+        val uids = runCatching { am.runningAppProcesses }
+            .onFailure { Log.e(TAG, "getRunningAppProcesses failed", it) }
+            .getOrNull().orEmpty()
+            .filter { Process.isApplicationUid(it.uid) }
+            .filter { (it.flags and android.app.RunningAppProcessInfo.FLAG_PERSISTENT) == 0 }
+            .mapTo(HashSet()) { it.uid }
+        val service = ActivityManager.getService()
+        uids.forEach { uid ->
+            runCatching {
+                service.killUid(UserHandle.getAppId(uid), UserHandle.getUserId(uid), KILL_REASON)
+            }.onFailure { Log.w(TAG, "killUid $uid failed", it) }
+        }
+    }
+
     private fun fileTypeface(file: File): Typeface? = runCatching {
         val family = FontFamily.Builder(Font.Builder(file).build()).build()
         Typeface.CustomFallbackBuilder(family).build()
@@ -205,6 +228,7 @@ internal class EmojiRepository(context: Context) {
     companion object {
         private const val TAG = "EmojiRepository"
         private const val PREVIEW_FILE = "emoji_preview.ttf"
+        private const val KILL_REASON = "system emoji changed"
         private const val PROBE_EMOJI = "😀" // 😀
 
         /** Where FontManagerService keeps the installed font (UpdatableFontDir). */
@@ -339,6 +363,7 @@ class EmojiPickerViewModel(application: Application) : AndroidViewModel(applicat
         if (pending == null) return
         tracker.restartNow(RestartKind.SYSTEMUI, activityContext)
         pending = null
+        viewModelScope.launch(Dispatchers.IO) { repo.killRunningApps() }
     }
 
     private fun errorMessage(code: Int): String = when (code) {
