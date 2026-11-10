@@ -226,11 +226,11 @@ internal data class PendingRestart(val kind: RestartKind, val fontLabel: String)
  * it back, so the prompt survives the recreation, leaving the screen, or the process dying.
  * It clears itself once the device has rebooted or SystemUI has restarted.
  */
-internal class FontRestartTracker(context: Context) {
+internal class FontRestartTracker(context: Context, prefsName: String = PREFS) {
 
     private val context: Context = context.applicationContext
     private val prefs: SharedPreferences =
-        this.context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+        this.context.getSharedPreferences(prefsName, Context.MODE_PRIVATE)
 
     fun pending(): PendingRestart? {
         val kind = prefs.getString(KEY_KIND, null)
