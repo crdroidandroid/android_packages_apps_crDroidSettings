@@ -383,6 +383,10 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="add_font">Betűtípus hozzáadása</string>
     <string name="toast_failed_apply_font">Nem sikerült beállítani a betűkészletet</string>
     <string name="toast_invalid_font_file">Hibás betűkészlet-fájl</string>
+    <string name="font_preview_quote">The quick brown fox jumps over the lazy dog.</string>
+    <string name="font_sample_glyphs">Aa</string>
+    <string name="font_sample_short">The quick brown fox</string>
+    <string name="font_sample_alphabet">ABCDEFGHIJKLM abcdefghijklm</string>
     <string name="font_default">Alapértelmezett</string>
     <string name="font_current">Jelenlegi betűtípus</string>
     <string name="font_selected">Kiválasztva</string>
@@ -420,6 +424,35 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="font_error_verification">A rendszer nem tudta megvédeni a betűtípusfájlt az fs-verity-vel, ezért nem került telepítésre.</string>
     <string name="font_error_storage">A rendszer nem tudta menteni a betűtípust. Szabadítson fel tárhelyet majd próbálja újra.</string>
     <string name="font_overlay_reset_failed">Egyéni betűtípus telepítve, de a betűstílust nem sikerült visszaállítani az alapértelmezettre</string>
+    <!-- System emoji -->
+    <string name="emoji_picker_title">System emoji</string>
+    <string name="emoji_picker_summary">Use your own emoji font</string>
+    <string name="emoji_current">Current emoji</string>
+    <string name="emoji_add">Choose emoji font</string>
+    <string name="emoji_removing">Removing custom emoji…</string>
+    <string name="emoji_updating_apps">Updating emoji in apps…</string>
+    <string name="emoji_install_message">These emoji replace the system emoji in every app that uses the system font. Restarting now restarts SystemUI and closes all running apps so they pick up the new emoji. If you restart later, each app switches the next time it starts.</string>
+    <string name="emoji_install_restart_now">Install and restart</string>
+    <string name="emoji_install_restart_later">Install, restart later</string>
+    <string name="emoji_remove_title">Remove custom emoji?</string>
+    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji already copied into apps stay until those apps download their own again or you clear their data.</string>
+    <string name="emoji_remove_restart_now">Remove and restart</string>
+    <string name="emoji_remove_restart_later">Remove, restart later</string>
+    <string name="emoji_pending_systemui_body">%1$s emoji are set. SystemUI and running apps keep the previous emoji until they restart. Restarting closes all running apps.</string>
+    <string name="emoji_apps_section">Third-party apps</string>
+    <string name="emoji_apps_summary">Some apps ship or download their own emoji (Facebook, Messenger, and apps using Google\'s downloadable emoji). Resetting them copies your emoji font over theirs.</string>
+    <string name="emoji_apps_reset">Reset third-party apps</string>
+    <string name="emoji_apps_confirm">This copies your emoji font over every emoji font stored in app data, stops Facebook and Messenger from downloading their own, clears the caches of those apps and Gboard, and turns off the Google Play services font provider. Affected apps are force stopped. Run it again after those apps update.</string>
+    <string name="emoji_apps_confirm_button">Visszaállítás</string>
+    <plurals name="emoji_apps_done">
+        <item quantity="one">Replaced %1$d emoji font in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
+        <item quantity="other">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
+    </plurals>
+    <string name="emoji_picker_footer">No emoji font is included. Choose a .ttf emoji font of up to 128 MB, for example from an emoji Magisk module (system/fonts/NotoColorEmoji.ttf). It is placed ahead of the system emoji, so any emoji it lacks still come from the system font.</string>
+    <string name="emoji_error_title">Couldn\'t change the emoji</string>
+    <string name="emoji_error_invalid_file">This file isn\'t an emoji font the system can use. Choose a .ttf font of up to 128 MB that contains color emoji.</string>
+    <string name="emoji_error_not_installed">Install a custom emoji font first.</string>
+    <string name="emoji_error_generic">Couldn\'t change the emoji (error %1$d)</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Alapértelmezett képernyőfrissítés</string>
     <string name="peak_refresh_rate_title_custom">Képernyőfrissítés-emelés</string>
@@ -1417,7 +1450,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="pif_no_devices_found">Nem található eszköz</string>
     <string name="pif_no_api_key">Nem sikerült kinyerni a Flash Tool API-kulcsot</string>
     <string name="pif_select_device">Eszköz kiválasztása</string>
-    <string name="pif_device_suggested">%1$s · Suggested</string>
+    <string name="pif_device_suggested">%1$s · Javasolt</string>
     <string name="pif_select_channel">Válasszon kiadási csatornát</string>
     <string name="pif_channel_latest_release">A legújabb kiadás</string>
     <string name="pif_channel_latest_release_summary">Ujjlenyomat a jelenlegi béta OTA-ból</string>
@@ -1587,12 +1620,12 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="gs_remove_title">Játék eltávolítása?</string>
     <string name="gs_remove_message">Eltávolítod a %s a játék rejtésből?</string>
     <string name="gs_edit_app">%s szerkesztése</string>
-    <string name="gs_edit_hint">Pick field names such as MODEL, MANUFACTURER, BRAND or DEVICE. Empty rows are ignored.</string>
+    <string name="gs_edit_hint">Jelöljön meg mezőket, például: MODEL, GyÁRTÓ, BRAND vagy KÉSZÜLÉK. Az üres sorok figyelmen kívül maradnak.</string>
     <string name="gs_key">Mező</string>
     <string name="gs_value">Érték</string>
-    <string name="gs_invalid_value">%s has an invalid value</string>
+    <string name="gs_invalid_value">Ennek: %s érvénytelen az értéke</string>
     <string name="gs_add_property">Mező hozzáadása</string>
-    <string name="gs_invalid_key">%s isn\'t a supported field. Pick one from the list or remove the row.</string>
+    <string name="gs_invalid_key">Ez: %s nem támogatott mező. Válasszon egyet a listából, vagy törölje a sort.</string>
     <string name="gs_duplicate_key">Minden mező csak egyszer állítható be</string>
     <string name="gs_save">Mentés</string>
     <string name="gs_footer_body">A kiválasztott játék a „Build” mezőiben látja a választott eszközazonosítót. A játékok újraindulnak, ha a konfigurációjuk megváltozik. Egyes játékok ezt arra használják, hogy magasabb képkockasebességet vagy grafikai beállításokat tegyenek elérhetővé.</string>
