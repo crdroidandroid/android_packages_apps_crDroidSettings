@@ -427,8 +427,25 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <!-- System emoji -->
     <string name="emoji_picker_title">System emoji</string>
     <string name="emoji_picker_summary">Use your own emoji font</string>
+    <string name="emoji_presets_section">Emoji styles</string>
+    <string name="emoji_download_size">Download · %1$s</string>
+    <string name="emoji_downloading">Downloading %1$s… %2$d%%</string>
+    <string name="emoji_applying">Applying %1$s…</string>
+    <string name="emoji_downloaded">Downloaded</string>
+    <string name="emoji_downloaded_size">Downloaded · %1$s</string>
+    <string name="emoji_download_only">Download, apply later</string>
+    <string name="emoji_download_done">%1$s downloaded</string>
+    <string name="emoji_delete_download">Delete download</string>
+    <string name="emoji_catalog_error">Couldn\'t load the emoji styles. Check your connection.</string>
+    <string name="emoji_catalog_retry">Retry</string>
+    <string name="emoji_error_download">Couldn\'t download the emoji font. Check your connection and try again.</string>
+    <string name="emoji_error_checksum">The downloaded emoji font didn\'t match the expected file. Try again later.</string>
+    <string name="emoji_custom_section">Custom emoji</string>
+    <string name="emoji_replace_custom">Install another emoji font</string>
+    <string name="emoji_apply_restart_now">Apply and restart</string>
+    <string name="emoji_apply_restart_later">Uygula, daha sonra yeniden başlat</string>
     <string name="emoji_current">Current emoji</string>
-    <string name="emoji_add">Choose emoji font</string>
+    <string name="emoji_add">Choose custom emoji font</string>
     <string name="emoji_removing">Removing custom emoji…</string>
     <string name="emoji_updating_apps">Updating emoji in apps…</string>
     <string name="emoji_install_message">These emoji replace the system emoji in every app that uses the system font. Restarting now restarts SystemUI and closes all running apps so they pick up the new emoji. If you restart later, each app switches the next time it starts.</string>
@@ -448,7 +465,7 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
         <item quantity="one">Replaced %1$d emoji font in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
         <item quantity="other">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
     </plurals>
-    <string name="emoji_picker_footer">No emoji font is included. Choose a .ttf emoji font of up to 128 MB, for example from an emoji Magisk module (system/fonts/NotoColorEmoji.ttf). It is placed ahead of the system emoji, so any emoji it lacks still come from the system font.</string>
+    <string name="emoji_picker_footer">Emoji styles are downloaded from crDroid\'s theme repository and kept on the device, so you can switch between them without downloading again. You can also add your own .ttf emoji font of up to 128 MB, for example from an emoji Magisk module (system/fonts/NotoColorEmoji.ttf). Any emoji a font lacks still come from the system emoji.</string>
     <string name="emoji_error_title">Couldn\'t change the emoji</string>
     <string name="emoji_error_invalid_file">This file isn\'t an emoji font the system can use. Choose a .ttf font of up to 128 MB that contains color emoji.</string>
     <string name="emoji_error_not_installed">Install a custom emoji font first.</string>
