@@ -429,8 +429,25 @@
     <!-- System emoji -->
     <string name="emoji_picker_title">Системные эмоции</string>
     <string name="emoji_picker_summary">Используйте собственный шрифт эмоций</string>
+    <string name="emoji_presets_section">Emoji styles</string>
+    <string name="emoji_download_size">Download · %1$s</string>
+    <string name="emoji_downloading">Downloading %1$s… %2$d%%</string>
+    <string name="emoji_applying">Applying %1$s…</string>
+    <string name="emoji_downloaded">Downloaded</string>
+    <string name="emoji_downloaded_size">Downloaded · %1$s</string>
+    <string name="emoji_download_only">Download, apply later</string>
+    <string name="emoji_download_done">%1$s downloaded</string>
+    <string name="emoji_delete_download">Delete download</string>
+    <string name="emoji_catalog_error">Couldn\'t load the emoji styles. Check your connection.</string>
+    <string name="emoji_catalog_retry">Retry</string>
+    <string name="emoji_error_download">Couldn\'t download the emoji font. Check your connection and try again.</string>
+    <string name="emoji_error_checksum">The downloaded emoji font didn\'t match the expected file. Try again later.</string>
+    <string name="emoji_custom_section">Custom emoji</string>
+    <string name="emoji_replace_custom">Install another emoji font</string>
+    <string name="emoji_apply_restart_now">Apply and restart</string>
+    <string name="emoji_apply_restart_later">Применить, перезапустить позже</string>
     <string name="emoji_current">Текущие эмоции</string>
-    <string name="emoji_add">Выбор шрифта эмоций</string>
+    <string name="emoji_add">Choose custom emoji font</string>
     <string name="emoji_removing">Удаление пользовательских эмоций…</string>
     <string name="emoji_updating_apps">Обновление эмоций в приложениях…</string>
     <string name="emoji_install_message">Эти эмоции заменяют системные во всех приложениях, использующих системный шрифт. Если выполнить перезапуск сейчас, произойдет перезагрузка интерфейса системы и закрытие всех запущенных приложений — благодаря этому в них появятся новые эмоции. Если же перезагрузить устройство позже, каждое приложение обновит набор эмоций при следующем запуске.</string>
@@ -452,7 +469,7 @@
         <item quantity="many">В данных приложений заменены шрифты эмоций на %1$d. Теперь приложения, использующие загружаемые эмоции, будут обращаться к системным эмоциям.</item>
         <item quantity="other">В данных приложений заменены шрифты эмоций на %1$d. Теперь приложения, использующие загружаемые эмоции, будут обращаться к системным эмоциям.</item>
     </plurals>
-    <string name="emoji_picker_footer">Шрифт с эмоциями в комплект не входит. Выберите файл шрифта эмоций в формате .ttf размером до 128 МБ — например, из модуля эмоций Magisk (путь: system/fonts/NotoColorEmoji.ttf). Этот шрифт будет иметь приоритет перед системным, поэтому, если в нём отсутствуют какие-либо эмоции, они будут взяты из системного шрифта.</string>
+    <string name="emoji_picker_footer">Emoji styles are downloaded from crDroid\'s theme repository and kept on the device, so you can switch between them without downloading again. You can also add your own .ttf emoji font of up to 128 MB, for example from an emoji Magisk module (system/fonts/NotoColorEmoji.ttf). Any emoji a font lacks still come from the system emoji.</string>
     <string name="emoji_error_title">Не удалось изменить эмоции</string>
     <string name="emoji_error_invalid_file">Этот файл не является шрифтом эмоций, который может использовать система. Выберите шрифт в формате .ttf размером до 128 МБ, содержащий цветные эмоции.</string>
     <string name="emoji_error_not_installed">Сначала установите свой шрифт эмоций.</string>
