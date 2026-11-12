@@ -17,6 +17,7 @@ import androidx.compose.material.icons.rounded.Apps
 import androidx.compose.material.icons.rounded.CalendarMonth
 import androidx.compose.material.icons.rounded.DeleteOutline
 import androidx.compose.material.icons.rounded.FileOpen
+import androidx.compose.material.icons.automirrored.rounded.HelpOutline
 import androidx.compose.material.icons.rounded.Key
 import androidx.compose.material.icons.rounded.NotificationsActive
 import androidx.compose.material.icons.rounded.Policy
@@ -88,6 +89,8 @@ internal interface TsActions {
     fun onImportTargets()
     fun onEditPatch()
 
+    fun onFindKeybox()
+
     /** Keybox alerts switch flipped. */
     fun onAlertsToggle(enabled: Boolean)
 
@@ -148,6 +151,16 @@ internal fun TrickyStoreContent(state: TsUiState, actions: TsActions) {
                     icon = Icons.Rounded.DeleteOutline,
                     enabled = state.keyboxExists,
                     onClick = actions::onDeleteKeybox,
+                ),
+            ),
+        )
+        Spacer(Modifier.height(8.dp))
+        SpoofActionRow(
+            listOf(
+                SpoofAction(
+                    text = stringResource(R.string.ts_find_keybox),
+                    icon = Icons.AutoMirrored.Rounded.HelpOutline,
+                    onClick = actions::onFindKeybox,
                 ),
             ),
         )

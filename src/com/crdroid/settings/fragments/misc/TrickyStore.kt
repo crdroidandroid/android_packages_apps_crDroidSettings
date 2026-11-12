@@ -8,7 +8,9 @@ package com.crdroid.settings.fragments.misc
 import android.app.Activity
 import android.app.ActivityManager
 import android.app.NotificationManager
+import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.security.trickystore.TrickyStoreService
@@ -110,6 +112,17 @@ class TrickyStore : SettingsPreferenceFragment() {
             val current = Settings.Secure.getString(
                 requireContext().contentResolver, PATCH_KEY) ?: ""
             ui.dialog = TsDialog.PatchDate(current)
+        }
+
+        override fun onFindKeybox() {
+            try {
+                startActivity(
+                    Intent(Intent.ACTION_VIEW, Uri.parse(KEYBOX_GUIDE_URL))
+                        .addCategory(Intent.CATEGORY_BROWSABLE)
+                )
+            } catch (_: ActivityNotFoundException) {
+                toast(getString(R.string.ts_no_browser))
+            }
         }
 
         override fun onAlertsToggle(enabled: Boolean) {
@@ -520,6 +533,9 @@ class TrickyStore : SettingsPreferenceFragment() {
         internal const val KEYBOX_KEY = "spoof_trickystore_keybox"
         private const val TARGET_KEY = TrickyStoreAppSettings.TARGET_KEY
         internal const val PATCH_KEY = "spoof_trickystore_patch"
+
+        private const val KEYBOX_GUIDE_URL =
+            "https://crdroid.net/blog/2026-11-07-keybox-and-pif-with-crDroid"
 
         private val PACKAGE_REGEX = Regex("""[A-Za-z0-9_]+(\.[A-Za-z0-9_]+)*""")
         private val TARGET_LINE_REGEX = Regex("""[A-Za-z0-9_]+(\.[A-Za-z0-9_]+)*\s*[?!-]?""")
