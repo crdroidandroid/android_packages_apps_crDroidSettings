@@ -383,6 +383,10 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="add_font"></string>
     <string name="toast_failed_apply_font">No se pudo aplicar la fuente</string>
     <string name="toast_invalid_font_file">Archivo de fuente inválido</string>
+    <string name="font_preview_quote">The quick brown fox jumps over the lazy dog.</string>
+    <string name="font_sample_glyphs">Aa</string>
+    <string name="font_sample_short">The quick brown fox</string>
+    <string name="font_sample_alphabet">ABCDEFGHIJKLM abcdefghijklm</string>
     <string name="font_default">Predeterminado</string>
     <string name="font_current">Fuente actual</string>
     <string name="font_selected">Seleccionado</string>
@@ -420,6 +424,35 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="font_error_verification">El sistema no pudo proteger el archivo de fuente con fs-verity, por lo que no se instaló.</string>
     <string name="font_error_storage">El sistema no pudo guardar la fuente. Compruebe que haya espacio de almacenamiento disponible e inténtelo de nuevo.</string>
     <string name="font_overlay_reset_failed">La fuente personalizada se instaló, pero no se pudo restablecer el estilo de fuente a Predeterminado</string>
+    <!-- System emoji -->
+    <string name="emoji_picker_title">Emoji del sistema</string>
+    <string name="emoji_picker_summary">Usar su propia fuente de emojis</string>
+    <string name="emoji_current">Emoji actuales</string>
+    <string name="emoji_add">Elegir fuente de emojis</string>
+    <string name="emoji_removing">Eliminando emojis personalizados…</string>
+    <string name="emoji_updating_apps">Actualizando emojis en las aplicaciones…</string>
+    <string name="emoji_install_message">Estos emojis reemplazarán a los emojis del sistema en todas las aplicaciones que utilicen la fuente del sistema. Al reiniciar ahora, se reiniciará SystemUI y se cerrarán todas las aplicaciones en ejecución para que utilicen los nuevos emojis. Si reinicia más tarde, cada aplicación los aplicará la próxima vez que se inicie.</string>
+    <string name="emoji_install_restart_now">Instalar y reiniciar</string>
+    <string name="emoji_install_restart_later">Instalar, reiniciar más tarde</string>
+    <string name="emoji_remove_title">¿Eliminar emojis personalizados?</string>
+    <string name="emoji_remove_message">Los emojis del sistema volverán una vez que se reinicien SystemUI y las aplicaciones. Reiniciar ahora cerrará todas las aplicaciones en ejecución. Los emojis que ya se hayan copiado en las aplicaciones permanecerán allí hasta que estas descarguen los suyos nuevamente o borre sus datos.</string>
+    <string name="emoji_remove_restart_now">Eliminar y reiniciar</string>
+    <string name="emoji_remove_restart_later">Eliminar, reiniciar más tarde</string>
+    <string name="emoji_pending_systemui_body">Hay %1$s emojis configurados. SystemUI y las aplicaciones en ejecución conservarán los emojis anteriores hasta que se reinicien. Reiniciar cerrará todas las aplicaciones en ejecución.</string>
+    <string name="emoji_apps_section">Aplicaciones de terceros</string>
+    <string name="emoji_apps_summary">Algunas aplicaciones incluyen o descargan sus propios emojis (Facebook, Messenger y las aplicaciones que utilizan los emojis descargables de Google). Restablecerlas copia tu fuente de emojis sobre la suya.</string>
+    <string name="emoji_apps_reset">Restablecer aplicaciones de terceros</string>
+    <string name="emoji_apps_confirm">Esto copia su fuente de emojis sobre todas las fuentes de emojis almacenadas en los datos de las aplicaciones, impide que Facebook y Messenger descarguen las suyas, borra las cachés de esas aplicaciones y de Gboard, y desactiva el proveedor de fuentes de Google Play Services. Las aplicaciones afectadas se detendrán de forma forzada. Vuelva a ejecutarlo después de que esas aplicaciones se actualicen.</string>
+    <string name="emoji_apps_confirm_button">Reiniciar</string>
+    <plurals name="emoji_apps_done">
+        <item quantity="one">Se reemplazó %1$d fuente de emojis en los datos de las aplicaciones. Las aplicaciones que utilizan emojis descargables ahora utilizan los emojis del sistema.</item>
+        <item quantity="other">Se reemplazaron %1$d fuentes de emojis en los datos de las aplicaciones. Las aplicaciones que utilizan emojis descargables ahora utilizan los emojis del sistema.</item>
+    </plurals>
+    <string name="emoji_picker_footer">No se incluye ninguna fuente de emojis. Seleccione una fuente de emojis .ttf de hasta 128 MB, por ejemplo, de un módulo de emojis de Magisk (system/fonts/NotoColorEmoji.ttf). Se coloca antes que la fuente de emojis del sistema, por lo que los emojis que no incluya seguirán obteniéndose de la fuente del sistema.</string>
+    <string name="emoji_error_title">No se pudo cambiar los emojis</string>
+    <string name="emoji_error_invalid_file">Este archivo no es una fuente de emojis compatible con el sistema. Seleccione una fuente .ttf de hasta 128 MB que contenga emojis a color.</string>
+    <string name="emoji_error_not_installed">Instale primero una fuente de emojis personalizada.</string>
+    <string name="emoji_error_generic">No se pudo cambiar los emojis (error %1$d)</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Frecuencia de refresco predeterminada</string>
     <string name="peak_refresh_rate_title_custom">Frecuencia máxima de refresco</string>
@@ -1415,7 +1448,7 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="pif_no_devices_found">No se encontraron dispositivos</string>
     <string name="pif_no_api_key">No se pudo extraer la clave de API de Flash Tool</string>
     <string name="pif_select_device">Seleccionar dispositivo</string>
-    <string name="pif_device_suggested">%1$s · Suggested</string>
+    <string name="pif_device_suggested">%1$s · Sugerido</string>
     <string name="pif_select_channel">Seleccionar canal</string>
     <string name="pif_channel_latest_release">Última versión</string>
     <string name="pif_channel_latest_release_summary">Huella digital de la beta actual OTA</string>
@@ -1587,12 +1620,12 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="gs_remove_title">¿Eliminar juego?</string>
     <string name="gs_remove_message">¿Eliminar %s de la suplantación en juegos?</string>
     <string name="gs_edit_app">Editar %s</string>
-    <string name="gs_edit_hint">Pick field names such as MODEL, MANUFACTURER, BRAND or DEVICE. Empty rows are ignored.</string>
+    <string name="gs_edit_hint">Nombres de campos de compilación, como MODELO, FABRICANTE, MARCA o DISPOSITIVO. Las filas vacías se ignoran.</string>
     <string name="gs_key">Campo</string>
     <string name="gs_value">Valor</string>
-    <string name="gs_invalid_value">%s has an invalid value</string>
+    <string name="gs_invalid_value">%s tiene un valor no válido</string>
     <string name="gs_add_property">Agregar campo</string>
-    <string name="gs_invalid_key">%s isn\'t a supported field. Pick one from the list or remove the row.</string>
+    <string name="gs_invalid_key">%s no es un campo compatible. Seleccione uno de la lista o elimine la fila.</string>
     <string name="gs_duplicate_key">Cada campo solo se puede establecer una vez</string>
     <string name="gs_save">Guardar</string>
     <string name="gs_footer_body">El juego seleccionado detecta la identidad del dispositivo elegido en los campos de Build. Los juegos se reinician cuando cambia su configuración. Algunos juegos utilizan esta información para desbloquear tasas de fotogramas más altas o ajustes gráficos adicionales.</string>

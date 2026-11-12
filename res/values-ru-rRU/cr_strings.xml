@@ -385,6 +385,10 @@
     <string name="add_font">Добавить шрифт</string>
     <string name="toast_failed_apply_font">Не удалось применить шрифт</string>
     <string name="toast_invalid_font_file">Некорректный файл шрифта</string>
+    <string name="font_preview_quote">The quick brown fox jumps over the lazy dog.</string>
+    <string name="font_sample_glyphs">Aa</string>
+    <string name="font_sample_short">The quick brown fox</string>
+    <string name="font_sample_alphabet">ABCDEFGHIJKLM abcdefghijklm</string>
     <string name="font_default">По умолчанию</string>
     <string name="font_current">Текущий шрифт</string>
     <string name="font_selected">Выбран</string>
@@ -422,6 +426,37 @@
     <string name="font_error_verification">Системе не удалось защитить файл шрифта с помощью fs-verity, поэтому он не был установлен.</string>
     <string name="font_error_storage">Системе не удалось сохранить шрифт. Убедитесь, что на диске достаточно свободного места, и повторите попытку.</string>
     <string name="font_overlay_reset_failed">Свой шрифт установлен, но стиль шрифта не удалось вернуть к значению «По умолчанию»</string>
+    <!-- System emoji -->
+    <string name="emoji_picker_title">Системные эмоции</string>
+    <string name="emoji_picker_summary">Используйте собственный шрифт эмоций</string>
+    <string name="emoji_current">Текущие эмоции</string>
+    <string name="emoji_add">Выбор шрифта эмоций</string>
+    <string name="emoji_removing">Удаление пользовательских эмоций…</string>
+    <string name="emoji_updating_apps">Обновление эмоций в приложениях…</string>
+    <string name="emoji_install_message">Эти эмоции заменяют системные во всех приложениях, использующих системный шрифт. Если выполнить перезапуск сейчас, произойдет перезагрузка интерфейса системы и закрытие всех запущенных приложений — благодаря этому в них появятся новые эмоции. Если же перезагрузить устройство позже, каждое приложение обновит набор эмоций при следующем запуске.</string>
+    <string name="emoji_install_restart_now">Установить и перезапустить</string>
+    <string name="emoji_install_restart_later">Установить, перезапустить позже</string>
+    <string name="emoji_remove_title">Удалить свои эмоции?</string>
+    <string name="emoji_remove_message">Системные эмоции вернутся после перезапуска интерфейса системы и приложений. Перезапуск закрывает все запущенные приложения. Эмоции, скопированные в приложения, сохранятся до тех пор, пока эти приложения не загрузят свои собственные эмоции снова или вы не очистите их данные.</string>
+    <string name="emoji_remove_restart_now">Удалить и перезапустить</string>
+    <string name="emoji_remove_restart_later">Удалить, перезапустить позже</string>
+    <string name="emoji_pending_systemui_body">Эмоции %1$s установлены. В системном интерфейсе и запущенных приложениях будут отображаться прежние эмоции — до тех пор, пока эти приложения не будут перезапущены. При перезапуске интерфейса системы, все запущенные приложения будут закрыты.</string>
+    <string name="emoji_apps_section">Сторонние приложения</string>
+    <string name="emoji_apps_summary">Некоторые приложения поставляются с собственным набором эмоций или загружают его (например, Facebook, Messenger и приложения, использующие загружаемые эмоции от Google). Сброс настроек приведёт к тому, что ваш шрифт эмоций заменит их собственный.</string>
+    <string name="emoji_apps_reset">Сбросить сторонние приложения</string>
+    <string name="emoji_apps_confirm">Это скопирует ваш шрифт эмоций поверх всех шрифтов эмоций, хранящихся в данных приложений, предотвращает загрузку собственных шрифтов приложениями Facebook и Messenger, очищает кэш этих приложений и клавиатуры Gboard, а также отключает поставщика шрифтов в сервисах Google Play. Работа затронутых приложений принудительно завершается. Запускайте программы повторно, после обновления этих приложений.</string>
+    <string name="emoji_apps_confirm_button">Сброс</string>
+    <plurals name="emoji_apps_done">
+        <item quantity="one">В данных приложений заменён шрифт эмоций на %1$d. Теперь приложения, использующие загружаемые эмоции, будут обращаться к системным эмоциям.</item>
+        <item quantity="few">В данных приложений заменены шрифты эмоций на %1$d. Теперь приложения, использующие загружаемые эмоции, будут обращаться к системным эмоциям.</item>
+        <item quantity="many">В данных приложений заменены шрифты эмоций на %1$d. Теперь приложения, использующие загружаемые эмоции, будут обращаться к системным эмоциям.</item>
+        <item quantity="other">В данных приложений заменены шрифты эмоций на %1$d. Теперь приложения, использующие загружаемые эмоции, будут обращаться к системным эмоциям.</item>
+    </plurals>
+    <string name="emoji_picker_footer">Шрифт с эмоциями в комплект не входит. Выберите файл шрифта эмоций в формате .ttf размером до 128 МБ — например, из модуля эмоций Magisk (путь: system/fonts/NotoColorEmoji.ttf). Этот шрифт будет иметь приоритет перед системным, поэтому, если в нём отсутствуют какие-либо эмоции, они будут взяты из системного шрифта.</string>
+    <string name="emoji_error_title">Не удалось изменить эмоции</string>
+    <string name="emoji_error_invalid_file">Этот файл не является шрифтом эмоций, который может использовать система. Выберите шрифт в формате .ttf размером до 128 МБ, содержащий цветные эмоции.</string>
+    <string name="emoji_error_not_installed">Сначала установите свой шрифт эмоций.</string>
+    <string name="emoji_error_generic">Не удалось изменить эмоции (ошибка %1$d)</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Частота обновления по умолчанию</string>
     <string name="peak_refresh_rate_title_custom">Максимальная частота обновления</string>
@@ -1277,8 +1312,8 @@
     <string name="lockscreen_custom_clock_style_info">Выбранный стиль часов заменит стиль часов AOSP. «Умное пространство» будет отключено. Вы можете включить и использовать службу погоды.</string>
     <string name="lockscreen_custom_clock_opacity_title">Прозрачность часов</string>
     <string name="lockscreen_custom_clock_opacity_summary">Настройка прозрачности выбранного стиля часов</string>
-    <string name="lockscreen_custom_clock_frame_margin_top_title">Высота часов</string>
-    <string name="lockscreen_custom_clock_frame_margin_top_summary">Регулировка высоты выбранного стиля часов</string>
+    <string name="lockscreen_custom_clock_frame_margin_top_title">Отступ от верхнего края</string>
+    <string name="lockscreen_custom_clock_frame_margin_top_summary">Регулировка положения выбранных часов от верхнего края</string>
     <string name="lockscreen_custom_clock_color_mode_title">Цветовой режим часов</string>
     <string name="lockscreen_custom_clock_size_title">Размер часов</string>
     <string name="lockscreen_custom_clock_size_summary">Масштабирование часов экрана блокировки</string>
@@ -1323,7 +1358,7 @@
     <string name="dynamic_bar_enable_summary">Отображать динамический индикатор в строке состояния для текущих событий</string>
     <string name="dynamic_bar_keyguard_enable">Динамическая панель на экране блокировки</string>
     <string name="dynamic_bar_keyguard_enable_summary">Замена индикаторов экрана блокировки на динамические индикаторы с элементами управления и быстрыми действиями</string>
-    <string name="dynamic_bar_keyguard_battery_chip">Информация о батареи на экране блокировки</string>
+    <string name="dynamic_bar_keyguard_battery_chip">Информация о батарее на экране блокировки</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">Не показывать</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">Только при зарядке</string>
     <string name="dynamic_bar_keyguard_battery_chip_always">Всегда показывать</string>
@@ -1421,7 +1456,7 @@
     <string name="pif_no_devices_found">Устройства не найдены</string>
     <string name="pif_no_api_key">Не удалось извлечь ключ API Flash Tool</string>
     <string name="pif_select_device">Выбор устройства</string>
-    <string name="pif_device_suggested">%1$s · Suggested</string>
+    <string name="pif_device_suggested">%1$s · Рекомендуемый</string>
     <string name="pif_select_channel">Выберите канал</string>
     <string name="pif_channel_latest_release">Последняя версия</string>
     <string name="pif_channel_latest_release_summary">Отпечаток из текущей бета-версии OTA</string>
@@ -1593,12 +1628,12 @@
     <string name="gs_remove_title">Удалить игру?</string>
     <string name="gs_remove_message">Удалить %s из игровой подмены?</string>
     <string name="gs_edit_app">Изменить %s</string>
-    <string name="gs_edit_hint">Pick field names such as MODEL, MANUFACTURER, BRAND or DEVICE. Empty rows are ignored.</string>
+    <string name="gs_edit_hint">Выберите названия полей, например MODEL, MANUFACTURER, BRAND или DEVICE. Пустые строки игнорируются.</string>
     <string name="gs_key">Поле</string>
     <string name="gs_value">Значение</string>
-    <string name="gs_invalid_value">%s has an invalid value</string>
+    <string name="gs_invalid_value">%s имеет недопустимое значение</string>
     <string name="gs_add_property">Добавить поле</string>
-    <string name="gs_invalid_key">%s isn\'t a supported field. Pick one from the list or remove the row.</string>
+    <string name="gs_invalid_key">%s — неподдерживаемое поле. Выберите вариант из списка или удалите строку.</string>
     <string name="gs_duplicate_key">Каждое поле можно задать только один раз</string>
     <string name="gs_save">Сохранить</string>
     <string name="gs_footer_body">Выбранная игра видит идентификатор устройства в названиях полей. Игры перезапускаются при изменении их конфигурации. Некоторые игры используют эту функцию, чтобы повысить частоту кадров или настройки графики.</string>

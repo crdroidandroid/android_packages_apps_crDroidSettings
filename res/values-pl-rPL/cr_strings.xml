@@ -385,6 +385,10 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="add_font">Dodaj czcionkę</string>
     <string name="toast_failed_apply_font">Nie udało się zastosować czcionki</string>
     <string name="toast_invalid_font_file">Nieprawidłowy plik czcionki</string>
+    <string name="font_preview_quote">The quick brown fox jumps over the lazy dog.</string>
+    <string name="font_sample_glyphs">Aa</string>
+    <string name="font_sample_short">The quick brown fox</string>
+    <string name="font_sample_alphabet">ABCDEFGHIJKLM abcdefghijklm</string>
     <string name="font_default">Domyślna</string>
     <string name="font_current">Aktualna czcionka</string>
     <string name="font_selected">Wybrano</string>
@@ -422,6 +426,37 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="font_error_verification">System nie mógł zabezpieczyć pliku czcionki za pomocą fs-verity, więc nie został on zainstalowany.</string>
     <string name="font_error_storage">System nie mógł zapisać czcionki. Sprawdź, czy jest wystarczająca ilość wolnego miejsca, i spróbuj ponownie.</string>
     <string name="font_overlay_reset_failed">Zainstalowano własną czcionkę, ale nie udało się przywrócić domyślnego stylu czcionki</string>
+    <!-- System emoji -->
+    <string name="emoji_picker_title">System emoji</string>
+    <string name="emoji_picker_summary">Use your own emoji font</string>
+    <string name="emoji_current">Current emoji</string>
+    <string name="emoji_add">Choose emoji font</string>
+    <string name="emoji_removing">Removing custom emoji…</string>
+    <string name="emoji_updating_apps">Updating emoji in apps…</string>
+    <string name="emoji_install_message">These emoji replace the system emoji in every app that uses the system font. Restarting now restarts SystemUI and closes all running apps so they pick up the new emoji. If you restart later, each app switches the next time it starts.</string>
+    <string name="emoji_install_restart_now">Install and restart</string>
+    <string name="emoji_install_restart_later">Install, restart later</string>
+    <string name="emoji_remove_title">Remove custom emoji?</string>
+    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji already copied into apps stay until those apps download their own again or you clear their data.</string>
+    <string name="emoji_remove_restart_now">Remove and restart</string>
+    <string name="emoji_remove_restart_later">Remove, restart later</string>
+    <string name="emoji_pending_systemui_body">%1$s emoji are set. SystemUI and running apps keep the previous emoji until they restart. Restarting closes all running apps.</string>
+    <string name="emoji_apps_section">Third-party apps</string>
+    <string name="emoji_apps_summary">Some apps ship or download their own emoji (Facebook, Messenger, and apps using Google\'s downloadable emoji). Resetting them copies your emoji font over theirs.</string>
+    <string name="emoji_apps_reset">Reset third-party apps</string>
+    <string name="emoji_apps_confirm">This copies your emoji font over every emoji font stored in app data, stops Facebook and Messenger from downloading their own, clears the caches of those apps and Gboard, and turns off the Google Play services font provider. Affected apps are force stopped. Run it again after those apps update.</string>
+    <string name="emoji_apps_confirm_button">Resetuj</string>
+    <plurals name="emoji_apps_done">
+        <item quantity="one">Replaced %1$d emoji font in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
+        <item quantity="few">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
+        <item quantity="many">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
+        <item quantity="other">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
+    </plurals>
+    <string name="emoji_picker_footer">No emoji font is included. Choose a .ttf emoji font of up to 128 MB, for example from an emoji Magisk module (system/fonts/NotoColorEmoji.ttf). It is placed ahead of the system emoji, so any emoji it lacks still come from the system font.</string>
+    <string name="emoji_error_title">Couldn\'t change the emoji</string>
+    <string name="emoji_error_invalid_file">This file isn\'t an emoji font the system can use. Choose a .ttf font of up to 128 MB that contains color emoji.</string>
+    <string name="emoji_error_not_installed">Install a custom emoji font first.</string>
+    <string name="emoji_error_generic">Couldn\'t change the emoji (error %1$d)</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Domyślna częstotliwość odświeżania</string>
     <string name="peak_refresh_rate_title_custom">Najwyższa częstotliwość odświeżania</string>
@@ -1423,7 +1458,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pif_no_devices_found">Nie znaleziono urządzeń</string>
     <string name="pif_no_api_key">Nie udało się wyodrębnić klucza API Flash Tool</string>
     <string name="pif_select_device">Wybierz urządzenie</string>
-    <string name="pif_device_suggested">%1$s · Suggested</string>
+    <string name="pif_device_suggested">%1$s · Sugerowane</string>
     <string name="pif_select_channel">Wybierz kanał</string>
     <string name="pif_channel_latest_release">Najnowsze wydanie</string>
     <string name="pif_channel_latest_release_summary">Odcisk palca z aktualnej wersji beta OTA</string>
@@ -1502,7 +1537,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_alert_expiry_text">Twój zestaw kluczy TrickyStore traci ważność %1$s. Jak najszybciej załaduj nowy zestaw kluczy, aby nadal spełniać wymagania integralności Play.</string>
     <string name="ts_alert_revoked_title">Odrzucono zestaw kluczy</string>
     <string name="ts_alert_revoked_text">Firma Google unieważniła twój klucz TrickyStore (przyczyna: %1$s). Sprawdzanie integralności zakończy się niepowodzeniem, dopóki nie załadujesz nowego klucza.</string>
-    <string name="ts_alert_suspended_title">Zestaw kluczy zawieszony</string>
+    <string name="ts_alert_suspended_title">Zawieszono zestaw kluczy</string>
     <string name="ts_alert_suspended_text">Firma Google zawiesiła twoją skrzynkę kluczy TrickyStore (przyczyna: %1$s). Sprawdzanie integralności zakończy się niepowodzeniem, dopóki nie załadujesz nowej skrzynki kluczy.</string>
     <string name="ts_revocation_status">Status unieważnienia w Google</string>
     <string name="ts_revocation_checking">Sprawdzanie z Google…</string>
@@ -1595,12 +1630,12 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="gs_remove_title">Usunąć grę?</string>
     <string name="gs_remove_message">Usunąć %s z listy sfałszowanych gier?</string>
     <string name="gs_edit_app">Edytuj %s</string>
-    <string name="gs_edit_hint">Pick field names such as MODEL, MANUFACTURER, BRAND or DEVICE. Empty rows are ignored.</string>
+    <string name="gs_edit_hint">Wybierz nazwy pól, takie jak MODEL, PRODUCENT, MARKA lub URZĄDZENIE. Puste wiersze są pomijane.</string>
     <string name="gs_key">Pole</string>
     <string name="gs_value">Wartość</string>
-    <string name="gs_invalid_value">%s has an invalid value</string>
+    <string name="gs_invalid_value">%s ma nieprawidłową wartość</string>
     <string name="gs_add_property">Dodaj pole</string>
-    <string name="gs_invalid_key">%s isn\'t a supported field. Pick one from the list or remove the row.</string>
+    <string name="gs_invalid_key">%s nie jest obsługiwanym polem. Wybierz jedno z listy lub usuń wiersz.</string>
     <string name="gs_duplicate_key">Każde pole można ustawić tylko raz</string>
     <string name="gs_save">Zapisz</string>
     <string name="gs_footer_body">W wybranej grze w polach „Build” widoczna jest identyfikacja wybranego urządzenia. Gry uruchamiają się ponownie po zmianie ich konfiguracji. Niektóre gry wykorzystują tę funkcję do odblokowania wyższych częstotliwości odświeżania lub lepszych ustawień graficznych.</string>

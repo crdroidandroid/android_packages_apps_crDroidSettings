@@ -383,6 +383,10 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="add_font">Betűtípus hozzáadása</string>
     <string name="toast_failed_apply_font">Nem sikerült beállítani a betűkészletet</string>
     <string name="toast_invalid_font_file">Hibás betűkészlet-fájl</string>
+    <string name="font_preview_quote">The quick brown fox jumps over the lazy dog.</string>
+    <string name="font_sample_glyphs">Aa</string>
+    <string name="font_sample_short">The quick brown fox</string>
+    <string name="font_sample_alphabet">ABCDEFGHIJKLM abcdefghijklm</string>
     <string name="font_default">Alapértelmezett</string>
     <string name="font_current">Jelenlegi betűtípus</string>
     <string name="font_selected">Kiválasztva</string>
@@ -420,6 +424,35 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="font_error_verification">A rendszer nem tudta megvédeni a betűtípusfájlt az fs-verity-vel, ezért nem került telepítésre.</string>
     <string name="font_error_storage">A rendszer nem tudta menteni a betűtípust. Szabadítson fel tárhelyet majd próbálja újra.</string>
     <string name="font_overlay_reset_failed">Egyéni betűtípus telepítve, de a betűstílust nem sikerült visszaállítani az alapértelmezettre</string>
+    <!-- System emoji -->
+    <string name="emoji_picker_title">Rendszer-hangulatjelek</string>
+    <string name="emoji_picker_summary">Használja saját emoji-csomagját</string>
+    <string name="emoji_current">Jelenlegi emoji</string>
+    <string name="emoji_add">Válasszon emoji-csomagot</string>
+    <string name="emoji_removing">Az egyéni emoji eltávolítása...</string>
+    <string name="emoji_updating_apps">Emojik frissítése az alkalmazásokban...</string>
+    <string name="emoji_install_message">Ezek az emojik minden olyan alkalmazásban lecserélik a rendszer-emojikat, amelyek rendszer-betűtípust használnak. Az újraindul a rendszerfelület , ez bezárja az összes futó alkalmazást, hogy azok átvegyék az új emojikat. Ha később indítja újra, az egyes alkalmazások a következő indításkor váltanak át.</string>
+    <string name="emoji_install_restart_now">Telepítés és újraindítás</string>
+    <string name="emoji_install_restart_later">Telepítés, újraindítás később</string>
+    <string name="emoji_remove_title">Eltávolítja az egyéni emojikat?</string>
+    <string name="emoji_remove_message">A rendszer-emojik visszatérnek, amint a rendszerfelület és az alkalmazások újraindulnak. Az újraindítás most bezárja az összes futó alkalmazást. Az alkalmazásokban az emojik mindaddig megmaradnak, amíg az adott alkalmazások újra le nem töltik a sajátjaikat, vagy amíg Ön nem törli az alkalmazások adatait.</string>
+    <string name="emoji_remove_restart_now">Eltávolítás és újraindítás</string>
+    <string name="emoji_remove_restart_later">Eltávolítás, újraindítás később</string>
+    <string name="emoji_pending_systemui_body">%1$s-emoji beállítva. A rendszerfelület és a futó alkalmazások az újraindításukig megtartják a korábbi emojit. Az újraindítás bezárja az összes futó alkalmazást.</string>
+    <string name="emoji_apps_section">Másik féltől származó alkalmazások</string>
+    <string name="emoji_apps_summary">Egyes alkalmazások saját emojikat tartalmaznak vagy töltenek le (Facebook, Messenger, és a Google letölthető hangulatjeleit használó alkalmazások). A visszaállításukkal a saját emoji-csomagodat másolod az övékre.</string>
+    <string name="emoji_apps_reset">Másik féltől származó alkalmazások visszaállítása</string>
+    <string name="emoji_apps_confirm">Ez az eljárás az alkalmazásadatokban tárolt összes emojit lecseréli a az Ön emoji-jára, megakadályozza, hogy a Facebook és a Messenger letöltse a sajátját, törli ezen alkalmazások, valamint a Gboard gyorsítótárát, továbbá kikapcsolja a Google Play-szolgáltatások betűtípus-szolgáltatóját.</string>
+    <string name="emoji_apps_confirm_button">Visszaállítás</string>
+    <plurals name="emoji_apps_done">
+        <item quantity="one">%1$d emoji-készlet lecserélve az alkalmazás-adatokban. A letölthető hangulatjeleket használó alkalmazások mostantól a rendszer hangulatjeleire váltanak vissza. </item>
+        <item quantity="other">%1$d emoji-készlet lecserélve az alkalmazás-adatokban. A letölthető hangulatjeleket használó alkalmazások mostantól a rendszer hangulatjeleire váltanak vissza. </item>
+    </plurals>
+    <string name="emoji_picker_footer">Nem tartalmaz emoji-készetet. Válasszon egy legfeljebb 128 MB méretű .ttf formátumú emoji-készletet – például egy emoji Magisk-modulból (system/fonts/NotoColorEmoji.ttf). A rendszer-emojik elé kerül, így azok az emojik, amelyek ebből hiányoznak, továbbra is a rendszer-készletből származnak.</string>
+    <string name="emoji_error_title">Nem cserélhetőle az emoji</string>
+    <string name="emoji_error_invalid_file">Ez a fájl nem olyan emoji-típus, amelyet a rendszer használni tudna. Válasszon egy legfeljebb 128 MB méretű, színes hangulatjeleket tartalmazó .ttf betűtípust.</string>
+    <string name="emoji_error_not_installed">Előbb telepítsen egy egyéni emoji-csomagot.</string>
+    <string name="emoji_error_generic">Nem cserélhetőle az emoji ( %1$d hiba )</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Alapértelmezett képernyőfrissítés</string>
     <string name="peak_refresh_rate_title_custom">Képernyőfrissítés-emelés</string>
@@ -1417,7 +1450,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="pif_no_devices_found">Nem található eszköz</string>
     <string name="pif_no_api_key">Nem sikerült kinyerni a Flash Tool API-kulcsot</string>
     <string name="pif_select_device">Eszköz kiválasztása</string>
-    <string name="pif_device_suggested">%1$s · Suggested</string>
+    <string name="pif_device_suggested">%1$s · Javasolt</string>
     <string name="pif_select_channel">Válasszon kiadási csatornát</string>
     <string name="pif_channel_latest_release">A legújabb kiadás</string>
     <string name="pif_channel_latest_release_summary">Ujjlenyomat a jelenlegi béta OTA-ból</string>
@@ -1587,12 +1620,12 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="gs_remove_title">Játék eltávolítása?</string>
     <string name="gs_remove_message">Eltávolítod a %s a játék rejtésből?</string>
     <string name="gs_edit_app">%s szerkesztése</string>
-    <string name="gs_edit_hint">Pick field names such as MODEL, MANUFACTURER, BRAND or DEVICE. Empty rows are ignored.</string>
+    <string name="gs_edit_hint">Jelöljön meg mezőket, például: MODEL, GyÁRTÓ, BRAND vagy KÉSZÜLÉK. Az üres sorok figyelmen kívül maradnak.</string>
     <string name="gs_key">Mező</string>
     <string name="gs_value">Érték</string>
-    <string name="gs_invalid_value">%s has an invalid value</string>
+    <string name="gs_invalid_value">Ennek: %s érvénytelen az értéke</string>
     <string name="gs_add_property">Mező hozzáadása</string>
-    <string name="gs_invalid_key">%s isn\'t a supported field. Pick one from the list or remove the row.</string>
+    <string name="gs_invalid_key">Ez: %s nem támogatott mező. Válasszon egyet a listából, vagy törölje a sort.</string>
     <string name="gs_duplicate_key">Minden mező csak egyszer állítható be</string>
     <string name="gs_save">Mentés</string>
     <string name="gs_footer_body">A kiválasztott játék a „Build” mezőiben látja a választott eszközazonosítót. A játékok újraindulnak, ha a konfigurációjuk megváltozik. Egyes játékok ezt arra használják, hogy magasabb képkockasebességet vagy grafikai beállításokat tegyenek elérhetővé.</string>
