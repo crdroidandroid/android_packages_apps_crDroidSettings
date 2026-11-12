@@ -8,6 +8,7 @@ package com.crdroid.settings.fragments.ui.fonts
 import android.app.ActivityManager
 import android.app.Application
 import android.content.Context
+import android.content.pm.ApplicationInfo
 import android.graphics.Paint
 import android.graphics.Typeface
 import android.graphics.fonts.Font
@@ -27,6 +28,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.AndroidViewModel
@@ -38,7 +40,9 @@ import com.android.settings.SettingsPreferenceFragment
 import com.android.settingslib.spa.framework.theme.SettingsTheme
 import com.crdroid.settings.fragments.misc.spoofComposeView
 import com.crdroid.settings.preferences.ExternalFontInstaller
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -115,8 +119,14 @@ internal class EmojiRepository(context: Context) {
         .getOrNull()
         ?.takeIf { it.isNotEmpty() }
 
-    fun installedTypeface(): Typeface? =
-        File(INSTALLED_EMOJI).takeIf { it.isFile }?.let { fileTypeface(it) }
+    fun installedTypeface(): Typeface? = runCatching {
+        fontManager?.fontConfig?.fontFamilies
+            ?.flatMap { it.fontList }
+            ?.firstOrNull { it.file.parent == INSTALLED_EMOJI_DIR }
+            ?.file
+    }.onFailure { Log.e(TAG, "getFontConfig failed", it) }
+        .getOrNull()
+        ?.let { fileTypeface(it) }
 
     /** Null when the file can't be read, is too large, or has no emoji in it. Blocking. */
     fun inspect(uri: Uri): EmojiFilePreview? {
@@ -170,7 +180,8 @@ internal class EmojiRepository(context: Context) {
             .onFailure { Log.e(TAG, "getRunningAppProcesses failed", it) }
             .getOrNull().orEmpty()
             .filter { Process.isApplicationUid(it.uid) }
-            .filter { (it.flags and android.app.RunningAppProcessInfo.FLAG_PERSISTENT) == 0 }
+            .filterNot { proc -> proc.pkgList.orEmpty().any { isPersistent(it) } }
+            .filterNot { GMS_PACKAGE in it.pkgList.orEmpty() }
             .mapTo(HashSet()) { it.uid }
         val service = ActivityManager.getService()
         uids.forEach { uid ->
@@ -179,6 +190,11 @@ internal class EmojiRepository(context: Context) {
             }.onFailure { Log.w(TAG, "killUid $uid failed", it) }
         }
     }
+
+    private fun isPersistent(pkg: String): Boolean = runCatching {
+        (context.packageManager.getApplicationInfo(pkg, 0).flags and
+            ApplicationInfo.FLAG_PERSISTENT) != 0
+    }.getOrDefault(false)
 
     private fun fileTypeface(file: File): Typeface? = runCatching {
         val family = FontFamily.Builder(Font.Builder(file).build()).build()
@@ -231,8 +247,10 @@ internal class EmojiRepository(context: Context) {
         private const val KILL_REASON = "system emoji changed"
         private const val PROBE_EMOJI = "😀" // 😀
 
+        private const val GMS_PACKAGE = "com.google.android.gms"
+
         /** Where FontManagerService keeps the installed font (UpdatableFontDir). */
-        private const val INSTALLED_EMOJI = "/data/fonts/emoji/emoji.ttf"
+        private const val INSTALLED_EMOJI_DIR = "/data/fonts/emoji"
 
         /** Same limit as UpdatableFontDir.MAX_CUSTOM_EMOJI_FILE_SIZE. */
         const val MAX_EMOJI_BYTES = 128L * 1024L * 1024L
@@ -244,6 +262,37 @@ internal sealed interface EmojiBusy {
     data class Installing(val name: String) : EmojiBusy
     data object Removing : EmojiBusy
     data object UpdatingApps : EmojiBusy
+}
+
+internal object EmojiOps {
+    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
+
+    var busy by mutableStateOf<EmojiBusy?>(null)
+        private set
+
+    var generation by mutableIntStateOf(0)
+        private set
+
+    /** "Restart now" chosen in a dialog; carried out by whichever screen is alive. */
+    var restartRequested by mutableStateOf(false)
+
+    fun run(state: EmojiBusy, block: suspend () -> Unit) {
+        if (busy != null) return
+        busy = state
+        scope.launch {
+            try {
+                block()
+            } finally {
+                busy = null
+                generation++
+            }
+        }
+    }
+
+    /** Background work that needn't block the screen and must outlive it. */
+    fun launch(block: suspend () -> Unit) {
+        scope.launch { block() }
+    }
 }
 
 internal sealed interface EmojiDialog {
@@ -268,13 +317,10 @@ class EmojiPickerViewModel(application: Application) : AndroidViewModel(applicat
         private set
     internal var pending by mutableStateOf<PendingRestart?>(null)
         private set
-    internal var busy by mutableStateOf<EmojiBusy?>(null)
-        private set
     internal var dialog by mutableStateOf<EmojiDialog?>(null)
         private set
 
-    /** Set when the user chose "restart now"; carried out by the screen, which has an activity. */
-    internal var restartRequested by mutableStateOf(false)
+    internal val busy: EmojiBusy? get() = EmojiOps.busy
 
     init {
         refresh()
@@ -293,56 +339,46 @@ class EmojiPickerViewModel(application: Application) : AndroidViewModel(applicat
         }
     }
 
-    private fun run(state: EmojiBusy, block: suspend () -> Unit) {
-        if (busy != null) return
-        busy = state
-        viewModelScope.launch {
-            try {
-                block()
-            } finally {
-                busy = null
-                refresh()
-            }
-        }
-    }
-
-    internal fun inspect(uri: Uri) = run(EmojiBusy.Reading) {
+    internal fun inspect(uri: Uri) = EmojiOps.run(EmojiBusy.Reading) {
         val preview = withContext(Dispatchers.IO) { repo.inspect(uri) }
-        if (preview == null) {
-            dialog = EmojiDialog.Error(app.getString(R.string.emoji_error_invalid_file))
+        dialog = if (preview == null) {
+            EmojiDialog.Error(app.getString(R.string.emoji_error_invalid_file))
         } else {
-            dialog = EmojiDialog.Install(preview)
+            EmojiDialog.Install(preview)
         }
     }
 
     internal fun install(preview: EmojiFilePreview, restartNow: Boolean) {
         dialog = null
-        run(EmojiBusy.Installing(preview.postScriptName)) {
-            val code = withContext(Dispatchers.IO) { repo.install(preview) }
-            finish(code, preview.postScriptName, restartNow)
+        change(EmojiBusy.Installing(preview.postScriptName), preview.postScriptName, restartNow) {
+            repo.install(preview)
         }
     }
 
     internal fun remove(restartNow: Boolean) {
         dialog = null
-        run(EmojiBusy.Removing) {
-            val code = withContext(Dispatchers.IO) { repo.clear() }
-            finish(code, app.getString(R.string.font_default), restartNow)
+        change(EmojiBusy.Removing, app.getString(R.string.font_default), restartNow) {
+            repo.clear()
         }
     }
 
-    private fun finish(code: Int, label: String, restartNow: Boolean) {
-        if (code != FontManager.RESULT_SUCCESS) {
-            dialog = EmojiDialog.Error(errorMessage(code))
-            return
+    private fun change(state: EmojiBusy, label: String, restartNow: Boolean, op: () -> Int) {
+        EmojiOps.run(state) {
+            val previous = tracker.pending()
+            tracker.markPending(RestartKind.SYSTEMUI, label)
+            val code = withContext(Dispatchers.IO) { op() }
+            if (code != FontManager.RESULT_SUCCESS) {
+                tracker.restore(previous)
+                dialog = EmojiDialog.Error(errorMessage(code))
+                return@run
+            }
+            if (restartNow) EmojiOps.restartRequested = true
         }
-        tracker.markPending(RestartKind.SYSTEMUI, label)
-        if (restartNow) restartRequested = true
     }
 
     internal fun updateApps() {
         dialog = null
-        run(EmojiBusy.UpdatingApps) {
+        EmojiOps.run(EmojiBusy.UpdatingApps) {
             val result = withContext(Dispatchers.IO) { repo.applyToApps() }
             dialog = if (result >= 0) EmojiDialog.AppsUpdated(result)
             else EmojiDialog.Error(errorMessage(result))
@@ -359,11 +395,16 @@ class EmojiPickerViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     internal fun restartNow(activityContext: Context) {
-        restartRequested = false
-        if (pending == null) return
+        if (tracker.pending() == null) return
         tracker.restartNow(RestartKind.SYSTEMUI, activityContext)
         pending = null
-        viewModelScope.launch(Dispatchers.IO) { repo.killRunningApps() }
+        EmojiOps.launch { withContext(Dispatchers.IO) { repo.killRunningApps() } }
+    }
+
+    internal fun consumeRestartRequest(activityContext: Context) {
+        if (!EmojiOps.restartRequested) return
+        EmojiOps.restartRequested = false
+        restartNow(activityContext)
     }
 
     private fun errorMessage(code: Int): String = when (code) {

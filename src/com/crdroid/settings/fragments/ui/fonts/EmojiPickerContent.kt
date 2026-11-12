@@ -76,7 +76,8 @@ internal fun EmojiPickerContent(vm: EmojiPickerViewModel, onPickFont: () -> Unit
     val context = LocalContext.current
     val busy = vm.busy
 
-    LaunchedEffect(vm.restartRequested) { if (vm.restartRequested) vm.restartNow(context) }
+    LaunchedEffect(EmojiOps.generation) { if (EmojiOps.generation > 0) vm.refresh() }
+    LaunchedEffect(EmojiOps.restartRequested) { vm.consumeRestartRequest(context) }
 
     EmojiDialogs(vm)
 
