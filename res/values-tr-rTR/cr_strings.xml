@@ -1366,7 +1366,7 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="game_spoofing_summary">Yapılandırılmış oyunlar için cihaz özelliklerini yanılt</string>
     <!-- Spoofing: shared -->
     <string name="spoof_wipe_playstore_title">Play Store verileri temizlensin mi?</string>
-    <string name="spoof_wipe_playstore_message">Integrity verdicts are cached by the Play Store. Clearing its data makes the new configuration take effect right away, but signs the Play Store out and clears its download queue.</string>
+    <string name="spoof_wipe_playstore_message">Bütünlük doğrulama sonuçları Play Store tarafından önbelleğe alınır. Uygulama verilerini temizlemek yeni yapılandırmanın hemen geçerli olmasını sağlar; ancak Play Store oturumunu kapatır ve indirme sırasını sıfırlar.</string>
     <string name="spoof_wipe_confirm">Verileri temizle</string>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Aktif yapılandırma</string>
@@ -1451,14 +1451,14 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="ts_revocation_status">Google iptal surumu</string>
     <string name="ts_revocation_checking">Google ile kontrol ediliyor...</string>
     <string name="ts_revocation_not_yet_checked">Henüz kontrol edilmedi. Şimdi kontrol etmek için bas</string>
-    <string name="ts_revocation_valid">Not revoked, and every certificate chain leads to a Google attestation root</string>
-    <string name="ts_revocation_expiring">Valid, but a certificate expires on %1$s</string>
-    <string name="ts_revocation_revoked">Revoked by Google (reason: %1$s)</string>
-    <string name="ts_revocation_suspended">Suspended by Google (reason: %1$s)</string>
-    <string name="ts_revocation_expired">A certificate expired on %1$s</string>
-    <string name="ts_revocation_chain_invalid">The certificate chain does not verify (%1$s)</string>
-    <string name="ts_revocation_untrusted_root">The chain does not lead to a Google attestation root</string>
-    <string name="ts_revocation_unverified">Google could not be reached. The status will be checked again later</string>
+    <string name="ts_revocation_valid">İptal edilmemiş ve tüm sertifika zincirleri bir Google doğrulama köküne ulaşıyor</string>
+    <string name="ts_revocation_expiring">Geçerli, ancak bir sertifikanın süresi %1$s tarihinde doluyor</string>
+    <string name="ts_revocation_revoked">Google tarafından iptal edildi (neden: %1$s)</string>
+    <string name="ts_revocation_suspended">Google tarafından askıya alındı (neden: %1$s)</string>
+    <string name="ts_revocation_expired">Bir sertifikanın süresi %1$s tarihinde doldu</string>
+    <string name="ts_revocation_chain_invalid">Sertifika zinciri doğrulanamıyor (%1$s)</string>
+    <string name="ts_revocation_untrusted_root">Zincir bir Google doğrulama köküne ulaşmıyor</string>
+    <string name="ts_revocation_unverified">Google\'a ulaşılamadı. Durum daha sonra tekrar kontrol edilecek</string>
     <string name="ts_revocation_error">Kontrol başarısız oldu: %s</string>
     <string name="ts_revocation_last_checked">Son kontrol: %1$s</string>
     <string name="ts_chip_valid">Geçerli</string>
@@ -1472,17 +1472,17 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="ts_chip_checking">Kontrol ediliyor</string>
     <string name="ts_chip_unchecked">Kontrol edilmemiş</string>
     <string name="ts_flag_revoked_title">Keybox iptal edilmiş</string>
-    <string name="ts_flag_revoked_message">Google has revoked this keybox. Strong integrity will fail with it; device integrity may still pass. Import a different keybox to restore strong integrity.</string>
+    <string name="ts_flag_revoked_message">Google bu anahtar kutusunu iptal etti. Bu anahtar kutusu ile güçlü bütünlük doğrulaması başarısız olur; ancak cihaz bütünlüğü yine de geçilebilir. Güçlü bütünlüğü kazanmak için farklı bir anahtar kutusu aktarın.</string>
     <string name="ts_flag_suspended_title">Keybox askıya alınmış</string>
-    <string name="ts_flag_suspended_message">Google has suspended this keybox. Strong integrity will fail while it is suspended. Import a different keybox to restore strong integrity.</string>
+    <string name="ts_flag_suspended_message">Google bu anahtar kutusunu askıya aldı. Askıdayken güçlü bütünlük sağlanamaz. Güçlü bütünlüğü tekrar kazanmak için farklı bir anahtar kutusunu içe aktarın.</string>
     <string name="ts_flag_expired_title">Keybox sona ermiş</string>
-    <string name="ts_flag_expired_message">A certificate in this keybox expired on %1$s. Attestation with it will fail.</string>
+    <string name="ts_flag_expired_message">Bu anahtar kutusundaki bir sertifikanın süresi %1$s tarihinde doldu. Bu anahtar kutusu ile yapılan doğrulama başarısız olur.</string>
     <string name="ts_flag_expiring_title">Keybox yakında sona erecek</string>
-    <string name="ts_flag_expiring_message">A certificate in this keybox expires on %1$s. It keeps working until then.</string>
+    <string name="ts_flag_expiring_message">Bu anahtar kutusundaki bir sertifikanın süresi %1$s tarihinde doluyor. O zamana kadar çalışmaya devam eder.</string>
     <string name="ts_flag_chain_title">Geçersiz sertifika zinciri</string>
-    <string name="ts_flag_chain_message">The keybox certificate chain does not verify (%1$s). The file may be corrupted or tampered with.</string>
+    <string name="ts_flag_chain_message">Anahtar kutusu sertifika zinciri doğrulanamadı (%1$s). Dosya hasar görmüş veya üzerinde değişiklik yapılmış olabilir.</string>
     <string name="ts_flag_root_title">Tanınmayan keybox kökü</string>
-    <string name="ts_flag_root_message">This keybox chains to a root that is not a Google hardware attestation root. Strong integrity will most likely fail.</string>
+    <string name="ts_flag_root_message">Bu anahtar kutusu, Google donanım doğrulama kökü olmayan bir köke bağlanıyor. Güçlü bütünlük büyük ihtimalle başarısız olur.</string>
     <string name="ts_keep_keybox">Sakla</string>
     <string name="ts_import_another">Başkasını içe aktar</string>
     <string name="ts_target_configuration">Hedef Yapılandırma</string>
@@ -1493,7 +1493,7 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="ts_import_target_list">Hedef listesini içe aktar</string>
     <string name="ts_import_target_list_summary">target.txt dosyasından içe aktar</string>
     <string name="ts_target_list_imported">Hedef listesi içe aktarıldı</string>
-    <string name="ts_target_list_invalid">Target list rejected near: %s</string>
+    <string name="ts_target_list_invalid">Hedef listesi şu ifadenin civarında reddedildi: %s</string>
     <string name="ts_system_apps">Sistem uygulamaları</string>
     <string name="ts_add_user_apps">Kullanıcı uygulamaları ekle</string>
     <plurals name="ts_added_installed_count">
@@ -1501,18 +1501,18 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
         <item quantity="other">%d uygulamaları eklendi</item>
     </plurals>
     <string name="ts_failed">Başarısız oldu: %s</string>
-    <string name="ts_footer_body">1. Obtain a valid keybox XML from a trusted source. Keyboxes are not provided; you must find one yourself.\n2. Tap \"Import keybox\" and load the file. Its revocation status is checked with Google right away and again every 24 hours while you visit this screen.\n3. Google Play Services, the Play Store and other common targets are added automatically. Open \"Manage target apps\" to change them.\n4. Set target mode to \"Leaf\" if your device has a working TEE, otherwise leave it as Auto.\n5. Recheck your Play Integrity status.\n\nIf Google revokes a keybox, it may still allow passing up to device integrity even though strong integrity will fail.</string>
+    <string name="ts_footer_body">1. Güvenilir bir kaynaktan geçerli bir anahtar kutusu XML dosyası edinin. Anahtar kutuları sağlanmaz; kendiniz bir tane bulmalısınız.\n2. \"Anahtar kutusunu içe aktar\" seçeneğine dokunun ve dosyayı yükleyin. İptal durumu hemen ve bu ekranı her ziyaret ettiğinizde 24 saatte bir Google ile kontrol edilir.\n3. Google Play Hizmetleri, Play Store ve diğer yaygın hedefler otomatik olarak eklenir. Bunları değiştirmek için \"Hedef uygulamaları yönet\" menüsünü açın.\n4. Cihazınızda çalışan bir TEE varsa hedef modunu \"Leaf\" olarak ayarlayın, aksi takdirde Otomatik olarak bırakın.\n5. Play Integrity durumunuzu tekrar kontrol edin.\n\nGoogle bir anahtar kutusunu iptal ederse, güçlü bütünlük başarısız olsa bile cihaz bütünlüğünün geçmesine yine de izin verebilir.</string>
     <string name="ts_verification_mode">Doğrulama modu</string>
     <string name="ts_verification_auto_count">%1$d otomatik</string>
     <string name="ts_verification_cert_count">%1$d sertifika</string>
     <string name="ts_verification_leaf_count">%1$d yaprak</string>
     <string name="ts_verification_skip_count">%1$d atla</string>
-    <string name="ts_patch_dialog_message">A date (YYYY-MM-DD or YYYY-MM), a template like YYYY-MM-05 that follows the current month, or \"no\" to report the device\'s own patch. Use system / vendor / boot / all lines with optional [package] sections to set them separately.</string>
+    <string name="ts_patch_dialog_message">Bir tarih (YYYY-MM-DD veya YYYY-MM), güncel ayı baz alan YYYY-MM-05 gibi bir şablon ya da cihazın kendi yama tarihini iletmek için \"no\" girin. Ayrı ayrı belirlemek için isteğe bağlı [package] bölümleriyle birlikte system / vendor / boot / all satırlarını kullanabilirsiniz.</string>
     <string name="ts_invalid_patch_date">Yama düzeyi geçersiz. YYYY-AA-GG kullanın</string>
-    <string name="ts_invalid_patch">Invalid patch level. Use a date, a YYYY-MM-DD template, or \"no\"</string>
+    <string name="ts_invalid_patch">Geçersiz yama düzeyi. Bir tarih, YYYY-MM-DD şablonu veya \"no\" kullanın</string>
     <string name="ts_security_patch">Güvenlik yaması tarihi</string>
     <string name="ts_no_patch">Ayarlanmadı (cihaz varsayılanı kullanılıyor)</string>
-    <string name="ts_patch_device">Device patch level (no override)</string>
+    <string name="ts_patch_device">Cihaz yama düzeyi (geçersiz kılma yok)</string>
     <string name="ts_patch_custom_blocks">Özel bölüm başına veya uygulama başına düzeyler</string>
     <string name="ts_patch_stale_chip">12+ aylık</string>
     <string name="ts_mode_auto">Otomatik</string>
