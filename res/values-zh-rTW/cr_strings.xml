@@ -956,15 +956,29 @@
     <string name="solid_accent">純色強調色</string>
     <string name="outline">邊框</string>
     <string name="solid_accent_gradient">純色漸層強調色</string>
-    <string name="solid_gradient">純色漸層側邊</string>
+    <string name="solid_gradient">Solid Gradient side</string>
     <string name="solid_gradient_corner">純色強調色銳利漸層</string>
-    <string name="solid_gradient_void">漸層留白</string>
+    <string name="solid_gradient_void">Gradient Void</string>
     <string name="solid_gradient_neumorph">新擬物風格漸層</string>
     <string name="solid_gradient_stroke">銳利漸層外框</string>
-    <string name="solid_accent_transperent">強調色透明度</string>
+    <string name="solid_accent_transperent">Accent transparent</string>
     <string name="solid_gradient_light">漸層亮色</string>
     <string name="solid_gradient_shape">銳利漸層圓角</string>
-    <string name="solid_gradient_void_light">漸層留白亮色</string>
+    <string name="solid_gradient_void_light">Gradient Void light</string>
+    <string name="clock_chip_custom_gradient">Custom gradient</string>
+    <!-- Gradient mode - Start color picker -->
+    <string name="clock_chip_gradient_start_color_title">漸變開始顏色</string>
+    <string name="clock_chip_gradient_start_color_summary">Color at the start of the gradient</string>
+    <!-- Gradient mode - End color picker -->
+    <string name="clock_chip_gradient_end_color_title">漸層結束顏色</string>
+    <string name="clock_chip_gradient_end_color_summary">Color at the end of the gradient</string>
+    <!-- Gradient mode - Angle seekbar -->
+    <string name="clock_chip_gradient_angle_title">Gradient angle</string>
+    <string name="clock_chip_gradient_angle_summary">Direction of the gradient (0° = left→right, 90° = bottom→top)</string>
+    <!-- Gradient mode - Mask text -->
+    <string name="clock_chip_gradient_mask_text_title">Clock text style</string>
+    <string name="clock_chip_gradient_mask_text_default">預設</string>
+    <string name="clock_chip_gradient_mask_text_mask">Transparent (Mask)</string>
     <!-- Weather -->
     <string name="weather_settings_title">天氣服務設定</string>
     <string name="weather_settings_summary">設定圖示包和天氣服務</string>
@@ -1435,6 +1449,11 @@
     <string name="spoof_wipe_playstore_message">Play 商店會快取完整性判定結果。清除其資料可讓新設定立即生效，但會登出 Play 商店並清除其下載佇列。</string>
     <string name="spoof_wipe_confirm">清除資料</string>
     <string name="spoof_choice_select">選取</string>
+    <string name="spoof_check_interval_title">Check every</string>
+    <string name="spoof_interval_hours_short">%dh</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="other">%d hours</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">活動配置</string>
     <string name="pif_no_config">未載入任何配置</string>
@@ -1466,9 +1485,9 @@
     <string name="pif_channel_latest_release_summary">來自目前 beta OTA 的指紋</string>
     <string name="pif_channel_canary_release">金絲雀版本</string>
     <string name="pif_channel_canary_release_summary">來自 Android Flash Tool 的最新 Canary 建置</string>
-    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">Auto-refresh fingerprint</string>
-    <string name="pif_auto_refresh_summary_on">每日檢查 %2$s 頻道上是否有更新的 %1$s 指紋。找到後會套用並清除 Play 商店資料</string>
+    <string name="pif_auto_refresh_summary_on">Checks every %3$s for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
     <string name="pif_auto_refresh_summary_off">Off. The %1$s fingerprint (%2$s) only changes when you fetch or import one</string>
     <string name="pif_auto_refresh_last_checked">Last checked: %1$s</string>
     <string name="pif_auto_refresh_channel_name">裝置完整性修正</string>
@@ -1536,14 +1555,20 @@ DroidGuard 和 Play 商店會在設定變更時自動重新啟動。載入過期
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Keybox alerts</string>
     <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
-    <string name="ts_alerts_summary_on">Checks daily with Google. You\'ll be notified if the keybox is revoked</string>
-    <string name="ts_alerts_summary_scheduled">Checks daily with Google for revocation status. Expiry reminder on %1$s</string>
-    <string name="ts_alerts_summary_due">The keybox expires in less than a day, load a new one soon</string>
+    <string name="ts_alerts_summary_on">Checks with Google every %1$s. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks with Google every %1$s for revocation status. Next expiry reminder on %2$s</string>
+    <string name="ts_alerts_summary_due">The keybox expires soon, load a new one</string>
+    <string name="ts_alerts_lead_title">Warn before expiry</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="other">%d days</item>
+    </plurals>
     <string name="ts_alerts_summary_expired">The keybox has expired. Load a new keybox to get alerts again</string>
     <string name="ts_alerts_summary_blocked">Notifications for Settings are turned off, so alerts can\'t be shown</string>
     <string name="ts_alerts_channel_name">Keybox alerts</string>
-    <string name="ts_alerts_channel_description">當 TrickyStore keybox 被 Google 撤銷或在一天內到期時通知你</string>
-    <string name="ts_alert_expiry_title">Keybox expires in 1 day</string>
+    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or is about to expire</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="other">Keybox expires in %d days</item>
+    </plurals>
     <string name="ts_alert_expiry_text">你的 TrickyStore keybox 於 %1$s 到期。請盡快載入新的 keybox 以繼續通過 Play Integrity。</string>
     <string name="ts_alert_revoked_title">Keybox 已撤銷</string>
     <string name="ts_alert_revoked_text">Google 已撤銷你的 TrickyStore keybox（原因：%1$s）。在你載入新的 keybox 之前，強完整性將失敗。</string>
