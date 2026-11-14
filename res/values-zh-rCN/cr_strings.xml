@@ -426,8 +426,25 @@
     <!-- System emoji -->
     <string name="emoji_picker_title">System emoji</string>
     <string name="emoji_picker_summary">Use your own emoji font</string>
+    <string name="emoji_presets_section">Emoji styles</string>
+    <string name="emoji_download_size">Download · %1$s</string>
+    <string name="emoji_downloading">Downloading %1$s… %2$d%%</string>
+    <string name="emoji_applying">Applying %1$s…</string>
+    <string name="emoji_downloaded">Downloaded</string>
+    <string name="emoji_downloaded_size">Downloaded · %1$s</string>
+    <string name="emoji_download_only">Download, apply later</string>
+    <string name="emoji_download_done">%1$s downloaded</string>
+    <string name="emoji_delete_download">Delete download</string>
+    <string name="emoji_catalog_error">Couldn\'t load the emoji styles. Check your connection.</string>
+    <string name="emoji_catalog_retry">Retry</string>
+    <string name="emoji_error_download">Couldn\'t download the emoji font. Check your connection and try again.</string>
+    <string name="emoji_error_checksum">The downloaded emoji font didn\'t match the expected file. Try again later.</string>
+    <string name="emoji_custom_section">Custom emoji</string>
+    <string name="emoji_replace_custom">Install another emoji font</string>
+    <string name="emoji_apply_restart_now">Apply and restart</string>
+    <string name="emoji_apply_restart_later">应用，稍后重启</string>
     <string name="emoji_current">Current emoji</string>
-    <string name="emoji_add">Choose emoji font</string>
+    <string name="emoji_add">Choose custom emoji font</string>
     <string name="emoji_removing">Removing custom emoji…</string>
     <string name="emoji_updating_apps">Updating emoji in apps…</string>
     <string name="emoji_install_message">These emoji replace the system emoji in every app that uses the system font. Restarting now restarts SystemUI and closes all running apps so they pick up the new emoji. If you restart later, each app switches the next time it starts.</string>
@@ -446,7 +463,7 @@
     <plurals name="emoji_apps_done">
         <item quantity="other">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
     </plurals>
-    <string name="emoji_picker_footer">No emoji font is included. Choose a .ttf emoji font of up to 128 MB, for example from an emoji Magisk module (system/fonts/NotoColorEmoji.ttf). It is placed ahead of the system emoji, so any emoji it lacks still come from the system font.</string>
+    <string name="emoji_picker_footer">Emoji styles are downloaded from crDroid\'s theme repository and kept on the device, so you can switch between them without downloading again. You can also add your own .ttf emoji font of up to 128 MB, for example from an emoji Magisk module (system/fonts/NotoColorEmoji.ttf). Any emoji a font lacks still come from the system emoji.</string>
     <string name="emoji_error_title">Couldn\'t change the emoji</string>
     <string name="emoji_error_invalid_file">This file isn\'t an emoji font the system can use. Choose a .ttf font of up to 128 MB that contains color emoji.</string>
     <string name="emoji_error_not_installed">Install a custom emoji font first.</string>
@@ -940,15 +957,29 @@
     <string name="solid_accent">纯色强调</string>
     <string name="outline">描边</string>
     <string name="solid_accent_gradient">纯色强调渐变</string>
-    <string name="solid_gradient">纯色渐变侧边</string>
+    <string name="solid_gradient">Solid Gradient side</string>
     <string name="solid_gradient_corner">纯色强调渐变</string>
-    <string name="solid_gradient_void">渐变空白</string>
+    <string name="solid_gradient_void">Gradient Void</string>
     <string name="solid_gradient_neumorph">新拟态渐变</string>
     <string name="solid_gradient_stroke">锐角渐变描边</string>
-    <string name="solid_accent_transperent">强调色透明</string>
+    <string name="solid_accent_transperent">Accent transparent</string>
     <string name="solid_gradient_light">渐变亮色</string>
     <string name="solid_gradient_shape">锐角渐变角</string>
-    <string name="solid_gradient_void_light">渐变空白亮色</string>
+    <string name="solid_gradient_void_light">Gradient Void light</string>
+    <string name="clock_chip_custom_gradient">Custom gradient</string>
+    <!-- Gradient mode - Start color picker -->
+    <string name="clock_chip_gradient_start_color_title">渐变开始颜色</string>
+    <string name="clock_chip_gradient_start_color_summary">Color at the start of the gradient</string>
+    <!-- Gradient mode - End color picker -->
+    <string name="clock_chip_gradient_end_color_title">渐变结束颜色</string>
+    <string name="clock_chip_gradient_end_color_summary">Color at the end of the gradient</string>
+    <!-- Gradient mode - Angle seekbar -->
+    <string name="clock_chip_gradient_angle_title">Gradient angle</string>
+    <string name="clock_chip_gradient_angle_summary">Direction of the gradient (0° = left→right, 90° = bottom→top)</string>
+    <!-- Gradient mode - Mask text -->
+    <string name="clock_chip_gradient_mask_text_title">Clock text style</string>
+    <string name="clock_chip_gradient_mask_text_default">默认</string>
+    <string name="clock_chip_gradient_mask_text_mask">Transparent (Mask)</string>
     <!-- Weather -->
     <string name="weather_settings_title">天气设置</string>
     <string name="weather_settings_summary">设置图标包与天气服务</string>
@@ -1421,6 +1452,11 @@
     <string name="spoof_wipe_playstore_message">完整性校验结果由Play商店缓存。清除其数据可让新配置立即生效，但会退出Play商店账号并清空下载队列。</string>
     <string name="spoof_wipe_confirm">清除数据</string>
     <string name="spoof_choice_select">选择</string>
+    <string name="spoof_check_interval_title">Check every</string>
+    <string name="spoof_interval_hours_short">%dh</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="other">%d hours</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">当前使用的配置</string>
     <string name="pif_no_config">未加载配置</string>
@@ -1452,9 +1488,9 @@
     <string name="pif_channel_latest_release_summary">当前测试版OTA 的指纹</string>
     <string name="pif_channel_canary_release">测试版本</string>
     <string name="pif_channel_canary_release_summary">最新的 Canary 版本从 Android Flash 工具</string>
-    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">自动刷新指纹</string>
-    <string name="pif_auto_refresh_summary_on">每日在%2$s渠道检查是否存在更新的%1$s指纹。一旦检测到，就会应用该指纹并清除Play商店数据</string>
+    <string name="pif_auto_refresh_summary_on">Checks every %3$s for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
     <string name="pif_auto_refresh_summary_off">关闭。%1$s 的指纹（%2$s）仅在获取或导入指纹时才会变更</string>
     <string name="pif_auto_refresh_last_checked">上次检查于：%1$s</string>
     <string name="pif_auto_refresh_channel_name">Play 完整性修复</string>
@@ -1496,6 +1532,8 @@
     <string name="ts_import_keybox">导入Keybox密钥</string>
     <string name="ts_replace_keybox">替换Keybox密钥</string>
     <string name="ts_check_status">检查状态</string>
+    <string name="ts_find_keybox">Where to find keybox?</string>
+    <string name="ts_no_browser">No browser found to open the link</string>
     <string name="ts_no_keybox">未安装Keybox密钥</string>
     <string name="ts_keybox_installed">已安装Keybox密钥</string>
     <string name="ts_keybox_imported">Keybox密钥导入成功</string>
@@ -1514,14 +1552,20 @@
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Keybox 提醒</string>
     <string name="ts_alerts_summary_off">关闭。Keybox 被吊销或即将到期时不会通知你</string>
-    <string name="ts_alerts_summary_on">每日向谷歌核验。Keybox 被吊销时会通知你</string>
-    <string name="ts_alerts_summary_scheduled">每日向 Google 查询吊销状态，将于 %1$s 发送到期提醒</string>
-    <string name="ts_alerts_summary_due">该 Keybox 将在一天内到期，请尽快导入新的 Keybox</string>
+    <string name="ts_alerts_summary_on">Checks with Google every %1$s. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks with Google every %1$s for revocation status. Next expiry reminder on %2$s</string>
+    <string name="ts_alerts_summary_due">The keybox expires soon, load a new one</string>
+    <string name="ts_alerts_lead_title">Warn before expiry</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="other">%d days</item>
+    </plurals>
     <string name="ts_alerts_summary_expired">该 Keybox 已到期，请导入新的 Keybox 以重新接收提醒</string>
     <string name="ts_alerts_summary_blocked">设置的通知权限已关闭，无法展示提醒</string>
     <string name="ts_alerts_channel_name">Keybox 提醒</string>
-    <string name="ts_alerts_channel_description">当 TrickyStore 的 Keybox 被谷歌吊销或距离到期仅剩一天时向你发送通知</string>
-    <string name="ts_alert_expiry_title">Keybox 将在 1 天后到期</string>
+    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or is about to expire</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="other">Keybox expires in %d days</item>
+    </plurals>
     <string name="ts_alert_expiry_text">你的 TrickyStore Keybox 将于 %1$s 到期，请尽快导入新Keybox以维持Play Integrity校验通过。</string>
     <string name="ts_alert_revoked_title">Keybox 已吊销</string>
     <string name="ts_alert_revoked_text">谷歌已吊销你的 TrickyStore Keybox（原因：%1$s ）。在导入新Keybox前，强完整性校验会失败。</string>

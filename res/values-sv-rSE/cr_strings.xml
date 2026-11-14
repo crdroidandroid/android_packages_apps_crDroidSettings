@@ -427,8 +427,25 @@ En liten donation hjälper oss att hålla det här projektet vid liv och för at
     <!-- System emoji -->
     <string name="emoji_picker_title">System emoji</string>
     <string name="emoji_picker_summary">Use your own emoji font</string>
+    <string name="emoji_presets_section">Emoji styles</string>
+    <string name="emoji_download_size">Download · %1$s</string>
+    <string name="emoji_downloading">Downloading %1$s… %2$d%%</string>
+    <string name="emoji_applying">Applying %1$s…</string>
+    <string name="emoji_downloaded">Downloaded</string>
+    <string name="emoji_downloaded_size">Downloaded · %1$s</string>
+    <string name="emoji_download_only">Download, apply later</string>
+    <string name="emoji_download_done">%1$s downloaded</string>
+    <string name="emoji_delete_download">Delete download</string>
+    <string name="emoji_catalog_error">Couldn\'t load the emoji styles. Check your connection.</string>
+    <string name="emoji_catalog_retry">Retry</string>
+    <string name="emoji_error_download">Couldn\'t download the emoji font. Check your connection and try again.</string>
+    <string name="emoji_error_checksum">The downloaded emoji font didn\'t match the expected file. Try again later.</string>
+    <string name="emoji_custom_section">Custom emoji</string>
+    <string name="emoji_replace_custom">Install another emoji font</string>
+    <string name="emoji_apply_restart_now">Apply and restart</string>
+    <string name="emoji_apply_restart_later">Apply, restart later</string>
     <string name="emoji_current">Current emoji</string>
-    <string name="emoji_add">Choose emoji font</string>
+    <string name="emoji_add">Choose custom emoji font</string>
     <string name="emoji_removing">Removing custom emoji…</string>
     <string name="emoji_updating_apps">Updating emoji in apps…</string>
     <string name="emoji_install_message">These emoji replace the system emoji in every app that uses the system font. Restarting now restarts SystemUI and closes all running apps so they pick up the new emoji. If you restart later, each app switches the next time it starts.</string>
@@ -448,7 +465,7 @@ En liten donation hjälper oss att hålla det här projektet vid liv och för at
         <item quantity="one">Replaced %1$d emoji font in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
         <item quantity="other">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
     </plurals>
-    <string name="emoji_picker_footer">No emoji font is included. Choose a .ttf emoji font of up to 128 MB, for example from an emoji Magisk module (system/fonts/NotoColorEmoji.ttf). It is placed ahead of the system emoji, so any emoji it lacks still come from the system font.</string>
+    <string name="emoji_picker_footer">Emoji styles are downloaded from crDroid\'s theme repository and kept on the device, so you can switch between them without downloading again. You can also add your own .ttf emoji font of up to 128 MB, for example from an emoji Magisk module (system/fonts/NotoColorEmoji.ttf). Any emoji a font lacks still come from the system emoji.</string>
     <string name="emoji_error_title">Couldn\'t change the emoji</string>
     <string name="emoji_error_invalid_file">This file isn\'t an emoji font the system can use. Choose a .ttf font of up to 128 MB that contains color emoji.</string>
     <string name="emoji_error_not_installed">Install a custom emoji font first.</string>
@@ -943,15 +960,29 @@ En liten donation hjälper oss att hålla det här projektet vid liv och för at
     <string name="solid_accent">Solid color accent</string>
     <string name="outline">Kontur</string>
     <string name="solid_accent_gradient">Solid color accent gradient</string>
-    <string name="solid_gradient">Solid gradient side</string>
+    <string name="solid_gradient">Solid Gradient side</string>
     <string name="solid_gradient_corner">Solid accent gradient sharp</string>
-    <string name="solid_gradient_void">Gradient void</string>
+    <string name="solid_gradient_void">Gradient Void</string>
     <string name="solid_gradient_neumorph">Neumorph gradient</string>
     <string name="solid_gradient_stroke">Sharp gradient stroke</string>
-    <string name="solid_accent_transperent">Accent transperent</string>
+    <string name="solid_accent_transperent">Accent transparent</string>
     <string name="solid_gradient_light">Gradient light</string>
     <string name="solid_gradient_shape">Sharp gradient corner</string>
-    <string name="solid_gradient_void_light">Gradient void light</string>
+    <string name="solid_gradient_void_light">Gradient Void light</string>
+    <string name="clock_chip_custom_gradient">Custom gradient</string>
+    <!-- Gradient mode - Start color picker -->
+    <string name="clock_chip_gradient_start_color_title">Gradient start color</string>
+    <string name="clock_chip_gradient_start_color_summary">Color at the start of the gradient</string>
+    <!-- Gradient mode - End color picker -->
+    <string name="clock_chip_gradient_end_color_title">Gradient end color</string>
+    <string name="clock_chip_gradient_end_color_summary">Color at the end of the gradient</string>
+    <!-- Gradient mode - Angle seekbar -->
+    <string name="clock_chip_gradient_angle_title">Gradient angle</string>
+    <string name="clock_chip_gradient_angle_summary">Direction of the gradient (0° = left→right, 90° = bottom→top)</string>
+    <!-- Gradient mode - Mask text -->
+    <string name="clock_chip_gradient_mask_text_title">Clock text style</string>
+    <string name="clock_chip_gradient_mask_text_default">Standard</string>
+    <string name="clock_chip_gradient_mask_text_mask">Transparent (Mask)</string>
     <!-- Weather -->
     <string name="weather_settings_title">Väderinställningar</string>
     <string name="weather_settings_summary">Ställ in ikonpaket och vädertjänst</string>
@@ -1423,6 +1454,12 @@ En liten donation hjälper oss att hålla det här projektet vid liv och för at
     <string name="spoof_wipe_playstore_message">Integrity verdicts are cached by the Play Store. Clearing its data makes the new configuration take effect right away, but signs the Play Store out and clears its download queue.</string>
     <string name="spoof_wipe_confirm">Clear data</string>
     <string name="spoof_choice_select">Select</string>
+    <string name="spoof_check_interval_title">Check every</string>
+    <string name="spoof_interval_hours_short">%dh</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Active configuration</string>
     <string name="pif_no_config">No configuration loaded</string>
@@ -1454,9 +1491,9 @@ En liten donation hjälper oss att hålla det här projektet vid liv och för at
     <string name="pif_channel_latest_release_summary">Fingerprint from the current beta OTA</string>
     <string name="pif_channel_canary_release">Canary release</string>
     <string name="pif_channel_canary_release_summary">Newest Canary build from the Android Flash Tool</string>
-    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">Auto-refresh fingerprint</string>
-    <string name="pif_auto_refresh_summary_on">Checks daily for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
+    <string name="pif_auto_refresh_summary_on">Checks every %3$s for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
     <string name="pif_auto_refresh_summary_off">Off. The %1$s fingerprint (%2$s) only changes when you fetch or import one</string>
     <string name="pif_auto_refresh_last_checked">Last checked: %1$s</string>
     <string name="pif_auto_refresh_channel_name">Play Integrity Fix</string>
@@ -1498,6 +1535,8 @@ En liten donation hjälper oss att hålla det här projektet vid liv och för at
     <string name="ts_import_keybox">Import keybox</string>
     <string name="ts_replace_keybox">Replace keybox</string>
     <string name="ts_check_status">Check status</string>
+    <string name="ts_find_keybox">Where to find keybox?</string>
+    <string name="ts_no_browser">No browser found to open the link</string>
     <string name="ts_no_keybox">No keybox installed</string>
     <string name="ts_keybox_installed">Keybox installed</string>
     <string name="ts_keybox_imported">Keybox imported successfully</string>
@@ -1516,14 +1555,22 @@ En liten donation hjälper oss att hålla det här projektet vid liv och för at
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Keybox alerts</string>
     <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
-    <string name="ts_alerts_summary_on">Checks daily with Google. You\'ll be notified if the keybox is revoked</string>
-    <string name="ts_alerts_summary_scheduled">Checks daily with Google for revocation status. Expiry reminder on %1$s</string>
-    <string name="ts_alerts_summary_due">The keybox expires in less than a day, load a new one soon</string>
+    <string name="ts_alerts_summary_on">Checks with Google every %1$s. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks with Google every %1$s for revocation status. Next expiry reminder on %2$s</string>
+    <string name="ts_alerts_summary_due">The keybox expires soon, load a new one</string>
+    <string name="ts_alerts_lead_title">Warn before expiry</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
     <string name="ts_alerts_summary_expired">The keybox has expired. Load a new keybox to get alerts again</string>
     <string name="ts_alerts_summary_blocked">Notifications for Settings are turned off, so alerts can\'t be shown</string>
     <string name="ts_alerts_channel_name">Keybox alerts</string>
-    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or expires in one day</string>
-    <string name="ts_alert_expiry_title">Keybox expires in 1 day</string>
+    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or is about to expire</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="one">Keybox expires in %d day</item>
+        <item quantity="other">Keybox expires in %d days</item>
+    </plurals>
     <string name="ts_alert_expiry_text">Your TrickyStore keybox expires on %1$s. Load a new keybox soon to keep passing Play Integrity.</string>
     <string name="ts_alert_revoked_title">Keybox revoked</string>
     <string name="ts_alert_revoked_text">Google has revoked your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>

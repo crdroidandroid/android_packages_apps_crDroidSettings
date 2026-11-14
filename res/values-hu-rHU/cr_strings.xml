@@ -427,8 +427,25 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <!-- System emoji -->
     <string name="emoji_picker_title">Rendszer-hangulatjelek</string>
     <string name="emoji_picker_summary">Használja saját emoji-csomagját</string>
+    <string name="emoji_presets_section">Hangulatjel-stílus</string>
+    <string name="emoji_download_size">Letöltés • %1$s</string>
+    <string name="emoji_downloading">%1$s letöltése... %2$d%%</string>
+    <string name="emoji_applying">%1$s beállítása...</string>
+    <string name="emoji_downloaded">Letöltve</string>
+    <string name="emoji_downloaded_size">%1$s • letöltve</string>
+    <string name="emoji_download_only">Letöltés, telepítés később</string>
+    <string name="emoji_download_done">%1$s letöltve</string>
+    <string name="emoji_delete_download">Letöltés törlése</string>
+    <string name="emoji_catalog_error">Nem lehet betölteni a hangulatjel-stílusokat. Ellenőrizze az internet-kapcsolatot.</string>
+    <string name="emoji_catalog_retry">Próbálja újra</string>
+    <string name="emoji_error_download">Nem lehet letölteni az emoji-csomagot. Ellenőrizze az internet-kapcsolatot, majd próbálja újra.</string>
+    <string name="emoji_error_checksum">A letöltött emoji-csomag nem egyezik meg azzal, amire szükség lenne. Próbálja újra később.</string>
+    <string name="emoji_custom_section">Egyéni emoji</string>
+    <string name="emoji_replace_custom">Másik hangulatjel-típus telepítése</string>
+    <string name="emoji_apply_restart_now">Alkalmazás és újraindítás</string>
+    <string name="emoji_apply_restart_later">Alkalmazás, újraindítás később</string>
     <string name="emoji_current">Jelenlegi emoji</string>
-    <string name="emoji_add">Válasszon emoji-csomagot</string>
+    <string name="emoji_add">Válasszon egyéni emoji-csomagot</string>
     <string name="emoji_removing">Az egyéni emoji eltávolítása...</string>
     <string name="emoji_updating_apps">Emojik frissítése az alkalmazásokban...</string>
     <string name="emoji_install_message">Ezek az emojik minden olyan alkalmazásban lecserélik a rendszer-emojikat, amelyek rendszer-betűtípust használnak. Az újraindul a rendszerfelület , ez bezárja az összes futó alkalmazást, hogy azok átvegyék az új emojikat. Ha később indítja újra, az egyes alkalmazások a következő indításkor váltanak át.</string>
@@ -448,7 +465,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
         <item quantity="one">%1$d emoji-készlet lecserélve az alkalmazás-adatokban. A letölthető hangulatjeleket használó alkalmazások mostantól a rendszer hangulatjeleire váltanak vissza. </item>
         <item quantity="other">%1$d emoji-készlet lecserélve az alkalmazás-adatokban. A letölthető hangulatjeleket használó alkalmazások mostantól a rendszer hangulatjeleire váltanak vissza. </item>
     </plurals>
-    <string name="emoji_picker_footer">Nem tartalmaz emoji-készetet. Válasszon egy legfeljebb 128 MB méretű .ttf formátumú emoji-készletet – például egy emoji Magisk-modulból (system/fonts/NotoColorEmoji.ttf). A rendszer-emojik elé kerül, így azok az emojik, amelyek ebből hiányoznak, továbbra is a rendszer-készletből származnak.</string>
+    <string name="emoji_picker_footer">Az emojistílusok a crDroid tématárából töltődnek le, és az eszközön tárolódnak, így újbóli letöltés nélkül válthatsz közöttük. Lehetőséged van saját, legfeljebb 128 MB méretű .ttf formátumú emojibetűtípus hozzáadására is – például egy emojikat tartalmazó Magisk-modulból (system/fonts/NotoColorEmoji.ttf). Ha egy betűtípusból hiányoznak bizonyos emojik, azok a rendszer alapértelmezett emojikészletéből jelennek meg.</string>
     <string name="emoji_error_title">Nem cserélhetőle az emoji</string>
     <string name="emoji_error_invalid_file">Ez a fájl nem olyan emoji-típus, amelyet a rendszer használni tudna. Válasszon egy legfeljebb 128 MB méretű, színes hangulatjeleket tartalmazó .ttf betűtípust.</string>
     <string name="emoji_error_not_installed">Előbb telepítsen egy egyéni emoji-csomagot.</string>
@@ -948,10 +965,24 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="solid_gradient_void">Void átmenet</string>
     <string name="solid_gradient_neumorph">Neumorph átmenet</string>
     <string name="solid_gradient_stroke">Éles simított átmenet</string>
-    <string name="solid_accent_transperent">A kiemelés áttetszősége</string>
+    <string name="solid_accent_transperent">Kiemelt áttetsző</string>
     <string name="solid_gradient_light">Az átmenet fénye</string>
     <string name="solid_gradient_shape">Éles sarkított átmenet</string>
     <string name="solid_gradient_void_light">A Void átmenet fénye</string>
+    <string name="clock_chip_custom_gradient">Egyéni színátmenet</string>
+    <!-- Gradient mode - Start color picker -->
+    <string name="clock_chip_gradient_start_color_title">A színátmenet kezdeti színe</string>
+    <string name="clock_chip_gradient_start_color_summary">Szín a színátmenet elején</string>
+    <!-- Gradient mode - End color picker -->
+    <string name="clock_chip_gradient_end_color_title">A színátmenet befejező színe</string>
+    <string name="clock_chip_gradient_end_color_summary">Szín a színátmenet végén</string>
+    <!-- Gradient mode - Angle seekbar -->
+    <string name="clock_chip_gradient_angle_title">A színátmenet dőlésszöge</string>
+    <string name="clock_chip_gradient_angle_summary">Az átmenet iránya ( 0° = balról -> jobbra, 90° = lentről -> felfelé )</string>
+    <!-- Gradient mode - Mask text -->
+    <string name="clock_chip_gradient_mask_text_title">Az Óra betűstílusa</string>
+    <string name="clock_chip_gradient_mask_text_default">Alapértelmezett</string>
+    <string name="clock_chip_gradient_mask_text_mask">Áttetsző (Maszk)</string>
     <!-- Weather -->
     <string name="weather_settings_title">Időjárás-beállítások</string>
     <string name="weather_settings_summary">Testre szabható ikoncsomag és időjárás-szolgáltatás</string>
@@ -1425,6 +1456,12 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="spoof_wipe_playstore_message">A Play Áruház gyorsítótárazza az integritási ellenőrzések eredményeit. Az alkalmazás adatainak törlésével az új konfiguráció azonnal érvénybe lép, ugyanakkor ez kijelentkeztet a Play Áruházból, és törli a letöltési várólistát is.</string>
     <string name="spoof_wipe_confirm">Adattörlés</string>
     <string name="spoof_choice_select">Kiválasztás</string>
+    <string name="spoof_check_interval_title">Frissítési gyakoriság</string>
+    <string name="spoof_interval_hours_short">%dó</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="one">%d óra</item>
+        <item quantity="other">%d óra</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Jelenlegi beállítások</string>
     <string name="pif_no_config">Nincs betöltött konfiguráció</string>
@@ -1456,9 +1493,9 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="pif_channel_latest_release_summary">Ujjlenyomat a jelenlegi béta OTA-ból</string>
     <string name="pif_channel_canary_release">Korlátozott körű kiadás</string>
     <string name="pif_channel_canary_release_summary">Legújabb Canary-verzió az Android Flash Toolból</string>
-    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">Automatikusan frissített ujjlenyomat</string>
-    <string name="pif_auto_refresh_summary_on">Naponta ellenőrzi, hogy elérhető-e újabb %1$s ujjlenyomat a(z) %2$s csatornán. Ha talál ilyet, alkalmazza azt, és törli a Play Áruház adatait.</string>
+    <string name="pif_auto_refresh_summary_on">Checks every %3$s for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
     <string name="pif_auto_refresh_summary_off">Kikapcsolva. A(z) %1$s ujjlenyomat (%2$s) csak akkor változik, ha letölt vagy importál egyet.</string>
     <string name="pif_auto_refresh_last_checked">Utolsó ellenőrzés: %1$s</string>
     <string name="pif_auto_refresh_channel_name">Play Integritás javítás</string>
@@ -1500,6 +1537,8 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="ts_import_keybox">Keybox importálása</string>
     <string name="ts_replace_keybox">Keybox cseréje</string>
     <string name="ts_check_status">Állapot ellenőrzése</string>
+    <string name="ts_find_keybox">Merre található a kulcsbox?</string>
+    <string name="ts_no_browser">Nincs böngésző telepítve a link megnyitásához</string>
     <string name="ts_no_keybox">Nincs telepítve keybox</string>
     <string name="ts_keybox_installed">Keybox telepítve</string>
     <string name="ts_keybox_imported">Keybox sikeresen importálva</string>
@@ -1518,14 +1557,22 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Keybox riasztások</string>
     <string name="ts_alerts_summary_off">Kikapcsolva. Nem kap értesítést, ha a keybox-ot visszavonják, vagy ha annak lejárati ideje közeledik</string>
-    <string name="ts_alerts_summary_on">Naponta ellenőrzi a Google-nél. Értesítést kap, ha a kebox-ot visszavonják</string>
-    <string name="ts_alerts_summary_scheduled">Naponta ellenőrzi a Google-nél a visszavonási állapotot. Lejárati emlékeztető: %1$s</string>
-    <string name="ts_alerts_summary_due">A keybox kevesebb mint egy nap múlva lejár, hamarosan tölts be egy újat</string>
+    <string name="ts_alerts_summary_on">Checks with Google every %1$s. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks with Google every %1$s for revocation status. Next expiry reminder on %2$s</string>
+    <string name="ts_alerts_summary_due">The keybox expires soon, load a new one</string>
+    <string name="ts_alerts_lead_title">Warn before expiry</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
     <string name="ts_alerts_summary_expired">A keybox érvényessége lejárt. Tölts be egy új keybox-ot az értesítések újbóli fogadásához</string>
     <string name="ts_alerts_summary_blocked">A Beállítások értesítései ki vannak kapcsolva, ezért a figyelmeztetések nem jeleníthetők meg</string>
     <string name="ts_alerts_channel_name">Keybox riasztások</string>
-    <string name="ts_alerts_channel_description">Értesítést küld, ha a Google visszavonja a TrickyStore keyboy-ot, vagy ha annak érvényessége egy napon belül lejár</string>
-    <string name="ts_alert_expiry_title">A keybox 1 nap múlva lejár</string>
+    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or is about to expire</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="one">Keybox expires in %d day</item>
+        <item quantity="other">Keybox expires in %d days</item>
+    </plurals>
     <string name="ts_alert_expiry_text">A TrickyStore keybox-od ekkor lejár: %1$s. Hamarosan tölts be egy újat, hogy továbbra is megfelelj a Play Integrity ellenőrzésnek.</string>
     <string name="ts_alert_revoked_title">Keybox elutasítva</string>
     <string name="ts_alert_revoked_text">A Google visszavonta a TrickyStore keybox-odat (ok: %1$s). Az erős integritásellenőrzés sikertelen lesz amíg be nem töltesz egy új kexbox-ot.</string>

@@ -427,36 +427,53 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="font_error_storage">System nie mógł zapisać czcionki. Sprawdź, czy jest wystarczająca ilość wolnego miejsca, i spróbuj ponownie.</string>
     <string name="font_overlay_reset_failed">Zainstalowano własną czcionkę, ale nie udało się przywrócić domyślnego stylu czcionki</string>
     <!-- System emoji -->
-    <string name="emoji_picker_title">System emoji</string>
-    <string name="emoji_picker_summary">Use your own emoji font</string>
-    <string name="emoji_current">Current emoji</string>
-    <string name="emoji_add">Choose emoji font</string>
-    <string name="emoji_removing">Removing custom emoji…</string>
-    <string name="emoji_updating_apps">Updating emoji in apps…</string>
-    <string name="emoji_install_message">These emoji replace the system emoji in every app that uses the system font. Restarting now restarts SystemUI and closes all running apps so they pick up the new emoji. If you restart later, each app switches the next time it starts.</string>
-    <string name="emoji_install_restart_now">Install and restart</string>
-    <string name="emoji_install_restart_later">Install, restart later</string>
-    <string name="emoji_remove_title">Remove custom emoji?</string>
-    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji already copied into apps stay until those apps download their own again or you clear their data.</string>
-    <string name="emoji_remove_restart_now">Remove and restart</string>
-    <string name="emoji_remove_restart_later">Remove, restart later</string>
-    <string name="emoji_pending_systemui_body">%1$s emoji are set. SystemUI and running apps keep the previous emoji until they restart. Restarting closes all running apps.</string>
-    <string name="emoji_apps_section">Third-party apps</string>
-    <string name="emoji_apps_summary">Some apps ship or download their own emoji (Facebook, Messenger, and apps using Google\'s downloadable emoji). Resetting them copies your emoji font over theirs.</string>
-    <string name="emoji_apps_reset">Reset third-party apps</string>
-    <string name="emoji_apps_confirm">This copies your emoji font over every emoji font stored in app data, stops Facebook and Messenger from downloading their own, clears the caches of those apps and Gboard, and turns off the Google Play services font provider. Affected apps are force stopped. Run it again after those apps update.</string>
+    <string name="emoji_picker_title">Emotikony systemowe</string>
+    <string name="emoji_picker_summary">Używaj swojej własnej czcionki emotikonów</string>
+    <string name="emoji_presets_section">Style emotikonów</string>
+    <string name="emoji_download_size">Pobierz · %1$s</string>
+    <string name="emoji_downloading">Pobieranie %1$s… %2$d%%</string>
+    <string name="emoji_applying">Stosowanie %1$s…</string>
+    <string name="emoji_downloaded">Pobrano</string>
+    <string name="emoji_downloaded_size">Pobrano · %1$s</string>
+    <string name="emoji_download_only">Pobierz, zastosuj później</string>
+    <string name="emoji_download_done">Pobrano %1$s</string>
+    <string name="emoji_delete_download">Usuń pobrane</string>
+    <string name="emoji_catalog_error">Nie można załadować stylów emotikonów. Sprawdź swoje połączenie.</string>
+    <string name="emoji_catalog_retry">Ponów</string>
+    <string name="emoji_error_download">Nie można pobrać czcionki emotikonów. Sprawdź połączenie i spróbuj ponownie.</string>
+    <string name="emoji_error_checksum">Pobrana czcionka emotikonów nie pasuje do oczekiwanego pliku. Spróbuj ponownie później.</string>
+    <string name="emoji_custom_section">Własne emotikony</string>
+    <string name="emoji_replace_custom">Zainstaluj inną czcionkę emotikonów</string>
+    <string name="emoji_apply_restart_now">Zastosuj i uruchom ponownie</string>
+    <string name="emoji_apply_restart_later">Zastosuj, uruchom ponownie później</string>
+    <string name="emoji_current">Bieżące emotikony</string>
+    <string name="emoji_add">Wybierz własną czcionkę emotikonów</string>
+    <string name="emoji_removing">Usuwanie własnych emotikonów…</string>
+    <string name="emoji_updating_apps">Aktualizacja emotikonów w aplikacjach…</string>
+    <string name="emoji_install_message">Te emotikony zastępują emotikony systemowe we wszystkich aplikacjach korzystających z czcionki systemowej. Ponowne uruchomienie teraz spowoduje ponowne uruchomienie systemowego interfejsu użytkownika i zamknięcie wszystkich uruchomionych aplikacji, dzięki czemu będą one korzystać z nowych emotikonów. Jeśli ponowne uruchomienie nastąpi później, zmiana nastąpi w każdej aplikacji przy jej następnym uruchomieniu.</string>
+    <string name="emoji_install_restart_now">Zainstaluj i uruchom ponownie</string>
+    <string name="emoji_install_restart_later">Zainstaluj, uruchom ponownie później</string>
+    <string name="emoji_remove_title">Usunąć własne emotikony?</string>
+    <string name="emoji_remove_message">Systemowe emotikony powracają po ponownym uruchomieniu systemowego interfejsu użytkownika i aplikacji. Ponowne uruchomienie spowoduje zamknięcie wszystkich uruchomionych aplikacji. Emotikony już skopiowane do aplikacji pozostaną w nich do momentu, aż aplikacje te ponownie pobiorą własne emotikony lub dopóki nie wyczyścisz ich danych.</string>
+    <string name="emoji_remove_restart_now">Usuń i uruchom ponownie</string>
+    <string name="emoji_remove_restart_later">Usuń, uruchom ponownie później</string>
+    <string name="emoji_pending_systemui_body">Ustawiono emotikony %1$s. Systemowy interfejs użytkownika i uruchomione aplikacje zachowują poprzednie emotikony do momentu ponownego uruchomienia. Ponowne uruchomienie powoduje zamknięcie wszystkich uruchomionych aplikacji.</string>
+    <string name="emoji_apps_section">Aplikacje zewnętrzne</string>
+    <string name="emoji_apps_summary">Niektóre aplikacje zawierają własne emotikony lub umożliwiają ich pobranie (np. Facebook, Messenger oraz aplikacje korzystające z emotikonów do pobrania z Google). Zresetowanie tych ustawień powoduje zastąpienie ich czcionką emotikonów użytkownika.</string>
+    <string name="emoji_apps_reset">Zresetuj aplikacje zewnętrzne</string>
+    <string name="emoji_apps_confirm">Ta operacja zastępuje czcionkę emotikonów czcionką użytkownika we wszystkich czcionkach emotikonów zapisanych w danych aplikacji, blokuje pobieranie własnych czcionek przez Facebooka i Messengera, czyści pamięć podręczną tych aplikacji oraz klawiatury Gboard, a także wyłącza dostawcę czcionek w usługach Google Play. Aplikacje, których to dotyczy, zostaną przymusowo zatrzymane. Uruchom tę operację ponownie po aktualizacji tych aplikacji.</string>
     <string name="emoji_apps_confirm_button">Resetuj</string>
     <plurals name="emoji_apps_done">
-        <item quantity="one">Replaced %1$d emoji font in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
-        <item quantity="few">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
-        <item quantity="many">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
-        <item quantity="other">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
+        <item quantity="one">W danych aplikacji zastąpiono czcionkę emotikony %1$d. Aplikacje korzystające z emotikonów do pobrania będą teraz wyświetlać emotikony systemowe.</item>
+        <item quantity="few">W danych aplikacji zastąpiono czcionki emotikonów %1$d. Aplikacje korzystające z emotikonów do pobrania będą teraz wyświetlać emotikony systemowe.</item>
+        <item quantity="many">W danych aplikacji zastąpiono czcionek emotikonów %1$d. Aplikacje korzystające z emotikonów do pobrania będą teraz wyświetlać emotikony systemowe.</item>
+        <item quantity="other">W danych aplikacji zastąpiono czcionek emotikonów %1$d. Aplikacje korzystające z emotikonów do pobrania będą teraz wyświetlać emotikony systemowe.</item>
     </plurals>
-    <string name="emoji_picker_footer">No emoji font is included. Choose a .ttf emoji font of up to 128 MB, for example from an emoji Magisk module (system/fonts/NotoColorEmoji.ttf). It is placed ahead of the system emoji, so any emoji it lacks still come from the system font.</string>
-    <string name="emoji_error_title">Couldn\'t change the emoji</string>
-    <string name="emoji_error_invalid_file">This file isn\'t an emoji font the system can use. Choose a .ttf font of up to 128 MB that contains color emoji.</string>
-    <string name="emoji_error_not_installed">Install a custom emoji font first.</string>
-    <string name="emoji_error_generic">Couldn\'t change the emoji (error %1$d)</string>
+    <string name="emoji_picker_footer">Style emotikonów są pobierane z repozytorium motywów crDroid i zapisywane na urządzeniu, dzięki czemu można przełączać się między nimi bez konieczności ponownego pobierania. Można również dodawać własną czcionkę emotikonów w formacie .ttf o rozmiarze do 128 MB, na przykład z modułu Magisk dla emotikonów (system/fonts/NotoColorEmoji.ttf). Emotikony, których brakuje w czcionce, nadal pochodzą z zestawu systemowego.</string>
+    <string name="emoji_error_title">Nie można zmienić emotikony</string>
+    <string name="emoji_error_invalid_file">Ten plik nie jest czcionką emotikony, z której może korzystać system. Wybierz czcionkę w formacie .ttf o rozmiarze nieprzekraczającym 128 MB, zawierającą kolorowe emotikony.</string>
+    <string name="emoji_error_not_installed">Zainstaluj najpierw własną czcionkę emotikon.</string>
+    <string name="emoji_error_generic">Nie udało się zmienić emotikonów (błąd %1$d)</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">Domyślna częstotliwość odświeżania</string>
     <string name="peak_refresh_rate_title_custom">Najwyższa częstotliwość odświeżania</string>
@@ -958,6 +975,20 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="solid_gradient_light">Lekki gradient</string>
     <string name="solid_gradient_shape">Ostry gradientowy narożnik</string>
     <string name="solid_gradient_void_light">Lekka gradientowa pustka</string>
+    <string name="clock_chip_custom_gradient">Własny gradient</string>
+    <!-- Gradient mode - Start color picker -->
+    <string name="clock_chip_gradient_start_color_title">Kolor początkowy gradientu</string>
+    <string name="clock_chip_gradient_start_color_summary">Kolor na początku gradientu</string>
+    <!-- Gradient mode - End color picker -->
+    <string name="clock_chip_gradient_end_color_title">Kolor końcowy gradientu</string>
+    <string name="clock_chip_gradient_end_color_summary">Kolor na końcu gradientu</string>
+    <!-- Gradient mode - Angle seekbar -->
+    <string name="clock_chip_gradient_angle_title">Kąt gradientu</string>
+    <string name="clock_chip_gradient_angle_summary">Kierunek gradientu (0° = lewo→prawo, 90° = dół→góra)</string>
+    <!-- Gradient mode - Mask text -->
+    <string name="clock_chip_gradient_mask_text_title">Styl tekstu zegara</string>
+    <string name="clock_chip_gradient_mask_text_default">Domyślny</string>
+    <string name="clock_chip_gradient_mask_text_mask">Przezroczysty (maska)</string>
     <!-- Weather -->
     <string name="weather_settings_title">Ustawienia pogody</string>
     <string name="weather_settings_summary">Ustaw pakiet ikon i usługę pogody</string>
@@ -1433,6 +1464,14 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="spoof_wipe_playstore_message">Wyniki sprawdzania integralności są przechowywane w pamięci podręcznej Sklepu Play. Wyczyszczenie jego danych powoduje natychmiastowe zastosowanie nowej konfiguracji, ale powoduje również wylogowanie ze Sklepu Play i wyczyszczenie jego kolejki pobrań.</string>
     <string name="spoof_wipe_confirm">Wyczyść dane</string>
     <string name="spoof_choice_select">Wybierz</string>
+    <string name="spoof_check_interval_title">Sprawdzaj co</string>
+    <string name="spoof_interval_hours_short">%dg</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="one">%d godzina</item>
+        <item quantity="few">%d godziny</item>
+        <item quantity="many">%d godzin</item>
+        <item quantity="other">%d godzin</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Aktywna konfiguracja</string>
     <string name="pif_no_config">Brak załadowanych konfiguracji</string>
@@ -1464,9 +1503,9 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pif_channel_latest_release_summary">Odcisk palca z aktualnej wersji beta OTA</string>
     <string name="pif_channel_canary_release">Wydanie Canary</string>
     <string name="pif_channel_canary_release_summary">Najnowsza wersja Canary z narzędzia Android Flash Tool</string>
-    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">Automatyczne odświeżanie odcisku palca</string>
-    <string name="pif_auto_refresh_summary_on">Codziennie sprawdza, czy na kanale %2$s pojawił się nowszy odcisk %1$s. W przypadku znalezienia takiego odcisku zostaje on zastosowany, a dane ze Sklepu Play są usuwane</string>
+    <string name="pif_auto_refresh_summary_on">Co %3$s sprawdza, czy na kanale %2$s pojawił się nowszy odcisk %1$s. Gdy taki zostanie znaleziony, zostaje zastosowany, a dane ze Sklepu Play są usuwane</string>
     <string name="pif_auto_refresh_summary_off">Wyłączono. Odcisk palca %1$s (%2$s) zmienia się tylko po pobraniu lub zaimportowaniu jednego</string>
     <string name="pif_auto_refresh_last_checked">Ostatnio sprawdzane: %1$s</string>
     <string name="pif_auto_refresh_channel_name">Naprawa integralności Google Play</string>
@@ -1489,7 +1528,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pif_flag_spoof_props_title">Sfałszuj właściwości systemu</string>
     <string name="pif_flag_spoof_props_summary">Nadpisanie ustawień dotyczących odcisków palców, poprawek zabezpieczeń i innych właściwości typu ro.* w aplikacji DroidGuard</string>
     <string name="pif_flag_spoof_provider_title">Fałszuj dostawcę zestawu kluczy</string>
-    <string name="pif_flag_spoof_provider_summary">Blokowanie programowi DroidGuard odczytu certyfikatów poświadczających klucze. Zazwyczaj opcja ta pozostaje wyłączona, gdy zainstalowano prawidłowo działającą skrzynkę kluczy</string>
+    <string name="pif_flag_spoof_provider_summary">Blokowanie programowi DroidGuard odczytu certyfikatów poświadczających klucze. Zazwyczaj opcja ta pozostaje wyłączona, gdy zainstalowano prawidłowo działający zestaw kluczy</string>
     <string name="pif_flag_spoof_signature_title">Fałszuj podpis ROM</string>
     <string name="pif_flag_spoof_signature_summary">Zgłaszanie sygnatury platformy producenta dla pakietu Androida</string>
     <string name="pif_flag_spoof_vending_build_title">Fałszuj kompilację Sklepu Play</string>
@@ -1508,6 +1547,8 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_import_keybox">Importuj zestaw kluczy</string>
     <string name="ts_replace_keybox">Zamień zestaw kluczy</string>
     <string name="ts_check_status">Sprawdź status</string>
+    <string name="ts_find_keybox">Gdzie znaleźć zestaw kluczy?</string>
+    <string name="ts_no_browser">Nie znaleziono przeglądarki, aby otworzyć link</string>
     <string name="ts_no_keybox">Nie zainstalowano zestawu kluczy</string>
     <string name="ts_keybox_installed">Zainstalowano zestaw kluczy</string>
     <string name="ts_keybox_imported">Zaimportowano pomyślnie zestaw kluczy</string>
@@ -1525,20 +1566,32 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_days_left">Pozostało %1$dd</string>
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Powiadomienia zestawu kluczy</string>
-    <string name="ts_alerts_summary_off">Wyłączono. Nie otrzymasz powiadomienia, jeśli uprawnienia do skrzynki kluczy zostaną cofnięte lub wkrótce wygasną</string>
-    <string name="ts_alerts_summary_on">Codziennie sprawdza to za pomocą Google. Otrzymasz powiadomienie, jeśli dostęp do skrzynki kluczy zostanie cofnięty</string>
-    <string name="ts_alerts_summary_scheduled">Codziennie sprawdza w Google, czy certyfikat nie został unieważniony. Przypomnienie o wygaśnięciu certyfikatu %1$s</string>
-    <string name="ts_alerts_summary_due">Okres ważności skrzynki kluczy wygasa za niecały dzień – wkrótce załaduj nową</string>
-    <string name="ts_alerts_summary_expired">Okres ważności skrzynki kluczy wygasł. Załaduj nową skrzynkę kluczy, aby ponownie otrzymywać powiadomienia</string>
+    <string name="ts_alerts_summary_off">Wyłączono. Nie otrzymasz powiadomienia, jeśli uprawnienia do zestawu kluczy zostaną cofnięte lub wkrótce wygasną</string>
+    <string name="ts_alerts_summary_on">Co %1$s sprawdza w Google. Otrzymasz powiadomienie, jeśli uprawnienia do zestawu kluczy zostaną cofnięte</string>
+    <string name="ts_alerts_summary_scheduled">Co %1$s sprawdza w Google stan unieważnienia. Kolejne przypomnienie o wygaśnięciu w dniu %2$s</string>
+    <string name="ts_alerts_summary_due">Zestaw kluczy niebawem wygaśnie, załaduj nowy</string>
+    <string name="ts_alerts_lead_title">Powiadom przed upływem terminu ważności</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="one">%d dzień</item>
+        <item quantity="few">%d dni</item>
+        <item quantity="many">%d dni</item>
+        <item quantity="other">%d dni</item>
+    </plurals>
+    <string name="ts_alerts_summary_expired">Okres ważności zestawu kluczy wygasł. Załaduj nowy zestaw kluczy, aby ponownie otrzymywać powiadomienia</string>
     <string name="ts_alerts_summary_blocked">Powiadomienia dotyczące ustawień są wyłączone, więc alerty nie mogą być wyświetlane</string>
     <string name="ts_alerts_channel_name">Powiadomienia zestawu kluczy</string>
-    <string name="ts_alerts_channel_description">Powiadamia cię, gdy skrzynka kluczy TrickyStore zostanie cofnięta przez Google lub jej ważność wygaśnie za jeden dzień</string>
-    <string name="ts_alert_expiry_title">Okres ważności skrzynki kluczy wygasa za 1 dzień</string>
+    <string name="ts_alerts_channel_description">Powiadamia użytkownika, gdy klucz TrickyStore zostanie unieważniony przez Google lub zbliża się termin jego wygaśnięcia</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="one">Okres ważności zestawu kluczy wygasa za %d dzień</item>
+        <item quantity="few">Okres ważności zestawu kluczy wygasa za %d dni</item>
+        <item quantity="many">Okres ważności zestawu kluczy wygasa za %d dni</item>
+        <item quantity="other">Okres ważności zestawu kluczy wygasa za %d dni</item>
+    </plurals>
     <string name="ts_alert_expiry_text">Twój zestaw kluczy TrickyStore traci ważność %1$s. Jak najszybciej załaduj nowy zestaw kluczy, aby nadal spełniać wymagania integralności Play.</string>
     <string name="ts_alert_revoked_title">Odrzucono zestaw kluczy</string>
     <string name="ts_alert_revoked_text">Firma Google unieważniła twój klucz TrickyStore (przyczyna: %1$s). Sprawdzanie integralności zakończy się niepowodzeniem, dopóki nie załadujesz nowego klucza.</string>
     <string name="ts_alert_suspended_title">Zawieszono zestaw kluczy</string>
-    <string name="ts_alert_suspended_text">Firma Google zawiesiła twoją skrzynkę kluczy TrickyStore (przyczyna: %1$s). Sprawdzanie integralności zakończy się niepowodzeniem, dopóki nie załadujesz nowej skrzynki kluczy.</string>
+    <string name="ts_alert_suspended_text">Firma Google zawiesiła twój zestaw kluczy TrickyStore (przyczyna: %1$s). Sprawdzanie integralności zakończy się niepowodzeniem, dopóki nie załadujesz nowego zestawu kluczy.</string>
     <string name="ts_revocation_status">Status unieważnienia w Google</string>
     <string name="ts_revocation_checking">Sprawdzanie z Google…</string>
     <string name="ts_revocation_not_yet_checked">Jeszcze nie sprawdzono. Dotknij, aby sprawdzić teraz</string>

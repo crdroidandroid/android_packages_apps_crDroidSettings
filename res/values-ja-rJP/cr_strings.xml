@@ -425,33 +425,50 @@
     <string name="font_error_storage">システムはフォントを保存できませんでした。空き容量があることを確認して再度お試し下さい。</string>
     <string name="font_overlay_reset_failed">カスタムフォントがインストールされていますが、フォントスタイルをデフォルトに戻すことができませんでした</string>
     <!-- System emoji -->
-    <string name="emoji_picker_title">System emoji</string>
-    <string name="emoji_picker_summary">Use your own emoji font</string>
-    <string name="emoji_current">Current emoji</string>
-    <string name="emoji_add">Choose emoji font</string>
-    <string name="emoji_removing">Removing custom emoji…</string>
-    <string name="emoji_updating_apps">Updating emoji in apps…</string>
-    <string name="emoji_install_message">These emoji replace the system emoji in every app that uses the system font. Restarting now restarts SystemUI and closes all running apps so they pick up the new emoji. If you restart later, each app switches the next time it starts.</string>
-    <string name="emoji_install_restart_now">Install and restart</string>
-    <string name="emoji_install_restart_later">Install, restart later</string>
-    <string name="emoji_remove_title">Remove custom emoji?</string>
-    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji already copied into apps stay until those apps download their own again or you clear their data.</string>
-    <string name="emoji_remove_restart_now">Remove and restart</string>
-    <string name="emoji_remove_restart_later">Remove, restart later</string>
-    <string name="emoji_pending_systemui_body">%1$s emoji are set. SystemUI and running apps keep the previous emoji until they restart. Restarting closes all running apps.</string>
-    <string name="emoji_apps_section">Third-party apps</string>
-    <string name="emoji_apps_summary">Some apps ship or download their own emoji (Facebook, Messenger, and apps using Google\'s downloadable emoji). Resetting them copies your emoji font over theirs.</string>
-    <string name="emoji_apps_reset">Reset third-party apps</string>
-    <string name="emoji_apps_confirm">This copies your emoji font over every emoji font stored in app data, stops Facebook and Messenger from downloading their own, clears the caches of those apps and Gboard, and turns off the Google Play services font provider. Affected apps are force stopped. Run it again after those apps update.</string>
+    <string name="emoji_picker_title">システムの絵文字</string>
+    <string name="emoji_picker_summary">独自の絵文字フォントを使用する</string>
+    <string name="emoji_presets_section">絵文字のスタイル</string>
+    <string name="emoji_download_size">ダウンロード・ %1$s</string>
+    <string name="emoji_downloading">ダウンロード中 %1$s… %2$d%%</string>
+    <string name="emoji_applying">適用中%1$s…</string>
+    <string name="emoji_downloaded">ダウンロード済み</string>
+    <string name="emoji_downloaded_size">ダウンロード済み · %1$s</string>
+    <string name="emoji_download_only">ダウンロードのみ、後で適用する</string>
+    <string name="emoji_download_done">%1$sをダウンロードしました</string>
+    <string name="emoji_delete_download">ダウンロードを削除</string>
+    <string name="emoji_catalog_error">絵文字スタイルを読み込めませんでした。接続を確認してください。</string>
+    <string name="emoji_catalog_retry">再試行</string>
+    <string name="emoji_error_download">絵文字フォントをダウンロードできませんでした。接続を確認して再度お試し下さい。</string>
+    <string name="emoji_error_checksum">ダウンロードした絵文字フォントが想定されたファイルと一致しませんでした。後でもう一度お試しください。</string>
+    <string name="emoji_custom_section">カスタム絵文字</string>
+    <string name="emoji_replace_custom">別の絵文字フォントをインストールする</string>
+    <string name="emoji_apply_restart_now">適用して再起動</string>
+    <string name="emoji_apply_restart_later">適用して、後でシステムUIを再起動する</string>
+    <string name="emoji_current">現在の絵文字</string>
+    <string name="emoji_add">カスタム絵文字フォントを選択</string>
+    <string name="emoji_removing">カスタム絵文字を削除しています…</string>
+    <string name="emoji_updating_apps">アプリ内の絵文字を更新しています…</string>
+    <string name="emoji_install_message">システムフォントを使用しているすべてのアプリで、標準の絵文字がこの絵文字に置き換わります。今すぐ再起動するとシステムUIが再起動し、新しい絵文字を反映するために実行中のアプリがすべて終了します。後で再起動する場合は、各アプリの次回起動時に切り替わります。</string>
+    <string name="emoji_install_restart_now">インストールして、今すぐ再起動する</string>
+    <string name="emoji_install_restart_later">インストールして、後で再起動する</string>
+    <string name="emoji_remove_title">カスタム絵文字を削除しますか?</string>
+    <string name="emoji_remove_message">システムUIおよびアプリが再起動すると、システム絵文字が元に戻ります。今すぐ再起動を行うと、実行中のすべてのアプリが終了します。すでにアプリ内にコピーされた絵文字は、そのアプリが改めて独自の絵文字をダウンロードし直すか、あるいはアプリのデータを消去するまで、そのまま残ります。</string>
+    <string name="emoji_remove_restart_now">削除して、今すぐ再起動</string>
+    <string name="emoji_remove_restart_later">削除して、後で再起動</string>
+    <string name="emoji_pending_systemui_body">%1$s の絵文字が設定されています。システムUIと実行中のアプリは再起動するまで以前の絵文字を保持します。再起動すると実行中のすべてのアプリが閉じます。</string>
+    <string name="emoji_apps_section">サードパーティのアプリ</string>
+    <string name="emoji_apps_summary">一部のアプリ（Facebook、Messenger、およびGoogleのダウンロード可能な絵文字を利用するアプリなど）は、独自の絵文字を同梱またはダウンロードする仕組みになっています。これらをリセットすると、それらのアプリが持つ絵文字フォントが、あなたの絵文字フォントで上書きされます。</string>
+    <string name="emoji_apps_reset">サードパーティのアプリをリセット</string>
+    <string name="emoji_apps_confirm">アプリデータ内に保存されているすべての絵文字フォントにカスタム絵文字フォントを上書きコピーし、FacebookとMessengerによる独自絵文字のダウンロードを停止します。また、対象アプリとGboardのキャッシュを消去し、Google Play開発者サービスのフォントプロバイダを無効にします。影響を受けるアプリは強制停止されます。これらのアプリがアップデートされた場合は、再度実行してください。</string>
     <string name="emoji_apps_confirm_button">リセット</string>
     <plurals name="emoji_apps_done">
-        <item quantity="other">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
+        <item quantity="other">アプリデータ内の %1$d 個の絵文字フォントを置き換えました。ダウンロード可能な絵文字を使用するアプリでは、システムの絵文字が使用されるようになります。</item>
     </plurals>
-    <string name="emoji_picker_footer">No emoji font is included. Choose a .ttf emoji font of up to 128 MB, for example from an emoji Magisk module (system/fonts/NotoColorEmoji.ttf). It is placed ahead of the system emoji, so any emoji it lacks still come from the system font.</string>
-    <string name="emoji_error_title">Couldn\'t change the emoji</string>
-    <string name="emoji_error_invalid_file">This file isn\'t an emoji font the system can use. Choose a .ttf font of up to 128 MB that contains color emoji.</string>
-    <string name="emoji_error_not_installed">Install a custom emoji font first.</string>
-    <string name="emoji_error_generic">Couldn\'t change the emoji (error %1$d)</string>
+    <string name="emoji_picker_footer">絵文字スタイルはcrDroidのテーマリポジトリからダウンロードされ、デバイス内に保存されます。そのため、一度ダウンロードしてしまえば、再ダウンロードすることなくスタイルを切り替えることが可能です。また、最大128MBまでの独自の絵文字フォント（.ttf形式）を追加することもできます。例えば、絵文字用Magiskモジュールに含まれるフォント（system/fonts/NotoColorEmoji.ttfなど）を利用可能です。なお、追加したフォントに含まれていない絵文字については、引き続きシステム標準の絵文字が表示されます。</string>
+    <string name="emoji_error_title">絵文字を変更できませんでした</string>
+    <string name="emoji_error_invalid_file">このファイルはシステムが使用できる絵文字フォントではありません。カラー絵文字を含む最大 128 MB の .ttf フォントを選択してください。</string>
+    <string name="emoji_error_not_installed">最初にカスタム絵文字フォントをインストールしてください。</string>
+    <string name="emoji_error_generic">絵文字を変更できませんでした（ %1$d エラー）</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">デフォルトのリフレッシュレート</string>
     <string name="peak_refresh_rate_title_custom">最高リフレッシュレート</string>
@@ -950,6 +967,20 @@
     <string name="solid_gradient_light">グラデーションライト</string>
     <string name="solid_gradient_shape">シャープグラデーションコーナー</string>
     <string name="solid_gradient_void_light">グラデーションボイドライト</string>
+    <string name="clock_chip_custom_gradient">カスタムグラデーション</string>
+    <!-- Gradient mode - Start color picker -->
+    <string name="clock_chip_gradient_start_color_title">グラデーションの開始の色</string>
+    <string name="clock_chip_gradient_start_color_summary">グラデーション開始位置の色</string>
+    <!-- Gradient mode - End color picker -->
+    <string name="clock_chip_gradient_end_color_title">グラデーションの終了の色</string>
+    <string name="clock_chip_gradient_end_color_summary">グラデーション終了位置の色</string>
+    <!-- Gradient mode - Angle seekbar -->
+    <string name="clock_chip_gradient_angle_title">グラデーションの角度</string>
+    <string name="clock_chip_gradient_angle_summary">グラデーションの方向 (0° = 左→右→右、90° = 下→上)</string>
+    <!-- Gradient mode - Mask text -->
+    <string name="clock_chip_gradient_mask_text_title">時計のテキストスタイル</string>
+    <string name="clock_chip_gradient_mask_text_default">デフォルト</string>
+    <string name="clock_chip_gradient_mask_text_mask">透明 (マスク)</string>
     <!-- Weather -->
     <string name="weather_settings_title">天気の設定</string>
     <string name="weather_settings_summary">アイコンパックと天気サービスを設定します</string>
@@ -1420,6 +1451,11 @@
     <string name="spoof_wipe_playstore_message">整合性判定の結果は、Playストアによってキャッシュされます。Playストアのデータを消去すると新しい設定が即座に反映されますが、同時にPlayストアからサインアウトされ、ダウンロードキューもクリアされます。</string>
     <string name="spoof_wipe_confirm">データを消去</string>
     <string name="spoof_choice_select">選択</string>
+    <string name="spoof_check_interval_title">チェック間隔</string>
+    <string name="spoof_interval_hours_short">%d時間</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="other">%d時間</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">アクティブな設定</string>
     <string name="pif_no_config">設定が読み込まれていません</string>
@@ -1451,7 +1487,7 @@
     <string name="pif_channel_latest_release_summary">現在のベータ版OTAからのフィンガープリント</string>
     <string name="pif_channel_canary_release">Canary リリース</string>
     <string name="pif_channel_canary_release_summary">Android Flash ツールからの最新のCanary ビルド</string>
-    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">フィンガープリントを自動更新する</string>
     <string name="pif_auto_refresh_summary_on">%1$s チャンネルの新しい %2$s フィンガープリントを毎日チェックします。見つかった場合は適用され、Playストアのデータが消去されます</string>
     <string name="pif_auto_refresh_summary_off">オフ。 %1$s フィンガープリント（%2$s）は、取得またはインポートしたときにのみ変更されます</string>
@@ -1495,6 +1531,8 @@
     <string name="ts_import_keybox">キーボックスをインポート</string>
     <string name="ts_replace_keybox">キーボックスを置換</string>
     <string name="ts_check_status">ステータスを確認</string>
+    <string name="ts_find_keybox">キーボックスはどこにあるの？</string>
+    <string name="ts_no_browser">リンクを開くためのブラウザが見つかりません</string>
     <string name="ts_no_keybox">キーボックスがインストールされていません</string>
     <string name="ts_keybox_installed">キーボックスがインストールされています</string>
     <string name="ts_keybox_imported">キーボックスのインポートに成功しました</string>
@@ -1513,14 +1551,20 @@
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">キーボックスアラート</string>
     <string name="ts_alerts_summary_off">オフ。キーボックスが破棄された場合や期限切れになる場合は通知されません</string>
-    <string name="ts_alerts_summary_on">Googleで毎日チェックします。キーボックスが無効になった場合に通知されます</string>
-    <string name="ts_alerts_summary_scheduled">失効状態については、Googleで毎日チェックします。 %1$sの期限切れリマインダー</string>
-    <string name="ts_alerts_summary_due">キーボックスの有効期限は1日未満です。すぐに新しいキーを読み込みます</string>
+    <string name="ts_alerts_summary_on">Googleで%1$sごとにチェックします。キーボックスが無効になった場合に通知されます</string>
+    <string name="ts_alerts_summary_scheduled">%1$s ごとにGoogleで失効状態をチェックします。 %2$sの次回の有効期限通知</string>
+    <string name="ts_alerts_summary_due">キーボックスの有効期限が間もなく切れます。新しいキーを読み込みます</string>
+    <string name="ts_alerts_lead_title">有効期限前に警告</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="other">%d日</item>
+    </plurals>
     <string name="ts_alerts_summary_expired">キーボックスの有効期限が切れています。再度アラートを取得するには、新しいキーボックスを読み込んでください</string>
     <string name="ts_alerts_summary_blocked">設定の通知がオフになっているため、アラートを表示できません</string>
     <string name="ts_alerts_channel_name">キーボックスアラート</string>
-    <string name="ts_alerts_channel_description">TrickyStoreキーボックスがGoogleによって取り消されたり、1日で期限切れになったときに通知します</string>
-    <string name="ts_alert_expiry_title">キーボックスの有効期限は1日後に切れます</string>
+    <string name="ts_alerts_channel_description">TrickyStoreキーボックスがGoogleによって取り消された場合、または終了しようとしている場合に通知します</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="other">キーボックスの有効期限は %d 日です</item>
+    </plurals>
     <string name="ts_alert_expiry_text">TrickyStoreのキーボックスは %1$sに期限が切れます。すぐに新しいキーボックスを読み込んで、Play Integrity を維持します。</string>
     <string name="ts_alert_revoked_title">キーボックスが取り消されました</string>
     <string name="ts_alert_revoked_text">GoogleはTrickyStoreのキーボックスを取り消しました（理由： %1$s）。新しいキーボックスを読み込むまでStrong integrityは失敗します。</string>
