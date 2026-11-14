@@ -958,15 +958,29 @@
     <string name="solid_accent">ソリッドアクセントカラー</string>
     <string name="outline">アウトライン</string>
     <string name="solid_accent_gradient">ソリッドアクセントグラデーション</string>
-    <string name="solid_gradient">ソリッドサイドグラデーション</string>
+    <string name="solid_gradient">Solid Gradient side</string>
     <string name="solid_gradient_corner">シャープソリッドアクセントグラデーション</string>
-    <string name="solid_gradient_void">グラデーションボイド</string>
+    <string name="solid_gradient_void">Gradient Void</string>
     <string name="solid_gradient_neumorph">ニューモフィズムグラデーション</string>
     <string name="solid_gradient_stroke">シャープグラデーションストローク</string>
-    <string name="solid_accent_transperent">透明なアクセント</string>
+    <string name="solid_accent_transperent">Accent transparent</string>
     <string name="solid_gradient_light">グラデーションライト</string>
     <string name="solid_gradient_shape">シャープグラデーションコーナー</string>
-    <string name="solid_gradient_void_light">グラデーションボイドライト</string>
+    <string name="solid_gradient_void_light">Gradient Void light</string>
+    <string name="clock_chip_custom_gradient">Custom gradient</string>
+    <!-- Gradient mode - Start color picker -->
+    <string name="clock_chip_gradient_start_color_title">グラデーションの開始の色</string>
+    <string name="clock_chip_gradient_start_color_summary">Color at the start of the gradient</string>
+    <!-- Gradient mode - End color picker -->
+    <string name="clock_chip_gradient_end_color_title">グラデーションの終了の色</string>
+    <string name="clock_chip_gradient_end_color_summary">Color at the end of the gradient</string>
+    <!-- Gradient mode - Angle seekbar -->
+    <string name="clock_chip_gradient_angle_title">Gradient angle</string>
+    <string name="clock_chip_gradient_angle_summary">Direction of the gradient (0° = left→right, 90° = bottom→top)</string>
+    <!-- Gradient mode - Mask text -->
+    <string name="clock_chip_gradient_mask_text_title">Clock text style</string>
+    <string name="clock_chip_gradient_mask_text_default">デフォルト</string>
+    <string name="clock_chip_gradient_mask_text_mask">Transparent (Mask)</string>
     <!-- Weather -->
     <string name="weather_settings_title">天気の設定</string>
     <string name="weather_settings_summary">アイコンパックと天気サービスを設定します</string>
@@ -1437,6 +1451,11 @@
     <string name="spoof_wipe_playstore_message">整合性判定の結果は、Playストアによってキャッシュされます。Playストアのデータを消去すると新しい設定が即座に反映されますが、同時にPlayストアからサインアウトされ、ダウンロードキューもクリアされます。</string>
     <string name="spoof_wipe_confirm">データを消去</string>
     <string name="spoof_choice_select">選択</string>
+    <string name="spoof_check_interval_title">Check every</string>
+    <string name="spoof_interval_hours_short">%dh</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="other">%d hours</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">アクティブな設定</string>
     <string name="pif_no_config">設定が読み込まれていません</string>
@@ -1468,9 +1487,9 @@
     <string name="pif_channel_latest_release_summary">現在のベータ版OTAからのフィンガープリント</string>
     <string name="pif_channel_canary_release">Canary リリース</string>
     <string name="pif_channel_canary_release_summary">Android Flash ツールからの最新のCanary ビルド</string>
-    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">フィンガープリントを自動更新する</string>
-    <string name="pif_auto_refresh_summary_on">%1$s チャンネルの新しい %2$s フィンガープリントを毎日チェックします。見つかった場合は適用され、Playストアのデータが消去されます</string>
+    <string name="pif_auto_refresh_summary_on">Checks every %3$s for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
     <string name="pif_auto_refresh_summary_off">オフ。 %1$s フィンガープリント（%2$s）は、取得またはインポートしたときにのみ変更されます</string>
     <string name="pif_auto_refresh_last_checked">最終確認: %1$s</string>
     <string name="pif_auto_refresh_channel_name">Play Integrity Fix</string>
@@ -1532,14 +1551,20 @@
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">キーボックスアラート</string>
     <string name="ts_alerts_summary_off">オフ。キーボックスが破棄された場合や期限切れになる場合は通知されません</string>
-    <string name="ts_alerts_summary_on">Googleで毎日チェックします。キーボックスが無効になった場合に通知されます</string>
-    <string name="ts_alerts_summary_scheduled">失効状態については、Googleで毎日チェックします。 %1$sの期限切れリマインダー</string>
-    <string name="ts_alerts_summary_due">キーボックスの有効期限は1日未満です。すぐに新しいキーを読み込みます</string>
+    <string name="ts_alerts_summary_on">Checks with Google every %1$s. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks with Google every %1$s for revocation status. Next expiry reminder on %2$s</string>
+    <string name="ts_alerts_summary_due">The keybox expires soon, load a new one</string>
+    <string name="ts_alerts_lead_title">Warn before expiry</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="other">%d days</item>
+    </plurals>
     <string name="ts_alerts_summary_expired">キーボックスの有効期限が切れています。再度アラートを取得するには、新しいキーボックスを読み込んでください</string>
     <string name="ts_alerts_summary_blocked">設定の通知がオフになっているため、アラートを表示できません</string>
     <string name="ts_alerts_channel_name">キーボックスアラート</string>
-    <string name="ts_alerts_channel_description">TrickyStoreキーボックスがGoogleによって取り消されたり、1日で期限切れになったときに通知します</string>
-    <string name="ts_alert_expiry_title">キーボックスの有効期限は1日後に切れます</string>
+    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or is about to expire</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="other">Keybox expires in %d days</item>
+    </plurals>
     <string name="ts_alert_expiry_text">TrickyStoreのキーボックスは %1$sに期限が切れます。すぐに新しいキーボックスを読み込んで、Play Integrity を維持します。</string>
     <string name="ts_alert_revoked_title">キーボックスが取り消されました</string>
     <string name="ts_alert_revoked_text">GoogleはTrickyStoreのキーボックスを取り消しました（理由： %1$s）。新しいキーボックスを読み込むまでStrong integrityは失敗します。</string>
