@@ -39,6 +39,13 @@ internal object KeyboxMonitor {
     const val ENABLED_KEY = "spoof_trickystore_keybox_alerts"
     const val ACTION_EXPIRY_DUE = "com.crdroid.settings.action.KEYBOX_EXPIRY_DUE"
 
+    /** Comma-separated lead times in days, e.g. "1,7". Unset means [DEFAULT_LEAD_DAYS]. */
+    const val LEAD_DAYS_KEY = "spoof_trickystore_expiry_lead_days"
+
+    /** Lead times offered on the TrickyStore screen, in display order. */
+    val LEAD_DAY_OPTIONS = listOf(1, 3, 7, 14)
+    private val DEFAULT_LEAD_DAYS = setOf(1)
+
     // Must not clash with other JobScheduler ids used by the Settings app.
     internal const val JOB_DAILY = 0x7b0c01
     internal const val JOB_NOW = 0x7b0c02
@@ -49,11 +56,11 @@ internal object KeyboxMonitor {
 
     private const val PREFS = "trickystore_keybox_alerts"
     private const val PREF_KEYBOX_HASH = "keybox_hash"
-    private const val PREF_EXPIRY_NOTIFIED = "expiry_notified"
+    private const val PREF_LEADS_DONE = "expiry_leads_done"
+    private const val PREF_EXPIRY_MUTED = "expiry_muted"
     private const val PREF_REVOKED_NOTIFIED = "revoked_notified"
 
-    /** How long before expiry the expiry alert fires. */
-    private val LEAD_TIME_MS = TimeUnit.DAYS.toMillis(1)
+    private val DAY_MS = TimeUnit.DAYS.toMillis(1)
     /** An alarm that lands slightly early still counts as due. */
     private val EARLY_TOLERANCE_MS = TimeUnit.MINUTES.toMillis(5)
     private val CHECK_INTERVAL_MS = TimeUnit.DAYS.toMillis(1)
@@ -70,19 +77,55 @@ internal object KeyboxMonitor {
         sync(context)
     }
 
-    /** When the expiry alert for a keybox expiring at [expiry] is due. */
-    fun triggerAt(expiry: Long): Long = expiry - LEAD_TIME_MS
+    /** The selected lead times, in days; never empty. */
+    fun leadDays(context: Context): Set<Int> {
+        val raw = Settings.Secure.getString(context.contentResolver, LEAD_DAYS_KEY)
+            ?: return DEFAULT_LEAD_DAYS
+        return raw.split(',')
+            .mapNotNull { it.trim().toIntOrNull() }
+            .filter { it in LEAD_DAY_OPTIONS }
+            .toSet()
+            .ifEmpty { DEFAULT_LEAD_DAYS }
+    }
+
+    /** Stores [days] (ignored when empty: at least one lead time stays selected). */
+    fun setLeadDays(context: Context, days: Set<Int>) {
+        val ctx = context.applicationContext
+        val valid = days.filter { it in LEAD_DAY_OPTIONS }.toSet()
+        if (valid.isEmpty()) return
+        val added = valid - leadDays(ctx)
+        Settings.Secure.putString(
+            ctx.contentResolver, LEAD_DAYS_KEY, valid.sorted().joinToString(","),
+        )
+        val keybox = currentKeybox(ctx)
+        val expiry = keybox?.expiry
+        if (keybox != null && expiry != null && isUnlocked(ctx)) {
+            val now = System.currentTimeMillis()
+            val passed = added.filter { now >= triggerAt(expiry, it) - EARLY_TOLERANCE_MS }
+            if (passed.isNotEmpty()) markLeadsDone(prefsFor(ctx, keybox.hash), passed)
+        }
+        sync(ctx)
+    }
+
+    /** When the reminder [days] before a keybox expiring at [expiry] is due. */
+    fun triggerAt(expiry: Long, days: Int): Long = expiry - days * DAY_MS
+
+    /** The next selected reminder still ahead for [expiry], or null when all have passed. */
+    fun nextReminderAt(context: Context, expiry: Long): Long? {
+        val now = System.currentTimeMillis()
+        return leadDays(context).map { triggerAt(expiry, it) }.filter { it > now }.minOrNull()
+    }
 
     /** Brings jobs, alarm and notifications in line with the current keybox and switch. */
     fun sync(context: Context) {
         val ctx = context.applicationContext
         val keybox = reconcile(ctx) ?: return
         val expiry = keybox.expiry ?: return
+        if (!isUnlocked(ctx)) return
+        val prefs = prefs(ctx)
         val now = System.currentTimeMillis()
-        // Inside the last day (device was off at the alarm, or alerts were just turned on):
-        // run the check now; it posts the expiry alert if still appropriate.
-        if (now < expiry && now >= triggerAt(expiry) - EARLY_TOLERANCE_MS &&
-            !prefs(ctx).getBoolean(PREF_EXPIRY_NOTIFIED, false)) {
+        if (now < expiry && !prefs.getBoolean(PREF_EXPIRY_MUTED, false) &&
+            dueLeads(ctx, expiry, now, doneLeads(prefs)).isNotEmpty()) {
             checkNow(ctx)
         }
     }
@@ -93,7 +136,7 @@ internal object KeyboxMonitor {
         val prefs = prefsFor(ctx, hash)
         prefs.edit()
             .putBoolean(PREF_REVOKED_NOTIFIED, true)
-            .putBoolean(PREF_EXPIRY_NOTIFIED, true)
+            .putBoolean(PREF_EXPIRY_MUTED, true)
             .apply()
         cancelNotification(ctx, NOTIFY_REVOKED)
     }
@@ -124,7 +167,7 @@ internal object KeyboxMonitor {
             // An expiry reminder for a revoked keybox would only add noise.
             prefs.edit()
                 .putBoolean(PREF_REVOKED_NOTIFIED, true)
-                .putBoolean(PREF_EXPIRY_NOTIFIED, true)
+                .putBoolean(PREF_EXPIRY_MUTED, true)
                 .apply()
             return true
         }
@@ -132,10 +175,11 @@ internal object KeyboxMonitor {
         val expiry = keybox.expiry ?: return true
         val now = System.currentTimeMillis()
         if (status == KeyboxInspector.Status.EXPIRED || now >= expiry) return true
-        if (now >= triggerAt(expiry) - EARLY_TOLERANCE_MS &&
-            !prefs.getBoolean(PREF_EXPIRY_NOTIFIED, false)) {
-            postExpiry(ctx, expiry)
-            prefs.edit().putBoolean(PREF_EXPIRY_NOTIFIED, true).apply()
+        if (prefs.getBoolean(PREF_EXPIRY_MUTED, false)) return true
+        val due = dueLeads(ctx, expiry, now, doneLeads(prefs))
+        if (due.isNotEmpty()) {
+            postExpiry(ctx, expiry, now, due.min())
+            markLeadsDone(prefs, due)
         }
         return true
     }
@@ -164,14 +208,27 @@ internal object KeyboxMonitor {
             return null
         }
         scheduleDailyCheck(ctx)
-        val expiry = keybox.expiry
         val now = System.currentTimeMillis()
-        if (expiry == null || now >= triggerAt(expiry) - EARLY_TOLERANCE_MS) {
-            cancelAlarm(ctx)
-        } else {
-            scheduleAlarm(ctx, triggerAt(expiry))
+        val next = keybox.expiry?.let { expiry ->
+            leadDays(ctx).map { triggerAt(expiry, it) }
+                .filter { it - EARLY_TOLERANCE_MS > now }
+                .minOrNull()
         }
+        if (next == null) cancelAlarm(ctx) else scheduleAlarm(ctx, next)
         return keybox
+    }
+
+    /** Selected lead times whose moment has come and that were not reminded about yet. */
+    private fun dueLeads(ctx: Context, expiry: Long, now: Long, done: Set<Int>): List<Int> =
+        leadDays(ctx).filter { it !in done && now >= triggerAt(expiry, it) - EARLY_TOLERANCE_MS }
+
+    private fun doneLeads(prefs: SharedPreferences): Set<Int> =
+        prefs.getStringSet(PREF_LEADS_DONE, emptySet()).orEmpty()
+            .mapNotNull { it.toIntOrNull() }.toSet()
+
+    private fun markLeadsDone(prefs: SharedPreferences, leads: Collection<Int>) {
+        val done = doneLeads(prefs) + leads
+        prefs.edit().putStringSet(PREF_LEADS_DONE, done.map { it.toString() }.toSet()).apply()
     }
 
     private fun currentKeybox(ctx: Context): Keybox? {
@@ -247,11 +304,14 @@ internal object KeyboxMonitor {
         pi.cancel()
     }
 
-    private fun postExpiry(ctx: Context, expiry: Long) = post(
-        ctx, NOTIFY_EXPIRY,
-        title = ctx.getString(R.string.ts_alert_expiry_title),
-        text = ctx.getString(R.string.ts_alert_expiry_text, KeyboxInspector.formatDate(expiry)),
-    )
+    private fun postExpiry(ctx: Context, expiry: Long, now: Long, lead: Int) {
+        val days = ((expiry - now + EARLY_TOLERANCE_MS) / DAY_MS).toInt().coerceIn(1, lead)
+        post(
+            ctx, NOTIFY_EXPIRY,
+            title = ctx.resources.getQuantityString(R.plurals.ts_alert_expiry_title, days, days),
+            text = ctx.getString(R.string.ts_alert_expiry_text, KeyboxInspector.formatDate(expiry)),
+        )
+    }
 
     private fun postRevoked(ctx: Context, status: KeyboxInspector.Status, reason: String) {
         val suspended = status == KeyboxInspector.Status.SUSPENDED

@@ -130,6 +130,15 @@ class TrickyStore : SettingsPreferenceFragment() {
             refreshStatus()
         }
 
+        override fun onLeadDayToggle(days: Int) {
+            val current = KeyboxMonitor.leadDays(requireContext())
+            val next = if (days in current) current - days else current + days
+            // At least one reminder stays selected; tapping the last one does nothing.
+            if (next.isEmpty()) return
+            KeyboxMonitor.setLeadDays(requireContext(), next)
+            refreshStatus()
+        }
+
         override fun onConfirmDeleteKeybox() = deleteKeybox()
 
         override fun onSavePatch(value: String): String? {
@@ -402,6 +411,7 @@ class TrickyStore : SettingsPreferenceFragment() {
         val now = System.currentTimeMillis()
         val expired = expiry != null && now >= expiry
         ui.alertsEnabled = KeyboxMonitor.isEnabled(ctx)
+        ui.leadDays = KeyboxMonitor.leadDays(ctx)
         ui.alertsAvailable = ui.keyboxExists && !expired
         val blocked = ctx.getSystemService(NotificationManager::class.java)
             ?.areNotificationsEnabled() == false
@@ -410,12 +420,13 @@ class TrickyStore : SettingsPreferenceFragment() {
             !ui.alertsEnabled -> getString(R.string.ts_alerts_summary_off)
             blocked -> getString(R.string.ts_alerts_summary_blocked)
             expiry == null -> getString(R.string.ts_alerts_summary_on)
-            now >= KeyboxMonitor.triggerAt(expiry) -> getString(R.string.ts_alerts_summary_due)
-            else -> getString(
-                R.string.ts_alerts_summary_scheduled,
-                DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
-                    .format(Date(KeyboxMonitor.triggerAt(expiry))),
-            )
+            else -> KeyboxMonitor.nextReminderAt(ctx, expiry)?.let { next ->
+                getString(
+                    R.string.ts_alerts_summary_scheduled,
+                    DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
+                        .format(Date(next)),
+                )
+            } ?: getString(R.string.ts_alerts_summary_due)
         }
     }
 

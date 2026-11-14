@@ -22,6 +22,7 @@ import androidx.compose.material.icons.rounded.Key
 import androidx.compose.material.icons.rounded.NotificationsActive
 import androidx.compose.material.icons.rounded.Policy
 import androidx.compose.material.icons.rounded.Refresh
+import androidx.compose.material.icons.rounded.Schedule
 import androidx.compose.material.icons.rounded.Tune
 import androidx.compose.material.icons.rounded.UploadFile
 import androidx.compose.material.icons.rounded.VerifiedUser
@@ -37,6 +38,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
@@ -69,6 +71,8 @@ internal class TsUiState {
     /** False without a keybox or once it has expired: nothing left to alert about. */
     var alertsAvailable by mutableStateOf(false)
     var alertsSummary by mutableStateOf("")
+    /** Selected expiry reminder lead times, in days ([KeyboxMonitor.LEAD_DAY_OPTIONS]). */
+    var leadDays by mutableStateOf<Set<Int>>(setOf(1))
 
     var statusChip by mutableStateOf("")
     var statusTone by mutableStateOf(SpoofTone.Neutral)
@@ -93,6 +97,9 @@ internal interface TsActions {
 
     /** Keybox alerts switch flipped. */
     fun onAlertsToggle(enabled: Boolean)
+
+    /** An expiry reminder chip ([days] before expiry) was tapped. */
+    fun onLeadDayToggle(days: Int)
 
     fun onConfirmDeleteKeybox()
 
@@ -205,6 +212,22 @@ internal fun TrickyStoreContent(state: TsUiState, actions: TsActions) {
                         enabled = state.alertsAvailable,
                         onCheckedChange = actions::onAlertsToggle,
                     )
+                }
+                if (state.alertsEnabled && state.alertsAvailable && state.expirySummary != null) {
+                    item {
+                        val options = KeyboxMonitor.LEAD_DAY_OPTIONS
+                        SpoofMultiChoiceRow(
+                            title = stringResource(R.string.ts_alerts_lead_title),
+                            options = options.map {
+                                pluralStringResource(R.plurals.ts_alerts_lead_days, it, it)
+                            },
+                            selected = options.indices
+                                .filter { options[it] in state.leadDays }
+                                .toSet(),
+                            onToggle = { actions.onLeadDayToggle(options[it]) },
+                            icon = Icons.Rounded.Schedule,
+                        )
+                    }
                 }
             }
         }
