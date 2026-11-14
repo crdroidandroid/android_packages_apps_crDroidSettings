@@ -17,6 +17,7 @@ import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
+import android.view.SoundEffectConstants
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.expandVertically
@@ -48,6 +49,7 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
@@ -100,6 +102,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.platform.rememberNestedScrollInteropConnection
 import androidx.compose.ui.res.stringResource
@@ -261,6 +264,12 @@ enum class SpoofTone { Positive, Warning, Negative, Neutral }
 
 private val LocalSpoofRowShape = compositionLocalOf<Shape> { SpoofShapes.single }
 
+@Composable
+internal fun rememberClickSound(): () -> Unit {
+    val view = LocalView.current
+    return remember(view) { { view.playSoundEffect(SoundEffectConstants.CLICK) } }
+}
+
 // ---------------------------------------------------------------------------
 // Page scaffolding
 // ---------------------------------------------------------------------------
@@ -329,6 +338,7 @@ fun SpoofGroup(
     content: SpoofGroupScope.() -> Unit,
 ) {
     var expanded by rememberSaveable(title) { mutableStateOf(initiallyExpanded) }
+    val clickSound = rememberClickSound()
     val items = SpoofGroupScope().apply(content).items
     Column(modifier = modifier.padding(vertical = 8.dp)) {
         if (!title.isNullOrEmpty()) {
@@ -337,7 +347,7 @@ fun SpoofGroup(
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(12.dp))
                     .then(
-                        if (collapsible) Modifier.clickable { expanded = !expanded }
+                        if (collapsible) Modifier.clickable { clickSound(); expanded = !expanded }
                         else Modifier
                     )
                     .padding(start = 4.dp, end = 4.dp, top = 8.dp, bottom = 8.dp),
@@ -392,9 +402,22 @@ fun SpoofRow(
     selectableText: Boolean = false,
     onClick: (() -> Unit)? = null,
     trailing: (@Composable () -> Unit)? = null,
+    checked: Boolean? = null,
+    onCheckedChange: ((Boolean) -> Unit)? = null,
 ) {
     val shape = LocalSpoofRowShape.current
     val color = MaterialTheme.colorScheme.surfaceBright
+    val clickSound = rememberClickSound()
+    val interaction = when {
+        checked != null && onCheckedChange != null -> Modifier.toggleable(
+            value = checked,
+            enabled = enabled,
+            role = Role.Switch,
+            onValueChange = { clickSound(); onCheckedChange(it) },
+        )
+        onClick != null -> Modifier.clickable(enabled = enabled) { clickSound(); onClick() }
+        else -> Modifier
+    }
     val body: @Composable () -> Unit = {
         Row(
             modifier = Modifier
@@ -450,20 +473,12 @@ fun SpoofRow(
             }
         }
     }
-    if (onClick != null) {
-        Surface(
-            onClick = onClick,
-            enabled = enabled,
-            modifier = modifier.fillMaxWidth(),
-            shape = shape,
-            color = color,
-        ) { body() }
-    } else {
-        Surface(
-            modifier = modifier.fillMaxWidth(),
-            shape = shape,
-            color = color,
-        ) { body() }
+    Surface(
+        modifier = modifier.fillMaxWidth(),
+        shape = shape,
+        color = color,
+    ) {
+        Box(modifier = Modifier.fillMaxWidth().then(interaction)) { body() }
     }
 }
 
@@ -521,11 +536,12 @@ fun SpoofSwitchRow(
         summary = summary,
         icon = icon,
         enabled = enabled,
-        onClick = { onCheckedChange(!checked) },
+        checked = checked,
+        onCheckedChange = onCheckedChange,
         trailing = {
             CheckCloseSwitch(
                 checked = checked,
-                onCheckedChange = onCheckedChange,
+                onCheckedChange = null,
                 enabled = enabled,
             )
         },
@@ -542,6 +558,7 @@ fun SpoofMultiChoiceRow(
     icon: ImageVector? = null,
     enabled: Boolean = true,
 ) {
+    val clickSound = rememberClickSound()
     Surface(
         modifier = modifier.fillMaxWidth(),
         shape = LocalSpoofRowShape.current,
@@ -580,7 +597,7 @@ fun SpoofMultiChoiceRow(
                     options.forEachIndexed { index, option ->
                         FilterChip(
                             selected = index in selected,
-                            onClick = { onToggle(index) },
+                            onClick = { clickSound(); onToggle(index) },
                             label = { Text(option) },
                             enabled = enabled,
                             shape = RoundedCornerShape(12.dp),
@@ -659,8 +676,10 @@ fun SpoofPrimaryAction(
     loading: Boolean = false,
 ) {
     val haptic = LocalHapticFeedback.current
+    val clickSound = rememberClickSound()
     Button(
         onClick = {
+            clickSound()
             haptic.performHapticFeedback(HapticFeedbackType.ContextClick)
             onClick()
         },
@@ -699,6 +718,7 @@ fun SpoofActionRow(
     actions: List<SpoofAction>,
     modifier: Modifier = Modifier,
 ) {
+    val clickSound = rememberClickSound()
     Row(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
@@ -706,7 +726,7 @@ fun SpoofActionRow(
         actions.forEach { action ->
             val checked = action.selected == true
             FilledTonalButton(
-                onClick = action.onClick,
+                onClick = { clickSound(); action.onClick() },
                 enabled = action.enabled,
                 modifier = Modifier
                     .weight(1f)
@@ -917,6 +937,7 @@ fun SpoofChoiceDialog(
     summaries: List<String?> = emptyList(),
 ) {
     var current by rememberSaveable(options, selected) { mutableStateOf(selected) }
+    val clickSound = rememberClickSound()
     SpoofDialog(
         onDismissRequest = onDismiss,
         title = title,
@@ -936,7 +957,7 @@ fun SpoofChoiceDialog(
                             .selectable(
                                 selected = index == current,
                                 role = Role.RadioButton,
-                                onClick = { current = index },
+                                onClick = { clickSound(); current = index },
                             )
                             .padding(vertical = 10.dp, horizontal = 4.dp),
                         verticalAlignment = Alignment.CenterVertically,
@@ -1040,6 +1061,7 @@ fun SpoofingHeaderCard(
     icon: @Composable () -> Unit,
 ) {
     val haptic = LocalHapticFeedback.current
+    val clickSound = rememberClickSound()
     Surface(
         modifier = modifier.fillMaxWidth(),
         shape = SpoofShapes.single,
@@ -1083,6 +1105,7 @@ fun SpoofingHeaderCard(
                 Switch(
                     checked = checked,
                     onCheckedChange = { newValue ->
+                        clickSound()
                         if (hapticOnToggle) {
                             haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                         }
