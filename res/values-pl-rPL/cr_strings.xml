@@ -966,29 +966,29 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="solid_accent">Jednolity akcent kolorystyczny</string>
     <string name="outline">Kontur</string>
     <string name="solid_accent_gradient">Jednolity kolor naznaczony gradientem</string>
-    <string name="solid_gradient">Solid Gradient side</string>
+    <string name="solid_gradient">Jednolity gradient boczny</string>
     <string name="solid_gradient_corner">Wyraźny, ostry akcent gradientu</string>
-    <string name="solid_gradient_void">Gradient Void</string>
+    <string name="solid_gradient_void">Gradientowa pustka</string>
     <string name="solid_gradient_neumorph">Gradient neumorficzny</string>
     <string name="solid_gradient_stroke">Ostry gradientowy kontur</string>
-    <string name="solid_accent_transperent">Accent transparent</string>
+    <string name="solid_accent_transperent">Przezroczysty akcent</string>
     <string name="solid_gradient_light">Lekki gradient</string>
     <string name="solid_gradient_shape">Ostry gradientowy narożnik</string>
-    <string name="solid_gradient_void_light">Gradient Void light</string>
-    <string name="clock_chip_custom_gradient">Custom gradient</string>
+    <string name="solid_gradient_void_light">Lekka gradientowa pustka</string>
+    <string name="clock_chip_custom_gradient">Własny gradient</string>
     <!-- Gradient mode - Start color picker -->
     <string name="clock_chip_gradient_start_color_title">Kolor początkowy gradientu</string>
-    <string name="clock_chip_gradient_start_color_summary">Color at the start of the gradient</string>
+    <string name="clock_chip_gradient_start_color_summary">Kolor na początku gradientu</string>
     <!-- Gradient mode - End color picker -->
     <string name="clock_chip_gradient_end_color_title">Kolor końcowy gradientu</string>
-    <string name="clock_chip_gradient_end_color_summary">Color at the end of the gradient</string>
+    <string name="clock_chip_gradient_end_color_summary">Kolor na końcu gradientu</string>
     <!-- Gradient mode - Angle seekbar -->
-    <string name="clock_chip_gradient_angle_title">Gradient angle</string>
-    <string name="clock_chip_gradient_angle_summary">Direction of the gradient (0° = left→right, 90° = bottom→top)</string>
+    <string name="clock_chip_gradient_angle_title">Kąt gradientu</string>
+    <string name="clock_chip_gradient_angle_summary">Kierunek gradientu (0° = lewo→prawo, 90° = dół→góra)</string>
     <!-- Gradient mode - Mask text -->
-    <string name="clock_chip_gradient_mask_text_title">Clock text style</string>
+    <string name="clock_chip_gradient_mask_text_title">Styl tekstu zegara</string>
     <string name="clock_chip_gradient_mask_text_default">Domyślny</string>
-    <string name="clock_chip_gradient_mask_text_mask">Transparent (Mask)</string>
+    <string name="clock_chip_gradient_mask_text_mask">Przezroczysty (maska)</string>
     <!-- Weather -->
     <string name="weather_settings_title">Ustawienia pogody</string>
     <string name="weather_settings_summary">Ustaw pakiet ikon i usługę pogody</string>
@@ -1464,13 +1464,13 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="spoof_wipe_playstore_message">Wyniki sprawdzania integralności są przechowywane w pamięci podręcznej Sklepu Play. Wyczyszczenie jego danych powoduje natychmiastowe zastosowanie nowej konfiguracji, ale powoduje również wylogowanie ze Sklepu Play i wyczyszczenie jego kolejki pobrań.</string>
     <string name="spoof_wipe_confirm">Wyczyść dane</string>
     <string name="spoof_choice_select">Wybierz</string>
-    <string name="spoof_check_interval_title">Check every</string>
-    <string name="spoof_interval_hours_short">%dh</string>
+    <string name="spoof_check_interval_title">Sprawdzaj co</string>
+    <string name="spoof_interval_hours_short">%dg</string>
     <plurals name="spoof_interval_hours">
-        <item quantity="one">%d hour</item>
-        <item quantity="few">%d hours</item>
-        <item quantity="many">%d hours</item>
-        <item quantity="other">%d hours</item>
+        <item quantity="one">%d godzina</item>
+        <item quantity="few">%d godziny</item>
+        <item quantity="many">%d godzin</item>
+        <item quantity="other">%d godzin</item>
     </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Aktywna konfiguracja</string>
@@ -1505,7 +1505,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pif_channel_canary_release_summary">Najnowsza wersja Canary z narzędzia Android Flash Tool</string>
     <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">Automatyczne odświeżanie odcisku palca</string>
-    <string name="pif_auto_refresh_summary_on">Checks every %3$s for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
+    <string name="pif_auto_refresh_summary_on">Co %3$s sprawdza, czy na kanale %2$s pojawił się nowszy odcisk %1$s. Gdy taki zostanie znaleziony, zostaje zastosowany, a dane ze Sklepu Play są usuwane</string>
     <string name="pif_auto_refresh_summary_off">Wyłączono. Odcisk palca %1$s (%2$s) zmienia się tylko po pobraniu lub zaimportowaniu jednego</string>
     <string name="pif_auto_refresh_last_checked">Ostatnio sprawdzane: %1$s</string>
     <string name="pif_auto_refresh_channel_name">Naprawa integralności Google Play</string>
@@ -1528,7 +1528,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pif_flag_spoof_props_title">Sfałszuj właściwości systemu</string>
     <string name="pif_flag_spoof_props_summary">Nadpisanie ustawień dotyczących odcisków palców, poprawek zabezpieczeń i innych właściwości typu ro.* w aplikacji DroidGuard</string>
     <string name="pif_flag_spoof_provider_title">Fałszuj dostawcę zestawu kluczy</string>
-    <string name="pif_flag_spoof_provider_summary">Blokowanie programowi DroidGuard odczytu certyfikatów poświadczających klucze. Zazwyczaj opcja ta pozostaje wyłączona, gdy zainstalowano prawidłowo działającą skrzynkę kluczy</string>
+    <string name="pif_flag_spoof_provider_summary">Blokowanie programowi DroidGuard odczytu certyfikatów poświadczających klucze. Zazwyczaj opcja ta pozostaje wyłączona, gdy zainstalowano prawidłowo działający zestaw kluczy</string>
     <string name="pif_flag_spoof_signature_title">Fałszuj podpis ROM</string>
     <string name="pif_flag_spoof_signature_summary">Zgłaszanie sygnatury platformy producenta dla pakietu Androida</string>
     <string name="pif_flag_spoof_vending_build_title">Fałszuj kompilację Sklepu Play</string>
@@ -1566,32 +1566,32 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_days_left">Pozostało %1$dd</string>
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Powiadomienia zestawu kluczy</string>
-    <string name="ts_alerts_summary_off">Wyłączono. Nie otrzymasz powiadomienia, jeśli uprawnienia do skrzynki kluczy zostaną cofnięte lub wkrótce wygasną</string>
-    <string name="ts_alerts_summary_on">Checks with Google every %1$s. You\'ll be notified if the keybox is revoked</string>
-    <string name="ts_alerts_summary_scheduled">Checks with Google every %1$s for revocation status. Next expiry reminder on %2$s</string>
-    <string name="ts_alerts_summary_due">The keybox expires soon, load a new one</string>
-    <string name="ts_alerts_lead_title">Warn before expiry</string>
+    <string name="ts_alerts_summary_off">Wyłączono. Nie otrzymasz powiadomienia, jeśli uprawnienia do zestawu kluczy zostaną cofnięte lub wkrótce wygasną</string>
+    <string name="ts_alerts_summary_on">Co %1$s sprawdza w Google. Otrzymasz powiadomienie, jeśli uprawnienia do zestawu kluczy zostaną cofnięte</string>
+    <string name="ts_alerts_summary_scheduled">Co %1$s sprawdza w Google stan unieważnienia. Kolejne przypomnienie o wygaśnięciu w dniu %2$s</string>
+    <string name="ts_alerts_summary_due">Zestaw kluczy niebawem wygaśnie, załaduj nowy</string>
+    <string name="ts_alerts_lead_title">Powiadom przed upływem terminu ważności</string>
     <plurals name="ts_alerts_lead_days">
-        <item quantity="one">%d day</item>
-        <item quantity="few">%d days</item>
-        <item quantity="many">%d days</item>
-        <item quantity="other">%d days</item>
+        <item quantity="one">%d dzień</item>
+        <item quantity="few">%d dni</item>
+        <item quantity="many">%d dni</item>
+        <item quantity="other">%d dni</item>
     </plurals>
-    <string name="ts_alerts_summary_expired">Okres ważności skrzynki kluczy wygasł. Załaduj nową skrzynkę kluczy, aby ponownie otrzymywać powiadomienia</string>
+    <string name="ts_alerts_summary_expired">Okres ważności zestawu kluczy wygasł. Załaduj nowy zestaw kluczy, aby ponownie otrzymywać powiadomienia</string>
     <string name="ts_alerts_summary_blocked">Powiadomienia dotyczące ustawień są wyłączone, więc alerty nie mogą być wyświetlane</string>
     <string name="ts_alerts_channel_name">Powiadomienia zestawu kluczy</string>
-    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or is about to expire</string>
+    <string name="ts_alerts_channel_description">Powiadamia użytkownika, gdy klucz TrickyStore zostanie unieważniony przez Google lub zbliża się termin jego wygaśnięcia</string>
     <plurals name="ts_alert_expiry_title">
-        <item quantity="one">Keybox expires in %d day</item>
-        <item quantity="few">Keybox expires in %d days</item>
-        <item quantity="many">Keybox expires in %d days</item>
-        <item quantity="other">Keybox expires in %d days</item>
+        <item quantity="one">Okres ważności zestawu kluczy wygasa za %d dzień</item>
+        <item quantity="few">Okres ważności zestawu kluczy wygasa za %d dni</item>
+        <item quantity="many">Okres ważności zestawu kluczy wygasa za %d dni</item>
+        <item quantity="other">Okres ważności zestawu kluczy wygasa za %d dni</item>
     </plurals>
     <string name="ts_alert_expiry_text">Twój zestaw kluczy TrickyStore traci ważność %1$s. Jak najszybciej załaduj nowy zestaw kluczy, aby nadal spełniać wymagania integralności Play.</string>
     <string name="ts_alert_revoked_title">Odrzucono zestaw kluczy</string>
     <string name="ts_alert_revoked_text">Firma Google unieważniła twój klucz TrickyStore (przyczyna: %1$s). Sprawdzanie integralności zakończy się niepowodzeniem, dopóki nie załadujesz nowego klucza.</string>
     <string name="ts_alert_suspended_title">Zawieszono zestaw kluczy</string>
-    <string name="ts_alert_suspended_text">Firma Google zawiesiła twoją skrzynkę kluczy TrickyStore (przyczyna: %1$s). Sprawdzanie integralności zakończy się niepowodzeniem, dopóki nie załadujesz nowej skrzynki kluczy.</string>
+    <string name="ts_alert_suspended_text">Firma Google zawiesiła twój zestaw kluczy TrickyStore (przyczyna: %1$s). Sprawdzanie integralności zakończy się niepowodzeniem, dopóki nie załadujesz nowego zestawu kluczy.</string>
     <string name="ts_revocation_status">Status unieważnienia w Google</string>
     <string name="ts_revocation_checking">Sprawdzanie z Google…</string>
     <string name="ts_revocation_not_yet_checked">Jeszcze nie sprawdzono. Dotknij, aby sprawdzić teraz</string>
