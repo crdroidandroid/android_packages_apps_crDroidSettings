@@ -966,29 +966,29 @@
     <string name="solid_accent">Сплошной цвет акцента</string>
     <string name="outline">Контур</string>
     <string name="solid_accent_gradient">Градиент цветового акцента</string>
-    <string name="solid_gradient">Solid Gradient side</string>
+    <string name="solid_gradient">Сплошной боковой градиент</string>
     <string name="solid_gradient_corner">Сплошной акцент с градиентным кантом</string>
-    <string name="solid_gradient_void">Gradient Void</string>
+    <string name="solid_gradient_void">Градиентная пустота</string>
     <string name="solid_gradient_neumorph">Вертикальный градиент с кантом</string>
     <string name="solid_gradient_stroke">Резкий градиентный штрих</string>
-    <string name="solid_accent_transperent">Accent transparent</string>
+    <string name="solid_accent_transperent">Полупрозрачный акцент</string>
     <string name="solid_gradient_light">Лёгкий градиент</string>
     <string name="solid_gradient_shape">Лёгкий градиент с углами</string>
-    <string name="solid_gradient_void_light">Gradient Void light</string>
-    <string name="clock_chip_custom_gradient">Custom gradient</string>
+    <string name="solid_gradient_void_light">Свет «градиентной пустоты»</string>
+    <string name="clock_chip_custom_gradient">Свой градиент</string>
     <!-- Gradient mode - Start color picker -->
     <string name="clock_chip_gradient_start_color_title">Цвет начала градиента</string>
-    <string name="clock_chip_gradient_start_color_summary">Color at the start of the gradient</string>
+    <string name="clock_chip_gradient_start_color_summary">Цвет начала градиента</string>
     <!-- Gradient mode - End color picker -->
     <string name="clock_chip_gradient_end_color_title">Цвет завершения градиента</string>
-    <string name="clock_chip_gradient_end_color_summary">Color at the end of the gradient</string>
+    <string name="clock_chip_gradient_end_color_summary">Цвет конца градиента</string>
     <!-- Gradient mode - Angle seekbar -->
-    <string name="clock_chip_gradient_angle_title">Gradient angle</string>
-    <string name="clock_chip_gradient_angle_summary">Direction of the gradient (0° = left→right, 90° = bottom→top)</string>
+    <string name="clock_chip_gradient_angle_title">Угол градиента</string>
+    <string name="clock_chip_gradient_angle_summary">Направление градиента (0° = слева направо, 90° = снизу вверх)</string>
     <!-- Gradient mode - Mask text -->
-    <string name="clock_chip_gradient_mask_text_title">Clock text style</string>
+    <string name="clock_chip_gradient_mask_text_title">Стиль текста часов</string>
     <string name="clock_chip_gradient_mask_text_default">По умолчанию</string>
-    <string name="clock_chip_gradient_mask_text_mask">Transparent (Mask)</string>
+    <string name="clock_chip_gradient_mask_text_mask">Прозрачность (маска)</string>
     <!-- Weather -->
     <string name="weather_settings_title">Настройки погоды</string>
     <string name="weather_settings_summary">Настройка значков и службы погоды</string>
@@ -1462,13 +1462,13 @@
     <string name="spoof_wipe_playstore_message">Результаты проверки целостности сохраняются в кэше Google Play. Очистка данных приложения позволяет новой конфигурации вступить в силу незамедлительно, однако при этом происходит выход из аккаунта Google Play и удаляется очередь загрузок.</string>
     <string name="spoof_wipe_confirm">Стереть данные</string>
     <string name="spoof_choice_select">Выбрать</string>
-    <string name="spoof_check_interval_title">Check every</string>
-    <string name="spoof_interval_hours_short">%dh</string>
+    <string name="spoof_check_interval_title">Периодичность проверки</string>
+    <string name="spoof_interval_hours_short">%dч</string>
     <plurals name="spoof_interval_hours">
-        <item quantity="one">%d hour</item>
-        <item quantity="few">%d hours</item>
-        <item quantity="many">%d hours</item>
-        <item quantity="other">%d hours</item>
+        <item quantity="one">%d час</item>
+        <item quantity="few">%d часа</item>
+        <item quantity="many">%d часов</item>
+        <item quantity="other">%d часов</item>
     </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Текущая конфигурация</string>
@@ -1503,7 +1503,7 @@
     <string name="pif_channel_canary_release_summary">Новейшая ранняя сборка из Android Flash Tool</string>
     <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">Автообновление отпечатка</string>
-    <string name="pif_auto_refresh_summary_on">Checks every %3$s for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
+    <string name="pif_auto_refresh_summary_on">Каждые %3$s выполняется проверка на наличие более новой версии отпечатка %1$s в канале %2$s. При её обнаружении она применяется, а данные Play Store — очищаются</string>
     <string name="pif_auto_refresh_summary_off">Отключено. Отпечаток %1$s (%2$s) изменяется только при получении или импорте данных</string>
     <string name="pif_auto_refresh_last_checked">Последняя проверка: %1$s</string>
     <string name="pif_auto_refresh_channel_name">Исправление Play Integrity</string>
@@ -1565,25 +1565,25 @@
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Уведомления хранилища ключей</string>
     <string name="ts_alerts_summary_off">Отключено. Вы не получите уведомление в случае отзыва хранилища ключей или приближения срока окончания его действия</string>
-    <string name="ts_alerts_summary_on">Checks with Google every %1$s. You\'ll be notified if the keybox is revoked</string>
-    <string name="ts_alerts_summary_scheduled">Checks with Google every %1$s for revocation status. Next expiry reminder on %2$s</string>
-    <string name="ts_alerts_summary_due">The keybox expires soon, load a new one</string>
-    <string name="ts_alerts_lead_title">Warn before expiry</string>
+    <string name="ts_alerts_summary_on">Проверка через Google выполняется каждые %1$s. Вы получите уведомление, если ключ будет отозван</string>
+    <string name="ts_alerts_summary_scheduled">Проверяет статус отзыва в Google каждые %1$s. Следующее напоминание об истечении срока через %2$s</string>
+    <string name="ts_alerts_summary_due">Срок действия хранилища ключей скоро истечёт, загрузите новые</string>
+    <string name="ts_alerts_lead_title">Предупреждать до истечения срока</string>
     <plurals name="ts_alerts_lead_days">
-        <item quantity="one">%d day</item>
-        <item quantity="few">%d days</item>
-        <item quantity="many">%d days</item>
-        <item quantity="other">%d days</item>
+        <item quantity="one">%d день</item>
+        <item quantity="few">%d дня</item>
+        <item quantity="many">%d дней</item>
+        <item quantity="other">%d дней</item>
     </plurals>
     <string name="ts_alerts_summary_expired">Срок действия ключей истёк. Загрузите новые ключи, чтобы снова получать оповещения</string>
     <string name="ts_alerts_summary_blocked">Уведомления для настроек отключены, поэтому оповещения не могут отображаться</string>
     <string name="ts_alerts_channel_name">Уведомления хранилища ключей</string>
-    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or is about to expire</string>
+    <string name="ts_alerts_channel_description">Уведомляет вас, если ключи TrickyStore были отозваны компанией Google или срок их действия подходит к концу</string>
     <plurals name="ts_alert_expiry_title">
-        <item quantity="one">Keybox expires in %d day</item>
-        <item quantity="few">Keybox expires in %d days</item>
-        <item quantity="many">Keybox expires in %d days</item>
-        <item quantity="other">Keybox expires in %d days</item>
+        <item quantity="one">Ключи истекают через %d день</item>
+        <item quantity="few">Ключи истекают через %d дня</item>
+        <item quantity="many">Ключи истекают через %d дней</item>
+        <item quantity="other">Ключи истекают через %d дней</item>
     </plurals>
     <string name="ts_alert_expiry_text">Срок действия вашего хранилища ключей TrickyStore истекает %1$s. В ближайшее время загрузите новое хранилище ключей, чтобы и дальше проходить проверку Play Integrity.</string>
     <string name="ts_alert_revoked_title">Ключи отозваны</string>
