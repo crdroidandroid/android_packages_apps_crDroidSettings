@@ -966,15 +966,29 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="solid_accent">Jednolity akcent kolorystyczny</string>
     <string name="outline">Kontur</string>
     <string name="solid_accent_gradient">Jednolity kolor naznaczony gradientem</string>
-    <string name="solid_gradient">Jednolity gradient boczny</string>
+    <string name="solid_gradient">Solid Gradient side</string>
     <string name="solid_gradient_corner">Wyraźny, ostry akcent gradientu</string>
-    <string name="solid_gradient_void">Gradientowa pustka</string>
+    <string name="solid_gradient_void">Gradient Void</string>
     <string name="solid_gradient_neumorph">Gradient neumorficzny</string>
     <string name="solid_gradient_stroke">Ostry gradientowy kontur</string>
-    <string name="solid_accent_transperent">Przezroczysty akcent</string>
+    <string name="solid_accent_transperent">Accent transparent</string>
     <string name="solid_gradient_light">Lekki gradient</string>
     <string name="solid_gradient_shape">Ostry gradientowy narożnik</string>
-    <string name="solid_gradient_void_light">Lekka gradientowa pustka</string>
+    <string name="solid_gradient_void_light">Gradient Void light</string>
+    <string name="clock_chip_custom_gradient">Custom gradient</string>
+    <!-- Gradient mode - Start color picker -->
+    <string name="clock_chip_gradient_start_color_title">Kolor początkowy gradientu</string>
+    <string name="clock_chip_gradient_start_color_summary">Color at the start of the gradient</string>
+    <!-- Gradient mode - End color picker -->
+    <string name="clock_chip_gradient_end_color_title">Kolor końcowy gradientu</string>
+    <string name="clock_chip_gradient_end_color_summary">Color at the end of the gradient</string>
+    <!-- Gradient mode - Angle seekbar -->
+    <string name="clock_chip_gradient_angle_title">Gradient angle</string>
+    <string name="clock_chip_gradient_angle_summary">Direction of the gradient (0° = left→right, 90° = bottom→top)</string>
+    <!-- Gradient mode - Mask text -->
+    <string name="clock_chip_gradient_mask_text_title">Clock text style</string>
+    <string name="clock_chip_gradient_mask_text_default">Domyślny</string>
+    <string name="clock_chip_gradient_mask_text_mask">Transparent (Mask)</string>
     <!-- Weather -->
     <string name="weather_settings_title">Ustawienia pogody</string>
     <string name="weather_settings_summary">Ustaw pakiet ikon i usługę pogody</string>
@@ -1450,6 +1464,14 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="spoof_wipe_playstore_message">Wyniki sprawdzania integralności są przechowywane w pamięci podręcznej Sklepu Play. Wyczyszczenie jego danych powoduje natychmiastowe zastosowanie nowej konfiguracji, ale powoduje również wylogowanie ze Sklepu Play i wyczyszczenie jego kolejki pobrań.</string>
     <string name="spoof_wipe_confirm">Wyczyść dane</string>
     <string name="spoof_choice_select">Wybierz</string>
+    <string name="spoof_check_interval_title">Check every</string>
+    <string name="spoof_interval_hours_short">%dh</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="one">%d hour</item>
+        <item quantity="few">%d hours</item>
+        <item quantity="many">%d hours</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Aktywna konfiguracja</string>
     <string name="pif_no_config">Brak załadowanych konfiguracji</string>
@@ -1481,9 +1503,9 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pif_channel_latest_release_summary">Odcisk palca z aktualnej wersji beta OTA</string>
     <string name="pif_channel_canary_release">Wydanie Canary</string>
     <string name="pif_channel_canary_release_summary">Najnowsza wersja Canary z narzędzia Android Flash Tool</string>
-    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">Automatyczne odświeżanie odcisku palca</string>
-    <string name="pif_auto_refresh_summary_on">Codziennie sprawdza, czy na kanale %2$s pojawił się nowszy odcisk %1$s. W przypadku znalezienia takiego odcisku zostaje on zastosowany, a dane ze Sklepu Play są usuwane</string>
+    <string name="pif_auto_refresh_summary_on">Checks every %3$s for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
     <string name="pif_auto_refresh_summary_off">Wyłączono. Odcisk palca %1$s (%2$s) zmienia się tylko po pobraniu lub zaimportowaniu jednego</string>
     <string name="pif_auto_refresh_last_checked">Ostatnio sprawdzane: %1$s</string>
     <string name="pif_auto_refresh_channel_name">Naprawa integralności Google Play</string>
@@ -1545,14 +1567,26 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Powiadomienia zestawu kluczy</string>
     <string name="ts_alerts_summary_off">Wyłączono. Nie otrzymasz powiadomienia, jeśli uprawnienia do skrzynki kluczy zostaną cofnięte lub wkrótce wygasną</string>
-    <string name="ts_alerts_summary_on">Codziennie sprawdza to za pomocą Google. Otrzymasz powiadomienie, jeśli dostęp do skrzynki kluczy zostanie cofnięty</string>
-    <string name="ts_alerts_summary_scheduled">Codziennie sprawdza w Google, czy certyfikat nie został unieważniony. Przypomnienie o wygaśnięciu certyfikatu %1$s</string>
-    <string name="ts_alerts_summary_due">Okres ważności skrzynki kluczy wygasa za niecały dzień – wkrótce załaduj nową</string>
+    <string name="ts_alerts_summary_on">Checks with Google every %1$s. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks with Google every %1$s for revocation status. Next expiry reminder on %2$s</string>
+    <string name="ts_alerts_summary_due">The keybox expires soon, load a new one</string>
+    <string name="ts_alerts_lead_title">Warn before expiry</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="one">%d day</item>
+        <item quantity="few">%d days</item>
+        <item quantity="many">%d days</item>
+        <item quantity="other">%d days</item>
+    </plurals>
     <string name="ts_alerts_summary_expired">Okres ważności skrzynki kluczy wygasł. Załaduj nową skrzynkę kluczy, aby ponownie otrzymywać powiadomienia</string>
     <string name="ts_alerts_summary_blocked">Powiadomienia dotyczące ustawień są wyłączone, więc alerty nie mogą być wyświetlane</string>
     <string name="ts_alerts_channel_name">Powiadomienia zestawu kluczy</string>
-    <string name="ts_alerts_channel_description">Powiadamia cię, gdy skrzynka kluczy TrickyStore zostanie cofnięta przez Google lub jej ważność wygaśnie za jeden dzień</string>
-    <string name="ts_alert_expiry_title">Okres ważności skrzynki kluczy wygasa za 1 dzień</string>
+    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or is about to expire</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="one">Keybox expires in %d day</item>
+        <item quantity="few">Keybox expires in %d days</item>
+        <item quantity="many">Keybox expires in %d days</item>
+        <item quantity="other">Keybox expires in %d days</item>
+    </plurals>
     <string name="ts_alert_expiry_text">Twój zestaw kluczy TrickyStore traci ważność %1$s. Jak najszybciej załaduj nowy zestaw kluczy, aby nadal spełniać wymagania integralności Play.</string>
     <string name="ts_alert_revoked_title">Odrzucono zestaw kluczy</string>
     <string name="ts_alert_revoked_text">Firma Google unieważniła twój klucz TrickyStore (przyczyna: %1$s). Sprawdzanie integralności zakończy się niepowodzeniem, dopóki nie załadujesz nowego klucza.</string>
