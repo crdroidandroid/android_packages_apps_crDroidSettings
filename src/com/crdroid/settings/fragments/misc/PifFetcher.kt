@@ -88,7 +88,7 @@ internal object PifFetcher {
         "tokay" to 34, "caiman" to 34, "komodo" to 34, "comet" to 34,
         "tegu" to 35,
         "stallion" to 36, "frankel" to 36, "blazer" to 36, "mustang" to 36, "rango" to 36,
-        "cubs" to 37, "grizzly" to 37, "kodiak" to 37, "yogi" to 37,
+        "cubs" to 37, "grizzly" to 37, "kodiak" to 37, "yogi" to 37, "formosan" to 37,
     )
 
     /** Lowest launch SDK of any Pixel above; older devices are matched to it. */

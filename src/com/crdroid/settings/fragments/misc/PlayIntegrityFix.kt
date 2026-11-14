@@ -166,7 +166,13 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
                 json.put(key, value)
                 // Keep the derived fields in step with the new fingerprint so the screen
                 // shows what the framework will actually apply.
-                if (key == "FINGERPRINT") fingerprintFields(value).forEach { (k, v) -> json.put(k, v) }
+                if (key == "FINGERPRINT") {
+                    val fields = fingerprintFields(value)
+                    fields.forEach { (k, v) -> json.put(k, v) }
+                    fields["DEVICE"]?.let {
+                        json.put("DEVICE_INITIAL_SDK_INT", PifFetcher.initialSdkIntFor(it))
+                    }
+                }
             }
             // A hand-edited fingerprint must not be replaced by the next auto-refresh.
             if (key == "FINGERPRINT") {
