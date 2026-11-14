@@ -241,10 +241,7 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
 
         /** Previews the custom gradient chip with the user's current colours, angle and text style. */
         private fun bindCustomGradient(clock: TextView) {
-            val start = readInt(KEY_GRADIENT_START_COLOR,
-                ClockChipSettings.DEFAULT_GRADIENT_START_COLOR)
-            val end = readInt(KEY_GRADIENT_END_COLOR,
-                ClockChipSettings.DEFAULT_GRADIENT_END_COLOR)
+            val (start, end) = resolveGradientColors(clock.context)
             val angle = readInt(KEY_GRADIENT_ANGLE, ClockChipSettings.DEFAULT_GRADIENT_ANGLE)
             val mask = readInt(KEY_GRADIENT_MASK_TEXT,
                 ClockChipSettings.GRADIENT_TEXT_STYLE_NORMAL) ==
@@ -269,6 +266,20 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
             val clock: TextView = itemView.findViewById(R.id.option_clock)
             val name: TextView = itemView.findViewById(R.id.option_label)
         }
+    }
+
+    /** Same colour resolution as SystemUI's ClockChipGradientDrawable.resolveColors(). */
+    private fun resolveGradientColors(ctx: Context): Pair<Int, Int> {
+        val primary = ctx.getColor(com.android.internal.R.color.materialColorPrimary)
+        val secondary = ctx.getColor(com.android.internal.R.color.materialColorSecondary)
+        if (readInt(KEY_GRADIENT_COLOR_MODE, ClockChipSettings.COLOR_MODE_AUTO) !=
+                ClockChipSettings.COLOR_MODE_CUSTOM) {
+            return primary to secondary
+        }
+        val start = readInt(KEY_GRADIENT_START_COLOR,
+            ClockChipSettings.DEFAULT_GRADIENT_START_COLOR)
+        val end = readInt(KEY_GRADIENT_END_COLOR, ClockChipSettings.DEFAULT_GRADIENT_END_COLOR)
+        return (if (start != 0) start else primary) to (if (end != 0) end else secondary)
     }
 
     /** Same punch-out as SystemUI's Clock mask mode: text erases the chip in its own layer. */
@@ -352,6 +363,7 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
         private const val KEY_GRADIENT_END_COLOR = "statusbar_clock_chip_gradient_end_color"
         private const val KEY_GRADIENT_ANGLE = "statusbar_clock_chip_gradient_angle"
         private const val KEY_GRADIENT_MASK_TEXT = "statusbar_clock_chip_gradient_mask_text"
+        private const val KEY_GRADIENT_COLOR_MODE = "statusbar_clock_chip_gradient_color_mode"
         private val MASK_XFERMODE = PorterDuffXfermode(PorterDuff.Mode.DST_OUT)
         private const val SYSTEMUI_PACKAGE = "com.android.systemui"
         private const val DIALOG_MAX_WIDTH_DP = 360

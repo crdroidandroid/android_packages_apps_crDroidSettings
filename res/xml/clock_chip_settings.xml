@@ -24,16 +24,27 @@
         android:title="@string/statusbar_clock_chip_title"
         android:summary="@string/statusbar_clock_chip_summary" />
 
+    <com.crdroid.settings.preferences.SystemSettingListPreference
+        android:key="statusbar_clock_chip_gradient_color_mode"
+        android:title="@string/custom_gradient_color_mode_title"
+        android:summary="%s"
+        android:entries="@array/custom_gradient_color_mode_entries"
+        android:entryValues="@array/custom_gradient_color_mode_values"
+        android:defaultValue="0"
+        android:visible="false" />
+
     <com.crdroid.settings.preferences.colorpicker.SystemSettingColorPickerPreference
         android:key="statusbar_clock_chip_gradient_start_color"
         android:title="@string/clock_chip_gradient_start_color_title"
         android:summary="@string/clock_chip_gradient_start_color_summary"
+        android:defaultValue="#FFFF6B6B"
         android:visible="false" />
 
     <com.crdroid.settings.preferences.colorpicker.SystemSettingColorPickerPreference
         android:key="statusbar_clock_chip_gradient_end_color"
         android:title="@string/clock_chip_gradient_end_color_title"
         android:summary="@string/clock_chip_gradient_end_color_summary"
+        android:defaultValue="#FF4ECDC4"
         android:visible="false" />
 
     <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
