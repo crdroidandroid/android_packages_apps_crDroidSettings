@@ -960,15 +960,29 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="solid_accent">Egyszínű kiemelés</string>
     <string name="outline">Körvonalas</string>
     <string name="solid_accent_gradient">Egyszínű átmenetes kiemelés</string>
-    <string name="solid_gradient">Egyszínű átmenetes oldal</string>
+    <string name="solid_gradient">Solid Gradient side</string>
     <string name="solid_gradient_corner">Átmenetes éles kiemelés</string>
-    <string name="solid_gradient_void">Void átmenet</string>
+    <string name="solid_gradient_void">Gradient Void</string>
     <string name="solid_gradient_neumorph">Neumorph átmenet</string>
     <string name="solid_gradient_stroke">Éles simított átmenet</string>
-    <string name="solid_accent_transperent">A kiemelés áttetszősége</string>
+    <string name="solid_accent_transperent">Accent transparent</string>
     <string name="solid_gradient_light">Az átmenet fénye</string>
     <string name="solid_gradient_shape">Éles sarkított átmenet</string>
-    <string name="solid_gradient_void_light">A Void átmenet fénye</string>
+    <string name="solid_gradient_void_light">Gradient Void light</string>
+    <string name="clock_chip_custom_gradient">Custom gradient</string>
+    <!-- Gradient mode - Start color picker -->
+    <string name="clock_chip_gradient_start_color_title">A színátmenet kezdeti színe</string>
+    <string name="clock_chip_gradient_start_color_summary">Color at the start of the gradient</string>
+    <!-- Gradient mode - End color picker -->
+    <string name="clock_chip_gradient_end_color_title">A színátmenet befejező színe</string>
+    <string name="clock_chip_gradient_end_color_summary">Color at the end of the gradient</string>
+    <!-- Gradient mode - Angle seekbar -->
+    <string name="clock_chip_gradient_angle_title">Gradient angle</string>
+    <string name="clock_chip_gradient_angle_summary">Direction of the gradient (0° = left→right, 90° = bottom→top)</string>
+    <!-- Gradient mode - Mask text -->
+    <string name="clock_chip_gradient_mask_text_title">Clock text style</string>
+    <string name="clock_chip_gradient_mask_text_default">Alapértelmezett</string>
+    <string name="clock_chip_gradient_mask_text_mask">Transparent (Mask)</string>
     <!-- Weather -->
     <string name="weather_settings_title">Időjárás-beállítások</string>
     <string name="weather_settings_summary">Testre szabható ikoncsomag és időjárás-szolgáltatás</string>
@@ -1442,6 +1456,12 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="spoof_wipe_playstore_message">A Play Áruház gyorsítótárazza az integritási ellenőrzések eredményeit. Az alkalmazás adatainak törlésével az új konfiguráció azonnal érvénybe lép, ugyanakkor ez kijelentkeztet a Play Áruházból, és törli a letöltési várólistát is.</string>
     <string name="spoof_wipe_confirm">Adattörlés</string>
     <string name="spoof_choice_select">Kiválasztás</string>
+    <string name="spoof_check_interval_title">Check every</string>
+    <string name="spoof_interval_hours_short">%dh</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Jelenlegi beállítások</string>
     <string name="pif_no_config">Nincs betöltött konfiguráció</string>
@@ -1473,9 +1493,9 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="pif_channel_latest_release_summary">Ujjlenyomat a jelenlegi béta OTA-ból</string>
     <string name="pif_channel_canary_release">Korlátozott körű kiadás</string>
     <string name="pif_channel_canary_release_summary">Legújabb Canary-verzió az Android Flash Toolból</string>
-    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">Automatikusan frissített ujjlenyomat</string>
-    <string name="pif_auto_refresh_summary_on">Naponta ellenőrzi, hogy elérhető-e újabb %1$s ujjlenyomat a(z) %2$s csatornán. Ha talál ilyet, alkalmazza azt, és törli a Play Áruház adatait.</string>
+    <string name="pif_auto_refresh_summary_on">Checks every %3$s for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
     <string name="pif_auto_refresh_summary_off">Kikapcsolva. A(z) %1$s ujjlenyomat (%2$s) csak akkor változik, ha letölt vagy importál egyet.</string>
     <string name="pif_auto_refresh_last_checked">Utolsó ellenőrzés: %1$s</string>
     <string name="pif_auto_refresh_channel_name">Play Integritás javítás</string>
@@ -1537,14 +1557,22 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Keybox riasztások</string>
     <string name="ts_alerts_summary_off">Kikapcsolva. Nem kap értesítést, ha a keybox-ot visszavonják, vagy ha annak lejárati ideje közeledik</string>
-    <string name="ts_alerts_summary_on">Naponta ellenőrzi a Google-nél. Értesítést kap, ha a kebox-ot visszavonják</string>
-    <string name="ts_alerts_summary_scheduled">Naponta ellenőrzi a Google-nél a visszavonási állapotot. Lejárati emlékeztető: %1$s</string>
-    <string name="ts_alerts_summary_due">A keybox kevesebb mint egy nap múlva lejár, hamarosan tölts be egy újat</string>
+    <string name="ts_alerts_summary_on">Checks with Google every %1$s. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks with Google every %1$s for revocation status. Next expiry reminder on %2$s</string>
+    <string name="ts_alerts_summary_due">The keybox expires soon, load a new one</string>
+    <string name="ts_alerts_lead_title">Warn before expiry</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
     <string name="ts_alerts_summary_expired">A keybox érvényessége lejárt. Tölts be egy új keybox-ot az értesítések újbóli fogadásához</string>
     <string name="ts_alerts_summary_blocked">A Beállítások értesítései ki vannak kapcsolva, ezért a figyelmeztetések nem jeleníthetők meg</string>
     <string name="ts_alerts_channel_name">Keybox riasztások</string>
-    <string name="ts_alerts_channel_description">Értesítést küld, ha a Google visszavonja a TrickyStore keyboy-ot, vagy ha annak érvényessége egy napon belül lejár</string>
-    <string name="ts_alert_expiry_title">A keybox 1 nap múlva lejár</string>
+    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or is about to expire</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="one">Keybox expires in %d day</item>
+        <item quantity="other">Keybox expires in %d days</item>
+    </plurals>
     <string name="ts_alert_expiry_text">A TrickyStore keybox-od ekkor lejár: %1$s. Hamarosan tölts be egy újat, hogy továbbra is megfelelj a Play Integrity ellenőrzésnek.</string>
     <string name="ts_alert_revoked_title">Keybox elutasítva</string>
     <string name="ts_alert_revoked_text">A Google visszavonta a TrickyStore keybox-odat (ok: %1$s). Az erős integritásellenőrzés sikertelen lesz amíg be nem töltesz egy új kexbox-ot.</string>
