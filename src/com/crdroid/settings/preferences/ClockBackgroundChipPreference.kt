@@ -9,7 +9,17 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.content.res.Resources
+import android.graphics.Canvas
 import android.graphics.Color
+import android.graphics.ColorFilter
+import android.graphics.LinearGradient
+import android.graphics.Paint
+import android.graphics.PixelFormat
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffXfermode
+import android.graphics.Rect
+import android.graphics.RectF
+import android.graphics.Shader
 import android.graphics.drawable.Drawable
 import android.os.UserHandle
 import android.provider.Settings
@@ -20,12 +30,17 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.core.graphics.ColorUtils
 import androidx.preference.Preference
 import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.settings.R
+import com.crdroid.settings.fragments.statusbar.ClockChipSettings
+import kotlin.math.abs
+import kotlin.math.cos
 import kotlin.math.min
+import kotlin.math.sin
 
 class ClockBackgroundChipPreference @JvmOverloads constructor(
     context: Context,
@@ -126,14 +141,10 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
         w.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
     }
 
-    private fun getCurrentValue(): Int {
-        return Settings.System.getIntForUser(
-            context.contentResolver,
-            SETTING_KEY,
-            0,
-            UserHandle.USER_CURRENT
-        )
-    }
+    private fun getCurrentValue(): Int = readInt(SETTING_KEY, 0)
+
+    private fun readInt(key: String, def: Int): Int =
+        Settings.System.getIntForUser(context.contentResolver, key, def, UserHandle.USER_CURRENT)
 
     private fun updateSummary() {
         val label = labelForIndex(getCurrentValue()).orEmpty()
@@ -148,6 +159,7 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
     private fun getChipDrawable(styleIndex: Int): Drawable? {
         val res = sysUiRes ?: return null
         if (styleIndex <= 0 || styleIndex >= chipDrawables.size) return null
+        if (styleIndex == ClockChipSettings.CHIP_STYLE_CUSTOM_GRADIENT) return null
 
         val name = chipDrawables[styleIndex]
         val id = res.getIdentifier(name, "drawable", SYSTEMUI_PACKAGE)
@@ -174,15 +186,22 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
         override fun onBindViewHolder(holder: IconViewHolder, position: Int) {
             val styleIndex = position
 
-            holder.clock.background = getChipDrawable(styleIndex)
-            holder.clock.setPadding(8, 2, 8, 2)
-            holder.clock.textAlignment = View.TEXT_ALIGNMENT_CENTER
+            val clock = holder.clock
+            // Views are recycled: clear any mask state left by the custom gradient row.
+            clock.setMaskText(false)
+            clock.setPadding(8, 2, 8, 2)
+            clock.textAlignment = View.TEXT_ALIGNMENT_CENTER
 
-            when (styleIndex) {
-                0, 2, 8 -> holder.clock.setTextColor(
-                    holder.clock.context.getColorStateList(R.color.picker_option_text)
-                )
-                else -> holder.clock.setTextColor(Color.WHITE)
+            if (styleIndex == ClockChipSettings.CHIP_STYLE_CUSTOM_GRADIENT) {
+                bindCustomGradient(clock)
+            } else {
+                clock.background = getChipDrawable(styleIndex)
+                when (styleIndex) {
+                    0, 2, 8 -> clock.setTextColor(
+                        clock.context.getColorStateList(R.color.picker_option_text)
+                    )
+                    else -> clock.setTextColor(Color.WHITE)
+                }
             }
 
             holder.name.visibility = View.VISIBLE
@@ -220,6 +239,26 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
 
         override fun getItemCount(): Int = chipDrawables.size
 
+        /** Previews the custom gradient chip with the user's current colours, angle and text style. */
+        private fun bindCustomGradient(clock: TextView) {
+            val start = readInt(KEY_GRADIENT_START_COLOR,
+                ClockChipSettings.DEFAULT_GRADIENT_START_COLOR)
+            val end = readInt(KEY_GRADIENT_END_COLOR,
+                ClockChipSettings.DEFAULT_GRADIENT_END_COLOR)
+            val angle = readInt(KEY_GRADIENT_ANGLE, ClockChipSettings.DEFAULT_GRADIENT_ANGLE)
+            val mask = readInt(KEY_GRADIENT_MASK_TEXT,
+                ClockChipSettings.GRADIENT_TEXT_STYLE_NORMAL) ==
+                ClockChipSettings.GRADIENT_TEXT_STYLE_MASK
+
+            clock.background = GradientChipPreviewDrawable(start, end, angle.toFloat())
+            if (mask) {
+                clock.setTextColor(Color.WHITE)
+                clock.setMaskText(true)
+            } else {
+                clock.setTextColor(chipTextColorFor(start, end))
+            }
+        }
+
         private fun clampIndex(idx: Int): Int {
             if (idx < 0) return 0
             if (idx >= chipDrawables.size) return 0
@@ -232,8 +271,88 @@ class ClockBackgroundChipPreference @JvmOverloads constructor(
         }
     }
 
+    /** Same punch-out as SystemUI's Clock mask mode: text erases the chip in its own layer. */
+    private fun TextView.setMaskText(enabled: Boolean) {
+        if (enabled) {
+            setLayerType(View.LAYER_TYPE_HARDWARE, null)
+            paint.xfermode = MASK_XFERMODE
+        } else {
+            paint.xfermode = null
+            setLayerType(View.LAYER_TYPE_NONE, null)
+        }
+        invalidate()
+    }
+
+    /** Mirrors SystemUI's chip text colour choice: white or black, whichever contrasts better. */
+    private fun chipTextColorFor(startColor: Int, endColor: Int): Int {
+        val mid = ColorUtils.setAlphaComponent(ColorUtils.blendARGB(startColor, endColor, 0.5f), 255)
+        val whiteContrast = ColorUtils.calculateContrast(Color.WHITE, mid)
+        val blackContrast = ColorUtils.calculateContrast(Color.BLACK, mid)
+        return if (whiteContrast >= blackContrast) Color.WHITE else Color.BLACK
+    }
+
+    /**
+     * Preview copy of SystemUI's ClockChipGradientDrawable: pill shape, linear gradient using the
+     * GradientDrawable angle convention (0° = left→right, counter-clockwise).
+     */
+    private class GradientChipPreviewDrawable(
+        private val startColor: Int,
+        private val endColor: Int,
+        angleDeg: Float,
+    ) : Drawable() {
+        private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        private val rect = RectF()
+        private val angleRad = Math.toRadians((((angleDeg % 360f) + 360f) % 360f).toDouble())
+
+        override fun onBoundsChange(bounds: Rect) {
+            super.onBoundsChange(bounds)
+            rect.set(bounds)
+            val w = rect.width()
+            val h = rect.height()
+            if (w <= 0f || h <= 0f) {
+                paint.shader = null
+                return
+            }
+            val dx = cos(angleRad).toFloat()
+            val dy = -sin(angleRad).toFloat()
+            val half = (abs(w * dx) + abs(h * dy)) / 2f
+            val cx = rect.centerX()
+            val cy = rect.centerY()
+            paint.shader = LinearGradient(
+                cx - dx * half, cy - dy * half, cx + dx * half, cy + dy * half,
+                startColor, endColor, Shader.TileMode.CLAMP,
+            )
+        }
+
+        override fun draw(canvas: Canvas) {
+            if (rect.isEmpty) return
+            val radius = min(rect.width(), rect.height()) / 2f
+            canvas.drawRoundRect(rect, radius, radius, paint)
+        }
+
+        override fun setAlpha(alpha: Int) {
+            paint.alpha = alpha
+            invalidateSelf()
+        }
+
+        override fun getAlpha(): Int = paint.alpha
+
+        override fun setColorFilter(colorFilter: ColorFilter?) {
+            paint.colorFilter = colorFilter
+            invalidateSelf()
+        }
+
+        @Suppress("OVERRIDE_DEPRECATION")
+        override fun getOpacity(): Int = PixelFormat.TRANSLUCENT
+    }
+
     companion object {
         private const val SETTING_KEY = "statusbar_clock_chip"
+        private const val KEY_GRADIENT_START_COLOR = "statusbar_clock_chip_gradient_start_color"
+        private const val KEY_GRADIENT_END_COLOR = "statusbar_clock_chip_gradient_end_color"
+        private const val KEY_GRADIENT_ANGLE = "statusbar_clock_chip_gradient_angle"
+        private const val KEY_GRADIENT_MASK_TEXT = "statusbar_clock_chip_gradient_mask_text"
+        private val MASK_XFERMODE = PorterDuffXfermode(PorterDuff.Mode.DST_OUT)
         private const val SYSTEMUI_PACKAGE = "com.android.systemui"
         private const val DIALOG_MAX_WIDTH_DP = 360
         private const val DIALOG_MAX_WIDTH_DP_LANDSCAPE = 640

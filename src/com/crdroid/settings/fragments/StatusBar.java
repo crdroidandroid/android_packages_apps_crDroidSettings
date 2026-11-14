@@ -247,7 +247,7 @@ public class StatusBar extends SettingsPreferenceFragment implements
 
         BatteryBar.reset(mContext);
         Clock.reset(mContext);
-        ClockChipSettings.reset(mContext);
+        ClockChipSettings.Companion.reset(mContext);
         DynamicBar.Companion.reset(mContext);
         NetworkTrafficSettings.reset(mContext);
     }
