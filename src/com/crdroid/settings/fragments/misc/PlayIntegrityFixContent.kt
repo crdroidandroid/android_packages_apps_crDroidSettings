@@ -183,6 +183,46 @@ internal fun PlayIntegrityFixContent(state: PifUiState, actions: PifActions) {
             ),
         )
 
+        SpoofGroup(title = stringResource(R.string.pif_settings)) {
+            item {
+                SpoofSwitchRow(
+                    title = stringResource(R.string.pif_spoof_photos),
+                    summary = stringResource(R.string.pif_spoof_photos_summary),
+                    icon = Icons.Rounded.Photo,
+                    checked = state.photosSpoof,
+                    onCheckedChange = actions::onPhotosChange,
+                )
+            }
+            if (state.autoRefreshAvailable) {
+                item {
+                    SpoofSwitchRow(
+                        title = stringResource(R.string.pif_auto_refresh_title),
+                        summary = state.autoRefreshSummary,
+                        icon = Icons.Rounded.Autorenew,
+                        checked = state.autoRefreshEnabled,
+                        enabled = !state.fetching,
+                        onCheckedChange = actions::onAutoRefreshChange,
+                    )
+                }
+                if (state.autoRefreshEnabled) {
+                    item {
+                        val options = PifAutoRefresh.REFRESH_INTERVAL_OPTIONS
+                        SpoofMultiChoiceRow(
+                            title = stringResource(R.string.spoof_check_interval_title),
+                            options = options.map {
+                                stringResource(R.string.spoof_interval_hours_short, it)
+                            },
+                            // Single choice: exactly one chip is selected.
+                            selected = setOf(options.indexOf(state.refreshIntervalHours)),
+                            onToggle = { actions.onRefreshIntervalChange(options[it]) },
+                            icon = Icons.Rounded.Update,
+                            enabled = !state.fetching,
+                        )
+                    }
+                }
+            }
+        }
+
         SpoofGroup(
             title = stringResource(R.string.pif_active_config),
             collapsible = hasConfig,
@@ -231,46 +271,6 @@ internal fun PlayIntegrityFixContent(state: PifUiState, actions: PifActions) {
                             note = if (derived) stringResource(R.string.pif_value_from_fingerprint)
                             else null,
                             onClick = if (derived) null else ({ editKey = key }),
-                        )
-                    }
-                }
-            }
-        }
-
-        SpoofGroup(title = stringResource(R.string.pif_settings)) {
-            item {
-                SpoofSwitchRow(
-                    title = stringResource(R.string.pif_spoof_photos),
-                    summary = stringResource(R.string.pif_spoof_photos_summary),
-                    icon = Icons.Rounded.Photo,
-                    checked = state.photosSpoof,
-                    onCheckedChange = actions::onPhotosChange,
-                )
-            }
-            if (state.autoRefreshAvailable) {
-                item {
-                    SpoofSwitchRow(
-                        title = stringResource(R.string.pif_auto_refresh_title),
-                        summary = state.autoRefreshSummary,
-                        icon = Icons.Rounded.Autorenew,
-                        checked = state.autoRefreshEnabled,
-                        enabled = !state.fetching,
-                        onCheckedChange = actions::onAutoRefreshChange,
-                    )
-                }
-                if (state.autoRefreshEnabled) {
-                    item {
-                        val options = PifAutoRefresh.REFRESH_INTERVAL_OPTIONS
-                        SpoofMultiChoiceRow(
-                            title = stringResource(R.string.spoof_check_interval_title),
-                            options = options.map {
-                                stringResource(R.string.spoof_interval_hours_short, it)
-                            },
-                            // Single choice: exactly one chip is selected.
-                            selected = setOf(options.indexOf(state.refreshIntervalHours)),
-                            onToggle = { actions.onRefreshIntervalChange(options[it]) },
-                            icon = Icons.Rounded.Update,
-                            enabled = !state.fetching,
                         )
                     }
                 }
