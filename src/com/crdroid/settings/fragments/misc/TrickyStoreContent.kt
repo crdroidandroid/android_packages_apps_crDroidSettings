@@ -24,6 +24,7 @@ import androidx.compose.material.icons.rounded.Policy
 import androidx.compose.material.icons.rounded.Refresh
 import androidx.compose.material.icons.rounded.Schedule
 import androidx.compose.material.icons.rounded.Tune
+import androidx.compose.material.icons.rounded.Update
 import androidx.compose.material.icons.rounded.UploadFile
 import androidx.compose.material.icons.rounded.VerifiedUser
 import androidx.compose.material.icons.rounded.VpnKey
@@ -73,6 +74,8 @@ internal class TsUiState {
     var alertsSummary by mutableStateOf("")
     /** Selected expiry reminder lead times, in days ([KeyboxMonitor.LEAD_DAY_OPTIONS]). */
     var leadDays by mutableStateOf<Set<Int>>(setOf(1))
+    /** Hours between background revocation checks ([KeyboxMonitor.CHECK_INTERVAL_OPTIONS]). */
+    var checkIntervalHours by mutableStateOf(12)
 
     var statusChip by mutableStateOf("")
     var statusTone by mutableStateOf(SpoofTone.Neutral)
@@ -100,6 +103,9 @@ internal interface TsActions {
 
     /** An expiry reminder chip ([days] before expiry) was tapped. */
     fun onLeadDayToggle(days: Int)
+
+    /** A "Check every" chip was tapped. */
+    fun onCheckIntervalChange(hours: Int)
 
     fun onConfirmDeleteKeybox()
 
@@ -212,6 +218,21 @@ internal fun TrickyStoreContent(state: TsUiState, actions: TsActions) {
                         enabled = state.alertsAvailable,
                         onCheckedChange = actions::onAlertsToggle,
                     )
+                }
+                if (state.alertsEnabled && state.alertsAvailable) {
+                    item {
+                        val options = KeyboxMonitor.CHECK_INTERVAL_OPTIONS
+                        SpoofMultiChoiceRow(
+                            title = stringResource(R.string.spoof_check_interval_title),
+                            options = options.map {
+                                stringResource(R.string.spoof_interval_hours_short, it)
+                            },
+                            // Single choice: exactly one chip is selected.
+                            selected = setOf(options.indexOf(state.checkIntervalHours)),
+                            onToggle = { actions.onCheckIntervalChange(options[it]) },
+                            icon = Icons.Rounded.Update,
+                        )
+                    }
                 }
                 if (state.alertsEnabled && state.alertsAvailable && state.expirySummary != null) {
                     item {

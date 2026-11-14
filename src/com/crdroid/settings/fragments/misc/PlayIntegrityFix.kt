@@ -146,6 +146,11 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
             refreshStatus()
         }
 
+        override fun onRefreshIntervalChange(hours: Int) {
+            PifAutoRefresh.setRefreshIntervalHours(requireContext(), hours)
+            refreshStatus()
+        }
+
         override fun onEditValue(key: String, value: String): String? {
             if (value.isEmpty()) return getString(R.string.pif_value_empty)
             if (key in INT_KEYS && value.toIntOrNull() == null) {
@@ -239,6 +244,7 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         val source = PifAutoRefresh.readSource(ctx)
         ui.autoRefreshAvailable = source != null && ui.config["DEVICE"] == source.device
         ui.autoRefreshEnabled = PifAutoRefresh.isEnabled(ctx)
+        ui.refreshIntervalHours = PifAutoRefresh.refreshIntervalHours(ctx)
         if (source == null) {
             ui.autoRefreshSummary = ""
             return
@@ -250,7 +256,10 @@ class PlayIntegrityFix : SettingsPreferenceFragment() {
         ui.autoRefreshSummary = if (!ui.autoRefreshEnabled) {
             getString(R.string.pif_auto_refresh_summary_off, model, channel)
         } else {
-            val base = getString(R.string.pif_auto_refresh_summary_on, model, channel)
+            val every = resources.getQuantityString(
+                R.plurals.spoof_interval_hours, ui.refreshIntervalHours, ui.refreshIntervalHours,
+            )
+            val base = getString(R.string.pif_auto_refresh_summary_on, model, channel, every)
             PifAutoRefresh.lastChecked(ctx)?.let { at ->
                 base + "\n" + getString(
                     R.string.pif_auto_refresh_last_checked,

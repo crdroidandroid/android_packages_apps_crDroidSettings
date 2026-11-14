@@ -34,7 +34,8 @@ import org.json.JSONObject
 import java.util.concurrent.TimeUnit
 
 /**
- * Daily auto-refresh of a fingerprint that was fetched online.
+ * Periodic auto-refresh (every 6, 12 or 24 hours, 24 by default) of a fingerprint that was
+ * fetched online.
  */
 internal object PifAutoRefresh {
     private const val TAG = "PifAutoRefresh"
@@ -42,6 +43,13 @@ internal object PifAutoRefresh {
     const val ENABLED_KEY = "spoof_pif_auto_refresh"
     /** JSON {channel, device, model} of the last online fetch; absent otherwise. */
     const val SOURCE_KEY = "spoof_pif_auto_source"
+
+    /** Hours between refresh checks. Unset means [DEFAULT_REFRESH_INTERVAL_HOURS]. */
+    const val REFRESH_INTERVAL_KEY = "spoof_pif_auto_refresh_interval_hours"
+
+    /** Refresh intervals offered on the Play Integrity Fix screen, in display order. */
+    val REFRESH_INTERVAL_OPTIONS = listOf(6, 12, 24)
+    private const val DEFAULT_REFRESH_INTERVAL_HOURS = 24
 
     // Must not clash with other JobScheduler ids used by the Settings app.
     private const val JOB_ID = 0x7b0c03
@@ -53,8 +61,6 @@ internal object PifAutoRefresh {
     private const val PREF_LAST_CHECKED = "last_checked"
     private const val PREF_LAST_UPDATED = "last_updated"
 
-    private val CHECK_INTERVAL_MS = TimeUnit.DAYS.toMillis(1)
-
     data class Source(val channel: PifChannel, val device: String, val model: String)
 
     fun isEnabled(context: Context): Boolean =
@@ -62,6 +68,17 @@ internal object PifAutoRefresh {
 
     fun setEnabled(context: Context, enabled: Boolean) {
         Settings.Secure.putInt(context.contentResolver, ENABLED_KEY, if (enabled) 1 else 0)
+        sync(context)
+    }
+
+    fun refreshIntervalHours(context: Context): Int =
+        Settings.Secure.getInt(
+            context.contentResolver, REFRESH_INTERVAL_KEY, DEFAULT_REFRESH_INTERVAL_HOURS,
+        ).takeIf { it in REFRESH_INTERVAL_OPTIONS } ?: DEFAULT_REFRESH_INTERVAL_HOURS
+
+    fun setRefreshIntervalHours(context: Context, hours: Int) {
+        if (hours !in REFRESH_INTERVAL_OPTIONS) return
+        Settings.Secure.putInt(context.contentResolver, REFRESH_INTERVAL_KEY, hours)
         sync(context)
     }
 
@@ -101,10 +118,11 @@ internal object PifAutoRefresh {
             js.cancel(JOB_ID)
             return
         }
-        if (js.getPendingJob(JOB_ID) != null) return
+        val interval = TimeUnit.HOURS.toMillis(refreshIntervalHours(ctx).toLong())
+        if (js.getPendingJob(JOB_ID)?.intervalMillis == interval) return
         js.schedule(
             JobInfo.Builder(JOB_ID, ComponentName(ctx, PifRefreshJobService::class.java))
-                .setPeriodic(CHECK_INTERVAL_MS)
+                .setPeriodic(interval)
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
                 .setPersisted(true)
                 .build()
@@ -234,7 +252,7 @@ class PifRefreshJobService : JobService() {
     override fun onStartJob(params: JobParameters): Boolean {
         scope.launch {
             runCatching { PifAutoRefresh.runRefresh(applicationContext) }
-            // Periodic: a miss is simply retried at the next daily slot.
+            // Periodic: a miss is simply retried at the next slot.
             jobFinished(params, false)
         }
         return true

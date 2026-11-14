@@ -139,6 +139,11 @@ class TrickyStore : SettingsPreferenceFragment() {
             refreshStatus()
         }
 
+        override fun onCheckIntervalChange(hours: Int) {
+            KeyboxMonitor.setCheckIntervalHours(requireContext(), hours)
+            refreshStatus()
+        }
+
         override fun onConfirmDeleteKeybox() = deleteKeybox()
 
         override fun onSavePatch(value: String): String? {
@@ -412,6 +417,10 @@ class TrickyStore : SettingsPreferenceFragment() {
         val expired = expiry != null && now >= expiry
         ui.alertsEnabled = KeyboxMonitor.isEnabled(ctx)
         ui.leadDays = KeyboxMonitor.leadDays(ctx)
+        ui.checkIntervalHours = KeyboxMonitor.checkIntervalHours(ctx)
+        val every = resources.getQuantityString(
+            R.plurals.spoof_interval_hours, ui.checkIntervalHours, ui.checkIntervalHours,
+        )
         ui.alertsAvailable = ui.keyboxExists && !expired
         val blocked = ctx.getSystemService(NotificationManager::class.java)
             ?.areNotificationsEnabled() == false
@@ -419,10 +428,11 @@ class TrickyStore : SettingsPreferenceFragment() {
             expired -> getString(R.string.ts_alerts_summary_expired)
             !ui.alertsEnabled -> getString(R.string.ts_alerts_summary_off)
             blocked -> getString(R.string.ts_alerts_summary_blocked)
-            expiry == null -> getString(R.string.ts_alerts_summary_on)
+            expiry == null -> getString(R.string.ts_alerts_summary_on, every)
             else -> KeyboxMonitor.nextReminderAt(ctx, expiry)?.let { next ->
                 getString(
                     R.string.ts_alerts_summary_scheduled,
+                    every,
                     DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
                         .format(Date(next)),
                 )

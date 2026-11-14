@@ -19,6 +19,7 @@ import androidx.compose.material.icons.rounded.Fingerprint
 import androidx.compose.material.icons.rounded.History
 import androidx.compose.material.icons.rounded.Photo
 import androidx.compose.material.icons.rounded.Policy
+import androidx.compose.material.icons.rounded.Update
 import androidx.compose.material.icons.automirrored.rounded.Subject
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -61,6 +62,8 @@ internal class PifUiState {
     var autoRefreshAvailable by mutableStateOf(false)
     var autoRefreshEnabled by mutableStateOf(true)
     var autoRefreshSummary by mutableStateOf("")
+    /** Hours between refresh checks ([PifAutoRefresh.REFRESH_INTERVAL_OPTIONS]). */
+    var refreshIntervalHours by mutableStateOf(24)
 
     /** Days since the config's SECURITY_PATCH, null when absent or unparsable. */
     var patchAgeDays by mutableStateOf<Long?>(null)
@@ -80,6 +83,7 @@ internal interface PifActions {
     fun onPickVerbose(index: Int)
     fun onPhotosChange(enabled: Boolean)
     fun onAutoRefreshChange(enabled: Boolean)
+    fun onRefreshIntervalChange(hours: Int)
 
     /** Returns an error message to keep the edit dialog open, or null once saved. */
     fun onEditValue(key: String, value: String): String?
@@ -253,6 +257,22 @@ internal fun PlayIntegrityFixContent(state: PifUiState, actions: PifActions) {
                         enabled = !state.fetching,
                         onCheckedChange = actions::onAutoRefreshChange,
                     )
+                }
+                if (state.autoRefreshEnabled) {
+                    item {
+                        val options = PifAutoRefresh.REFRESH_INTERVAL_OPTIONS
+                        SpoofMultiChoiceRow(
+                            title = stringResource(R.string.spoof_check_interval_title),
+                            options = options.map {
+                                stringResource(R.string.spoof_interval_hours_short, it)
+                            },
+                            // Single choice: exactly one chip is selected.
+                            selected = setOf(options.indexOf(state.refreshIntervalHours)),
+                            onToggle = { actions.onRefreshIntervalChange(options[it]) },
+                            icon = Icons.Rounded.Update,
+                            enabled = !state.fetching,
+                        )
+                    }
                 }
             }
         }

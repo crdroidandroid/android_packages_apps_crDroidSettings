@@ -46,8 +46,15 @@ internal object KeyboxMonitor {
     val LEAD_DAY_OPTIONS = listOf(1, 3, 7, 14)
     private val DEFAULT_LEAD_DAYS = setOf(1)
 
+    /** Hours between background revocation checks. Unset means [DEFAULT_CHECK_INTERVAL_HOURS]. */
+    const val CHECK_INTERVAL_KEY = "spoof_trickystore_check_interval_hours"
+
+    /** Check intervals offered on the TrickyStore screen, in display order. */
+    val CHECK_INTERVAL_OPTIONS = listOf(6, 12, 24)
+    private const val DEFAULT_CHECK_INTERVAL_HOURS = 12
+
     // Must not clash with other JobScheduler ids used by the Settings app.
-    internal const val JOB_DAILY = 0x7b0c01
+    internal const val JOB_PERIODIC = 0x7b0c01
     internal const val JOB_NOW = 0x7b0c02
 
     private const val CHANNEL_ID = "trickystore_keybox_alerts"
@@ -63,7 +70,6 @@ internal object KeyboxMonitor {
     private val DAY_MS = TimeUnit.DAYS.toMillis(1)
     /** An alarm that lands slightly early still counts as due. */
     private val EARLY_TOLERANCE_MS = TimeUnit.MINUTES.toMillis(5)
-    private val CHECK_INTERVAL_MS = TimeUnit.DAYS.toMillis(1)
     /** The expiry-due check waits this long for a network before running without one. */
     private val NOW_DEADLINE_MS = TimeUnit.MINUTES.toMillis(30)
 
@@ -74,6 +80,19 @@ internal object KeyboxMonitor {
 
     fun setEnabled(context: Context, enabled: Boolean) {
         Settings.Secure.putInt(context.contentResolver, ENABLED_KEY, if (enabled) 1 else 0)
+        sync(context)
+    }
+
+    /** Hours between background revocation checks: one of [CHECK_INTERVAL_OPTIONS]. */
+    fun checkIntervalHours(context: Context): Int =
+        Settings.Secure.getInt(
+            context.contentResolver, CHECK_INTERVAL_KEY, DEFAULT_CHECK_INTERVAL_HOURS,
+        ).takeIf { it in CHECK_INTERVAL_OPTIONS } ?: DEFAULT_CHECK_INTERVAL_HOURS
+
+    /** Stores [hours] (ignored unless one of [CHECK_INTERVAL_OPTIONS]) and re-arms the job. */
+    fun setCheckIntervalHours(context: Context, hours: Int) {
+        if (hours !in CHECK_INTERVAL_OPTIONS) return
+        Settings.Secure.putInt(context.contentResolver, CHECK_INTERVAL_KEY, hours)
         sync(context)
     }
 
@@ -207,7 +226,7 @@ internal object KeyboxMonitor {
             cancelAll(ctx)
             return null
         }
-        scheduleDailyCheck(ctx)
+        schedulePeriodicCheck(ctx)
         val now = System.currentTimeMillis()
         val next = keybox.expiry?.let { expiry ->
             leadDays(ctx).map { triggerAt(expiry, it) }
@@ -258,7 +277,7 @@ internal object KeyboxMonitor {
 
     private fun cancelAll(ctx: Context) {
         ctx.getSystemService(JobScheduler::class.java)?.apply {
-            cancel(JOB_DAILY)
+            cancel(JOB_PERIODIC)
             cancel(JOB_NOW)
         }
         cancelAlarm(ctx)
@@ -266,13 +285,15 @@ internal object KeyboxMonitor {
         cancelNotification(ctx, NOTIFY_REVOKED)
     }
 
-    private fun scheduleDailyCheck(ctx: Context) {
+    private fun schedulePeriodicCheck(ctx: Context) {
         val js = ctx.getSystemService(JobScheduler::class.java) ?: return
-        // Re-scheduling would restart the period, so leave a pending job alone.
-        if (js.getPendingJob(JOB_DAILY) != null) return
+        val interval = TimeUnit.HOURS.toMillis(checkIntervalHours(ctx).toLong())
+        // Re-scheduling restarts the period, so leave a pending job alone unless the user
+        // picked a different interval.
+        if (js.getPendingJob(JOB_PERIODIC)?.intervalMillis == interval) return
         js.schedule(
-            JobInfo.Builder(JOB_DAILY, ComponentName(ctx, KeyboxCheckJobService::class.java))
-                .setPeriodic(CHECK_INTERVAL_MS)
+            JobInfo.Builder(JOB_PERIODIC, ComponentName(ctx, KeyboxCheckJobService::class.java))
+                .setPeriodic(interval)
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
                 .setPersisted(true)
                 .build()

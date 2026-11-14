@@ -1692,6 +1692,12 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="spoof_wipe_playstore_message">Integrity verdicts are cached by the Play Store. Clearing its data makes the new configuration take effect right away, but signs the Play Store out and clears its download queue.</string>
     <string name="spoof_wipe_confirm">Clear data</string>
     <string name="spoof_choice_select">Select</string>
+    <string name="spoof_check_interval_title">Check every</string>
+    <string name="spoof_interval_hours_short">%dh</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
 
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Active configuration</string>
@@ -1725,9 +1731,9 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="pif_channel_canary_release">Canary release</string>
     <string name="pif_channel_canary_release_summary">Newest Canary build from the Android Flash Tool</string>
 
-    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">Auto-refresh fingerprint</string>
-    <string name="pif_auto_refresh_summary_on">Checks daily for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
+    <string name="pif_auto_refresh_summary_on">Checks every %3$s for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
     <string name="pif_auto_refresh_summary_off">Off. The %1$s fingerprint (%2$s) only changes when you fetch or import one</string>
     <string name="pif_auto_refresh_last_checked">Last checked: %1$s</string>
     <string name="pif_auto_refresh_channel_name">Play Integrity Fix</string>
@@ -1791,8 +1797,8 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Keybox alerts</string>
     <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
-    <string name="ts_alerts_summary_on">Checks daily with Google. You\'ll be notified if the keybox is revoked</string>
-    <string name="ts_alerts_summary_scheduled">Checks daily with Google for revocation status. Next expiry reminder on %1$s</string>
+    <string name="ts_alerts_summary_on">Checks with Google every %1$s. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks with Google every %1$s for revocation status. Next expiry reminder on %2$s</string>
     <string name="ts_alerts_summary_due">The keybox expires soon, load a new one</string>
     <string name="ts_alerts_lead_title">Warn before expiry</string>
     <plurals name="ts_alerts_lead_days">
