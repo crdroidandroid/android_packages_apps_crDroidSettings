@@ -960,15 +960,29 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="solid_accent">Düz renk vurgusu</string>
     <string name="outline">Ana hat</string>
     <string name="solid_accent_gradient">Düz renk geçişi vurgusu</string>
-    <string name="solid_gradient">Düz geçiş tarafı</string>
+    <string name="solid_gradient">Solid Gradient side</string>
     <string name="solid_gradient_corner">Katı gradyan vurgusu keskinliği</string>
-    <string name="solid_gradient_void">Gradyan boşluğu</string>
+    <string name="solid_gradient_void">Gradient Void</string>
     <string name="solid_gradient_neumorph">Nömorf gradyanı</string>
     <string name="solid_gradient_stroke">Keskin gradyan tarzı</string>
-    <string name="solid_accent_transperent">Vurgu şeffaflığı</string>
+    <string name="solid_accent_transperent">Accent transparent</string>
     <string name="solid_gradient_light">Renk geçişi ışığı</string>
     <string name="solid_gradient_shape">Köşe renk geçişi</string>
-    <string name="solid_gradient_void_light">Vurgu boşluğu ışığı</string>
+    <string name="solid_gradient_void_light">Gradient Void light</string>
+    <string name="clock_chip_custom_gradient">Custom gradient</string>
+    <!-- Gradient mode - Start color picker -->
+    <string name="clock_chip_gradient_start_color_title">Renk geçişi başlangıç rengi</string>
+    <string name="clock_chip_gradient_start_color_summary">Color at the start of the gradient</string>
+    <!-- Gradient mode - End color picker -->
+    <string name="clock_chip_gradient_end_color_title">Renk geçişi bitiş rengi</string>
+    <string name="clock_chip_gradient_end_color_summary">Color at the end of the gradient</string>
+    <!-- Gradient mode - Angle seekbar -->
+    <string name="clock_chip_gradient_angle_title">Gradient angle</string>
+    <string name="clock_chip_gradient_angle_summary">Direction of the gradient (0° = left→right, 90° = bottom→top)</string>
+    <!-- Gradient mode - Mask text -->
+    <string name="clock_chip_gradient_mask_text_title">Clock text style</string>
+    <string name="clock_chip_gradient_mask_text_default">Varsayılan</string>
+    <string name="clock_chip_gradient_mask_text_mask">Transparent (Mask)</string>
     <!-- Weather -->
     <string name="weather_settings_title">Hava durumu ayarları</string>
     <string name="weather_settings_summary">Simge paketini ve hava durumu servis sağlayıcısını ayarlayın</string>
@@ -1440,6 +1454,12 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="spoof_wipe_playstore_message">Integrity verdicts are cached by the Play Store. Clearing its data makes the new configuration take effect right away, but signs the Play Store out and clears its download queue.</string>
     <string name="spoof_wipe_confirm">Verileri temizle</string>
     <string name="spoof_choice_select">Seç</string>
+    <string name="spoof_check_interval_title">Check every</string>
+    <string name="spoof_interval_hours_short">%dh</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Aktif yapılandırma</string>
     <string name="pif_no_config">Yapılandırma yüklenmedi</string>
@@ -1471,9 +1491,9 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="pif_channel_latest_release_summary">Güncel beta OTA\'sından alınan parmak izi</string>
     <string name="pif_channel_canary_release">Canary sürümü</string>
     <string name="pif_channel_canary_release_summary">Android Flash Tool\'dan en yeni Canary derlemesi</string>
-    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">Parmak izini otomatik yenile</string>
-    <string name="pif_auto_refresh_summary_on">%2$s kanalında daha yeni bir %1$s parmak izi olup olmadığını her gün denetler. Bulunduğunda uygulanır ve Play Store verileri temizlenir</string>
+    <string name="pif_auto_refresh_summary_on">Checks every %3$s for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
     <string name="pif_auto_refresh_summary_off">Kapalı. %1$s parmak izi (%2$s) yalnızca yeni bir tane aldığınızda veya içe aktardığınızda değişir</string>
     <string name="pif_auto_refresh_last_checked">Son kontrol: %1$s</string>
     <string name="pif_auto_refresh_channel_name">Play Integrity Düzeltmesi</string>
@@ -1535,14 +1555,22 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Keybox alerts</string>
     <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
-    <string name="ts_alerts_summary_on">Checks daily with Google. You\'ll be notified if the keybox is revoked</string>
-    <string name="ts_alerts_summary_scheduled">Checks daily with Google for revocation status. Expiry reminder on %1$s</string>
-    <string name="ts_alerts_summary_due">The keybox expires in less than a day, load a new one soon</string>
+    <string name="ts_alerts_summary_on">Checks with Google every %1$s. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks with Google every %1$s for revocation status. Next expiry reminder on %2$s</string>
+    <string name="ts_alerts_summary_due">The keybox expires soon, load a new one</string>
+    <string name="ts_alerts_lead_title">Warn before expiry</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
     <string name="ts_alerts_summary_expired">The keybox has expired. Load a new keybox to get alerts again</string>
     <string name="ts_alerts_summary_blocked">Notifications for Settings are turned off, so alerts can\'t be shown</string>
     <string name="ts_alerts_channel_name">Anahtar kutusu uyarıları</string>
-    <string name="ts_alerts_channel_description">TrickyStore anahtar kutusu Google tarafından iptal edildiğinde veya süresinin dolmasına bir gün kaldığında bildirir</string>
-    <string name="ts_alert_expiry_title">Anahtar kutusunun süresinin dolmasına 1 gün kaldı</string>
+    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or is about to expire</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="one">Keybox expires in %d day</item>
+        <item quantity="other">Keybox expires in %d days</item>
+    </plurals>
     <string name="ts_alert_expiry_text">TrickyStore anahtar kutunuzun kullanım süresi %1$s tarihinde bitiyor. Play Integrity\'yi geçmeye devam etmek için yakında yeni bir anahtar kutusu yükleyin.</string>
     <string name="ts_alert_revoked_title">Anahtar kutusu iptal edilmiş</string>
     <string name="ts_alert_revoked_text">Google, TrickyStore anahtar kutunuzu iptal etti (neden: %1$s). Yeni bir anahtar kutusu yükleyene kadar Strong integrity doğrulaması başarısız olacak.</string>
