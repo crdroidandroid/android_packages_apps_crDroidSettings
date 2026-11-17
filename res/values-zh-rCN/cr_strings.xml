@@ -364,6 +364,10 @@
     <string name="add_font">添加字体</string>
     <string name="toast_failed_apply_font">应用字体失败</string>
     <string name="toast_invalid_font_file">字体文件无效</string>
+    <string name="font_preview_quote">The quick brown fox jumps over the lazy dog.</string>
+    <string name="font_sample_glyphs">Aa</string>
+    <string name="font_sample_short">The quick brown fox</string>
+    <string name="font_sample_alphabet">ABCDEFGHIJKLM abcdefghijklm</string>
     <string name="font_default">默认</string>
     <string name="font_current">当前字体</string>
     <string name="font_selected">已选择</string>
@@ -690,9 +694,12 @@
     <string name="enable_fingerprint_ripple_effect_summary">使用指纹解锁时显示波纹效果</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">屏幕关闭动画</string>
-    <string name="screen_off_animation_default">默认</string>
+    <string name="screen_off_animation_colorfade">色彩淡化</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">缩放</string>
+    <string name="screen_off_animation_iris">虹膜效果</string>
+    <string name="screen_off_animation_desaturate">去色淡出</string>
+    <string name="screen_off_animation_shutter">快门效果</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">指纹识别时振动</string>
     <string name="fp_success_vibrate_summary">指纹识别成功时振动</string>
@@ -1256,6 +1263,7 @@
     <string name="lockscreen_custom_clock_size_summary">调整锁屏时钟大小</string>
     <string name="lockscreen_custom_clock_aod_anim_title">自定义时钟AOD动画</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">设置自定义时钟样式的 AOD 动画</string>
+    <string name="lockscreen_custom_clock_browse_all_clocks">浏览全部时钟样式</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">快捷设置面板样式</string>
     <string name="qs_panel_style_card">卡片样式</string>
@@ -1367,6 +1375,12 @@
     <string name="spoof_wipe_playstore_title">确定清除 Play 商店数据？</string>
     <string name="spoof_wipe_playstore_message">完整性校验结果由Play商店缓存。清除其数据可让新配置立即生效，但会退出应用商店账号并清空下载队列。</string>
     <string name="spoof_wipe_confirm">清除数据</string>
+    <string name="spoof_choice_select">选择</string>
+    <string name="spoof_check_interval_title">检查间隔</string>
+    <string name="spoof_interval_hours_short">%d 小时</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="other">%d 小时</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">当前使用的配置</string>
     <string name="pif_no_config">未加载配置</string>
@@ -1392,11 +1406,21 @@
     <string name="pif_no_devices_found">未找到设备</string>
     <string name="pif_no_api_key">提取 Flash 工具 API 密钥失败</string>
     <string name="pif_select_device">选择设备</string>
+    <string name="pif_device_suggested">%1$s · 推荐</string>
     <string name="pif_select_channel">选择通道</string>
     <string name="pif_channel_latest_release">正式版本</string>
     <string name="pif_channel_latest_release_summary">当前测试版OTA 的指纹</string>
     <string name="pif_channel_canary_release">测试版本</string>
     <string name="pif_channel_canary_release_summary">最新的 Canary 版本从 Android Flash 工具</string>
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
+    <string name="pif_auto_refresh_title">自动刷新指纹</string>
+    <string name="pif_auto_refresh_summary_on">每 %3$s 检查 %2$s 渠道上是否有新版 %1$s 指纹。找到后自动应用，并清除Play商店数据</string>
+    <string name="pif_auto_refresh_summary_off">关闭。%1$s 的指纹（%2$s）仅在获取或导入指纹时才会变更</string>
+    <string name="pif_auto_refresh_last_checked">上次检查于：%1$s</string>
+    <string name="pif_auto_refresh_channel_name">Play 完整性修复</string>
+    <string name="pif_auto_refresh_channel_description">在自动应用新指纹时通知你</string>
+    <string name="pif_auto_refresh_notification_title">指纹已更新</string>
+    <string name="pif_auto_refresh_notification_text">应用了较新的 %1$s 指纹(安全补丁 %2$s) 并清除了Play 商店数据。</string>
     <string name="pif_canary_build">Canary 版本</string>
     <string name="pif_beta_build">测试版</string>
     <string name="pif_patch_summary">安全补丁：%1$s</string>
@@ -1432,6 +1456,8 @@
     <string name="ts_import_keybox">导入Keybox密钥</string>
     <string name="ts_replace_keybox">替换Keybox密钥</string>
     <string name="ts_check_status">检查状态</string>
+    <string name="ts_find_keybox">去哪里获取 Keybox？</string>
+    <string name="ts_no_browser">未找到可打开链接的浏览器</string>
     <string name="ts_no_keybox">未安装Keybox密钥</string>
     <string name="ts_keybox_installed">已安装Keybox密钥</string>
     <string name="ts_keybox_imported">Keybox密钥导入成功</string>
@@ -1447,6 +1473,28 @@
     <string name="ts_keybox_expiry">证书有效期</string>
     <string name="ts_keybox_expiry_summary">最早的叶子证书将于 %1$s 到期</string>
     <string name="ts_days_left">剩余 %1$d 天</string>
+    <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
+    <string name="ts_alerts_title">Keybox 提醒</string>
+    <string name="ts_alerts_summary_off">关闭。Keybox 被吊销或即将到期时不会通知你</string>
+    <string name="ts_alerts_summary_on">每 %1$s 向谷歌核验一次。Keybox 被吊销时会通知你</string>
+    <string name="ts_alerts_summary_scheduled">每 %1$s 向 Google 查询吊销状态，下次到期提醒时间为 %2$s</string>
+    <string name="ts_alerts_summary_due">Keybox 即将到期，请导入新的 Keybox</string>
+    <string name="ts_alerts_lead_title">到期前提醒</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="other">%d 天</item>
+    </plurals>
+    <string name="ts_alerts_summary_expired">该 Keybox 已到期，请导入新的 Keybox 以重新接收提醒</string>
+    <string name="ts_alerts_summary_blocked">设置的通知权限已关闭，无法展示提醒</string>
+    <string name="ts_alerts_channel_name">Keybox 提醒</string>
+    <string name="ts_alerts_channel_description">当 TrickyStore 的 Keybox 被谷歌吊销或即将到期时向你发送通知</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="other">Keybox 将于 %d 天后到期</item>
+    </plurals>
+    <string name="ts_alert_expiry_text">你的 TrickyStore Keybox 将于 %1$s 到期，请尽快导入新Keybox以维持Play Integrity校验通过。</string>
+    <string name="ts_alert_revoked_title">Keybox 已吊销</string>
+    <string name="ts_alert_revoked_text">谷歌已吊销你的 TrickyStore Keybox（原因：%1$s ）。在导入新Keybox前，强完整性校验会失败。</string>
+    <string name="ts_alert_suspended_title">Keybox 已被封</string>
+    <string name="ts_alert_suspended_text">谷歌已封禁你的 TrickyStore Keybox（原因：%1$s ）。在导入新Keybox前，强完整性校验会失败。</string>
     <string name="ts_revocation_status">谷歌吊销状态</string>
     <string name="ts_revocation_checking">正在向谷歌核验…</string>
     <string name="ts_revocation_not_yet_checked">尚未检查。点击即可检查</string>
@@ -1535,11 +1583,12 @@
     <string name="gs_remove_title">移除游戏？</string>
     <string name="gs_remove_message">从游戏伪装中移除%s？</string>
     <string name="gs_edit_app">编辑%s</string>
-    <string name="gs_edit_hint">MODEL、MANUFACTURER、BRAND、DEVICE 这类 Build 字段名，空行会被忽略。</string>
+    <string name="gs_edit_hint">选择字段名，例如 MODEL、MANUFACTURER、BRAND 或 DEVICE，空行会被忽略。</string>
     <string name="gs_key">字段</string>
     <string name="gs_value">值</string>
+    <string name="gs_invalid_value">%s 的值无效</string>
     <string name="gs_add_property">添加字段</string>
-    <string name="gs_invalid_key">字段名无效： %s</string>
+    <string name="gs_invalid_key">%s 不是支持的字段，请从列表选择或删除该行。</string>
     <string name="gs_duplicate_key">每个字段只能设置一次</string>
     <string name="gs_save">保存</string>
     <string name="gs_footer_body">游戏可通过 Build 字段读取选定的设备标识，配置变更将重启游戏，部分游戏借此解锁高帧率与高画质设置。</string>

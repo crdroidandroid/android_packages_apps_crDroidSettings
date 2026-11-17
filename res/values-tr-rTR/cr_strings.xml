@@ -365,6 +365,10 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="add_font">Yazı tipi ekle</string>
     <string name="toast_failed_apply_font">Yazı tipi uygulanamadı</string>
     <string name="toast_invalid_font_file">Geçersiz yazı tipi dosyası</string>
+    <string name="font_preview_quote">The quick brown fox jumps over the lazy dog.</string>
+    <string name="font_sample_glyphs">Aa</string>
+    <string name="font_sample_short">The quick brown fox</string>
+    <string name="font_sample_alphabet">ABCDEFGHIJKLM abcdefghijklm</string>
     <string name="font_default">Varsayılan</string>
     <string name="font_current">Mevcut yazı tipi</string>
     <string name="font_selected">Seçildi</string>
@@ -691,9 +695,12 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="enable_fingerprint_ripple_effect_summary">Parmak izi ile kilit açma sırasında dalgalanma efekti göster</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Ekran kapanma animasyonu</string>
-    <string name="screen_off_animation_default">Varsayılan</string>
+    <string name="screen_off_animation_colorfade">ColorFade</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Ölçek</string>
+    <string name="screen_off_animation_iris">Iris</string>
+    <string name="screen_off_animation_desaturate">Doygunluğu azalt</string>
+    <string name="screen_off_animation_shutter">Kepenk</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Parmak izi kimlik doğrulama titreşimi</string>
     <string name="fp_success_vibrate_summary">Parmak izi doğrulaması başarılı olduğunda titret</string>
@@ -1257,6 +1264,7 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="lockscreen_custom_clock_size_summary">Kilit ekranı saatinin boyutunu ayarla</string>
     <string name="lockscreen_custom_clock_aod_anim_title">Özel AOD saat animasyonu</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">Özel saat stili için AOD animasyonu ayarla</string>
+    <string name="lockscreen_custom_clock_browse_all_clocks">Browse All Clocks</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">Hızlı ayarlar paneli stili</string>
     <string name="qs_panel_style_card">Kart stili</string>
@@ -1368,6 +1376,13 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="spoof_wipe_playstore_title">Play Store verileri temizlensin mi?</string>
     <string name="spoof_wipe_playstore_message">Bütünlük doğrulama sonuçları Play Store tarafından önbelleğe alınır. Uygulama verilerini temizlemek yeni yapılandırmanın hemen geçerli olmasını sağlar; ancak Play Store oturumunu kapatır ve indirme sırasını sıfırlar.</string>
     <string name="spoof_wipe_confirm">Verileri temizle</string>
+    <string name="spoof_choice_select">Seç</string>
+    <string name="spoof_check_interval_title">Check every</string>
+    <string name="spoof_interval_hours_short">%dh</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Aktif yapılandırma</string>
     <string name="pif_no_config">Yapılandırma yüklenmedi</string>
@@ -1393,11 +1408,21 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="pif_no_devices_found">Cihaz bulunamadı</string>
     <string name="pif_no_api_key">Flash Tool API anahtarı çıkarılamadı</string>
     <string name="pif_select_device">Cihaz seçin</string>
+    <string name="pif_device_suggested">%1$s · Önerilen</string>
     <string name="pif_select_channel">Kanal seç</string>
     <string name="pif_channel_latest_release">Son sürüm</string>
     <string name="pif_channel_latest_release_summary">Şuanki beta OTA\'nın parmak izi</string>
     <string name="pif_channel_canary_release">Canary sürümü</string>
     <string name="pif_channel_canary_release_summary">Android Flash Tool\'dan en yeni Canary derlemesi</string>
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
+    <string name="pif_auto_refresh_title">Parmak izini otomatik yenile</string>
+    <string name="pif_auto_refresh_summary_on">Checks every %3$s for a newer %1$s fingerprint on the %2$s channel. When one is found, it is applied and Play Store data is cleared</string>
+    <string name="pif_auto_refresh_summary_off">Kapalı. %1$s parmak izi (%2$s) yalnızca yeni bir tane aldığınızda veya içe aktardığınızda değişir</string>
+    <string name="pif_auto_refresh_last_checked">Son kontrol: %1$s</string>
+    <string name="pif_auto_refresh_channel_name">Play Integrity Düzeltmesi</string>
+    <string name="pif_auto_refresh_channel_description">Daha yeni bir parmak izi otomatik olarak uygulandığında sizi bilgilendirir</string>
+    <string name="pif_auto_refresh_notification_title">Parmak izi güncellendi</string>
+    <string name="pif_auto_refresh_notification_text">Daha yeni bir %1$s parmak izi (%2$s güvenlik yaması) uygulandı ve Play Store verileri temizlendi.</string>
     <string name="pif_canary_build">Canary derlemesi</string>
     <string name="pif_beta_build">Beta derlemesi</string>
     <string name="pif_patch_summary">Güvenlik yaması %1$s</string>
@@ -1433,6 +1458,8 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="ts_import_keybox">Keybox İçe Aktar</string>
     <string name="ts_replace_keybox">Keybox\'ı değiştir</string>
     <string name="ts_check_status">Durumu kontrol et</string>
+    <string name="ts_find_keybox">Where to find keybox?</string>
+    <string name="ts_no_browser">No browser found to open the link</string>
     <string name="ts_no_keybox">Keybox yüklü değil</string>
     <string name="ts_keybox_installed">Keybox kuruldu</string>
     <string name="ts_keybox_imported">Keybox başarıyla içe aktarıldı</string>
@@ -1448,6 +1475,30 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="ts_keybox_expiry">Sertifika süre sonu</string>
     <string name="ts_keybox_expiry_summary">En erken yaprak sertifika süre sonu %1$s</string>
     <string name="ts_days_left">%1$d gün kaldı</string>
+    <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
+    <string name="ts_alerts_title">Keybox alerts</string>
+    <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
+    <string name="ts_alerts_summary_on">Checks with Google every %1$s. You\'ll be notified if the keybox is revoked</string>
+    <string name="ts_alerts_summary_scheduled">Checks with Google every %1$s for revocation status. Next expiry reminder on %2$s</string>
+    <string name="ts_alerts_summary_due">The keybox expires soon, load a new one</string>
+    <string name="ts_alerts_lead_title">Warn before expiry</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="one">%d day</item>
+        <item quantity="other">%d days</item>
+    </plurals>
+    <string name="ts_alerts_summary_expired">The keybox has expired. Load a new keybox to get alerts again</string>
+    <string name="ts_alerts_summary_blocked">Notifications for Settings are turned off, so alerts can\'t be shown</string>
+    <string name="ts_alerts_channel_name">Anahtar kutusu uyarıları</string>
+    <string name="ts_alerts_channel_description">Notifies you when the TrickyStore keybox is revoked by Google or is about to expire</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="one">Keybox expires in %d day</item>
+        <item quantity="other">Keybox expires in %d days</item>
+    </plurals>
+    <string name="ts_alert_expiry_text">TrickyStore anahtar kutunuzun kullanım süresi %1$s tarihinde bitiyor. Play Integrity\'yi geçmeye devam etmek için yakında yeni bir anahtar kutusu yükleyin.</string>
+    <string name="ts_alert_revoked_title">Anahtar kutusu iptal edilmiş</string>
+    <string name="ts_alert_revoked_text">Google, TrickyStore anahtar kutunuzu iptal etti (neden: %1$s). Yeni bir anahtar kutusu yükleyene kadar Strong integrity doğrulaması başarısız olacak.</string>
+    <string name="ts_alert_suspended_title">Anahtar kutusu askıya alınmış</string>
+    <string name="ts_alert_suspended_text">Google, TrickyStore anahtar kutunuzu askıya aldı (neden: %1$s). Yeni bir anahtar kutusu yükleyene kadar Strong integrity doğrulaması başarısız olacak.</string>
     <string name="ts_revocation_status">Google iptal surumu</string>
     <string name="ts_revocation_checking">Google ile kontrol ediliyor...</string>
     <string name="ts_revocation_not_yet_checked">Henüz kontrol edilmedi. Şimdi kontrol etmek için bas</string>
@@ -1537,11 +1588,12 @@ Küçük bir bağış, bu projenin devam etmesine ve gelişmesine yardımcı olu
     <string name="gs_remove_title">Oyun kaldırılsın mı?</string>
     <string name="gs_remove_message">%s oyun yanıltmadan kaldırılsın mı?</string>
     <string name="gs_edit_app">%s öğesini düzenle</string>
-    <string name="gs_edit_hint">MODEL, ÜRETİCİ, MARKA veya CİHAZ gibi derleme alan isimleri. Boş satırlar yoksayılır.</string>
+    <string name="gs_edit_hint">Pick field names such as MODEL, MANUFACTURER, BRAND or DEVICE. Empty rows are ignored.</string>
     <string name="gs_key">Alan</string>
     <string name="gs_value">Değer</string>
+    <string name="gs_invalid_value">%s has an invalid value</string>
     <string name="gs_add_property">Alan ekle</string>
-    <string name="gs_invalid_key">Geçersiz alan adı: %s</string>
+    <string name="gs_invalid_key">%s isn\'t a supported field. Pick one from the list or remove the row.</string>
     <string name="gs_duplicate_key">Her alan yalnız bir kere ayarlanabilir</string>
     <string name="gs_save">Kaydet</string>
     <string name="gs_footer_body">Seçilen oyun Derleme alanlarında seçili cihaz kimliğini görür. Oyunlar yapılandırmaları değiştiğinde yeniden başlatılır. Bazı oyunlar bunu daha yüksek kare hızı veya grafik ayarlarının kilidini açmak için kullanır.</string>
