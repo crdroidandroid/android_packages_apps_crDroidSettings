@@ -365,6 +365,10 @@
     <string name="add_font">افزودن قلم</string>
     <string name="toast_failed_apply_font">اعمال قلم ناموفق بود</string>
     <string name="toast_invalid_font_file">فایل قلم نامعتبر</string>
+    <string name="font_preview_quote">The quick brown fox jumps over the lazy dog.</string>
+    <string name="font_sample_glyphs">Aa</string>
+    <string name="font_sample_short">The quick brown fox</string>
+    <string name="font_sample_alphabet">ABCDEFGHIJKLM abcdefghijklm</string>
     <string name="font_default">پیش‌فرض</string>
     <string name="font_current">قلم فعلی</string>
     <string name="font_selected">انتخابی</string>
@@ -691,9 +695,12 @@
     <string name="enable_fingerprint_ripple_effect_summary">نمایش جلوه موج دار در باز کردن قفل با اثر انگشت</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">انیمیشن خاموش شدن صفحه</string>
-    <string name="screen_off_animation_default">پیش‌فرض</string>
+    <string name="screen_off_animation_colorfade">رنگ محو شده</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">مقیاس</string>
+    <string name="screen_off_animation_iris">قوس</string>
+    <string name="screen_off_animation_desaturate">غیر اشباع</string>
+    <string name="screen_off_animation_shutter">دیافراگم</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">لرزش هنگام تایید اثر انگشت</string>
     <string name="fp_success_vibrate_summary">لرزش زمانی که شناسایی اثر انگشت موفقیت امیز باشد</string>
@@ -1257,6 +1264,7 @@
     <string name="lockscreen_custom_clock_size_summary">تغییر اندازه ساعت صفحه قفل</string>
     <string name="lockscreen_custom_clock_aod_anim_title">پویانمایی AOD برای ساعت سفارشی</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">تنظیم پویانمایی AOD برای سبک ساعت سفارشی</string>
+    <string name="lockscreen_custom_clock_browse_all_clocks">مشاهده همه ساعت‌ها</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">سبک پنل QS</string>
     <string name="qs_panel_style_card">سبک کارت وار</string>
@@ -1368,6 +1376,13 @@
     <string name="spoof_wipe_playstore_title">پاک‌سازی داده‌های فروشگاه پلی؟</string>
     <string name="spoof_wipe_playstore_message">نتایج ارزیابی یکپارچگی در فروشگاه پلی ذخیره می‌شوند. پاک‌سازی داده‌های این برنامه باعث می‌شود پیکربندی جدید بلافاصله اعمال گردد، اما منجر به خروج از حساب کاربری در فروشگاه پلی و پاک شدن صف دانلودها می‌شود.</string>
     <string name="spoof_wipe_confirm">پاکسازی داده</string>
+    <string name="spoof_choice_select">انتخاب</string>
+    <string name="spoof_check_interval_title">بررسی هر</string>
+    <string name="spoof_interval_hours_short">%d س</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="one">%d ساعت</item>
+        <item quantity="other">%d ساعت</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">پیکربندی فعال</string>
     <string name="pif_no_config">هیچ پیکربندی بارگذاری نشده است</string>
@@ -1393,11 +1408,21 @@
     <string name="pif_no_devices_found">دستگاهی پیدا نشد</string>
     <string name="pif_no_api_key">استخراج کلید API ابزار فلش ناموفق بود</string>
     <string name="pif_select_device">انتخاب دستگاه</string>
+    <string name="pif_device_suggested">%1$s - پیشنهادی</string>
     <string name="pif_select_channel">انتخاب کانال</string>
     <string name="pif_channel_latest_release">آخرین نسخه</string>
     <string name="pif_channel_latest_release_summary">اثر انگشت از نسخه بتای فعلی بروزرسانی بی‌سیم</string>
     <string name="pif_channel_canary_release">نسخه کاناری</string>
     <string name="pif_channel_canary_release_summary">جدیدترین نسخه قناری از طریق ابزار فلش اندروید</string>
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
+    <string name="pif_auto_refresh_title">تازه‌سازی خودکار اثرانگشت</string>
+    <string name="pif_auto_refresh_summary_on">هر %3$s بررسی می‌کند که آیا اثر انگشت جدیدتری برای %1$s در کانال %2$s وجود دارد یا خیر. در صورت یافتن مورد جدید، اعمال شده و داده‌های فروشگاه پلی پاک می‌شوند</string>
+    <string name="pif_auto_refresh_summary_off">خاموش.%1$s اثر انگشت (%2$s) فقط زمانی تغییر می‌کند که شما یکی از آنها را دریافت یا وارد کنید</string>
+    <string name="pif_auto_refresh_last_checked">آخرین بررسی: %1$s</string>
+    <string name="pif_auto_refresh_channel_name">رفع مشکل Play Integrity</string>
+    <string name="pif_auto_refresh_channel_description">به شما می‌گوید چه زمانی اثر انگشت جدیدتری به طور خودکار اعمال شده است</string>
+    <string name="pif_auto_refresh_notification_title">اثرانگشت به روز شد</string>
+    <string name="pif_auto_refresh_notification_text">اثر انگشت جدیدتر %1$s (وصله امنیتی %2$s) را اعمال شد و داده‌های فروشگاه پلی پاک شدند.</string>
     <string name="pif_canary_build">نسخه قناری</string>
     <string name="pif_beta_build">نسخه آزمایشی</string>
     <string name="pif_patch_summary">وصله امنیتی %1$s</string>
@@ -1433,6 +1458,8 @@
     <string name="ts_import_keybox">جای‌گذاری Keybox</string>
     <string name="ts_replace_keybox">تعویض جعبه کلید</string>
     <string name="ts_check_status">بررسی وضعیت</string>
+    <string name="ts_find_keybox">جعبه کلید را کجا می‌توان پیدا کرد؟</string>
+    <string name="ts_no_browser">مرورگری برای باز کردن لینک پیدا نشد</string>
     <string name="ts_no_keybox">هیچ Keybox نصب نشده</string>
     <string name="ts_keybox_installed">Keybox نصب شد</string>
     <string name="ts_keybox_imported">Keybox با موفقیت جای‌گذاری شد</string>
@@ -1448,6 +1475,30 @@
     <string name="ts_keybox_expiry">انقضای گواهی‌نامه</string>
     <string name="ts_keybox_expiry_summary">قدیمی‌ترین گواهی برگ در تاریخ %1$s منقضی می‌شود</string>
     <string name="ts_days_left">%1$dروز باقی‌مانده</string>
+    <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
+    <string name="ts_alerts_title">هشدارهای جعبه کلید</string>
+    <string name="ts_alerts_summary_off">خاموش. در صورت لغو یا نزدیک شدن به انقضای صفحه‌کلید، به شما اطلاع داده نخواهد شد</string>
+    <string name="ts_alerts_summary_on">هر %1$s یک‌بار با گوگل بررسی می‌شود. در صورت ابطال جعبه کلید، به شما اطلاع داده خواهد شد</string>
+    <string name="ts_alerts_summary_scheduled">هر %1$s یک‌بار وضعیت ابطال را از گوگل بررسی می‌کند. یادآوری بعدی برای تاریخ انقضا در %2$s خواهد بود</string>
+    <string name="ts_alerts_summary_due">مهلت جعبه کلید به‌زودی به پایان می‌رسد؛ یک جعبه کلید جدید بارگذاری کنید</string>
+    <string name="ts_alerts_lead_title">هشدار پیش از انقضا</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="one">%d روز</item>
+        <item quantity="other">%d روز</item>
+    </plurals>
+    <string name="ts_alerts_summary_expired">جعبه‌کلید منقضی شده است. برای دریافت مجدد هشدارها، یک جعبه‌کلید جدید بارگذاری کنید</string>
+    <string name="ts_alerts_summary_blocked">اعلان‌های تنظیمات خاموش هستند، بنابراین هشدارها نمایش داده نمی‌شوند</string>
+    <string name="ts_alerts_channel_name">هشدارهای جعبه کلید</string>
+    <string name="ts_alerts_channel_description">زمانی که جعبه‌کلید مربوط به TrickyStore توسط گوگل ابطال شود یا در شرف انقضا باشد، به شما اطلاع می‌دهد</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="one">جعبه‌کلید در %d روز منقضی می‌شود</item>
+        <item quantity="other">جعبه‌کلید در %d روز منقضی می‌شود</item>
+    </plurals>
+    <string name="ts_alert_expiry_text">جعبه‌کلید TrickyStore شما در تاریخ %1$s منقضی می‌شود. برای اینکه همچنان در بررسی یکپارچگی پلی تأیید شوید، هرچه زودتر یک جعبه‌کلید جدید بارگذاری کنید.</string>
+    <string name="ts_alert_revoked_title">جعبه کلید باطل شد</string>
+    <string name="ts_alert_revoked_text">گوگل جعبه‌کلید مربوط به TrickyStore شما را باطل کرده است (دلیل: %1$s). تا زمانی که یک جعبه‌کلید جدید بارگذاری نکنید، بررسی یکپارچگی قوی با شکست مواجه خواهد شد.</string>
+    <string name="ts_alert_suspended_title">جعبه کلید معلق</string>
+    <string name="ts_alert_suspended_text">گوگل جعبه‌کلید مربوط به TrickyStore شما را تعلیق کرده است (دلیل: %1$s). تا زمانی که یک جعبه‌کلید جدید بارگذاری نکنید، «یکپارچگی قوی» تأیید نخواهد شد.</string>
     <string name="ts_revocation_status">وضعیت ابطال گوگل</string>
     <string name="ts_revocation_checking">در حال بررسی با گوگل…</string>
     <string name="ts_revocation_not_yet_checked">هنوز بررسی نشده است. برای بررسی در حال حاضر، ضربه بزنید</string>
@@ -1537,11 +1588,12 @@
     <string name="gs_remove_title">بازی پاک شود؟</string>
     <string name="gs_remove_message">آیا %s از فهرست جعل هویت بازی حذف گردد؟</string>
     <string name="gs_edit_app">ویرایش %s</string>
-    <string name="gs_edit_hint">نام فیلدهایی مانند MODEL، MANUFACTURER، BRAND یا DEVICE بسازید. ردیف های خالی نادیده گرفته می شوند.</string>
+    <string name="gs_edit_hint">نام بخش‌هایی مانند مدل، سازنده، برند یا دستگاه را انتخاب کنید. ردیف‌های خالی نادیده گرفته می‌شوند.</string>
     <string name="gs_key">فیلد</string>
     <string name="gs_value">مقدار</string>
+    <string name="gs_invalid_value">%s دارای مقدار نامعتبر است</string>
     <string name="gs_add_property">افزودن فیلد</string>
-    <string name="gs_invalid_key">اسم فیلد نامعتبر: %s</string>
+    <string name="gs_invalid_key">%s فیلد پشتیبانی‌شده‌ای نیست. موردی را از فهرست انتخاب کنید یا این ردیف را حذف نمایید.</string>
     <string name="gs_duplicate_key">هر فیلد تنها یک‌بار قابل تنظیم است</string>
     <string name="gs_save">ذخیره</string>
     <string name="gs_footer_body">بازی انتخاب‌شده، هویت دستگاه انتخاب‌شده را در فیلدهای ساخت خود می‌بیند. بازی‌ها با تغییر پیکربندی‌شان، مجدداً راه‌اندازی می‌شوند. برخی از بازی‌ها از این قابلیت برای باز کردن نرخ فریم بالاتر یا تنظیمات گرافیکی استفاده می‌کنند.</string>
