@@ -367,6 +367,10 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="add_font">Dodaj czcionkę</string>
     <string name="toast_failed_apply_font">Nie udało się zastosować czcionki</string>
     <string name="toast_invalid_font_file">Nieprawidłowy plik czcionki</string>
+    <string name="font_preview_quote">The quick brown fox jumps over the lazy dog.</string>
+    <string name="font_sample_glyphs">Aa</string>
+    <string name="font_sample_short">The quick brown fox</string>
+    <string name="font_sample_alphabet">ABCDEFGHIJKLM abcdefghijklm</string>
     <string name="font_default">Domyślna</string>
     <string name="font_current">Aktualna czcionka</string>
     <string name="font_selected">Wybrano</string>
@@ -693,9 +697,12 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="enable_fingerprint_ripple_effect_summary">Pokazuj efekt fali podczas odblokowywania odciskiem palca</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Animacja wyłączenia ekranu</string>
-    <string name="screen_off_animation_default">Domyślna</string>
+    <string name="screen_off_animation_colorfade">Zanikanie kolorów</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Skala</string>
+    <string name="screen_off_animation_iris">Źrenica</string>
+    <string name="screen_off_animation_desaturate">Zmniejszanie nasycenia</string>
+    <string name="screen_off_animation_shutter">Migawka</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Wibracja uwierzytelniania odcisku palca</string>
     <string name="fp_success_vibrate_summary">Wibracje po udanym uwierzytelnieniu odcisku palca</string>
@@ -1265,6 +1272,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="lockscreen_custom_clock_size_summary">Skaluj zegar ekranu blokady</string>
     <string name="lockscreen_custom_clock_aod_anim_title">Własna animacja zegara ekranu zawsze włączonego</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">Ustaw animację w trybie ekran zawsze włączony dla własnego stylu zegara</string>
+    <string name="lockscreen_custom_clock_browse_all_clocks">Przeglądaj wszystkie zegary</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">Styl panelu szybkich ustawień</string>
     <string name="qs_panel_style_card">Styl karty</string>
@@ -1376,6 +1384,15 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="spoof_wipe_playstore_title">Wyczyścić dane Sklepu Google Play?</string>
     <string name="spoof_wipe_playstore_message">Wyniki sprawdzania integralności są przechowywane w pamięci podręcznej Sklepu Play. Wyczyszczenie jego danych powoduje natychmiastowe zastosowanie nowej konfiguracji, ale powoduje również wylogowanie ze Sklepu Play i wyczyszczenie jego kolejki pobrań.</string>
     <string name="spoof_wipe_confirm">Wyczyść dane</string>
+    <string name="spoof_choice_select">Wybierz</string>
+    <string name="spoof_check_interval_title">Sprawdzaj co</string>
+    <string name="spoof_interval_hours_short">%dg</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="one">%d godzina</item>
+        <item quantity="few">%d godziny</item>
+        <item quantity="many">%d godzin</item>
+        <item quantity="other">%d godzin</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Aktywna konfiguracja</string>
     <string name="pif_no_config">Brak załadowanych konfiguracji</string>
@@ -1401,11 +1418,21 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="pif_no_devices_found">Nie znaleziono urządzeń</string>
     <string name="pif_no_api_key">Nie udało się wyodrębnić klucza API Flash Tool</string>
     <string name="pif_select_device">Wybierz urządzenie</string>
+    <string name="pif_device_suggested">%1$s · Sugerowane</string>
     <string name="pif_select_channel">Wybierz kanał</string>
     <string name="pif_channel_latest_release">Najnowsze wydanie</string>
     <string name="pif_channel_latest_release_summary">Odcisk palca z aktualnej wersji beta OTA</string>
     <string name="pif_channel_canary_release">Wydanie Canary</string>
     <string name="pif_channel_canary_release_summary">Najnowsza wersja Canary z narzędzia Android Flash Tool</string>
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
+    <string name="pif_auto_refresh_title">Automatyczne odświeżanie odcisku palca</string>
+    <string name="pif_auto_refresh_summary_on">Co %3$s sprawdza, czy na kanale %2$s pojawił się nowszy odcisk %1$s. Gdy taki zostanie znaleziony, zostaje zastosowany, a dane ze Sklepu Play są usuwane</string>
+    <string name="pif_auto_refresh_summary_off">Wyłączono. Odcisk palca %1$s (%2$s) zmienia się tylko po pobraniu lub zaimportowaniu jednego</string>
+    <string name="pif_auto_refresh_last_checked">Ostatnio sprawdzane: %1$s</string>
+    <string name="pif_auto_refresh_channel_name">Naprawa integralności Google Play</string>
+    <string name="pif_auto_refresh_channel_description">Informuje, kiedy automatycznie dodano nowszy odcisk palca</string>
+    <string name="pif_auto_refresh_notification_title">Odcisk palca zaktualizowany</string>
+    <string name="pif_auto_refresh_notification_text">Zainstalowano nowszą wersję %1$s (poprawka zabezpieczeń %2$s) i wyczyszczono dane ze Sklepu Play.</string>
     <string name="pif_canary_build">Kompilacja Canary</string>
     <string name="pif_beta_build">Kompilacja Beta</string>
     <string name="pif_patch_summary">Poprawka bezpieczeństwa: %1$s</string>
@@ -1441,6 +1468,8 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_import_keybox">Importuj zestaw kluczy</string>
     <string name="ts_replace_keybox">Zamień zestaw kluczy</string>
     <string name="ts_check_status">Sprawdź status</string>
+    <string name="ts_find_keybox">Gdzie znaleźć zestaw kluczy?</string>
+    <string name="ts_no_browser">Nie znaleziono przeglądarki, aby otworzyć link</string>
     <string name="ts_no_keybox">Nie zainstalowano zestawu kluczy</string>
     <string name="ts_keybox_installed">Zainstalowano zestaw kluczy</string>
     <string name="ts_keybox_imported">Zaimportowano pomyślnie zestaw kluczy</string>
@@ -1456,6 +1485,34 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_keybox_expiry">Wygaśnięcie certyfikatu</string>
     <string name="ts_keybox_expiry_summary">Najwcześniejszy certyfikat \"liść\" traci ważność %1$s</string>
     <string name="ts_days_left">Pozostało %1$dd</string>
+    <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
+    <string name="ts_alerts_title">Powiadomienia zestawu kluczy</string>
+    <string name="ts_alerts_summary_off">Wyłączono. Nie otrzymasz powiadomienia, jeśli uprawnienia do zestawu kluczy zostaną cofnięte lub wkrótce wygasną</string>
+    <string name="ts_alerts_summary_on">Co %1$s sprawdza w Google. Otrzymasz powiadomienie, jeśli uprawnienia do zestawu kluczy zostaną cofnięte</string>
+    <string name="ts_alerts_summary_scheduled">Co %1$s sprawdza w Google stan unieważnienia. Kolejne przypomnienie o wygaśnięciu w dniu %2$s</string>
+    <string name="ts_alerts_summary_due">Zestaw kluczy niebawem wygaśnie, załaduj nowy</string>
+    <string name="ts_alerts_lead_title">Powiadom przed upływem terminu ważności</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="one">%d dzień</item>
+        <item quantity="few">%d dni</item>
+        <item quantity="many">%d dni</item>
+        <item quantity="other">%d dni</item>
+    </plurals>
+    <string name="ts_alerts_summary_expired">Okres ważności zestawu kluczy wygasł. Załaduj nowy zestaw kluczy, aby ponownie otrzymywać powiadomienia</string>
+    <string name="ts_alerts_summary_blocked">Powiadomienia dotyczące ustawień są wyłączone, więc alerty nie mogą być wyświetlane</string>
+    <string name="ts_alerts_channel_name">Powiadomienia zestawu kluczy</string>
+    <string name="ts_alerts_channel_description">Powiadamia użytkownika, gdy klucz TrickyStore zostanie unieważniony przez Google lub zbliża się termin jego wygaśnięcia</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="one">Okres ważności zestawu kluczy wygasa za %d dzień</item>
+        <item quantity="few">Okres ważności zestawu kluczy wygasa za %d dni</item>
+        <item quantity="many">Okres ważności zestawu kluczy wygasa za %d dni</item>
+        <item quantity="other">Okres ważności zestawu kluczy wygasa za %d dni</item>
+    </plurals>
+    <string name="ts_alert_expiry_text">Twój zestaw kluczy TrickyStore traci ważność %1$s. Jak najszybciej załaduj nowy zestaw kluczy, aby nadal spełniać wymagania integralności Play.</string>
+    <string name="ts_alert_revoked_title">Odrzucono zestaw kluczy</string>
+    <string name="ts_alert_revoked_text">Firma Google unieważniła twój klucz TrickyStore (przyczyna: %1$s). Sprawdzanie integralności zakończy się niepowodzeniem, dopóki nie załadujesz nowego klucza.</string>
+    <string name="ts_alert_suspended_title">Zestaw kluczy zawieszony</string>
+    <string name="ts_alert_suspended_text">Firma Google zawiesiła twój zestaw kluczy TrickyStore (przyczyna: %1$s). Sprawdzanie integralności zakończy się niepowodzeniem, dopóki nie załadujesz nowego zestawu kluczy.</string>
     <string name="ts_revocation_status">Status unieważnienia w Google</string>
     <string name="ts_revocation_checking">Sprawdzanie z Google…</string>
     <string name="ts_revocation_not_yet_checked">Jeszcze nie sprawdzono. Dotknij, aby sprawdzić teraz</string>
@@ -1547,11 +1604,12 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="gs_remove_title">Usunąć grę?</string>
     <string name="gs_remove_message">Usunąć %s z listy sfałszowanych gier?</string>
     <string name="gs_edit_app">Edytuj %s</string>
-    <string name="gs_edit_hint">Wprowadź nazwy pól, takie jak MODEL, PRODUCENT, MARKA lub URZĄDZENIE. Puste wiersze są pomijane.</string>
+    <string name="gs_edit_hint">Wybierz nazwy pól, takie jak MODEL, PRODUCENT, MARKA lub URZĄDZENIE. Puste wiersze są pomijane.</string>
     <string name="gs_key">Pole</string>
     <string name="gs_value">Wartość</string>
+    <string name="gs_invalid_value">%s ma nieprawidłową wartość</string>
     <string name="gs_add_property">Dodaj pole</string>
-    <string name="gs_invalid_key">Nieprawidłowa nazwa pola: %s</string>
+    <string name="gs_invalid_key">%s nie jest obsługiwanym polem. Wybierz jedno z listy lub usuń wiersz.</string>
     <string name="gs_duplicate_key">Każde pole można ustawić tylko raz</string>
     <string name="gs_save">Zapisz</string>
     <string name="gs_footer_body">W wybranej grze w polach „Build” widoczna jest identyfikacja wybranego urządzenia. Gry uruchamiają się ponownie po zmianie ich konfiguracji. Niektóre gry wykorzystują tę funkcję do odblokowania wyższych częstotliwości odświeżania lub lepszych ustawień graficznych.</string>
