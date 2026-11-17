@@ -365,6 +365,10 @@
     <string name="add_font">フォントを追加</string>
     <string name="toast_failed_apply_font">フォントの適用に失敗しました</string>
     <string name="toast_invalid_font_file">無効なフォントファイルです</string>
+    <string name="font_preview_quote">The quick brown fox jumps over the lazy dog.</string>
+    <string name="font_sample_glyphs">Aa</string>
+    <string name="font_sample_short">The quick brown fox</string>
+    <string name="font_sample_alphabet">ABCDEFGHIJKLM abcdefghijklm</string>
     <string name="font_default">デフォルト</string>
     <string name="font_current">現在のフォント</string>
     <string name="font_selected">選択中</string>
@@ -691,9 +695,12 @@
     <string name="enable_fingerprint_ripple_effect_summary">指紋認証でのロック解除時に波紋エフェクトを表示します</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">画面消灯時のアニメーション</string>
-    <string name="screen_off_animation_default">デフォルト</string>
+    <string name="screen_off_animation_colorfade">色のフェード</string>
     <string name="screen_off_animation_crt">ブラウン管</string>
     <string name="screen_off_animation_scale">スケール</string>
+    <string name="screen_off_animation_iris">アイリス</string>
+    <string name="screen_off_animation_desaturate">彩度を下げる</string>
+    <string name="screen_off_animation_shutter">シャッター</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">指紋認証時の振動</string>
     <string name="fp_success_vibrate_summary">指紋認証が成功した際に振動させます</string>
@@ -1255,6 +1262,7 @@
     <string name="lockscreen_custom_clock_size_summary">ロック画面の時計のサイズを変更する</string>
     <string name="lockscreen_custom_clock_aod_anim_title">AODアニメーション</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">カスタム時計スタイルの AOD アニメーションを設定します</string>
+    <string name="lockscreen_custom_clock_browse_all_clocks">すべての時計を閲覧する</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">クイック設定パネルのスタイル</string>
     <string name="qs_panel_style_card">カードスタイル</string>
@@ -1366,6 +1374,12 @@
     <string name="spoof_wipe_playstore_title">Playストアのデータを消去しますか？</string>
     <string name="spoof_wipe_playstore_message">整合性判定の結果は、Playストアによってキャッシュされます。Playストアのデータを消去すると新しい設定が即座に反映されますが、同時にPlayストアからサインアウトされ、ダウンロードキューもクリアされます。</string>
     <string name="spoof_wipe_confirm">データを消去</string>
+    <string name="spoof_choice_select">選択</string>
+    <string name="spoof_check_interval_title">チェック間隔</string>
+    <string name="spoof_interval_hours_short">%d時間</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="other">%d時間</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">アクティブな設定</string>
     <string name="pif_no_config">設定が読み込まれていません</string>
@@ -1391,11 +1405,21 @@
     <string name="pif_no_devices_found">デバイスが見つかりません</string>
     <string name="pif_no_api_key">Flash Tool API キーの抽出に失敗しました</string>
     <string name="pif_select_device">デバイスを選択</string>
+    <string name="pif_device_suggested">%1$s ・提案</string>
     <string name="pif_select_channel">チャンネルを選択</string>
     <string name="pif_channel_latest_release">最新のリリース</string>
     <string name="pif_channel_latest_release_summary">現在のベータ版OTAからのフィンガープリント</string>
     <string name="pif_channel_canary_release">Canary リリース</string>
     <string name="pif_channel_canary_release_summary">Android Flash ツールからの最新のCanary ビルド</string>
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
+    <string name="pif_auto_refresh_title">フィンガープリントを自動更新する</string>
+    <string name="pif_auto_refresh_summary_on">%1$s チャンネルの新しい %2$s フィンガープリントを毎日チェックします。見つかった場合は適用され、Playストアのデータが消去されます</string>
+    <string name="pif_auto_refresh_summary_off">オフ。 %1$s フィンガープリント（%2$s）は、取得またはインポートしたときにのみ変更されます</string>
+    <string name="pif_auto_refresh_last_checked">最終確認: %1$s</string>
+    <string name="pif_auto_refresh_channel_name">Play Integrity Fix</string>
+    <string name="pif_auto_refresh_channel_description">新しいフィンガープリントが自動的に適用されたときに通知します</string>
+    <string name="pif_auto_refresh_notification_title">指紋が更新されました</string>
+    <string name="pif_auto_refresh_notification_text">新しい %1$s フィンガープリント（セキュリティパッチ %2$s）を適用し、Play ストア データをクリアしました。</string>
     <string name="pif_canary_build">Canary ビルド</string>
     <string name="pif_beta_build">ベータビルド</string>
     <string name="pif_patch_summary">セキュリティパッチ %1$s</string>
@@ -1431,6 +1455,8 @@
     <string name="ts_import_keybox">キーボックスをインポート</string>
     <string name="ts_replace_keybox">キーボックスを置換</string>
     <string name="ts_check_status">ステータスを確認</string>
+    <string name="ts_find_keybox">キーボックスはどこにあるの？</string>
+    <string name="ts_no_browser">リンクを開くためのブラウザが見つかりません</string>
     <string name="ts_no_keybox">キーボックスがインストールされていません</string>
     <string name="ts_keybox_installed">キーボックスがインストールされています</string>
     <string name="ts_keybox_imported">キーボックスのインポートに成功しました</string>
@@ -1446,6 +1472,28 @@
     <string name="ts_keybox_expiry">証明書の有効期限</string>
     <string name="ts_keybox_expiry_summary">最も期限が近いリーフ証明書の有効期限: %1$s</string>
     <string name="ts_days_left">%1$d日後</string>
+    <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
+    <string name="ts_alerts_title">キーボックスアラート</string>
+    <string name="ts_alerts_summary_off">オフ。キーボックスが破棄された場合や期限切れになる場合は通知されません</string>
+    <string name="ts_alerts_summary_on">Googleで%1$sごとにチェックします。キーボックスが無効になった場合に通知されます</string>
+    <string name="ts_alerts_summary_scheduled">%1$s ごとにGoogleで失効状態をチェックします。 %2$sの次回の有効期限通知</string>
+    <string name="ts_alerts_summary_due">キーボックスの有効期限が間もなく切れます。新しいキーを読み込みます</string>
+    <string name="ts_alerts_lead_title">有効期限前に警告</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="other">%d日</item>
+    </plurals>
+    <string name="ts_alerts_summary_expired">キーボックスの有効期限が切れています。再度アラートを取得するには、新しいキーボックスを読み込んでください</string>
+    <string name="ts_alerts_summary_blocked">設定の通知がオフになっているため、アラートを表示できません</string>
+    <string name="ts_alerts_channel_name">キーボックスアラート</string>
+    <string name="ts_alerts_channel_description">TrickyStoreキーボックスがGoogleによって取り消された場合、または終了しようとしている場合に通知します</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="other">キーボックスの有効期限は %d 日です</item>
+    </plurals>
+    <string name="ts_alert_expiry_text">TrickyStoreのキーボックスは %1$sに期限が切れます。すぐに新しいキーボックスを読み込んで、Play Integrity を維持します。</string>
+    <string name="ts_alert_revoked_title">キーボックスが取り消されました</string>
+    <string name="ts_alert_revoked_text">GoogleはTrickyStoreのキーボックスを取り消しました（理由： %1$s）。新しいキーボックスを読み込むまでStrong integrityは失敗します。</string>
+    <string name="ts_alert_suspended_title">キーボックスが一時停止されました</string>
+    <string name="ts_alert_suspended_text">GoogleはTrickyStoreのキーボックスを一時停止しました（理由： %1$s）。新しいキーボックスをロードするまでStrong integrityは失敗します。</string>
     <string name="ts_revocation_status">Googleの失効状態</string>
     <string name="ts_revocation_checking">Googleで確認しています…</string>
     <string name="ts_revocation_not_yet_checked">まだ確認されていません。タップして今すぐ確認してください</string>
@@ -1534,11 +1582,12 @@
     <string name="gs_remove_title">ゲームを削除しますか？</string>
     <string name="gs_remove_message">%s をゲームスプーフィングから削除しますか？</string>
     <string name="gs_edit_app">%s を編集</string>
-    <string name="gs_edit_hint">MODEL、MANUFACTURER、BRAND、DEVICEなどのビルドフィールド名。空の行は無視されます。</string>
+    <string name="gs_edit_hint">MODEL、MANUFACTURER、BRAND、DEVICEなどのフィールド名を選択します。空の行は無視されます。</string>
     <string name="gs_key">項目</string>
     <string name="gs_value">値</string>
+    <string name="gs_invalid_value">%s は無効な値です</string>
     <string name="gs_add_property">項目を追加</string>
-    <string name="gs_invalid_key">無効な項目名: %s</string>
+    <string name="gs_invalid_key">%s はサポートされているフィールドではありません。リストから選択するか、行を削除してください。</string>
     <string name="gs_duplicate_key">各項目は1回のみ設定できます</string>
     <string name="gs_save">保存</string>
     <string name="gs_footer_body">選択されたゲームは、指定したデバイス識別子をシステムのビルド情報として認識します。設定が変更されると、該当するゲームは自動的に再起動します。ゲームによっては、この仕組みを利用することで高フレームレートや高画質設定を解放できる場合があります。</string>
