@@ -365,6 +365,10 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="add_font">Betűtípus hozzáadása</string>
     <string name="toast_failed_apply_font">Nem sikerült beállítani a betűkészletet</string>
     <string name="toast_invalid_font_file">Hibás betűkészlet-fájl</string>
+    <string name="font_preview_quote">The quick brown fox jumps over the lazy dog.</string>
+    <string name="font_sample_glyphs">Aa</string>
+    <string name="font_sample_short">The quick brown fox</string>
+    <string name="font_sample_alphabet">ABCDEFGHIJKLM abcdefghijklm</string>
     <string name="font_default">Alapértelmezett</string>
     <string name="font_current">Jelenlegi betűtípus</string>
     <string name="font_selected">Kiválasztva</string>
@@ -691,9 +695,12 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="enable_fingerprint_ripple_effect_summary">Ujjlenyomatos feloldáskor hullámeffektus</string>
     <!-- Screen Off animation -->
     <string name="screen_off_animation_title">Képernyő-kikapcsolási animáció</string>
-    <string name="screen_off_animation_default">Alapértelmezett</string>
+    <string name="screen_off_animation_colorfade">Elhalványulás</string>
     <string name="screen_off_animation_crt">CRT</string>
     <string name="screen_off_animation_scale">Skálázott</string>
+    <string name="screen_off_animation_iris">Írisz</string>
+    <string name="screen_off_animation_desaturate">Kifakítás</string>
+    <string name="screen_off_animation_shutter">Exponálás</string>
     <!-- Fingerprint authentication vibration -->
     <string name="fp_success_vibrate_title">Ujjlenyomat-hitelesítési rezgés</string>
     <string name="fp_success_vibrate_summary">Rezgés az ujjlenyomat sikeres hitelesítésekor</string>
@@ -1259,6 +1266,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="lockscreen_custom_clock_size_summary">A záróképernyő órája méretezhető</string>
     <string name="lockscreen_custom_clock_aod_anim_title">Egyéni \"Mindig bekapcsolva\" óraanimáció</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">AOD animáció beállítása az egyéni órastílushoz</string>
+    <string name="lockscreen_custom_clock_browse_all_clocks">Nézelődés az összes Óra között</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">A Gyorsbeállítások panel stílusa</string>
     <string name="qs_panel_style_card">Kártyastílus</string>
@@ -1370,6 +1378,13 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="spoof_wipe_playstore_title">Törli a Play Áruház adatait?</string>
     <string name="spoof_wipe_playstore_message">A Play Áruház gyorsítótárazza az integritás-ellenőrzések eredményeit. Az alkalmazásadatok törlésével az új konfiguráció azonnal érvénybe lép, ugyanakkor kijelentkeztet a Play Áruházból, és törli a letöltési várólistát is.</string>
     <string name="spoof_wipe_confirm">Adattörlés</string>
+    <string name="spoof_choice_select">Kiválasztás</string>
+    <string name="spoof_check_interval_title">Frissítési gyakoriság</string>
+    <string name="spoof_interval_hours_short">%dó</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="one">%d óra</item>
+        <item quantity="other">%d óra</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">Jelenlegi beállítások</string>
     <string name="pif_no_config">Nincs betöltött konfiguráció</string>
@@ -1395,11 +1410,21 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="pif_no_devices_found">Nem található eszköz</string>
     <string name="pif_no_api_key">Nem sikerült kinyerni a Flash Tool API-kulcsot</string>
     <string name="pif_select_device">Eszköz kiválasztása</string>
+    <string name="pif_device_suggested">%1$s · Javasolt</string>
     <string name="pif_select_channel">Válasszon kiadási csatornát</string>
     <string name="pif_channel_latest_release">A legújabb kiadás</string>
     <string name="pif_channel_latest_release_summary">Ujjlenyomat a jelenlegi béta OTA-ból</string>
     <string name="pif_channel_canary_release">Korlátozott körű kiadás</string>
     <string name="pif_channel_canary_release_summary">Legújabb Canary-verzió az Android Flash Toolból</string>
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
+    <string name="pif_auto_refresh_title">Automatikusan frissített ujjlenyomat</string>
+    <string name="pif_auto_refresh_summary_on">Minden %3$s nap ellenőrzi, hogy elérhető-e újabb %1$s ujjlenyomat a %2$s csatornán. Ha talál ilyet, alkalmazza azt, és törli a Play Áruház adatait</string>
+    <string name="pif_auto_refresh_summary_off">Kikapcsolva. A(z) %1$s ujjlenyomat (%2$s) csak akkor változik, ha letölt vagy importál egyet.</string>
+    <string name="pif_auto_refresh_last_checked">Utolsó ellenőrzés: %1$s</string>
+    <string name="pif_auto_refresh_channel_name">Play Integritás javítás</string>
+    <string name="pif_auto_refresh_channel_description">Jelzi, ha automatikusan egy újabb ujjlenyomat került alkalmazásra</string>
+    <string name="pif_auto_refresh_notification_title">Ujjlenyomat frissítve</string>
+    <string name="pif_auto_refresh_notification_text">Alkalmaztam egy újabb %1$s ujjlenyomatot (%2$s biztonsági javítócsomag), és töröltem a Play Áruház adatait.</string>
     <string name="pif_canary_build">Canary-verzió</string>
     <string name="pif_beta_build">Béta-verzió</string>
     <string name="pif_patch_summary">Biztonsági javítás %1$s</string>
@@ -1435,6 +1460,8 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="ts_import_keybox">Keybox importálása</string>
     <string name="ts_replace_keybox">Keybox cseréje</string>
     <string name="ts_check_status">Állapot ellenőrzése</string>
+    <string name="ts_find_keybox">Merre található a kulcsbox?</string>
+    <string name="ts_no_browser">Nincs böngésző telepítve a link megnyitásához</string>
     <string name="ts_no_keybox">Nincs telepítve keybox</string>
     <string name="ts_keybox_installed">Keybox telepítve</string>
     <string name="ts_keybox_imported">Keybox sikeresen importálva</string>
@@ -1450,6 +1477,30 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="ts_keybox_expiry">Tanúsítvány lejárata</string>
     <string name="ts_keybox_expiry_summary">A legkorábbi tanúsítvány lejárati ideje %1$s</string>
     <string name="ts_days_left">Még %1$dnap van hátra</string>
+    <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
+    <string name="ts_alerts_title">Keybox riasztások</string>
+    <string name="ts_alerts_summary_off">Kikapcsolva. Nem kap értesítést, ha a keybox-ot visszavonják, vagy ha annak lejárati ideje közeledik</string>
+    <string name="ts_alerts_summary_on">%1$s naponként ellenőrzi a Google-nál. Értesítést kap, ha a keybox-ot visszavonják</string>
+    <string name="ts_alerts_summary_scheduled">%1$s naponként ellenőrzi a Google-nál a visszavonási státuszt. A következő lejárati emlékeztető időpontja: %2$s</string>
+    <string name="ts_alerts_summary_due">A keybox hamarosan lejár, töltsön be egy újat</string>
+    <string name="ts_alerts_lead_title">Figyelmeztetés a lejárati idő előtt</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="one">%d nap</item>
+        <item quantity="other">%d nap</item>
+    </plurals>
+    <string name="ts_alerts_summary_expired">A keybox érvényessége lejárt. Tölts be egy új keybox-ot az értesítések újbóli fogadásához</string>
+    <string name="ts_alerts_summary_blocked">A Beállítások értesítései ki vannak kapcsolva, ezért a figyelmeztetések nem jeleníthetők meg</string>
+    <string name="ts_alerts_channel_name">Keybox riasztások</string>
+    <string name="ts_alerts_channel_description">Értesítést küld, ha a Google visszavonja a TrickyStore keybox-ot vagy ha az hamarosan lejár</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="one">A keybox %d nap múlva lejár</item>
+        <item quantity="other">A keybox %d nap múlva lejár</item>
+    </plurals>
+    <string name="ts_alert_expiry_text">A TrickyStore keybox-od ekkor lejár: %1$s. Hamarosan tölts be egy újat, hogy továbbra is megfelelj a Play Integrity ellenőrzésnek.</string>
+    <string name="ts_alert_revoked_title">Keybox elutasítva</string>
+    <string name="ts_alert_revoked_text">A Google visszavonta a TrickyStore keybox-odat (ok: %1$s). Az erős integritásellenőrzés sikertelen lesz amíg be nem töltesz egy új kexbox-ot.</string>
+    <string name="ts_alert_suspended_title">Keybox felfüggesztve</string>
+    <string name="ts_alert_suspended_text">A Google felfüggesztette a TrickyStore keybox-odat (ok: %1$s). Az erős integritásellenőrzés sikertelen lesz amíg be nem töltesz egy új kexbox-ot.</string>
     <string name="ts_revocation_status">Google visszavonási állapot</string>
     <string name="ts_revocation_checking">Ellenőrzés a Google-ban…</string>
     <string name="ts_revocation_not_yet_checked">Még nincs ellenőrizve. Koppints az azonnali ellenőrzéshez</string>
@@ -1539,11 +1590,12 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="gs_remove_title">Játék eltávolítása?</string>
     <string name="gs_remove_message">Eltávolítod a %s a játék rejtésből?</string>
     <string name="gs_edit_app">%s szerkesztése</string>
-    <string name="gs_edit_hint">Hozzon létre mezőneveket, például: MODEL, MANUFACTURER, BRAND vagy DEVICE. Az üres sorokat a rendszer figyelmen kívül hagyja.</string>
+    <string name="gs_edit_hint">Jelöljön meg mezőket, például: MODEL, GyÁRTÓ, BRAND vagy KÉSZÜLÉK. Az üres sorok figyelmen kívül maradnak.</string>
     <string name="gs_key">Mező</string>
     <string name="gs_value">Érték</string>
+    <string name="gs_invalid_value">Ennek: %s érvénytelen az értéke</string>
     <string name="gs_add_property">Mező hozzáadása</string>
-    <string name="gs_invalid_key">Érvénytelen mezőnév: %s</string>
+    <string name="gs_invalid_key">Ez: %s nem támogatott mező. Válasszon egyet a listából, vagy törölje a sort.</string>
     <string name="gs_duplicate_key">Minden mező csak egyszer állítható be</string>
     <string name="gs_save">Mentés</string>
     <string name="gs_footer_body">A kiválasztott játék a „Build” mezőiben látja a választott eszközazonosítót. A játékok újraindulnak, ha a konfigurációjuk megváltozik. Egyes játékok ezt arra használják, hogy magasabb képkockasebességet vagy grafikai beállításokat tegyenek elérhetővé.</string>
