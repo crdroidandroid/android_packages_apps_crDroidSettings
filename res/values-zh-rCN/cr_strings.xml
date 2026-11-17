@@ -424,33 +424,50 @@
     <string name="font_error_storage">系统无法保存字体，请确认存储空间充足后重试。</string>
     <string name="font_overlay_reset_failed">自定义字体已安装，但字体样式无法恢复为默认</string>
     <!-- System emoji -->
-    <string name="emoji_picker_title">System emoji</string>
-    <string name="emoji_picker_summary">Use your own emoji font</string>
-    <string name="emoji_current">Current emoji</string>
-    <string name="emoji_add">Choose emoji font</string>
-    <string name="emoji_removing">Removing custom emoji…</string>
-    <string name="emoji_updating_apps">Updating emoji in apps…</string>
-    <string name="emoji_install_message">These emoji replace the system emoji in every app that uses the system font. Restarting now restarts SystemUI and closes all running apps so they pick up the new emoji. If you restart later, each app switches the next time it starts.</string>
-    <string name="emoji_install_restart_now">Install and restart</string>
-    <string name="emoji_install_restart_later">Install, restart later</string>
-    <string name="emoji_remove_title">Remove custom emoji?</string>
-    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji already copied into apps stay until those apps download their own again or you clear their data.</string>
-    <string name="emoji_remove_restart_now">Remove and restart</string>
-    <string name="emoji_remove_restart_later">Remove, restart later</string>
-    <string name="emoji_pending_systemui_body">%1$s emoji are set. SystemUI and running apps keep the previous emoji until they restart. Restarting closes all running apps.</string>
-    <string name="emoji_apps_section">Third-party apps</string>
-    <string name="emoji_apps_summary">Some apps ship or download their own emoji (Facebook, Messenger, and apps using Google\'s downloadable emoji). Resetting them copies your emoji font over theirs.</string>
-    <string name="emoji_apps_reset">Reset third-party apps</string>
-    <string name="emoji_apps_confirm">This copies your emoji font over every emoji font stored in app data, stops Facebook and Messenger from downloading their own, clears the caches of those apps and Gboard, and turns off the Google Play services font provider. Affected apps are force stopped. Run it again after those apps update.</string>
+    <string name="emoji_picker_title">系统表情符号</string>
+    <string name="emoji_picker_summary">使用自定义表情字体</string>
+    <string name="emoji_presets_section">表情样式</string>
+    <string name="emoji_download_size">下载 · %1$s</string>
+    <string name="emoji_downloading">下载中 %1$s… %2$d%%</string>
+    <string name="emoji_applying">应用中 %1$s…</string>
+    <string name="emoji_downloaded">已下载</string>
+    <string name="emoji_downloaded_size">已下载 · %1$s</string>
+    <string name="emoji_download_only">下载，稍后应用</string>
+    <string name="emoji_download_done">%1$s 已下载</string>
+    <string name="emoji_delete_download">删除下载文件</string>
+    <string name="emoji_catalog_error">无法加载表情样式，请检查网络连接。</string>
+    <string name="emoji_catalog_retry">重试</string>
+    <string name="emoji_error_download">表情字体下载失败，请检查网络连接后重试。</string>
+    <string name="emoji_error_checksum">下载的表情字体文件校验失败，请稍后重试。</string>
+    <string name="emoji_custom_section">自定义表情</string>
+    <string name="emoji_replace_custom">安装其他表情字体</string>
+    <string name="emoji_apply_restart_now">应用并重启</string>
+    <string name="emoji_apply_restart_later">应用，稍后重启</string>
+    <string name="emoji_current">当前表情</string>
+    <string name="emoji_add">选择自定义表情字体</string>
+    <string name="emoji_removing">正在移除自定义表情…</string>
+    <string name="emoji_updating_apps">正在更新应用内表情…</string>
+    <string name="emoji_install_message">这些表情会替换所有使用系统字体应用里的系统表情。立即重启将重启系统界面并关闭所有正在运行的应用，使新表情生效；如果稍后重启，各应用会在下次启动时切换。</string>
+    <string name="emoji_install_restart_now">安装并重启</string>
+    <string name="emoji_install_restart_later">安装，稍后重启</string>
+    <string name="emoji_remove_title">是否移除自定义表情？</string>
+    <string name="emoji_remove_message">重启系统界面和应用后，将恢复系统默认表情。立即重启会关闭所有正在运行的应用。已缓存到应用内的表情，会保留至应用自行更新或清除应用数据为止。</string>
+    <string name="emoji_remove_restart_now">移除并重启</string>
+    <string name="emoji_remove_restart_later">移除，稍后重启</string>
+    <string name="emoji_pending_systemui_body">%1$s 表情已设置完成。系统界面和正在运行的应用在重启前仍使用旧表情；重启会关闭所有正在运行的应用。</string>
+    <string name="emoji_apps_section">第三方应用</string>
+    <string name="emoji_apps_summary">部分应用自带或会下载独立表情（Facebook、Messenger 以及使用谷歌可下载表情的应用），重置操作会用你的表情字体覆盖它们自带的表情。</string>
+    <string name="emoji_apps_reset">重置第三方应用</string>
+    <string name="emoji_apps_confirm">该操作会将你的表情字体覆盖应用数据里存储的所有表情字体，阻止 Facebook、Messenger 下载自带表情，清除这些应用和 Gboard 的缓存，并关闭谷歌服务字体提供程序。受影响应用会被强制停止，这些应用更新后需要重新执行本操作。</string>
     <string name="emoji_apps_confirm_button">重置</string>
     <plurals name="emoji_apps_done">
-        <item quantity="other">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
+        <item quantity="other">已替换应用数据内 %1$d 个表情字体。使用可下载表情的应用现在将回退为系统表情。</item>
     </plurals>
-    <string name="emoji_picker_footer">No emoji font is included. Choose a .ttf emoji font of up to 128 MB, for example from an emoji Magisk module (system/fonts/NotoColorEmoji.ttf). It is placed ahead of the system emoji, so any emoji it lacks still come from the system font.</string>
-    <string name="emoji_error_title">Couldn\'t change the emoji</string>
-    <string name="emoji_error_invalid_file">This file isn\'t an emoji font the system can use. Choose a .ttf font of up to 128 MB that contains color emoji.</string>
-    <string name="emoji_error_not_installed">Install a custom emoji font first.</string>
-    <string name="emoji_error_generic">Couldn\'t change the emoji (error %1$d)</string>
+    <string name="emoji_picker_footer">表情样式从 crDroid 主题仓库下载并保存在本机，可直接切换，无需重复下载。你也可以自行添加不超过 128MB 的 TTF 表情字体，例如取自表情 Magisk 模块（system/fonts/NotoColorEmoji.ttf）。当前字体缺失的表情，仍会使用系统表情兜底。</string>
+    <string name="emoji_error_title">无法更改表情</string>
+    <string name="emoji_error_invalid_file">该文件不是系统可用的表情字体，请选择不超过 128MB、包含彩色表情的 TTF 字体。</string>
+    <string name="emoji_error_not_installed">请先安装自定义表情字体。</string>
+    <string name="emoji_error_generic">无法更改表情（错误码 %1$d ）</string>
     <!-- Refresh rate -->
     <string name="default_refresh_rate_title_custom">默认刷新率</string>
     <string name="peak_refresh_rate_title_custom">最高刷新率</string>
@@ -940,15 +957,29 @@
     <string name="solid_accent">纯色强调</string>
     <string name="outline">描边</string>
     <string name="solid_accent_gradient">纯色强调渐变</string>
-    <string name="solid_gradient">纯色渐变侧边</string>
+    <string name="solid_gradient">侧边渐变样式</string>
     <string name="solid_gradient_corner">纯色强调渐变</string>
-    <string name="solid_gradient_void">渐变空白</string>
+    <string name="solid_gradient_void">渐变留白</string>
     <string name="solid_gradient_neumorph">新拟态渐变</string>
     <string name="solid_gradient_stroke">锐角渐变描边</string>
     <string name="solid_accent_transperent">强调色透明</string>
     <string name="solid_gradient_light">渐变亮色</string>
     <string name="solid_gradient_shape">锐角渐变角</string>
-    <string name="solid_gradient_void_light">渐变空白亮色</string>
+    <string name="solid_gradient_void_light">浅色渐变留白</string>
+    <string name="clock_chip_custom_gradient">自定义渐变</string>
+    <!-- Gradient mode - Start color picker -->
+    <string name="clock_chip_gradient_start_color_title">渐变开始颜色</string>
+    <string name="clock_chip_gradient_start_color_summary">渐变起始颜色</string>
+    <!-- Gradient mode - End color picker -->
+    <string name="clock_chip_gradient_end_color_title">渐变结束颜色</string>
+    <string name="clock_chip_gradient_end_color_summary">渐变结束颜色</string>
+    <!-- Gradient mode - Angle seekbar -->
+    <string name="clock_chip_gradient_angle_title">渐变角度</string>
+    <string name="clock_chip_gradient_angle_summary">渐变方向（0° = 从左到右，90° = 从下到上）</string>
+    <!-- Gradient mode - Mask text -->
+    <string name="clock_chip_gradient_mask_text_title">时钟文字样式</string>
+    <string name="clock_chip_gradient_mask_text_default">默认</string>
+    <string name="clock_chip_gradient_mask_text_mask">透明（蒙版）</string>
     <!-- Weather -->
     <string name="weather_settings_title">天气设置</string>
     <string name="weather_settings_summary">设置图标包与天气服务</string>
@@ -1309,6 +1340,7 @@
     <string name="lockscreen_custom_clock_size_summary">调整锁屏时钟大小</string>
     <string name="lockscreen_custom_clock_aod_anim_title">自定义时钟AOD动画</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">设置自定义时钟样式的 AOD 动画</string>
+    <string name="lockscreen_custom_clock_browse_all_clocks">浏览全部时钟样式</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">快捷设置面板样式</string>
     <string name="qs_panel_style_card">卡片样式</string>
@@ -1421,6 +1453,11 @@
     <string name="spoof_wipe_playstore_message">完整性校验结果由Play商店缓存。清除其数据可让新配置立即生效，但会退出Play商店账号并清空下载队列。</string>
     <string name="spoof_wipe_confirm">清除数据</string>
     <string name="spoof_choice_select">选择</string>
+    <string name="spoof_check_interval_title">检查间隔</string>
+    <string name="spoof_interval_hours_short">%d 小时</string>
+    <plurals name="spoof_interval_hours">
+        <item quantity="other">%d 小时</item>
+    </plurals>
     <!-- Play Integrity Fix -->
     <string name="pif_active_config">当前使用的配置</string>
     <string name="pif_no_config">未加载配置</string>
@@ -1452,9 +1489,9 @@
     <string name="pif_channel_latest_release_summary">当前测试版OTA 的指纹</string>
     <string name="pif_channel_canary_release">测试版本</string>
     <string name="pif_channel_canary_release_summary">最新的 Canary 版本从 Android Flash 工具</string>
-    <!-- Play Integrity Fix: daily auto-refresh of a fetched fingerprint -->
+    <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
     <string name="pif_auto_refresh_title">自动刷新指纹</string>
-    <string name="pif_auto_refresh_summary_on">每日在%2$s渠道检查是否存在更新的%1$s指纹。一旦检测到，就会应用该指纹并清除Play商店数据</string>
+    <string name="pif_auto_refresh_summary_on">每 %3$s 检查 %2$s 渠道上是否有新版 %1$s 指纹。找到后自动应用，并清除Play商店数据</string>
     <string name="pif_auto_refresh_summary_off">关闭。%1$s 的指纹（%2$s）仅在获取或导入指纹时才会变更</string>
     <string name="pif_auto_refresh_last_checked">上次检查于：%1$s</string>
     <string name="pif_auto_refresh_channel_name">Play 完整性修复</string>
@@ -1496,6 +1533,8 @@
     <string name="ts_import_keybox">导入Keybox密钥</string>
     <string name="ts_replace_keybox">替换Keybox密钥</string>
     <string name="ts_check_status">检查状态</string>
+    <string name="ts_find_keybox">去哪里获取 Keybox？</string>
+    <string name="ts_no_browser">未找到可打开链接的浏览器</string>
     <string name="ts_no_keybox">未安装Keybox密钥</string>
     <string name="ts_keybox_installed">已安装Keybox密钥</string>
     <string name="ts_keybox_imported">Keybox密钥导入成功</string>
@@ -1514,14 +1553,20 @@
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Keybox 提醒</string>
     <string name="ts_alerts_summary_off">关闭。Keybox 被吊销或即将到期时不会通知你</string>
-    <string name="ts_alerts_summary_on">每日向谷歌核验。Keybox 被吊销时会通知你</string>
-    <string name="ts_alerts_summary_scheduled">每日向 Google 查询吊销状态，将于 %1$s 发送到期提醒</string>
-    <string name="ts_alerts_summary_due">该 Keybox 将在一天内到期，请尽快导入新的 Keybox</string>
+    <string name="ts_alerts_summary_on">每 %1$s 向谷歌核验一次。Keybox 被吊销时会通知你</string>
+    <string name="ts_alerts_summary_scheduled">每 %1$s 向 Google 查询吊销状态，下次到期提醒时间为 %2$s</string>
+    <string name="ts_alerts_summary_due">Keybox 即将到期，请导入新的 Keybox</string>
+    <string name="ts_alerts_lead_title">到期前提醒</string>
+    <plurals name="ts_alerts_lead_days">
+        <item quantity="other">%d 天</item>
+    </plurals>
     <string name="ts_alerts_summary_expired">该 Keybox 已到期，请导入新的 Keybox 以重新接收提醒</string>
     <string name="ts_alerts_summary_blocked">设置的通知权限已关闭，无法展示提醒</string>
     <string name="ts_alerts_channel_name">Keybox 提醒</string>
-    <string name="ts_alerts_channel_description">当 TrickyStore 的 Keybox 被谷歌吊销或距离到期仅剩一天时向你发送通知</string>
-    <string name="ts_alert_expiry_title">Keybox 将在 1 天后到期</string>
+    <string name="ts_alerts_channel_description">当 TrickyStore 的 Keybox 被谷歌吊销或即将到期时向你发送通知</string>
+    <plurals name="ts_alert_expiry_title">
+        <item quantity="other">Keybox 将于 %d 天后到期</item>
+    </plurals>
     <string name="ts_alert_expiry_text">你的 TrickyStore Keybox 将于 %1$s 到期，请尽快导入新Keybox以维持Play Integrity校验通过。</string>
     <string name="ts_alert_revoked_title">Keybox 已吊销</string>
     <string name="ts_alert_revoked_text">谷歌已吊销你的 TrickyStore Keybox（原因：%1$s ）。在导入新Keybox前，强完整性校验会失败。</string>
