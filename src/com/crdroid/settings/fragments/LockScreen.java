@@ -41,7 +41,6 @@ import com.crdroid.settings.fragments.lockscreen.MediaArtSettings;
 import com.crdroid.settings.fragments.lockscreen.UdfpsAnimation;
 import com.crdroid.settings.fragments.lockscreen.UdfpsIconPicker;
 import com.crdroid.settings.utils.DeviceUtils;
-import com.crdroid.settings.utils.SystemUtils;
 
 import java.util.List;
 
@@ -110,7 +109,6 @@ public class LockScreen extends SettingsPreferenceFragment
         mSmartspace.setOnPreferenceChangeListener(this);
 
         mWeather = (SwitchPreferenceCompat) findPreference(KEY_WEATHER);
-        mWeather.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -118,11 +116,6 @@ public class LockScreen extends SettingsPreferenceFragment
         if (preference == mSmartspace) {
             mSmartspace.setChecked((Boolean)newValue);
             updateWeatherSettings();
-            SystemUtils.showSystemUiRestartDialog(getContext());
-            return true;
-        } else if (preference == mWeather) {
-            mWeather.setChecked((Boolean)newValue);
-            SystemUtils.showSystemUiRestartDialog(getContext());
             return true;
         }
 
