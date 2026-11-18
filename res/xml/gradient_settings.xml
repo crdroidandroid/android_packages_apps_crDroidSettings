@@ -59,6 +59,16 @@
             android:key="custom_gradient_end_color"
             android:title="@string/custom_gradient_end_color_title"
             android:defaultValue="#ff0000" />
+
+        <com.crdroid.settings.preferences.SystemSettingSeekBarPreference
+            android:key="custom_gradient_angle"
+            android:title="@string/custom_gradient_angle_title"
+            android:summary="@string/custom_gradient_angle_summary"
+            android:defaultValue="0"
+            android:max="360"
+            settings:min="0"
+            settings:interval="1"
+            settings:units="°" />
     </PreferenceCategory>
 
 </PreferenceScreen>

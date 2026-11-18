@@ -97,6 +97,10 @@ class GradientSettings : SettingsPreferenceFragment() {
                 resolver, Settings.System.CUSTOM_GRADIENT_END_COLOR, 0,
                 UserHandle.USER_CURRENT
             )
+            Settings.System.putIntForUser(
+                resolver, Settings.System.CUSTOM_GRADIENT_ANGLE, 0,
+                UserHandle.USER_CURRENT
+            )
         }
     }
 }
