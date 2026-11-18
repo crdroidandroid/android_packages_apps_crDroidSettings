@@ -599,6 +599,8 @@ internal sealed interface EmojiDialog {
     class Install(val preview: EmojiFilePreview) : EmojiDialog
     data object Remove : EmojiDialog
     data object UpdateApps : EmojiDialog
+    data object RestoreApps : EmojiDialog
+    data object AppsRestored : EmojiDialog
     data class AppsUpdated(val files: Int) : EmojiDialog
     data class Error(val message: String) : EmojiDialog
 }
@@ -789,6 +791,20 @@ class EmojiPickerViewModel(application: Application) : AndroidViewModel(applicat
             val result = withContext(Dispatchers.IO) { repo.applyToApps() }
             dialog = if (result >= 0) EmojiDialog.AppsUpdated(result)
             else EmojiDialog.Error(errorMessage(result))
+        }
+    }
+
+    /**
+     * Puts back the emoji fonts an earlier reset overwrote in app data. clearCustomEmoji does
+     * this whether or not a custom font is installed, so it also repairs apps left with the
+     * old font after the custom one was removed.
+     */
+    internal fun restoreApps() {
+        dialog = null
+        EmojiOps.run(EmojiBusy.UpdatingApps) {
+            val code = withContext(Dispatchers.IO) { repo.clear() }
+            dialog = if (code == FontManager.RESULT_SUCCESS) EmojiDialog.AppsRestored
+            else EmojiDialog.Error(errorMessage(code))
         }
     }
 

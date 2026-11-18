@@ -212,15 +212,18 @@ internal fun EmojiPickerContent(vm: EmojiPickerViewModel, onPickFont: () -> Unit
             )
         }
 
-        if (vm.selectedKey != EmojiRepository.DEFAULT_KEY) {
-            Spacer(Modifier.height(24.dp))
-            SectionLabel(stringResource(R.string.emoji_apps_section))
-            AppsCard(
-                enabled = busy == null,
-                loading = busy is EmojiBusy.UpdatingApps,
-                onClick = { vm.showDialog(EmojiDialog.UpdateApps) },
-            )
-        }
+        // With the system emoji, the card puts back app fonts an earlier reset overwrote.
+        val restore = vm.selectedKey == EmojiRepository.DEFAULT_KEY
+        Spacer(Modifier.height(24.dp))
+        SectionLabel(stringResource(R.string.emoji_apps_section))
+        AppsCard(
+            restore = restore,
+            enabled = busy == null,
+            loading = busy is EmojiBusy.UpdatingApps,
+            onClick = {
+                vm.showDialog(if (restore) EmojiDialog.RestoreApps else EmojiDialog.UpdateApps)
+            },
+        )
 
         SpoofFooter(text = stringResource(R.string.emoji_picker_footer))
     }
@@ -470,7 +473,7 @@ private fun EmojiRow(text: String, style: TextStyle, family: FontFamily) {
 }
 
 @Composable
-private fun AppsCard(enabled: Boolean, loading: Boolean, onClick: () -> Unit) {
+private fun AppsCard(restore: Boolean, enabled: Boolean, loading: Boolean, onClick: () -> Unit) {
     Surface(
         modifier = Modifier.fillMaxWidth(),
         shape = SpoofShapes.single,
@@ -478,13 +481,17 @@ private fun AppsCard(enabled: Boolean, loading: Boolean, onClick: () -> Unit) {
     ) {
         Column(Modifier.padding(16.dp)) {
             Text(
-                text = stringResource(R.string.emoji_apps_summary),
+                text = stringResource(
+                    if (restore) R.string.emoji_apps_restore_summary else R.string.emoji_apps_summary,
+                ),
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
             Spacer(Modifier.height(12.dp))
             SpoofPrimaryAction(
-                text = stringResource(R.string.emoji_apps_reset),
+                text = stringResource(
+                    if (restore) R.string.emoji_apps_restore else R.string.emoji_apps_reset,
+                ),
                 icon = Icons.Rounded.Apps,
                 onClick = onClick,
                 enabled = enabled,
@@ -567,6 +574,26 @@ private fun EmojiDialogs(vm: EmojiPickerViewModel) {
             confirmText = stringResource(R.string.emoji_apps_confirm_button),
             onConfirm = vm::updateApps,
             onDismiss = vm::dismissDialog,
+        )
+        EmojiDialog.RestoreApps -> SpoofConfirmDialog(
+            title = stringResource(R.string.emoji_apps_restore),
+            message = stringResource(R.string.emoji_apps_restore_confirm),
+            confirmText = stringResource(R.string.emoji_apps_restore_button),
+            onConfirm = vm::restoreApps,
+            onDismiss = vm::dismissDialog,
+        )
+        EmojiDialog.AppsRestored -> SpoofDialog(
+            onDismissRequest = vm::dismissDialog,
+            title = stringResource(R.string.emoji_apps_restore),
+            text = {
+                Text(
+                    stringResource(R.string.emoji_apps_restored),
+                    style = MaterialTheme.typography.bodyMedium,
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = vm::dismissDialog) { Text(stringResource(android.R.string.ok)) }
+            },
         )
         is EmojiDialog.AppsUpdated -> SpoofDialog(
             onDismissRequest = vm::dismissDialog,
