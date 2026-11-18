@@ -34,13 +34,11 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.crdroid.ThemeUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.widget.LayoutPreference;
 
 import com.android.settings.core.SubSettingLauncher;
-import com.crdroid.settings.utils.SystemUtils;
 
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
@@ -59,7 +57,6 @@ public class CustomClockPreview extends SettingsPreferenceFragment {
 
     private int mClockPosition = 0;
 
-    private ThemeUtils mThemeUtils;
     private Handler mHandler = new Handler();
 
     private static final int[] CLOCK_LAYOUTS = ClockUtils.INSTANCE.getCLOCK_LAYOUTS();
@@ -69,7 +66,6 @@ public class CustomClockPreview extends SettingsPreferenceFragment {
         super.onCreate(savedInstanceState);
 
         getActivity().setTitle(getString(R.string.lockscreen_custom_clock_style_title));
-        mThemeUtils = ThemeUtils.getInstance(getActivity());
 
         addPreferencesFromResource(R.xml.lockscreen_clock_preview_settings);
     }
@@ -108,10 +104,7 @@ public class CustomClockPreview extends SettingsPreferenceFragment {
             int currentClock = Settings.Secure.getIntForUser(
                     ctx.getContentResolver(), Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_STYLE, 0, UserHandle.USER_CURRENT);
             if (mClockPosition != currentClock) {
-                Settings.Secure.putIntForUser(
-                        ctx.getContentResolver(), Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_STYLE, mClockPosition, UserHandle.USER_CURRENT);
-                updateClockOverlays(mClockPosition);
-                SystemUtils.restartSystemUI(ctx);
+                ClockUtils.applyClockStyle(ctx, mClockPosition);
             }
         });
 
@@ -159,17 +152,6 @@ public class CustomClockPreview extends SettingsPreferenceFragment {
         if (clockNameTextView != null && position >= 0 && position < clockNames.length) {
             clockNameTextView.setText(clockNames[position]);
         }
-    }
-
-    private void updateClockOverlays(int clockStyle) {
-        mThemeUtils.setOverlayEnabled(
-                "android.theme.customization.hideclock",
-                clockStyle != 0 ? "com.android.systemui.clocks.hideclock" : "android",
-                "android");
-        mThemeUtils.setOverlayEnabled(
-                "android.theme.customization.smartspace",
-                clockStyle != 0 ? "com.android.systemui.hide.smartspace" : "com.android.systemui",
-                "com.android.systemui");
     }
 
     private boolean isFirstTime() {

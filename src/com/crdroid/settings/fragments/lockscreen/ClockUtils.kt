@@ -5,9 +5,25 @@
 
 package com.crdroid.settings.fragments.lockscreen
 
+import android.content.Context
+import android.os.UserHandle
+import android.provider.Settings
 import com.android.settings.R
 
 object ClockUtils {
+
+    /**
+     * Applies a custom lock screen clock style.
+     */
+    @JvmStatic
+    fun applyClockStyle(context: Context, clockStyle: Int) {
+        Settings.Secure.putIntForUser(
+            context.contentResolver,
+            Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_STYLE,
+            clockStyle,
+            UserHandle.USER_CURRENT
+        )
+    }
 
     val CLOCK_LAYOUTS = intArrayOf(
         R.layout.keyguard_clock_default,
