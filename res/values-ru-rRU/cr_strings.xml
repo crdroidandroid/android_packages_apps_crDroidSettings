@@ -454,7 +454,7 @@
     <string name="emoji_install_restart_now">Установить и перезапустить</string>
     <string name="emoji_install_restart_later">Установить, перезапустить позже</string>
     <string name="emoji_remove_title">Удалить свои эмоции?</string>
-    <string name="emoji_remove_message">Системные эмоции вернутся после перезапуска интерфейса системы и приложений. Перезапуск закрывает все запущенные приложения. Эмоции, скопированные в приложения, сохранятся до тех пор, пока эти приложения не загрузят свои собственные эмоции снова или вы не очистите их данные.</string>
+    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji fonts copied into apps are deleted so those apps fetch their own again, and affected apps are force stopped.</string>
     <string name="emoji_remove_restart_now">Удалить и перезапустить</string>
     <string name="emoji_remove_restart_later">Удалить, перезапустить позже</string>
     <string name="emoji_pending_systemui_body">Эмоции %1$s установлены. В системном интерфейсе и запущенных приложениях будут отображаться прежние эмоции — до тех пор, пока эти приложения не будут перезапущены. При перезапуске интерфейса системы, все запущенные приложения будут закрыты.</string>
@@ -463,6 +463,11 @@
     <string name="emoji_apps_reset">Сбросить сторонние приложения</string>
     <string name="emoji_apps_confirm">Это скопирует ваш шрифт эмоций поверх всех шрифтов эмоций, хранящихся в данных приложений, предотвращает загрузку собственных шрифтов приложениями Facebook и Messenger, очищает кэш этих приложений и клавиатуры Gboard, а также отключает поставщика шрифтов в сервисах Google Play. Работа затронутых приложений принудительно завершается. Запускайте программы повторно, после обновления этих приложений.</string>
     <string name="emoji_apps_confirm_button">Сброс</string>
+    <string name="emoji_apps_restore_summary">If apps such as Gboard, Facebook or Messenger still show emoji from a font you removed, restoring them deletes the copied emoji fonts so each app fetches its own again.</string>
+    <string name="emoji_apps_restore">Restore third-party apps</string>
+    <string name="emoji_apps_restore_confirm">This deletes every emoji font stored in app data, lets Facebook and Messenger download their own again, clears the caches of those apps and Gboard, and turns the Google Play services font provider back on. Affected apps are force stopped.</string>
+    <string name="emoji_apps_restore_button">Restore</string>
+    <string name="emoji_apps_restored">Apps that had a copied emoji font now fetch their own again.</string>
     <plurals name="emoji_apps_done">
         <item quantity="one">В данных приложений заменён шрифт эмоций на %1$d. Теперь приложения, использующие загружаемые эмоции, будут обращаться к системным эмоциям.</item>
         <item quantity="few">В данных приложений заменены шрифты эмоций на %1$d. Теперь приложения, использующие загружаемые эмоции, будут обращаться к системным эмоциям.</item>
@@ -1336,6 +1341,8 @@
     <string name="custom_gradient_color_mode_custom">Свой режим</string>
     <string name="custom_gradient_start_color_title">Цвет начала градиента</string>
     <string name="custom_gradient_end_color_title">Цвет завершения градиента</string>
+    <string name="custom_gradient_angle_title">Угол градиента</string>
+    <string name="custom_gradient_angle_summary">Rotates the gradient counter-clockwise. At 0° it flows from start to end, along the fill direction for sliders</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">Свой стиль часов</string>
     <string name="lockscreen_custom_clock_style_summary">Настройка стилей часов на экране блокировки</string>
@@ -1348,6 +1355,8 @@
     <string name="lockscreen_custom_clock_color_mode_title">Цветовой режим часов</string>
     <string name="lockscreen_custom_clock_size_title">Размер часов</string>
     <string name="lockscreen_custom_clock_size_summary">Масштабирование часов экрана блокировки</string>
+    <string name="lockscreen_custom_clock_dynamic_size_title">Dynamic clock size</string>
+    <string name="lockscreen_custom_clock_dynamic_size_summary">Enlarge the clock when there are no notifications or media on the lock screen. Very large clock styles keep their size</string>
     <string name="lockscreen_custom_clock_aod_anim_title">Анимация часов всегда включенного экрана</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">Установить анимацию всегда включенного экрана для своего стиля часов</string>
     <string name="lockscreen_custom_clock_browse_all_clocks">Просмотреть все часы</string>
