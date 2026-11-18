@@ -48,6 +48,13 @@
         settings:min="50"
         settings:units="%" />
 
+    <!-- Same setting as the AOSP double-line clock toggle -->
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="lockscreen_use_double_line_clock"
+        android:title="@string/lockscreen_custom_clock_dynamic_size_title"
+        android:summary="@string/lockscreen_custom_clock_dynamic_size_summary"
+        android:defaultValue="true" />
+
     <com.crdroid.settings.preferences.colorpicker.SecureSettingColorPickerPreference
         android:key="lock_screen_custom_clock_custom_color"
         android:title="@string/custom_color"
