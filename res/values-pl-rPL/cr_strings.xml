@@ -454,7 +454,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="emoji_install_restart_now">Zainstaluj i uruchom ponownie</string>
     <string name="emoji_install_restart_later">Zainstaluj, uruchom ponownie później</string>
     <string name="emoji_remove_title">Usunąć własne emotikony?</string>
-    <string name="emoji_remove_message">Systemowe emotikony powracają po ponownym uruchomieniu systemowego interfejsu użytkownika i aplikacji. Ponowne uruchomienie spowoduje zamknięcie wszystkich uruchomionych aplikacji. Emotikony już skopiowane do aplikacji pozostaną w nich do momentu, aż aplikacje te ponownie pobiorą własne emotikony lub dopóki nie wyczyścisz ich danych.</string>
+    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji fonts copied into apps are deleted so those apps fetch their own again, and affected apps are force stopped.</string>
     <string name="emoji_remove_restart_now">Usuń i uruchom ponownie</string>
     <string name="emoji_remove_restart_later">Usuń, uruchom ponownie później</string>
     <string name="emoji_pending_systemui_body">Ustawiono emotikony %1$s. Systemowy interfejs użytkownika i uruchomione aplikacje zachowują poprzednie emotikony do momentu ponownego uruchomienia. Ponowne uruchomienie powoduje zamknięcie wszystkich uruchomionych aplikacji.</string>
@@ -463,6 +463,11 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="emoji_apps_reset">Zresetuj aplikacje zewnętrzne</string>
     <string name="emoji_apps_confirm">Ta operacja zastępuje czcionkę emotikonów czcionką użytkownika we wszystkich czcionkach emotikonów zapisanych w danych aplikacji, blokuje pobieranie własnych czcionek przez Facebooka i Messengera, czyści pamięć podręczną tych aplikacji oraz klawiatury Gboard, a także wyłącza dostawcę czcionek w usługach Google Play. Aplikacje, których to dotyczy, zostaną przymusowo zatrzymane. Uruchom tę operację ponownie po aktualizacji tych aplikacji.</string>
     <string name="emoji_apps_confirm_button">Resetuj</string>
+    <string name="emoji_apps_restore_summary">If apps such as Gboard, Facebook or Messenger still show emoji from a font you removed, restoring them deletes the copied emoji fonts so each app fetches its own again.</string>
+    <string name="emoji_apps_restore">Restore third-party apps</string>
+    <string name="emoji_apps_restore_confirm">This deletes every emoji font stored in app data, lets Facebook and Messenger download their own again, clears the caches of those apps and Gboard, and turns the Google Play services font provider back on. Affected apps are force stopped.</string>
+    <string name="emoji_apps_restore_button">Restore</string>
+    <string name="emoji_apps_restored">Apps that had a copied emoji font now fetch their own again.</string>
     <plurals name="emoji_apps_done">
         <item quantity="one">W danych aplikacji zastąpiono czcionkę emotikony %1$d. Aplikacje korzystające z emotikonów do pobrania będą teraz wyświetlać emotikony systemowe.</item>
         <item quantity="few">W danych aplikacji zastąpiono czcionki emotikonów %1$d. Aplikacje korzystające z emotikonów do pobrania będą teraz wyświetlać emotikony systemowe.</item>
@@ -1338,6 +1343,8 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="custom_gradient_color_mode_custom">Tryb użytkownika</string>
     <string name="custom_gradient_start_color_title">Kolor początkowy gradientu</string>
     <string name="custom_gradient_end_color_title">Kolor końcowy gradientu</string>
+    <string name="custom_gradient_angle_title">Kąt gradientu</string>
+    <string name="custom_gradient_angle_summary">Rotates the gradient counter-clockwise. At 0° it flows from start to end, along the fill direction for sliders</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">Własny styl zegara</string>
     <string name="lockscreen_custom_clock_style_summary">Skonfiguruj style zegara na ekranie blokady</string>
@@ -1350,6 +1357,8 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="lockscreen_custom_clock_color_mode_title">Własny tryb kolorów zegara</string>
     <string name="lockscreen_custom_clock_size_title">Rozmiar zegara</string>
     <string name="lockscreen_custom_clock_size_summary">Skaluj zegar ekranu blokady</string>
+    <string name="lockscreen_custom_clock_dynamic_size_title">Dynamic clock size</string>
+    <string name="lockscreen_custom_clock_dynamic_size_summary">Enlarge the clock when there are no notifications or media on the lock screen. Very large clock styles keep their size</string>
     <string name="lockscreen_custom_clock_aod_anim_title">Własna animacja zegara ekranu zawsze włączonego</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">Ustaw animację w trybie ekran zawsze włączony dla własnego stylu zegara</string>
     <string name="lockscreen_custom_clock_browse_all_clocks">Przeglądaj wszystkie zegary</string>
