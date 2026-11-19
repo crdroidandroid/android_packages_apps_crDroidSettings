@@ -27,7 +27,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.internal.util.crdroid.ThemeUtils
 import com.android.settings.R
-import com.crdroid.settings.utils.SystemUtils
 import java.util.concurrent.Executors
 import kotlin.math.min
 
@@ -139,9 +138,7 @@ class LockClockFontsPreference @JvmOverloads constructor(
     ) : RecyclerView.Adapter<FontsAdapter.FontsViewHolder>() {
 
         private var selectedPkg: String = getApplied(themeUtils)
-        private val appliedPkg: String = selectedPkg
 
-        private val overlayExecutor = Executors.newSingleThreadExecutor()
         private val mainHandler = Handler(Looper.getMainLooper())
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FontsViewHolder {
@@ -168,40 +165,30 @@ class LockClockFontsPreference @JvmOverloads constructor(
             holder.itemView.isActivated = (pkg == selectedPkg)
 
             holder.itemView.setOnClickListener {
-                val pkg = pkgs[position]
-                if (pkg == selectedPkg) return@setOnClickListener
+                val pos = holder.bindingAdapterPosition
+                if (pos == RecyclerView.NO_POSITION) return@setOnClickListener
+                val pending = pkgs[pos]
+                if (pending == selectedPkg) return@setOnClickListener
 
                 val old = selectedPkg
-                val pending = pkg
-
                 selectedPkg = pending
-                notifyItemChanged(pkgs.indexOf(old).takeIf { it >= 0 } ?: 0)
-                notifyItemChanged(position)
+                pkgs.indexOf(old).takeIf { it >= 0 }?.let { notifyItemChanged(it) }
+                notifyItemChanged(pos)
 
                 dialog?.dismiss()
 
-                showSystemUiRestartDialogWithAction(ctx,
-                    onConfirm = {
-                        applyOverlayInBackground(
-                            old, pending,
-                            onFailed = {
-                                selectedPkg = old
-                                notifyDataSetChanged()
-                                Toast.makeText(
-                                    ctx, R.string.toast_failed_apply_font,
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
-                        ) {
-                            SystemUtils.restartSystemUI(ctx)
-                        }
+                applyOverlayInBackground(
+                    old, pending,
+                    onFailed = {
+                        selectedPkg = old
+                        notifyDataSetChanged()
+                        updateSummary()
+                        Toast.makeText(
+                            ctx, R.string.toast_failed_apply_font,
+                            Toast.LENGTH_SHORT
+                        ).show()
                     },
-                    onLater = {
-                        mainHandler.post {
-                            themeUtils.setOverlayEnabled(CATEGORY, old, old)
-                            themeUtils.setOverlayEnabled(CATEGORY, pending, "android")
-                        }
-                    }
+                    onDone = { updateSummary() }
                 )
             }
         }
@@ -224,23 +211,6 @@ class LockClockFontsPreference @JvmOverloads constructor(
                     mainHandler.post { onFailed() }
                 }
             }
-        }
-
-        private fun showSystemUiRestartDialogWithAction(
-            ctx: Context,
-            onConfirm: () -> Unit,
-            onLater: () -> Unit
-        ) {
-            androidx.appcompat.app.AlertDialog.Builder(ctx)
-                .setTitle(R.string.systemui_restart_title)
-                .setMessage(R.string.systemui_restart_message)
-                .setPositiveButton(R.string.systemui_restart_yes) { _, _ ->
-                    onConfirm()
-                }
-                .setNegativeButton(R.string.systemui_restart_not_now) { _, _ ->
-                    onLater()
-                }
-                .show()
         }
 
         inner class FontsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -267,6 +237,8 @@ class LockClockFontsPreference @JvmOverloads constructor(
         private const val CATEGORY = "android.theme.customization.lockscreen_clock_font"
         private const val DIALOG_MAX_WIDTH_DP = 360
         private const val DIALOG_MAX_WIDTH_DP_LANDSCAPE = 640
+
+        private val overlayExecutor = Executors.newSingleThreadExecutor()
 
         private fun getApplied(themeUtils: ThemeUtils): String {
             return themeUtils.getOverlayInfos(CATEGORY)
