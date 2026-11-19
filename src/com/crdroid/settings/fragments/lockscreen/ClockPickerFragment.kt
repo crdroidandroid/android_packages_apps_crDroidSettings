@@ -6,6 +6,7 @@
 package com.crdroid.settings.fragments.lockscreen
 
 import android.app.WallpaperManager
+import android.content.Context
 import android.os.Bundle
 import android.os.UserHandle
 import android.provider.Settings
@@ -81,6 +82,7 @@ import androidx.fragment.app.Fragment
 import com.android.settings.R
 import com.android.settingslib.spa.framework.theme.SettingsTheme
 import com.google.android.material.appbar.AppBarLayout
+import kotlin.math.min
 import kotlin.math.roundToInt
 
 class ClockPickerFragment : Fragment() {
@@ -273,20 +275,12 @@ private fun ClockItem(
 
                 AndroidView(
                     factory = { ctx ->
-                        FrameLayout(ctx).apply {
-                            clipChildren = false
-                            clipToPadding = false
+                        ClockPreviewFrame(ctx).apply {
                             isClickable = false
                             isFocusable = false
                             descendantFocusability = ViewGroup.FOCUS_BLOCK_DESCENDANTS
 
                             LayoutInflater.from(ctx).inflate(layoutRes, this, true)
-
-                            if (childCount > 0) {
-                                val child = getChildAt(0)
-                                child.scaleX = 0.45f
-                                child.scaleY = 0.45f
-                            }
                         }
                     },
                     modifier = Modifier.fillMaxSize()
@@ -323,6 +317,53 @@ private fun ClockItem(
                 overflow = TextOverflow.Ellipsis
             )
         }
+    }
+}
+
+private class ClockPreviewFrame(context: Context) : FrameLayout(context) {
+
+    private val density = context.resources.displayMetrics.density
+    private val previewWidthPx = (PREVIEW_WIDTH_DP * density).roundToInt()
+    private val previewTopPx = PREVIEW_TOP_DP * density
+    private var previewScale = 1f
+
+    init {
+        clipChildren = true
+        clipToPadding = true
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        val width = MeasureSpec.getSize(widthMeasureSpec)
+        val height = MeasureSpec.getSize(heightMeasureSpec)
+        previewScale = if (width > 0) min(1f, width.toFloat() / previewWidthPx) else 1f
+        val childWidthSpec = MeasureSpec.makeMeasureSpec(previewWidthPx, MeasureSpec.EXACTLY)
+        val childHeightSpec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED)
+        for (i in 0 until childCount) {
+            getChildAt(i).measure(childWidthSpec, childHeightSpec)
+        }
+        setMeasuredDimension(width, height)
+    }
+
+    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
+        val width = right - left
+        val childLeft = (width - previewWidthPx) / 2
+        val childTop = (previewTopPx * previewScale).roundToInt()
+        for (i in 0 until childCount) {
+            val child = getChildAt(i)
+            child.layout(
+                childLeft, childTop,
+                childLeft + child.measuredWidth, childTop + child.measuredHeight
+            )
+            child.pivotX = child.measuredWidth / 2f
+            child.pivotY = 0f
+            child.scaleX = previewScale
+            child.scaleY = previewScale
+        }
+    }
+
+    private companion object {
+        const val PREVIEW_WIDTH_DP = 170
+        const val PREVIEW_TOP_DP = 30f
     }
 }
 
