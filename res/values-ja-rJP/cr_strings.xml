@@ -452,7 +452,7 @@
     <string name="emoji_install_restart_now">インストールして、今すぐ再起動する</string>
     <string name="emoji_install_restart_later">インストールして、後で再起動する</string>
     <string name="emoji_remove_title">カスタム絵文字を削除しますか?</string>
-    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji fonts copied into apps are deleted so those apps fetch their own again, and affected apps are force stopped.</string>
+    <string name="emoji_remove_message">システムUIおよびアプリが再起動すると、システム標準の絵文字が元に戻ります。再起動を実行すると、現在実行中のすべてのアプリが終了します。アプリ内にコピーされていた絵文字フォントは削除されるため、各アプリは改めて独自の絵文字フォントを取得し直すことになります。また、影響を受けるアプリは強制停止されます。</string>
     <string name="emoji_remove_restart_now">削除して、今すぐ再起動</string>
     <string name="emoji_remove_restart_later">削除して、後で再起動</string>
     <string name="emoji_pending_systemui_body">%1$s の絵文字が設定されています。システムUIと実行中のアプリは再起動するまで以前の絵文字を保持します。再起動すると実行中のすべてのアプリが閉じます。</string>
@@ -461,11 +461,11 @@
     <string name="emoji_apps_reset">サードパーティのアプリをリセット</string>
     <string name="emoji_apps_confirm">アプリデータ内に保存されているすべての絵文字フォントにカスタム絵文字フォントを上書きコピーし、FacebookとMessengerによる独自絵文字のダウンロードを停止します。また、対象アプリとGboardのキャッシュを消去し、Google Play開発者サービスのフォントプロバイダを無効にします。影響を受けるアプリは強制停止されます。これらのアプリがアップデートされた場合は、再度実行してください。</string>
     <string name="emoji_apps_confirm_button">リセット</string>
-    <string name="emoji_apps_restore_summary">If apps such as Gboard, Facebook or Messenger still show emoji from a font you removed, restoring them deletes the copied emoji fonts so each app fetches its own again.</string>
-    <string name="emoji_apps_restore">Restore third-party apps</string>
-    <string name="emoji_apps_restore_confirm">This deletes every emoji font stored in app data, lets Facebook and Messenger download their own again, clears the caches of those apps and Gboard, and turns the Google Play services font provider back on. Affected apps are force stopped.</string>
-    <string name="emoji_apps_restore_button">Restore</string>
-    <string name="emoji_apps_restored">Apps that had a copied emoji font now fetch their own again.</string>
+    <string name="emoji_apps_restore_summary">Gboard、Facebook、Messengerなどのアプリがまだあなたが削除したフォントから絵文字を表示している場合、 復元すると、コピーされた絵文字フォントが削除され、各アプリが再び独自のフォントを取得するようになります。</string>
+    <string name="emoji_apps_restore">サードパーティのアプリをリセット</string>
+    <string name="emoji_apps_restore_confirm">これにより、アプリデータ内に保存されているすべての絵文字フォントが削除され、FacebookおよびMessengerがそれぞれ独自の絵文字フォントを再ダウンロードできるようになります。また、これらのアプリとGboardのキャッシュが消去され、Google Play開発者サービスのフォントプロバイダー機能が再び有効になります。対象となるアプリは強制停止されます。</string>
+    <string name="emoji_apps_restore_button">復元</string>
+    <string name="emoji_apps_restored">コピーされた絵文字フォントを持つアプリが再度取得されるようになりました。</string>
     <plurals name="emoji_apps_done">
         <item quantity="other">アプリデータ内の %1$d 個の絵文字フォントを置き換えました。ダウンロード可能な絵文字を使用するアプリでは、システムの絵文字が使用されるようになります。</item>
     </plurals>
@@ -1161,7 +1161,7 @@
     <!-- Smartspace -->
     <string name="lockscreen_smartspace_title">スマートスペース</string>
     <string name="lockscreen_smartspace_summary">利用可能な場合はGoogle Smartspace を表示する</string>
-    <string name="lockscreen_smartspace_custom_clock_info">Not available while a custom clock style is enabled</string>
+    <string name="lockscreen_smartspace_custom_clock_info">カスタム時計スタイルが有効になっている間は利用できません</string>
     <!-- Clipboard auto clear -->
     <string name="clipboard_auto_clear_timeout_title">クリップボード自動消去のタイムアウト</string>
     <string name="clipboard_auto_clear_title">クリップボードを自動的に消去</string>
@@ -1332,7 +1332,7 @@
     <string name="custom_gradient_start_color_title">グラデーションの開始の色</string>
     <string name="custom_gradient_end_color_title">グラデーションの終了の色</string>
     <string name="custom_gradient_angle_title">グラデーションの角度</string>
-    <string name="custom_gradient_angle_summary">Rotates the gradient counter-clockwise. At 0° it flows from start to end, along the fill direction for sliders</string>
+    <string name="custom_gradient_angle_summary">グラデーションを反時計回りに回転させます。0°の場合、グラデーションは始点から終点へと流れます（スライダーの塗りつぶし方向と同じ向きです）</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">カスタム時計スタイル</string>
     <string name="lockscreen_custom_clock_style_summary">ロック画面の時計のスタイルを設定します</string>
@@ -1345,12 +1345,12 @@
     <string name="lockscreen_custom_clock_color_mode_title">カスタムクロックのカラーモード</string>
     <string name="lockscreen_custom_clock_size_title">時計のサイズ</string>
     <string name="lockscreen_custom_clock_size_summary">ロック画面の時計のサイズを変更する</string>
-    <string name="lockscreen_custom_clock_dynamic_size_title">Dynamic clock size</string>
-    <string name="lockscreen_custom_clock_dynamic_size_summary">Enlarge the clock when there are no notifications or media on the lock screen. Very large clock styles keep their size</string>
+    <string name="lockscreen_custom_clock_dynamic_size_title">ダイナミック時計サイズ</string>
+    <string name="lockscreen_custom_clock_dynamic_size_summary">ロック画面に通知やメディアがない場合に時計を大きく表示します。非常に大きな時計スタイルはサイズを維持します</string>
     <string name="lockscreen_custom_clock_aod_anim_title">AODアニメーション</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">カスタム時計スタイルの AOD アニメーションを設定します</string>
     <string name="lockscreen_custom_clock_browse_all_clocks">すべての時計を閲覧する</string>
-    <string name="lockscreen_custom_clock_applied"><xliff:g id="clock_name" example="OnePlus Clock">%1$s</xliff:g> applied</string>
+    <string name="lockscreen_custom_clock_applied"><xliff:g id="clock_name" example="OnePlus Clock">%1$s</xliff:g> が適用されました</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">クイック設定パネルのスタイル</string>
     <string name="qs_panel_style_card">カードスタイル</string>
