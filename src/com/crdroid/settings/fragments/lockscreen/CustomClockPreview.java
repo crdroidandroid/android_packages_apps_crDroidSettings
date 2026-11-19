@@ -103,6 +103,7 @@ public class CustomClockPreview extends SettingsPreferenceFragment {
         viewPager.setCurrentItem(mClockPosition);
 
         applyFab.setOnClickListener(v -> {
+            ClockUtils.performClickFeedback(v, true);
             Context ctx = getContext();
             int currentClock = Settings.Secure.getIntForUser(
                     ctx.getContentResolver(), Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_STYLE, 0, UserHandle.USER_CURRENT);
@@ -110,11 +111,13 @@ public class CustomClockPreview extends SettingsPreferenceFragment {
                 ClockUtils.applyClockStyle(ctx, mClockPosition);
             }
             mAppliedClock = mClockPosition;
+            ClockUtils.showClockAppliedToast(ctx, mClockPosition);
         });
 
         View browseButton = clockPreviewPref.findViewById(R.id.browse_clocks_button);
         if (browseButton != null) {
             browseButton.setOnClickListener(v -> {
+                ClockUtils.performClickFeedback(v);
                 new SubSettingLauncher(getContext())
                     .setDestination(ClockPickerFragment.class.getName())
                     .setTitleRes(R.string.lockscreen_custom_clock_style_title)

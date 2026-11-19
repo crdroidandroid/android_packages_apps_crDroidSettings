@@ -8,6 +8,10 @@ package com.crdroid.settings.fragments.lockscreen
 import android.content.Context
 import android.os.UserHandle
 import android.provider.Settings
+import android.view.HapticFeedbackConstants
+import android.view.SoundEffectConstants
+import android.view.View
+import android.widget.Toast
 import com.android.settings.R
 
 object ClockUtils {
@@ -22,6 +26,26 @@ object ClockUtils {
             Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_STYLE,
             clockStyle,
             UserHandle.USER_CURRENT
+        )
+    }
+
+    @JvmStatic
+    fun showClockAppliedToast(context: Context, clockStyle: Int) {
+        val name = getClockNames().getOrNull(clockStyle) ?: return
+        val appContext = context.applicationContext
+        Toast.makeText(
+            appContext,
+            appContext.getString(R.string.lockscreen_custom_clock_applied, name),
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+
+    @JvmStatic
+    @JvmOverloads
+    fun performClickFeedback(view: View, confirm: Boolean = false, playSound: Boolean = false) {
+        if (playSound) view.playSoundEffect(SoundEffectConstants.CLICK)
+        view.performHapticFeedback(
+            if (confirm) HapticFeedbackConstants.CONFIRM else HapticFeedbackConstants.VIRTUAL_KEY
         )
     }
 

@@ -114,6 +114,7 @@ class ClockPickerFragment : Fragment() {
                         initialClock = initialClock,
                         bottomObscuredPx = { toolbarObscuredPx.intValue },
                         onApply = { clockStyle ->
+                            ClockUtils.performClickFeedback(this@apply, confirm = true, playSound = true)
                             applyClock(clockStyle)
                             requireActivity().onBackPressedDispatcher.onBackPressed()
                         }
@@ -148,6 +149,7 @@ class ClockPickerFragment : Fragment() {
         if (clockStyle == current) return
 
         ClockUtils.applyClockStyle(ctx, clockStyle)
+        ClockUtils.showClockAppliedToast(ctx, clockStyle)
     }
 }
 
