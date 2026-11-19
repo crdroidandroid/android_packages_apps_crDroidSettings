@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.SystemClock;
 import android.os.UserManager;
+import android.service.notification.StatusBarNotification;
 import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
@@ -34,8 +35,13 @@ public class DonateReceiver extends BroadcastReceiver {
     public static final long COOLDOWN_MIN = 30 * 24 * 60; // Monthly reminder
     public static final long INITIAL_DELAY_MIN = 30; // 30-minute after first boot
     public static final long REPEAT_DELAY_MIN = 60; // Repeat after 1 hour if not opened
+    public static final long SNOOZE_DELAY_MIN = 24 * 60; // Remind again a day after swipe-dismiss
+
+    private static final int REQ_DISMISS = 7612;
 
     private static final String ACTION_DONATE_NUDGE = "com.crdroid.settings.action.DONATE_NUDGE";
+    private static final String ACTION_DONATE_DISMISSED =
+            "com.crdroid.settings.action.DONATE_DISMISSED";
  
     @Override
     public void onReceive(Context ctx, Intent intent) {
@@ -68,6 +74,9 @@ public class DonateReceiver extends BroadcastReceiver {
             scheduleNext(ctx, INITIAL_DELAY_MIN);
         } else if (ACTION_DONATE_NUDGE.equals(action)) {
             showDonateNotification(ctx);
+        } else if (ACTION_DONATE_DISMISSED.equals(action)) {
+            Log.d(TAG, "Donate notification dismissed, snoozing");
+            scheduleNext(ctx, SNOOZE_DELAY_MIN);
         }
     }
 
@@ -75,7 +84,7 @@ public class DonateReceiver extends BroadcastReceiver {
         long now = System.currentTimeMillis();
         long last = PreferenceManager.getDefaultSharedPreferences(ctx)
                        .getLong(DONATE_LAST_CHECKED, 0L);
-        long elapsed = (now - last) / (60_000L);
+        long elapsed = Math.max(0, (now - last) / 60_000L);
         if (last > 0 && elapsed < COOLDOWN_MIN) {
             // Reschedule after cooldown
             long remaining = Math.max(1, COOLDOWN_MIN - elapsed);
@@ -87,18 +96,25 @@ public class DonateReceiver extends BroadcastReceiver {
 
     public static void scheduleNext(Context ctx, long delayMinutes) {
         AlarmManager am = (AlarmManager) ctx.getSystemService(Context.ALARM_SERVICE);
+        if (am == null) return;
         PendingIntent pi = PendingIntent.getBroadcast(
                 ctx, REQ_ALARM, new Intent(ACTION_DONATE_NUDGE).setPackage(ctx.getPackageName()),
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
         );
         long triggerAt = SystemClock.elapsedRealtime() + delayMinutes * 60_000L;
         am.cancel(pi);
-        am.setExactAndAllowWhileIdle(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAt, pi);
+        am.setAndAllowWhileIdle(AlarmManager.ELAPSED_REALTIME, triggerAt, pi);
     }
 
     private void showDonateNotification(Context ctx) {
         NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
-        nm.cancel(DONATE_NOTIFICATION_ID);
+        if (nm == null) return;
+        scheduleNext(ctx, REPEAT_DELAY_MIN);
+
+        if (isNotificationShowing(nm)) {
+            Log.d(TAG, "Donate notification already showing, skipping");
+            return;
+        }
 
         createChannelIfNeeded(ctx);
 
@@ -107,18 +123,38 @@ public class DonateReceiver extends BroadcastReceiver {
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
         );
 
+        PendingIntent deletePi = PendingIntent.getBroadcast(
+                ctx, REQ_DISMISS,
+                new Intent(ctx, DonateReceiver.class).setAction(ACTION_DONATE_DISMISSED),
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+        );
+
         NotificationCompat.Builder b = new NotificationCompat.Builder(ctx, DONATE_CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_donate_notification)
                 .setContentTitle(ctx.getString(R.string.crdroid_donate_title))
                 .setContentText(ctx.getString(R.string.crdroid_donate_notification_text))
                 .setContentIntent(contentPi)
+                .setDeleteIntent(deletePi)
                 .setAutoCancel(true)
                 .setOnlyAlertOnce(true)
                 .setPriority(NotificationCompat.PRIORITY_HIGH);
 
         nm.notify(DONATE_NOTIFICATION_ID, b.build());
+    }
 
-        scheduleNext(ctx, REPEAT_DELAY_MIN);
+    private static boolean isNotificationShowing(NotificationManager nm) {
+        try {
+            StatusBarNotification[] active = nm.getActiveNotifications();
+            if (active == null) return false;
+            for (StatusBarNotification sbn : active) {
+                if (sbn.getId() == DONATE_NOTIFICATION_ID && sbn.getTag() == null) {
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+            Log.w(TAG, "Unable to query active notifications", e);
+        }
+        return false;
     }
 
     private void createChannelIfNeeded(Context ctx) {
@@ -134,6 +170,6 @@ public class DonateReceiver extends BroadcastReceiver {
 
     public static void cancelNotification(Context ctx) {
         NotificationManager nm = (NotificationManager) ctx.getSystemService(Context.NOTIFICATION_SERVICE);
-        nm.cancel(DONATE_NOTIFICATION_ID);
+        if (nm != null) nm.cancel(DONATE_NOTIFICATION_ID);
     }
 }

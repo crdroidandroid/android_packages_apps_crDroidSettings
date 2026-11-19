@@ -65,6 +65,7 @@ public class DonateActivity extends AppCompatActivity {
 
         DonateReceiver.cancelNotification(this);
         setLastChecked();
+        DonateReceiver.scheduleNext(this, DonateReceiver.COOLDOWN_MIN);
 
         FragmentManager fm = getSupportFragmentManager();
         DonateFragment fragment = (DonateFragment) fm.findFragmentByTag(DonateFragment.TAG);
