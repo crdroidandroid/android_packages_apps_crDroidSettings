@@ -28,6 +28,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
@@ -47,6 +48,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -67,6 +69,7 @@ import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.Velocity
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -77,9 +80,17 @@ import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import com.android.settings.R
 import com.android.settingslib.spa.framework.theme.SettingsTheme
+import com.google.android.material.appbar.AppBarLayout
 import kotlin.math.roundToInt
 
 class ClockPickerFragment : Fragment() {
+
+    private val toolbarObscuredPx = mutableIntStateOf(0)
+    private var appBarLayout: AppBarLayout? = null
+    private val appBarOffsetListener =
+        AppBarLayout.OnOffsetChangedListener { appBar, verticalOffset ->
+            toolbarObscuredPx.intValue = (appBar.totalScrollRange + verticalOffset).coerceAtLeast(0)
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -101,6 +112,7 @@ class ClockPickerFragment : Fragment() {
                     }
                     ClockPickerScreen(
                         initialClock = initialClock,
+                        bottomObscuredPx = { toolbarObscuredPx.intValue },
                         onApply = { clockStyle ->
                             applyClock(clockStyle)
                             requireActivity().onBackPressedDispatcher.onBackPressed()
@@ -109,6 +121,20 @@ class ClockPickerFragment : Fragment() {
                 }
             }
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        appBarLayout = requireActivity().findViewById<AppBarLayout?>(R.id.app_bar)?.also {
+            toolbarObscuredPx.intValue = (it.totalScrollRange + it.top).coerceAtLeast(0)
+            it.addOnOffsetChangedListener(appBarOffsetListener)
+        }
+    }
+
+    override fun onDestroyView() {
+        appBarLayout?.removeOnOffsetChangedListener(appBarOffsetListener)
+        appBarLayout = null
+        super.onDestroyView()
     }
 
     private fun applyClock(clockStyle: Int) {
@@ -128,6 +154,7 @@ class ClockPickerFragment : Fragment() {
 @Composable
 fun ClockPickerScreen(
     initialClock: Int,
+    bottomObscuredPx: () -> Int = { 0 },
     onApply: (Int) -> Unit
 ) {
     var selectedClock by rememberSaveable { mutableStateOf(initialClock) }
@@ -199,6 +226,7 @@ fun ClockPickerScreen(
                 .align(Alignment.BottomEnd)
                 .navigationBarsPadding()
                 .padding(16.dp)
+                .offset { IntOffset(0, -bottomObscuredPx()) }
         )
     }
 }
