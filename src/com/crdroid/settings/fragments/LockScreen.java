@@ -157,9 +157,17 @@ public class LockScreen extends SettingsPreferenceFragment
     private void updateWeatherSettings() {
         if (mWeather == null || mSmartspace == null) return;
 
-        boolean weatherEnabled = OmniJawsClient.get().isOmniJawsEnabled(getContext());
-        mWeather.setEnabled(!mSmartspace.isChecked() && weatherEnabled);
-        mWeather.setSummary(!mSmartspace.isChecked() && weatherEnabled ? R.string.lockscreen_weather_summary :
+        // Smartspace only works with the AOSP clocks; custom clock styles show OmniJaws weather.
+        final boolean customClock = Settings.Secure.getIntForUser(getContext().getContentResolver(),
+                Settings.Secure.LOCK_SCREEN_CUSTOM_CLOCK_STYLE, 0, UserHandle.USER_CURRENT) != 0;
+        mSmartspace.setEnabled(!customClock);
+        mSmartspace.setSummary(customClock ? R.string.lockscreen_smartspace_custom_clock_info :
+            R.string.lockscreen_smartspace_summary);
+
+        final boolean weatherEnabled = OmniJawsClient.get().isOmniJawsEnabled(getContext());
+        final boolean weatherAvailable = weatherEnabled && (customClock || !mSmartspace.isChecked());
+        mWeather.setEnabled(weatherAvailable);
+        mWeather.setSummary(weatherAvailable ? R.string.lockscreen_weather_summary :
             R.string.lockscreen_weather_enabled_info);
     }
 
