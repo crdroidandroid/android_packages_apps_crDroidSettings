@@ -452,7 +452,7 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="emoji_install_restart_now">Instalar y reiniciar</string>
     <string name="emoji_install_restart_later">Instalar, reiniciar más tarde</string>
     <string name="emoji_remove_title">¿Eliminar emojis personalizados?</string>
-    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji fonts copied into apps are deleted so those apps fetch their own again, and affected apps are force stopped.</string>
+    <string name="emoji_remove_message">Los emojis del sistema volverán una vez que SystemUI y las aplicaciones se reinicien. Reiniciar ahora cerrará todas las aplicaciones en ejecución. Las fuentes de emojis copiadas en las aplicaciones se eliminarán para que estas las obtengan nuevamente, y las aplicaciones afectadas se detendrán de forma forzada.</string>
     <string name="emoji_remove_restart_now">Eliminar y reiniciar</string>
     <string name="emoji_remove_restart_later">Eliminar, reiniciar más tarde</string>
     <string name="emoji_pending_systemui_body">Hay %1$s emojis configurados. SystemUI y las aplicaciones en ejecución conservarán los emojis anteriores hasta que se reinicien. Reiniciar cerrará todas las aplicaciones en ejecución.</string>
@@ -461,11 +461,11 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="emoji_apps_reset">Restablecer aplicaciones de terceros</string>
     <string name="emoji_apps_confirm">Esto copia su fuente de emojis sobre todas las fuentes de emojis almacenadas en los datos de las aplicaciones, impide que Facebook y Messenger descarguen las suyas, borra las cachés de esas aplicaciones y de Gboard, y desactiva el proveedor de fuentes de Google Play Services. Las aplicaciones afectadas se detendrán de forma forzada. Vuelva a ejecutarlo después de que esas aplicaciones se actualicen.</string>
     <string name="emoji_apps_confirm_button">Reiniciar</string>
-    <string name="emoji_apps_restore_summary">If apps such as Gboard, Facebook or Messenger still show emoji from a font you removed, restoring them deletes the copied emoji fonts so each app fetches its own again.</string>
-    <string name="emoji_apps_restore">Restore third-party apps</string>
-    <string name="emoji_apps_restore_confirm">This deletes every emoji font stored in app data, lets Facebook and Messenger download their own again, clears the caches of those apps and Gboard, and turns the Google Play services font provider back on. Affected apps are force stopped.</string>
-    <string name="emoji_apps_restore_button">Restore</string>
-    <string name="emoji_apps_restored">Apps that had a copied emoji font now fetch their own again.</string>
+    <string name="emoji_apps_restore_summary">Si aplicaciones como Gboard, Facebook o Messenger siguen mostrando emojis de una fuente que ha eliminado, restaurarlos eliminará las fuentes de emojis copiadas para que cada aplicación obtenga las suyas nuevamente.</string>
+    <string name="emoji_apps_restore">Restaurar aplicaciones de terceros</string>
+    <string name="emoji_apps_restore_confirm">Esto elimina todas las fuentes de emojis almacenadas en los datos de las aplicaciones, permite que Facebook y Messenger descarguen las suyas nuevamente, borra las cachés de esas aplicaciones y de Gboard, y vuelve a activar el proveedor de fuentes de Google Play Services. Las aplicaciones afectadas se detienen de forma forzada.</string>
+    <string name="emoji_apps_restore_button">Restaurar</string>
+    <string name="emoji_apps_restored">Las aplicaciones que tenían una fuente de emojis copiada ahora obtienen la suya nuevamente.</string>
     <plurals name="emoji_apps_done">
         <item quantity="one">Se reemplazó %1$d fuente de emojis en los datos de las aplicaciones. Las aplicaciones que utilizan emojis descargables ahora utilizan los emojis del sistema.</item>
         <item quantity="other">Se reemplazaron %1$d fuentes de emojis en los datos de las aplicaciones. Las aplicaciones que utilizan emojis descargables ahora utilizan los emojis del sistema.</item>
@@ -1164,7 +1164,7 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <!-- Smartspace -->
     <string name="lockscreen_smartspace_title">Espacio inteligente</string>
     <string name="lockscreen_smartspace_summary">Mostrar Google Smartspace cuando esté disponible</string>
-    <string name="lockscreen_smartspace_custom_clock_info">Not available while a custom clock style is enabled</string>
+    <string name="lockscreen_smartspace_custom_clock_info">No disponible mientras esté habilitado un estilo de reloj personalizado</string>
     <!-- Clipboard auto clear -->
     <string name="clipboard_auto_clear_timeout_title">Tiempo de espera de borrado automático del portapapeles</string>
     <string name="clipboard_auto_clear_title">Borrado automático del portapapeles</string>
@@ -1335,7 +1335,7 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="custom_gradient_start_color_title">Color inicial del degradado</string>
     <string name="custom_gradient_end_color_title">Color final del degradado</string>
     <string name="custom_gradient_angle_title">Ángulo del degradado</string>
-    <string name="custom_gradient_angle_summary">Rotates the gradient counter-clockwise. At 0° it flows from start to end, along the fill direction for sliders</string>
+    <string name="custom_gradient_angle_summary">Rota el degradado en sentido antihorario. A 0°, fluye desde el inicio hasta el final, siguiendo la dirección de relleno en los controles deslizantes</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">Estilo de reloj personalizado</string>
     <string name="lockscreen_custom_clock_style_summary">Configurar estilos de reloj de la pantalla de bloqueo</string>
@@ -1348,12 +1348,12 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="lockscreen_custom_clock_color_mode_title">Modo de color de reloj personalizado</string>
     <string name="lockscreen_custom_clock_size_title">Tamaño del reloj</string>
     <string name="lockscreen_custom_clock_size_summary">Escalar el reloj de la pantalla de bloqueo</string>
-    <string name="lockscreen_custom_clock_dynamic_size_title">Dynamic clock size</string>
-    <string name="lockscreen_custom_clock_dynamic_size_summary">Enlarge the clock when there are no notifications or media on the lock screen. Very large clock styles keep their size</string>
+    <string name="lockscreen_custom_clock_dynamic_size_title">Tamaño dinámico del reloj</string>
+    <string name="lockscreen_custom_clock_dynamic_size_summary">Aumenta el tamaño del reloj cuando no hay notificaciones ni contenido multimedia en la pantalla de bloqueo. Los estilos de reloj muy grandes mantienen su tamaño</string>
     <string name="lockscreen_custom_clock_aod_anim_title">Animación personalizada de reloj AOD</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">Establecer animación AOD para estilo de reloj personalizado</string>
     <string name="lockscreen_custom_clock_browse_all_clocks">Explorar todos los relojes</string>
-    <string name="lockscreen_custom_clock_applied"><xliff:g id="clock_name" example="OnePlus Clock">%1$s</xliff:g> applied</string>
+    <string name="lockscreen_custom_clock_applied"><xliff:g id="clock_name" example="Reloj OnePlus">%1$s</xliff:g> aplicado</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">Estilo del panel de ajustes rápidos</string>
     <string name="qs_panel_style_card">Estilo de tarjeta</string>
