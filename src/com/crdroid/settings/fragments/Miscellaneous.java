@@ -37,6 +37,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
+import com.crdroid.settings.fragments.buttons.LaunchAppAction;
 import com.crdroid.settings.fragments.misc.SensorBlock;
 
 import java.util.List;
@@ -79,6 +80,23 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         mThreeFingersSwipeAction = initList(KEY_THREE_FINGERS_SWIPE, threeFingersSwipeAction);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        if (mThreeFingersSwipeAction != null) {
+            final String setting = LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION;
+            mThreeFingersSwipeAction.setValue(Integer.toString(Action.fromSettings(
+                    getContentResolver(), setting, Action.NOTHING).ordinal()));
+            if (LaunchAppAction.isLaunchApp(mThreeFingersSwipeAction.getValue())) {
+                mThreeFingersSwipeAction.setSummary(
+                        LaunchAppAction.getSummary(getContext(), setting));
+            } else {
+                mThreeFingersSwipeAction.setSummary(mThreeFingersSwipeAction.getEntry());
+            }
+        }
+    }
+
     private ListPreference initList(String key, Action value) {
         return initList(key, value.ordinal());
     }
@@ -92,19 +110,24 @@ public class Miscellaneous extends SettingsPreferenceFragment implements
         return list;
     }
 
-    private void handleListChange(ListPreference pref, Object newValue, String setting) {
+    private boolean handleListChange(ListPreference pref, Object newValue, String setting) {
+        if (LaunchAppAction.isLaunchApp(newValue)) {
+            LaunchAppAction.openPicker(getContext(), setting, pref.getTitle(),
+                    getMetricsCategory());
+            return false;
+        }
         String value = (String) newValue;
         int index = pref.findIndexOfValue(value);
         pref.setSummary(pref.getEntries()[index]);
         LineageSettings.System.putIntForUser(getContentResolver(), setting, Integer.valueOf(value), UserHandle.USER_CURRENT);
+        return true;
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mThreeFingersSwipeAction) {
-            handleListChange((ListPreference) preference, newValue,
+            return handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_THREE_FINGERS_SWIPE_ACTION);
-            return true;
         }
         return false;
     }

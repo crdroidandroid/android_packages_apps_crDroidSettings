@@ -39,6 +39,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.search.SearchIndexable;
 
 import com.crdroid.settings.fragments.buttons.ButtonBacklightBrightness;
+import com.crdroid.settings.fragments.buttons.LaunchAppAction;
 import com.crdroid.settings.fragments.buttons.PowerMenuActions;
 import com.crdroid.settings.preferences.LineageSystemSettingSeekBarPreference;
 import com.crdroid.settings.utils.DeviceUtils;
@@ -104,6 +105,20 @@ public class Buttons extends SettingsPreferenceFragment implements
     private static final String CATEGORY_CAMERA = "camera_key";
     private static final String CATEGORY_VOLUME = "volume_keys";
     private static final String CATEGORY_EXTRAS = "extras_category";
+
+    // Key action lists and the LineageSettings.System keys they control.
+    private static final String[][] ACTION_LISTS = {
+        { KEY_HOME_LONG_PRESS, LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION },
+        { KEY_HOME_DOUBLE_TAP, LineageSettings.System.KEY_HOME_DOUBLE_TAP_ACTION },
+        { KEY_BACK_LONG_PRESS, LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION },
+        { KEY_MENU_PRESS, LineageSettings.System.KEY_MENU_ACTION },
+        { KEY_MENU_LONG_PRESS, LineageSettings.System.KEY_MENU_LONG_PRESS_ACTION },
+        { KEY_ASSIST_PRESS, LineageSettings.System.KEY_ASSIST_ACTION },
+        { KEY_ASSIST_LONG_PRESS, LineageSettings.System.KEY_ASSIST_LONG_PRESS_ACTION },
+        { KEY_APP_SWITCH_PRESS, LineageSettings.System.KEY_APP_SWITCH_ACTION },
+        { KEY_APP_SWITCH_LONG_PRESS, LineageSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION },
+        { KEY_APP_SWITCH_DOUBLE_TAP, LineageSettings.System.KEY_APP_SWITCH_DOUBLE_TAP_ACTION },
+    };
 
     private SwitchPreferenceCompat mHardwareKeysDisable;
     private SwitchPreferenceCompat mSwapCapacitiveKeys;
@@ -404,6 +419,18 @@ public class Buttons extends SettingsPreferenceFragment implements
     public void onResume() {
         super.onResume();
 
+        // An app picked for "Open app" changes the action setting, so reload the lists.
+        for (String[] actionList : ACTION_LISTS) {
+            final ListPreference pref = findPreference(actionList[0]);
+            if (pref == null) continue;
+            final int value = LineageSettings.System.getIntForUser(getContentResolver(),
+                    actionList[1], -1, UserHandle.USER_CURRENT);
+            if (value >= 0) {
+                pref.setValue(Integer.toString(value));
+            }
+            updateActionSummary(pref, actionList[1]);
+        }
+
         // Power button ends calls.
         if (mPowerEndCall != null) {
             final int incallPowerBehavior = Settings.Secure.getInt(getContentResolver(),
@@ -438,11 +465,26 @@ public class Buttons extends SettingsPreferenceFragment implements
         return list;
     }
 
-    private void handleListChange(ListPreference pref, Object newValue, String setting) {
+    private boolean handleListChange(ListPreference pref, Object newValue, String setting) {
+        if (LaunchAppAction.isLaunchApp(newValue)) {
+            // The picker sets the action once an app is picked.
+            LaunchAppAction.openPicker(getContext(), setting, pref.getTitle(),
+                    getMetricsCategory());
+            return false;
+        }
         String value = (String) newValue;
         int index = pref.findIndexOfValue(value);
         pref.setSummary(pref.getEntries()[index]);
         LineageSettings.System.putInt(getContentResolver(), setting, Integer.valueOf(value));
+        return true;
+    }
+
+    private void updateActionSummary(ListPreference pref, String setting) {
+        if (LaunchAppAction.isLaunchApp(pref.getValue())) {
+            pref.setSummary(LaunchAppAction.getSummary(getContext(), setting));
+        } else {
+            pref.setSummary(pref.getEntry());
+        }
     }
 
     private void handleSystemListChange(ListPreference pref, Object newValue, String setting) {
@@ -464,45 +506,35 @@ public class Buttons extends SettingsPreferenceFragment implements
             }
             return true;
         } else if (preference == mHomeLongPressAction) {
-            handleListChange((ListPreference) preference, newValue,
+            return handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION);
-            return true;
         } else if (preference == mHomeDoubleTapAction) {
-            handleListChange((ListPreference) preference, newValue,
+            return handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_HOME_DOUBLE_TAP_ACTION);
-            return true;
         } else if (preference == mBackLongPressAction) {
-            handleListChange((ListPreference) preference, newValue,
+            return handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_BACK_LONG_PRESS_ACTION);
-            return true;
         } else if (preference == mMenuPressAction) {
-            handleListChange((ListPreference) preference, newValue,
+            return handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_MENU_ACTION);
-            return true;
         } else if (preference == mMenuLongPressAction) {
-            handleListChange((ListPreference) preference, newValue,
+            return handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_MENU_LONG_PRESS_ACTION);
-            return true;
         } else if (preference == mAssistPressAction) {
-            handleListChange((ListPreference) preference, newValue,
+            return handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_ASSIST_ACTION);
-            return true;
         } else if (preference == mAssistLongPressAction) {
-            handleListChange((ListPreference) preference, newValue,
+            return handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_ASSIST_LONG_PRESS_ACTION);
-            return true;
         } else if (preference == mAppSwitchPressAction) {
-            handleListChange((ListPreference) preference, newValue,
+            return handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_APP_SWITCH_ACTION);
-            return true;
         } else if (preference == mAppSwitchLongPressAction) {
-            handleListChange((ListPreference) preference, newValue,
+            return handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
-            return true;
         } else if (preference == mAppSwitchDoubleTapAction) {
-            handleListChange((ListPreference) preference, newValue,
+            return handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_APP_SWITCH_DOUBLE_TAP_ACTION);
-            return true;
         } else if (preference == mVolumeKeyCursorControl) {
             handleSystemListChange((ListPreference) preference, newValue,
                     Settings.System.VOLUME_KEY_CURSOR_CONTROL);
