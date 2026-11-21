@@ -454,7 +454,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="emoji_install_restart_now">Zainstaluj i uruchom ponownie</string>
     <string name="emoji_install_restart_later">Zainstaluj, uruchom ponownie później</string>
     <string name="emoji_remove_title">Usunąć własne emotikony?</string>
-    <string name="emoji_remove_message">Systemowe emotikony powracają po ponownym uruchomieniu systemowego interfejsu użytkownika i aplikacji. Ponowne uruchomienie spowoduje zamknięcie wszystkich uruchomionych aplikacji. Emotikony już skopiowane do aplikacji pozostaną w nich do momentu, aż aplikacje te ponownie pobiorą własne emotikony lub dopóki nie wyczyścisz ich danych.</string>
+    <string name="emoji_remove_message">Emotikony systemowe powracają po ponownym uruchomieniu systemowego interfejsu użytkownika i aplikacji. Ponowne uruchomienie spowoduje zamknięcie wszystkich uruchomionych aplikacji. Czcionki emotikonów skopiowane do aplikacji zostaną usunięte, więc aplikacje te pobiorą je ponownie, a aplikacje, których to dotyczy, zostaną przymusowo zatrzymane.</string>
     <string name="emoji_remove_restart_now">Usuń i uruchom ponownie</string>
     <string name="emoji_remove_restart_later">Usuń, uruchom ponownie później</string>
     <string name="emoji_pending_systemui_body">Ustawiono emotikony %1$s. Systemowy interfejs użytkownika i uruchomione aplikacje zachowują poprzednie emotikony do momentu ponownego uruchomienia. Ponowne uruchomienie powoduje zamknięcie wszystkich uruchomionych aplikacji.</string>
@@ -463,6 +463,11 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="emoji_apps_reset">Zresetuj aplikacje zewnętrzne</string>
     <string name="emoji_apps_confirm">Ta operacja zastępuje czcionkę emotikonów czcionką użytkownika we wszystkich czcionkach emotikonów zapisanych w danych aplikacji, blokuje pobieranie własnych czcionek przez Facebooka i Messengera, czyści pamięć podręczną tych aplikacji oraz klawiatury Gboard, a także wyłącza dostawcę czcionek w usługach Google Play. Aplikacje, których to dotyczy, zostaną przymusowo zatrzymane. Uruchom tę operację ponownie po aktualizacji tych aplikacji.</string>
     <string name="emoji_apps_confirm_button">Resetuj</string>
+    <string name="emoji_apps_restore_summary">Jeśli aplikacje takie jak Gboard, Facebook czy Messenger nadal wyświetlają emotikony z czcionki, którą usunięto, przywrócenie ich spowoduje usunięcie skopiowanych czcionek emotikonów, dzięki czemu każda aplikacja ponownie pobierze własną czcionkę.</string>
+    <string name="emoji_apps_restore">Przywróć zewnętrzne aplikacje</string>
+    <string name="emoji_apps_restore_confirm">Spowoduje to usunięcie wszystkich czcionek emotikonów zapisanych w danych aplikacji, umożliwi aplikacjom Facebook i Messenger ponowne pobranie własnych czcionek, wyczyści pamięć podręczną tych aplikacji oraz aplikacji Gboard, a także ponownie włączy dostawcę czcionek usług Google Play. Dotyczy to aplikacji, które zostaną przymusowo zatrzymane.</string>
+    <string name="emoji_apps_restore_button">Przywróć</string>
+    <string name="emoji_apps_restored">Aplikacje, które korzystały ze skopiowanej czcionki emotikony, znów pobierają własną.</string>
     <plurals name="emoji_apps_done">
         <item quantity="one">W danych aplikacji zastąpiono czcionkę emotikony %1$d. Aplikacje korzystające z emotikonów do pobrania będą teraz wyświetlać emotikony systemowe.</item>
         <item quantity="few">W danych aplikacji zastąpiono czcionki emotikonów %1$d. Aplikacje korzystające z emotikonów do pobrania będą teraz wyświetlać emotikony systemowe.</item>
@@ -1167,6 +1172,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <!-- Smartspace -->
     <string name="lockscreen_smartspace_title">SmartSpace</string>
     <string name="lockscreen_smartspace_summary">Pokazuj Google SmartSpace, gdy jest dostępny</string>
+    <string name="lockscreen_smartspace_custom_clock_info">Niedostępne, gdy włączony jest własny styl zegara</string>
     <!-- Clipboard auto clear -->
     <string name="clipboard_auto_clear_timeout_title">Czas automatycznego czyszczenia schowka</string>
     <string name="clipboard_auto_clear_title">Automatyczne czyszczenie schowka</string>
@@ -1338,6 +1344,8 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="custom_gradient_color_mode_custom">Tryb użytkownika</string>
     <string name="custom_gradient_start_color_title">Kolor początkowy gradientu</string>
     <string name="custom_gradient_end_color_title">Kolor końcowy gradientu</string>
+    <string name="custom_gradient_angle_title">Kąt gradientu</string>
+    <string name="custom_gradient_angle_summary">Obraca gradient w kierunku przeciwnym do ruchu wskazówek zegara. Przy 0° przebiega on od początku do końca, zgodnie z kierunkiem wypełnienia suwaków</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">Własny styl zegara</string>
     <string name="lockscreen_custom_clock_style_summary">Skonfiguruj style zegara na ekranie blokady</string>
@@ -1350,9 +1358,12 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="lockscreen_custom_clock_color_mode_title">Własny tryb kolorów zegara</string>
     <string name="lockscreen_custom_clock_size_title">Rozmiar zegara</string>
     <string name="lockscreen_custom_clock_size_summary">Skaluj zegar ekranu blokady</string>
+    <string name="lockscreen_custom_clock_dynamic_size_title">Dynamiczny rozmiar zegara</string>
+    <string name="lockscreen_custom_clock_dynamic_size_summary">Powiększaj zegar, gdy na ekranie blokady nie ma żadnych powiadomień ani plików multimedialnych. Bardzo duże style zegara zachowują swój rozmiar</string>
     <string name="lockscreen_custom_clock_aod_anim_title">Własna animacja zegara ekranu zawsze włączonego</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">Ustaw animację w trybie ekran zawsze włączony dla własnego stylu zegara</string>
     <string name="lockscreen_custom_clock_browse_all_clocks">Przeglądaj wszystkie zegary</string>
+    <string name="lockscreen_custom_clock_applied">Zastosowano <xliff:g id="clock_name" example="OnePlus Clock">%1$s</xliff:g></string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">Styl panelu szybkich ustawień</string>
     <string name="qs_panel_style_card">Styl karty</string>

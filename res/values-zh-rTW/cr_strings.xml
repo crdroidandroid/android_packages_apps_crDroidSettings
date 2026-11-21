@@ -450,7 +450,7 @@
     <string name="emoji_install_restart_now">Install and restart</string>
     <string name="emoji_install_restart_later">Install, restart later</string>
     <string name="emoji_remove_title">Remove custom emoji?</string>
-    <string name="emoji_remove_message">SystemUI 和應用程式重新啟動後，系統 emoji 會恢復。立即重新啟動會關閉所有執行中的應用程式。已複製到應用程式中的 emoji 會保留，直到這些應用程式再次下載自己的 emoji 或你清除其資料。</string>
+    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji fonts copied into apps are deleted so those apps fetch their own again, and affected apps are force stopped.</string>
     <string name="emoji_remove_restart_now">Remove and restart</string>
     <string name="emoji_remove_restart_later">Remove, restart later</string>
     <string name="emoji_pending_systemui_body">已設定 %1$s emoji。SystemUI 和執行中的應用程式會保留先前的 emoji，直到它們重新啟動。重新啟動會關閉所有執行中的應用程式。</string>
@@ -459,6 +459,11 @@
     <string name="emoji_apps_reset">Reset third-party apps</string>
     <string name="emoji_apps_confirm">這會將你的 emoji 字型複製到應用程式資料中儲存的每個 emoji 字型上，阻止 Facebook 和 Messenger 下載自己的 emoji，清除這些應用程式和 Gboard 的快取，並關閉 Google Play 服務字型供應商。受影響的應用程式會被強制停止。在這些應用程式更新後再次執行。</string>
     <string name="emoji_apps_confirm_button">重設</string>
+    <string name="emoji_apps_restore_summary">If apps such as Gboard, Facebook or Messenger still show emoji from a font you removed, restoring them deletes the copied emoji fonts so each app fetches its own again.</string>
+    <string name="emoji_apps_restore">Restore third-party apps</string>
+    <string name="emoji_apps_restore_confirm">This deletes every emoji font stored in app data, lets Facebook and Messenger download their own again, clears the caches of those apps and Gboard, and turns the Google Play services font provider back on. Affected apps are force stopped.</string>
+    <string name="emoji_apps_restore_button">Restore</string>
+    <string name="emoji_apps_restored">Apps that had a copied emoji font now fetch their own again.</string>
     <plurals name="emoji_apps_done">
         <item quantity="other">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
     </plurals>
@@ -1154,6 +1159,7 @@
     <!-- Smartspace -->
     <string name="lockscreen_smartspace_title">智慧空間</string>
     <string name="lockscreen_smartspace_summary">當 Google 智慧空間可用時顯示</string>
+    <string name="lockscreen_smartspace_custom_clock_info">Not available while a custom clock style is enabled</string>
     <!-- Clipboard auto clear -->
     <string name="clipboard_auto_clear_timeout_title">剪貼簿自動清除逾時</string>
     <string name="clipboard_auto_clear_title">剪貼簿自動清除</string>
@@ -1323,6 +1329,8 @@
     <string name="custom_gradient_color_mode_custom">自訂模式</string>
     <string name="custom_gradient_start_color_title">漸變開始顏色</string>
     <string name="custom_gradient_end_color_title">漸層結束顏色</string>
+    <string name="custom_gradient_angle_title">Gradient angle</string>
+    <string name="custom_gradient_angle_summary">Rotates the gradient counter-clockwise. At 0° it flows from start to end, along the fill direction for sliders</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">自訂時鐘風格</string>
     <string name="lockscreen_custom_clock_style_summary">自訂鎖定畫面時鐘樣式</string>
@@ -1335,9 +1343,12 @@
     <string name="lockscreen_custom_clock_color_mode_title">自訂時鐘色彩模式</string>
     <string name="lockscreen_custom_clock_size_title">時鐘大小</string>
     <string name="lockscreen_custom_clock_size_summary">調整鎖定螢幕時鐘大小</string>
+    <string name="lockscreen_custom_clock_dynamic_size_title">Dynamic clock size</string>
+    <string name="lockscreen_custom_clock_dynamic_size_summary">Enlarge the clock when there are no notifications or media on the lock screen. Very large clock styles keep their size</string>
     <string name="lockscreen_custom_clock_aod_anim_title">自訂時鐘 AOD 動畫</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">設定自訂時鐘樣式的 AOD 動畫</string>
     <string name="lockscreen_custom_clock_browse_all_clocks">Browse All Clocks</string>
+    <string name="lockscreen_custom_clock_applied"><xliff:g id="clock_name" example="OnePlus Clock">%1$s</xliff:g> applied</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">快速設定面板樣式</string>
     <string name="qs_panel_style_card">卡片樣式</string>

@@ -452,7 +452,7 @@
     <string name="emoji_install_restart_now">Install and restart</string>
     <string name="emoji_install_restart_later">Install, restart later</string>
     <string name="emoji_remove_title">Remove custom emoji?</string>
-    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji already copied into apps stay until those apps download their own again or you clear their data.</string>
+    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji fonts copied into apps are deleted so those apps fetch their own again, and affected apps are force stopped.</string>
     <string name="emoji_remove_restart_now">Remove and restart</string>
     <string name="emoji_remove_restart_later">Remove, restart later</string>
     <string name="emoji_pending_systemui_body">%1$s emoji are set. SystemUI and running apps keep the previous emoji until they restart. Restarting closes all running apps.</string>
@@ -461,6 +461,11 @@
     <string name="emoji_apps_reset">Reset third-party apps</string>
     <string name="emoji_apps_confirm">This copies your emoji font over every emoji font stored in app data, stops Facebook and Messenger from downloading their own, clears the caches of those apps and Gboard, and turns off the Google Play services font provider. Affected apps are force stopped. Run it again after those apps update.</string>
     <string name="emoji_apps_confirm_button">Resetuj</string>
+    <string name="emoji_apps_restore_summary">If apps such as Gboard, Facebook or Messenger still show emoji from a font you removed, restoring them deletes the copied emoji fonts so each app fetches its own again.</string>
+    <string name="emoji_apps_restore">Restore third-party apps</string>
+    <string name="emoji_apps_restore_confirm">This deletes every emoji font stored in app data, lets Facebook and Messenger download their own again, clears the caches of those apps and Gboard, and turns the Google Play services font provider back on. Affected apps are force stopped.</string>
+    <string name="emoji_apps_restore_button">Restore</string>
+    <string name="emoji_apps_restored">Apps that had a copied emoji font now fetch their own again.</string>
     <plurals name="emoji_apps_done">
         <item quantity="one">Replaced %1$d emoji font in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
         <item quantity="few">Replaced %1$d emoji fonts in app data. Apps that use downloadable emoji now fall back to the system emoji.</item>
@@ -1162,6 +1167,7 @@
     <!-- Smartspace -->
     <string name="lockscreen_smartspace_title">Smartspace</string>
     <string name="lockscreen_smartspace_summary">Show Google Smartspace when available</string>
+    <string name="lockscreen_smartspace_custom_clock_info">Not available while a custom clock style is enabled</string>
     <!-- Clipboard auto clear -->
     <string name="clipboard_auto_clear_timeout_title">Clipboard auto clear timeout</string>
     <string name="clipboard_auto_clear_title">Clipboard auto clear</string>
@@ -1331,6 +1337,8 @@
     <string name="custom_gradient_color_mode_custom">Custom mode</string>
     <string name="custom_gradient_start_color_title">Gradient start color</string>
     <string name="custom_gradient_end_color_title">Gradient end color</string>
+    <string name="custom_gradient_angle_title">Gradient angle</string>
+    <string name="custom_gradient_angle_summary">Rotates the gradient counter-clockwise. At 0° it flows from start to end, along the fill direction for sliders</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">Custom clock style</string>
     <string name="lockscreen_custom_clock_style_summary">Configure lock screen clock styles</string>
@@ -1343,9 +1351,12 @@
     <string name="lockscreen_custom_clock_color_mode_title">Custom clock color mode</string>
     <string name="lockscreen_custom_clock_size_title">Clock size</string>
     <string name="lockscreen_custom_clock_size_summary">Scale the lock screen clock</string>
+    <string name="lockscreen_custom_clock_dynamic_size_title">Dynamic clock size</string>
+    <string name="lockscreen_custom_clock_dynamic_size_summary">Enlarge the clock when there are no notifications or media on the lock screen. Very large clock styles keep their size</string>
     <string name="lockscreen_custom_clock_aod_anim_title">Custom clock AOD animation</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">Set AOD animation for custom clock style</string>
     <string name="lockscreen_custom_clock_browse_all_clocks">Browse All Clocks</string>
+    <string name="lockscreen_custom_clock_applied"><xliff:g id="clock_name" example="OnePlus Clock">%1$s</xliff:g> applied</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">QS Panel style</string>
     <string name="qs_panel_style_card">Card style</string>

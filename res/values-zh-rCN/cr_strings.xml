@@ -451,7 +451,7 @@
     <string name="emoji_install_restart_now">安装并重启</string>
     <string name="emoji_install_restart_later">安装，稍后重启</string>
     <string name="emoji_remove_title">是否移除自定义表情？</string>
-    <string name="emoji_remove_message">重启系统界面和应用后，将恢复系统默认表情。立即重启会关闭所有正在运行的应用。已缓存到应用内的表情，会保留至应用自行更新或清除应用数据为止。</string>
+    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji fonts copied into apps are deleted so those apps fetch their own again, and affected apps are force stopped.</string>
     <string name="emoji_remove_restart_now">移除并重启</string>
     <string name="emoji_remove_restart_later">移除，稍后重启</string>
     <string name="emoji_pending_systemui_body">%1$s 表情已设置完成。系统界面和正在运行的应用在重启前仍使用旧表情；重启会关闭所有正在运行的应用。</string>
@@ -460,6 +460,11 @@
     <string name="emoji_apps_reset">重置第三方应用</string>
     <string name="emoji_apps_confirm">该操作会将你的表情字体覆盖应用数据里存储的所有表情字体，阻止 Facebook、Messenger 下载自带表情，清除这些应用和 Gboard 的缓存，并关闭谷歌服务字体提供程序。受影响应用会被强制停止，这些应用更新后需要重新执行本操作。</string>
     <string name="emoji_apps_confirm_button">重置</string>
+    <string name="emoji_apps_restore_summary">If apps such as Gboard, Facebook or Messenger still show emoji from a font you removed, restoring them deletes the copied emoji fonts so each app fetches its own again.</string>
+    <string name="emoji_apps_restore">Restore third-party apps</string>
+    <string name="emoji_apps_restore_confirm">This deletes every emoji font stored in app data, lets Facebook and Messenger download their own again, clears the caches of those apps and Gboard, and turns the Google Play services font provider back on. Affected apps are force stopped.</string>
+    <string name="emoji_apps_restore_button">Restore</string>
+    <string name="emoji_apps_restored">Apps that had a copied emoji font now fetch their own again.</string>
     <plurals name="emoji_apps_done">
         <item quantity="other">已替换应用数据内 %1$d 个表情字体。使用可下载表情的应用现在将回退为系统表情。</item>
     </plurals>
@@ -1157,6 +1162,7 @@
     <!-- Smartspace -->
     <string name="lockscreen_smartspace_title">“一目了然”</string>
     <string name="lockscreen_smartspace_summary">可用时展示Google“一目了然”</string>
+    <string name="lockscreen_smartspace_custom_clock_info">Not available while a custom clock style is enabled</string>
     <!-- Clipboard auto clear -->
     <string name="clipboard_auto_clear_timeout_title">剪贴板自动清除超时</string>
     <string name="clipboard_auto_clear_title">自动清除剪贴板</string>
@@ -1326,6 +1332,8 @@
     <string name="custom_gradient_color_mode_custom">自定义模式</string>
     <string name="custom_gradient_start_color_title">渐变开始颜色</string>
     <string name="custom_gradient_end_color_title">渐变结束颜色</string>
+    <string name="custom_gradient_angle_title">渐变角度</string>
+    <string name="custom_gradient_angle_summary">Rotates the gradient counter-clockwise. At 0° it flows from start to end, along the fill direction for sliders</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">自定义时钟样式</string>
     <string name="lockscreen_custom_clock_style_summary">配置锁屏时钟样式</string>
@@ -1338,9 +1346,12 @@
     <string name="lockscreen_custom_clock_color_mode_title">自定义时钟颜色模式</string>
     <string name="lockscreen_custom_clock_size_title">时钟大小</string>
     <string name="lockscreen_custom_clock_size_summary">调整锁屏时钟大小</string>
+    <string name="lockscreen_custom_clock_dynamic_size_title">Dynamic clock size</string>
+    <string name="lockscreen_custom_clock_dynamic_size_summary">Enlarge the clock when there are no notifications or media on the lock screen. Very large clock styles keep their size</string>
     <string name="lockscreen_custom_clock_aod_anim_title">自定义时钟AOD动画</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">设置自定义时钟样式的 AOD 动画</string>
     <string name="lockscreen_custom_clock_browse_all_clocks">浏览全部时钟样式</string>
+    <string name="lockscreen_custom_clock_applied"><xliff:g id="clock_name" example="OnePlus Clock">%1$s</xliff:g> applied</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">快捷设置面板样式</string>
     <string name="qs_panel_style_card">卡片样式</string>

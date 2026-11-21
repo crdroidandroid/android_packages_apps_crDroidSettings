@@ -452,7 +452,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="emoji_install_restart_now">Telepítés és újraindítás</string>
     <string name="emoji_install_restart_later">Telepítés, újraindítás később</string>
     <string name="emoji_remove_title">Eltávolítja az egyéni emojikat?</string>
-    <string name="emoji_remove_message">A rendszer-emojik visszatérnek, amint a rendszerfelület és az alkalmazások újraindulnak. Az újraindítás most bezárja az összes futó alkalmazást. Az alkalmazásokban az emojik mindaddig megmaradnak, amíg az adott alkalmazások újra le nem töltik a sajátjaikat, vagy amíg Ön nem törli az alkalmazások adatait.</string>
+    <string name="emoji_remove_message">A rendszer-emojik a Rendszer és az alkalmazások újraindulását követően térnek vissza. Az újraindítás bezárja az összes futó alkalmazást. Az alkalmazásokba bemásolt emoji-betűtípusok törlődnek – így az alkalmazások újra letöltik a sajátjukat –, az érintett alkalmazásokat pedig a rendszer kényszerített leállítással bezárja.</string>
     <string name="emoji_remove_restart_now">Eltávolítás és újraindítás</string>
     <string name="emoji_remove_restart_later">Eltávolítás, újraindítás később</string>
     <string name="emoji_pending_systemui_body">%1$s-emoji beállítva. A rendszerfelület és a futó alkalmazások az újraindításukig megtartják a korábbi emojit. Az újraindítás bezárja az összes futó alkalmazást.</string>
@@ -461,6 +461,11 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="emoji_apps_reset">Másik féltől származó alkalmazások visszaállítása</string>
     <string name="emoji_apps_confirm">Ez az eljárás az alkalmazásadatokban tárolt összes emojit lecseréli a az Ön emoji-jára, megakadályozza, hogy a Facebook és a Messenger letöltse a sajátját, törli ezen alkalmazások, valamint a Gboard gyorsítótárát, továbbá kikapcsolja a Google Play-szolgáltatások betűtípus-szolgáltatóját.</string>
     <string name="emoji_apps_confirm_button">Visszaállítás</string>
+    <string name="emoji_apps_restore_summary">Ha az olyan alkalmazások, mint a Gboard, a Facebook vagy a Messenger továbbra is egy olyan betűtípusból származó emojikat jelenítenek meg amelyet eltávolítottál, akkor a betűtípusok visszaállítása törli a másolt emoji-készleteket így minden alkalmazás újra letölti a sajátját.</string>
+    <string name="emoji_apps_restore">Harmadik féltől származó alkalmazások visszaállítása</string>
+    <string name="emoji_apps_restore_confirm">Ez törli az alkalmazásadatokban tárolt összes emojibetűtípust, lehetővé teszi a Facebook és a Messenger számára, hogy újra letöltsék a sajátjukat, törli ezen alkalmazások, valamint a Gboard gyorsítótárát, továbbá visszakapcsolja a Google Play-szolgáltatások betűtípus-szolgáltatóját. Az érintett alkalmazásokat a rendszer kényszerített leállítással bezárja.</string>
+    <string name="emoji_apps_restore_button">Visszaállítás</string>
+    <string name="emoji_apps_restored">Azok az alkalmazások, amelyek korábban másolt készletet használtak, most ismét a sajátjukat töltik le.</string>
     <plurals name="emoji_apps_done">
         <item quantity="one">%1$d emoji-készlet lecserélve az alkalmazás-adatokban. A letölthető hangulatjeleket használó alkalmazások mostantól a rendszer hangulatjeleire váltanak vissza. </item>
         <item quantity="other">%1$d emoji-készlet lecserélve az alkalmazás-adatokban. A letölthető hangulatjeleket használó alkalmazások mostantól a rendszer hangulatjeleire váltanak vissza. </item>
@@ -978,7 +983,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="clock_chip_gradient_end_color_summary">Szín a színátmenet végén</string>
     <!-- Gradient mode - Angle seekbar -->
     <string name="clock_chip_gradient_angle_title">A színátmenet dőlésszöge</string>
-    <string name="clock_chip_gradient_angle_summary">Az átmenet iránya ( 0° = balról -> jobbra, 90° = lentről -> felfelé )</string>
+    <string name="clock_chip_gradient_angle_summary">Az átmenet iránya ( 0° = balról -&gt; jobbra, 90° = lentről -&gt; felfelé )</string>
     <!-- Gradient mode - Mask text -->
     <string name="clock_chip_gradient_mask_text_title">Az Óra betűstílusa</string>
     <string name="clock_chip_gradient_mask_text_default">Alapértelmezett</string>
@@ -1161,6 +1166,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <!-- Smartspace -->
     <string name="lockscreen_smartspace_title">Google Smartspace</string>
     <string name="lockscreen_smartspace_summary">Ha elérhető, akkor megjeleníti</string>
+    <string name="lockscreen_smartspace_custom_clock_info">Nem érhető el, ha egyéni órastílus van beállítva</string>
     <!-- Clipboard auto clear -->
     <string name="clipboard_auto_clear_timeout_title">A kiürítés időkorlátja</string>
     <string name="clipboard_auto_clear_title">Automatikus vágólapkiürítés</string>
@@ -1330,6 +1336,8 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="custom_gradient_color_mode_custom">Egyéni mód</string>
     <string name="custom_gradient_start_color_title">A színátmenet kezdeti színe</string>
     <string name="custom_gradient_end_color_title">A színátmenet befejező színe</string>
+    <string name="custom_gradient_angle_title">A színátmenet dőlésszöge</string>
+    <string name="custom_gradient_angle_summary">Az átmenetet az óramutató járásával ellentétes irányba forgatja. 0°-nál a kezdőponttól a végpont felé halad, a csúszkák kitöltési irányát követve</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">Egyéni órastílus</string>
     <string name="lockscreen_custom_clock_style_summary">Itt állíthatja be a záróképernyő órastílusát</string>
@@ -1342,9 +1350,12 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="lockscreen_custom_clock_color_mode_title">Az egyéni óra színmódja</string>
     <string name="lockscreen_custom_clock_size_title">Óraméret</string>
     <string name="lockscreen_custom_clock_size_summary">A záróképernyő órája méretezhető</string>
+    <string name="lockscreen_custom_clock_dynamic_size_title">A dinamikus óra mérete</string>
+    <string name="lockscreen_custom_clock_dynamic_size_summary">Az óra nagyítása, ha nincsenek értesítések vagy média a zárolási képernyőn. A különösen nagy órastílusok megtartják a méretüket</string>
     <string name="lockscreen_custom_clock_aod_anim_title">Egyéni \"Mindig bekapcsolva\" óraanimáció</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">AOD animáció beállítása az egyéni órastílushoz</string>
     <string name="lockscreen_custom_clock_browse_all_clocks">Nézelődés az összes Óra között</string>
+    <string name="lockscreen_custom_clock_applied"><xliff:g id="clock_name" example="OnePlus Clock">%1$s</xliff:g> alkalmazva</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">A Gyorsbeállítások panel stílusa</string>
     <string name="qs_panel_style_card">Kártyastílus</string>
