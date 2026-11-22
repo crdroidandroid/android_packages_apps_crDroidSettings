@@ -174,14 +174,14 @@
     <string name="hardware_keys_action_expand_qs_panel">展开快捷设置面板</string>
     <string name="hardware_keys_action_ringer_modes">更改铃声模式</string>
     <string name="hardware_keys_action_power_menu">电源菜单</string>
-    <string name="hardware_keys_action_contextual_search">Circle to Search</string>
-    <string name="hardware_keys_action_silence_call">Silence incoming call</string>
-    <string name="hardware_keys_action_launch_app">Open app</string>
-    <string name="launch_app_summary">Open <xliff:g id="app" example="Chrome">%1$s</xliff:g></string>
-    <string name="launch_app_shortcut_summary">Open <xliff:g id="app" example="Chrome">%1$s</xliff:g>: <xliff:g id="shortcut" example="New tab">%2$s</xliff:g></string>
-    <string name="launch_app_no_selection">No app selected</string>
-    <string name="launch_app_not_installed">App not installed</string>
-    <string name="launch_app_shortcuts_a11y">Shortcuts of <xliff:g id="app" example="Chrome">%1$s</xliff:g></string>
+    <string name="hardware_keys_action_contextual_search">圈定即搜</string>
+    <string name="hardware_keys_action_silence_call">静音来电</string>
+    <string name="hardware_keys_action_launch_app">打开应用</string>
+    <string name="launch_app_summary">打开 <xliff:g id="app" example="Chrome">%1$s</xliff:g></string>
+    <string name="launch_app_shortcut_summary">打开 <xliff:g id="app" example="Chrome">%1$s</xliff:g>: <xliff:g id="shortcut" example="New tab">%2$s</xliff:g></string>
+    <string name="launch_app_no_selection">未选择应用</string>
+    <string name="launch_app_not_installed">应用未安装</string>
+    <string name="launch_app_shortcuts_a11y"><xliff:g id="app" example="Chrome">%1$s</xliff:g> 的快捷方式</string>
     <string name="home_answer_call_title">接听电话</string>
     <string name="home_answer_call_summary">按主页键接听来电</string>
     <string name="camera_sleep_on_release_title">屏幕速览</string>
@@ -460,7 +460,7 @@
     <string name="emoji_install_restart_now">安装并重启</string>
     <string name="emoji_install_restart_later">安装，稍后重启</string>
     <string name="emoji_remove_title">是否移除自定义表情？</string>
-    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji fonts copied into apps are deleted so those apps fetch their own again, and affected apps are force stopped.</string>
+    <string name="emoji_remove_message">重启系统界面与应用即可恢复系统表情；立即重启会关闭全部应用，清除应用缓存表情，相关应用将被强制停止。</string>
     <string name="emoji_remove_restart_now">移除并重启</string>
     <string name="emoji_remove_restart_later">移除，稍后重启</string>
     <string name="emoji_pending_systemui_body">%1$s 表情已设置完成。系统界面和正在运行的应用在重启前仍使用旧表情；重启会关闭所有正在运行的应用。</string>
@@ -469,11 +469,11 @@
     <string name="emoji_apps_reset">重置第三方应用</string>
     <string name="emoji_apps_confirm">该操作会将你的表情字体覆盖应用数据里存储的所有表情字体，阻止 Facebook、Messenger 下载自带表情，清除这些应用和 Gboard 的缓存，并关闭谷歌服务字体提供程序。受影响应用会被强制停止，这些应用更新后需要重新执行本操作。</string>
     <string name="emoji_apps_confirm_button">重置</string>
-    <string name="emoji_apps_restore_summary">If apps such as Gboard, Facebook or Messenger still show emoji from a font you removed, restoring them deletes the copied emoji fonts so each app fetches its own again.</string>
-    <string name="emoji_apps_restore">Restore third-party apps</string>
-    <string name="emoji_apps_restore_confirm">This deletes every emoji font stored in app data, lets Facebook and Messenger download their own again, clears the caches of those apps and Gboard, and turns the Google Play services font provider back on. Affected apps are force stopped.</string>
-    <string name="emoji_apps_restore_button">Restore</string>
-    <string name="emoji_apps_restored">Apps that had a copied emoji font now fetch their own again.</string>
+    <string name="emoji_apps_restore_summary">如果 Gboard、Facebook、Messenger 等应用仍显示你已移除字体里的表情，执行恢复操作会删除复制进去的表情字体，让这些应用重新加载自身自带表情。</string>
+    <string name="emoji_apps_restore">恢复第三方应用</string>
+    <string name="emoji_apps_restore_confirm">该操作会删除应用数据内存储的所有表情字体，允许 Facebook 和 Messenger 重新下载自带表情，清除这些应用与 Gboard 的缓存，并重新启用 Google Play 服务字体提供程序，相关应用将被强制停止。</string>
+    <string name="emoji_apps_restore_button">恢复</string>
+    <string name="emoji_apps_restored">内嵌表情字体的应用会重新获取自身表情。</string>
     <plurals name="emoji_apps_done">
         <item quantity="other">已替换应用数据内 %1$d 个表情字体。使用可下载表情的应用现在将回退为系统表情。</item>
     </plurals>
@@ -1171,7 +1171,7 @@
     <!-- Smartspace -->
     <string name="lockscreen_smartspace_title">“一目了然”</string>
     <string name="lockscreen_smartspace_summary">可用时展示Google“一目了然”</string>
-    <string name="lockscreen_smartspace_custom_clock_info">Not available while a custom clock style is enabled</string>
+    <string name="lockscreen_smartspace_custom_clock_info">启用自定义时钟样式时不可用</string>
     <!-- Clipboard auto clear -->
     <string name="clipboard_auto_clear_timeout_title">剪贴板自动清除超时</string>
     <string name="clipboard_auto_clear_title">自动清除剪贴板</string>
@@ -1342,7 +1342,7 @@
     <string name="custom_gradient_start_color_title">渐变开始颜色</string>
     <string name="custom_gradient_end_color_title">渐变结束颜色</string>
     <string name="custom_gradient_angle_title">渐变角度</string>
-    <string name="custom_gradient_angle_summary">Rotates the gradient counter-clockwise. At 0° it flows from start to end, along the fill direction for sliders</string>
+    <string name="custom_gradient_angle_summary">逆时针旋转渐变。0° 时从起点向终点延伸，与滑块填充方向一致</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">自定义时钟样式</string>
     <string name="lockscreen_custom_clock_style_summary">配置锁屏时钟样式</string>
@@ -1355,12 +1355,12 @@
     <string name="lockscreen_custom_clock_color_mode_title">自定义时钟颜色模式</string>
     <string name="lockscreen_custom_clock_size_title">时钟大小</string>
     <string name="lockscreen_custom_clock_size_summary">调整锁屏时钟大小</string>
-    <string name="lockscreen_custom_clock_dynamic_size_title">Dynamic clock size</string>
-    <string name="lockscreen_custom_clock_dynamic_size_summary">Enlarge the clock when there are no notifications or media on the lock screen. Very large clock styles keep their size</string>
+    <string name="lockscreen_custom_clock_dynamic_size_title">动态时钟尺寸</string>
+    <string name="lockscreen_custom_clock_dynamic_size_summary">锁屏无通知、无媒体播放时放大时钟。超大时钟样式将保持原有尺寸</string>
     <string name="lockscreen_custom_clock_aod_anim_title">自定义时钟AOD动画</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">设置自定义时钟样式的 AOD 动画</string>
     <string name="lockscreen_custom_clock_browse_all_clocks">浏览全部时钟样式</string>
-    <string name="lockscreen_custom_clock_applied"><xliff:g id="clock_name" example="OnePlus Clock">%1$s</xliff:g> applied</string>
+    <string name="lockscreen_custom_clock_applied"><xliff:g id="clock_name" example="OnePlus Clock">%1$s</xliff:g> 已应用</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">快捷设置面板样式</string>
     <string name="qs_panel_style_card">卡片样式</string>
