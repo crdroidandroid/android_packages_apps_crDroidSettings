@@ -27,6 +27,7 @@ import androidx.lifecycle.viewModelScope
 import com.android.internal.logging.nano.MetricsProto
 import com.android.settings.R
 import com.android.settings.SettingsPreferenceFragment
+import com.android.settings.core.SubSettingLauncher
 import com.android.settingslib.spa.framework.theme.SettingsTheme
 import com.crdroid.settings.fragments.misc.spoofComposeView
 import com.crdroid.settings.preferences.ExternalFontInstaller
@@ -34,6 +35,7 @@ import com.crdroid.settings.preferences.ExternalFontInstaller.InstallResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.io.File
 
 class FontPicker : SettingsPreferenceFragment() {
 
@@ -62,6 +64,7 @@ class FontPicker : SettingsPreferenceFragment() {
                 FontPickerContent(
                     vm = viewModel,
                     onAddFont = { fontFilePicker.launch(FONT_MIME_TYPES) },
+                    onBrowseOnline = ::openOnlineFonts,
                 )
             }
         }
@@ -70,6 +73,14 @@ class FontPicker : SettingsPreferenceFragment() {
     override fun onResume() {
         super.onResume()
         viewModel.refresh()
+    }
+
+    private fun openOnlineFonts() {
+        SubSettingLauncher(requireContext())
+            .setDestination(OnlineFontPicker::class.java.name)
+            .setTitleRes(R.string.online_fonts_title)
+            .setSourceMetricsCategory(metricsCategory)
+            .launch()
     }
 
     override fun getMetricsCategory(): Int = MetricsProto.MetricsEvent.CRDROID_SETTINGS
@@ -106,6 +117,75 @@ class FontPicker : SettingsPreferenceFragment() {
                     )
                 }
             }
+        }
+    }
+}
+
+/**
+ * Installs a checked font file as the system font. Shared by Add font and Online fonts.
+ * [onError] gets a message to show in a dialog; the work runs in [FontOps]' scope because
+ * the overlay reset recreates the activity.
+ */
+internal object CustomFontInstall {
+    fun start(
+        context: Context,
+        preview: ExternalFontInstaller.FontFilePreview,
+        rebootNow: Boolean,
+        onError: (String) -> Unit,
+    ) {
+        val app = context.applicationContext
+        FontOps.run(FontBusy.Installing(preview.postScriptName)) {
+            install(app, preview, rebootNow, onError)
+        }
+    }
+
+    /** Checks [file] (a downloaded font) first; [name] labels it while that happens. */
+    fun startFromFile(
+        context: Context,
+        file: File,
+        name: String,
+        rebootNow: Boolean,
+        onError: (String) -> Unit,
+    ) {
+        val app = context.applicationContext
+        FontOps.run(FontBusy.Installing(name)) {
+            val preview = ExternalFontInstaller(app).inspectFile(file, name)
+            if (preview == null) {
+                onError(app.getString(R.string.font_error_invalid_file))
+            } else {
+                install(app, preview, rebootNow, onError)
+            }
+        }
+    }
+
+    private suspend fun install(
+        app: Context,
+        preview: ExternalFontInstaller.FontFilePreview,
+        rebootNow: Boolean,
+        onError: (String) -> Unit,
+    ) {
+        val repo = FontRepository(app)
+        val installer = ExternalFontInstaller(app)
+        val tracker = FontRestartTracker(app)
+        when (val result = installer.install(preview)) {
+            is InstallResult.Success -> {
+                repo.setCustomFontName(result.postScriptName)
+                // Recorded before the overlay switch, which recreates this activity.
+                tracker.markPending(RestartKind.REBOOT, result.postScriptName)
+                // The custom font sits in front of the UI families; an overlay pointing the
+                // UI at another family would hide it, so go back to Default.
+                val overlayReset = withContext(Dispatchers.IO) { repo.resetOverlayToDefault() }
+                if (!overlayReset) FontOps.toast(app, R.string.font_overlay_reset_failed)
+                if (rebootNow) ExternalFontInstaller.rebootDevice()
+            }
+            InstallResult.Invalid -> FontOps.toast(app, R.string.toast_invalid_font_file)
+            is InstallResult.Failed -> onError(
+                if (result.code == ExternalFontInstaller.RESULT_EXCEPTION) {
+                    app.getString(R.string.font_install_failed, result.code)
+                } else {
+                    FontOps.errorMessage(app, result.code)
+                },
+            )
         }
     }
 }
@@ -250,28 +330,7 @@ class FontPickerViewModel(application: Application) : AndroidViewModel(applicati
 
     internal fun install(preview: ExternalFontInstaller.FontFilePreview, rebootNow: Boolean) {
         dialog = null
-        FontOps.run(FontBusy.Installing(preview.postScriptName)) {
-            when (val result = installer.install(preview)) {
-                is InstallResult.Success -> {
-                    repo.setCustomFontName(result.postScriptName)
-                    // Recorded before the overlay switch, which recreates this activity.
-                    tracker.markPending(RestartKind.REBOOT, result.postScriptName)
-                    // The custom font sits in front of the UI families; an overlay pointing the
-                    // UI at another family would hide it, so go back to Default.
-                    val overlayReset = withContext(Dispatchers.IO) { repo.resetOverlayToDefault() }
-                    if (!overlayReset) FontOps.toast(app, R.string.font_overlay_reset_failed)
-                    if (rebootNow) ExternalFontInstaller.rebootDevice()
-                }
-                InstallResult.Invalid -> FontOps.toast(app, R.string.toast_invalid_font_file)
-                is InstallResult.Failed -> dialog = FontDialog.Error(
-                    if (result.code == ExternalFontInstaller.RESULT_EXCEPTION) {
-                        app.getString(R.string.font_install_failed, result.code)
-                    } else {
-                        FontOps.errorMessage(app, result.code)
-                    },
-                )
-            }
-        }
+        CustomFontInstall.start(app, preview, rebootNow) { dialog = FontDialog.Error(it) }
     }
 
     // ---- Restart ---------------------------------------------------------------------------

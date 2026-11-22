@@ -117,6 +117,20 @@ class ExternalFontInstaller(context: Context) {
      */
     suspend fun inspect(uri: Uri): FontFilePreview? = withContext(Dispatchers.IO) {
         val file = copyUriToCache(uri, TEMP_PREVIEW_FONT) ?: return@withContext null
+        previewOf(file, queryDisplayName(uri))
+    }
+
+    /**
+     * Same as [inspect] for a font file this app already has, such as one downloaded from
+     * Google Fonts. [source] is copied, so the caller may delete it afterwards.
+     */
+    suspend fun inspectFile(source: File, displayName: String?): FontFilePreview? =
+        withContext(Dispatchers.IO) {
+            val file = copyFileToCache(source, TEMP_PREVIEW_FONT) ?: return@withContext null
+            previewOf(file, displayName)
+        }
+
+    private fun previewOf(file: File, displayName: String?): FontFilePreview? {
         val postScriptName = extractPostScriptName(file)
         val typeface = postScriptName?.let {
             runCatching { Typeface.createFromFile(file) }
@@ -125,12 +139,12 @@ class ExternalFontInstaller(context: Context) {
         }
         if (postScriptName == null || typeface == null) {
             file.delete()
-            return@withContext null
+            return null
         }
-        FontFilePreview(
+        return FontFilePreview(
             file = file,
             postScriptName = postScriptName,
-            displayName = queryDisplayName(uri),
+            displayName = displayName,
             sizeBytes = file.length(),
             typeface = typeface,
         )
@@ -264,6 +278,28 @@ class ExternalFontInstaller(context: Context) {
             cacheFile
         } catch (e: Exception) {
             Log.e(TAG, "Failed to copy URI to cache", e)
+            tempFile.delete()
+            null
+        }
+    }
+
+    private fun copyFileToCache(source: File, fileName: String): File? {
+        val cacheFile = File(context.cacheDir, fileName)
+        val tempFile = File(context.cacheDir, "$fileName.tmp")
+        return try {
+            if (!source.isFile || source.length() <= 0L || source.length() > MAX_FONT_BYTES) {
+                return null
+            }
+            source.copyTo(tempFile, overwrite = true)
+            if (cacheFile.exists() && !cacheFile.delete()) {
+                throw IllegalStateException("Could not replace cached font")
+            }
+            if (!tempFile.renameTo(cacheFile)) {
+                throw IllegalStateException("Could not install cached font")
+            }
+            cacheFile
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to copy $source to cache", e)
             tempFile.delete()
             null
         }

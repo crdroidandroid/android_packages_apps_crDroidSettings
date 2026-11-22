@@ -32,6 +32,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.CheckCircle
+import androidx.compose.material.icons.rounded.CloudDownload
 import androidx.compose.material.icons.rounded.DeleteOutline
 import androidx.compose.material.icons.rounded.FontDownload
 import androidx.compose.material.icons.rounded.RestartAlt
@@ -68,6 +69,8 @@ import com.crdroid.settings.fragments.misc.SpoofAction
 import com.crdroid.settings.fragments.misc.SpoofActionRow
 import com.crdroid.settings.fragments.misc.SpoofDialog
 import com.crdroid.settings.fragments.misc.SpoofFooter
+import com.crdroid.settings.fragments.misc.SpoofGroup
+import com.crdroid.settings.fragments.misc.SpoofNavRow
 import com.crdroid.settings.fragments.misc.SpoofPrimaryAction
 import com.crdroid.settings.fragments.misc.SpoofScreen
 import com.crdroid.settings.fragments.misc.SpoofShapes
@@ -81,7 +84,11 @@ private val CardShape = RoundedCornerShape(20.dp)
 private fun Typeface?.toFamily(): FontFamily = if (this == null) FontFamily.Default else FontFamily(this)
 
 @Composable
-internal fun FontPickerContent(vm: FontPickerViewModel, onAddFont: () -> Unit) {
+internal fun FontPickerContent(
+    vm: FontPickerViewModel,
+    onAddFont: () -> Unit,
+    onBrowseOnline: () -> Unit,
+) {
     val context = LocalContext.current
     val busy = FontOps.busy
 
@@ -162,7 +169,21 @@ internal fun FontPickerContent(vm: FontPickerViewModel, onAddFont: () -> Unit) {
             )
         }
 
-        Spacer(Modifier.height(24.dp))
+        // First, so the online library is seen before the handful of system fonts.
+        Spacer(Modifier.height(16.dp))
+        SpoofGroup(title = stringResource(R.string.online_fonts_section)) {
+            item {
+                SpoofNavRow(
+                    title = stringResource(R.string.online_fonts_browse),
+                    summary = stringResource(R.string.online_fonts_browse_summary),
+                    icon = Icons.Rounded.CloudDownload,
+                    enabled = busy == null,
+                    onClick = onBrowseOnline,
+                )
+            }
+        }
+
+        Spacer(Modifier.height(16.dp))
         SectionLabel(stringResource(R.string.font_system_section))
         if (vm.loading && vm.options.isEmpty()) {
             SpoofingLoadingBox(Modifier.padding(vertical = 48.dp))
@@ -347,7 +368,7 @@ private fun FontCard(
 // ---------------------------------------------------------------------------
 
 @Composable
-private fun PendingRestartBanner(
+internal fun PendingRestartBanner(
     pending: PendingRestart,
     onRestart: () -> Unit,
     modifier: Modifier = Modifier,
@@ -565,7 +586,7 @@ private fun FontActionDialog(
 
 /** Glyphs, weights and running text, so the font can be judged before applying it. */
 @Composable
-private fun FontSpecimen(family: FontFamily) {
+internal fun FontSpecimen(family: FontFamily) {
     Surface(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
