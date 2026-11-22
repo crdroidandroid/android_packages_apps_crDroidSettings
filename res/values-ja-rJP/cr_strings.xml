@@ -424,7 +424,7 @@
     <string name="font_restart_systemui">システム UI を再起動</string>
     <string name="font_summary_pending_reboot">%1$s · 再起動を保留中</string>
     <string name="font_summary_pending_systemui">%1$s · システムUIの再起動を保留中</string>
-    <string name="font_picker_footer">システム標準のフォントスタイルは上に表示されています。独自のフォントを使用するには、「フォントを追加」をタップして最大64MBまでの.ttfまたは.otfファイルを選択してください。カスタムフォントは、標準UIフォントを使用するすべてのシステムおよびアプリのテキストに適用されます。</string>
+    <string name="font_picker_footer">Font styles provided by the system are listed above. To use your own, tap Add font and choose a .ttf or .otf file of up to 64 MB. You can also download one from Google Fonts under Online fonts. A custom font is used for all system and app text that uses the standard UI fonts.</string>
     <string name="font_error_title">フォントを変更できませんでした</string>
     <string name="font_error_updater_disabled">カスタムフォントはこのデバイスでは使用できません。カーネルとデータパーティションで fs-verity サポートが必要です。</string>
     <string name="font_error_invalid_file">このファイルはシステムが使用できるフォントではありません。最大 64 MB の OpenType フォント (.ttf, .otf) のみがサポートされています。</string>
@@ -432,6 +432,46 @@
     <string name="font_error_downgrading">システムはすでにこのフォントの新しいバージョンを持っています。</string>
     <string name="font_error_verification">システムは fs-verity でフォントファイルを保護できなかったので、インストールされていませんでした。</string>
     <string name="font_error_storage">システムはフォントを保存できませんでした。空き容量があることを確認して再度お試し下さい。</string>
+    <!-- Online fonts (Google Fonts) -->
+    <string name="online_fonts_section">Online fonts</string>
+    <string name="online_fonts_title">Online fonts</string>
+    <string name="online_fonts_browse">Browse Google Fonts</string>
+    <string name="online_fonts_browse_summary">Explore 1,800+ free fonts from Google and give your phone a whole new look</string>
+    <string name="online_fonts_search">Search fonts</string>
+    <string name="online_fonts_sort_name">A–Z</string>
+    <string name="online_fonts_category_all">All</string>
+    <string name="online_fonts_category_sans">Sans serif</string>
+    <string name="online_fonts_category_serif">Serif</string>
+    <string name="online_fonts_category_display">ディスプレイ</string>
+    <string name="online_fonts_category_handwriting">Handwriting</string>
+    <string name="online_fonts_category_mono">Monospace</string>
+    <plurals name="online_fonts_styles">
+        <item quantity="other">%d styles</item>
+    </plurals>
+    <string name="online_fonts_error">Couldn\'t load Google Fonts. Check your connection.</string>
+    <string name="online_fonts_empty_title">No fonts found</string>
+    <string name="online_fonts_empty_body">Try another name or category.</string>
+    <string name="online_fonts_downloading">Downloading…</string>
+    <string name="online_fonts_downloading_progress">Downloading… %1$d%%</string>
+    <string name="online_fonts_download_failed">Couldn\'t download this style.</string>
+    <string name="online_fonts_footer">Fonts come from Google Fonts and are free to use. Tap one to see it in full before installing, or download it to install later. Downloaded fonts are listed first and work without a connection. Only the chosen style is installed, and a reboot is needed to apply it everywhere.</string>
+    <string name="online_fonts_downloaded">ダウンロード済み</string>
+    <string name="online_fonts_download_only">Download, install later</string>
+    <string name="online_fonts_delete_download">ダウンロードを削除</string>
+    <string name="online_fonts_download_done">%1$sをダウンロードしました</string>
+    <string name="online_fonts_download_deleted">%1$s deleted</string>
+    <string name="online_fonts_offline">You\'re offline. Showing your downloaded fonts.</string>
+    <string name="font_weight_thin">細め</string>
+    <string name="font_weight_extra_light">Extra light</string>
+    <string name="font_weight_light">Light</string>
+    <string name="font_weight_regular">通常</string>
+    <string name="font_weight_medium">Medium</string>
+    <string name="font_weight_semi_bold">Semi bold</string>
+    <string name="font_weight_bold">Bold</string>
+    <string name="font_weight_extra_bold">Extra bold</string>
+    <string name="font_weight_black">Black</string>
+    <string name="font_variant_italic">Italic</string>
+    <string name="font_variant_weight_italic">%1$s italic</string>
     <string name="font_overlay_reset_failed">カスタムフォントがインストールされていますが、フォントスタイルをデフォルトに戻すことができませんでした</string>
     <!-- System emoji -->
     <string name="emoji_picker_title">システムの絵文字</string>
