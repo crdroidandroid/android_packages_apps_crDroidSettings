@@ -423,7 +423,7 @@
     <string name="font_restart_systemui">시스템 UI 재시작</string>
     <string name="font_summary_pending_reboot">%1$s - 다시 시작 대기</string>
     <string name="font_summary_pending_systemui">%1$s - 시스템 UI 재시작 대기</string>
-    <string name="font_picker_footer"></string>
+    <string name="font_picker_footer">Font styles provided by the system are listed above. To use your own, tap Add font and choose a .ttf or .otf file of up to 64 MB. You can also download one from Google Fonts under Online fonts. A custom font is used for all system and app text that uses the standard UI fonts.</string>
     <string name="font_error_title">글꼴을 변경하지 않았습니다</string>
     <string name="font_error_updater_disabled">사용자 지정 글꼴은 현재 기기에서 지원하지 않습니다. 커널과 데이터 파티션에서 fs-verify를 지원해야 합니다.</string>
     <string name="font_error_invalid_file">이 파일은 시스템이 사용할 수 있는 글꼴이 아닙니다.  64 MB 이하의 OpenType 글꼴(.ttf, .otf)만 지원합니다.</string>
@@ -431,6 +431,46 @@
     <string name="font_error_downgrading">이미 시스템에 해당 글꼴의 새로운 버전이 있습니다.</string>
     <string name="font_error_verification">시스템이 fs-verify로 글꼴 파일을 보호할 수 없어 설치되지 않았습니다.</string>
     <string name="font_error_storage">시스템이 글꼴을 저장하지 못했습니다. 남은 저장 공간이 있는지 확인하고 다시 시도하세요.</string>
+    <!-- Online fonts (Google Fonts) -->
+    <string name="online_fonts_section">Online fonts</string>
+    <string name="online_fonts_title">Online fonts</string>
+    <string name="online_fonts_browse">Browse Google Fonts</string>
+    <string name="online_fonts_browse_summary">Explore 1,800+ free fonts from Google and give your phone a whole new look</string>
+    <string name="online_fonts_search">Search fonts</string>
+    <string name="online_fonts_sort_name">A–Z</string>
+    <string name="online_fonts_category_all">All</string>
+    <string name="online_fonts_category_sans">Sans serif</string>
+    <string name="online_fonts_category_serif">Serif</string>
+    <string name="online_fonts_category_display">디스플레이</string>
+    <string name="online_fonts_category_handwriting">Handwriting</string>
+    <string name="online_fonts_category_mono">Monospace</string>
+    <plurals name="online_fonts_styles">
+        <item quantity="other">%d styles</item>
+    </plurals>
+    <string name="online_fonts_error">Couldn\'t load Google Fonts. Check your connection.</string>
+    <string name="online_fonts_empty_title">No fonts found</string>
+    <string name="online_fonts_empty_body">Try another name or category.</string>
+    <string name="online_fonts_downloading">Downloading…</string>
+    <string name="online_fonts_downloading_progress">Downloading… %1$d%%</string>
+    <string name="online_fonts_download_failed">Couldn\'t download this style.</string>
+    <string name="online_fonts_footer">Fonts come from Google Fonts and are free to use. Tap one to see it in full before installing, or download it to install later. Downloaded fonts are listed first and work without a connection. Only the chosen style is installed, and a reboot is needed to apply it everywhere.</string>
+    <string name="online_fonts_downloaded">Downloaded</string>
+    <string name="online_fonts_download_only">Download, install later</string>
+    <string name="online_fonts_delete_download">Delete download</string>
+    <string name="online_fonts_download_done">%1$s downloaded</string>
+    <string name="online_fonts_download_deleted">%1$s deleted</string>
+    <string name="online_fonts_offline">You\'re offline. Showing your downloaded fonts.</string>
+    <string name="font_weight_thin">얇게</string>
+    <string name="font_weight_extra_light">Extra light</string>
+    <string name="font_weight_light">Light</string>
+    <string name="font_weight_regular">일반</string>
+    <string name="font_weight_medium">Medium</string>
+    <string name="font_weight_semi_bold">Semi bold</string>
+    <string name="font_weight_bold">Bold</string>
+    <string name="font_weight_extra_bold">Extra bold</string>
+    <string name="font_weight_black">Black</string>
+    <string name="font_variant_italic">Italic</string>
+    <string name="font_variant_weight_italic">%1$s italic</string>
     <string name="font_overlay_reset_failed">사용자 지정 글꼴이 설치되었으나 글꼴 스타일이 기본값으로 바뀌지 않았습니다.</string>
     <!-- System emoji -->
     <string name="emoji_picker_title">System emoji</string>
