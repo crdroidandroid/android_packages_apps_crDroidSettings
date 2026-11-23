@@ -406,7 +406,7 @@ internal class OnlineFontRepository(context: Context) {
     }
 
     /** Already-loaded preview, for the first frame of a card. */
-    fun cachedPreview(font: OnlineFont): Typeface? = previews.get(font.family)
+    fun cachedPreview(font: OnlineFont): Typeface? = previews.get(previewKey(font))
 
     /**
      * The family name (plus the "Aa" sample) in the font itself: from a saved style, else
@@ -415,7 +415,8 @@ internal class OnlineFontRepository(context: Context) {
      * opened again.
      */
     suspend fun preview(font: OnlineFont): Typeface? {
-        previews.get(font.family)?.let { return it }
+        val key = previewKey(font)
+        previews.get(key)?.let { return it }
         val local = withContext(Dispatchers.IO) {
             val saved = (listOf(font.defaultVariant) + font.variants)
                 .firstNotNullOfOrNull { downloadedFile(font, it) }
@@ -430,11 +431,11 @@ internal class OnlineFontRepository(context: Context) {
                 else -> null
             }
         }
-        if (local != null) return local.also { previews.put(font.family, it) }
+        if (local != null) return local.also { previews.put(key, it) }
         if (font.family in failedPreviews) return null
         return previewLimit.withPermit {
             withContext(Dispatchers.IO) {
-                previews.get(font.family) ?: runCatching {
+                previews.get(key) ?: runCatching {
                     val file = previewFile(font)
                     GoogleFontsCatalog.fetchPreview(font, previewText(font), file)
                     setVersion(file, font.version)
@@ -442,16 +443,21 @@ internal class OnlineFontRepository(context: Context) {
                 }.onFailure {
                     Log.w(TAG, "Preview of ${font.family} unavailable: $it")
                     failedPreviews += font.family
-                }.getOrNull()?.also { previews.put(font.family, it) }
+                }.getOrNull()?.also { previews.put(key, it) }
             }
         }
     }
 
-    private fun previewFile(font: OnlineFont) =
-        File(previewDir, "${onlineFontFileName(font.family)}.ttf")
+    private fun previewSample() = context.getString(R.string.font_sample_glyphs)
 
-    private fun previewText(font: OnlineFont) =
-        font.family + context.getString(R.string.font_sample_glyphs)
+    private fun previewKey(font: OnlineFont) = font.family + previewSample()
+
+    private fun previewFile(font: OnlineFont): File {
+        val sample = Integer.toHexString(previewSample().hashCode())
+        return File(previewDir, "${onlineFontFileName(font.family)}-$sample.ttf")
+    }
+
+    private fun previewText(font: OnlineFont) = font.family + previewSample()
 
     /**
      * One style for previewing and installing: the saved copy, else the cached one (both
@@ -484,7 +490,10 @@ internal class OnlineFontRepository(context: Context) {
     fun load(file: File): Typeface? = runCatching { Typeface.createFromFile(file) }
         .getOrNull()
         ?.takeUnless { it === Typeface.DEFAULT }
-        .also { if (it == null) file.delete() }
+        .also { if (it == null && !file.isDownload()) file.delete() }
+
+    private fun File.isDownload() =
+        canonicalPath.startsWith(downloadDir.canonicalPath + File.separator)
 
     /**
      * Downloads [file] again in the background when it predates [font]'s current version.
@@ -508,7 +517,7 @@ internal class OnlineFontRepository(context: Context) {
     private fun update(file: File, font: OnlineFont, variant: String?) {
         if (variant == null) {
             GoogleFontsCatalog.fetchPreview(font, previewText(font), file)
-            load(file)?.let { previews.put(font.family, it) }
+            load(file)?.let { previews.put(previewKey(font), it) }
         } else {
             GoogleFontsCatalog.fetchVariant(font, variant, file, onProgress = null)
         }
