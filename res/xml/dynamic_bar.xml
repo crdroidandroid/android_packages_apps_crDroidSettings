@@ -50,6 +50,13 @@
         android:defaultValue="true"
         android:dependency="ax_dynamic_bar_enabled" />
 
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="ax_dynamic_bar_chip_morph"
+        android:title="@string/dynamic_bar_chip_morph"
+        android:summary="@string/dynamic_bar_chip_morph_summary"
+        android:defaultValue="true"
+        android:dependency="ax_dynamic_bar_enabled" />
+
     <PreferenceCategory
         android:key="dynamic_bar_events_category"
         android:title="@string/dynamic_bar_events"

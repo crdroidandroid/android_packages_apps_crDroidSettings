@@ -185,6 +185,7 @@ class DynamicBar : SettingsPreferenceFragment() {
         private const val SETTINGS_KEY_BATTERY_CHIP_MODE =
             Settings.Secure.AX_DYNAMIC_BAR_KEYGUARD_BATTERY_CHIP_MODE
         private const val SETTINGS_KEY_HAPTICS = Settings.Secure.AX_DYNAMIC_BAR_HAPTICS
+        private const val SETTINGS_KEY_CHIP_MORPH = Settings.Secure.AX_DYNAMIC_BAR_CHIP_MORPH
 
         @JvmStatic
         fun reset(context: Context) {
@@ -207,6 +208,10 @@ class DynamicBar : SettingsPreferenceFragment() {
             )
             Settings.Secure.putIntForUser(
                 resolver, SETTINGS_KEY_HAPTICS, 1,
+                UserHandle.USER_CURRENT
+            )
+            Settings.Secure.putIntForUser(
+                resolver, SETTINGS_KEY_CHIP_MORPH, 1,
                 UserHandle.USER_CURRENT
             )
         }
