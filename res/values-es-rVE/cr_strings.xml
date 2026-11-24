@@ -174,14 +174,14 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="hardware_keys_action_expand_qs_panel">Expandir panel \"Ajustes rápidos\"</string>
     <string name="hardware_keys_action_ringer_modes">Cambiar modo de timbre</string>
     <string name="hardware_keys_action_power_menu">Menú de apagado</string>
-    <string name="hardware_keys_action_contextual_search">Circle to Search</string>
-    <string name="hardware_keys_action_silence_call">Silence incoming call</string>
-    <string name="hardware_keys_action_launch_app">Open app</string>
-    <string name="launch_app_summary">Open <xliff:g id="app" example="Chrome">%1$s</xliff:g></string>
-    <string name="launch_app_shortcut_summary">Open <xliff:g id="app" example="Chrome">%1$s</xliff:g>: <xliff:g id="shortcut" example="New tab">%2$s</xliff:g></string>
-    <string name="launch_app_no_selection">No app selected</string>
-    <string name="launch_app_not_installed">App not installed</string>
-    <string name="launch_app_shortcuts_a11y">Shortcuts of <xliff:g id="app" example="Chrome">%1$s</xliff:g></string>
+    <string name="hardware_keys_action_contextual_search">Buscar con un círculo</string>
+    <string name="hardware_keys_action_silence_call">Silenciar llamada entrante</string>
+    <string name="hardware_keys_action_launch_app">Abrir aplicación</string>
+    <string name="launch_app_summary">Abrir <xliff:g id="app" ejemplo="Chrome">%1$s</xliff:g></string>
+    <string name="launch_app_shortcut_summary">Abrir <xliff:g id="app" ejemplo="Chrome">%1$s</xliff:g>: <xliff:g id="shortcut" ejemplo="New tab">%2$s</xliff:g></string>
+    <string name="launch_app_no_selection">Ninguna aplicación seleccionada</string>
+    <string name="launch_app_not_installed">Aplicación no instalada</string>
+    <string name="launch_app_shortcuts_a11y">Accesos directos de <xliff:g id="app" ejemplo="Chrome">%1$s</xliff:g></string>
     <string name="home_answer_call_title">Responder la llamada</string>
     <string name="home_answer_call_summary">Responder llamadas entrantes presionando el botón de inicio</string>
     <string name="camera_sleep_on_release_title">Vista rápida</string>
@@ -424,7 +424,7 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="font_restart_systemui">Reiniciar SystemUI</string>
     <string name="font_summary_pending_reboot">%1$s · reinicio pendiente</string>
     <string name="font_summary_pending_systemui">%1$s · reinicio de SystemUI pendiente</string>
-    <string name="font_picker_footer">Font styles provided by the system are listed above. To use your own, tap Add font and choose a .ttf or .otf file of up to 64 MB. You can also download one from Google Fonts under Online fonts. A custom font is used for all system and app text that uses the standard UI fonts.</string>
+    <string name="font_picker_footer">Los estilos de fuente proporcionados por el sistema se muestran arriba. Para utilizar una fuente propia, toque Añadir fuente y seleccione un archivo .ttf o .otf de hasta 64 MB. También puede descargar una desde Google Fonts, en Fuentes en línea. La fuente personalizada se utiliza en todo el texto del sistema y de las aplicaciones que emplean las fuentes estándar de la interfaz de usuario.</string>
     <string name="font_error_title">No se pudo cambiar la fuente</string>
     <string name="font_error_updater_disabled">Las fuentes personalizadas no están disponibles en este dispositivo. Requieren compatibilidad con fs-verity en el kernel y en la partición de datos.</string>
     <string name="font_error_invalid_file">Este archivo no es una fuente que el sistema pueda utilizar. Solo se admiten fuentes OpenType (.ttf, .otf) de hasta 64 MB.</string>
@@ -433,46 +433,46 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="font_error_verification">El sistema no pudo proteger el archivo de fuente con fs-verity, por lo que no se instaló.</string>
     <string name="font_error_storage">El sistema no pudo guardar la fuente. Compruebe que haya espacio de almacenamiento disponible e inténtelo de nuevo.</string>
     <!-- Online fonts (Google Fonts) -->
-    <string name="online_fonts_section">Online fonts</string>
-    <string name="online_fonts_title">Online fonts</string>
-    <string name="online_fonts_browse">Browse Google Fonts</string>
-    <string name="online_fonts_browse_summary">Explore 1,800+ free fonts from Google and give your phone a whole new look</string>
-    <string name="online_fonts_search">Search fonts</string>
+    <string name="online_fonts_section">Fuentes en línea</string>
+    <string name="online_fonts_title">Fuentes en línea</string>
+    <string name="online_fonts_browse">Explorar Google Fonts</string>
+    <string name="online_fonts_browse_summary">Explore más de 1.800 fuentes gratuitas de Google y dé un nuevo aspecto a su teléfono</string>
+    <string name="online_fonts_search">Buscar fuentes</string>
     <string name="online_fonts_sort_name">A–Z</string>
-    <string name="online_fonts_category_all">All</string>
-    <string name="online_fonts_category_sans">Sans serif</string>
+    <string name="online_fonts_category_all">Todas</string>
+    <string name="online_fonts_category_sans">Sans Serif</string>
     <string name="online_fonts_category_serif">Serif</string>
     <string name="online_fonts_category_display">Pantalla</string>
-    <string name="online_fonts_category_handwriting">Handwriting</string>
-    <string name="online_fonts_category_mono">Monospace</string>
+    <string name="online_fonts_category_handwriting">Escritura a mano</string>
+    <string name="online_fonts_category_mono">Monoespaciada</string>
     <plurals name="online_fonts_styles">
-        <item quantity="one">%d style</item>
-        <item quantity="other">%d styles</item>
+        <item quantity="one">%d estilo</item>
+        <item quantity="other">%d estilos</item>
     </plurals>
-    <string name="online_fonts_error">Couldn\'t load Google Fonts. Check your connection.</string>
-    <string name="online_fonts_empty_title">No fonts found</string>
-    <string name="online_fonts_empty_body">Try another name or category.</string>
-    <string name="online_fonts_downloading">Downloading…</string>
-    <string name="online_fonts_downloading_progress">Downloading… %1$d%%</string>
-    <string name="online_fonts_download_failed">Couldn\'t download this style.</string>
-    <string name="online_fonts_footer">Fonts come from Google Fonts and are free to use. Tap one to see it in full before installing, or download it to install later. Downloaded fonts are listed first and work without a connection. Only the chosen style is installed, and a reboot is needed to apply it everywhere.</string>
+    <string name="online_fonts_error">No se pudo cargar las fuentes de Google. Compruebe su conexión.</string>
+    <string name="online_fonts_empty_title">No se encontraron fuentes</string>
+    <string name="online_fonts_empty_body">Pruebe con otro nombre o categoría.</string>
+    <string name="online_fonts_downloading">Descargando…</string>
+    <string name="online_fonts_downloading_progress">Descargando... %1$d%%</string>
+    <string name="online_fonts_download_failed">No se pudo descargar este estilo.</string>
+    <string name="online_fonts_footer">Las fuentes provienen de Google Fonts y son gratuitas. Toque una para verla en detalle antes de instalarla o descárguela para instalarla más tarde. Las fuentes descargadas aparecen primero y funcionan sin conexión. Solo se instala el estilo seleccionado y es necesario reiniciar el dispositivo para aplicarlo en todo el sistema.</string>
     <string name="online_fonts_downloaded">Descargado</string>
-    <string name="online_fonts_download_only">Download, install later</string>
+    <string name="online_fonts_download_only">Descargar, instalar más tarde</string>
     <string name="online_fonts_delete_download">Eliminar descarga</string>
     <string name="online_fonts_download_done">%1$s descargado</string>
-    <string name="online_fonts_download_deleted">%1$s deleted</string>
-    <string name="online_fonts_offline">You\'re offline. Showing your downloaded fonts.</string>
+    <string name="online_fonts_download_deleted">%1$s eliminado</string>
+    <string name="online_fonts_offline">No tiene conexión. Se muestran las fuentes descargadas.</string>
     <string name="font_weight_thin">Delgada</string>
-    <string name="font_weight_extra_light">Extra light</string>
-    <string name="font_weight_light">Light</string>
+    <string name="font_weight_extra_light">Extra ligera</string>
+    <string name="font_weight_light">Ligera</string>
     <string name="font_weight_regular">Normal</string>
-    <string name="font_weight_medium">Medium</string>
-    <string name="font_weight_semi_bold">Semi bold</string>
-    <string name="font_weight_bold">Bold</string>
-    <string name="font_weight_extra_bold">Extra bold</string>
-    <string name="font_weight_black">Black</string>
-    <string name="font_variant_italic">Italic</string>
-    <string name="font_variant_weight_italic">%1$s italic</string>
+    <string name="font_weight_medium">Mediana</string>
+    <string name="font_weight_semi_bold">Semi negrita</string>
+    <string name="font_weight_bold">Negrita</string>
+    <string name="font_weight_extra_bold">Extra negrita</string>
+    <string name="font_weight_black">Negra</string>
+    <string name="font_variant_italic">Cursiva</string>
+    <string name="font_variant_weight_italic">%1$s cursiva</string>
     <string name="font_overlay_reset_failed">La fuente personalizada se instaló, pero no se pudo restablecer el estilo de fuente a Predeterminado</string>
     <!-- System emoji -->
     <string name="emoji_picker_title">Emoji del sistema</string>
@@ -1444,6 +1444,10 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="dynamic_bar_keyguard_enable">Barra dinámica en la pantalla de bloqueo</string>
     <string name="dynamic_bar_keyguard_enable_summary">Reemplazar la indicación del teclado con el chip de la barra dinámica en la pantalla de bloqueo con controles y acciones rápidas</string>
     <string name="dynamic_bar_keyguard_battery_chip">Información de la batería en la pantalla de bloqueo</string>
+    <string name="dynamic_bar_haptics">Tap haptics</string>
+    <string name="dynamic_bar_haptics_summary">Vibrate subtly when tapping the chip</string>
+    <string name="dynamic_bar_chip_morph">Morph animation</string>
+    <string name="dynamic_bar_chip_morph_summary">Expand the chip into its panel and shrink it back on close</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">No mostrar nunca</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">Sólo al cargar</string>
     <string name="dynamic_bar_keyguard_battery_chip_always">Mostrar siempre</string>
