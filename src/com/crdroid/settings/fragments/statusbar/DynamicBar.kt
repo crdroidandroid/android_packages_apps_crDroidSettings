@@ -19,6 +19,7 @@ import androidx.preference.SwitchPreferenceCompat
 import com.android.internal.logging.nano.MetricsProto
 import com.android.settings.R
 import com.android.settings.SettingsPreferenceFragment
+import com.crdroid.settings.utils.DeviceUtils
 import org.json.JSONArray
 
 class DynamicBar : SettingsPreferenceFragment() {
@@ -56,6 +57,12 @@ class DynamicBar : SettingsPreferenceFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         addPreferencesFromResource(R.xml.dynamic_bar)
+
+        if (!DeviceUtils.hasVibrator(requireContext())) {
+            findPreference<Preference>(SETTINGS_KEY_HAPTICS)?.let {
+                preferenceScreen.removePreference(it)
+            }
+        }
 
         setupKeyguardSubPrefs()
         setupEventToggles()
@@ -177,6 +184,7 @@ class DynamicBar : SettingsPreferenceFragment() {
             Settings.Secure.AX_DYNAMIC_BAR_COMPACT_NOTIFICATIONS
         private const val SETTINGS_KEY_BATTERY_CHIP_MODE =
             Settings.Secure.AX_DYNAMIC_BAR_KEYGUARD_BATTERY_CHIP_MODE
+        private const val SETTINGS_KEY_HAPTICS = Settings.Secure.AX_DYNAMIC_BAR_HAPTICS
 
         @JvmStatic
         fun reset(context: Context) {
@@ -195,6 +203,10 @@ class DynamicBar : SettingsPreferenceFragment() {
             )
             Settings.Secure.putIntForUser(
                 resolver, SETTINGS_KEY_BATTERY_CHIP_MODE, 1,
+                UserHandle.USER_CURRENT
+            )
+            Settings.Secure.putIntForUser(
+                resolver, SETTINGS_KEY_HAPTICS, 1,
                 UserHandle.USER_CURRENT
             )
         }

@@ -43,6 +43,13 @@
         android:defaultValue="1"
         android:dependency="ax_dynamic_bar_keyguard_enabled" />
 
+    <com.crdroid.settings.preferences.SecureSettingSwitchPreference
+        android:key="ax_dynamic_bar_haptics"
+        android:title="@string/dynamic_bar_haptics"
+        android:summary="@string/dynamic_bar_haptics_summary"
+        android:defaultValue="true"
+        android:dependency="ax_dynamic_bar_enabled" />
+
     <PreferenceCategory
         android:key="dynamic_bar_events_category"
         android:title="@string/dynamic_bar_events"
