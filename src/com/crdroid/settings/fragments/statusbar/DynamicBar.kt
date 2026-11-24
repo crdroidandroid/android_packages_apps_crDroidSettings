@@ -169,11 +169,14 @@ class DynamicBar : SettingsPreferenceFragment() {
     }
 
     companion object {
-        private const val SETTINGS_KEY_ENABLED = "ax_dynamic_bar_enabled"
-        private const val SETTINGS_KEY_KEYGUARD_ENABLED = "ax_dynamic_bar_keyguard_enabled"
-        private const val SETTINGS_KEY_EVENTS = "ax_dynamic_bar_events"
-        private const val SETTINGS_KEY_COMPACT_NOTIFICATIONS = "ax_dynamic_bar_compact_notifications"
-        private const val SETTINGS_KEY_BATTERY_CHIP_MODE = "ax_dynamic_bar_keyguard_battery_chip_mode"
+        private const val SETTINGS_KEY_ENABLED = Settings.Secure.AX_DYNAMIC_BAR_ENABLED
+        private const val SETTINGS_KEY_KEYGUARD_ENABLED =
+            Settings.Secure.AX_DYNAMIC_BAR_KEYGUARD_ENABLED
+        private const val SETTINGS_KEY_EVENTS = Settings.Secure.AX_DYNAMIC_BAR_EVENTS
+        private const val SETTINGS_KEY_COMPACT_NOTIFICATIONS =
+            Settings.Secure.AX_DYNAMIC_BAR_COMPACT_NOTIFICATIONS
+        private const val SETTINGS_KEY_BATTERY_CHIP_MODE =
+            Settings.Secure.AX_DYNAMIC_BAR_KEYGUARD_BATTERY_CHIP_MODE
 
         @JvmStatic
         fun reset(context: Context) {
