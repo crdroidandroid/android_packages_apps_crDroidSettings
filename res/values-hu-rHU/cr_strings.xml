@@ -173,6 +173,15 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="hardware_keys_action_notifications_panel">Értesítésipanel-kapcsoló</string>
     <string name="hardware_keys_action_expand_qs_panel">Bővített panel</string>
     <string name="hardware_keys_action_ringer_modes">Csengésmód-változtatás</string>
+    <string name="hardware_keys_action_power_menu">Kikapcsolómenü</string>
+    <string name="hardware_keys_action_contextual_search">Keresés karikázással</string>
+    <string name="hardware_keys_action_silence_call">Bejövő hívás némitása</string>
+    <string name="hardware_keys_action_launch_app">Alkalmazásindítás</string>
+    <string name="launch_app_summary"><xliff:g id="app" example="Chrome">%1$s</xliff:g> megnyitása</string>
+    <string name="launch_app_shortcut_summary"><xliff:g id="app" example="Chrome">%1$s</xliff:g> megnyitása: <xliff:g id="shortcut" example="New tab">%2$s</xliff:g> futtatása</string>
+    <string name="launch_app_no_selection">Nincs kiválasztva alkalmazás</string>
+    <string name="launch_app_not_installed">Nincs telepítve alkalmazás</string>
+    <string name="launch_app_shortcuts_a11y"><xliff:g id="app" example="Chrome">%1$s</xliff:g> ikonja</string>
     <string name="home_answer_call_title">Hívásfogadás</string>
     <string name="home_answer_call_summary">A bejövő hívások fogadhatók a kezdőképernyő-gomb megnyomásával</string>
     <string name="camera_sleep_on_release_title">Betekintés a képernyőbe</string>
@@ -415,7 +424,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="font_restart_systemui">Rendszer újraindítása</string>
     <string name="font_summary_pending_reboot">%1$s · újraindítás függőben</string>
     <string name="font_summary_pending_systemui">%1$s · Rendszer újraindítás függőben</string>
-    <string name="font_picker_footer">A rendszer-betűtípusok fent láthatók. Saját betűtípus használatához kattintson a \'Betűtípus hozzáadása\' lehetőségre, és válasszon ki egy legfeljebb 64 MB méretű .ttf vagy .otf fájlt. Az új betűtípus minden rendszer- és alkalmazás-szövegnél megjelenik, ami a szabványos felhasználói felületi betűtípusokat használja.</string>
+    <string name="font_picker_footer">A rendszer-betűtípusok fent láthatók. Saját betűtípus használatához kattintson a \'Betűtípus hozzáadása\' lehetőségre, és válasszon ki egy legfeljebb 64 MB méretű .ttf vagy .otf fájlt. Az Online betűtípusok menüpontból a Google Fonts kínálatából is letölthet egyet. Az új betűtípus minden rendszer- és alkalmazás-szövegnél megjelenik, ami a szabványos felhasználói felületi betűtípusokat használja.</string>
     <string name="font_error_title">A betűkészlet megváltoztatása nem sikerült</string>
     <string name="font_error_updater_disabled">Ezen a készüléken nem használható egyéni betűtípus. A kernelben és az adatpartíción fs-verity támogatás szükséges.</string>
     <string name="font_error_invalid_file">Ez a fájl nem olyan betűtípus, amelyet a rendszer használni tud. Kizárólag max. 64 MB méretű OpenType betűtípusok (.ttf, .otf) támogatottak.</string>
@@ -423,6 +432,47 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="font_error_downgrading">A rendszer jelenleg ennél frissebb verziót használ.</string>
     <string name="font_error_verification">A rendszer nem tudta megvédeni a betűtípusfájlt az fs-verity-vel, ezért nem került telepítésre.</string>
     <string name="font_error_storage">A rendszer nem tudta menteni a betűtípust. Szabadítson fel tárhelyet majd próbálja újra.</string>
+    <!-- Online fonts (Google Fonts) -->
+    <string name="online_fonts_section">Online betűtípusok</string>
+    <string name="online_fonts_title">Online betűtípusok</string>
+    <string name="online_fonts_browse">Böngésszen a Google betűtipusokból</string>
+    <string name="online_fonts_browse_summary">Válasszon több mint 1800 ingyenes betűtípusból a Google-tól, és varázsoljon teljesen új megjelenést telefonjának!</string>
+    <string name="online_fonts_search">Betűtípus-keresés</string>
+    <string name="online_fonts_sort_name">A–Z</string>
+    <string name="online_fonts_category_all">Az összes</string>
+    <string name="online_fonts_category_sans">Sans Serif</string>
+    <string name="online_fonts_category_serif">Serif</string>
+    <string name="online_fonts_category_display">Megjelenítés</string>
+    <string name="online_fonts_category_handwriting">Kézzelírott</string>
+    <string name="online_fonts_category_mono">Monospace</string>
+    <plurals name="online_fonts_styles">
+        <item quantity="one">%d stílus</item>
+        <item quantity="other">%d stílus</item>
+    </plurals>
+    <string name="online_fonts_error">A Google Betűtipusok nem tölthetők be. Ellenőrizze az internet-kapcsolatot.</string>
+    <string name="online_fonts_empty_title">Nem találhatók betűtípusok</string>
+    <string name="online_fonts_empty_body">Próbáljon más kategóriát vagy más nevet.</string>
+    <string name="online_fonts_downloading">Letöltés…</string>
+    <string name="online_fonts_downloading_progress">Letöltés… %1$d%%</string>
+    <string name="online_fonts_download_failed">Ez a stílus nem tölthető le.</string>
+    <string name="online_fonts_footer">A betűtípusok a Google Betűtípustól származnak, és ingyenesek. Koppintson rá az egyikre, hogy telepítés megtekinthesse, vagy töltse le, és telepítse később. A letöltött betűtípusok jelennek meg elsőként, és kapcsolat nélkül is használhatók. Csak a kiválasztott stílus kerül telepítésre, és az érvényesítéséhez – hogy mindenhol megjelenjen – újraindítás szükséges.</string>
+    <string name="online_fonts_downloaded">Letöltve</string>
+    <string name="online_fonts_download_only">Letöltés, telepítés később</string>
+    <string name="online_fonts_delete_download">Letöltés törlése</string>
+    <string name="online_fonts_download_done">%1$s letöltve</string>
+    <string name="online_fonts_download_deleted">%1$s törölve</string>
+    <string name="online_fonts_offline">Ön offline üzemmódba van. Csak a már letöltött betűtípusok láthatók.</string>
+    <string name="font_weight_thin">Vékony</string>
+    <string name="font_weight_extra_light">Rendkívül vékony</string>
+    <string name="font_weight_light">Vékonyított</string>
+    <string name="font_weight_regular">Szokásos</string>
+    <string name="font_weight_medium">Közepes</string>
+    <string name="font_weight_semi_bold">Enyhén vastagított</string>
+    <string name="font_weight_bold">Félkövér</string>
+    <string name="font_weight_extra_bold">Extrán vastag</string>
+    <string name="font_weight_black">Fekete</string>
+    <string name="font_variant_italic">Dőlt</string>
+    <string name="font_variant_weight_italic">%1$s dőlt</string>
     <string name="font_overlay_reset_failed">Egyéni betűtípus telepítve, de a betűstílust nem sikerült visszaállítani az alapértelmezettre</string>
     <!-- System emoji -->
     <string name="emoji_picker_title">Rendszer-hangulatjelek</string>
@@ -1396,6 +1446,10 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="dynamic_bar_keyguard_enable">Dinamikus sáv a záróképernyőn</string>
     <string name="dynamic_bar_keyguard_enable_summary">Lecseréli a hagyományos záróképernyő jelet egy dinamikus sávra amelyről vezérlést vagy gyorsműveleteket indíthat</string>
     <string name="dynamic_bar_keyguard_battery_chip">Akkuinfó a záróképernyőn</string>
+    <string name="dynamic_bar_haptics">Érintés visszajelzéssel</string>
+    <string name="dynamic_bar_haptics_summary">Finoman rezeg, amikor a kitöltést érinti</string>
+    <string name="dynamic_bar_chip_morph">Morf animáció</string>
+    <string name="dynamic_bar_chip_morph_summary">Kitöltés kibontása, majd záráskor összecsukása</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">Soha ne jelenjen meg</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">Csak töltés közben</string>
     <string name="dynamic_bar_keyguard_battery_chip_always">Mindig jelenjen meg</string>

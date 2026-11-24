@@ -173,6 +173,15 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="hardware_keys_action_notifications_panel">Pokaż panel powiadomień</string>
     <string name="hardware_keys_action_expand_qs_panel">Rozwiń panel szybkich ustawień</string>
     <string name="hardware_keys_action_ringer_modes">Zmień tryb dzwonka</string>
+    <string name="hardware_keys_action_power_menu">Menu zasilania</string>
+    <string name="hardware_keys_action_contextual_search">Zakreśl, aby wyszukać</string>
+    <string name="hardware_keys_action_silence_call">Wycisz połączenie przychodzące</string>
+    <string name="hardware_keys_action_launch_app">Otwórz aplikację</string>
+    <string name="launch_app_summary">Otwórz <xliff:g id="app" example="Chrome">%1$s</xliff:g></string>
+    <string name="launch_app_shortcut_summary">Otwórz <xliff:g id="app" example="Chrome">%1$s</xliff:g>: <xliff:g id="shortcut" example="New tab">%2$s</xliff:g></string>
+    <string name="launch_app_no_selection">Nie wybrano aplikacji</string>
+    <string name="launch_app_not_installed">Aplikacja nie została zainstalowana</string>
+    <string name="launch_app_shortcuts_a11y">Skróty do <xliff:g id="app" example="Chrome">%1$s</xliff:g></string>
     <string name="home_answer_call_title">Odbierz połączenie</string>
     <string name="home_answer_call_summary">Odbieraj połączenia przychodzące przyciskiem \"ekran główny\"</string>
     <string name="camera_sleep_on_release_title">Podgląd ekranu</string>
@@ -417,7 +426,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="font_restart_systemui">Uruchom ponownie SystemUI</string>
     <string name="font_summary_pending_reboot">%1$s · oczekiwanie na ponowne uruchomienie</string>
     <string name="font_summary_pending_systemui">%1$s · Oczekiwanie na ponowne uruchomienie SystemUI</string>
-    <string name="font_picker_footer">Style czcionek udostępniane przez system zostały wymienione powyżej. Aby użyć własnej czcionki, dotknij opcji „Dodaj czcionkę” i wybierz plik w formacie .ttf lub .otf o rozmiarze nieprzekraczającym 64 MB. Własna czcionka będzie stosowana we wszystkich tekstach systemowych i aplikacjach, które korzystają ze standardowych czcionek interfejsu użytkownika.</string>
+    <string name="font_picker_footer">Style czcionek udostępniane przez system zostały wymienione powyżej. Aby użyć własnej czcionki, dotknij opcji „Dodaj czcionkę” i wybierz plik .ttf lub .otf o rozmiarze do 64 MB. Możesz również pobrać czcionkę z serwisu Google Fonts w sekcji „Czcionki online”. Czcionka własna jest stosowana we wszystkich tekstach systemowych i aplikacjach, które korzystają ze standardowych czcionek interfejsu użytkownika.</string>
     <string name="font_error_title">Nie można zmienić czcionki</string>
     <string name="font_error_updater_disabled">Na tym urządzeniu nie są dostępne własne czcionki. Wymagają one obsługi funkcji fs-verity w jądrze systemu oraz na partycji danych.</string>
     <string name="font_error_invalid_file">Ten plik nie jest czcionką, z której może korzystać system. Obsługiwane są wyłącznie czcionki OpenType (.ttf, .otf) o rozmiarze do 64 MB.</string>
@@ -425,6 +434,49 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="font_error_downgrading">System posiada już nowszą wersję tej czcionki.</string>
     <string name="font_error_verification">System nie mógł zabezpieczyć pliku czcionki za pomocą fs-verity, więc nie został on zainstalowany.</string>
     <string name="font_error_storage">System nie mógł zapisać czcionki. Sprawdź, czy jest wystarczająca ilość wolnego miejsca, i spróbuj ponownie.</string>
+    <!-- Online fonts (Google Fonts) -->
+    <string name="online_fonts_section">Czcionki online</string>
+    <string name="online_fonts_title">Czcionki online</string>
+    <string name="online_fonts_browse">Przeglądaj czcionki Google</string>
+    <string name="online_fonts_browse_summary">Odkryj ponad 1800 darmowych czcionek z Google i nadaj całemu telefonowi nowy wygląd</string>
+    <string name="online_fonts_search">Wyszukiwanie czcionek</string>
+    <string name="online_fonts_sort_name">A–Z</string>
+    <string name="online_fonts_category_all">Wszystkie</string>
+    <string name="online_fonts_category_sans">Bezszeryfowa</string>
+    <string name="online_fonts_category_serif">Szeryfowa</string>
+    <string name="online_fonts_category_display">Ekran</string>
+    <string name="online_fonts_category_handwriting">Pismo ręczne</string>
+    <string name="online_fonts_category_mono">Stała szerokość</string>
+    <plurals name="online_fonts_styles">
+        <item quantity="one">%d styl</item>
+        <item quantity="few">%d style</item>
+        <item quantity="many">%d stylów</item>
+        <item quantity="other">%d stylów</item>
+    </plurals>
+    <string name="online_fonts_error">Nie udało się załadować czcionek Google. Sprawdź połączenie.</string>
+    <string name="online_fonts_empty_title">Nie znaleziono czcionek</string>
+    <string name="online_fonts_empty_body">Spróbuj innej nazwy lub kategorii.</string>
+    <string name="online_fonts_downloading">Pobieranie…</string>
+    <string name="online_fonts_downloading_progress">Pobieranie… %1$d%%</string>
+    <string name="online_fonts_download_failed">Nie można pobrać tego stylu.</string>
+    <string name="online_fonts_footer">Czcionki pochodzą z serwisu Google Fonts i są dostępne bezpłatnie. Dotknij jednej z nich, aby obejrzeć ją w całości przed zainstalowaniem, lub pobierz ją, aby zainstalować później. Pobrane czcionki są wyświetlane na początku listy i działają bez połączenia z internetem. Instalowany jest tylko wybrany styl, a aby zastosować go wszędzie, konieczne jest ponowne uruchomienie urządzenia.</string>
+    <string name="online_fonts_downloaded">Pobrano</string>
+    <string name="online_fonts_download_only">Pobierz, zainstaluj później</string>
+    <string name="online_fonts_delete_download">Usuń pobrane</string>
+    <string name="online_fonts_download_done">Pobrano %1$s</string>
+    <string name="online_fonts_download_deleted">%1$s usuniętych</string>
+    <string name="online_fonts_offline">Jesteś offline. Wyświetlanie pobranych czcionek.</string>
+    <string name="font_weight_thin">Cienka</string>
+    <string name="font_weight_extra_light">Bardzo cienka</string>
+    <string name="font_weight_light">Cienka</string>
+    <string name="font_weight_regular">Standardowe</string>
+    <string name="font_weight_medium">Średnia</string>
+    <string name="font_weight_semi_bold">Średnio pogrubiona</string>
+    <string name="font_weight_bold">Pogrubiona</string>
+    <string name="font_weight_extra_bold">Bardzo pogrubiona</string>
+    <string name="font_weight_black">Czarna</string>
+    <string name="font_variant_italic">Kursywa</string>
+    <string name="font_variant_weight_italic">%1$s kursywa</string>
     <string name="font_overlay_reset_failed">Zainstalowano własną czcionkę, ale nie udało się przywrócić domyślnego stylu czcionki</string>
     <!-- System emoji -->
     <string name="emoji_picker_title">Emotikony systemowe</string>
@@ -1404,6 +1456,10 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="dynamic_bar_keyguard_enable">Pasek dynamiczny na ekranie blokady</string>
     <string name="dynamic_bar_keyguard_enable_summary">Zastępuj ikonę blokady klawiatury dynamicznym paskiem na ekranie blokady, zawierającym przyciski sterujące i szybkie działania</string>
     <string name="dynamic_bar_keyguard_battery_chip">Informacje o baterii na ekranie blokady</string>
+    <string name="dynamic_bar_haptics">Tap haptics</string>
+    <string name="dynamic_bar_haptics_summary">Vibrate subtly when tapping the chip</string>
+    <string name="dynamic_bar_chip_morph">Morph animation</string>
+    <string name="dynamic_bar_chip_morph_summary">Expand the chip into its panel and shrink it back on close</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">Nigdy nie pokazuj</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">Tylko podczas ładowania</string>
     <string name="dynamic_bar_keyguard_battery_chip_always">Zawsze pokazuj</string>

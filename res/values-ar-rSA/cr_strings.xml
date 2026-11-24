@@ -173,6 +173,15 @@
     <string name="hardware_keys_action_notifications_panel">تبديل لوحة الإشعارات</string>
     <string name="hardware_keys_action_expand_qs_panel">توسيع لوحة الإعدادات السريعة</string>
     <string name="hardware_keys_action_ringer_modes">تغيير وضع الرنين</string>
+    <string name="hardware_keys_action_power_menu">قائمة زر التشغيل</string>
+    <string name="hardware_keys_action_contextual_search">Circle to Search</string>
+    <string name="hardware_keys_action_silence_call">Silence incoming call</string>
+    <string name="hardware_keys_action_launch_app">Open app</string>
+    <string name="launch_app_summary">Open <xliff:g id="app" example="Chrome">%1$s</xliff:g></string>
+    <string name="launch_app_shortcut_summary">Open <xliff:g id="app" example="Chrome">%1$s</xliff:g>: <xliff:g id="shortcut" example="New tab">%2$s</xliff:g></string>
+    <string name="launch_app_no_selection">No app selected</string>
+    <string name="launch_app_not_installed">App not installed</string>
+    <string name="launch_app_shortcuts_a11y">Shortcuts of <xliff:g id="app" example="Chrome">%1$s</xliff:g></string>
     <string name="home_answer_call_title">الرد على المكالمة</string>
     <string name="home_answer_call_summary">الرد على المكالمات الواردة بالضغط على زر الرئيسية</string>
     <string name="camera_sleep_on_release_title">نظرة خاطفة للشاشة</string>
@@ -420,7 +429,7 @@
     <string name="font_restart_systemui">Restart SystemUI</string>
     <string name="font_summary_pending_reboot">%1$s · reboot pending</string>
     <string name="font_summary_pending_systemui">%1$s · SystemUI restart pending</string>
-    <string name="font_picker_footer">Font styles provided by the system are listed above. To use your own, tap Add font and choose a .ttf or .otf file of up to 64 MB. A custom font is used for all system and app text that uses the standard UI fonts.</string>
+    <string name="font_picker_footer">Font styles provided by the system are listed above. To use your own, tap Add font and choose a .ttf or .otf file of up to 64 MB. You can also download one from Google Fonts under Online fonts. A custom font is used for all system and app text that uses the standard UI fonts.</string>
     <string name="font_error_title">Couldn\'t change the font</string>
     <string name="font_error_updater_disabled">Custom fonts aren\'t available on this device. They need fs-verity support in the kernel and on the data partition.</string>
     <string name="font_error_invalid_file">This file isn\'t a font the system can use. Only OpenType fonts (.ttf, .otf) of up to 64 MB are supported.</string>
@@ -428,6 +437,51 @@
     <string name="font_error_downgrading">The system already has a newer version of this font.</string>
     <string name="font_error_verification">The system couldn\'t protect the font file with fs-verity, so it was not installed.</string>
     <string name="font_error_storage">The system couldn\'t save the font. Check that there is free storage and try again.</string>
+    <!-- Online fonts (Google Fonts) -->
+    <string name="online_fonts_section">Online fonts</string>
+    <string name="online_fonts_title">Online fonts</string>
+    <string name="online_fonts_browse">Browse Google Fonts</string>
+    <string name="online_fonts_browse_summary">Explore 1,800+ free fonts from Google and give your phone a whole new look</string>
+    <string name="online_fonts_search">Search fonts</string>
+    <string name="online_fonts_sort_name">A–Z</string>
+    <string name="online_fonts_category_all">All</string>
+    <string name="online_fonts_category_sans">Sans serif</string>
+    <string name="online_fonts_category_serif">Serif</string>
+    <string name="online_fonts_category_display">العرض</string>
+    <string name="online_fonts_category_handwriting">Handwriting</string>
+    <string name="online_fonts_category_mono">Monospace</string>
+    <plurals name="online_fonts_styles">
+        <item quantity="zero">%d styles</item>
+        <item quantity="one">%d style</item>
+        <item quantity="two">%d styles</item>
+        <item quantity="few">%d styles</item>
+        <item quantity="many">%d styles</item>
+        <item quantity="other">%d styles</item>
+    </plurals>
+    <string name="online_fonts_error">Couldn\'t load Google Fonts. Check your connection.</string>
+    <string name="online_fonts_empty_title">No fonts found</string>
+    <string name="online_fonts_empty_body">Try another name or category.</string>
+    <string name="online_fonts_downloading">Downloading…</string>
+    <string name="online_fonts_downloading_progress">Downloading… %1$d%%</string>
+    <string name="online_fonts_download_failed">Couldn\'t download this style.</string>
+    <string name="online_fonts_footer">Fonts come from Google Fonts and are free to use. Tap one to see it in full before installing, or download it to install later. Downloaded fonts are listed first and work without a connection. Only the chosen style is installed, and a reboot is needed to apply it everywhere.</string>
+    <string name="online_fonts_downloaded">Downloaded</string>
+    <string name="online_fonts_download_only">Download, install later</string>
+    <string name="online_fonts_delete_download">Delete download</string>
+    <string name="online_fonts_download_done">%1$s downloaded</string>
+    <string name="online_fonts_download_deleted">%1$s deleted</string>
+    <string name="online_fonts_offline">You\'re offline. Showing your downloaded fonts.</string>
+    <string name="font_weight_thin">رفيع</string>
+    <string name="font_weight_extra_light">Extra light</string>
+    <string name="font_weight_light">Light</string>
+    <string name="font_weight_regular">منتظم</string>
+    <string name="font_weight_medium">Medium</string>
+    <string name="font_weight_semi_bold">Semi bold</string>
+    <string name="font_weight_bold">Bold</string>
+    <string name="font_weight_extra_bold">Extra bold</string>
+    <string name="font_weight_black">Black</string>
+    <string name="font_variant_italic">Italic</string>
+    <string name="font_variant_weight_italic">%1$s italic</string>
     <string name="font_overlay_reset_failed">Custom font installed, but the font style couldn\'t be set back to Default</string>
     <!-- System emoji -->
     <string name="emoji_picker_title">System emoji</string>
@@ -1415,6 +1469,10 @@
     <string name="dynamic_bar_keyguard_enable">الشريط الديناميكي على شاشة القفل</string>
     <string name="dynamic_bar_keyguard_enable_summary">استبدال مؤشر حراسة المفاتيح برقائق الشريط الديناميكي على شاشة القفل بضوابط وإجراءات سريعة</string>
     <string name="dynamic_bar_keyguard_battery_chip">معلومات البطارية على شاشة القفل</string>
+    <string name="dynamic_bar_haptics">Tap haptics</string>
+    <string name="dynamic_bar_haptics_summary">Vibrate subtly when tapping the chip</string>
+    <string name="dynamic_bar_chip_morph">Morph animation</string>
+    <string name="dynamic_bar_chip_morph_summary">Expand the chip into its panel and shrink it back on close</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">لا تُظهر أبداً</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">فقط عند الشحن</string>
     <string name="dynamic_bar_keyguard_battery_chip_always">الإظهار دائمًا</string>

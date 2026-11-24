@@ -173,6 +173,15 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="hardware_keys_action_notifications_panel">Activar el panel de notificaciones</string>
     <string name="hardware_keys_action_expand_qs_panel">Expandir panel \"Ajustes rápidos\"</string>
     <string name="hardware_keys_action_ringer_modes">Cambiar modo de timbre</string>
+    <string name="hardware_keys_action_power_menu">Menú de apagado</string>
+    <string name="hardware_keys_action_contextual_search">Buscar con un círculo</string>
+    <string name="hardware_keys_action_silence_call">Silenciar llamada entrante</string>
+    <string name="hardware_keys_action_launch_app">Abrir aplicación</string>
+    <string name="launch_app_summary">Abrir <xliff:g id="app" ejemplo="Chrome">%1$s</xliff:g></string>
+    <string name="launch_app_shortcut_summary">Abrir <xliff:g id="app" ejemplo="Chrome">%1$s</xliff:g>: <xliff:g id="shortcut" ejemplo="New tab">%2$s</xliff:g></string>
+    <string name="launch_app_no_selection">Ninguna aplicación seleccionada</string>
+    <string name="launch_app_not_installed">Aplicación no instalada</string>
+    <string name="launch_app_shortcuts_a11y">Accesos directos de <xliff:g id="app" ejemplo="Chrome">%1$s</xliff:g></string>
     <string name="home_answer_call_title">Responder la llamada</string>
     <string name="home_answer_call_summary">Responder llamadas entrantes presionando el botón de inicio</string>
     <string name="camera_sleep_on_release_title">Vista rápida</string>
@@ -415,7 +424,7 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="font_restart_systemui">Reiniciar SystemUI</string>
     <string name="font_summary_pending_reboot">%1$s · reinicio pendiente</string>
     <string name="font_summary_pending_systemui">%1$s · reinicio de SystemUI pendiente</string>
-    <string name="font_picker_footer">Los estilos de fuente proporcionados por el sistema aparecen arriba. Para usar su propia fuente, toque Añadir fuente y seleccione un archivo .ttf o .otf de hasta 64 MB. Una fuente personalizada se utiliza para todo el texto del sistema y de las aplicaciones que emplea las fuentes estándar de la interfaz.</string>
+    <string name="font_picker_footer">Los estilos de fuente proporcionados por el sistema se muestran arriba. Para utilizar una fuente propia, toque Añadir fuente y seleccione un archivo .ttf o .otf de hasta 64 MB. También puede descargar una desde Google Fonts, en Fuentes en línea. La fuente personalizada se utiliza en todo el texto del sistema y de las aplicaciones que emplean las fuentes estándar de la interfaz de usuario.</string>
     <string name="font_error_title">No se pudo cambiar la fuente</string>
     <string name="font_error_updater_disabled">Las fuentes personalizadas no están disponibles en este dispositivo. Requieren compatibilidad con fs-verity en el kernel y en la partición de datos.</string>
     <string name="font_error_invalid_file">Este archivo no es una fuente que el sistema pueda utilizar. Solo se admiten fuentes OpenType (.ttf, .otf) de hasta 64 MB.</string>
@@ -423,6 +432,47 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="font_error_downgrading">El sistema ya tiene una versión más reciente de esta fuente.</string>
     <string name="font_error_verification">El sistema no pudo proteger el archivo de fuente con fs-verity, por lo que no se instaló.</string>
     <string name="font_error_storage">El sistema no pudo guardar la fuente. Compruebe que haya espacio de almacenamiento disponible e inténtelo de nuevo.</string>
+    <!-- Online fonts (Google Fonts) -->
+    <string name="online_fonts_section">Fuentes en línea</string>
+    <string name="online_fonts_title">Fuentes en línea</string>
+    <string name="online_fonts_browse">Explorar Google Fonts</string>
+    <string name="online_fonts_browse_summary">Explore más de 1.800 fuentes gratuitas de Google y dé un nuevo aspecto a su teléfono</string>
+    <string name="online_fonts_search">Buscar fuentes</string>
+    <string name="online_fonts_sort_name">A–Z</string>
+    <string name="online_fonts_category_all">Todas</string>
+    <string name="online_fonts_category_sans">Sans Serif</string>
+    <string name="online_fonts_category_serif">Serif</string>
+    <string name="online_fonts_category_display">Pantalla</string>
+    <string name="online_fonts_category_handwriting">Escritura a mano</string>
+    <string name="online_fonts_category_mono">Monoespaciada</string>
+    <plurals name="online_fonts_styles">
+        <item quantity="one">%d estilo</item>
+        <item quantity="other">%d estilos</item>
+    </plurals>
+    <string name="online_fonts_error">No se pudo cargar las fuentes de Google. Compruebe su conexión.</string>
+    <string name="online_fonts_empty_title">No se encontraron fuentes</string>
+    <string name="online_fonts_empty_body">Pruebe con otro nombre o categoría.</string>
+    <string name="online_fonts_downloading">Descargando…</string>
+    <string name="online_fonts_downloading_progress">Descargando... %1$d%%</string>
+    <string name="online_fonts_download_failed">No se pudo descargar este estilo.</string>
+    <string name="online_fonts_footer">Las fuentes provienen de Google Fonts y son gratuitas. Toque una para verla en detalle antes de instalarla o descárguela para instalarla más tarde. Las fuentes descargadas aparecen primero y funcionan sin conexión. Solo se instala el estilo seleccionado y es necesario reiniciar el dispositivo para aplicarlo en todo el sistema.</string>
+    <string name="online_fonts_downloaded">Descargado</string>
+    <string name="online_fonts_download_only">Descargar, instalar más tarde</string>
+    <string name="online_fonts_delete_download">Eliminar descarga</string>
+    <string name="online_fonts_download_done">%1$s descargado</string>
+    <string name="online_fonts_download_deleted">%1$s eliminado</string>
+    <string name="online_fonts_offline">No tiene conexión. Se muestran las fuentes descargadas.</string>
+    <string name="font_weight_thin">Delgada</string>
+    <string name="font_weight_extra_light">Extra ligera</string>
+    <string name="font_weight_light">Ligera</string>
+    <string name="font_weight_regular">Normal</string>
+    <string name="font_weight_medium">Mediana</string>
+    <string name="font_weight_semi_bold">Semi negrita</string>
+    <string name="font_weight_bold">Negrita</string>
+    <string name="font_weight_extra_bold">Extra negrita</string>
+    <string name="font_weight_black">Negra</string>
+    <string name="font_variant_italic">Cursiva</string>
+    <string name="font_variant_weight_italic">%1$s cursiva</string>
     <string name="font_overlay_reset_failed">La fuente personalizada se instaló, pero no se pudo restablecer el estilo de fuente a Predeterminado</string>
     <!-- System emoji -->
     <string name="emoji_picker_title">Emoji del sistema</string>
@@ -452,7 +502,7 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="emoji_install_restart_now">Instalar y reiniciar</string>
     <string name="emoji_install_restart_later">Instalar, reiniciar más tarde</string>
     <string name="emoji_remove_title">¿Eliminar emojis personalizados?</string>
-    <string name="emoji_remove_message">The system emoji come back once SystemUI and apps restart. Restarting now closes all running apps. Emoji fonts copied into apps are deleted so those apps fetch their own again, and affected apps are force stopped.</string>
+    <string name="emoji_remove_message">Los emojis del sistema volverán una vez que SystemUI y las aplicaciones se reinicien. Reiniciar ahora cerrará todas las aplicaciones en ejecución. Las fuentes de emojis copiadas en las aplicaciones se eliminarán para que estas las obtengan nuevamente, y las aplicaciones afectadas se detendrán de forma forzada.</string>
     <string name="emoji_remove_restart_now">Eliminar y reiniciar</string>
     <string name="emoji_remove_restart_later">Eliminar, reiniciar más tarde</string>
     <string name="emoji_pending_systemui_body">Hay %1$s emojis configurados. SystemUI y las aplicaciones en ejecución conservarán los emojis anteriores hasta que se reinicien. Reiniciar cerrará todas las aplicaciones en ejecución.</string>
@@ -461,11 +511,11 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="emoji_apps_reset">Restablecer aplicaciones de terceros</string>
     <string name="emoji_apps_confirm">Esto copia su fuente de emojis sobre todas las fuentes de emojis almacenadas en los datos de las aplicaciones, impide que Facebook y Messenger descarguen las suyas, borra las cachés de esas aplicaciones y de Gboard, y desactiva el proveedor de fuentes de Google Play Services. Las aplicaciones afectadas se detendrán de forma forzada. Vuelva a ejecutarlo después de que esas aplicaciones se actualicen.</string>
     <string name="emoji_apps_confirm_button">Reiniciar</string>
-    <string name="emoji_apps_restore_summary">If apps such as Gboard, Facebook or Messenger still show emoji from a font you removed, restoring them deletes the copied emoji fonts so each app fetches its own again.</string>
-    <string name="emoji_apps_restore">Restore third-party apps</string>
-    <string name="emoji_apps_restore_confirm">This deletes every emoji font stored in app data, lets Facebook and Messenger download their own again, clears the caches of those apps and Gboard, and turns the Google Play services font provider back on. Affected apps are force stopped.</string>
-    <string name="emoji_apps_restore_button">Restore</string>
-    <string name="emoji_apps_restored">Apps that had a copied emoji font now fetch their own again.</string>
+    <string name="emoji_apps_restore_summary">Si aplicaciones como Gboard, Facebook o Messenger siguen mostrando emojis de una fuente que ha eliminado, restaurarlos eliminará las fuentes de emojis copiadas para que cada aplicación obtenga las suyas nuevamente.</string>
+    <string name="emoji_apps_restore">Restaurar aplicaciones de terceros</string>
+    <string name="emoji_apps_restore_confirm">Esto elimina todas las fuentes de emojis almacenadas en los datos de las aplicaciones, permite que Facebook y Messenger descarguen las suyas nuevamente, borra las cachés de esas aplicaciones y de Gboard, y vuelve a activar el proveedor de fuentes de Google Play Services. Las aplicaciones afectadas se detienen de forma forzada.</string>
+    <string name="emoji_apps_restore_button">Restaurar</string>
+    <string name="emoji_apps_restored">Las aplicaciones que tenían una fuente de emojis copiada ahora obtienen la suya nuevamente.</string>
     <plurals name="emoji_apps_done">
         <item quantity="one">Se reemplazó %1$d fuente de emojis en los datos de las aplicaciones. Las aplicaciones que utilizan emojis descargables ahora utilizan los emojis del sistema.</item>
         <item quantity="other">Se reemplazaron %1$d fuentes de emojis en los datos de las aplicaciones. Las aplicaciones que utilizan emojis descargables ahora utilizan los emojis del sistema.</item>
@@ -1164,7 +1214,7 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <!-- Smartspace -->
     <string name="lockscreen_smartspace_title">Espacio inteligente</string>
     <string name="lockscreen_smartspace_summary">Mostrar Google Smartspace cuando esté disponible</string>
-    <string name="lockscreen_smartspace_custom_clock_info">Not available while a custom clock style is enabled</string>
+    <string name="lockscreen_smartspace_custom_clock_info">No disponible mientras esté habilitado un estilo de reloj personalizado</string>
     <!-- Clipboard auto clear -->
     <string name="clipboard_auto_clear_timeout_title">Tiempo de espera de borrado automático del portapapeles</string>
     <string name="clipboard_auto_clear_title">Borrado automático del portapapeles</string>
@@ -1335,7 +1385,7 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="custom_gradient_start_color_title">Color inicial del degradado</string>
     <string name="custom_gradient_end_color_title">Color final del degradado</string>
     <string name="custom_gradient_angle_title">Ángulo del degradado</string>
-    <string name="custom_gradient_angle_summary">Rotates the gradient counter-clockwise. At 0° it flows from start to end, along the fill direction for sliders</string>
+    <string name="custom_gradient_angle_summary">Rota el degradado en sentido antihorario. A 0°, fluye desde el inicio hasta el final, siguiendo la dirección de relleno en los controles deslizantes</string>
     <!-- Custom clock style -->
     <string name="lockscreen_custom_clock_style_title">Estilo de reloj personalizado</string>
     <string name="lockscreen_custom_clock_style_summary">Configurar estilos de reloj de la pantalla de bloqueo</string>
@@ -1348,12 +1398,12 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="lockscreen_custom_clock_color_mode_title">Modo de color de reloj personalizado</string>
     <string name="lockscreen_custom_clock_size_title">Tamaño del reloj</string>
     <string name="lockscreen_custom_clock_size_summary">Escalar el reloj de la pantalla de bloqueo</string>
-    <string name="lockscreen_custom_clock_dynamic_size_title">Dynamic clock size</string>
-    <string name="lockscreen_custom_clock_dynamic_size_summary">Enlarge the clock when there are no notifications or media on the lock screen. Very large clock styles keep their size</string>
+    <string name="lockscreen_custom_clock_dynamic_size_title">Tamaño dinámico del reloj</string>
+    <string name="lockscreen_custom_clock_dynamic_size_summary">Aumenta el tamaño del reloj cuando no hay notificaciones ni contenido multimedia en la pantalla de bloqueo. Los estilos de reloj muy grandes mantienen su tamaño</string>
     <string name="lockscreen_custom_clock_aod_anim_title">Animación personalizada de reloj AOD</string>
     <string name="lockscreen_custom_clock_aod_anim_summary">Establecer animación AOD para estilo de reloj personalizado</string>
     <string name="lockscreen_custom_clock_browse_all_clocks">Explorar todos los relojes</string>
-    <string name="lockscreen_custom_clock_applied"><xliff:g id="clock_name" example="OnePlus Clock">%1$s</xliff:g> applied</string>
+    <string name="lockscreen_custom_clock_applied"><xliff:g id="clock_name" example="Reloj OnePlus">%1$s</xliff:g> aplicado</string>
     <!-- QS Panel style -->
     <string name="qs_panel_style_title">Estilo del panel de ajustes rápidos</string>
     <string name="qs_panel_style_card">Estilo de tarjeta</string>
@@ -1394,6 +1444,10 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="dynamic_bar_keyguard_enable">Barra dinámica en la pantalla de bloqueo</string>
     <string name="dynamic_bar_keyguard_enable_summary">Reemplazar la indicación del teclado con el chip de la barra dinámica en la pantalla de bloqueo con controles y acciones rápidas</string>
     <string name="dynamic_bar_keyguard_battery_chip">Información de la batería en la pantalla de bloqueo</string>
+    <string name="dynamic_bar_haptics">Tap haptics</string>
+    <string name="dynamic_bar_haptics_summary">Vibrate subtly when tapping the chip</string>
+    <string name="dynamic_bar_chip_morph">Morph animation</string>
+    <string name="dynamic_bar_chip_morph_summary">Expand the chip into its panel and shrink it back on close</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">No mostrar nunca</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">Sólo al cargar</string>
     <string name="dynamic_bar_keyguard_battery_chip_always">Mostrar siempre</string>
