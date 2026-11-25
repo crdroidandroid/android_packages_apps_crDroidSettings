@@ -14,6 +14,8 @@ import android.os.Handler
 import android.os.Looper
 import android.os.UserHandle
 import android.provider.Settings
+import android.view.Surface
+import android.view.WindowManager
 import androidx.preference.Preference
 import androidx.preference.SwitchPreferenceCompat
 import com.android.internal.logging.nano.MetricsProto
@@ -60,6 +62,12 @@ class DynamicBar : SettingsPreferenceFragment() {
 
         if (!DeviceUtils.hasVibrator(requireContext())) {
             findPreference<Preference>(SETTINGS_KEY_HAPTICS)?.let {
+                preferenceScreen.removePreference(it)
+            }
+        }
+
+        if (!hasCenterCutout(requireContext())) {
+            findPreference<Preference>(SETTINGS_KEY_CENTER_ISLAND)?.let {
                 preferenceScreen.removePreference(it)
             }
         }
@@ -186,6 +194,29 @@ class DynamicBar : SettingsPreferenceFragment() {
             Settings.Secure.AX_DYNAMIC_BAR_KEYGUARD_BATTERY_CHIP_MODE
         private const val SETTINGS_KEY_HAPTICS = Settings.Secure.AX_DYNAMIC_BAR_HAPTICS
         private const val SETTINGS_KEY_CHIP_MORPH = Settings.Secure.AX_DYNAMIC_BAR_CHIP_MORPH
+        private const val SETTINGS_KEY_CENTER_ISLAND =
+            Settings.Secure.AX_DYNAMIC_BAR_CENTER_ISLAND
+
+        // Whether the camera cutout sits centred on the screen's natural top edge.
+        private fun hasCenterCutout(context: Context): Boolean {
+            val display = context.display ?: return false
+            val cutout = display.cutout ?: return false
+            val rotation = display.rotation
+            val rect = when (rotation) {
+                Surface.ROTATION_90 -> cutout.boundingRectLeft
+                Surface.ROTATION_180 -> cutout.boundingRectBottom
+                Surface.ROTATION_270 -> cutout.boundingRectRight
+                else -> cutout.boundingRectTop
+            }
+            if (rect.isEmpty) return false
+            val bounds = context.getSystemService(WindowManager::class.java)
+                ?.maximumWindowMetrics?.bounds ?: return false
+            val sideways = rotation == Surface.ROTATION_90 || rotation == Surface.ROTATION_270
+            val edge = if (sideways) bounds.height() else bounds.width()
+            val center = if (sideways) rect.exactCenterY() else rect.exactCenterX()
+            val size = if (sideways) rect.height() else rect.width()
+            return edge > 0 && center / edge in 0.35f..0.65f && size <= edge * 0.4f
+        }
 
         @JvmStatic
         fun reset(context: Context) {
@@ -212,6 +243,10 @@ class DynamicBar : SettingsPreferenceFragment() {
             )
             Settings.Secure.putIntForUser(
                 resolver, SETTINGS_KEY_CHIP_MORPH, 1,
+                UserHandle.USER_CURRENT
+            )
+            Settings.Secure.putIntForUser(
+                resolver, SETTINGS_KEY_CENTER_ISLAND, 0,
                 UserHandle.USER_CURRENT
             )
         }
