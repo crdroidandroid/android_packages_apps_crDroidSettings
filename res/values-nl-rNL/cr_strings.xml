@@ -1415,14 +1415,14 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="pif_channel_canary_release">Canary release</string>
     <string name="pif_channel_canary_release_summary">Nieuwste Canary versie van de Android Flash Tool</string>
     <!-- Play Integrity Fix: periodic auto-refresh of a fetched fingerprint -->
-    <string name="pif_auto_refresh_title">Auto-refresh fingerprint</string>
+    <string name="pif_auto_refresh_title">Vingerafdruk automatisch vernieuwen</string>
     <string name="pif_auto_refresh_summary_on">Controleert elke %3$s op een nieuwere %1$s vingerafdruk op het %2$s kanaal. Wanneer deze wordt gevonden, wordt deze toegepast en wordt de Play Store gegevens gewist</string>
-    <string name="pif_auto_refresh_summary_off">Off. The %1$s fingerprint (%2$s) only changes when you fetch or import one</string>
-    <string name="pif_auto_refresh_last_checked">Last checked: %1$s</string>
+    <string name="pif_auto_refresh_summary_off">Uitgeschakeld. De %1$s vingerafdruk (%2$s) verandert alleen wanneer je er één ophaalt of importeert</string>
+    <string name="pif_auto_refresh_last_checked">Laatst gecontroleerd: %1$s</string>
     <string name="pif_auto_refresh_channel_name">Play Integrity Fix</string>
-    <string name="pif_auto_refresh_channel_description">Tells you when a newer fingerprint was applied automatically</string>
-    <string name="pif_auto_refresh_notification_title">Fingerprint updated</string>
-    <string name="pif_auto_refresh_notification_text">Applied a newer %1$s fingerprint (security patch %2$s) and cleared Play Store data.</string>
+    <string name="pif_auto_refresh_channel_description">Vertelt je wanneer een nieuwere vingerafdruk automatisch is toegepast</string>
+    <string name="pif_auto_refresh_notification_title">Vingerafdruk bijgewerkt</string>
+    <string name="pif_auto_refresh_notification_text">Heeft een nieuwere %1$s vingerafdruk (security patch %2$s) toegepast en de Play Store gegevens geleegd.</string>
     <string name="pif_canary_build">Canary build</string>
     <string name="pif_beta_build">Beta build</string>
     <string name="pif_patch_summary">Beveiligingspatch %1$s</string>
@@ -1477,7 +1477,7 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
     <string name="ts_days_left">%1$dd weg</string>
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Keybox alerts</string>
-    <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
+    <string name="ts_alerts_summary_off">Uitgeschakeld. U krijgt geen melding als de keybox is ingetrokken of bijna verlopen</string>
     <string name="ts_alerts_summary_on">Controleert op Google elke %1$s. U krijgt een melding als de keybox is ingetrokken</string>
     <string name="ts_alerts_summary_scheduled">Controleert met Google elke %1$s voor herroepingsstatus. Volgende verloop herinnering op %2$s</string>
     <string name="ts_alerts_summary_due">Het toetsenbord vervalt binnenkort, laad een nieuwe</string>
@@ -1486,19 +1486,19 @@ Een kleine donatie helpt dit project in leven te houden en te verbeteren. U kunt
         <item quantity="one">%d dag</item>
         <item quantity="other">%d dagen</item>
     </plurals>
-    <string name="ts_alerts_summary_expired">The keybox has expired. Load a new keybox to get alerts again</string>
-    <string name="ts_alerts_summary_blocked">Notifications for Settings are turned off, so alerts can\'t be shown</string>
+    <string name="ts_alerts_summary_expired">Het keybox is verlopen. Laad een nieuw keybox om meldingen te krijgen</string>
+    <string name="ts_alerts_summary_blocked">Meldingen voor instellingen zijn uitgeschakeld, dus meldingen kunnen niet worden weergegeven</string>
     <string name="ts_alerts_channel_name">Keybox alerts</string>
     <string name="ts_alerts_channel_description">Geeft een melding wanneer de TrickyStore keybox is ingetrokken door Google of zal verlopen</string>
     <plurals name="ts_alert_expiry_title">
         <item quantity="one">Keybox verloopt in %d dag</item>
         <item quantity="other">Keybox verloopt in %d dagen</item>
     </plurals>
-    <string name="ts_alert_expiry_text">Your TrickyStore keybox expires on %1$s. Load a new keybox soon to keep passing Play Integrity.</string>
-    <string name="ts_alert_revoked_title">Keybox revoked</string>
-    <string name="ts_alert_revoked_text">Google has revoked your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>
-    <string name="ts_alert_suspended_title">Keybox suspended</string>
-    <string name="ts_alert_suspended_text">Google has suspended your TrickyStore keybox (reason: %1$s). Strong integrity will fail until you load a new keybox.</string>
+    <string name="ts_alert_expiry_text">Je TrickyStore keybox verloopt op %1$s. Laad binnenkort een nieuwe keybox om de Play Integrity te blijven passeren.</string>
+    <string name="ts_alert_revoked_title">Keybox ingetrokken</string>
+    <string name="ts_alert_revoked_text">Google heeft uw TrickyStore keybox ingetrokken (reden: %1$s). Strong-integriteit zal mislukken totdat u een nieuwe keybox laadt.</string>
+    <string name="ts_alert_suspended_title">Keybox geschorst</string>
+    <string name="ts_alert_suspended_text">Google heeft uw TrickyStore keybox ingetrokken (reden: %1$s). Strong-integriteit zal mislukken totdat u een nieuwe keybox laadt.</string>
     <string name="ts_revocation_status">Google intrekkingsstatus</string>
     <string name="ts_revocation_checking">Controleren met Google…</string>
     <string name="ts_revocation_not_yet_checked">Nog niet gecontroleerd. Tik om nu te controleren</string>
