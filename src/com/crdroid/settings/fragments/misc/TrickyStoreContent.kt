@@ -67,6 +67,9 @@ internal class TsUiState {
     var expiryTone by mutableStateOf(SpoofTone.Neutral)
     var expiryChip by mutableStateOf<String?>(null)
 
+    /** Offline description of the installed keybox, null without one or when unreadable. */
+    var details by mutableStateOf<KeyboxDetails.Result?>(null)
+
     /** Background revocation / expiry alerts; on by default. */
     var alertsEnabled by mutableStateOf(true)
     /** False without a keybox or once it has expired: nothing left to alert about. */
@@ -253,6 +256,10 @@ internal fun TrickyStoreContent(state: TsUiState, actions: TsActions) {
             }
         }
 
+        SpoofingAnimatedVisibility(visible = state.keyboxExists && state.details != null) {
+            state.details?.let { TsKeyboxDetails(it) }
+        }
+
         SpoofGroup(title = stringResource(R.string.ts_target_configuration)) {
             item {
                 SpoofNavRow(
@@ -294,6 +301,99 @@ internal fun TrickyStoreContent(state: TsUiState, actions: TsActions) {
 
         SpoofFooter(stringResource(R.string.ts_footer_body))
     }
+}
+
+@Composable
+private fun TsKeyboxDetails(details: KeyboxDetails.Result) {
+    SpoofGroup(
+        title = stringResource(R.string.ts_kb_details_title),
+        collapsible = true,
+    ) {
+        item {
+            SpoofValueRow(
+                label = stringResource(R.string.ts_kb_manufacturer),
+                value = details.manufacturer ?: stringResource(R.string.ts_kb_manufacturer_unknown),
+                note = when (details.manufacturerSource) {
+                    KeyboxDetails.ManufacturerSourceKind.RKP ->
+                        stringResource(R.string.ts_kb_source_rkp)
+                    KeyboxDetails.ManufacturerSourceKind.SUBJECT ->
+                        details.issuerOrganisation
+                            ?.let { stringResource(R.string.ts_kb_source_subject_org, it) }
+                            ?: stringResource(R.string.ts_kb_source_subject)
+                    KeyboxDetails.ManufacturerSourceKind.NONE ->
+                        details.issuerOrganisation
+                            ?.let { stringResource(R.string.ts_kb_source_org_only, it) }
+                            ?: stringResource(R.string.ts_kb_source_none)
+                },
+            )
+        }
+        details.teeVendor?.let { vendor ->
+            item {
+                SpoofValueRow(label = stringResource(R.string.ts_kb_tee_vendor), value = vendor)
+            }
+        }
+        item {
+            val software = KeyboxDetails.SecurityLevel.SOFTWARE in details.securityLevels
+            SpoofValueRow(
+                label = stringResource(R.string.ts_kb_security_level),
+                value = details.securityLevels
+                    .map { stringResource(securityLevelLabel(it)) }
+                    .joinToString(" \u00b7 "),
+                note = stringResource(
+                    if (software) R.string.ts_kb_level_software_note else R.string.ts_kb_level_note),
+            )
+        }
+        item {
+            SpoofValueRow(
+                label = stringResource(R.string.ts_kb_root),
+                value = details.rootLabels.joinToString(" \u00b7 ")
+                    .ifEmpty { stringResource(R.string.ts_kb_root_unknown) },
+            )
+        }
+        details.keys.forEach { key ->
+            val rkp = key.rkp ?: return@forEach
+            item {
+                SpoofValueRow(
+                    label = stringResource(R.string.ts_kb_rkp_title, key.algorithm),
+                    value = listOfNotNull(rkp.manufacturer, rkp.validatedEntity)
+                        .joinToString(" \u00b7 ")
+                        .ifEmpty { stringResource(R.string.ts_kb_manufacturer_unknown) },
+                    note = listOfNotNull(
+                        rkp.certsIssued?.let { stringResource(R.string.ts_kb_rkp_certs, it) },
+                        rkp.issue?.let { stringResource(R.string.ts_kb_rkp_issue, it) },
+                    ).joinToString("\n").ifEmpty { null },
+                )
+            }
+        }
+        details.keys.forEach { key ->
+            key.certs.forEachIndexed { index, cert ->
+                item {
+                    val role = when {
+                        index == 0 -> R.string.ts_kb_cert_attest_key
+                        cert.isRoot -> R.string.ts_kb_cert_root
+                        else -> R.string.ts_kb_cert_intermediate
+                    }
+                    SpoofValueRow(
+                        label = stringResource(role, key.algorithm, cert.publicKey),
+                        value = cert.subject,
+                        note = stringResource(
+                            R.string.ts_kb_cert_note,
+                            cert.serialHex,
+                            KeyboxInspector.formatDate(cert.notBefore),
+                            KeyboxInspector.formatDate(cert.notAfter),
+                        ),
+                    )
+                }
+            }
+        }
+    }
+}
+
+private fun securityLevelLabel(level: KeyboxDetails.SecurityLevel): Int = when (level) {
+    KeyboxDetails.SecurityLevel.STRONGBOX -> R.string.ts_kb_level_strongbox
+    KeyboxDetails.SecurityLevel.TEE -> R.string.ts_kb_level_tee
+    KeyboxDetails.SecurityLevel.SOFTWARE -> R.string.ts_kb_level_software
+    KeyboxDetails.SecurityLevel.UNKNOWN -> R.string.ts_kb_level_unknown
 }
 
 @Composable

@@ -62,13 +62,13 @@ internal object KeyboxInspector {
      * SHA-256 of the DER of Google's hardware attestation roots, only used when neither a live
      * nor a cached copy of the root list is available.
      */
-    private val FALLBACK_ROOT_SHA256 = setOf(
-        // RSA-4096, 2019 issuance
-        "1EF1A04B8BA58AB94589AC498C8982A783F24EA7307E0159A0C3A73B377D87CC",
-        // RSA-4096, 2022 reissue
-        "CEDB1CB6DC896AE5EC797348BCE9286753C2B38EE71CE0FBE34A9A1248800DFC",
-        // EC P-384 "Key Attestation CA1", 2025
-        "6D9DB4CE6C5C0B293166D08986E05774A8776CEB525D9E4329520DE12BA4BCC0",
+    private val FALLBACK_ROOT_SHA256 get() = GOOGLE_ROOT_LABELS.keys
+
+    /** Google hardware attestation roots by SHA-256 of their DER, with a display label. */
+    val GOOGLE_ROOT_LABELS = mapOf(
+        "1EF1A04B8BA58AB94589AC498C8982A783F24EA7307E0159A0C3A73B377D87CC" to "Google RSA-4096 (2019)",
+        "CEDB1CB6DC896AE5EC797348BCE9286753C2B38EE71CE0FBE34A9A1248800DFC" to "Google RSA-4096 (2022 reissue)",
+        "6D9DB4CE6C5C0B293166D08986E05774A8776CEB525D9E4329520DE12BA4BCC0" to "Google EC P-384 Key Attestation CA1 (2025)",
     )
 
     enum class Status {
@@ -194,6 +194,18 @@ internal object KeyboxInspector {
         if (keys.isEmpty()) null else Summary(keys)
     } catch (_: Exception) {
         null
+    }
+
+    /**
+     * Every complete key as (normalised algorithm, parsed chain leaf first). Keys whose
+     * certificates do not all parse keep the ones that did. Empty when the XML is unreadable.
+     */
+    fun chains(xml: String): List<Pair<String, List<X509Certificate>>> = try {
+        parseKeys(sanitize(xml)).map { key ->
+            normaliseAlgorithm(key.algorithm) to key.certPems.mapNotNull { parseCertificate(it) }
+        }.filter { it.second.isNotEmpty() }
+    } catch (_: Exception) {
+        emptyList()
     }
 
     // ---- Status check (network, call off the main thread) ----------------------------------
@@ -520,7 +532,7 @@ internal object KeyboxInspector {
             }
             .minByOrNull { it.ordinal } // REVOKED before SUSPENDED
 
-    private fun sha256Hex(input: ByteArray): String =
+    fun sha256Hex(input: ByteArray): String =
         MessageDigest.getInstance("SHA-256").digest(input).joinToString("") { "%02X".format(it) }
 
     fun formatDate(millis: Long): String =

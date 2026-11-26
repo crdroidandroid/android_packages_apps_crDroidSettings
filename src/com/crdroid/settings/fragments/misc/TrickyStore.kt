@@ -369,6 +369,7 @@ class TrickyStore : SettingsPreferenceFragment() {
                 summary.keys.maxOf { it.chainLength },
             )
         }
+        ui.details = keyboxXml?.let { KeyboxDetails.analyze(it) }
         applyExpiryUi(summary?.earliestExpiry)
         applyAlertsUi(summary?.earliestExpiry)
 
