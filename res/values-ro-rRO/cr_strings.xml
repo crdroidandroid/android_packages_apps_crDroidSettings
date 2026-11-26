@@ -1627,6 +1627,32 @@ A small donation helps keep this project alive and improving. You can dismiss th
     <string name="ts_keybox_expiry">Certificate expiry</string>
     <string name="ts_keybox_expiry_summary">Earliest leaf certificate expires on %1$s</string>
     <string name="ts_days_left">%1$dd left</string>
+    <!-- TrickyStore: keybox details -->
+    <string name="ts_kb_details_title">Keybox details</string>
+    <string name="ts_kb_manufacturer">Issued for</string>
+    <string name="ts_kb_manufacturer_unknown">Not named in the certificates</string>
+    <string name="ts_kb_source_rkp">From the RKP provisioning info signed by Google</string>
+    <string name="ts_kb_source_subject">From the certificate subject</string>
+    <string name="ts_kb_source_subject_org">From the certificate subject (O=%1$s)</string>
+    <string name="ts_kb_source_org_only">Certificates name the organization %1$s</string>
+    <string name="ts_kb_source_none">Google-issued keyboxes usually don\'t name the device maker</string>
+    <string name="ts_kb_tee_vendor">TEE vendor</string>
+    <string name="ts_kb_security_level">Security level</string>
+    <string name="ts_kb_level_strongbox">StrongBox</string>
+    <string name="ts_kb_level_tee">TEE</string>
+    <string name="ts_kb_level_software">Software (AOSP)</string>
+    <string name="ts_kb_level_unknown">Not stated</string>
+    <string name="ts_kb_level_note">From the intermediate certificate subject</string>
+    <string name="ts_kb_level_software_note">A software attestation keybox can\'t pass strong integrity</string>
+    <string name="ts_kb_root">Attestation root</string>
+    <string name="ts_kb_root_unknown">Not a known Google attestation root</string>
+    <string name="ts_kb_rkp_title">%1$s · RKP provisioning info</string>
+    <string name="ts_kb_rkp_certs">About %1$d certificates issued in the last 30 days</string>
+    <string name="ts_kb_rkp_issue">Partly unreadable: %1$s</string>
+    <string name="ts_kb_cert_attest_key">%1$s · Attestation key (%2$s)</string>
+    <string name="ts_kb_cert_intermediate">%1$s · Intermediate (%2$s)</string>
+    <string name="ts_kb_cert_root">%1$s · Root (%2$s)</string>
+    <string name="ts_kb_cert_note">Serial %1$s · valid %2$s to %3$s</string>
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Keybox alerts</string>
     <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
