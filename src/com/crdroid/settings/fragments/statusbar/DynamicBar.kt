@@ -73,6 +73,7 @@ class DynamicBar : SettingsPreferenceFragment() {
         }
 
         setupKeyguardSubPrefs()
+        setupCardStyle()
         setupEventToggles()
         updateCompactNotificationVisibility()
         registerObserver()
@@ -98,6 +99,24 @@ class DynamicBar : SettingsPreferenceFragment() {
 
     private fun updateKeyguardSubPrefsVisibility(keyguardEnabled: Boolean) {
         findPreference<Preference>(SETTINGS_KEY_BATTERY_CHIP_MODE)?.isVisible = keyguardEnabled
+    }
+
+    private fun setupCardStyle() {
+        findPreference<Preference>(SETTINGS_KEY_CARD_STYLE)?.setOnPreferenceChangeListener {
+                _, newValue ->
+            updateShadeStyleVisibility((newValue as String).toIntOrNull() ?: 0)
+            true
+        }
+        updateShadeStyleVisibility(
+            Settings.Secure.getIntForUser(
+                resolver, SETTINGS_KEY_CARD_STYLE, 0, UserHandle.USER_CURRENT
+            )
+        )
+    }
+
+    private fun updateShadeStyleVisibility(cardStyle: Int) {
+        findPreference<Preference>(SETTINGS_KEY_SHADE_COLOR_STYLE)?.isVisible =
+            cardStyle == CARD_STYLE_SHADE
     }
 
     private fun setupEventToggles() {
@@ -196,6 +215,9 @@ class DynamicBar : SettingsPreferenceFragment() {
         private const val SETTINGS_KEY_CHIP_MORPH = Settings.Secure.AX_DYNAMIC_BAR_CHIP_MORPH
         private const val SETTINGS_KEY_CENTER_ISLAND =
             Settings.Secure.AX_DYNAMIC_BAR_CENTER_ISLAND
+        private const val SETTINGS_KEY_CARD_STYLE = Settings.Secure.AX_DYNAMIC_BAR_CARD_STYLE
+        private const val SETTINGS_KEY_SHADE_COLOR_STYLE = Settings.Secure.SHADE_COLOR_STYLE
+        private const val CARD_STYLE_SHADE = 1
 
         // Whether the camera cutout sits centred on the screen's natural top edge.
         private fun hasCenterCutout(context: Context): Boolean {
@@ -247,6 +269,10 @@ class DynamicBar : SettingsPreferenceFragment() {
             )
             Settings.Secure.putIntForUser(
                 resolver, SETTINGS_KEY_CENTER_ISLAND, 0,
+                UserHandle.USER_CURRENT
+            )
+            Settings.Secure.putIntForUser(
+                resolver, SETTINGS_KEY_CARD_STYLE, 0,
                 UserHandle.USER_CURRENT
             )
         }

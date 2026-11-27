@@ -64,6 +64,25 @@
         android:defaultValue="false"
         android:dependency="ax_dynamic_bar_enabled" />
 
+    <com.crdroid.settings.preferences.SecureSettingListPreference
+        android:key="ax_dynamic_bar_card_style"
+        android:title="@string/dynamic_bar_card_style"
+        android:entries="@array/dynamic_bar_card_style_entries"
+        android:entryValues="@array/dynamic_bar_card_style_values"
+        android:summary="%s"
+        android:defaultValue="0"
+        android:dependency="ax_dynamic_bar_enabled" />
+
+    <com.crdroid.settings.preferences.SecureSettingListPreference
+        android:key="shade_color_style"
+        android:title="@string/shade_color_style_title"
+        android:summary="@string/shade_color_style_summary"
+        android:dialogTitle="@string/shade_color_style_title"
+        android:entries="@array/shade_color_style_entries"
+        android:entryValues="@array/shade_color_style_values"
+        android:defaultValue="0"
+        android:dependency="ax_dynamic_bar_enabled" />
+
     <PreferenceCategory
         android:key="dynamic_bar_events_category"
         android:title="@string/dynamic_bar_events"
