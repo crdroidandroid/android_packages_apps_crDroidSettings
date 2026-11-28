@@ -99,9 +99,10 @@
     <string name="crdroid_donate_preference_title">Wesprzyj nas</string>
     <string name="crdroid_donate_preference_summary">Wspomóż dalszy rozwój</string>
     <string name="crdroid_donate_title">crDroid potrzebuje twojej pomocy!</string>
-    <string name="crdroid_donate_notification_text">Dotknij, aby dowiedzieć się więcej</string>
-    <string name="crdroid_donate_message">crDroid Android to projekt o otwartym kodzie źródłowym, który potrzebuje Twojej pomocy, aby utrzymać stronę internetową online, zapewnić działanie naszych serwerów kompilacyjnych i dostarczać wysokiej jakości kompilacje dla Twojego urządzenia.\n\n
-Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignorować tę wiadomość, ale Twoje wsparcie ma dla nas ogromne znaczenie.</string>
+    <string name="crdroid_donate_notification_text">Dotknij, aby dowiedzieć się więcej lub odrzucić tę wiadomość</string>
+    <string name="crdroid_donate_message">crDroid Android to projekt o otwartym kodzie źródłowym, który potrzebuje Twojej pomocy, aby utrzymać stronę internetową w sieci, zapewnić działanie naszych serwerów kompilacji oraz dostarczać wysokiej jakości kompilacje dla Twojego urządzenia.\n\n
+Nawet niewielka darowizna pomaga utrzymać ten projekt przy życiu i go ulepszać. Możesz ukryć ten komunikat na miesiąc, klikając poniższy przycisk, ale prosimy, rozważ 
+udzielanie wsparcia, jeśli tylko możesz. Twoje wsparcie wiele dla nas znaczy!</string>
     <string name="crdroid_donate_button">Przekaż darowiznę</string>
     <string name="crdroid_later_button">Może w przyszłym miesiącu</string>
     <string name="crdroid_channel_name">Powiadomienia crDroid</string>
@@ -469,7 +470,7 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="font_weight_thin">Cienka</string>
     <string name="font_weight_extra_light">Bardzo cienka</string>
     <string name="font_weight_light">Cienka</string>
-    <string name="font_weight_regular">Standardowe</string>
+    <string name="font_weight_regular">Standardowa</string>
     <string name="font_weight_medium">Średnia</string>
     <string name="font_weight_semi_bold">Średnio pogrubiona</string>
     <string name="font_weight_bold">Pogrubiona</string>
@@ -1456,10 +1457,16 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="dynamic_bar_keyguard_enable">Pasek dynamiczny na ekranie blokady</string>
     <string name="dynamic_bar_keyguard_enable_summary">Zastępuj ikonę blokady klawiatury dynamicznym paskiem na ekranie blokady, zawierającym przyciski sterujące i szybkie działania</string>
     <string name="dynamic_bar_keyguard_battery_chip">Informacje o baterii na ekranie blokady</string>
-    <string name="dynamic_bar_haptics">Tap haptics</string>
-    <string name="dynamic_bar_haptics_summary">Vibrate subtly when tapping the chip</string>
-    <string name="dynamic_bar_chip_morph">Morph animation</string>
-    <string name="dynamic_bar_chip_morph_summary">Expand the chip into its panel and shrink it back on close</string>
+    <string name="dynamic_bar_haptics">Wibracje dotknięcia</string>
+    <string name="dynamic_bar_haptics_summary">Delikatne wibracje po dotknięciu wskaźnika</string>
+    <string name="dynamic_bar_chip_morph">Morfing</string>
+    <string name="dynamic_bar_chip_morph_summary">Rozsuwa wskaźnik na panelu, a przy zamykaniu zsuwa go z powrotem</string>
+    <string name="dynamic_bar_center_island">Tryb Dynamicznej wyspy</string>
+    <string name="dynamic_bar_card_style">Styl karty</string>
+    <string name="dynamic_bar_card_style_frosted">Matowe szkło</string>
+    <string name="dynamic_bar_card_style_shade">Dopasuj do panelu powiadomień</string>
+    <string name="dynamic_bar_card_style_black">Pełny czarny</string>
+    <string name="dynamic_bar_center_island_summary">Owiń wskaźnik wokół przedniego aparatu tak, aby wyglądał jak czarna pigułka, z treścią na żywo po obu stronach</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">Nigdy nie pokazuj</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">Tylko podczas ładowania</string>
     <string name="dynamic_bar_keyguard_battery_chip_always">Zawsze pokazuj</string>
@@ -1632,6 +1639,32 @@ Niewielka darowizna pomaga utrzymać ten projekt i ulepszać go. Możesz zignoro
     <string name="ts_keybox_expiry">Wygaśnięcie certyfikatu</string>
     <string name="ts_keybox_expiry_summary">Najwcześniejszy certyfikat \"liść\" traci ważność %1$s</string>
     <string name="ts_days_left">Pozostało %1$dd</string>
+    <!-- TrickyStore: keybox details -->
+    <string name="ts_kb_details_title">Szczegóły zestawu kluczy</string>
+    <string name="ts_kb_manufacturer">Wydane dla</string>
+    <string name="ts_kb_manufacturer_unknown">Brak nazwy w certyfikatach</string>
+    <string name="ts_kb_source_rkp">Z informacji dotyczących przydzielania zasobów RKP podpisanych przez Google</string>
+    <string name="ts_kb_source_subject">Z podmiotu certyfikatu</string>
+    <string name="ts_kb_source_subject_org">Z podmiotu certyfikatu (O=%1$s)</string>
+    <string name="ts_kb_source_org_only">W certyfikatach podano nazwę organizacji %1$s</string>
+    <string name="ts_kb_source_none">W generowanych przez Google zestawach kluczy zazwyczaj nie podaje się nazwy producenta urządzenia</string>
+    <string name="ts_kb_tee_vendor">Dostawca TEE</string>
+    <string name="ts_kb_security_level">Poziom zabezpieczeń</string>
+    <string name="ts_kb_level_strongbox">Silny zestaw</string>
+    <string name="ts_kb_level_tee">TEE</string>
+    <string name="ts_kb_level_software">Oprogramowanie (AOSP)</string>
+    <string name="ts_kb_level_unknown">Nie stwierdzono</string>
+    <string name="ts_kb_level_note">Z podmiotu certyfikatu średniozaawansowanego</string>
+    <string name="ts_kb_level_software_note">Oprogramowanie certyfikujące zestaw kluczy nie spełnia wymogów dotyczących silnej integralności</string>
+    <string name="ts_kb_root">Certyfikat roota</string>
+    <string name="ts_kb_root_unknown">Nie jest to znany certyfikat główny firmy Google</string>
+    <string name="ts_kb_rkp_title">%1$s · RKP informacje o certyfikacji</string>
+    <string name="ts_kb_rkp_certs">Około %1$d certyfikatów wydanych w ciągu ostatnich 30 dni</string>
+    <string name="ts_kb_rkp_issue">Częściowo nieczytelne: %1$s</string>
+    <string name="ts_kb_cert_attest_key">%1$s · Klucz certyfikujący (%2$s)</string>
+    <string name="ts_kb_cert_intermediate">%1$s · Średni (%2$s)</string>
+    <string name="ts_kb_cert_root">%1$s · Root (%2$s)</string>
+    <string name="ts_kb_cert_note">Numer seryjny %1$s · ważny %2$s do %3$s</string>
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Powiadomienia zestawu kluczy</string>
     <string name="ts_alerts_summary_off">Wyłączono. Nie otrzymasz powiadomienia, jeśli uprawnienia do zestawu kluczy zostaną cofnięte lub wkrótce wygasną</string>

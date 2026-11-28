@@ -99,9 +99,8 @@
     <string name="crdroid_donate_preference_title">Apóyanos</string>
     <string name="crdroid_donate_preference_summary">Donar para apoyar un mejor desarrollo</string>
     <string name="crdroid_donate_title">¡CrDroid necesita tu ayuda!</string>
-    <string name="crdroid_donate_notification_text">Toque para obtener más información</string>
-    <string name="crdroid_donate_message">crDroid Android es un proyecto de código abierto que necesita tu ayuda para mantener nuestro sitio web en línea, nuestros servidores de compilación en funcionamiento y para ofrecer compilaciones de alta calidad para tu dispositivo.\n\n
-Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora. Puedes ignorar este mensaje, pero tu apoyo es muy importante para nosotros.</string>
+    <string name="crdroid_donate_notification_text">Toque para obtener más información o descartar este mensaje</string>
+    <string name="crdroid_donate_message">crDroid Android es un proyecto de código abierto que necesita su ayuda para mantener el sitio web en línea, nuestros servidores de compilación en funcionamiento y ofrecer compilaciones de alta calidad para su dispositivo.\\n\\n Una pequeña donación ayuda a mantener vivo este proyecto y a seguir mejorándolo. Puede descartar este mensaje durante un mes haciendo clic en el botón de abajo, pero considere colaborar si puede. ¡Su apoyo significa mucho para nosotros\!</string>
     <string name="crdroid_donate_button">Dona ahora</string>
     <string name="crdroid_later_button">Quizás el próximo mes</string>
     <string name="crdroid_channel_name">Notificaciones de crDroid</string>
@@ -1444,10 +1443,16 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="dynamic_bar_keyguard_enable">Barra dinámica en la pantalla de bloqueo</string>
     <string name="dynamic_bar_keyguard_enable_summary">Sustituir la indicación de bloqueo por un chip dinámico con controles y acciones rápidas</string>
     <string name="dynamic_bar_keyguard_battery_chip">Información de la batería en la pantalla de bloqueo</string>
-    <string name="dynamic_bar_haptics">Tap haptics</string>
-    <string name="dynamic_bar_haptics_summary">Vibrate subtly when tapping the chip</string>
-    <string name="dynamic_bar_chip_morph">Morph animation</string>
-    <string name="dynamic_bar_chip_morph_summary">Expand the chip into its panel and shrink it back on close</string>
+    <string name="dynamic_bar_haptics">Vibración al tocar</string>
+    <string name="dynamic_bar_haptics_summary">Vibrar sutilmente al tocar el chip</string>
+    <string name="dynamic_bar_chip_morph">Animación de transformación</string>
+    <string name="dynamic_bar_chip_morph_summary">Expandir el chip en su panel y reducirlo nuevamente al cerrar</string>
+    <string name="dynamic_bar_center_island">Modo Isla Dinámica</string>
+    <string name="dynamic_bar_card_style">Estilo de tarjeta</string>
+    <string name="dynamic_bar_card_style_frosted">Vidrio esmerilado</string>
+    <string name="dynamic_bar_card_style_shade">Coincidir con el panel de notificaciones</string>
+    <string name="dynamic_bar_card_style_black">Negro sólido</string>
+    <string name="dynamic_bar_center_island_summary">Envuelva el indicador alrededor de la cámara frontal como una píldora negra, con contenido en tiempo real a ambos lados</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">No mostrar nunca</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">Solo cuando se está cargando</string>
     <string name="dynamic_bar_keyguard_battery_chip_always">Mostrar siempre</string>
@@ -1620,6 +1625,32 @@ Una pequeña donación ayuda a mantener este proyecto vivo y en constante mejora
     <string name="ts_keybox_expiry">Vencimiento del certificado</string>
     <string name="ts_keybox_expiry_summary">El certificado con vencimiento más próximo caduca el %1$s</string>
     <string name="ts_days_left">%1$dd restante</string>
+    <!-- TrickyStore: keybox details -->
+    <string name="ts_kb_details_title">Detalles de Keybox</string>
+    <string name="ts_kb_manufacturer">Emitido para</string>
+    <string name="ts_kb_manufacturer_unknown">No figura en los certificados</string>
+    <string name="ts_kb_source_rkp">De la información de aprovisionamiento de RKP firmada por Google</string>
+    <string name="ts_kb_source_subject">Del sujeto del certificado</string>
+    <string name="ts_kb_source_subject_org">Del sujeto del certificado (O=%1$s)</string>
+    <string name="ts_kb_source_org_only">Los certificados indican la organización %1$s</string>
+    <string name="ts_kb_source_none">Los keyboxes emitidos por Google normalmente no indican el fabricante del dispositivo</string>
+    <string name="ts_kb_tee_vendor">Proveedor de TEE</string>
+    <string name="ts_kb_security_level">Nivel de seguridad</string>
+    <string name="ts_kb_level_strongbox">StrongBox</string>
+    <string name="ts_kb_level_tee">TEE</string>
+    <string name="ts_kb_level_software">Software (AOSP)</string>
+    <string name="ts_kb_level_unknown">No especificado</string>
+    <string name="ts_kb_level_note">Del sujeto del certificado intermedio</string>
+    <string name="ts_kb_level_software_note">Un keybox de atestación de software no puede superar la integridad fuerte</string>
+    <string name="ts_kb_root">Raíz de atestación</string>
+    <string name="ts_kb_root_unknown">No es una raíz de atestación de Google conocida</string>
+    <string name="ts_kb_rkp_title">%1$s · Información de aprovisionamiento de RKP</string>
+    <string name="ts_kb_rkp_certs">Aproximadamente %1$d certificados emitidos en los últimos 30 días</string>
+    <string name="ts_kb_rkp_issue">Parcialmente ilegible: %1$s</string>
+    <string name="ts_kb_cert_attest_key">%1$s · Clave de atestación (%2$s)</string>
+    <string name="ts_kb_cert_intermediate">%1$s · Intermedio (%2$s)</string>
+    <string name="ts_kb_cert_root">%1$s · Raíz (%2$s)</string>
+    <string name="ts_kb_cert_note">Serial %1$s · válido desde %2$s hasta %3$s</string>
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Alertas de Keybox</string>
     <string name="ts_alerts_summary_off">Desactivado. No recibirás notificaciones si la keybox es revocada o está a punto de caducar</string>

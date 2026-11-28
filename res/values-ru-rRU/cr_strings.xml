@@ -99,9 +99,9 @@
     <string name="crdroid_donate_preference_title">Поддержать нас</string>
     <string name="crdroid_donate_preference_summary">Пожертвования для дальнейшего развития</string>
     <string name="crdroid_donate_title">crDroid нужна Ваша помощь!</string>
-    <string name="crdroid_donate_notification_text">Подробнее</string>
-    <string name="crdroid_donate_message">crDroid Android - это проект с открытым исходным кодом, который нуждается в Вашей помощи для поддержания web-сайта в рабочем состоянии, работы наших серверов сборки и предоставления высококачественных сборок для Вашего устройства.\n\n
-Небольшое пожертвование поможет поддерживать этот проект в рабочем состоянии и улучшать его. Вы можете отказаться от этого сообщения, но Ваша поддержка очень много значит для нас.</string>
+    <string name="crdroid_donate_notification_text">Узнать больше или отменить это сообщение</string>
+    <string name="crdroid_donate_message">crDroid Android — это проект с открытым исходным кодом. Нам нужна ваша помощь, чтобы поддерживать работу сайта и серверов для сборки прошивок, а также продолжать выпускать качественные сборки для вашего устройства.\n\n
+Даже небольшое пожертвование помогает проекту существовать и развиваться. Вы можете скрыть это сообщение на месяц, нажав на кнопку ниже, но пожалуйста, подумайте о том, чтобы поддержать нас, если есть такая возможность. Ваша поддержка очень важна для нас!</string>
     <string name="crdroid_donate_button">Пожертвовать</string>
     <string name="crdroid_later_button">Может, в следующем месяце</string>
     <string name="crdroid_channel_name">Уведомления crDroid</string>
@@ -395,9 +395,9 @@
     <string name="toast_failed_apply_font">Не удалось применить шрифт</string>
     <string name="toast_invalid_font_file">Некорректный файл шрифта</string>
     <string name="font_preview_quote">The quick brown fox. Быстрая бурая лисица.</string>
-    <string name="font_sample_glyphs">AaАа</string>
+    <string name="font_sample_glyphs">Aa Аа</string>
     <string name="font_sample_short">Быстрая бурая лисица</string>
-    <string name="font_sample_alphabet">ABCDEFАБВГДЕ abcdefабвгде</string>
+    <string name="font_sample_alphabet">ABCDEF АБВГДЕ abcdef абвгде</string>
     <string name="font_default">По умолчанию</string>
     <string name="font_current">Текущий шрифт</string>
     <string name="font_selected">Выбран</string>
@@ -1458,6 +1458,12 @@
     <string name="dynamic_bar_haptics_summary">Лёгкая вибрация при касании индикатора</string>
     <string name="dynamic_bar_chip_morph">Анимация индикатора</string>
     <string name="dynamic_bar_chip_morph_summary">Разворачивать индикатор в панель, а при закрытии — сворачивать обратно</string>
+    <string name="dynamic_bar_center_island">Режим динамичного островка</string>
+    <string name="dynamic_bar_card_style">Карточки</string>
+    <string name="dynamic_bar_card_style_frosted">Матовое стекло</string>
+    <string name="dynamic_bar_card_style_shade">Соответствовать оттенку уведомления</string>
+    <string name="dynamic_bar_card_style_black">Сплошной чёрный</string>
+    <string name="dynamic_bar_center_island_summary">Разместите индикатор вокруг фронтальной камеры в виде чёрной пилюли, по обе стороны от которой отображается динамический контент</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">Не показывать</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">Только при зарядке</string>
     <string name="dynamic_bar_keyguard_battery_chip_always">Всегда показывать</string>
@@ -1630,6 +1636,32 @@
     <string name="ts_keybox_expiry">Сертификат просрочен</string>
     <string name="ts_keybox_expiry_summary">Срок действия самого раннего сертификата истекает %1$s</string>
     <string name="ts_days_left">Осталось %1$dд</string>
+    <!-- TrickyStore: keybox details -->
+    <string name="ts_kb_details_title">Детали хранилища ключей</string>
+    <string name="ts_kb_manufacturer">Выдан</string>
+    <string name="ts_kb_manufacturer_unknown">Не указан в сертификатах</string>
+    <string name="ts_kb_source_rkp">Из информации для подготовки ключей, подписанной Google</string>
+    <string name="ts_kb_source_subject">Из сведений о сертификате</string>
+    <string name="ts_kb_source_subject_org">Из сведений о сертификате (O=%1$s)</string>
+    <string name="ts_kb_source_org_only">В сертификатах указана организация %1$s</string>
+    <string name="ts_kb_source_none">В хранилищах ключей, предоставляемых Google, как правило, не указывается производитель устройства</string>
+    <string name="ts_kb_tee_vendor">Вендор TEE</string>
+    <string name="ts_kb_security_level">Уровень безопасности</string>
+    <string name="ts_kb_level_strongbox">Сейф</string>
+    <string name="ts_kb_level_tee">Доверенная среда выполнения (TEE)</string>
+    <string name="ts_kb_level_software">Программное обеспечение (AOSP)</string>
+    <string name="ts_kb_level_unknown">Не указано</string>
+    <string name="ts_kb_level_note">Из поля «субъект» промежуточного сертификата</string>
+    <string name="ts_kb_level_software_note">Программное хранилище ключей аттестации не может обеспечить строгую проверку целостности</string>
+    <string name="ts_kb_root">Корень аттестации</string>
+    <string name="ts_kb_root_unknown">Неизвестный корень аттестации Google</string>
+    <string name="ts_kb_rkp_title">%1$s · информация о подготовке RKP</string>
+    <string name="ts_kb_rkp_certs">За последние 30 дней выдано около %1$d сертификатов</string>
+    <string name="ts_kb_rkp_issue">Частично нечитаемо: %1$s</string>
+    <string name="ts_kb_cert_attest_key">%1$s · ключ аттестации (%2$s)</string>
+    <string name="ts_kb_cert_intermediate">%1$s · промежуточный (%2$s)</string>
+    <string name="ts_kb_cert_root">%1$s · корневой (%2$s)</string>
+    <string name="ts_kb_cert_note">Серийный номер %1$s · действителен с %2$s по %3$s</string>
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Уведомления хранилища ключей</string>
     <string name="ts_alerts_summary_off">Отключено. Вы не получите уведомление в случае отзыва хранилища ключей или приближения срока окончания его действия</string>

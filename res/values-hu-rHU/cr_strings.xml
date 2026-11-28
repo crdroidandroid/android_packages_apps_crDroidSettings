@@ -99,9 +99,9 @@
     <string name="crdroid_donate_preference_title">Támogasson bennünket</string>
     <string name="crdroid_donate_preference_summary">Küldjön adományt a további fejlesztés támogatására</string>
     <string name="crdroid_donate_title">A crDroidnak szüksége van az Ön segítségére!</string>
-    <string name="crdroid_donate_notification_text">Kattintson ide további információkért</string>
-    <string name="crdroid_donate_message">A crDroid egy nyílt forráskódú projekt, weboldaluk fenntartásához, a romokat őrző szerverek üzemeltetéséhez és remek kiadások létrehozásához szükségük van az Ön segítségére.\n\n
-Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. Elutasíthatja ezt az üzenetet, de minden támogatás sokat jelent nekünk.</string>
+    <string name="crdroid_donate_notification_text">Koppintson a további részletekért, vagy zárja be ezt az üzenetet</string>
+    <string name="crdroid_donate_message">A crDroid Android egy nyílt forráskódú projekt, amelynek szüksége van az Ön segítségére ahhoz, hogy a weboldal elérhető maradjon, a fordító-szervereink működjenek, és kiváló minőségű szoftvert biztosíthassunk készülékére.\n\n
+Egy kisebb adomány segít életben tartani és továbbfejleszteni a projektet. Az alábbi gombra kattintva egy hónapra elrejtheti ezt az üzenetet, de kérjük, fontolja meg a támogatást, ha módjában áll. Sokat jelent számunkra segítsége!</string>
     <string name="crdroid_donate_button">Azonnali adomány</string>
     <string name="crdroid_later_button">Talán a következő hónapban</string>
     <string name="crdroid_channel_name">crDroid-értesítések</string>
@@ -511,7 +511,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="emoji_apps_reset">Másik féltől származó alkalmazások visszaállítása</string>
     <string name="emoji_apps_confirm">Ez az eljárás az alkalmazásadatokban tárolt összes emojit lecseréli a az Ön emoji-jára, megakadályozza, hogy a Facebook és a Messenger letöltse a sajátját, törli ezen alkalmazások, valamint a Gboard gyorsítótárát, továbbá kikapcsolja a Google Play-szolgáltatások betűtípus-szolgáltatóját.</string>
     <string name="emoji_apps_confirm_button">Visszaállítás</string>
-    <string name="emoji_apps_restore_summary">Ha az olyan alkalmazások, mint a Gboard, a Facebook vagy a Messenger továbbra is egy olyan betűtípusból származó emojikat jelenítenek meg amelyet eltávolítottál, akkor a betűtípusok visszaállítása törli a másolt emoji-készleteket így minden alkalmazás újra letölti a sajátját.</string>
+    <string name="emoji_apps_restore_summary">Ha az olyan alkalmazások, mint a Gboard, a Facebook vagy a Messenger továbbra is egy olyan betűtípusból származó emojikat jelenítenek meg amelyet eltávolított, akkor a betűtípusok visszaállítása törli a másolt emoji-készleteket így minden alkalmazás újra letölti a sajátját.</string>
     <string name="emoji_apps_restore">Harmadik féltől származó alkalmazások visszaállítása</string>
     <string name="emoji_apps_restore_confirm">Ez törli az alkalmazásadatokban tárolt összes emojibetűtípust, lehetővé teszi a Facebook és a Messenger számára, hogy újra letöltsék a sajátjukat, törli ezen alkalmazások, valamint a Gboard gyorsítótárát, továbbá visszakapcsolja a Google Play-szolgáltatások betűtípus-szolgáltatóját. Az érintett alkalmazásokat a rendszer kényszerített leállítással bezárja.</string>
     <string name="emoji_apps_restore_button">Visszaállítás</string>
@@ -520,7 +520,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
         <item quantity="one">%1$d emoji-készlet lecserélve az alkalmazás-adatokban. A letölthető hangulatjeleket használó alkalmazások mostantól a rendszer hangulatjeleire váltanak vissza. </item>
         <item quantity="other">%1$d emoji-készlet lecserélve az alkalmazás-adatokban. A letölthető hangulatjeleket használó alkalmazások mostantól a rendszer hangulatjeleire váltanak vissza. </item>
     </plurals>
-    <string name="emoji_picker_footer">Az emojistílusok a crDroid tématárából töltődnek le, és az eszközön tárolódnak, így újbóli letöltés nélkül válthatsz közöttük. Lehetőséged van saját, legfeljebb 128 MB méretű .ttf formátumú emojibetűtípus hozzáadására is – például egy emojikat tartalmazó Magisk-modulból (system/fonts/NotoColorEmoji.ttf). Ha egy betűtípusból hiányoznak bizonyos emojik, azok a rendszer alapértelmezett emojikészletéből jelennek meg.</string>
+    <string name="emoji_picker_footer">Az emojistílusok a crDroid tématárából töltődnek le, és az eszközön tárolódnak, így újbóli letöltés nélkül válthat közöttük. Lehetősége van saját, legfeljebb 128 MB méretű .ttf formátumú emojibetűtípus hozzáadására is – például egy emojikat tartalmazó Magisk-modulból (system/fonts/NotoColorEmoji.ttf). Ha egy betűtípusból hiányoznak bizonyos emojik, azok a rendszer alapértelmezett emojikészletéből jelennek meg.</string>
     <string name="emoji_error_title">Nem cserélhetőle az emoji</string>
     <string name="emoji_error_invalid_file">Ez a fájl nem olyan emoji-típus, amelyet a rendszer használni tudna. Válasszon egy legfeljebb 128 MB méretű, színes hangulatjeleket tartalmazó .ttf betűtípust.</string>
     <string name="emoji_error_not_installed">Előbb telepítsen egy egyéni emoji-csomagot.</string>
@@ -1253,7 +1253,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="systemui_restart_process">Rendszerfelület-újraindítás a változások életbe léptetéséhez...</string>
     <!-- System reboot -->
     <string name="reboot_required_title">Újraindítás szükséges</string>
-    <string name="reboot_required_message">A módosítások életbe léptetéséhez újra kell indítani a készüléket. Újraindítod most?</string>
+    <string name="reboot_required_message">A módosítások életbe léptetéséhez újra kell indítani a készüléket. Újraindítja most?</string>
     <string name="action_later">Később</string>
     <string name="action_reboot_now">Újraindítás most</string>
     <!-- Notification / Power Menu Styles -->
@@ -1450,6 +1450,12 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="dynamic_bar_haptics_summary">Finoman rezeg, amikor a kitöltést érinti</string>
     <string name="dynamic_bar_chip_morph">Morf animáció</string>
     <string name="dynamic_bar_chip_morph_summary">Kitöltés kibontása, majd záráskor összecsukása</string>
+    <string name="dynamic_bar_center_island">Dinamikus Sziget mód</string>
+    <string name="dynamic_bar_card_style">Kártyastílus</string>
+    <string name="dynamic_bar_card_style_frosted">Frosted glass</string>
+    <string name="dynamic_bar_card_style_shade">Match notification shade</string>
+    <string name="dynamic_bar_card_style_black">Solid black</string>
+    <string name="dynamic_bar_center_island_summary">Az előlapi kamera köré dinamikus, élő tartalommal ellátott területet épít</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">Soha ne jelenjen meg</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">Csak töltés közben</string>
     <string name="dynamic_bar_keyguard_battery_chip_always">Mindig jelenjen meg</string>
@@ -1519,7 +1525,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="game_spoofing_summary">Eszköz tulajdonságainak meghamisítása adott játékokhoz</string>
     <!-- Spoofing: shared -->
     <string name="spoof_wipe_playstore_title">Törli a Play Áruház adatait?</string>
-    <string name="spoof_wipe_playstore_message">A Play Áruház gyorsítótárazza az integritási ellenőrzések eredményeit. Az alkalmazás adatainak törlésével az új konfiguráció azonnal érvénybe lép, ugyanakkor ez kijelentkeztet a Play Áruházból, és törli a letöltési várólistát is.</string>
+    <string name="spoof_wipe_playstore_message">A Play Áruház gyorsítótárazza az integritási ellenőrzések eredményeit. Az alkalmazás adatainak törlésével az új konfiguráció azonnal érvénybe lép, ugyanakkor ez kijelentkezteti a Play Áruházból, és törli a letöltési várólistát is.</string>
     <string name="spoof_wipe_confirm">Adattörlés</string>
     <string name="spoof_choice_select">Kiválasztás</string>
     <string name="spoof_check_interval_title">Frissítési gyakoriság</string>
@@ -1577,7 +1583,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="pif_value_empty">Az érték nem lehet üres</string>
     <string name="pif_value_not_integer">Egész számot adj meg</string>
     <string name="pif_invalid_fingerprint">Érvénytelen ujjlenyomat-formátum</string>
-    <string name="pif_footer_body">1. Koppints a „Pixel-ujjlenyomat lekérése” („Fetch Pixel fingerprint”) lehetőségre, válassz ki egy csatornát, majd jelölj ki egy eszközt.\n2. Ha a rendszer nem talál eszközt, importálj egy működő PIF-konfigurációt egy megbízható forrásból. Konfigurációs fájlokat nem biztosítunk; ezeket neked kell felkutatnod.\n3. Ellenőrizd újra a Play Integrity állapotát.\n\nA konfiguráció módosításakor a DroidGuard és a Play Áruház automatikusan újraindul. Ha lejárt PIF-konfigurációt töltesz be, a TrickyStore által biztosított „erős integritás” (strong integrity) ellenőrzés sikertelen lesz – még akkor is, ha érvényes keyboxszal rendelkezel.\n\nAmíg keyboxot használsz, tartsd kikapcsolva a „Keystore-szolgáltató hamisítása” („Spoof keystore provider”) opciót, mivel az megkerüli a keybox-alapú hitelesítést.</string>
+    <string name="pif_footer_body">1. Koppintson a „Pixel-ujjlenyomat lekérése” lehetőségre, válasszon ki egy csatornát, majd jelöljön ki egy eszközt.\n2. Ha a rendszer nem talál eszközt, importáljon egy működő PIF-konfigurációt egy megbízható forrásból. Konfigurációs fájlokat nem biztosítunk; ezeket Önnek kell felkutatnia.\n3. Ellenőrizze újra a Play Integrity állapotát.\n\nA konfiguráció módosításakor a DroidGuard és a Play Áruház automatikusan újraindul. Ha lejárt PIF-konfigurációt tölt be, a TrickyStore által biztosított „erős integritás” ellenőrzés sikertelen lesz – még akkor is, ha érvényes keybox-al rendelkezik.\n\nAmíg keybox-ot használ, tartsa kikapcsolva a „Keystore-szolgáltató hamisítása” opciót, mivel az megkerüli a keybox-alapú hitelesítést.</string>
     <string name="pif_flags_title">Hamisítási opciók</string>
     <string name="pif_flag_spoof_build_title">Build-mezőhamisítás</string>
     <string name="pif_flag_spoof_build_summary">Alkalmazza a Build konfigurálást a DroidGuard ellenőrzésének megtévesztésére</string>
@@ -1620,6 +1626,32 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="ts_keybox_expiry">Tanúsítvány lejárata</string>
     <string name="ts_keybox_expiry_summary">A legkorábbi tanúsítvány lejárati ideje %1$s</string>
     <string name="ts_days_left">Még %1$dnap van hátra</string>
+    <!-- TrickyStore: keybox details -->
+    <string name="ts_kb_details_title">Keybox details</string>
+    <string name="ts_kb_manufacturer">Issued for</string>
+    <string name="ts_kb_manufacturer_unknown">Not named in the certificates</string>
+    <string name="ts_kb_source_rkp">From the RKP provisioning info signed by Google</string>
+    <string name="ts_kb_source_subject">From the certificate subject</string>
+    <string name="ts_kb_source_subject_org">From the certificate subject (O=%1$s)</string>
+    <string name="ts_kb_source_org_only">Certificates name the organization %1$s</string>
+    <string name="ts_kb_source_none">Google-issued keyboxes usually don\'t name the device maker</string>
+    <string name="ts_kb_tee_vendor">TEE vendor</string>
+    <string name="ts_kb_security_level">Security level</string>
+    <string name="ts_kb_level_strongbox">StrongBox</string>
+    <string name="ts_kb_level_tee">TEE</string>
+    <string name="ts_kb_level_software">Software (AOSP)</string>
+    <string name="ts_kb_level_unknown">Not stated</string>
+    <string name="ts_kb_level_note">From the intermediate certificate subject</string>
+    <string name="ts_kb_level_software_note">A software attestation keybox can\'t pass strong integrity</string>
+    <string name="ts_kb_root">Attestation root</string>
+    <string name="ts_kb_root_unknown">Not a known Google attestation root</string>
+    <string name="ts_kb_rkp_title">%1$s · RKP provisioning info</string>
+    <string name="ts_kb_rkp_certs">About %1$d certificates issued in the last 30 days</string>
+    <string name="ts_kb_rkp_issue">Partly unreadable: %1$s</string>
+    <string name="ts_kb_cert_attest_key">%1$s · Attestation key (%2$s)</string>
+    <string name="ts_kb_cert_intermediate">%1$s · Intermediate (%2$s)</string>
+    <string name="ts_kb_cert_root">%1$s · Root (%2$s)</string>
+    <string name="ts_kb_cert_note">Serial %1$s · valid %2$s to %3$s</string>
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Keybox riasztások</string>
     <string name="ts_alerts_summary_off">Kikapcsolva. Nem kap értesítést, ha a keybox-ot visszavonják, vagy ha annak lejárati ideje közeledik</string>
@@ -1631,7 +1663,7 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
         <item quantity="one">%d nap</item>
         <item quantity="other">%d nap</item>
     </plurals>
-    <string name="ts_alerts_summary_expired">A keybox érvényessége lejárt. Tölts be egy új keybox-ot az értesítések újbóli fogadásához</string>
+    <string name="ts_alerts_summary_expired">A keybox érvényessége lejárt. Töltsön be egy új keybox-ot az értesítések újbóli fogadásához</string>
     <string name="ts_alerts_summary_blocked">A Beállítások értesítései ki vannak kapcsolva, ezért a figyelmeztetések nem jeleníthetők meg</string>
     <string name="ts_alerts_channel_name">Keybox riasztások</string>
     <string name="ts_alerts_channel_description">Értesítést küld, ha a Google visszavonja a TrickyStore keybox-ot vagy ha az hamarosan lejár</string>
@@ -1639,14 +1671,14 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
         <item quantity="one">A keybox %d nap múlva lejár</item>
         <item quantity="other">A keybox %d nap múlva lejár</item>
     </plurals>
-    <string name="ts_alert_expiry_text">A TrickyStore keybox-od ekkor lejár: %1$s. Hamarosan tölts be egy újat, hogy továbbra is megfelelj a Play Integrity ellenőrzésnek.</string>
+    <string name="ts_alert_expiry_text">A TrickyStore keybox-od ekkor lejár: %1$s. Hamarosan töltsön be egy újat, hogy továbbra is megfeleljen a Play Integrity ellenőrzésnek.</string>
     <string name="ts_alert_revoked_title">Keybox elutasítva</string>
-    <string name="ts_alert_revoked_text">A Google visszavonta a TrickyStore keybox-odat (ok: %1$s). Az erős integritásellenőrzés sikertelen lesz amíg be nem töltesz egy új kexbox-ot.</string>
+    <string name="ts_alert_revoked_text">A Google visszavonta a TrickyStore keybox-ot (ok: %1$s). Az erős integritásellenőrzés sikertelen lesz amíg be nem tölt be egy új kexbox-ot.</string>
     <string name="ts_alert_suspended_title">Keybox felfüggesztve</string>
-    <string name="ts_alert_suspended_text">A Google felfüggesztette a TrickyStore keybox-odat (ok: %1$s). Az erős integritásellenőrzés sikertelen lesz amíg be nem töltesz egy új kexbox-ot.</string>
+    <string name="ts_alert_suspended_text">A Google felfüggesztette a TrickyStore keybox-ot (ok: %1$s). Az erős integritásellenőrzés sikertelen lesz amíg be nem tölt be egy új kexbox-ot.</string>
     <string name="ts_revocation_status">Google visszavonási állapot</string>
     <string name="ts_revocation_checking">Ellenőrzés a Google-ban…</string>
-    <string name="ts_revocation_not_yet_checked">Még nincs ellenőrizve. Koppints az azonnali ellenőrzéshez</string>
+    <string name="ts_revocation_not_yet_checked">Még nincs ellenőrizve. Koppintson az azonnali ellenőrzéshez</string>
     <string name="ts_revocation_valid">Nem visszavont, és minden tanúsítványlánc egy Google-igazolási gyökértanúsítványhoz vezet</string>
     <string name="ts_revocation_expiring">Érvényes, de a tanúsítvány lejár ekkor: %1$s</string>
     <string name="ts_revocation_revoked">A Google visszavonta (ok: %1$s)</string>
@@ -1668,9 +1700,9 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
     <string name="ts_chip_checking">Ellenőrzés</string>
     <string name="ts_chip_unchecked">Nem ellenőrzött</string>
     <string name="ts_flag_revoked_title">Keybox elutasítva</string>
-    <string name="ts_flag_revoked_message">A Google visszavonta ezt a keybox-ot. Az erős integritási teszt sikertelen lesz vele de az eszköz integritási tesztje továbbra is sikeres lehet. Importálj egy másik kulcsdobozt az erős integritás visszaállításához.</string>
+    <string name="ts_flag_revoked_message">A Google visszavonta ezt a keybox-ot. Az erős integritási teszt sikertelen lesz vele de az eszköz integritási tesztje továbbra is sikeres lehet. Importáljon egy másik keybox-ot az erős integritás visszaállításához.</string>
     <string name="ts_flag_suspended_title">Keybox felfüggesztve</string>
-    <string name="ts_flag_suspended_message">A Google felfüggesztette ezt a keybox-ot. Amíg az felfüggesztett állapotban van, az erős integritás (strong integrity) nem fog működni. Az erős integritás helyreállításához importálj egy másik keybox-ot.</string>
+    <string name="ts_flag_suspended_message">A Google felfüggesztette ezt a keybox-ot. Amíg az felfüggesztett állapotban van, az erős integritás nem fog működni. Az erős integritás helyreállításához importáljon egy másik keybox-ot.</string>
     <string name="ts_flag_expired_title">Lejárt a keybox</string>
     <string name="ts_flag_expired_message">Az ebben a keybox-ban található tanúsítvány érvényessége %1$s napon lejárt. Az ezzel történő igazolás sikertelen lesz.</string>
     <string name="ts_flag_expiring_title">A keybox hamarosan lejár</string>
@@ -1697,15 +1729,15 @@ Egy kis adomány is segíthet életben tartani és fejleszteni ezt a projektet. 
         <item quantity="other">%d alkalmazások hozzáadva</item>
     </plurals>
     <string name="ts_failed">Sikertelen: %s</string>
-    <string name="ts_footer_body">1. Szerezz be egy érvényes keybox XML-t egy megbízható forrásból. A keybox-ok nem állnak rendelkezésre, Neked kell megtalálni egyet.\n2. Koppintson a „Keybox importálása” gombra, és töltsd be a fájlt. A visszavonási állapotát a Google azonnal, majd 24 óránként ellenőrzi, amíg ezt a képernyőt látogatod.\n3. A Google Play Szolgáltatások, a Play Áruház és más gyakori célpontok automatikusan hozzáadódnak. Nyissa meg a „Célalkalmazások kezelése” lehetőséget a módosításukhoz.\n4. Állítsd a célmódot „Leaf” értékre, ha az eszközön működik a TEE, egyébként hagyja Automatikus értéken.\n5. Ellenőrizze újra a Play integritásának állapotát.\n\nHa a Google visszavon egy keybox-ot, az továbbra is engedélyezheti az eszköz integritásának továbbítását, még akkor is, ha az erős integritás nem működik.</string>
+    <string name="ts_footer_body">1. Szerezzen be egy érvényes keybox XML-t egy megbízható forrásból. A keybox-ok nem állnak rendelkezésre, Önnek kell megtalálni egyet.\n2. Koppintson a „Keybox importálása” gombra, és töltse be a fájlt. A visszavonási állapotát a Google azonnal, majd 24 óránként ellenőrzi, amíg ezt a képernyőt látogatja.\n3. A Google Play Szolgáltatások, a Play Áruház és más gyakori célpontok automatikusan hozzáadódnak. Nyissa meg a „Célalkalmazások kezelése” lehetőséget a módosításukhoz.\n4. Állítsa a célmódot „Leaf” értékre, ha az eszközön működik a TEE, egyébként hagyja Automatikus értéken.\n5. Ellenőrizze újra a Play integritásának állapotát.\n\nHa a Google visszavon egy keybox-ot, az továbbra is engedélyezheti az eszköz integritásának továbbítását, még akkor is, ha az erős integritás nem működik.</string>
     <string name="ts_verification_mode">Ellenőrzési mód</string>
     <string name="ts_verification_auto_count">%1$d automatikus módon</string>
     <string name="ts_verification_cert_count">%1$d cert (teljes) módban</string>
     <string name="ts_verification_leaf_count">%1$d leaf (külső héj) módban</string>
     <string name="ts_verification_skip_count">%1$d kihagyva</string>
-    <string name="ts_patch_dialog_message">Egy dátum (ÉÉÉÉ-HH-NN vagy ÉÉÉÉ-HH formátumban), egy az aktuális hónapot követő sablon pl. ÉÉÉÉ-HH-05, vagy a „no” érték az eszköz saját javítócsomagjának megadásához. Használd a system / vendor / boot / all sorokat amit az opcionális szakaszokkal állíthatod be külön.</string>
-    <string name="ts_invalid_patch_date">Érvénytelen javítási szint. Így használd: ÉÉÉÉ-HH-NN</string>
-    <string name="ts_invalid_patch">Érvénytelen javítási szint. Használj egy dátumot ÉÉÉÉ-HH-NN formátumban vagy válaszd a „no” értéket</string>
+    <string name="ts_patch_dialog_message">Egy dátum (ÉÉÉÉ-HH-NN vagy ÉÉÉÉ-HH formátumban), egy az aktuális hónapot követő sablon pl. ÉÉÉÉ-HH-05, vagy a „no” érték az eszköz saját javítócsomagjának megadásához. Használja a system / vendor / boot / all sorokat amit az opcionális szakaszokkal állíthatja be külön.</string>
+    <string name="ts_invalid_patch_date">Érvénytelen javítási szint. Így használja: ÉÉÉÉ-HH-NN</string>
+    <string name="ts_invalid_patch">Érvénytelen javítási szint. Használjon egy dátumot ÉÉÉÉ-HH-NN formátumban vagy válassza a „nem” értéket</string>
     <string name="ts_security_patch">A biztonsági javítócsomag dátuma</string>
     <string name="ts_no_patch">Nincs beállítva (a készülék alapértelmezését használja)</string>
     <string name="ts_patch_device">Eszközjavítási szint (nincs felülírás)</string>

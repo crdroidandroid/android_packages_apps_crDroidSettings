@@ -99,10 +99,8 @@
     <string name="crdroid_donate_preference_title">私たちを支援する</string>
     <string name="crdroid_donate_preference_summary">さらなる開発を支援するために寄付をお願いします</string>
     <string name="crdroid_donate_title">crDroidはあなたの助けを必要としています！</string>
-    <string name="crdroid_donate_notification_text">タップして詳細を表示</string>
-    <string name="crdroid_donate_message">crDroid Androidはウェブサイトの運営、ビルドサーバーの稼働、デバイス向けに高品質なビルドを提供するために皆様の支援を必要としているオープンソースプロジェクトです。
-\n\n
-少しの寄付でもこのプロジェクトを維持し改善し続けるための大きな力となります。このメッセージを無視しても構いませんが皆様の支援は私たちにとって大変重要です。</string>
+    <string name="crdroid_donate_notification_text">タップして詳細を確認するか、このメッセージを閉じてください</string>
+    <string name="crdroid_donate_message">crDroid Android はオープンソースプロジェクトです。ウェブサイトの維持やビルドサーバーの稼働を続け、お使いのデバイスに高品質なビルドをお届けするためには、皆様のご協力が必要です。\n\n少額のご寄付でも、このプロジェクトを継続し、さらに改善していく大きな力になります。下のボタンをタップするとこのメッセージを 1 か月間非表示にできますが、可能であればぜひご支援をご検討ください。皆様のサポートが私たちの大きな励みになります！</string>
     <string name="crdroid_donate_button">今すぐ寄付をする</string>
     <string name="crdroid_later_button">来月にする</string>
     <string name="crdroid_channel_name">crDroidの通知</string>
@@ -1444,6 +1442,12 @@
     <string name="dynamic_bar_haptics_summary">チップをタップしたときに軽く振動します</string>
     <string name="dynamic_bar_chip_morph">変形アニメーション</string>
     <string name="dynamic_bar_chip_morph_summary">チップをパネルに拡大表示し、閉じるときに元のチップへ縮小します</string>
+    <string name="dynamic_bar_center_island">Dynamic Island モード</string>
+    <string name="dynamic_bar_card_style">カードスタイル</string>
+    <string name="dynamic_bar_card_style_frosted">すりガラス</string>
+    <string name="dynamic_bar_card_style_shade">通知シェードに合わせる</string>
+    <string name="dynamic_bar_card_style_black">単色ブラック</string>
+    <string name="dynamic_bar_center_island_summary">フロントカメラを囲む黒いピル型のチップとして表示し、左右にライブコンテンツを配置します</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">表示しない</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">充電中のみ</string>
     <string name="dynamic_bar_keyguard_battery_chip_always">常に表示</string>
@@ -1613,6 +1617,32 @@
     <string name="ts_keybox_expiry">証明書の有効期限</string>
     <string name="ts_keybox_expiry_summary">最も期限が近いリーフ証明書の有効期限: %1$s</string>
     <string name="ts_days_left">%1$d日後</string>
+    <!-- TrickyStore: keybox details -->
+    <string name="ts_kb_details_title">キーボックスの詳細</string>
+    <string name="ts_kb_manufacturer">発行先</string>
+    <string name="ts_kb_manufacturer_unknown">証明書に名前がありません</string>
+    <string name="ts_kb_source_rkp">Google 署名済みの RKP プロビジョニング情報から取得</string>
+    <string name="ts_kb_source_subject">証明書のサブジェクトから取得</string>
+    <string name="ts_kb_source_subject_org">証明書のサブジェクト（O=%1$s）から取得</string>
+    <string name="ts_kb_source_org_only">証明書に組織名「%1$s」が記載されています</string>
+    <string name="ts_kb_source_none">Google 発行の Keybox には、通常デバイスメーカー名は記載されません</string>
+    <string name="ts_kb_tee_vendor">TEE ベンダー</string>
+    <string name="ts_kb_security_level">セキュリティレベル</string>
+    <string name="ts_kb_level_strongbox">StrongBox</string>
+    <string name="ts_kb_level_tee">TEE</string>
+    <string name="ts_kb_level_software">ソフトウェア (AOSP)</string>
+    <string name="ts_kb_level_unknown">記載なし</string>
+    <string name="ts_kb_level_note">中間証明書のサブジェクトから取得</string>
+    <string name="ts_kb_level_software_note">ソフトウェア構成証明のキーボックスではStrong Integrity を通過できません</string>
+    <string name="ts_kb_root">構成証明ルート</string>
+    <string name="ts_kb_root_unknown">既知の Google 構成証明ルートではありません</string>
+    <string name="ts_kb_rkp_title">%1$s · RKP プロビジョニング情報</string>
+    <string name="ts_kb_rkp_certs">過去 30 日間に約 %1$d 件の証明書が発行されました</string>
+    <string name="ts_kb_rkp_issue">一部読み取り不可: %1$s</string>
+    <string name="ts_kb_cert_attest_key">%1$s ・認証キー (%2$s)</string>
+    <string name="ts_kb_cert_intermediate">%1$s 中級（%2$s）</string>
+    <string name="ts_kb_cert_root">%1$s · Root (%2$s)</string>
+    <string name="ts_kb_cert_note">シリアル %1$s· %2$s 〜 %3$s まで有効</string>
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">キーボックスアラート</string>
     <string name="ts_alerts_summary_off">オフ。キーボックスが破棄された場合や期限切れになる場合は通知されません</string>

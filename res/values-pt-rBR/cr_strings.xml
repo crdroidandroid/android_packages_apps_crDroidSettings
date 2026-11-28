@@ -99,9 +99,9 @@
     <string name="crdroid_donate_preference_title">Apoie-nos</string>
     <string name="crdroid_donate_preference_summary">Doe para apoiar o desenvolvimento</string>
     <string name="crdroid_donate_title">crDroid precisa da sua ajuda!</string>
-    <string name="crdroid_donate_notification_text">Toque para saber mais</string>
-    <string name="crdroid_donate_message">crDroid Android é um projeto de código aberto que precisa de sua ajuda para se manter online, nossos servidores de build rodando e fornecendo compilações de alta qualidade para o seu dispositivo.\n\n
-Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode descartar esta mensagem, mas o seu apoio significa muito para nós.</string>
+    <string name="crdroid_donate_notification_text">Saiba mais ou não mostrar essa mensagem mais</string>
+    <string name="crdroid_donate_message">crDroid Android is an open-source project which needs your help to keep website online, our build servers running and to deliver high-quality builds for your device.\n\n
+A small donation helps keep this project alive and improving. You can dismiss this message for a month by clicking below button, but do consider to help if you can. Your support means a lot to us!</string>
     <string name="crdroid_donate_button">Doar agora</string>
     <string name="crdroid_later_button">Talvez próximo mês</string>
     <string name="crdroid_channel_name">Notificações crDroid</string>
@@ -416,7 +416,7 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="font_apply_reboot_later">Aplicar, reiniciar mais tarde</string>
     <string name="font_install_message">This font is used for system and app text until you pick another font. Only this file\'s style is installed, so bold and italic text is generated from it. The font style is set back to Default, and a reboot is needed to apply it everywhere.</string>
     <string name="font_install_reboot_now">Instalar e reiniciar</string>
-    <string name="font_install_reboot_later">Install, reboot later</string>
+    <string name="font_install_reboot_later">Instalar, reiniciar depois</string>
     <string name="font_pending_reboot_title">Reinicie para finalizar</string>
     <string name="font_pending_reboot_body">%1$s foi definido. Alguns aplicativos mantêm a fonte anterior até você reiniciar.</string>
     <string name="font_pending_systemui_title">Reiniciar SystemUI para finalizar</string>
@@ -1448,6 +1448,12 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="dynamic_bar_haptics_summary">Vibrate subtly when tapping the chip</string>
     <string name="dynamic_bar_chip_morph">Morph animation</string>
     <string name="dynamic_bar_chip_morph_summary">Expand the chip into its panel and shrink it back on close</string>
+    <string name="dynamic_bar_center_island">Dynamic Island mode</string>
+    <string name="dynamic_bar_card_style">Estilo cartão</string>
+    <string name="dynamic_bar_card_style_frosted">Frosted glass</string>
+    <string name="dynamic_bar_card_style_shade">Match notification shade</string>
+    <string name="dynamic_bar_card_style_black">Solid black</string>
+    <string name="dynamic_bar_center_island_summary">Wrap the chip around the front camera as a black pill, with live content on either side</string>
     <string name="dynamic_bar_keyguard_battery_chip_disabled">Nunca mostrar</string>
     <string name="dynamic_bar_keyguard_battery_chip_charging">Apenas ao carregar</string>
     <string name="dynamic_bar_keyguard_battery_chip_always">Sempre mostrar</string>
@@ -1618,6 +1624,32 @@ Uma pequena doação ajuda a manter este projeto vivo e a melhorar. Você pode d
     <string name="ts_keybox_expiry">Certificate expiry</string>
     <string name="ts_keybox_expiry_summary">Earliest leaf certificate expires on %1$s</string>
     <string name="ts_days_left">%1$dd left</string>
+    <!-- TrickyStore: keybox details -->
+    <string name="ts_kb_details_title">Keybox details</string>
+    <string name="ts_kb_manufacturer">Issued for</string>
+    <string name="ts_kb_manufacturer_unknown">Not named in the certificates</string>
+    <string name="ts_kb_source_rkp">From the RKP provisioning info signed by Google</string>
+    <string name="ts_kb_source_subject">From the certificate subject</string>
+    <string name="ts_kb_source_subject_org">From the certificate subject (O=%1$s)</string>
+    <string name="ts_kb_source_org_only">Certificates name the organization %1$s</string>
+    <string name="ts_kb_source_none">Google-issued keyboxes usually don\'t name the device maker</string>
+    <string name="ts_kb_tee_vendor">TEE vendor</string>
+    <string name="ts_kb_security_level">Security level</string>
+    <string name="ts_kb_level_strongbox">StrongBox</string>
+    <string name="ts_kb_level_tee">TEE</string>
+    <string name="ts_kb_level_software">Software (AOSP)</string>
+    <string name="ts_kb_level_unknown">Not stated</string>
+    <string name="ts_kb_level_note">From the intermediate certificate subject</string>
+    <string name="ts_kb_level_software_note">A software attestation keybox can\'t pass strong integrity</string>
+    <string name="ts_kb_root">Attestation root</string>
+    <string name="ts_kb_root_unknown">Not a known Google attestation root</string>
+    <string name="ts_kb_rkp_title">%1$s · RKP provisioning info</string>
+    <string name="ts_kb_rkp_certs">About %1$d certificates issued in the last 30 days</string>
+    <string name="ts_kb_rkp_issue">Partly unreadable: %1$s</string>
+    <string name="ts_kb_cert_attest_key">%1$s · Attestation key (%2$s)</string>
+    <string name="ts_kb_cert_intermediate">%1$s · Intermediate (%2$s)</string>
+    <string name="ts_kb_cert_root">%1$s · Root (%2$s)</string>
+    <string name="ts_kb_cert_note">Serial %1$s · valid %2$s to %3$s</string>
     <!-- TrickyStore: background keybox alerts (revocation + expiry) -->
     <string name="ts_alerts_title">Keybox alerts</string>
     <string name="ts_alerts_summary_off">Off. You won\'t be notified if the keybox is revoked or about to expire</string>
