@@ -28,7 +28,6 @@ import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.util.crdroid.OmniJawsClient;
 import com.android.internal.util.crdroid.Utils;
 
 import com.android.settings.R;
@@ -41,6 +40,8 @@ import com.crdroid.settings.fragments.lockscreen.MediaArtSettings;
 import com.crdroid.settings.fragments.lockscreen.UdfpsAnimation;
 import com.crdroid.settings.fragments.lockscreen.UdfpsIconPicker;
 import com.crdroid.settings.utils.DeviceUtils;
+
+import org.omnirom.omnijaws.client.OmniJawsClient;
 
 import java.util.List;
 
